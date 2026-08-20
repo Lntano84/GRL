@@ -1,0 +1,34 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.DS_Store
+.idea/
+.vscode/
+参考材料/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+venv/
+.venv/
+env/
+
+outputs/*
+!outputs/.gitkeep
+# Keep reproducible experiment summaries, but never commit model/checkpoint
+# binaries or training intermediates.
+!outputs/first_smoke/
+!outputs/first_smoke/network_science/
+!outputs/first_smoke/network_science/first_round_results.json
+outputs/first_smoke/network_science/config.yaml
+outputs/first_smoke/network_science/checkpoints/
+outputs/first_smoke/network_science/training/
+
+checkpoints/*
+!checkpoints/.gitkeep
+
+log/
+
+*.log

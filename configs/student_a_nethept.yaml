@@ -15,19 +15,19 @@ seed:
 
 gnn:
   device: cpu
-  model_dir: C:/Users/windows/Desktop/codex/GRL_最终实验/models
+  model_dir: C:/Users/windows/Desktop/codex/GRL_最终实验_v2/models
   embedding_dim: 64
   hidden_dim: 64
-  contexts: 100
-  candidates_per_context: 10
-  mc_runs_train: 30
+  contexts: 200
+  candidates_per_context: 20
+  mc_runs_train: 20
   walk_length: 10
   num_walks: 10
   window: 10
   workers: 1
 
 comparison:
-  dataset_path: C:/Users/windows/Desktop/codex/GRL_最终实验/marginal_dataset.json
+  dataset_path: C:/Users/windows/Desktop/codex/GRL_最终实验_v2/marginal_dataset.json
   reuse_dataset: true
   epochs: 8
   batch_size: 16
@@ -36,4 +36,4 @@ comparison:
 experiment:
   random_seed: 20260821
   repeat: 1
-  output_dir: C:/Users/windows/Desktop/codex/GRL_最终实验
+  output_dir: C:/Users/windows/Desktop/codex/GRL_最终实验_v2

@@ -1,0 +1,39 @@
+dataset:
+  name: nethept
+  graph_path: data/NetHEPT.txt
+  directed: true
+  expected_num_nodes: 15233
+  expected_num_edges: 32235
+
+diffusion:
+  model: IC
+  probability: 0.01
+  mc_runs_train: 30
+
+seed:
+  budget: 10
+
+gnn:
+  device: cpu
+  model_dir: C:/Users/windows/Desktop/codex/GRL_最终实验/models
+  embedding_dim: 64
+  hidden_dim: 64
+  contexts: 100
+  candidates_per_context: 10
+  mc_runs_train: 30
+  walk_length: 10
+  num_walks: 10
+  window: 10
+  workers: 1
+
+comparison:
+  dataset_path: C:/Users/windows/Desktop/codex/GRL_最终实验/marginal_dataset.json
+  reuse_dataset: true
+  epochs: 8
+  batch_size: 16
+  learning_rate: 0.001
+
+experiment:
+  random_seed: 20260821
+  repeat: 1
+  output_dir: C:/Users/windows/Desktop/codex/GRL_最终实验

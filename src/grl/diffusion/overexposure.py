@@ -285,7 +285,7 @@ def estimate_spread(
     activation_mode: str = DETERMINISTIC,
 ) -> dict[str, float]:
     """Monte-Carlo estimate of the expected *positive* spread of ``seeds``."""
-    return estimate_spread_over_configs(
+    return estimate_overexposure_spread_over_configs(
         graph,
         [seeds],
         mc_runs,
@@ -295,7 +295,7 @@ def estimate_spread(
     )[0]
 
 
-def estimate_spread_over_configs(
+def estimate_overexposure_spread_over_configs(
     graph: nx.Graph | nx.DiGraph,
     seed_sets: list[list[int]],
     mc_runs: int,
@@ -310,6 +310,12 @@ def estimate_spread_over_configs(
     trial, so differences between them are not contaminated by threshold noise.  This
     is the overexposure analogue of the common live-edge sampling used for IC, and it is
     what makes ``Delta(v | S)`` labels usable.
+
+    .. note::
+       Deliberately *not* named ``estimate_spread_over_configs``.  That name belongs to
+       the independent-cascade estimator in :mod:`grl.diffusion.independent_cascade`, and
+       re-exporting an overexposure function under the same name silently shadowed it —
+       which made model comparisons evaluate overexposure against itself.
     """
     if mc_runs <= 0:
         raise ValueError("mc_runs must be positive")
@@ -365,7 +371,7 @@ def estimate_marginal_gains(
         raise ValueError("candidates must not be in the seed set")
 
     configurations = [list(seeds)] + [[*seeds, candidate] for candidate in candidates]
-    estimates = estimate_spread_over_configs(
+    estimates = estimate_overexposure_spread_over_configs(
         graph, configurations, mc_runs, random_seed,
         overexposure_free=overexposure_free,
         activation_mode=activation_mode,

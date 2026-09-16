@@ -2,6 +2,7 @@ from .independent_cascade import (
     estimate_marginal_gain,
     estimate_marginal_gains,
     estimate_spread,
+    estimate_spread_over_configs,
     run_independent_cascade,
 )
 from .overexposure import (
@@ -14,8 +15,8 @@ from .overexposure import (
     OverexposureRun,
     estimate_marginal_gain as estimate_overexposure_marginal_gain,
     estimate_marginal_gains as estimate_overexposure_marginal_gains,
+    estimate_overexposure_spread_over_configs,
     estimate_spread as estimate_overexposure_spread,
-    estimate_spread_over_configs,
     marginal_positive_probability,
     positive_activation_probability,
     run_overexposure,
@@ -23,9 +24,12 @@ from .overexposure import (
 )
 
 __all__ = [
-    # Independent cascade
+    # Independent cascade.  ``estimate_spread`` / ``estimate_spread_over_configs`` /
+    # ``estimate_marginal_gain(s)`` are the IC estimators; every overexposure analogue is
+    # prefixed with ``overexposure`` so the two can never shadow each other.
     "run_independent_cascade",
     "estimate_spread",
+    "estimate_spread_over_configs",
     "estimate_marginal_gain",
     "estimate_marginal_gains",
     # Overexposure threshold-window model
@@ -41,7 +45,7 @@ __all__ = [
     "sample_threshold_windows",
     "run_overexposure",
     "estimate_overexposure_spread",
-    "estimate_spread_over_configs",
+    "estimate_overexposure_spread_over_configs",
     "estimate_overexposure_marginal_gain",
     "estimate_overexposure_marginal_gains",
 ]

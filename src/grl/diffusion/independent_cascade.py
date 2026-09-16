@@ -72,6 +72,44 @@ def estimate_spread(
     return {"mean": float(mean), "std": float(std)}
 
 
+def estimate_spread_over_configs(
+    graph: nx.Graph | nx.DiGraph,
+    seed_sets: list[list[int]],
+    mc_runs: int,
+    random_seed: int,
+) -> list[dict[str, float]]:
+    """Paired Monte-Carlo estimate of several seed sets under common live-edge samples.
+
+    Every seed set in ``seed_sets`` is evaluated on the same sampled live graph within a
+    trial, so differences between configurations are not contaminated by edge-removal
+    noise.  This is the estimator behind the paired ``Delta(v | S)`` labels.
+
+    Mirrors :func:`grl.diffusion.overexposure.estimate_overexposure_spread_over_configs`;
+    the two share a signature so models can be compared with identical protocols.
+    """
+    if mc_runs <= 0:
+        raise ValueError("mc_runs must be positive")
+    if not seed_sets:
+        raise ValueError("seed_sets must not be empty")
+
+    samples: list[list[float]] = [[] for _ in seed_sets]
+    seed_sets_as_sets = [set(seeds) for seeds in seed_sets]
+
+    for offset in range(mc_runs):
+        live_graph = _sample_live_graph(graph, random.Random(random_seed + offset))
+        for index, seed_set in enumerate(seed_sets_as_sets):
+            samples[index].append(float(len(_reachable_nodes(live_graph, seed_set))))
+
+    results: list[dict[str, float]] = []
+    for values in samples:
+        mean = sum(values) / len(values)
+        results.append({
+            "mean": float(mean),
+            "std": float(pstdev(values) if len(values) > 1 else 0.0),
+        })
+    return results
+
+
 def estimate_marginal_gain(
     graph: nx.Graph | nx.DiGraph,
     seeds: list[int],

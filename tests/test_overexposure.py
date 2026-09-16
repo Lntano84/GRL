@@ -14,7 +14,7 @@ from grl.diffusion.overexposure import (
     STOCHASTIC,
     estimate_marginal_gains,
     estimate_spread,
-    estimate_spread_over_configs,
+    estimate_overexposure_spread_over_configs,
     marginal_positive_probability,
     positive_activation_probability,
     run_overexposure,
@@ -293,7 +293,7 @@ def test_positive_and_negative_are_disjoint():
 
 def test_paired_estimates_share_thresholds():
     graph = _chain(5, weight=0.5)
-    estimates = estimate_spread_over_configs(graph, [[0], [0, 1]], 60, 123)
+    estimates = estimate_overexposure_spread_over_configs(graph, [[0], [0, 1]], 60, 123)
     assert len(estimates) == 2
     # Adding a seed can never reduce the spread: it is itself positive.
     assert estimates[1]["mean"] >= estimates[0]["mean"]
@@ -349,9 +349,9 @@ def test_estimate_marginal_gains_rejects_seed_candidate_overlap():
         estimate_marginal_gains(graph, [0], [0], 5, 1)
 
 
-def test_estimate_spread_over_configs_validates_mc_runs():
+def test_estimate_overexposure_spread_over_configs_validates_mc_runs():
     graph = _chain(3)
     with pytest.raises(ValueError):
-        estimate_spread_over_configs(graph, [[0]], 0, 1)
+        estimate_overexposure_spread_over_configs(graph, [[0]], 0, 1)
     with pytest.raises(ValueError):
-        estimate_spread_over_configs(graph, [], 5, 1)
+        estimate_overexposure_spread_over_configs(graph, [], 5, 1)

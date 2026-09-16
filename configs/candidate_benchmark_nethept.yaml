@@ -1,0 +1,29 @@
+dataset:
+  name: nethept
+  graph_path: data/NetHEPT.txt
+  directed: true
+  expected_num_nodes: null
+  expected_num_edges: null
+
+diffusion:
+  model: IC
+  probability: 0.01
+
+seed:
+  budget: 10
+
+candidate_benchmark:
+  pool_sizes: [10, 20, 50, 100]
+  max_nodes: 200
+  steps: 10
+  mc_runs: 10
+  random_repeats: 10
+  feature_dqn_path: param/dqn_model.pth
+  embedding_paths:
+    - param/node2vec_NetHEPT.txt.pth
+    - param/node2vec_nethept.pth
+    - param/node2vec_emb.pth
+
+experiment:
+  random_seed: 20260715
+  output_dir: outputs/candidate_benchmark/nethept

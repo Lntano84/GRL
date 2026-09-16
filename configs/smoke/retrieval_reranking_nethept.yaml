@@ -1,0 +1,34 @@
+dataset:
+  name: nethept
+  graph_path: data/NetHEPT.txt
+  directed: true
+  expected_num_nodes: 15233
+  expected_num_edges: 32235
+
+diffusion:
+  model: IC
+  probability: 0.01
+
+seed:
+  budget: 2
+
+retrieval_reranking:
+  pool_sizes: [10, 20]
+  max_nodes: 30
+  steps: 2
+  mc_runs_diagnostic: 2
+  mc_runs_end_to_end: 2
+  mc_runs_spread: 10
+  random_repeats: 2
+  device: cpu
+  feature_dqn_path: param/dqn_model.pth
+  embedding_paths:
+    - param/node2vec_NetHEPT.txt.pth
+    - param/node2vec_nethept.pth
+    - param/node2vec_emb.pth
+  marginal_model_path: ../codex/GRL_最终实验_v2/models/direct_marginal_nethept.pth
+  marginal_embedding_path: ../codex/GRL_最终实验_v2/models/comparison_node2vec_nethept.pth
+
+experiment:
+  random_seed: 20260821
+  output_dir: outputs/smoke_retrieval_reranking

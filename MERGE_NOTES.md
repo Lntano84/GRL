@@ -121,25 +121,47 @@ merged/
 
 ---
 
-## 五、⚠️ 仍需你确认/处理
+## 五、合并的落地情况（✅ 已完成 2026-09-15）
 
-### 5.1 合并方向与 push
+**采用选项 A：force push 合并结果到 `Lntano84/GRL` 的 `main`。**
 
-你要求"整合到 Lntano 里面"。当前合并结果的 **git 历史是重新初始化的**（因为两个仓库历史独立，无法直接 merge）。
+### 5.1 远端最终状态
 
-**两个选项**：
+```
+Lntano84/GRL
+├─ main                        = 510e232   ← 合并结果（本仓库）
+└─ backup/lntano-before-merge  = 55816fe   ← 合并前的 Lntano main（原样保留）
+```
 
-| 选项 | 做法 | 优点 | 缺点 |
-| --- | --- | --- | --- |
-| **A（推荐）** | 以合并结果为准，**force push 到 `Lntano84/GRL`** | 干净、单一历史 | 会覆盖 Lntano 现有 8 个提交（但内容已保留在合并树里） |
-| **B（保守）** | 把合并结果作为**新分支** `merge/gaoyucen` push 到 Lntano | 不破坏现有 main | 历史仍分裂 |
-| **C** | 把合并结果 push 到 **GaoYucen/GRL** | 保留 45 个提交历史 | 违背你"整合到 Lntano"的要求 |
+⚠️ **Lntano 原有 8 个提交可通过 `backup/lntano-before-merge` 分支找回**，内容也全部保留在合并树里（§5.2 已验证），所以这次 force push **没有丢失任何工作**。
 
-⚠️ **我倾向 A 或 B，但这是覆盖式操作，必须你点头我才做。**
+### 5.2 push 前的完整性核对（三重保险）
 
-### 5.2 一处需要你复核的技术决策
+| 检查 | 结果 |
+| --- | --- |
+| ① Lntano 的 28 个独有文件在合并结果中**按内容哈希**逐一比对 | ✅ 28/28 存在且完全一致 |
+| ② Lntano 的 11 个冲突文件（采用其较新版本） | ✅ 逐一比对一致 |
+| ③ 本地备份 | ✅ `_grl_merge\_backup_Lntano_20260916_1722` |
+| ④ 远端备份分支 | ✅ `backup/lntano-before-merge` |
 
-**§2.1 的 11 个冲突文件我选了 Lntano 版本。** 请在合并结果里跑一次：
+### 5.3 push 后验证
+
+从远端**重新克隆**并检查：
+
+- ✅ HEAD = `510e232`，5 个提交历史完整
+- ✅ 两条 track 的关键文件全部到位（`paper/iclr2027/`、`docs/RESEARCH_STATE.md`、`scripts/experiments/`、`src/grl/diagnostics/retrieval_reranking.py`、`src/grl/experiments/overlap.py`、`MERGE_NOTES.md`）
+- ✅ **`pytest` 36 passed**
+
+### 5.4 两处后续修正（已一并推送）
+
+1. **`outputs/marginal_predictability/nethept_grouped/summary.json`** —— 这是 A 侧的真实结果文件，
+   但被 `.gitignore` 的 `outputs/*` 规则吃掉了（原仓库里也未被跟踪）。已用 `git add -f` 强制追回。
+2. **`docs/DECISIONS.md`** —— 追加 `2026-09-15 HUMAN AUTHORIZATION: change setting from static IC to overexposure`，
+   正式解冻 2026-09-05 gate 所冻结的 multi-graph / k-sweep / ablations / new setting。
+
+### 5.5 仍需你复核的技术决策
+
+**§2.1 的 11 个冲突文件采用了 Lntano 版本。** 请在合并仓库里跑一次：
 
 ```powershell
 cd C:\Users\windows\Desktop\_grl_merge\merged
@@ -150,9 +172,9 @@ python scripts/run_first_smoke.py --config configs/smoke/network_science_first_r
 
 **如果 A 侧某些论文结果无法复现**，说明该文件的 A 侧版本有 Lntano 没有的改动 ⇒ 需要逐个 review 而不是整体替换。
 
-### 5.3 数据文件
+### 5.6 数据文件提醒
 
-`data/twitter-d.txt` 有 **37MB**，两个仓库都提交了。合并后仍在。如果 Lntano 仓库有体积限制，建议改为 Git LFS 或移出。
+`data/twitter-d.txt` 有 **37MB**，两个仓库都提交了。如果 Lntano 仓库有体积限制，建议改为 Git LFS 或移出。
 
 ---
 

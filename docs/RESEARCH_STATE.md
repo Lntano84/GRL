@@ -125,3 +125,43 @@ The 50k verifier reaches **99.51% of official IMM spread** (IMM 509.081 ± 0.842
 The current tuned state-aware learned marginal predictor does not yet reduce the RR evidence needed for near-IMM quality. Learned-only remained poor (~324–333 spread in observed repeats), and hard learned-Top16 guidance was worse than pure RR at each completed low-budget pilot (1k: 378.812 vs 424.797; 2k: 384.294 vs 433.680; 5k: 374.293 vs 478.747; 10k: 402.223 vs 496.804).
 
 **Paper-level judgment:** the engineering runtime bottleneck is largely solved, but the learning-value hypothesis in vanilla static IC is not. The current route cannot claim better quality, runtime, or demonstrated sample efficiency from learning relative to mature RIS. This is a **YELLOW / human paper-positioning review** boundary. Do not expand to multi-graph, k-sensitivity, broad ablations, a new predictor architecture, RL, or a new IM setting without human authorization.
+
+## 2026-09-15 — HUMAN AUTHORIZATION: setting change authorized (overexposure), target DASFAA 2027
+
+The 2026-09-05 paper-positioning gate has been **resolved by human decision**. The static-IC
+learning-value question is closed as *negative* (see the OPIM-C same-protocol comparison and the
+P0-RESCUE record above) and is **no longer the paper's claim**.
+
+**Authorized:** change the evaluation setting to **overexposure-aware diffusion
+(threshold-window model)** and retarget to **DASFAA 2027** (deadline 2026-11-25, LNCS 16 pages,
+double-blind). Full rationale and scope in `docs/DECISIONS.md` (2026-09-15 entry).
+
+**Why this setting resolves the gate:** under overexposure, RR/RIS is *unusable* (per-node
+activation probability is non-monotone in the active-neighbour set, so the coverage identity has no
+valid premise), the only ground-truth oracle is state-tracking Monte-Carlo, and no learning-based
+method exists in this setting. Therefore the already-built mechanism — full-graph screening,
+state-aware marginal proposal, **audited residual trust test, progressive verification, classical
+fallback** — stops being defensive decoration and becomes the algorithmic core.
+
+**Consequences:**
+- **Unfrozen** (previously frozen by the 2026-09-05 gate): multi-graph evaluation, `k={5,10,20}`
+  sweeps, broad ablations, new IM setting.
+- **Still frozen:** no RL, no new predictor architecture, no local runtime tuning to mask a
+  structural comparison.
+- **Abandoned claim:** "learned advice beats mature RIS on static IC" (runtime or quality).
+- **New claim to earn:** in a setting with no certified classical method, audited learned advice
+  preserves near-oracle quality while cutting expensive oracle computation, and degrades gracefully
+  as advice quality collapses.
+
+**Decision gates (hard):**
+- **2026-10-13** — Gate 1. (a) degree-vs-true-marginal Spearman collapses under overexposure;
+  (b) sequential decision beats the static optimum by a material margin (>5%).
+  *If either fails, DASFAA is dropped and the target moves to CIKM 2027.*
+- Gate 2 — quality–cost Pareto curve must include a **random-pruning control**.
+
+**Repository consolidation:** this decision was taken after merging `GaoYucen/GRL` and
+`Lntano84/GRL` into a single repository; see `MERGE_NOTES.md`.
+
+**Next action:** implement the overexposure threshold-window diffusion model with a degeneracy
+check (`θ^τ = 1` must reduce to the standard LT/IC behaviour), then build the ground-truth
+state-tracking MC-greedy baseline.

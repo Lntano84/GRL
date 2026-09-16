@@ -21,8 +21,22 @@ class SetEncoder(nn.Module):
         )
 
     def forward(self, node_features: torch.Tensor, seed_mask: torch.Tensor) -> torch.Tensor:
-        encoded = self.node_mlp(node_features)
-        pooled = (encoded * seed_mask).sum(dim=-2)
+        if node_features.dim() == 2:
+            node_features = node_features.unsqueeze(0)
+        if seed_mask.dim() == 2:
+            seed_mask = seed_mask.unsqueeze(0)
+        pooled_rows = []
+        for features, mask in zip(node_features, seed_mask):
+            selected = features[mask.squeeze(-1).bool()]
+            if selected.shape[0] == 0:
+                pooled_rows.append(torch.zeros(
+                    self.node_mlp[0].out_features,
+                    device=features.device,
+                    dtype=features.dtype,
+                ))
+            else:
+                pooled_rows.append(self.node_mlp(selected).sum(dim=0))
+        pooled = torch.stack(pooled_rows)
         return self.set_mlp(pooled)
 
 

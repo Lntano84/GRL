@@ -1,0 +1,80 @@
+\section{The Controlling Variable Is the Seed Fraction}
+\label{sec:regime}
+
+\subsection{Why absolute budgets mislead}
+
+Our first two attempts to characterise this problem produced the conclusion that out-degree
+\emph{does not} fail under overexposure, and both were wrong for the same reason. We sampled
+candidate nodes uniformly from the whole graph and correlated out-degree with the true marginal
+gain. On a heavy-tailed graph such a pool consists almost entirely of low-degree nodes, so the
+correlation is dominated by the global regularity ``high-degree nodes are more valuable'' rather
+than by any ability to rank candidates under a given state. Worse, the experiments were run at
+tiny coverage: on NetHEPT ($n = 15233$) a budget of $200$ seeds is $1.3\%$ of the network.
+
+Replacing the uniform pool by a degree-retrieved pool --- which is what a deployed
+\emph{retrieve-then-rerank} pipeline actually sees --- moves the measured out-degree rank
+correlation from $0.882$ to $0.654$ on the same graph and objective, because the pool no longer
+spans the degree distribution.
+
+The decisive variable, however, is not the pool but the \emph{seed fraction} $|S|/n$. Saturation
+is a property of coverage, not of the absolute budget. The same budget of $200$ seeds is $1.3\%$
+of NetHEPT but $42\%$ of Congress-Twitter ($n = 475$).
+
+\subsection{Sweeping the fraction across eight graphs}
+
+We therefore sweep $|S|/n \in \{0, 0.05, 0.10, 0.20, 0.40\}$ on eight graphs whose mean degree
+spans $4.23$ to $55.95$, and measure the rank correlation between out-degree and the true
+marginal gain $\Delta(v \mid S) = \sigma(S \cup \{v\}) - \sigma(S)$, estimated by paired Monte
+Carlo with windows shared across candidates within a trial.
+
+\begin{table}[t]
+\centering
+\caption{Out-degree becomes an anti-signal once the network saturates. Values are means over
+$|S|/n \ge 20\%$. ``neg.'' is the share of candidates with $\Delta(v \mid S) < 0$. $\delta_2$
+denotes the state-conditioned closed form of \S\ref{sec:analysis}.}
+\label{tab:signflip}
+\begin{tabular}{lrrrrr}
+\toprule
+graph & $n$ & $\langle k \rangle$ & $\rho_{\text{degree}}$ & $\rho_{\delta_2}$ & neg. \\
+\midrule
+NetHEPT            & 15233 &  4.23 & $\mathbf{+0.092}$ & $+0.686$ &  0.0\% \\
+p2p-Gnutella08     &  6301 &  6.59 & $-0.094$ & $+0.756$ &  8.0\% \\
+ca-GrQc            &  5242 & 11.06 & $-0.701$ & $+0.656$ & 20.0\% \\
+Wiki-Vote          &  7115 & 29.15 & $-0.035$ & $+0.265$ &  8.0\% \\
+ca-HepPh           & 12008 & 39.48 & $-0.431$ & $+0.481$ & 21.0\% \\
+Facebook           &  4039 & 43.69 & $-0.402$ & $+0.388$ & 21.0\% \\
+email-Eu-core      &  1005 & 50.89 & $-0.695$ & $+0.685$ & 34.0\% \\
+Congress-Twitter   &   475 & 55.95 & $-0.049$ & $+0.050$ & 35.0\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three observations follow from Table~\ref{tab:signflip}.
+
+\begin{enumerate}
+  \item \textbf{Out-degree flips sign.} It is positively correlated with the marginal gain on
+        only one of eight graphs --- NetHEPT, the sparsest --- and negative on the other seven
+        once $|S|/n \ge 20\%$.
+  \item \textbf{The objective really is non-monotone there.} Between $20\%$ and $35\%$ of
+        candidates have a \emph{negative} marginal gain on the denser graphs. This matches the
+        source model's own report that the objective value fluctuates with the budget on its
+        sparsest dataset.
+  \item \textbf{The state-conditioned closed form stays positive on all eight.} It is the only
+        scorer we tested that does.
+\end{enumerate}
+
+\paragraph{Density is not the explanation.}
+It is tempting to attribute the sign flip to density. We do not, because the evidence does not
+support it: the rank correlation between $\langle k \rangle$ and $\rho_{\text{degree}}$ across
+the eight graphs is only $-0.405$, and Congress-Twitter --- the densest graph --- is a
+counterexample at $\rho_{\text{degree}} = -0.049$. The defensible claim is about the
+\emph{saturated regime}, not about dense graphs.
+
+\paragraph{A structural hint.}
+After in-weight normalisation, exposure $\delta$ is driven by a node's \emph{in}-degree while a
+seed's value is driven by its \emph{out}-degree. The two coincide only when a graph is
+approximately symmetric. Consistently, the graphs with $\rho(\text{in},\text{out})$ near $1$
+(ca-GrQc and ca-HepPh, both symmetrised collaboration networks) show the strongest negative
+out-degree correlation, while NetHEPT, whose in- and out-degrees are nearly independent
+($\rho = -0.051$), is the one graph where degree survives. We record this as a hypothesis rather
+than a result; testing it needs more graphs than the eight available here.

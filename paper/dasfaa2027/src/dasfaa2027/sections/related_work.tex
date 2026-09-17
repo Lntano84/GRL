@@ -1,0 +1,51 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Scalable influence maximization.}
+The reverse-reachability family underpins the fastest known IM algorithms. TIM and TIM+
+\cite{tang2014influence,tang2015tim} and IMM \cite{tang2015imm} sample reverse walks and solve
+maximum coverage, achieving $(1-1/e-\varepsilon)$ guarantees with near-linear expected running
+time; OPIM and its successors \cite{tang2018online} extend this to the online setting;
+\cite{nguyen2016stop} tightens the stopping rule. GPU-parallel implementations
+\cite{li2020gim,min2020curipples} report speedups of two to three orders of magnitude over
+sequential baselines. All of these inherit the identity
+$\mathbb{E}[\sigma(S)] = n \cdot \Pr[S \cap \mathcal{R} \neq \emptyset]$, and therefore all of
+them require the graph-structured randomness that \S\ref{sec:inapplicability} shows is absent
+here. Our result is not that these algorithms are slow, but that they cannot be instantiated.
+
+\paragraph{Learning-based influence maximization.}
+A complementary line replaces the influence oracle with a learned predictor, either to prune the
+candidate set before exact greedy \cite{chen2020gcomb} or to estimate marginal gains directly.
+A recent benchmark study \cite{liang2024rethinking} finds that, across a range of IM and
+maximum-coverage tasks, classical lazy greedy and sampling-based methods remain competitive with
+or superior to deep reinforcement learning approaches. Our \S\ref{sec:limitations} reaches a
+consistent conclusion in the overexposure setting, via a different route: the training-free
+closed form is not beaten by the learned scorers we tested.
+
+\paragraph{Overexposure and negative influence.}
+That excessive exposure can be counterproductive is well documented. The model we study is due to
+\cite{zhu2026overexposure}, who introduce the threshold window and derive the
+$2\delta(1-\delta)$ activation probability; they establish non-monotonicity and non-submodularity
+of the objective and propose an incremental greedy algorithm with a $\gamma/k$ ratio plus an
+upper-bound method built on two monotone submodular linear-threshold surrogates. An earlier line
+models overexposure through a logistic opinion-formation term inside a targeted-IM objective
+\cite{loukides2020laico}, and notes explicitly that because the spread function is
+non-submodular, the greedy step cannot be accelerated with lazy evaluation or reverse-influence
+sets. Our contribution relative to this line is to give a structural reason --- rather than an
+empirical observation --- for why reverse-influence machinery does not apply, and to characterise
+the seed-fraction regime in which the resulting failure of degree-based heuristics becomes
+visible.
+
+\paragraph{Threshold and complex-contagion models.}
+IM has also been studied under threshold dynamics in which adoption requires reinforcement from
+multiple neighbours. Reinforcement learning has been applied to such settings
+\cite{chen2023rl4ccim}. Our finding adds a boundary condition to this literature: as soon as the
+activation rule depends on an accumulated \emph{sum} that must land inside an interval, the
+per-edge random structure that sampling-based methods rely on is lost, and the guarantees that
+accompany them do not transfer.
+
+%% TODO(refs): verify every entry below against the published version before submission.
+%% In particular confirm: TIM/TIM+ and IMM venue and year; the OPIM and SSA references;
+%% the GPU papers' exact titles; the GCOMB authors and venue; the LAICO authors and venue;
+%% and the RL4CCIM venue. Any entry that cannot be verified should be removed rather than
+%% guessed -- a wrong citation is worse than a missing one.

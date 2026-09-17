@@ -1,0 +1,83 @@
+\section{Introduction}
+\label{sec:intro}
+
+Influence maximization (IM) asks for a seed set of size $k$ that maximises expected influence
+spread. The dominant algorithmic family is reverse-reachability (RR) sampling
+\cite{borgs2014tim,tang2015imm,nguyen2016stop}: sample random reverse walks, observe that
+$\mathbb{E}[\sigma(S)] = n \cdot \Pr[S \cap \mathcal{R} \neq \emptyset]$, and solve a
+maximum-coverage problem on the sampled sets. RR is attractive because it is both fast in
+practice and provably near-optimal. Its guarantees, however, rest on a specific generative
+structure: an independent per-edge random mechanism (the live-edge graph of independent
+cascade, or the trigger set of linear thresholds) together with a monotone submodular spread
+function.
+
+This paper is about a setting where that structure is absent, and about what a practitioner
+should do instead. We study \emph{targeted} IM under a threshold-dependent overexposure model
+\cite{zhu2026overexposure} motivated by advertising fatigue: a user becomes positively active
+only when the weighted influence they receive from their in-neighbours lands inside a personal
+window $[\theta^\kappa_v, \theta^\tau_v]$. Too little influence leaves them inactive; too much
+makes them \emph{negatively} active, and a negatively active user never promotes the item.
+The window is drawn uniformly from the simplex $\{0 \le \theta^\kappa \le \theta^\tau \le 1\}$,
+and the exposure a node accumulates is the sum of the weights of the in-neighbours that were
+\emph{ever} positively activated.
+
+Our first contribution is negative and, we would argue, the most useful part of the paper:
+\emph{RR sampling has no domain here}. Two independent obstructions apply. First, because
+$\theta^\kappa_v = 0$ is a null event, a node receiving no influence can never be positive, so
+the reverse walk that RR sampling is built on has no base case --- every RR set is empty.
+Second, and more fundamentally, the exposure score is a set function of the ever-activated
+in-neighbours, so once the windows are fixed it is \emph{deterministic} in the seed set; the
+only randomness in the whole process is the window draw itself. There is therefore no per-edge
+random structure to sample. The classical identity does not merely lose accuracy, it degenerates:
+we measure a TIM-style estimate of $0.0$ where the true spread is $111.9$. This is consistent
+with the source model's own analysis, which guarantees only a $\gamma/k$ ratio and optimises a
+monotone surrogate $\lambda(S) \ge \sigma(S)$ rather than the objective itself.
+
+Our second contribution is to identify \emph{when} this matters. A naive experiment measures
+out-degree against the true marginal gain and concludes that degree is fine --- we made exactly
+that mistake, twice, before locating the flaw. The controlling variable is the seed
+\emph{fraction} $|S|/n$, not the absolute budget. On a large sparse graph, a budget of $200$
+seeds is $1.3\%$ coverage and nothing interesting happens; on a small dense graph the same
+budget is $42\%$ coverage and the objective becomes genuinely non-monotone. Sweeping the
+fraction across eight graphs with mean degree from $4.2$ to $56.0$, we find that out-degree
+becomes an \emph{anti-signal}: it is positively correlated with the true marginal gain only on
+the sparsest graph, negative on the other seven when $|S|/n \ge 20\%$, and $20\%$ to $35\%$ of
+candidates have a negative marginal gain there.
+
+Third, we show that the standard exact reference also fails in that regime. Monte-Carlo greedy
+searches for the largest marginal gain using noisy estimates; when the true marginal is near
+zero, noise drives its decisions. On Congress-Twitter, adding the highest-degree ten nodes
+\emph{reduces} spread by $5.17 \pm 0.40$ while a training-free two-hop closed form adds
+$+2.26 \pm 0.24$ and exact greedy adds only $+0.42 \pm 0.31$. The closed form wins on $8/8$
+independent selection draws.
+
+Finally, we report a negative result that bounds how much room is left. Having established that
+a closed form beats degree and greedy, we asked whether a learned state-conditioned scorer can
+beat the closed form. Using leave-one-context-out evaluation over $480$ labelled states, it
+cannot: the closed form's regret against the true top-$5$ is $0.34$--$0.50$, and every learned
+variant we tried is worse, including one that wins $0/12$ held-out contexts. This is a limitation
+of the learned approach at the tested scale, not a proof of impossibility, and we state it as
+such.
+
+\paragraph{Contributions.}
+\begin{itemize}
+  \item We prove and empirically verify that reverse-reachability sampling is structurally
+        inapplicable under threshold-dependent overexposure, for two independent reasons
+        (\S\ref{sec:inapplicability}). The result does not depend on non-monotonicity.
+  \item We identify the seed \emph{fraction} as the controlling variable, and show that
+        out-degree degrades to an anti-signal across eight graphs once the network saturates
+        (\S\ref{sec:regime}).
+  \item We show that exact Monte-Carlo greedy also fails in that regime, because it is
+        noise-driven exactly where the marginal is near zero, and that a training-free closed
+        form dominates it (\S\ref{sec:experiments}).
+  \item We report a measurement caveat that constrains the whole area: in the
+        negative-marginal regime the label signal-to-noise ratio is below $1.4$ at
+        $60$ Monte-Carlo trials, so rank-correlation claims below $300$ trials are not
+        interpretable (\S\ref{sec:experiments}).
+  \item We delimit the remaining gap with a negative result on learned scorers
+        (\S\ref{sec:limitations}).
+\end{itemize}
+
+%% TODO(refs): the related-work section needs verified citations for TIM, IMM, OPIM, SSA,
+%% gIM, cuRipples, GCOMB and the LAICO overexposure line. The bibliography is intentionally
+%% empty rather than populated with unverified entries.

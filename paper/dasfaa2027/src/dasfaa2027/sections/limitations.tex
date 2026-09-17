@@ -1,0 +1,73 @@
+\section{Limitations and Threats to Validity}
+\label{sec:limitations}
+
+We list the things that could be wrong, in the order we consider them most likely to matter.
+
+\paragraph{1. A learned scorer does not beat the closed form.}
+Having established that $\delta_2$ beats degree and exact greedy, the natural next question is
+whether a learned state-conditioned scorer can beat $\delta_2$. On the evidence we collected, it
+cannot. We built a dataset of $480$ labelled states on Congress-Twitter ($4$ seed fractions
+$\times$ $3$ independent contexts $\times$ $40$ candidates, paired labels at
+$\text{MC} = 400$) and evaluated with \emph{leave-one-context-out}, so every score is a
+cross-state generalisation score. With $\mathrm{regret} = 1 - (\text{model top-}5\text{ gain}) /
+(\text{true top-}5\text{ gain})$:
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+model & Spearman & regret \\
+\midrule
+$\delta_2$ (no training) & $\mathbf{+0.6932}$ & $\mathbf{0.5025}$ \\
+ridge on the same features & $+0.4255$ & $0.6172$ \\
+MLP on the same features & $+0.3652$ & $0.9662$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A feature ablation, replicated on two independently generated datasets, shows that this is not a
+matter of insufficient model capacity. Adding threshold-derived features (distance to
+$\theta^\tau$, fraction of neighbours inside the band) to the analytic score makes held-out
+regret \emph{worse} on both replications ($+0.167$ and $+0.300$), and on the first replication
+the combination wins $0/12$ held-out contexts. The single analytic score column is the strongest
+single predictor we found.
+
+This should be read as a limitation, not as a theorem: $480$ states is small, and we cannot
+exclude that a larger corpus would change the answer. What we can say is that under a
+cross-state evaluation protocol, at this scale, the closed form is not beaten, and the
+threshold features --- which were our main hypothesis for where extra signal would come from ---
+are actively unhelpful. We report it because a paper that shows a strong training-free baseline
+should also report that learning did not improve on it.
+
+\paragraph{2. A trap in interpreting feature importance here.}
+Pooled across contexts, \emph{every} informative feature correlates with the label at
+$|r| \approx 0.85$--$0.91$, including one at $0.907$ that is pure regime identification. This is
+because the dataset mixes regimes whose label scales differ by three orders of magnitude
+($\approx +200$ when unsaturated, $\approx 0$ when saturated). Any evaluation that does not hold
+out a context will therefore report strong, meaningless feature utility. We mention it because
+we initially drew exactly that wrong conclusion.
+
+\paragraph{3. Density does not explain the sign flip.}
+We would like a crisp graph-level criterion predicting when out-degree fails. We do not have one.
+Across the eight graphs the correlation between $\langle k \rangle$ and
+$\rho_{\text{degree}}$ is $-0.405$, and Congress-Twitter is a counterexample. The structural hint
+in \S\ref{sec:regime} (in-/out-degree coupling) is a hypothesis supported by a
+$\rho(\text{in},\text{out}) = 1.000$ symmetry in the two collaboration graphs, but eight graphs
+is not enough to establish it.
+
+\paragraph{4. Scale and dataset coverage.}
+Our largest graph has $15{,}233$ nodes; the source model's datasets are smaller still. We do not
+demonstrate behaviour on million-node graphs, and the per-decision cost of obtaining the state
+--- one cascade, which is cheap here --- would need re-examination at that scale.
+
+\paragraph{5. The surrogate gap is unquantified.}
+\S\ref{sec:inapplicability} observes that RR \emph{is} applicable to the monotone upper bound
+$\lambda(S) \ge \sigma(S)$ used by the source model. We have not measured
+$\lambda(S) - \sigma(S)$. That gap is the natural quantity for deciding whether solving the
+surrogate is worthwhile, and it is the most direct follow-up to this work.
+
+\paragraph{6. Non-monotonicity is regime-dependent, and we once got this wrong.}
+We initially reported that the objective is effectively monotone, based on a sweep at
+$|S| \le 4000$ on a graph where that is at most $26\%$ coverage and mostly far less. Measured as
+a \emph{fraction}, the objective is clearly non-monotone on most of our graphs
+(Table~\ref{tab:signflip}). Any statement about overexposure that does not report $|S|/n$ should
+be treated with suspicion --- including, historically, ours.

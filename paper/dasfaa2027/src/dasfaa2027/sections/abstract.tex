@@ -1,0 +1,29 @@
+\begin{abstract}
+Influence maximization (IM) is dominated by reverse-reachability (RR) sampling, which reduces
+the problem to a maximum-coverage instance and yields near-linear-time algorithms with
+$(1-1/e-\varepsilon)$ guarantees. That reduction rests on two assumptions: a node can become
+active after receiving influence from a single successful edge, and the influence function is
+monotone submodular. We study targeted IM under a \emph{threshold-dependent overexposure} model
+in which a node becomes positively active only when the total weighted influence it receives
+from its in-neighbours falls inside a node-specific window $[\theta^\kappa_v, \theta^\tau_v]$.
+We prove that RR sampling is not merely slow here but \emph{structurally inapplicable}: because
+the window is drawn uniformly from the simplex $\{0 \le \theta^\kappa \le \theta^\tau \le 1\}$,
+$\theta^\kappa_v = 0$ is a null event, so a node with zero incoming influence can never be
+positive and the reverse walk has no base case. Empirically every RR set is empty
+($0/15233$ nodes admit a window containing zero; the TIM-style estimate is $0.0$ against a true
+spread of $111.9$). Independently, the exposure score is a \emph{set function} of the
+ever-activated in-neighbours, so given the windows it is deterministic in the seed set and
+neither a live-edge graph nor a trigger set can be sampled. We then characterise the regime in
+which this matters. Across eight graphs spanning mean degree $4.2$ to $56.0$, sweeping the seed
+\emph{fraction} $|S|/n$ rather than the absolute budget, out-degree turns into an
+\emph{anti-signal}: its rank correlation with the true marginal gain is positive only on the
+sparsest graph and negative on the other seven once $|S|/n \ge 20\%$, where $20\%$ to $35\%$ of
+candidates have a negative marginal gain. Exact Monte-Carlo greedy also degrades there, because
+it searches for the largest marginal with noisy estimates while the true marginal is near zero;
+a training-free two-hop closed form beats it at every saturated fraction, and wins on $8/8$
+independent selection draws. We close with a negative result that delimits the remaining gap: a
+learned state-conditioned scorer does \emph{not} beat that closed form on held-out states.
+
+\keywords{Influence maximization \and Overexposure \and Reverse reachability \and
+Threshold models \and Negative results}
+\end{abstract}

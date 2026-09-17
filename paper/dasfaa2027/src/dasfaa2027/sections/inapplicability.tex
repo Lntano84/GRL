@@ -1,0 +1,119 @@
+\section{Reverse Reachability Has No Domain Here}
+\label{sec:inapplicability}
+
+We give two independent obstructions. The first is a base-case failure and is easy to verify
+empirically; the second is more fundamental and rules out any repair of the reduction.
+
+\subsection{The reverse walk has no base case}
+
+\begin{proposition}[Null activation threshold]
+\label{prop:null}
+Let $(\theta^\kappa_v, \theta^\tau_v)$ be drawn with density $2$ on the simplex
+$\Delta$ of Eq.~\eqref{eq:simplex}. Then $\Pr[\theta^\kappa_v = 0] = 0$, and consequently a node
+with $\delta(v,t) = 0$ is positively activated with probability $g(0) = 0$.
+\end{proposition}
+
+\begin{proof}
+$\{\theta^\kappa = 0\}$ is the lower-dimensional face of $\Delta$ and has measure zero under a
+density on the two-dimensional simplex. The second statement is Remark~\ref{rem:lemma1}:
+$g(0) = 2 \cdot 0 \cdot 1 = 0$.
+\end{proof}
+
+Now consider the reverse walk used to build $\mathcal{R}$. Such a walk traverses edges backwards
+from a source and admits a predecessor $u$ into $\mathcal{R}$ when $u$ \emph{could be active given
+that it has received no influence}. Under Eq.~\eqref{eq:transition} this requires
+$\theta^\kappa_u \le 0 \le \theta^\tau_u$, hence $\theta^\kappa_u = 0$. By
+Proposition~\ref{prop:null} that event has probability zero, so no predecessor is ever admitted
+and the walk terminates immediately.
+
+\begin{corollary}[Empty RR sets]
+\label{cor:empty}
+For a non-seed source, $\mathcal{R} = \emptyset$ almost surely. The identity
+Eq.~\eqref{eq:rr-identity} therefore returns $0$ for every seed set, against a true spread that is
+generally positive.
+\end{corollary}
+
+\paragraph{Empirical confirmation.}
+Table~\ref{tab:rr} reports the measurement on NetHEPT ($n = 15233$, $m = 32235$, in-weights
+normalised so that $\sum_u \omega_{uv} = 1$ for every $v$ with in-edges, matching the source
+model's setting). We ran $300$ reverse breadth-first walks from uniformly random sources, where a
+predecessor is admitted exactly when $0 \in [\theta^\kappa_u, \theta^\tau_u]$.
+
+\begin{table}[t]
+\centering
+\caption{Reverse reachability on NetHEPT. Every RR set is empty, so the classical estimator
+degenerates to zero.}
+\label{tab:rr}
+\begin{tabular}{lr}
+\toprule
+quantity & value \\
+\midrule
+nodes whose window contains $0$ & $0 \;/\; 15233$ \\
+RR-set size (min / median / mean / max) & $0 \;/\; 0 \;/\; \mathbf{0.0} \;/\; 0$ \\
+RR-set size as fraction of the graph & $0.0000$ \\
+TIM-style estimate $n \cdot \Pr[S \cap \mathcal{R} \neq \emptyset]$, $|S| = 50$ & $\mathbf{0.0}$ \\
+true Monte-Carlo spread $\sigma(S)$, $|S| = 50$ & $111.93$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The reduction has no randomised structure to sample}
+
+The base-case failure above is about the simplex draw. One might hope to repair it, for example
+by placing mass at $\theta^\kappa = 0$, or by treating seeds as the only permitted base case.
+The second obstruction shows why such repairs do not restore Eq.~\eqref{eq:rr-identity}.
+
+\begin{proposition}[No edge-factorised structure]
+\label{prop:nofactor}
+Under the process of \eqref{eq:delta}--\eqref{eq:transition}, the event ``$v$ is ever positively
+activated'' is not a function of a per-edge independent random structure. Consequently no
+live-edge graph and no trigger set exists whose reachability relation reproduces the process.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+By Observation~\ref{obs:setfunction}, after conditioning on the window draw the entire trajectory
+--- including which nodes are ever positive and the final spread --- is a deterministic function
+of $S$. The only random object is the window draw, which is indexed by \emph{node}, not by edge,
+and which does not fail independently per edge. The activation rule \eqref{eq:transition} depends
+on the \emph{sum} $\delta(v,t)$ of weights over a dynamically growing set
+$A^{\mathrm{in}}_t(v)$; it is therefore not expressible as ``at least one incident edge
+succeeded'' (the IC form) nor as ``the set of active in-neighbours covers a sampled threshold
+set'' with a per-edge independent threshold (the LT form). Since the reachability relation in
+Eq.~\eqref{eq:rr-identity} must be induced by such a structure, and no such structure exists, the
+identity is unavailable.
+\end{proof}
+
+Two consequences deserve emphasis.
+
+\begin{itemize}
+  \item \textbf{This is a domain problem, not an efficiency problem.} The RR family --- TIM,
+        TIM+, IMM, OPIM, SSA, D-SSA --- and its GPU-parallel descendants all consume the same
+        identity. None of them can be instantiated, so their asymptotic guarantees and their
+        orders-of-magnitude speedups do not transfer. There is no RR baseline to beat in this
+        setting.
+  \item \textbf{The result does not depend on non-monotonicity.} Even if $g$ were replaced by a
+        monotone function, Proposition~\ref{prop:nofactor} would still hold, because it concerns
+        the factorisation of the randomness rather than the shape of the objective. This matters
+        because the objective in this setting turns out to be monotone over most of the tested
+        range (\S\ref{sec:regime}), so an argument phrased purely in terms of non-monotonicity
+        would be fragile.
+\end{itemize}
+
+\subsection{The source model avoids the objective, and we can say how}
+
+It is worth recording that the model's own solution path is consistent with the above. Its
+analysis establishes only a $\gamma/k$ ratio for incremental greedy --- not $(1-1/e)$ --- and its
+upper-bound method is constructed by exhibiting two \emph{monotone submodular} functions
+$\sigma^\kappa(\cdot)$ and $\sigma^\tau(\cdot)$ derived from linear-threshold processes, with
+$\lambda(S) \ge \sigma(S)$, and then optimising the surrogate $\lambda$. Since
+$\sigma^\kappa$ and $\sigma^\tau$ are genuine LT influence functions, RR sampling \emph{can} be
+applied to them. The correct statement is therefore not ``RR is impossible in this problem'' but:
+
+\begin{quote}
+\emph{RR can only be applied to a monotone upper bound $\lambda(S) \ge \sigma(S)$, whose
+optimisation guarantees a $\gamma/k$ ratio at best; applying coverage semantics directly to
+$\sigma$ makes the estimator degenerate to zero.}
+\end{quote}
+
+Quantifying the surrogate gap $\lambda(S) - \sigma(S)$ is a natural next step and we flag it in
+\S\ref{sec:limitations}.

@@ -1,0 +1,78 @@
+\section{A Training-Free State-Conditioned Score}
+\label{sec:analysis}
+
+\subsection{Definition}
+
+We need a scorer that (i) requires no sampling, and (ii) reads the \emph{realised} exposure
+state. Observation~\ref{obs:setfunction} makes the state cheap to obtain: given the windows,
+one cascade returns $\delta(v)$ for every $v$, at a cost of one simulation per decision rather
+than one per candidate.
+
+Let $g(e) = 2e(1-e)$ by Remark~\ref{rem:lemma1}, and let $N^+(w)$ be the out-neighbours of a
+candidate $w$, each with weight $\omega_{wv}$. Adding $w$ raises the exposure of each
+$v \in N^+(w)$ by
+\begin{equation}
+  \Delta e_w(v) \;=\; \omega_{wv}\,\bigl(1 - \delta(v)\bigr),
+  \label{eq:delta-e}
+\end{equation}
+the factor $(1-\delta(v))$ accounting for the influence $v$ has already accumulated. The score
+of $w$ is the resulting change in the expected number of its positively active out-neighbours,
+\begin{equation}
+  \mathrm{score}(w) \;=\; \sum_{v \in N^+(w)} \Bigl[\, g\bigl(\delta(v) + \Delta e_w(v)\bigr)
+  \;-\; g\bigl(\delta(v)\bigr) \Bigr].
+  \label{eq:score}
+\end{equation}
+We take two hops: \eqref{eq:delta-e} is propagated once more through the out-edges of each $v$,
+each hop attenuated by $(1-\delta(\cdot))$, before \eqref{eq:score} is evaluated. We refer to
+\eqref{eq:score} as $\delta_2$.
+
+Two properties matter for what follows. First, \eqref{eq:score} is a \emph{closed form}: no
+Monte-Carlo trials are involved, so its decisions carry no estimation noise. Second, because
+$g$ is concave and non-monotone, \eqref{eq:score} can be \emph{negative} --- it penalises a
+candidate that would push already-exposed neighbours past their overexposure threshold. A
+negative score expresses ``do not seed this'', which is exactly the information that is absent
+from a degree ranking.
+
+\subsection{Why a closed form can beat a noisy exact method}
+
+\eqref{eq:score} is not an unbiased estimator of $\Delta(w \mid S)$; empirically it
+under-estimates the marginal by roughly two orders of magnitude at $|S|/n = 0$ and its sign can
+differ from the truth once saturated. That sounds disqualifying and is not, for a reason that is
+central to this paper.
+
+Once the network saturates, the true marginal $\Delta(w \mid S)$ is close to zero for
+\emph{every} candidate. The spread of the true marginals across candidates therefore also
+collapses. A method that estimates the marginal by Monte Carlo --- which is what exact greedy
+does --- then faces a signal-to-noise problem: the differences it must resolve are smaller than
+its own estimation error, so its argmax is driven by noise. A method that is \emph{biased but
+noise-free} can still rank usefully, and --- as \S\ref{sec:experiments} shows --- does.
+
+This is not a claim that bias is harmless. It is a claim about which error dominates in this
+specific regime, and we quantify it in \S\ref{sec:experiments}.
+
+\begin{table}[t]
+\centering
+\caption{Calibration of $\delta_2$ against the true marginal (Congress-Twitter, $40$ candidates,
+$60$ paired trials per candidate). The score is a good \emph{ranker} and a poor
+\emph{calibrator}: the ratio is far from $1$ and its sign is unstable, while the rank
+correlation stays positive throughout.}
+\label{tab:calibration}
+\begin{tabular}{lrrrr}
+\toprule
+$|S|/n$ & true mean marginal & $\delta_2$ mean & ratio & Spearman \\
+\midrule
+ 0\% & $+193.586$ & $+2.852$ & $0.01$  & $0.902$ \\
+ 5\% & $-0.661$   & $-0.251$ & $0.38$  & $0.667$ \\
+10\% & $+0.167$   & $-0.095$ & $-0.57$ & $0.263$ \\
+20\% & $+0.120$   & $-0.192$ & $-1.60$ & $0.427$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The practical consequence, visible in Table~\ref{tab:calibration}: the \emph{zero crossing} of
+$\delta_2$ is not an unbiased estimate of the point at which adding seeds stops helping.
+An early version of our pipeline used ``stop when $\mathrm{score} \le 0$'' as a stopping rule
+and halted after a single seed, scoring $347$ against a degree baseline of $364$. Stopping
+decisions must therefore come from the observed spread --- which is exact, by
+Observation~\ref{obs:setfunction} --- rather than from the analytic score. We use a
+patience-based stop on the observed spread in \S\ref{sec:experiments}.

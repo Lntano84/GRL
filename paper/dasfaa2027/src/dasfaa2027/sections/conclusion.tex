@@ -1,0 +1,39 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We set out to select seeds under a threshold-dependent overexposure model and found that the
+dominant algorithmic tool for influence maximization cannot be used at all. Reverse-reachability
+sampling requires a randomised per-edge structure and a base case in which a node is active under
+incoming influence from a single predecessor. Under the threshold-window process neither exists:
+the activation threshold is strictly positive almost surely, so zero-influence nodes are never
+active and every reverse walk terminates immediately; and the exposure score is a set function of
+the ever-activated in-neighbours, so after conditioning on the windows the whole trajectory is
+deterministic in the seed set. Measured directly, every RR set is empty and the classical
+estimator returns $0$ where the true spread is $111.9$. There is no RR baseline to beat here, and
+the results that make RR attractive --- near-linear time with $(1-1/e-\varepsilon)$ guarantees,
+and the GPU speedups built on it --- do not transfer.
+
+What replaces it is unglamorous but effective. The regime that matters is the seed
+\emph{fraction}: across eight graphs the objective becomes genuinely non-monotone once
+$|S|/n \ge 20\%$, with $20\%$ to $35\%$ of candidates having a negative marginal gain, and
+out-degree turning from a signal into an anti-signal on seven of the eight. Exact Monte-Carlo
+greedy also degrades there, because the marginals it must resolve are smaller than its own
+estimation noise. A two-hop closed form that reads the realised exposure state and penalises
+candidates that would over-expose their neighbourhood recovers spread where degree destroys it,
+beats exact greedy, and does so on $8/8$ independent selection draws --- at one cascade per
+decision rather than $k \cdot |M| \cdot \text{MC}$.
+
+We close on a negative result rather than a new method. Having found a strong training-free
+baseline, we asked whether a learned state-conditioned scorer could beat it, and under a
+cross-state evaluation protocol it could not: the closed form's regret against the true
+top-$5$ is $0.34$--$0.50$, and every learned variant we tried was worse, with our main
+hypothesis for where extra signal would come from --- the threshold information the closed form
+ignores --- turning out to be actively harmful. A remaining gap of that size means the problem is
+not solved; it means the obvious learned approach is not the way to close it.
+
+Two directions follow directly. The first is to quantify the surrogate gap
+$\lambda(S) - \sigma(S)$ between the objective and the monotone upper bound to which RR
+\emph{can} be applied; that single number decides whether the sampling machinery is worth
+reaching for at all in this family of models. The second is to look for a graph-level criterion
+--- we suspect in-/out-degree coupling --- that predicts when degree-based heuristics fail,
+which would let a practitioner decide whether the overexposure regime needs to be handled at all.

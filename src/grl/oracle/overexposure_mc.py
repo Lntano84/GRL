@@ -136,6 +136,34 @@ class OverexposureMonteCarloOracle:
     # ----------------------------------------------------------------------------------
     # public API
     # ----------------------------------------------------------------------------------
+    def state(self, seeds: Iterable[int], step: int = 0) -> list[float]:
+        """Mean realised exposure vector ``delta`` of the cascade started at ``seeds``.
+
+        This is the observation a state-conditioned policy is allowed to see: one pass of the
+        process, averaged over enough windows to be a stable feature rather than a single noisy
+        draw.  The returned list is indexed by position in ``list(graph.nodes())`` so it can be
+        turned into a node-ordered feature vector by the caller.
+
+        Cost is ``mc_runs`` cascades, counted like any other query.
+        """
+        seed_list = list(seeds)
+        base_seed = self._call_seed(step)
+        totals = [0.0] * len(self._nodes)
+        for offset in range(self.mc_runs):
+            rng = random.Random(base_seed + offset)
+            windows = self._draw_windows(rng)
+            self.stats.mc_cascades += 1
+            run = oe.run_overexposure(
+                self.graph,
+                seed_list,
+                windows,
+                rng,
+                activation_mode=self.params.activation_mode,
+            )
+            for position, node in enumerate(self._nodes):
+                totals[position] += run.delta.get(node, 0.0)
+        return [value / self.mc_runs for value in totals]
+
     def spread(self, seeds: Iterable[int]) -> dict[str, float]:
         """Monte-Carlo estimate of ``sigma(seeds)``."""
         seed_list = list(seeds)

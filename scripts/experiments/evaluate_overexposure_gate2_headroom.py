@@ -181,11 +181,17 @@ def evaluate_size(
     true_gains = [truth_est[i + 1]["mean"] - truth_base for i in range(len(pool))]
 
     # --- capture, measured in realised spread -------------------------------------
-    # NOTE: capture must be the ratio of *evaluated spreads*, not of summed one-step
+    # NOTE 1: capture must be the ratio of *evaluated spreads*, not of summed one-step
     # marginal gains.  Summing ``Delta(v | S)`` over a scorer's top-k double counts, because
     # those gains are single additions to the same state and ignore the diminishing returns
-    # of adding them together.  That version produced captures above 1.0 (impossible for a
-    # greedy reference) and was replaced by this paired evaluation.
+    # of adding them together.  That version produced captures above 1.0, impossible for a
+    # greedy reference.
+    #
+    # NOTE 2: the ratio is still numerically fragile in the saturated regime, because the
+    # greedy reference gain tends to zero there (at |S|/n = 20% on Congress-Twitter the
+    # exact greedy adds only +0.5 to a base of 366).  Dividing by that produces wild values
+    # for every policy.  ``spread_*`` is therefore the primary quantity and ``capture_*``
+    # is reported only for reference.
     def capture(spread: float) -> float:
         return spread / spread_greedy if abs(spread_greedy) > 1e-9 else float("nan")
 
@@ -259,18 +265,34 @@ def main() -> int:
         if not block:
             continue
         print(f"  {name}")
-        print(f"    rh_degree  {statistics.fmean([r.spearman_degree for r in block]):+.3f}"
-              f"   rh_delta2 {statistics.fmean([r.spearman_delta2 for r in block]):+.3f}"
-              f"   capture deg {statistics.fmean([r.capture_degree for r in block]):.3f}"
-              f"   capture d2 {statistics.fmean([r.capture_delta2 for r in block]):.3f}"
-              f"   neg {statistics.fmean([r.negative_share for r in block])*100:.1f}%")
+        print(f"    marginal spread added by the budget:"
+              f"  degree {statistics.fmean([r.spread_degree for r in block]):+8.2f}"
+              f"   delta2 {statistics.fmean([r.spread_delta2 for r in block]):+8.2f}"
+              f"   greedy {statistics.fmean([r.spread_greedy for r in block]):+8.2f}")
+        print(f"    rank correlation with the true marginal gain:"
+              f"  rho_degree {statistics.fmean([r.spearman_degree for r in block]):+.3f}"
+              f"   rho_delta2 {statistics.fmean([r.spearman_delta2 for r in block]):+.3f}"
+              f"   negative-gain share {statistics.fmean([r.negative_share for r in block])*100:.1f}%")
     print()
     total_cascades = sum(r.greedy_cascades for r in rows)
-    print(f"  exact greedy spent {total_cascades} cascades across {len(rows)} settings")
-    print(f"  both zero-cost scorers spent 0")
-    best_d2 = statistics.fmean([r.capture_delta2 for r in rows])
-    print(f"  delta2 average capture of the exact greedy gain: {best_d2:.3f}")
-    print(f"  => a learned policy must beat {best_d2:.3f} capture at ~0 cascades")
+    print(f"  exact greedy spent {total_cascades} cascades across {len(rows)} settings;"
+          f" both zero-cost scorers spent 0")
+    print()
+    print("  PRIMARY QUANTITY is the marginal spread, not the capture ratio: the greedy")
+    print("  reference gain collapses toward zero once the network saturates, so the ratio")
+    print("  is numerically unstable there and is reported only for reference.")
+    print()
+    worst_deg = min(rows, key=lambda r: r.spread_degree)
+    best_d2 = max(rows, key=lambda r: r.spread_delta2)
+    print(f"  worst degree marginal   : {worst_deg.spread_degree:+8.2f} "
+          f"at |S|/n = {worst_deg.seed_fraction*100:.1f}%")
+    print(f"  best  delta2 marginal   : {best_d2.spread_delta2:+8.2f} "
+          f"at |S|/n = {best_d2.seed_fraction*100:.1f}%")
+    if sat and statistics.fmean([r.spread_degree for r in sat]) < 0:
+        print("  -> in the saturated regime the out-degree scorer is actively HARMFUL")
+        print("     (it reduces spread below the pre-existing seed set), while delta2 stays")
+        print("     non-negative.  That is the gap a learned policy has to close, and it is")
+        print("     a stopping/selection problem, not a ranking problem.")
     print()
 
     if args.output:

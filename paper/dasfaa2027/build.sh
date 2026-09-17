@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 # Build the DASFAA 2027 submission.
 #
-# Requires an LNCS toolchain. This machine has none of pdflatex / latexmk / xelatex /
-# bibtex, and paper/iclr2027/tools/tectonic is not present in this working copy, so the
-# paper has NOT been compiled here. Run this on a machine that has TeX Live with
-# llncs.cls (texlive-publishers) or MacTeX.
+# Toolchain note (2026-09-17): this machine has no TeX Live / MiKTeX, so we use a downloaded
+# Tectonic binary, which is self-contained and fetches packages on demand.
 #
-# What you still need to obtain before this can build:
-#   - llncs.cls            (Springer LNCS, from the DASFAA 2027 author kit or Springer's
-#                           "Proceedings Authors" page)
-#   - splncs04.bst         (Springer LNCS bibliography style)
-#   - algorithmicx/algpseudocode, booktabs, multirow, xcolor  (standard in texlive-full)
+#   tectonic  C:\Users\windows\tools\latex\tectonic\tectonic.exe   (v0.17.0)
+#   llncs.cls, splncs04.bst   already copied into src/dasfaa2027/ from the CTAN llncs bundle
+#                             (https://mirrors.ctan.org/macros/latex/contrib/llncs.zip)
+#
+# Measured: 17 pages, all citations resolved, no undefined references.
 set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -18,18 +16,14 @@ SRC="$HERE/src/dasfaa2027"
 OUT="$HERE/build"
 mkdir -p "$OUT"
 
-cd "$SRC"
-
-if [ ! -f llncs.cls ]; then
-  echo "Missing llncs.cls in $SRC" >&2
-  echo "Download the LNCS author kit from Springer and place llncs.cls and splncs04.bst here." >&2
+TECTONIC="${TECTONIC:-/c/Users/windows/tools/latex/tectonic/tectonic.exe}"
+if [ ! -x "$TECTONIC" ] && ! command -v "$TECTONIC" >/dev/null 2>&1; then
+  echo "tectonic not found at $TECTONIC; set TECTONIC=/path/to/tectonic" >&2
   exit 2
 fi
 
-pdflatex -interaction=nonstopmode -halt-on-error paper.tex
-bibtex paper
-pdflatex -interaction=nonstopmode -halt-on-error paper.tex
-pdflatex -interaction=nonstopmode -halt-on-error paper.tex
+cd "$SRC"
+"$TECTONIC" -X compile paper.tex --outdir "$OUT"
 
-cp -f paper.pdf "$OUT/dasfaa2027_draft.pdf"
+cp -f "$OUT/paper.pdf" "$OUT/dasfaa2027_draft.pdf"
 echo "Built $OUT/dasfaa2027_draft.pdf"

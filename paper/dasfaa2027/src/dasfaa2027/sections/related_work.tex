@@ -3,9 +3,9 @@
 
 \paragraph{Scalable influence maximization.}
 The reverse-reachability family underpins the fastest known IM algorithms. TIM and TIM+
-\cite{tang2014influence,tang2015tim} and IMM \cite{tang2015imm} sample reverse walks and solve
+\cite{borgs2014tim,tang2014timplus} and IMM \cite{tang2015imm} sample reverse walks and solve
 maximum coverage, achieving $(1-1/e-\varepsilon)$ guarantees with near-linear expected running
-time; OPIM and its successors \cite{tang2018online} extend this to the online setting;
+time; OPIM \cite{tang2018online} extends this to the online setting;
 \cite{nguyen2016stop} tightens the stopping rule. GPU-parallel implementations
 \cite{li2020gim,min2020curipples} report speedups of two to three orders of magnitude over
 sequential baselines. All of these inherit the identity

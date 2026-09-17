@@ -13,6 +13,10 @@
 
 \input{math_commands}
 
+% llncs does not provide an ``observation'' float.  Define one that matches the plain
+% theorem style so observations read like the propositions and corollary.
+\spnewtheorem{observation}{Observation}{\bfseries}{\itshape}
+
 % Allow the draft to build before every figure exists.
 \usepackage{ifthen}
 \newif\ifdraftfigures

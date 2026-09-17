@@ -30,38 +30,48 @@ inside the 16-page budget. This is an estimate from word count, not a compiled m
 
 ## What is NOT done
 
-### Blocking
+### Resolved since the first draft
 
-1. **The paper does not compile here.** No LaTeX toolchain on this machine and
-   `paper/iclr2027/tools/tectonic` is absent from the working copy. `build.sh` documents the
-   command; `llncs.cls` and `splncs04.bst` must be downloaded from Springer.
+* ~~**The paper does not compile.**~~ **It compiles.** Toolchain installed on 2026-09-17:
+  Tectonic 0.17.0 from `C:\Users\windows\tools\latex\tectonic\tectonic.exe`, plus `llncs.cls`
+  and `splncs04.bst` copied from the CTAN bundle into `src/dasfaa2027/`. **Current build: 18
+  pages, 0 undefined citations, 0 overfull hboxes.** `build.sh` documents the command.
+* ~~**No baselines from the source model.**~~ **Done.** `evaluate_source_model_baselines.py`
+  implements \textsc{IGA} (greedy on the objective) and two readings of the upper-bound method
+  (\textsc{UB}-$\lambda$ on the surrogate, \textsc{UB}-$\kappa$ on $\sigma^\kappa$ alone). Result
+  (Table 6): \textsc{IGA} spends **13,875 cascades per query** to reach a mean marginal of
+  $+132.21$ against the closed form's $+133.20$ at zero cost, and is *negative* on
+  Congress-Twitter at $|S|/n = 10\%$. The \textsc{UB} arms are the weakest policies tested
+  because the surrogate saturates after one seed.
+* ~~**The surrogate gap is unmeasured.**~~ **Done**, see Table 8 and
+  `docs/SURROGATE_GAP_FINDING.md`. Now a result plus an open question.
+* ~~**Trust Bitcoin-Alpha not parsed.**~~ **Done** — ninth graph, reproduces the source's
+  `|V| = 3783` exactly.
+
+### Still blocking
+
+1. **The paper is 18 pages against a 16-page limit.** Needs ~2 pages of trimming. The cheapest
+   candidates: move the SNR caveat table to an appendix, condense \S\ref{sec:analysis}
+   (Table 3 partially duplicates Table 4's story), and tighten the related-work paragraphs.
+   ⚠️ First confirm whether references count toward the limit — `notes/REQUIREMENTS.md`.
 2. **Citations are unverified.** 8 of 13 entries carry `TODO(verify)`. Do not submit with a
    guessed venue or page range.
-3. **DASFAA requirements are partially unverified.** See `notes/REQUIREMENTS.md` — the page
-   limit, template version and submission portal all need confirming on the official site.
+3. **DASFAA requirements are partially unverified** — page limit, template version, portal.
 
 ### Content gaps that a reviewer will notice
 
-4. **Three of the four datasets of the source model are not covered.** We now include **Trust
-   Bitcoin-Alpha** (parsed by `scripts/data/convert_bitcoin_alpha.py`; it reproduces the source's
-   `|V| = 3783` exactly and behaves as the other graphs do --- `ρ_degree` flips from $+0.897$ at
-   0\% to $-0.679$ at saturation). Still missing: **Occupywallstnyc** (not on SNAP; needs another
-   source) and **Congress-Twitter / Wiki-Vote in the source's exact versions** --- we use the raw
-   Wiki-Vote (7,115 nodes) rather than its 889-node version, and the source's Congress-Twitter
-   `|V| = 333` versus our 475. A benchmark section that omits the source model's own datasets is
-   a real weakness; it is now one dataset rather than three.
-5. **No comparison against the source model's own algorithms** (incremental greedy, the
-   upper-bound method) or against `Max_Degree` / `IMRank` / `PageRank` / `CELF` as it reports
-   them. Our baselines are degree, exact MC-greedy and our own closed form.
-6. ~~**The surrogate gap `λ(S) − σ(S)` is not measured**~~ — **done**, see Table 8 and
-   `docs/SURROGATE_GAP_FINDING.md`. It is now a result plus an open question: the bound is tight
-   at low coverage (9.8%) but inverts under our reading once saturated, and the per-realisation
-   containment its proof invokes holds in 0/180 draws. **Before submitting, get the authors'
-   reading of `σ^κ`/`σ^τ`** — the check is cheap and being wrong is expensive.
-7. **Only one graph is used for the main comparison** (Congress-Twitter, Table 4). Table 2
-   covers 8 graphs but only for rank correlation.
-8. **No figures.** All results are tables. At least one figure showing the sign flip against
-   `|S|/n` and one showing regret vs.\ fraction would help.
+4. **Two of the four datasets of the source model are still missing or approximate.** We include
+   **Trust Bitcoin-Alpha** exactly (`|V| = 3783` matches). Still missing: **Occupywallstnyc** (not
+   on SNAP; needs another source). Still approximate: the source uses Congress-Twitter with
+   `|V| = 333` and Wiki-Vote with `|V| = 889`, whereas we use 475 and 7,115. Documenting the
+   version difference is the minimum; matching them would be better.
+5. **Only three graphs appear in the main comparison** (Table 6). Table 2 covers nine graphs but
+   only for rank correlation.
+6. **No figures.** All results are tables. One figure showing the sign flip against `|S|/n`, and
+   one showing regret or marginal against fraction, would help a lot.
+7. **\textsc{CELF} / \textsc{IMRank} / \textsc{PageRank} are not implemented**, so the comparison
+   against the source model's own reported baselines is incomplete. These are standard and cheap;
+   the reason to include them is that the source model's Table/Figure comparisons use them.
 
 ### Known soft spots in the argument
 

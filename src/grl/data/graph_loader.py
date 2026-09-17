@@ -130,6 +130,13 @@ def _find_header_end(lines: list[str]) -> int:
     return 1 if node_count * 10 >= max_id_seen else 0
 
 
+COMMENT_PREFIXES = ("#", "%", "//")
+
+
+def _is_comment(line: str) -> bool:
+    return line.startswith(COMMENT_PREFIXES)
+
+
 def _parse_graph_file(graph_path: Path, directed: bool, default_probability: float) -> tuple[nx.Graph | nx.DiGraph, int]:
     if not graph_path.exists():
         raise GraphValidationError(f"Graph file does not exist: {graph_path}")
@@ -139,7 +146,13 @@ def _parse_graph_file(graph_path: Path, directed: bool, default_probability: flo
     duplicate_edges = 0
 
     with graph_path.open("r", encoding="utf-8") as handle:
-        lines = [line for line in (raw.strip() for raw in handle) if line]
+        # SNAP datasets (ca-GrQc, ca-HepPh, p2p-Gnutella08, ...) prefix files with '#'
+        # metadata lines, and some tooling emits '%' or '//'.  Without this filter the
+        # int() cast below raises ``invalid literal for int() with base 10: '#'``.
+        lines = [
+            line for line in (raw.strip() for raw in handle)
+            if line and not _is_comment(line)
+        ]
         start = _find_header_end(lines)
 
         for line in lines[start:]:

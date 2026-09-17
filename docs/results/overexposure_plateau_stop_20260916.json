@@ -1,0 +1,223 @@
+{
+  "graph": "congress_twitter",
+  "n": 475,
+  "budget": 10,
+  "pool_size": 60,
+  "trials": 200,
+  "patience": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "in_weights_normalised": true,
+  "rows": [
+    {
+      "graph": "congress_twitter",
+      "seed_size": 0,
+      "seed_fraction": 0.0,
+      "budget": 10,
+      "policy": "degree",
+      "patience": 0,
+      "seeds_used": 10,
+      "cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 0,
+      "seed_fraction": 0.0,
+      "budget": 10,
+      "policy": "plateau@0",
+      "patience": 0,
+      "seeds_used": 10,
+      "cascades": 20
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 0,
+      "seed_fraction": 0.0,
+      "budget": 10,
+      "policy": "plateau@1",
+      "patience": 1,
+      "seeds_used": 2,
+      "cascades": 4
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 0,
+      "seed_fraction": 0.0,
+      "budget": 10,
+      "policy": "plateau@2",
+      "patience": 2,
+      "seeds_used": 3,
+      "cascades": 6
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 0,
+      "seed_fraction": 0.0,
+      "budget": 10,
+      "policy": "plateau@3",
+      "patience": 3,
+      "seeds_used": 4,
+      "cascades": 8
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 24,
+      "seed_fraction": 0.05052631578947368,
+      "budget": 10,
+      "policy": "degree",
+      "patience": 0,
+      "seeds_used": 10,
+      "cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 24,
+      "seed_fraction": 0.05052631578947368,
+      "budget": 10,
+      "policy": "plateau@0",
+      "patience": 0,
+      "seeds_used": 10,
+      "cascades": 20
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 24,
+      "seed_fraction": 0.05052631578947368,
+      "budget": 10,
+      "policy": "plateau@1",
+      "patience": 1,
+      "seeds_used": 5,
+      "cascades": 10
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 24,
+      "seed_fraction": 0.05052631578947368,
+      "budget": 10,
+      "policy": "plateau@2",
+      "patience": 2,
+      "seeds_used": 6,
+      "cascades": 12
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 24,
+      "seed_fraction": 0.05052631578947368,
+      "budget": 10,
+      "policy": "plateau@3",
+      "patience": 3,
+      "seeds_used": 10,
+      "cascades": 20
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 48,
+      "seed_fraction": 0.10105263157894737,
+      "budget": 10,
+      "policy": "degree",
+      "patience": 0,
+      "seeds_used": 10,
+      "cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 48,
+      "seed_fraction": 0.10105263157894737,
+      "budget": 10,
+      "policy": "plateau@0",
+      "patience": 0,
+      "seeds_used": 10,
+      "cascades": 20
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 48,
+      "seed_fraction": 0.10105263157894737,
+      "budget": 10,
+      "policy": "plateau@1",
+      "patience": 1,
+      "seeds_used": 2,
+      "cascades": 4
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 48,
+      "seed_fraction": 0.10105263157894737,
+      "budget": 10,
+      "policy": "plateau@2",
+      "patience": 2,
+      "seeds_used": 5,
+      "cascades": 10
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 48,
+      "seed_fraction": 0.10105263157894737,
+      "budget": 10,
+      "policy": "plateau@3",
+      "patience": 3,
+      "seeds_used": 9,
+      "cascades": 18
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 95,
+      "seed_fraction": 0.2,
+      "budget": 10,
+      "policy": "degree",
+      "patience": 0,
+      "seeds_used": 10,
+      "cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 95,
+      "seed_fraction": 0.2,
+      "budget": 10,
+      "policy": "plateau@0",
+      "patience": 0,
+      "seeds_used": 10,
+      "cascades": 20
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 95,
+      "seed_fraction": 0.2,
+      "budget": 10,
+      "policy": "plateau@1",
+      "patience": 1,
+      "seeds_used": 2,
+      "cascades": 4
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 95,
+      "seed_fraction": 0.2,
+      "budget": 10,
+      "policy": "plateau@2",
+      "patience": 2,
+      "seeds_used": 3,
+      "cascades": 6
+    },
+    {
+      "graph": "congress_twitter",
+      "seed_size": 95,
+      "seed_fraction": 0.2,
+      "budget": 10,
+      "policy": "plateau@3",
+      "patience": 3,
+      "seeds_used": 4,
+      "cascades": 8
+    }
+  ],
+  "mean_marginal_by_policy": {
+    "degree": 87.88125,
+    "plateau@0": 93.08125000000001,
+    "plateau@1": 90.31375,
+    "plateau@2": 91.295,
+    "plateau@3": 91.90124999999999
+  }
+}

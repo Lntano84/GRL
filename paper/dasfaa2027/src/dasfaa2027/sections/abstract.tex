@@ -14,15 +14,16 @@ positive and the reverse walk has no base case. Empirically every RR set is empt
 spread of $111.9$). Independently, the exposure score is a \emph{set function} of the
 ever-activated in-neighbours, so given the windows it is deterministic in the seed set and
 neither a live-edge graph nor a trigger set can be sampled. We then characterise the regime in
-which this matters. Across eight graphs spanning mean degree $4.2$ to $56.0$, sweeping the seed
+which this matters. Across nine graphs spanning mean degree $4.2$ to $56.0$, sweeping the seed
 \emph{fraction} $|S|/n$ rather than the absolute budget, out-degree turns into an
 \emph{anti-signal}: its rank correlation with the true marginal gain is positive only on the
-sparsest graph and negative on the other seven once $|S|/n \ge 20\%$, where $20\%$ to $35\%$ of
+sparsest graph and negative on the other eight once $|S|/n \ge 20\%$, where $8\%$ to $35\%$ of
 candidates have a negative marginal gain. Exact Monte-Carlo greedy also degrades there, because
 it searches for the largest marginal with noisy estimates while the true marginal is near zero;
-a training-free two-hop closed form beats it at every saturated fraction, and wins on $8/8$
-independent selection draws. We close with a negative result that delimits the remaining gap: a
-learned state-conditioned scorer does \emph{not} beat that closed form on held-out states.
+a training-free two-hop closed form beats it, and every other baseline we tested, at every
+saturated fraction, and wins on $8/8$ independent selection draws. We close with a negative result
+that delimits the remaining gap: a learned state-conditioned scorer does \emph{not} beat that
+closed form on held-out states.
 
 \keywords{Influence maximization \and Overexposure \and Reverse reachability \and
 Threshold models \and Negative results}

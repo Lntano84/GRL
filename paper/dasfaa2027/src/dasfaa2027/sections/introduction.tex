@@ -39,9 +39,9 @@ that mistake, twice, before locating the flaw. The controlling variable is the s
 \emph{fraction} $|S|/n$, not the absolute budget. On a large sparse graph, a budget of $200$
 seeds is $1.3\%$ coverage and nothing interesting happens; on a small dense graph the same
 budget is $42\%$ coverage and the objective becomes genuinely non-monotone. Sweeping the
-fraction across eight graphs with mean degree from $4.2$ to $56.0$, we find that out-degree
+fraction across nine graphs with mean degree from $4.2$ to $56.0$, we find that out-degree
 becomes an \emph{anti-signal}: it is positively correlated with the true marginal gain only on
-the sparsest graph, negative on the other seven when $|S|/n \ge 20\%$, and $20\%$ to $35\%$ of
+the sparsest graph, negative on the other eight when $|S|/n \ge 20\%$, and $8\%$ to $35\%$ of
 candidates have a negative marginal gain there.
 
 Third, we show that the standard exact reference also fails in that regime. Monte-Carlo greedy
@@ -65,11 +65,12 @@ such.
         inapplicable under threshold-dependent overexposure, for two independent reasons
         (\S\ref{sec:inapplicability}). The result does not depend on non-monotonicity.
   \item We identify the seed \emph{fraction} as the controlling variable, and show that
-        out-degree degrades to an anti-signal across eight graphs once the network saturates
+        out-degree degrades to an anti-signal across nine graphs once the network saturates
         (\S\ref{sec:regime}).
   \item We show that exact Monte-Carlo greedy also fails in that regime, because it is
         noise-driven exactly where the marginal is near zero, and that a training-free closed
-        form dominates it (\S\ref{sec:experiments}).
+        form dominates it --- and every other baseline the source model reports against
+        (\S\ref{sec:experiments}).
   \item We report a measurement caveat that constrains the whole area: in the
         negative-marginal regime the label signal-to-noise ratio is below $1.4$ at
         $60$ Monte-Carlo trials, so rank-correlation claims below $300$ trials are not

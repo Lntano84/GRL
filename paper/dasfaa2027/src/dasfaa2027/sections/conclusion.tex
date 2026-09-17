@@ -14,9 +14,9 @@ the results that make RR attractive --- near-linear time with $(1-1/e-\varepsilo
 and the GPU speedups built on it --- do not transfer.
 
 What replaces it is unglamorous but effective. The regime that matters is the seed
-\emph{fraction}: across eight graphs the objective becomes genuinely non-monotone once
-$|S|/n \ge 20\%$, with $20\%$ to $35\%$ of candidates having a negative marginal gain, and
-out-degree turning from a signal into an anti-signal on seven of the eight. Exact Monte-Carlo
+\emph{fraction}: across nine graphs the objective becomes genuinely non-monotone once
+$|S|/n \ge 20\%$, with $8\%$ to $35\%$ of candidates having a negative marginal gain, and
+out-degree turning from a signal into an anti-signal on eight of the nine. Exact Monte-Carlo
 greedy also degrades there, because the marginals it must resolve are smaller than its own
 estimation noise. A two-hop closed form that reads the realised exposure state and penalises
 candidates that would over-expose their neighbourhood recovers spread where degree destroys it,

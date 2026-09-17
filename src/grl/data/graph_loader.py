@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -9,6 +10,39 @@ import networkx as nx
 
 class GraphValidationError(ValueError):
     pass
+
+
+# ``congress.edgelist`` (and anything written by ``nx.write_edgelist``) stores attributes
+# as a Python dict literal, e.g. ``0 4 {'weight': 0.002105263157894737}``.  Splitting on
+# whitespace yields ``['0', '4', "{'weight':", "0.002105263157894737}"]``, so casting field
+# 3 to float raises ValueError.  This pattern pulls the weight out instead.
+_NETWORKX_WEIGHT_RE = re.compile(r"['\"]weight['\"]\s*:\s*([0-9eE.+-]+)")
+
+
+def _parse_weight(fields: list[str], default_probability: float) -> float:
+    """Extract an edge probability from a tokenised line.
+
+    Handles plain numeric third columns and NetworkX dict literals.  A line with no
+    weight information falls back to ``default_probability``.
+    """
+    if len(fields) < 3:
+        return float(default_probability)
+
+    rest = " ".join(fields[2:])
+    try:
+        return float(fields[2])
+    except ValueError:
+        pass
+
+    match = _NETWORKX_WEIGHT_RE.search(rest)
+    if match:
+        return float(match.group(1))
+
+    # A dict literal without a weight key carries no probability information.
+    if rest.lstrip().startswith("{"):
+        return float(default_probability)
+
+    raise GraphValidationError(f"cannot parse edge weight from: {' '.join(fields)}")
 
 
 @dataclass
@@ -48,6 +82,54 @@ def _build_graph(directed: bool) -> nx.Graph | nx.DiGraph:
     return nx.DiGraph() if directed else nx.Graph()
 
 
+def _looks_like_edge(line: str) -> bool:
+    parts = line.split()
+    if len(parts) < 2:
+        return False
+    try:
+        int(parts[0])
+        int(parts[1])
+    except ValueError:
+        return False
+    return True
+
+
+def _find_header_end(lines: list[str]) -> int:
+    """Return the index of the first edge line, skipping an ``n m`` header if present.
+
+    A leading line of two non-negative integers is ambiguous -- it can be a graph header
+    or an ordinary edge of a two-column file.  Three conditions must all hold before the
+    line is treated as a header, so that a plain edge list essentially never loses data:
+
+    1. it has exactly two non-negative integer fields;
+    2. ``m >= n``, since a simple graph on ``n`` nodes needs at least ``n - 1`` edges
+       (an edge line carries no such constraint);
+    3. ``n`` is at least one tenth of the largest node id appearing in the rest of the
+       file -- a header's first field *is* the node count, whereas an edge's first field
+       is just one endpoint id.
+
+    Condition 3 is what separates ``15233 32235`` (a real header: the largest id is
+    15232) from an edge such as ``30 1412`` (a real edge in a file whose largest id is
+    far above 30).
+    """
+    if not lines:
+        return 0
+    first = lines[0].split()
+    if len(first) != 2 or not all(part.isdigit() for part in first):
+        return 0
+
+    node_count, edge_count = int(first[0]), int(first[1])
+    if edge_count < node_count:
+        return 0
+
+    others = [line for line in lines[1:] if _looks_like_edge(line)]
+    if not others:
+        return 0
+    max_id_seen = max(max(int(part) for part in line.split()[:2]) for line in others)
+
+    return 1 if node_count * 10 >= max_id_seen else 0
+
+
 def _parse_graph_file(graph_path: Path, directed: bool, default_probability: float) -> tuple[nx.Graph | nx.DiGraph, int]:
     if not graph_path.exists():
         raise GraphValidationError(f"Graph file does not exist: {graph_path}")
@@ -57,22 +139,17 @@ def _parse_graph_file(graph_path: Path, directed: bool, default_probability: flo
     duplicate_edges = 0
 
     with graph_path.open("r", encoding="utf-8") as handle:
-        first_line = handle.readline().strip().split()
-        has_header = len(first_line) == 2 and all(part.lstrip("-").isdigit() for part in first_line)
-        if not has_header:
-            handle.seek(0)
+        lines = [line for line in (raw.strip() for raw in handle) if line]
+        start = _find_header_end(lines)
 
-        for raw_line in handle:
-            line = raw_line.strip()
-            if not line:
-                continue
+        for line in lines[start:]:
             parts = line.split()
             if len(parts) < 2:
                 continue
 
             u = int(parts[0])
             v = int(parts[1])
-            probability = float(parts[2]) if len(parts) >= 3 else float(default_probability)
+            probability = _parse_weight(parts, default_probability)
 
             edge_key = (u, v) if directed else tuple(sorted((u, v)))
             if edge_key in seen_edges:

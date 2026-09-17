@@ -1,0 +1,34 @@
+dataset:
+  name: nethept_uniform
+  # A genuinely uniform-weight copy of NetHEPT.  The original NetHEPT.txt carries its own
+  # weight column (in-weights normalised to sum to 1), so setting ``diffusion.probability``
+  # has NO effect: ``_parse_graph_file`` only falls back to the default probability when a
+  # line has fewer than three columns.  Pointing at this stripped copy is what actually
+  # yields uniform weights.
+  graph_path: data/NetHEPT_uniform.txt
+  directed: true
+  expected_num_nodes: null
+  expected_num_edges: null
+
+diffusion:
+  # Uniform edge weights, p = 0.01.  A node can now reach delta = 0.01 * in-degree, so the
+  # highest in-degree node (60) reaches delta = 0.60 and genuinely enters the
+  # overexposure regime.  Under the original normalised weights delta is concentrated at
+  # ~1/in-degree per edge, which keeps overexposure mild.
+  model: IC
+  probability: 0.01
+  mc_runs_train: 100
+  mc_runs_eval: 1000
+
+seed:
+  budget: 10
+
+baselines:
+  methods:
+    - degree
+    - degree_discount
+
+experiment:
+  random_seed: 20260715
+  repeat: 1
+  output_dir: outputs/nethept_uniform

@@ -174,6 +174,49 @@ End-to-end (`MC = 400` labels, `top-5`): `delta2` Spearman **+0.6932**, ridge +0
 
 ---
 
+## C7. The surrogate gap, and an open question about Theorem 6
+
+**Source** `docs/results/surrogate_gap_20260917.json`,
+`docs/results/surrogate_bound_verification_20260917.json`
+**Detail** `docs/SURROGATE_GAP_FINDING.md`
+**Scripts** `scripts/experiments/measure_surrogate_gap.py`,
+`scripts/experiments/verify_surrogate_bound.py`
+
+The source model optimises a surrogate. Its Section 5.2 defines
+`λ(·) = σ^κ(·) − σ^τ(·)` (LT spreads at the lower and upper thresholds) and Theorem 6 asserts
+`λ(S) ≥ σ(S)`. We measured the gap; the model never reports it.
+
+| graph | `\|S\|/n` | `E[\|A\|]` | `λ` | gap | gap/λ |
+| --- | --- | --- | --- | --- | --- |
+| Congress-Twitter | 5.1% | 367.17 | 441.40 | **+74.23** | +0.170 |
+| Congress-Twitter | 10.1% | 366.13 | 403.53 | **+37.40** | +0.098 |
+| Congress-Twitter | 20.0% | 363.57 | 342.23 | **−21.33** | −0.065 |
+| NetHEPT | 5.0% | 1469.87 | 1442.00 | −27.87 | −0.019 |
+| NetHEPT | 10.0% | 2787.77 | 2329.97 | −457.80 | −0.197 |
+| NetHEPT | 20.0% | 4672.73 | 2387.00 | **−2285.73** | **−0.958** |
+
+Per-realisation verification (180 draws, 2 graphs × 3 fractions × 30 trials):
+
+```
+A_window ⊆ A^κ \ A^τ         holds in   0 / 180
+|A| ≤ |A^κ| − |A^τ|           holds in  73 / 180
+λ < σ in expectation         in 4 / 6 settings
+```
+
+**Can claim**
+* The bound is tight where it matters: 9.8% over-estimate at `|S|/n = 10%` on Congress-Twitter.
+* It degrades with saturation and, under our reading, inverts.
+* `λ` is a **difference** of two monotone submodular functions; differences do not preserve
+  submodularity, so even a valid upper bound would not by itself license a sampling guarantee.
+
+**Must NOT claim**
+* ~~"Theorem 6 is false."~~ Three innocent readings remain open (our interpretation of
+  `σ^κ`/`σ^τ`; whether the two processes are coupled; whether the proof is illustrative). Report
+  the measured gap and flag the discrepancy as an open question requiring clarification from the
+  authors.
+
+---
+
 ## What the paper can and cannot claim
 
 **Can claim**

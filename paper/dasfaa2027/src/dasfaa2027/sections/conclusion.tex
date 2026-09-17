@@ -33,7 +33,12 @@ not solved; it means the obvious learned approach is not the way to close it.
 
 Two directions follow directly. The first is to quantify the surrogate gap
 $\lambda(S) - \sigma(S)$ between the objective and the monotone upper bound to which RR
-\emph{can} be applied; that single number decides whether the sampling machinery is worth
-reaching for at all in this family of models. The second is to look for a graph-level criterion
---- we suspect in-/out-degree coupling --- that predicts when degree-based heuristics fail,
-which would let a practitioner decide whether the overexposure regime needs to be handled at all.
+\emph{can} be applied. We took a first step: the bound is tight at low coverage ($9.8\%$
+over-estimate on Congress-Twitter at $|S|/n = 10\%$) but degrades with saturation, and under our
+reading of the definitions it inverts, which raises a question about the expectation-versus-
+realisation step in its proof that we flag rather than resolve. Because $\lambda$ is a difference
+of two monotone submodular functions and differences do not preserve submodularity, even a valid
+upper bound would not by itself license a sampling-based guarantee. The second direction is to
+look for a graph-level criterion --- we suspect in-/out-degree coupling --- that predicts when
+degree-based heuristics fail, which would let a practitioner decide whether the overexposure
+regime needs to be handled at all.

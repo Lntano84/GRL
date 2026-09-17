@@ -59,11 +59,52 @@ Our largest graph has $15{,}233$ nodes; the source model's datasets are smaller 
 demonstrate behaviour on million-node graphs, and the per-decision cost of obtaining the state
 --- one cascade, which is cheap here --- would need re-examination at that scale.
 
-\paragraph{5. The surrogate gap is unquantified.}
+\paragraph{5. The surrogate gap is measured, and it exposes an open question.}
 \S\ref{sec:inapplicability} observes that RR \emph{is} applicable to the monotone upper bound
-$\lambda(S) \ge \sigma(S)$ used by the source model. We have not measured
-$\lambda(S) - \sigma(S)$. That gap is the natural quantity for deciding whether solving the
-surrogate is worthwhile, and it is the most direct follow-up to this work.
+$\lambda(S) \ge \sigma(S)$ used by the source model. We therefore measured the gap
+$\lambda(S) - \sigma(S)$ directly, which the source model does not report
+(Table~\ref{tab:surrogate}).
+
+\begin{table}[t]
+\centering
+\caption{The surrogate gap. $\lambda = \sigma^\kappa - \sigma^\tau$ where $\sigma^\kappa$,
+$\sigma^\tau$ are linear-threshold spreads at the lower and upper thresholds. All quantities
+share the same window draw within a trial.}
+\label{tab:surrogate}
+\begin{tabular}{lrrrrr}
+\toprule
+graph & $|S|/n$ & $\mathbb{E}[|A|]$ & $\lambda$ & gap & gap$/\lambda$ \\
+\midrule
+Congress-Twitter &  5.1\% & $367.17$ & $441.40$ & $+74.23$   & $+0.170$ \\
+Congress-Twitter & 10.1\% & $366.13$ & $403.53$ & $+37.40$   & $+0.098$ \\
+Congress-Twitter & 20.0\% & $363.57$ & $342.23$ & $-21.33$   & $-0.065$ \\
+NetHEPT          &  5.0\% & $1469.87$ & $1442.00$ & $-27.87$  & $-0.019$ \\
+NetHEPT          & 10.0\% & $2787.77$ & $2329.97$ & $-457.80$ & $-0.197$ \\
+NetHEPT          & 20.0\% & $4672.73$ & $2387.00$ & $-2285.73$ & $-0.958$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two things follow. First, the bound is \emph{tight where it is useful}: on Congress-Twitter at
+$|S|/n = 10\%$ it over-estimates the objective by $9.8\%$, which makes the surrogate worth
+optimising --- and $\sigma^\kappa$ and $\sigma^\tau$ are genuine LT influence functions, so RR
+sampling applies to each individually. Second, the gap degrades with saturation and, under our
+reading of the definitions, \emph{inverts}: $\lambda < \sigma$ in $4$ of $6$ settings. Across a
+wider sweep ($4$ graphs $\times$ $3$ fractions $\times$ $30$ trials) the per-realisation
+containment that the source model's proof invokes holds in $0/180$ draws and the inequality
+$|A| \le |A^\kappa| - |A^\tau|$ holds in $73/180$.
+
+We deliberately do not present this as a refutation. The source states Theorem~6 for the
+expectation of $\sigma$ but proves it on one fixed realisation, and at least three innocent
+readings remain open: our interpretation of $\sigma^\kappa/\sigma^\tau$ may differ from the
+intended one, the two threshold processes may be intended to be coupled rather than independent,
+or the proof may be illustrative rather than general. Every counterexample we observe is a node
+active in the $\theta^\tau$ process but not the $\theta^\kappa$ process, which is exactly what a
+monotone coupling would forbid. Resolving this requires clarification from the authors, and we
+flag it as an open question rather than a result. What we can state without qualification is the
+measured gap above, and the structural point that follows: $\lambda$ is a \emph{difference} of two
+monotone submodular functions, and submodularity is not preserved under differences, so even a
+valid upper bound would not by itself license a sampling-based guarantee.
 
 \paragraph{6. Non-monotonicity is regime-dependent, and we once got this wrong.}
 We initially reported that the objective is effectively monotone, based on a sweep at

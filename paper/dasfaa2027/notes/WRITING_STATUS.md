@@ -17,7 +17,7 @@
 | `sections/regime.tex` | **complete draft** | Table 2, the seed-fraction claim |
 | `sections/analysis.tex` | **complete draft** | the closed form, Table 3 (calibration) |
 | `sections/experiments.tex` | **complete draft** | Tables 4–7, incl. the SNR caveat |
-| `sections/limitations.tex` | **complete draft** | 6 numbered threats, incl. the negative result |
+| `sections/limitations.tex` | **complete draft** | 6 numbered threats, incl. the negative result and the surrogate gap (Table 8) |
 | `sections/conclusion.tex` | **complete draft** | |
 | `sections/related_work.tex` | **complete draft** | citations need verification (see below) |
 | `references.bib` | **needs verification** | 13 entries; 8 carry `TODO(verify)` |
@@ -50,8 +50,11 @@ inside the 16-page budget. This is an estimate from word count, not a compiled m
 5. **No comparison against the source model's own algorithms** (incremental greedy, the
    upper-bound method) or against `Max_Degree` / `IMRank` / `PageRank` / `CELF` as it reports
    them. Our baselines are degree, exact MC-greedy and our own closed form.
-6. **The surrogate gap `λ(S) − σ(S)` is not measured** — flagged as the most direct follow-up.
-   Measuring it would materially strengthen §5 and the conclusion.
+6. ~~**The surrogate gap `λ(S) − σ(S)` is not measured**~~ — **done**, see Table 8 and
+   `docs/SURROGATE_GAP_FINDING.md`. It is now a result plus an open question: the bound is tight
+   at low coverage (9.8%) but inverts under our reading once saturated, and the per-realisation
+   containment its proof invokes holds in 0/180 draws. **Before submitting, get the authors'
+   reading of `σ^κ`/`σ^τ`** — the check is cheap and being wrong is expensive.
 7. **Only one graph is used for the main comparison** (Congress-Twitter, Table 4). Table 2
    covers 8 graphs but only for rank correlation.
 8. **No figures.** All results are tables. At least one figure showing the sign flip against
@@ -75,9 +78,9 @@ inside the 16-page budget. This is an estimate from word count, not a compiled m
 | --- | --- | --- |
 | days 1–3 | obtain `llncs.cls`, compile, verify requirements | everything downstream depends on knowing the real page budget |
 | days 3–7 | verify all citations | cheap, and a wrong reference is a desk-reject risk |
+| **days 3–10** | **resolve the `σ^κ`/`σ^τ` reading with the authors** | the surrogate result depends on it; ask before publishing it |
 | days 7–20 | parse Trust Bitcoin-Alpha; find Occupywallstnyc; add both | closes the biggest credibility gap (#4) |
 | days 14–28 | implement the source model's incremental greedy + upper bound as baselines | reviewers will ask why the source model is not compared |
-| days 20–35 | measure `λ(S) − σ(S)` | turns a limitation into a result |
 | days 28–45 | figures; extend Table 4 to 3 graphs | presentation |
 | days 45–60 | full rewrite pass for LNCS length; anonymity check | |
 | days 60–69 | buffer | |

@@ -72,6 +72,12 @@ GRAPHS: dict[str, tuple[Path, bool]] = {
     "facebook": (PAPER / "facebook_combined.txt", True),
     "email_eu_core": (PAPER / "email-Eu-core.txt", True),
     "congress_twitter": (PAPER / "congress" / "congress_network" / "congress.edgelist", True),
+    # One of the source model's own four datasets.  Converted from the signed trust ratings by
+    # scripts/data/convert_bitcoin_alpha.py.  Note the mean-degree convention difference: the
+    # source reports <k> = 6.39, which is m/n for this edge set (i.e. the undirected reading);
+    # as a directed graph 2m/n = 12.79.  We keep it directed because the exposure sum is
+    # defined over in-edges.
+    "bitcoin_alpha": (PAPER / "bitcoin-alpha.txt", True),
 }
 
 

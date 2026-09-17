@@ -31,7 +31,8 @@ Carlo with windows shared across candidates within a trial.
 \centering
 \caption{Out-degree becomes an anti-signal once the network saturates. Values are means over
 $|S|/n \ge 20\%$. ``neg.'' is the share of candidates with $\Delta(v \mid S) < 0$. $\delta_2$
-denotes the state-conditioned closed form of \S\ref{sec:analysis}.}
+denotes the state-conditioned closed form of \S\ref{sec:analysis}. Trust Bitcoin-Alpha is one of
+the source model's own datasets.}
 \label{tab:signflip}
 \begin{tabular}{lrrrrr}
 \toprule
@@ -40,6 +41,7 @@ graph & $n$ & $\langle k \rangle$ & $\rho_{\text{degree}}$ & $\rho_{\delta_2}$ &
 NetHEPT            & 15233 &  4.23 & $\mathbf{+0.092}$ & $+0.686$ &  0.0\% \\
 p2p-Gnutella08     &  6301 &  6.59 & $-0.094$ & $+0.756$ &  8.0\% \\
 ca-GrQc            &  5242 & 11.06 & $-0.701$ & $+0.656$ & 20.0\% \\
+Trust Bitcoin-Alpha & 3783 & 12.79 & $-0.679$ & $+0.592$ & 10.8\% \\
 Wiki-Vote          &  7115 & 29.15 & $-0.035$ & $+0.265$ &  8.0\% \\
 ca-HepPh           & 12008 & 39.48 & $-0.431$ & $+0.481$ & 21.0\% \\
 Facebook           &  4039 & 43.69 & $-0.402$ & $+0.388$ & 21.0\% \\
@@ -53,20 +55,21 @@ Three observations follow from Table~\ref{tab:signflip}.
 
 \begin{enumerate}
   \item \textbf{Out-degree flips sign.} It is positively correlated with the marginal gain on
-        only one of eight graphs --- NetHEPT, the sparsest --- and negative on the other seven
+        only one of nine graphs --- NetHEPT, the sparsest --- and negative on the other eight
         once $|S|/n \ge 20\%$.
-  \item \textbf{The objective really is non-monotone there.} Between $20\%$ and $35\%$ of
+  \item \textbf{The objective really is non-monotone there.} Between $8\%$ and $35\%$ of
         candidates have a \emph{negative} marginal gain on the denser graphs. This matches the
         source model's own report that the objective value fluctuates with the budget on its
         sparsest dataset.
-  \item \textbf{The state-conditioned closed form stays positive on all eight.} It is the only
+  \item \textbf{The state-conditioned closed form stays positive on all nine.} It is the only
         scorer we tested that does.
 \end{enumerate}
 
 \paragraph{Density is not the explanation.}
 It is tempting to attribute the sign flip to density. We do not, because the evidence does not
-support it: the rank correlation between $\langle k \rangle$ and $\rho_{\text{degree}}$ across
-the eight graphs is only $-0.405$, and Congress-Twitter --- the densest graph --- is a
+support it: with nine graphs the rank correlation between $\langle k \rangle$ and
+$\rho_{\text{degree}}$ is only $-0.183$ --- weaker than the $-0.405$ we measured with eight, so
+adding a graph moved it \emph{towards} zero --- and Congress-Twitter, the densest graph, is a
 counterexample at $\rho_{\text{degree}} = -0.049$. The defensible claim is about the
 \emph{saturated regime}, not about dense graphs.
 
@@ -74,7 +77,8 @@ counterexample at $\rho_{\text{degree}} = -0.049$. The defensible claim is about
 After in-weight normalisation, exposure $\delta$ is driven by a node's \emph{in}-degree while a
 seed's value is driven by its \emph{out}-degree. The two coincide only when a graph is
 approximately symmetric. Consistently, the graphs with $\rho(\text{in},\text{out})$ near $1$
-(ca-GrQc and ca-HepPh, both symmetrised collaboration networks) show the strongest negative
-out-degree correlation, while NetHEPT, whose in- and out-degrees are nearly independent
-($\rho = -0.051$), is the one graph where degree survives. We record this as a hypothesis rather
-than a result; testing it needs more graphs than the eight available here.
+(ca-GrQc and ca-HepPh, both symmetrised collaboration networks, and Trust Bitcoin-Alpha at
+$+0.862$) show strongly negative out-degree correlations, while NetHEPT, whose in- and
+out-degrees are nearly independent ($\rho = -0.051$), is the one graph where degree survives.
+We record this as a hypothesis rather than a result; testing it needs more graphs than the nine
+available here.

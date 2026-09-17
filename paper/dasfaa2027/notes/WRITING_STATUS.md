@@ -42,11 +42,14 @@ inside the 16-page budget. This is an estimate from word count, not a compiled m
 
 ### Content gaps that a reviewer will notice
 
-4. **The four datasets of the source model are not covered.** We use 8 graphs but not
-   Occupywallstnyc (not on SNAP; needs another source), Trust Bitcoin-Alpha (downloaded as
-   `data/paper/bitcoin-alpha.csv.gz`, **not yet parsed**) and we use the raw Wiki-Vote rather
-   than the source model's 889-node version. A benchmark section that omits the source model's
-   own datasets is a real weakness.
+4. **Three of the four datasets of the source model are not covered.** We now include **Trust
+   Bitcoin-Alpha** (parsed by `scripts/data/convert_bitcoin_alpha.py`; it reproduces the source's
+   `|V| = 3783` exactly and behaves as the other graphs do --- `ρ_degree` flips from $+0.897$ at
+   0\% to $-0.679$ at saturation). Still missing: **Occupywallstnyc** (not on SNAP; needs another
+   source) and **Congress-Twitter / Wiki-Vote in the source's exact versions** --- we use the raw
+   Wiki-Vote (7,115 nodes) rather than its 889-node version, and the source's Congress-Twitter
+   `|V| = 333` versus our 475. A benchmark section that omits the source model's own datasets is
+   a real weakness; it is now one dataset rather than three.
 5. **No comparison against the source model's own algorithms** (incremental greedy, the
    upper-bound method) or against `Max_Degree` / `IMRank` / `PageRank` / `CELF` as it reports
    them. Our baselines are degree, exact MC-greedy and our own closed form.

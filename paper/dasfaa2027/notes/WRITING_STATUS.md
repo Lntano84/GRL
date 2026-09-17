@@ -48,13 +48,27 @@ inside the 16-page budget. This is an estimate from word count, not a compiled m
 * ~~**Trust Bitcoin-Alpha not parsed.**~~ **Done** — ninth graph, reproduces the source's
   `|V| = 3783` exactly.
 
+* ~~**The datasets' other baselines are missing.**~~ **Done.** `src/grl/baselines/classic_im.py`
+  implements \texttt{Random}, \texttt{Max\_Degree}, \textsc{IMRank}, \texttt{PageRank} and
+  \textsc{CELF}, and all nine policies are compared in Table 6. Result: \textsc{IGA} **and** its
+  exact variant \textsc{CELF} both spend $13{,}875$ cascades per query to land at or below the
+  zero-cost closed form, and both go negative on Congress-Twitter at $|S|/n = 10\%$. In the
+  saturated subset $\delta_2$ averages $+8.13$ against $+4.66$ and $+4.74$ for the two greedies.
+  \textsc{CELF} is implemented as the **exact** greedy, not a lazy one, because the lazy
+  skip-test needs monotone submodularity and this objective has neither; that methodological point
+  is now made in the related work.
+
 ### Still blocking
 
-1. **The paper is 18 pages against a 16-page limit.** Needs ~2 pages of trimming. The cheapest
-   candidates: move the SNR caveat table to an appendix, condense \S\ref{sec:analysis}
-   (Table 3 partially duplicates Table 4's story), and tighten the related-work paragraphs.
-   ⚠️ First confirm whether references count toward the limit — `notes/REQUIREMENTS.md`.
-2. **Citations are unverified.** 8 of 13 entries carry `TODO(verify)`. Do not submit with a
+1. **The paper is 19 pages against a 16-page limit.** Needs ~3 pages of trimming. Cheapest
+   candidates, in order:
+   (a) move the SNR caveat table (Table 3) to an appendix --- it is a methodological warning, not
+   a result;
+   (b) merge Table 3 into Table 4 --- both tell the "calibration fails, ranking survives" story;
+   (c) tighten the related-work paragraphs, especially the CELF one;
+   (d) drop Table 7 (the NetHEPT counterexample) and state it in a sentence.
+   ⚠️ First confirm whether references count toward the limit — see `notes/REQUIREMENTS.md`.
+2. **Citations are unverified.** 9 of 14 entries carry `TODO(verify)`. Do not submit with a
    guessed venue or page range.
 3. **DASFAA requirements are partially unverified** — page limit, template version, portal.
 
@@ -68,10 +82,7 @@ inside the 16-page budget. This is an estimate from word count, not a compiled m
 5. **Only three graphs appear in the main comparison** (Table 6). Table 2 covers nine graphs but
    only for rank correlation.
 6. **No figures.** All results are tables. One figure showing the sign flip against `|S|/n`, and
-   one showing regret or marginal against fraction, would help a lot.
-7. **\textsc{CELF} / \textsc{IMRank} / \textsc{PageRank} are not implemented**, so the comparison
-   against the source model's own reported baselines is incomplete. These are standard and cheap;
-   the reason to include them is that the source model's Table/Figure comparisons use them.
+   one showing the marginal against fraction for the baseline table, would help a lot.
 
 ### Known soft spots in the argument
 

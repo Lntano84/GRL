@@ -60,6 +60,13 @@ from evaluate_overexposure_pool_ranking import (  # noqa: E402
     degree_scores,
     exposure_scores_delta,
 )
+from grl.baselines.classic_im import (  # noqa: E402
+    celf_seeds,
+    imrank_seeds,
+    max_degree_seeds,
+    pagerank_seeds,
+    random_seeds,
+)
 from grl.diffusion.overexposure import (  # noqa: E402
     estimate_overexposure_spread_over_configs,
     run_overexposure,
@@ -249,22 +256,35 @@ def main() -> int:
             ub_lambda = greedy_lt(graph, pool, args.budget, select_windows, "lambda")
             ub_kappa = greedy_lt(graph, pool, args.budget, select_windows, "kappa")
 
+            # The remaining baselines the source model reports against.
+            celf_pick, celf_cascades = celf_seeds(
+                graph, pool, args.budget, args.mc_greedy, base_seed + 909,
+            )
+            pr_pick = pagerank_seeds(graph, pool, args.budget)
+            imr_pick = imrank_seeds(graph, pool, args.budget)
+            rnd_pick = random_seeds(graph, pool, args.budget,
+                                    random.Random(base_seed + 555))
+
             variants = {
                 "degree": by_degree,
                 "delta2 (ours)": by_delta2,
                 "IGA": iga_seeds,
                 "UB-lambda": ub_lambda,
                 "UB-kappa": ub_kappa,
+                "CELF": celf_pick,
+                "IMRank": imr_pick,
+                "PageRank": pr_pick,
+                "Random": rnd_pick,
             }
             results = paired_marginals(graph, nodes, seeds, variants, args.trials, base_seed)
 
             used = {name: len(v) for name, v in variants.items()}
-            cascades = {"IGA": iga_cascades}
+            cascades = {"IGA": iga_cascades, "CELF": celf_cascades}
             print(f"  |S|/n={fraction*100:>5.1f}%")
             for name, (mean, se) in results.items():
                 rows.append(Row(label, size, size / n, name, mean, se, used[name],
                                 cascades.get(name, 0)))
-                print(f"     {name:<10} {mean:>+9.2f} +-{se:>6.2f}  seeds={used[name]:>3}"
+                print(f"     {name:<14} {mean:>+9.2f} +-{se:>6.2f}  seeds={used[name]:>3}"
                       f"  cascades={cascades.get(name, 0):>8}", flush=True)
         print()
 

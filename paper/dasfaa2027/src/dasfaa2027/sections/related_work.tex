@@ -44,6 +44,22 @@ activation rule depends on an accumulated \emph{sum} that must land inside an in
 per-edge random structure that sampling-based methods rely on is lost, and the guarantees that
 accompany them do not transfer.
 
+\paragraph{CELF, and the cost of a violated precondition.}
+\textsc{CELF} \cite{leskovec2007cost} is the standard lazy-evaluation accelerator for greedy
+maximisation and is cited as a baseline by the source model. Its saving comes from a
+stale-upper-bound argument: if the recomputed gain of the heap head still dominates the
+runner-up's stale gain, the head is the true argmax and the remaining candidates can be skipped.
+That argument requires the objective to be monotone and submodular. The objective here is neither
+--- the source model's Theorem 2 establishes non-monotonicity and its Theorem 3 establishes that
+neither submodularity nor supermodularity holds --- so a candidate whose gain has fallen can rise
+again later and the skip test is unsound. We therefore implement \textsc{CELF} as the
+\emph{exact} greedy it is designed to accelerate; a lazy variant would yield an artificially
+weaker baseline whose shortfall came from a violated precondition rather than from the algorithm.
+We raise the point because it generalises: every overexposure objective inherits the same
+obstruction, and lazy evaluation is one of the few standard accelerations that is \emph{not}
+blocked by the absence of reverse reachability, so it is worth knowing that it fails for a
+different reason.
+
 %% TODO(refs): verify every entry below against the published version before submission.
 %% In particular confirm: TIM/TIM+ and IMM venue and year; the OPIM and SSA references;
 %% the GPU papers' exact titles; the GCOMB authors and venue; the LAICO authors and venue;

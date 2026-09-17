@@ -114,12 +114,28 @@ def sample_threshold_windows(
     nodes: list[int],
     rng: random.Random,
     overexposure_free: bool = False,
+    window_lo: float = 0.0,
 ) -> dict[int, tuple[float, float]]:
     """Sample one ``(theta_kappa, theta_tau)`` window per node from the 2-D simplex.
 
-    With ``overexposure_free=True`` every ``theta_tau`` is clamped to 1, which is the
-    degenerate no-overexposure limit (equivalent to the linear threshold model).
+    ``overexposure_free=True`` clamps every ``theta_tau`` to 1, the degenerate
+    no-overexposure limit.  Note this is the *linear-threshold-like* limit, not independent
+    cascade: activation still requires ``delta >= theta_kappa``, and the audit showed the two
+    processes percolate at different scales at the same edge weights.
+
+    ``window_lo`` raises the lower end of the ``theta_tau`` support, so ``tau`` is drawn from
+    ``[max(kappa, window_lo), 1]`` instead of ``[kappa, 1]``.  This makes an activation attempt
+    more likely to land inside the window and therefore makes overexposure easier to trigger.
+    It exists as an explicit experimental knob because the process scale is sensitive to the
+    window support; ``window_lo = 0.0`` is the source model's setting.
     """
+    if not 0.0 <= window_lo < 1.0:
+        raise ValueError(f"window_lo must lie in [0, 1), got {window_lo}")
+    if overexposure_free and window_lo != 0.0:
+        raise ValueError(
+            "overexposure_free=True clamps theta_tau to 1, so window_lo must be 0.0"
+        )
+
     windows: dict[int, tuple[float, float]] = {}
     for node in nodes:
         kappa = rng.random()
@@ -128,6 +144,9 @@ def sample_threshold_windows(
             kappa, tau = tau, kappa
         if overexposure_free:
             tau = 1.0
+        elif window_lo > 0.0:
+            lo = max(kappa, window_lo)
+            tau = lo + tau * (1.0 - lo)
         windows[node] = (kappa, tau)
     return windows
 

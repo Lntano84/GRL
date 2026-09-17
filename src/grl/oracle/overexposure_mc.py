@@ -1,0 +1,180 @@
+"""State-tracking Monte-Carlo oracle for the overexposure diffusion model.
+
+This is the ground-truth reference for every experiment in this project.  It replaces
+:class:`grl.oracle.marginal.BatchedMonteCarloMarginalOracle`, which samples a *live-edge graph*
+and computes reachability.  That construction is valid for independent cascade and is exactly
+what is unavailable here: under the threshold-window process a node's activation depends on the
+accumulated exposure ``delta`` landing inside its own window, so there is no per-edge random
+structure to sample.  See ``docs/GATE1_REPORT.md`` (Gate 1d) for the measurement.
+
+What this oracle does instead
+-----------------------------
+It runs the cascade itself.  ``score`` returns the paired Monte-Carlo estimate of
+
+    Delta(v | S) = sigma(S union {v}) - sigma(S)
+
+where every configuration in a call shares the same sampled threshold windows within a trial, so
+the difference carries no window-draw noise.  ``spread`` returns ``sigma(S)``.  Cost is counted in
+*Monte-Carlo cascades*, which is the quantity the paper's cost axis is about; the existing
+``OracleStats`` in :mod:`grl.oracle.marginal` counts candidate evaluations and live-edge samples
+but has no field for this, so it is extended here rather than overloaded.
+"""
+
+from __future__ import annotations
+
+import random
+import sys
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Iterable
+
+import networkx as nx
+
+ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT / "src") not in sys.path:
+    sys.path.insert(0, str(ROOT / "src"))
+
+from grl.diffusion import overexposure as oe  # noqa: E402
+from grl.diffusion.params import OverexposureParams  # noqa: E402
+
+
+@dataclass
+class OverexposureOracleStats:
+    """Cost accounting for the overexposure oracle.
+
+    ``mc_cascades`` is the primary cost unit: the number of single-cascade simulations spent.
+    It is the quantity that must be held equal across methods in any comparison, and it is what
+    the quality-vs-cost figures are plotted against.
+    """
+
+    mc_cascades: int = 0
+    candidate_evaluations: int = 0
+    spread_queries: int = 0
+
+    def as_dict(self) -> dict[str, int]:
+        return {
+            "mc_cascades": self.mc_cascades,
+            "candidate_evaluations": self.candidate_evaluations,
+            "spread_queries": self.spread_queries,
+        }
+
+    def reset(self) -> None:
+        self.mc_cascades = 0
+        self.candidate_evaluations = 0
+        self.spread_queries = 0
+
+
+class OverexposureMonteCarloOracle:
+    """Monte-Carlo marginal-gain oracle under the threshold-window process.
+
+    Parameters
+    ----------
+    graph
+        Directed graph with ``weight`` on every edge.  In-weights are expected to be normalised
+        (sum to 1 per node), which is the regime the model requires; this class does not enforce
+        it because the caller may deliberately study un-normalised graphs.
+    mc_runs
+        Cascades per configuration per trial.  Higher values reduce label noise; the audit showed
+        the negative-marginal regime needs at least a few hundred for rank comparisons.
+    random_seed
+        Base seed.  The seed used for a scoring call is ``random_seed`` combined with ``step``, so
+        the same ``(seeds, step)`` reproduces exactly while different steps are independent.
+    params
+        Validated overexposure parameters.  ``params.mc_runs`` is ignored here; pass ``mc_runs``
+        explicitly so that one oracle instance can be used at several budgets.
+    """
+
+    def __init__(
+        self,
+        graph: nx.DiGraph,
+        mc_runs: int = 200,
+        random_seed: int = 20260917,
+        params: OverexposureParams | None = None,
+        *,
+        window_lo: float | None = None,
+    ) -> None:
+        if mc_runs <= 0:
+            raise ValueError(f"mc_runs must be positive, got {mc_runs}")
+        self.graph = graph
+        self.mc_runs = int(mc_runs)
+        self.random_seed = int(random_seed)
+        self.params = params or OverexposureParams()
+        # ``window_lo`` is exposed separately so a single oracle can be re-parameterised by a
+        # sweep without rebuilding the whole params object.
+        self.window_lo = self.params.window_lo if window_lo is None else float(window_lo)
+        if not 0.0 <= self.window_lo < 1.0:
+            raise ValueError(f"window_lo must lie in [0, 1), got {self.window_lo}")
+        self.stats = OverexposureOracleStats()
+        self._nodes: list[int] = list(graph.nodes())
+
+    # ----------------------------------------------------------------------------------
+    # internal helpers
+    # ----------------------------------------------------------------------------------
+    def _call_seed(self, step: int) -> int:
+        return self.random_seed + 1_000_003 * int(step)
+
+    def _draw_windows(self, rng: random.Random) -> dict[int, tuple[float, float]]:
+        return oe.sample_threshold_windows(
+            self._nodes,
+            rng,
+            overexposure_free=self.params.overexposure_free,
+            window_lo=self.window_lo,
+        )
+
+    def _spread_once(
+        self, seeds: Iterable[int], windows: dict[int, tuple[float, float]], rng: random.Random
+    ) -> int:
+        self.stats.mc_cascades += 1
+        return oe.run_overexposure(
+            self.graph,
+            list(seeds),
+            windows,
+            rng,
+            activation_mode=self.params.activation_mode,
+        ).spread
+
+    # ----------------------------------------------------------------------------------
+    # public API
+    # ----------------------------------------------------------------------------------
+    def spread(self, seeds: Iterable[int]) -> dict[str, float]:
+        """Monte-Carlo estimate of ``sigma(seeds)``."""
+        seed_list = list(seeds)
+        values = []
+        for offset in range(self.mc_runs):
+            rng = random.Random(self.random_seed + offset)
+            windows = self._draw_windows(rng)
+            values.append(float(self._spread_once(seed_list, windows, rng)))
+        self.stats.spread_queries += 1
+        mean = sum(values) / len(values)
+        if len(values) > 1:
+            var = sum((v - mean) ** 2 for v in values) / len(values)
+            stderr = (var / len(values)) ** 0.5
+        else:
+            stderr = 0.0
+        return {"mean": mean, "stderr": stderr, "n": float(len(values))}
+
+    def score(
+        self, seeds: list[int], candidates: list[int], step: int = 0
+    ) -> dict[int, float]:
+        """Paired Monte-Carlo marginal gain ``Delta(v | seeds)`` for every candidate.
+
+        All candidates in one call share the sampled windows within each trial, so the *differences*
+        between them are free of window-draw noise even though each individual estimate is noisy.
+        """
+        if not candidates:
+            return {}
+        seed_list = list(seeds)
+        base_seed = self._call_seed(step)
+        totals = {int(v): 0.0 for v in candidates}
+
+        for offset in range(self.mc_runs):
+            rng = random.Random(base_seed + offset)
+            windows = self._draw_windows(rng)
+            base = float(self._spread_once(seed_list, windows, rng))
+            for candidate in candidates:
+                totals[int(candidate)] += (
+                    float(self._spread_once([*seed_list, candidate], windows, rng)) - base
+                )
+
+        self.stats.candidate_evaluations += len(candidates)
+        return {v: total / self.mc_runs for v, total in totals.items()}

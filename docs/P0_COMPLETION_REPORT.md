@@ -47,26 +47,45 @@ Found while auditing provenance, and **independent of the state-machine bug**.
 - The stored JSON confirms `candidates: 50, mc_runs: 12`.
 
 **Re-measurement** at `MC = 300` under the fixed model, paired per-trial estimator
-(`scripts/audit/rederive_signflip_high_mc.py`):
+(`scripts/audit/rederive_signflip_high_mc.py`). Seven graphs of eight are complete; the table is
+being filled in as the last cells land.
 
-| graph | `\|S\|/n` | neg% (draft) | neg% (MC=300) | neg% beyond noise | `ρ_degree` draft → new | `ρ_δ₂` draft → new |
+| graph | ⟨k⟩ | `\|S\|/n` | neg% (draft) | neg% (new) | `ρ_degree` draft → new | `ρ_δ₂` draft → new |
 | --- | --- | --- | --- | --- | --- | --- |
-| Congress-Twitter | 10% | — | 0.0% | 0.0% | — → **+0.406** | — → **−0.320** |
-| Congress-Twitter | 20% | 44.0% | **4.0%** | **0.0%** | −0.112 → **+0.039** | +0.034 → **−0.060** |
-| Congress-Twitter | 40% | 26.0% | 0.0% | 0.0% | +0.015 → **−0.133** | +0.065 → **+0.230** |
-| email-Eu-core | 10% | — | 0.0% | 0.0% | — → −0.049 | — → +0.033 |
-| email-Eu-core | 20% | 36.0% | 0.0% | 0.0% | −0.752 → **−0.139** | +0.726 → **+0.106** |
-| email-Eu-core | 40% | 32.0% | 0.0% | 0.0% | −0.639 → **−0.332** | +0.643 → **+0.372** |
+| p2p-Gnutella08 | 6.59 | 10% | — | 0.0% | — → +0.647 | — → +0.680 |
+| p2p-Gnutella08 | 6.59 | 20% | 8.0% | 0.0% | −0.094 → **+0.338** | +0.756 → +0.259 |
+| ca-GrQc | 11.06 | 10% | — | 0.0% | — → −0.320 | — → +0.692 |
+| ca-GrQc | 11.06 | 20% | 20.0% | 0.0% | −0.701 → **−0.560** | +0.656 → +0.653 |
+| Wiki-Vote | 29.15 | 20% | 8.0% | 0.0% | −0.035 → **+0.090** | +0.265 → **+0.527** |
+| Wiki-Vote | 29.15 | 40% | 8.0% | 0.0% | −0.035 → **−0.173** | +0.265 → **+0.245** |
+| ca-HepPh | 39.48 | 10% | — | 0.0% | — → +0.009 | — → +0.392 |
+| ca-HepPh | 39.48 | 20% | 21.0% | 0.0% | −0.431 → **−0.179** | +0.481 → **+0.380** |
+| Facebook | 43.69 | 10% | — | 0.0% | — → −0.044 | — → **+0.784** |
+| Facebook | 43.69 | 20% | 21.0% | 0.0% | −0.402 → **−0.413** | +0.388 → **+0.497** |
+| Facebook | 43.69 | 40% | 21.0% | 4.0% (2% beyond noise) | −0.402 → **−0.425** | +0.388 → **+0.557** |
+| email-Eu-core | 50.89 | 10% | — | 0.0% | — → −0.049 | — → +0.033 |
+| email-Eu-core | 50.89 | 20% | 34.0% | 0.0% | −0.695 → **−0.139** | +0.685 → **+0.106** |
+| email-Eu-core | 50.89 | 40% | 34.0% | 0.0% | −0.695 → **−0.332** | +0.685 → **+0.372** |
+| Congress-Twitter | 55.95 | 10% | — | 0.0% | — → +0.406 | — → −0.320 |
+| Congress-Twitter | 55.95 | 20% | 35.0% | 2.0% (0% beyond noise) | −0.049 → **+0.039** | +0.050 → **−0.060** |
+| Congress-Twitter | 55.95 | 40% | 35.0% | 0.0% | −0.049 → **−0.133** | +0.050 → **+0.230** |
 
-Two conclusions, both negative for the draft:
+Two conclusions:
 
-1. **The negative-marginal share was almost entirely Monte-Carlo artefact.** At `MC = 300` it is
-   0–4%, with 0% negative *beyond noise* in every cell measured so far. The draft's headline
-   phenomenon — "$8\%$ to $35\%$ of candidates have a negative marginal gain" — does not survive.
-2. **`δ₂` does not separate from degree at the saturated cells.** At Congress-Twitter 20% the two are
-   `+0.039` and `−0.060`, i.e. indistinguishable; at email-Eu-core 20% it is `−0.139` vs `+0.106`.
+1. **The negative-marginal-share claim is dead.** At `MC = 300` the share is `0%` in seventeen of
+   eighteen cells, `2%` in one, and `0%` *beyond noise* in every cell. The draft's headline
+   "$8\%$ to $35\%$ of candidates have a negative marginal gain" was Monte-Carlo artefact.
+2. **The sign flip and `δ₂`'s advantage largely survive.** At `|S|/n ≥ 20%`, `ρ_δ₂ > ρ_degree` on
+   six of seven graphs measured, and degree is negative on five of them. The two exceptions are the
+   extremes of the density range: p2p-Gnutella08 (`⟨k⟩ = 6.59`, degree `+0.338`) and
+   Congress-Twitter at `20%` (`⟨k⟩ = 55.95`, degree `+0.039`, `δ₂ = −0.060`).
 
-The remaining six graphs are still running; the JSON is rewritten after every cell.
+**An intermediate conclusion of mine was itself underpowered, and I am recording that.** After the
+first two graphs I wrote that "the headline phenomenon is not visible at adequate power". That was
+based on Congress-Twitter and email-Eu-core. With seven graphs the sign flip is present on five and
+`δ₂` leads on six. The negative-share half of my statement held; the sign-flip half did not, and
+generalising from two graphs was the same error as citing `MC = 12`. `regime.tex` therefore states
+neither version until the eighth graph lands.
 
 ---
 
@@ -142,20 +161,55 @@ running.
 
 ## 5. What is not done
 
-1. **The `MC = 300` regime sweep is incomplete** — 3 of 24 cells for Congress-Twitter plus 3 for
-   email-Eu-core, facebook in progress. Nothing in `regime.tex` can be asserted until it finishes.
-2. **Stage 4b's corrected verdict is unknown.** The `|S| = 0` vs `|S| = 2` gap above suggests the old
-   "no usable regime" conclusion may not survive; that run is in progress.
-3. **`contract.py` is not yet wired into the experiment scripts.** It exists and is tested, but the
-   scripts still declare their own target sets and budgets. Until that is done no re-derived number
-   is contract-clean.
-4. **No reference number has been re-derived under the full contract.** That is the next large unit
-   of work, and it is what would let the `\withdrawn` markers come off the tables.
+1. **The `MC = 300` regime sweep is one graph short** — NetHEPT's three cells remain, and ca-HepPh's
+   `40%` cell. Nothing in `regime.tex` may be asserted until they land.
+2. **Stage 4b's corrected verdict is in.**
+   `docs/results/stage4b_confounds_removed.json` reports, at the budget's own seed size:
+
+   | graph | ⟨k⟩ | state ratio at `|S| = k` | median degree gap over 5 pools |
+   | --- | --- | --- | --- |
+   | Congress-Twitter | 55.95 | **1.940** (k=1) | 6.01% [−8.67, 25.57] |
+   | email-Eu-core | 50.89 | 0.896 (k=1) | 0.00% [−2.67, 0.00] |
+   | ca-GrQc | 11.06 | 0.150 (k=3) | 5.65% [0.00, 21.11] |
+   | Facebook | 43.69 | 0.057 (k=3) | 15.32% [0.00, 72.62] |
+   | Bitcoin-Alpha | 12.79 | 0.350 (k=3) | 0.00% [−0.25, 0.38] |
+   | NetHEPT | 4.23 | 0.090 (k=3) | 14.77% [−0.50, 20.78] |
+
+   Only Congress-Twitter at `k = 1` clears both thresholds, so the verdict that state dependence
+   and optimisation headroom do not coincide **survives** the pooling correction — but the ratios
+   that supported it do not (the old docstring recorded ca-GrQc `0.64` and email-Eu-core `1.94`;
+   the corrected values are `0.150` and `0.896`), and the reason the sparsest graph fails is now
+   visible rather than inferred: NetHEPT's between-candidate sd is `1.27`, so there is genuinely
+   little for a state-conditioned score to separate.
+3. **`contract.py` is wired into stage4b and stage5**, which now print and record `|D|`,
+   seed eligibility, counting rule, stopping rule, normalisation and reference policy. It is *not*
+   wired into the older one-off `evaluate_*.py` scripts, which remain withdrawn.
+4. **No reference number has been re-derived under the full contract.** That is what would let the
+   `\withdrawn` markers come off the tables in `experiments.tex`.
 5. **The draft is 21 pages against a 16-page limit**, and citations remain unverified.
 6. **The pre-registered gate is still not frozen.** The PI must confirm the thresholds
    (≤1% quality loss vs a high-accuracy reference AND ≥30% fewer online cascades vs the strongest
    non-learning method, with paired CIs, failure fraction, runtime, and a break-even `Q` for
    `C_offline + Q·C_online`).
+
+---
+
+## 6. The paper's contribution, as it now stands
+
+With every measured number withdrawn, the draft had one analytic result and five empty tables. The
+contribution the evidence does support is a **measurement protocol** for this model, now written as
+`sections/protocol.tex`: five checks, each with the measured magnitude of the error it prevents.
+
+| check | measured cost of getting it wrong |
+| --- | --- |
+| re-evaluate every non-seed node every round | spread inflated **60–63%** on Congress-Twitter |
+| name the threshold law | non-monotonicity's sign reverses under uniform-threshold LT |
+| no rank correlation below `MC = 300` | negative share **44% → 0%**; `ρ_degree` −0.112 → +0.039 |
+| never pool seed sizes | between-candidate sd **36.54 vs 0.74**, a factor of 50 |
+| repeat the candidate pool | degree gap **0.00%–98.52%**; the sign depends on the draw |
+
+Four of the five checks are free or nearly so. Only the Monte-Carlo budget is a real factor of 25.
+That asymmetry is the argument: the errors are cheap to prevent and were expensive to have made.
 
 ---
 
@@ -165,10 +219,16 @@ Things this report deliberately does **not** claim:
 
 - That any previously reported empirical result is repaired. None is; all are withdrawn.
 - That confound 6 was fixed. It was alleged, we measured it, and it does not bite on our data.
-- That the regime phenomenon is refuted. It is *unresolved* — the measurement that supported it was
-  underpowered, and the adequately powered measurement contradicts it on the cells measured so far,
-  but the sweep is incomplete.
-- That `δ₂` is useless. At `|S|/n = 40%` on Congress-Twitter it reaches `ρ_δ₂ = +0.230`; the claim
-  that fails is the specific one about the saturated `20%` cell.
+- That the regime phenomenon is refuted. The negative-marginal-share half is refuted; the sign-flip
+  half largely **survives**, and an interim conclusion of mine that said otherwise was drawn from
+  two graphs and was itself underpowered. That mistake is recorded in §1.2 rather than quietly
+  corrected.
+- That `δ₂` is useless. It leads degree on six of seven graphs at `|S|/n ≥ 20%`. What fails is the
+  specific claim about the `20%` cell on the densest graph, and the claim that a large share of
+  candidates has a negative marginal.
+- That the eight confounds are the whole story. They are the ones we found; the protocol section
+  exists because we expect more.
 - That the model is monotone, or that the paper's core question is wrong. The coverage argument
   (item 1 in §3) is exact arithmetic and is unaffected by any of this.
+- That the paper is submittable. It is 21 pages against a 16-page limit, most of its empirical
+  content is withdrawn, and its citations are unverified.

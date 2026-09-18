@@ -198,6 +198,59 @@ def build_contract(
                          diffusion=resolve_overexposure_params(config))
 
 
+#: Target-set modes understood by :func:`resolve_target_contract`.
+TARGET_MODE_ALL = "all"
+TARGET_MODE_DEGREE_TAIL = "degree-tail"
+TARGET_MODES = (TARGET_MODE_ALL, TARGET_MODE_DEGREE_TAIL)
+
+
+def resolve_target_contract(
+    graph: nx.DiGraph, target_mode: str, target_fraction: float, budget: int
+) -> ModelContract:
+    """State which nodes are counted and where seeds may come from --- explicitly.
+
+    The source model is *targeted*: it defines a target set ``D`` and draws seeds from ``V \\ D``,
+    counting only positives inside ``D``.  Earlier sweeps in this repository counted every positive
+    node and drew seeds from the whole graph.  That is the same simulator applied to a **different
+    problem**, and it is what ``all`` selects --- permitted, recorded, and reported, but never
+    silently mixed with the source model's formulation.
+
+    ``all``
+        ``D = V`` with ``allow_seeds_in_target=True``.  Every positive node is counted and any node
+        may be a seed.
+    ``degree-tail``
+        ``D`` is the top ``target_fraction`` of nodes by out-degree --- the natural reading of "the
+        nodes we are trying to activate" --- and seeds come from ``V \\ D`` as the model requires.
+
+    This lives here rather than in each script so that two experiment scripts cannot drift into
+    declaring different problems under the same flag name.
+    """
+    nodes = list(graph.nodes())
+    if not nodes:
+        raise ContractViolation("cannot build a contract for an empty graph")
+    if target_mode == TARGET_MODE_ALL:
+        return build_contract(graph, {}, target_set=nodes, allow_seeds_in_target=True,
+                              budget=budget)
+    if target_mode == TARGET_MODE_DEGREE_TAIL:
+        if not 0.0 < target_fraction < 1.0:
+            raise ContractViolation(
+                f"target_fraction must lie strictly between 0 and 1, got {target_fraction}"
+            )
+        degree = dict(graph.out_degree())
+        ordered = sorted(nodes, key=lambda v: (-degree[v], v))
+        cut = max(1, int(round(target_fraction * len(ordered))))
+        if cut >= len(ordered):
+            raise ContractViolation(
+                f"target_fraction {target_fraction} selects all {len(ordered)} nodes, which leaves "
+                f"no eligible seeds; use target_mode={TARGET_MODE_ALL!r} to record that choice"
+            )
+        return build_contract(graph, {}, target_set=ordered[:cut],
+                              allow_seeds_in_target=False, budget=budget)
+    raise ContractViolation(
+        f"unknown target mode {target_mode!r}; choose from {TARGET_MODES}"
+    )
+
+
 class TargetedObjective:
     """Evaluate the contracted objective by simulation.
 

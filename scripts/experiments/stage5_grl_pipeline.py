@@ -61,6 +61,14 @@ from grl.algorithms.sequential_im import (  # noqa: E402
     reference_policy_name,
     selective_greedy,
 )
+from grl.diffusion.contract import (  # noqa: E402
+    TARGET_MODE_ALL,
+    TARGET_MODE_DEGREE_TAIL,
+    ContractViolation,
+    ModelContract,
+    build_contract,
+    resolve_target_contract,
+)
 from grl.diffusion.params import resolve_overexposure_params  # noqa: E402
 from grl.models import StateConditionedMarginalPredictor  # noqa: E402
 from grl.oracle import OverexposureMonteCarloOracle  # noqa: E402
@@ -404,6 +412,15 @@ def main() -> int:
     )
     parser.add_argument("--eval-mc", type=int, default=200)
     parser.add_argument(
+        "--target-mode", default=TARGET_MODE_ALL,
+        choices=[TARGET_MODE_ALL, TARGET_MODE_DEGREE_TAIL],
+        help=f"'{TARGET_MODE_ALL}' is D = V with seeds allowed inside it -- what the earlier sweeps "
+             f"did, and a DIFFERENT problem from the source model's; "
+             f"'{TARGET_MODE_DEGREE_TAIL}' is the source model's formulation: D is the top "
+             f"--target-fraction by out-degree and seeds come from V \\ D",
+    )
+    parser.add_argument("--target-fraction", type=float, default=0.2)
+    parser.add_argument(
         "--stopping", default="fill_budget",
         choices=["fill_budget", "stop_on_non_positive", "patience_2"],
         help="The budget is AT MOST k, so a policy may stop early.  Which rule each arm uses "
@@ -431,6 +448,21 @@ def main() -> int:
     print()
 
     # ---------------- dataset ----------------
+    contract = resolve_target_contract(graph, args.target_mode, args.target_fraction,
+                                       max(args.budgets))
+    contract_description = contract.describe()
+    eligible = contract.objective.legal_candidates(graph)
+    print(f"contract: |D|={contract_description['objective']['target_set_size']} "
+          f"seeds_in_D={contract_description['objective']['allow_seeds_in_target']} "
+          f"budget<= {contract_description['objective']['budget']}")
+    print(f"          counting='{contract_description['counting']}' "
+          f"eligible_seeds={len(eligible)}/{n}")
+    if args.target_mode == "all":
+        print("          NOTE: --target-mode all is D = V with seeds allowed inside it.  That is")
+        print("          the same simulator as the source model but a DIFFERENT problem, because")
+        print("          the source model draws seeds from V \\ D.")
+    print()
+
     cfg = {
         "overexposure_dataset": {
             "budget": max(args.budgets),
@@ -447,7 +479,8 @@ def main() -> int:
         if values.get("n"):
             print(f"  {name:<11} n={values['n']:<5} contexts={values['contexts']:<4} "
                   f"mean={values['mean_gain']:>9.3f} min={values['min_gain']:>9.3f} "
-                  f"neg={values['negative_share']*100:>5.1f}%")
+                  f"neg={values['negative_share']*100:>5.1f}% "
+                  f"label_se={values['mean_label_std']:>7.3f}")
         else:
             print(f"  {name:<11} EMPTY")
     print()
@@ -511,7 +544,12 @@ def main() -> int:
     print()
     for budget in args.budgets:
         rng = random.Random(args.random_seed + 31 * budget)
-        pool = rng.sample(nodes, min(args.pool_size, n))
+        # the pool must be drawn from eligible seeds, and the contract is checked rather than
+        # trusted: under --target-mode degree-tail a pool drawn from all nodes would put target
+        # nodes in the shortlist and the contract would refuse it here rather than silently
+        # measuring a problem nobody declared
+        pool = rng.sample(eligible, min(args.pool_size, len(eligible)))
+        contract.objective.check_seed_eligibility(pool)
 
         exact = OverexposureMonteCarloOracle(graph, mc_runs=args.oracle_mc,
                                              random_seed=args.random_seed, params=params)
@@ -574,6 +612,15 @@ def main() -> int:
         args.output.write_text(json.dumps({
             "graph": args.graph, "n": n, "budgets": args.budgets,
             "pool_size": args.pool_size, "dataset": stats,
+            # The contract and the stopping rule are part of the result, not of the invocation:
+            # a reader must be able to tell from the file alone which problem was solved and
+            # whether a method was allowed to stop early (audit items P0-4 and P1-3.1).
+            "contract": contract_description,
+            "stopping_rule": args.stopping,
+            "normalisation": graph.graph.get("in_weight_normalisation", "unknown"),
+            "reference_policy": reference_policy_name(exact, args.oracle_mc),
+            "reference_is_exact": False,
+            "reference_mc_runs": args.oracle_mc,
             "rows": [asdict(r) for r in rows],
         }, indent=2), encoding="utf-8")
         print(f"wrote {args.output}")

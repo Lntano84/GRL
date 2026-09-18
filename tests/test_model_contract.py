@@ -14,11 +14,14 @@ import pytest
 
 from grl.diffusion import overexposure as oe
 from grl.diffusion.contract import (
+    TARGET_MODE_ALL,
+    TARGET_MODE_DEGREE_TAIL,
     ContractViolation,
     ModelContract,
     ObjectiveContract,
     TargetedObjective,
     build_contract,
+    resolve_target_contract,
 )
 from grl.diffusion.params import OverexposureParams
 
@@ -27,6 +30,16 @@ def chain(n: int = 5) -> nx.DiGraph:
     graph = nx.DiGraph()
     for i in range(n - 1):
         graph.add_edge(i, i + 1, weight=0.5)
+    return graph
+
+
+def star(n: int = 10) -> nx.DiGraph:
+    """A graph with a clear out-degree ordering, so degree-tail target selection is unambiguous."""
+    graph = nx.DiGraph()
+    graph.add_nodes_from(range(n))
+    for v in range(1, n):
+        graph.add_edge(0, v, weight=0.3)
+        graph.add_edge(v, 0, weight=0.3)
     return graph
 
 
@@ -310,3 +323,70 @@ def test_config_driven_construction():
     assert 4 in contract.objective.target_set
     assert contract.diffusion.mc_runs == 9
     assert contract.diffusion.random_seed == 4
+
+
+# --------------------------------------------------------------------------------------
+# resolve_target_contract: the two target modes must be distinguishable and recorded
+# --------------------------------------------------------------------------------------
+def test_all_target_mode_counts_everything_and_records_the_choice():
+    """D = V is the same simulator applied to a different problem, and it must say so."""
+    graph = star()
+    contract = resolve_target_contract(graph, TARGET_MODE_ALL, 0.2, budget=2)
+    described = contract.describe()
+    assert described["objective"]["target_set_size"] == len(graph.nodes())
+    assert described["objective"]["allow_seeds_in_target"] is True
+    assert described["counting"] == "final positive nodes intersect target set"
+    # every node is a legal seed in this mode
+    assert len(contract.objective.legal_candidates(graph)) == len(graph.nodes())
+
+
+def test_degree_tail_target_mode_matches_the_source_formulation():
+    """D is a strict subset and seeds come from V \\ D, which is what the source model states."""
+    graph = star()
+    contract = resolve_target_contract(graph, TARGET_MODE_DEGREE_TAIL, 0.2, budget=2)
+    target = contract.objective.target_set
+    assert 0 < len(target) < len(graph.nodes())
+    assert contract.objective.allow_seeds_in_target is False
+    eligible = contract.objective.legal_candidates(graph)
+    assert set(eligible).isdisjoint(target), "a target node must not be an eligible seed"
+    assert len(eligible) + len(target) == len(graph.nodes())
+    # the highest out-degree node is in D, so it cannot be seeded
+    assert max(graph.out_degree(), key=lambda kv: kv[1])[0] in target
+
+
+def test_the_two_modes_do_not_declare_the_same_problem():
+    graph = star()
+    everything = resolve_target_contract(graph, TARGET_MODE_ALL, 0.2, budget=2)
+    tail = resolve_target_contract(graph, TARGET_MODE_DEGREE_TAIL, 0.2, budget=2)
+    assert everything.objective.target_set != tail.objective.target_set
+    assert (everything.objective.allow_seeds_in_target
+            != tail.objective.allow_seeds_in_target)
+
+
+def test_degree_tail_rejects_a_fraction_that_leaves_no_seeds():
+    """A fraction below 1 can still round up to the whole graph on a small one."""
+    graph = star(10)
+    with pytest.raises(ContractViolation, match="leaves"):
+        resolve_target_contract(graph, TARGET_MODE_DEGREE_TAIL, 0.999, budget=2)
+
+
+def test_degree_tail_rejects_a_degenerate_fraction():
+    for bad in (0.0, -0.1, 1.5):
+        with pytest.raises(ContractViolation, match="strictly between 0 and 1"):
+            resolve_target_contract(star(), TARGET_MODE_DEGREE_TAIL, bad, budget=2)
+
+
+def test_unknown_target_mode_is_refused():
+    with pytest.raises(ContractViolation, match="unknown target mode"):
+        resolve_target_contract(star(), "whatever", 0.2, budget=2)
+
+
+def test_an_empty_graph_is_refused():
+    with pytest.raises(ContractViolation, match="empty graph"):
+        resolve_target_contract(nx.DiGraph(), TARGET_MODE_ALL, 0.2, budget=1)
+
+
+def test_the_budget_is_carried_into_the_contract():
+    managed = resolve_target_contract(star(), TARGET_MODE_ALL, 0.2, budget=3)
+    assert managed.objective.budget == 3
+    assert managed.objective.budget_is_at_most is True

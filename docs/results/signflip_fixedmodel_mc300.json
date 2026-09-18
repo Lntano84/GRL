@@ -34,6 +34,14 @@
       "max_out_degree": 1043,
       "max_in_degree": 251,
       "rho_in_out": 0.3641148069944201
+    },
+    "ca_grqc": {
+      "n": 5242,
+      "m": 28980,
+      "mean_degree": 11.056848531095001,
+      "max_out_degree": 81,
+      "max_in_degree": 81,
+      "rho_in_out": 1.0
     }
   },
   "cells": [
@@ -206,6 +214,57 @@
       "rho_degree": -0.4250841399475382,
       "rho_delta2": 0.5573112464182748,
       "seconds": 387.5711143016815
+    },
+    {
+      "graph": "ca_grqc",
+      "graph_mean_degree": 11.056848531095001,
+      "n": 5242,
+      "seed_size": 524,
+      "seed_fraction": 0.09996184662342618,
+      "mc_runs": 300,
+      "candidates": 50,
+      "mean_gain": 1.0912666666666666,
+      "paired_se": 0.0997695510931958,
+      "gain_sd": 0.333519874470273,
+      "negative_share": 0.0,
+      "negative_beyond_noise": 0.0,
+      "rho_degree": -0.32025552634669097,
+      "rho_delta2": 0.6917015040123012,
+      "seconds": 353.2258062362671
+    },
+    {
+      "graph": "ca_grqc",
+      "graph_mean_degree": 11.056848531095001,
+      "n": 5242,
+      "seed_size": 1048,
+      "seed_fraction": 0.19992369324685236,
+      "mc_runs": 300,
+      "candidates": 50,
+      "mean_gain": 0.8335333333333333,
+      "paired_se": 0.07511833880892692,
+      "gain_sd": 0.2695975684031458,
+      "negative_share": 0.0,
+      "negative_beyond_noise": 0.0,
+      "rho_degree": -0.56019012788133,
+      "rho_delta2": 0.653186888881886,
+      "seconds": 319.2280309200287
+    },
+    {
+      "graph": "ca_grqc",
+      "graph_mean_degree": 11.056848531095001,
+      "n": 5242,
+      "seed_size": 2097,
+      "seed_fraction": 0.40003815337657384,
+      "mc_runs": 300,
+      "candidates": 50,
+      "mean_gain": 0.8134666666666667,
+      "paired_se": 0.05520197315123827,
+      "gain_sd": 0.20047605564976803,
+      "negative_share": 0.0,
+      "negative_beyond_noise": 0.0,
+      "rho_degree": -0.6054803212509534,
+      "rho_delta2": 0.6271677762588393,
+      "seconds": 306.26004433631897
     }
   ]
 }

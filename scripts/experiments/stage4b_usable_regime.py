@@ -60,10 +60,13 @@ from grl.data.weights import (  # noqa: E402
     normalise_in_weights,
 )
 from grl.diffusion.contract import (  # noqa: E402
+    TARGET_MODE_ALL,
+    TARGET_MODE_DEGREE_TAIL,
     ContractViolation,
     ModelContract,
     TargetedObjective,
     build_contract,
+    resolve_target_contract,
 )
 from grl.diffusion.params import resolve_overexposure_params  # noqa: E402
 from grl.oracle import OverexposureMonteCarloOracle  # noqa: E402
@@ -72,37 +75,6 @@ from grl.oracle import OverexposureMonteCarloOracle  # noqa: E402
 STATE_RATIO_THRESHOLD = 0.5
 #: The degree-to-reference gap must clear this fraction to count as headroom.
 GAP_THRESHOLD = 0.02
-
-
-def resolve_target_contract(
-    graph: nx.DiGraph, target_mode: str, target_fraction: float, budget: int
-) -> ModelContract:
-    """State which nodes are counted and where seeds may come from --- explicitly.
-
-    The frozen contract requires this because the source model is *targeted*: it defines a target
-    set ``D`` and draws seeds from ``V \\ D``, counting only positives inside ``D``.  Earlier regime
-    sweeps counted every positive node and drew seeds from the whole graph, which is the ``D = V``
-    variant: the same simulator, a different problem.  Both are allowed here, but the choice is
-    recorded in the contract and printed, so a table cannot silently mix them.
-
-    ``all``
-        ``D = V`` with ``allow_seeds_in_target=True``.  This is what the earlier sweeps did; it is
-        a different problem from the source model's and the output says so.
-    ``degree-tail``
-        ``D`` is the top ``target_fraction`` of nodes by out-degree, which is the natural reading of
-        "the nodes we are trying to activate", and seeds come from ``V \\ D`` as the model requires.
-    """
-    nodes = list(graph.nodes())
-    if target_mode == "all":
-        return build_contract(graph, {}, target_set=nodes, allow_seeds_in_target=True,
-                              budget=budget)
-    if target_mode == "degree-tail":
-        degree = dict(graph.out_degree())
-        ordered = sorted(nodes, key=lambda v: (-degree[v], v))
-        cut = max(1, int(round(target_fraction * len(ordered))))
-        return build_contract(graph, {}, target_set=ordered[:cut],
-                              allow_seeds_in_target=False, budget=budget)
-    raise ContractViolation(f"unknown target mode {target_mode!r}")
 
 
 @dataclass
@@ -260,11 +232,13 @@ def main() -> int:
     parser.add_argument("--normalisation", default=SUM_TO_ONE,
                         choices=[SUM_TO_ONE, CLIP_TO_ONE, AS_GIVEN],
                         help="confound P1-3.8: the model requires at most 1, not exactly 1")
-    parser.add_argument("--target-mode", default="all", choices=["all", "degree-tail"],
-                        help="'all' is D = V with seeds allowed inside it (what the earlier sweeps "
-                             "did, and a DIFFERENT problem from the source model's); "
-                             "'degree-tail' is the source model's formulation: D is the top "
-                             "--target-fraction by out-degree and seeds come from V \\ D")
+    parser.add_argument("--target-mode", default=TARGET_MODE_ALL,
+                        choices=[TARGET_MODE_ALL, TARGET_MODE_DEGREE_TAIL],
+                        help=f"'{TARGET_MODE_ALL}' is D = V with seeds allowed inside it (what the "
+                             f"earlier sweeps did, and a DIFFERENT problem from the source "
+                             f"model's); '{TARGET_MODE_DEGREE_TAIL}' is the source model's "
+                             f"formulation: D is the top --target-fraction by out-degree and seeds "
+                             f"come from V \\ D")
     parser.add_argument("--target-fraction", type=float, default=0.2)
     parser.add_argument("--random-seed", type=int, default=20260917)
     parser.add_argument("--output", type=Path, default=None)

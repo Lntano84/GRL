@@ -1,0 +1,160 @@
+{
+  "script": "calibrate_gate_tolerance.py",
+  "design": {
+    "graphs": [
+      "congress_twitter"
+    ],
+    "budgets": [
+      5
+    ],
+    "mc": 300,
+    "reference_mc": 100,
+    "state_mc": 20,
+    "pool_size": 40,
+    "target_fraction": 0.2
+  },
+  "candidates": [
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "rows": [
+    {
+      "graph": "congress_twitter",
+      "n": 475,
+      "budget": 5,
+      "contrast": "ref_vs_seq",
+      "mc": 300,
+      "paired_mean": 15.173333333333334,
+      "paired_se": 2.4923906120355537,
+      "paired_sd": 43.169471723532695,
+      "ci_width_95": 9.77017119917937,
+      "target_size": 95,
+      "mc_needed": {
+        "1_per_1000": {
+          "tolerance": 0.095,
+          "mc_scale_needed": 2644.2173202568983,
+          "mc_needed": 793265
+        },
+        "10_per_1000": {
+          "tolerance": 0.95,
+          "mc_scale_needed": 26.44217320256899,
+          "mc_needed": 7933
+        },
+        "100_per_1000": {
+          "tolerance": 9.5,
+          "mc_scale_needed": 0.26442173202568986,
+          "mc_needed": 79
+        },
+        "1000_per_1000": {
+          "tolerance": 95.0,
+          "mc_scale_needed": 0.0026442173202568986,
+          "mc_needed": 1
+        }
+      }
+    },
+    {
+      "graph": "congress_twitter",
+      "n": 475,
+      "budget": 5,
+      "contrast": "ref_vs_degree",
+      "mc": 300,
+      "paired_mean": 4.046666666666667,
+      "paired_se": 1.246779614610139,
+      "paired_sd": 21.594856383459053,
+      "ci_width_95": 4.887376089271745,
+      "target_size": 95,
+      "mc_needed": {
+        "1_per_1000": {
+          "tolerance": 0.095,
+          "mc_scale_needed": 661.6743777835228,
+          "mc_needed": 198502
+        },
+        "10_per_1000": {
+          "tolerance": 0.95,
+          "mc_scale_needed": 6.6167437778352305,
+          "mc_needed": 1985
+        },
+        "100_per_1000": {
+          "tolerance": 9.5,
+          "mc_scale_needed": 0.06616743777835231,
+          "mc_needed": 20
+        },
+        "1000_per_1000": {
+          "tolerance": 95.0,
+          "mc_scale_needed": 0.000661674377783523,
+          "mc_needed": 0
+        }
+      }
+    },
+    {
+      "graph": "congress_twitter",
+      "n": 475,
+      "budget": 5,
+      "contrast": "ref_vs_delta2_static",
+      "mc": 300,
+      "paired_mean": 1.7533333333333334,
+      "paired_se": 0.7953039018490329,
+      "paired_sd": 13.775067654602967,
+      "ci_width_95": 3.117591295248209,
+      "target_size": 95,
+      "mc_needed": {
+        "1_per_1000": {
+          "tolerance": 0.095,
+          "mc_scale_needed": 269.2347779558838,
+          "mc_needed": 80770
+        },
+        "10_per_1000": {
+          "tolerance": 0.95,
+          "mc_scale_needed": 2.692347779558838,
+          "mc_needed": 808
+        },
+        "100_per_1000": {
+          "tolerance": 9.5,
+          "mc_scale_needed": 0.026923477795588378,
+          "mc_needed": 8
+        },
+        "1000_per_1000": {
+          "tolerance": 95.0,
+          "mc_scale_needed": 0.0002692347779558838,
+          "mc_needed": 0
+        }
+      }
+    },
+    {
+      "graph": "congress_twitter",
+      "n": 475,
+      "budget": 5,
+      "contrast": "seq_vs_degree",
+      "mc": 300,
+      "paired_mean": -11.126666666666667,
+      "paired_se": 2.3846480911276022,
+      "paired_sd": 41.30331652005145,
+      "ci_width_95": 9.347820517220201,
+      "target_size": 95,
+      "mc_needed": {
+        "1_per_1000": {
+          "tolerance": 0.095,
+          "mc_scale_needed": 2420.547047705345,
+          "mc_needed": 726164
+        },
+        "10_per_1000": {
+          "tolerance": 0.95,
+          "mc_scale_needed": 24.205470477053456,
+          "mc_needed": 7262
+        },
+        "100_per_1000": {
+          "tolerance": 9.5,
+          "mc_scale_needed": 0.24205470477053448,
+          "mc_needed": 73
+        },
+        "1000_per_1000": {
+          "tolerance": 95.0,
+          "mc_scale_needed": 0.0024205470477053448,
+          "mc_needed": 1
+        }
+      }
+    }
+  ]
+}

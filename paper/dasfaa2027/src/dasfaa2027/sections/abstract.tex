@@ -12,19 +12,20 @@ the standard RR representation is unavailable. The statement is deliberately nar
 exclude signed decompositions, restricted-instance algorithms, or Monte-Carlo estimation, and it
 does not imply that learning must help. It also requires naming the threshold distribution: under
 uniform-threshold linear thresholds the same instance is monotone, so the two readings cannot be
-conflated. We then give a measurement protocol for the model, because its structure makes five
-specific traps easy to fall into and we fell into all five. Each is stated with the magnitude of
-the error it produces: freezing a node's state instead of re-evaluating it inflates the measured
-spread by $60$--$63\%$ on our densest graph, which is larger than any effect we report; conflating
-the model's simplex threshold law with uniform-threshold linear thresholds reverses the sign of
-non-monotonicity; a share of ``negative'' candidates falls from $44\%$ at $12$ Monte-Carlo trials to
-$0\%$ at $300$ once a candidate must be negative beyond its own paired standard error; pooling seed
-sizes in a state-dependence statistic lets an unsaturated cell with $50\times$ the spread of the
-saturated one decide the answer; and a single candidate pool moves a degree-to-reference gap between
-$0.00\%$ and $98.52\%$, so one draw can flip its sign. We report both what the evidence supports and
-what it does not; the empirical characterisation in an earlier version of this work was measured
-with an incorrect activation rule and at insufficient Monte-Carlo budgets, and is withdrawn rather
-than restated.
+conflated. We then report the regime where this matters, re-measured under the corrected activation
+rule at $300$ paired Monte-Carlo trials per cell: saturation is controlled by the seed
+\emph{fraction} $|S|/n$ rather than the absolute budget, and across eight graphs spanning mean
+degree $4.2$ to $56.0$, out-degree is negatively correlated with the true marginal gain on seven of
+them once $|S|/n \ge 20\%$, while a training-free state-conditioned closed form is the better ranker
+on all eight. We also correct a claim from an earlier version of this work: the share of candidates
+with a negative marginal gain is $0.5\%$ on average and at most $4.0\%$ in any cell, not the
+$8$--$35\%$ we reported from twelve trials per cell. Finally we give a measurement protocol for the
+model --- five checks, each with the measured magnitude of the error it prevents, because we fell
+into all five. The largest is a state-machine error that inflates the measured spread by
+$60$--$63\%$ on our densest graph; conflating the model's simplex threshold law with
+uniform-threshold linear thresholds reverses the sign of non-monotonicity; and a single candidate
+pool moves a degree-to-reference gap between $0.00\%$ and $98.52\%$, so one draw can flip its sign.
+We report both what the evidence supports and what it does not.
 
 \keywords{Influence maximization \and Overexposure \and Marginal gain estimation \and
 Simulation budget \and Negative results}

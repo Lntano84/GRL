@@ -119,12 +119,18 @@ measured gap above, and the structural point that follows: $\lambda$ is a \emph{
 monotone submodular functions, and submodularity is not preserved under differences, so even a
 valid upper bound would not by itself license a sampling-based guarantee.
 
-\paragraph{6. Non-monotonicity is regime-dependent, and we once got this wrong.}
-We initially reported that the objective is effectively monotone, based on a sweep at
-$|S| \le 4000$ on a graph where that is at most $26\%$ coverage and mostly far less. Measured as
-a \emph{fraction}, the objective is clearly non-monotone on most of our graphs
-(Table~\ref{tab:signflip}). Any statement about overexposure that does not report $|S|/n$ should
-be treated with suspicion --- including, historically, ours.
+\paragraph{6. We got non-monotonicity wrong twice, in opposite directions.}
+First we reported that the objective is effectively monotone, based on a sweep at $|S| \le 4000$ on
+a graph where that is at most $26\%$ coverage and mostly far less --- a claim about a \emph{budget}
+presented as a claim about the model. Then, measuring as a \emph{fraction}
+(Table~\ref{tab:regime-fixed}), we over-corrected and reported that between $8\%$ and $35\%$ of
+candidates have a negative marginal gain. That was measured at twelve Monte-Carlo trials per cell,
+and at $300$ trials the share is $0.5\%$ on average with a worst cell of $4.0\%$
+(\S\ref{sec:regime}). Non-monotonicity is real --- \S\ref{sec:coverage} proves it on a one-hop
+instance by exact arithmetic --- but it is rare here, and the operational difficulty is that
+marginal gains become \emph{small} and comparable to their own estimation error. Any statement about
+overexposure that reports neither $|S|/n$ nor the Monte-Carlo budget should be treated with
+suspicion, including, historically, ours.
 
 \paragraph{7. Eight confounds, and what became of each.}
 Withdrawing the measurements of \S\ref{sec:experiments} is necessary but not sufficient; the

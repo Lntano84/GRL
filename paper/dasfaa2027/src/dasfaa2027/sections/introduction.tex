@@ -35,29 +35,28 @@ monotone, so the two readings cannot be conflated.  A weaker version of this arg
 "RR sets are empty", appeared in an earlier draft of this work and is withdrawn; the probe it
 rested on was mis-specified.
 
-Our second contribution is a measurement discipline for the question that follows. A naive
-experiment measures out-degree against the true marginal gain and concludes that degree is fine ---
-we made exactly that mistake, twice. The first time, we swept an absolute budget on a graph where
-that budget was at most $26\%$ coverage and mostly far less; measured as a \emph{fraction}
-$|S|/n$, the same sweep tells a different story, so any statement about overexposure that does not
-report $|S|/n$ should be distrusted. The second time, we read a regime signal out of rank
-correlations computed from twelve Monte-Carlo trials. They were noise: the negative-marginal regime
-has a label signal-to-noise ratio below $1.4$ there, and the same measurement at $300$ trials gives
-a different answer (\S\ref{sec:experiments}). We therefore state the constraint explicitly --- no
-rank correlation in this regime below $\text{MC} \ge 300$, and prefer paired spread comparisons,
-which cancel the noise by construction --- and we list the eight protocol confounds
-(\S\ref{sec:limitations}) that must be removed before a cost-versus-quality comparison between a
-learned and a training-free selector means anything.
+Our second contribution is to identify \emph{when} this matters, re-measured under the corrected
+activation rule at $300$ paired Monte-Carlo trials per cell (\S\ref{sec:regime}). A naive experiment
+measures out-degree against the true marginal gain and concludes that degree is fine --- we made
+exactly that mistake, twice. The first time, we swept an absolute budget on a graph where that
+budget was at most $26\%$ coverage and mostly far less; measured as a \emph{fraction} $|S|/n$, the
+same sweep tells a different story, so any statement about overexposure that does not report
+$|S|/n$ should be distrusted. The second time, we read the regime signal out of twelve Monte-Carlo
+trials per cell. Across eight graphs spanning mean degree $4.2$ to $56.0$, out-degree is negatively
+correlated with the true marginal gain on seven of them once $|S|/n \ge 20\%$ --- NetHEPT, the
+sparsest, is the exception --- and a training-free two-hop closed form is the better ranker on all
+eight. But the same twelve-trial measurement also told us that $8$--$35\%$ of candidates have a
+\emph{negative} marginal gain, and that is false: at $300$ trials the figure is $0.5\%$ on average
+with a worst cell of $4.0\%$. The sign flip is real and the negative-marginal share was Monte-Carlo
+artefact, and only adequate power separates the two.
 
-An earlier version of this work reported the regime characterisation itself, and the baseline
-comparison that followed from it. Those measurements were produced by an activation rule that
-denied an over-exposed node the ability to turn negative, and at Monte-Carlo budgets below the
-threshold we now require; on Congress-Twitter the corrected rule removes $60$--$63\%$ of the
-measured spread, which is larger than every effect that was reported. They are withdrawn, and
+An earlier version of this work reported the baseline comparison that followed from the regime
+characterisation. Those measurements were produced by an activation rule that denied an
+over-exposed node the ability to turn negative and at Monte-Carlo budgets below the threshold we
+now require; on Congress-Twitter the corrected rule removes $60$--$63\%$ of the measured spread,
+which is larger than every effect that was reported. They are withdrawn, and
 \S\ref{sec:experiments} retains them under an explicit marker rather than deleting them, because
 the record of what was measured and of why it was wrong is part of what this paper has to offer.
-Re-deriving them under a frozen model contract with those confounds removed is the immediate next
-step, and we describe what it must control.
 
 \paragraph{Contributions.}
 \begin{itemize}
@@ -68,6 +67,12 @@ step, and we describe what it must control.
         decompositions, not algorithms for restricted instances, not Monte-Carlo estimation, and
         not the possibility that learning helps. It also fails under uniform-threshold linear
         thresholds, which is why the threshold distribution must be named.
+  \item We identify the seed \emph{fraction} as the controlling variable and report a re-measured
+        regime characterisation: across eight graphs, out-degree becomes an anti-signal on seven
+        once $|S|/n \ge 20\%$ while a training-free state-conditioned closed form is the better
+        ranker on all eight (\S\ref{sec:regime}). We also withdraw the negative-marginal share we
+        previously reported from twelve trials per cell; at $300$ trials it is $0.5\%$ on average
+        and $4.0\%$ at worst.
   \item We give a measurement protocol for this model (\S\ref{sec:protocol}) in the form of five
         checks, each stated with the measured magnitude of the error it prevents. The largest is a
         state-machine error that inflates the spread of our densest graph by $60$--$63\%$; the

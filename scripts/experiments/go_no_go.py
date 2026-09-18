@@ -67,6 +67,7 @@ for extra in (ROOT / "src", ROOT / "scripts" / "experiments"):
         sys.path.insert(0, str(extra))
 
 from evaluate_density_degree_signflip import GRAPHS, load as load_graph  # noqa: E402
+from grl.data import graph_loader  # noqa: E402
 from grl.algorithms.sequential_im import (  # noqa: E402
     FILL_BUDGET,
     PATIENCE_2,
@@ -120,7 +121,12 @@ STATIC_ARMS = ("degree_static", "delta2_static")
 #: The candidate pool must be at least this many times the budget.  Below it, the arms converge on
 #: the same set and the cell measures nothing --- the first smoke run had pool=15 against k=95 and
 #: produced identical spreads for every arm with a CI of exactly [0, 0].
-POOL_TO_BUDGET = 4
+#:
+#: Set to 2 rather than 4 deliberately.  On a graph with a 20% target set the eligible seeds are
+#: 0.8n, so a 4x guard caps the reachable seed fraction at |S|/n <= 0.20 and makes the 40% regime
+#: --- where this paper's sign flip is strongest --- unreachable by construction.  At 2x the 40%
+#: cell is exactly reachable (k = 0.4n needs pool = 0.8n = all eligible nodes).
+POOL_TO_BUDGET = 2
 
 
 @dataclass
@@ -154,6 +160,11 @@ class Cell:
     pool_size: int
     pool_draw: int
     pool_strategy: str
+    #: True when the budget forced the pool to be the whole eligible set, so the pool draws are not
+    #: independent replicates of anything.
+    pool_covers_all_eligible: bool
+    #: pool_size / budget.  The arms need room to differ; 1.0 means no choice at all.
+    pool_to_budget: float
     random_seed: int
     reference_mc: int
     eval_mc: int
@@ -317,7 +328,7 @@ def run_adaptive(graph, pool, budget, *, oracle_mc, params, random_seed, stoppin
 
 
 def run_delta2_patience(graph, pool, budget, *, state_mc, params, random_seed, stopping,
-                        eval_mc, **_):
+                        eval_mc=None, **_):
     """Sequential ranking **plus a stopping rule driven by the observed spread**.
 
     Why this arm exists, and how it differs from :func:`run_delta2_sequential`
@@ -445,6 +456,37 @@ def paired_spreads(graph, nodes, seed_sets: dict[str, list[int]], trials: int, s
     return per_trial
 
 
+def load_raw(name: str) -> nx.DiGraph:
+    """Load a graph **without** normalising its in-weights.
+
+    The obvious loader, ``evaluate_density_degree_signflip.load``, normalises internally.  Feeding
+    its output to ``normalise_in_weights`` therefore applies the strategy to an
+    already-normalised graph: every strategy becomes a no-op and ``sum_to_one`` and ``clip_to_one``
+    produce byte-identical numbers.  That is exactly what the first version of this runner did, and
+    the identical columns were the tell.
+
+    Comparing weight strategies requires the file's own weights, so this bypasses the wrapper.
+    """
+    path, directed = GRAPHS[name]
+    graph, _ = graph_loader._parse_graph_file(path, directed, 0.01)
+    return graph
+
+
+def raw_weight_profile(graph: nx.DiGraph) -> dict:
+    """What the file actually carries, so a no-op strategy is visible before it is run."""
+    from grl.data.weights import in_weight_totals
+
+    totals = sorted(in_weight_totals(graph).values())
+    nonzero = [t for t in totals if t > 0.0]
+    return {
+        "max_in_total": totals[-1] if totals else 0.0,
+        "min_nonzero_in_total": nonzero[0] if nonzero else 0.0,
+        "nodes_over_one": sum(1 for t in totals if t > 1.0 + 1e-9),
+        "nodes_at_one": sum(1 for t in totals if abs(t - 1.0) <= 1e-9),
+        "n": len(totals),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -492,6 +534,11 @@ def main() -> int:
                              "need it. Pass --arms delta2_sequential degree_static delta2_static for "
                              "Gate 1(b) alone: the full-pool reference costs O(k*|pool|*MC) and "
                              "would otherwise dominate the run.")
+    parser.add_argument("--max-seeds", type=int, default=1200,
+                        help="skip cells whose realised k exceeds this. The sequential arm reads the "
+                             "state once per seed, so its cost is O(k * state_mc) cascades; past a "
+                             "few thousand seeds that is hours per cell on a 15k-node graph. "
+                             "Skipped cells are recorded with the reason, not silently dropped.")
     parser.add_argument("--random-seed", type=int, default=20260917)
     parser.add_argument("--output", type=Path,
                         default=ROOT / "docs" / "results" / "go_no_go.json")
@@ -514,6 +561,7 @@ def main() -> int:
           f"{'  + full-pool reference' if want_reference else '  (no full-pool reference)'}")
     cells: list[Cell] = []
     skipped: list[dict] = []
+    failures: list[dict] = []
 
     def flush() -> None:
         args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -554,13 +602,23 @@ def main() -> int:
             },
             "cells": [asdict(c) for c in cells],
             "skipped_cells": skipped,
+            "arm_failures": failures,
         }, indent=2), encoding="utf-8")
 
     started_all = time.time()
     for graph_name in args.graphs:
-        base_graph = load_graph(graph_name)
+        raw_graph = load_raw(graph_name)
+        profile = raw_weight_profile(raw_graph)
+        print(f"  [{graph_name} raw in-weights] max_total={profile['max_in_total']:.4f} "
+              f"min_nonzero={profile['min_nonzero_in_total']:.4f} "
+              f"nodes_over_1={profile['nodes_over_one']} nodes_at_1={profile['nodes_at_one']}"
+              f"/{profile['n']}", flush=True)
+        if profile["nodes_over_one"] == 0 and profile["nodes_at_one"] == profile["n"]:
+            print(f"  NOTE: {graph_name} already has every in-weight total at exactly 1, so "
+                  f"sum_to_one and clip_to_one are identical here and the strategy comparison is "
+                  f"degenerate on this graph.  Reported rather than silently duplicated.")
         for normalisation in args.normalisations:
-            graph = normalise_in_weights(base_graph.copy(), normalisation)
+            graph = normalise_in_weights(raw_graph.copy(), normalisation)
             scale = describe_normalisation(graph)
             nodes = list(graph.nodes())
             n = len(nodes)
@@ -610,7 +668,30 @@ def main() -> int:
                                           "select the same set",
                             })
                             continue
+                        if budget > args.max_seeds:
+                            # The sequential arm reads the state once per seed, so its cost is
+                            # O(k * state_mc) cascades.  Past a few thousand seeds that is hours per
+                            # cell on a 15k-node graph, and the cell is not worth it: |S|/n is what
+                            # matters, and a smaller graph reaches the same fraction for less.
+                            print(f"  SKIP k={budget} (|S|/n={realised_fraction:.3f}) on "
+                                  f"{graph_name}: exceeds --max-seeds {args.max_seeds}; the "
+                                  f"sequential arm's cost is O(k * state_mc)", flush=True)
+                            skipped.append({
+                                "graph": graph_name, "normalisation": normalisation,
+                                "budget": budget, "fraction": realised_fraction,
+                                "pool_draw": draw, "random_seed": seed,
+                                "eligible": len(eligible),
+                                "reason": f"k > --max-seeds ({args.max_seeds}); sequential state "
+                                          f"reads cost O(k * state_mc)",
+                            })
+                            continue
                         pool = degree_stratified_pool(graph, eligible, pool_size, rng)
+                        # When the budget forces the pool to be the entire eligible set, the pool
+                        # draws are not independent: there is nothing left to vary.  Observed on
+                        # congress_twitter at |S|/n = 0.20, where 4 x 95 = 380 equals the number of
+                        # eligible nodes and all three draws gave identical spreads.  Recorded
+                        # rather than reported as three independent replicates.
+                        pool_covers_all = pool_size >= len(eligible)
                         contract.objective.check_seed_eligibility(pool)
 
                         t0 = time.time()
@@ -636,10 +717,17 @@ def main() -> int:
                                 seeds_arm, info = fn(
                                     graph, pool, budget, oracle_mc=args.reference_mc,
                                     params=params, random_seed=seed, stopping=stopping,
-                                    shortlist=args.shortlist, state_mc=args.state_mc)
+                                    shortlist=args.shortlist, state_mc=args.state_mc,
+                                    eval_mc=args.eval_mc)
                             except Exception as exc:
-                                print(f"    !! {arm_name} failed: {type(exc).__name__}: {exc}",
-                                      flush=True)
+                                # A failing arm must be loud, not silently absent: an arm that
+                                # disappears from the table looks like an arm that was never run,
+                                # and the first version of delta2_patience did exactly that when its
+                                # signature did not match the dispatcher.
+                                print(f"    !! {arm_name} FAILED and is absent from this cell: "
+                                      f"{type(exc).__name__}: {exc}", flush=True)
+                                failures.append({"graph": graph_name, "arm": arm_name,
+                                                 "budget": budget, "error": repr(exc)})
                                 continue
                             seed_sets[arm_name] = seeds_arm
                             meta[arm_name] = info
@@ -704,6 +792,8 @@ def main() -> int:
                             max_in_weight_total=scale["max_in_weight_total"],
                             target_size=target_size, budget=budget, pool_size=len(pool),
                             pool_draw=draw, pool_strategy="degree_stratified",
+                            pool_covers_all_eligible=pool_covers_all,
+                            pool_to_budget=(len(pool) / budget if budget else float("nan")),
                             random_seed=seed, reference_mc=args.reference_mc,
                             eval_mc=args.eval_mc, state_mc=args.state_mc,
                             stopping_rule=args.stopping,

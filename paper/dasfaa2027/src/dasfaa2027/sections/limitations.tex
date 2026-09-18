@@ -148,12 +148,23 @@ part of the record.
   \item \textbf{A noisy estimator presented as an oracle.} \emph{Reproduced.} Greedy at
         $\text{MC} = 25$ is neither exact nor globally optimal and was labelled an oracle. The name
         now carries the Monte-Carlo budget, and an exact reference is a separate arm.
-  \item \textbf{Mixed seed sizes in one statistic.} \emph{Reproduced.} A within/between comparison
-        that pools $|S| \in \{0, k, 2k, 3k\}$ is dominated by the $|S| = 0$ cells, whose marginals
-        are two orders of magnitude larger.
+  \item \textbf{Mixed seed sizes in one statistic.} \emph{Reproduced, and it changed a verdict.} A
+        within/between comparison that pooled $|S| \in \{0, k, 2k, 3k\}$ is dominated by the
+        $|S| = 0$ cell, whose marginals are two orders of magnitude larger. Measured on
+        Congress-Twitter, the between-candidate standard deviation is $34.86$ at $|S| = 0$ against
+        $4.32$ at $|S| = 2$ and $2.16$ at $|S| = 4$, so the pooled ratio landed near the unsaturated
+        value. The verdicts that a graph is \emph{not} state dependent --- ca-GrQc at $0.64$ and
+        NetHEPT at $0.075$ --- could therefore have been produced by the pooling rather than by the
+        graphs. The ratio is now computed inside one seed size and reported per size, and a cell
+        counts only when it clears the threshold at the seed size where the headroom was measured.
+        Re-running the sweep is in progress; until it finishes we make no state-dependence claim.
   \item \textbf{Selection bias in the candidate pool.} \emph{Reproduced.} A single random $30$-node
-        pool makes regime selection an uncontrolled variable; the pool must be stratified or the
-        sweep repeated.
+        pool makes regime selection an uncontrolled variable. In a smoke run on Congress-Twitter at
+        $k = 2$ the degree-to-reference gap ranged from $0.90\%$ to $13.49\%$ across two pools --- an
+        order of magnitude --- so one draw can decide the verdict. The pool is now drawn
+        degree-stratified so its profile matches the graph's by construction, and the measurement
+        repeats over independent pools so the reported headroom comes with a min--max band rather
+        than a point.
   \item \textbf{Splits that do not deduplicate.} \emph{Alleged, not reproduced.} Splitting by
         context identifier could in principle place an identical seed set on both sides of a split.
         We checked: on our generators every context already has a distinct seed set and a
@@ -167,9 +178,13 @@ part of the record.
         anything. The paired estimator already formed per-trial differences, so the standard error
         was available at no extra cost; it is now recorded and reported next to the mean gain.
   \item \textbf{Weights normalised beyond what the model allows.} \emph{Reproduced.} In-edge weights
-        are normalised to sum to exactly $1$, whereas the model requires at most $1$. Every graph
-        must be reported with the normalisation actually used, and the choice must be varied as a
-        sensitivity check.
+        are normalised to sum to exactly $1$, whereas the model requires at most $1$. On a uniformly
+        weighted sparse file the two readings differ by a factor of $50$ in the exposure scale
+        ($0.02$ against $1.00$ per node), which decides whether any node is over-exposed at all.
+        Four strategies are now named --- \texttt{sum\_to\_one}, \texttt{clip\_to\_one},
+        \texttt{uniform\_share}, \texttt{as\_given} --- the one used is recorded on the graph and
+        reported with the exposure scale, and a graph that exceeds the allowance is refused rather
+        than silently repaired.
 \end{enumerate}
 
 Two of these interact with the model fix in the same direction: defect 2 charges nothing for the

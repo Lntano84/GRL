@@ -52,6 +52,7 @@ class OverexposureMarginalSample:
     label_std: float
     base_spread: float
     extended_spread: float
+    label_trials: int = 0
     exposure: list[float] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
@@ -159,19 +160,25 @@ def build_overexposure_dataset(
         # The state a deployed policy observes: one cascade under the same windows.
         state = oracle.state(seeds, step=base_seed + index)
         base = oracle.spread(seeds)
-        scores = oracle.score(seeds, candidates, step=base_seed + index)
+        # ``score_with_uncertainty`` rather than ``score``: confound P1-3.7 was that label_std was
+        # recorded as NaN, so a candidate difference was never compared against the error of
+        # estimating it.  The paired standard error is available at no extra cost because the
+        # per-trial differences are formed before averaging anyway.
+        scored = oracle.score_with_uncertainty(seeds, candidates, step=base_seed + index)
 
         context_id = f"ctx_{index:05d}"
         samples = []
         for candidate in candidates:
-            gain = scores[candidate]
+            row = scored[candidate]
+            gain = row["mean"]
             samples.append(OverexposureMarginalSample(
                 context_id=context_id,
                 seed_set=list(seeds),
                 candidate=int(candidate),
                 seed_set_size=len(seeds),
                 marginal_gain=float(gain),          # SIGNED -- negatives are kept
-                label_std=float("nan"),             # per-candidate stderr not tracked by score()
+                label_std=float(row["stderr"]),     # paired stderr, not NaN
+                label_trials=int(row["n"]),
                 base_spread=float(base["mean"]),
                 extended_spread=float(base["mean"] + gain),
                 exposure=list(state),
@@ -184,19 +191,46 @@ def build_overexposure_dataset(
     by_size: dict[int, list[tuple[str, list[OverexposureMarginalSample]]]] = {}
     for context in contexts:
         by_size.setdefault(context[1][0].seed_set_size, []).append(context)
+
+    # Confound P1-3.6 alleged that splitting by context id lets identical seed sets straddle the
+    # boundary.  Measured on this builder it does not: ``_make_seed_set`` gives each index a distinct
+    # seed set and candidates are drawn without replacement, so every context is already a distinct
+    # state (zero duplicates at 12/24/48/120 contexts).  The grouping below is therefore a *guard*,
+    # not a repair: it makes "no state crosses the boundary" an invariant of this code instead of a
+    # property that happens to hold, so changing the generator cannot silently introduce the leak.
+    # No previously reported number changes because of it, and none should be claimed to.
+    assigned: dict[str, str] = {}
     for size_contexts in by_size.values():
         rng.shuffle(size_contexts)
-        split_ids = _split_context_ids([cid for cid, _ in size_contexts], split)
+        # group context ids by their state fingerprint, so all copies of a state travel together
+        groups: dict[tuple, list[str]] = {}
         for context_id, samples in size_contexts:
+            fingerprint = (
+                tuple(sorted(samples[0].seed_set)),
+                tuple(sorted(s.candidate for s in samples)),
+            )
+            groups.setdefault(fingerprint, []).append(context_id)
+        group_keys = sorted(groups)
+        rng.shuffle(group_keys)
+        split_ids = _split_context_ids([f"group_{i:05d}" for i in range(len(group_keys))], split)
+        for index, key in enumerate(group_keys):
             for name, ids in split_ids.items():
-                if context_id in ids:
-                    result[name].extend(samples)
+                if f"group_{index:05d}" in ids:
+                    for context_id in groups[key]:
+                        assigned[context_id] = name
                     break
+
+    for context_id, samples in contexts:
+        result[assigned[context_id]].extend(samples)
     return result
 
 
 def dataset_statistics(splits: dict[str, list[OverexposureMarginalSample]]) -> dict[str, Any]:
-    """Report the signed-label shape, including the negative share, which must not be hidden."""
+    """Report the signed-label shape, including the negative share, which must not be hidden.
+
+    ``mean_label_std`` is reported next to ``mean_gain`` on purpose: a candidate difference is only
+    interpretable against the error of estimating it, so the two belong in the same summary.
+    """
     stats: dict[str, Any] = {}
     for name, samples in splits.items():
         if not samples:
@@ -204,6 +238,7 @@ def dataset_statistics(splits: dict[str, list[OverexposureMarginalSample]]) -> d
             continue
         gains = [s.marginal_gain for s in samples]
         negatives = sum(1 for g in gains if g < 0)
+        stds = [s.label_std for s in samples if not math.isnan(s.label_std)]
         stats[name] = {
             "n": len(samples),
             "contexts": len({s.context_id for s in samples}),
@@ -211,6 +246,8 @@ def dataset_statistics(splits: dict[str, list[OverexposureMarginalSample]]) -> d
             "min_gain": min(gains),
             "max_gain": max(gains),
             "negative_share": negatives / len(gains),
+            "mean_label_std": (sum(stds) / len(stds)) if stds else float("nan"),
+            "label_std_is_recorded": len(stds) == len(samples),
         }
     return stats
 

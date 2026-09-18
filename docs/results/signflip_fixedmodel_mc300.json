@@ -18,6 +18,22 @@
       "max_out_degree": 210,
       "max_in_degree": 127,
       "rho_in_out": 0.4911298510030374
+    },
+    "email_eu_core": {
+      "n": 1005,
+      "m": 25571,
+      "mean_degree": 50.88756218905473,
+      "max_out_degree": 334,
+      "max_in_degree": 212,
+      "rho_in_out": 0.9046628886889739
+    },
+    "facebook": {
+      "n": 4039,
+      "m": 88234,
+      "mean_degree": 43.69101262688784,
+      "max_out_degree": 1043,
+      "max_in_degree": 251,
+      "rho_in_out": 0.3641148069944201
     }
   },
   "cells": [
@@ -71,6 +87,91 @@
       "rho_degree": -0.1325949604742623,
       "rho_delta2": 0.23007277634639747,
       "seconds": 40.55891013145447
+    },
+    {
+      "graph": "congress_twitter",
+      "graph_mean_degree": 55.95368421052632,
+      "n": 475,
+      "seed_size": 48,
+      "seed_fraction": 0.10105263157894737,
+      "mc_runs": 300,
+      "candidates": 50,
+      "mean_gain": 0.8370000000000001,
+      "paired_se": 0.23222225548943304,
+      "gain_sd": 0.2830133487232635,
+      "negative_share": 0.0,
+      "negative_beyond_noise": 0.0,
+      "rho_degree": 0.40596324925195876,
+      "rho_delta2": -0.31987898370982887,
+      "seconds": 43.85481286048889
+    },
+    {
+      "graph": "email_eu_core",
+      "graph_mean_degree": 50.88756218905473,
+      "n": 1005,
+      "seed_size": 100,
+      "seed_fraction": 0.09950248756218906,
+      "mc_runs": 300,
+      "candidates": 50,
+      "mean_gain": 0.8029333333333334,
+      "paired_se": 0.23041331152664257,
+      "gain_sd": 0.25205787695157106,
+      "negative_share": 0.0,
+      "negative_beyond_noise": 0.0,
+      "rho_degree": -0.049312152315835175,
+      "rho_delta2": 0.03346493737124406,
+      "seconds": 114.86492276191711
+    },
+    {
+      "graph": "email_eu_core",
+      "graph_mean_degree": 50.88756218905473,
+      "n": 1005,
+      "seed_size": 201,
+      "seed_fraction": 0.2,
+      "mc_runs": 300,
+      "candidates": 50,
+      "mean_gain": 0.8082666666666667,
+      "paired_se": 0.14036290661456527,
+      "gain_sd": 0.20820635063427928,
+      "negative_share": 0.0,
+      "negative_beyond_noise": 0.0,
+      "rho_degree": -0.1393031542316755,
+      "rho_delta2": 0.10588640851754831,
+      "seconds": 105.0129063129425
+    },
+    {
+      "graph": "email_eu_core",
+      "graph_mean_degree": 50.88756218905473,
+      "n": 1005,
+      "seed_size": 402,
+      "seed_fraction": 0.4,
+      "mc_runs": 300,
+      "candidates": 50,
+      "mean_gain": 0.6975333333333333,
+      "paired_se": 0.08827878221351616,
+      "gain_sd": 0.1597648410772672,
+      "negative_share": 0.0,
+      "negative_beyond_noise": 0.0,
+      "rho_degree": -0.33220298048594055,
+      "rho_delta2": 0.37157583172373104,
+      "seconds": 92.74833679199219
+    },
+    {
+      "graph": "facebook",
+      "graph_mean_degree": 43.69101262688784,
+      "n": 4039,
+      "seed_size": 404,
+      "seed_fraction": 0.10002475860361476,
+      "mc_runs": 300,
+      "candidates": 50,
+      "mean_gain": 1.9805333333333335,
+      "paired_se": 0.16789084522775385,
+      "gain_sd": 5.378409527814788,
+      "negative_share": 0.0,
+      "negative_beyond_noise": 0.0,
+      "rho_degree": -0.04397195958187751,
+      "rho_delta2": 0.7843133493776219,
+      "seconds": 307.81980776786804
     }
   ]
 }

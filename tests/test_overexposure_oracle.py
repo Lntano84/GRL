@@ -177,11 +177,73 @@ def test_stats_reset():
     graph = make_graph()
     oracle = OverexposureMonteCarloOracle(graph, mc_runs=5)
     oracle.score([0], list(graph.nodes())[:3])
+    oracle.state([0])
     assert oracle.stats.mc_cascades > 0
+    assert oracle.stats.state_cascades > 0
     oracle.stats.reset()
+    # Every counter must be zero after a reset; the set is pinned in full so that a new cost
+    # channel cannot be added without this test noticing.
     assert oracle.stats.as_dict() == {
-        "mc_cascades": 0, "candidate_evaluations": 0, "spread_queries": 0
+        "mc_cascades": 0,
+        "candidate_evaluations": 0,
+        "spread_queries": 0,
+        "state_reads": 0,
+        "state_cascades": 0,
+        "cascades_for_scoring": 0,
     }
+
+
+def test_state_acquisition_is_priced():
+    """Confound P1-3.2: the state a state-conditioned policy reads costs cascades.
+
+    Reporting that policy at zero cost next to policies charged for every cascade makes the cost
+    column meaningless, so the acquisition must be visible in the same accounting --- and it must
+    be a *breakdown* of the primary unit, so that a caller charging ``mc_cascades`` cannot
+    accidentally give a state-conditioned policy free state.
+    """
+    graph = make_graph()
+    mc = 7
+    oracle = OverexposureMonteCarloOracle(graph, mc_runs=mc)
+    assert oracle.stats.mc_cascades == 0
+    oracle.state([0])
+    assert oracle.stats.state_reads == 1
+    assert oracle.stats.state_cascades == mc
+    assert oracle.stats.mc_cascades == mc, "the state must be inside the primary cost unit"
+    assert oracle.stats.cascades_for_scoring == 0
+
+    # scoring adds to the same unit, and the two channels partition it rather than double-count
+    oracle.score([0], list(graph.nodes())[:2])
+    assert oracle.stats.state_cascades == mc
+    assert oracle.stats.mc_cascades > mc
+    assert oracle.stats.cascades_for_scoring == oracle.stats.mc_cascades - mc
+    assert (oracle.stats.cascades_for_scoring + oracle.stats.state_cascades
+            == oracle.stats.mc_cascades), "the breakdown must sum to the total, not exceed it"
+
+
+def test_score_with_uncertainty_reports_a_paired_standard_error():
+    """Confound P1-3.7: a candidate difference must be comparable to its own estimation error."""
+    graph = make_graph(n=30, seed=11)
+    mc = 60
+    oracle = OverexposureMonteCarloOracle(graph, mc_runs=mc, random_seed=5)
+    candidates = list(graph.nodes())[:4]
+
+    rows = oracle.score_with_uncertainty([0], candidates)
+    assert set(rows) == set(candidates)
+    for v, row in rows.items():
+        assert row["n"] == mc
+        assert row["stderr"] >= 0.0
+    # the point estimates must agree exactly with the plain score, which averages the same trials
+    oracle.stats.reset()
+    plain = oracle.score([0], candidates)
+    for v in candidates:
+        assert plain[v] == rows[v]["mean"]
+
+    # a standard error is not a standard deviation: with enough trials it must be smaller
+    wide = OverexposureMonteCarloOracle(graph, mc_runs=4 * mc, random_seed=5)
+    wide_rows = wide.score_with_uncertainty([0], candidates)
+    mean_se = sum(r["stderr"] for r in rows.values()) / len(rows)
+    wide_se = sum(r["stderr"] for r in wide_rows.values()) / len(wide_rows)
+    assert wide_se < mean_se, "quadrupling the trials must shrink the standard error"
 
 
 def test_spread_mean_is_consistent_with_brute_force():

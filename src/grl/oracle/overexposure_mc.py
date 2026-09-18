@@ -1,4 +1,4 @@
-﻿"""State-tracking Monte-Carlo oracle for the overexposure diffusion model.
+"""State-tracking Monte-Carlo oracle for the overexposure diffusion model.
 
 This is the ground-truth reference for every experiment in this project.  It replaces
 :class:`grl.oracle.marginal.BatchedMonteCarloMarginalOracle`, which samples a *live-edge graph*
@@ -45,23 +45,47 @@ class OverexposureOracleStats:
     ``mc_cascades`` is the primary cost unit: the number of single-cascade simulations spent.
     It is the quantity that must be held equal across methods in any comparison, and it is what
     the quality-vs-cost figures are plotted against.
+
+    ``state_reads`` and ``state_cascades`` exist because of confound P1-3.2.  A state-conditioned
+    policy needs the realised exposure vector ``delta`` before it can score anything, and obtaining
+    that vector costs cascades.  Earlier scripts reported that policy's cost as *zero*, next to
+    policies that were charged for every cascade, which makes the cost column meaningless.
+
+    ``state_cascades`` is a **breakdown of** ``mc_cascades``, not a parallel channel: every cascade
+    spent on a state read is also counted in ``mc_cascades``.  That is deliberate.  Any caller that
+    charges ``mc_cascades`` therefore charges the state automatically and cannot under-report a
+    state-conditioned policy by forgetting a second counter.  ``cascades_for_scoring`` gives the
+    complement, so the free-state variant can still be studied --- but only by subtracting the
+    state spend on purpose.
     """
 
     mc_cascades: int = 0
     candidate_evaluations: int = 0
     spread_queries: int = 0
+    state_reads: int = 0
+    state_cascades: int = 0
+
+    @property
+    def cascades_for_scoring(self) -> int:
+        """Cascades spent on scoring, i.e. everything except state acquisition."""
+        return self.mc_cascades - self.state_cascades
 
     def as_dict(self) -> dict[str, int]:
         return {
             "mc_cascades": self.mc_cascades,
             "candidate_evaluations": self.candidate_evaluations,
             "spread_queries": self.spread_queries,
+            "state_reads": self.state_reads,
+            "state_cascades": self.state_cascades,
+            "cascades_for_scoring": self.cascades_for_scoring,
         }
 
     def reset(self) -> None:
         self.mc_cascades = 0
         self.candidate_evaluations = 0
         self.spread_queries = 0
+        self.state_reads = 0
+        self.state_cascades = 0
 
 
 class OverexposureMonteCarloOracle:
@@ -144,7 +168,9 @@ class OverexposureMonteCarloOracle:
         draw.  The returned list is indexed by position in ``list(graph.nodes())`` so it can be
         turned into a node-ordered feature vector by the caller.
 
-        Cost is ``mc_runs`` cascades, counted like any other query.
+        Cost is ``mc_runs`` cascades.  Confound P1-3.2 was that this cost was reported as zero; the
+        cascades are now tagged in ``stats.state_cascades``, which is a breakdown of
+        ``stats.mc_cascades``, so a caller that charges ``mc_cascades`` charges the state too.
         """
         seed_list = list(seeds)
         base_seed = self._call_seed(step)
@@ -153,6 +179,7 @@ class OverexposureMonteCarloOracle:
             rng = random.Random(base_seed + offset)
             windows = self._draw_windows(rng)
             self.stats.mc_cascades += 1
+            self.stats.state_cascades += 1
             run = oe.run_overexposure(
                 self.graph,
                 seed_list,
@@ -162,6 +189,7 @@ class OverexposureMonteCarloOracle:
             )
             for position, node in enumerate(self._nodes):
                 totals[position] += run.delta.get(node, 0.0)
+        self.stats.state_reads += 1
         return [value / self.mc_runs for value in totals]
 
     def spread(self, seeds: Iterable[int]) -> dict[str, float]:
@@ -188,21 +216,51 @@ class OverexposureMonteCarloOracle:
 
         All candidates in one call share the sampled windows within each trial, so the *differences*
         between them are free of window-draw noise even though each individual estimate is noisy.
+
+        Use :meth:`score_with_uncertainty` when the caller needs to compare a candidate difference
+        against its own estimation error; this method returns the point estimates alone, which is
+        what the greedy selectors want.
+        """
+        if not candidates:
+            return {}
+        return {v: row["mean"] for v, row in self.score_with_uncertainty(
+            seeds, candidates, step=step).items()}
+
+    def score_with_uncertainty(
+        self, seeds: list[int], candidates: list[int], step: int = 0
+    ) -> dict[int, dict[str, float]]:
+        """Paired marginal gain per candidate, **with** its standard error and trial count.
+
+        Confound P1-3.7 was that the dataset recorded ``label_std`` as ``NaN``, so a candidate
+        difference was never compared against the error of estimating it --- which is exactly the
+        comparison that decides whether a rank correlation in the saturated regime means anything.
+        The paired per-trial differences are formed before averaging, so ``stderr`` here is the
+        standard error of the *difference*, not of two independent spreads.
         """
         if not candidates:
             return {}
         seed_list = list(seeds)
         base_seed = self._call_seed(step)
-        totals = {int(v): 0.0 for v in candidates}
+        per_trial: dict[int, list[float]] = {int(v): [] for v in candidates}
 
         for offset in range(self.mc_runs):
             rng = random.Random(base_seed + offset)
             windows = self._draw_windows(rng)
             base = float(self._spread_once(seed_list, windows, rng))
             for candidate in candidates:
-                totals[int(candidate)] += (
+                per_trial[int(candidate)].append(
                     float(self._spread_once([*seed_list, candidate], windows, rng)) - base
                 )
 
         self.stats.candidate_evaluations += len(candidates)
-        return {v: total / self.mc_runs for v, total in totals.items()}
+        out: dict[int, dict[str, float]] = {}
+        for v, values in per_trial.items():
+            n = len(values)
+            mean = sum(values) / n
+            if n > 1:
+                var = sum((x - mean) ** 2 for x in values) / n
+                stderr = (var / n) ** 0.5
+            else:
+                stderr = 0.0
+            out[v] = {"mean": mean, "stderr": stderr, "n": float(n)}
+        return out

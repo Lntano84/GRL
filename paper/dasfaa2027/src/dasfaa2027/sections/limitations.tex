@@ -126,37 +126,53 @@ a \emph{fraction}, the objective is clearly non-monotone on most of our graphs
 (Table~\ref{tab:signflip}). Any statement about overexposure that does not report $|S|/n$ should
 be treated with suspicion --- including, historically, ours.
 
-\paragraph{7. Eight confounds must be removed before any new number is reported.}
+\paragraph{7. Eight confounds, and what became of each.}
 Withdrawing the measurements of \S\ref{sec:experiments} is necessary but not sufficient; the
 measurement apparatus itself has the following defects, each of which can change a conclusion
 independently of the model fix. They are listed here rather than in a private note because a
-reviewer cannot verify a number whose protocol is not stated.
+reviewer cannot verify a number whose protocol is not stated. We also state, for each, whether the
+defect was reproduced or only alleged: two of the eight turned out not to bite, and saying so is
+part of the record.
 
 \begin{enumerate}
-  \item \textbf{Inconsistent stopping under a budget of \emph{at most} $k$.} One policy selects a
-        seed with negative marginal gain while another stops at the first non-positive gain. Under
-        $\le k$ both are admissible, so the two are not comparable; the stopping rule must be part
-        of the policy and stated.
-  \item \textbf{Unpriced state acquisition.} Obtaining the exposure vector $\delta_2$ needs one
-        cascade, but it is reported at zero cost next to policies that are charged for their
-        cascades. The cost column is therefore not a like-for-like comparison.
-  \item \textbf{A noisy estimator presented as an oracle.} Greedy at $\text{MC} = 25$ is neither
-        exact nor globally optimal and must not be called an oracle; it needs a high-accuracy
-        reference with a reported tolerance.
-  \item \textbf{Mixed seed sizes in one statistic.} A within/between comparison that pools
-        $|S| \in \{0, k, 2k, 3k\}$ is dominated by the $|S| = 0$ cells.
-  \item \textbf{Selection bias in the candidate pool.} A single random $30$-node pool makes regime
-        selection an uncontrolled variable; the pool must be stratified or the sweep repeated.
-  \item \textbf{Splits that do not deduplicate.} Splitting by context identifier allows identical
-        seed sets to appear on both sides of a split.
-  \item \textbf{Unreported label uncertainty.} Recording $\sigma$ of the label as \texttt{NaN}
-        means candidate differences were never compared against estimation error.
-  \item \textbf{Weights normalised beyond what the model allows.} In-edge weights are normalised to
-        sum to exactly $1$, whereas the model requires at most $1$. Every graph must be reported
-        with the normalisation actually used, and the choice must be varied as a sensitivity check.
+  \item \textbf{Inconsistent stopping under a budget of \emph{at most} $k$.} \emph{Reproduced.} One
+        policy selects a seed with negative marginal gain while another stops at the first
+        non-positive gain. Under $\le k$ both are admissible, so the two are not comparable. The
+        rule is now an explicit argument recorded in every decision, and a policy that cannot
+        evaluate a rule refuses it rather than guessing.
+  \item \textbf{Unpriced state acquisition.} \emph{Reproduced.} Obtaining the exposure vector
+        $\delta_2$ needs one cascade, but it was reported at zero cost next to policies charged for
+        their cascades. The state spend is now a breakdown of the same primary cost unit, so any
+        caller that charges cascades charges the state, and it cannot be omitted by forgetting a
+        second counter.
+  \item \textbf{A noisy estimator presented as an oracle.} \emph{Reproduced.} Greedy at
+        $\text{MC} = 25$ is neither exact nor globally optimal and was labelled an oracle. The name
+        now carries the Monte-Carlo budget, and an exact reference is a separate arm.
+  \item \textbf{Mixed seed sizes in one statistic.} \emph{Reproduced.} A within/between comparison
+        that pools $|S| \in \{0, k, 2k, 3k\}$ is dominated by the $|S| = 0$ cells, whose marginals
+        are two orders of magnitude larger.
+  \item \textbf{Selection bias in the candidate pool.} \emph{Reproduced.} A single random $30$-node
+        pool makes regime selection an uncontrolled variable; the pool must be stratified or the
+        sweep repeated.
+  \item \textbf{Splits that do not deduplicate.} \emph{Alleged, not reproduced.} Splitting by
+        context identifier could in principle place an identical seed set on both sides of a split.
+        We checked: on our generators every context already has a distinct seed set and a
+        without-replacement candidate draw, so there are zero duplicate states at $12$, $24$, $48$
+        and $120$ contexts. The split now groups by the canonical (seed set, candidate set) state so
+        the invariant is enforced rather than incidental, but \emph{no number changed} because of
+        it, and we do not claim that any did.
+  \item \textbf{Unreported label uncertainty.} \emph{Reproduced.} Recording the label's standard
+        error as \texttt{NaN} meant a candidate difference was never compared against the error of
+        estimating it --- the comparison that decides whether a rank correlation in this regime means
+        anything. The paired estimator already formed per-trial differences, so the standard error
+        was available at no extra cost; it is now recorded and reported next to the mean gain.
+  \item \textbf{Weights normalised beyond what the model allows.} \emph{Reproduced.} In-edge weights
+        are normalised to sum to exactly $1$, whereas the model requires at most $1$. Every graph
+        must be reported with the normalisation actually used, and the choice must be varied as a
+        sensitivity check.
 \end{enumerate}
 
 Two of these interact with the model fix in the same direction: defect 2 charges nothing for the
 state that the correction makes more valuable, and defect 8 sets the exposure scale that decides
 whether any node is over-exposed at all. A re-derived table that fixes the state machine but not
-these eight would not be trustworthy.
+these would not be trustworthy.

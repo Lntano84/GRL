@@ -51,9 +51,14 @@ if str(ROOT / "scripts" / "experiments") not in sys.path:
 from evaluate_density_degree_signflip import GRAPHS, load as load_graph  # noqa: E402
 from evaluate_overexposure_pool_ranking import spearman  # noqa: E402
 from grl.algorithms.sequential_im import (  # noqa: E402
+    FILL_BUDGET,
+    PATIENCE_2,
+    STOP_ON_NON_POSITIVE,
+    StoppingRule,
     adaptive_selective_greedy,
     full_oracle_greedy,
     learned_greedy,
+    reference_policy_name,
     selective_greedy,
 )
 from grl.diffusion.params import resolve_overexposure_params  # noqa: E402
@@ -298,6 +303,7 @@ class MethodResult:
     spread_stderr: float
     gap_to_oracle: float
     mc_cascades: int
+    state_cascades: int
     verified_total: int
     accepted_steps: int
     envelope_steps: int
@@ -319,22 +325,36 @@ def run_policy(
     batch_m: int = 4,
     max_m: int | None = None,
     oracle_spread: float | None = None,
+    stopping: StoppingRule = FILL_BUDGET,
 ) -> MethodResult:
     before = exact.stats.mc_cascades
+    before_state = exact.stats.state_cascades
     if policy == "learned_only":
-        result = learned_greedy(pool, budget, learned)
+        # A prediction-only policy has no observed spread of its own, so only fill_budget and
+        # patience are available to it; stop_on_non_positive would be deciding on a prediction.
+        result = learned_greedy(pool, budget, learned, stopping=stopping,
+                                spread_of=(evaluator.spread if stopping.patience else None))
     elif policy == "selective_greedy":
-        result = selective_greedy(pool, budget, learned, exact, top_m=top_m)
+        result = selective_greedy(pool, budget, learned, exact, top_m=top_m, stopping=stopping,
+                                  spread_of=(evaluator.spread if stopping.patience else None))
     elif policy == "adaptive_selective":
         result = adaptive_selective_greedy(
             pool, budget, learned, exact,
-            initial_m=initial_m, batch_m=batch_m, max_m=max_m,
+            initial_m=initial_m, batch_m=batch_m, max_m=max_m, stopping=stopping,
+            spread_of=(evaluator.spread if stopping.patience else None),
         )
-    elif policy == "full_oracle":
-        result = full_oracle_greedy(pool, budget, exact)
+    elif policy == "greedy_reference":
+        # Confound P1-3.3: this arm is greedy on an ESTIMATOR, not on the objective.  At
+        # oracle_mc = 25 it is neither exact nor globally optimal, so the reported name carries the
+        # Monte-Carlo budget and the spread it reaches is a reference point, not an upper bound.
+        result = full_oracle_greedy(
+            pool, budget, exact, stopping=stopping,
+            spread_of=(evaluator.spread if stopping.patience else None),
+        )
     else:
         raise ValueError(policy)
     used = exact.stats.mc_cascades - before
+    used_state = exact.stats.state_cascades - before_state
 
     spread = evaluator.spread(result.selected_seeds)
     steps = result.steps
@@ -360,7 +380,7 @@ def run_policy(
     return MethodResult(
         graph="", budget=budget, policy=policy, corruption="clean",
         spread=spread["mean"], spread_stderr=spread["stderr"],
-        gap_to_oracle=gap, mc_cascades=used,
+        gap_to_oracle=gap, mc_cascades=used, state_cascades=used_state,
         verified_total=verified_total, accepted_steps=accepted_steps,
         envelope_steps=envelope_steps, full_scan_steps=full_scan_steps,
         cap_stopped_steps=cap_stopped_steps, steps=len(steps),
@@ -375,8 +395,21 @@ def main() -> int:
     parser.add_argument("--contexts", type=int, default=90)
     parser.add_argument("--candidates-per-context", type=int, default=20)
     parser.add_argument("--dataset-mc", type=int, default=25)
-    parser.add_argument("--oracle-mc", type=int, default=25)
+    parser.add_argument(
+        "--oracle-mc", "--reference-mc", dest="oracle_mc", type=int, default=25,
+        help="Monte-Carlo budget of the greedy REFERENCE arm.  Confound P1-3.3: this arm is "
+             "greedy on an estimator, so at 25 runs it is neither exact nor globally optimal and "
+             "its spread is a reference point, not an upper bound.  Raise it to make the reference "
+             "tighter, and report the value used.",
+    )
     parser.add_argument("--eval-mc", type=int, default=200)
+    parser.add_argument(
+        "--stopping", default="fill_budget",
+        choices=["fill_budget", "stop_on_non_positive", "patience_2"],
+        help="The budget is AT MOST k, so a policy may stop early.  Which rule each arm uses "
+             "changes both the spread it obtains and the cascades it spends, so it is declared "
+             "here and recorded per decision (audit item P1-3.1).",
+    )
     parser.add_argument("--epochs", type=int, default=250)
     parser.add_argument("--hidden-dim", type=int, default=64)
     parser.add_argument("--embedding-dim", type=int, default=32)
@@ -468,6 +501,14 @@ def main() -> int:
 
     # ---------------- main sweep ----------------
     rows: list[MethodResult] = []
+    stopping = {
+        "fill_budget": FILL_BUDGET,
+        "stop_on_non_positive": STOP_ON_NON_POSITIVE,
+        "patience_2": PATIENCE_2,
+    }[args.stopping]
+    print(f"stopping rule: {args.stopping}  (the budget is AT MOST k, so this changes both the "
+          f"spread obtained and the cascades spent)")
+    print()
     for budget in args.budgets:
         rng = random.Random(args.random_seed + 31 * budget)
         pool = rng.sample(nodes, min(args.pool_size, n))
@@ -484,37 +525,48 @@ def main() -> int:
             device=device,
         )
 
-        oracle_result = run_policy("full_oracle", graph, pool, budget,
-                                   learn_oracle, exact, evaluator)
-        oracle_spread = oracle_result.spread
-        oracle_result.graph = args.graph
-        rows.append(oracle_result)
-        print(f"k={budget}  oracle spread={oracle_spread:.2f} "
-              f"mc_cascades={oracle_result.mc_cascades}")
+        # Confound P1-3.3: this is greedy on a Monte-Carlo ESTIMATOR.  The arm's name carries the
+        # budget so that its spread is not mistaken for an upper bound.
+        reference_name = reference_policy_name(exact, args.oracle_mc)
+        reference_result = run_policy("greedy_reference", graph, pool, budget,
+                                      learn_oracle, exact, evaluator, stopping=stopping)
+        reference_spread = reference_result.spread
+        reference_result.graph = args.graph
+        reference_result.policy = reference_name
+        rows.append(reference_result)
+        print(f"k={budget}  {reference_name} spread={reference_spread:.2f} "
+              f"mc_cascades={reference_result.mc_cascades} "
+              f"(a reference point, NOT an upper bound)")
 
         for policy in ("learned_only", "selective_greedy", "adaptive_selective"):
             exact.stats.reset()
             learn_oracle.learned_evaluations = 0
             r = run_policy(policy, graph, pool, budget, learn_oracle, exact, evaluator,
-                           top_m=args.top_m, oracle_spread=oracle_spread)
+                           top_m=args.top_m, oracle_spread=reference_spread,
+                           stopping=stopping)
             r.graph = args.graph
             rows.append(r)
             print(f"   {policy:<18} spread={r.spread:8.2f} gap={r.gap_to_oracle*100:6.2f}% "
-                  f"mc={r.mc_cascades:<6} verified={r.verified_total:<4} "
+                  f"mc={r.mc_cascades:<6} state_mc={r.state_cascades:<6} "
+                  f"verified={r.verified_total:<4} "
                   f"accept={r.accepted_steps}/{r.steps} "
                   f"(envelope={r.envelope_steps} full_scan={r.full_scan_steps} "
-                  f"cap_stopped={r.cap_stopped_steps})")
+                  f"cap_stopped={r.cap_stopped_steps}) seeds={len(r.steps)}")
         print()
 
     print("=" * 100)
     print("STAGE 5 SUMMARY")
     print("=" * 100)
-    print(f"  {'k':>3}{'policy':<20}{'spread':>9}{'gap%':>8}{'mc_cascades':>13}"
-          f"{'verified':>10}{'accept':>7}{'env':>5}{'full':>5}{'cap':>5}")
+    print(f"  {'k':>3}{'policy':<22}{'spread':>9}{'gap%':>8}{'mc_casc':>9}{'state':>7}"
+          f"{'verified':>10}{'seeds':>7}{'accept':>7}{'env':>5}{'full':>5}{'cap':>5}")
     for r in rows:
-        print(f"  {r.budget:>3}{r.policy:<20}{r.spread:>9.2f}{r.gap_to_oracle*100:>8.2f}"
-              f"{r.mc_cascades:>13}{r.verified_total:>10}{r.accepted_steps:>7}"
+        print(f"  {r.budget:>3}{r.policy:<22}{r.spread:>9.2f}{r.gap_to_oracle*100:>8.2f}"
+              f"{r.mc_cascades:>9}{r.state_cascades:>7}{r.verified_total:>10}{r.steps:>7}"
+              f"{r.accepted_steps:>7}"
               f"{r.envelope_steps:>5}{r.full_scan_steps:>5}{r.cap_stopped_steps:>5}")
+    print()
+    print("  mc_casc is the primary cost unit and INCLUDES state acquisition; 'state' breaks out "
+          "how much of it bought the exposure state (audit item P1-3.2).")
     print()
 
     if args.output:

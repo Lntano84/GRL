@@ -59,6 +59,12 @@ from grl.data.weights import (  # noqa: E402
     describe_normalisation,
     normalise_in_weights,
 )
+from grl.diffusion.contract import (  # noqa: E402
+    ContractViolation,
+    ModelContract,
+    TargetedObjective,
+    build_contract,
+)
 from grl.diffusion.params import resolve_overexposure_params  # noqa: E402
 from grl.oracle import OverexposureMonteCarloOracle  # noqa: E402
 
@@ -66,6 +72,37 @@ from grl.oracle import OverexposureMonteCarloOracle  # noqa: E402
 STATE_RATIO_THRESHOLD = 0.5
 #: The degree-to-reference gap must clear this fraction to count as headroom.
 GAP_THRESHOLD = 0.02
+
+
+def resolve_target_contract(
+    graph: nx.DiGraph, target_mode: str, target_fraction: float, budget: int
+) -> ModelContract:
+    """State which nodes are counted and where seeds may come from --- explicitly.
+
+    The frozen contract requires this because the source model is *targeted*: it defines a target
+    set ``D`` and draws seeds from ``V \\ D``, counting only positives inside ``D``.  Earlier regime
+    sweeps counted every positive node and drew seeds from the whole graph, which is the ``D = V``
+    variant: the same simulator, a different problem.  Both are allowed here, but the choice is
+    recorded in the contract and printed, so a table cannot silently mix them.
+
+    ``all``
+        ``D = V`` with ``allow_seeds_in_target=True``.  This is what the earlier sweeps did; it is
+        a different problem from the source model's and the output says so.
+    ``degree-tail``
+        ``D`` is the top ``target_fraction`` of nodes by out-degree, which is the natural reading of
+        "the nodes we are trying to activate", and seeds come from ``V \\ D`` as the model requires.
+    """
+    nodes = list(graph.nodes())
+    if target_mode == "all":
+        return build_contract(graph, {}, target_set=nodes, allow_seeds_in_target=True,
+                              budget=budget)
+    if target_mode == "degree-tail":
+        degree = dict(graph.out_degree())
+        ordered = sorted(nodes, key=lambda v: (-degree[v], v))
+        cut = max(1, int(round(target_fraction * len(ordered))))
+        return build_contract(graph, {}, target_set=ordered[:cut],
+                              allow_seeds_in_target=False, budget=budget)
+    raise ContractViolation(f"unknown target mode {target_mode!r}")
 
 
 @dataclass
@@ -223,6 +260,12 @@ def main() -> int:
     parser.add_argument("--normalisation", default=SUM_TO_ONE,
                         choices=[SUM_TO_ONE, CLIP_TO_ONE, AS_GIVEN],
                         help="confound P1-3.8: the model requires at most 1, not exactly 1")
+    parser.add_argument("--target-mode", default="all", choices=["all", "degree-tail"],
+                        help="'all' is D = V with seeds allowed inside it (what the earlier sweeps "
+                             "did, and a DIFFERENT problem from the source model's); "
+                             "'degree-tail' is the source model's formulation: D is the top "
+                             "--target-fraction by out-degree and seeds come from V \\ D")
+    parser.add_argument("--target-fraction", type=float, default=0.2)
     parser.add_argument("--random-seed", type=int, default=20260917)
     parser.add_argument("--output", type=Path, default=None)
     args = parser.parse_args()
@@ -238,16 +281,29 @@ def main() -> int:
         n = len(nodes)
         md = 2 * graph.number_of_edges() / n
         scale = describe_normalisation(graph)
+        contract = resolve_target_contract(graph, args.target_mode, args.target_fraction,
+                                           max(args.budgets))
+        describe = contract.describe()
+        eligible = contract.objective.legal_candidates(graph)
         print(f"=== {graph_name} n={n} <k>={md:.2f} "
               f"normalisation={scale['strategy']} max_in_total={scale['max_in_weight_total']:.3f}")
+        print(f"    contract: |D|={describe['objective']['target_set_size']} "
+              f"seeds_in_D={describe['objective']['allow_seeds_in_target']} "
+              f"budget<= {describe['objective']['budget']} "
+              f"counting='{describe['counting']}'")
+        print(f"    eligible seeds: {len(eligible)}/{n}")
 
         for budget in args.budgets:
             for draw in range(args.pool_draws):
                 rng = random.Random(args.random_seed + 31 * budget + 101 * draw)
+                pool_size = min(args.pool_size, len(eligible))
                 if args.pool_strategy == "degree_stratified":
-                    pool = degree_stratified_pool(graph, nodes, min(args.pool_size, n), rng)
+                    pool = degree_stratified_pool(graph, eligible, pool_size, rng)
                 else:
-                    pool = rng.sample(nodes, min(args.pool_size, n))
+                    pool = rng.sample(eligible, pool_size)
+                # the contract forbids a seed inside D; a pool that slipped one through would be
+                # caught here rather than silently measured
+                contract.objective.check_seed_eligibility(pool)
 
                 oracle = OverexposureMonteCarloOracle(
                     graph, mc_runs=args.oracle_mc, random_seed=args.random_seed, params=params)

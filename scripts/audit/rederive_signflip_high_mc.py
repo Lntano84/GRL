@@ -70,6 +70,12 @@ class Cell:
     graph_mean_degree: float
     n: int
     seed_size: int
+    #: The fraction that was ASKED for.  ``seed_fraction`` is the fraction realised after rounding
+    #: the seed count to an integer, and the two differ: 0.10 requested becomes 48/475 = 0.10105 on
+    #: Congress-Twitter.  Resuming on the realised value never matches the requested one, so the
+    #: resume key must be this field --- getting that wrong silently re-measured cells and wrote
+    #: duplicate rows into the JSON.
+    requested_fraction: float
     seed_fraction: float
     mc_runs: int
     candidates: int
@@ -170,6 +176,7 @@ def probe_cell(
         graph_mean_degree=stats["mean_degree"],
         n=n,
         seed_size=len(seeds),
+        requested_fraction=fraction,
         seed_fraction=size / n if n else 0.0,
         mc_runs=mc_runs,
         candidates=len(candidates),
@@ -258,9 +265,30 @@ def main() -> int:
     done: set[tuple[str, float]] = set()
     if args.resume and args.output.exists():
         payload = json.loads(args.output.read_text(encoding="utf-8"))
-        cells = [Cell(**row) for row in payload.get("cells", [])]
-        done = {(c.graph, round(c.seed_fraction, 6)) for c in cells}
-        print(f"resuming: {len(cells)} cells already measured", flush=True)
+        raw_rows = payload.get("cells", [])
+        cells = []
+        for row in raw_rows:
+            row = dict(row)
+            if "requested_fraction" not in row:
+                # Rows written by the version that lacked the field recorded only the realised
+                # fraction, which is the requested one after rounding the seed count to an integer
+                # (0.10 -> 48/475 = 0.10105).  Snap to the nearest REQUESTED fraction, because
+                # that is what the resume key is built from; using the realised value would never
+                # match and would silently re-measure every cell.
+                realised = float(row.get("seed_fraction", 0.0))
+                row["requested_fraction"] = min(
+                    args.fractions, key=lambda f: abs(f - realised)
+                )
+            cells.append(Cell(**row))
+        # deduplicate on the resume key, keeping the LAST measurement of each cell
+        deduped: dict[tuple[str, float], Cell] = {}
+        for cell in cells:
+            deduped[(cell.graph, round(cell.requested_fraction, 6))] = cell
+        duplicates = len(cells) - len(deduped)
+        cells = list(deduped.values())
+        done = set(deduped)
+        print(f"resuming: {len(cells)} cells already measured"
+              f"{f' ({duplicates} duplicate row(s) dropped)' if duplicates else ''}", flush=True)
 
     stats_by_graph: dict[str, dict] = {}
     for name in args.graphs:

@@ -1,7 +1,6 @@
 # GRL Research State
 
 Last updated: **2026-09-18**  
-Remote HEAD: `744b2547869c9e6ce8288a8a1a4c84cd4972e933`  
 Current target: **DASFAA 2027**, conditional on the post-fix algorithmic gates.
 
 ## Source of truth
@@ -53,8 +52,11 @@ standard coverage/RR guarantees do not apply.
 
 The DASFAA draft compiles, is anonymous, and contains the corrected analytic/measurement material.
 The rebuilt anonymous PDF is 16 pages and the pre-fix withdrawn tables have been removed from the
-submission artifact. The manuscript is format-ready, but the title and algorithmic claims must
-remain conditional until the post-fix quality--cost experiments pass.
+submission artifact. All 12 cited references were checked against official proceedings, publisher
+records, or DBLP; false/duplicate/unused entries and the stale reference TODO were removed. The
+audit trail is `paper/dasfaa2027/notes/REFERENCE_AUDIT.md`. The manuscript is format-ready, but the
+title and algorithmic claims must remain conditional until the post-fix quality--cost experiments
+pass.
 
 ## Immediate gates
 

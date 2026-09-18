@@ -198,3 +198,13 @@ The 50k verifier reaches **99.51% of official IMM spread** (IMM 509.081 ± 0.842
 The current tuned state-aware learned marginal predictor does not yet reduce the RR evidence needed for near-IMM quality. Learned-only remained poor (~324–333 spread in observed repeats), and hard learned-Top16 guidance was worse than pure RR at each completed low-budget pilot (1k: 378.812 vs 424.797; 2k: 384.294 vs 433.680; 5k: 374.293 vs 478.747; 10k: 402.223 vs 496.804).
 
 **Paper-level judgment:** the engineering runtime bottleneck is largely solved, but the learning-value hypothesis in vanilla static IC is not. The current route cannot claim better quality, runtime, or demonstrated sample efficiency from learning relative to mature RIS. This is a **YELLOW / human paper-positioning review** boundary. Do not expand to multi-graph, k-sensitivity, broad ablations, a new predictor architecture, RL, or a new IM setting without human authorization.
+
+## 2026-09-18 — Repository closure and reference audit
+
+This was an editorial/artifact audit, not a new experiment. The corrected result JSON contains 24
+unique graph/fraction cells; the source-rule documentation, state files, and claim ledger are
+aligned; pre-fix withdrawn tables are absent from the submission PDF. The 12 references cited by
+the manuscript were then checked against authoritative records. Five materially incorrect records
+and their prose were corrected, an unsupported related-work claim was removed, and duplicate/unused
+entries were deleted. The rebuilt anonymous PDF is 16 pages. Detailed provenance is in
+`paper/dasfaa2027/notes/REFERENCE_AUDIT.md`.

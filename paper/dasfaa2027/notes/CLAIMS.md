@@ -2,6 +2,10 @@
 
 Last updated: **2026-09-18**. This file is the claim source of truth for the manuscript.
 
+Bibliographic support for the related-work statements was checked on the same date; provenance is
+recorded in `REFERENCE_AUDIT.md`. Bibliographic verification does not promote any conditional
+algorithmic claim to supported status.
+
 ## Claims supported by current artifacts
 
 ### C1 — Narrow coverage obstruction

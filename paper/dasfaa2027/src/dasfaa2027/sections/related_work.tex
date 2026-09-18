@@ -2,25 +2,24 @@
 \label{sec:related}
 
 \paragraph{Scalable influence maximization.}
-The reverse-reachability family underpins the fastest known IM algorithms. TIM and TIM+
-\cite{borgs2014tim,tang2014timplus} and IMM \cite{tang2015imm} sample reverse walks and solve
-maximum coverage, achieving $(1-1/e-\varepsilon)$ guarantees with near-linear expected running
-time; OPIM \cite{tang2018online} extends this to the online setting;
-\cite{nguyen2016stop} tightens the stopping rule. GPU-parallel implementations
-\cite{li2020gim,min2020curipples} report speedups of two to three orders of magnitude over
+The reverse-reachability family underpins the fastest known IM algorithms. Borgs et al.
+\cite{borgs2014tim} introduced the reverse-influence-sampling foundation; TIM/TIM+
+\cite{tang2014timplus} and IMM \cite{tang2015imm} turn sampled reverse-reachable sets into
+maximum-coverage instances with $(1-1/e-\varepsilon)$ guarantees and near-linear expected running
+time. OPIM \cite{tang2018online} supports online processing, while Stop-and-Stare
+\cite{nguyen2016stop} uses an adaptive stopping rule. GPU-parallel implementations
+\cite{shahrouz2021gim,min2020curipples} report speedups of two to three orders of magnitude over
 sequential baselines. All of these inherit the identity
 $\mathbb{E}[\sigma(S)] = n \cdot \Pr[S \cap \mathcal{R} \neq \emptyset]$, and therefore all of
 them require a coverage representation that \S\ref{sec:coverage} shows cannot match this objective
 here. Our result is not that these algorithms are slow, but that they cannot be instantiated.
 
 \paragraph{Learning-based influence maximization.}
-A complementary line replaces the influence oracle with a learned predictor, either to prune the
-candidate set before exact greedy \cite{chen2020gcomb} or to estimate marginal gains directly.
-A recent benchmark study \cite{liang2024rethinking} finds that, across a range of IM and
-maximum-coverage tasks, classical lazy greedy and sampling-based methods remain competitive with
-or superior to deep reinforcement learning approaches. Our \S\ref{sec:limitations} reaches a
-consistent conclusion in the overexposure setting, via a different route: the training-free
-closed form is not beaten by the learned scorers we tested.
+A complementary line replaces part of the influence-maximization pipeline with learned predictors.
+GCOMB \cite{manchanda2020gcomb}, for example, uses a graph convolutional network to prune poor
+candidates and a Q-learning stage to construct the solution. Our \S\ref{sec:limitations} records
+a boundary in the overexposure setting: the training-free closed form is not beaten by the learned
+scorers we tested.
 
 \paragraph{Overexposure and negative influence.}
 That excessive exposure can be counterproductive is well documented. The model we study is due to
@@ -59,9 +58,3 @@ We raise the point because it generalises: every overexposure objective inherits
 obstruction, and lazy evaluation is one of the few standard accelerations that is \emph{not}
 blocked by the absence of reverse reachability, so it is worth knowing that it fails for a
 different reason.
-
-%% TODO(refs): verify every entry below against the published version before submission.
-%% In particular confirm: TIM/TIM+ and IMM venue and year; the OPIM and SSA references;
-%% the GPU papers' exact titles; the GCOMB authors and venue; the LAICO authors and venue;
-%% and the RL4CCIM venue. Any entry that cannot be verified should be removed rather than
-%% guessed -- a wrong citation is worse than a missing one.

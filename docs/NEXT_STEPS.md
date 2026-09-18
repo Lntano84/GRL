@@ -36,7 +36,8 @@ venue such as CIKM or a suitable journal.
 - [x] Delete the pre-fix withdrawn tables from the submission PDF; retain only a concise threat/history
   paragraph.
 - Keep the exact coverage counterexample and the corrected MC=300 regime table.
-- [x] Verify every bibliography entry and remove `TODO(verify)` notes.
+- [x] Verify all 12 cited bibliography entries against authoritative records, remove false,
+      duplicate and uncited entries, and record the audit in `notes/REFERENCE_AUDIT.md`.
 - [x] Rebuild the anonymous LNCS PDF and keep it at or below 16 pages.
 - Run the complete test suite in an environment containing the declared requirements, including
   PyTorch-dependent oracle tests.

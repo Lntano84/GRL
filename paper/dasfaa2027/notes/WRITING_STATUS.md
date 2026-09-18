@@ -31,7 +31,8 @@ bibliography. The PDF remains double-blind and contains no author-identifying re
 1. Re-run sequential quality--cost experiments under the corrected contract.
 2. Include Full-MC, degree, `delta2`, random-pruning, repeated pools and independent seeds.
 3. Verify `sum_to_one` versus `clip_to_one` weight normalisation.
-4. [done] Removed all `TODO(verify)` notes from the bibliography; final metadata review remains.
+4. [done] Verified all 12 cited records, corrected the related-work prose, removed false/duplicate/
+   uncited entries, and recorded provenance in `REFERENCE_AUDIT.md`.
 5. Run the complete test suite in an environment with PyTorch, not only the lightweight targeted
    tests.
 

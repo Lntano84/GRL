@@ -33,3 +33,11 @@ The state-machine correction and MC=300 sweep changed the evidence boundary:
 The current DASFAA submission remains conditional. If corrected sequential experiments cannot show
 near-oracle quality with a reproducible reduction in expensive oracle work, remove the
 sample-efficiency framing and retarget the manuscript.
+
+## 2026-09-18 — Reference audit decision
+
+Only bibliographic records verified against publisher/official proceedings pages or DBLP may remain
+in the submission. The audit corrected five materially wrong records, removed one unsupported
+related-work claim, one duplicate entry and one uncited entry, and aligned the prose with the
+published methods. Short venue names are retained to keep the fully verified bibliography inside
+the 16-page LNCS limit; DOI, volume/issue, article number and page data remain in BibTeX.

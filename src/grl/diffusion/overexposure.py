@@ -29,18 +29,19 @@ Bernoulli trial with probability ``2 * delta * (1 - delta)``, as the paper's wor
 rate then becomes ``4 * delta^2 * (1 - delta)^2``.  Both violate monotonicity, which is
 the property that matters here.
 
-A deliberate consistency guard: the positive branch additionally requires
-``delta < 1``.  The literal rule ``delta in [kappa, tau]`` would otherwise activate a
-node whenever ``tau == 1``, even though ``2 * delta * (1 - delta)`` vanishes at
-``delta = 1``.  Taking the derived probability as authoritative, maximal exposure is
-treated as maximal rejection.
-
-Three states are possible and transitions are one-way only
+The state rule is evaluated literally against the sampled window.  In particular,
+``delta == theta_tau == 1`` is inside the window and therefore activates the node;
+the marginal probability formula must not be used as an extra guard on a window that
+has already been sampled.  Three states are possible and transitions are one-way only
 (``inactive`` -> ``positive``/``negative``, ``positive`` -> ``negative``):
 
     delta <  theta_kappa                  : stays inactive
-    theta_kappa <= delta < 1, <= theta_tau: becomes positive
-    delta >  theta_tau   (or delta >= 1)  : becomes negative (permanent)
+    theta_kappa <= delta <= theta_tau      : becomes positive
+    delta >  theta_tau                     : becomes negative (permanent)
+
+An already-positive non-seed node is re-evaluated when exposure grows, so it may
+later turn negative.  Its historical positive activation still contributes to the
+exposure of downstream nodes through ``ever_positive``.
 
 Why this breaks reverse-influence sampling
 ------------------------------------------
@@ -94,23 +95,24 @@ NEGATIVE = 2
 
 
 def positive_activation_probability(delta: float) -> float:
-    """Conditional probability of a positive transition given ``delta`` is in the window.
+    """Simplex-window probability used by the deterministic model.
 
-    Lemma 1 of the reference paper gives the window-membership probability
-    ``P(theta_kappa <= delta <= theta_tau) = 2 * delta * (1 - delta)``.  Under the rule
-    ``delta > theta_tau => negative``, only half of that mass yields a positive
-    transition, so the *unconditional* positive rate is ``delta * (1 - delta)`` — see
-    :func:`marginal_positive_probability`.
+    For a window sampled uniformly from ``0 <= theta_kappa <= theta_tau <= 1``,
+    Lemma 1 gives
+    ``P(theta_kappa <= delta <= theta_tau) = 2 * delta * (1 - delta)``.
+    In deterministic mode this is the probability of the window event itself.
 
-    This function returns the value applied once a node is known to be inside its
-    window, which is the ``2 * delta * (1 - delta)`` factor.  It peaks at
-    ``delta = 0.5``; that it decreases beyond the peak is exactly why coverage-based
-    sampling loses its validity under overexposure.
+    The optional stochastic mode uses the same value as an additional Bernoulli
+    factor after a node is in its window; that mode therefore has a different
+    observable positive rate and is not the default paper protocol.  The function
+    peaks at ``delta = 0.5``; its non-monotonicity is why coverage-based sampling
+    loses its validity under overexposure.
     """
     if delta <= 0.0:
         return 0.0
     if delta >= 1.0:
-        # delta > theta_tau with probability 1, so no positive activation is possible.
+        # The simplex window event has zero measure at delta=1; this helper is not
+        # the conditional state rule applied after a concrete window is sampled.
         return 0.0
     return 2.0 * delta * (1.0 - delta)
 

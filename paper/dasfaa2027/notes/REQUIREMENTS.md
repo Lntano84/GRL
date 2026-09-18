@@ -1,11 +1,9 @@
 # DASFAA 2027 submission requirements
 
-> Snapshot taken 2026-09-17. Base facts were verified against the official site
-> (`https://dasfaa2027.github.io/index.html`) on 2026-09-15 and recorded in
+> Snapshot taken 2026-09-18. Base facts were verified against the official CFP page
+> (`https://dasfaa2027.github.io/CallforResearchTrack/list.htm`) on 2026-09-18 and recorded in
 > `../../../../论文整理_三条理由/_三条理由的推论与课题启示/CCFB投稿窗口与IM友好度评估.md`.
 > **Items marked ⚠️ must be re-checked on the official site before submission.**
-> The official site could not be re-fetched on 2026-09-17 from this machine (the hostname
-> resolves to a non-public address under the current network policy).
 
 ## Verified dates
 
@@ -16,16 +14,16 @@
 | Camera-ready | 2027-02-20 |
 | Conference | 2027-05-27 to 05-30, Shenyang, China |
 
-Countdown from 2026-09-17: **69 days**.
+Countdown from 2026-09-18: **68 days**.
 
 ## Format (⚠️ confirm the template version on the official site)
 
 | item | value |
 | --- | --- |
 | Proceedings style | **LNCS** (Springer), `llncs.cls` |
-| Page limit | **16 pages** including references ⚠️ |
+| Page limit | **16 pages** including references |
 | Review | **double-blind** |
-| Submission system | CMT ⚠️ |
+| Submission system | CMT |
 | Topics | official list includes "Graph and social network analytics", "Data mining and knowledge discovery", "Neural networks and deep learning" |
 
 ## Consequences for this paper
@@ -42,8 +40,7 @@ Countdown from 2026-09-17: **69 days**.
 
 ## ⚠️ Open items to verify manually
 
-- [ ] Confirm the exact page limit and whether references count.
-- [ ] Confirm the CMT submission URL and whether an abstract-only pre-registration is required.
+- [ ] Confirm the final CMT submission URL and whether an abstract-only pre-registration is required.
 - [ ] Download `llncs.cls` and the official `sample-authordraft.tex` from Springer.
 - [ ] Confirm whether a supplementary/artefact track exists.
 
@@ -64,8 +61,9 @@ cd paper\dasfaa2027\src\dasfaa2027
 & "C:\Users\windows\tools\latex\tectonic\tectonic.exe" -X compile paper.tex --outdir ..\..\build
 ```
 
-**Latest build: 18 pages, 0 undefined citations, 0 overfull hboxes.** That is 2 pages over the
-16-page limit, so trimming is required (see `WRITING_STATUS.md`).
+**Latest build: 17 pages.** Citations and references resolve; Tectonic still reports three
+non-fatal overfull boxes and legacy font warnings. The draft is therefore 1 page over the
+16-page limit and needs trimming before submission (see `WRITING_STATUS.md`).
 
 `tectonic` writes a harmless `Fontconfig error: Cannot load default config file` line to stderr;
 the build succeeds and the exit code is non-zero only because of that. Ignore it.

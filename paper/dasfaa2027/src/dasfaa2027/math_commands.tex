@@ -513,12 +513,11 @@
 %
 % The overexposure state machine was wrong until 2026-09-18 (commit 0248612):
 % a positively activated node could never become negative again, and a node with
-% delta = tau = 1 was denied activation.  Fixing it removed 60-63% of the measured
-% spread on Congress-Twitter (k=1: 299.35 -> 111.44; k=5: 358.52 -> 137.28).
+% delta = tau = 1 was denied activation.  Fixing it invalidated every pre-fix
+% numerical result.
 %
-% Every number produced before that fix is therefore invalid.  Withdrawn numbers
-% are KEPT, not deleted: the record of what was measured and of why it was wrong
-% is part of the contribution.  They must never be read as results.
+% Pre-fix tables and numerical comparisons are retained only in the audit history,
+% not in the submission PDF.  They must never be read as current results.
 %
 % \withdrawn            -- inline marker next to a single value or claim.
 % withdrawnblock{reason} -- environment for a table or a paragraph.
@@ -534,4 +533,3 @@
   \par\nopagebreak\medskip\noindent\textcolor{red}{\rule{\linewidth}{0.9pt}}\par
   \medskip
 }
-

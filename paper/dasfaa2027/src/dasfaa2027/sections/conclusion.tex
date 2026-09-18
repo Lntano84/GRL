@@ -26,13 +26,11 @@ flip is real and the negative-marginal share was Monte-Carlo artefact, and only 
 separates the two.
 
 The baseline comparison that an even earlier version built on top of the regime characterisation is
-withdrawn and retained under an explicit marker in \S\ref{sec:experiments}. It was produced by an
-activation rule that forbade an over-exposed node from turning negative, and at Monte-Carlo budgets
-below the threshold the measurement itself requires; on Congress-Twitter the corrected rule removes
-$60$--$63\%$ of the spread, more than every effect that was reported. We draw the general lesson in
-\S\ref{sec:protocol} as five checks, each with the measured magnitude of the error it prevents.
-Four of them are free or nearly so, and the largest --- re-evaluating a node's state every round
-rather than freezing it --- is what invalidated the rest.
+omitted from this submission. It was produced by an activation rule that forbade an over-exposed
+node from turning negative and at Monte-Carlo budgets below the threshold the measurement itself
+requires. We draw the general lesson in \S\ref{sec:protocol} as five checks; the pre-fix numerical
+comparison is not evidence for the current paper, and re-evaluating a node's state every round is
+the check that invalidated it.
 
 The negative result that survives is about the reference itself. The upper bound the source model
 optimises is a \emph{difference} of two monotone submodular functions, and submodularity is not
@@ -41,11 +39,10 @@ sampling-based guarantee. Whether that bound is tight anywhere, and whether the 
 resolve are in fact smaller than the estimation noise, are empirical questions we can no longer
 answer from the measurements we have.
 
-Two directions follow directly. The first is to re-derive the baseline comparison under the frozen
-model contract --- a declared target set, seed eligibility, a budget of \emph{at most} $k$, a priced
-state acquisition, and a Monte-Carlo reference with a stated tolerance --- with the eight confounds
-of \S\ref{sec:limitations} removed. That is not a formality: two of them, the unpriced state and the
-weight normalisation, interact with the model correction in the same direction. The second is to
-look for a graph-level criterion --- we suspect in-/out-degree coupling --- that predicts when
-degree-based heuristics fail, which would let a practitioner decide whether the overexposure
-regime needs to be handled at all.
+Two directions follow directly. The first is to re-derive the sequential quality--cost comparison
+under the frozen model contract --- a declared target set, seed eligibility, a budget of
+\emph{at most} $k$, a priced state acquisition, and a Monte-Carlo reference with a stated tolerance
+--- with the eight confounds of \S\ref{sec:limitations} removed. The second is to look for a
+graph-level criterion --- we suspect in-/out-degree coupling --- that predicts when degree-based
+heuristics fail, which would let a practitioner decide whether the overexposure regime needs to be
+handled at all.

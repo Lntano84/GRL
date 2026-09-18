@@ -2,6 +2,28 @@
 
 This file is a concise index of experiments worth remembering. Raw logs, checkpoints, copied worktrees, and large outputs remain in their project-local result directories.
 
+## 2026-09-18 — Current-state override after model correction
+
+This entry is the current interpretation of all later evidence. Entries below that predate the
+state-machine correction are historical and must not be quoted as current measurements.
+
+**Correction.** The old implementation froze a positive node and rejected the literal boundary
+`delta=tau=1`. The corrected model re-evaluates non-seed nodes and counts only final positives.
+
+**Completed evidence.** `docs/results/signflip_fixedmodel_mc300.json` now contains 8 graphs and 24
+unique graph/fraction cells at MC=300 with paired per-trial estimation. In saturated cells,
+degree is negative on 7/8 graphs and `delta2` is the better ranker on 8/8. The old 8--35% negative
+marginal-share claim is withdrawn; the corrected mean is 0.5% and the worst cell is 4.0%.
+
+**Current limitation.** Corrected Stage 4b has only one usable state-dependence/headroom cell
+(Congress-Twitter, k=1). No post-fix multi-graph sample-efficiency or quality--cost claim is yet
+confirmed. The next experiment must re-run sequential selection, Full-MC, degree, `delta2`, and
+random-pruning under the frozen contract.
+
+**Artifact rule.** A result is current only when its JSON, generating script, model contract, MC
+budget, random seeds, and status are all recorded. The current state summary is maintained in
+`docs/RESEARCH_STATE.md`; this log retains historical provenance but does not override it.
+
 ## 2026-09-01 to 2026-09-02 — Marginal-gain predictability validation
 **Goal:** Determine whether the model genuinely learns conditional marginal gain Δ(v|S), especially candidate ranking under a fixed seed set/state.
 

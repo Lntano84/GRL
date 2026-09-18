@@ -41,14 +41,11 @@ Three observations follow, and the third is a correction of an earlier version o
   \item \textbf{The state-conditioned closed form is the better ranker on all eight.} It is the only
         scorer we tested that is positive in every saturated cell, and its advantage is largest
         exactly where out-degree is most misleading.
-  \item \textbf{The objective is almost never non-monotone, and our earlier claim that it often was
-        is withdrawn.} An earlier version reported that between $8\%$ and $35\%$ of candidates have
-        a negative marginal gain on the denser graphs. Measured at $\mathrm{MC} = 300$ the mean
-        share over saturated cells is $0.5\%$, the worst cell in the entire sweep is $4.0\%$, and
-        the mean share that is negative by more than two paired standard errors is $0.2\%$. The
-        earlier numbers came from twelve trials per cell, where label noise alone produces apparent
-        sign changes at that rate; the same measurement at $300$ trials in one of those cells moves
-        the share from $44\%$ to $4\%$.
+  \item \textbf{The corrected negative-share result is small.} Measured at $\mathrm{MC}=300$, the
+        mean share over saturated cells is $0.5\%$, the worst cell in the entire sweep is $4.0\%$,
+        and the mean share negative by more than two paired standard errors is $0.2\%$. The
+        low-budget predecessor is excluded because its label noise is not a valid basis for this
+        claim.
 \end{enumerate}
 
 \paragraph{What this means for the argument.} Non-monotonicity is \emph{possible} in this model ---

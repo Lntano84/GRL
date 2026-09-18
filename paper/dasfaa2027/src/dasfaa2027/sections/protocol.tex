@@ -2,9 +2,9 @@
 \label{sec:protocol}
 
 Everything in this section was found by getting it wrong first. Each item states the trap, the
-magnitude of the error it produces, and the check that catches it. The magnitudes are measured, not
-estimated, and each is reproducible from the scripts named in the text. We report them because the
-model's structure makes all five traps easy to fall into and because we have not seen them stated.
+failure mode it can produce, and the check that catches it. Historical pre-fix magnitudes are not
+part of the submission artifact; the corrected protocol is the fact source for any future
+measurement.
 
 \subsection{Re-evaluate every non-seed node every round}
 
@@ -20,11 +20,10 @@ it turns positive. Node $b$ then activates and raises $a$'s exposure to $0.9 > 0
 turn negative. Freezing $a$ gives spread $3$ and an empty negative set; the correct answer is spread
 $2$ with $a$ negative.
 
-\paragraph{Why it matters more than it looks.} On Congress-Twitter the freezing error inflates the
-measured spread by $60$--$63\%$ ($k = 1$: $299.35 \to 111.44$; $k = 5$: $358.52 \to 137.28$;
-$k = 10$: $365.95 \to 143.43$). That is larger than the effect of changing the seed budget, larger
-than the gap between any two policies we have compared, and larger than the differences reported in
-the source model's own tables. A single frozen node is enough to produce it.
+\paragraph{Why it matters more than it looks.} On the audit graph the freezing error changes the
+measured spread by far more than the policy differences that the paper is intended to compare.
+Those pre-fix numerical measurements are omitted from the submission; the point retained here is
+the mechanism, not a withdrawn benchmark.
 
 \paragraph{The check.} The transition rule must be the literal one,
 $\theta^\kappa_v \le \delta(v,t) \le \theta^\tau_v$, evaluated for every non-seed node in every round.
@@ -63,13 +62,10 @@ which is an intervention knob rather than a degeneracy.
 \paragraph{The trap.} Measuring candidate marginals with a few dozen Monte-Carlo trials and
 reporting rank correlations, or a share of candidates with a negative marginal.
 
-\paragraph{The error.} In the regime this paper is about, the true marginals are small compared with
-the error of estimating them. At $60$ paired trials the label signal-to-noise ratio --- the
-dispersion of the true marginals over the mean standard error of their estimates --- is below
-$1.4$. Measured on Congress-Twitter, the share of candidates with a negative marginal gain falls
-from $44\%$ at $\mathrm{MC} = 12$ to $4\%$ at $\mathrm{MC} = 300$, and to $0\%$ once a candidate
-must be negative \emph{beyond} two paired standard errors. The rank correlation for the same cell
-moves from $-0.112$ to $+0.039$: not a refinement of the same answer, a different one.
+\paragraph{The error.} In the regime this paper is about, the true marginals can be small compared
+with the error of estimating them. Low-trial labels can therefore change sign and rank ordering as
+the Monte-Carlo budget increases. The pre-fix numerical sweep is withdrawn; only the measurement
+lesson is retained here.
 
 \paragraph{The check.} Report the paired standard error of every label. A candidate is negative only
 if its mean is more than two paired standard errors below zero, and a share of negative candidates
@@ -82,12 +78,9 @@ window-draw noise by construction and are unaffected by this trap.
 drawing contexts at several seed sizes --- typically $0, k, 2k, 3k$ --- and computing one
 within/between variance ratio over all of them.
 
-\paragraph{The error.} The unsaturated context dominates. On Congress-Twitter at $k = 3$ the
-between-candidate standard deviation is $36.54$ at $|S| = 0$ and $0.74$ at $|S| = 3$: a factor of
-$50$. The pooled ratio therefore reports the unsaturated cell's behaviour, which is not the regime
-of interest. In our own first pass this produced ratios of $0.64$ and $0.075$ for two graphs where
-the per-size measurement gives $0.150$ and $0.090$ --- the same qualitative verdict by accident, and
-for the wrong reason.
+\paragraph{The error.} The unsaturated context can dominate the pooled statistic. A pooled ratio
+therefore reports behaviour outside the regime of interest and can give the right qualitative
+verdict for the wrong reason. We now compute the ratio inside one seed size and report it per size.
 
 \paragraph{The check.} Compute the ratio inside one seed size and report it per size. A cell counts
 as state dependent only if it clears the threshold at the seed size at which the rest of the
@@ -98,11 +91,9 @@ measurement was taken.
 \paragraph{The trap.} Drawing one random pool of candidates and reporting the headroom a policy has
 on it.
 
-\paragraph{The error.} The pool's degree profile decides how much headroom is visible. Across five
-pools, the gap between the highest-degree selection and a Monte-Carlo greedy reference ranges from
-$0.00\%$ to $98.52\%$ on Facebook at $k = 1$, and from $-8.67\%$ to $+25.57\%$ on Congress-Twitter
-at $k = 1$. The \emph{sign} of the effect depends on the draw, so a single-pool number cannot
-support a claim in either direction.
+\paragraph{The error.} The pool's degree profile decides how much headroom is visible, and the
+\emph{sign} of the policy gap can depend on the draw. A single-pool number therefore cannot support
+a claim in either direction.
 
 \paragraph{The check.} Draw the pool degree-stratified so its profile matches the graph's by
 construction, repeat over several independent draws, and report the median with a min--max band.
@@ -116,6 +107,6 @@ threshold law is free. Storing a paired standard error alongside each label cost
 the paired differences are formed before averaging anyway. Computing the state-dependence ratio per
 size rather than pooled is a loop boundary. Stratifying and repeating the pool multiplies one
 measurement by the number of draws. The expensive check is the Monte-Carlo budget, which is a
-factor of $25$ over a low-budget run --- and the alternative, as \S\ref{sec:experiments} records in
-full, was to publish five tables of numbers that a single implementation error had already
-invalidated.
+factor of $25$ over a low-budget run.  The earlier low-budget tables are omitted from the
+submission; the remaining experiment section records the protocol boundary and the pending
+post-fix quality--cost study.

@@ -1,203 +1,53 @@
 \section{Limitations and Threats to Validity}
 \label{sec:limitations}
 
-We list the things that could be wrong, in the order we consider them most likely to matter.
+\paragraph{No claim of a learned advantage yet.}
+The current evidence does not establish that a learned state-conditioned scorer improves on degree
+or the training-free $\delta_2$ score.  The earlier predictor and policy-comparison measurements
+were generated before the state-machine correction or under an insufficient Monte-Carlo budget,
+so they are not reported here.  A valid learned-advantage claim requires held-out contexts,
+post-fix labels, repeated candidate pools, and downstream quality--cost evaluation.
 
-\paragraph{1. A learned scorer did not beat the closed form, in a study we must re-run.}
-\withdrawn{} The natural question after establishing a training-free baseline is whether a learned
-state-conditioned scorer can beat it. On the evidence we collected it could not. We built a dataset
-of $480$ labelled states on Congress-Twitter ($4$ seed fractions $\times$ $3$ independent contexts
-$\times$ $40$ candidates, paired labels at $\text{MC} = 400$) and evaluated with
-\emph{leave-one-context-out}, so every score is a cross-state generalisation score. With
-$\mathrm{regret} = 1 - (\text{model top-}5\text{ gain}) / (\text{true top-}5\text{ gain})$:
+\paragraph{The sign pattern is graph dependent.}
+The corrected eight-graph sweep finds negative degree correlation in seven saturated graphs, with
+NetHEPT as an exception.  We do not attribute this to density: the density--correlation
+association is weak and non-monotone.  The plausible in-/out-degree explanation remains a
+hypothesis, not a theorem, and larger graph families are needed.
 
-\begin{center}
-\begin{tabular}{lrr}
-\toprule
-model & Spearman & regret \\
-\midrule
-$\delta_2$ (no training) & $\mathbf{+0.6932}$ & $\mathbf{0.5025}$ \\
-ridge on the same features & $+0.4255$ & $0.6172$ \\
-MLP on the same features & $+0.3652$ & $0.9662$ \\
-\bottomrule
-\end{tabular}
-\end{center}
+\paragraph{Scale and dataset coverage.}
+The largest graph in the current sweep has $15{,}233$ nodes.  We do not demonstrate million-node
+behaviour, and the cost of obtaining the exposure state--one cascade in the current prototype--must
+be re-evaluated at that scale.
 
-A feature ablation, replicated on two independently generated datasets, shows that this is not a
-matter of insufficient model capacity. Adding threshold-derived features (distance to
-$\theta^\tau$, fraction of neighbours inside the band) to the analytic score makes held-out
-regret \emph{worse} on both replications ($+0.167$ and $+0.300$), and on the first replication
-the combination wins $0/12$ held-out contexts. The single analytic score column is the strongest
-single predictor we found.
+\paragraph{The surrogate is not a certified algorithmic route.}
+The source model's $\lambda=\sigma^\kappa-\sigma^\tau$ is a difference of two monotone
+submodular functions.  Each component can individually admit a coverage argument, but the
+difference need not be monotone or submodular.  The pre-fix numerical surrogate-gap table is
+omitted; whether the source theorem is tight under its intended coupling remains open.
 
-This should be read as a limitation, not as a theorem: $480$ states is small, and we cannot
-exclude that a larger corpus would change the answer. What we can say is that under a
-cross-state evaluation protocol, at this scale, the closed form was not beaten, and the
-threshold features --- which were our main hypothesis for where extra signal would come from ---
-were actively unhelpful. We report it because a paper that shows a strong training-free baseline
-should also report that learning did not improve on it. \withdrawn{} The labels themselves came
-from the pre-fix state machine, so both the absolute regrets and the sign of the threshold-feature
-effect must be re-measured before this paragraph can claim anything; what is unaffected is the
-methodological warning that a pooled feature-importance statistic here measures regime
-identification rather than utility.
-
-\paragraph{2. A trap in interpreting feature importance here.}
-\withdrawn{} Pooled across contexts, \emph{every} informative feature correlated with the label at
-$|r| \approx 0.85$--$0.91$, including one at $0.907$ that is pure regime identification. This is
-because the dataset mixes regimes whose label scales differ by three orders of magnitude
-($\approx +200$ when unsaturated, $\approx 0$ when saturated). Any evaluation that does not hold
-out a context will therefore report strong, meaningless feature utility. We mention it because
-we initially drew exactly that wrong conclusion. The warning survives the model correction --- the
-regime scale gap is a property of the protocol, not of the activation rule --- but the coefficients
-do not.
-
-\paragraph{3. Density does not explain a sign flip, and we no longer know that there is one.}
-We would like a crisp graph-level criterion predicting when out-degree fails. We do not have one. The
-correlation we once reported between $\langle k \rangle$ and $\rho_{\text{degree}}$ was weak and is
-\withdrawn, because both of its components came from rank correlations measured at
-$\text{MC} = 12$; a re-measurement at $\text{MC} = 300$ under the corrected activation rule moves
-Congress-Twitter from $-0.112$ to $+0.039$ in the same cell, so the sign of the effect is not
-established. The structural hint in \S\ref{sec:regime} (in-/out-degree coupling) remains a
-hypothesis; nine graphs is not enough to establish it, and it would need to be tested with paired
-measurements rather than with correlations whose noise exceeds their signal.
-
-\paragraph{4. Scale and dataset coverage.}
-Our largest graph has $15{,}233$ nodes; the source model's datasets are smaller still. We do not
-demonstrate behaviour on million-node graphs, and the per-decision cost of obtaining the state
---- one cascade, which is cheap here --- would need re-examination at that scale.
-
-\paragraph{5. The surrogate gap is measured, and it exposes an open question.}
-\S\ref{sec:coverage} observes that RR sampling \emph{is} applicable to the monotone upper bound
-$\lambda(S) \ge \sigma(S)$ used by the source model: $\sigma^\kappa$ and $\sigma^\tau$ each fix one
-threshold per node, so each is monotone submodular and the coverage identity applies to each
-individually. What the identity does not reach is their \emph{difference}. We therefore measured
-the gap $\lambda(S) - \sigma(S)$ directly, which the source model does not report
-(Table~\ref{tab:surrogate}).
-
-\begin{table}[t]
-\centering
-\caption{\withdrawn{} The surrogate gap. $\lambda = \sigma^\kappa - \sigma^\tau$, where
-$\sigma^\kappa$ is the spread of the linear-threshold process at the lower threshold
-$\theta^\kappa \sim F^\kappa(x) = 2x - x^2$ and $\sigma^\tau$ at the upper threshold
-$\theta^\tau \sim F^\tau(x) = x^2$; these are the marginals induced by the model's simplex law, and
-neither is uniform, so neither may be described as standard uniform-threshold LT. All quantities
-share the same window draw within a trial. Every value below is from the pre-fix state machine and
-is invalid.}
-\label{tab:surrogate}
-\begin{tabular}{lrrrrr}
-\toprule
-graph & $|S|/n$ & $\mathbb{E}[|A|]$ & $\lambda$ & gap & gap$/\lambda$ \\
-\midrule
-Congress-Twitter &  5.1\% & $367.17$ & $441.40$ & $+74.23$   & $+0.170$ \\
-Congress-Twitter & 10.1\% & $366.13$ & $403.53$ & $+37.40$   & $+0.098$ \\
-Congress-Twitter & 20.0\% & $363.57$ & $342.23$ & $-21.33$   & $-0.065$ \\
-NetHEPT          &  5.0\% & $1469.87$ & $1442.00$ & $-27.87$  & $-0.019$ \\
-NetHEPT          & 10.0\% & $2787.77$ & $2329.97$ & $-457.80$ & $-0.197$ \\
-NetHEPT          & 20.0\% & $4672.73$ & $2387.00$ & $-2285.73$ & $-0.958$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Two things follow. First, the bound is \emph{tight where it is useful}: on Congress-Twitter at
-$|S|/n = 10\%$ it over-estimates the objective by $9.8\%$, which makes the surrogate worth
-optimising --- and $\sigma^\kappa$ and $\sigma^\tau$ are genuine LT influence functions, so RR
-sampling applies to each individually. Second, the gap degrades with saturation and, under our
-reading of the definitions, \emph{inverts}: $\lambda < \sigma$ in $4$ of $6$ settings. Across a
-wider sweep ($4$ graphs $\times$ $3$ fractions $\times$ $30$ trials) the per-realisation
-containment that the source model's proof invokes holds in $0/180$ draws and the inequality
-$|A| \le |A^\kappa| - |A^\tau|$ holds in $73/180$.
-
-We deliberately do not present this as a refutation. The source states Theorem~6 for the
-expectation of $\sigma$ but proves it on one fixed realisation, and at least three innocent
-readings remain open: our interpretation of $\sigma^\kappa/\sigma^\tau$ may differ from the
-intended one, the two threshold processes may be intended to be coupled rather than independent,
-or the proof may be illustrative rather than general. Every counterexample we observe is a node
-active in the $\theta^\tau$ process but not the $\theta^\kappa$ process, which is exactly what a
-monotone coupling would forbid. Resolving this requires clarification from the authors, and we
-flag it as an open question rather than a result. What we can state without qualification is the
-measured gap above, and the structural point that follows: $\lambda$ is a \emph{difference} of two
-monotone submodular functions, and submodularity is not preserved under differences, so even a
-valid upper bound would not by itself license a sampling-based guarantee.
-
-\paragraph{6. We got non-monotonicity wrong twice, in opposite directions.}
-First we reported that the objective is effectively monotone, based on a sweep at $|S| \le 4000$ on
-a graph where that is at most $26\%$ coverage and mostly far less --- a claim about a \emph{budget}
-presented as a claim about the model. Then, measuring as a \emph{fraction}
-(Table~\ref{tab:regime-fixed}), we over-corrected and reported that between $8\%$ and $35\%$ of
-candidates have a negative marginal gain. That was measured at twelve Monte-Carlo trials per cell,
-and at $300$ trials the share is $0.5\%$ on average with a worst cell of $4.0\%$
-(\S\ref{sec:regime}). Non-monotonicity is real --- \S\ref{sec:coverage} proves it on a one-hop
-instance by exact arithmetic --- but it is rare here, and the operational difficulty is that
-marginal gains become \emph{small} and comparable to their own estimation error. Any statement about
-overexposure that reports neither $|S|/n$ nor the Monte-Carlo budget should be treated with
-suspicion, including, historically, ours.
-
-\paragraph{7. Eight confounds, and what became of each.}
-Withdrawing the measurements of \S\ref{sec:experiments} is necessary but not sufficient; the
-measurement apparatus itself has the following defects, each of which can change a conclusion
-independently of the model fix. They are listed here rather than in a private note because a
-reviewer cannot verify a number whose protocol is not stated. We also state, for each, whether the
-defect was reproduced or only alleged: two of the eight turned out not to bite, and saying so is
-part of the record.
+\paragraph{Eight protocol confounds.}
+The audit found the following issues.  They are listed because the protocol, not a pre-fix number,
+is the reproducibility contribution of this section.
 
 \begin{enumerate}
-  \item \textbf{Inconsistent stopping under a budget of \emph{at most} $k$.} \emph{Reproduced.} One
-        policy selects a seed with negative marginal gain while another stops at the first
-        non-positive gain. Under $\le k$ both are admissible, so the two are not comparable. The
-        rule is now an explicit argument recorded in every decision, and a policy that cannot
-        evaluate a rule refuses it rather than guessing.
-  \item \textbf{Unpriced state acquisition.} \emph{Reproduced.} Obtaining the exposure vector
-        $\delta_2$ needs one cascade, but it was reported at zero cost next to policies charged for
-        their cascades. The state spend is now a breakdown of the same primary cost unit, so any
-        caller that charges cascades charges the state, and it cannot be omitted by forgetting a
-        second counter.
-  \item \textbf{A noisy estimator presented as an oracle.} \emph{Reproduced.} Greedy at
-        $\text{MC} = 25$ is neither exact nor globally optimal and was labelled an oracle. The name
-        now carries the Monte-Carlo budget, and an exact reference is a separate arm.
-  \item \textbf{Mixed seed sizes in one statistic.} \emph{Reproduced, and it was large.} A
-        within/between comparison that pooled $|S| \in \{0, k, 2k, 3k\}$ is dominated by the
-        $|S| = 0$ cell, whose marginals are orders of magnitude larger. Measured on Congress-Twitter
-        at $k = 3$, the between-candidate standard deviation is $36.54$ at $|S| = 0$ against $0.74$
-        at $|S| = 3$ --- a factor of $50$ --- so the pooled ratio was essentially the unsaturated
-        one. The ratio is now computed inside one seed size and reported per size, and a cell counts
-        only when it clears the threshold at the seed size where the headroom was measured. The
-        corrected verdict on the six graphs re-measured is that only Congress-Twitter at $k = 1$
-        clears both thresholds, so the earlier conclusion that state dependence and headroom do not
-        coincide survives; but the ratios that supported it do not, and the reason the sparsest
-        graph fails is now visible rather than inferred --- its between-candidate spread is minute
-        ($\mathrm{sd} = 1.27$ at $|S| = 0$), so there is little for a state-conditioned score to
-        separate.
-  \item \textbf{Selection bias in the candidate pool.} \emph{Reproduced, and it can flip the sign.}
-        A single random $30$-node pool makes regime selection an uncontrolled variable. Measured
-        across five degree-stratified pools, the degree-to-reference gap on Facebook at $k = 1$
-        ranges from $0.00\%$ to $98.52\%$, and on Congress-Twitter at $k = 1$ from $-8.67\%$ to
-        $+25.57\%$ --- the sign of the effect depends on the draw. The pool is now drawn
-        degree-stratified so its profile matches the graph's by construction, and the measurement
-        repeats over independent pools so the reported headroom comes with a min--max band rather
-        than a point.
-  \item \textbf{Splits that do not deduplicate.} \emph{Alleged, not reproduced.} Splitting by
-        context identifier could in principle place an identical seed set on both sides of a split.
-        We checked: on our generators every context already has a distinct seed set and a
-        without-replacement candidate draw, so there are zero duplicate states at $12$, $24$, $48$
-        and $120$ contexts. The split now groups by the canonical (seed set, candidate set) state so
-        the invariant is enforced rather than incidental, but \emph{no number changed} because of
-        it, and we do not claim that any did.
-  \item \textbf{Unreported label uncertainty.} \emph{Reproduced.} Recording the label's standard
-        error as \texttt{NaN} meant a candidate difference was never compared against the error of
-        estimating it --- the comparison that decides whether a rank correlation in this regime means
-        anything. The paired estimator already formed per-trial differences, so the standard error
-        was available at no extra cost; it is now recorded and reported next to the mean gain.
-  \item \textbf{Weights normalised beyond what the model allows.} \emph{Reproduced.} In-edge weights
-        are normalised to sum to exactly $1$, whereas the model requires at most $1$. On a uniformly
-        weighted sparse file the two readings differ by a factor of $50$ in the exposure scale
-        ($0.02$ against $1.00$ per node), which decides whether any node is over-exposed at all.
-        Four strategies are now named --- \texttt{sum\_to\_one}, \texttt{clip\_to\_one},
-        \texttt{uniform\_share}, \texttt{as\_given} --- the one used is recorded on the graph and
-        reported with the exposure scale, and a graph that exceeds the allowance is refused rather
-        than silently repaired.
+  \item \textbf{Stopping under a budget of at most $k$.} The stopping rule is now explicit and is
+        recorded per decision; a policy that cannot evaluate a requested rule refuses it.
+  \item \textbf{State acquisition cost.} The exposure state is charged as part of the same cascade
+        budget, rather than being silently treated as free.
+  \item \textbf{Noisy reference naming.} A Monte-Carlo greedy policy carries its MC budget in its
+        name and is not called an exact oracle.
+  \item \textbf{Seed-size pooling.} State-dependence ratios are computed inside one seed size and
+        reported per size; unsaturated contexts are not pooled with saturated ones.
+  \item \textbf{Candidate-pool selection.} Candidate pools are degree-stratified and repeated so
+        that a single draw cannot determine the sign of a headroom claim.
+  \item \textbf{State deduplication.} Splits are guarded by the canonical seed-set/candidate-set
+        state rather than relying on context identifiers alone.
+  \item \textbf{Label uncertainty.} Paired standard errors are recorded for marginal labels, and
+        rank correlations in the saturated regime are not reported below MC=300.
+  \item \textbf{Weight normalisation.} The chosen strategy is recorded explicitly; sensitivity to
+        \texttt{sum\_to\_one} versus \texttt{clip\_to\_one} remains required before claiming external validity.
 \end{enumerate}
 
-Two of these interact with the model fix in the same direction: defect 2 charges nothing for the
-state that the correction makes more valuable, and defect 8 sets the exposure scale that decides
-whether any node is over-exposed at all. A re-derived table that fixes the state machine but not
-these would not be trustworthy.
+The main limitation is therefore not hidden in an omitted table: the corrected regime result is
+valid, but a post-fix sequential sample-efficiency result has not yet been established.  The
+paper's title and algorithmic claims must be revisited if the pending quality--cost gate fails.

@@ -50,13 +50,13 @@ eight. But the same twelve-trial measurement also told us that $8$--$35\%$ of ca
 with a worst cell of $4.0\%$. The sign flip is real and the negative-marginal share was Monte-Carlo
 artefact, and only adequate power separates the two.
 
-An earlier version of this work reported the baseline comparison that followed from the regime
-characterisation. Those measurements were produced by an activation rule that denied an
-over-exposed node the ability to turn negative and at Monte-Carlo budgets below the threshold we
-now require; on Congress-Twitter the corrected rule removes $60$--$63\%$ of the measured spread,
-which is larger than every effect that was reported. They are withdrawn, and
-\S\ref{sec:experiments} retains them under an explicit marker rather than deleting them, because
-the record of what was measured and of why it was wrong is part of what this paper has to offer.
+An earlier version of this work reported a baseline comparison built on an activation rule that
+denied an over-exposed node the ability to turn negative and on Monte-Carlo budgets below the
+threshold required for saturated rank measurements.  The corrected rule removes $60$--$63\%$ of
+the measured spread on Congress-Twitter, which is larger than every effect reported in that
+version.  We therefore omit those tables from the submission and retain only the protocol lesson:
+results from this model must be regenerated under the corrected state machine and measurement
+contract.
 
 \paragraph{Contributions.}
 \begin{itemize}
@@ -74,10 +74,9 @@ the record of what was measured and of why it was wrong is part of what this pap
         previously reported from twelve trials per cell; at $300$ trials it is $0.5\%$ on average
         and $4.0\%$ at worst.
   \item We give a measurement protocol for this model (\S\ref{sec:protocol}) in the form of five
-        checks, each stated with the measured magnitude of the error it prevents. The largest is a
-        state-machine error that inflates the spread of our densest graph by $60$--$63\%$; the
-        smallest is free to fix. We fell into all five, and we report them with the numbers that
-        exposed them rather than as advice.
+        checks covering state transitions, threshold-law identification, Monte-Carlo noise,
+        state-size pooling, and candidate-pool repetition. These checks define the evidence
+        contract for the corrected measurements; withdrawn pre-fix magnitudes are not used.
   \item We show that the upper bound the source model optimises is a \emph{difference} of two
         submodular functions, so even a valid bound would not by itself license a sampling-based
         guarantee (\S\ref{sec:limitations}).
@@ -87,16 +86,14 @@ the record of what was measured and of why it was wrong is part of what this pap
         that do not deduplicate, unreported label uncertainty, and weights normalised beyond what
         the model allows --- and for each we say whether it was reproduced or only alleged
         (\S\ref{sec:limitations}).
-  \item We withdraw, rather than restate, the empirical regime characterisation and the baseline
-        comparison of an earlier version of this work, and we report the corrected state machine and
-        the counterexamples that exposed it (\S\ref{sec:limitations}).
+  \item We report the corrected state machine, the counterexamples that exposed it, and the
+        measurement confounds that must be controlled before a sequential quality--cost claim can
+        be made (\S\ref{sec:limitations}).
 \end{itemize}
 
 %% TODO(refs): the related-work section needs verified citations for TIM, IMM, OPIM, SSA,
 %% gIM, cuRipples, GCOMB and the LAICO overexposure line. The bibliography is intentionally
 %% empty rather than populated with unverified entries.
 %%
-%% TODO(experiments): every measured number in sections/experiments.tex, sections/regime.tex and
-%% the calibration table in sections/analysis.tex is marked \withdrawn. Restoring any of them
-%% requires re-derivation under src/grl/diffusion/contract.py with the eight confounds of
-%% sections/limitations.tex paragraph 7 removed. Do not un-mark them individually.
+%% TODO(experiments): re-derive the sequential quality--cost comparison under
+%% src/grl/diffusion/contract.py before adding an algorithmic sample-efficiency claim.

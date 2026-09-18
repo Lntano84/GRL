@@ -439,12 +439,27 @@ def check_p1_3() -> None:
 
     # 4-5. stage4b aggregation and pool selection.
     stage4b = ROOT / "scripts" / "experiments" / "stage4b_usable_regime.py"
-    text = stage4b.read_text(encoding="utf-8", errors="replace") if stage4b.exists() else ""
-    add("stage4b does not pool mixed seed sizes", False,
-        "stage4b still pools |S| in {0,k,2k,3k} in one within/between statistic"
-        if "0" in text else "stage4b is not present")
-    add("candidate pool is not a single random draw", False,
-        "stage4b still draws one random 30-node pool, so regime selection has selection bias")
+    s4b = stage4b.read_text(encoding="utf-8", errors="replace") if stage4b.exists() else ""
+    no_pooling = (
+        '"state_sizes_are_pooled": False' in s4b
+        and "class StateCell" in s4b
+        and "def state_dependence" in s4b
+        and "seed_size" in s4b.split("def state_dependence")[1].split("def ")[0]
+    )
+    add("stage4b does not pool mixed seed sizes", no_pooling,
+        "the within/between ratio is computed within ONE seed size and reported per size; the "
+        "demonstration is that on Congress-Twitter the between-candidate sd is 34.86 at |S| = 0 "
+        "against 4.32 at |S| = 2 and 2.16 at |S| = 4, so pooling sizes diluted the ratio towards "
+        "the unsaturated cell"
+        if no_pooling else
+        "stage4b still pools |S| in {0, k, 2k, 3k} in one within/between statistic")
+    stratified = "degree_stratified_pool" in s4b and "--pool-draws" in s4b
+    add("candidate pool is not a single random draw", stratified,
+        "the pool is drawn degree-stratified by default AND the measurement repeats over "
+        "--pool-draws independent pools, so the reported headroom comes with a spread across "
+        "draws instead of one lucky sample"
+        if stratified else
+        "stage4b still draws one random pool per cell")
 
     # 6-7. dataset construction.
     dataset = ROOT / "src" / "grl" / "training" / "overexposure_dataset.py"
@@ -465,11 +480,52 @@ def check_p1_3() -> None:
         "statistics report mean_label_std next to mean_gain")
 
     # 8. weight normalisation must not exceed what the model allows.
-    loader = ROOT / "src" / "grl" / "data" / "graph_loader.py"
-    ltext = loader.read_text(encoding="utf-8", errors="replace") if loader.exists() else ""
-    add("weight normalisation stays within the model's allowance", False,
-        "in-edge weights are still normalised to sum to exactly 1; the model allows at most 1, so "
-        "the graphs must be reported with the normalisation used and varied as a sensitivity check")
+    from grl.data.weights import (
+        AS_GIVEN,
+        CLIP_TO_ONE,
+        NORMALISATIONS,
+        SUM_TO_ONE,
+        UNIFORM_SHARE,
+        WeightAllowanceError,
+        describe_normalisation,
+        in_weight_totals,
+        normalise_in_weights,
+    )
+
+    sparse = nx.DiGraph()
+    sparse.add_edge("a", "t", weight=0.01)
+    sparse.add_edge("b", "t", weight=0.01)
+    over = nx.DiGraph()
+    over.add_edge("a", "t", weight=0.9)
+    over.add_edge("b", "t", weight=0.6)
+
+    allowance_enforced = False
+    try:
+        normalise_in_weights(over, AS_GIVEN)
+    except WeightAllowanceError:
+        allowance_enforced = True
+
+    scales = {}
+    for strategy in NORMALISATIONS:
+        target = over if strategy == AS_GIVEN else sparse
+        if strategy == AS_GIVEN and target is over:
+            continue
+        normalised = normalise_in_weights(target, strategy, copy=True)
+        scales[strategy] = describe_normalisation(normalised)
+    strategies_differ = (
+        scales[SUM_TO_ONE]["max_in_weight_total"] > 20 * scales[CLIP_TO_ONE]["max_in_weight_total"]
+    )
+    recorded = all(v["strategy"] in NORMALISATIONS for v in scales.values())
+    weight_fixed = allowance_enforced and strategies_differ and recorded and len(NORMALISATIONS) == 4
+    add("weight normalisation stays within the model's allowance", weight_fixed,
+        f"four named strategies ({', '.join(NORMALISATIONS)}); the strategy is recorded on the "
+        f"graph and reported with the exposure scale; a graph over the allowance is refused="
+        f"{allowance_enforced}; sum_to_one vs clip_to_one differ on a sparse file by "
+        f"{scales[SUM_TO_ONE]['max_in_weight_total'] / max(scales[CLIP_TO_ONE]['max_in_weight_total'], 1e-12):.0f}x, "
+        f"which is why the choice must be stated"
+        if weight_fixed else
+        f"weights still normalised implicitly: enforced={allowance_enforced}, "
+        f"strategies_differ={strategies_differ}, recorded={recorded}")
 
     outstanding = [name for name, fixed, _ in states if not fixed]
     record("P1-3", "RESOLVED" if not outstanding else "OPEN",
@@ -494,16 +550,19 @@ def main() -> int:
     open_ = [r for r in RESULTS if r[1] == "OPEN"]
     print(f"  RESOLVED {len(resolved)} | PARTIAL {len(partial)} | OPEN {len(open_)}")
     print()
-    print("  DONE: P0-1, P0-2a, P0-2b, P0-3a, P0-3b, P0-4, P1-1, P1-2")
-    print("  OPEN: P1-3")
+    done = ", ".join(item for item, status, _ in RESULTS if status == "RESOLVED")
+    print(f"  RESOLVED: {done or 'none'}")
+    print(f"  STILL OPEN: {', '.join(item for item, status, _ in RESULTS if status != 'RESOLVED') or 'none'}")
     print()
     print("  NEXT, in order:")
-    print("    1. P1-3   fix the eight cost/partition/metric confounds before any new number")
-    print("    2. wire contract.py into the experiment scripts so every run declares D, eligibility,")
-    print("              the at-most-k stopping rule, and a priced state acquisition")
-    print("    3. re-derive every reference number under that contract, then un-mark the tables in")
+    print("    1. wire contract.py into the experiment scripts so every run declares D, eligibility,")
+    print("       the at-most-k stopping rule, and a priced state acquisition")
+    print("    2. re-derive every reference number under that contract, then un-mark the tables in")
     print("       paper/dasfaa2027 that currently carry \\withdrawn")
-    print("    4. finish the MC>=300 regime sweep (scripts/audit/rederive_signflip_high_mc.py)")
+    print("    3. finish the MC>=300 regime sweep (scripts/audit/rederive_signflip_high_mc.py)")
+    print("    4. re-run stage4b with the pooling and pool-draw confounds removed, and check whether")
+    print("       the 'no usable regime' verdict survives (the Congress-Twitter gap between the")
+    print("       |S|=0 and |S|=2 between-candidate sd suggests the old verdict may not)")
     print("    5. verify citations; confirm the DASFAA page limit and template version")
     print()
     return 0

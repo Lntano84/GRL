@@ -53,6 +53,10 @@ if str(ROOT / "src") not in sys.path:
 if str(ROOT / "scripts" / "experiments") not in sys.path:
     sys.path.insert(0, str(ROOT / "scripts" / "experiments"))
 
+from grl.data.weights import (  # noqa: E402
+    SUM_TO_ONE,
+    normalise_in_weights as _normalise,
+)
 from evaluate_overexposure_pool_ranking import (  # noqa: E402
     degree_scores,
     exposure_scores_delta,
@@ -117,15 +121,19 @@ LOADERS = {
 }
 
 
-def normalise_in_weights(graph: nx.DiGraph) -> nx.DiGraph:
-    """Scale each node's in-edge weights to sum to 1 (the regime the model requires)."""
-    totals: dict = {v: 0.0 for v in graph.nodes()}
-    for _, v, data in graph.edges(data=True):
-        totals[v] += float(data.get("weight", 0.0))
-    for _, v, data in graph.edges(data=True):
-        total = totals[v]
-        data["weight"] = float(data.get("weight", 0.0)) / total if total > 0 else 0.0
-    return graph
+def normalise_in_weights(graph: nx.DiGraph, strategy: str = SUM_TO_ONE) -> nx.DiGraph:
+    """Scale in-edge weights per ``strategy`` and record which one was used.
+
+    Kept as a thin wrapper so that the many scripts importing this name keep working, but the
+    decision itself now lives in :mod:`grl.data.weights`.  Confound P1-3.8: the historical
+    behaviour scaled every node's in-weights to sum to *exactly* 1, whereas the model only requires
+    *at most* 1.  That choice sets the exposure scale --- on a uniformly weighted sparse file it is
+    a change of one to two orders of magnitude --- so it must be named and reported rather than
+    assumed.  Pass ``strategy=AS_GIVEN`` or ``CLIP_TO_ONE`` to respect the allowance literally;
+    the default is retained only so existing sweeps reproduce, and any table built with it should
+    say so.
+    """
+    return _normalise(graph, strategy)
 
 
 # --------------------------------------------------------------------------------------

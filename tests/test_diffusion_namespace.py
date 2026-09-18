@@ -48,19 +48,54 @@ def test_overexposure_estimators_resolve_to_the_overexposure_module():
     assert diffusion.run_overexposure.__module__ == "grl.diffusion.overexposure"
 
 
+OVEREXPOSURE_NAMES = {
+    "run_overexposure", "sample_threshold_windows", "positive_activation_probability",
+    "marginal_positive_probability", "OverexposureRun",
+    "INACTIVE", "POSITIVE", "NEGATIVE", "DETERMINISTIC", "STOCHASTIC", "ACTIVATION_MODES",
+}
+CONTRACT_NAMES = {
+    "ContractViolation", "ObjectiveContract", "ModelContract", "TargetedObjective",
+    "build_contract", "OverexposureParams", "resolve_overexposure_params",
+}
+IC_NAMES = {
+    "run_independent_cascade",
+    "estimate_spread",
+    "estimate_spread_over_configs",
+    "estimate_marginal_gain",
+    "estimate_marginal_gains",
+}
+
+
 def test_no_public_name_is_claimed_by_both_modules():
-    """Every exported name must map to exactly one module's definition."""
-    ic_public = {name for name in diffusion.__all__ if not name.startswith("estimate_overexposure")
-                 and name not in {"run_overexposure", "sample_threshold_windows",
-                                  "positive_activation_probability",
-                                  "marginal_positive_probability", "OverexposureRun",
-                                  "INACTIVE", "POSITIVE", "NEGATIVE",
-                                  "DETERMINISTIC", "STOCHASTIC", "ACTIVATION_MODES"}
-                 and name not in {"run_independent_cascade"}}
-    for name in ic_public:
+    """Every exported name must map to exactly one module's definition.
+
+    The sets are listed explicitly rather than inferred, so adding a new module to the package
+    forces this test to be updated instead of silently widening what counts as "IC".
+    """
+    covered = OVEREXPOSURE_NAMES | CONTRACT_NAMES | IC_NAMES
+    unclassified = set(diffusion.__all__) - covered - {
+        name for name in diffusion.__all__ if name.startswith("estimate_overexposure")
+    }
+    assert not unclassified, (
+        f"these exported names are not classified by module: {sorted(unclassified)}; "
+        f"add them to OVEREXPOSURE_NAMES, CONTRACT_NAMES or IC_NAMES"
+    )
+    for name in set(diffusion.__all__) - OVEREXPOSURE_NAMES - CONTRACT_NAMES - IC_NAMES:
+        if name.startswith("estimate_overexposure"):
+            continue
         obj = getattr(diffusion, name)
-        module = getattr(obj, "__module__", "grl.diffusion.independent_cascade")
+        module = getattr(obj, "__module__", "")
         assert module == "grl.diffusion.independent_cascade", (name, module)
+
+
+def test_contract_names_come_from_the_contract_module():
+    for name in CONTRACT_NAMES:
+        assert name in diffusion.__all__, name
+        obj = getattr(diffusion, name)
+        module = getattr(obj, "__module__", None)
+        # OverexposureParams is defined in params.py and re-exported through contract; either is a
+        # single definition site, which is what matters.
+        assert module in {"grl.diffusion.contract", "grl.diffusion.params"}, (name, module)
 
 
 def test_models_actually_disagree_on_a_toy_graph():

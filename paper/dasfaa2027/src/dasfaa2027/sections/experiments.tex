@@ -1,6 +1,20 @@
 \section{Experiments}
 \label{sec:experiments}
 
+\begin{withdrawnblock}{Every measured number in this section is withdrawn.}
+The overexposure state machine was wrong when these measurements were taken: a positively
+activated node could never become negative again, and a node with $\delta = \theta^\tau = 1$ was
+denied activation. On Congress-Twitter the correction removes $60$--$63\%$ of the measured spread
+($k = 1$: $299.35 \to 111.44$; $k = 5$: $358.52 \to 137.28$; $k = 10$: $365.95 \to 143.43$), which
+is larger than every effect reported below. The tables are \emph{retained}, not deleted, so that
+the record of what was measured and of why it was wrong stays visible; they must not be read as
+results. What survives the correction is the analytic material: the closed form of
+\S\ref{sec:analysis}, the exact one-hop argument of \S\ref{sec:coverage}, and the structural
+observation that $\lambda$ is a difference of two submodular functions. Re-deriving the numbers
+below requires the frozen model contract of \S\ref{sec:prelim} and is future work; the
+confounds that must be removed first are listed in \S\ref{sec:limitations}.
+\end{withdrawnblock}
+
 \subsection{Setup}
 
 \paragraph{Graphs.}
@@ -36,9 +50,10 @@ of the spread of the true marginals to the mean standard error of their estimate
 
 \begin{table}[t]
 \centering
-\caption{Label signal-to-noise in the negative-marginal regime (Congress-Twitter, $30$
-candidates, paired labels). At $60$ trials the noise equals the signal; only at
-$\ge 300$ trials are rank correlations interpretable.}
+\caption{\withdrawn{} Label signal-to-noise in the negative-marginal regime (Congress-Twitter,
+$30$ candidates, paired labels). At $60$ trials the noise equals the signal; only at
+$\ge 300$ trials are rank correlations interpretable. Measured with the pre-fix state machine;
+the qualitative warning may survive the correction but these values do not.}
 \label{tab:snr}
 \begin{tabular}{lrrrrrr}
 \toprule
@@ -67,10 +82,11 @@ $10$ additional seeds drawn from a pool of $60$, over $400$ paired trials.
 
 \begin{table}[t]
 \centering
-\caption{Congress-Twitter, budget $10$, pool $60$, $400$ paired trials with per-trial shared
-windows. The quantity is the marginal spread added by the budget over the pre-existing seed set.
-Degree becomes harmful once saturated; the closed form $\delta_2$ beats both degree and exact
-Monte-Carlo greedy.}
+\caption{\withdrawn{} Congress-Twitter, budget $10$, pool $60$, $400$ paired trials with per-trial
+shared windows. The quantity is the marginal spread added by the budget over the pre-existing seed
+set. Degree becomes harmful once saturated; the closed form $\delta_2$ beats both degree and exact
+Monte-Carlo greedy. Pre-fix state machine: the qualitative sign pattern is under re-measurement and
+the magnitudes are invalid.}
 \label{tab:main}
 \begin{tabular}{lrrrr}
 \toprule
@@ -113,11 +129,12 @@ under a paired protocol with shared threshold windows.
 
 \begin{table}[t]
 \centering
-\caption{All policies evaluated on the true objective. Marginal spread over the pre-existing seed
-set, over three graphs $\times$ three seed fractions ($n = 9$ cells, $150$ paired trials each).
-``satur.'' restricts to $|S|/n \ge 10\%$. \texttt{casc.} is the number of cascade simulations the
-policy spends per query. \textsc{UB} arms implement our reading of the stated definition --- see
-\S\ref{sec:limitations}.}
+\caption{\withdrawn{} All policies evaluated on the true objective. Marginal spread over the
+pre-existing seed set, over three graphs $\times$ three seed fractions ($n = 9$ cells, $150$ paired
+trials each). ``satur.'' restricts to $|S|/n \ge 10\%$. \texttt{casc.} is the number of cascade
+simulations the policy spends per query. \textsc{UB} arms implement our reading of the stated
+definition --- see \S\ref{sec:limitations}. Pre-fix state machine: the whole table must be
+re-derived, and the cascade counts are additionally confounded (see \S\ref{sec:limitations}).}
 \label{tab:baselines}
 \begin{tabular}{lrrrr}
 \toprule
@@ -177,8 +194,9 @@ set of $100$ evaluation windows so that only the selection varies.
 
 \begin{table}[t]
 \centering
-\caption{Robustness across $8$ independent selection draws (Congress-Twitter, budget $10$,
-pool $60$). $\delta_2$ beats degree on every draw at every fraction; no counterexample exists.}
+\caption{\withdrawn{} Robustness across $8$ independent selection draws (Congress-Twitter, budget
+$10$, pool $60$). $\delta_2$ beats degree on every draw at every fraction; no counterexample exists.
+Pre-fix state machine; the pool is also a single random draw, not a stratified one.}
 \label{tab:robust}
 \begin{tabular}{lrrr}
 \toprule
@@ -207,8 +225,9 @@ On NetHEPT the picture is different, and we report it because it bounds the clai
 
 \begin{table}[t]
 \centering
-\caption{NetHEPT ($\langle k \rangle = 4.23$). Degree remains beneficial at every fraction and
-actually wins at $|S|/n = 20\%$.}
+\caption{\withdrawn{} NetHEPT ($\langle k \rangle = 4.23$). Degree remains beneficial at every
+fraction and actually wins at $|S|/n = 20\%$. Pre-fix state machine; NetHEPT weights are uniform
+$p = 0.01$, a different normalisation from the other graphs.}
 \label{tab:nethept}
 \begin{tabular}{lrr}
 \toprule

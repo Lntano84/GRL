@@ -66,7 +66,7 @@ def test_marginal_gain_is_non_negative_when_windows_cannot_overexpose():
     consistency check on both the oracle and the diffusion model.
     """
     graph = make_graph()
-    params = OverexposureParams(overexposure_free=True)
+    params = OverexposureParams(threshold_law="simplex_tau_clamped_to_one")
     oracle = OverexposureMonteCarloOracle(graph, mc_runs=30, params=params, random_seed=5)
     seeds = [0]
     candidates = [v for v in graph.nodes() if v not in seeds][:8]

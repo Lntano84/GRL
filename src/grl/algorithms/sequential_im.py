@@ -87,19 +87,46 @@ def adaptive_selective_greedy(
     min_rounds: int = 2,
     max_m: int | None = None,
 ) -> SequentialSelectionResult:
-    """Adaptive prediction-guided refinement with safe full-oracle fallback.
+    """Adaptive prediction-guided refinement with an empirical acceptance test.
 
-    Candidates are ranked once by the learned oracle at each greedy step. Exact
-    evaluation starts from a small prefix and expands in batches. A provisional
-    winner is accepted only when (1) it is stable across ``min_rounds`` expansion
-    rounds and (2) its exact score exceeds an empirical upper envelope for the
-    best unverified candidate. The envelope is the learned outsider score plus
-    the largest observed exact-minus-learned residual and ``residual_beta``
-    residual standard deviations. If this never certifies, the method expands to
-    ``max_m``; with max_m=None it can fall back to all remaining candidates.
+    Candidates are ranked once by the learned oracle at each greedy step.  Exact evaluation starts
+    from a small prefix and expands in batches.  A provisional winner is *accepted* when it is
+    stable across ``min_rounds`` expansion rounds and its exact score exceeds an empirical upper
+    envelope for the best unverified candidate: the learned outsider score plus the largest observed
+    exact-minus-learned residual and ``residual_beta`` residual standard deviations.
 
-    This is an operational first certification baseline, not yet a formal
-    probabilistic guarantee.
+    What this is NOT
+    ----------------
+    The envelope is **not** a probabilistic guarantee.  The residual is a maximum over the
+    candidates inspected so far, which says nothing about the ones that were not inspected; a
+    candidate with a large but unobserved gain is invisible to it.  There is a concrete
+    counterexample with no Monte-Carlo noise at all, using the default ``min_rounds = 2``:
+
+    ===========  ====  ====  ====  =====  =====
+    candidate      0     1     2      3      4
+    learned       10     9     4     -1     -2
+    true          10     9     4      1    100
+    ===========  ====  ====  ====  =====  =====
+
+    with ``initial_m = 2``, ``batch_m = 1``, ``max_m = 3``.  Nodes 0, 1 and 2 are verified and all
+    three residuals are zero, so the envelope for the best unverified candidate (node 3) collapses to
+    its predicted score of -1.  The winner is stable and is accepted at node 0, while node 4 -- never
+    inspected -- has true gain 100.  The pool was not exhausted, so this is not the exact branch.
+
+    The reported fields therefore separate three stages instead of merging them into one
+    "certified" flag:
+
+    ``empirical_accept``
+        the envelope test passed.  A heuristic; it can be wrong as shown above.
+    ``statistical_certificate``
+        reserved for a decision carrying an explicit coverage or confidence statement.  Nothing in
+        this repository sets it today; a caller supplying a genuinely valid bound may.
+    ``fallback_full_scan``
+        the cap was reached with every candidate in the pool evaluated exactly.  This is the only
+        branch whose decision is exact with respect to the pool, and it must be *entered*, not
+        merely reachable.
+
+    This is an operational first baseline, not a formal probabilistic guarantee.
     """
     initial_m = max(1, int(initial_m))
     batch_m = max(1, int(batch_m))
@@ -118,7 +145,9 @@ def adaptive_selective_greedy(
         winner_history: list[int] = []
         rounds: list[dict] = []
         target = min(initial_m, cap)
-        certified = False
+        empirical_accept = False
+        statistical_certificate = False
+        fallback_full_scan = False
         stop_reason = "max_m"
 
         while True:
@@ -148,10 +177,12 @@ def adaptive_selective_greedy(
                 and len(set(winner_history[-min_rounds:])) == 1
             )
             if outsider is None:
-                certified = True
+                # every candidate in the pool was evaluated exactly
+                empirical_accept = True
+                fallback_full_scan = True
                 stop_reason = "all_candidates"
             elif stable and float(verified[winner]) >= float(outsider_upper):
-                certified = True
+                empirical_accept = True
                 stop_reason = "residual_envelope"
 
             rounds.append({
@@ -165,13 +196,14 @@ def adaptive_selective_greedy(
                 "best_unverified_predicted": None if outsider is None else float(learned[outsider]),
                 "best_unverified_upper": outsider_upper,
                 "stable": bool(stable),
-                "certified": bool(certified),
+                "empirical_accept": bool(empirical_accept),
             })
 
-            if certified:
+            if empirical_accept:
                 break
             if target >= cap:
                 stop_reason = "max_m" if cap < len(ranked) else "all_candidates"
+                fallback_full_scan = cap >= len(ranked)
                 break
             target = min(cap, target + batch_m)
 
@@ -182,7 +214,9 @@ def adaptive_selective_greedy(
             "predicted_score": float(learned[chosen]),
             "oracle_score": float(verified[chosen]),
             "verified": len(verified),
-            "certified": bool(certified),
+            "empirical_accept": bool(empirical_accept),
+            "statistical_certificate": bool(statistical_certificate),
+            "fallback_full_scan": bool(fallback_full_scan),
             "stop_reason": stop_reason,
             "rounds": rounds,
             "shortlist": ranked[:len(verified)],

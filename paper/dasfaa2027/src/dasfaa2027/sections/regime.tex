@@ -29,10 +29,18 @@ Carlo with windows shared across candidates within a trial.
 
 \begin{table}[t]
 \centering
-\caption{Out-degree becomes an anti-signal once the network saturates. Values are means over
-$|S|/n \ge 20\%$. ``neg.'' is the share of candidates with $\Delta(v \mid S) < 0$. $\delta_2$
+\caption{\withdrawn{} Out-degree becomes an anti-signal once the network saturates. Values are means
+over $|S|/n \ge 20\%$. ``neg.'' is the share of candidates with $\Delta(v \mid S) < 0$. $\delta_2$
 denotes the state-conditioned closed form of \S\ref{sec:analysis}. Trust Bitcoin-Alpha is one of
-the source model's own datasets.}
+the source model's own datasets. \textbf{Two independent defects.} (i) The state machine was fixed
+after these were measured. (ii) They were measured at $\text{MC} = 12$, and the command that
+produced them is recorded in \texttt{docs/GATE3A\_REPORT.md} together with an explicit warning that
+correlations must not be cited from it; the honesty constraints carried from the earlier analysis
+forbid reporting a rank correlation in this regime below $\text{MC} = 300$. A re-measurement at
+$\text{MC} = 300$ under the fixed model gives, for Congress-Twitter at $|S|/n = 20\%$, a raw
+negative share of $4\%$ instead of $44\%$ and $0\%$ of candidates negative beyond noise --- so the
+``neg.'' column here is largely Monte-Carlo artefact. Re-derivation is in progress
+(\texttt{scripts/audit/rederive\_signflip\_high\_mc.py}).}
 \label{tab:signflip}
 \begin{tabular}{lrrrrr}
 \toprule
@@ -51,27 +59,40 @@ Congress-Twitter   &   475 & 55.95 & $-0.049$ & $+0.050$ & 35.0\% \\
 \end{tabular}
 \end{table}
 
-Three observations follow from Table~\ref{tab:signflip}.
+Three observations follow from Table~\ref{tab:signflip}. They are stated as hypotheses to be
+re-measured, not as results: the table is withdrawn (see its caption), and a re-measurement at
+$\text{MC} = 300$ under the fixed model already contradicts observation 2 on Congress-Twitter,
+where the share of negative marginals falls from $44\%$ to $4\%$ and no candidate is negative
+beyond noise.
 
 \begin{enumerate}
   \item \textbf{Out-degree flips sign.} It is positively correlated with the marginal gain on
         only one of nine graphs --- NetHEPT, the sparsest --- and negative on the other eight
         once $|S|/n \ge 20\%$.
-  \item \textbf{The objective really is non-monotone there.} Between $8\%$ and $35\%$ of
-        candidates have a \emph{negative} marginal gain on the denser graphs. This matches the
-        source model's own report that the objective value fluctuates with the budget on its
-        sparsest dataset.
+  \item \textbf{The objective really is non-monotone there.} \withdrawn{} Between $8\%$ and $35\%$
+        of candidates have a \emph{negative} marginal gain on the denser graphs. This was offered
+        as matching the source model's own report that the objective value fluctuates with the
+        budget on its sparsest dataset; the re-measurement suggests most of the share was
+        estimation noise, so the phenomenon must be established at $\text{MC} \ge 300$ with paired
+        per-trial differences before it can be claimed.
   \item \textbf{The state-conditioned closed form stays positive on all nine.} It is the only
-        scorer we tested that does.
+        scorer we tested that does. \withdrawn{} The re-measurement gives $\rho_{\delta_2} = +0.030$
+        on Congress-Twitter at $|S|/n = 20\%$ and $\rho_{\text{degree}} = +0.039$ in the same cell,
+        i.e.\ no separation; the claim that $\delta_2$ is a usable ranker in this regime is not
+        supported by the re-derived numbers.
 \end{enumerate}
 
 \paragraph{Density is not the explanation.}
-It is tempting to attribute the sign flip to density. We do not, because the evidence does not
-support it: with nine graphs the rank correlation between $\langle k \rangle$ and
-$\rho_{\text{degree}}$ is only $-0.183$ --- weaker than the $-0.405$ we measured with eight, so
-adding a graph moved it \emph{towards} zero --- and Congress-Twitter, the densest graph, is a
-counterexample at $\rho_{\text{degree}} = -0.049$. The defensible claim is about the
-\emph{saturated regime}, not about dense graphs.
+It is tempting to attribute a sign flip to density. We do not, for two reasons. First, the claim was
+never supported even by the numbers we had: the rank correlation between $\langle k \rangle$ and
+$\rho_{\text{degree}}$ was only weakly negative, and Congress-Twitter, the densest graph, was a
+counterexample at $\rho_{\text{degree}} = -0.049$. Second, and more seriously, \withdrawn{} both
+components of that correlation were measured at $\text{MC} = 12$ (\S\ref{sec:experiments}), so even
+its sign is currently unknown; the re-measurement under the fixed model gives
+$\rho_{\text{degree}} = +0.039$ on Congress-Twitter at $|S|/n = 20\%$, where the withdrawn table
+records $-0.112$. The defensible claim, when there is one, will be about the \emph{saturated regime}
+and will be supported by paired per-trial differences at $\text{MC} \ge 300$, not by a correlation
+against density.
 
 \paragraph{A structural hint.}
 After in-weight normalisation, exposure $\delta$ is driven by a node's \emph{in}-degree while a

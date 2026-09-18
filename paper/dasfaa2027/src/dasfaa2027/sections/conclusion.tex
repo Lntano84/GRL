@@ -14,32 +14,32 @@ It also holds only for a named threshold distribution --- under uniform-threshol
 the same instance is monotone. An earlier draft argued the stronger claim that "RR sets are empty";
 that probe was mis-specified and the claim is withdrawn.
 
-What replaces it is unglamorous but effective. The regime that matters is the seed
-\emph{fraction}: across nine graphs the objective becomes genuinely non-monotone once
-$|S|/n \ge 20\%$, with $8\%$ to $35\%$ of candidates having a negative marginal gain, and
-out-degree turning from a signal into an anti-signal on eight of the nine. Exact Monte-Carlo
-greedy also degrades there, because the marginals it must resolve are smaller than its own
-estimation noise. A two-hop closed form that reads the realised exposure state and penalises
-candidates that would over-expose their neighbourhood recovers spread where degree destroys it,
-beats exact greedy, and does so on $8/8$ independent selection draws --- at one cascade per
-decision rather than $k \cdot |M| \cdot \text{MC}$.
+What replaces it is a measurement discipline, and an honest account of the measurements we had to
+withdraw. We identified the seed \emph{fraction} $|S|/n$ as the variable that governs whether the
+objective is monotone, and we reported a regime characterisation and a baseline comparison on top of
+it. Both of those were produced by an activation rule that forbade an over-exposed node from turning
+negative, and at Monte-Carlo budgets below the threshold the measurement itself requires; on
+Congress-Twitter the corrected rule removes $60$--$63\%$ of the spread, more than every effect that
+was reported. They are withdrawn and retained under an explicit marker in \S\ref{sec:experiments}.
+What we can state without qualification is the constraint that caught them: in the negative-marginal
+regime the label noise at $60$ trials is as large as the dispersion of the labels, the
+negative-marginal share is the quantity most inflated by that noise, and no rank correlation there
+should be believed below $300$ trials. We also list the eight further protocol confounds
+(\S\ref{sec:limitations}) that have to be removed before a cost-versus-quality comparison between a
+learned and a training-free selector is interpretable at all.
 
-We close on a negative result rather than a new method. Having found a strong training-free
-baseline, we asked whether a learned state-conditioned scorer could beat it, and under a
-cross-state evaluation protocol it could not: the closed form's regret against the true
-top-$5$ is $0.34$--$0.50$, and every learned variant we tried was worse, with our main
-hypothesis for where extra signal would come from --- the threshold information the closed form
-ignores --- turning out to be actively harmful. A remaining gap of that size means the problem is
-not solved; it means the obvious learned approach is not the way to close it.
+The negative result that survives is about the reference itself. The upper bound the source model
+optimises is a \emph{difference} of two monotone submodular functions, and submodularity is not
+preserved under differences, so even a valid upper bound would not by itself license a
+sampling-based guarantee. Whether that bound is tight anywhere, and whether the marginals it must
+resolve are in fact smaller than the estimation noise, are empirical questions we can no longer
+answer from the measurements we have.
 
-Two directions follow directly. The first is to quantify the surrogate gap
-$\lambda(S) - \sigma(S)$ between the objective and the monotone upper bound to which RR
-\emph{can} be applied. We took a first step: the bound is tight at low coverage ($9.8\%$
-over-estimate on Congress-Twitter at $|S|/n = 10\%$) but degrades with saturation, and under our
-reading of the definitions it inverts, which raises a question about the expectation-versus-
-realisation step in its proof that we flag rather than resolve. Because $\lambda$ is a difference
-of two monotone submodular functions and differences do not preserve submodularity, even a valid
-upper bound would not by itself license a sampling-based guarantee. The second direction is to
+Two directions follow directly. The first is to re-derive the whole empirical section under a frozen
+model contract --- a declared target set, seed eligibility, a budget of \emph{at most} $k$, a priced
+state acquisition, and a Monte-Carlo reference with a stated tolerance --- with the eight confounds
+removed. That is not a formality: two of them, the unpriced state and the weight normalisation,
+interact with the model correction in the same direction. The second is to
 look for a graph-level criterion --- we suspect in-/out-degree coupling --- that predicts when
 degree-based heuristics fail, which would let a practitioner decide whether the overexposure
 regime needs to be handled at all.

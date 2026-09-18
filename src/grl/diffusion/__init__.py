@@ -5,6 +5,14 @@ from .independent_cascade import (
     estimate_spread_over_configs,
     run_independent_cascade,
 )
+from .contract import (
+    ContractViolation,
+    ModelContract,
+    ObjectiveContract,
+    TargetedObjective,
+    build_contract,
+)
+from .params import OverexposureParams, resolve_overexposure_params
 from .overexposure import (
     ACTIVATION_MODES,
     DETERMINISTIC,
@@ -48,4 +56,12 @@ __all__ = [
     "estimate_overexposure_spread_over_configs",
     "estimate_overexposure_marginal_gain",
     "estimate_overexposure_marginal_gains",
+    # Frozen model contract: target set, seed eligibility, budget semantics, threshold law.
+    "ContractViolation",
+    "ObjectiveContract",
+    "ModelContract",
+    "TargetedObjective",
+    "build_contract",
+    "OverexposureParams",
+    "resolve_overexposure_params",
 ]

@@ -33,13 +33,40 @@ from .overexposure import ACTIVATION_MODES, DETERMINISTIC
 DEFAULT_MC_RUNS = 200
 DEFAULT_RANDOM_SEED = 20260917
 
+#: The source model's law: ``(kappa, tau)`` uniform on the 2-simplex
+#: ``{0 <= kappa <= tau <= 1}``, i.e. the order statistics of two independent uniforms.  Marginals
+#: are ``F_kappa(x) = 2x - x^2`` and ``F_tau(x) = x^2``.
+LAW_SIMPLEX = "simplex"
+
+#: The source model's law with the upper threshold clamped to 1, keeping kappa's marginal at
+#: ``2x - x^2``.  This removes the overexposure branch while leaving the lower-threshold
+#: distribution untouched, so it isolates "overexposure off" from "different threshold law".
+LAW_SIMPLEX_TAU_CLAMPED = "simplex_tau_clamped_to_one"
+
+#: ``kappa ~ U[0, 1]`` with ``tau = 1``.  This is the genuine uniform-threshold linear-threshold
+#: reading, and it is a DIFFERENT process from the clamped-simplex law above because kappa's
+#: marginal differs.  It exists solely as an explicit control; the audit required the two not to be
+#: conflated, and the original ``overexposure_free`` flag conflated them.
+LAW_UNIFORM_LT = "uniform_lt_tau_one"
+
+#: The source model's law with the lower end of tau's support raised, which makes overexposure
+#: easier to trigger.  An intervention knob, not a degeneracy path.
+LAW_SIMPLEX_TAU_RAISED = "simplex_tau_support_raised"
+
+THRESHOLD_LAWS = (LAW_SIMPLEX, LAW_SIMPLEX_TAU_CLAMPED, LAW_UNIFORM_LT, LAW_SIMPLEX_TAU_RAISED)
+
 
 @dataclass(frozen=True)
 class OverexposureParams:
-    """Validated overexposure diffusion parameters."""
+    """Validated overexposure diffusion parameters.
+
+    This fixes the *diffusion* half of the frozen model contract.  The *objective* half -- target
+    set and seed eligibility -- lives in :class:`grl.diffusion.contract.ObjectiveContract`, because
+    it decides which nodes are counted rather than how the process runs.
+    """
 
     activation_mode: str = DETERMINISTIC
-    overexposure_free: bool = False
+    threshold_law: str = LAW_SIMPLEX
     window_lo: float = 0.0
     mc_runs: int = DEFAULT_MC_RUNS
     random_seed: int = DEFAULT_RANDOM_SEED
@@ -50,20 +77,38 @@ class OverexposureParams:
                 f"activation_mode must be one of {ACTIVATION_MODES}, "
                 f"got {self.activation_mode!r}"
             )
+        if self.threshold_law not in THRESHOLD_LAWS:
+            raise ValueError(
+                f"threshold_law must be one of {THRESHOLD_LAWS}, got {self.threshold_law!r}"
+            )
         if not 0.0 <= self.window_lo < 1.0:
             raise ValueError(f"window_lo must lie in [0, 1), got {self.window_lo}")
         if self.mc_runs <= 0:
             raise ValueError(f"mc_runs must be positive, got {self.mc_runs}")
-        if self.overexposure_free and self.window_lo != 0.0:
-            # Clamping tau to 1 and compressing the tau support are contradictory requests;
-            # silently honouring one of them would make results unexplainable.
+        if self.threshold_law == LAW_SIMPLEX_TAU_RAISED and self.window_lo <= 0.0:
             raise ValueError(
-                "overexposure_free=True clamps theta_tau to 1, so window_lo must be 0.0"
+                f"threshold_law={LAW_SIMPLEX_TAU_RAISED} needs a positive window_lo"
             )
+        if self.threshold_law != LAW_SIMPLEX_TAU_RAISED and self.window_lo != 0.0:
+            raise ValueError(
+                f"window_lo only applies to threshold_law={LAW_SIMPLEX_TAU_RAISED}; "
+                f"got law={self.threshold_law} with window_lo={self.window_lo}"
+            )
+
+    @property
+    def overexposure_free(self) -> bool:
+        """True when the upper threshold cannot be crossed.
+
+        Kept as a derived property rather than a settable field so that the three degeneracy paths
+        cannot be collapsed into one boolean again.  Both ``simplex_tau_clamped_to_one`` and
+        ``uniform_lt_tau_one`` disable overexposure, but they use different kappa marginals.
+        """
+        return self.threshold_law in (LAW_SIMPLEX_TAU_CLAMPED, LAW_UNIFORM_LT)
 
     def as_dict(self) -> dict[str, Any]:
         return {
             "activation_mode": self.activation_mode,
+            "threshold_law": self.threshold_law,
             "overexposure_free": self.overexposure_free,
             "window_lo": self.window_lo,
             "mc_runs": self.mc_runs,
@@ -95,9 +140,20 @@ def resolve_overexposure_params(config: Mapping[str, Any] | None) -> Overexposur
         (config.get("experiment") or {}).get("random_seed", DEFAULT_RANDOM_SEED),
     )
 
+    # ``threshold_law`` is preferred.  ``overexposure_free: true`` is still accepted for backward
+    # compatibility and maps to the clamped-simplex law, which is the one that flag always meant.
+    if "threshold_law" in block:
+        law = str(block["threshold_law"])
+    elif block.get("overexposure_free"):
+        law = LAW_SIMPLEX_TAU_CLAMPED
+    elif float(block.get("window_lo", 0.0)) > 0.0:
+        law = LAW_SIMPLEX_TAU_RAISED
+    else:
+        law = LAW_SIMPLEX
+
     return OverexposureParams(
         activation_mode=str(block.get("activation_mode", DETERMINISTIC)),
-        overexposure_free=bool(block.get("overexposure_free", False)),
+        threshold_law=law,
         window_lo=float(block.get("window_lo", 0.0)),
         mc_runs=int(mc_runs),
         random_seed=int(random_seed),

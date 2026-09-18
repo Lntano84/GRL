@@ -35,52 +35,62 @@ monotone, so the two readings cannot be conflated.  A weaker version of this arg
 "RR sets are empty", appeared in an earlier draft of this work and is withdrawn; the probe it
 rested on was mis-specified.
 
-Our second contribution is to identify \emph{when} this matters. A naive experiment measures
-out-degree against the true marginal gain and concludes that degree is fine --- we made exactly
-that mistake, twice, before locating the flaw. The controlling variable is the seed
-\emph{fraction} $|S|/n$, not the absolute budget. On a large sparse graph, a budget of $200$
-seeds is $1.3\%$ coverage and nothing interesting happens; on a small dense graph the same
-budget is $42\%$ coverage and the objective becomes genuinely non-monotone. Sweeping the
-fraction across nine graphs with mean degree from $4.2$ to $56.0$, we find that out-degree
-becomes an \emph{anti-signal}: it is positively correlated with the true marginal gain only on
-the sparsest graph, negative on the other eight when $|S|/n \ge 20\%$, and $8\%$ to $35\%$ of
-candidates have a negative marginal gain there.
+Our second contribution is a measurement discipline for the question that follows. A naive
+experiment measures out-degree against the true marginal gain and concludes that degree is fine ---
+we made exactly that mistake, twice. The first time, we swept an absolute budget on a graph where
+that budget was at most $26\%$ coverage and mostly far less; measured as a \emph{fraction}
+$|S|/n$, the same sweep tells a different story, so any statement about overexposure that does not
+report $|S|/n$ should be distrusted. The second time, we read a regime signal out of rank
+correlations computed from twelve Monte-Carlo trials. They were noise: the negative-marginal regime
+has a label signal-to-noise ratio below $1.4$ there, and the same measurement at $300$ trials gives
+a different answer (\S\ref{sec:experiments}). We therefore state the constraint explicitly --- no
+rank correlation in this regime below $\text{MC} \ge 300$, and prefer paired spread comparisons,
+which cancel the noise by construction --- and we list the eight protocol confounds
+(\S\ref{sec:limitations}) that must be removed before a cost-versus-quality comparison between a
+learned and a training-free selector means anything.
 
-Third, we show that the standard exact reference also fails in that regime. Monte-Carlo greedy
-searches for the largest marginal gain using noisy estimates; when the true marginal is near
-zero, noise drives its decisions. On Congress-Twitter, adding the highest-degree ten nodes
-\emph{reduces} spread by $5.17 \pm 0.40$ while a training-free two-hop closed form adds
-$+2.26 \pm 0.24$ and exact greedy adds only $+0.42 \pm 0.31$. The closed form wins on $8/8$
-independent selection draws.
-
-Finally, we report a negative result that bounds how much room is left. Having established that
-a closed form beats degree and greedy, we asked whether a learned state-conditioned scorer can
-beat the closed form. Using leave-one-context-out evaluation over $480$ labelled states, it
-cannot: the closed form's regret against the true top-$5$ is $0.34$--$0.50$, and every learned
-variant we tried is worse, including one that wins $0/12$ held-out contexts. This is a limitation
-of the learned approach at the tested scale, not a proof of impossibility, and we state it as
-such.
+An earlier version of this work reported the regime characterisation itself, and the baseline
+comparison that followed from it. Those measurements were produced by an activation rule that
+denied an over-exposed node the ability to turn negative, and at Monte-Carlo budgets below the
+threshold we now require; on Congress-Twitter the corrected rule removes $60$--$63\%$ of the
+measured spread, which is larger than every effect that was reported. They are withdrawn, and
+\S\ref{sec:experiments} retains them under an explicit marker rather than deleting them, because
+the record of what was measured and of why it was wrong is part of what this paper has to offer.
+Re-deriving them under a frozen model contract with those confounds removed is the immediate next
+step, and we describe what it must control.
 
 \paragraph{Contributions.}
 \begin{itemize}
-  \item We prove and empirically verify that reverse-reachability sampling is structurally
-        not expressible by a coverage representation under threshold-dependent overexposure, for reasons
-        (\S\ref{sec:coverage}). The statement is narrow: it excludes the coverage form, not signed or other estimators.
-  \item We identify the seed \emph{fraction} as the controlling variable, and show that
-        out-degree degrades to an anti-signal across nine graphs once the network saturates
-        (\S\ref{sec:regime}).
-  \item We show that exact Monte-Carlo greedy also fails in that regime, because it is
-        noise-driven exactly where the marginal is near zero, and that a training-free closed
-        form dominates it --- and every other baseline the source model reports against
-        (\S\ref{sec:experiments}).
-  \item We report a measurement caveat that constrains the whole area: in the
-        negative-marginal regime the label signal-to-noise ratio is below $1.4$ at
-        $60$ Monte-Carlo trials, so rank-correlation claims below $300$ trials are not
-        interpretable (\S\ref{sec:experiments}).
-  \item We delimit the remaining gap with a negative result on learned scorers
-        (\S\ref{sec:limitations}).
+  \item We show that reverse-reachability sampling is not expressible by a coverage representation
+        under threshold-dependent overexposure, by exact arithmetic on a one-hop instance
+        (\S\ref{sec:coverage}). The statement is deliberately narrow: it excludes the standard
+        non-negative seed-independent coverage form, and nothing else --- not signed
+        decompositions, not algorithms for restricted instances, not Monte-Carlo estimation, and
+        not the possibility that learning helps. It also fails under uniform-threshold linear
+        thresholds, which is why the threshold distribution must be named.
+  \item We show that the upper bound the source model optimises is a \emph{difference} of two
+        submodular functions, so even a valid bound would not by itself license a sampling-based
+        guarantee (\S\ref{sec:limitations}).
+  \item We report a measurement constraint that we violated ourselves and that we believe
+        constrains the area: in the negative-marginal regime the label signal-to-noise ratio is
+        below $1.4$ at $60$ Monte-Carlo trials, so rank-correlation claims below $300$ trials are
+        not interpretable, and the negative-marginal share is itself the quantity most inflated by
+        that noise (\S\ref{sec:experiments}).
+  \item We state eight protocol confounds --- inconsistent stopping under a budget of \emph{at most}
+        $k$, unpriced state acquisition, a noisy estimator called an oracle, mixed seed sizes in one
+        statistic, a single random candidate pool, splits that do not deduplicate, unreported label
+        uncertainty, and weights normalised beyond what the model allows --- and record the earlier
+        measurements that they invalidate (\S\ref{sec:limitations}).
+  \item We withdraw, rather than restate, the empirical regime characterisation and the baseline
+        comparison of an earlier version of this work, and we report the corrected state machine and
+        the counterexamples that exposed it (\S\ref{sec:limitations}).
 \end{itemize}
 
 %% TODO(refs): the related-work section needs verified citations for TIM, IMM, OPIM, SSA,
 %% gIM, cuRipples, GCOMB and the LAICO overexposure line. The bibliography is intentionally
 %% empty rather than populated with unverified entries.
+%%
+%% TODO(experiments): every measured number in sections/experiments.tex, sections/regime.tex and
+%% the calibration table in sections/analysis.tex is marked \withdrawn. Restoring any of them
+%% requires re-derivation under src/grl/diffusion/contract.py with the eight confounds of
+%% sections/limitations.tex paragraph 7 removed. Do not un-mark them individually.

@@ -8,48 +8,123 @@
 
 ---
 
-## C1. Reverse-reachability sampling is structurally inapplicable
+## STATUS OF EVERY CLAIM IN THIS LEDGER
 
-**Source** `docs/results/overexposure_monotonicity_rr_20260916.json`
-**Script** `scripts/experiments/evaluate_overexposure_monotonicity_rr.py`
-
-Measured on NetHEPT (15,233 nodes / 32,235 edges), in-weights normalised:
-
-| quantity | value |
-| --- | --- |
-| nodes whose window contains 0 | **0 / 15233** |
-| RR-set size, 300 reverse BFS draws | min 0, median 0, mean **0.0**, max **0** |
-| RR-set size as fraction of graph | **0.0000** |
-| TIM-style estimate `n · Pr[S ∩ RR ≠ ∅]`, `\|S\| = 50` | **0.0** |
-| true Monte-Carlo spread `σ(S)`, `\|S\| = 50` | **111.93** |
-
-**Statement.** Positive activation requires `δ ∈ [θ^κ, θ^τ]` with `θ^κ > 0` almost surely, so a
-node with `δ = 0` can never be positive; the reverse walk therefore has no base case and every
-RR set is empty. The classic identity degenerates to `0` while the true spread is positive.
-
-**Second, independent reason.** `δ(v,t) = Σ_{u ∈ A^in_t(v)} ω_uv` where `A^in_t(v)` is the set of
-in-neighbours that were *ever* positively activated (the source paper states this set also
-contains nodes later turned negative). This is a set function: given the threshold windows,
-`δ` is deterministic in `S`. So neither a live-edge graph (IC) nor a trigger set (LT) can be
-sampled — the randomised structure the identity is built on does not exist.
-
-**Corroboration from the source paper.** Its Theorem 5 gives only a `γ/k` ratio (not
-`1 − 1/e`); Lemma 2 and Theorem 6 construct monotone submodular `σ^κ`, `σ^τ` with
-`λ(S) ≥ σ(S)` and optimise the surrogate. Its own solution path avoids the non-monotone
-objective.
+> Rewritten 2026-09-18 after two findings that invalidate most of the numerical record.
+>
+> **Finding 1 — the state machine was wrong.** Until commit `0248612` a positively activated node
+> could never become negative again, and a node with `δ = θ^τ = 1` was denied activation. The
+> correction removes 60–63% of the measured spread on Congress-Twitter (k=1: 299.35 → 111.44;
+> k=5: 358.52 → 137.28; k=10: 365.95 → 143.43). Every spread, marginal gain, and calibration
+> number in this ledger was produced with the broken machine.
+>
+> **Finding 2 — the ledger's own MC warning was ignored in the paper.** C2 carries an explicit
+> warning that its rank correlations came from `mc-runs = 12` and that only the sign pattern may be
+> used. `docs/GATE3A_REPORT.md` records the producing command and says the same. The paper quoted
+> the magnitudes anyway (abstract, introduction, regime section), against the C5 constraint that a
+> rank correlation in this regime requires `MC ≥ 300`. A re-measurement at `MC = 300` under the
+> fixed model gives Congress-Twitter at `|S|/n = 20%`: raw negative share `4%` (table says `44%`),
+> `0%` negative beyond noise, `ρ_degree = +0.039`, `ρ_δ₂ = +0.030`.
+>
+> | claim | status |
+> | --- | --- |
+> | C1 RR sampling has no domain | **WITHDRAWN** — the probe was mis-specified. See C1 below. |
+> | C1′ no non-negative seed-independent coverage form matches `F_D` | **STANDS** — exact arithmetic, no simulation |
+> | C2 out-degree anti-signal | **WITHDRAWN** — two independent defects; partially contradicted |
+> | C3 exact MC greedy fails | **WITHDRAWN** — pre-fix spread |
+> | C4 advantage is not a selection artefact | **WITHDRAWN** — pre-fix spread |
+> | C5 measurement caveat (MC ≥ 300) | **STANDS** — and it is the constraint the paper violated |
+> | C6 learned scorer does not beat the closed form | **WITHDRAWN as a number**; the direction of the negative result is the honest expectation but must be re-measured |
+> | C7 surrogate gap, measured | **WITHDRAWN as a number**; the structural half stands |
+> | C7′ `λ` is a difference of two submodular functions | **STANDS** — algebraic, no simulation |
+> | `σ^κ`, `σ^τ` are each monotone submodular LT spreads | **STANDS**, but they are LT spreads under the *simplex* marginals `F^κ(x)=2x−x²` and `F^τ(x)=x²`, **not** uniform-threshold LT |
+>
+> Nothing in this ledger may be cited until it is re-derived under the frozen model contract
+> (`src/grl/diffusion/contract.py`) with the eight confounds of
+> `paper/dasfaa2027/src/dasfaa2027/sections/limitations.tex` paragraph 7 removed.
 
 ---
 
-## C2. Out-degree degrades to an anti-signal in the saturated regime
+## C1. ~~Reverse-reachability sampling is structurally inapplicable~~ — WITHDRAWN
 
-**Source** `docs/results/density_degree_signflip_20260917.json`
-**Script** `scripts/experiments/evaluate_density_degree_signflip.py`
-**Setting** 8 graphs, seed fraction swept as `|S|/n`; values below are means over `|S|/n ≥ 20%`.
-Rank correlation is Spearman(out-degree, true marginal gain).
+**This claim is withdrawn.** The probe it rested on required a predecessor's window to contain zero
+and excluded the root, and it tested whether the *returned set* was non-empty rather than whether it
+*intersected the seed set*. A reverse-reachability set for a root answers "which seeds can reach this
+root"; it does not require a node to self-activate under zero incoming influence. The measured
+all-zero RR sets were an artefact of the probe, not a property of the model.
+
+The second argument recorded here — that `δ` is a deterministic set function given the windows, so
+neither a live-edge graph nor a trigger set exists — is **also wrong as stated**: `σ^κ` and `σ^τ`
+each fix one threshold per node and *are* monotone submodular, so the coverage identity applies to
+each of them individually.
+
+**Superseded by C1′.**
+
+| original quantity | value | status |
+| --- | --- | --- |
+| nodes whose window contains 0 | 0 / 15233 | not evidence of anything |
+| RR-set size, 300 reverse BFS draws | all 0 | probe artefact |
+| true Monte-Carlo spread `σ(S)`, `\|S\| = 50` | 111.93 | pre-fix model |
+
+---
+
+## C1′. No non-negative seed-independent coverage function matches the objective — STANDS
+
+**Source** `scripts/audit/verify_coverage_argument.py`, generated into
+`paper/dasfaa2027/src/dasfaa2027/sections/coverage.tex`
+**Method** exact arithmetic on a one-hop instance, closed form validated against 2-D numerical
+integration (worst absolute difference `4.5e-4`). No simulation.
+
+Single target `D = {t}`, candidates `a, b`, edges `a → t` and `b → t` both of weight `ω = 0.40`:
+
+| `S` | `δ` | `F_D(S)` under the model | `F_D(S)` under uniform-threshold LT |
+| --- | --- | --- | --- |
+| `∅` | 0.00 | 0.0000 | 0.0000 |
+| `{a}` | 0.40 | 0.4800 | 0.4000 |
+| `{a,b}` | 0.80 | 0.3200 | 0.8000 |
+
+`F_D({a,b}) = 0.3200 < F_D({a}) = 0.4800`, so the objective is non-monotone. For any random set `R`
+independent of `S`, `S ↦ c·Pr[S ∩ R ≠ ∅]` is non-decreasing and submodular in `S`; a non-monotone
+`F_D` therefore cannot equal such a function on this instance, for any `c` and any distribution
+of `R`. The argument fails under uniform-threshold LT, where the same instance *is* monotone
+(`0.4000 → 0.8000`) — which is exactly why the threshold distribution must be named.
+
+**Scope.** This excludes the standard non-negative seed-independent coverage representation only.
+It does not exclude signed decompositions, restricted instance classes, Monte-Carlo estimation, or
+the possibility that a learned predictor helps.
+
+---
+
+## C2. ~~Out-degree degrades to an anti-signal in the saturated regime~~ — WITHDRAWN
+
+**Two independent defects.**
+
+1. **Pre-fix state machine.** These spreads were measured before commit `0248612`.
+2. **`MC = 12`.** The producing command is `docs/GATE3A_REPORT.md`:
+   `python scripts/experiments/evaluate_density_degree_signflip.py --candidates 50 --mc-runs 12`.
+   The same report warns, in the same block, that this is only good for trends and that the
+   correlation numbers must not be cited from it. The stored JSON
+   (`docs/results/density_degree_signflip_20260917.json`) confirms `candidates: 50, mc_runs: 12`.
+   C5 requires `MC ≥ 300` for a rank correlation in this regime.
+
+**Re-measurement under the fixed model at `MC = 300`**, script
+`scripts/audit/rederive_signflip_high_mc.py`, output
+`docs/results/signflip_fixedmodel_mc300.json`:
+
+| graph | `\|S\|/n` | neg% (table, MC=12) | neg% (MC=300) | neg% beyond noise | `ρ_degree` | `ρ_delta2` |
+| --- | --- | --- | --- | --- | --- | --- |
+| Congress-Twitter | 20% | 44.0% | **4.0%** | **0.0%** | **+0.039** | **+0.030** |
+| email-Eu-core | 20% | 36.0% | see JSON | see JSON | see JSON | see JSON |
+
+The negative-share column was largely Monte-Carlo artefact, and on Congress-Twitter there is no
+separation between degree and `δ₂`. **The sign pattern itself is not yet established**; the full
+eight-graph sweep is in the JSON above.
+
+The original table, kept for the record:
 
 | graph | n | `⟨k⟩` | `ρ_degree` | `ρ_delta2` | negative-gain share |
 | --- | --- | --- | --- | --- | --- |
-| NetHEPT | 15233 | 4.23 | **+0.092** | +0.686 | 0.0% |
+| NetHEPT | 15233 | 4.23 | +0.092 | +0.686 | 0.0% |
 | p2p-Gnutella08 | 6301 | 6.59 | −0.094 | +0.756 | 8.0% |
 | ca-GrQc | 5242 | 11.06 | −0.701 | +0.656 | 20.0% |
 | Wiki-Vote | 7115 | 29.15 | −0.035 | +0.265 | 8.0% |
@@ -58,16 +133,9 @@ Rank correlation is Spearman(out-degree, true marginal gain).
 | email-Eu-core | 1005 | 50.89 | −0.695 | +0.685 | 34.0% |
 | Congress-Twitter | 475 | 55.95 | −0.049 | +0.050 | 35.0% |
 
-`δ2` beats degree on rank correlation in **8 / 8** graphs. Degree stays positive **only** on
-NetHEPT, the sparsest graph.
-
-> ⚠️ **Do NOT claim density causes the sign flip.** `Spearman(⟨k⟩, ρ_degree) = −0.405` over 8
-> graphs, and Congress-Twitter (the densest) is a counterexample at `−0.049`. The supported
-> claim is "in the saturated regime", not "in dense graphs".
-
-> ⚠️ These rank correlations were produced with `mc-runs = 12`. See **C5**: at low MC the
-> negative-marginal regime has SNR below 2, so correlation magnitudes here are noisy. Use only
-> the **sign pattern** from this table, never the magnitudes.
+> ⚠️ **Do NOT claim density causes the sign flip.** `Spearman(⟨k⟩, ρ_degree) = −0.183` over nine
+> graphs, and Congress-Twitter (the densest) is a counterexample. Even the sign of this correlation
+> is now in doubt, because both components are measured at `MC = 12`.
 
 ---
 
@@ -183,19 +251,23 @@ End-to-end (`MC = 400` labels, `top-5`): `delta2` Spearman **+0.6932**, ridge +0
 `scripts/experiments/verify_surrogate_bound.py`
 
 The source model optimises a surrogate. Its Section 5.2 defines
-`λ(·) = σ^κ(·) − σ^τ(·)` (LT spreads at the lower and upper thresholds) and Theorem 6 asserts
-`λ(S) ≥ σ(S)`. We measured the gap; the model never reports it.
+`λ(·) = σ^κ(·) − σ^τ(·)` and Theorem 6 asserts `λ(S) ≥ σ(S)`. We measured the gap; the model never
+reports it. **The whole table below is withdrawn** (pre-fix state machine), and the description
+must be exact: `σ^κ` is the linear-threshold spread at the lower threshold
+`θ^κ ∼ F^κ(x) = 2x − x²` and `σ^τ` at the upper threshold `θ^τ ∼ F^τ(x) = x²`. These are the
+marginals induced by the model's simplex law; **neither is uniform**, so neither may be described
+as standard uniform-threshold LT.
 
 | graph | `\|S\|/n` | `E[\|A\|]` | `λ` | gap | gap/λ |
 | --- | --- | --- | --- | --- | --- |
-| Congress-Twitter | 5.1% | 367.17 | 441.40 | **+74.23** | +0.170 |
-| Congress-Twitter | 10.1% | 366.13 | 403.53 | **+37.40** | +0.098 |
-| Congress-Twitter | 20.0% | 363.57 | 342.23 | **−21.33** | −0.065 |
+| Congress-Twitter | 5.1% | 367.17 | 441.40 | +74.23 | +0.170 |
+| Congress-Twitter | 10.1% | 366.13 | 403.53 | +37.40 | +0.098 |
+| Congress-Twitter | 20.0% | 363.57 | 342.23 | −21.33 | −0.065 |
 | NetHEPT | 5.0% | 1469.87 | 1442.00 | −27.87 | −0.019 |
 | NetHEPT | 10.0% | 2787.77 | 2329.97 | −457.80 | −0.197 |
 | NetHEPT | 20.0% | 4672.73 | 2387.00 | **−2285.73** | **−0.958** |
 
-Per-realisation verification (180 draws, 2 graphs × 3 fractions × 30 trials):
+Per-realisation verification (180 draws, 2 graphs × 3 fractions × 30 trials) — also pre-fix:
 
 ```
 A_window ⊆ A^κ \ A^τ         holds in   0 / 180
@@ -204,10 +276,11 @@ A_window ⊆ A^κ \ A^τ         holds in   0 / 180
 ```
 
 **Can claim**
-* The bound is tight where it matters: 9.8% over-estimate at `|S|/n = 10%` on Congress-Twitter.
-* It degrades with saturation and, under our reading, inverts.
+* `σ^κ` and `σ^τ` are each genuine monotone submodular LT influence functions, so RR sampling
+  applies to each **individually**; what it does not reach is their difference.
 * `λ` is a **difference** of two monotone submodular functions; differences do not preserve
   submodularity, so even a valid upper bound would not by itself license a sampling guarantee.
+* Whether the surrogate is tight anywhere is an **open question** until re-measured.
 
 **Must NOT claim**
 * ~~"Theorem 6 is false."~~ Three innocent readings remain open (our interpretation of
@@ -219,16 +292,27 @@ A_window ⊆ A^κ \ A^τ         holds in   0 / 180
 
 ## What the paper can and cannot claim
 
-**Can claim**
-1. RR-style sampling is structurally inapplicable (C1) — provable, and independent of
-   non-monotonicity.
-2. In the saturated regime out-degree becomes an anti-signal across 8 graphs (C2).
-3. Exact Monte-Carlo greedy is noise-driven there and is beaten by a closed form (C3).
-4. The analytic ranking's edge is robust across selection draws (C4).
-5. A learned scorer does not beat the analytic baseline at the tested scale (C6).
+**Can claim, today, without new measurement**
+1. The objective is not representable by any non-negative seed-independent coverage function, hence
+   the standard RR/RIS identity has no domain here (C1′). Exact arithmetic.
+2. `σ^κ` and `σ^τ` are individually amenable to RR sampling, but their difference is not, and
+   submodularity is not preserved under differences (C7′). Algebraic.
+3. The threshold law must be named, because the same instance is monotone under uniform-threshold
+   LT and non-monotone under the model's simplex law (C1′).
+4. In the negative-marginal regime, a rank correlation must not be reported below `MC ≥ 300` (C5).
+5. Until `0248612` the measured spread was inflated by 60–63% on Congress-Twitter; every number
+   produced before that commit is withdrawn.
 
 **Cannot claim**
+* That RR sampling is structurally inapplicable in general, or that RR sets are empty (C1, withdrawn).
+* That out-degree becomes an anti-signal once saturated, or any of its magnitudes (C2, withdrawn).
+* That exact Monte-Carlo greedy fails there (C3, withdrawn).
+* That the analytic ranking's edge is not a selection artefact (C4, withdrawn).
+* That a learned scorer does or does not beat the analytic baseline (C6, numbers withdrawn).
+* The measured surrogate gap, or that the bound is tight anywhere (C7, withdrawn).
 * That density causes the sign flip (C2 caveat).
 * That degree is universally harmful (C4 caveat: NetHEPT is a counterexample).
-* That `delta2` is optimal — its regret is 0.34–0.50, so a large gap remains (C6).
-* Any rank-correlation magnitude measured below `MC = 300` (C5).
+* Any rank-correlation magnitude measured below `MC = 300` (C5) — **the paper currently violates
+  this in the abstract, the introduction and the regime section; those numbers are withdrawn in the
+  draft and must not be restored.**
+* Any number measured with the pre-fix state machine.

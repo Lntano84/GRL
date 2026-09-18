@@ -56,13 +56,28 @@ relay node past its overexposure threshold and destroys more spread than it crea
 The empirical RR-invalidity check is intended for
 ``scripts/experiments/evaluate_overexposure_diagnostics.py``.
 
-Degeneracy
-----------
+Degeneracy, and three paths that must not be conflated
+------------------------------------------------------
 Setting ``theta_tau_v = 1`` for every node removes overexposure entirely: the negative
-branch becomes unreachable, every node with ``theta_kappa <= delta < 1`` activates, and
-the process reduces to the standard linear threshold (LT) model.
-``sample_threshold_windows(..., overexposure_free=True)`` builds that limiting
-configuration and the test-suite uses it as a sanity check.
+branch becomes unreachable and every node with ``theta_kappa <= delta`` activates.  That
+limit is a linear-threshold model, but its threshold distribution depends on how the
+window was drawn, and the three resulting processes are genuinely different:
+
+``threshold_law="simplex_tau_clamped_to_one"``
+    the simplex draw with ``tau`` forced to 1.  ``kappa`` keeps the marginal
+    ``F_kappa(x) = 2x - x^2``, so ``E[kappa] = 1/3``.  This is the *correct* "overexposure
+    off" ablation for the source model.
+``threshold_law="uniform_lt_tau_one"``
+    ``kappa ~ U[0, 1]``, so ``E[kappa] = 1/2``.  This is genuine uniform-threshold LT, a
+    different process that is also *monotone* where the source law is not.
+``overexposure_free=True``
+    the legacy flag.  It maps onto one of the two above and is retained only so that older
+    callers keep working; it is no longer a field of ``OverexposureParams`` (it is derived
+    from ``threshold_law``) precisely because it used to conflate them.
+
+None of the simplex-derived paths may be described as "standard uniform-threshold LT":
+only ``uniform_lt_tau_one`` has uniform thresholds.  ``sample_threshold_windows`` exposes
+all four laws by name.
 """
 
 from __future__ import annotations
@@ -115,36 +130,71 @@ def sample_threshold_windows(
     rng: random.Random,
     overexposure_free: bool = False,
     window_lo: float = 0.0,
+    threshold_law: str | None = None,
 ) -> dict[int, tuple[float, float]]:
-    """Sample one ``(theta_kappa, theta_tau)`` window per node from the 2-D simplex.
+    """Sample one ``(theta_kappa, theta_tau)`` window per node.
 
-    ``overexposure_free=True`` clamps every ``theta_tau`` to 1, the degenerate
-    no-overexposure limit.  Note this is the *linear-threshold-like* limit, not independent
-    cascade: activation still requires ``delta >= theta_kappa``, and the audit showed the two
-    processes percolate at different scales at the same edge weights.
+    Four threshold laws are supported and they are NOT interchangeable.  The audit required the
+    degeneracy paths to be kept apart, because sampling two uniforms and clamping tau to 1 does not
+    give a uniform lower-threshold marginal:
 
-    ``window_lo`` raises the lower end of the ``theta_tau`` support, so ``tau`` is drawn from
-    ``[max(kappa, window_lo), 1]`` instead of ``[kappa, 1]``.  This makes an activation attempt
-    more likely to land inside the window and therefore makes overexposure easier to trigger.
-    It exists as an explicit experimental knob because the process scale is sensitive to the
-    window support; ``window_lo = 0.0`` is the source model's setting.
+    ``simplex`` (default)
+        ``(kappa, tau)`` uniform on ``{0 <= kappa <= tau <= 1}``, i.e. the order statistics of two
+        independent uniforms.  Marginals ``F_kappa(x) = 2x - x^2``, ``F_tau(x) = x^2``.  This is the
+        source model's law.
+    ``simplex_tau_clamped_to_one``
+        the same draw with ``tau`` forced to 1.  Overexposure is impossible, but kappa keeps its
+        ``2x - x^2`` marginal.  This is the "overexposure off" ablation.
+    ``uniform_lt_tau_one``
+        ``kappa ~ U[0, 1]`` and ``tau = 1``.  This is genuine uniform-threshold linear threshold and
+        is a DIFFERENT process from the clamped-simplex law.  It exists as an explicit control, and
+        in particular it is *monotone* where the simplex law is not.
+    ``simplex_tau_support_raised``
+        the simplex draw with tau's support raised to ``[max(kappa, window_lo), 1]``, which makes an
+        activation attempt likelier to land inside the window.  An intervention knob, not a
+        degeneracy path.
+
+    ``overexposure_free`` and ``window_lo`` are retained for callers that predate
+    ``threshold_law``; they map onto the laws above and raise if both are given inconsistently.
     """
+    if threshold_law is None:
+        if overexposure_free and window_lo != 0.0:
+            raise ValueError(
+                "overexposure_free=True clamps theta_tau to 1, so window_lo must be 0.0"
+            )
+        if overexposure_free:
+            threshold_law = "simplex_tau_clamped_to_one"
+        elif window_lo > 0.0:
+            threshold_law = "simplex_tau_support_raised"
+        else:
+            threshold_law = "simplex"
+
+    if threshold_law not in ("simplex", "simplex_tau_clamped_to_one",
+                             "uniform_lt_tau_one", "simplex_tau_support_raised"):
+        raise ValueError(f"unknown threshold_law {threshold_law!r}")
     if not 0.0 <= window_lo < 1.0:
         raise ValueError(f"window_lo must lie in [0, 1), got {window_lo}")
-    if overexposure_free and window_lo != 0.0:
+    if threshold_law == "simplex_tau_support_raised" and window_lo <= 0.0:
+        raise ValueError("simplex_tau_support_raised needs a positive window_lo")
+    if threshold_law != "simplex_tau_support_raised" and window_lo != 0.0:
         raise ValueError(
-            "overexposure_free=True clamps theta_tau to 1, so window_lo must be 0.0"
+            f"window_lo only applies to simplex_tau_support_raised, not {threshold_law}"
         )
 
     windows: dict[int, tuple[float, float]] = {}
     for node in nodes:
+        if threshold_law == "uniform_lt_tau_one":
+            # kappa uniform on [0, 1] -- deliberately NOT min of two uniforms
+            windows[node] = (rng.random(), 1.0)
+            continue
+
         kappa = rng.random()
         tau = rng.random()
         if kappa > tau:
             kappa, tau = tau, kappa
-        if overexposure_free:
+        if threshold_law == "simplex_tau_clamped_to_one":
             tau = 1.0
-        elif window_lo > 0.0:
+        elif threshold_law == "simplex_tau_support_raised":
             lo = max(kappa, window_lo)
             tau = lo + tau * (1.0 - lo)
         windows[node] = (kappa, tau)

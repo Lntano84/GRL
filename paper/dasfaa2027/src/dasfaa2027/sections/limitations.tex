@@ -3,14 +3,13 @@
 
 We list the things that could be wrong, in the order we consider them most likely to matter.
 
-\paragraph{1. A learned scorer does not beat the closed form.}
-Having established that $\delta_2$ beats degree and exact greedy, the natural next question is
-whether a learned state-conditioned scorer can beat $\delta_2$. On the evidence we collected, it
-cannot. We built a dataset of $480$ labelled states on Congress-Twitter ($4$ seed fractions
-$\times$ $3$ independent contexts $\times$ $40$ candidates, paired labels at
-$\text{MC} = 400$) and evaluated with \emph{leave-one-context-out}, so every score is a
-cross-state generalisation score. With $\mathrm{regret} = 1 - (\text{model top-}5\text{ gain}) /
-(\text{true top-}5\text{ gain})$:
+\paragraph{1. A learned scorer did not beat the closed form, in a study we must re-run.}
+\withdrawn{} The natural question after establishing a training-free baseline is whether a learned
+state-conditioned scorer can beat it. On the evidence we collected it could not. We built a dataset
+of $480$ labelled states on Congress-Twitter ($4$ seed fractions $\times$ $3$ independent contexts
+$\times$ $40$ candidates, paired labels at $\text{MC} = 400$) and evaluated with
+\emph{leave-one-context-out}, so every score is a cross-state generalisation score. With
+$\mathrm{regret} = 1 - (\text{model top-}5\text{ gain}) / (\text{true top-}5\text{ gain})$:
 
 \begin{center}
 \begin{tabular}{lrr}
@@ -33,28 +32,34 @@ single predictor we found.
 
 This should be read as a limitation, not as a theorem: $480$ states is small, and we cannot
 exclude that a larger corpus would change the answer. What we can say is that under a
-cross-state evaluation protocol, at this scale, the closed form is not beaten, and the
+cross-state evaluation protocol, at this scale, the closed form was not beaten, and the
 threshold features --- which were our main hypothesis for where extra signal would come from ---
-are actively unhelpful. We report it because a paper that shows a strong training-free baseline
-should also report that learning did not improve on it.
+were actively unhelpful. We report it because a paper that shows a strong training-free baseline
+should also report that learning did not improve on it. \withdrawn{} The labels themselves came
+from the pre-fix state machine, so both the absolute regrets and the sign of the threshold-feature
+effect must be re-measured before this paragraph can claim anything; what is unaffected is the
+methodological warning that a pooled feature-importance statistic here measures regime
+identification rather than utility.
 
 \paragraph{2. A trap in interpreting feature importance here.}
-Pooled across contexts, \emph{every} informative feature correlates with the label at
+\withdrawn{} Pooled across contexts, \emph{every} informative feature correlated with the label at
 $|r| \approx 0.85$--$0.91$, including one at $0.907$ that is pure regime identification. This is
 because the dataset mixes regimes whose label scales differ by three orders of magnitude
 ($\approx +200$ when unsaturated, $\approx 0$ when saturated). Any evaluation that does not hold
 out a context will therefore report strong, meaningless feature utility. We mention it because
-we initially drew exactly that wrong conclusion.
+we initially drew exactly that wrong conclusion. The warning survives the model correction --- the
+regime scale gap is a property of the protocol, not of the activation rule --- but the coefficients
+do not.
 
-\paragraph{3. Density does not explain the sign flip.}
-We would like a crisp graph-level criterion predicting when out-degree fails. We do not have one.
-Across the nine graphs the correlation between $\langle k \rangle$ and
-$\rho_{\text{degree}}$ is $-0.183$, and Congress-Twitter is a counterexample --- indeed the
-correlation moved \emph{towards} zero when the ninth graph was added, which is the opposite of
-what a density-based criterion would predict. The structural hint
-in \S\ref{sec:regime} (in-/out-degree coupling) is a hypothesis supported by a
-$\rho(\text{in},\text{out}) = 1.000$ symmetry in the two collaboration graphs, but nine graphs
-is not enough to establish it.
+\paragraph{3. Density does not explain a sign flip, and we no longer know that there is one.}
+We would like a crisp graph-level criterion predicting when out-degree fails. We do not have one. The
+correlation we once reported between $\langle k \rangle$ and $\rho_{\text{degree}}$ was weak and is
+\withdrawn, because both of its components came from rank correlations measured at
+$\text{MC} = 12$; a re-measurement at $\text{MC} = 300$ under the corrected activation rule moves
+Congress-Twitter from $-0.112$ to $+0.039$ in the same cell, so the sign of the effect is not
+established. The structural hint in \S\ref{sec:regime} (in-/out-degree coupling) remains a
+hypothesis; nine graphs is not enough to establish it, and it would need to be tested with paired
+measurements rather than with correlations whose noise exceeds their signal.
 
 \paragraph{4. Scale and dataset coverage.}
 Our largest graph has $15{,}233$ nodes; the source model's datasets are smaller still. We do not
@@ -62,16 +67,22 @@ demonstrate behaviour on million-node graphs, and the per-decision cost of obtai
 --- one cascade, which is cheap here --- would need re-examination at that scale.
 
 \paragraph{5. The surrogate gap is measured, and it exposes an open question.}
-\S\ref{sec:coverage} observes that RR \emph{is} applicable to the monotone upper bound
-$\lambda(S) \ge \sigma(S)$ used by the source model. We therefore measured the gap
-$\lambda(S) - \sigma(S)$ directly, which the source model does not report
+\S\ref{sec:coverage} observes that RR sampling \emph{is} applicable to the monotone upper bound
+$\lambda(S) \ge \sigma(S)$ used by the source model: $\sigma^\kappa$ and $\sigma^\tau$ each fix one
+threshold per node, so each is monotone submodular and the coverage identity applies to each
+individually. What the identity does not reach is their \emph{difference}. We therefore measured
+the gap $\lambda(S) - \sigma(S)$ directly, which the source model does not report
 (Table~\ref{tab:surrogate}).
 
 \begin{table}[t]
 \centering
-\caption{The surrogate gap. $\lambda = \sigma^\kappa - \sigma^\tau$ where $\sigma^\kappa$,
-$\sigma^\tau$ are linear-threshold spreads at the lower and upper thresholds. All quantities
-share the same window draw within a trial.}
+\caption{\withdrawn{} The surrogate gap. $\lambda = \sigma^\kappa - \sigma^\tau$, where
+$\sigma^\kappa$ is the spread of the linear-threshold process at the lower threshold
+$\theta^\kappa \sim F^\kappa(x) = 2x - x^2$ and $\sigma^\tau$ at the upper threshold
+$\theta^\tau \sim F^\tau(x) = x^2$; these are the marginals induced by the model's simplex law, and
+neither is uniform, so neither may be described as standard uniform-threshold LT. All quantities
+share the same window draw within a trial. Every value below is from the pre-fix state machine and
+is invalid.}
 \label{tab:surrogate}
 \begin{tabular}{lrrrrr}
 \toprule
@@ -114,3 +125,38 @@ $|S| \le 4000$ on a graph where that is at most $26\%$ coverage and mostly far l
 a \emph{fraction}, the objective is clearly non-monotone on most of our graphs
 (Table~\ref{tab:signflip}). Any statement about overexposure that does not report $|S|/n$ should
 be treated with suspicion --- including, historically, ours.
+
+\paragraph{7. Eight confounds must be removed before any new number is reported.}
+Withdrawing the measurements of \S\ref{sec:experiments} is necessary but not sufficient; the
+measurement apparatus itself has the following defects, each of which can change a conclusion
+independently of the model fix. They are listed here rather than in a private note because a
+reviewer cannot verify a number whose protocol is not stated.
+
+\begin{enumerate}
+  \item \textbf{Inconsistent stopping under a budget of \emph{at most} $k$.} One policy selects a
+        seed with negative marginal gain while another stops at the first non-positive gain. Under
+        $\le k$ both are admissible, so the two are not comparable; the stopping rule must be part
+        of the policy and stated.
+  \item \textbf{Unpriced state acquisition.} Obtaining the exposure vector $\delta_2$ needs one
+        cascade, but it is reported at zero cost next to policies that are charged for their
+        cascades. The cost column is therefore not a like-for-like comparison.
+  \item \textbf{A noisy estimator presented as an oracle.} Greedy at $\text{MC} = 25$ is neither
+        exact nor globally optimal and must not be called an oracle; it needs a high-accuracy
+        reference with a reported tolerance.
+  \item \textbf{Mixed seed sizes in one statistic.} A within/between comparison that pools
+        $|S| \in \{0, k, 2k, 3k\}$ is dominated by the $|S| = 0$ cells.
+  \item \textbf{Selection bias in the candidate pool.} A single random $30$-node pool makes regime
+        selection an uncontrolled variable; the pool must be stratified or the sweep repeated.
+  \item \textbf{Splits that do not deduplicate.} Splitting by context identifier allows identical
+        seed sets to appear on both sides of a split.
+  \item \textbf{Unreported label uncertainty.} Recording $\sigma$ of the label as \texttt{NaN}
+        means candidate differences were never compared against estimation error.
+  \item \textbf{Weights normalised beyond what the model allows.} In-edge weights are normalised to
+        sum to exactly $1$, whereas the model requires at most $1$. Every graph must be reported
+        with the normalisation actually used, and the choice must be varied as a sensitivity check.
+\end{enumerate}
+
+Two of these interact with the model fix in the same direction: defect 2 charges nothing for the
+state that the correction makes more valuable, and defect 8 sets the exposure scale that decides
+whether any node is over-exposed at all. A re-derived table that fixes the state machine but not
+these eight would not be trustworthy.

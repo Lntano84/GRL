@@ -1,4 +1,4 @@
-"""State-tracking Monte-Carlo oracle for the overexposure diffusion model.
+﻿"""State-tracking Monte-Carlo oracle for the overexposure diffusion model.
 
 This is the ground-truth reference for every experiment in this project.  It replaces
 :class:`grl.oracle.marginal.BatchedMonteCarloMarginalOracle`, which samples a *live-edge graph*
@@ -117,7 +117,7 @@ class OverexposureMonteCarloOracle:
         return oe.sample_threshold_windows(
             self._nodes,
             rng,
-            overexposure_free=self.params.overexposure_free,
+            threshold_law=self.params.threshold_law,
             window_lo=self.window_lo,
         )
 

@@ -1,0 +1,76 @@
+{
+  "script": "rederive_signflip_high_mc.py",
+  "model": "fixed state machine (positive nodes may turn negative)",
+  "estimator": "paired per-trial marginal, common window draw within a trial",
+  "mc_runs": 300,
+  "candidates": 50,
+  "fractions": [
+    0.1,
+    0.2,
+    0.4
+  ],
+  "random_seed": 20260917,
+  "structural_stats": {
+    "congress_twitter": {
+      "n": 475,
+      "m": 13289,
+      "mean_degree": 55.95368421052632,
+      "max_out_degree": 210,
+      "max_in_degree": 127,
+      "rho_in_out": 0.4911298510030374
+    }
+  },
+  "cells": [
+    {
+      "graph": "congress_twitter",
+      "graph_mean_degree": 55.95368421052632,
+      "n": 475,
+      "seed_size": 48,
+      "seed_fraction": 0.10105263157894737,
+      "mc_runs": 300,
+      "candidates": 50,
+      "mean_gain": 0.8370000000000001,
+      "paired_se": 0.23222225548943304,
+      "gain_sd": 0.2830133487232635,
+      "negative_share": 0.0,
+      "negative_beyond_noise": 0.0,
+      "rho_degree": 0.40596324925195876,
+      "rho_delta2": -0.31987898370982887,
+      "seconds": 45.72435212135315
+    },
+    {
+      "graph": "congress_twitter",
+      "graph_mean_degree": 55.95368421052632,
+      "n": 475,
+      "seed_size": 95,
+      "seed_fraction": 0.2,
+      "mc_runs": 300,
+      "candidates": 50,
+      "mean_gain": 0.7040000000000001,
+      "paired_se": 0.17180440908552577,
+      "gain_sd": 0.2496201558813355,
+      "negative_share": 0.02,
+      "negative_beyond_noise": 0.0,
+      "rho_degree": 0.03866953390236851,
+      "rho_delta2": -0.06017095665793077,
+      "seconds": 46.28504467010498
+    },
+    {
+      "graph": "congress_twitter",
+      "graph_mean_degree": 55.95368421052632,
+      "n": 475,
+      "seed_size": 190,
+      "seed_fraction": 0.4,
+      "mc_runs": 300,
+      "candidates": 50,
+      "mean_gain": 0.7138666666666666,
+      "paired_se": 0.08934635485582686,
+      "gain_sd": 0.10543109387441428,
+      "negative_share": 0.0,
+      "negative_beyond_noise": 0.0,
+      "rho_degree": -0.1325949604742623,
+      "rho_delta2": 0.23007277634639747,
+      "seconds": 40.55891013145447
+    }
+  ]
+}

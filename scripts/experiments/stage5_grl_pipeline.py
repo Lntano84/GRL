@@ -299,9 +299,11 @@ class MethodResult:
     gap_to_oracle: float
     mc_cascades: int
     verified_total: int
-    fallback_steps: int
+    accepted_steps: int
+    envelope_steps: int
+    full_scan_steps: int
+    cap_stopped_steps: int
     steps: int
-    certified_steps: int
 
 
 def run_policy(
@@ -337,11 +339,21 @@ def run_policy(
     spread = evaluator.spread(result.selected_seeds)
     steps = result.steps
     verified_total = sum(int(s.get("verified", 0)) for s in steps)
-    fallback_steps = sum(
+    # Three stages, reported separately (audit item P1-2).  ``empirical_accept`` is a heuristic
+    # envelope test and can be wrong; only ``fallback_full_scan`` is exact with respect to the pool;
+    # ``statistical_certificate`` is never set by this codebase.
+    accepted_steps = sum(1 for s in steps if s.get("empirical_accept", False))
+    full_scan_steps = sum(1 for s in steps if s.get("fallback_full_scan", False))
+    envelope_steps = sum(
         1 for s in steps
-        if s.get("stop_reason") in ("max_m", "all_candidates") and not s.get("certified", False)
+        if s.get("empirical_accept", False) and not s.get("fallback_full_scan", False)
     )
-    certified_steps = sum(1 for s in steps if s.get("certified", False))
+    cap_stopped_steps = sum(1 for s in steps if not s.get("empirical_accept", False))
+    certified_steps = sum(1 for s in steps if s.get("statistical_certificate", False))
+    if certified_steps:
+        raise RuntimeError(
+            "a statistical certificate was reported, but nothing in this repository establishes one"
+        )
     gap = float("nan")
     if oracle_spread and oracle_spread > 1e-9:
         gap = (oracle_spread - spread["mean"]) / oracle_spread
@@ -349,8 +361,9 @@ def run_policy(
         graph="", budget=budget, policy=policy, corruption="clean",
         spread=spread["mean"], spread_stderr=spread["stderr"],
         gap_to_oracle=gap, mc_cascades=used,
-        verified_total=verified_total, fallback_steps=fallback_steps,
-        steps=len(steps), certified_steps=certified_steps,
+        verified_total=verified_total, accepted_steps=accepted_steps,
+        envelope_steps=envelope_steps, full_scan_steps=full_scan_steps,
+        cap_stopped_steps=cap_stopped_steps, steps=len(steps),
     )
 
 
@@ -488,17 +501,20 @@ def main() -> int:
             rows.append(r)
             print(f"   {policy:<18} spread={r.spread:8.2f} gap={r.gap_to_oracle*100:6.2f}% "
                   f"mc={r.mc_cascades:<6} verified={r.verified_total:<4} "
-                  f"fallback={r.fallback_steps} certified={r.certified_steps}/{r.steps}")
+                  f"accept={r.accepted_steps}/{r.steps} "
+                  f"(envelope={r.envelope_steps} full_scan={r.full_scan_steps} "
+                  f"cap_stopped={r.cap_stopped_steps})")
         print()
 
     print("=" * 100)
     print("STAGE 5 SUMMARY")
     print("=" * 100)
     print(f"  {'k':>3}{'policy':<20}{'spread':>9}{'gap%':>8}{'mc_cascades':>13}"
-          f"{'verified':>10}{'fallback':>10}")
+          f"{'verified':>10}{'accept':>7}{'env':>5}{'full':>5}{'cap':>5}")
     for r in rows:
         print(f"  {r.budget:>3}{r.policy:<20}{r.spread:>9.2f}{r.gap_to_oracle*100:>8.2f}"
-              f"{r.mc_cascades:>13}{r.verified_total:>10}{r.fallback_steps:>10}")
+              f"{r.mc_cascades:>13}{r.verified_total:>10}{r.accepted_steps:>7}"
+              f"{r.envelope_steps:>5}{r.full_scan_steps:>5}{r.cap_stopped_steps:>5}")
     print()
 
     if args.output:

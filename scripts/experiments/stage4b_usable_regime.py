@@ -248,6 +248,38 @@ def main() -> int:
     gap_cells: list[GapCell] = []
     state_cells: list[StateCell] = []
 
+    def flush(contracts: dict) -> None:
+        """Write what has been measured so far.
+
+        A long sweep that only writes at the end loses everything if it is interrupted, and this
+        one takes tens of minutes on the larger graphs.  The partial file is explicitly marked
+        incomplete so a reader cannot mistake a truncated sweep for a finished one.
+        """
+        if not args.output:
+            return
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        done_graphs = {c.graph for c in gap_cells}
+        args.output.write_text(json.dumps({
+            "complete": done_graphs >= set(args.graphs),
+            "graphs_requested": args.graphs,
+            "graphs_measured": sorted(done_graphs),
+            "budgets": args.budgets, "pool_size": args.pool_size,
+            "pool_draws": args.pool_draws, "pool_strategy": args.pool_strategy,
+            "oracle_mc": args.oracle_mc, "eval_mc": args.eval_mc, "state_mc": args.state_mc,
+            "state_contexts_per_size": args.state_contexts,
+            "normalisation": args.normalisation,
+            "target_mode": args.target_mode, "target_fraction": args.target_fraction,
+            "contracts": contracts,
+            "state_sizes_are_pooled": False,
+            "reference_is_exact": False,
+            "state_ratio_threshold": STATE_RATIO_THRESHOLD,
+            "gap_threshold": GAP_THRESHOLD,
+            "gap_cells": [asdict(c) for c in gap_cells],
+            "state_cells": [asdict(c) for c in state_cells],
+        }, indent=2), encoding="utf-8")
+
+    contracts: dict = {}
+
     for graph_name in args.graphs:
         graph = load_graph(graph_name)
         graph = normalise_in_weights(graph, args.normalisation)
@@ -259,6 +291,7 @@ def main() -> int:
                                            max(args.budgets))
         describe = contract.describe()
         eligible = contract.objective.legal_candidates(graph)
+        contracts[graph_name] = describe
         print(f"=== {graph_name} n={n} <k>={md:.2f} "
               f"normalisation={scale['strategy']} max_in_total={scale['max_in_weight_total']:.3f}")
         print(f"    contract: |D|={describe['objective']['target_set_size']} "
@@ -329,6 +362,7 @@ def main() -> int:
             print(f"  k={budget}  degree_gap median={deg_median*100:7.2f}% "
                   f"[{deg_lo*100:7.2f}, {deg_hi*100:7.2f}] over {len(gaps)} pools  "
                   f"state_ratio by size -> {ratios}")
+            flush(contracts)
         print()
 
     print("=" * 108)
@@ -390,22 +424,18 @@ def main() -> int:
     print()
 
     if args.output:
-        args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(json.dumps({
-            "graphs": args.graphs, "budgets": args.budgets, "pool_size": args.pool_size,
-            "pool_draws": args.pool_draws, "pool_strategy": args.pool_strategy,
-            "oracle_mc": args.oracle_mc, "eval_mc": args.eval_mc, "state_mc": args.state_mc,
-            "state_contexts_per_size": args.state_contexts,
-            "normalisation": args.normalisation,
-            "state_sizes_are_pooled": False,
-            "reference_is_exact": False,
-            "state_ratio_threshold": STATE_RATIO_THRESHOLD,
-            "gap_threshold": GAP_THRESHOLD,
-            "gap_cells": [asdict(c) for c in gap_cells],
-            "state_cells": [asdict(c) for c in state_cells],
-            "usable": [{"graph": g, "budget": b, "state_ratio": r, "median_degree_gap": d}
-                       for g, b, r, d in usable],
-        }, indent=2), encoding="utf-8")
+        flush(contracts)
+        # the "usable" verdict is only meaningful once every requested graph has been measured
+        if {c.graph for c in gap_cells} >= set(args.graphs):
+            payload = json.loads(args.output.read_text(encoding="utf-8"))
+            payload["usable"] = [
+                {"graph": g, "budget": b, "state_ratio": r, "median_degree_gap": d}
+                for g, b, r, d in usable
+            ]
+            args.output.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+        else:
+            print("NOTE: some requested graphs were not measured, so no 'usable' verdict was")
+            print("      written.  The file is marked complete=false for the same reason.")
         print(f"wrote {args.output}")
     return 0
 

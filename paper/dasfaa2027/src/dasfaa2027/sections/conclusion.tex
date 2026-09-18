@@ -2,16 +2,17 @@
 \label{sec:conclusion}
 
 We set out to select seeds under a threshold-dependent overexposure model and found that the
-dominant algorithmic tool for influence maximization cannot be used at all. Reverse-reachability
-sampling requires a randomised per-edge structure and a base case in which a node is active under
-incoming influence from a single predecessor. Under the threshold-window process neither exists:
-the activation threshold is strictly positive almost surely, so zero-influence nodes are never
-active and every reverse walk terminates immediately; and the exposure score is a set function of
-the ever-activated in-neighbours, so after conditioning on the windows the whole trajectory is
-deterministic in the seed set. Measured directly, every RR set is empty and the classical
-estimator returns $0$ where the true spread is $111.9$. There is no RR baseline to beat here, and
-the results that make RR attractive --- near-linear time with $(1-1/e-\varepsilon)$ guarantees,
-and the GPU speedups built on it --- do not transfer.
+coverage representation behind the dominant algorithmic tool does not apply. Reverse-reachability
+sampling rests on the identity $F_D(S) = c \cdot \Pr[S \cap R \neq \emptyset]$ for a random set $R$
+independent of $S$, a function that is necessarily non-decreasing and submodular. On a one-hop
+instance of two candidates of weight $0.4$ into one target, the model's own window distribution
+gives $F_D(\{a\}) = 0.48$ against $F_D(\{a,b\}) = 0.32$, so the target is non-monotone and no such
+coverage function matches it. We are explicit about the limits of that statement: it rules out the
+standard coverage form and nothing more. It does not rule out signed decompositions, algorithms for
+restricted instances, or Monte-Carlo estimation, and it says nothing about whether learning helps.
+It also holds only for a named threshold distribution --- under uniform-threshold linear thresholds
+the same instance is monotone. An earlier draft argued the stronger claim that "RR sets are empty";
+that probe was mis-specified and the claim is withdrawn.
 
 What replaces it is unglamorous but effective. The regime that matters is the seed
 \emph{fraction}: across nine graphs the objective becomes genuinely non-monotone once

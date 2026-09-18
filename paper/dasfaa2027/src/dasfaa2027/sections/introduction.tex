@@ -21,17 +21,19 @@ The window is drawn uniformly from the simplex $\{0 \le \theta^\kappa \le \theta
 and the exposure a node accumulates is the sum of the weights of the in-neighbours that were
 \emph{ever} positively activated.
 
-Our first contribution is negative and, we would argue, the most useful part of the paper:
-\emph{RR sampling has no domain here}. Two independent obstructions apply. First, because
-$\theta^\kappa_v = 0$ is a null event, a node receiving no influence can never be positive, so
-the reverse walk that RR sampling is built on has no base case --- every RR set is empty.
-Second, and more fundamentally, the exposure score is a set function of the ever-activated
-in-neighbours, so once the windows are fixed it is \emph{deterministic} in the seed set; the
-only randomness in the whole process is the window draw itself. There is therefore no per-edge
-random structure to sample. The classical identity does not merely lose accuracy, it degenerates:
-we measure a TIM-style estimate of $0.0$ where the true spread is $111.9$. This is consistent
-with the source model's own analysis, which guarantees only a $\gamma/k$ ratio and optimises a
-monotone surrogate $\lambda(S) \ge \sigma(S)$ rather than the objective itself.
+Our first contribution delimits what this objective rules out, and what it does not.  The
+coverage representation behind RR sampling requires the spread to be $c \cdot \Pr[S \cap R \neq
+\emptyset]$ for some random $R$ independent of $S$; such a function is non-decreasing and
+submodular.  On a one-hop instance with two candidates of weight $0.4$ into a single target the
+model's own window distribution gives $F_D(\{a\}) = 0.48$ and $F_D(\{a,b\}) = 0.32$, so the target
+is non-monotone and no such coverage function can match it (\S\ref{sec:coverage}).  We state the
+scope precisely because it is easy to over-read: this excludes the standard coverage form, and
+nothing else --- not signed decompositions, not algorithms for restricted instances, and not
+Monte-Carlo estimation, since a sample mean is itself unbiased.  It is also a statement about a
+named threshold distribution: under uniform-threshold linear thresholds the same instance is
+monotone, so the two readings cannot be conflated.  A weaker version of this argument, phrased as
+"RR sets are empty", appeared in an earlier draft of this work and is withdrawn; the probe it
+rested on was mis-specified.
 
 Our second contribution is to identify \emph{when} this matters. A naive experiment measures
 out-degree against the true marginal gain and concludes that degree is fine --- we made exactly
@@ -62,8 +64,8 @@ such.
 \paragraph{Contributions.}
 \begin{itemize}
   \item We prove and empirically verify that reverse-reachability sampling is structurally
-        inapplicable under threshold-dependent overexposure, for two independent reasons
-        (\S\ref{sec:inapplicability}). The result does not depend on non-monotonicity.
+        not expressible by a coverage representation under threshold-dependent overexposure, for reasons
+        (\S\ref{sec:coverage}). The statement is narrow: it excludes the coverage form, not signed or other estimators.
   \item We identify the seed \emph{fraction} as the controlling variable, and show that
         out-degree degrades to an anti-signal across nine graphs once the network saturates
         (\S\ref{sec:regime}).

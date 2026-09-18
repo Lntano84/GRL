@@ -1,0 +1,75 @@
+\section{What the Objective Rules Out, and What It Does Not}
+\label{sec:coverage}
+
+An earlier version of this work argued that reverse-reachability sampling has no domain here
+because every RR set is empty.  That argument is withdrawn.  The probe it rested on required a
+predecessor's window to contain zero and excluded the root, and it tested whether the returned set
+was non-empty rather than whether it intersected the seed set.  A reverse-reachability set for a
+root answers \emph{which seeds can reach this root}; it does not require a node to self-activate
+under zero incoming influence.  The empty sets were an artefact of a mis-specified probe.
+
+What survives is a strictly narrower statement, proved by exact arithmetic on a one-hop instance
+rather than by simulation.
+
+\subsection{The instance}
+
+Take a single target $D = \{t\}$ and two candidates $a, b$ with edges $a \to t$ and $b \to t$,
+both of weight $\omega = 0.40$, and seeds drawn from $V \setminus D$.
+
+Under the model's own window distribution -- $(\theta^\kappa, \theta^\tau)$ uniform on the
+2-simplex $\{0 \le \theta^\kappa \le \theta^\tau \le 1\}$ -- the target's positive-activation
+probability is $g(\delta) = 2\delta(1-\delta)$ with $\delta$ the exposure it receives, so
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+$S$ & $\delta$ & $F_D(S)$ under the model & $F_D(S)$ under uniform-threshold LT \\
+\midrule
+$\emptyset$   & $0.00$ & $0.0000$ & $0.0000$ \\
+$\{a\}$       & $0.40$ & $0.4800$ & $0.4000$ \\
+$\{a,b\}$     & $0.80$ & $0.3200$ & $0.8000$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Two things follow, and they must be kept apart.
+
+\textbf{The objective is non-monotone.} $F_D(\{a,b\}) = 0.3200 < F_D(\{a\}) = 0.4800$.
+Adding a seed can strictly decrease the target's activation probability.
+
+\textbf{No non-negative seed-independent coverage function matches it.} For any random set $R$
+independent of $S$, the function $S \mapsto c \cdot \Pr[S \cap R \neq \emptyset]$ is non-decreasing
+and submodular in $S$, because adding a seed can only create intersections and the marginal value
+of a seed cannot increase as $S$ grows.  A non-monotone $F_D$ therefore cannot equal such a
+function on this instance, for any $c$ and any distribution of $R$.
+
+\subsection{Scope}
+
+The statement above excludes exactly one thing: the standard, non-negative, seed-independent
+coverage representation that underlies RR sampling.  It does not exclude, and should not be read
+as excluding:
+
+\begin{itemize}
+  \item signed decompositions, or sampling structures other than non-negative coverage;
+  \item algorithms specialised to restricted instance classes;
+  \item Monte-Carlo estimation.  A plain sample mean is an unbiased estimator of $F_D$ and is the
+        reference used throughout this paper;
+  \item any claim that a learned predictor must help.  Whether learning adds anything is an
+        empirical question this paper treats as open.
+\end{itemize}
+
+\subsection{Why the threshold distribution must be stated explicitly}
+
+The table also shows why the two threshold readings cannot be conflated.  Under
+uniform-threshold LT with $\theta^\kappa \sim U[0,1]$ and no upper threshold, the same instance is
+\emph{monotone} ($0.4000 \to 0.8000$), so the argument would fail there.  The
+source model samples $(\theta^\kappa, \theta^\tau)$ jointly from the simplex, which induces the
+marginal $F^\kappa(x) = 2x - x^2$ for the lower threshold and $F^\tau(x) = x^2$ for the upper; a
+later lemma in the same work describes sampling $\theta^\tau$ uniformly and then
+$\theta^\kappa$ conditionally, which is a different joint law.  Every claim in this paper
+therefore names the distribution it assumes, and the degenerate no-overexposure setting is
+treated as its own configuration rather than as standard uniform-threshold LT.
+
+The practical consequence for the rest of the paper is that this objective must be estimated by
+simulating the process.  Sampling-based coverage machinery is unavailable, so the question turns
+into how to spend a simulation budget well -- which is the subject of \S\ref{sec:experiments}.

@@ -46,46 +46,55 @@ Found while auditing provenance, and **independent of the state-machine bug**.
   constraint (C5) that a rank correlation in this regime needs `MC ≥ 300`.
 - The stored JSON confirms `candidates: 50, mc_runs: 12`.
 
-**Re-measurement** at `MC = 300` under the fixed model, paired per-trial estimator
-(`scripts/audit/rederive_signflip_high_mc.py`). Seven graphs of eight are complete; the table is
-being filled in as the last cells land.
+**Re-measurement** at `MC = 300` under the fixed model, paired per-trial estimator. **Complete:
+8 graphs, 24 cells** (`docs/results/signflip_fixedmodel_mc300.json`, generated table in
+`paper/dasfaa2027/src/dasfaa2027/sections/regime_table.tex`).
 
-| graph | ⟨k⟩ | `\|S\|/n` | neg% (draft) | neg% (new) | `ρ_degree` draft → new | `ρ_δ₂` draft → new |
-| --- | --- | --- | --- | --- | --- | --- |
-| p2p-Gnutella08 | 6.59 | 10% | — | 0.0% | — → +0.647 | — → +0.680 |
-| p2p-Gnutella08 | 6.59 | 20% | 8.0% | 0.0% | −0.094 → **+0.338** | +0.756 → +0.259 |
-| ca-GrQc | 11.06 | 10% | — | 0.0% | — → −0.320 | — → +0.692 |
-| ca-GrQc | 11.06 | 20% | 20.0% | 0.0% | −0.701 → **−0.560** | +0.656 → +0.653 |
-| Wiki-Vote | 29.15 | 20% | 8.0% | 0.0% | −0.035 → **+0.090** | +0.265 → **+0.527** |
-| Wiki-Vote | 29.15 | 40% | 8.0% | 0.0% | −0.035 → **−0.173** | +0.265 → **+0.245** |
-| ca-HepPh | 39.48 | 10% | — | 0.0% | — → +0.009 | — → +0.392 |
-| ca-HepPh | 39.48 | 20% | 21.0% | 0.0% | −0.431 → **−0.179** | +0.481 → **+0.380** |
-| Facebook | 43.69 | 10% | — | 0.0% | — → −0.044 | — → **+0.784** |
-| Facebook | 43.69 | 20% | 21.0% | 0.0% | −0.402 → **−0.413** | +0.388 → **+0.497** |
-| Facebook | 43.69 | 40% | 21.0% | 4.0% (2% beyond noise) | −0.402 → **−0.425** | +0.388 → **+0.557** |
-| email-Eu-core | 50.89 | 10% | — | 0.0% | — → −0.049 | — → +0.033 |
-| email-Eu-core | 50.89 | 20% | 34.0% | 0.0% | −0.695 → **−0.139** | +0.685 → **+0.106** |
-| email-Eu-core | 50.89 | 40% | 34.0% | 0.0% | −0.695 → **−0.332** | +0.685 → **+0.372** |
-| Congress-Twitter | 55.95 | 10% | — | 0.0% | — → +0.406 | — → −0.320 |
-| Congress-Twitter | 55.95 | 20% | 35.0% | 2.0% (0% beyond noise) | −0.049 → **+0.039** | +0.050 → **−0.060** |
-| Congress-Twitter | 55.95 | 40% | 35.0% | 0.0% | −0.049 → **−0.133** | +0.050 → **+0.230** |
+At `|S|/n ≥ 20%`, over 16 saturated cells:
 
-Two conclusions:
+| quantity | value |
+| --- | --- |
+| `ρ_degree < 0` | **12 / 16 cells**, mean `−0.177` |
+| mean `ρ_δ₂` | **+0.420** |
+| graphs with negative saturated `ρ_degree` | **7 / 8** (NetHEPT the exception, exactly as the draft said) |
+| graphs where `ρ_δ₂ > ρ_degree` | **8 / 8** (exactly as the draft claimed) |
+| mean negative-marginal share | **0.5%** (the draft said 8–35%) |
+| worst negative-marginal share, any cell | **4.0%** |
+| mean share negative beyond two paired SEs | **0.2%** |
+| `Spearman(⟨k⟩, saturated ρ_degree)` | **−0.286** |
 
-1. **The negative-marginal-share claim is dead.** At `MC = 300` the share is `0%` in seventeen of
-   eighteen cells, `2%` in one, and `0%` *beyond noise* in every cell. The draft's headline
-   "$8\%$ to $35\%$ of candidates have a negative marginal gain" was Monte-Carlo artefact.
-2. **The sign flip and `δ₂`'s advantage largely survive.** At `|S|/n ≥ 20%`, `ρ_δ₂ > ρ_degree` on
-   six of seven graphs measured, and degree is negative on five of them. The two exceptions are the
-   extremes of the density range: p2p-Gnutella08 (`⟨k⟩ = 6.59`, degree `+0.338`) and
-   Congress-Twitter at `20%` (`⟨k⟩ = 55.95`, degree `+0.039`, `δ₂ = −0.060`).
+| graph | ⟨k⟩ | `ρ_degree` | `ρ_δ₂` | neg. | neg.>noise |
+| --- | --- | --- | --- | --- | --- |
+| NetHEPT | 4.23 | **+0.099** | +0.693 | 1.0% | 1.0% |
+| p2p-Gnutella08 | 6.59 | −0.052 | +0.400 | 0.0% | 0.0% |
+| ca-GrQc | 11.06 | −0.583 | +0.640 | 0.0% | 0.0% |
+| Wiki-Vote | 29.15 | −0.042 | +0.386 | 0.0% | 0.0% |
+| ca-HepPh | 39.48 | −0.137 | +0.386 | 0.0% | 0.0% |
+| Facebook | 43.69 | −0.419 | +0.527 | 2.0% | 1.0% |
+| email-Eu-core | 50.89 | −0.236 | +0.239 | 0.0% | 0.0% |
+| Congress-Twitter | 55.95 | −0.047 | +0.085 | 1.0% | 0.0% |
 
-**An intermediate conclusion of mine was itself underpowered, and I am recording that.** After the
-first two graphs I wrote that "the headline phenomenon is not visible at adequate power". That was
-based on Congress-Twitter and email-Eu-core. With seven graphs the sign flip is present on five and
-`δ₂` leads on six. The negative-share half of my statement held; the sign-flip half did not, and
-generalising from two graphs was the same error as citing `MC = 12`. `regime.tex` therefore states
-neither version until the eighth graph lands.
+**Two conclusions, and they point in opposite directions.**
+
+1. **The draft's negative-marginal-share claim is dead.** `0%` in fourteen of sixteen saturated
+   cells, `4.0%` at worst, `0.2%` beyond noise. The draft's "$8\%$ to $35\%$ of candidates have a
+   negative marginal gain" was Monte-Carlo artefact: the same cell moves from `44%` at `MC = 12` to
+   `4%` at `MC = 300`.
+2. **The draft's sign-flip claim survives re-measurement.** Out-degree is negatively correlated on
+   seven of eight graphs at `|S|/n ≥ 20%`, NetHEPT is the sole exception, and `δ₂` is the better
+   ranker on all eight. Those were the draft's own qualitative claims, quoted at `MC = 12`. The
+   magnitudes moved (email-Eu-core `−0.695 → −0.236`; ca-GrQc `−0.701 → −0.583`) but the pattern did
+   not.
+
+So the regime table is **un-withdrawn** and replaced by a generated one: it is the first result to
+come back out of withdrawal. It is produced by `scripts/audit/write_regime_table.py` reading the
+JSON, so no number in it is transcribed by hand.
+
+**An intermediate conclusion of mine was itself underpowered, and that is recorded rather than
+quietly fixed.** After the first two graphs I wrote that "the headline phenomenon is not visible at
+adequate power". With eight graphs it is visible on seven. Generalising from two graphs was the same
+error as citing `MC = 12`. The abstract, the introduction, `regime.tex` and this report all now say
+the negative-share half was refuted and the sign-flip half held.
 
 ---
 
@@ -107,9 +116,6 @@ neither version until the eighth graph lands.
 
 ## 3. What the paper can defend today
 
-Only the analytic material survived both findings. This is a short paper, and it is the only part
-that is currently true:
-
 1. **No non-negative seed-independent coverage function matches the objective.** Exact one-hop
    arithmetic: `F_D(∅) = 0.0000`, `F_D({a}) = 0.4800`, `F_D({a,b}) = 0.3200` under the model's simplex
    law, against `0.0000 / 0.4000 / 0.8000` under uniform-threshold LT. The closed form `2δ(1−δ)` was
@@ -117,12 +123,18 @@ that is currently true:
    `S ↦ c·Pr[S ∩ R ≠ ∅]` is non-decreasing and submodular for any `R` independent of `S`, a
    non-monotone `F_D` cannot equal it for any `c` and any distribution of `R`.
 2. **The threshold distribution must be named**, because the sign of the effect depends on it.
-3. **`λ` is a difference of two monotone submodular functions**, so submodularity is not preserved
+3. **The re-measured regime characterisation.** Out-degree is an anti-signal on seven of eight graphs
+   at `|S|/n ≥ 20%`; the state-conditioned closed form is the better ranker on all eight; the
+   negative-marginal share is `0.5%`, not the `8–35%` we previously reported.
+4. **`λ` is a difference of two monotone submodular functions**, so submodularity is not preserved
    and even a valid upper bound would not by itself license a sampling guarantee.
-4. **A measurement constraint**: no rank correlation in the negative-marginal regime below
-   `MC ≥ 300`, and the negative-marginal share is itself the quantity most inflated by that noise.
+5. **A measurement protocol of five checks**, each with the measured magnitude of the error it
+   prevents (`sections/protocol.tex`).
 
-Everything else in the draft is marked `\withdrawn`.
+Withdrawn and not restorable in their present form: the baseline comparison (`experiments.tex`,
+Tables 4–7), the calibration table, the surrogate-gap table, the learned-scorer negative result, and
+the SNR table. Those depend on the pre-fix state machine and on a Monte-Carlo budget below the
+threshold the protocol requires.
 
 ---
 

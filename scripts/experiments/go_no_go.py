@@ -563,6 +563,24 @@ def main() -> int:
     skipped: list[dict] = []
     failures: list[dict] = []
 
+    # Resume support.  A cell is identified by everything that determines it, so a cell already in
+    # the artifact is not re-measured and a re-run with different settings does not silently reuse
+    # a result produced by other settings.  Without this a sweep that needs hours cannot be run in
+    # affordable pieces, and killing one loses all of it.
+    def cell_key(c: dict) -> tuple:
+        return (c["graph"], c["normalisation"], c["budget"], c["pool_draw"], c["random_seed"],
+                c["eval_mc"], c["state_mc"], c["stopping_rule"], c["reference_mc"])
+
+    done: set[tuple] = set()
+    if args.resume and args.output.exists():
+        prior = json.loads(args.output.read_text(encoding="utf-8"))
+        cells = [Cell(**row) for row in prior.get("cells", [])]
+        skipped = list(prior.get("skipped_cells", []))
+        failures = list(prior.get("arm_failures", []))
+        done = {cell_key(asdict(c)) for c in cells}
+        print(f"resuming: {len(cells)} cells already measured, {len(done)} distinct keys",
+              flush=True)
+
     def flush() -> None:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps({
@@ -644,6 +662,18 @@ def main() -> int:
                           f"{realised_fraction:.4f} after rounding k={budget} on n={n}")
                 for draw in range(args.pool_draws):
                     for seed in args.seeds:
+                        # skip a cell that the artifact already holds, under identical settings
+                        planned = {
+                            "graph": graph_name, "normalisation": normalisation,
+                            "budget": budget, "pool_draw": draw, "random_seed": seed,
+                            "eval_mc": args.eval_mc, "state_mc": args.state_mc,
+                            "stopping_rule": args.stopping, "reference_mc": args.reference_mc,
+                        }
+                        if args.resume and cell_key(planned) in done:
+                            print(f"  k={budget:>5} |S|/n={realised_fraction:.3f} draw={draw} "
+                                  f"seed={seed}  (cached)", flush=True)
+                            continue
+
                         rng = random.Random(seed + 31 * budget + 101 * draw)
                         # The pool is the domain the arms choose from, and it shrinks as seeds are
                         # taken.  If the pool is not comfortably larger than the budget every arm

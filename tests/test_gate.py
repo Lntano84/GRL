@@ -53,10 +53,12 @@ def test_pass_when_the_ci_fits_inside_the_tolerance_and_cost_is_saved():
     assert verdict.ci_high <= verdict.abs_tolerance
 
 
-def test_fail_on_quality_when_the_ci_upper_bound_exceeds_the_tolerance():
-    verdict = gate(paired_gains=[5.0, 5.2, 4.8, 5.1, 4.9])
+def test_fail_on_quality_when_the_ci_lies_entirely_above_the_tolerance():
+    """A CI wholly above the tolerance EXCLUDES being within it: that is a decision, not a shrug."""
+    verdict = gate(paired_gains=[5.0, 5.2, 4.8, 5.1, 4.9], abs_tolerance=1.0)
     assert verdict.verdict == FAIL
     assert not verdict.quality_ok
+    assert verdict.ci_low > verdict.abs_tolerance
 
 
 def test_fail_on_cost_when_the_cascade_saving_is_too_small():
@@ -65,17 +67,20 @@ def test_fail_on_cost_when_the_cascade_saving_is_too_small():
     assert verdict.quality_ok and not verdict.cost_ok
 
 
-def test_undecided_when_the_ci_is_wider_than_the_tolerance():
-    """The core claim: an uninformative measurement must not be reported as a verdict."""
-    verdict = gate(abs_tolerance=0.05)
+def test_undecided_when_the_ci_straddles_the_tolerance():
+    """The core claim: an interval that contains the tolerance cannot decide either way.
+
+    The gains below give a CI of roughly [-0.47, +1.47], so a tolerance of 1.0 sits inside it.
+    """
+    verdict = gate(paired_gains=[-1.0, 0.0, 1.0, 2.0, 0.5], abs_tolerance=1.0)
+    assert verdict.ci_low < verdict.abs_tolerance < verdict.ci_high
     assert verdict.verdict == UNDECIDED
     assert not verdict.quality_ok
-    assert (verdict.ci_high - verdict.ci_low) > verdict.abs_tolerance
 
 
 def test_undecided_takes_precedence_over_a_cost_success():
-    """Cheap but unmeasurable is still unknown, not a pass."""
-    verdict = gate(abs_tolerance=0.05, method_cascades=1)
+    """Cheap but undecidable is still unknown, not a pass."""
+    verdict = gate(paired_gains=[-1.0, 0.0, 1.0, 2.0, 0.5], abs_tolerance=1.0, method_cascades=1)
     assert verdict.cost_ok is True
     assert verdict.verdict == UNDECIDED
 
@@ -94,16 +99,32 @@ def test_the_relative_loss_is_recorded_but_does_not_decide():
     strict = gate(abs_tolerance=0.05)
     assert lenient.relative_loss == pytest.approx(strict.relative_loss)
     assert lenient.verdict == PASS
-    assert strict.verdict == UNDECIDED, (
-        "the same relative loss must not decide the verdict; only the absolute tolerance may"
+    assert strict.verdict == FAIL, (
+        "the same relative loss must not decide the verdict; only the absolute tolerance may.  "
+        "Here the CI lies wholly above the stricter tolerance, so the stricter question is "
+        "answered against the method --- which is a decision, not an absence of one."
     )
 
 
 def test_a_relative_loss_below_one_percent_can_still_be_undecided():
-    """Exactly the trap the plan's '<= 1%' wording walks into."""
-    verdict = gate(paired_gains=[0.5, 0.7, 0.3, 0.6, 0.4], abs_tolerance=0.05)
+    """Exactly the trap the plan's '<= 1%' wording walks into: 0.5% loss, no decision available."""
+    verdict = gate(paired_gains=[-1.0, 0.0, 1.0, 2.0, 0.5], abs_tolerance=0.5)
     assert verdict.relative_loss < 0.01
     assert verdict.verdict == UNDECIDED
+
+
+def test_max_plausible_loss_is_the_ci_upper_end():
+    """The most useful number the experiment produces: comparable to any tolerance a reader picks."""
+    verdict = gate(abs_tolerance=0.01)
+    assert verdict.max_plausible_loss == pytest.approx(verdict.ci_high)
+    assert verdict.max_plausible_loss > verdict.abs_tolerance
+
+
+def test_power_ratio_says_whether_the_tolerance_was_resolvable():
+    resolvable = gate(abs_tolerance=1.0)
+    unresolvable = gate(abs_tolerance=0.01)
+    assert resolvable.power_ratio > 1.0
+    assert unresolvable.power_ratio < 1.0
 
 
 # ---------------------------------------------------------------------------------------------
@@ -169,5 +190,8 @@ def test_empty_paired_gains_are_refused():
 # ---------------------------------------------------------------------------------------------
 def test_explain_names_the_outcome_and_the_number_that_decided_it():
     assert "PASS" in explain(gate())
-    assert "UNDECIDED" in explain(gate(abs_tolerance=0.01))
-    assert "FAIL" in explain(gate(paired_gains=[5.0, 5.1, 4.9, 5.05, 4.95]))
+    assert "UNDECIDED" in explain(gate(paired_gains=[-1.0, 0.0, 1.0, 2.0, 0.5], abs_tolerance=1.0))
+    assert "FAIL" in explain(gate(paired_gains=[5.0, 5.1, 4.9, 5.05, 4.95], abs_tolerance=1.0))
+    # the undecided line must state the largest loss the data still permits
+    undecided = explain(gate(paired_gains=[-1.0, 0.0, 1.0, 2.0, 0.5], abs_tolerance=1.0))
+    assert "largest loss" in undecided

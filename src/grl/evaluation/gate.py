@@ -112,6 +112,16 @@ class GateVerdict:
     verdict: str
     relative_loss: float
     n_pairs: int
+    #: The largest loss the data still permits, in target nodes: the upper end of the paired CI on
+    #: ``reference - method``.  This is the single most useful number the experiment produces,
+    #: because it can be compared against any tolerance a reader considers substantive, whereas a
+    #: binary verdict depends on the tolerance someone chose.  A negative value means the method was
+    #: better than the reference beyond noise.
+    max_plausible_loss: float = float("nan")
+    #: ``abs_tolerance / (z * paired_se)``.  Above 1 the experiment can resolve the tolerance in
+    #: principle; below 1 it cannot, and the verdict is UNDECIDED whatever the point estimate says.
+    #: Reported so that "we could not decide" is distinguishable from "we decided against".
+    power_ratio: float = float("nan")
 
     def as_dict(self) -> dict:
         return {
@@ -134,6 +144,8 @@ class GateVerdict:
             "verdict": self.verdict,
             "relative_loss": self.relative_loss,
             "n_pairs": self.n_pairs,
+            "max_plausible_loss": self.max_plausible_loss,
+            "power_ratio": self.power_ratio,
         }
 
 
@@ -188,14 +200,30 @@ def evaluate_gate(
 
     cost_ok = method_cascades <= (1.0 - required_saving) * reference_cascades + 1e-12
 
-    # The quality test needs the CI to be tighter than the tolerance: if the interval is wider than
-    # what we are trying to resolve, the measurement has not answered the question.
-    if not math.isfinite(half) or (ci_high - ci_low) > abs_tolerance:
+    # Non-inferiority logic, three outcomes rather than two.
+    #
+    #   PASS       the whole CI sits at or below the tolerance: we can exclude a loss that matters
+    #   FAIL       the whole CI sits above the tolerance: we can exclude being within tolerance
+    #   UNDECIDED  the CI straddles the tolerance: the experiment lacks the power to decide
+    #
+    # The third case is the common one in this regime and it is not a cop-out.  A measurement whose
+    # interval is wider than the thing being measured has not answered the question, and reporting
+    # it as a pass or a fail would be the same error as the withdrawn negative-share column ---
+    # reading a number the noise produced.
+    power_ratio = abs_tolerance / half if half > 0 else float("inf")
+
+    if not math.isfinite(half):
         quality_ok = False
         verdict = UNDECIDED
+    elif ci_high <= abs_tolerance:
+        quality_ok = True
+        verdict = PASS if cost_ok else FAIL
+    elif ci_low > abs_tolerance:
+        quality_ok = False
+        verdict = FAIL
     else:
-        quality_ok = ci_high <= abs_tolerance
-        verdict = PASS if (quality_ok and cost_ok) else FAIL
+        quality_ok = False
+        verdict = UNDECIDED
 
     return GateVerdict(
         graph=graph, budget=budget, reference=reference, method=method,
@@ -205,6 +233,7 @@ def evaluate_gate(
         cascade_saving=saving, required_saving=required_saving,
         quality_ok=quality_ok, cost_ok=cost_ok, verdict=verdict,
         relative_loss=relative_loss, n_pairs=n,
+        max_plausible_loss=ci_high, power_ratio=power_ratio,
     )
 
 
@@ -213,20 +242,22 @@ def explain(verdict: GateVerdict) -> str:
     if verdict.verdict == UNDECIDED:
         return (
             f"{verdict.method} vs {verdict.reference}: UNDECIDED — the paired 95% CI on the loss is "
-            f"[{verdict.ci_low:+.3f}, {verdict.ci_high:+.3f}] target nodes, wider than the tolerance "
-            f"{verdict.abs_tolerance:.3f}. The measurement cannot resolve the question."
+            f"[{verdict.ci_low:+.3f}, {verdict.ci_high:+.3f}] target nodes and the tolerance is "
+            f"{verdict.abs_tolerance:.3f}, so the interval straddles it (power {verdict.power_ratio:.2f}). "
+            f"The largest loss the data still permits is {verdict.max_plausible_loss:+.3f} nodes."
         )
     if verdict.verdict == PASS:
         return (
-            f"{verdict.method} vs {verdict.reference}: PASS — loss <= {verdict.abs_tolerance:.3f} "
-            f"nodes (CI high {verdict.ci_high:+.3f}) with {verdict.cascade_saving*100:.0f}% fewer "
-            f"online cascades (needed {verdict.required_saving*100:.0f}%)."
+            f"{verdict.method} vs {verdict.reference}: PASS — the whole CI is within the tolerance "
+            f"{verdict.abs_tolerance:.3f} (upper end {verdict.ci_high:+.3f} nodes) with "
+            f"{verdict.cascade_saving*100:.0f}% fewer online cascades "
+            f"(needed {verdict.required_saving*100:.0f}%)."
         )
     if not verdict.quality_ok and verdict.cost_ok:
         return (
-            f"{verdict.method} vs {verdict.reference}: FAIL on quality — CI high "
-            f"{verdict.ci_high:+.3f} exceeds the tolerance {verdict.abs_tolerance:.3f} "
-            f"(relative loss {verdict.relative_loss*100:.1f}%, reported for context only)."
+            f"{verdict.method} vs {verdict.reference}: FAIL on quality — the CI lies entirely above "
+            f"the tolerance, so a loss of at least {verdict.ci_low:+.3f} nodes is excluded "
+            f"(relative {verdict.relative_loss*100:.1f}%, reported for context only)."
         )
     if verdict.quality_ok and not verdict.cost_ok:
         return (
@@ -235,7 +266,7 @@ def explain(verdict: GateVerdict) -> str:
             f"{verdict.required_saving*100:.0f}%."
         )
     return (
-        f"{verdict.method} vs {verdict.reference}: FAIL on both — quality CI high "
-        f"{verdict.ci_high:+.3f} > {verdict.abs_tolerance:.3f} and cascade saving "
-        f"{verdict.cascade_saving*100:.0f}% < {verdict.required_saving*100:.0f}%."
+        f"{verdict.method} vs {verdict.reference}: FAIL on both — CI lower end "
+        f"{verdict.ci_low:+.3f} above the tolerance {verdict.abs_tolerance:.3f}, and cascade saving "
+        f"{verdict.cascade_saving*100:.0f}% below {verdict.required_saving*100:.0f}%."
     )

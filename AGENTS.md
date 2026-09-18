@@ -40,10 +40,12 @@ After a meaningful experiment or technical decision:
 - **Push after every meaningful unit of work, without being asked.**  A stage, a fix, a corrected
   test, an experiment result — if it is worth committing it is worth pushing immediately.  Do not
   leave work only on the local machine.
-- **Use `pwsh scripts/git_push.ps1` to commit and push.**  Plain `git push` writes progress to
-  stderr, so PowerShell reports a non-zero exit code and a red error line even on success; that has
-  already produced a false "did you push?" check.  The script decides success by comparing the
-  remote ref to local HEAD, so its verdict reflects reality.
+- **Use `scripts\git_push.cmd "<message>"` (or a message-file path) to commit and push.**  Plain
+  `git push` writes progress to stderr, so shells report a non-zero exit code and a red error line
+  even on success; that has already produced a false "did you push?" check.  The helper decides
+  success by comparing the remote ref to local HEAD and prints `PUSHED OK <sha>` or
+  `PUSH FAILED` with both shas.  It is a `.cmd` rather than a `.ps1` because PowerShell execution
+  policy blocks local scripts on this machine.
 - Do not include unrelated untracked project-local experiment directories in commits.
 - Make focused commits for code/config/state-document changes.
 - Never leave the working tree dirty at the end of a piece of work: either commit it or say

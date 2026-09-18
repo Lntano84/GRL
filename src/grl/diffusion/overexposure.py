@@ -164,18 +164,37 @@ ACTIVATION_MODES = (DETERMINISTIC, STOCHASTIC)
 
 @dataclass
 class OverexposureRun:
-    """Result of a single deterministic realization."""
+    """Result of a single deterministic realization.
+
+    Three node sets are reported and they are NOT interchangeable:
+
+    ``positive``
+        Nodes that are positive at the END of the process.  This is what ``spread`` counts, and
+        it is what the positive influence of a seed set means.  A seed is always here.
+    ``negative``
+        Nodes that became negatively active (overexposed).  A node here is not in ``positive``.
+    ``ever_positive``
+        Every node that was positive at some point, including nodes later turned negative.  This
+        set drives the exposure accumulation ``delta``: the model keeps the influence of
+        previously activated neighbours, so a node that has since turned negative still
+        contributes to its neighbours' exposure.
+    """
 
     spread: int
     positive: set[int] = field(default_factory=set)
     negative: set[int] = field(default_factory=set)
     delta: dict[int, float] = field(default_factory=dict)
     rounds: int = 0
+    ever_positive: set[int] = field(default_factory=set)
 
     @property
-    def ever_positive(self) -> set[int]:
-        """Nodes that were positively activated at some point (they promote)."""
-        return self.positive
+    def ever_positive_or_positive(self) -> set[int]:
+        """Union kept for callers that only want 'was ever activated'."""
+        return set(self.positive) | set(self.ever_positive)
+
+    @property
+    def final_positive(self) -> set[int]:
+        return set(self.positive)
 
 
 def run_overexposure(
@@ -215,9 +234,10 @@ def run_overexposure(
 
     state = {node: INACTIVE for node in graph.nodes()}
     delta = {node: 0.0 for node in graph.nodes()}
-    settled: set[int] = set()
-    positive: set[int] = set()
+    positive: set[int] = set()      # currently positive (seeds always)
     negative: set[int] = set()
+    ever_positive: set[int] = set()  # every node that was positive at some point
+    seeds_set = set(seeds)
 
     directed = graph.is_directed()
 
@@ -230,6 +250,7 @@ def run_overexposure(
         if state[seed] != POSITIVE:
             state[seed] = POSITIVE
             positive.add(seed)
+            ever_positive.add(seed)
             frontier.append(seed)
 
     rounds = 0
@@ -246,41 +267,55 @@ def run_overexposure(
                     continue
                 delta[target] += float(data.get("weight", 0.0))
 
-        # Phase 2: evaluate nodes against the freshly updated influence.  At most one
-        # transition per node happens in a round, so a chain advances one hop per round.
+        # Phase 2: evaluate nodes against the freshly updated influence.
+        #
+        # Two rules matter here and both were wrong before (see
+        # scripts/audit/verify_p0_counterexamples.py):
+        #
+        #   1. A node that is already POSITIVE is NOT settled.  Exposure keeps accumulating from
+        #      the ever-activated set, so a positive node can later cross its own tau and turn
+        #      negative.  Freezing it at its first transition systematically under-counts
+        #      overexposure and inflates spread.
+        #   2. The state rule is the literal ``kappa <= delta <= tau``.  An earlier version added
+        #      a ``delta < 1`` guard to force a negative transition at delta = 1, on the theory
+        #      that the marginal probability 2*delta*(1-delta) vanishes there.  That conflated two
+        #      different things: 2*delta*(1-delta) is the probability of the window event under
+        #      the *sampled* window distribution, whereas the state rule is conditional on a
+        #      window that has already been drawn.  With tau = 1 the literal rule puts delta = 1
+        #      inside the window, and the guard wrongly made it negative.
+        #
+        # Seeds are exempt: they are positive by definition and never stop being so.
         newly_positive: list[int] = []
         for node in graph.nodes():
-            if state[node] != INACTIVE or node in settled:
+            if node in seeds_set:
                 continue
+            if state[node] == NEGATIVE:
+                continue                      # one-way transition, permanently negative
             current = delta[node]
             if current <= 0.0:
                 continue
             kappa, tau = windows[node]
             if current > tau:
-                # Overexposed: permanently negative, never promotes.
+                if state[node] == POSITIVE:
+                    positive.discard(node)
                 state[node] = NEGATIVE
                 negative.add(node)
-                settled.add(node)
-            elif current >= kappa and current < 1.0:
-                # Inside the window.  The strict ``current < 1`` guard keeps the discrete
-                # state rule consistent with Lemma 1: 2*delta*(1-delta) vanishes at
-                # delta = 1, so maximal exposure must not yield a positive transition.
-                # Without the guard the literal rule "delta in [kappa, tau]" would
-                # activate a node whenever tau == 1, contradicting the very probability
-                # the model was derived from.
-                inside = True
+            elif current >= kappa:
+                activates = True
                 if stochastic:
-                    inside = rng.random() < positive_activation_probability(current)
-                if inside:
+                    # Extra Bernoulli layer on top of the window event.  Applied only on the
+                    # first transition into the window; a node already positive is not re-rolled.
+                    if state[node] != POSITIVE:
+                        activates = rng.random() < positive_activation_probability(current)
+                    else:
+                        activates = True
+                if activates and state[node] != POSITIVE:
                     state[node] = POSITIVE
                     positive.add(node)
+                    ever_positive.add(node)
                     newly_positive.append(node)
-                settled.add(node)
-            elif current >= 1.0:
-                # delta = 1 exhausts the influence budget: Lemma 1 gives probability 0.
-                state[node] = NEGATIVE
-                negative.add(node)
-                settled.add(node)
+                # already positive and still inside the window: no transition, no promotion
+                # (its influence was exerted when it first turned positive)
             # else current < kappa: stays inactive and stays re-evaluable.
 
         frontier = newly_positive
@@ -291,6 +326,7 @@ def run_overexposure(
         negative=negative,
         delta=delta,
         rounds=rounds,
+        ever_positive=ever_positive,
     )
 
 

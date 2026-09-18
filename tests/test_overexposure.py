@@ -112,13 +112,17 @@ def test_no_overexposure_means_no_node_ever_goes_negative():
         assert 0 in run.positive
 
 
-def test_delta_one_makes_positive_activation_impossible():
-    """Boundary behaviour of Lemma 1.
+def test_delta_one_inside_window_activates():
+    """The boundary rule is the literal ``kappa <= delta <= tau``.
 
-    With unit weights a node whose only in-neighbour is active receives delta = 1.
-    Since (theta_kappa, theta_tau) <= 1 componentwise, delta = 1 lies in the window
-    only on a measure-zero event, and 2*delta*(1-delta) = 0.  The node therefore never
-    turns positive: maximal exposure is maximal rejection.
+    This test previously asserted the opposite -- that delta = 1 can never turn a node positive
+    -- justified by ``2*delta*(1-delta) = 0``.  That reasoning was wrong and is corrected here.
+    ``2*delta*(1-delta)`` is the probability of the window event under the *sampled* window
+    distribution; the state rule is conditional on a window that has already been drawn.  Mixing
+    them made ``delta = 1`` negative even when the drawn window was ``[0, 1]``, which is outside
+    the rule.  See ``scripts/audit/verify_p0_counterexamples.py`` (P0-2).
+
+    With window ``[0, 1]`` the endpoints are inside it, so the node activates.
     """
     graph = nx.DiGraph()
     graph.add_edge(0, 1, weight=1.0)
@@ -126,8 +130,20 @@ def test_delta_one_makes_positive_activation_impossible():
     run = run_overexposure(graph, [0], windows, random.Random(0))
 
     assert run.delta[1] == pytest.approx(1.0)
+    assert 1 in run.positive
+    assert run.spread == 2
+
+
+def test_delta_exceeding_tau_turns_negative():
+    """The other side of the boundary: delta strictly above tau is overexposure."""
+    graph = nx.DiGraph()
+    graph.add_edge(0, 1, weight=1.0)
+    windows = {0: (0.0, 1.0), 1: (0.0, 0.5)}
+    run = run_overexposure(graph, [0], windows, random.Random(0))
+
+    assert run.delta[1] == pytest.approx(1.0)
+    assert 1 in run.negative
     assert 1 not in run.positive
-    assert run.spread == 1
 
 
 def test_high_threshold_leaves_node_inactive():

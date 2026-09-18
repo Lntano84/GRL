@@ -2,7 +2,8 @@
 
 The tension found in stage 4
 ----------------------------
-On four graphs the two properties the learned pipeline needs did not coincide:
+On four graphs the two properties the learned pipeline needs did not coincide.  The first run
+recorded them as:
 
     graph              <k>    within/between (state dependence)   headroom at k=5..10
     congress_twitter  55.95        5.64  (strong)                 0.6%  (saturated)
@@ -10,27 +11,44 @@ On four graphs the two properties the learned pipeline needs did not coincide:
     ca_grqc           11.06        0.64  (moderate)               4-5% degree, 41-78% random
     nethept            4.23        0.075 (NOT state dependent)   0.7-40%
 
-A state-conditioned predictor is only useful when (i) a candidate's marginal gain genuinely
-depends on the current seed set, and (ii) a cheap heuristic still leaves room to be improved on.
+**Those ratios were computed with the pooling confound below and must not be reused.**  The
+corrected run (`docs/results/stage4b_confounds_removed.json`) gives, at the budget's own seed size:
 
-Two confounds in the first run of this script (audit item P1-3.4 and P1-3.5)
---------------------------------------------------------------------------
-**P1-3.4 --- mixed seed sizes in one statistic.**  The state-dependence contexts were built with
-sizes ``0, k, 2k, 3k`` and the within/between ratio was computed over all of them at once.  The
-``|S| = 0`` context has marginals orders of magnitude larger than the saturated ones, so it
-dominated the *between*-candidate spread and deflated the ratio.  The verdict "not state
-dependent" could therefore be produced by the pooling, not by the graph.  The ratio is now computed
-**within one seed size at a time** and reported per size; nothing is pooled.
+    graph              <k>    state_ratio at |S| = k     median degree gap over 5 pools
+    congress_twitter  55.95        1.940  (k=1)                  6.01%   [-8.67, 25.57]
+    email_eu_core     50.89        0.896  (k=1)                  0.00%   [-2.67,  0.00]
+    ca_grqc           11.06        0.150  (k=3)                  5.65%   [ 0.00, 21.11]
+    facebook          43.69        0.057  (k=3)                 15.32%   [ 0.00, 72.62]
+    bitcoin_alpha     12.79        0.350  (k=3)                  0.00%   [-0.25,  0.38]
+    nethept            4.23        0.090  (k=3)                 14.77%   [-0.50, 20.78]
+
+So the *verdict* survives --- only Congress-Twitter at k=1 clears both thresholds --- but the
+*numbers* do not, and the reason ca_GrQc and NetHEPT fail is now visible rather than inferred:
+NetHEPT's between-candidate spread is minute (sd 1.27 at |S| = 0) because the graph is sparse and
+nowhere near saturation, so there is genuinely little for a state-conditioned score to separate.
+That is an absence of state dependence, not a pooling artefact.
+
+Two confounds were removed (audit item P1-3.4 and P1-3.5)
+--------------------------------------------------------
+**P1-3.4 --- mixed seed sizes in one statistic.**  The contexts were built with sizes ``0, k, 2k,
+3k`` and the within/between ratio was computed over all of them at once.  The ``|S| = 0`` context
+has marginals orders of magnitude larger than the saturated ones, so it dominated the
+*between*-candidate spread.  On Congress-Twitter at k=3 the between sd is 36.54 at ``|S| = 0``
+against 0.74 at ``|S| = 3`` --- a factor of 50 --- so the pooled ratio was essentially the
+unsaturated one.  The ratio is now computed **within one seed size at a time** and reported per
+size; nothing is pooled.
 
 **P1-3.5 --- a single random candidate pool.**  One ``rng.sample`` of 30 nodes makes regime
-selection an uncontrolled variable: the pool's degree profile decides how much headroom is
-visible.  The pool is now drawn by **degree-stratified sampling** (the default) so it mirrors the
-graph's degree distribution, and the whole measurement is repeated over several independent pools
-so the reported gap comes with a spread across draws rather than a single number.
+selection an uncontrolled variable, and the corrected run shows how badly: on Facebook at k=1 the
+degree-to-reference gap ranges from **0.00% to 98.52%** across five degree-stratified pools, and on
+Congress-Twitter at k=1 from **-8.67% to +25.57%** --- the sign of the effect depends on the draw.
+The pool is now drawn degree-stratified so its degree profile matches the graph's by construction,
+and every cell is measured over ``--pool-draws`` independent pools; the reported headroom carries a
+min--max band.
 
-Both fixes change what a "usable" cell means, so the verdict is deliberately conservative: a cell
-counts only when the state ratio clears the threshold at the seed size where the headroom was
-measured, and the headroom clears it in the *median* pool draw.
+A "usable" cell therefore requires the ratio to clear the threshold **at the seed size where the
+headroom was measured**, and the headroom to clear it in the *median* pool.  A verdict is written
+only when every requested graph has been measured.
 """
 
 from __future__ import annotations

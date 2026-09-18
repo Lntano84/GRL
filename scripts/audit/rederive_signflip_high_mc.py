@@ -312,21 +312,52 @@ def main() -> int:
                   f"rho_deg={cell.rho_degree:>+7.3f} rho_d2={cell.rho_delta2:>+7.3f} "
                   f"[{cell.seconds:.0f}s]", flush=True)
             args.output.parent.mkdir(parents=True, exist_ok=True)
-            args.output.write_text(json.dumps({
-                "script": Path(__file__).name,
-                "model": "fixed state machine (positive nodes may turn negative)",
-                "estimator": "paired per-trial marginal, common window draw within a trial",
-                "mc_runs": args.mc_runs,
-                "candidates": args.candidates,
-                "fractions": args.fractions,
-                "random_seed": args.random_seed,
-                "structural_stats": stats_by_graph,
-                "cells": [asdict(c) for c in cells],
-            }, indent=2), encoding="utf-8")
+            write_payload(args, cells, stats_by_graph)
         print(flush=True)
 
+    # Always write at the end, even when every cell was cached.  The resume path deduplicates, and
+    # without a final write that deduplication would exist only in memory: the artifact on disk
+    # would keep whatever duplicate rows an earlier version of this script appended, and every
+    # consumer would have to re-deduplicate.  The artifact itself must be the 24 cells.
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    write_payload(args, cells, stats_by_graph)
+    expected = len(args.graphs) * len(args.fractions)
+    if len(cells) != expected:
+        print(f"  NOTE: {len(cells)} cells != {len(args.graphs)} graphs x "
+              f"{len(args.fractions)} fractions; the sweep is incomplete and the file says so.")
+
     summarise(cells, args.graphs)
-    print(f"\n  wrote {args.output}")
+    print(f"\n  wrote {args.output}  ({len(cells)} cells)")
+    return 0
+
+
+def write_payload(args, cells: list[Cell], stats_by_graph: dict) -> dict:
+    """Write the artifact, sorted and deduplicated, with its own completeness flag.
+
+    Sorted by (requested graph order, requested fraction) so a diff between two runs is readable,
+    and ``complete`` is computed rather than assumed, so a truncated sweep cannot be mistaken for
+    a finished one --- which is exactly the mistake that put a duplicate row in this file once.
+    """
+    order = {name: index for index, name in enumerate(args.graphs)}
+    ordered = sorted(cells, key=lambda c: (order.get(c.graph, 999), c.requested_fraction))
+    expected = len(args.graphs) * len(args.fractions)
+    payload = {
+        "script": Path(__file__).name,
+        "model": "fixed state machine (positive nodes may turn negative)",
+        "estimator": "paired per-trial marginal, common window draw within a trial",
+        "mc_runs": args.mc_runs,
+        "candidates": args.candidates,
+        "fractions": args.fractions,
+        "random_seed": args.random_seed,
+        "graphs_requested": args.graphs,
+        "graphs_measured": sorted({c.graph for c in ordered}, key=lambda g: order.get(g, 999)),
+        "expected_cells": expected,
+        "complete": len(ordered) == expected,
+        "structural_stats": stats_by_graph,
+        "cells": [asdict(c) for c in ordered],
+    }
+    args.output.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return payload
     return 0
 
 

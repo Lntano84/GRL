@@ -43,19 +43,28 @@ An already-positive non-seed node is re-evaluated when exposure grows, so it may
 later turn negative.  Its historical positive activation still contributes to the
 exposure of downstream nodes through ``ever_positive``.
 
-Why this breaks reverse-influence sampling
-------------------------------------------
+Why reverse-influence sampling does not transfer
+------------------------------------------------
 ``delta`` is monotone in the set of positively activated in-neighbours, but
 ``2 * delta * (1 - delta)`` is **not**: it peaks at ``delta = 0.5`` and decreases beyond
-it.  Adding an active neighbour can therefore *lower* a node's activation probability,
-which destroys the premise of the coverage identity ``sigma(S) = n * Pr[S ∩ R != ∅]``
-that RR/RIS methods rely on.
+it.  Adding an active neighbour can therefore *lower* a node's activation probability, and
+the objective ``F_D`` is non-monotone.  That is enough to rule out the standard non-negative
+seed-independent coverage form ``c * Pr[S ∩ R != ∅]``, which is necessarily non-decreasing
+and submodular; ``sections/coverage.tex`` proves it on a one-hop instance by exact
+arithmetic, and ``test_marginal_gain_can_be_negative_under_overexposure`` exhibits the same
+effect on a small graph.
 
-Monotonicity of ``sigma`` itself fails too: see
-``test_marginal_gain_can_be_negative_under_overexposure``, where an extra seed drives a
-relay node past its overexposure threshold and destroys more spread than it creates.
-The empirical RR-invalidity check is intended for
-``scripts/experiments/evaluate_overexposure_diagnostics.py``.
+Note what that argument does *not* say, because an earlier version of this docstring
+overclaimed it:
+
+* It does **not** say RR sets are empty.  A probe that reported all-empty RR sets was
+  mis-specified --- it required a predecessor's window to contain zero, excluded the root,
+  and tested whether the returned set was non-empty rather than whether it *intersected the
+  seed set*.  That claim is withdrawn; see ``docs/WITHDRAWN_RESULTS.md``.
+* It does **not** say ``sigma^kappa`` and ``sigma^tau`` are unusable.  Each fixes one
+  threshold per node, so each *is* monotone submodular and the coverage identity applies to
+  each individually.  What the identity does not reach is their difference, and the
+  objective ``sigma`` itself.
 
 Degeneracy, and three paths that must not be conflated
 ------------------------------------------------------

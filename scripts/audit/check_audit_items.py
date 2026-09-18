@@ -116,25 +116,36 @@ def check_p0_3() -> None:
            f"so no non-negative seed-independent coverage form matches")
 
     # (b) the RR claim must be gone from the paper, the title must no longer promise "no domain",
-    # the withdrawn tables must be marked, and the invalid probe must not be cited as evidence.
+    # no withdrawn number may appear in the submission, the record must be archived, and the one
+    # remaining table must be generated rather than transcribed.
+    #
+    # NOTE on why this probe no longer looks for marked-withdrawn tables.  It used to require the
+    # seven pre-fix tables to be present and to carry a \withdrawn caption.  Those tables have since
+    # been DELETED from the submission, which is the correct end state, so that assertion had
+    # inverted into a false failure: it reported "expected withdrawn tables not found" for
+    # tab:snr / tab:main / tab:baselines / tab:robust / tab:nethept / tab:surrogate /
+    # tab:calibration and left P0-3b OPEN on a paper that was in fact clean.  The probe now asserts
+    # the properties that actually matter: no banned number anywhere in the sources, the archive
+    # exists, and the one live table is generated.
     paper = ROOT / "paper" / "dasfaa2027" / "src" / "dasfaa2027"
     sections = paper / "sections"
 
-    stale_title, rr_claims, unmarked = [], [], []
+    stale_title, rr_claims = [], []
     seen_live: set[str] = set()
     wrongly_withdrawn: list[str] = []
-    # Tables whose numbers came from the pre-fix state machine or an inadequate Monte-Carlo budget.
-    # ``tab:signflip`` is NOT here any more: the regime table is no longer withdrawn, it is
-    # GENERATED from docs/results/signflip_fixedmodel_mc300.json by scripts/audit/write_regime_table.py
-    # and re-labelled tab:regime-fixed, so it must NOT carry a \withdrawn marker.  That distinction
-    # is the whole point of the item, so it is asserted below rather than left implicit.
-    marker_tables = {
-        "tab:snr", "tab:main", "tab:baselines", "tab:robust", "tab:nethept",
-        "tab:surrogate", "tab:calibration",
-    }
-    # tables that must be present and must NOT be withdrawn, because they are re-derived
+    leaked_numbers: list[str] = []
+
+    # Numbers that must NOT appear anywhere in the submission sources: they come from the pre-fix
+    # state machine, or from Monte-Carlo budgets below the threshold the protocol requires.
+    banned_numbers = (
+        "362.51", "367.28", "133.20", "132.21", "132.86", "193.586",
+        "2285.73", "4672.73", "13,875", "0.6932", "0.5025", "0.6172", "0.9662",
+    )
+    #: The one table restored after re-measurement.  It must exist and must NOT be withdrawn.
     live_tables = {"tab:regime-fixed"}
-    seen_tables: set[str] = set()
+    #: Where the withdrawn record lives, so deleting it from the paper loses nothing.
+    archive = ROOT / "docs" / "WITHDRAWN_RESULTS.md"
+
     for tex in sorted(sections.glob("*.tex")):
         text = tex.read_text(encoding="utf-8", errors="replace")
         if "No Domain" in text:
@@ -148,40 +159,37 @@ def check_p0_3() -> None:
             window = " ".join(lines[index: index + 3]).lower()
             if "withdrawn" not in window:
                 rr_claims.append(f"{tex.name}: {line.strip()[:70]}")
-        # a withdrawn table must have \withdrawn in its caption
         for block in text.split("\\begin{table}"):
             if "\\label{tab:" not in block:
                 continue
-            label = block.split("\\label{tab:")[1].split("}")[0]
-            label = f"tab:{label}"
-            caption = block.split("\\caption{")[1].split("\\label")[0]
-            if label in marker_tables:
-                seen_tables.add(label)
-                if "\\withdrawn" not in caption:
-                    unmarked.append(label)
+            label = f"tab:{block.split('\\label{tab:')[1].split('}')[0]}"
             if label in live_tables:
                 seen_live.add(label)
+                caption = block.split("\\caption{")[1].split("\\label")[0]
                 if "\\withdrawn" in caption:
                     wrongly_withdrawn.append(label)
-    missing_marker = sorted(marker_tables - seen_tables)
+        for banned in banned_numbers:
+            if banned in text:
+                leaked_numbers.append(f"{tex.name}:{banned}")
+
     missing_live = sorted(live_tables - seen_live)
     inapplicability = (sections / "inapplicability.tex").exists()
     coverage = (sections / "coverage.tex").exists()
     # the re-derived table must actually be generated, not transcribed
     generator = ROOT / "scripts" / "audit" / "write_regime_table.py"
     generated = (sections / "regime_table.tex").exists() and generator.exists()
+    archived = archive.exists() and archive.stat().st_size > 2000
 
     clean = (
-        not stale_title and not rr_claims and not unmarked and not missing_marker
-        and not missing_live and not wrongly_withdrawn
-        and not inapplicability and coverage and generated
+        not stale_title and not rr_claims and not missing_live and not wrongly_withdrawn
+        and not leaked_numbers and not inapplicability and coverage and generated and archived
     )
     record("P0-3b", "RESOLVED" if clean else "OPEN",
            f"'No Domain' title files: {stale_title or 'none'}; live RR-is-empty claims: "
-           f"{rr_claims or 'none'}; withdrawn tables missing a marker: "
-           f"{unmarked or 'none'}; expected withdrawn tables not found: "
-           f"{missing_marker or 'none'}; re-derived table missing: {missing_live or 'none'}; "
+           f"{rr_claims or 'none'}; re-derived table missing: {missing_live or 'none'}; "
            f"re-derived table wrongly marked withdrawn: {wrongly_withdrawn or 'none'}; "
+           f"withdrawn numbers still in the paper: {leaked_numbers or 'none'}; "
+           f"record archived in docs/WITHDRAWN_RESULTS.md: {archived}; "
            f"inapplicability.tex present: {inapplicability}; coverage.tex present: {coverage}; "
            f"regime table generated by write_regime_table.py: {generated}")
 

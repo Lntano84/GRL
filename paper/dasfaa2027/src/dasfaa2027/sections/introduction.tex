@@ -68,19 +68,20 @@ step, and we describe what it must control.
         decompositions, not algorithms for restricted instances, not Monte-Carlo estimation, and
         not the possibility that learning helps. It also fails under uniform-threshold linear
         thresholds, which is why the threshold distribution must be named.
+  \item We give a measurement protocol for this model (\S\ref{sec:protocol}) in the form of five
+        checks, each stated with the measured magnitude of the error it prevents. The largest is a
+        state-machine error that inflates the spread of our densest graph by $60$--$63\%$; the
+        smallest is free to fix. We fell into all five, and we report them with the numbers that
+        exposed them rather than as advice.
   \item We show that the upper bound the source model optimises is a \emph{difference} of two
         submodular functions, so even a valid bound would not by itself license a sampling-based
         guarantee (\S\ref{sec:limitations}).
-  \item We report a measurement constraint that we violated ourselves and that we believe
-        constrains the area: in the negative-marginal regime the label signal-to-noise ratio is
-        below $1.4$ at $60$ Monte-Carlo trials, so rank-correlation claims below $300$ trials are
-        not interpretable, and the negative-marginal share is itself the quantity most inflated by
-        that noise (\S\ref{sec:experiments}).
-  \item We state eight protocol confounds --- inconsistent stopping under a budget of \emph{at most}
-        $k$, unpriced state acquisition, a noisy estimator called an oracle, mixed seed sizes in one
-        statistic, a single random candidate pool, splits that do not deduplicate, unreported label
-        uncertainty, and weights normalised beyond what the model allows --- and record the earlier
-        measurements that they invalidate (\S\ref{sec:limitations}).
+  \item We state eight protocol confounds we found in our own experiment code --- inconsistent
+        stopping under a budget of \emph{at most} $k$, unpriced state acquisition, a noisy estimator
+        called an oracle, mixed seed sizes in one statistic, a single random candidate pool, splits
+        that do not deduplicate, unreported label uncertainty, and weights normalised beyond what
+        the model allows --- and for each we say whether it was reproduced or only alleged
+        (\S\ref{sec:limitations}).
   \item We withdraw, rather than restate, the empirical regime characterisation and the baseline
         comparison of an earlier version of this work, and we report the corrected state machine and
         the counterexamples that exposed it (\S\ref{sec:limitations}).

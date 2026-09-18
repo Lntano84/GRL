@@ -35,6 +35,16 @@ After a meaningful experiment or technical decision:
 - Do not claim a result as confirmed until the command/config/result artifact can be located.
 
 ## Git discipline
-- Main repository remote: `GaoYucen/GRL`.
+- Main repository remote: **`Lntano84/GRL`**, branch **`main`** (local branch is `master`;
+  push with `HEAD:main`).  Git remote name in this working copy: `lntano-src`.
+- **Push after every meaningful unit of work, without being asked.**  A stage, a fix, a corrected
+  test, an experiment result — if it is worth committing it is worth pushing immediately.  Do not
+  leave work only on the local machine.
+- **Use `pwsh scripts/git_push.ps1` to commit and push.**  Plain `git push` writes progress to
+  stderr, so PowerShell reports a non-zero exit code and a red error line even on success; that has
+  already produced a false "did you push?" check.  The script decides success by comparing the
+  remote ref to local HEAD, so its verdict reflects reality.
 - Do not include unrelated untracked project-local experiment directories in commits.
 - Make focused commits for code/config/state-document changes.
+- Never leave the working tree dirty at the end of a piece of work: either commit it or say
+  explicitly why it is uncommitted.

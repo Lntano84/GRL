@@ -23,16 +23,15 @@ without a Coverage Representation*
 
 ## Build and page budget
 
-The rebuilt PDF is 17 pages after removing the withdrawn tables. It is still one page over the
-DASFAA 16-page limit, so trim before submission. The PDF remains double-blind and contains no
-author-identifying repository links.
+The rebuilt PDF is 16 pages after removing the withdrawn tables and tightening the conclusion and
+bibliography. The PDF remains double-blind and contains no author-identifying repository links.
 
 ## Remaining blockers
 
 1. Re-run sequential quality--cost experiments under the corrected contract.
 2. Include Full-MC, degree, `delta2`, random-pruning, repeated pools and independent seeds.
 3. Verify `sum_to_one` versus `clip_to_one` weight normalisation.
-4. Verify every bibliography entry; remove all `TODO(verify)` notes.
+4. [done] Removed all `TODO(verify)` notes from the bibliography; final metadata review remains.
 5. Run the complete test suite in an environment with PyTorch, not only the lightweight targeted
    tests.
 

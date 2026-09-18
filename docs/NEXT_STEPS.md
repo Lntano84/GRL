@@ -8,9 +8,9 @@ Last updated: **2026-09-18**
 - [x] Complete the MC=300, 8-graph regime sweep.
 - [x] Withdraw all pre-fix numerical tables and the low-MC negative-share claim.
 - [x] Add direct audit probes for P0-1 through P1-3 and targeted state-machine tests.
-- [ ] Keep `RESEARCH_STATE.md`, `DECISIONS.md`, `EXPERIMENT_LOG.md`, `CLAIMS.md`, and the paper
+- [x] Keep `RESEARCH_STATE.md`, `DECISIONS.md`, `EXPERIMENT_LOG.md`, `CLAIMS.md`, and the paper
       introduction synchronized after every new result.
-- [ ] Remove duplicate rows from raw result artifacts, not only from table-generation scripts.
+- [x] Remove duplicate rows from raw result artifacts, not only from table-generation scripts.
 
 ## P0 — paper-valid algorithmic evidence
 
@@ -33,10 +33,10 @@ venue such as CIKM or a suitable journal.
 
 ## Manuscript cleanup after the gate
 
-- Delete the pre-fix withdrawn tables from the submission PDF; retain only a concise threat/history
+- [x] Delete the pre-fix withdrawn tables from the submission PDF; retain only a concise threat/history
   paragraph.
 - Keep the exact coverage counterexample and the corrected MC=300 regime table.
-- Verify every bibliography entry and remove `TODO(verify)` notes.
-- Rebuild the anonymous LNCS PDF and keep it at or below 16 pages.
+- [x] Verify every bibliography entry and remove `TODO(verify)` notes.
+- [x] Rebuild the anonymous LNCS PDF and keep it at or below 16 pages.
 - Run the complete test suite in an environment containing the declared requirements, including
   PyTorch-dependent oracle tests.

@@ -61,9 +61,9 @@ cd paper\dasfaa2027\src\dasfaa2027
 & "C:\Users\windows\tools\latex\tectonic\tectonic.exe" -X compile paper.tex --outdir ..\..\build
 ```
 
-**Latest build: 17 pages.** Citations and references resolve; Tectonic still reports three
-non-fatal overfull boxes and legacy font warnings. The draft is therefore 1 page over the
-16-page limit and needs trimming before submission (see `WRITING_STATUS.md`).
+**Latest build: 16 pages.** Citations and references resolve; Tectonic still reports three
+non-fatal overfull boxes and a legacy font warning. The draft is within the page limit; the
+remaining warnings are non-fatal layout/encoding cleanup items.
 
 `tectonic` writes a harmless `Fontconfig error: Cannot load default config file` line to stderr;
 the build succeeds and the exit code is non-zero only because of that. Ignore it.

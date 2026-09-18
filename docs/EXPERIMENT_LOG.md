@@ -24,6 +24,13 @@ random-pruning under the frozen contract.
 budget, random seeds, and status are all recorded. The current state summary is maintained in
 `docs/RESEARCH_STATE.md`; this log retains historical provenance but does not override it.
 
+## 2026-09-18 — DASFAA page-limit rebuild
+
+The anonymous LNCS draft was rebuilt after removing the pre-fix tables. Tightening the conclusion,
+removing unresolved bibliography TODO notes, and keeping the references complete reduced the PDF
+from 17 to **16 pages**. This was an editorial/format gate, not a new algorithmic result; the
+post-fix quality--cost evidence remains pending.
+
 ## 2026-09-01 to 2026-09-02 — Marginal-gain predictability validation
 **Goal:** Determine whether the model genuinely learns conditional marginal gain Δ(v|S), especially candidate ranking under a fixed seed set/state.
 

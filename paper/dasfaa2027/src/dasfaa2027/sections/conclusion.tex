@@ -1,48 +1,26 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-We set out to select seeds under a threshold-dependent overexposure model and found that the
-coverage representation behind the dominant algorithmic tool does not apply. Reverse-reachability
-sampling rests on the identity $F_D(S) = c \cdot \Pr[S \cap R \neq \emptyset]$ for a random set $R$
-independent of $S$, a function that is necessarily non-decreasing and submodular. On a one-hop
-instance of two candidates of weight $0.4$ into one target, the model's own window distribution
-gives $F_D(\{a\}) = 0.48$ against $F_D(\{a,b\}) = 0.32$, so the target is non-monotone and no such
-coverage function matches it. We are explicit about the limits of that statement: it rules out the
-standard coverage form and nothing more. It does not rule out signed decompositions, algorithms for
-restricted instances, or Monte-Carlo estimation, and it says nothing about whether learning helps.
-It also holds only for a named threshold distribution --- under uniform-threshold linear thresholds
-the same instance is monotone. An earlier draft argued the stronger claim that "RR sets are empty";
-that probe was mis-specified and the claim is withdrawn.
+The standard reverse-reachability coverage form does not apply to the named
+threshold-window overexposure law. On the exact one-hop instance in \S\ref{sec:coverage}, adding a
+second weight-$0.4$ seed lowers the target activation probability from $0.48$ to $0.32$; hence no
+non-negative seed-independent coverage function can match this objective. This is a narrow
+obstruction: it does not rule out signed decompositions, restricted-instance algorithms, or
+Monte-Carlo estimation, and it depends on naming the threshold distribution.
 
-What replaces it is a re-measured regime characterisation and a measurement protocol. We identified
-the seed \emph{fraction} $|S|/n$ as the variable that governs how a candidate's value is ranked, and
-re-measured the sweep under the corrected activation rule at $300$ paired Monte-Carlo trials per
-cell: across eight graphs spanning mean degree $4.2$ to $56.0$, out-degree is negatively correlated
-with the true marginal gain on seven of them once $|S|/n \ge 20\%$, and a training-free
-state-conditioned closed form is the better ranker on all eight (\S\ref{sec:regime}). We also had to
-withdraw one column of that claim. An earlier version reported that $8$--$35\%$ of candidates have a
-negative marginal gain; at $300$ trials the mean is $0.5\%$ and the worst cell is $4.0\%$. The sign
-flip is real and the negative-marginal share was Monte-Carlo artefact, and only adequate power
-separates the two.
+Under the corrected state machine and $300$ paired Monte-Carlo trials per cell, the seed fraction
+$|S|/n$ controls the measured regime. Across eight graphs, out-degree is negatively correlated with
+true marginal gain on seven graphs once $|S|/n \ge 20\%$, while the training-free state-conditioned
+closed form is the better ranker on all eight (\S\ref{sec:regime}). The corrected negative-share
+mean is $0.5\%$ and the worst cell is $4.0\%$; low-budget predecessor measurements are not used as
+evidence. The accompanying protocol records five checks for state transitions, threshold-law
+identification, Monte-Carlo noise, state-size pooling, and candidate-pool repetition
+(\S\ref{sec:protocol}).
 
-The baseline comparison that an even earlier version built on top of the regime characterisation is
-omitted from this submission. It was produced by an activation rule that forbade an over-exposed
-node from turning negative and at Monte-Carlo budgets below the threshold the measurement itself
-requires. We draw the general lesson in \S\ref{sec:protocol} as five checks; the pre-fix numerical
-comparison is not evidence for the current paper, and re-evaluating a node's state every round is
-the check that invalidated it.
-
-The negative result that survives is about the reference itself. The upper bound the source model
-optimises is a \emph{difference} of two monotone submodular functions, and submodularity is not
-preserved under differences, so even a valid upper bound would not by itself license a
-sampling-based guarantee. Whether that bound is tight anywhere, and whether the marginals it must
-resolve are in fact smaller than the estimation noise, are empirical questions we can no longer
-answer from the measurements we have.
-
-Two directions follow directly. The first is to re-derive the sequential quality--cost comparison
-under the frozen model contract --- a declared target set, seed eligibility, a budget of
-\emph{at most} $k$, a priced state acquisition, and a Monte-Carlo reference with a stated tolerance
---- with the eight confounds of \S\ref{sec:limitations} removed. The second is to look for a
-graph-level criterion --- we suspect in-/out-degree coupling --- that predicts when degree-based
-heuristics fail, which would let a practitioner decide whether the overexposure regime needs to be
-handled at all.
+The submission does not claim a sample-efficient algorithm yet: the pre-fix baseline comparison is
+omitted because its state machine and measurement budget were invalid. A difference of monotone
+submodular functions does not inherit submodularity, so it cannot by itself license a coverage-based
+guarantee. The next experiment must re-derive a sequential quality--cost comparison under the
+frozen contract, with priced state acquisition, a Monte-Carlo reference, repeated candidate pools,
+and the confounds of \S\ref{sec:limitations} removed. If that gate fails, retain the model/protocol
+framing and drop the sample-efficiency title.

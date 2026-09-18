@@ -52,10 +52,9 @@ standard coverage/RR guarantees do not apply.
 ## Submission state
 
 The DASFAA draft compiles, is anonymous, and contains the corrected analytic/measurement material.
-The rebuilt PDF is 17 pages, so it is still one page over the 16-page limit; the pre-fix
-withdrawn tables have been removed from the submission artifact. The current manuscript is
-therefore not submission-ready. The title and algorithmic claims must remain conditional until
-the post-fix quality--cost experiments pass.
+The rebuilt anonymous PDF is 16 pages and the pre-fix withdrawn tables have been removed from the
+submission artifact. The manuscript is format-ready, but the title and algorithmic claims must
+remain conditional until the post-fix quality--cost experiments pass.
 
 ## Immediate gates
 

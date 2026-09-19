@@ -1,0 +1,561 @@
+{
+  "script": "verify_grqc_rank_reversal.py",
+  "code_version": "d06f719",
+  "run_command": "python scripts\\audit\\verify_grqc_rank_reversal.py --trials 6000",
+  "objective": "Delta(v|S) = |P_final(S u {v}) cap D| - |P_final(S) cap D|",
+  "graph": "ca_grqc",
+  "fraction": 0.01,
+  "source_artifact": "docs\\results\\shortlist_headroom.json",
+  "source_code_version": "75b0635",
+  "configuration": {
+    "n": 5242,
+    "seed_size": 52,
+    "target_size": 1048,
+    "candidate_count": 50,
+    "shortlist_size": 8,
+    "seed_set": [
+      25402,
+      21543,
+      20129,
+      1829,
+      4588,
+      2303,
+      6064,
+      547,
+      14967,
+      19314,
+      9248,
+      24765,
+      25419,
+      11102,
+      18592,
+      3099,
+      1660,
+      6558,
+      2202,
+      10056,
+      6904,
+      11902,
+      6317,
+      13711,
+      15182,
+      24220,
+      17189,
+      24593,
+      24271,
+      15495,
+      25948,
+      18739,
+      2293,
+      360,
+      1436,
+      3679,
+      6707,
+      8064,
+      21558,
+      15687,
+      23303,
+      20942,
+      19350,
+      20231,
+      25158,
+      20257,
+      19560,
+      15175,
+      14972,
+      18182,
+      24159,
+      18066
+    ],
+    "verified_against_source": {
+      "target_set_matches": true,
+      "seed_count_matches": true,
+      "candidate_count_matches": true,
+      "target_size_matches": true,
+      "seeds_reproduced": true,
+      "candidates_reproduced": true
+    }
+  },
+  "ablation": {
+    "definition": {
+      "A": "zero exposure, empty seed mask (reproduces the original static score)",
+      "B": "zero exposure, current seed set as mask",
+      "C": "current mean exposure, empty seed mask",
+      "D": "current mean exposure, current seed set as mask (original state score)"
+    },
+    "held_fixed": [
+      "two-hop depth",
+      "score function",
+      "candidate list",
+      "target set D",
+      "existing seed set S",
+      "actual simulation always starts from S"
+    ],
+    "exposure_reproduced_from_stream": "base_seed + 900000, 1000 trials, step=0",
+    "state_cascades": 1000,
+    "empty_state_all_zero": true,
+    "reproduction": {
+      "A_vs_old_static_max_abs_diff": 0.0,
+      "D_vs_old_state_max_abs_diff": 0.0,
+      "old_static_top8_matches": true,
+      "old_state_top8_matches": true,
+      "reference_rank_reproduced": {
+        "static_old": 1,
+        "static_new": 1,
+        "state_old": 50,
+        "state_new": 50
+      }
+    },
+    "reproduced_exactly": true,
+    "state_exposure_sha256": "9cf38f9093b024652c810ed90819c6deba74694e6ab7ede3af7e5b79a1ea3616",
+    "seed_mask_liveness_control": {
+      "seeds_outside_target": true,
+      "seeds_in_target": 0,
+      "candidates_whose_two_hop_reach_touches_a_seed": 3,
+      "candidate_count": 50,
+      "control_widened_mask_max_abs_score_change": 0.4858990783606575,
+      "control_meaning": "nonzero proves the mask reaches the score; the A=B identity below is therefore a property of this configuration, not a dead argument"
+    }
+  },
+  "stream_check": {
+    "trials": {
+      "state": 1000,
+      "batch1": 1000,
+      "batch2": 1000,
+      "batch3": 6000
+    },
+    "namespaces": {
+      "state": 900000,
+      "batch1": 1100000,
+      "batch2": 1300000,
+      "batch3": 1500000
+    },
+    "base_seed": 20260917,
+    "overlaps": {
+      "batch1_batch2": 0,
+      "batch1_batch3": 0,
+      "batch1_state": 0,
+      "batch2_batch3": 0,
+      "batch2_state": 0,
+      "batch3_state": 0
+    },
+    "disjoint": true
+  },
+  "frozen_candidates": {
+    "file": "docs\\results\\grqc_rank_reversal_candidates.json",
+    "payload_sha256": "4af578a509b12224cc3d74bc829242044dbd5c905f1975ef39f8ffae509c199a",
+    "written_before_evaluation": true,
+    "evaluation_order": [
+      3058,
+      8150,
+      15960
+    ],
+    "choices": {
+      "A": {
+        "top8": [
+          8150,
+          15960,
+          13529,
+          11563,
+          9314,
+          6919,
+          2655,
+          3058
+        ],
+        "chosen": 8150
+      },
+      "B": {
+        "top8": [
+          8150,
+          15960,
+          13529,
+          11563,
+          9314,
+          6919,
+          2655,
+          3058
+        ],
+        "chosen": 8150
+      },
+      "C": {
+        "top8": [
+          15960,
+          9391,
+          5445,
+          4775,
+          6919,
+          9314,
+          13389,
+          11405
+        ],
+        "chosen": 15960
+      },
+      "D": {
+        "top8": [
+          15960,
+          9391,
+          5445,
+          4775,
+          6919,
+          9314,
+          13389,
+          11405
+        ],
+        "chosen": 15960
+      },
+      "degree": {
+        "top8": [
+          733,
+          844,
+          1608,
+          2055,
+          3058,
+          3200,
+          4034,
+          4650
+        ],
+        "chosen": 3058
+      }
+    },
+    "reference_candidate": 8150,
+    "same_choice_pairs": [
+      "A=B",
+      "C=D"
+    ]
+  },
+  "confirmation_batch": {
+    "trials": 6000,
+    "fixed_in_advance": true,
+    "stopped_early": false,
+    "namespace": 1500000,
+    "cascades": 25000,
+    "base_counts": {
+      "mean": 186.92616666666666,
+      "sd": 47.10223793807839,
+      "se": 0.6080872770109227,
+      "n": 6000,
+      "ci95_low": 185.73431560372526,
+      "ci95_high": 188.11801772960806,
+      "min": 10.0,
+      "median": 198.0,
+      "max": 276.0,
+      "negative_share": 0.0
+    },
+    "wall_seconds": 493.73562359809875,
+    "shared_windows_within_trial": true,
+    "coin_stream_note": "activation flips are drawn sequentially from the per-trial stream, so results depend on the frozen evaluation order"
+  },
+  "gain_decomposition": {
+    "3058": {
+      "marginal": {
+        "mean": 0.6565,
+        "sd": 7.65558243421543,
+        "se": 0.09883314424411466,
+        "n": 6000,
+        "ci95_low": 0.46278703728153525,
+        "ci95_high": 0.8502129627184647,
+        "min": -92.0,
+        "median": 0.0,
+        "max": 199.0,
+        "negative_share": 0.10533333333333333
+      },
+      "newly_positive_mean": 1.832,
+      "lost_positive_mean": 1.1755,
+      "identity_holds": true,
+      "identity_residual": 0.0,
+      "any_loss_at_all": true,
+      "trials_with_a_lost_positive": 1414
+    },
+    "8150": {
+      "marginal": {
+        "mean": 0.9275,
+        "sd": 10.667264980945005,
+        "se": 0.1377137987359386,
+        "n": 6000,
+        "ci95_low": 0.6575809544775604,
+        "ci95_high": 1.1974190455224396,
+        "min": -108.0,
+        "median": 0.0,
+        "max": 197.0,
+        "negative_share": 0.19833333333333333
+      },
+      "newly_positive_mean": 2.962,
+      "lost_positive_mean": 2.0345,
+      "identity_holds": true,
+      "identity_residual": 0.0,
+      "any_loss_at_all": true,
+      "trials_with_a_lost_positive": 2290
+    },
+    "15960": {
+      "marginal": {
+        "mean": 0.823,
+        "sd": 6.960465430786138,
+        "se": 0.08985922231762383,
+        "n": 6000,
+        "ci95_low": 0.6468759242574572,
+        "ci95_high": 0.9991240757425427,
+        "min": -34.0,
+        "median": 0.0,
+        "max": 189.0,
+        "negative_share": 0.07983333333333334
+      },
+      "newly_positive_mean": 1.5255,
+      "lost_positive_mean": 0.7025,
+      "identity_holds": true,
+      "identity_residual": 0.0,
+      "any_loss_at_all": true,
+      "trials_with_a_lost_positive": 1101
+    }
+  },
+  "contrasts": {
+    "primary_A_minus_D": {
+      "same_choice": false,
+      "chosen_a": 8150,
+      "chosen_b": 15960,
+      "difference_a_minus_b": {
+        "mean": 0.1045,
+        "sd": 11.781031867737426,
+        "se": 0.15209246741628638,
+        "n": 6000,
+        "ci95_low": -0.19360123613592128,
+        "ci95_high": 0.40260123613592125,
+        "min": -189.0,
+        "median": 0.0,
+        "max": 197.0,
+        "negative_share": 0.357,
+        "p_two_sided": 0.4920310427843706,
+        "same_choice": false,
+        "chosen_a": 8150,
+        "chosen_b": 15960
+      }
+    },
+    "secondary": {
+      "A-B": {
+        "same_choice": true,
+        "chosen": 8150,
+        "note": "both versions selected the SAME candidate; the contrast is exactly zero by construction and is NOT independent evidence"
+      },
+      "A-C": {
+        "same_choice": false,
+        "chosen_a": 8150,
+        "chosen_b": 15960,
+        "difference_a_minus_b": {
+          "mean": 0.1045,
+          "sd": 11.781031867737426,
+          "se": 0.15209246741628638,
+          "n": 6000,
+          "ci95_low": -0.19360123613592128,
+          "ci95_high": 0.40260123613592125,
+          "min": -189.0,
+          "median": 0.0,
+          "max": 197.0,
+          "negative_share": 0.357,
+          "p_two_sided": 0.4920310427843706,
+          "same_choice": false,
+          "chosen_a": 8150,
+          "chosen_b": 15960
+        }
+      },
+      "B-D": {
+        "same_choice": false,
+        "chosen_a": 8150,
+        "chosen_b": 15960,
+        "difference_a_minus_b": {
+          "mean": 0.1045,
+          "sd": 11.781031867737426,
+          "se": 0.15209246741628638,
+          "n": 6000,
+          "ci95_low": -0.19360123613592128,
+          "ci95_high": 0.40260123613592125,
+          "min": -189.0,
+          "median": 0.0,
+          "max": 197.0,
+          "negative_share": 0.357,
+          "p_two_sided": 0.4920310427843706,
+          "same_choice": false,
+          "chosen_a": 8150,
+          "chosen_b": 15960
+        }
+      },
+      "C-D": {
+        "same_choice": true,
+        "chosen": 15960,
+        "note": "both versions selected the SAME candidate; the contrast is exactly zero by construction and is NOT independent evidence"
+      }
+    },
+    "distinct_candidate_pairs": {
+      "8150_vs_15960": [
+        "primary_A-D",
+        "A-C",
+        "B-D"
+      ]
+    },
+    "multiplicity": {
+      "primary": "A-D, pre-registered",
+      "same_choice_contrasts": [
+        "A-B",
+        "C-D"
+      ],
+      "distinct_candidate_pairs": {
+        "8150_vs_15960": [
+          "primary_A-D",
+          "A-C",
+          "B-D"
+        ]
+      },
+      "correction_applied": false,
+      "reason": "every informative contrast reduces to the same candidate pair, so there is exactly one independent measurement.  The A-C and B-D entries are that same measurement restated, not extra evidence, and no multiplicity correction is meaningful or applied."
+    },
+    "reading": "the primary contrast is the only pre-registered one; the four secondary contrasts are mechanism exploration"
+  },
+  "score_side": {
+    "8150": {
+      "A": {
+        "score": 0.4858990783606575,
+        "rank": 1,
+        "in_top8": true
+      },
+      "B": {
+        "score": 0.4858990783606575,
+        "rank": 1,
+        "in_top8": true
+      },
+      "C": {
+        "score": -0.012564952673796703,
+        "rank": 50,
+        "in_top8": false
+      },
+      "D": {
+        "score": -0.012564952673796703,
+        "rank": 50,
+        "in_top8": false
+      },
+      "degree": {
+        "score": 2.0,
+        "rank": 13,
+        "in_top8": false
+      }
+    },
+    "15960": {
+      "A": {
+        "score": 0.4081004826111425,
+        "rank": 2,
+        "in_top8": true
+      },
+      "B": {
+        "score": 0.4081004826111425,
+        "rank": 2,
+        "in_top8": true
+      },
+      "C": {
+        "score": 0.15289671237402302,
+        "rank": 1,
+        "in_top8": true
+      },
+      "D": {
+        "score": 0.15289671237402302,
+        "rank": 1,
+        "in_top8": true
+      },
+      "degree": {
+        "score": 2.0,
+        "rank": 17,
+        "in_top8": false
+      }
+    },
+    "3058": {
+      "A": {
+        "score": 0.24901564099513504,
+        "rank": 8,
+        "in_top8": true
+      },
+      "B": {
+        "score": 0.24901564099513504,
+        "rank": 8,
+        "in_top8": true
+      },
+      "C": {
+        "score": 0.03811809044809128,
+        "rank": 16,
+        "in_top8": false
+      },
+      "D": {
+        "score": 0.03811809044809128,
+        "rank": 16,
+        "in_top8": false
+      },
+      "degree": {
+        "score": 2.0,
+        "rank": 5,
+        "in_top8": true
+      }
+    }
+  },
+  "factor_effects_on_the_ranking": {
+    "A_vs_B": {
+      "changed": "seed mask only, exposure held at zero",
+      "max_abs_score_difference": 0.0,
+      "spearman_between_scores": 1.0,
+      "identical_ranking": true,
+      "identical_top8": true,
+      "candidates_changing_position": 0,
+      "reference_rank_from": 1,
+      "reference_rank_to": 1
+    },
+    "C_vs_D": {
+      "changed": "seed mask only, exposure held at current",
+      "max_abs_score_difference": 0.0,
+      "spearman_between_scores": 1.0,
+      "identical_ranking": true,
+      "identical_top8": true,
+      "candidates_changing_position": 0,
+      "reference_rank_from": 50,
+      "reference_rank_to": 50
+    },
+    "A_vs_C": {
+      "changed": "exposure input only, seed mask held empty",
+      "max_abs_score_difference": 0.4984640310344542,
+      "spearman_between_scores": 0.7591952864907834,
+      "identical_ranking": false,
+      "identical_top8": false,
+      "candidates_changing_position": 47,
+      "reference_rank_from": 1,
+      "reference_rank_to": 50
+    },
+    "B_vs_D": {
+      "changed": "exposure input only, seed mask held at S",
+      "max_abs_score_difference": 0.4984640310344542,
+      "spearman_between_scores": 0.7591952864907834,
+      "identical_ranking": false,
+      "identical_top8": false,
+      "candidates_changing_position": 47,
+      "reference_rank_from": 1,
+      "reference_rank_to": 50
+    },
+    "A_vs_D": {
+      "changed": "both inputs changed (static vs state)",
+      "max_abs_score_difference": 0.4984640310344542,
+      "spearman_between_scores": 0.7591952864907834,
+      "identical_ranking": false,
+      "identical_top8": false,
+      "candidates_changing_position": 47,
+      "reference_rank_from": 1,
+      "reference_rank_to": 50
+    }
+  },
+  "confounding": {
+    "same_choice_pairs": [
+      "A=B",
+      "C=D"
+    ],
+    "note": "either input factor alone flips the selected candidate, so the two factors are perfectly confounded at the level of the CHOICE.  The score side is what separates them, because it shows what each factor does to the ranking."
+  },
+  "score_versus_gain_warning": "a negative score is not evidence of a negative true gain; the confirmation batch is the only thing that measures the gain",
+  "nodes_of_interest": {
+    "8150": "original MC reference and static-delta2 choice",
+    "15960": "original state-delta2 choice",
+    "3058": "original degree choice"
+  },
+  "wall_seconds": 518.305431842804,
+  "complete": true
+}

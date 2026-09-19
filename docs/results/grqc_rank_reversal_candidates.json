@@ -1,0 +1,109 @@
+{
+  "graph": "ca_grqc",
+  "fraction": 0.01,
+  "seed_size": 52,
+  "target_size": 1048,
+  "reference_candidate": 8150,
+  "note": "every candidate below is evaluated from the same actual seed set S",
+  "versions": {
+    "A": {
+      "top8": [
+        8150,
+        15960,
+        13529,
+        11563,
+        9314,
+        6919,
+        2655,
+        3058
+      ],
+      "chosen": 8150
+    },
+    "B": {
+      "top8": [
+        8150,
+        15960,
+        13529,
+        11563,
+        9314,
+        6919,
+        2655,
+        3058
+      ],
+      "chosen": 8150
+    },
+    "C": {
+      "top8": [
+        15960,
+        9391,
+        5445,
+        4775,
+        6919,
+        9314,
+        13389,
+        11405
+      ],
+      "chosen": 15960
+    },
+    "D": {
+      "top8": [
+        15960,
+        9391,
+        5445,
+        4775,
+        6919,
+        9314,
+        13389,
+        11405
+      ],
+      "chosen": 15960
+    }
+  },
+  "degree": {
+    "top8": [
+      733,
+      844,
+      1608,
+      2055,
+      3058,
+      3200,
+      4034,
+      4650
+    ],
+    "chosen": 3058
+  },
+  "frozen_evaluation_order": [
+    3058,
+    8150,
+    15960
+  ],
+  "chosen_by_version": {
+    "A": 8150,
+    "B": 8150,
+    "C": 15960,
+    "D": 15960
+  },
+  "same_choice_pairs": [
+    "A=B",
+    "C=D"
+  ],
+  "nodes_of_interest": {
+    "8150": {
+      "in_frozen_evaluation": true,
+      "why": "original MC reference and static-delta2 choice"
+    },
+    "15960": {
+      "in_frozen_evaluation": true,
+      "why": "original state-delta2 choice"
+    },
+    "3058": {
+      "in_frozen_evaluation": true,
+      "why": "original degree choice"
+    }
+  },
+  "frozen_before_evaluation": true,
+  "select_trials": 1000,
+  "confirm_trials": 6000,
+  "code_version": "d06f719",
+  "payload_sha256": "4af578a509b12224cc3d74bc829242044dbd5c905f1975ef39f8ffae509c199a"
+}

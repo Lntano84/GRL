@@ -1,5 +1,13 @@
 # Candidate-screening headroom on three fixed configurations
 
+> **Correction, 2026-09-19.**  §6 below ("Why the state-conditioned score fails") is arithmetically
+> correct but was read as saying the state *information* is harmful.  That reading is not supported by
+> this document's data and is now refuted at ca-GrQc on the objective itself.  The companion
+> verification `docs/GRQC_RANK_REVERSAL.md` reproduces this document's scores bit-exactly and measures
+> what §6 did not: the two candidates the reversal swaps are `+0.104 [−0.194, +0.403]` apart at 6000
+> fixed trials, i.e. **not separable**.  This document establishes a **rank reversal in the score**,
+> not a loss in the objective.  Read §6 together with that correction.  Nothing below has been altered.
+>
 > 2026-09-19.  This is the diagnostic requested after the corrected validation
 > (`docs/VALIDATION_TARGETED.md`) showed that state-aware sequential screening does not stably beat
 > static screening on the contracted objective.  It answers one question and nothing else: **at three

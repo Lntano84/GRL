@@ -1,5 +1,16 @@
 # Four new states on the same ca-GrQc configuration: is there stable screening headroom?
 
+> **Correction, 2026-09-19 (after review).**  Three over-statements in the first version of this
+> document are corrected in place, and the measurement itself is unchanged.  (a) The
+> selection-versus-evaluation gap of 0.863 in cfg0 is an **observed difference between two finite
+> batches**, not a decomposition into selection noise --- the independent evaluation has error of its
+> own and the two are not separable from that comparison.  (b) The pool's cross-candidate standard
+> deviation is computed from 1000-trial estimates and therefore contains Monte-Carlo noise; it cannot
+> on its own show that the true candidate differences are large.  (c) The "3,346--595,136 trials"
+> figures are a post-hoc extrapolation of **evaluation** precision for a fixed candidate difference
+> --- not the sample size the **selection** stage needs, and not a formal power analysis.  §7 now
+> treats the proposed mechanism as a hypothesis with a testable prediction rather than a finding.
+
 > 2026-09-19.  The prerequisite experiment before deciding whether a learned screener is worth
 > building.  One thing is changed --- the random draws that produce the existing seed set and the
 > candidate pool.  Everything else is frozen.  One raw artifact plus the four-row table.
@@ -139,8 +150,12 @@ a sign test: 0 of 2 informative cells positive against `degree` gives a one-side
 This run cannot establish that expensive screening does *not* help; it establishes that at this budget
 it does not show up.
 
-**What the design would have needed** (post hoc, at the observed point estimate --- a contrast whose
-true effect is zero is not resolved by any number of trials):
+**What the design would have needed** --- and this number must be read for exactly what it is: a
+**post-hoc extrapolation of evaluation precision for a fixed candidate difference**.  It is *not* the
+sample size the **selection** stage would need to find good candidates, and it is *not* a formal power
+analysis.  It says only: had the two candidates' difference been this size and fixed, the interval on
+it would have needed this many trials.  A contrast whose true effect is zero is not resolved by any
+number of trials.
 
 | contrast | cfg0 | cfg1 | cfg2 | cfg3 |
 |---|---|---|---|---|
@@ -148,33 +163,42 @@ true effect is zero is not resolved by any number of trials):
 | MC reference − static | 14,439 | 3,626 | tie | tie |
 | state − static | 316,658 | 595,136 | tie | 3,346 |
 
-The cheapest contrast here needs **3,346** trials; the most expensive needs **595,136**.  The fixed
-1000-trial budget is roughly one to two orders of magnitude short for the effects actually present.
+The cheapest contrast here needs **3,346** trials and the most expensive **595,136**, so the fixed
+1000-trial budget is far short of what these particular intervals would need.  What the selection stage
+needs is a different question, and it is the one the budget-curve experiment
+(`docs/SELECTION_BUDGET_CURVE.md`) was built to answer.
 
-## 7. Why expensive screening does not show up: the selection gap
+## 7. The selection gap: an observation, and a hypothesis that is not yet tested
 
 The MC reference is chosen as the maximum over 50 candidates on the selection batch, so its
 selection-batch value is a maximum and is upward-biased by construction.  Comparing it against the
-same candidate's value on the independent batch measures how much of that advantage was selection
-noise:
+same candidate's value on the independent batch gives an **observed difference between two finite
+batches**:
 
-| configuration | selection-batch value | independent evaluation | gap | pool evaluation mean / sd |
+| configuration | selection-batch value | independent evaluation | observed gap | pool evaluation mean / sd |
 |---|---|---|---|---|
 | cfg0 | +1.002 | +0.139 | **+0.863** | +0.200 / 0.211 |
 | cfg1 | +0.890 | +0.759 | +0.131 | +0.227 / 0.297 |
 | cfg2 | +0.898 | +0.947 | −0.049 | +0.287 / 0.369 |
 | cfg3 | +0.781 | +0.433 | +0.348 | +0.161 / 0.169 |
 
-In cfg0, **0.863 of the reference's 1.002 apparent advantage was selection noise**, and the reference
-ended up *below* the pool mean.  In cfg3 it kept only 0.433 of 0.781.  This is the mechanism: with
-1000 selection trials and a pool whose per-candidate marginals have standard deviation 0.17--0.37, the
-argmax of 50 noisy estimates is largely the argmax of the noise, and the independent batch regresses
-it towards the pool mean.
+**That gap cannot be attributed entirely to selection noise.**  Both batches are finite samples, the
+independent evaluation carries its own error, and the two errors are not separable from this
+comparison alone: part of the 0.863 is the selection maximum being too high, and part is the
+evaluation estimate being too low.  Reading the whole gap as "selection noise" would treat a noisy
+measurement as if it were the truth.
 
-Note also that the pool is **not** homogeneous: its evaluation mean is 0.16--0.29 while its
-cross-candidate standard deviation is 0.17--0.37, so candidate-level differences of real size do
-exist.  What is missing is not variation --- it is the ability of a 1000-trial selection pass to
-identify which candidates carry it.
+**Nor does the cross-candidate spread settle it.**  The pool's per-candidate evaluation standard
+deviation (0.17--0.37) is computed from 1000-trial estimates, so it contains Monte-Carlo noise as well
+as any real heterogeneity.  It cannot on its own establish that the true candidate differences are
+large; it bounds them from above, not from below.
+
+**The mechanism is therefore a hypothesis, not a finding.**  "With 1000 selection trials the argmax
+over 50 is largely the argmax of the noise" is a plausible and testable explanation of the observed
+gap.  It predicts something specific: **raising the selection budget should improve the chosen
+candidate's independent gain.**  That prediction is what the budget-curve experiment tests, and it
+could fail --- if the budget curve is flat, the explanation is wrong and the gap has to come from
+somewhere else.
 
 ## 8. What this establishes, and what it does not
 
@@ -187,18 +211,26 @@ identify which candidates carry it.
    the hashes.
 4. **The MC reference was never better than `degree`** (0/4 positive) and **no contrast in any
    configuration had an interval excluding zero** (0/12 cells).
-5. The mechanism is visible and consistent: the MC reference's selection-batch advantage is inflated
-   by 0.13--0.86 target nodes, and it disappears on the independent batch.
+5. The selection-batch value of the MC reference exceeds its independent-batch value by 0.13--0.86
+   target nodes.  This is an observed between-batch difference; **how much of it is selection noise is
+   not identified here**, because both batches are finite and the evaluation has error of its own.
 
 **Not established --- do not write these.**
 
+- **That the selection gap is selection noise.**  It is a difference between two finite estimates and
+  the two error contributions are not separable from this comparison.  The "argmax of the noise"
+  explanation is a *hypothesis* with a testable prediction, not a finding.
+- That the pool's true candidate differences are large.  Its cross-candidate spread is measured from
+  1000-trial estimates and therefore contains Monte-Carlo noise; it is an upper bound, not a lower one.
+- That the "3,346--595,136 trials" figures describe what the selection stage needs, or that they
+  constitute a power analysis.  They are a post-hoc extrapolation of *evaluation* precision for a
+  fixed candidate difference.
 - That expensive screening is useless, or that simple screening is as good.  Eleven of the twelve
-  cells have intervals containing zero; this design is underpowered by one to two orders of magnitude
-  for the effects present.
+  cells have intervals containing zero; this design is underpowered for the effects present.
 - That any method is *equivalent* to any other.  No equivalence test was run, and "not detected" is
   not "equivalent".
-- That there is no candidate-screening benefit at ca-GrQc.  The pool's cross-candidate spread is real;
-  what is unmeasured is whether any score can identify the good candidates within a feasible budget.
+- That there is no candidate-screening benefit at ca-GrQc.  What is unmeasured is whether any rule can
+  identify the good candidates within a feasible budget.
 - That `degree` is the best screener.  It is competitive in all four and best in one, which is a
   description of four configurations, not a general claim.
 - Anything pooled across the four configurations, and anything about other graphs, fractions or
@@ -209,15 +241,16 @@ identify which candidates carry it.
 
 The question "is it worth learning a screener?" needs a preceding answer: **is there a screening gain
 that a feasible amount of simulation can capture?**  On this evidence the answer is not yet yes --- and
-importantly it is not no either.  What the run does show is that at a 1000-trial selection budget the
-argmax-over-50 rule captures mostly noise, so **increasing the selection budget is the first thing to
-test**, not model capacity.  A learned screener trained on 1000-trial labels would be trained on
-labels of exactly the quality that produced this null result.
+not no either.  What this run does show is that a learned screener trained on 1000-trial labels would
+be trained on labels of exactly the quality that produced this null result.
 
-Concretely, the cheapest next question is whether a selection budget in the 3,000--30,000 trial range
-makes the MC reference separate from `degree` --- the same configurations, the same frozen `D` and
-rule, only more trials.  Until that is answered, training a predictor would be fitting a target that
-has not been shown to be learnable at the available label quality.
+The mechanism proposed in §7 makes a specific prediction --- raising the selection budget should
+improve the chosen candidate's independent gain --- and that prediction is testable without training
+anything.  `docs/SELECTION_BUDGET_CURVE.md` tests it over the same four configurations, the same
+frozen `D`, the same candidate order and the same rule, changing only the selection budget, with a new
+6000-trial independent confirmation.  If the budget curve is flat, the proposed explanation is wrong
+and the gap must have another source; if it rises and separates from simple screening, there is a
+measured target worth learning.  Either outcome is informative, and neither is assumed in advance.
 
 ## 10. Provenance
 

@@ -81,7 +81,15 @@ FRACTION = 0.01
 TARGET_FRACTION = 0.2
 SHORTLIST = 8
 POOL_SIZE = 120
-TRIALS = 1000
+#: The three batches have INDEPENDENT budgets.  They used to share one ``--trials`` flag, which meant
+#: a change to the selection budget silently changed the state and evaluation budgets too.  The
+#: budget-curve experiment changes the selection budget alone, so the three must be separable.
+STATE_TRIALS = 1000
+SELECT_TRIALS = 1000
+EVAL_TRIALS = 1000
+#: The original configuration's confirmation stream is 6000 trials long.  The overlap check used to
+#: assume 1000 for every stream, so 5000 of its seeds were never checked.
+ORIGINAL_CONFIRM_TRIALS = 6000
 RANDOM_REPEATS = 100
 
 #: Pre-fixed, chosen before any of these configurations was generated.  No seed was selected,
@@ -152,20 +160,40 @@ def frozen_digest(entry: dict) -> str:
     return hashlib.sha256(json.dumps(body, sort_keys=True).encode("utf-8")).hexdigest()
 
 
-def stream_overlap_check() -> dict:
-    """Every stream any of the sixteen (four old, twelve new) will draw from, checked pairwise."""
+def stream_overlap_check(state_trials: int = STATE_TRIALS,
+                         select_trials: int = SELECT_TRIALS,
+                         eval_trials: int = EVAL_TRIALS) -> dict:
+    """Every stream any run will draw from, at its ACTUAL length, checked pairwise.
+
+    Two things this fixes.  The check used to assume 1000 trials for every stream, so the original
+    configuration's 6000-trial confirmation stream had only its first 1000 seeds examined.  And it
+    took no arguments, so it could not describe a run whose budgets differ from the defaults.
+
+    Nested budgets sharing a prefix is deliberate and is NOT an overlap: a 10000-trial selection
+    stream contains the 3000-trial and 1000-trial streams as prefixes, which is what makes the three
+    budget levels comparable on identical data.  What must never overlap is a stream used for one
+    *purpose* and a stream used for another.
+    """
     streams: dict[str, set[int]] = {}
-    for name, ns in ORIGINAL_NS.items():
-        streams[f"orig_{name}"] = set(trial_seeds(ORIGINAL_SEED + ns, TRIALS))
+    # the original configuration, each stream at its real length
+    streams["orig_state"] = set(trial_seeds(ORIGINAL_SEED + ORIGINAL_NS["state"], 1000))
+    streams["orig_batch1"] = set(trial_seeds(ORIGINAL_SEED + ORIGINAL_NS["batch1"], 1000))
+    streams["orig_batch2"] = set(trial_seeds(ORIGINAL_SEED + ORIGINAL_NS["batch2"], 1000))
+    streams["orig_batch3"] = set(trial_seeds(ORIGINAL_SEED + ORIGINAL_NS["batch3"],
+                                             ORIGINAL_CONFIRM_TRIALS))
     for i, seed in enumerate(NEW_SEEDS):
-        streams[f"cfg{i}_state"] = set(trial_seeds(seed + STATE_NS, TRIALS))
-        streams[f"cfg{i}_select"] = set(trial_seeds(seed + SELECT_NS, TRIALS))
-        streams[f"cfg{i}_eval"] = set(trial_seeds(seed + EVAL_NS, TRIALS))
+        streams[f"cfg{i}_state"] = set(trial_seeds(seed + STATE_NS, state_trials))
+        streams[f"cfg{i}_select"] = set(trial_seeds(seed + SELECT_NS, select_trials))
+        streams[f"cfg{i}_eval"] = set(trial_seeds(seed + EVAL_NS, eval_trials))
     names = sorted(streams)
     overlaps = {f"{a}|{b}": len(streams[a] & streams[b])
                 for i, a in enumerate(names) for b in names[i + 1:]}
     bad = {k: v for k, v in overlaps.items() if v}
     return {"streams_checked": len(names), "pairs_checked": len(overlaps),
+            "stream_lengths": {n: len(s) for n, s in streams.items()},
+            "budgets": {"state": state_trials, "select": select_trials, "eval": eval_trials,
+                        "original_confirm": ORIGINAL_CONFIRM_TRIALS},
+            "nested_prefixes_are_intentional": True,
             "overlapping_pairs": bad, "disjoint": not bad}
 
 
@@ -225,14 +253,14 @@ def run_one(index: int, args) -> int:
     base = NEW_SEEDS[index]
 
     # ---- 1. state, own stream ----
-    oracle = TargetedMonteCarloOracle(graph, contract, mc_runs=args.trials,
+    oracle = TargetedMonteCarloOracle(graph, contract, mc_runs=args.state_trials,
                                       random_seed=base + STATE_NS)
     state_current = oracle.state(seeds, step=0)
     state_cascades = oracle.stats.state_cascades
 
     # ---- 2. selection batch, own stream ----
     t0 = time.time()
-    sel, sel_base = paired_marginals(graph, contract, seeds, candidates, args.trials,
+    sel, sel_base = paired_marginals(graph, contract, seeds, candidates, args.select_trials,
                                      base + SELECT_NS)
 
     # ---- 3. freeze choices BEFORE the evaluation batch exists ----
@@ -269,7 +297,7 @@ def run_one(index: int, args) -> int:
         "index": index, "seed": base, "graph": GRAPH, "fraction": FRACTION,
         "n": n, "seed_size": k, "target_size": len(target), "pool_size": pool_size,
         "existing_seeds": seeds, "candidates": candidates,
-        "choices": choices, "random_draws": draws, "select_trials": args.trials,
+        "choices": choices, "random_draws": draws, "select_trials": args.select_trials,
         "code_version": code_version(), "frozen_before_evaluation": True,
         "new_seeds": NEW_SEEDS,
         "note": ("this configuration's choices, written BEFORE its evaluation batch is generated; "
@@ -287,7 +315,7 @@ def run_one(index: int, args) -> int:
           f"mc_ref={reference}  sha={digest[:12]}", flush=True)
 
     # ---- 4. evaluation batch, own stream, all 50 candidates ----
-    ev, ev_base = paired_marginals(graph, contract, seeds, candidates, args.trials, base + EVAL_NS)
+    ev, ev_base = paired_marginals(graph, contract, seeds, candidates, args.eval_trials, base + EVAL_NS)
     eval_seconds = time.time() - t0
 
     ev_mean = {c: statistics.fmean(ev[c]["marginal"]) for c in candidates}
@@ -336,10 +364,13 @@ def run_one(index: int, args) -> int:
                           "candidates": candidates,
                           "seeds_in_target": len(set(seeds) & target)},
         "streams": {"state": base + STATE_NS, "selection": base + SELECT_NS,
-                    "evaluation": base + EVAL_NS, "trials": args.trials},
+                    "evaluation": base + EVAL_NS,
+                    "trials": {"state": args.state_trials,
+                               "selection": args.select_trials,
+                               "evaluation": args.eval_trials}},
         "cost": {"state_cascades": state_cascades,
-                 "selection_cascades": (1 + len(candidates)) * args.trials,
-                 "evaluation_cascades": (1 + len(candidates)) * args.trials,
+                 "selection_cascades": (1 + len(candidates)) * args.select_trials,
+                 "evaluation_cascades": (1 + len(candidates)) * args.eval_trials,
                  "seconds": eval_seconds},
         "frozen": {"payload_sha256": digest, "file": frozen_path.name,
                    "written_before_evaluation": True},
@@ -459,10 +490,11 @@ def merge(args) -> int:
             "diffusion parameters", "seed and candidate generation rule"],
         "changed_only": "the four pre-fixed random seeds that generate S and the candidate pool",
         "new_seeds": NEW_SEEDS,
-        "trials_per_batch": args.trials,
+        "trials_per_batch": {"state": args.state_trials, "selection": args.select_trials,
+                             "evaluation": args.eval_trials},
         "framework": "state 1000 -> selection 1000 (freeze) -> independent evaluation 1000, "
                      "per configuration, on disjoint streams",
-        "stream_check": stream_overlap_check(),
+        "stream_check": stream_overlap_check(args.state_trials, args.select_trials, args.eval_trials),
         "distinctness": distinct,
         "frozen_choices_files": [FROZEN.name.format(index=i) for i in range(len(NEW_SEEDS))],
         "frozen_choices_sha256": {k: v["payload_sha256"] for k, v in frozen.items()},
@@ -528,18 +560,23 @@ def main() -> int:
     parser.add_argument("--config-index", type=int, default=None, choices=range(len(NEW_SEEDS)))
     parser.add_argument("--merge", action="store_true")
     parser.add_argument("--check-streams-only", action="store_true")
-    parser.add_argument("--trials", type=int, default=TRIALS)
+    parser.add_argument("--state-trials", type=int, default=STATE_TRIALS,
+                        help="state-estimation cascades; independent of the other two budgets")
+    parser.add_argument("--select-trials", type=int, default=SELECT_TRIALS,
+                        help="selection-batch trials; independent of the other two budgets")
+    parser.add_argument("--eval-trials", type=int, default=EVAL_TRIALS,
+                        help="evaluation-batch trials; independent of the other two budgets")
     args = parser.parse_args()
 
     if args.check_streams_only:
-        check = stream_overlap_check()
+        check = stream_overlap_check(args.state_trials, args.select_trials, args.eval_trials)
         print(json.dumps(check, indent=2))
         return 0 if check["disjoint"] else 1
     if args.merge:
         return merge(args)
     if args.config_index is None:
         parser.error("give --config-index N, --merge, or --check-streams-only")
-    check = stream_overlap_check()
+    check = stream_overlap_check(args.state_trials, args.select_trials, args.eval_trials)
     if not check["disjoint"]:
         raise SystemExit(f"stream overlap: {check['overlapping_pairs']}")
     return run_one(args.config_index, args)

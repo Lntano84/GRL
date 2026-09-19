@@ -93,11 +93,14 @@ from grl.evaluation.gate import (  # noqa: E402
     tolerance_from_reference_se,
     tolerance_from_target_fraction,
 )
-from grl.oracle import OverexposureMonteCarloOracle  # noqa: E402
+from grl.oracle import (  # noqa: E402
+    TargetedMonteCarloOracle,
+    TargetedObjectiveError,
+    trial_seeds,
+)
 from grl.scoring import (  # noqa: E402
     degree_scores,
     exposure_scores_delta,
-    mean_exposure_state,
     rank_by_score,
 )
 
@@ -179,7 +182,31 @@ class Cell:
 
 # ----------------------------------------------------------------------------------------------
 # arms
+#
+# Every arm below measures the CONTRACTED objective: |positive_at_end 鈭?D|, via
+# TargetedMonteCarloOracle.  Nothing here reads run.spread (the whole-graph count), because the
+# source model is targeted and the two are not close --- on Congress-Twitter with |D| = 95 a 20-seed
+# configuration gave 145 whole-graph positives against 24 inside D, so 84% of the earlier quantity
+# lay outside the target set.  The oracle asserts 0 <= value <= |D|, so a regression fires
+# immediately instead of producing a plausible-looking table.
+#
+# Random streams are namespaced by PURPOSE as well as by replicate:
+#
+#   SELECT_NS  <  EVAL_NS  <  STATE_NS
+#
+# so a method never selects on the same windows it is scored on, and two replicates' evaluation
+# streams are disjoint.  The first version used base + offset, which made the replicates 20260917
+# and 20260918 share 199 of 200 windows --- a 99.5% overlap between "independent" repeats.
 # ----------------------------------------------------------------------------------------------
+SELECT_NS = 0
+EVAL_NS = 500_000
+STATE_NS = 900_000
+
+
+def arm_oracle(graph, contract, mc_runs: int, random_seed: int) -> TargetedMonteCarloOracle:
+    return TargetedMonteCarloOracle(graph, contract, mc_runs=mc_runs, random_seed=random_seed)
+
+
 def run_static_degree(graph, pool, budget, **_) -> tuple[list[int], dict]:
     """Top-k by out-degree.  No cascade, no state, no observation."""
     degree = dict(graph.out_degree())
@@ -188,53 +215,107 @@ def run_static_degree(graph, pool, budget, **_) -> tuple[list[int], dict]:
                    "stopping_rule": "single_shot", "stopped_early": False}
 
 
-def run_static_delta2(graph, pool, budget, *, state_mc, params, random_seed, **_):
+def run_static_delta2(graph, pool, budget, *, contract, state_mc, random_seed, **_):
     """Top-k by the analytic score computed **once** at S = empty, then frozen.
 
     One state read, then no observation.  This is the static counterpart of the sequential
     state-conditioned arm, and the pair of them is what Gate 1(b) compares.
 
-    ``mc_cascades`` must include the state read.  The first version of this arm called
+    The score is restricted to the target set: a candidate whose influence lands outside D is
+    worthless to the contracted objective, and the untargeted score would rank it highly.
+
+    The state read is charged to ``mc_cascades``.  An earlier version called
     ``mean_exposure_state`` directly and reported the oracle's counter, which was zero, so the arm
-    looked free --- the exact confound (P1-3.2) this project already fixed once.  The read is
-    charged explicitly here.
+    looked free --- confound P1-3.2, which this project already fixed once and then reintroduced.
     """
-    delta = mean_exposure_state(graph, [], state_mc, random_seed)   # the paid observation
-    scores = exposure_scores_delta(graph, pool, delta, set())
+    oracle = arm_oracle(graph, contract, state_mc, random_seed)
+    delta = oracle.state([], step=0)
+    scores = exposure_scores_delta(graph, pool, delta, set(),
+                                  target_set=set(contract.objective.target_set))
     seeds = rank_by_score(pool, scores)[:budget]
-    return seeds, {"mc_cascades": state_mc, "state_cascades": state_mc,
-                   "state_reads": 1, "stopping_rule": "single_shot", "stopped_early": False}
+    return seeds, {"mc_cascades": oracle.stats.mc_cascades,
+                   "state_cascades": oracle.stats.state_cascades,
+                   "state_reads": oracle.stats.state_reads,
+                   "stopping_rule": "single_shot", "stopped_early": False}
 
 
-def run_delta2_sequential(graph, pool, budget, *, state_mc, params, random_seed, **_):
+def run_delta2_sequential(graph, pool, budget, *, contract, state_mc, random_seed, **_):
     """Observe the state after every seed, re-rank by the closed form, take the argmax.
 
     This is the sequential arm Gate 1(b) is about.  Cost is one state read per step; the score
-    itself is free.
+    itself is free.  The score is restricted to D.
     """
+    oracle = arm_oracle(graph, contract, state_mc, random_seed)
+    target = set(contract.objective.target_set)
     selected: list[int] = []
-    state_cascades = 0
     for step in range(budget):
         available = [v for v in pool if v not in set(selected)]
         if not available:
             break
-        delta = mean_exposure_state(graph, selected, state_mc, random_seed + 1009 * step)
-        state_cascades += state_mc
-        scores = exposure_scores_delta(graph, available, delta, set(selected))
+        delta = oracle.state(selected, step=step)
+        scores = exposure_scores_delta(graph, available, delta, set(selected), target_set=target)
         selected.append(rank_by_score(available, scores)[0])
-    return selected, {"mc_cascades": state_cascades, "state_cascades": state_cascades,
-                      "state_reads": len(selected), "stopping_rule": "fill_budget",
-                      "stopped_early": False}
+    return selected, {"mc_cascades": oracle.stats.mc_cascades,
+                      "state_cascades": oracle.stats.state_cascades,
+                      "state_reads": oracle.stats.state_reads,
+                      "stopping_rule": "fill_budget", "stopped_early": False}
 
 
-def run_mc_greedy(graph, pool, budget, *, oracle_mc, params, random_seed, stopping, **_):
-    """Greedy on a Monte-Carlo estimate of the marginal.  The expensive reference.
+def run_delta2_patience(graph, pool, budget, *, contract, state_mc, random_seed, stopping, **_):
+    """Sequential ranking plus a patience stop on the **contracted** observed value.
 
-    Not exact, not globally optimal: at finite ``oracle_mc`` it is an estimator, and the arm's
-    reported name carries that budget.
+    The stopping rule is :data:`PATIENCE_2`, not the runner's global ``--stopping``.  The first
+    version forwarded the global rule, which defaults to ``fill_budget`` and whose ``should_stop``
+    always returns False --- so patience was never enabled and the conclusion "the stopping lever
+    never fires" was measuring the absence of a rule rather than the behaviour of one.  The rule
+    actually used is recorded in the returned record.
+
+    Both costs are charged: one state read per step for ranking, and one cascade per step for the
+    observed value the patience rule reads.  That observed value is ``|positive 鈭?D|``, the same
+    quantity the arm is scored on, so the rule cannot be reading a different objective than the one
+    it is judged by.
     """
-    oracle = OverexposureMonteCarloOracle(graph, mc_runs=oracle_mc,
-                                          random_seed=random_seed, params=params)
+    rule = PATIENCE_2
+    oracle = arm_oracle(graph, contract, state_mc, random_seed)
+    eval_oracle = arm_oracle(graph, contract, 1, random_seed + EVAL_NS)
+    target = set(contract.objective.target_set)
+    del target
+    selected: list[int] = []
+    observed: list[float] = []
+    spread_reads = 0
+
+    for step in range(int(budget)):
+        available = [v for v in pool if v not in set(selected)]
+        if not available:
+            break
+        delta = oracle.state(selected, step=step)
+        scores = exposure_scores_delta(graph, available, delta, set(selected),
+                                      target_set=set(contract.objective.target_set))
+        selected.append(rank_by_score(available, scores)[0])
+
+        observed.append(eval_oracle.spread(selected)["mean"])
+        spread_reads += 1
+
+        if rule.should_stop([], observed):
+            break
+
+    return selected, {
+        "mc_cascades": oracle.stats.mc_cascades + eval_oracle.stats.mc_cascades,
+        "state_cascades": oracle.stats.state_cascades,
+        "state_reads": oracle.stats.state_reads,
+        "stopping_rule": f"{rule.name}_on_observed_target_count+{spread_reads}_reads",
+        "stopped_early": len(selected) < int(budget),
+    }
+
+
+def run_mc_greedy(graph, pool, budget, *, contract, oracle_mc, random_seed, stopping, **_):
+    """Greedy on a Monte-Carlo estimate of the contracted marginal.  The expensive reference.
+
+    Not exact and not globally optimal: at finite ``oracle_mc`` it is an estimator, and the arm's
+    reported name carries that budget so its value is not mistaken for an upper bound.  Every score
+    it sees is a paired difference of ``|positive 鈭?D|``.
+    """
+    oracle = arm_oracle(graph, contract, oracle_mc, random_seed)
     result = full_oracle_greedy(pool, budget, oracle, stopping=stopping)
     return result.selected_seeds, {
         "mc_cascades": oracle.stats.mc_cascades,
@@ -245,13 +326,12 @@ def run_mc_greedy(graph, pool, budget, *, oracle_mc, params, random_seed, stoppi
     }
 
 
-def run_random_pruning(graph, pool, budget, *, oracle_mc, params, random_seed, stopping,
+def run_random_pruning(graph, pool, budget, *, contract, oracle_mc, random_seed, stopping,
                        shortlist, **_):
     """The matched control: same shortlist budget, random shortlist (Gate 2)."""
-    oracle = OverexposureMonteCarloOracle(graph, mc_runs=oracle_mc,
-                                          random_seed=random_seed, params=params)
+    oracle = arm_oracle(graph, contract, oracle_mc, random_seed)
     result = random_pruning_greedy(pool, budget, oracle, shortlist_size=shortlist,
-                                   random_seed=random_seed, stopping=stopping)
+                                   random_seed=random_seed + SELECT_NS, stopping=stopping)
     return result.selected_seeds, {
         "mc_cascades": oracle.stats.mc_cascades,
         "state_cascades": oracle.stats.state_cascades,
@@ -261,127 +341,53 @@ def run_random_pruning(graph, pool, budget, *, oracle_mc, params, random_seed, s
     }
 
 
-def run_selective(graph, pool, budget, *, oracle_mc, params, random_seed, stopping,
+class AnalyticScorer:
+    """Scores candidates by the closed form against the state observed so far, restricted to D."""
+
+    def __init__(self, graph, contract, state_mc: int, random_seed: int) -> None:
+        self.oracle = arm_oracle(graph, contract, state_mc, random_seed)
+        self.graph = graph
+        self.target = set(contract.objective.target_set)
+
+    def score(self, seeds, candidates, step=0):
+        delta = self.oracle.state(list(seeds), step=step)
+        values = exposure_scores_delta(self.graph, list(candidates), delta, set(seeds),
+                                      target_set=self.target)
+        return {c: v for c, v in zip(candidates, values)}
+
+
+def run_selective(graph, pool, budget, *, contract, oracle_mc, random_seed, stopping,
                   shortlist, state_mc, **_):
-    """Learned/analytic shortlist + exact refinement, at the same shortlist budget as the control."""
-    exact = OverexposureMonteCarloOracle(graph, mc_runs=oracle_mc,
-                                         random_seed=random_seed, params=params)
-
-    class AnalyticScorer:
-        """Scores by the closed form against the state observed so far."""
-
-        def __init__(self):
-            self.state_cascades = 0
-            self.state_reads = 0
-
-        def score(self, seeds, candidates, step=0):
-            delta = mean_exposure_state(graph, list(seeds), state_mc,
-                                        random_seed + 7717 * step)
-            self.state_cascades += state_mc
-            self.state_reads += 1
-            values = exposure_scores_delta(graph, list(candidates), delta, set(seeds))
-            return {c: v for c, v in zip(candidates, values)}
-
-    scorer = AnalyticScorer()
+    """Analytic shortlist + exact refinement, at the same shortlist budget as the control."""
+    exact = arm_oracle(graph, contract, oracle_mc, random_seed)
+    scorer = AnalyticScorer(graph, contract, state_mc, random_seed + STATE_NS)
     result = selective_greedy(pool, budget, scorer, exact, top_m=shortlist, stopping=stopping)
     return result.selected_seeds, {
-        "mc_cascades": exact.stats.mc_cascades + scorer.state_cascades,
-        "state_cascades": scorer.state_cascades,
-        "state_reads": scorer.state_reads,
+        "mc_cascades": exact.stats.mc_cascades + scorer.oracle.stats.mc_cascades,
+        "state_cascades": scorer.oracle.stats.state_cascades,
+        "state_reads": scorer.oracle.stats.state_reads,
         "stopping_rule": result.steps[-1]["stopping_rule"] if result.steps else "n/a",
         "stopped_early": any(s.get("stopped_early") for s in result.steps),
     }
 
 
-def run_adaptive(graph, pool, budget, *, oracle_mc, params, random_seed, stopping,
+def run_adaptive(graph, pool, budget, *, contract, oracle_mc, random_seed, stopping,
                  shortlist, state_mc, **_):
     """Adaptive refinement: expand the exact-evaluation frontier until the envelope closes."""
-    exact = OverexposureMonteCarloOracle(graph, mc_runs=oracle_mc,
-                                         random_seed=random_seed, params=params)
-
-    class AnalyticScorer:
-        def __init__(self):
-            self.state_cascades = 0
-            self.state_reads = 0
-
-        def score(self, seeds, candidates, step=0):
-            delta = mean_exposure_state(graph, list(seeds), state_mc,
-                                        random_seed + 7717 * step)
-            self.state_cascades += state_mc
-            self.state_reads += 1
-            values = exposure_scores_delta(graph, list(candidates), delta, set(seeds))
-            return {c: v for c, v in zip(candidates, values)}
-
-    scorer = AnalyticScorer()
+    exact = arm_oracle(graph, contract, oracle_mc, random_seed)
+    scorer = AnalyticScorer(graph, contract, state_mc, random_seed + STATE_NS)
     result = adaptive_selective_greedy(
         pool, budget, scorer, exact,
         initial_m=max(1, shortlist // 2), batch_m=max(1, shortlist // 2),
         max_m=shortlist, stopping=stopping,
     )
     return result.selected_seeds, {
-        "mc_cascades": exact.stats.mc_cascades + scorer.state_cascades,
-        "state_cascades": scorer.state_cascades,
-        "state_reads": scorer.state_reads,
+        "mc_cascades": exact.stats.mc_cascades + scorer.oracle.stats.mc_cascades,
+        "state_cascades": scorer.oracle.stats.state_cascades,
+        "state_reads": scorer.oracle.stats.state_reads,
         "stopping_rule": result.steps[-1]["stopping_rule"] if result.steps else "n/a",
         "stopped_early": any(s.get("stopped_early") for s in result.steps),
     }
-
-
-def run_delta2_patience(graph, pool, budget, *, state_mc, params, random_seed, stopping,
-                        eval_mc=None, **_):
-    """Sequential ranking **plus a stopping rule driven by the observed spread**.
-
-    Why this arm exists, and how it differs from :func:`run_delta2_sequential`
-    ---------------------------------------------------------------------------
-    ``delta2_sequential`` uses observation for one thing only: re-ranking.  A static arm already
-    ranks well in the unsaturated regime, so if re-ranking is the only lever, sequential selection
-    has little to add --- and the first cells of the Gate 1(b) sweep show it adding nothing.
-
-    But observation licenses a second decision that a static arm structurally cannot make: *how many*
-    seeds to take.  A static arm commits to ``k`` seeds before seeing anything; a sequential arm can
-    stop when the realised spread stops improving.  That is the mechanism the paper's own framing
-    proposes ("analytic ranking + a patience stop on the observed spread"), so testing it is testing
-    the method as described, not a post-hoc variant.
-
-    Both arms are reported side by side and the distinction is stated in the results, because a
-    reader is entitled to know that the stronger sequential arm was also the more complex one.
-
-    Cost: one state read per step (for ranking) **plus one cascade per step** to measure the realised
-    spread that the patience rule reads.  Both are charged.
-    """
-    from grl.diffusion import overexposure as oe
-
-    selected: list[int] = []
-    state_cascades = 0
-    spread_cascades = 0
-    observed: list[float] = []
-
-    for step in range(int(budget)):
-        available = [v for v in pool if v not in set(selected)]
-        if not available:
-            break
-        delta = mean_exposure_state(graph, selected, state_mc, random_seed + 1009 * step)
-        state_cascades += state_mc
-        scores = exposure_scores_delta(graph, available, delta, set(selected))
-        chosen = rank_by_score(available, scores)[0]
-        selected.append(chosen)
-
-        # the observation the patience rule reads: one cascade on the realised seed set
-        rng = random.Random(random_seed + 4241 * step)
-        windows = oe.sample_threshold_windows(list(graph.nodes()), rng)
-        observed.append(float(oe.run_overexposure(
-            graph, list(selected), windows, rng,
-            activation_mode=params.activation_mode).spread))
-        spread_cascades += 1
-
-        if stopping.should_stop([], observed):
-            break
-
-    return selected, {"mc_cascades": state_cascades + spread_cascades,
-                      "state_cascades": state_cascades,
-                      "state_reads": len(selected),
-                      "stopping_rule": f"patience_on_observed_spread+{len(observed)}_spread_reads",
-                      "stopped_early": len(selected) < int(budget)}
 
 
 ARMS = {
@@ -434,25 +440,46 @@ def degree_stratified_pool(graph, eligible, size, rng, bands=5):
     return pool
 
 
-def paired_spreads(graph, nodes, seed_sets: dict[str, list[int]], trials: int, seed: int,
-                   params) -> dict[str, list[float]]:
-    """Evaluate every arm's seed set on the SAME threshold windows.
+def paired_target_counts(graph, contract, seed_sets: dict[str, list[int]], trials: int,
+                         replicate_seed: int) -> dict[str, list[float]]:
+    """Per-trial ``|positive_at_end ∩ D|`` for every arm on the SAME threshold windows.
 
-    Pairing is not an optimisation here, it is the experiment: in the saturated regime the
-    window-draw variance is larger than the between-arm differences, so an unpaired comparison
-    cannot see the effect at all.
+    Pairing is not an optimisation here, it is the experiment: the window-draw variance is larger
+    than the between-arm differences, so an unpaired comparison cannot see the effect at all.
+
+    The quantity is the CONTRACTED one.  The earlier version appended ``run.spread`` --- the
+    whole-graph positive count --- which on Congress-Twitter with ``|D| = 95`` reported 145 where the
+    objective is 24.  Every conclusion drawn from it, including a Gate 1(b) verdict, was about a
+    different objective, and the gate's tolerance was in target nodes while the difference was in
+    whole-graph nodes, so the units did not match either.
+
+    Trial streams come from :func:`grl.oracle.trial_seeds` with the EVAL namespace, so two replicates
+    are disjoint.  The earlier ``base + offset`` made replicates 20260917 and 20260918 share 199 of
+    200 windows.
     """
     from grl.diffusion import overexposure as oe
 
+    target = set(contract.objective.target_set)
     names = list(seed_sets)
     per_trial = {name: [] for name in names}
-    for offset in range(trials):
-        rng = random.Random(seed + offset)
-        windows = oe.sample_threshold_windows(nodes, rng)
+    for trial_seed in trial_seeds(replicate_seed + EVAL_NS, trials):
+        rng = random.Random(trial_seed)
+        windows = oe.sample_threshold_windows(
+            list(graph.nodes()), rng,
+            threshold_law=contract.diffusion.threshold_law,
+            window_lo=contract.diffusion.window_lo,
+        )
         for name in names:
-            per_trial[name].append(float(
-                oe.run_overexposure(graph, list(seed_sets[name]), windows, rng,
-                                    activation_mode=params.activation_mode).spread))
+            contract.objective.check_seed_eligibility(seed_sets[name])
+            run = oe.run_overexposure(graph, list(seed_sets[name]), windows, rng,
+                                      activation_mode=contract.diffusion.activation_mode)
+            value = float(len(run.positive & target))
+            if not (-1e-9 <= value <= len(target) + 1e-9):
+                raise TargetedObjectiveError(
+                    f"arm {name!r} scored {value} against |D| = {len(target)}; the contracted "
+                    f"objective cannot exceed the target set"
+                )
+            per_trial[name].append(value)
     return per_trial
 
 
@@ -745,8 +772,9 @@ def main() -> int:
                         for arm_name, fn in selected_arms.items():
                             try:
                                 seeds_arm, info = fn(
-                                    graph, pool, budget, oracle_mc=args.reference_mc,
-                                    params=params, random_seed=seed, stopping=stopping,
+                                    graph, pool, budget, contract=contract,
+                                    oracle_mc=args.reference_mc, params=params,
+                                    random_seed=seed, stopping=stopping,
                                     shortlist=args.shortlist, state_mc=args.state_mc,
                                     eval_mc=args.eval_mc)
                             except Exception as exc:
@@ -762,8 +790,14 @@ def main() -> int:
                             seed_sets[arm_name] = seeds_arm
                             meta[arm_name] = info
 
-                        paired = paired_spreads(graph, nodes, seed_sets, args.eval_mc,
-                                                seed + 5000, params)
+                        # every arm scored on |positive ∩ D|, on shared windows
+                        paired = paired_target_counts(graph, contract, seed_sets,
+                                                      args.eval_mc, seed)
+                        for name, trials_values in paired.items():
+                            if max(trials_values) > target_size + 1e-9:
+                                raise TargetedObjectiveError(
+                                    f"{name} scored {max(trials_values)} > |D| = {target_size}"
+                                )
 
                         for arm_name, seeds_arm in seed_sets.items():
                             info = meta[arm_name]

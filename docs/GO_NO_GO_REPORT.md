@@ -1,9 +1,33 @@
 # Go/No-Go: the answer, and what it decides
 
+> ⛔ **THE CONCLUSIONS IN THIS FILE ARE RETRACTED.** Three validity bugs were found in the runner
+> that produced them. All three were confirmed by inspection, not argument, and the numbers below
+> **must not be used**. See `docs/VALIDITY_FIXES.md` for the evidence and the fixes.
+>
+> | # | bug | evidence |
+> | --- | --- | --- |
+> | 1 | **The objective was never wired in.** Every arm reported `run.spread` — the whole-graph positive count — not the contracted `\|positive ∩ D\|`. On Congress-Twitter with `\|D\| = 95`, a 20-seed configuration gave **145 whole-graph positives against 24 inside D**, so 84% of the reported quantity lay outside the target set. The gate's tolerance was additionally computed in *target nodes* and compared against a difference in *whole-graph* nodes, so the units did not match either. | `\|D\|=95`, `run.spread=145`, `\|positive ∩ D\|=24` |
+> | 2 | **Patience was never enabled.** `delta2_patience` was handed the runner's global `--stopping`, which defaults to `fill_budget`, whose `should_stop` always returns `False`. The claim "the stopping lever never fires" therefore measured the absence of a rule, not the behaviour of one. | `FILL_BUDGET.should_stop(...) == False`; `PATIENCE_2.should_stop(...) == True` on the same input |
+> | 3 | **The two "independent" replicates shared 199 of 200 evaluation windows.** Trial seeds were `base + offset` with bases 20260917 and 20260918, so the streams overlapped by 99.5%. | `\|A ∩ B\| = 199/200` |
+>
+> **What survives.** The weight-normalisation finding (item 4) is about raw file contents and a
+> strategy no-op; it is unaffected by any of the three. The criterion calibration (item 5) needs
+> redoing in target units, but its conclusion — that a 1% relative tolerance sits far below the
+> noise floor — is a statement about variance scaling and is very unlikely to reverse.
+>
+> **What does not survive.** The Gate 1(b) verdict, the quality–cost curves, and every statement in
+> items 1–3 that rests on them. In particular, **"sequential decision has no value and the paper
+> must change direction" is NOT established by these two experiments.** That assessment is the
+> user's and it is correct. The only defensible reading of the retracted runs is the weaker one: the
+> sequential `δ₂` arm's performance is a cause for concern, the true objective may rank the arms
+> differently, and the experiment had to be rebuilt before any of it could be believed.
+>
+> Re-run in progress: `docs/results/validation_targeted.json`.
+
 > 2026-09-18. Covers the five items of the Go/No-Go plan. Every number is read from
 > `docs/results/*.json`; none is transcribed. Reproduce with the commands at the end.
 >
-> **Verdict: NO-GO for the sample-efficiency thesis.** Detail below, per item.
+> ~~**Verdict: NO-GO for the sample-efficiency thesis.**~~ **RETRACTED — see above.**
 
 ---
 
@@ -51,7 +75,9 @@ rule on it never triggers.
 
 ## Item 2 — quality–cost curves: built, and the reference is not a ceiling
 
-**Complete: 18 of 18 cells** (3 graphs × k ∈ {5, 10, 20} × 2 seeds, 85 minutes of compute). Arms:
+**Complete: 18 of 18 cells** (3 graphs × k ∈ {5, 10, 20} × 2 seeds, 85 minutes of compute), plus a
+separate **saturated point** (`quality_cost_saturated.json`, Congress-Twitter k ∈ {48, 95}) because
+the main design sits in the mild regime and the two experiments otherwise do not overlap. Arms:
 `mc_greedy_mc50` (reference), `degree_static`, `delta2_static`, `delta2_sequential`,
 `delta2_patience`, `random_pruning`, `selective_analytic`, `adaptive_selective`.
 
@@ -67,8 +93,8 @@ rule on it never triggers.
 
 "max-loss" is the upper end of the paired 95% CI on `reference − method`, in target nodes: **the
 largest loss the data still permits.** It is reported instead of a verdict because it survives any
-choice of tolerance. The worst-case column is large because ca-GrQc is large — the reference there is
-also the noisiest, see below.
+choice of tolerance. The worst-case column is dominated by ca-GrQc, where the reference is also the
+noisiest — see point 4.
 
 **Three things follow.**
 

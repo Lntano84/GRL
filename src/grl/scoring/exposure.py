@@ -74,17 +74,31 @@ def exposure_scores_delta(
     delta: dict,
     seeds: set,
     hops: int = DEFAULT_HOPS,
+    *,
+    target_set: set | None = None,
 ) -> list[float]:
     """The two-hop state-conditioned closed form.
 
     For each candidate ``w``:
 
         dE(v)    <- dE(parent) * weight(parent, v) * (1 - E_S(v))     (Bellman over ``hops``)
-        score(w) = sum over out-neighbours v of
-                   [ g(E_S(v) + dE(v)) - g(E_S(v)) ]
+        score(w) = sum over v of [ g(E_S(v) + dE(v)) - g(E_S(v)) ]
 
     where ``E_S`` is the realised mean exposure of ``v`` under the current seed set and
     ``g`` is the model's positive-activation probability ``2 * delta * (1 - delta)``.
+
+    ``target_set`` and why it matters
+    ---------------------------------
+    The source model is **targeted**: its objective counts ``|positive ∩ D|``.  Summing over every
+    out-neighbour scores a candidate by how much it activates *the whole graph*, which is a different
+    quantity and can rank candidates differently --- a candidate whose influence lands entirely
+    outside ``D`` is worthless to the contracted objective and valuable to the untargeted score.
+    Pass ``target_set`` to restrict the sum to ``D``, which is what a policy optimising the
+    contracted objective must do.
+
+    ``target_set=None`` keeps the historical untargeted behaviour, because the regime table in the
+    paper was measured with it and changing it silently would make those numbers unreproducible.
+    The two are **not interchangeable** and the caller has to say which it wants.
 
     A candidate already in ``seeds`` scores ``-inf`` so it can never be re-selected.  The score is
     signed: ``g`` is not monotone, so a candidate whose influence pushes a neighbour past its upper
@@ -121,6 +135,9 @@ def exposure_scores_delta(
 
         total = 0.0
         for target, change in d_e.items():
+            # Only nodes whose activation the contracted objective counts contribute.
+            if target_set is not None and target not in target_set:
+                continue
             current = delta.get(target, 0.0)
             before = oe.positive_activation_probability(current)
             after = oe.positive_activation_probability(min(1.0, current + change))

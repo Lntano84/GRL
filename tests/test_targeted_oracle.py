@@ -154,7 +154,7 @@ def test_patience_fires_on_a_flat_sequence_while_fill_budget_does_not():
 
 
 def test_patience_runs_in_the_runner_with_its_own_rule():
-    """End to end: the patience arm must be able to return fewer seeds than the budget."""
+    """End to end: the patience arm must use its own rule and record it."""
     import importlib.util
     import sys
     from pathlib import Path
@@ -170,11 +170,48 @@ def test_patience_runs_in_the_runner_with_its_own_rule():
     contract = build_contract(graph, {}, target_set=target, budget=8)
     pool = [v for v in graph.nodes() if v not in set(target)][:30]
     seeds, info = module.run_delta2_patience(
-        graph, pool, 8, contract=contract, state_mc=4, random_seed=3,
+        graph, pool, 8, contract=contract, state_mc=4, stop_mc=6, random_seed=3,
         stopping=module.FILL_BUDGET,  # deliberately the disabling rule
     )
     assert "patience" in info["stopping_rule"], (
-        "the arm must use PATIENCE_2 regardless of the runner's global --stopping, and must record "
-        "the rule it actually used"
+        "the arm must use its own patience rule regardless of the runner's global --stopping, and "
+        "must record the rule it actually used"
+    )
+    assert "beyond_1se" in info["stopping_rule"], (
+        "the stop must require improvement beyond the estimate's own uncertainty; a bare "
+        "non-increase stops on window noise, which is what halted after 3 of 95 seeds"
     )
     assert len(seeds) <= 8
+
+
+def test_the_patience_control_shares_the_rule_but_freezes_the_ranking():
+    """The control that separates re-ranking from taking fewer seeds."""
+    import importlib.util
+    import sys
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    spec = importlib.util.spec_from_file_location(
+        "go_no_go_under_test2", root / "scripts" / "experiments" / "go_no_go.py")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules["go_no_go_under_test2"] = module
+    spec.loader.exec_module(module)
+
+    graph, target = graph_with_targets(n=60, target=10)
+    contract = build_contract(graph, {}, target_set=target, budget=8)
+    pool = [v for v in graph.nodes() if v not in set(target)][:30]
+
+    seq_seeds, seq_info = module.run_delta2_patience(
+        graph, pool, 8, contract=contract, state_mc=4, stop_mc=6, random_seed=3)
+    ctl_seeds, ctl_info = module.run_patience_static_ranking(
+        graph, pool, 8, contract=contract, state_mc=4, stop_mc=6, random_seed=3)
+
+    assert ctl_info["control"] == "static_ranking_same_stopping_rule"
+    assert ctl_info["stopping_rule"] == seq_info["stopping_rule"], (
+        "the control must use the SAME stopping rule, or it does not control for the stop"
+    )
+    assert ctl_info["state_reads"] == 1, (
+        "the control reads the state once and then freezes the ranking; more than one read means "
+        "it is re-ranking and is no longer a control"
+    )
+    assert len(ctl_seeds) <= 8

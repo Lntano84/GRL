@@ -421,10 +421,32 @@ def merge(args) -> int:
                      ("mc_reference_minus_static", "mc_reference_minus_static"),
                      ("state_minus_static", "state_minus_static")):
         pos = sum(1 for b in blocks if b["contrasts"][c]["mean"] > 0)
+        ties = sum(1 for b in blocks if b["contrasts"][c]["mean"] == 0)
         sig = sum(1 for b in blocks
                   if b["contrasts"][c]["ci95_low"] > 0 or b["contrasts"][c]["ci95_high"] < 0)
-        sign_counts[cname] = {"positive_point_estimates": pos, "configurations": len(blocks),
-                              "intervals_excluding_zero": sig}
+        sign_counts[cname] = {"positive_point_estimates": pos, "exact_ties": ties,
+                              "configurations": len(blocks),
+                              "intervals_excluding_zero": sig,
+                              "negative_point_estimates":
+                                  len(blocks) - pos - ties}
+
+    # For each observed point estimate, how many trials would this contrast have needed for its
+    # interval to exclude zero?  Post hoc and descriptive: it uses the observed effect size, so a
+    # contrast whose true effect is zero is never resolved by any number of trials.
+    resolvability: dict[str, dict] = {}
+    for cname in ("mc_reference_minus_degree", "mc_reference_minus_static", "state_minus_static"):
+        per_cfg = {}
+        for b in blocks:
+            c = b["contrasts"][cname]
+            if c["mean"] == 0 or not math.isfinite(c["se"]) or c["se"] <= 0:
+                per_cfg[str(b["index"])] = {"mean": c["mean"], "note": "exact tie; nothing to resolve"}
+                continue
+            per_cfg[str(b["index"])] = {
+                "mean": c["mean"], "se": c["se"], "trials_used": c["n"],
+                "trials_for_ci_to_exclude_zero":
+                    math.ceil(c["n"] * (1.96 * c["se"] / abs(c["mean"])) ** 2),
+            }
+        resolvability[cname] = per_cfg
 
     artifact = {
         "script": Path(__file__).name, "code_version": code_version(),
@@ -446,6 +468,12 @@ def merge(args) -> int:
         "frozen_choices_sha256": {k: v["payload_sha256"] for k, v in frozen.items()},
         "summary_table": table,
         "sign_counts": sign_counts,
+        "resolvability": {
+            "note": "trials this contrast would have needed for its interval to exclude zero, at the "
+                    "OBSERVED point estimate.  Post hoc and descriptive: a contrast whose true "
+                    "effect is zero is not resolved by any number of trials.",
+            "per_contrast": resolvability,
+        },
         "pooling": "none; the four configurations are separate states, not replicates of one "
                    "population, and the random method's 100 repetitions are a baseline within a "
                    "configuration rather than 100 study scenarios",
@@ -476,9 +504,19 @@ def merge(args) -> int:
             print(f"      cfg{b['index']}  {c['mean']:+.3f} +-{c['se']:.3f}  "
                   f"[{c['ci95_low']:+.3f}, {c['ci95_high']:+.3f}]  p={c['p_two_sided']:.3f}")
         sc = sign_counts[name]
-        print(f"      positive in {sc['positive_point_estimates']}/{sc['configurations']} "
-              f"configurations; intervals excluding zero in "
-              f"{sc['intervals_excluding_zero']}/{sc['configurations']}")
+        print(f"      positive {sc['positive_point_estimates']}/{sc['configurations']}, "
+              f"ties {sc['exact_ties']}, negative {sc['negative_point_estimates']}; "
+              f"intervals excluding zero in {sc['intervals_excluding_zero']}/{sc['configurations']}")
+        need = {k: v.get("trials_for_ci_to_exclude_zero") for k, v in resolvability[name].items()}
+        print(f"      trials needed at the observed effect: {need}")
+    print()
+    print("  MC REFERENCE: selection-batch value vs independent evaluation")
+    for b in blocks:
+        h = b["headroom"]
+        print(f"    cfg{b['index']}  selection {h['reference_selection']['mean']:+.3f} -> "
+              f"evaluation {h['reference_evaluation']['mean']:+.3f}   "
+              f"gap {h['reference_selection']['mean'] - h['reference_evaluation']['mean']:+.3f}"
+              f"   pool mean {h['pool_evaluation_mean']:+.3f} sd {h['pool_evaluation_sd']:.3f}")
     print()
     print(f"  wrote {OUTPUT}")
     return 0

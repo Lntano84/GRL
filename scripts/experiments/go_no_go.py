@@ -84,7 +84,8 @@ from grl.data.weights import (  # noqa: E402
     describe_normalisation,
     normalise_in_weights,
 )
-from grl.diffusion.contract import resolve_target_contract  # noqa: E402
+from grl.diffusion import overexposure as oe  # noqa: E402
+from grl.diffusion.contract import TargetedObjective, resolve_target_contract  # noqa: E402
 from grl.diffusion.params import resolve_overexposure_params  # noqa: E402
 from grl.evaluation.gate import (  # noqa: E402
     DEFAULT_CASCADE_SAVING,
@@ -119,6 +120,11 @@ SEQUENTIAL_ARM = "delta2_sequential"
 #: This is the mechanism the paper's own framing proposes, so it is reported alongside rather than
 #: substituted silently.
 PATIENCE_ARM = "delta2_patience"
+#: The control for :data:`PATIENCE_ARM`: the SAME stopping rule and observation cost, but the
+#: ranking is computed once at S = empty and frozen.  Without it, a patience arm that beats filling
+#: the budget cannot be attributed --- the gain could be re-ranking or merely taking fewer seeds,
+#: and the two have completely different implications for the paper.
+PATIENCE_CONTROL_ARM = "patience_static"
 STATIC_ARMS = ("degree_static", "delta2_static")
 
 #: The candidate pool must be at least this many times the budget.  Below it, the arms converge on
@@ -183,7 +189,7 @@ class Cell:
 # ----------------------------------------------------------------------------------------------
 # arms
 #
-# Every arm below measures the CONTRACTED objective: |positive_at_end 鈭?D|, via
+# Every arm below measures the CONTRACTED objective: |positive_at_end 閳?D|, via
 # TargetedMonteCarloOracle.  Nothing here reads run.spread (the whole-graph count), because the
 # source model is targeted and the two are not close --- on Congress-Twitter with |D| = 95 a 20-seed
 # configuration gave 145 whole-graph positives against 24 inside D, so 84% of the earlier quantity
@@ -200,6 +206,7 @@ class Cell:
 # ----------------------------------------------------------------------------------------------
 SELECT_NS = 0
 EVAL_NS = 500_000
+STOP_NS = 700_000
 STATE_NS = 900_000
 
 
@@ -261,50 +268,136 @@ def run_delta2_sequential(graph, pool, budget, *, contract, state_mc, random_see
                       "stopping_rule": "fill_budget", "stopped_early": False}
 
 
-def run_delta2_patience(graph, pool, budget, *, contract, state_mc, random_seed, stopping, **_):
-    """Sequential ranking plus a patience stop on the **contracted** observed value.
+def observed_target_count(oracle, seeds, samples: int) -> tuple[float, float]:
+    """Mean and standard error of the contracted count over ``samples`` independent trials.
 
-    The stopping rule is :data:`PATIENCE_2`, not the runner's global ``--stopping``.  The first
-    version forwarded the global rule, which defaults to ``fill_budget`` and whose ``should_stop``
-    always returns False --- so patience was never enabled and the conclusion "the stopping lever
-    never fires" was measuring the absence of a rule rather than the behaviour of one.  The rule
-    actually used is recorded in the returned record.
-
-    Both costs are charged: one state read per step for ranking, and one cascade per step for the
-    observed value the patience rule reads.  That observed value is ``|positive 鈭?D|``, the same
-    quantity the arm is scored on, so the rule cannot be reading a different objective than the one
-    it is judged by.
+    The stopping decision must not read a single draw, and it must not read the same draws the arm
+    is later scored on.  A one-sample observation makes a patience rule a coin flip on window-draw
+    noise --- which is why the first corrected run stopped after 3 of 95 seeds on Congress-Twitter
+    --- and reusing the evaluation stream would let the arm decide on the very numbers it is judged
+    by.  The caller passes an oracle whose seed carries :data:`STOP_NS`.
     """
-    rule = PATIENCE_2
+    values = []
+    for trial_seed in trial_seeds(oracle.random_seed, samples):
+        rng = random.Random(trial_seed)
+        run = oe.run_overexposure(
+            oracle.graph, list(seeds), oracle._windows(rng), rng,
+            activation_mode=oracle.contract.diffusion.activation_mode,
+        )
+        values.append(float(len(run.positive & oracle._target)))
+    oracle.stats.mc_cascades += samples
+    mean = statistics.fmean(values)
+    se = (statistics.pstdev(values) / math.sqrt(len(values))) if len(values) > 1 else float("inf")
+    return mean, se
+
+
+def should_stop_with_uncertainty(means: list[float], ses: list[float], patience: int) -> bool:
+    """Stop once the contracted count has failed to improve **beyond noise** for ``patience`` steps.
+
+    "Beyond noise" is one standard error of the step's own estimate.  A rule that stops on a bare
+    non-increase stops on a draw, which is what happened when :data:`PATIENCE_2` was applied to a
+    single-sample observation: it halted after 3 of 95 seeds.  Requiring the improvement to exceed
+    the estimate's own uncertainty is the cheapest honest fix.  It is still a heuristic, not a
+    guarantee, and the caller records it as one.
+    """
+    if len(means) < patience + 1:
+        return False
+    recent_means = means[-(patience + 1):]
+    recent_ses = ses[-(patience + 1):]
+    for earlier, later, later_se in zip(recent_means, recent_means[1:], recent_ses[1:]):
+        if later - earlier > later_se:
+            return False
+    return True
+
+
+_PATIENCE_RULE_NAME = ("patience2_beyond_1se_on_observed_target_count"
+                       "+{stop_mc}mc_per_step")
+
+
+def run_delta2_patience(graph, pool, budget, *, contract, state_mc, stop_mc, random_seed, **_):
+    """Sequential ranking plus a patience stop on the **contracted** observed count.
+
+    Three things this arm had wrong, all fixed here:
+
+    1. the stopping rule is its own (patience semantics with an uncertainty margin), not the
+       runner's global ``--stopping``, which defaults to ``fill_budget`` and whose ``should_stop``
+       always returns False --- so the earlier conclusion "the stopping lever never fires" was
+       measuring the absence of a rule;
+    2. the observation is ``|positive 鈭?D|``, the same quantity the arm is scored on, so the rule
+       cannot be reading a different objective from the one it is judged by;
+    3. the observation uses ``stop_mc`` samples from its own :data:`STOP_NS` stream, so it is not a
+       single draw and it does not overlap the :data:`EVAL_NS` stream the arm is scored on.
+
+    The rule actually used is recorded in the returned record.
+    """
     oracle = arm_oracle(graph, contract, state_mc, random_seed)
-    eval_oracle = arm_oracle(graph, contract, 1, random_seed + EVAL_NS)
+    stop_oracle = arm_oracle(graph, contract, stop_mc, random_seed + STOP_NS)
     target = set(contract.objective.target_set)
-    del target
     selected: list[int] = []
-    observed: list[float] = []
-    spread_reads = 0
+    means: list[float] = []
+    ses: list[float] = []
 
     for step in range(int(budget)):
         available = [v for v in pool if v not in set(selected)]
         if not available:
             break
         delta = oracle.state(selected, step=step)
-        scores = exposure_scores_delta(graph, available, delta, set(selected),
-                                      target_set=set(contract.objective.target_set))
+        scores = exposure_scores_delta(graph, available, delta, set(selected), target_set=target)
         selected.append(rank_by_score(available, scores)[0])
 
-        observed.append(eval_oracle.spread(selected)["mean"])
-        spread_reads += 1
-
-        if rule.should_stop([], observed):
+        mean, se = observed_target_count(stop_oracle, selected, stop_mc)
+        means.append(mean)
+        ses.append(se)
+        if should_stop_with_uncertainty(means, ses, 2):
             break
 
     return selected, {
-        "mc_cascades": oracle.stats.mc_cascades + eval_oracle.stats.mc_cascades,
+        "mc_cascades": oracle.stats.mc_cascades + stop_oracle.stats.mc_cascades,
         "state_cascades": oracle.stats.state_cascades,
         "state_reads": oracle.stats.state_reads,
-        "stopping_rule": f"{rule.name}_on_observed_target_count+{spread_reads}_reads",
+        "stopping_rule": _PATIENCE_RULE_NAME.format(stop_mc=stop_mc),
         "stopped_early": len(selected) < int(budget),
+    }
+
+
+def run_patience_static_ranking(graph, pool, budget, *, contract, state_mc, stop_mc,
+                                random_seed, **_):
+    """The control that separates *re-ranking* from *taking fewer seeds*.
+
+    Same stopping rule, same observation cost, same state read as :func:`run_delta2_patience`, but
+    the ranking is computed **once** at ``S = empty`` and then frozen.  Without this control, a
+    patience arm that beats filling the budget cannot be attributed: the gain could come from
+    re-ranking after each seed or merely from stopping earlier, and the two have completely
+    different implications.  The pair is therefore a clean A/B on the re-ranking alone.
+    """
+    oracle = arm_oracle(graph, contract, state_mc, random_seed)
+    stop_oracle = arm_oracle(graph, contract, stop_mc, random_seed + STOP_NS)
+    target = set(contract.objective.target_set)
+
+    delta = oracle.state([], step=0)                    # ONE read, then frozen
+    order = rank_by_score(pool, exposure_scores_delta(
+        graph, pool, delta, set(), target_set=target))
+
+    selected: list[int] = []
+    means: list[float] = []
+    ses: list[float] = []
+    for step in range(int(budget)):
+        if step >= len(order):
+            break
+        selected.append(order[step])
+        mean, se = observed_target_count(stop_oracle, selected, stop_mc)
+        means.append(mean)
+        ses.append(se)
+        if should_stop_with_uncertainty(means, ses, 2):
+            break
+
+    return selected, {
+        "mc_cascades": oracle.stats.mc_cascades + stop_oracle.stats.mc_cascades,
+        "state_cascades": oracle.stats.state_cascades,
+        "state_reads": oracle.stats.state_reads,
+        "stopping_rule": _PATIENCE_RULE_NAME.format(stop_mc=stop_mc),
+        "stopped_early": len(selected) < int(budget),
+        "control": "static_ranking_same_stopping_rule",
     }
 
 
@@ -313,7 +406,7 @@ def run_mc_greedy(graph, pool, budget, *, contract, oracle_mc, random_seed, stop
 
     Not exact and not globally optimal: at finite ``oracle_mc`` it is an estimator, and the arm's
     reported name carries that budget so its value is not mistaken for an upper bound.  Every score
-    it sees is a paired difference of ``|positive 鈭?D|``.
+    it sees is a paired difference of ``|positive 閳?D|``.
     """
     oracle = arm_oracle(graph, contract, oracle_mc, random_seed)
     result = full_oracle_greedy(pool, budget, oracle, stopping=stopping)
@@ -395,6 +488,7 @@ ARMS = {
     "delta2_static": run_static_delta2,
     SEQUENTIAL_ARM: run_delta2_sequential,
     PATIENCE_ARM: run_delta2_patience,
+    PATIENCE_CONTROL_ARM: run_patience_static_ranking,
     "random_pruning": run_random_pruning,
     "selective_analytic": run_selective,
     "adaptive_selective": run_adaptive,
@@ -406,7 +500,8 @@ ARMS = {
 #: separation matters: the full-pool reference costs ``O(k * |pool| * MC)`` cascades, which at
 #: ``k = 95``, ``|pool| = 380``, ``MC = 25`` is roughly 900,000 cascades for ONE cell, so bundling
 #: it with the gate experiment would make the gate unaffordable for no reason.
-CHEAP_ARMS = ("degree_static", "delta2_static", SEQUENTIAL_ARM, PATIENCE_ARM)
+CHEAP_ARMS = ("degree_static", "delta2_static", SEQUENTIAL_ARM, PATIENCE_ARM,
+              PATIENCE_CONTROL_ARM)
 #: Arms that need the expensive full-pool Monte-Carlo reference to be meaningful.
 REFERENCE_ARMS = ("random_pruning", "selective_analytic", "adaptive_selective")
 
@@ -442,7 +537,7 @@ def degree_stratified_pool(graph, eligible, size, rng, bands=5):
 
 def paired_target_counts(graph, contract, seed_sets: dict[str, list[int]], trials: int,
                          replicate_seed: int) -> dict[str, list[float]]:
-    """Per-trial ``|positive_at_end ∩ D|`` for every arm on the SAME threshold windows.
+    """Per-trial ``|positive_at_end 鈭?D|`` for every arm on the SAME threshold windows.
 
     Pairing is not an optimisation here, it is the experiment: the window-draw variance is larger
     than the between-arm differences, so an unpaired comparison cannot see the effect at all.
@@ -457,8 +552,6 @@ def paired_target_counts(graph, contract, seed_sets: dict[str, list[int]], trial
     are disjoint.  The earlier ``base + offset`` made replicates 20260917 and 20260918 share 199 of
     200 windows.
     """
-    from grl.diffusion import overexposure as oe
-
     target = set(contract.objective.target_set)
     names = list(seed_sets)
     per_trial = {name: [] for name in names}
@@ -542,6 +635,15 @@ def main() -> int:
     parser.add_argument("--eval-mc", type=int, default=300)
     parser.add_argument("--state-mc", type=int, default=25,
                         help="cascades to read the exposure state; charged to every arm that reads it")
+    parser.add_argument("--stop-mc", type=int, default=25,
+                        help="cascades per step for the STOPPING decision, drawn from a dedicated "
+                             "stream (STOP_NS) that does not overlap the evaluation stream. A "
+                             "single-sample stopping observation makes the patience rule a coin "
+                             "flip on window noise.")
+    parser.add_argument("--require-reference", action="store_true",
+                        help="mark the run incomplete if the full-pool Monte-Carlo reference fails "
+                             "or is absent. Without it a baseline failure silently degrades the "
+                             "experiment to a set of arms that no longer have a cost reference.")
     parser.add_argument("--shortlist", type=int, default=8)
     parser.add_argument("--stopping", default="fill_budget", choices=list(STOPPING_RULES))
     parser.add_argument("--tolerance-anchor", default="resolution",
@@ -610,6 +712,26 @@ def main() -> int:
 
     def flush() -> None:
         args.output.parent.mkdir(parents=True, exist_ok=True)
+        # Completeness has three independent failure modes and all three are recorded, because a
+        # partial sweep read as a finished one is exactly the mistake that put a duplicate row in
+        # the regime artifact and a wrong verdict in the Go/No-Go report.
+        expected = 0
+        for graph_name in args.graphs:
+            n_here = len(load_raw(graph_name).nodes())
+            spec = (args.budgets if args.budgets
+                    else [max(1, int(round(f * n_here))) for f in args.fractions])
+            expected += len(spec) * args.pool_draws * len(args.seeds) * len(args.normalisations)
+        skipped_by_key = {(s["graph"], s["budget"], s["pool_draw"], s["random_seed"])
+                          for s in skipped}
+        expected -= len(skipped_by_key)
+        missing = expected - len(cells)
+        reference_requested = any(a.startswith("mc_greedy") for a in selected_arms) or want_reference
+        reference_failures = sum(1 for f in failures if f["arm"].startswith("mc_greedy"))
+        arm_failures = len(failures) - reference_failures
+        complete = (missing <= 0 and arm_failures == 0
+                    and (not args.require_reference
+                         or (reference_requested and reference_failures == 0)))
+
         args.output.write_text(json.dumps({
             "script": Path(__file__).name,
             "contract": {
@@ -620,6 +742,7 @@ def main() -> int:
                 "state_acquisition_is_priced": True,
                 "reference_is_exact": False,
                 "reference_mc": args.reference_mc,
+                "objective": "|positive_at_end ∩ D| (contracted), not run.spread",
             },
             "design": {
                 "graphs": args.graphs,
@@ -628,9 +751,32 @@ def main() -> int:
                 "pool_size": args.pool_size, "pool_draws": args.pool_draws,
                 "random_seeds": args.seeds, "normalisations": args.normalisations,
                 "eval_mc": args.eval_mc, "state_mc": args.state_mc,
-                "shortlist": args.shortlist,
+                "stop_mc": args.stop_mc, "shortlist": args.shortlist,
+                "arms": sorted(selected_arms),
                 "sequential_arm": SEQUENTIAL_ARM, "static_arms": list(STATIC_ARMS),
+                "patience_arm": PATIENCE_ARM, "patience_control_arm": PATIENCE_CONTROL_ARM,
                 "reference_arm": reference,
+                "stream_namespaces": {"select": SELECT_NS, "eval": EVAL_NS,
+                                      "stop": STOP_NS, "state": STATE_NS},
+            },
+            "completeness": {
+                "complete": complete,
+                "expected_cells": expected,
+                "measured_cells": len(cells),
+                "missing_cells": missing,
+                "skipped_cells": len(skipped),
+                "arm_failures": arm_failures,
+                "reference_requested": reference_requested,
+                "reference_failures": reference_failures,
+                "require_reference": args.require_reference,
+                "note": ("incomplete: " + ", ".join(filter(None, [
+                    f"{missing} cells missing" if missing > 0 else "",
+                    f"{arm_failures} arm failures" if arm_failures else "",
+                    f"{reference_failures} reference failures"
+                    if (args.require_reference and reference_failures) else "",
+                    "reference requested but never ran"
+                    if (args.require_reference and not reference_requested) else "",
+                ]))) if not complete else "complete",
             },
             "gate": {
                 "criterion": "absolute pair tolerance in target nodes + required cascade saving",
@@ -760,14 +906,21 @@ def main() -> int:
                         if want_reference:
                             try:
                                 seeds_ref, info_ref = run_mc_greedy(
-                                    graph, pool, budget, oracle_mc=args.reference_mc,
-                                    params=params, random_seed=seed, stopping=stopping)
+                                    graph, pool, budget, contract=contract,
+                                    oracle_mc=args.reference_mc,
+                                    random_seed=seed, stopping=stopping)
                                 seed_sets[reference] = seeds_ref
                                 meta[reference] = info_ref
                             except Exception as exc:      # a failing arm must not lose the cell
-                                print(f"    !! reference failed: {type(exc).__name__}: {exc}",
+                                # Loud, and recorded.  The cell is still measured, but the run is
+                                # marked incomplete: without the reference there is no cost baseline
+                                # and every "N% fewer cascades" statement loses its denominator.
+                                print(f"    !! reference FAILED for {graph_name} k={budget} "
+                                      f"draw={draw} seed={seed}: {type(exc).__name__}: {exc}",
                                       flush=True)
-                                want_reference = False
+                                failures.append({"graph": graph_name, "arm": reference,
+                                                 "budget": budget, "random_seed": seed,
+                                                 "error": repr(exc)})
 
                         for arm_name, fn in selected_arms.items():
                             try:
@@ -776,7 +929,7 @@ def main() -> int:
                                     oracle_mc=args.reference_mc, params=params,
                                     random_seed=seed, stopping=stopping,
                                     shortlist=args.shortlist, state_mc=args.state_mc,
-                                    eval_mc=args.eval_mc)
+                                    stop_mc=args.stop_mc, eval_mc=args.eval_mc)
                             except Exception as exc:
                                 # A failing arm must be loud, not silently absent: an arm that
                                 # disappears from the table looks like an arm that was never run,
@@ -790,7 +943,7 @@ def main() -> int:
                             seed_sets[arm_name] = seeds_arm
                             meta[arm_name] = info
 
-                        # every arm scored on |positive ∩ D|, on shared windows
+                        # every arm scored on |positive 鈭?D|, on shared windows
                         paired = paired_target_counts(graph, contract, seed_sets,
                                                       args.eval_mc, seed)
                         for name, trials_values in paired.items():

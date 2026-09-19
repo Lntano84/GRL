@@ -602,6 +602,35 @@ def main() -> int:
                                 "so results depend on the frozen evaluation order",
         },
         "gain_decomposition": decomposition,
+        # The per-trial arrays themselves, so the paired intervals can be recomputed from the file
+        # alone.  They are a deterministic REPLAY: the first version of this run computed these
+        # arrays in memory and wrote only the summaries.  Re-running the same frozen streams
+        # reproduces them bit-for-bit, which is a backfill of the same evidence, NOT new evidence.
+        "per_trial_data": {
+            "replay_of_identical_streams": True,
+            "not_new_evidence": True,
+            "note": "recomputed from the same frozen streams as the published summaries; the "
+                    "summaries are asserted unchanged against the previously committed artifact",
+            "graph": GRAPH, "trials": args.trials,
+            "stream_namespace": BATCH3_NS,
+            "candidates": {str(c): per_candidate[c] for c in frozen_order},
+        },
+        "effect_size_bound": {
+            "difference_definition": "A - D = (static choice) - (state choice), paired per trial",
+            "point": primary.get("difference_a_minus_b", {}).get("mean"),
+            "ci95": [primary.get("difference_a_minus_b", {}).get("ci95_low"),
+                     primary.get("difference_a_minus_b", {}).get("ci95_high")],
+            "upper_bound_on_state_method_loss": primary.get("difference_a_minus_b", {}).get("ci95_high"),
+            "upper_bound_on_static_method_loss":
+                -primary.get("difference_a_minus_b", {}).get("ci95_low", 0.0)
+                if primary.get("difference_a_minus_b") else None,
+            "reading": "with the difference defined as static minus state, the interval's UPPER end "
+                       "is the largest state-method loss the data leave open, and its LOWER end is "
+                       "the largest static-method loss.  Neither direction is established.",
+            "no_threshold_applied": "no gate tolerance is applied to this interval, and none is "
+                                    "claimed: being a small fraction of |D| is not evidence of "
+                                    "equivalence and is not used as one here",
+        },
         "contrasts": {
             "primary_A_minus_D": primary,
             "secondary": secondary,
@@ -614,9 +643,10 @@ def main() -> int:
         "factor_effects_on_the_ranking": factor_effects,
         "confounding": {
             "same_choice_pairs": payload["same_choice_pairs"],
-            "note": "either input factor alone flips the selected candidate, so the two factors are "
-                    "perfectly confounded at the level of the CHOICE.  The score side is what "
-                    "separates them, because it shows what each factor does to the ranking.",
+            "note": "CORRECTED.  The two input factors are NOT both able to change the choice.  "
+                    "Versions A and B chose the same candidate and C and D chose the same candidate, "
+                    "so the seed mask changes nothing here; the exposure input alone produces the "
+                    "reversal, and the factor-effect block below measures that directly.",
         },
         "score_versus_gain_warning":
             "a negative score is not evidence of a negative true gain; the confirmation batch is the "

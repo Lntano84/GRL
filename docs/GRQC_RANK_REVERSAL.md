@@ -15,10 +15,17 @@ the Monte-Carlo reference candidate **50th of 50** where the state-free form ran
 It then explained that as the state-conditioning term `g(E_S + dE) − g(E_S)` going negative, and that
 explanation is arithmetically correct.  The mistake was in what it was taken to mean.
 
-**What is established is a rank reversal in the score.  What is not established, and is now refuted at
-this configuration, is that the state information is harmful.**
+**What is established is a rank reversal in the score.  What is not established --- and is *not*
+established by anything below either --- is that the state information is harmful.**  The correct
+statement of the result is:
 
-Three reasons, all of them visible in the earlier document's own numbers:
+> The exposure input causes a reproducible rank change, but at this configuration **no quality
+> difference between the two selections was detected** in 6000 independent confirmation trials.
+
+"Not detected" is not "equivalent".  A paired interval that contains zero is insufficient evidence in
+both directions, and it must not be written up as a demonstration that the two methods agree.
+
+Three reasons the earlier reading was wrong, all of them visible in that document's own numbers:
 
 1. **The two candidates were never separable.**  The earlier run measured the reference-versus-runner-up
    gap as `+0.440 [−0.345, +1.225]` on batch 1 and `+0.530 [−0.317, +1.377]` on batch 2 — both
@@ -104,7 +111,7 @@ Each version's choice was decided by the **existing** batch-1 marginals, written
 
 **`A` and `B` chose the same candidate; `C` and `D` chose the same candidate.**  Only **three** distinct
 nodes needed evaluation — 3058, 8150, 15960 — so this is not a re-run of all 50 candidates.  The frozen
-payload SHA-256 is `4af578a509b12224…`; the full value is recorded in the artifact, and the file was
+payload SHA-256 is `86e8b36a61e9c22a…`; the full value is recorded in the artifact, and the file was
 regenerated identically by the evaluation run, so nothing was swapped after the numbers arrived.
 
 ## 4. Confirmation batch
@@ -116,7 +123,7 @@ regenerated identically by the evaluation run, so nothing was swapped after the 
 | stream namespace | `base_seed + 1_500_000`, disjoint from state, batch 1 and batch 2 |
 | cascades | 25,000 (4 × 6000 marginal runs + 1000 state reads) |
 | windows | drawn once per trial and shared by every candidate |
-| wall time | 518 s |
+| wall time | 616 s (replay pass; 518 s on the first pass, same numbers) |
 | base level `\|P_final(S) ∩ D\|` | **186.926 ± 0.608** (sd 47.10, median 198, min 10, max 276) |
 
 Old batches selected; batch 3 only confirms.  The two are **never pooled**.
@@ -149,8 +156,21 @@ trials respectively.
 | `A − C` | exposure input only | 8150 − 15960 = +0.104 ± 0.152, CI [−0.194, +0.403] |
 | `B − D` | exposure input only | 8150 − 15960 = +0.104 ± 0.152, CI [−0.194, +0.403] |
 
-**The primary comparison does not separate the two choices.**  The state score's pick is not measurably
-worse than the static score's pick.
+**The primary comparison does not separate the two choices.**  No quality difference between the
+state score's pick and the static score's pick was detected.  That is all it says.
+
+**What the interval does and does not bound.**  The difference is defined as *static minus state*, so
+the interval's two ends bound two different losses and must not be read as if they bounded one:
+
+| quantity | bound from the CI `[−0.194, +0.403]` |
+|---|---|
+| how much worse the **state** pick could be than the static pick | **0.403 target nodes** (upper end) |
+| how much worse the **static** pick could be than the state pick | **0.194 target nodes** (lower end) |
+
+The bound on the state method's loss is **0.403, not 0.194**.  Both directions remain open, and neither
+is converted into a verdict here.  In particular, **no gate tolerance is applied to this interval post
+hoc**, and being a small fraction of `|D| = 1048` is **not** evidence of equivalence — that argument
+would be a threshold invented after seeing the number, and it is not made.
 
 **Multiplicity, handled explicitly.**  After removing the two same-choice contrasts, the remaining
 contrasts (`A−C`, `B−D`) compare *the same candidate pair* as the primary — they are the primary
@@ -160,11 +180,9 @@ entries must not be reported as four findings.
 
 **The comparison with the earlier point estimates matters.**  The earlier run put the same gap at
 `+0.440` (batch 1) and `+0.530` (batch 2).  Both are consistent with the new `+0.104` — each old CI
-contains it — but the new estimate is roughly eight times more precise and places the difference
-firmly inside the noise.  The old point estimates were not wrong; they were too imprecise to be read as
-a size.  **The plausible cost of the reversal is bounded by the CI's lower end: 0.194 target nodes out
-of |D| = 1048, i.e. 0.019% of the target set**, well inside the calibrated Gate 1(b) tolerance of
-`|D|/1000 ≈ 1.05` nodes.
+contains it — but the new estimate is roughly eight times more precise.  The old point estimates were
+not wrong; they were too imprecise to be read as a size, and the new estimate is still compatible with
+a state-method loss as large as 0.403 target nodes.
 
 ## 7. The score side: what actually moved
 
@@ -214,8 +232,9 @@ ordering only by an amount that is not established.
    and state scores to `0.00e+00`, including both top-8 lists and the reference's ranks 1 and 50.
 2. The reversal is caused by the **exposure input**, not by the seed mask — which is *exactly* inert at
    this configuration, on a code path proven live by a control.
-3. **The reversal costs nothing measurable.**  `A − D = +0.104 [−0.194, +0.403]`, p = 0.49, at 6000
-   fixed trials.  The most pessimistic reading bounds the cost at 0.019% of `D`.
+3. **No quality difference was detected.**  `A − D = +0.104 [−0.194, +0.403]`, p = 0.49, at 6000 fixed
+   trials.  This is insufficient evidence in *both* directions: a state-method loss up to **0.403**
+   target nodes and a static-method loss up to **0.194** remain compatible with the data.
 4. The reversal is a **swap between two good candidates**, not the promotion of a bad one: both chosen
    candidates have positive confirmed marginals within ~0.10 of each other.
 5. All three evaluated candidates are strongly **non-monotone** in the contracted objective: each
@@ -223,7 +242,14 @@ ordering only by an amount that is not established.
 
 **Not established — and these must not be written.**
 
-- That the state information is harmful.  At this configuration it is **refuted on the objective**.
+- **That the state information is harmful.**  Not demonstrated, and equally **not excluded**: the
+  interval leaves a state-method loss of up to 0.403 target nodes open.  Do not write "refuted", "no
+  cost", "harmless" or "equivalent".
+- That the state information is harmless.  The same interval leaves a static-method loss of up to 0.194
+  open.  "Not detected" is not "equivalent", and no equivalence test was run.
+- That either selection passes any quality gate.  No tolerance was applied to this interval, and the
+  fact that 0.403 is a small fraction of `|D| = 1048` is **not** used here as evidence of anything —
+  that would be a threshold chosen after seeing the result.
 - That the static score is better than the state score.  `+0.104` is not distinguishable from zero.
 - That the earlier `+0.44` / `+0.53` headroom figures were real.  The better-powered estimate is
   `+0.104`, inside noise; the honest reading of the earlier numbers is "unresolved", not "large".
@@ -247,7 +273,7 @@ ordering only by an amount that is not established.
 |---|---|
 | script | `scripts/audit/verify_grqc_rank_reversal.py` |
 | artifact | `docs/results/grqc_rank_reversal.json` |
-| frozen candidates | `docs/results/grqc_rank_reversal_candidates.json` (sha256 `4af578a5…`) |
+| frozen candidates | `docs/results/grqc_rank_reversal_candidates.json` (sha256 `86e8b36a…`) |
 | log | `docs/results/grqc_rank_reversal.log` |
 | code version | `d06f719` |
 | source artifact | `docs/results/shortlist_headroom.json` (code version `75b0635`) |

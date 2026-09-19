@@ -1,7 +1,7 @@
 {
   "script": "selection_budget_curve.py",
-  "code_version": "162163b",
-  "run_command": "python scripts\\audit\\selection_budget_curve.py",
+  "code_version": "ee50a7c",
+  "run_command": "python scripts\\audit\\selection_budget_curve.py --merge",
   "question": "does raising the selection budget improve which candidate is chosen?",
   "objective": "Delta(v|S) = |P_final(S u {v}) cap D| - |P_final(S) cap D|",
   "frozen": [
@@ -19,32 +19,43 @@
   },
   "tie_break": "highest selection-batch mean; ties broken by ascending node id",
   "stream_check": {
-    "streams_checked": 12,
-    "pairs_checked": 66,
+    "streams_checked": 20,
+    "pairs_checked": 190,
     "stream_lengths": {
       "orig_state": 1000,
       "orig_batch1": 1000,
       "orig_batch2": 1000,
       "orig_batch3": 6000,
+      "cfg0_hist_state": 1000,
+      "cfg0_hist_eval": 1000,
       "cfg0_select_10000": 10000,
       "cfg0_confirm_6000": 6000,
+      "cfg1_hist_state": 1000,
+      "cfg1_hist_eval": 1000,
       "cfg1_select_10000": 10000,
       "cfg1_confirm_6000": 6000,
+      "cfg2_hist_state": 1000,
+      "cfg2_hist_eval": 1000,
       "cfg2_select_10000": 10000,
       "cfg2_confirm_6000": 6000,
+      "cfg3_hist_state": 1000,
+      "cfg3_hist_eval": 1000,
       "cfg3_select_10000": 10000,
       "cfg3_confirm_6000": 6000
     },
     "budgets": {
       "selection": 10000,
       "confirmation": 6000,
+      "historical_state": 1000,
+      "historical_evaluation": 1000,
       "nested_prefixes": [
         1000,
         3000,
         10000
       ]
     },
-    "nested_prefixes_are_intentional": "the 1000- and 3000-trial selections are prefixes of the 10000-trial selection, which is what makes the three budget levels comparable on identical data",
+    "nested_prefixes_are_intentional": "the 1000- and 3000-trial selections are prefixes of the 10000-trial selection, which is what makes the three budget levels comparable on identical data; the 1000-trial selection stream is therefore counted once, inside the 10000-trial stream",
+    "historical_streams_included": "cfg{i}_hist_state and cfg{i}_hist_eval for all four configurations, which the first version of this check omitted",
     "overlapping_pairs": {},
     "disjoint": true
   },
@@ -59,15 +70,34 @@
   },
   "primary_comparison": {
     "definition": "full50 minus degree8 at budget 10000, paired per trial",
+    "family": "all four configurations; an exact same-choice tie enters the family as p = 1",
     "holm_over_configurations": {
       "method": "Holm-Bonferroni",
       "alpha": 0.05,
-      "comparisons": 1,
+      "comparisons": 4,
       "per_comparison": {
         "0": {
           "p_raw": 0.07667785949119121,
+          "factor": 4,
+          "p_adjusted": 0.30671143796476485,
+          "significant_at_0_05": false
+        },
+        "1": {
+          "p_raw": 1.0,
+          "factor": 3,
+          "p_adjusted": 1.0,
+          "significant_at_0_05": false
+        },
+        "2": {
+          "p_raw": 1.0,
+          "factor": 2,
+          "p_adjusted": 1.0,
+          "significant_at_0_05": false
+        },
+        "3": {
+          "p_raw": 1.0,
           "factor": 1,
-          "p_adjusted": 0.07667785949119121,
+          "p_adjusted": 1.0,
           "significant_at_0_05": false
         }
       }
@@ -75,7 +105,73 @@
   },
   "auxiliary_comparison": {
     "definition": "full50 at budget 10000 minus full50 at budget 1000, paired per trial",
-    "status": "EXPLORATORY; no multiplicity correction and no confirmatory claim"
+    "family": "all four configurations; an exact same-choice tie enters the family as p = 1",
+    "holm_over_configurations": {
+      "method": "Holm-Bonferroni",
+      "alpha": 0.05,
+      "comparisons": 4,
+      "per_comparison": {
+        "2": {
+          "p_raw": 0.00014491040612685246,
+          "factor": 4,
+          "p_adjusted": 0.0005796416245074099,
+          "significant_at_0_05": true
+        },
+        "0": {
+          "p_raw": 0.022236538715771026,
+          "factor": 3,
+          "p_adjusted": 0.06670961614731308,
+          "significant_at_0_05": false
+        },
+        "1": {
+          "p_raw": 0.676259994159661,
+          "factor": 2,
+          "p_adjusted": 1.0,
+          "significant_at_0_05": false
+        },
+        "3": {
+          "p_raw": 1.0,
+          "factor": 1,
+          "p_adjusted": 1.0,
+          "significant_at_0_05": false
+        }
+      }
+    },
+    "status": "EXPLORATORY; no confirmatory claim"
+  },
+  "cheap_baseline_for_future_work": {
+    "strategy": "degree8@3000",
+    "per_decision_cascades": 27000,
+    "why": "chosen FROM THESE RESULTS: it matched full50@10000's candidate in three of the four configurations and its gain was lower in the fourth by an amount whose interval still contains zero.  It is a working baseline, NOT an established optimum, and it has not been validated on any configuration other than these four.",
+    "status": "provisional; must be re-checked on new configurations before it is treated as a fixed reference"
+  },
+  "cost_levels": {
+    "1_method_decision_cost": {
+      "what": "cascades one decision costs, per strategy; this is what a deployed method pays",
+      "per_decision_cascades": {
+        "degree8@1000": 9000,
+        "degree8@3000": 27000,
+        "full50@3000": 153000,
+        "full50@10000": 510000
+      },
+      "note": "one base run per trial plus one run per candidate screened; a cascade count, not measured wall time"
+    },
+    "2_experimental_confirmation_cost": {
+      "what": "what THIS experiment spent on top of a single decision, to know whether the decision was any good",
+      "selection_cascades": 2040000,
+      "confirmation_cascades": 78000,
+      "confirmation_trial_candidate_pairs": 54000,
+      "confirmation_base_runs": 24000,
+      "counting_note": "the identity marginal = newly_positive - lost_positive is checked on 54,000 trial-candidate pairs; the confirmation COST is 78,000 cascades = those 54,000 candidate runs plus 24,000 base runs",
+      "total": 2118000
+    },
+    "3_interruption_overhead": {
+      "what": "compute spent and discarded when the connection dropped during the first attempt, before the workers were made resumable",
+      "estimated_cascades": 1770000,
+      "estimated_cpu_hours": 15,
+      "basis": "ESTIMATE, not a measurement: twelve workers had each reached roughly 2,900 of their 3,334 trials when the processes were killed (last observed checkpoints ranged 2,500-3,300), so about 12 x 2,900 x 51 cascades.  The first attempt's log files were overwritten by the second attempt, so this cannot be tightened retrospectively.",
+      "not_counted_in_total": "this is execution overhead, not part of the experiment's cost"
+    }
   },
   "configurations": [
     {
@@ -308,6 +404,97 @@
           "ci95_low": -0.31856389205852464,
           "ci95_high": 0.24756389205852466,
           "p_two_sided": 0.8058291387266716
+        }
+      },
+      "deployment_cost_and_quality": {
+        "degree8@1000": {
+          "budget": 1000,
+          "candidates_screened": 8,
+          "cascades_per_decision": 9000,
+          "chosen": 4960,
+          "confirmation": {
+            "mean": 0.542,
+            "sd": 8.278042663076938,
+            "se": 0.10686907124430493,
+            "n": 6000,
+            "ci95_low": 0.3325366203611624,
+            "ci95_high": 0.7514633796388377
+          }
+        },
+        "degree8@3000": {
+          "budget": 3000,
+          "candidates_screened": 8,
+          "cascades_per_decision": 27000,
+          "chosen": 4960,
+          "confirmation": {
+            "mean": 0.542,
+            "sd": 8.278042663076938,
+            "se": 0.10686907124430493,
+            "n": 6000,
+            "ci95_low": 0.3325366203611624,
+            "ci95_high": 0.7514633796388377
+          }
+        },
+        "full50@3000": {
+          "budget": 3000,
+          "candidates_screened": 50,
+          "cascades_per_decision": 153000,
+          "chosen": 9713,
+          "confirmation": {
+            "mean": 0.7843333333333333,
+            "sd": 9.437319449325656,
+            "se": 0.12183527020025874,
+            "n": 6000,
+            "ci95_low": 0.5455362037408262,
+            "ci95_high": 1.0231304629258404
+          }
+        },
+        "full50@10000": {
+          "budget": 10000,
+          "candidates_screened": 50,
+          "cascades_per_decision": 510000,
+          "chosen": 9713,
+          "confirmation": {
+            "mean": 0.7843333333333333,
+            "sd": 9.437319449325656,
+            "se": 0.12183527020025874,
+            "n": 6000,
+            "ci95_low": 0.5455362037408262,
+            "ci95_high": 1.0231304629258404
+          }
+        }
+      },
+      "core_comparison": {
+        "cheap": "degree8@3000",
+        "expensive": "full50@10000",
+        "cheap_cascades": 27000,
+        "expensive_cascades": 510000,
+        "cascades_saved": 483000,
+        "cascades_saved_fraction": 0.9470588235294117,
+        "simulation_reduction_note": "this is a reduction in the NUMBER OF CASCADES, not a measured speed-up, and it excludes the independent confirmation that exists only to evaluate the decision",
+        "same_choice": false,
+        "gain_difference": {
+          "mean": 0.24233333333333335,
+          "sd": 12.31731412525064,
+          "se": 0.15901584159033702,
+          "n": 6000,
+          "ci95_low": -0.0693377161837272,
+          "ci95_high": 0.5540043828503939,
+          "p_two_sided": 0.1275194084423772,
+          "same_choice": false,
+          "definition": "expensive minus cheap"
+        }
+      },
+      "budget_3000_versus_10000": {
+        "full50": {
+          "at_3000": 9713,
+          "at_10000": 9713,
+          "identical": true
+        },
+        "degree8": {
+          "at_3000": 4960,
+          "at_10000": 7811,
+          "identical": false
         }
       },
       "per_candidate_confirmation": {
@@ -579,6 +766,91 @@
           "note": "the higher budget selected the same candidate; there is no budget effect to measure"
         }
       },
+      "deployment_cost_and_quality": {
+        "degree8@1000": {
+          "budget": 1000,
+          "candidates_screened": 8,
+          "cascades_per_decision": 9000,
+          "chosen": 3718,
+          "confirmation": {
+            "mean": 0.6693333333333333,
+            "sd": 7.937705005164511,
+            "se": 0.10247533097369803,
+            "n": 6000,
+            "ci95_low": 0.4684816846248852,
+            "ci95_high": 0.8701849820417815
+          }
+        },
+        "degree8@3000": {
+          "budget": 3000,
+          "candidates_screened": 8,
+          "cascades_per_decision": 27000,
+          "chosen": 3718,
+          "confirmation": {
+            "mean": 0.6693333333333333,
+            "sd": 7.937705005164511,
+            "se": 0.10247533097369803,
+            "n": 6000,
+            "ci95_low": 0.4684816846248852,
+            "ci95_high": 0.8701849820417815
+          }
+        },
+        "full50@3000": {
+          "budget": 3000,
+          "candidates_screened": 50,
+          "cascades_per_decision": 153000,
+          "chosen": 3718,
+          "confirmation": {
+            "mean": 0.6693333333333333,
+            "sd": 7.937705005164511,
+            "se": 0.10247533097369803,
+            "n": 6000,
+            "ci95_low": 0.4684816846248852,
+            "ci95_high": 0.8701849820417815
+          }
+        },
+        "full50@10000": {
+          "budget": 10000,
+          "candidates_screened": 50,
+          "cascades_per_decision": 510000,
+          "chosen": 3718,
+          "confirmation": {
+            "mean": 0.6693333333333333,
+            "sd": 7.937705005164511,
+            "se": 0.10247533097369803,
+            "n": 6000,
+            "ci95_low": 0.4684816846248852,
+            "ci95_high": 0.8701849820417815
+          }
+        }
+      },
+      "core_comparison": {
+        "cheap": "degree8@3000",
+        "expensive": "full50@10000",
+        "cheap_cascades": 27000,
+        "expensive_cascades": 510000,
+        "cascades_saved": 483000,
+        "cascades_saved_fraction": 0.9470588235294117,
+        "simulation_reduction_note": "this is a reduction in the NUMBER OF CASCADES, not a measured speed-up, and it excludes the independent confirmation that exists only to evaluate the decision",
+        "same_choice": true,
+        "gain_difference": {
+          "same_choice": true,
+          "chosen": 3718,
+          "note": "both strategies selected the SAME candidate, so this decision's gain is identical; that is not evidence that the strategies are equivalent"
+        }
+      },
+      "budget_3000_versus_10000": {
+        "full50": {
+          "at_3000": 3718,
+          "at_10000": 3718,
+          "identical": true
+        },
+        "degree8": {
+          "at_3000": 3718,
+          "at_10000": 3718,
+          "identical": true
+        }
+      },
       "per_candidate_confirmation": {
         "11640": {
           "marginal": {
@@ -823,6 +1095,91 @@
           "p_two_sided": 0.00014491040612685246
         }
       },
+      "deployment_cost_and_quality": {
+        "degree8@1000": {
+          "budget": 1000,
+          "candidates_screened": 8,
+          "cascades_per_decision": 9000,
+          "chosen": 839,
+          "confirmation": {
+            "mean": 0.6156666666666667,
+            "sd": 5.915357396732458,
+            "se": 0.0763669356146989,
+            "n": 6000,
+            "ci95_low": 0.4659874728618568,
+            "ci95_high": 0.7653458604714766
+          }
+        },
+        "degree8@3000": {
+          "budget": 3000,
+          "candidates_screened": 8,
+          "cascades_per_decision": 27000,
+          "chosen": 4960,
+          "confirmation": {
+            "mean": 1.2638333333333334,
+            "sd": 11.892622266891046,
+            "se": 0.15353309327468173,
+            "n": 6000,
+            "ci95_low": 0.9629084705149571,
+            "ci95_high": 1.5647581961517096
+          }
+        },
+        "full50@3000": {
+          "budget": 3000,
+          "candidates_screened": 50,
+          "cascades_per_decision": 153000,
+          "chosen": 4960,
+          "confirmation": {
+            "mean": 1.2638333333333334,
+            "sd": 11.892622266891046,
+            "se": 0.15353309327468173,
+            "n": 6000,
+            "ci95_low": 0.9629084705149571,
+            "ci95_high": 1.5647581961517096
+          }
+        },
+        "full50@10000": {
+          "budget": 10000,
+          "candidates_screened": 50,
+          "cascades_per_decision": 510000,
+          "chosen": 4960,
+          "confirmation": {
+            "mean": 1.2638333333333334,
+            "sd": 11.892622266891046,
+            "se": 0.15353309327468173,
+            "n": 6000,
+            "ci95_low": 0.9629084705149571,
+            "ci95_high": 1.5647581961517096
+          }
+        }
+      },
+      "core_comparison": {
+        "cheap": "degree8@3000",
+        "expensive": "full50@10000",
+        "cheap_cascades": 27000,
+        "expensive_cascades": 510000,
+        "cascades_saved": 483000,
+        "cascades_saved_fraction": 0.9470588235294117,
+        "simulation_reduction_note": "this is a reduction in the NUMBER OF CASCADES, not a measured speed-up, and it excludes the independent confirmation that exists only to evaluate the decision",
+        "same_choice": true,
+        "gain_difference": {
+          "same_choice": true,
+          "chosen": 4960,
+          "note": "both strategies selected the SAME candidate, so this decision's gain is identical; that is not evidence that the strategies are equivalent"
+        }
+      },
+      "budget_3000_versus_10000": {
+        "full50": {
+          "at_3000": 4960,
+          "at_10000": 4960,
+          "identical": true
+        },
+        "degree8": {
+          "at_3000": 4960,
+          "at_10000": 4960,
+          "identical": true
+        }
+      },
       "per_candidate_confirmation": {
         "839": {
           "marginal": {
@@ -1052,6 +1409,91 @@
           "to_candidate": 5840,
           "same_choice": true,
           "note": "the higher budget selected the same candidate; there is no budget effect to measure"
+        }
+      },
+      "deployment_cost_and_quality": {
+        "degree8@1000": {
+          "budget": 1000,
+          "candidates_screened": 8,
+          "cascades_per_decision": 9000,
+          "chosen": 5840,
+          "confirmation": {
+            "mean": 0.75,
+            "sd": 7.922602346324702,
+            "se": 0.10228035648646458,
+            "n": 6000,
+            "ci95_low": 0.5495305012865295,
+            "ci95_high": 0.9504694987134705
+          }
+        },
+        "degree8@3000": {
+          "budget": 3000,
+          "candidates_screened": 8,
+          "cascades_per_decision": 27000,
+          "chosen": 5840,
+          "confirmation": {
+            "mean": 0.75,
+            "sd": 7.922602346324702,
+            "se": 0.10228035648646458,
+            "n": 6000,
+            "ci95_low": 0.5495305012865295,
+            "ci95_high": 0.9504694987134705
+          }
+        },
+        "full50@3000": {
+          "budget": 3000,
+          "candidates_screened": 50,
+          "cascades_per_decision": 153000,
+          "chosen": 5840,
+          "confirmation": {
+            "mean": 0.75,
+            "sd": 7.922602346324702,
+            "se": 0.10228035648646458,
+            "n": 6000,
+            "ci95_low": 0.5495305012865295,
+            "ci95_high": 0.9504694987134705
+          }
+        },
+        "full50@10000": {
+          "budget": 10000,
+          "candidates_screened": 50,
+          "cascades_per_decision": 510000,
+          "chosen": 5840,
+          "confirmation": {
+            "mean": 0.75,
+            "sd": 7.922602346324702,
+            "se": 0.10228035648646458,
+            "n": 6000,
+            "ci95_low": 0.5495305012865295,
+            "ci95_high": 0.9504694987134705
+          }
+        }
+      },
+      "core_comparison": {
+        "cheap": "degree8@3000",
+        "expensive": "full50@10000",
+        "cheap_cascades": 27000,
+        "expensive_cascades": 510000,
+        "cascades_saved": 483000,
+        "cascades_saved_fraction": 0.9470588235294117,
+        "simulation_reduction_note": "this is a reduction in the NUMBER OF CASCADES, not a measured speed-up, and it excludes the independent confirmation that exists only to evaluate the decision",
+        "same_choice": true,
+        "gain_difference": {
+          "same_choice": true,
+          "chosen": 5840,
+          "note": "both strategies selected the SAME candidate, so this decision's gain is identical; that is not evidence that the strategies are equivalent"
+        }
+      },
+      "budget_3000_versus_10000": {
+        "full50": {
+          "at_3000": 5840,
+          "at_10000": 5840,
+          "identical": true
+        },
+        "degree8": {
+          "at_3000": 5840,
+          "at_10000": 5840,
+          "identical": true
         }
       },
       "per_candidate_confirmation": {

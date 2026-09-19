@@ -95,6 +95,27 @@ ORIGINAL_CONFIRM_TRIALS = 6000
 #: one sequential run; the boundaries are fixed here and recorded in the artifact.
 CHUNKS = ((0, 3334), (3334, 6668), (6668, 10000))
 
+#: The four configurations' HISTORICAL streams, from ``verify_grqc_new_states.py``.  The first version
+#: of this check omitted them, so the new confirmation stream was never compared against the state and
+#: evaluation streams that already existed on disk.  ``cfg{i}_select_1000`` is deliberately NOT listed
+#: again: it is a prefix of ``cfg{i}_select_10000``, which is already checked.
+HIST_STATE_NS = 900_000
+HIST_EVAL_NS = 1_300_000
+HIST_TRIALS = 1000
+
+#: One decision's simulation cost: one base run per trial plus one run per candidate screened.
+#: This is a COUNT of cascades, not measured wall time, and it excludes the independent confirmation
+#: that exists only to evaluate the decision.
+DEPLOYMENT_STRATEGIES = {
+    "degree8@1000": {"budget": 1000, "candidates_screened": 8},
+    "degree8@3000": {"budget": 3000, "candidates_screened": 8},
+    "full50@3000": {"budget": 3000, "candidates_screened": 50},
+    "full50@10000": {"budget": 10000, "candidates_screened": 50},
+}
+#: The comparison the next stage has to beat.
+CHEAP_BASELINE = "degree8@3000"
+EXPENSIVE_REFERENCE = "full50@10000"
+
 SOURCE_CONFIG = ROOT / "docs" / "results" / "grqc_new_states_cfg{index}.json"
 #: The degree top-8 lives in the frozen-choices file, not in the per-configuration artifact.
 SOURCE_CHOICES = ROOT / "docs" / "results" / "grqc_new_states_choices_cfg{index}.json"
@@ -159,15 +180,21 @@ def holm(pairs: dict[str, float], alpha: float = 0.05) -> dict:
 def stream_overlap_check() -> dict:
     """Every stream this experiment touches, at its ACTUAL length, pairwise.
 
-    The old check assumed 1000 trials for every stream and never examined the last 5000 seeds of the
-    original 6000-trial confirmation stream.  Budgets within the selection purpose share a prefix by
-    design; anything else overlapping would be a fault.
+    Twenty streams: the original configuration's four, the four new configurations' historical state
+    and evaluation streams (eight), and the selection and confirmation streams this experiment adds
+    (eight).  The historical state and evaluation streams were missing from the first version of this
+    check, so the new confirmation stream had never been compared against them.
+
+    Budgets within the selection purpose share a prefix by design and are counted once; anything else
+    overlapping would be a fault.
     """
     streams: dict[str, set[int]] = {}
     for name, ns in ORIGINAL_NS.items():
         n = ORIGINAL_CONFIRM_TRIALS if name == "batch3" else 1000
         streams[f"orig_{name}"] = set(trial_seeds(ORIGINAL_SEED + ns, n))
     for i, seed in enumerate(NEW_SEEDS):
+        streams[f"cfg{i}_hist_state"] = set(trial_seeds(seed + HIST_STATE_NS, HIST_TRIALS))
+        streams[f"cfg{i}_hist_eval"] = set(trial_seeds(seed + HIST_EVAL_NS, HIST_TRIALS))
         streams[f"cfg{i}_select_10000"] = set(trial_seeds(seed + SELECT_NS, MAX_TRIALS))
         streams[f"cfg{i}_confirm_6000"] = set(trial_seeds(seed + CONFIRM_NS, CONFIRM_TRIALS))
     names = sorted(streams)
@@ -175,13 +202,18 @@ def stream_overlap_check() -> dict:
                 for i, a in enumerate(names) for b in names[i + 1:]}
     bad = {k: v for k, v in overlaps.items() if v}
     return {
-        "streams_checked": len(names), "pairs_checked": len(overlaps),
+        "streams_checked": len(streams), "pairs_checked": len(overlaps),
         "stream_lengths": {n: len(s) for n, s in streams.items()},
         "budgets": {"selection": MAX_TRIALS, "confirmation": CONFIRM_TRIALS,
+                    "historical_state": HIST_TRIALS, "historical_evaluation": HIST_TRIALS,
                     "nested_prefixes": list(BUDGETS)},
         "nested_prefixes_are_intentional":
             "the 1000- and 3000-trial selections are prefixes of the 10000-trial selection, which is "
-            "what makes the three budget levels comparable on identical data",
+            "what makes the three budget levels comparable on identical data; the 1000-trial "
+            "selection stream is therefore counted once, inside the 10000-trial stream",
+        "historical_streams_included":
+            "cfg{i}_hist_state and cfg{i}_hist_eval for all four configurations, which the first "
+            "version of this check omitted",
         "overlapping_pairs": bad, "disjoint": not bad,
     }
 
@@ -494,7 +526,7 @@ def confirm(index: int, trials: int) -> int:
 
 
 def merge() -> int:
-    blocks, holm_inputs = [], {}
+    blocks, primary_p, auxiliary_p = [], {}, {}
     for index in range(len(NEW_SEEDS)):
         frozen = json.loads(CHOICES.with_name(CHOICES.name.format(index=index))
                             .read_text(encoding="utf-8"))
@@ -537,8 +569,12 @@ def merge() -> int:
                     paired(per[f]["marginal"], per[d]["marginal"]), same_choice=False)
             rows.append(row)
         primary = next(r for r in rows if r["budget"] == max(BUDGETS))
-        if not primary["same_choice"]:
-            holm_inputs[str(index)] = primary["difference_full50_minus_degree8"]["p_two_sided"]
+        # The pre-registered family is ALL FOUR CONFIGURATIONS.  A same-choice tie is not a missing
+        # test, it is a contrast that came out exactly zero, so it enters the family conservatively as
+        # p = 1.  The first version dropped ties and corrected over the one surviving test, which
+        # produced 0.077 and was not the agreed family.
+        primary_p[str(index)] = (1.0 if primary["same_choice"]
+                                 else primary["difference_full50_minus_degree8"]["p_two_sided"])
 
         budget_effects = {}
         for method in METHODS:
@@ -554,6 +590,51 @@ def merge() -> int:
             else:
                 budget_effects[method]["note"] = ("the higher budget selected the same candidate; "
                                                   "there is no budget effect to measure")
+        # auxiliary family: full50 at 10000 minus full50 at 1000, again over all four configurations
+        e = budget_effects["full50"]
+        auxiliary_p[str(index)] = 1.0 if e["same_choice"] else e["p_two_sided"]
+
+        # ---- deployment cost and quality, per strategy, from THIS configuration's confirmation ----
+        deployment = {}
+        for name, spec in DEPLOYMENT_STRATEGIES.items():
+            method = "degree8" if name.startswith("degree8") else "full50"
+            chosen = sel[f"{method}@{spec['budget']}"]["chosen"]
+            deployment[name] = {
+                "budget": spec["budget"],
+                "candidates_screened": spec["candidates_screened"],
+                "cascades_per_decision": spec["budget"] * (1 + spec["candidates_screened"]),
+                "chosen": chosen,
+                "confirmation": describe(per[chosen]["marginal"]),
+            }
+        cheap, dear = deployment[CHEAP_BASELINE], deployment[EXPENSIVE_REFERENCE]
+        core = {
+            "cheap": CHEAP_BASELINE, "expensive": EXPENSIVE_REFERENCE,
+            "cheap_cascades": cheap["cascades_per_decision"],
+            "expensive_cascades": dear["cascades_per_decision"],
+            "cascades_saved": dear["cascades_per_decision"] - cheap["cascades_per_decision"],
+            "cascades_saved_fraction":
+                1.0 - cheap["cascades_per_decision"] / dear["cascades_per_decision"],
+            "simulation_reduction_note":
+                "this is a reduction in the NUMBER OF CASCADES, not a measured speed-up, and it "
+                "excludes the independent confirmation that exists only to evaluate the decision",
+            "same_choice": cheap["chosen"] == dear["chosen"],
+        }
+        if core["same_choice"]:
+            core["gain_difference"] = {
+                "same_choice": True, "chosen": cheap["chosen"],
+                "note": "both strategies selected the SAME candidate, so this decision's gain is "
+                        "identical; that is not evidence that the strategies are equivalent"}
+        else:
+            core["gain_difference"] = dict(
+                paired(per[dear["chosen"]]["marginal"], per[cheap["chosen"]]["marginal"]),
+                same_choice=False, definition="expensive minus cheap")
+
+        budget_3000_vs_10000 = {
+            method: {"at_3000": sel[f"{method}@3000"]["chosen"],
+                     "at_10000": sel[f"{method}@10000"]["chosen"],
+                     "identical": sel[f"{method}@3000"]["chosen"] == sel[f"{method}@10000"]["chosen"]}
+            for method in METHODS
+        }
 
         blocks.append({
             "configuration": index, "random_seed": NEW_SEEDS[index],
@@ -570,6 +651,9 @@ def merge() -> int:
             "confirmation_base_counts": describe(conf["base_counts"]),
             "rows": rows,
             "budget_effect": budget_effects,
+            "deployment_cost_and_quality": deployment,
+            "core_comparison": core,
+            "budget_3000_versus_10000": budget_3000_vs_10000,
             "per_candidate_confirmation": {
                 str(c): {"marginal": describe(per[c]["marginal"]),
                          "newly_positive_mean": sum(per[c]["newly_positive"]) / conf["trials"],
@@ -581,11 +665,50 @@ def merge() -> int:
                 for c in order},
         })
 
-    multiplicity = holm(holm_inputs) if holm_inputs else {
-        "method": "Holm-Bonferroni", "note": "every configuration's primary contrast was a same-choice "
-                                             "tie, so there was nothing to correct"}
+    multiplicity = holm(primary_p)
+    auxiliary_multiplicity = holm(auxiliary_p)
     sel_total = sum(r["selection_cascades"] for b in blocks for r in b["rows"] if r["budget"] == max(BUDGETS))
     conf_total = sum(b["confirmation_cascades"] for b in blocks)
+    trial_candidate_pairs = sum(b["confirmation_trials"] * len(b["confirmation_candidates"])
+                                for b in blocks)
+    base_runs = sum(b["confirmation_trials"] for b in blocks)
+
+    # three levels of cost, kept apart because they answer different questions
+    decision_cost = {name: spec["budget"] * (1 + spec["candidates_screened"])
+                     for name, spec in DEPLOYMENT_STRATEGIES.items()}
+    cost_levels = {
+        "1_method_decision_cost": {
+            "what": "cascades one decision costs, per strategy; this is what a deployed method pays",
+            "per_decision_cascades": decision_cost,
+            "note": "one base run per trial plus one run per candidate screened; a cascade count, not "
+                    "measured wall time",
+        },
+        "2_experimental_confirmation_cost": {
+            "what": "what THIS experiment spent on top of a single decision, to know whether the "
+                    "decision was any good",
+            "selection_cascades": sel_total,
+            "confirmation_cascades": conf_total,
+            "confirmation_trial_candidate_pairs": trial_candidate_pairs,
+            "confirmation_base_runs": base_runs,
+            "counting_note": "the identity marginal = newly_positive - lost_positive is checked on "
+                             f"{trial_candidate_pairs:,} trial-candidate pairs; the confirmation "
+                             f"COST is {conf_total:,} cascades = those {trial_candidate_pairs:,} "
+                             f"candidate runs plus {base_runs:,} base runs",
+            "total": sel_total + conf_total,
+        },
+        "3_interruption_overhead": {
+            "what": "compute spent and discarded when the connection dropped during the first "
+                    "attempt, before the workers were made resumable",
+            "estimated_cascades": 1_770_000,
+            "estimated_cpu_hours": 15,
+            "basis": "ESTIMATE, not a measurement: twelve workers had each reached roughly 2,900 of "
+                     "their 3,334 trials when the processes were killed (last observed checkpoints "
+                     "ranged 2,500-3,300), so about 12 x 2,900 x 51 cascades.  The first attempt's "
+                     "log files were overwritten by the second attempt, so this cannot be tightened "
+                     "retrospectively.",
+            "not_counted_in_total": "this is execution overhead, not part of the experiment's cost",
+        },
+    }
 
     artifact = {
         "script": Path(__file__).name, "code_version": code_version(),
@@ -607,11 +730,27 @@ def merge() -> int:
                          "selection_cascades_total": sel_total,
                          "confirmation_cascades_total": conf_total,
                          "total_cascades": sel_total + conf_total},
-        "primary_comparison": {"definition": "full50 minus degree8 at budget 10000, paired per trial",
-                               "holm_over_configurations": multiplicity},
+        "primary_comparison": {
+            "definition": "full50 minus degree8 at budget 10000, paired per trial",
+            "family": "all four configurations; an exact same-choice tie enters the family as p = 1",
+            "holm_over_configurations": multiplicity},
         "auxiliary_comparison": {
             "definition": "full50 at budget 10000 minus full50 at budget 1000, paired per trial",
-            "status": "EXPLORATORY; no multiplicity correction and no confirmatory claim"},
+            "family": "all four configurations; an exact same-choice tie enters the family as p = 1",
+            "holm_over_configurations": auxiliary_multiplicity,
+            "status": "EXPLORATORY; no confirmatory claim"},
+        "cheap_baseline_for_future_work": {
+            "strategy": CHEAP_BASELINE,
+            "per_decision_cascades": decision_cost[CHEAP_BASELINE],
+            "why": "chosen FROM THESE RESULTS: it matched full50@10000's candidate in three of the "
+                   "four configurations and its gain was lower in the fourth by an amount whose "
+                   "interval still contains zero.  It is a working baseline, NOT an established "
+                   "optimum, and it has not been validated on any configuration other than these "
+                   "four.",
+            "status": "provisional; must be re-checked on new configurations before it is treated as "
+                      "a fixed reference",
+        },
+        "cost_levels": cost_levels,
         "configurations": blocks,
         "no_pooling": "the four configurations are separate states; nothing is averaged across them",
         "complete": all(b["rows"] for b in blocks),
@@ -654,10 +793,10 @@ def merge() -> int:
             print(f"    cfg{b['configuration']}  {r['full50_candidate']} - {r['degree8_candidate']} "
                   f"= {x['mean']:+.3f} +-{x['se']:.3f} [{x['ci95_low']:+.3f}, {x['ci95_high']:+.3f}]"
                   f"  p={x['p_two_sided']:.3f}")
+    print(f"    family = all four configurations, a same-choice tie entered as p = 1")
     print(f"    {multiplicity.get('method', '')}: "
-          + (json.dumps({k: round(v["p_adjusted"], 3)
-                         for k, v in multiplicity.get("per_comparison", {}).items()})
-             if "per_comparison" in multiplicity else multiplicity.get("note", "")))
+          + json.dumps({k: round(v["p_adjusted"], 4)
+                        for k, v in multiplicity.get("per_comparison", {}).items()}))
     print()
     print("  AUXILIARY (exploratory): full50 at 10000 minus full50 at 1000")
     for b in blocks:
@@ -668,6 +807,45 @@ def merge() -> int:
             print(f"    cfg{b['configuration']}  {e['to_candidate']} - {e['from_candidate']} "
                   f"= {e['mean']:+.3f} +-{e['se']:.3f} [{e['ci95_low']:+.3f}, {e['ci95_high']:+.3f}]"
                   f"  p={e['p_two_sided']:.3f}")
+    print(f"    family = all four configurations, a same-choice tie entered as p = 1")
+    print(f"    {auxiliary_multiplicity.get('method', '')}: "
+          + json.dumps({k: round(v["p_adjusted"], 5)
+                        for k, v in auxiliary_multiplicity.get("per_comparison", {}).items()}))
+    print()
+    print("  BUDGET 3000 VERSUS 10000")
+    for b in blocks:
+        for method, v in b["budget_3000_versus_10000"].items():
+            print(f"    cfg{b['configuration']} {method:<8} @3000={v['at_3000']:<7} "
+                  f"@10000={v['at_10000']:<7} identical={v['identical']}")
+    print()
+    print("  DEPLOYMENT COST AND QUALITY  (cascades per decision, then this run's confirmation)")
+    print(f"    {'cfg':>3}  " + "  ".join(f"{n:>24}" for n in DEPLOYMENT_STRATEGIES))
+    for b in blocks:
+        cells = []
+        for name in DEPLOYMENT_STRATEGIES:
+            d = b["deployment_cost_and_quality"][name]
+            cells.append(f"{d['chosen']:>7} {d['confirmation']['mean']:>6.3f} {d['cascades_per_decision']:>9,}")
+        print(f"    {b['configuration']:>3}  " + "  ".join(cells))
+    print()
+    print(f"  CORE COMPARISON: {CHEAP_BASELINE} (cheap) versus {EXPENSIVE_REFERENCE} (expensive)")
+    for b in blocks:
+        c = b["core_comparison"]
+        if c["same_choice"]:
+            print(f"    cfg{b['configuration']}  same choice ({c['gain_difference']['chosen']}); "
+                  f"saves {c['cascades_saved']:,} cascades "
+                  f"({c['cascades_saved_fraction']*100:.1f}%)")
+        else:
+            g = c["gain_difference"]
+            print(f"    cfg{b['configuration']}  saves {c['cascades_saved']:,} cascades "
+                  f"({c['cascades_saved_fraction']*100:.1f}%);  gain difference "
+                  f"(expensive - cheap) = {g['mean']:+.3f} "
+                  f"[{g['ci95_low']:+.3f}, {g['ci95_high']:+.3f}]")
+    print()
+    print(f"  cost levels: decision {decision_cost} | experiment "
+          f"{cost_levels['2_experimental_confirmation_cost']['total']:,} | "
+          f"interruption overhead ~{cost_levels['3_interruption_overhead']['estimated_cascades']:,} "
+          f"(estimate, excluded from the total)")
+    print(f"  provisional cheap baseline for future work: {CHEAP_BASELINE}")
     print()
     print(f"  wrote {OUTPUT}")
     return 0

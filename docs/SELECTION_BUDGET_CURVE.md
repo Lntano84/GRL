@@ -4,12 +4,12 @@
 > Budgets 1000 / 3000 / 10000 trials per candidate, two selection methods, a new 6000-trial independent
 > confirmation.  Nothing here is pooled across configurations, and no "refuted" / "equivalent" /
 > "no effect" language is used: where an interval contains zero the result is recorded as *not
-> detected*, with the family of tests it belongs to stated.
+> detected*, together with the family of tests it belongs to.
 >
 > **Design note.**  An earlier attempt at this run was lost when the connection dropped: the workers
-> wrote their output only at the end, so ~1080 CPU-minutes vanished with nothing on disk.  The workers
-> are now checkpointed every 200 trials and resume exactly; the resume path is tested (`RESUME IS
-> EXACT: True`, and a mismatched file is refused rather than reused).
+> wrote their output only at the end, so ~1.77M cascades of compute vanished with nothing on disk
+> (§9).  The workers are now checkpointed every 200 trials and resume exactly; the resume path is
+> tested (`RESUME IS EXACT: True`, and a mismatched file is refused rather than reused).
 
 ---
 
@@ -32,7 +32,7 @@ whether the original gap was selection noise.
 | the four configurations' `S`, 50 candidates, and candidate order | read from `grqc_new_states_cfg{0..3}.json`, never regenerated |
 | target set `D` | the same `D`, verified equal to the stored set |
 | diffusion parameters, weight handling | unchanged |
-| the `degree` top-8 | read from `grqc_new_states_choices_cfg{0..3}.json`, and re-derived only to check it |
+| the `degree` top-8 | read from `grqc_new_states_choices_cfg{0..3}.json`, re-derived only to check it |
 | state estimation | not re-run; no method here uses the state score |
 | model training | none |
 
@@ -54,10 +54,22 @@ candidates):
 
 Ties break by ascending node id, fixed in advance and never adjusted to a result.
 
+**Streams.**  Twenty streams are involved: the original configuration's four, the four new
+configurations' historical state and evaluation streams (eight, which the first version of the check
+omitted), and this experiment's selection and confirmation streams (eight).  All **190 pairs** were
+checked at their actual lengths, before the run:
+
+```
+{"streams_checked": 20, "pairs_checked": 190, "overlapping_pairs": {}, "disjoint": true}
+```
+
+The 1000-trial selection stream is deliberately **not** counted again: it is a prefix of the
+10000-trial selection stream, which is already checked.
+
 ## 3. Reproduction: the stored 1000-trial selections come back exactly
 
-The first 1000 trials of the new stream are the stored selection batch, so recomputing them is a direct
-check of the stream and of the candidate order that decides how the activation coin flips are consumed:
+The first 1000 trials of the new stream are the stored selection batch, so recomputing them directly
+checks the stream and the candidate order that decides how the activation coin flips are consumed:
 
 | configuration | max abs difference, 50 candidates × 1000 trials | `full50@1000` = stored MC reference | `degree8@1000` = stored degree choice |
 |---|---|---|---|
@@ -66,53 +78,65 @@ check of the stream and of the candidate order that decides how the activation c
 | cfg2 | **0.0** | yes | yes |
 | cfg3 | **0.0** | yes | yes |
 
-(`marginal = newly_positive − lost_positive` also holds on every one of the 78,000 confirmation
-trial-candidate pairs.)
+## 4. The finding worth keeping: 3000 and 10000 give the same `full50` choice
 
-## 4. The twelve-row table
+| configuration | `full50@3000` | `full50@10000` | identical? |
+|---|---|---|---|
+| cfg0 | 9713 | 9713 | **yes** |
+| cfg1 | 3718 | 3718 | **yes** |
+| cfg2 | 4960 | 4960 | **yes** |
+| cfg3 | 5840 | 5840 | **yes** |
 
-Candidates and their **independent 6000-trial confirmation marginal**, paired within a trial:
+In **all four** measured configurations, tripling the `full50` selection budget from 3000 to 10000 did
+**not change the selected candidate**.  `degree8@3000` selected the same candidate as `full50@10000` in
+**three of the four** (cfg1, cfg2, cfg3; cfg0 differs).
 
-| configuration | budget | full50 candidate / gain / 95% CI | degree8 candidate / gain / 95% CI | paired difference full50 − degree8 | selection cascades |
-|---|---|---|---|---|---|
-| cfg0 | 1000 | 19244 / 0.456 [+0.285, +0.628] | 4960 / 0.542 [+0.333, +0.751] | −0.086 [−0.352, +0.181] | 51,000 |
-| cfg0 | 3000 | 9713 / 0.784 [+0.546, +1.023] | 4960 / 0.542 [+0.333, +0.751] | +0.242 [−0.069, +0.554] | 153,000 |
-| cfg0 | 10000 | 9713 / 0.784 [+0.546, +1.023] | 7811 / 0.506 [+0.300, +0.713] | **+0.278 [−0.030, +0.585]** | 510,000 |
-| cfg1 | 1000 | 11640 / 0.731 [+0.501, +0.961] | 3718 / 0.669 [+0.468, +0.870] | +0.062 [−0.228, +0.351] | 51,000 |
-| cfg1 | 3000 | 3718 / 0.669 | 3718 / 0.669 | **same choice** | 153,000 |
-| cfg1 | 10000 | 3718 / 0.669 | 3718 / 0.669 | **same choice** | 510,000 |
-| cfg2 | 1000 | 839 / 0.616 [+0.466, +0.765] | 839 / 0.616 | **same choice** | 51,000 |
-| cfg2 | 3000 | 4960 / 1.264 [+0.963, +1.565] | 4960 / 1.264 | **same choice** | 153,000 |
-| cfg2 | 10000 | 4960 / 1.264 [+0.963, +1.565] | 4960 / 1.264 | **same choice** | 510,000 |
-| cfg3 | 1000 | 5840 / 0.750 [+0.550, +0.950] | 5840 / 0.750 | **same choice** | 51,000 |
-| cfg3 | 3000 | 5840 / 0.750 | 5840 / 0.750 | **same choice** | 153,000 |
-| cfg3 | 10000 | 5840 / 0.750 | 5840 / 0.750 | **same choice** | 510,000 |
+This is the sharpest result of the run and it is a statement about **these four configurations
+only**.  It must not be extrapolated to "3000 trials is generally enough": nothing here varies the
+graph, the target set, the seed fraction or the pool size.  It is also specific to `full50` --- for
+`degree8` the two budgets disagree in cfg0 (4960 → 7811).
+
+## 5. The twelve-row table
+
+Candidates and their **independent 6000-trial confirmation marginal**:
+
+| configuration | budget | full50 candidate / gain / 95% CI | degree8 candidate / gain / 95% CI | paired difference full50 − degree8 |
+|---|---|---|---|---|
+| cfg0 | 1000 | 19244 / 0.456 [+0.285, +0.628] | 4960 / 0.542 [+0.333, +0.751] | −0.086 [−0.352, +0.181] |
+| cfg0 | 3000 | 9713 / 0.784 [+0.546, +1.023] | 4960 / 0.542 [+0.333, +0.751] | +0.242 [−0.069, +0.554] |
+| cfg0 | 10000 | 9713 / 0.784 [+0.546, +1.023] | 7811 / 0.506 [+0.300, +0.713] | **+0.278 [−0.030, +0.585]** |
+| cfg1 | 1000 | 11640 / 0.731 [+0.501, +0.961] | 3718 / 0.669 [+0.468, +0.870] | +0.062 [−0.228, +0.351] |
+| cfg1 | 3000 | 3718 / 0.669 | 3718 / 0.669 | **same choice** |
+| cfg1 | 10000 | 3718 / 0.669 | 3718 / 0.669 | **same choice** |
+| cfg2 | 1000 | 839 / 0.616 [+0.466, +0.765] | 839 / 0.616 | **same choice** |
+| cfg2 | 3000 | 4960 / 1.264 [+0.963, +1.565] | 4960 / 1.264 | **same choice** |
+| cfg2 | 10000 | 4960 / 1.264 [+0.963, +1.565] | 4960 / 1.264 | **same choice** |
+| cfg3 | 1000 | 5840 / 0.750 [+0.550, +0.950] | 5840 / 0.750 | **same choice** |
+| cfg3 | 3000 | 5840 / 0.750 | 5840 / 0.750 | **same choice** |
+| cfg3 | 10000 | 5840 / 0.750 | 5840 / 0.750 | **same choice** |
 
 "Same choice" means both methods selected the same candidate at that budget: the contrast is exactly
-zero by construction and is **not** evidence that the methods agree.  Selection cascades are
-`budget × 51` (one base run plus 50 candidates) and are **shared by both methods**, because they read
-the same paired data; the 10000-trial run subsumes the smaller budgets, so the actual selection cost is
-4 × 510,000 = 2,040,000, not the sum of the column.
+zero by construction and is **not** evidence that the methods agree.
 
-## 5. Primary comparison: full50 versus degree8 at budget 10000
+## 6. Primary comparison: full50 versus degree8 at budget 10000
 
-| configuration | contrast | result |
+| configuration | contrast | p |
 |---|---|---|
-| cfg0 | 9713 − 7811 | **+0.278**, 95% CI [−0.030, +0.585], p = 0.077 |
-| cfg1 | 3718 − 3718 | same choice |
-| cfg2 | 4960 − 4960 | same choice |
-| cfg3 | 5840 − 5840 | same choice |
+| cfg0 | 9713 − 7811 = **+0.278** [−0.030, +0.585] | 0.0767 |
+| cfg1 | same choice | entered as **1.0** |
+| cfg2 | same choice | entered as **1.0** |
+| cfg3 | same choice | entered as **1.0** |
 
-**Holm over the four configurations:** only cfg0 contributes a test, so `p_adj = 0.077`, **not
-significant at 0.05**.
+**Family: all four configurations.**  A same-choice tie is not a missing test --- it is a contrast that
+came out exactly zero --- so it enters the family conservatively as `p = 1`.  Holm over the four:
+**cfg0 `p_adj = 0.3067`**, not significant at 0.05.
 
-**Answer: no.**  At a 10000-trial budget, `full50` is **not established** to beat same-budget
-`degree8`.  In three of the four configurations both methods selected the same candidate, which means
-the degree top-8 already contained everything the full-pool search found; in the fourth the difference
-is +0.278 with an interval that contains zero.  Spending 50× the candidates bought no measurable
-advantage over spending the same budget inside the degree top-8.
+**Answer: no.**  `full50` is **not established** to beat same-budget `degree8`.  In three of the four
+configurations both methods selected the same candidate, and in the fourth the difference has an
+interval containing zero and does not reach the corrected threshold.  Spending 50× the candidates
+bought no measurable advantage over spending the same budget inside the degree top-8.
 
-## 6. Auxiliary comparison: the budget effect on full50 (exploratory)
+## 7. Auxiliary comparison: the budget effect on full50 (exploratory)
 
 Prediction under test: raising the budget from 1000 to 10000 improves the chosen candidate.
 
@@ -121,92 +145,157 @@ Prediction under test: raising the budget from 1000 to 10000 improves the chosen
 | cfg0 | 19244 (+0.456) | 9713 (+0.784) | **+0.328 [+0.047, +0.609]** | 0.0222 |
 | cfg1 | 11640 (+0.731) | 3718 (+0.669) | −0.062 [−0.351, +0.228] | 0.676 |
 | cfg2 | 839 (+0.616) | 4960 (+1.264) | **+0.648 [+0.314, +0.983]** | 0.000145 |
-| cfg3 | 5840 (+0.750) | 5840 | same choice | — |
+| cfg3 | 5840 (+0.750) | 5840 | same choice | entered as **1.0** |
 
-Two of the four move up, one does not move detectably, and one has nothing to measure.  No
-configuration moves down significantly.
+**Family: the same four configurations**, ties as `p = 1`.  Holm:
 
-**Multiplicity, stated rather than chosen after the fact.**  This family is exploratory, so its
-definition changes the verdict and both readings are given:
+| configuration | p raw | factor | p adjusted | significant at 0.05 |
+|---|---|---|---|---|
+| cfg2 | 0.000145 | 4 | **0.00058** | **yes** |
+| cfg0 | 0.0222 | 3 | **0.0667** | no |
+| cfg1 | 0.676 | 2 | 1.0 | no |
+| cfg3 | (tie) 1.0 | 1 | 1.0 | no |
 
-- Over the **four distinct method × configuration budget effects** (including `degree8` in cfg0, whose
-  pick moved 4960 → 7811, a nominal −0.035, p = 0.806): Holm gives cfg2 **p_adj = 0.00058
-  (significant)** and cfg0 **p_adj = 0.067 (not significant)**.
-- Over only the **pre-specified `full50` comparison** (three informative tests): Holm gives cfg2
-  **0.00043** and cfg0 **0.044**.
+**One configuration has evidence of a positive budget effect (cfg2); the others do not reach the
+threshold.**  cfg0 is borderline and **not** significant after correction.  This comparison remains
+**exploratory** --- it is not a confirmatory result and no claim rests on it.
 
-So cfg2's improvement is robust to how the family is drawn; **cfg0's is borderline and its status
-depends on the family definition.**  It must be reported as borderline, not as a second positive.
+**Accurate statement of direction.**  One configuration detected a positive budget effect and the
+others detected no clear change.  **cfg1's point estimate is negative** (−0.062).  Nothing here
+guarantees that increasing the budget cannot reduce the gain; the non-monotonicity is visible in the
+raw cells, where the extra budget moved `degree8` in cfg0 from 4960 to 7811 (0.542 → 0.506) and
+`full50` in cfg1 from 11640 to 3718 (0.731 → 0.669).  Neither is significant, and both are what an
+argmax does as its estimates change: a bigger budget changes which candidate wins, it does not walk a
+fixed ordering towards the truth.
 
-## 7. The mechanism, and what it costs
+## 8. Deployment cost and quality
 
-The §7 prediction is **partly supported and nowhere contradicted**: more selection budget did change
-the chosen candidate in a measurable, sometimes significant way (cfg2), and did nothing detectable in
-cfg1.  So the selection budget is a **live lever** --- not a dead one.
+**Cost per decision** is one base run per trial plus one run per candidate screened.  It is a **count
+of cascades, not measured wall time**, and it excludes the independent confirmation, which exists only
+to evaluate a decision and is not part of deploying one.
 
-But the lever is not monotone, and this is worth recording: in cfg0 the extra budget made `degree8`
-pick a *nominally worse* candidate (4960 → 7811, 0.542 → 0.506), and in cfg1 it made `full50` pick a
-nominally worse one (11640 → 3718, 0.731 → 0.669).  Neither is significant, and both are the expected
-behaviour of an argmax moving as its estimates change: a bigger budget does not shrink the estimate
-towards the truth along a fixed ordering, it changes which candidate wins.
+| strategy | cascades per decision |
+|---|---|
+| `degree8@1000` | 1000 × 9 = **9,000** |
+| `degree8@3000` | 3000 × 9 = **27,000** |
+| `full50@3000` | 3000 × 51 = **153,000** |
+| `full50@10000` | 10000 × 51 = **510,000** |
 
-## 8. What this establishes, and what it does not
+Quality is this run's 6000-trial independent confirmation of each strategy's chosen candidate:
+
+| configuration | `degree8@1000` (9,000) | `degree8@3000` (27,000) | `full50@3000` (153,000) | `full50@10000` (510,000) |
+|---|---|---|---|---|
+| cfg0 | 4960 / 0.542 | 4960 / 0.542 | 9713 / 0.784 | 9713 / 0.784 |
+| cfg1 | 3718 / 0.669 | 3718 / 0.669 | 3718 / 0.669 | 3718 / 0.669 |
+| cfg2 | 839 / 0.616 | 4960 / **1.264** | 4960 / 1.264 | 4960 / 1.264 |
+| cfg3 | 5840 / 0.750 | 5840 / 0.750 | 5840 / 0.750 | 5840 / 0.750 |
+
+### The core comparison: `degree8@3000` versus `full50@10000`
+
+| configuration | cascades saved | gain difference (expensive − cheap) |
+|---|---|---|
+| cfg0 | 483,000 (**94.7%**) | **+0.242** [−0.069, +0.554] |
+| cfg1 | 483,000 (94.7%) | **same candidate** (3718) → identical gain for this decision |
+| cfg2 | 483,000 (94.7%) | **same candidate** (4960) → identical gain for this decision |
+| cfg3 | 483,000 (94.7%) | **same candidate** (5840) → identical gain for this decision |
+
+The cheap strategy costs **27,000** cascades against **510,000**, a reduction of **94.7%**.
+
+Two things this table does **not** say, and they must not be written:
+
+- The 94.7% is a reduction in the **number of cascades**.  It is **not a measured speed-up**; no wall
+  time for a single decision was recorded, and the confirmation cost is excluded from it.
+- It is **not** "no loss in all four configurations".  In cfg0 the cheap strategy's gain is lower by
+  0.242, and the interval [−0.069, +0.554] **contains zero**, so the loss cannot be called negligible.
+  In the other three the two strategies chose the same candidate, which is an exact tie, not an
+  equivalence result.
+
+### Provisional cheap baseline for future work
+
+**`degree8@3000` (27,000 cascades per decision) is fixed as the cheap baseline that any new method must
+beat.**  It was selected **from these results**: it matched `full50@10000`'s candidate in three of four
+configurations, and in the fourth its gain was lower by an amount whose interval still contains zero.
+
+It is a working reference, **not an established optimum**, and it has **not been validated on any
+configuration other than these four**.  It must be re-checked on new configurations before being
+treated as a fixed reference, and a future method that beats it on these four configurations has
+beaten a baseline chosen on those same four.
+
+## 9. Cost, at three levels
+
+These answer different questions and are kept apart.
+
+| level | cascades | what it is |
+|---|---|---|
+| **1. Method decision cost** | 9,000 / 27,000 / 153,000 / 510,000 | what one decision costs, per strategy (§8).  This is what a deployed method pays. |
+| **2. Experimental confirmation cost** | 2,040,000 selection + 78,000 confirmation = **2,118,000** | what *this experiment* spent beyond a single decision, to learn whether the decisions were any good |
+| **3. Interruption overhead** | **~1,770,000** (estimate) | compute spent and discarded when the connection dropped during the first attempt |
+
+**Counting detail for level 2.**  The confirmation's chosen-candidate union is 4+2+2+1 = **9**
+candidates.  The identity `marginal = newly_positive − lost_positive` is checked on
+9 × 6000 = **54,000 trial-candidate pairs**; the confirmation **cost** of 78,000 cascades is those
+54,000 candidate runs **plus 24,000 base runs** (4 configurations × 6000 trials).
+
+**Basis for level 3, which is an estimate and not a measurement.**  Twelve workers had each reached
+roughly 2,900 of their 3,334 trials when the processes were killed (the last observed checkpoints
+ranged from 2,500 to 3,300), giving about 12 × 2,900 × 51 ≈ 1.77M cascades ≈ 15 CPU-hours.  The first
+attempt's log files were overwritten by the second, so this cannot be tightened retrospectively.  It is
+**execution overhead**, not part of the experiment's cost, and it is excluded from the level-2 total.
+
+The estimate made before the run was ~2.004M (selection ~1.836M, confirmation ≤168,000).  The run is
+larger because the first 1000 selection trials were **recomputed rather than literally reused**, which
+is what makes the exact reproduction in §3 possible; that adds 204,000 cascades.  The confirmation is
+smaller than its ceiling because three of the four unions collapsed to one or two candidates.
+
+## 10. What this establishes, and what it does not
 
 **Established.**
 
 1. The stored 1000-trial selections are **reproduced exactly** by the new stream in all four
    configurations, for both methods.
-2. `full50` is **not** established to beat same-budget `degree8` at budget 10000: one contrast of four,
-   `p_adj = 0.077` (cfg0), and three exact ties.
-3. The selection budget **does** change the chosen candidate in a measurable way in at least one
-   configuration (cfg2, `p_adj = 0.00058` after Holm over the method × configuration family), so the
-   budget is a real lever rather than an inert parameter.
-4. The budget effect is **not monotone**: two cells moved nominally downward, neither significantly.
-5. Restricting to the degree top-8 before spending the selection budget found the same candidate as
-   the full-pool search in **3 of 4** configurations at every budget from 3000 up.
+2. Tripling the `full50` budget from 3000 to 10000 **did not change the selected candidate in any of
+   the four** configurations, and `degree8@3000` matched `full50@10000` in three of the four.
+3. `full50` is **not** established to beat same-budget `degree8` at budget 10000: one contrast of four,
+   `p_adj = 0.3067` over the four-configuration family.
+4. The selection budget **does** change the chosen candidate in a measurable way in at least one
+   configuration (cfg2, auxiliary `p_adj = 0.00058`), so the budget is a real lever rather than an
+   inert parameter.
+5. `degree8@3000` reaches the same decision as `full50@10000` in three of four configurations at
+   **5.3%** of the cascade count.
 
 **Not established --- do not write these.**
 
-- That expensive screening is worth its cost.  In 3 of 4 configurations it found the same candidate as
-  the far cheaper degree-filtered search, and the one place it differed is not significant.
+- That expensive screening is worth its cost.  In three of four configurations it found the same
+  candidate as the far cheaper degree-filtered search, and the one place it differed does not reach
+  the corrected threshold.
 - That `full50` and `degree8` are *equivalent*.  Three of the four comparisons are exact ties between
   identical candidate sets, which is not a test of equivalence; no equivalence test was run.
-- That the budget effect is real in cfg0.  It is borderline and family-dependent (§6).
-- That raising the budget never hurts.  Two cells moved nominally down; neither is significant, and the
-  6000-trial confirmation has a fixed budget that does not guarantee significance either way.
+- That the budget effect is real in cfg0.  `p_adj = 0.0667`, exploratory.
+- That increasing the budget cannot hurt.  cfg1's point estimate is negative; none of the detected
+  changes rules a loss out.
+- **That 3000 trials is generally enough.**  That is true of `full50` on these four configurations and
+  nothing more.
+- That the 94.7% is a speed-up, or that the cheap strategy loses nothing on all four configurations.
+- That `degree8@3000` is optimal, or a validated baseline.
 - That the selection-versus-evaluation gap in `docs/GRQC_NEW_STATES.md` was selection noise.  This run
-  tested a *prediction* of that hypothesis, and finding the prediction partly supported does not
-  identify how much of the original gap came from which batch.
+  tested a *prediction* of that hypothesis; supporting a prediction is not decomposing the gap.
 - Anything pooled across configurations, or about other graphs, fractions or budgets.
 - Anything about `state_delta2`, which this run does not test at all.
 
-## 9. Cost
-
-| item | cascades |
-|---|---|
-| selection (4 configurations × 10000 trials × 51 runs) | 2,040,000 |
-| confirmation (6000 trials × (1 + union) per configuration; unions 4, 2, 2, 1) | 78,000 |
-| **total** | **2,118,000** |
-
-The estimate before the run was ~2.004M: selection ~1.836M and confirmation ≤168,000.  The run is
-larger because the first 1000 selection trials were **recomputed rather than literally reused**, which
-is what makes the exact reproduction in §3 possible; that adds 204,000 cascades.  The confirmation is
-smaller than its ceiling because three of the four unions collapsed to one or two candidates.
-
-## 10. Provenance
+## 11. Provenance
 
 | item | value |
 |---|---|
 | script | `scripts/audit/selection_budget_curve.py` (driver: `scripts/audit/run_budget_curve.py`) |
 | artifact | `docs/results/selection_budget_curve.json` |
 | per-configuration files | `sbc_sel_cfg{0..3}_{00000_03334,03334_06668,06668_10000}.json`, `sbc_choices_cfg{0..3}.json`, `sbc_confirm_cfg{0..3}.json` |
-| code version | `162163b` |
+| code version | `ee50a7c` (merged statistics revised in place; no simulation re-run) |
 | configuration sources | `grqc_new_states_cfg{0..3}.json`, `grqc_new_states_choices_cfg{0..3}.json` |
-| streams | selection `seed + 1_100_000` (10000 trials, nested prefixes); confirmation `seed + 1_700_000` (6000 trials) |
-| stream check | 12 streams, 66 pairs, all disjoint; the original 6000-trial batch is checked at its full length, not its first 1000 |
+| streams | selection `seed + 1_100_000` (10000 trials, nested prefixes); confirmation `seed + 1_700_000` (6000 trials); historical state `seed + 900_000` and evaluation `seed + 1_300_000` (1000 each) |
+| stream check | 20 streams, 190 pairs, all disjoint |
 | `complete` | `true` |
 
-## 11. Reproduce
+## 12. Reproduce
 
 ```
 python scripts/audit/selection_budget_curve.py --check-streams-only
@@ -221,4 +310,5 @@ Or all of it, in order, with waiting: `python scripts/audit/run_budget_curve.py`
 Every stage is resumable and idempotent.  `--assemble` refuses to run on an incomplete chunk and stops
 if the first 1000 trials do not reproduce the stored selection exactly; `--merge` refuses to run unless
 all four choice files exist, still hash to what was written before confirmation, and each confirmation
-records the hash of the choices it was produced from.
+records the hash of the choices it was produced from.  `--merge` performs no simulation, so the
+statistics in §6--§9 can be revised without re-running anything.

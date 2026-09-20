@@ -1,0 +1,1000 @@
+{
+  "script": "successive_halving.py",
+  "code_version": "a784f0a",
+  "run_command": "python scripts\\audit\\successive_halving.py",
+  "status": "DEVELOPMENT DIAGNOSTIC on four configurations that are now development data.  Not an independently validated rule, even if the numbers look good.",
+  "not_novel": "progressively eliminating trailing candidates is the established successive-halving / racing idea; budget-allocation methods of this kind are well documented.  Nothing here is claimed as a new algorithm.",
+  "question": "can simulation be withdrawn from trailing candidates without losing the candidate that would have won?",
+  "schedule": {
+    "stages": [
+      {
+        "stage": 1,
+        "candidates": 8,
+        "cumulative_trials": 1000,
+        "keep": 4
+      },
+      {
+        "stage": 2,
+        "candidates": 4,
+        "cumulative_trials": 2000,
+        "keep": 2
+      },
+      {
+        "stage": 3,
+        "candidates": 2,
+        "cumulative_trials": 3000,
+        "keep": 1
+      }
+    ],
+    "ties": "ascending node id",
+    "revival": "none",
+    "tuning": "none"
+  },
+  "cost_model": {
+    "halving": {
+      "per_stage": [
+        {
+          "stage": 1,
+          "trials_read": [
+            0,
+            1000
+          ],
+          "new_trials": 1000,
+          "candidates_alive": 8,
+          "candidate_runs": 8000,
+          "base_runs": 1000,
+          "subtotal": 9000
+        },
+        {
+          "stage": 2,
+          "trials_read": [
+            1000,
+            2000
+          ],
+          "new_trials": 1000,
+          "candidates_alive": 4,
+          "candidate_runs": 4000,
+          "base_runs": 1000,
+          "subtotal": 5000
+        },
+        {
+          "stage": 3,
+          "trials_read": [
+            2000,
+            3000
+          ],
+          "new_trials": 1000,
+          "candidates_alive": 2,
+          "candidate_runs": 2000,
+          "base_runs": 1000,
+          "subtotal": 3000
+        }
+      ],
+      "total": 17000,
+      "candidate_runs": 14000,
+      "base_runs": 3000
+    },
+    "uniform": {
+      "fixed1000": 9000,
+      "fixed1888": 16992,
+      "fixed3000": 27000
+    },
+    "halving_vs_fixed3000_reduction": 0.37037037037037035,
+    "near_cost_control_difference": 8,
+    "note": "the saving is guaranteed by the schedule, so cost is not what is being tested; the open question is quality, and fixed1888 is the near-equal-cost control that decides whether any gain is due to allocating the budget cleverly"
+  },
+  "replay": {
+    "decision_prefix": [
+      0,
+      3000
+    ],
+    "evaluation_segment": [
+      4000,
+      10000
+    ],
+    "new_simulation": "none"
+  },
+  "summary": {
+    "configurations": 4,
+    "fixed3000_candidate_eliminated_early": 1,
+    "halving_equals_fixed1888": 3,
+    "halving_equals_fixed3000": 3
+  },
+  "configurations": [
+    {
+      "configuration": 0,
+      "random_seed": 20261001,
+      "degree_top8": [
+        115,
+        408,
+        820,
+        4554,
+        4960,
+        5355,
+        6431,
+        7811
+      ],
+      "halving": {
+        "chosen": 7811,
+        "trail": [
+          {
+            "stage": 1,
+            "new_trials_read": [
+              0,
+              1000
+            ],
+            "candidates_computed": [
+              115,
+              408,
+              820,
+              4554,
+              4960,
+              5355,
+              6431,
+              7811
+            ],
+            "cumulative_mean": {
+              "115": 0.0,
+              "408": 0.135,
+              "820": 0.155,
+              "4554": -0.056,
+              "4960": 0.819,
+              "5355": 0.321,
+              "6431": 0.652,
+              "7811": 0.429
+            },
+            "ranking": [
+              4960,
+              6431,
+              7811,
+              5355,
+              820,
+              408,
+              115,
+              4554
+            ],
+            "survivors": [
+              4960,
+              6431,
+              7811,
+              5355
+            ],
+            "eliminated": [
+              820,
+              408,
+              115,
+              4554
+            ],
+            "eliminated_at_trial": 1000
+          },
+          {
+            "stage": 2,
+            "new_trials_read": [
+              1000,
+              2000
+            ],
+            "candidates_computed": [
+              4960,
+              6431,
+              7811,
+              5355
+            ],
+            "cumulative_mean": {
+              "4960": 0.5315,
+              "6431": 0.5765,
+              "7811": 0.61,
+              "5355": 0.4425
+            },
+            "ranking": [
+              7811,
+              6431,
+              4960,
+              5355
+            ],
+            "survivors": [
+              7811,
+              6431
+            ],
+            "eliminated": [
+              4960,
+              5355
+            ],
+            "eliminated_at_trial": 2000
+          },
+          {
+            "stage": 3,
+            "new_trials_read": [
+              2000,
+              3000
+            ],
+            "candidates_computed": [
+              7811,
+              6431
+            ],
+            "cumulative_mean": {
+              "7811": 0.546,
+              "6431": 0.468
+            },
+            "ranking": [
+              7811,
+              6431
+            ],
+            "survivors": [
+              7811
+            ],
+            "eliminated": [
+              6431
+            ],
+            "eliminated_at_trial": 3000
+          }
+        ],
+        "elimination_trial": {
+          "820": 1000,
+          "408": 1000,
+          "115": 1000,
+          "4554": 1000,
+          "4960": 2000,
+          "5355": 2000,
+          "6431": 3000
+        }
+      },
+      "chosen": {
+        "halving": 7811,
+        "fixed1000": 4960,
+        "fixed1888": 6431,
+        "fixed3000": 4960
+      },
+      "fixed3000_candidate_eliminated_early": true,
+      "fixed3000_candidate_eliminated_at_trial": 2000,
+      "evaluation": {
+        "segment": [
+          4000,
+          10000
+        ],
+        "trials": 6000,
+        "gains": {
+          "halving": {
+            "mean": 0.5866666666666667,
+            "sd": 8.006549799726772,
+            "se": 0.10336411344974038,
+            "n": 6000,
+            "ci95_low": 0.38407300430517555,
+            "ci95_high": 0.7892603290281578
+          },
+          "fixed1000": {
+            "mean": 0.3883333333333333,
+            "sd": 7.912961922269442,
+            "se": 0.10215589914707658,
+            "n": 6000,
+            "ci95_low": 0.1881077710050632,
+            "ci95_high": 0.5885588956616035
+          },
+          "fixed1888": {
+            "mean": 0.5015,
+            "sd": 7.17722670538768,
+            "se": 0.0926575983397387,
+            "n": 6000,
+            "ci95_low": 0.3198911072541121,
+            "ci95_high": 0.6831088927458878
+          },
+          "fixed3000": {
+            "mean": 0.3883333333333333,
+            "sd": 7.912961922269442,
+            "se": 0.10215589914707658,
+            "n": 6000,
+            "ci95_low": 0.1881077710050632,
+            "ci95_high": 0.5885588956616035
+          }
+        },
+        "halving_minus_fixed1888": {
+          "mean": 0.08516666666666667,
+          "sd": 10.616890616683241,
+          "se": 0.13706346848973328,
+          "n": 6000,
+          "ci95_low": -0.18347773157321057,
+          "ci95_high": 0.3538110649065439,
+          "p_two_sided": 0.5343584173958631,
+          "same_choice": false,
+          "definition": "halving minus fixed1888"
+        },
+        "halving_minus_fixed3000": {
+          "mean": 0.19833333333333333,
+          "sd": 10.849590598646966,
+          "se": 0.14006761233909418,
+          "n": 6000,
+          "ci95_low": -0.07619918685129126,
+          "ci95_high": 0.47286585351795796,
+          "p_two_sided": 0.15678053325486907,
+          "same_choice": false,
+          "definition": "halving minus fixed3000"
+        },
+        "halving_minus_fixed1000": {
+          "mean": 0.19833333333333333,
+          "sd": 10.849590598646966,
+          "se": 0.14006761233909418,
+          "n": 6000,
+          "ci95_low": -0.07619918685129126,
+          "ci95_high": 0.47286585351795796,
+          "p_two_sided": 0.15678053325486907,
+          "same_choice": false,
+          "definition": "halving minus fixed1000"
+        },
+        "fixed1888_minus_fixed3000": {
+          "mean": 0.11316666666666667,
+          "sd": 10.222219700314072,
+          "se": 0.1319682888686326,
+          "n": 6000,
+          "ci95_low": -0.14549117951585325,
+          "ci95_high": 0.3718245128491866,
+          "p_two_sided": 0.3911524613434292,
+          "same_choice": false,
+          "definition": "fixed1888 minus fixed3000"
+        }
+      },
+      "cost": {
+        "halving": 17000,
+        "fixed1000": 9000,
+        "fixed1888": 16992,
+        "fixed3000": 27000
+      },
+      "constraints": {
+        "eliminated_candidates_later_trials_never_read": true
+      }
+    },
+    {
+      "configuration": 1,
+      "random_seed": 20261002,
+      "degree_top8": [
+        379,
+        884,
+        1608,
+        1833,
+        1834,
+        1969,
+        3239,
+        3718
+      ],
+      "halving": {
+        "chosen": 3718,
+        "trail": [
+          {
+            "stage": 1,
+            "new_trials_read": [
+              0,
+              1000
+            ],
+            "candidates_computed": [
+              379,
+              884,
+              1608,
+              1833,
+              1834,
+              1969,
+              3239,
+              3718
+            ],
+            "cumulative_mean": {
+              "379": 0.414,
+              "884": 0.096,
+              "1608": 0.516,
+              "1833": 0.224,
+              "1834": 0.436,
+              "1969": 0.0,
+              "3239": 0.0,
+              "3718": 0.613
+            },
+            "ranking": [
+              3718,
+              1608,
+              1834,
+              379,
+              1833,
+              884,
+              1969,
+              3239
+            ],
+            "survivors": [
+              3718,
+              1608,
+              1834,
+              379
+            ],
+            "eliminated": [
+              1833,
+              884,
+              1969,
+              3239
+            ],
+            "eliminated_at_trial": 1000
+          },
+          {
+            "stage": 2,
+            "new_trials_read": [
+              1000,
+              2000
+            ],
+            "candidates_computed": [
+              3718,
+              1608,
+              1834,
+              379
+            ],
+            "cumulative_mean": {
+              "3718": 0.991,
+              "1608": 0.496,
+              "1834": 0.474,
+              "379": 0.8
+            },
+            "ranking": [
+              3718,
+              379,
+              1608,
+              1834
+            ],
+            "survivors": [
+              3718,
+              379
+            ],
+            "eliminated": [
+              1608,
+              1834
+            ],
+            "eliminated_at_trial": 2000
+          },
+          {
+            "stage": 3,
+            "new_trials_read": [
+              2000,
+              3000
+            ],
+            "candidates_computed": [
+              3718,
+              379
+            ],
+            "cumulative_mean": {
+              "3718": 1.0813333333333333,
+              "379": 0.7543333333333333
+            },
+            "ranking": [
+              3718,
+              379
+            ],
+            "survivors": [
+              3718
+            ],
+            "eliminated": [
+              379
+            ],
+            "eliminated_at_trial": 3000
+          }
+        ],
+        "elimination_trial": {
+          "1833": 1000,
+          "884": 1000,
+          "1969": 1000,
+          "3239": 1000,
+          "1608": 2000,
+          "1834": 2000,
+          "379": 3000
+        }
+      },
+      "chosen": {
+        "halving": 3718,
+        "fixed1000": 3718,
+        "fixed1888": 3718,
+        "fixed3000": 3718
+      },
+      "fixed3000_candidate_eliminated_early": false,
+      "fixed3000_candidate_eliminated_at_trial": null,
+      "evaluation": {
+        "segment": [
+          4000,
+          10000
+        ],
+        "trials": 6000,
+        "gains": {
+          "halving": {
+            "mean": 0.7841666666666667,
+            "sd": 8.232894148671702,
+            "se": 0.10628620642964665,
+            "n": 6000,
+            "ci95_low": 0.5758457020645593,
+            "ci95_high": 0.992487631268774
+          },
+          "fixed1000": {
+            "mean": 0.7841666666666667,
+            "sd": 8.232894148671702,
+            "se": 0.10628620642964665,
+            "n": 6000,
+            "ci95_low": 0.5758457020645593,
+            "ci95_high": 0.992487631268774
+          },
+          "fixed1888": {
+            "mean": 0.7841666666666667,
+            "sd": 8.232894148671702,
+            "se": 0.10628620642964665,
+            "n": 6000,
+            "ci95_low": 0.5758457020645593,
+            "ci95_high": 0.992487631268774
+          },
+          "fixed3000": {
+            "mean": 0.7841666666666667,
+            "sd": 8.232894148671702,
+            "se": 0.10628620642964665,
+            "n": 6000,
+            "ci95_low": 0.5758457020645593,
+            "ci95_high": 0.992487631268774
+          }
+        },
+        "halving_minus_fixed1888": {
+          "same_choice": true,
+          "chosen": 3718,
+          "note": "both methods selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "halving_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 3718,
+          "note": "both methods selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "halving_minus_fixed1000": {
+          "same_choice": true,
+          "chosen": 3718,
+          "note": "both methods selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "fixed1888_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 3718,
+          "note": "both methods selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        }
+      },
+      "cost": {
+        "halving": 17000,
+        "fixed1000": 9000,
+        "fixed1888": 16992,
+        "fixed3000": 27000
+      },
+      "constraints": {
+        "eliminated_candidates_later_trials_never_read": true
+      }
+    },
+    {
+      "configuration": 2,
+      "random_seed": 20261003,
+      "degree_top8": [
+        839,
+        920,
+        2074,
+        2504,
+        2883,
+        3744,
+        3852,
+        4960
+      ],
+      "halving": {
+        "chosen": 4960,
+        "trail": [
+          {
+            "stage": 1,
+            "new_trials_read": [
+              0,
+              1000
+            ],
+            "candidates_computed": [
+              839,
+              920,
+              2074,
+              2504,
+              2883,
+              3744,
+              3852,
+              4960
+            ],
+            "cumulative_mean": {
+              "839": 0.898,
+              "920": 0.731,
+              "2074": 0.502,
+              "2504": 0.569,
+              "2883": 0.296,
+              "3744": 0.0,
+              "3852": 0.0,
+              "4960": 0.767
+            },
+            "ranking": [
+              839,
+              4960,
+              920,
+              2504,
+              2074,
+              2883,
+              3744,
+              3852
+            ],
+            "survivors": [
+              839,
+              4960,
+              920,
+              2504
+            ],
+            "eliminated": [
+              2074,
+              2883,
+              3744,
+              3852
+            ],
+            "eliminated_at_trial": 1000
+          },
+          {
+            "stage": 2,
+            "new_trials_read": [
+              1000,
+              2000
+            ],
+            "candidates_computed": [
+              839,
+              4960,
+              920,
+              2504
+            ],
+            "cumulative_mean": {
+              "839": 0.769,
+              "4960": 1.104,
+              "920": 0.6815,
+              "2504": 0.3545
+            },
+            "ranking": [
+              4960,
+              839,
+              920,
+              2504
+            ],
+            "survivors": [
+              4960,
+              839
+            ],
+            "eliminated": [
+              920,
+              2504
+            ],
+            "eliminated_at_trial": 2000
+          },
+          {
+            "stage": 3,
+            "new_trials_read": [
+              2000,
+              3000
+            ],
+            "candidates_computed": [
+              4960,
+              839
+            ],
+            "cumulative_mean": {
+              "4960": 1.134,
+              "839": 0.822
+            },
+            "ranking": [
+              4960,
+              839
+            ],
+            "survivors": [
+              4960
+            ],
+            "eliminated": [
+              839
+            ],
+            "eliminated_at_trial": 3000
+          }
+        ],
+        "elimination_trial": {
+          "2074": 1000,
+          "2883": 1000,
+          "3744": 1000,
+          "3852": 1000,
+          "920": 2000,
+          "2504": 2000,
+          "839": 3000
+        }
+      },
+      "chosen": {
+        "halving": 4960,
+        "fixed1000": 839,
+        "fixed1888": 4960,
+        "fixed3000": 4960
+      },
+      "fixed3000_candidate_eliminated_early": false,
+      "fixed3000_candidate_eliminated_at_trial": null,
+      "evaluation": {
+        "segment": [
+          4000,
+          10000
+        ],
+        "trials": 6000,
+        "gains": {
+          "halving": {
+            "mean": 1.3258333333333334,
+            "sd": 11.868844828028303,
+            "se": 0.15322612785891215,
+            "n": 6000,
+            "ci95_low": 1.0255101227298655,
+            "ci95_high": 1.6261565439368013
+          },
+          "fixed1000": {
+            "mean": 0.5055,
+            "sd": 5.369119200591939,
+            "se": 0.0693150308256502,
+            "n": 6000,
+            "ci95_low": 0.36964253958172555,
+            "ci95_high": 0.6413574604182743
+          },
+          "fixed1888": {
+            "mean": 1.3258333333333334,
+            "sd": 11.868844828028303,
+            "se": 0.15322612785891215,
+            "n": 6000,
+            "ci95_low": 1.0255101227298655,
+            "ci95_high": 1.6261565439368013
+          },
+          "fixed3000": {
+            "mean": 1.3258333333333334,
+            "sd": 11.868844828028303,
+            "se": 0.15322612785891215,
+            "n": 6000,
+            "ci95_low": 1.0255101227298655,
+            "ci95_high": 1.6261565439368013
+          }
+        },
+        "halving_minus_fixed1888": {
+          "same_choice": true,
+          "chosen": 4960,
+          "note": "both methods selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "halving_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 4960,
+          "note": "both methods selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "halving_minus_fixed1000": {
+          "mean": 0.8203333333333334,
+          "sd": 12.930503452771896,
+          "se": 0.16693208176887683,
+          "n": 6000,
+          "ci95_low": 0.49314645306633476,
+          "ci95_high": 1.147520213600332,
+          "p_two_sided": 8.915744058590747e-07,
+          "same_choice": false,
+          "definition": "halving minus fixed1000"
+        },
+        "fixed1888_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 4960,
+          "note": "both methods selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        }
+      },
+      "cost": {
+        "halving": 17000,
+        "fixed1000": 9000,
+        "fixed1888": 16992,
+        "fixed3000": 27000
+      },
+      "constraints": {
+        "eliminated_candidates_later_trials_never_read": true
+      }
+    },
+    {
+      "configuration": 3,
+      "random_seed": 20261004,
+      "degree_top8": [
+        750,
+        2049,
+        2805,
+        3927,
+        4019,
+        4189,
+        5840,
+        6291
+      ],
+      "halving": {
+        "chosen": 5840,
+        "trail": [
+          {
+            "stage": 1,
+            "new_trials_read": [
+              0,
+              1000
+            ],
+            "candidates_computed": [
+              750,
+              2049,
+              2805,
+              3927,
+              4019,
+              4189,
+              5840,
+              6291
+            ],
+            "cumulative_mean": {
+              "750": 0.253,
+              "2049": 0.454,
+              "2805": 0.631,
+              "3927": 0.178,
+              "4019": 0.0,
+              "4189": 0.561,
+              "5840": 0.781,
+              "6291": 0.234
+            },
+            "ranking": [
+              5840,
+              2805,
+              4189,
+              2049,
+              750,
+              6291,
+              3927,
+              4019
+            ],
+            "survivors": [
+              5840,
+              2805,
+              4189,
+              2049
+            ],
+            "eliminated": [
+              750,
+              6291,
+              3927,
+              4019
+            ],
+            "eliminated_at_trial": 1000
+          },
+          {
+            "stage": 2,
+            "new_trials_read": [
+              1000,
+              2000
+            ],
+            "candidates_computed": [
+              5840,
+              2805,
+              4189,
+              2049
+            ],
+            "cumulative_mean": {
+              "5840": 0.6285,
+              "2805": 0.4735,
+              "4189": 0.469,
+              "2049": 0.555
+            },
+            "ranking": [
+              5840,
+              2049,
+              2805,
+              4189
+            ],
+            "survivors": [
+              5840,
+              2049
+            ],
+            "eliminated": [
+              2805,
+              4189
+            ],
+            "eliminated_at_trial": 2000
+          },
+          {
+            "stage": 3,
+            "new_trials_read": [
+              2000,
+              3000
+            ],
+            "candidates_computed": [
+              5840,
+              2049
+            ],
+            "cumulative_mean": {
+              "5840": 0.6543333333333333,
+              "2049": 0.5086666666666667
+            },
+            "ranking": [
+              5840,
+              2049
+            ],
+            "survivors": [
+              5840
+            ],
+            "eliminated": [
+              2049
+            ],
+            "eliminated_at_trial": 3000
+          }
+        ],
+        "elimination_trial": {
+          "750": 1000,
+          "6291": 1000,
+          "3927": 1000,
+          "4019": 1000,
+          "2805": 2000,
+          "4189": 2000,
+          "2049": 3000
+        }
+      },
+      "chosen": {
+        "halving": 5840,
+        "fixed1000": 5840,
+        "fixed1888": 5840,
+        "fixed3000": 5840
+      },
+      "fixed3000_candidate_eliminated_early": false,
+      "fixed3000_candidate_eliminated_at_trial": null,
+      "evaluation": {
+        "segment": [
+          4000,
+          10000
+        ],
+        "trials": 6000,
+        "gains": {
+          "halving": {
+            "mean": 0.8118333333333333,
+            "sd": 7.923207863150884,
+            "se": 0.10228817367507677,
+            "n": 6000,
+            "ci95_low": 0.6113485129301828,
+            "ci95_high": 1.0123181537364838
+          },
+          "fixed1000": {
+            "mean": 0.8118333333333333,
+            "sd": 7.923207863150884,
+            "se": 0.10228817367507677,
+            "n": 6000,
+            "ci95_low": 0.6113485129301828,
+            "ci95_high": 1.0123181537364838
+          },
+          "fixed1888": {
+            "mean": 0.8118333333333333,
+            "sd": 7.923207863150884,
+            "se": 0.10228817367507677,
+            "n": 6000,
+            "ci95_low": 0.6113485129301828,
+            "ci95_high": 1.0123181537364838
+          },
+          "fixed3000": {
+            "mean": 0.8118333333333333,
+            "sd": 7.923207863150884,
+            "se": 0.10228817367507677,
+            "n": 6000,
+            "ci95_low": 0.6113485129301828,
+            "ci95_high": 1.0123181537364838
+          }
+        },
+        "halving_minus_fixed1888": {
+          "same_choice": true,
+          "chosen": 5840,
+          "note": "both methods selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "halving_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 5840,
+          "note": "both methods selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "halving_minus_fixed1000": {
+          "same_choice": true,
+          "chosen": 5840,
+          "note": "both methods selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "fixed1888_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 5840,
+          "note": "both methods selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        }
+      },
+      "cost": {
+        "halving": 17000,
+        "fixed1000": 9000,
+        "fixed1888": 16992,
+        "fixed3000": 27000
+      },
+      "constraints": {
+        "eliminated_candidates_later_trials_never_read": true
+      }
+    }
+  ],
+  "complete": true
+}

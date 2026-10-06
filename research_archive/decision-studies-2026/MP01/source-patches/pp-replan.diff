@@ -1,0 +1,292 @@
+diff --git a/inc/PIBT/graph.h b/inc/PIBT/graph.h
+index c2367db..42c2627 100644
+--- a/inc/PIBT/graph.h
++++ b/inc/PIBT/graph.h
+@@ -67,7 +67,7 @@ protected:
+ 
+ public:
+   Graph();
+-  Graph(std::mt19937* _MT);
++  Graph(std::mt19937* mt);
+   ~Graph();
+ 
+   Node* getNode(int id);
+diff --git a/inc/PIBT/grid.h b/inc/PIBT/grid.h
+index cdcfa03..e86d39a 100644
+--- a/inc/PIBT/grid.h
++++ b/inc/PIBT/grid.h
+@@ -13,7 +13,7 @@ protected:
+ 
+ public:
+   Grid();
+-  Grid(std::mt19937* _MT);
++  Grid(std::mt19937* mt);
+   ~Grid();
+ 
+   int getW() { return w; }
+diff --git a/inc/PIBT/mapf.h b/inc/PIBT/mapf.h
+index 39cd00f..c4fc876 100644
+--- a/inc/PIBT/mapf.h
++++ b/inc/PIBT/mapf.h
+@@ -13,7 +13,7 @@ public:
+   MAPF(Graph* _G,
+        PIBT_Agents _A,
+        std::vector<Task*> _T,
+-       std::mt19937* _MT);
++       std::mt19937* mt);
+   ~MAPF();
+   bool isSolved();
+   void update();
+diff --git a/inc/PIBT/pibt.h b/inc/PIBT/pibt.h
+index 192ad29..49e8bc5 100644
+--- a/inc/PIBT/pibt.h
++++ b/inc/PIBT/pibt.h
+@@ -37,7 +37,7 @@ protected:
+ 
+ public:
+   PIBT(Problem* _P);
+-  PIBT(Problem* _P, std::mt19937* _MT);
++  PIBT(Problem* _P, std::mt19937* mt);
+   ~PIBT();
+ 
+   bool solve();
+diff --git a/inc/PIBT/pps.h b/inc/PIBT/pps.h
+index abc3d98..3091eea 100644
+--- a/inc/PIBT/pps.h
++++ b/inc/PIBT/pps.h
+@@ -101,7 +101,7 @@ private:
+ 
+ public:
+   PPS(Problem* _P);
+-  PPS(Problem* _P, std::mt19937* _MT);
++  PPS(Problem* _P, std::mt19937* mt);
+   ~PPS();
+ 
+   bool solve();
+diff --git a/inc/PIBT/problem.h b/inc/PIBT/problem.h
+index 3127f38..32ef9c4 100644
+--- a/inc/PIBT/problem.h
++++ b/inc/PIBT/problem.h
+@@ -24,8 +24,8 @@ protected:
+ public:
+   Problem(Graph* _G, PIBT_Agents _A, std::vector<Task*> _T);
+   Problem(Graph* _G, PIBT_Agents _A);
+-  Problem(Graph* _G, PIBT_Agents _A, std::vector<Task*> _T, std::mt19937* _MT);
+-  Problem(Graph* _G, PIBT_Agents _A, std::mt19937* _MT);
++  Problem(Graph* _G, PIBT_Agents _A, std::vector<Task*> _T, std::mt19937* mt);
++  Problem(Graph* _G, PIBT_Agents _A, std::mt19937* mt);
+ 
+   virtual ~Problem();
+ 
+diff --git a/inc/PIBT/simplegrid.h b/inc/PIBT/simplegrid.h
+index 834921f..42434b5 100644
+--- a/inc/PIBT/simplegrid.h
++++ b/inc/PIBT/simplegrid.h
+@@ -44,7 +44,7 @@ protected:
+ 
+ public:
+   SimpleGrid(std::string _filename);
+-  SimpleGrid(std::string _filename, std::mt19937* _MT);
++  SimpleGrid(std::string _filename, std::mt19937* mt);
+   ~SimpleGrid();
+ 
+   // for iterative MAPF
+diff --git a/inc/PIBT/solver.h b/inc/PIBT/solver.h
+index 921256a..5e3b9fb 100644
+--- a/inc/PIBT/solver.h
++++ b/inc/PIBT/solver.h
+@@ -43,7 +43,7 @@ protected:
+ 
+ public:
+   Solver(Problem* _P);
+-  Solver(Problem* _P, std::mt19937* _MT);
++  Solver(Problem* _P, std::mt19937* mt);
+   ~Solver();
+ 
+   void WarshallFloyd();
+diff --git a/inc/PIBT/winpibt.h b/inc/PIBT/winpibt.h
+index 175981f..3a2fe2e 100644
+--- a/inc/PIBT/winpibt.h
++++ b/inc/PIBT/winpibt.h
+@@ -40,7 +40,7 @@ protected:
+ 
+ public:
+   winPIBT(Problem* _P, int _w, bool _softmode);
+-  winPIBT(Problem* _P, int _w, bool _softmode, std::mt19937* _MT);
++  winPIBT(Problem* _P, int _w, bool _softmode, std::mt19937* mt);
+   ~winPIBT();
+ 
+   virtual bool solve();
+diff --git a/src/PIBT/graph.cpp b/src/PIBT/graph.cpp
+index 4fed0f4..dd37e76 100644
+--- a/src/PIBT/graph.cpp
++++ b/src/PIBT/graph.cpp
+@@ -18,7 +18,7 @@ Graph::Graph() {
+   init();
+ }
+ 
+-Graph::Graph(std::mt19937* _MT) : MT(_MT) {
++Graph::Graph(std::mt19937* mt) : MT(mt) {
+   init();
+ }
+ 
+diff --git a/src/PIBT/grid.cpp b/src/PIBT/grid.cpp
+index 38f4e1d..0f28d3c 100644
+--- a/src/PIBT/grid.cpp
++++ b/src/PIBT/grid.cpp
+@@ -8,7 +8,7 @@
+ #include "grid.h"
+ 
+ 
+-Grid::Grid(std::mt19937* _MT) : Graph(_MT) {}
++Grid::Grid(std::mt19937* mt) : Graph(mt) {}
+ Grid::Grid() {};
+ Grid::~Grid() {}
+ 
+diff --git a/src/PIBT/mapf.cpp b/src/PIBT/mapf.cpp
+index 442cff5..6d1f8ad 100644
+--- a/src/PIBT/mapf.cpp
++++ b/src/PIBT/mapf.cpp
+@@ -18,7 +18,7 @@ MAPF::MAPF(Graph* _G,
+ MAPF::MAPF(Graph* _G,
+            PIBT_Agents _A,
+            std::vector<Task*> _T,
+-           std::mt19937* _MT) : Problem(_G, _A, _T, _MT)
++           std::mt19937* mt) : Problem(_G, _A, _T, mt)
+ {
+   init();
+ }
+diff --git a/src/PIBT/pibt.cpp b/src/PIBT/pibt.cpp
+index 497ea02..030fa3a 100644
+--- a/src/PIBT/pibt.cpp
++++ b/src/PIBT/pibt.cpp
+@@ -22,7 +22,7 @@ PIBT::PIBT(Problem* _P) : Solver(_P)
+   init();
+ }
+ 
+-PIBT::PIBT(Problem* _P, std::mt19937* _MT) : Solver(_P, _MT)
++PIBT::PIBT(Problem* _P, std::mt19937* mt) : Solver(_P, mt)
+ {
+   init();
+ }
+diff --git a/src/PIBT/pps.cpp b/src/PIBT/pps.cpp
+index 586ca7c..b343cfd 100644
+--- a/src/PIBT/pps.cpp
++++ b/src/PIBT/pps.cpp
+@@ -17,7 +17,7 @@ int PPS::s_uuid = 0;
+ PPS::PPS(Problem* _P) : Solver(_P) {
+   init();
+ }
+-PPS::PPS(Problem* _P, std::mt19937* _MT) : Solver(_P, _MT) {
++PPS::PPS(Problem* _P, std::mt19937* mt) : Solver(_P, mt) {
+   init();
+ }
+ 
+diff --git a/src/PIBT/problem.cpp b/src/PIBT/problem.cpp
+index b4420b0..bc78e3e 100644
+--- a/src/PIBT/problem.cpp
++++ b/src/PIBT/problem.cpp
+@@ -27,13 +27,13 @@ Problem::Problem(Graph* _G, PIBT_Agents _A) : G(_G), A(_A) {
+ Problem::Problem(Graph* _G,
+                  PIBT_Agents _A,
+                  std::vector<Task*> _T,
+-                 std::mt19937* _MT) : G(_G), A(_A), T_OPEN(_T), MT(_MT) {
++                 std::mt19937* mt) : G(_G), A(_A), T_OPEN(_T), MT(mt) {
+   init();
+ }
+ 
+ Problem::Problem(Graph* _G,
+                  PIBT_Agents _A,
+-                 std::mt19937* _MT) : G(_G), A(_A), MT(_MT) {
++                 std::mt19937* mt) : G(_G), A(_A), MT(mt) {
+   init();
+ }
+ 
+diff --git a/src/PIBT/simplegrid.cpp b/src/PIBT/simplegrid.cpp
+index 3a060cd..7745117 100644
+--- a/src/PIBT/simplegrid.cpp
++++ b/src/PIBT/simplegrid.cpp
+@@ -16,8 +16,8 @@ SimpleGrid::SimpleGrid(std::string _filename)
+   init();
+ }
+ 
+-SimpleGrid::SimpleGrid(std::string _filename, std::mt19937* _MT)
+-  : Grid(_MT), filename(_filename)
++SimpleGrid::SimpleGrid(std::string _filename, std::mt19937* mt)
++  : Grid(mt), filename(_filename)
+ {
+   init();
+ }
+diff --git a/src/PIBT/solver.cpp b/src/PIBT/solver.cpp
+index 12c1c8e..dad87d3 100644
+--- a/src/PIBT/solver.cpp
++++ b/src/PIBT/solver.cpp
+@@ -16,7 +16,7 @@ Solver::Solver(Problem* _P) : P(_P) {
+   MT = new std::mt19937(seed_gen());
+   init();
+ }
+-Solver::Solver(Problem* _P, std::mt19937* _MT) : P(_P), MT(_MT) {
++Solver::Solver(Problem* _P, std::mt19937* mt) : P(_P), MT(mt) {
+   init();
+ }
+ 
+diff --git a/src/PIBT/winpibt.cpp b/src/PIBT/winpibt.cpp
+index 82c3586..313b97a 100644
+--- a/src/PIBT/winpibt.cpp
++++ b/src/PIBT/winpibt.cpp
+@@ -17,8 +17,8 @@ winPIBT::winPIBT(Problem* _P, int _w, bool _softmode)
+   init();
+ }
+ 
+-winPIBT::winPIBT(Problem* _P, int _w, bool _softmode, std::mt19937* _MT)
+-  : Solver(_P, _MT), w(_w), softmode(_softmode)
++winPIBT::winPIBT(Problem* _P, int _w, bool _softmode, std::mt19937* mt)
++  : Solver(_P, mt), w(_w), softmode(_softmode)
+ {
+   init();
+ }
+diff --git a/src/driver.cpp b/src/driver.cpp
+index 8015d79..887d15c 100644
+--- a/src/driver.cpp
++++ b/src/driver.cpp
+@@ -70,7 +70,7 @@ int main(int argc, char** argv)
+ 
+     po::notify(vm);
+ 
+-    srand(time(NULL));
++    srand(vm["seed"].as<int>());
+     string state = vm["state"].as<std::string>();
+ 
+     std::cout << "Input State :  " << state << endl;
+@@ -86,11 +86,13 @@ int main(int argc, char** argv)
+             vm["num_subset"].as<int>(), screen, pipp_option);
+     lns.state_json = state;
+     lns.replan_agents = vm["replanAgents"].as<vector<int>>();
++    lns.replan_time_limit = vm["replanTime"].as<double>();
++    lns.pprun = vm["pprun"].as<int>();
+     std::string  input;
+ 
+     while (true) {
+         std::cout << "CPP program start" << endl;
+-        std::cout << "Enter command: ";
++        std::cout << "Enter command:" << std::endl;
+         std::getline(std::cin, input);
+         if (input.empty()) {
+             continue;  // Skip empty input
+@@ -127,6 +129,9 @@ int main(int argc, char** argv)
+         if (vm.count("state")) {
+             lns.state_json  = vm["state"].as<std::string>();
+             lns.replan_agents = vm["replanAgents"].as<vector<int>>();
++            lns.replan_time_limit = vm["replanTime"].as<double>();
++            lns.pprun = vm["pprun"].as<int>();
++            srand(vm["seed"].as<int>());
+ 
+             bool succ = lns.run();  // You might want to pass state and weights
+             cout << "replan_agents: ";
+@@ -140,4 +145,4 @@ int main(int argc, char** argv)
+ 
+ 	return 0;
+ 
+-}
+\ No newline at end of file
++}

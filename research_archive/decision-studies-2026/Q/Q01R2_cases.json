@@ -1,0 +1,77 @@
+{
+  "task": "Q01-R2 -- four corrections to the read-site classification and the acceptance tests",
+  "supersedes_in_part": "Q01R_report.md (its read-site classification)",
+  "verdict_unchanged": true,
+  "corrections": {
+    "1_read_sites": {
+      "rule": "a timeout at cap reveals only 'x >= cap'; retiring a cell because 'x >= b' is legal only when the revealed bound already implies it",
+      "moved_out_of_violations": [
+        "limeqo.py:114",
+        "limeqo_plus.py:139",
+        "greedy.py:74",
+        "random.py:60",
+        "qo_advisor.py:68"
+      ],
+      "reason_moved": "these paths use cap = current best, so the timeout itself reveals x >= b",
+      "confirmed_violations": [
+        "strategies/limeqo.py:89",
+        "strategies/limeqo_plus.py:114"
+      ],
+      "confirmed_violation_statement": "the prediction-driven path of LimeQO / LimeQO+ uses a tolerance that may sit below the current best, and then retires the cell using the hidden runtime",
+      "listed_separately": [
+        "strategies/limeqo.py:35",
+        "strategies/limeqo.py:105"
+      ],
+      "do_not_grow_from_expression_shape": true
+    },
+    "2_state_snapshot": {
+      "keys_only_equal": true,
+      "value_snapshot_equal": false,
+      "pass": true
+    },
+    "3_check4_real_runner": {
+      "check4": {
+        "feedback_identical": true,
+        "next_action_A": [
+          0,
+          1
+        ],
+        "next_action_B": [
+          0,
+          1
+        ],
+        "stop_A": true,
+        "stop_B": true,
+        "state_identical": true,
+        "pass": true
+      },
+      "privileged_stop_demo": [
+        {
+          "world": "W_same_hidden_optimum",
+          "opt_time": 100.0,
+          "min_observed_sum": 200.0,
+          "continue": true
+        },
+        {
+          "world": "W_different_hidden_optimum",
+          "opt_time": 260.0,
+          "min_observed_sum": 200.0,
+          "continue": false
+        }
+      ],
+      "privileged_stop_exposed": true
+    },
+    "4_lower_bound": {
+      "bound_after_caps_10_then_2": 10,
+      "bound_kept_max": true,
+      "prune_legal_when_L_ge_b": true,
+      "prune_refused_when_L_below_b": true
+    }
+  },
+  "research_positioning": "under legal feedback only, how should budget be split between retrying and exploring new candidates, and can that beat both the existing prediction rule and cheap retry rules?  It must NOT be phrased as 'existing methods do not consider retry'",
+  "not_redone": [
+    "data numeric qualification (L1)",
+    "rediscovery of the permission defect"
+  ],
+  "evidence_level": "unchanged: no new evidence for or against the topic, and no basis to start GRL"
+}

@@ -1,0 +1,105 @@
+{
+  "task": "Q02R -- protocol-corrected four-arm cost-quality screening on JOB",
+  "supersedes": "Q02_report.md main comparison",
+  "verdict": "GATE NOT MET: 2 of 3 seeds better, mean +3.73% (>= 2%), but seed 2 is -0.33%",
+  "reading": "mixed direction -> undetermined; multiplier unchanged, no seeds added; the strategy's overall result is accepted as it stands",
+  "retractions": [
+    "'both arms used the same ranking rule' -- MF-BEST used min(b_q, x_hat) as denominator, MF-RETRY used the budget-dependent cap, so the arms differed even with zero retries",
+    "'this round only tested early cutoff without retry' -- BOTH arms were cutting early, because cap_for() returned min(b_q, 15*x_hat) for a fresh candidate in both MF arms; the main contrast was mis-defined",
+    "'239 exploration actions and 1 retry at the main budget' -- 239/1 is the total across all three budgets; the main budget alone was 158/1",
+    "'23 of 25 timeouts ran to b_q' -- computed from end-of-run bounds, not from the state at each timeout",
+    "'init_cost is an execution deviation' -- it is the protocol the auditor specified; charging it to the exploration budget was the implementation error",
+    "'simulated and wall-clock seconds cannot be added' -- both are seconds; the agreed cost model is replay execution time plus local policy time",
+    "'0.02-0.19 s is the whole strategy cost' -- only the ALS call was timed",
+    "'fallbacks counts random fallbacks' -- it counted decisions with an invalid prediction",
+    "'the retry incidence should be fixed as a design parameter' -- the incidence is an outcome determined by data, feedback and policy, not an exogenous parameter"
+  ],
+  "guards": {
+    "guard1": {
+      "b": 10.0,
+      "x_hat": 0.1,
+      "mf_best_cap": 10.0,
+      "mf_retry_cap": 1.5,
+      "pass": true
+    },
+    "guard2": {
+      "order_best": [
+        [
+          79.0,
+          1,
+          3
+        ],
+        [
+          19.0,
+          0,
+          1
+        ],
+        [
+          0.42857142857142855,
+          0,
+          2
+        ]
+      ],
+      "order_retry": [
+        [
+          79.0,
+          1,
+          3
+        ],
+        [
+          19.0,
+          0,
+          1
+        ],
+        [
+          0.42857142857142855,
+          0,
+          2
+        ]
+      ],
+      "identical": true
+    },
+    "all_pass": true
+  },
+  "protocol": {
+    "caps": {
+      "RANDOM-BEST": "b_q",
+      "GREEDY-BEST": "b_q",
+      "MF-BEST": "b_q",
+      "MF-RETRY": "fresh min(b_q,15*x_hat), retry min(b_q,2*L)"
+    },
+    "scoring": "S=(b_q-x_hat)/max(1e-9,min(b_q,x_hat)), shared by both MF arms",
+    "cost": "replay execution seconds + local policy seconds, both charged to B",
+    "init_cost": "separate identical line item, not charged to B",
+    "predictor": {
+      "name": "censored_als",
+      "rank": 5,
+      "lambda": 0.2,
+      "iters": 50
+    }
+  },
+  "gate": {
+    "all_seeds_better": false,
+    "mean_relative_reduction": 0.037251635033679814,
+    "beats_both_cheap_arms": true,
+    "passed": false
+  },
+  "total_retry_actions_all_36_replays": 0,
+  "key_finding": "with the protocol corrected, retry never fires: the two MF arms differ only in the cap given to FRESH candidates (min(b_q,15*x_hat) vs b_q), so this is an early-cutoff-versus-no-cutoff comparison and says nothing about retry",
+  "relative_vs_MF_BEST": {
+    "seed_0": 0.0638556867943889,
+    "seed_1": 0.05119471275962406,
+    "seed_2": -0.0032954944529735184
+  },
+  "mean_relative": 0.037251635033679814,
+  "cost_model": "replay execution seconds + local policy seconds, both charged to B; init_cost separate and identical; every replay stayed within budget after the last-action truncation fix",
+  "action_log": "Q02_work/q02r_actions.json, 1671 records, fields include b_before, L_before, is_retry, prediction, score, planned_cap, cap_reason, actual_cap, feedback and per-item costs",
+  "not_done": [
+    "no data change",
+    "no predictor change",
+    "no multiplier change",
+    "no extra seeds",
+    "no second workload",
+    "no attempt to make retry fire more often"
+  ]
+}

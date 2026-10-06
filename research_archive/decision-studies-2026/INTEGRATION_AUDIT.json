@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-06",
+  "scope": "Archive integrity and catalog consistency; not a new scientific reproduction or statistical audit",
+  "source_files_archived": 12253,
+  "browsable_source_files": 3315,
+  "source_markdown_files": 193,
+  "study_groups": 14,
+  "release_assets": 17,
+  "compressed_asset_bytes": 716757629,
+  "source_copies_sha256_checked": true,
+  "all_bundle_objects_checked": true,
+  "bundle_verification": {
+    "bundles": 17,
+    "unique_objects": 9769,
+    "method": "verify_archive.py --assets; all object bytes and path manifests compared"
+  },
+  "remote_upload_server_sha256_matched": 17,
+  "catalog_local_links_checked": 260,
+  "broken_catalog_links": [],
+  "restore_actual_bundle_smoke": "TAIM: 6/6 reconstructed; second restore reused identical existing files",
+  "current_result_anchor": {
+    "LG01_verdict": "ACCEPT_CHEAP_STOP_GNN",
+    "LG01_mean_G": -0.0009106967137285187,
+    "families_positive": 3
+  },
+  "source_report_discrepancy": "Stage12 source still states 12 certificates; final Stage13 source states 11. Explicit cross-report override added; original bytes retained.",
+  "excluded_files": 758,
+  "source_files_not_modified": true,
+  "new_experiments_run": 0,
+  "automations_changed": false,
+  "limitations": [
+    "No scientific solver/diffusion reruns or independent model refits during integration.",
+    "Old scripts retain local paths and external dependencies.",
+    "Some original report links refer to historical local workspaces; new catalog links are verified.",
+    "No guarantee of one-command full reproduction.",
+    "Checkpoints and external raw input datasets are excluded explicitly."
+  ],
+  "git_index_source_blobs_verified": 3315,
+  "line_endings": "Archive .gitattributes preserves exact original bytes",
+  "git_diff_check_new_code_and_current_docs": "passed",
+  "historical_diff_check_exception": "ASLib_format.md:592 is a preserved Setext heading (cv.arff followed by =======), not a merge conflict. Historical bytes are not rewritten for whitespace checks."
+}

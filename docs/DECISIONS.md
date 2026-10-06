@@ -87,3 +87,8 @@ Corollary for reporting: because the marginals are near zero in the regime of in
 quality claim there needs its paired standard error printed next to it. A bare mean is not
 interpretable, and this project has already published one table of bare means that turned out to be
 Monte-Carlo artefact (`docs/WITHDRAWN_RESULTS.md` W8).
+
+
+## 2026-10-06 — Evidence archive and current stopping decisions
+
+保留全部有效与否定结果，协议/数据资格失败单独标注。LG01接受固定LOSS-EXPAND并停止当前GNN配置，不进入RL；LOT固定AB不再作为核心贡献；FA低预算线索仍不等于新算法贡献。以最终更正报告为准，不覆盖删除历史证据。

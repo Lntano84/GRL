@@ -1,0 +1,66 @@
+{
+  "round_trip": {
+    "warmup_episodes": 21,
+    "replay_size": 105,
+    "weights_identical": true,
+    "replay_identical": true,
+    "rng_identical": true,
+    "episode": 21,
+    "epsilon": 0.1
+  },
+  "continuation": {
+    "split_after": 2,
+    "tail_episodes": 3,
+    "actions_continuous": [
+      [
+        82,
+        155,
+        85,
+        679,
+        136
+      ],
+      [
+        329,
+        243,
+        224,
+        17,
+        241
+      ],
+      [
+        4,
+        66,
+        23,
+        17,
+        9
+      ]
+    ],
+    "actions_restarted": [
+      [
+        82,
+        155,
+        85,
+        679,
+        136
+      ],
+      [
+        329,
+        243,
+        224,
+        17,
+        241
+      ],
+      [
+        4,
+        66,
+        23,
+        17,
+        9
+      ]
+    ],
+    "actions_identical": true,
+    "weights_identical": true,
+    "replay_size_identical": true,
+    "epsilon_identical": true
+  },
+  "overall_pass": true
+}

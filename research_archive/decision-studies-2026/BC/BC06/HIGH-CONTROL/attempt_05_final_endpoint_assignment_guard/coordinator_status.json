@@ -1,0 +1,93 @@
+{
+  "status": "failed",
+  "arm": "HIGH-CONTROL",
+  "budget_seconds": 1800,
+  "attempts": 1,
+  "started_unix": 1790756444.7431881,
+  "wall_seconds": 810.25,
+  "remaining_budget_seconds": 989.75,
+  "latest_progress": {
+    "arm": "HIGH-CONTROL",
+    "completed_windows": 1007,
+    "trace_elapsed_s": 604200.355905056,
+    "request_sequence": 147675,
+    "candidate_items_decided": 2373288,
+    "wall_seconds": 792.4483145999984
+  },
+  "exit_code": 1,
+  "replay_audit": {
+    "completed": false,
+    "mode": "read_only_observation",
+    "started_unix": 1790756446.0450242,
+    "recorder": {
+      "completed": false,
+      "arm": "HIGH-CONTROL",
+      "elapsed_wall_seconds": 793.174598499998,
+      "request_sequence": 147794,
+      "get_request_count": 127304,
+      "candidate_counts": {
+        "generated": 2375547,
+        "currently_pending": 0,
+        "decided": 2375547
+      },
+      "actual_decision_counts": {
+        "batches": 176373,
+        "items": 2375547,
+        "rejected": 2234483,
+        "source/demand": 2343380,
+        "created_and_decided_same_request": 2375547,
+        "delay_positive": 0,
+        "get_requests": 127304,
+        "accepted": 141064,
+        "source/prefetch": 32167
+      },
+      "check_only_counts": {
+        "calls": 2211,
+        "items": 49204,
+        "accept": 32167,
+        "reject": 17037
+      },
+      "candidate_source_counts": {
+        "demand": 2343380,
+        "prefetch": 32167
+      },
+      "unique_candidate_creation_requests": 72899,
+      "unique_actual_decision_requests": 72899,
+      "unique_candidate_blocks": 13688,
+      "unique_candidate_chunks": 671724,
+      "model_input_vector_lengths": {
+        "18": 2424751
+      },
+      "predicted_items_by_call_kind": {
+        "actual": 2375547,
+        "check_only": 49204
+      },
+      "model_feature_names": [
+        "feat_metadata|op",
+        "feat_metadata|ns",
+        "feat_metadata|user",
+        "feat_metadata_size|start",
+        "feat_metadata_size|end",
+        "feat_metadata_size|size",
+        "feat_dynamic_b|0",
+        "feat_dynamic_b|1",
+        "feat_dynamic_b|2",
+        "feat_dynamic_b|3",
+        "feat_dynamic_b|4",
+        "feat_dynamic_b|5",
+        "feat_dynamic_c_combined|0",
+        "feat_dynamic_c_combined|1",
+        "feat_dynamic_c_combined|2",
+        "feat_dynamic_c_combined|3",
+        "feat_dynamic_c_combined|4",
+        "feat_dynamic_c_combined|5"
+      ],
+      "max_cache_occupancy_chunks": 3001,
+      "evaluation_writes_recorded_independently": 119276,
+      "completed_windows_recorded": 1007,
+      "completed_window_component_max_abs_error": 4.291678123991005e-12,
+      "wall_seconds": 793.1747184999986
+    }
+  },
+  "console_tail": "1m     | [1] 272 | [2] 1d21h     | [3] 16.2 | [4] 26.4  | [5] 10330 | [6] 2348  | [7] 11.13   | [8] 23.22    | [9] 15.12       | [10] 6.00    | [11] 486.31  | [12] 398.06  | [13] 242.74  | [14] 25.67   | [15] 9.67    | [16] 26.3%     | [17] 1.6%     | [18] 2.28%    | [19] 3.3%     | [20] 36.8%    | [21] (1795,2h) | [22] (275,18m) | [23] 0.4   | [24] 12m          | [25] 0.97     | [26] 0.2     | [27] 171.6  | [28] 241.8      | [29] 3688.2    | [30] 33609 | [31] 6033 | [32] 39779 | [33] 36778 | [34] 72 | [35] 67\n[0] 7.3m     | [1] 370 | [2] 2d14h     | [3] 16.3 | [4] 35.2  | [5] 11264 | [6] 2309  | [7] 10.66   | [8] 23.22    | [9] 15.61       | [10] 5.38    | [11] 488.72  | [12] 388.46  | [13] 212.25  | [14] 20.40   | [15] 6.49    | [16] 31.7%     | [17] 1.0%     | [18] 1.38%    | [19] 2.5%     | [20] 32.2%    | [21] (2388,3h) | [22] (284,19m) | [23] 0.4   | [24] 11m          | [25] 0.98     | [26] 0.2     | [27] 187.3  | [28] 233.0      | [29] 3659.8    | [30] 44873 | [31] 8342 | [32] 49375 | [33] 46374 | [34] 105 | [35] 94\n(Increasing print interval to 2 mins)\n[0] 7m       | [1] 514 | [2] 3d14h     | [3] 24.0 | [4] 49.4  | [5] 18020 | [6] 3116  | [7] 14.00   | [8] 23.22    | [9] 18.60       | [10] 5.03    | [11] 614.34  | [12] 508.19  | [13] 199.65  | [14] 29.36   | [15] 5.75    | [16] 24.7%     | [17] 0.7%     | [18] 1.96%    | [19] 3.1%     | [20] 28.6%    | [21] (1707,2h) | [22] (305,19m) | [23] 0.5   | [24] 13m          | [25] 0.74     | [26] 0.2     | [27] 153.8  | [28] 229.4      | [29] 3506.3    | [30] 62893 | [31] 11458 | [32] 69669 | [33] 66668 | [34] 161 | [35] 146\n[0] 5.2m     | [1] 654 | [2] 4d13h     | [3] 23.3 | [4] 63.5  | [5] 17991 | [6] 3063  | [7] 15.14   | [8] 28.51    | [9] 19.91       | [10] 4.96    | [11] 672.94  | [12] 550.35  | [13] 195.60  | [14] 36.36   | [15] 7.35    | [16] 24.0%     | [17] 0.9%     | [18] 1.77%    | [19] 3.5%     | [20] 28.5%    | [21] (1512,2h) | [22] (318,21m) | [23] 0.5   | [24] 13m          | [25] 0.70     | [26] 0.2     | [27] 149.6  | [28] 236.0      | [29] 3571.4    | [30] 80884 | [31] 14521 | [32] 94098 | [33] 91097 | [34] 218 | [35] 198\n[0] 3.8m     | [1] 785 | [2] 5d11h     | [3] 21.8 | [4] 76.1  | [5] 16056 | [6] 2305  | [7] 15.38   | [8] 28.51    | [9] 20.20       | [10] 4.20    | [11] 703.93  | [12] 571.72  | [13] 167.87  | [14] 31.13   | [15] 5.83    | [16] 23.9%     | [17] 0.7%     | [18] 1.14%    | [19] 3.0%     | [20] 31.4%    | [21] (1329,2h) | [22] (334,22m) | [23] 0.5   | [24] 14m          | [25] 0.65     | [26] 0.2     | [27] 133.7  | [28] 226.5      | [29] 3437.6    | [30] 96940 | [31] 16826 | [32] 113676 | [33] 110675 | [34] 270 | [35] 245\n[0] 1.1m     | [1] 920 | [2] 6d9.3h    | [3] 22.5 | [4] 91.5  | [5] 19588 | [6] 2356  | [7] 14.90   | [8] 28.51    | [9] 21.10       | [10] 4.33    | [11] 688.77  | [12] 554.57  | [13] 174.98  | [14] 27.95   | [15] 6.42    | [16] 29.4%     | [17] 0.7%     | [18] 0.88%    | [19] 2.6%     | [20] 33.3%    | [21] (1666,2h) | [22] (349,23m) | [23] 0.6   | [24] 13m          | [25] 0.67     | [26] 0.2     | [27] 161.5  | [28] 223.8      | [29] 3491.1    | [30] 116528 | [31] 19182 | [32] 131790 | [33] 128789 | [34] 319 | [35] 292\nTraceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1335, in run\n    self.run_get(acc)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 518, in run_get\n    recorder.begin_get(self, acc)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 233, in begin_get\n    self.request = self.request_context(sim, acc)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 189, in request_context\n    raise AssertionError(('author checkpoint assignment changed', nwin, assigned, relative))\nAssertionError: ('author checkpoint assignment changed', 1007, 1008, 604641.9793410301)\nAccess to block 1005520 at TS=(147793,436855.30654372246h), Acc(block=1005520, offset=0, size=5898240, ts=1572679103.557401, features=op=OpType.GET_PERM, pipeline=1, namespace=1, user=6)\nTraceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 669, in <module>\n    main()\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 585, in main\n    sim_cache.simulate_cache_driver(args)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1560, in simulate_cache_driver\n    stats = simulate_cache(cache, accesses, sample_ratio,\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1356, in simulate_cache\n    csim.run(accesses, total_iops_get, total_iops, total_secs)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1335, in run\n    self.run_get(acc)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 518, in run_get\n    recorder.begin_get(self, acc)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 233, in begin_get\n    self.request = self.request_context(sim, acc)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 189, in request_context\n    raise AssertionError(('author checkpoint assignment changed', nwin, assigned, relative))\nAssertionError: ('author checkpoint assignment changed', 1007, 1008, 604641.9793410301)\n"
+}

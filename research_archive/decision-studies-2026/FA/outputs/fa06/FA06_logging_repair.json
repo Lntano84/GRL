@@ -1,0 +1,44 @@
+{
+  "status": "verified",
+  "issue": "fresh collection log was only opened when file already existed",
+  "evaluation_scores_read": false,
+  "old_collections_retained": true,
+  "completed_fits": 9,
+  "new_refits": 0,
+  "new_valid_collections": 3,
+  "invalid_collections": 3,
+  "actual_terminal_fits": 9,
+  "training_artifact_identity": [
+    {
+      "seed": 7,
+      "artifact": "labels.json",
+      "identical_sha256": "e4ce03348297a9ebf702764c9ab471a32fb03658335cb4882105f78496b05bb0"
+    },
+    {
+      "seed": 7,
+      "artifact": "visible_cache.npz",
+      "identical_sha256": "c412541482a217bace5228d9cd42bd70c08ad609e1fe21e39302a89b56da2d11"
+    },
+    {
+      "seed": 42,
+      "artifact": "labels.json",
+      "identical_sha256": "72c01080ef0c2ba7bdc3a582028ab6e86f0f09d6987562dedcee74271cd456b2"
+    },
+    {
+      "seed": 42,
+      "artifact": "visible_cache.npz",
+      "identical_sha256": "2cd77c1afd9a64c2d4d18cb4f6aeec90c7a4a2244c47b7c4f798922fc51543fc"
+    },
+    {
+      "seed": 99,
+      "artifact": "labels.json",
+      "identical_sha256": "9dac7cece78240961882b09ee12f0ec2b1ee4ff59e7b96b0f3a41334b2ef04e4"
+    },
+    {
+      "seed": 99,
+      "artifact": "visible_cache.npz",
+      "identical_sha256": "e0fb3c43855528d6892a9a25931dbb50cb7603d49e8872ec23d81155ed54d848"
+    }
+  ],
+  "explanation": "fresh log-open fix changed persistence only; corrected replays yielded byte-identical caches and labels, so nine sealed completed fits were reused and will be independently re-predicted"
+}

@@ -1,0 +1,287 @@
+{
+  "task": "Q01 step 1 -- data and feedback qualification for the timeout-retry screening",
+  "status": "data qualification PASSED; feedback permission FAILED; no retry arm exists",
+  "repo": {
+    "name": "zixy17/LimeQO",
+    "default_branch": "main",
+    "note": "the four matrix CSVs and the four init masks ship with the repo, so the Dropbox download and the EXPLAIN-plan zip are NOT needed for this round"
+  },
+  "data_profile": {
+    "ceb": {
+      "file": "ceb-matrix.csv",
+      "rows": 3133,
+      "cols": 49,
+      "unique_row_labels": 3133,
+      "min": 0.008107900619506836,
+      "max": 4368.411399841309,
+      "median": 2.1091442108154297,
+      "nan": 0,
+      "inf": 0,
+      "zero": 0,
+      "negative": 0,
+      "identical_column_pairs": 7,
+      "constant_columns": 0,
+      "col0_is_row_min": 758
+    },
+    "job": {
+      "file": "job-matrix.csv",
+      "rows": 113,
+      "cols": 49,
+      "unique_row_labels": 113,
+      "min": 0.0029163360595703125,
+      "max": 2238.118647813797,
+      "median": 1.3229424953460693,
+      "nan": 0,
+      "inf": 0,
+      "zero": 0,
+      "negative": 0,
+      "identical_column_pairs": 8,
+      "constant_columns": 0,
+      "col0_is_row_min": 43
+    },
+    "stack": {
+      "file": "stack-matrix.csv",
+      "rows": 6191,
+      "cols": 49,
+      "unique_row_labels": 6191,
+      "min": 0.003534078598022461,
+      "max": 317.01166009902954,
+      "median": 2.540956497192383,
+      "nan": 0,
+      "inf": 0,
+      "zero": 0,
+      "negative": 0,
+      "identical_column_pairs": 15,
+      "constant_columns": 0,
+      "col0_is_row_min": 502
+    },
+    "dsb": {
+      "file": "dsb-matrix.csv",
+      "rows": 964,
+      "cols": 49,
+      "unique_row_labels": 964,
+      "min": 0.0025453567504882812,
+      "max": 969.903906583786,
+      "median": 6.1188013553619385,
+      "nan": 0,
+      "inf": 0,
+      "zero": 0,
+      "negative": 0,
+      "identical_column_pairs": 7,
+      "constant_columns": 0,
+      "col0_is_row_min": 146
+    }
+  },
+  "replay_semantics": {
+    "matrix": "rows = queries, cols = hints, cell = true runtime in SECONDS",
+    "default_plan": "column 0; dataset.default_time = sum(matrix[:,0])",
+    "initial_mask": "init_<name>_mask.npy marks cells already observed at start",
+    "duplicate_plan_correspondence": "given by a UNION-FIND over hints per query, built from the EXPLAIN plans; get_same_hints(q,h) returns the whole equivalence class.  The matrix CSVs alone do not carry this information.  The matrices do contain exactly identical column pairs (7 for ceb/job/dsb, 15 for stack), which is consistent with the equivalence structure."
+  },
+  "feedback_permission": {
+    "violation_lines": [
+      "limeqo.py:89",
+      "limeqo.py:92",
+      "limeqo.py:114"
+    ],
+    "other_files_with_same_pattern": [
+      {
+        "file": "strategies/limeqo.py",
+        "line": 89,
+        "code": "if dataset.matrix[select, hint] >= min_observed[select]:",
+        "masked_in_line": false
+      },
+      {
+        "file": "strategies/limeqo.py",
+        "line": 92,
+        "code": "if dataset.matrix[select, hint] >= timeout_tolerance:",
+        "masked_in_line": false
+      },
+      {
+        "file": "strategies/limeqo.py",
+        "line": 114,
+        "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+        "masked_in_line": false
+      },
+      {
+        "file": "strategies/limeqo_plus.py",
+        "line": 114,
+        "code": "if dataset.matrix[select, hint] >= min_observed[select]:",
+        "masked_in_line": false
+      },
+      {
+        "file": "strategies/limeqo_plus.py",
+        "line": 117,
+        "code": "if dataset.matrix[select, hint] >= timeout_tolerance:",
+        "masked_in_line": false
+      },
+      {
+        "file": "strategies/limeqo_plus.py",
+        "line": 139,
+        "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+        "masked_in_line": false
+      },
+      {
+        "file": "strategies/greedy.py",
+        "line": 74,
+        "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+        "masked_in_line": false
+      },
+      {
+        "file": "strategies/random.py",
+        "line": 60,
+        "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+        "masked_in_line": false
+      },
+      {
+        "file": "strategies/qo_advisor.py",
+        "line": 68,
+        "code": "if dataset.matrix[select, hint] >= min_observed[select]:",
+        "masked_in_line": false
+      }
+    ],
+    "minimal_witness": {
+      "fixed_context": {
+        "deadline_t": 2.0,
+        "best": 10.0,
+        "timeout_tolerance": 10.0
+      },
+      "legal_feedback": "runtime >= 2.0",
+      "rows": [
+        {
+          "x": 0.5,
+          "legal_visible": false,
+          "explored": null,
+          "timeout_m": null,
+          "mask": "mask[select, same_hints] = 1 ; explored_m[select, same_hints] = 1",
+          "outcome": "booked as a MEASUREMENT of the runtime"
+        },
+        {
+          "x": 1.9,
+          "legal_visible": false,
+          "explored": null,
+          "timeout_m": null,
+          "mask": "mask[select, same_hints] = 1 ; explored_m[select, same_hints] = 1",
+          "outcome": "booked as a MEASUREMENT of the runtime"
+        },
+        {
+          "x": 2.0,
+          "legal_visible": true,
+          "explored": null,
+          "timeout_m": null,
+          "mask": "mask[select, same_hints] = 1 ; explored_m[select, same_hints] = 1",
+          "outcome": "booked as a MEASUREMENT of the runtime"
+        },
+        {
+          "x": 4.0,
+          "legal_visible": true,
+          "explored": null,
+          "timeout_m": null,
+          "mask": "mask[select, same_hints] = 1 ; explored_m[select, same_hints] = 1",
+          "outcome": "booked as a MEASUREMENT of the runtime"
+        },
+        {
+          "x": 9.9,
+          "legal_visible": true,
+          "explored": null,
+          "timeout_m": null,
+          "mask": "mask[select, same_hints] = 1 ; explored_m[select, same_hints] = 1",
+          "outcome": "booked as a MEASUREMENT of the runtime"
+        },
+        {
+          "x": 10.0,
+          "legal_visible": true,
+          "explored": "explored_m[select, same_hints] = 1",
+          "timeout_m": "timeout_m[select, same_hints] = tolerance ; timeout += tolerance",
+          "mask": null,
+          "outcome": "recorded as a censored lower bound"
+        },
+        {
+          "x": 25.0,
+          "legal_visible": true,
+          "explored": "explored_m[select, same_hints] = 1",
+          "timeout_m": "timeout_m[select, same_hints] = tolerance ; timeout += tolerance",
+          "mask": null,
+          "outcome": "recorded as a censored lower bound"
+        }
+      ],
+      "decision_split_among_legal_rows": {
+        "booked as a MEASUREMENT of the runtime": [
+          2.0,
+          4.0,
+          9.9
+        ],
+        "recorded as a censored lower bound": [
+          10.0,
+          25.0
+        ]
+      },
+      "established": [
+        "limeqo.py:89 and :92 branch on the ground-truth runtime",
+        "two worlds consistent with the same legal feedback produce different bookkeeping (mask vs timeout_m) and different candidate sets"
+      ],
+      "not_established": [
+        "that published conclusions reverse",
+        "the effect size on reported results"
+      ]
+    },
+    "explanation": "the branch at line 92 splits on the HIDDEN runtime: x < tol books a cancelled run into mask as a completed measurement, x >= tol books it into timeout_m as a censored bound.  Legal feedback ('runtime >= 2') cannot choose between these.  The misbooked window is t <= x < tol."
+  },
+  "retry_arm": {
+    "present": false,
+    "evidence": "timeout_m is written at lines 93 and 117 and read only at line 41 as the censoring indicator for the matrix-factorization stage; no line uses it to re-run a candidate, and the candidate filter at 82-85 never consults it"
+  },
+  "exposure": {
+    "ceb": {
+      "rows": 3133,
+      "cols": 49,
+      "cells_better_than_default": 32198,
+      "share": 0.20973572959346523,
+      "median_improvement_factor": 1.1451515395776237,
+      "max_improvement_factor": 284.36970845189444
+    },
+    "job": {
+      "rows": 113,
+      "cols": 49,
+      "cells_better_than_default": 911,
+      "share": 0.16452952862560954,
+      "median_improvement_factor": 1.2574188501589625,
+      "max_improvement_factor": 51.042825231291054
+    },
+    "stack": {
+      "rows": 6191,
+      "cols": 49,
+      "cells_better_than_default": 62738,
+      "share": 0.20681107203016888,
+      "median_improvement_factor": 1.164791760164043,
+      "max_improvement_factor": 113.79007869745874
+    },
+    "dsb": {
+      "rows": 964,
+      "cols": 49,
+      "cells_better_than_default": 10945,
+      "share": 0.23170886611906175,
+      "median_improvement_factor": 1.5580544933078393,
+      "max_improvement_factor": 262.1171862498543
+    },
+    "retry_arm_present": false,
+    "timeout_m_read_lines": [
+      28,
+      41,
+      44
+    ]
+  },
+  "not_done": [
+    "no model training",
+    "no full experiment run",
+    "no Dropbox download",
+    "no database rebuild",
+    "no window or threshold search"
+  ],
+  "next_step_requirements": [
+    "replace the policy's access to `matrix` with observe(q,h) -> (value, kind) where kind is measured or cancelled_at_t",
+    "make bookkeeping depend only on the observation kind",
+    "use the two-world example as a regression test",
+    "if the official strategies are reused as baselines, mark them as modified"
+  ]
+}

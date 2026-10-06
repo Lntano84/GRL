@@ -1,0 +1,1813 @@
+{
+  "new_formal_runs": 6,
+  "reused_baseline_runs": 3,
+  "hard_failures": 0,
+  "frozen_hashes_unchanged": true,
+  "raw_runtime_cells": 14234,
+  "events": 748952,
+  "observation_events": 413129,
+  "test_predictions": 1161,
+  "max_ledger_error_s": 0.0,
+  "per_run_event_audits": [
+    {
+      "arm": "FIXED-100",
+      "seed": 7,
+      "events": 83061,
+      "observation_events": 41316,
+      "pair_labels": 41672,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 10566,
+      "cache_checks": 30750,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "FIXED-100",
+      "seed": 42,
+      "events": 82942,
+      "observation_events": 41125,
+      "pair_labels": 41744,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 10565,
+      "cache_checks": 30560,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "FIXED-100",
+      "seed": 99,
+      "events": 81712,
+      "observation_events": 39976,
+      "pair_labels": 41665,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 10548,
+      "cache_checks": 29428,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "RANDOM-100",
+      "seed": 7,
+      "events": 40404,
+      "observation_events": 12774,
+      "pair_labels": 27607,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 9070,
+      "cache_checks": 3704,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 7,
+      "events": 127888,
+      "observation_events": 83992,
+      "pair_labels": 43747,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 10523,
+      "cache_checks": 73469,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "RANDOM-100",
+      "seed": 42,
+      "events": 36645,
+      "observation_events": 12661,
+      "pair_labels": 23963,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 9007,
+      "cache_checks": 3654,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 42,
+      "events": 126019,
+      "observation_events": 82606,
+      "pair_labels": 43268,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 10507,
+      "cache_checks": 72099,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "RANDOM-100",
+      "seed": 99,
+      "events": 40765,
+      "observation_events": 12978,
+      "pair_labels": 27764,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 9160,
+      "cache_checks": 3818,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 99,
+      "events": 129516,
+      "observation_events": 85701,
+      "pair_labels": 43664,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 10551,
+      "cache_checks": 75150,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    }
+  ],
+  "independent_selection_audits": [
+    {
+      "arm": "RANDOM-100",
+      "seed": 42,
+      "batches_checked": 11,
+      "selections_checked": 6226,
+      "cost_regressor_refits_for_audit": 0,
+      "cost_regressor_recompute_s": 0,
+      "audit_wall_s": 0.8373068999999305,
+      "checks": [
+        {
+          "round": 1,
+          "eligible_candidates": 56540,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 2,
+          "eligible_candidates": 55628,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 3,
+          "eligible_candidates": 53894,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 4,
+          "eligible_candidates": 51722,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 5,
+          "eligible_candidates": 48985,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 6,
+          "eligible_candidates": 45891,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 7,
+          "eligible_candidates": 42523,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 8,
+          "eligible_candidates": 38798,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 9,
+          "eligible_candidates": 34903,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 10,
+          "eligible_candidates": 30789,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 11,
+          "eligible_candidates": 26243,
+          "selected": 566,
+          "exact_order_match": true
+        }
+      ]
+    },
+    {
+      "arm": "RANDOM-100",
+      "seed": 7,
+      "batches_checked": 12,
+      "selections_checked": 6792,
+      "cost_regressor_refits_for_audit": 0,
+      "cost_regressor_recompute_s": 0,
+      "audit_wall_s": 0.8993953999997757,
+      "checks": [
+        {
+          "round": 1,
+          "eligible_candidates": 56540,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 2,
+          "eligible_candidates": 55532,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 3,
+          "eligible_candidates": 53934,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 4,
+          "eligible_candidates": 51687,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 5,
+          "eligible_candidates": 48927,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 6,
+          "eligible_candidates": 45867,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 7,
+          "eligible_candidates": 42380,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 8,
+          "eligible_candidates": 38777,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 9,
+          "eligible_candidates": 34706,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 10,
+          "eligible_candidates": 30581,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 11,
+          "eligible_candidates": 26326,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 12,
+          "eligible_candidates": 21912,
+          "selected": 566,
+          "exact_order_match": true
+        }
+      ]
+    },
+    {
+      "arm": "RANDOM-100",
+      "seed": 99,
+      "batches_checked": 12,
+      "selections_checked": 6792,
+      "cost_regressor_refits_for_audit": 0,
+      "cost_regressor_recompute_s": 0,
+      "audit_wall_s": 0.6809060999999019,
+      "checks": [
+        {
+          "round": 1,
+          "eligible_candidates": 56540,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 2,
+          "eligible_candidates": 55585,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 3,
+          "eligible_candidates": 53913,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 4,
+          "eligible_candidates": 51647,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 5,
+          "eligible_candidates": 49010,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 6,
+          "eligible_candidates": 45968,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 7,
+          "eligible_candidates": 42567,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 8,
+          "eligible_candidates": 38882,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 9,
+          "eligible_candidates": 34847,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 10,
+          "eligible_candidates": 30597,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 11,
+          "eligible_candidates": 26387,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 12,
+          "eligible_candidates": 22014,
+          "selected": 566,
+          "exact_order_match": true
+        }
+      ]
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 42,
+      "batches_checked": 73,
+      "selections_checked": 41318,
+      "cost_regressor_refits_for_audit": 803,
+      "cost_regressor_recompute_s": 560.7624493999997,
+      "audit_wall_s": 564.2037276000001,
+      "checks": [
+        {
+          "round": 1,
+          "eligible_candidates": 56540,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 2,
+          "eligible_candidates": 55788,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 3,
+          "eligible_candidates": 55117,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 4,
+          "eligible_candidates": 54431,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 5,
+          "eligible_candidates": 53645,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 6,
+          "eligible_candidates": 52910,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 7,
+          "eligible_candidates": 52245,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 8,
+          "eligible_candidates": 51579,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 9,
+          "eligible_candidates": 50946,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 10,
+          "eligible_candidates": 50338,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 11,
+          "eligible_candidates": 49738,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 12,
+          "eligible_candidates": 49131,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 13,
+          "eligible_candidates": 48545,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 14,
+          "eligible_candidates": 47946,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 15,
+          "eligible_candidates": 47361,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 16,
+          "eligible_candidates": 46771,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 17,
+          "eligible_candidates": 46184,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 18,
+          "eligible_candidates": 45598,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 19,
+          "eligible_candidates": 45004,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 20,
+          "eligible_candidates": 44370,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 21,
+          "eligible_candidates": 43719,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 22,
+          "eligible_candidates": 43067,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 23,
+          "eligible_candidates": 42414,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 24,
+          "eligible_candidates": 41733,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 25,
+          "eligible_candidates": 41074,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 26,
+          "eligible_candidates": 40314,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 27,
+          "eligible_candidates": 39522,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 28,
+          "eligible_candidates": 38815,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 29,
+          "eligible_candidates": 37931,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 30,
+          "eligible_candidates": 37205,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 31,
+          "eligible_candidates": 36491,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 32,
+          "eligible_candidates": 35746,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 33,
+          "eligible_candidates": 35023,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 34,
+          "eligible_candidates": 34383,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 35,
+          "eligible_candidates": 33739,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 36,
+          "eligible_candidates": 33060,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 37,
+          "eligible_candidates": 32354,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 38,
+          "eligible_candidates": 31701,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 39,
+          "eligible_candidates": 31111,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 40,
+          "eligible_candidates": 30515,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 41,
+          "eligible_candidates": 29878,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 42,
+          "eligible_candidates": 29183,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 43,
+          "eligible_candidates": 28396,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 44,
+          "eligible_candidates": 27703,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 45,
+          "eligible_candidates": 27077,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 46,
+          "eligible_candidates": 26448,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 47,
+          "eligible_candidates": 25745,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 48,
+          "eligible_candidates": 25054,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 49,
+          "eligible_candidates": 24331,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 50,
+          "eligible_candidates": 23662,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 51,
+          "eligible_candidates": 23048,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 52,
+          "eligible_candidates": 22363,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 53,
+          "eligible_candidates": 21708,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 54,
+          "eligible_candidates": 21103,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 55,
+          "eligible_candidates": 20282,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 56,
+          "eligible_candidates": 19588,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 57,
+          "eligible_candidates": 18985,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 58,
+          "eligible_candidates": 18242,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 59,
+          "eligible_candidates": 17624,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 60,
+          "eligible_candidates": 17037,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 61,
+          "eligible_candidates": 16276,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 62,
+          "eligible_candidates": 15474,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 63,
+          "eligible_candidates": 14674,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 64,
+          "eligible_candidates": 13612,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 65,
+          "eligible_candidates": 12869,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 66,
+          "eligible_candidates": 12211,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 67,
+          "eligible_candidates": 11242,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 68,
+          "eligible_candidates": 10605,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 69,
+          "eligible_candidates": 9858,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 70,
+          "eligible_candidates": 9225,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 71,
+          "eligible_candidates": 8607,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 72,
+          "eligible_candidates": 7961,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 73,
+          "eligible_candidates": 6676,
+          "selected": 566,
+          "exact_order_match": true
+        }
+      ]
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 99,
+      "batches_checked": 76,
+      "selections_checked": 43016,
+      "cost_regressor_refits_for_audit": 836,
+      "cost_regressor_recompute_s": 585.2236416000019,
+      "audit_wall_s": 588.8932807000001,
+      "checks": [
+        {
+          "round": 1,
+          "eligible_candidates": 56540,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 2,
+          "eligible_candidates": 55774,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 3,
+          "eligible_candidates": 55162,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 4,
+          "eligible_candidates": 54546,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 5,
+          "eligible_candidates": 53966,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 6,
+          "eligible_candidates": 53318,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 7,
+          "eligible_candidates": 52689,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 8,
+          "eligible_candidates": 52015,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 9,
+          "eligible_candidates": 51331,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 10,
+          "eligible_candidates": 50634,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 11,
+          "eligible_candidates": 49991,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 12,
+          "eligible_candidates": 49358,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 13,
+          "eligible_candidates": 48717,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 14,
+          "eligible_candidates": 48121,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 15,
+          "eligible_candidates": 47530,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 16,
+          "eligible_candidates": 46942,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 17,
+          "eligible_candidates": 46347,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 18,
+          "eligible_candidates": 45764,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 19,
+          "eligible_candidates": 45180,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 20,
+          "eligible_candidates": 44596,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 21,
+          "eligible_candidates": 44004,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 22,
+          "eligible_candidates": 43412,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 23,
+          "eligible_candidates": 42822,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 24,
+          "eligible_candidates": 42211,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 25,
+          "eligible_candidates": 41615,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 26,
+          "eligible_candidates": 41029,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 27,
+          "eligible_candidates": 40437,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 28,
+          "eligible_candidates": 39810,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 29,
+          "eligible_candidates": 39100,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 30,
+          "eligible_candidates": 38457,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 31,
+          "eligible_candidates": 37812,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 32,
+          "eligible_candidates": 37190,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 33,
+          "eligible_candidates": 36525,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 34,
+          "eligible_candidates": 35915,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 35,
+          "eligible_candidates": 35264,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 36,
+          "eligible_candidates": 34672,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 37,
+          "eligible_candidates": 34071,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 38,
+          "eligible_candidates": 33452,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 39,
+          "eligible_candidates": 32818,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 40,
+          "eligible_candidates": 32206,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 41,
+          "eligible_candidates": 31574,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 42,
+          "eligible_candidates": 30906,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 43,
+          "eligible_candidates": 30158,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 44,
+          "eligible_candidates": 29443,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 45,
+          "eligible_candidates": 28772,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 46,
+          "eligible_candidates": 28148,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 47,
+          "eligible_candidates": 27378,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 48,
+          "eligible_candidates": 26514,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 49,
+          "eligible_candidates": 25722,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 50,
+          "eligible_candidates": 24909,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 51,
+          "eligible_candidates": 24099,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 52,
+          "eligible_candidates": 23448,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 53,
+          "eligible_candidates": 22664,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 54,
+          "eligible_candidates": 22045,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 55,
+          "eligible_candidates": 21385,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 56,
+          "eligible_candidates": 20691,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 57,
+          "eligible_candidates": 20021,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 58,
+          "eligible_candidates": 19397,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 59,
+          "eligible_candidates": 18635,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 60,
+          "eligible_candidates": 17955,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 61,
+          "eligible_candidates": 17301,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 62,
+          "eligible_candidates": 16537,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 63,
+          "eligible_candidates": 15670,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 64,
+          "eligible_candidates": 14826,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 65,
+          "eligible_candidates": 13997,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 66,
+          "eligible_candidates": 13142,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 67,
+          "eligible_candidates": 12417,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 68,
+          "eligible_candidates": 11715,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 69,
+          "eligible_candidates": 11014,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 70,
+          "eligible_candidates": 10400,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 71,
+          "eligible_candidates": 9761,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 72,
+          "eligible_candidates": 9116,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 73,
+          "eligible_candidates": 8287,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 74,
+          "eligible_candidates": 7669,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 75,
+          "eligible_candidates": 6736,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 76,
+          "eligible_candidates": 5823,
+          "selected": 566,
+          "exact_order_match": true
+        }
+      ]
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 7,
+      "batches_checked": 75,
+      "selections_checked": 42450,
+      "cost_regressor_refits_for_audit": 825,
+      "cost_regressor_recompute_s": 590.8487523000017,
+      "audit_wall_s": 594.5551729000003,
+      "checks": [
+        {
+          "round": 1,
+          "eligible_candidates": 56540,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 2,
+          "eligible_candidates": 55741,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 3,
+          "eligible_candidates": 54985,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 4,
+          "eligible_candidates": 54316,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 5,
+          "eligible_candidates": 53623,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 6,
+          "eligible_candidates": 52965,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 7,
+          "eligible_candidates": 52338,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 8,
+          "eligible_candidates": 51730,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 9,
+          "eligible_candidates": 51054,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 10,
+          "eligible_candidates": 50403,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 11,
+          "eligible_candidates": 49733,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 12,
+          "eligible_candidates": 49129,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 13,
+          "eligible_candidates": 48504,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 14,
+          "eligible_candidates": 47823,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 15,
+          "eligible_candidates": 47154,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 16,
+          "eligible_candidates": 46517,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 17,
+          "eligible_candidates": 45855,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 18,
+          "eligible_candidates": 45221,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 19,
+          "eligible_candidates": 44615,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 20,
+          "eligible_candidates": 43977,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 21,
+          "eligible_candidates": 43336,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 22,
+          "eligible_candidates": 42684,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 23,
+          "eligible_candidates": 41964,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 24,
+          "eligible_candidates": 41251,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 25,
+          "eligible_candidates": 40595,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 26,
+          "eligible_candidates": 39980,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 27,
+          "eligible_candidates": 39403,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 28,
+          "eligible_candidates": 38819,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 29,
+          "eligible_candidates": 38234,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 30,
+          "eligible_candidates": 37653,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 31,
+          "eligible_candidates": 37052,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 32,
+          "eligible_candidates": 36385,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 33,
+          "eligible_candidates": 35754,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 34,
+          "eligible_candidates": 35099,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 35,
+          "eligible_candidates": 34439,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 36,
+          "eligible_candidates": 33836,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 37,
+          "eligible_candidates": 33163,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 38,
+          "eligible_candidates": 32512,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 39,
+          "eligible_candidates": 31868,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 40,
+          "eligible_candidates": 31102,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 41,
+          "eligible_candidates": 30471,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 42,
+          "eligible_candidates": 29807,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 43,
+          "eligible_candidates": 29062,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 44,
+          "eligible_candidates": 28386,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 45,
+          "eligible_candidates": 27636,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 46,
+          "eligible_candidates": 26946,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 47,
+          "eligible_candidates": 26306,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 48,
+          "eligible_candidates": 25655,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 49,
+          "eligible_candidates": 24819,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 50,
+          "eligible_candidates": 24085,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 51,
+          "eligible_candidates": 23340,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 52,
+          "eligible_candidates": 22725,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 53,
+          "eligible_candidates": 21816,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 54,
+          "eligible_candidates": 21219,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 55,
+          "eligible_candidates": 20504,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 56,
+          "eligible_candidates": 19848,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 57,
+          "eligible_candidates": 19196,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 58,
+          "eligible_candidates": 18377,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 59,
+          "eligible_candidates": 17531,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 60,
+          "eligible_candidates": 16883,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 61,
+          "eligible_candidates": 16064,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 62,
+          "eligible_candidates": 15200,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 63,
+          "eligible_candidates": 14547,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 64,
+          "eligible_candidates": 13840,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 65,
+          "eligible_candidates": 13053,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 66,
+          "eligible_candidates": 12389,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 67,
+          "eligible_candidates": 11713,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 68,
+          "eligible_candidates": 11067,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 69,
+          "eligible_candidates": 10455,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 70,
+          "eligible_candidates": 9881,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 71,
+          "eligible_candidates": 9239,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 72,
+          "eligible_candidates": 8584,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 73,
+          "eligible_candidates": 7966,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 74,
+          "eligible_candidates": 6830,
+          "selected": 566,
+          "exact_order_match": true
+        },
+        {
+          "round": 75,
+          "eligible_candidates": 5569,
+          "selected": 566,
+          "exact_order_match": true
+        }
+      ]
+    }
+  ],
+  "initial_predictions_and_costs_match": true,
+  "new_validation_cost_s": 0,
+  "all_new_dispatch_caps_leq100": true,
+  "audit_total_wall_s": 601.6635940000001,
+  "external_interruption_recovery_checks": [
+    {
+      "seed": 7,
+      "preserved_events": 121997,
+      "exact_log_prefix_match": true,
+      "checkpoint_round": 70,
+      "discarded_events": 0,
+      "resume_including_setup_wall_s": 229.9523095999998,
+      "resume_setup_and_bookkeeping_s": 1.0065569999997024
+    },
+    {
+      "seed": 42,
+      "preserved_events": 120657,
+      "exact_log_prefix_match": true,
+      "checkpoint_round": 69,
+      "discarded_events": 0,
+      "resume_including_setup_wall_s": 169.61057579999988,
+      "resume_setup_and_bookkeeping_s": 1.0623611999999412
+    },
+    {
+      "seed": 99,
+      "preserved_events": 120157,
+      "exact_log_prefix_match": true,
+      "checkpoint_round": 69,
+      "discarded_events": 0,
+      "resume_including_setup_wall_s": 314.7264639,
+      "resume_setup_and_bookkeeping_s": 1.0762179000003016
+    }
+  ],
+  "warning": "This is a development comparison on the previously inspected test fold. Audit regressor refits are not additional strategy trajectories."
+}

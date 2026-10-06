@@ -1,0 +1,36 @@
+diff --git a/src/driver.cpp b/src/driver.cpp
+index 663fc4d..3afee73 100644
+--- a/src/driver.cpp
++++ b/src/driver.cpp
+@@ -33,6 +33,7 @@ int main(int argc, char** argv)
+ 		("agentNum,k", po::value<int>()->default_value(0), "number of agents")
+ 		("cutoffTime,t", po::value<double>()->default_value(20), "cutoff time (seconds)")
+ 		("screen,s", po::value<int>()->default_value(1), "screen option (0: none; 1: results; 2:all)")
++		("seed", po::value<int>()->default_value(0), "random seed")
+ 		("sipp", po::value<bool>()->default_value(0), "using SIPP as the low-level solver")
+ 		;
+ 	po::variables_map vm;
+@@ -45,7 +46,7 @@ int main(int argc, char** argv)
+ 
+ 	po::notify(vm);
+ 
+-	srand((int)time(0));
++	srand(vm["seed"].as<int>());
+     auto start_time = Time::now();
+ 	///////////////////////////////////////////////////////////////////////////
+ 	// load the instance
+@@ -55,7 +56,6 @@ int main(int argc, char** argv)
+         agent_num = replan_agent.size();
+     }
+ 	Instance instance(vm["map"].as<string>(), input_state, replan_agent, agent_num);
+-	srand(0);
+     PBS pbs(instance, vm["sipp"].as<bool>(), vm["screen"].as<int>());
+     pbs.replan_agents = replan_agent;
+     pbs.state_json = input_state;
+@@ -67,4 +67,4 @@ int main(int argc, char** argv)
+     cout << "program run time : " << ((fsec)(Time::now() - start_time)).count() << endl;
+ 	return 0;
+ 
+-}
+\ No newline at end of file
++}

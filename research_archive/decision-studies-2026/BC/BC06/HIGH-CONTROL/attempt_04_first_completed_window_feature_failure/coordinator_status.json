@@ -1,0 +1,92 @@
+{
+  "status": "failed",
+  "arm": "HIGH-CONTROL",
+  "budget_seconds": 1800,
+  "attempts": 1,
+  "started_unix": 1790756080.6156652,
+  "wall_seconds": 30.014999999999418,
+  "remaining_budget_seconds": 1769.9850000000006,
+  "latest_progress": {
+    "arm": "HIGH-CONTROL",
+    "completed_windows": 1,
+    "trace_elapsed_s": 604.7618930339813,
+    "request_sequence": 245,
+    "candidate_items_decided": 3442,
+    "wall_seconds": 2.4103768000022683
+  },
+  "exit_code": 1,
+  "replay_audit": {
+    "completed": false,
+    "mode": "read_only_observation",
+    "started_unix": 1790756081.8079708,
+    "recorder": {
+      "completed": false,
+      "arm": "HIGH-CONTROL",
+      "elapsed_wall_seconds": 2.4138206000025093,
+      "request_sequence": 246,
+      "get_request_count": 228,
+      "candidate_counts": {
+        "generated": 3442,
+        "currently_pending": 0,
+        "decided": 3442
+      },
+      "actual_decision_counts": {
+        "batches": 278,
+        "items": 3442,
+        "rejected": 3087,
+        "source/demand": 3345,
+        "created_and_decided_same_request": 3442,
+        "delay_positive": 0,
+        "get_requests": 228,
+        "accepted": 355,
+        "source/prefetch": 97
+      },
+      "check_only_counts": {
+        "calls": 5,
+        "items": 97,
+        "accept": 97,
+        "reject": 0
+      },
+      "candidate_source_counts": {
+        "demand": 3345,
+        "prefetch": 97
+      },
+      "unique_candidate_creation_requests": 136,
+      "unique_actual_decision_requests": 136,
+      "unique_candidate_blocks": 71,
+      "unique_candidate_chunks": 2872,
+      "model_input_vector_lengths": {
+        "18": 3539
+      },
+      "predicted_items_by_call_kind": {
+        "actual": 3442,
+        "check_only": 97
+      },
+      "model_feature_names": [
+        "feat_metadata|op",
+        "feat_metadata|ns",
+        "feat_metadata|user",
+        "feat_metadata_size|start",
+        "feat_metadata_size|end",
+        "feat_metadata_size|size",
+        "feat_dynamic_b|0",
+        "feat_dynamic_b|1",
+        "feat_dynamic_b|2",
+        "feat_dynamic_b|3",
+        "feat_dynamic_b|4",
+        "feat_dynamic_b|5",
+        "feat_dynamic_c_combined|0",
+        "feat_dynamic_c_combined|1",
+        "feat_dynamic_c_combined|2",
+        "feat_dynamic_c_combined|3",
+        "feat_dynamic_c_combined|4",
+        "feat_dynamic_c_combined|5"
+      ],
+      "max_cache_occupancy_chunks": 355,
+      "evaluation_writes_recorded_independently": 0,
+      "completed_window_component_max_abs_error": 0.0,
+      "wall_seconds": 2.4138326000029338
+    }
+  },
+  "console_tail": "'ram_cache_elems': None,\n 'ram_cache_size_gb': 10.0,\n 'rejectx_ap': False,\n 'rejectx_ap_factor': None,\n 'rejectx_ap_threshold': None,\n 'retrain_interval_hrs': None,\n 'size_gb': 366.475,\n 'size_opt': 'access',\n 'stats_start': 86400.0,\n 'trace': 'data/tectonic/201910/Region1/full_0_0.1.trace',\n 'tracefile': 'data/tectonic/201910/Region1/full_0_0.1.trace',\n 'train_history_hrs': None,\n 'ttl_model_path': None,\n 'write_mbps': 0}\nCommand: C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim/../run_py.sh py bc06/replay.py --config C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\config.json\nOutput dir: C:/Users/windows/Documents/Codex/2026-09-29/mp01-pp-pbs-socs-2025-https/work/bc06/HIGH-CONTROL/raw/ml-ap-0.798545_6_lru_366.475GB\nLogging to C:/Users/windows/Documents/Codex/2026-09-29/mp01-pp-pbs-socs-2025-https/work/bc06/HIGH-CONTROL/raw/ml-ap-0.798545_6_lru_366.475GB/full_0_0.1.out\nNewMLAP with model: tmp/example/201910_Region1_0_0.1/ea_5892.86_wr_35.599_admit_threshold_binary.model threshold: 0.798545\nPrefetcher(when=partial, range=acctime-episode-predict)\nLearnedRangePrefetcherModel(tmp/example/201910_Region1_0_0.1/ea_5892.86_wr_35.599_prefetch_{k}.model)\nReading from file data/tectonic/201910/Region1/full_0_0.1.trace\n{'total_iops': 147794, 'total_iops_get': 127305, 'total_iops_put': 20489, 'max_key': ('9997015', Acc(block=9997015, offset=0, size=8388608, ts=1572298799.127971, features=op=OpType.GET_PERM, pipeline=1, namespace=9, user=23)), 'trace_duration_secs': 604641.98, 'start_ts': 1572074461.57806, 'end_ts': 1572679103.557401, 'filename': 'data/tectonic/201910/Region1/full_0_0.1.trace', 'trace_hash': b'859229345a0fa792582df0db8cd56c4d', 'kwargs_hash': '5a0a05', 'kwargs': {'only_gets': False}}\n[0] TimeLeft | [1] I   | [2] TraceTime | [3] Hrs$ | [4] %GETs | [5] GETs$ | [6] PUTs$ | [7] STGet%$ | [8] PeakST%$ | [9] STGetNoCa%$ | [10] STPut%$ | [11] ReqMBs$ | [12] GetMBs$ | [13] PutMBs$ | [14] FlaMBs$ | [15] PreMBs$ | [16] STSaved%$ | [17] STPref%$ | [18] Accept%$ | [19] STLate%$ | [20] Wasted%$ | [21] EA$ | [22] AvgIAMax | [23] RAMGb | [24] EstTotalTime | [25] Speedup$ | [26] GET/Ts$ | [27] GET/s$ | [28] MLbatch/s$ | [29] MLpred/s$ | [30] WarningRootEpNotfound | [31] WarningPutStartsAfterZero | [32] Flashcache/warningAdmittedEpsUnknown\n[0] 8.1m     | [1] 1   | [2] 0.17h     | [3] 0.2  | [4] 0.2   | [5] 228   | [6] 17    | [7] 21.10   | [8] 0.00     | [9] 29.16       | [10] 5.11    | [11] 881.34  | [12] 716.40  | [13] 216.82  | [14] 73.38   | [15] 20.05   | [16] 27.6%     | [17] 1.7%     | [18] 10.31%   | [19] 4.9%     | [20] 0.0%     | [21] 0   | [22] (8,22s)  | [23] 0.3   | [24] 8.1m         | [25] 0.69     | [26] 0.4     | [27] 262.0  | [28] 332.1      | [29] 4949.4    | [30] 228 | [31] 17 | [32] 355\nTraceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1335, in run\n    self.run_get(acc)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 499, in run_get\n    recorder.begin_get(self, acc)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 216, in begin_get\n    self.request = self.request_context(sim, acc)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 173, in request_context\n    completed.append(self._completed_window(ods.batches, j))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 135, in _completed_window\n    values = batches[field]\n             ~~~~~~~^^^^^^^\nKeyError: 'flashcache/evictions_stats'\nAccess to block 1868 at TS=(245,436687.5184277647h), Acc(block=1868, offset=0, size=1572864, ts=1572075066.339953, features=op=OpType.GET_PERM, pipeline=0, namespace=0, user=0)\nTraceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 631, in <module>\n    main()\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 560, in main\n    sim_cache.simulate_cache_driver(args)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1560, in simulate_cache_driver\n    stats = simulate_cache(cache, accesses, sample_ratio,\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1356, in simulate_cache\n    csim.run(accesses, total_iops_get, total_iops, total_secs)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1335, in run\n    self.run_get(acc)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 499, in run_get\n    recorder.begin_get(self, acc)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 216, in begin_get\n    self.request = self.request_context(sim, acc)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 173, in request_context\n    completed.append(self._completed_window(ods.batches, j))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 135, in _completed_window\n    values = batches[field]\n             ~~~~~~~^^^^^^^\nKeyError: 'flashcache/evictions_stats'\n"
+}

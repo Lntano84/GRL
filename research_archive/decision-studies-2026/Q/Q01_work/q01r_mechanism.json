@@ -1,0 +1,138 @@
+{
+  "official_branch_table": [
+    {
+      "cap": 2,
+      "x": 5,
+      "mask": 0,
+      "explored_m": 0,
+      "timeout_m": 2,
+      "counted": false,
+      "eligible_again": true
+    },
+    {
+      "cap": 2,
+      "x": 20,
+      "mask": 0,
+      "explored_m": 1,
+      "timeout_m": 2,
+      "counted": false,
+      "eligible_again": false
+    },
+    {
+      "cap": 10,
+      "x": 5,
+      "mask": 1,
+      "explored_m": 1,
+      "timeout_m": null,
+      "counted": true,
+      "eligible_again": false
+    },
+    {
+      "cap": 10,
+      "x": 20,
+      "mask": 0,
+      "explored_m": 1,
+      "timeout_m": 10,
+      "counted": false,
+      "eligible_again": false
+    }
+  ],
+  "retry_trace": {
+    "check1": {
+      "cap": 2,
+      "x": 5.0,
+      "mask": 0,
+      "explored_m": 0,
+      "timeout_m": 2,
+      "counted": false
+    },
+    "check3": {
+      "cap": 10,
+      "x": 5.0,
+      "mask": 1,
+      "explored_m": 1,
+      "timeout_m": null,
+      "counted": true
+    },
+    "total_cost": 7.0
+  },
+  "read_sites": [
+    {
+      "file": "strategies/limeqo.py",
+      "line": 89,
+      "code": "if dataset.matrix[select, hint] >= min_observed[select]:",
+      "role": "DECIDES explored_m for the candidate just executed",
+      "verdict": "VIOLATION: eligibility decided by a comparison (x >= b) that the run did not reveal"
+    },
+    {
+      "file": "strategies/limeqo.py",
+      "line": 92,
+      "code": "if dataset.matrix[select, hint] >= timeout_tolerance:",
+      "role": "decides measurement vs censored bound for the candidate just executed",
+      "verdict": "OK: this is the completion test for the run just performed, at the cap it was given; an environment must know it to report which kind of feedback occurred"
+    },
+    {
+      "file": "strategies/limeqo.py",
+      "line": 114,
+      "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+      "role": "random fallback: eligibility of a randomly drawn cell",
+      "verdict": "VIOLATION, same shape as line 89"
+    },
+    {
+      "file": "strategies/limeqo.py",
+      "line": 35,
+      "code": "while min_observed.sum() > dataset.opt_time + 20:",
+      "role": "STOPPING RULE",
+      "verdict": "VIOLATION (privileged and global): opt_time is the per-row minimum of the FULL hidden matrix, i.e. the oracle optimum.  It may be used for post-hoc evaluation but not as a deployable stop condition"
+    },
+    {
+      "file": "strategies/limeqo.py",
+      "line": 105,
+      "code": "if min_observed.sum() <= dataset.opt_time + 50:",
+      "role": "STOPPING RULE inside the random fallback",
+      "verdict": "VIOLATION, same as line 35"
+    },
+    {
+      "file": "strategies/limeqo_plus.py",
+      "line": 114,
+      "code": "if dataset.matrix[select, hint] >= min_observed[select]:",
+      "role": "eligibility",
+      "verdict": "VIOLATION (same shape as limeqo.py:89)"
+    },
+    {
+      "file": "strategies/limeqo_plus.py",
+      "line": 117,
+      "code": "if dataset.matrix[select, hint] >= timeout_tolerance:",
+      "role": "completion test",
+      "verdict": "OK (same reasoning as limeqo.py:92)"
+    },
+    {
+      "file": "strategies/limeqo_plus.py",
+      "line": 139,
+      "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+      "role": "random fallback eligibility",
+      "verdict": "VIOLATION (same shape as limeqo.py:114)"
+    },
+    {
+      "file": "strategies/greedy.py",
+      "line": 74,
+      "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+      "role": "eligibility of a randomly drawn cell",
+      "verdict": "VIOLATION (same shape)"
+    },
+    {
+      "file": "strategies/random.py",
+      "line": 60,
+      "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+      "role": "eligibility of a randomly drawn cell",
+      "verdict": "VIOLATION (same shape)"
+    },
+    {
+      "file": "strategies/qo_advisor.py",
+      "line": 68,
+      "code": "if dataset.matrix[select, hint] >= min_observed[select]:",
+      "role": "eligibility",
+      "verdict": "VIOLATION (same shape)"
+    }
+  ]
+}

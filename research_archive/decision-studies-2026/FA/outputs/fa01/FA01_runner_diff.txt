@@ -1,0 +1,28 @@
+--- FA00 execution helpers
++++ FA01 execution helpers
+@@ -12,7 +12,7 @@
+                   Exhausted, WallLimit, paid_difference)
+ 
+ ROOT=Path(__file__).resolve().parent
+-OUT=ROOT.parents[1]/"outputs"/"fa00"
++OUT=ROOT.parents[1]/"outputs"/"fa01"
+ 
+ def atomic_json(path,data):
+     temp=path.with_suffix(path.suffix+".tmp")
+@@ -77,7 +77,7 @@
+             if time.perf_counter()>=deadline:raise WallLimit
+             candidates=selector.candidates(cap)
+             if not len(candidates):
+-                if arm=="FIXED-100" or cap>=T:
++                if arm in ("FIXED-100","RANDOM-100","CHEAP-100") or cap>=T:
+                     reason="no_informative_candidates_at_allowed_cap";break
+                 cap=min(T,cap*2 if arm=="GEOMETRIC" else cap+100)
+                 ledger.event(dict(type="cutoff",reason="same_selector_zero_difference_no_candidates",cap_s=cap))
+@@ -140,6 +140,6 @@
+             validation_comparisons=val_comparisons,completed_validation_comparisons=val_complete,
+             changed_validation_choices=changed_total,wall_s=time.perf_counter()-started,
+             fit_s=selector.fit_s,predict_s=selector.predict_s,selection_s=selector.selection_s,
+-            diagnostic=diagnostic,protocol_sha256=hashlib.sha256((OUT/"FA00_protocol.json").read_bytes()).hexdigest())
++            diagnostic=diagnostic,protocol_sha256=hashlib.sha256((OUT/"FA01_protocol.json").read_bytes()).hexdigest())
+         atomic_json(dest/"result.json",result)
+     return result

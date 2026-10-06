@@ -1,0 +1,1316 @@
+{
+  "script": "adaptive_early_stop.py",
+  "code_version": "76b397a",
+  "run_command": "python scripts\\audit\\adaptive_early_stop.py",
+  "status": "EXPLORATORY OFFLINE REPLAY ON HISTORICAL DATA -- not an independent confirmation experiment; the evaluation segment lies inside the same stream as the decision prefix and these trials have already been used for research analysis",
+  "question": "can a pre-fixed paired-gap early-stop rule decide more cheaply than a fixed 3000 trials without losing gain?",
+  "rule": {
+    "checkpoints": [
+      300,
+      1000
+    ],
+    "hard_stop": 3000,
+    "multiplier": 3.0,
+    "stop_condition": "for EVERY competitor v: mean(d) > multiplier * SE(d), with d_t = Delta_t(leader) - Delta_t(v) on the same trial",
+    "zero_se_policy": "if any SE(d) is exactly zero, do not stop this round",
+    "fallback": "run to 3000, take the highest mean, ties by ascending node id",
+    "caveat": "3 SE is a PRE-FIXED HEURISTIC, not a proven confidence bound and not a 95%-correct-selection guarantee.  No other multiple was tried and no threshold was searched on these configurations."
+  },
+  "replay": {
+    "decision_prefix": [
+      0,
+      3000
+    ],
+    "evaluation_segment": [
+      4000,
+      10000
+    ],
+    "unused": [
+      3000,
+      4000
+    ],
+    "new_simulation": "none"
+  },
+  "candidate_pool": "the four configurations' existing degree top-8; the screening method is unchanged, only the budget is",
+  "cost_model": "one base run per trial plus one run per candidate screened; 9 x stopping trials -- a replay-derived decision cost, NOT a measured speed-up",
+  "summary": {
+    "configurations": 4,
+    "early_stopped": 0,
+    "ran_to_hard_stop": 4
+  },
+  "configurations": [
+    {
+      "configuration": 0,
+      "random_seed": 20261001,
+      "degree_top8": [
+        115,
+        408,
+        820,
+        4554,
+        4960,
+        5355,
+        6431,
+        7811
+      ],
+      "adaptive": {
+        "early_stopped": false,
+        "stopped_at": 3000,
+        "chosen": 4960,
+        "checkpoints": [
+          {
+            "trials": 300,
+            "leader": 4960,
+            "leader_mean": 0.9266666666666666,
+            "competitors": [
+              {
+                "competitor": 115,
+                "mean_difference": 0.9266666666666666,
+                "se": 0.7056154655229611,
+                "sd": 12.221618368921341,
+                "mean_over_se": 1.313274314331922,
+                "passes": false
+              },
+              {
+                "competitor": 408,
+                "mean_difference": 0.8133333333333334,
+                "se": 0.7079826321368394,
+                "sd": 12.262618897373523,
+                "mean_over_se": 1.148804075713727,
+                "passes": false
+              },
+              {
+                "competitor": 820,
+                "mean_difference": 0.91,
+                "se": 0.7117160014125483,
+                "sd": 12.327282750062967,
+                "mean_over_se": 1.2785998884300984,
+                "passes": false
+              },
+              {
+                "competitor": 4554,
+                "mean_difference": 0.91,
+                "se": 0.7163686977465661,
+                "sd": 12.407869814490049,
+                "mean_over_se": 1.2702955934039653,
+                "passes": false
+              },
+              {
+                "competitor": 5355,
+                "mean_difference": 0.7966666666666666,
+                "se": 0.7060893606231332,
+                "sd": 12.229826472830903,
+                "mean_over_se": 1.128280230654655,
+                "passes": false
+              },
+              {
+                "competitor": 6431,
+                "mean_difference": 0.8033333333333333,
+                "se": 0.7343432187764539,
+                "sd": 12.719197651144858,
+                "mean_over_se": 1.0939480515280433,
+                "passes": false
+              },
+              {
+                "competitor": 7811,
+                "mean_difference": 0.016666666666666666,
+                "se": 0.8785652234477824,
+                "sd": 15.217196047746627,
+                "mean_over_se": 0.018970323684405717,
+                "passes": false
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "115": 0.0,
+              "408": 0.11333333333333333,
+              "820": 0.016666666666666666,
+              "4554": 0.016666666666666666,
+              "4960": 0.9266666666666666,
+              "5355": 0.13,
+              "6431": 0.12333333333333334,
+              "7811": 0.91
+            }
+          },
+          {
+            "trials": 1000,
+            "leader": 4960,
+            "leader_mean": 0.819,
+            "competitors": [
+              {
+                "competitor": 115,
+                "mean_difference": 0.819,
+                "se": 0.4338135993718962,
+                "sd": 13.718390539709825,
+                "mean_over_se": 1.8879076201986336,
+                "passes": false
+              },
+              {
+                "competitor": 408,
+                "mean_difference": 0.684,
+                "se": 0.43483806641093414,
+                "sd": 13.750787032021112,
+                "mean_over_se": 1.5729993596135645,
+                "passes": false
+              },
+              {
+                "competitor": 820,
+                "mean_difference": 0.664,
+                "se": 0.4388474723636904,
+                "sd": 13.877575580770584,
+                "mean_over_se": 1.5130541744347037,
+                "passes": false
+              },
+              {
+                "competitor": 4554,
+                "mean_difference": 0.875,
+                "se": 0.4549015003272686,
+                "sd": 14.385248520620003,
+                "mean_over_se": 1.9234933262926173,
+                "passes": false
+              },
+              {
+                "competitor": 5355,
+                "mean_difference": 0.498,
+                "se": 0.4414747965626124,
+                "sd": 13.960658866973292,
+                "mean_over_se": 1.1280372149837343,
+                "passes": false
+              },
+              {
+                "competitor": 6431,
+                "mean_difference": 0.167,
+                "se": 0.4230852290023843,
+                "sd": 13.379129680214628,
+                "mean_over_se": 0.39471952351959533,
+                "passes": false
+              },
+              {
+                "competitor": 7811,
+                "mean_difference": 0.39,
+                "se": 0.502700606723326,
+                "sd": 15.896788983942638,
+                "mean_over_se": 0.7758096862903657,
+                "passes": false
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "115": 0.0,
+              "408": 0.135,
+              "820": 0.155,
+              "4554": -0.056,
+              "4960": 0.819,
+              "5355": 0.321,
+              "6431": 0.652,
+              "7811": 0.429
+            }
+          },
+          {
+            "trials": 3000,
+            "leader": 4960,
+            "leader_mean": 0.5816666666666667,
+            "competitors": [
+              {
+                "competitor": 115,
+                "mean_difference": 0.5816666666666667,
+                "se": 0.18968628828400583,
+                "sd": 10.38954589425779,
+                "mean_over_se": 3.0664665956021677,
+                "passes": true
+              },
+              {
+                "competitor": 408,
+                "mean_difference": 0.609,
+                "se": 0.20055045278211442,
+                "sd": 10.984600690663877,
+                "mean_over_se": 3.0366423588264873,
+                "passes": true
+              },
+              {
+                "competitor": 820,
+                "mean_difference": 0.43366666666666664,
+                "se": 0.19439044319978133,
+                "sd": 10.647203070394696,
+                "mean_over_se": 2.230905282833135,
+                "passes": false
+              },
+              {
+                "competitor": 4554,
+                "mean_difference": 0.4573333333333333,
+                "se": 0.21005886441309377,
+                "sd": 11.505397844297065,
+                "mean_over_se": 2.177167503076466,
+                "passes": false
+              },
+              {
+                "competitor": 5355,
+                "mean_difference": 0.22933333333333333,
+                "se": 0.2068505146413888,
+                "sd": 11.329669290064128,
+                "mean_over_se": 1.1086911421560754,
+                "passes": false
+              },
+              {
+                "competitor": 6431,
+                "mean_difference": 0.11366666666666667,
+                "se": 0.2056988736712713,
+                "sd": 11.26659131631608,
+                "mean_over_se": 0.5525876959750305,
+                "passes": false
+              },
+              {
+                "competitor": 7811,
+                "mean_difference": 0.035666666666666666,
+                "se": 0.22898112092646575,
+                "sd": 12.541812517424354,
+                "mean_over_se": 0.15576247737087698,
+                "passes": false
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "115": 0.0,
+              "408": -0.027333333333333334,
+              "820": 0.148,
+              "4554": 0.12433333333333334,
+              "4960": 0.5816666666666667,
+              "5355": 0.35233333333333333,
+              "6431": 0.468,
+              "7811": 0.546
+            }
+          }
+        ],
+        "reason": "no checkpoint triggered; fell back to the highest mean at 3000"
+      },
+      "fixed1000": {
+        "chosen": 4960,
+        "trials": 1000,
+        "decision_cascades": 9000
+      },
+      "fixed3000": {
+        "chosen": 4960,
+        "trials": 3000,
+        "decision_cascades": 27000
+      },
+      "adaptive_decision_cascades": 27000,
+      "same_choice_as_fixed3000": true,
+      "evaluation": {
+        "segment": [
+          4000,
+          10000
+        ],
+        "trials": 6000,
+        "gains": {
+          "adaptive": {
+            "mean": 0.3883333333333333,
+            "sd": 7.912961922269442,
+            "se": 0.10215589914707658,
+            "n": 6000,
+            "ci95_low": 0.1881077710050632,
+            "ci95_high": 0.5885588956616035
+          },
+          "fixed1000": {
+            "mean": 0.3883333333333333,
+            "sd": 7.912961922269442,
+            "se": 0.10215589914707658,
+            "n": 6000,
+            "ci95_low": 0.1881077710050632,
+            "ci95_high": 0.5885588956616035
+          },
+          "fixed3000": {
+            "mean": 0.3883333333333333,
+            "sd": 7.912961922269442,
+            "se": 0.10215589914707658,
+            "n": 6000,
+            "ci95_low": 0.1881077710050632,
+            "ci95_high": 0.5885588956616035
+          }
+        },
+        "adaptive_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 4960,
+          "note": "both strategies selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "adaptive_minus_fixed1000": {
+          "same_choice": true,
+          "chosen": 4960,
+          "note": "both strategies selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "fixed1000_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 4960,
+          "note": "both strategies selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        }
+      },
+      "constraints": {
+        "decision_ignores_evaluation_segment": true,
+        "non_trigger_equals_fixed3000": true
+      }
+    },
+    {
+      "configuration": 1,
+      "random_seed": 20261002,
+      "degree_top8": [
+        379,
+        884,
+        1608,
+        1833,
+        1834,
+        1969,
+        3239,
+        3718
+      ],
+      "adaptive": {
+        "early_stopped": false,
+        "stopped_at": 3000,
+        "chosen": 3718,
+        "checkpoints": [
+          {
+            "trials": 300,
+            "leader": 379,
+            "leader_mean": 0.7366666666666667,
+            "competitors": [
+              {
+                "competitor": 884,
+                "mean_difference": 0.6366666666666667,
+                "se": 0.5778253933371094,
+                "sd": 10.008229391633446,
+                "mean_over_se": 1.1018322732231132,
+                "passes": false
+              },
+              {
+                "competitor": 1608,
+                "mean_difference": 1.0566666666666666,
+                "se": 0.7147341126963591,
+                "sd": 12.37955797092754,
+                "mean_over_se": 1.4784052529413423,
+                "passes": false
+              },
+              {
+                "competitor": 1833,
+                "mean_difference": 0.5366666666666666,
+                "se": 0.5746167482830685,
+                "sd": 9.952654029062913,
+                "mean_over_se": 0.9339558379915044,
+                "passes": false
+              },
+              {
+                "competitor": 1834,
+                "mean_difference": 0.4666666666666667,
+                "se": 0.5866729797640122,
+                "sd": 10.16147408379097,
+                "mean_over_se": 0.79544598569101,
+                "passes": false
+              },
+              {
+                "competitor": 1969,
+                "mean_difference": 0.7366666666666667,
+                "se": 0.5718604789696585,
+                "sd": 9.904914044161222,
+                "mean_over_se": 1.2881930011913838,
+                "passes": false
+              },
+              {
+                "competitor": 3239,
+                "mean_difference": 0.7366666666666667,
+                "se": 0.5718604789696585,
+                "sd": 9.904914044161222,
+                "mean_over_se": 1.2881930011913838,
+                "passes": false
+              },
+              {
+                "competitor": 3718,
+                "mean_difference": 0.1,
+                "se": 0.5389599036828043,
+                "sd": 9.335059364210457,
+                "mean_over_se": 0.18554255950523046,
+                "passes": false
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "379": 0.7366666666666667,
+              "884": 0.1,
+              "1608": -0.32,
+              "1833": 0.2,
+              "1834": 0.27,
+              "1969": 0.0,
+              "3239": 0.0,
+              "3718": 0.6366666666666667
+            }
+          },
+          {
+            "trials": 1000,
+            "leader": 3718,
+            "leader_mean": 0.613,
+            "competitors": [
+              {
+                "competitor": 379,
+                "mean_difference": 0.199,
+                "se": 0.3193139505251846,
+                "sd": 10.097593723259022,
+                "mean_over_se": 0.6232111051606081,
+                "passes": false
+              },
+              {
+                "competitor": 884,
+                "mean_difference": 0.517,
+                "se": 0.2558001387802595,
+                "sd": 8.089110643327857,
+                "mean_over_se": 2.0211091458559354,
+                "passes": false
+              },
+              {
+                "competitor": 1608,
+                "mean_difference": 0.097,
+                "se": 0.3701777829638078,
+                "sd": 11.706049333571084,
+                "mean_over_se": 0.26203625518359014,
+                "passes": false
+              },
+              {
+                "competitor": 1833,
+                "mean_difference": 0.389,
+                "se": 0.2516896481780687,
+                "sd": 7.959125517291457,
+                "mean_over_se": 1.5455542284551376,
+                "passes": false
+              },
+              {
+                "competitor": 1834,
+                "mean_difference": 0.177,
+                "se": 0.279649192739761,
+                "sd": 8.843283948850676,
+                "mean_over_se": 0.6329358517573643,
+                "passes": false
+              },
+              {
+                "competitor": 1969,
+                "mean_difference": 0.613,
+                "se": 0.2515297815368987,
+                "sd": 7.954070090211677,
+                "mean_over_se": 2.437087156258173,
+                "passes": false
+              },
+              {
+                "competitor": 3239,
+                "mean_difference": 0.613,
+                "se": 0.2515297815368987,
+                "sd": 7.954070090211677,
+                "mean_over_se": 2.437087156258173,
+                "passes": false
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "379": 0.414,
+              "884": 0.096,
+              "1608": 0.516,
+              "1833": 0.224,
+              "1834": 0.436,
+              "1969": 0.0,
+              "3239": 0.0,
+              "3718": 0.613
+            }
+          },
+          {
+            "trials": 3000,
+            "leader": 3718,
+            "leader_mean": 1.0813333333333333,
+            "competitors": [
+              {
+                "competitor": 379,
+                "mean_difference": 0.327,
+                "se": 0.25494186984487266,
+                "sd": 13.963741296658284,
+                "mean_over_se": 1.2826453347932742,
+                "passes": false
+              },
+              {
+                "competitor": 884,
+                "mean_difference": 0.9986666666666667,
+                "se": 0.205410698268038,
+                "sd": 11.250807299429178,
+                "mean_over_se": 4.861804546146463,
+                "passes": true
+              },
+              {
+                "competitor": 1608,
+                "mean_difference": 0.528,
+                "se": 0.2323511824803136,
+                "sd": 12.726398390746692,
+                "mean_over_se": 2.27242226341902,
+                "passes": false
+              },
+              {
+                "competitor": 1833,
+                "mean_difference": 0.844,
+                "se": 0.2057536261324856,
+                "sd": 11.26959023212468,
+                "mean_over_se": 4.101993320188413,
+                "passes": true
+              },
+              {
+                "competitor": 1834,
+                "mean_difference": 0.5173333333333333,
+                "se": 0.23037773297749903,
+                "sd": 12.618308109867803,
+                "mean_over_se": 2.245587395305523,
+                "passes": false
+              },
+              {
+                "competitor": 1969,
+                "mean_difference": 1.0813333333333333,
+                "se": 0.20449399737636054,
+                "sd": 11.200597523743493,
+                "mean_over_se": 5.287848774080129,
+                "passes": true
+              },
+              {
+                "competitor": 3239,
+                "mean_difference": 1.0813333333333333,
+                "se": 0.20449399737636054,
+                "sd": 11.200597523743493,
+                "mean_over_se": 5.287848774080129,
+                "passes": true
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "379": 0.7543333333333333,
+              "884": 0.08266666666666667,
+              "1608": 0.5533333333333333,
+              "1833": 0.23733333333333334,
+              "1834": 0.564,
+              "1969": 0.0,
+              "3239": 0.0,
+              "3718": 1.0813333333333333
+            }
+          }
+        ],
+        "reason": "no checkpoint triggered; fell back to the highest mean at 3000"
+      },
+      "fixed1000": {
+        "chosen": 3718,
+        "trials": 1000,
+        "decision_cascades": 9000
+      },
+      "fixed3000": {
+        "chosen": 3718,
+        "trials": 3000,
+        "decision_cascades": 27000
+      },
+      "adaptive_decision_cascades": 27000,
+      "same_choice_as_fixed3000": true,
+      "evaluation": {
+        "segment": [
+          4000,
+          10000
+        ],
+        "trials": 6000,
+        "gains": {
+          "adaptive": {
+            "mean": 0.7841666666666667,
+            "sd": 8.232894148671702,
+            "se": 0.10628620642964665,
+            "n": 6000,
+            "ci95_low": 0.5758457020645593,
+            "ci95_high": 0.992487631268774
+          },
+          "fixed1000": {
+            "mean": 0.7841666666666667,
+            "sd": 8.232894148671702,
+            "se": 0.10628620642964665,
+            "n": 6000,
+            "ci95_low": 0.5758457020645593,
+            "ci95_high": 0.992487631268774
+          },
+          "fixed3000": {
+            "mean": 0.7841666666666667,
+            "sd": 8.232894148671702,
+            "se": 0.10628620642964665,
+            "n": 6000,
+            "ci95_low": 0.5758457020645593,
+            "ci95_high": 0.992487631268774
+          }
+        },
+        "adaptive_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 3718,
+          "note": "both strategies selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "adaptive_minus_fixed1000": {
+          "same_choice": true,
+          "chosen": 3718,
+          "note": "both strategies selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "fixed1000_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 3718,
+          "note": "both strategies selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        }
+      },
+      "constraints": {
+        "decision_ignores_evaluation_segment": true,
+        "non_trigger_equals_fixed3000": true
+      }
+    },
+    {
+      "configuration": 2,
+      "random_seed": 20261003,
+      "degree_top8": [
+        839,
+        920,
+        2074,
+        2504,
+        2883,
+        3744,
+        3852,
+        4960
+      ],
+      "adaptive": {
+        "early_stopped": false,
+        "stopped_at": 3000,
+        "chosen": 4960,
+        "checkpoints": [
+          {
+            "trials": 300,
+            "leader": 839,
+            "leader_mean": 1.0966666666666667,
+            "competitors": [
+              {
+                "competitor": 920,
+                "mean_difference": 0.19333333333333333,
+                "se": 0.7780658831477695,
+                "sd": 13.476496412478859,
+                "mean_over_se": 0.24847938654137808,
+                "passes": false
+              },
+              {
+                "competitor": 2074,
+                "mean_difference": 0.88,
+                "se": 0.5051257269235057,
+                "sd": 8.749034232416742,
+                "mean_over_se": 1.7421405267945576,
+                "passes": false
+              },
+              {
+                "competitor": 2504,
+                "mean_difference": 0.9,
+                "se": 0.4994330118577799,
+                "sd": 8.650433515148244,
+                "mean_over_se": 1.8020434745636855,
+                "passes": false
+              },
+              {
+                "competitor": 2883,
+                "mean_difference": 0.7733333333333333,
+                "se": 0.5327557984111864,
+                "sd": 9.227601108750974,
+                "mean_over_se": 1.451571875218647,
+                "passes": false
+              },
+              {
+                "competitor": 3744,
+                "mean_difference": 1.0966666666666667,
+                "se": 0.4895598552290126,
+                "sd": 8.47942542602714,
+                "mean_over_se": 2.2401074249718738,
+                "passes": false
+              },
+              {
+                "competitor": 3852,
+                "mean_difference": 1.0966666666666667,
+                "se": 0.4895598552290126,
+                "sd": 8.47942542602714,
+                "mean_over_se": 2.2401074249718738,
+                "passes": false
+              },
+              {
+                "competitor": 4960,
+                "mean_difference": 0.4,
+                "se": 0.6834065001479313,
+                "sd": 11.836947804790444,
+                "mean_over_se": 0.585303183264156,
+                "passes": false
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "839": 1.0966666666666667,
+              "920": 0.9033333333333333,
+              "2074": 0.21666666666666667,
+              "2504": 0.19666666666666666,
+              "2883": 0.3233333333333333,
+              "3744": 0.0,
+              "3852": 0.0,
+              "4960": 0.6966666666666667
+            }
+          },
+          {
+            "trials": 1000,
+            "leader": 839,
+            "leader_mean": 0.898,
+            "competitors": [
+              {
+                "competitor": 920,
+                "mean_difference": 0.167,
+                "se": 0.3421536365435855,
+                "sd": 10.819848011871516,
+                "mean_over_se": 0.4880848313845894,
+                "passes": false
+              },
+              {
+                "competitor": 2074,
+                "mean_difference": 0.396,
+                "se": 0.2868260518153817,
+                "sd": 9.070236160100794,
+                "mean_over_se": 1.3806277271315968,
+                "passes": false
+              },
+              {
+                "competitor": 2504,
+                "mean_difference": 0.329,
+                "se": 0.3125712062874634,
+                "sd": 9.884369428547275,
+                "mean_over_se": 1.0525601635149577,
+                "passes": false
+              },
+              {
+                "competitor": 2883,
+                "mean_difference": 0.602,
+                "se": 0.24930221820112233,
+                "sd": 7.883628352478318,
+                "mean_over_se": 2.4147398460544056,
+                "passes": false
+              },
+              {
+                "competitor": 3744,
+                "mean_difference": 0.898,
+                "se": 0.21400840170423216,
+                "sd": 6.767539877976339,
+                "mean_over_se": 4.196096942217579,
+                "passes": true
+              },
+              {
+                "competitor": 3852,
+                "mean_difference": 0.898,
+                "se": 0.21400840170423216,
+                "sd": 6.767539877976339,
+                "mean_over_se": 4.196096942217579,
+                "passes": true
+              },
+              {
+                "competitor": 4960,
+                "mean_difference": 0.131,
+                "se": 0.3708959948557008,
+                "sd": 11.728761187781087,
+                "mean_over_se": 0.3531987452465382,
+                "passes": false
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "839": 0.898,
+              "920": 0.731,
+              "2074": 0.502,
+              "2504": 0.569,
+              "2883": 0.296,
+              "3744": 0.0,
+              "3852": 0.0,
+              "4960": 0.767
+            }
+          },
+          {
+            "trials": 3000,
+            "leader": 4960,
+            "leader_mean": 1.134,
+            "competitors": [
+              {
+                "competitor": 839,
+                "mean_difference": 0.312,
+                "se": 0.21056009118539057,
+                "sd": 11.532851165258311,
+                "mean_over_se": 1.4817622762392102,
+                "passes": false
+              },
+              {
+                "competitor": 920,
+                "mean_difference": 0.49333333333333335,
+                "se": 0.24929096490884942,
+                "sd": 13.654228486280562,
+                "mean_over_se": 1.978945901684465,
+                "passes": false
+              },
+              {
+                "competitor": 2074,
+                "mean_difference": 0.751,
+                "se": 0.2313503828971689,
+                "sd": 12.67158234002368,
+                "mean_over_se": 3.2461584484768546,
+                "passes": true
+              },
+              {
+                "competitor": 2504,
+                "mean_difference": 0.799,
+                "se": 0.22956475653820305,
+                "sd": 12.573779556415538,
+                "mean_over_se": 3.480499411359053,
+                "passes": true
+              },
+              {
+                "competitor": 2883,
+                "mean_difference": 0.7093333333333334,
+                "se": 0.2107037252918226,
+                "sd": 11.540718329270303,
+                "mean_over_se": 3.366496403188475,
+                "passes": true
+              },
+              {
+                "competitor": 3744,
+                "mean_difference": 1.134,
+                "se": 0.20413452318399147,
+                "sd": 11.180908311343345,
+                "mean_over_se": 5.555160304648213,
+                "passes": true
+              },
+              {
+                "competitor": 3852,
+                "mean_difference": 1.134,
+                "se": 0.20413452318399147,
+                "sd": 11.180908311343345,
+                "mean_over_se": 5.555160304648213,
+                "passes": true
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "839": 0.822,
+              "920": 0.6406666666666667,
+              "2074": 0.383,
+              "2504": 0.335,
+              "2883": 0.4246666666666667,
+              "3744": 0.0,
+              "3852": 0.0,
+              "4960": 1.134
+            }
+          }
+        ],
+        "reason": "no checkpoint triggered; fell back to the highest mean at 3000"
+      },
+      "fixed1000": {
+        "chosen": 839,
+        "trials": 1000,
+        "decision_cascades": 9000
+      },
+      "fixed3000": {
+        "chosen": 4960,
+        "trials": 3000,
+        "decision_cascades": 27000
+      },
+      "adaptive_decision_cascades": 27000,
+      "same_choice_as_fixed3000": true,
+      "evaluation": {
+        "segment": [
+          4000,
+          10000
+        ],
+        "trials": 6000,
+        "gains": {
+          "adaptive": {
+            "mean": 1.3258333333333334,
+            "sd": 11.868844828028303,
+            "se": 0.15322612785891215,
+            "n": 6000,
+            "ci95_low": 1.0255101227298655,
+            "ci95_high": 1.6261565439368013
+          },
+          "fixed1000": {
+            "mean": 0.5055,
+            "sd": 5.369119200591939,
+            "se": 0.0693150308256502,
+            "n": 6000,
+            "ci95_low": 0.36964253958172555,
+            "ci95_high": 0.6413574604182743
+          },
+          "fixed3000": {
+            "mean": 1.3258333333333334,
+            "sd": 11.868844828028303,
+            "se": 0.15322612785891215,
+            "n": 6000,
+            "ci95_low": 1.0255101227298655,
+            "ci95_high": 1.6261565439368013
+          }
+        },
+        "adaptive_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 4960,
+          "note": "both strategies selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "adaptive_minus_fixed1000": {
+          "mean": 0.8203333333333334,
+          "sd": 12.930503452771896,
+          "se": 0.16693208176887683,
+          "n": 6000,
+          "ci95_low": 0.49314645306633476,
+          "ci95_high": 1.147520213600332,
+          "p_two_sided": 8.915744058590747e-07,
+          "same_choice": false,
+          "left": "adaptive",
+          "right": "fixed1000",
+          "definition": "adaptive minus fixed1000"
+        },
+        "fixed1000_minus_fixed3000": {
+          "mean": -0.8203333333333334,
+          "sd": 12.930503452771896,
+          "se": 0.16693208176887683,
+          "n": 6000,
+          "ci95_low": -1.147520213600332,
+          "ci95_high": -0.49314645306633476,
+          "p_two_sided": 8.915744058590747e-07,
+          "same_choice": false,
+          "left": "fixed1000",
+          "right": "fixed3000",
+          "definition": "fixed1000 minus fixed3000"
+        }
+      },
+      "constraints": {
+        "decision_ignores_evaluation_segment": true,
+        "non_trigger_equals_fixed3000": true
+      }
+    },
+    {
+      "configuration": 3,
+      "random_seed": 20261004,
+      "degree_top8": [
+        750,
+        2049,
+        2805,
+        3927,
+        4019,
+        4189,
+        5840,
+        6291
+      ],
+      "adaptive": {
+        "early_stopped": false,
+        "stopped_at": 3000,
+        "chosen": 5840,
+        "checkpoints": [
+          {
+            "trials": 300,
+            "leader": 5840,
+            "leader_mean": 0.8233333333333334,
+            "competitors": [
+              {
+                "competitor": 750,
+                "mean_difference": 0.57,
+                "se": 0.48852988081021653,
+                "sd": 8.46158574578863,
+                "mean_over_se": 1.1667658875945663,
+                "passes": false
+              },
+              {
+                "competitor": 2049,
+                "mean_difference": 0.5466666666666666,
+                "se": 0.5202600489356437,
+                "sd": 9.011168379048055,
+                "mean_over_se": 1.050756574111439,
+                "passes": false
+              },
+              {
+                "competitor": 2805,
+                "mean_difference": 0.4633333333333333,
+                "se": 0.5078122648147603,
+                "sd": 8.795566433657863,
+                "mean_over_se": 0.9124106789786735,
+                "passes": false
+              },
+              {
+                "competitor": 3927,
+                "mean_difference": 0.8866666666666667,
+                "se": 0.471665449546918,
+                "sd": 8.16948522790077,
+                "mean_over_se": 1.8798635081674924,
+                "passes": false
+              },
+              {
+                "competitor": 4019,
+                "mean_difference": 0.8233333333333334,
+                "se": 0.4478297874399586,
+                "sd": 7.75663944988779,
+                "mean_over_se": 1.8384961349711897,
+                "passes": false
+              },
+              {
+                "competitor": 4189,
+                "mean_difference": 0.5833333333333334,
+                "se": 0.46570038850300716,
+                "sd": 8.066167339917735,
+                "mean_over_se": 1.2525936154110953,
+                "passes": false
+              },
+              {
+                "competitor": 6291,
+                "mean_difference": 0.6466666666666666,
+                "se": 0.45063592926079554,
+                "sd": 7.805243251957124,
+                "mean_over_se": 1.4350091164000875,
+                "passes": false
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "750": 0.25333333333333335,
+              "2049": 0.27666666666666667,
+              "2805": 0.36,
+              "3927": -0.06333333333333334,
+              "4019": 0.0,
+              "4189": 0.24,
+              "5840": 0.8233333333333334,
+              "6291": 0.17666666666666667
+            }
+          },
+          {
+            "trials": 1000,
+            "leader": 5840,
+            "leader_mean": 0.781,
+            "competitors": [
+              {
+                "competitor": 750,
+                "mean_difference": 0.528,
+                "se": 0.2583509550979055,
+                "sd": 8.169774537892707,
+                "mean_over_se": 2.0437315581043913,
+                "passes": false
+              },
+              {
+                "competitor": 2049,
+                "mean_difference": 0.327,
+                "se": 0.3493423406917633,
+                "sd": 11.04717479720494,
+                "mean_over_se": 0.9360445669210287,
+                "passes": false
+              },
+              {
+                "competitor": 2805,
+                "mean_difference": 0.15,
+                "se": 0.28296907958291134,
+                "sd": 8.948267988834488,
+                "mean_over_se": 0.5300932533727568,
+                "passes": false
+              },
+              {
+                "competitor": 3927,
+                "mean_difference": 0.603,
+                "se": 0.27681652949200847,
+                "sd": 8.753707271779197,
+                "mean_over_se": 2.178338125640753,
+                "passes": false
+              },
+              {
+                "competitor": 4019,
+                "mean_difference": 0.781,
+                "se": 0.22282513098840537,
+                "sd": 7.046349338487271,
+                "mean_over_se": 3.5049906468612786,
+                "passes": true
+              },
+              {
+                "competitor": 4189,
+                "mean_difference": 0.22,
+                "se": 0.31540386808027576,
+                "sd": 9.973946059609506,
+                "mean_over_se": 0.6975183955068243,
+                "passes": false
+              },
+              {
+                "competitor": 6291,
+                "mean_difference": 0.547,
+                "se": 0.2235437116091616,
+                "sd": 7.069072852927745,
+                "mean_over_se": 2.4469487245356363,
+                "passes": false
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "750": 0.253,
+              "2049": 0.454,
+              "2805": 0.631,
+              "3927": 0.178,
+              "4019": 0.0,
+              "4189": 0.561,
+              "5840": 0.781,
+              "6291": 0.234
+            }
+          },
+          {
+            "trials": 3000,
+            "leader": 5840,
+            "leader_mean": 0.6543333333333333,
+            "competitors": [
+              {
+                "competitor": 750,
+                "mean_difference": 0.342,
+                "se": 0.1324710064714372,
+                "sd": 7.255735845981899,
+                "mean_over_se": 2.581697000043104,
+                "passes": false
+              },
+              {
+                "competitor": 2049,
+                "mean_difference": 0.14566666666666667,
+                "se": 0.1773650797606973,
+                "sd": 9.71468550986369,
+                "mean_over_se": 0.8212815446152172,
+                "passes": false
+              },
+              {
+                "competitor": 2805,
+                "mean_difference": 0.12833333333333333,
+                "se": 0.15044142147791711,
+                "sd": 8.240016012659739,
+                "mean_over_se": 0.8530452057192974,
+                "passes": false
+              },
+              {
+                "competitor": 3927,
+                "mean_difference": 0.325,
+                "se": 0.14697774774887978,
+                "sd": 8.05030278933656,
+                "mean_over_se": 2.211219078926708,
+                "passes": false
+              },
+              {
+                "competitor": 4019,
+                "mean_difference": 0.6543333333333333,
+                "se": 0.10711600340371734,
+                "sd": 5.866985133401614,
+                "mean_over_se": 6.1086421500171975,
+                "passes": true
+              },
+              {
+                "competitor": 4189,
+                "mean_difference": 0.25933333333333336,
+                "se": 0.14154631698441275,
+                "sd": 7.752811074413948,
+                "mean_over_se": 1.8321446919872275,
+                "passes": false
+              },
+              {
+                "competitor": 6291,
+                "mean_difference": 0.41133333333333333,
+                "se": 0.11353042405093527,
+                "sd": 6.218317421582429,
+                "mean_over_se": 3.6231110450956225,
+                "passes": true
+              }
+            ],
+            "competitors_with_zero_se": [],
+            "triggered": false,
+            "blocked_by_zero_se": false,
+            "pool_means": {
+              "750": 0.31233333333333335,
+              "2049": 0.5086666666666667,
+              "2805": 0.526,
+              "3927": 0.3293333333333333,
+              "4019": 0.0,
+              "4189": 0.395,
+              "5840": 0.6543333333333333,
+              "6291": 0.243
+            }
+          }
+        ],
+        "reason": "no checkpoint triggered; fell back to the highest mean at 3000"
+      },
+      "fixed1000": {
+        "chosen": 5840,
+        "trials": 1000,
+        "decision_cascades": 9000
+      },
+      "fixed3000": {
+        "chosen": 5840,
+        "trials": 3000,
+        "decision_cascades": 27000
+      },
+      "adaptive_decision_cascades": 27000,
+      "same_choice_as_fixed3000": true,
+      "evaluation": {
+        "segment": [
+          4000,
+          10000
+        ],
+        "trials": 6000,
+        "gains": {
+          "adaptive": {
+            "mean": 0.8118333333333333,
+            "sd": 7.923207863150884,
+            "se": 0.10228817367507677,
+            "n": 6000,
+            "ci95_low": 0.6113485129301828,
+            "ci95_high": 1.0123181537364838
+          },
+          "fixed1000": {
+            "mean": 0.8118333333333333,
+            "sd": 7.923207863150884,
+            "se": 0.10228817367507677,
+            "n": 6000,
+            "ci95_low": 0.6113485129301828,
+            "ci95_high": 1.0123181537364838
+          },
+          "fixed3000": {
+            "mean": 0.8118333333333333,
+            "sd": 7.923207863150884,
+            "se": 0.10228817367507677,
+            "n": 6000,
+            "ci95_low": 0.6113485129301828,
+            "ci95_high": 1.0123181537364838
+          }
+        },
+        "adaptive_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 5840,
+          "note": "both strategies selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "adaptive_minus_fixed1000": {
+          "same_choice": true,
+          "chosen": 5840,
+          "note": "both strategies selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        },
+        "fixed1000_minus_fixed3000": {
+          "same_choice": true,
+          "chosen": 5840,
+          "note": "both strategies selected the SAME candidate; the contrast is exactly zero by construction and is not independent evidence"
+        }
+      },
+      "constraints": {
+        "decision_ignores_evaluation_segment": true,
+        "non_trigger_equals_fixed3000": true
+      }
+    }
+  ],
+  "complete": true
+}

@@ -1,0 +1,204 @@
+"""Package the completed qualification audit; reads audit outputs, not scores."""
+import csv
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[2]
+OUT=ROOT/'outputs/fa05_q'
+
+def save(name,obj):
+    (OUT/name).write_text(json.dumps(obj,indent=2,ensure_ascii=False),encoding='utf-8')
+
+coverage=[
+ dict(method='FrugalAS fixed official PC/Hard path',status='official source static call sites verified; not executed this stage',
+      censor_semantics='clipped runtimes; one complete plus sufficient bound can yield pair preference; double timeout handling',
+      target='weighted pair classification plus hard votes; separate predicted cost regressor',
+      loss_information='pair sample weight uses timeout_limit times penalty; not an identified native regret interval',
+      acquisition='active pair queries, free label propagation, dynamic timeout',
+      cost_and_cache='shared algorithm runs in instance_cost_table; official runtime cost adjustment differs from restart adapter',
+      coverage_limit='Hard body does not read timeout_predictor_dict; find_runtime_for_each_row has no call sites. penalty_type affects called cost regressor, not the pair sample weight.',
+      locators='Algorithm_Selection_Pareto.py hard 416/calls 511,515,742,744,840,842; cost regressor 931/calls 735,833; propagation 636/call818; ActiveRFModel.py 56',
+      source='https://github.com/stacs-cp/JAIR2026-FrugalAS/blob/7a5727651a92fd2fa4960dcbbd7f6dab94130028/Algorithm_Selection_Pareto.py',
+      code='https://github.com/stacs-cp/JAIR2026-FrugalAS/tree/7a5727651a92fd2fa4960dcbbd7f6dab94130028'),
+ dict(method='On the Effect of Training Data Selection, CP2026',status='formal paper definitions verified; separate artifact not run',
+      censor_semantics='dynamic time limits and timeout filtering in frugal mechanism',
+      target='PC, PR, single regression and multiclass formulations; final selection performance',
+      loss_information='different classification/regression formulations already compared',
+      acquisition='fine queries and coarse instance queries; average uncertainty then query all algorithms',
+      cost_and_cache='frugal data collection; runtime sharing implementation not separately verified',
+      coverage_limit='Do not claim coarse acquisition, changing learning formulation, or dynamic cutoff as new. A native pair-regret refinement purchase policy was not verified in the checked definitions; absence of a word is not proof of absence.',
+      locators='sections 3.1, 3.2, 5.3',
+      source='https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CP.2026.38',
+      code='separate artifact not checked in FA05-Q'),
+ dict(method='Run2Survive, ACML2020',status='formal paper equations verified; source implementation not run',
+      censor_semantics='right-censored lower bounds used by random survival forests',
+      target='choose algorithm minimizing expected loss; native PAR10 and risk-averse losses',
+      loss_information='runtime distributions, not pair weight point imputation',
+      acquisition='no paid adaptive acquisition policy defined in the checked method',
+      cost_and_cache='passive training setup; purchase/cache policy not specified in checked method',
+      coverage_limit='Censor-aware learning and loss-aware selection are existing contributions. A survival learner trained with support only through 100 seconds does not automatically provide validated estimates of a 600-second tail.',
+      locators='sections 2.2, 3, 4.1 equations13,15 and 4.2',
+      source='https://proceedings.mlr.press/v129/tornede20a.html',
+      code='https://github.com/alexandertornede/algorithm_survival_analysis'),
+ dict(method='Algorithm Selection as Superset Learning',status='formal paper definitions verified; source implementation not run',
+      censor_semantics='precise runtime or interval above censoring threshold',
+      target='per-algorithm regression with optimistic interval loss; select lowest predicted runtime; evaluate PAR10',
+      loss_information='interval observations rather than fabricated exact runtime',
+      acquisition='no paid adaptive acquisition policy defined in the checked method',
+      cost_and_cache='passive learning formulation; acquisition cache not verified',
+      coverage_limit='Interval-aware training is mature. Its runtime interval (c,infinity) is distinct from this audit native score set (c,600] union {6000}.',
+      locators='section3 equation5; section4',
+      source='https://epub.ub.uni-muenchen.de/91670/1/_PAKDD__Superset_Learning_for_Algorithm_Selection_with_Right_Censored_Data.pdf',
+      code='https://github.com/JonasHanselle/Superset_Learning_AS'),
+ dict(method='Budget-constrained Active Learning to Effectively De-censor Survival Data',status='arXiv2510.12144v1 preprint; publication venue and executable code not verified',
+      censor_semantics='pay to partially extend a censored record or reveal an event',
+      target='survival prediction; MAE-PO, C-index and IBS',
+      loss_information='Bayesian information gain with nonuniform probe costs',
+      acquisition='one batch of probes; probe depth input; multiple depth actions discussed in appendixA.6',
+      cost_and_cache='known individual probe costs; not a verified solver restart/actual completion-time cost model',
+      coverage_limit='Paid partial de-censoring, budgeted information gain and multiple probe depths are already considered. Native algorithm-selection decision loss and runtime sharing are possible specialization axes, not established novelty.',
+      locators='sections3,4,6; appendixA.6',
+      source='https://arxiv.org/html/2510.12144v1',code='not located/verified in reviewed paper; no claim that code does not exist')
+]
+
+def main():
+    audit=json.loads((OUT/'FA05_training_audit.json').read_text())
+    independent=json.loads((OUT/'FA05_independent_audit.json').read_text())
+    assert independent['status']=='passed'
+    with (OUT/'FA05_method_coverage.csv').open('w',encoding='utf-8-sig',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=list(coverage[0]));w.writeheader();w.writerows(coverage)
+    save('FA05_source_verification.json',dict(as_of='2026-10-05',coverage=coverage,
+        source_boundary='Only FrugalAS code call sites and local adapter are statically audited. Other methods checked in primary papers, not executed.',
+        novelty_boundary='A missing verified implementation of the precise proposed combination is not proof of a literature gap.'))
+    save('FA05_qualification_verdict.json',dict(stage='FA05-Q',information_qualification='passed',
+        native_cost_information_uncertainty='confirmed in training records',
+        surrogate_performance_loss='not tested',legal_learnability='not tested',
+        paid_refinement_value='not tested',novelty='not established',
+        grl='not started',historical_verdicts='unchanged',new_acquisitions=0,new_fits=0,
+        reason='Known preference and unknown native regret coexist, but mature censored learning and paid de-censoring cover much of the candidate idea.'))
+    table=[]
+    for arm,label in [('FIXED-100','Pareto'),('RANDOM-ROW','随机整实例'),('COARSE-PC-100','粗粒度 PC')]:
+        ss=[s for s in audit['summary'] if s['arm']==arm]
+        fmt=lambda key:f"{min(s[key] for s in ss)*100:.2f}%–{max(s[key] for s in ss)*100:.2f}%"
+        table.append(f"| {label} | {sum(s['labels'] for s in ss):,} | {sum(s['regret_unidentified'] for s in ss):,} | {fmt('censor_label_fraction_model_median')} | {fmt('censor_weight_fraction_model_median')} |")
+    report='''# FA05-Q：训练信息与成熟方法覆盖审计
+
+完成日期：2026-10-05。只读九份训练记录；未新增采集、拟合或模型成绩评价。
+
+**裁决：信息资格通过；研究贡献与实用价值仍未判定。** 已确认“胜负已知、原生代价未知”存在于当前训练输入，但不能由此断言权重近似损害决策，更不能宣布学习型采集有优势。FA03B 的“不确定”和 FA04 的原裁决不变。
+
+## 1. 冻结范围与证据来源
+
+沿用 FA05-Q 规格：ASP-POTASSCO，原生截止600秒，采集截止100秒，预算86460秒；三方法各种子7、42、99。共9份记录、495个成对模型。FIXED-100 使用 FA02-END 的 ALL 输入，随机整实例来自 FA03B，粗粒度 PC 来自 FA04。
+
+语义读取白名单为协议、付费训练日志、训练标签、可见缓存、FA02付费前缀和三个代码文件。未加载原生成绩矩阵、验证或测试成绩、预测数组或模型对象。协议含公开划分ID，但不含这些成绩。1790个历史文件另作原始字节哈希，包含历史评价文件的字节校验；没有反序列化它们作分析。输入清单保存在 `FA05_input_manifest.json`。
+
+FA02预算边界的原始日志反馈超出缩短后的截止，因此解析在该事件之前停止；只纳入已封存付费前缀中的截断反馈。缓存命中不是付费执行，分别计数。末端新增2256条偏好，单列为“末端已付款缓存推导”，没有伪造首次历史事件。
+
+## 2. 审计主表
+
+| 方法 | 偏好条数（三种子合计） | 原生代价未确定 | 删失条数占比的模型中位数范围 | 删失原始权重占比的模型中位数范围 |
+|---|---:|---:|---:|---:|
+'''+ '\n'.join(table)+'''
+
+表中两个范围分别来自三个种子；每个数先在55个成对模型内计算份额，再取中位数。不是把所有模型的权重合并后解释成训练影响。
+
+总计140748条偏好，其中13879条（约9.86%）胜负可辨识，但原生PAR-10错误代价未确定；其余126869条为双方完成的精确代价。不存在空模型或仅有单类正权重的模型。后续可见反馈改变数和代价范围收紧数均为0——这是这九条既有轨迹的事实，不是付费延长无用的证据。
+
+13869条代理权重落在其合法原生代价可能值集合之外。**它们是合法计算出的替代训练权重，不是已知真实代价；集合之外不等于算法实现错误。** 还有10条代理权重恰好属于可能集合，主要涉及更短的预算尾部下界；“属于集合”也不等于真实值已知。
+
+完整训练配对分母为518760个“方法×种子×成对模型×训练实例”位置：140748已有标签，356153至少一侧未观测，21857双方提前删失，2个双方已付款但仍不能判定胜负。它们是标签位置，**不是518760个独立样本**。
+
+所有输入共涉及34024次付费执行和53411次零费缓存引用；运行可生成多个成对标签。这是一个场景、原开发协议的记录审计，不作跨场景泛化或统计显著性声明。
+
+## 3. 数学口径：不要把代价包络当作精确标签
+
+设原生截止T=600，完成时长t≤T的评分为t；原生超时评分为10T=6000。提前删失于l<T意味着t>l，只能确定评分属于 `(l,600] ∪ {6000}`，不是连续的 `[l,6000]`。
+
+若A在v≤l完成，B在l仍未完成，则A严格更快，但选B而非A的代价只能确定为：
+
+`(l−v, 600−v] ∪ {6000−v}`。
+
+例：v=20、l=100，可能代价为 `(80,580] ∪ {5980}`；当前代理为980。980是替代权重，落在上述两段之间；没有揭示任何隐藏时长。代价包络宽5900并不意味着实际损失5900。
+
+双方完成的差值可精确确定；双方提前删失通常无法判定胜负；已知双方原生超时则评分差为0。完成恰在采集截止仍按当前回放的“成功≤截止”约定处理，不能仅凭数值100推断删失。原生评分不是实际支付CPU秒。
+
+17项预检覆盖这些边界、预算尾部、下界保持最大值、后来完成收紧范围、非凸可能集合、225个有限兼容世界以及两世界隐藏时长扰动。扰动检查验证信息函数，不声称验证了尚不存在的撤销/延长策略。
+
+## 4. 当前改编与官方路径
+
+当前 `core.py` 保留首次偏好与代理权重，硬投票聚合成对分类器；成本回归使用已揭示缓存数值，删失下界也进入其回归目标。这些已披露近似不是新发现的权限错误。原始权重份额不能等同于随机森林分裂影响、最终投票影响或决策损失。
+
+官方固定提交的两个文件与原来源清单SHA-256一致。本轮静态核查：Hard分支的 `hard_voting_mechanism` 虽接收 `timeout_predictor_dict`，函数体不读取它；`find_runtime_for_each_row` 有定义但无调用。不能由默认开关Yes推断当前Hard选择正式使用了那条路径。成本回归的 `penalty_type` 则有实际主流程调用；它改变成本回归目标，不能与成对分类样本权重混为一谈。免费标签传播有主流程调用。[固定官方代码](https://github.com/stacs-cp/JAIR2026-FrugalAS/blob/7a5727651a92fd2fa4960dcbbd7f6dab94130028/Algorithm_Selection_Pareto.py)
+
+这是源码调用点核查，本轮没有执行官方全流程。官方费用调整与我们从头重跑的费用模型有区别，不能把当前改编称为完全忠实复现。证据行号与哈希见 `FA05_code_path_evidence.json`。
+
+## 5. 一手方法覆盖与新意边界
+
+| 最近工作 | 已经覆盖 | 本轮未核实或尚待区分 |
+|---|---|---|
+| FrugalAS | 加权成对选择、成本预测、免费标签传播、动态截止 | 按原生错误代价信息决定“购买新偏好还是收紧已知偏好”的具体策略未在所查PC路径核实 |
+| CP2026 | PC/PR/单回归/多分类、粗细查询粒度、截止与超时机制 | 换学习形式或整实例主动采集已不是新贡献；不能从术语未出现推断它没有处理某问题 |
+| Run2Survive | 生存分布学习和按期望损失选择，明确包含PAR-10 | 所查方法为被动训练，不定义付费采集控制；100秒观测支持不自动保证600秒尾部已校准 |
+| Superset Learning | 用运行区间和乐观损失学习，避免虚构精确运行标签 | 所查方法不定义付费采集控制；它的运行区间与本审计原生评分集合不是同一个对象 |
+| Budget-constrained de-censoring | 预算内部分解除删失、非均匀费用、信息增益；附录讨论多探测深度 | 为生存预测和批量探测；原生选择损失、重跑实际费用与多模型共享反馈只是可能的细化轴，未证实新意 |
+
+CP论文已系统研究训练选择与模型形式，不能把恢复其现有方法作为新算法。[CP2026正式论文](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CP.2026.38)
+
+Run2Survive 已将删失运行建模成分布，并通过决策损失选择算法；“采用生存模型”本身不能成为我们的贡献。[Run2Survive论文](https://proceedings.mlr.press/v129/tornede20a.html)
+
+Superset Learning 已为删失运行构造区间损失；“保留区间”本身也已有先例。[Superset Learning论文，§3–4](https://epub.ub.uni-muenchen.de/91670/1/_PAKDD__Superset_Learning_for_Algorithm_Selection_with_Right_Censored_Data.pdf)
+
+付费收紧删失记录已有直接预印本，且附录A.6讨论一个实例的多个探测深度。因此“学习延长哪些运行”也不能直接宣称新颖。这里按arXiv v1标注，未确认正式发表或可执行作者代码。[预算受限解除删失，§3–4及附录A.6](https://arxiv.org/html/2510.12144v1)
+
+除FrugalAS的本地固定源码外，其余覆盖来自一手论文定义，**没有运行它们的实现**。作者仓库链接、逐项范围、定位见 `FA05_method_coverage.csv` 和 `FA05_source_verification.json`。未核实某项具体组合不是证明全领域不存在该组合。
+
+## 6. 研究判断与下一步边界
+
+本轮确认了目标信息的不确定性，**没有**确认它造成实用训练损失、合法特征能预测购买收益，或收益超过购买与计算成本。大量未知原生代价亦不能推出主动延长会赢；单位权重、简单惩罚或成熟删失模型都可能解决当前问题。
+
+只观察至100秒时，超过100秒的运行分布仍存在多种兼容尾部。任何600秒目标的点估计都需要额外数据或结构假设；不能把生存模型的外推当作已有真实标签。这是观测资格边界，不是声称Run2Survive失效。
+
+**建议下次先冻结“权重处理是否影响最终决策”的小比较，而非直接研究付费延长。** 便宜对照至少包括原代理、单位权重和明确的原生尺度处理；随后还要有成熟删失学习对照。评价必须使用未用于这轮挑选的新封存协议，不能在原已看测试折上挑惩罚常数找赢家。即使有收益，也只是恢复合理训练的证据；后续才检验新增反馈购买是否更有价值，并核查相对现成付费解除删失的新意。
+
+本轮不生成该比较的训练数据、不追加预算、不拟合、不启动GRL。尚未满足进入论文算法开发的证据链；研究领域保留，具体贡献假设仍待建立。
+
+## 7. 独立复算、耗时与实现记录
+
+主审计28.55秒；独立复算27.15秒。独立脚本不导入主审计或区间辅助模块，用双方完成/单方删失的另一套分支公式、原始付费记录和缓存重建信息，复算140748条标签、495个模型、九份费用与模型中位数；1790个历史文件和全部白名单输入哈希一致。它不是独立数据集验证，也没有独立重新训练RF。
+
+本轮审计开发修正三处自身假设：①有限兼容世界的预检实际为225，不是预期至少300，修正计数断言；②原付费前缀不包含零费缓存引用，修正日志关联，分别计费与计缓存；③独立检查器最初只处理未观测/双方删失，漏了两条“单方完成但下界还不能判定胜负”，补齐独立分支。这些只影响本轮新审计脚本，未改历史方法或数据、未重跑模型成绩。
+
+## 8. 交付与复算
+
+- `FA05_label_information.csv.gz`：逐偏好首次/末端合法信息与代价集合。
+- `FA05_pair_information.csv`：495个模型的信息、权重、类分布与无标签分母。
+- `FA05_method_seed_summary.csv`：九份模型中位数汇总。
+- `FA05_run_checks.csv`：费用、缓存与首次/末端来源。
+- `FA05_preflight.json` / `FA05_training_audit.json` / `FA05_independent_audit.json`：预检、主审计与独立复算。
+- `FA05_method_coverage.csv` / `FA05_source_verification.json`：一手方法覆盖与权限边界。
+- `FA05_qualification_verdict.json`：机器可读裁决。
+
+从工作区根目录执行：
+
+```powershell
+& work/fa00/.venv/Scripts/python.exe work/fa05_q/preflight.py
+& work/fa00/.venv/Scripts/python.exe work/fa05_q/run.py
+& work/fa00/.venv/Scripts/python.exe work/fa05_q/check.py
+& work/fa00/.venv/Scripts/python.exe work/fa05_q/report.py
+```
+
+脚本不启动采集、训练或评价。历史输出保持原样。
+'''
+    (OUT/'FA05_report.md').write_text(report,encoding='utf-8')
+    save('RUN_STATE.json',dict(stage='FA05-Q',status='complete',active_jobs=False,
+        result='information passed; practical value and novelty unestablished',new_fits=0,new_acquisitions=0,
+        entry='FA05_report.md'))
+    files=[p for p in OUT.rglob('*') if p.is_file() and p.name!='FA05_delivery_manifest.json']
+    files+=list((ROOT/'work/fa05_q').glob('*.py'))
+    manifest={p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(files)}
+    save('FA05_delivery_manifest.json',dict(as_of='2026-10-05',sha256=manifest))
+    print(json.dumps(dict(report=str(OUT/'FA05_report.md'),coverage_rows=len(coverage),sealed_files=len(files))))
+
+if __name__=='__main__':main()

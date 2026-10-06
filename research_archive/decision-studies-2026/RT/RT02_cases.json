@@ -1,0 +1,167 @@
+{
+  "task": "RT-02 -- one controlled completion-feedback experiment on the ATLAS/PAI trace",
+  "status": "pre-registered gate NOT met; the design's premise failed, so the round has no power to judge whether censoring correction helps",
+  "design": {
+    "records": "class A only (all tasks ended, status Terminated, finite times, positive duration)",
+    "label": "p_j = max_t e_jt - min_t s_jt",
+    "replay_start": "min_t s_jt",
+    "target": "per-job duration median",
+    "metric": "mean absolute log error",
+    "update_points": [
+      0.4,
+      0.6,
+      0.8
+    ],
+    "recent_window_days": 7,
+    "test_window_days": 2,
+    "visible_channel": "z_j = min(p_j, T - s_j), delta_j = 1[e_j <= T]",
+    "fallbacks": {
+      "min_group": 30,
+      "km_median_unreached": "fall back to HISTORY and record the share",
+      "history_insufficient": "fall back to the historical global median"
+    },
+    "conditioning_disclosure": "selecting class A uses archive information; this is a conditional replay of a successful-job queue, not a production reproduction"
+  },
+  "prechecks": {
+    "1_identical_recent_ids": true,
+    "2_full_label_coverage": 1.0,
+    "3_blindness_to_hidden_labels": true,
+    "4_km_hand_computed_cases": 5
+  },
+  "results": {
+    "0.4": {
+      "T": 2905870.6,
+      "n_recent": 72687,
+      "n_test": 21959,
+      "n_history": 219326,
+      "censored_share_recent": 0.007277780070714158,
+      "km_fallback": 19170,
+      "history_group_fallback": 18204,
+      "recent_group_fallback": 19170,
+      "scores": {
+        "HISTORY": {
+          "mean_abs_log_error": 1.5582205468244912,
+          "spearman": 0.320301030793163,
+          "median_pred": 704.0,
+          "median_true": 626.0
+        },
+        "RECENT": {
+          "mean_abs_log_error": 1.6161289423101837,
+          "spearman": 0.2742351983376714,
+          "median_pred": 729.0,
+          "median_true": 626.0
+        },
+        "KM": {
+          "mean_abs_log_error": 1.61848602829098,
+          "spearman": 0.27425656536734566,
+          "median_pred": 704.0,
+          "median_true": 626.0
+        },
+        "FULL_LABEL": {
+          "mean_abs_log_error": 1.614108386597342,
+          "spearman": 0.2742520593589431,
+          "median_pred": 751.0,
+          "median_true": 626.0
+        }
+      },
+      "recent_ids_count": 72687,
+      "recent_duplicate_ids": 0,
+      "full_label_coverage": 1.0,
+      "blindness_check_passed": true
+    },
+    "0.6": {
+      "T": 4087644.4,
+      "n_recent": 81029,
+      "n_test": 24145,
+      "n_history": 375779,
+      "censored_share_recent": 0.009107850275827173,
+      "km_fallback": 21548,
+      "history_group_fallback": 13751,
+      "recent_group_fallback": 21548,
+      "scores": {
+        "HISTORY": {
+          "mean_abs_log_error": 1.367910947788423,
+          "spearman": 0.4242380903912823,
+          "median_pred": 653.0,
+          "median_true": 557.0
+        },
+        "RECENT": {
+          "mean_abs_log_error": 1.6856351725074168,
+          "spearman": 0.239664831329495,
+          "median_pred": 579.0,
+          "median_true": 557.0
+        },
+        "KM": {
+          "mean_abs_log_error": 1.6784156616681885,
+          "spearman": 0.23775218899030448,
+          "median_pred": 653.0,
+          "median_true": 557.0
+        },
+        "FULL_LABEL": {
+          "mean_abs_log_error": 1.6835373424555073,
+          "spearman": 0.239664831329495,
+          "median_pred": 596.0,
+          "median_true": 557.0
+        }
+      },
+      "recent_ids_count": 81029,
+      "recent_duplicate_ids": 0,
+      "full_label_coverage": 1.0
+    },
+    "0.8": {
+      "T": 5269418.2,
+      "n_recent": 95694,
+      "n_test": 30286,
+      "n_history": 546723,
+      "censored_share_recent": 0.007712082262210797,
+      "km_fallback": 27618,
+      "history_group_fallback": 19772,
+      "recent_group_fallback": 27618,
+      "scores": {
+        "HISTORY": {
+          "mean_abs_log_error": 1.1937106340654875,
+          "spearman": 0.518654637378967,
+          "median_pred": 684.0,
+          "median_true": 924.0
+        },
+        "RECENT": {
+          "mean_abs_log_error": 1.4980212475908794,
+          "spearman": 0.2632877524582302,
+          "median_pred": 764.0,
+          "median_true": 924.0
+        },
+        "KM": {
+          "mean_abs_log_error": 1.5161883866052588,
+          "spearman": 0.26328772730073813,
+          "median_pred": 684.0,
+          "median_true": 924.0
+        },
+        "FULL_LABEL": {
+          "mean_abs_log_error": 1.4955608919705143,
+          "spearman": 0.2632877524582302,
+          "median_pred": 777.0,
+          "median_true": 924.0
+        }
+      },
+      "recent_ids_count": 95694,
+      "recent_duplicate_ids": 0,
+      "full_label_coverage": 1.0
+    }
+  },
+  "gate": {
+    "positive_windows": 0,
+    "equal_weight_mean_relative_change": -0.1786,
+    "threshold": {
+      "all_three_positive": true,
+      "mean_at_least": 0.01
+    },
+    "met": false
+  },
+  "why_not_met": "the recent queue is only 0.7-0.9% censored once restricted to class A, so RECENT, KM and FULL-LABEL receive essentially the same data; the experiment cannot answer whether censoring correction helps",
+  "secondary_observation": "HISTORY beats RECENT and KM in two of three windows (1.37 vs 1.69 and 1.19 vs 1.50), which is the opposite of the pre-registered 'only better than RECENT' case",
+  "not_concluded": [
+    "that the direction is invalid",
+    "any oracle bound on information value",
+    "any scheduling benefit"
+  ]
+}

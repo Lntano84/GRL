@@ -1,0 +1,391 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 23ab830..d6651e0 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -315,7 +315,11 @@ if (KAHYPAR_X86 AND KAHYPAR_ENABLE_EXTENDED_INSTRUCTIONS)
+   endif()
+ endif()
+ 
+-set(KAHYPAR_USE_GROWT TRUE)
++if(KAHYPAR_DISABLE_GROWT)
++  set(KAHYPAR_USE_GROWT FALSE)
++else()
++  set(KAHYPAR_USE_GROWT TRUE)
++endif()
+ 
+ if(KAHYPAR_ENABLE_ARCH_COMPILE_OPTIMIZATIONS)
+   target_compile_options(MtKaHyPar-BuildFlags INTERFACE $<$<CONFIG:RELEASE>:-mtune=native -march=native>
+@@ -343,41 +347,33 @@ set(KAHYPAR_PYBIND11_VERSION     v2.13.6)
+ 
+ message(STATUS "Fetching dependencies...")
+ 
+-# Include header-only dependencies
+-FetchContent_Populate(
+-  kahypar-shared-resources QUIET EXLUDE_FROM_ALL
+-  GIT_REPOSITORY https://github.com/kahypar/kahypar-shared-resources.git
+-  GIT_TAG        ${KAHYPAR_SHARED_RESOURCES_TAG}
+-  SOURCE_DIR     external_tools/kahypar-shared-resources
+-)
+-FetchContent_Populate(
+-  WHFC QUIET EXLUDE_FROM_ALL
+-  GIT_REPOSITORY https://github.com/larsgottesbueren/WHFC.git
+-  GIT_TAG        ${KAHYPAR_WHFC_TAG}
+-  SOURCE_DIR     external_tools/WHFC
+-)
++# Header-only dependencies are pre-populated at the exact upstream-pinned
++# commits below. Avoid the old FetchContent_Populate sub-build here: with
++# MinGW Makefiles on this Windows host, its relative sub-build paths are
++# evaluated from external_tools/ and fail before compilation starts.
++foreach(KAHYPAR_PINNED_DEP IN ITEMS
++    "${CMAKE_CURRENT_BINARY_DIR}/external_tools/kahypar-shared-resources"
++    "${CMAKE_CURRENT_BINARY_DIR}/external_tools/WHFC")
++  if(NOT IS_DIRECTORY "${KAHYPAR_PINNED_DEP}/.git")
++    message(FATAL_ERROR "Missing pre-populated pinned dependency: ${KAHYPAR_PINNED_DEP}")
++  endif()
++endforeach()
+ target_include_directories(MtKaHyPar-Include INTERFACE
+                            ${CMAKE_CURRENT_BINARY_DIR}/external_tools/kahypar-shared-resources
+                            ${CMAKE_CURRENT_BINARY_DIR}/external_tools)
+ 
+ if(KAHYPAR_USE_GROWT)
+   # Note: we use our own fork of growt since growt is no longer maintained and we need to fix some errors
+-  FetchContent_Populate(
+-    growt QUIET EXLUDE_FROM_ALL
+-    GIT_REPOSITORY https://github.com/N-Maas/growt.git
+-    GIT_TAG        ${KAHYPAR_GROWT_TAG}
+-    SOURCE_DIR     external_tools/growt
+-  )
++  if(NOT IS_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/external_tools/growt/.git")
++    message(FATAL_ERROR "Missing pre-populated pinned dependency: ${CMAKE_CURRENT_BINARY_DIR}/external_tools/growt")
++  endif()
+   target_compile_definitions(MtKaHyPar-BuildFlags INTERFACE KAHYPAR_USE_GROWT)
+ endif()
+ 
+ if(NOT KAHYPAR_DISABLE_PARLAY)
+-  FetchContent_Populate(
+-    parlay QUIET EXLUDE_FROM_ALL
+-    GIT_REPOSITORY https://github.com/cmuparlay/parlaylib.git
+-    GIT_TAG        ${KAHYPAR_PARLAY_TAG}
+-    SOURCE_DIR     external_tools/parlay
+-  )
++  if(NOT IS_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/external_tools/parlay/.git")
++    message(FATAL_ERROR "Missing pre-populated pinned dependency: ${CMAKE_CURRENT_BINARY_DIR}/external_tools/parlay")
++  endif()
+   target_include_directories(MtKaHyPar-Include INTERFACE ${CMAKE_CURRENT_BINARY_DIR}/external_tools/parlay/include)
+   target_compile_options(MtKaHyPar-BuildFlags INTERFACE -DPARLAY_TBB)
+ endif()
+diff --git a/mt-kahypar/partition/coarsening/multilevel/ml/compute_ml_results.cpp b/mt-kahypar/partition/coarsening/multilevel/ml/compute_ml_results.cpp
+index 4caf1d6..410689a 100644
+--- a/mt-kahypar/partition/coarsening/multilevel/ml/compute_ml_results.cpp
++++ b/mt-kahypar/partition/coarsening/multilevel/ml/compute_ml_results.cpp
+@@ -26,7 +26,18 @@
+ 
+ #include "compute_ml_results.h"
+ 
++#include <algorithm>
++#include <cmath>
++#include <cstdlib>
++#include <fstream>
++#include <iomanip>
++#include <limits>
++#include <map>
+ #include <memory>
++#include <sstream>
++#include <stdexcept>
++#include <string>
++#include <vector>
+ 
+ #include <tbb/parallel_invoke.h>
+ #include <tbb/enumerable_thread_specific.h>
+@@ -74,6 +85,120 @@ using BufferPtr = std::unique_ptr<InOutPredictionBuffer>;
+ using features::MEANS;
+ using features::STDEVS;
+ 
++std::vector<EdgeMetadata> readGp01Ratings(const char* path, const ds::StaticGraph& graph) {
++  std::ifstream input(path);
++  if (!input) {
++    throw std::runtime_error(std::string("Cannot open GP01 score file: ") + path);
++  }
++  std::string line;
++  if (!std::getline(input, line)) {
++    throw std::runtime_error("GP01 score file has an invalid header");
++  }
++  if (!line.empty() && line.back() == '\r') line.pop_back();
++
++  std::vector<EdgeMetadata> scores(graph.initialNumEdges(), 0.0f);
++  if (line == "source,target,score") {
++    std::map<std::pair<HypernodeID, HypernodeID>, std::vector<HyperedgeID>> arcs_by_edge;
++    for (HyperedgeID edge_id = 0; edge_id < graph.initialNumEdges(); ++edge_id) {
++      const HypernodeID source = graph.edgeSource(edge_id);
++      const HypernodeID target = graph.edgeTarget(edge_id);
++      arcs_by_edge[std::make_pair(std::min(source, target), std::max(source, target))].push_back(edge_id);
++    }
++    for (const auto& entry : arcs_by_edge) {
++      const auto& arcs = entry.second;
++      if (arcs.size() != 2 || graph.edgeSource(arcs[0]) != graph.edgeTarget(arcs[1]) ||
++          graph.edgeTarget(arcs[0]) != graph.edgeSource(arcs[1])) {
++        throw std::runtime_error("GP01 graph does not contain exactly two opposite arcs per edge");
++      }
++    }
++    std::map<std::pair<HypernodeID, HypernodeID>, bool> seen_edges;
++    HyperedgeID rows = 0;
++    while (std::getline(input, line)) {
++      if (!line.empty() && line.back() == '\r') line.pop_back();
++      std::istringstream row(line);
++      std::string source_text, target_text, score_text, extra;
++      if (!std::getline(row, source_text, ',') || !std::getline(row, target_text, ',') ||
++          !std::getline(row, score_text, ',') || std::getline(row, extra, ',')) {
++        throw std::runtime_error("GP01 undirected score row must have exactly three CSV fields");
++      }
++      const HypernodeID source = static_cast<HypernodeID>(std::stoull(source_text));
++      const HypernodeID target = static_cast<HypernodeID>(std::stoull(target_text));
++      if (source >= graph.initialNumNodes() || target >= graph.initialNumNodes() || source == target) {
++        throw std::runtime_error("GP01 keyed score has an invalid edge endpoint");
++      }
++      const auto key = std::make_pair(std::min(source, target), std::max(source, target));
++      const float score = std::stof(score_text);
++      const auto found = arcs_by_edge.find(key);
++      if (found == arcs_by_edge.end() || seen_edges[key]) {
++        throw std::runtime_error("GP01 keyed score has a missing or duplicate edge key");
++      }
++      if (!std::isfinite(score) || score < 0.0f || score > 1.0f) {
++        throw std::runtime_error("GP01 score must be finite and in [0, 1]");
++      }
++      for (HyperedgeID edge_id : found->second) scores[edge_id] = score;
++      seen_edges[key] = true;
++      ++rows;
++    }
++    if (rows != arcs_by_edge.size()) {
++      throw std::runtime_error("GP01 keyed score file does not cover every undirected edge");
++    }
++    return scores;
++  }
++  if (line != "edge_id,source,target,score") {
++    throw std::runtime_error("GP01 score file has an invalid header");
++  }
++
++  std::vector<bool> seen(graph.initialNumEdges(), false);
++  HyperedgeID rows = 0;
++  while (std::getline(input, line)) {
++    if (!line.empty() && line.back() == '\r') line.pop_back();
++    std::istringstream row(line);
++    std::string edge_id_text, source_text, target_text, score_text, extra;
++    if (!std::getline(row, edge_id_text, ',') || !std::getline(row, source_text, ',') ||
++        !std::getline(row, target_text, ',') || !std::getline(row, score_text, ',') ||
++        std::getline(row, extra, ',')) {
++      throw std::runtime_error("GP01 score row must have exactly four CSV fields");
++    }
++    const HyperedgeID edge_id = static_cast<HyperedgeID>(std::stoull(edge_id_text));
++    const HypernodeID source = static_cast<HypernodeID>(std::stoull(source_text));
++    const HypernodeID target = static_cast<HypernodeID>(std::stoull(target_text));
++    const float score = std::stof(score_text);
++    if (edge_id >= graph.initialNumEdges() || seen[edge_id]) {
++      throw std::runtime_error("GP01 score file has an out-of-range or duplicate edge_id");
++    }
++    if (source != graph.edgeSource(edge_id) || target != graph.edgeTarget(edge_id)) {
++      throw std::runtime_error("GP01 score arc endpoints do not match the current graph");
++    }
++    if (!std::isfinite(score) || score < 0.0f || score > 1.0f) {
++      throw std::runtime_error("GP01 score must be finite and in [0, 1]");
++    }
++    scores[edge_id] = score;
++    seen[edge_id] = true;
++    ++rows;
++  }
++  if (rows != graph.initialNumEdges()) {
++    throw std::runtime_error("GP01 score file does not contain every directed arc");
++  }
++  return scores;
++}
++
++void writeGp01Ratings(const char* path, const ds::StaticGraph& graph,
++                      const vec<EdgeMetadata>& metadata) {
++  std::ofstream output(path);
++  if (!output) {
++    throw std::runtime_error(std::string("Cannot create GP01 score file: ") + path);
++  }
++  output << "edge_id,source,target,score\n" << std::setprecision(std::numeric_limits<float>::max_digits10);
++  for (HyperedgeID edge_id = 0; edge_id < graph.initialNumEdges(); ++edge_id) {
++    output << edge_id << ',' << graph.edgeSource(edge_id) << ',' << graph.edgeTarget(edge_id)
++           << ',' << metadata[edge_id] << '\n';
++  }
++  output.close();
++  if (!output) {
++    throw std::runtime_error(std::string("Failed writing GP01 score file: ") + path);
++  }
++}
++
+ 
+ MT_KAHYPAR_ATTRIBUTE_ALWAYS_INLINE
+ void predictEdgesImpl(const ds::StaticGraph& graph, const Context& context,
+@@ -162,6 +287,73 @@ void computeEdgeMetadataFromModel(const ds::StaticGraph& graph, const Context& c
+       predictEdgesDynamicSize(graph, context, global_features, n1_features, skip_comm_1, first_edge, n, params_row, buffer, metadata);
+     }
+   });
++
++  // GP01 score replay deliberately runs the original feature/model path above,
++  // then replaces only EdgeMetadata. This keeps the scoring call and random
++  // path identical during the injection audit; original graph edge weights
++  // and all later coarsening/refinement logic remain untouched.
++  const char* gp01_input = std::getenv("MKH_GP01_SCORE_FILE");
++  const char* gp01_export = std::getenv("MKH_GP01_EXPORT_SCORES");
++  if (gp01_input != nullptr && gp01_input[0] != '\0' &&
++      gp01_export != nullptr && gp01_export[0] != '\0') {
++    throw std::runtime_error("Set only one of MKH_GP01_SCORE_FILE and MKH_GP01_EXPORT_SCORES");
++  }
++  if (gp01_input != nullptr && gp01_input[0] != '\0') {
++    const std::vector<EdgeMetadata> replayed = readGp01Ratings(gp01_input, graph);
++    for (HyperedgeID edge_id = 0; edge_id < graph.initialNumEdges(); ++edge_id) {
++      metadata[edge_id] = replayed[edge_id];
++    }
++  } else if (gp01_export != nullptr && gp01_export[0] != '\0') {
++    writeGp01Ratings(gp01_export, graph, metadata);
++  }
++
++  if (const char* audit_path = std::getenv("MKH_GP01_AUDIT_LOG");
++      audit_path != nullptr && audit_path[0] != '\0') {
++    std::ofstream audit(audit_path, std::ios::app);
++    if (!audit) throw std::runtime_error(std::string("Cannot open GP01 audit log: ") + audit_path);
++    audit << "MODEL,-1,-1," << context.partition.k << ',' << graph.initialNumNodes() << ','
++          << graph.initialNumEdges() << ",-1,"
++          << ((gp01_input != nullptr && gp01_input[0] != '\0') ? "replay" : "model") << '\n';
++  }
++
++  // Optional GP00 audit dump. This runs only when explicitly enabled and is
++  // read-only: the model inputs and metadata used by the coarsener above have
++  // already been produced, and the dump recomputes feature rows for export.
++  if (const char* dump_path = std::getenv("MKH_GP00_DUMP_FEATURES");
++      dump_path != nullptr && dump_path[0] != '\0') {
++    std::ofstream dump(dump_path);
++    if (!dump) {
++      throw std::runtime_error(std::string("Cannot open GP00 feature dump: ") + dump_path);
++    }
++    dump << "edge_id,source,target,k,n_nodes,skip_comm_1";
++    for (size_t i = 0; i < MEANS.size(); ++i) dump << ",raw_f" << std::setw(2) << std::setfill('0') << i;
++    for (size_t i = 0; i < MEANS.size(); ++i) dump << ",normalized_f" << std::setw(2) << std::setfill('0') << i;
++    dump << ",prediction\n" << std::setfill(' ') << std::setprecision(std::numeric_limits<float>::max_digits10);
++    for (HyperedgeID he = 0; he < graph.initialNumEdges(); ++he) {
++      HypernodeID source = graph.edgeSource(he);
++      HypernodeID target = graph.edgeTarget(he);
++      HypernodeID u = source;
++      HypernodeID v = target;
++      const N1Features* u_f = &n1_features[u];
++      const N1Features* v_f = &n1_features[v];
++      if (u_f->degree < v_f->degree || (u_f->degree == v_f->degree && u < v)) {
++        std::swap(u, v);
++        std::swap(u_f, v_f);
++      }
++      const EdgeFeatures edge = computeEdgeFeatures(graph, context, u, *u_f, v, *v_f, skip_comm_1);
++      float raw[32];
++      MapFeaturesForEdge::map_features(global_features, *u_f, *v_f, edge, raw);
++      dump << he << ',' << source << ',' << target << ',' << context.partition.k << ','
++           << graph.initialNumNodes() << ',' << static_cast<int>(skip_comm_1);
++      for (float value : raw) dump << ',' << value;
++      for (size_t i = 0; i < MEANS.size(); ++i) dump << ',' << ((raw[i] - MEANS[i]) / STDEVS[i]);
++      dump << ',' << metadata[he] << '\n';
++    }
++    dump.close();
++    if (!dump) {
++      throw std::runtime_error(std::string("Failed writing GP00 feature dump: ") + dump_path);
++    }
++  }
+   free_params(params_row);
+ 
+   timer.stop_timer("inference");
+diff --git a/mt-kahypar/partition/coarsening/multilevel/ml/mlp.c b/mt-kahypar/partition/coarsening/multilevel/ml/mlp.c
+index 1471697..93d0421 100644
+--- a/mt-kahypar/partition/coarsening/multilevel/ml/mlp.c
++++ b/mt-kahypar/partition/coarsening/multilevel/ml/mlp.c
+@@ -1,6 +1,9 @@
+ #include <stdlib.h>
+ #include <immintrin.h>
+ #include <math.h>
++#if defined(_WIN32)
++#include <malloc.h>
++#endif
+ 
+ #undef __cplusplus
+ 
+@@ -203,7 +206,11 @@ void column_to_row_matrix(const float *in, float *out, int n, int m)
+ float* precompute_params() {
+     int offsets_W[] = {0, 1584, 3152, 3680};
+ 
++#if defined(_WIN32)
++    float *params_row = (float*)_aligned_malloc(sizeof(float) * 3697, 32);
++#else
+     float *params_row = (float*)aligned_alloc(32, sizeof(float) * 3697);
++#endif
+     for (int i = 0; i < 3697; i++)
+         params_row[i] = params[i];
+ 
+@@ -215,7 +222,11 @@ float* precompute_params() {
+ }
+ 
+ void free_params(float *params_row) {
++#if defined(_WIN32)
++    _aligned_free(params_row);
++#else
+     free(params_row);
++#endif
+ }
+ 
+ void predict(float *in, float *params_row, int n, float *out)
+diff --git a/mt-kahypar/partition/coarsening/multilevel/three_phase_coarsener.h b/mt-kahypar/partition/coarsening/multilevel/three_phase_coarsener.h
+index 436dcc6..205072f 100644
+--- a/mt-kahypar/partition/coarsening/multilevel/three_phase_coarsener.h
++++ b/mt-kahypar/partition/coarsening/multilevel/three_phase_coarsener.h
+@@ -26,6 +26,11 @@
+ 
+ #pragma once
+ 
++#include <atomic>
++#include <cstdint>
++#include <cstdlib>
++#include <fstream>
++#include <stdexcept>
+ #include <string>
+ #include <type_traits>
+ 
+@@ -97,6 +102,7 @@ class ThreePhaseCoarsener : public ICoarsener,
+     _num_communities(kInvalidPartition),
+     _current_vertices(),
+     _pass_nr(0),
++    _gp01_context_id(nextGp01ContextId()),
+     _progress_bar(_hg.initialNumNodes(), 0, false),
+     _enable_randomization(true) {
+     _progress_bar += _hg.numRemovedHypernodes();
+@@ -113,6 +119,11 @@ class ThreePhaseCoarsener : public ICoarsener,
+   }
+ 
+  private:
++  static std::uint64_t nextGp01ContextId() {
++    static std::atomic<std::uint64_t> next_id{0};
++    return next_id.fetch_add(1, std::memory_order_relaxed);
++  }
++
+   void initializeImpl() override {
+     if ( _context.partition.verbose_output && _context.partition.enable_progress_bar ) {
+       _progress_bar.enable();
+@@ -126,6 +137,14 @@ class ThreePhaseCoarsener : public ICoarsener,
+   bool coarseningPassImpl() override {
+     HighResClockTimepoint round_start = std::chrono::high_resolution_clock::now();
+     Hypergraph& current_hg = Base::currentHypergraph();
++    if (const char* audit_path = std::getenv("MKH_GP01_AUDIT_LOG");
++        audit_path != nullptr && audit_path[0] != '\0') {
++      std::ofstream audit(audit_path, std::ios::app);
++      if (!audit) throw std::runtime_error(std::string("Cannot open GP01 audit log: ") + audit_path);
++      audit << "PASS," << _gp01_context_id << ',' << _pass_nr << ',' << _context.partition.k << ','
++            << current_hg.initialNumNodes() << ',' << current_hg.initialNumEdges() << ','
++            << (current_hg.initialNumNodes() - current_hg.numRemovedHypernodes()) << '\n';
++    }
+     DBG << V(_pass_nr)
+         << V(current_hg.initialNumNodes())
+         << V(current_hg.initialNumEdges())
+@@ -324,6 +343,7 @@ class ThreePhaseCoarsener : public ICoarsener,
+   PartitionID _num_communities;
+   parallel::scalable_vector<HypernodeID> _current_vertices;
+   int _pass_nr;
++  std::uint64_t _gp01_context_id;
+   utils::ProgressBar _progress_bar;
+   bool _enable_randomization;
+ };

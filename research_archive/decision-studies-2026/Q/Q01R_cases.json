@@ -1,0 +1,278 @@
+{
+  "task": "Q01-R -- corrected mechanism and minimal feedback interface for the timeout-retry screening",
+  "supersedes": "Q01_report.md",
+  "verdict": "overall verdict retained: the numeric matrices are usable; the stock replay cannot be used directly as a legal policy; the mechanism is corrected",
+  "retractions": [
+    "'cancelled runs are booked as completed' -- my witness injected a deadline the code does not use; the effective deadline IS timeout_tolerance, so x < cap completing is correct",
+    "'there is no retry arm' -- a timed-out cell whose hidden runtime is below the current best keeps mask=0 and explored_m=0 and can be executed again; the path exists",
+    "'nine unmasked reads = nine violations' -- a replay environment must read the hidden runtime to produce feedback; the correct test is whether the read exceeds what that execution revealed"
+  ],
+  "confirmed": {
+    "unobservable_candidate_retirement": {
+      "site": [
+        "strategies/limeqo.py:89",
+        "strategies/limeqo.py:114",
+        "strategies/limeqo_plus.py:114",
+        "strategies/limeqo_plus.py:139",
+        "strategies/greedy.py:74",
+        "strategies/random.py:60",
+        "strategies/qo_advisor.py:68"
+      ],
+      "statement": "explored_m is set from a comparison (x >= current best) that the run did not reveal; legal feedback is only 'runtime >= cap'"
+    },
+    "privileged_stopping_rule": {
+      "site": [
+        "strategies/limeqo.py:35",
+        "strategies/limeqo.py:105"
+      ],
+      "statement": "the stop rule reads opt_time = per-row minimum of the FULL hidden matrix; usable for post-hoc evaluation, not as a deployable stop condition"
+    },
+    "legitimate_environment_reads": {
+      "site": [
+        "strategies/limeqo.py:92",
+        "strategies/limeqo_plus.py:117"
+      ],
+      "statement": "the completion test for the run just performed at the cap it was given"
+    },
+    "implicit_retry": {
+      "statement": "no separately named retry action, but a path re-executes a timed-out candidate, and its eligibility is decided by the hidden runtime",
+      "worked_example": "x=5, b=10: cap=2 charges 2s and keeps eligibility; cap=10 then charges 5s and completes; total 7s"
+    }
+  },
+  "interface": {
+    "signature": "observe(query, hint, cap) -> kind, value_or_bound, charged_seconds",
+    "kinds": [
+      "completed",
+      "cancelled"
+    ],
+    "boundary": "x < cap completes, x >= cap times out (kept from the official code)",
+    "retry_billing": "a re-execution is charged from scratch",
+    "policy_holds_matrix": false
+  },
+  "checks": {
+    "results": {
+      "check1": {
+        "legal": {
+          "5": {
+            "kind": "cancelled",
+            "value_or_bound": 2,
+            "charged": 2,
+            "state": {
+              "mask": [],
+              "bounds": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "explored": [],
+              "counted": [],
+              "spent": 2.0
+            },
+            "eligible": true
+          },
+          "20": {
+            "kind": "cancelled",
+            "value_or_bound": 2,
+            "charged": 2,
+            "state": {
+              "mask": [],
+              "bounds": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "explored": [],
+              "counted": [],
+              "spent": 2.0
+            },
+            "eligible": true
+          }
+        },
+        "official_defect_differs": true
+      },
+      "check2": {
+        "5": {
+          "kind": "completed",
+          "value_or_bound": 5,
+          "charged": 5,
+          "state": {
+            "mask": [
+              [
+                0,
+                1
+              ]
+            ],
+            "bounds": [],
+            "explored": [
+              [
+                0,
+                1
+              ]
+            ],
+            "counted": [
+              [
+                0,
+                1
+              ]
+            ],
+            "spent": 5.0
+          }
+        },
+        "20": {
+          "kind": "cancelled",
+          "value_or_bound": 10,
+          "charged": 10,
+          "state": {
+            "mask": [],
+            "bounds": [
+              [
+                0,
+                1
+              ]
+            ],
+            "explored": [],
+            "counted": [],
+            "spent": 10.0
+          }
+        }
+      },
+      "check3": {
+        "sequence": [
+          {
+            "cap": 2,
+            "kind": "cancelled",
+            "value_or_bound": 2,
+            "charged": 2,
+            "cumulative_spent": 2.0
+          },
+          {
+            "cap": 10,
+            "kind": "completed",
+            "value_or_bound": 5.0,
+            "charged": 5.0,
+            "cumulative_spent": 7.0
+          }
+        ],
+        "total_charged": 7.0,
+        "eligible_after_first_run": true
+      },
+      "check4": {
+        "A": {
+          "next_action": [
+            0,
+            1
+          ],
+          "next_cap": 2,
+          "spent": 12.0,
+          "stop_by_budget": false,
+          "hidden": {
+            "(0, 1)": 5.0,
+            "(0, 2)": 7.0,
+            "(1, 0)": 9.0
+          },
+          "opt_time_A_only": null
+        },
+        "B": {
+          "next_action": [
+            0,
+            1
+          ],
+          "next_cap": 2,
+          "spent": 12.0,
+          "stop_by_budget": false,
+          "hidden": {
+            "(0, 1)": 5.0,
+            "(0, 2)": 90.0,
+            "(1, 0)": 9.0
+          },
+          "opt_time_A_only": null
+        }
+      }
+    },
+    "all_pass": true
+  },
+  "data_qualification": {
+    "initial_mask_audit": {
+      "ceb": {
+        "n": 3133,
+        "k": 49,
+        "mask_shape": [
+          3133,
+          49
+        ],
+        "binary": true,
+        "marked_total": 9539,
+        "marked_col0": 3133,
+        "marked_off_col0": 6406,
+        "marked_differing_from_col0": 38,
+        "marked_off_col0_differing": 38,
+        "share_differing": 0.00398364608449523
+      },
+      "job": {
+        "n": 113,
+        "k": 49,
+        "mask_shape": [
+          113,
+          49
+        ],
+        "binary": true,
+        "marked_total": 607,
+        "marked_col0": 113,
+        "marked_off_col0": 494,
+        "marked_differing_from_col0": 51,
+        "marked_off_col0_differing": 51,
+        "share_differing": 0.08401976935749589
+      },
+      "stack": {
+        "n": 6191,
+        "k": 49,
+        "mask_shape": [
+          6191,
+          49
+        ],
+        "binary": true,
+        "marked_total": 33312,
+        "marked_col0": 6191,
+        "marked_off_col0": 27121,
+        "marked_differing_from_col0": 42,
+        "marked_off_col0_differing": 42,
+        "share_differing": 0.001260806916426513
+      },
+      "dsb": {
+        "n": 964,
+        "k": 49,
+        "mask_shape": [
+          964,
+          49
+        ],
+        "binary": true,
+        "marked_total": 2520,
+        "marked_col0": 964,
+        "marked_off_col0": 1556,
+        "marked_differing_from_col0": 36,
+        "marked_off_col0_differing": 36,
+        "share_differing": 0.014285714285714285
+      }
+    },
+    "layers": {
+      "L1_finite_replay": "PASSED",
+      "L2_official_cost_and_equivalence": "MISSING: plan equivalence classes and initial-mask provenance",
+      "open": "whether each cell is an untruncated original completion time"
+    }
+  },
+  "screening_space_percent": {
+    "ceb": 0.24194063198212576,
+    "job": 0.3805309734513274,
+    "stack": 0.08108544661605556,
+    "dsb": 0.15145228215767634
+  },
+  "not_done": [
+    "no predictor fitted",
+    "no four-workload algorithm comparison",
+    "no Dropbox download",
+    "no database rebuild",
+    "no equivalence inferred from equal runtimes"
+  ]
+}

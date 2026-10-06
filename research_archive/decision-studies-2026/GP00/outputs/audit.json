@@ -1,0 +1,172 @@
+{
+  "main_matrix_runs": 16,
+  "all_exit_zero": true,
+  "independent_cut_mismatches": 0,
+  "balance_failures": 0,
+  "default_model_invocation_checks": [
+    {
+      "graph": "er1024_p001_seed20260930",
+      "seed": "0",
+      "k4_default_model_invoked": "True",
+      "k32_default_model_invoked": "False",
+      "k4_contraction_limit": "640",
+      "k32_contraction_limit": "5120",
+      "input_nodes": "1024",
+      "explanation": "Default guided coarsening asks for t*k nodes (t=160). At k=32 the 5120-node stopping target exceeds this input size, so the default run does not call the learned scorer."
+    },
+    {
+      "graph": "er1024_p001_seed20260930",
+      "seed": "1",
+      "k4_default_model_invoked": "True",
+      "k32_default_model_invoked": "False",
+      "k4_contraction_limit": "640",
+      "k32_contraction_limit": "5120",
+      "input_nodes": "1024",
+      "explanation": "Default guided coarsening asks for t*k nodes (t=160). At k=32 the 5120-node stopping target exceeds this input size, so the default run does not call the learned scorer."
+    },
+    {
+      "graph": "grid32x32_4n",
+      "seed": "0",
+      "k4_default_model_invoked": "True",
+      "k32_default_model_invoked": "False",
+      "k4_contraction_limit": "640",
+      "k32_contraction_limit": "5120",
+      "input_nodes": "1024",
+      "explanation": "Default guided coarsening asks for t*k nodes (t=160). At k=32 the 5120-node stopping target exceeds this input size, so the default run does not call the learned scorer."
+    },
+    {
+      "graph": "grid32x32_4n",
+      "seed": "1",
+      "k4_default_model_invoked": "True",
+      "k32_default_model_invoked": "False",
+      "k4_contraction_limit": "640",
+      "k32_contraction_limit": "5120",
+      "input_nodes": "1024",
+      "explanation": "Default guided coarsening asks for t*k nodes (t=160). At k=32 the 5120-node stopping target exceeds this input size, so the default run does not call the learned scorer."
+    }
+  ],
+  "feature_probe": {
+    "graph": "er1024_p001_seed20260930",
+    "seed": 0,
+    "k_low": 4,
+    "k_high": 32,
+    "diagnostic_common_config": "--preset-type=default --c-t=20 --t=1 --seed=0; extra c-t is only to make learned coarsener invoke the model at both k",
+    "aligned_edge_rows": 10472,
+    "alignment_errors": 0,
+    "raw_feature_rows_changed": 0,
+    "raw_feature_cells_changed": 0,
+    "raw_feature_cells_total": 335104,
+    "max_abs_raw_feature_delta": 0.0,
+    "normalized_feature_rows_changed": 0,
+    "normalized_feature_cells_changed": 0,
+    "max_abs_normalized_feature_delta": 0.0,
+    "predictions_changed": 0,
+    "max_abs_prediction_delta": 0.0,
+    "direction_checks": [
+      {
+        "k": 4,
+        "directed_arcs": 10472,
+        "undirected_pairs": 5236,
+        "reverse_missing": 0,
+        "reverse_raw_vector_mismatch_pairs": 0,
+        "reverse_max_prediction_delta": 0.0
+      },
+      {
+        "k": 32,
+        "directed_arcs": 10472,
+        "undirected_pairs": 5236,
+        "reverse_missing": 0,
+        "reverse_raw_vector_mismatch_pairs": 0,
+        "reverse_max_prediction_delta": 0.0
+      }
+    ]
+  },
+  "time_caveat": "External process wall time was not captured for one completed matrix run; its solver-reported partition time is retained. Learned runs had opt-in feature-export overhead, so timings are not a fair speed comparison.",
+  "outputs": [
+    "GP00_report.md",
+    "run_results.csv",
+    "default_model_invocation.csv",
+    "k_feature_probe.json",
+    "feature_dump_audit.csv",
+    "build_manifest.json",
+    "feature_dictionary.csv"
+  ],
+  "all_feature_dumps_pass": true,
+  "feature_dump_audits": [
+    {
+      "run": "er1024_p001_seed20260930_k4_s0_learned",
+      "rows": "10472",
+      "expected_directed_arcs": "10472",
+      "edge_ids_unique": "10472",
+      "missing_reverse_arcs": "0",
+      "reverse_raw_vector_mismatch": "0",
+      "nonfinite_or_out_of_range_values": "0",
+      "prediction_min": "0.059549246",
+      "prediction_max": "0.897533834",
+      "pass": "True"
+    },
+    {
+      "run": "er1024_p001_seed20260930_k4_s1_learned",
+      "rows": "10472",
+      "expected_directed_arcs": "10472",
+      "edge_ids_unique": "10472",
+      "missing_reverse_arcs": "0",
+      "reverse_raw_vector_mismatch": "0",
+      "nonfinite_or_out_of_range_values": "0",
+      "prediction_min": "0.0645853505",
+      "prediction_max": "0.901574492",
+      "pass": "True"
+    },
+    {
+      "run": "featurediag_er1024_s0_k32_ct20",
+      "rows": "10472",
+      "expected_directed_arcs": "10472",
+      "edge_ids_unique": "10472",
+      "missing_reverse_arcs": "0",
+      "reverse_raw_vector_mismatch": "0",
+      "nonfinite_or_out_of_range_values": "0",
+      "prediction_min": "0.059549246",
+      "prediction_max": "0.897533834",
+      "pass": "True"
+    },
+    {
+      "run": "featurediag_er1024_s0_k4_ct20",
+      "rows": "10472",
+      "expected_directed_arcs": "10472",
+      "edge_ids_unique": "10472",
+      "missing_reverse_arcs": "0",
+      "reverse_raw_vector_mismatch": "0",
+      "nonfinite_or_out_of_range_values": "0",
+      "prediction_min": "0.059549246",
+      "prediction_max": "0.897533834",
+      "pass": "True"
+    },
+    {
+      "run": "grid32x32_4n_k4_s0_learned",
+      "rows": "3968",
+      "expected_directed_arcs": "3968",
+      "edge_ids_unique": "3968",
+      "missing_reverse_arcs": "0",
+      "reverse_raw_vector_mismatch": "0",
+      "nonfinite_or_out_of_range_values": "0",
+      "prediction_min": "4.30007141E-11",
+      "prediction_max": "0.202667713",
+      "pass": "True"
+    },
+    {
+      "run": "grid32x32_4n_k4_s1_learned",
+      "rows": "3968",
+      "expected_directed_arcs": "3968",
+      "edge_ids_unique": "3968",
+      "missing_reverse_arcs": "0",
+      "reverse_raw_vector_mismatch": "0",
+      "nonfinite_or_out_of_range_values": "0",
+      "prediction_min": "3.4368796E-11",
+      "prediction_max": "0.199710071",
+      "pass": "True"
+    }
+  ],
+  "supplemental_feature_probe_runs": 2,
+  "interface_smoke_invocations": 2,
+  "total_solver_invocations": 20
+}

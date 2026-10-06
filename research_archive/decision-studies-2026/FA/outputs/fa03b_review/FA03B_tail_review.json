@@ -1,0 +1,52 @@
+{
+  "status": "POST_HOC_DESCRIPTIVE_ONLY",
+  "source_sha256": "bd05d0846f3a69582aefda082a336593963fc4ff7e1cb05672333cb407bedb13",
+  "script_sha256": "6b3a5bce2630423da4e11d48f2e0216b6f4a0469eceb55d08d2b33fc91e125db",
+  "no_new_observations_or_models": true,
+  "units": "PAR-10 seconds per test instance",
+  "seed_results": [
+    {
+      "seed": 7,
+      "total_gap": -2.8199422729457346,
+      "cross_timeout_contribution": 1.1377051162790714,
+      "other_contribution": -3.9576473892248063,
+      "cross_timeout_cases": 2
+    },
+    {
+      "seed": 42,
+      "total_gap": 92.47974774178294,
+      "cross_timeout_contribution": 92.59015658914728,
+      "other_contribution": -0.1104088473643412,
+      "cross_timeout_cases": 6
+    },
+    {
+      "seed": 99,
+      "total_gap": -37.45048156666666,
+      "cross_timeout_contribution": -35.78743674418604,
+      "other_contribution": -1.6630448224806198,
+      "cross_timeout_cases": 9
+    }
+  ],
+  "overall_gap": 17.403107967390184,
+  "cross_timeout_contribution": 19.313474987080106,
+  "other_contribution": -1.9103670196899225,
+  "cross_timeout_instance_seed_pairs": 17,
+  "cross_timeout_unique_instances": 14,
+  "largest_positive_instance": {
+    "i": 347,
+    "mean_difference": 3994.6459733333336,
+    "seed_gaps": {
+      "7": 5991.96896,
+      "42": 0.0,
+      "99": 5991.96896
+    }
+  },
+  "deletion_diagnostic_gap": -13.66910191828125,
+  "caveats": [
+    "Do not delete this instance or alter the frozen verdict.",
+    "Instances were identified after seeing test outcomes.",
+    "Three seeds share the same 129 test instances; 387 pairs are not independent cases.",
+    "A native timeout is identified by the frozen score 6000, not by collection censoring at 100 seconds.",
+    "This decomposition does not identify an acquisition mechanism or a deployable improvement."
+  ]
+}

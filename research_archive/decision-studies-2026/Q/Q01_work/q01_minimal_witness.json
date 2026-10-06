@@ -1,0 +1,85 @@
+{
+  "fixed_context": {
+    "deadline_t": 2.0,
+    "best": 10.0,
+    "timeout_tolerance": 10.0
+  },
+  "legal_feedback": "runtime >= 2.0",
+  "rows": [
+    {
+      "x": 0.5,
+      "legal_visible": false,
+      "explored": null,
+      "timeout_m": null,
+      "mask": "mask[select, same_hints] = 1 ; explored_m[select, same_hints] = 1",
+      "outcome": "booked as a MEASUREMENT of the runtime"
+    },
+    {
+      "x": 1.9,
+      "legal_visible": false,
+      "explored": null,
+      "timeout_m": null,
+      "mask": "mask[select, same_hints] = 1 ; explored_m[select, same_hints] = 1",
+      "outcome": "booked as a MEASUREMENT of the runtime"
+    },
+    {
+      "x": 2.0,
+      "legal_visible": true,
+      "explored": null,
+      "timeout_m": null,
+      "mask": "mask[select, same_hints] = 1 ; explored_m[select, same_hints] = 1",
+      "outcome": "booked as a MEASUREMENT of the runtime"
+    },
+    {
+      "x": 4.0,
+      "legal_visible": true,
+      "explored": null,
+      "timeout_m": null,
+      "mask": "mask[select, same_hints] = 1 ; explored_m[select, same_hints] = 1",
+      "outcome": "booked as a MEASUREMENT of the runtime"
+    },
+    {
+      "x": 9.9,
+      "legal_visible": true,
+      "explored": null,
+      "timeout_m": null,
+      "mask": "mask[select, same_hints] = 1 ; explored_m[select, same_hints] = 1",
+      "outcome": "booked as a MEASUREMENT of the runtime"
+    },
+    {
+      "x": 10.0,
+      "legal_visible": true,
+      "explored": "explored_m[select, same_hints] = 1",
+      "timeout_m": "timeout_m[select, same_hints] = tolerance ; timeout += tolerance",
+      "mask": null,
+      "outcome": "recorded as a censored lower bound"
+    },
+    {
+      "x": 25.0,
+      "legal_visible": true,
+      "explored": "explored_m[select, same_hints] = 1",
+      "timeout_m": "timeout_m[select, same_hints] = tolerance ; timeout += tolerance",
+      "mask": null,
+      "outcome": "recorded as a censored lower bound"
+    }
+  ],
+  "decision_split_among_legal_rows": {
+    "booked as a MEASUREMENT of the runtime": [
+      2.0,
+      4.0,
+      9.9
+    ],
+    "recorded as a censored lower bound": [
+      10.0,
+      25.0
+    ]
+  },
+  "established": [
+    "limeqo.py:89 and :92 branch on the ground-truth runtime",
+    "two worlds consistent with the same legal feedback produce different bookkeeping (mask vs timeout_m) and different candidate sets"
+  ],
+  "not_established": [
+    "that published conclusions reverse",
+    "the effect size on reported results"
+  ]
+}

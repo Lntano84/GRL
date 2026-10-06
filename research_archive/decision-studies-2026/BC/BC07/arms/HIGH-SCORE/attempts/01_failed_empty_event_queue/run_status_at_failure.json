@@ -1,0 +1,82 @@
+{
+  "status": "replay_failure",
+  "started_unix": 1790761151.0924277,
+  "budget_seconds": 3500,
+  "calibration_sha256": "6d294e4a4982ef3532197f0213a13a1a7cca5d39b6c3b4d74eae60614863caf6",
+  "preflight_sha256": "887e2b58630caf010eda27218303fcf1a378926860e4f37a873c79184bc8e2ad",
+  "arms": {
+    "HIGH-CONTROL": {
+      "status": "completed",
+      "started_unix": 1790761151.0934277,
+      "latest_progress": {
+        "arm": "HIGH-CONTROL",
+        "completed_windows": 976,
+        "trace_elapsed_s": 585609.0081391335,
+        "request_sequence": 143306,
+        "get_requests": 123310,
+        "supplemented": 0,
+        "wall_seconds": 568.4442453000011
+      },
+      "exit_code": 0,
+      "wall_seconds": 591.0470000000023,
+      "gate": {
+        "passed": true,
+        "arm": "HIGH-CONTROL",
+        "reference": "BC03 STATIC-HIGH",
+        "compared_windows": 1008,
+        "max_errors_by_required_field": {
+          "time_elapsed_phy": 0.0,
+          "time_log": 0.0,
+          "service_time_used_stats": 0.0,
+          "service_time_writes_stats": 0.0,
+          "service_time_used_demand_stats": 0.0,
+          "service_time_used_prefetch_stats": 0.0,
+          "service_time_nocache_stats": 0.0,
+          "flashcache/keys_written_stats": 0.0,
+          "flashcache/prefetches_stats": 0.0,
+          "fetches_chunks_prefetch_stats": 0.0,
+          "fetches_chunks_demandmiss_stats": 0.0,
+          "fetches_ios_stats": 0.0,
+          "iops_requests_stats": 0.0,
+          "chunk_queries_stats": 0.0,
+          "puts_ios_stats": 0.0,
+          "puts_chunks_stats": 0.0,
+          "flashcache/evictions_stats": 0.0
+        },
+        "decision_audit_sha256": "63aea01dfa90ed49d733064e457441283db112e3a766f76b5d484e2533bbd9be",
+        "stats_sha256": "0fbc9b85e39bd790c0ff48129823c409dfb47354f4258fd50d116601b1b4d87e"
+      }
+    },
+    "HIGH-SCORE": {
+      "status": "failed",
+      "started_unix": 1790761742.4293559,
+      "latest_progress": {
+        "arm": "HIGH-SCORE",
+        "completed_windows": 167,
+        "trace_elapsed_s": 100200.98228907585,
+        "request_sequence": 26032,
+        "get_requests": 22494,
+        "supplemented": 267,
+        "wall_seconds": 88.82087799999863
+      },
+      "exit_code": 1,
+      "wall_seconds": 97.57800000000134,
+      "console_tail": "trace_hash': b'859229345a0fa792582df0db8cd56c4d', 'kwargs_hash': '5a0a05', 'kwargs': {'only_gets': False}}\n[0] TimeLeft | [1] I   | [2] TraceTime | [3] Hrs$ | [4] %GETs | [5] GETs$ | [6] PUTs$ | [7] STGet%$ | [8] PeakST%$ | [9] STGetNoCa%$ | [10] STPut%$ | [11] ReqMBs$ | [12] GetMBs$ | [13] PutMBs$ | [14] FlaMBs$ | [15] PreMBs$ | [16] STSaved%$ | [17] STPref%$ | [18] Accept%$ | [19] STLate%$ | [20] Wasted%$ | [21] EA$ | [22] AvgIAMax | [23] RAMGb | [24] EstTotalTime | [25] Speedup$ | [26] GET/Ts$ | [27] GET/s$ | [28] MLbatch/s$ | [29] MLpred/s$ | [30] WarningRootEpNotfound | [31] WarningPutStartsAfterZero | [32] Flashcache/warningAdmittedEpsUnknown\n[0] 6.3m     | [1] 1   | [2] 0.17h     | [3] 0.2  | [4] 0.2   | [5] 228   | [6] 17    | [7] 21.10   | [8] 0.00     | [9] 29.16       | [10] 5.11    | [11] 881.34  | [12] 716.40  | [13] 216.82  | [14] 73.38   | [15] 20.05   | [16] 27.6%     | [17] 1.7%     | [18] 10.31%   | [19] 4.9%     | [20] 0.0%     | [21] 0   | [22] (8,22s)  | [23] 0.2   | [24] 6.3m         | [25] 0.89     | [26] 0.4     | [27] 336.5  | [28] 426.6      | [29] 6357.0    | [30] 228 | [31] 17 | [32] 355\n[0] TimeLeft | [1] I   | [2] TraceTime | [3] Hrs$ | [4] %GETs | [5] GETs$ | [6] PUTs$ | [7] STGet%$ | [8] PeakST%$ | [9] STGetNoCa%$ | [10] STPut%$ | [11] ReqMBs$ | [12] GetMBs$ | [13] PutMBs$ | [14] FlaMBs$ | [15] PreMBs$ | [16] STSaved%$ | [17] STPref%$ | [18] Accept%$ | [19] STLate%$ | [20] Wasted%$ | [21] EA$       | [22] AvgIAMax  | [23] RAMGb | [24] EstTotalTime | [25] Speedup$ | [26] GET/Ts$ | [27] GET/s$ | [28] MLbatch/s$ | [29] MLpred/s$ | [30] WarningRootEpNotfound | [31] WarningPutStartsAfterZero | [32] Flashcache/warningAdmittedEpsUnknown | [33] Flashcache/warningEvictedEpisodenotfound | [34] Flashcache/warningAdmitsPartial | [35] Flashcache/warningAdmitsPartialEpisodes\n[0] 7.2m     | [1] 117 | [2] 20h       | [3] 19.3 | [4] 12.4  | [5] 15568 | [6] 2388  | [7] 11.73   | [8] 17.30    | [9] 22.02       | [10] 5.21    | [11] 765.73  | [12] 430.81  | [13] 211.84  | [14] 32.98   | [15] 7.02    | [16] 46.7%     | [17] 0.8%     | [18] 7.60%    | [19] 2.9%     | [20] 31.7%    | [21] (1531,2h) | [22] (307,20m) | [23] 0.3   | [24] 8.2m         | [25] 1.16     | [26] 0.2     | [27] 258.9  | [28] 301.4      | [29] 4835.0    | [30] 15796 | [31] 2405 | [32] 18716 | [33] 15715 | [34] 31 | [35] 29\nTraceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1335, in run\n    self.run_get(acc)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\replay.py\", line 328, in run_get\n    result = originals['run_get'](self, acc)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1290, in run_get\n    insert_cache.process_admit_buffer(acc.ts)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\eviction_policies.py\", line 914, in process_admit_buffer\n    self.admit(nkey, ts, ts_access=ts_access, ttl=ttl, **item_kwargs)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\replay.py\", line 345, in admit\n    recorder.write_event(key, ts, delta)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\replay.py\", line 223, in write_event\n    raise AssertionError(('empty supplement event queue', typed(key)))\nAssertionError: ('empty supplement event queue', {'tuple': ['394873', 57]})\nAccess to block 394873 at TS=(27506,436717.38034735137h), Acc(block=394873, offset=0, size=7471104, ts=1572182569.250465, features=op=OpType.GET_PERM, pipeline=1, namespace=5, user=5)\nTraceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\replay.py\", line 428, in <module>\n    run_one(sys.argv[1])\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\replay.py\", line 374, in run_one\n    sim_cache.simulate_cache_driver(args)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1560, in simulate_cache_driver\n    stats = simulate_cache(cache, accesses, sample_ratio,\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1356, in simulate_cache\n    csim.run(accesses, total_iops_get, total_iops, total_secs)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1335, in run\n    self.run_get(acc)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\replay.py\", line 328, in run_get\n    result = originals['run_get'](self, acc)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\sim_cache.py\", line 1290, in run_get\n    insert_cache.process_admit_buffer(acc.ts)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\eviction_policies.py\", line 914, in process_admit_buffer\n    self.admit(nkey, ts, ts_access=ts_access, ttl=ttl, **item_kwargs)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\replay.py\", line 345, in admit\n    recorder.write_event(key, ts, delta)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\replay.py\", line 223, in write_event\n    raise AssertionError(('empty supplement event queue', typed(key)))\nAssertionError: ('empty supplement event queue', {'tuple': ['394873', 57]})\n"
+    }
+  },
+  "completed": [
+    "HIGH-CONTROL"
+  ],
+  "attempted": [
+    "HIGH-CONTROL",
+    "HIGH-SCORE"
+  ],
+  "wall_seconds": 688.9380000000019,
+  "remaining_budget_seconds": 2811.061999999998,
+  "current_arm": null,
+  "uncompleted": [
+    "HIGH-SCORE",
+    "HIGH-RECENCY",
+    "HIGH-RANDOM"
+  ]
+}

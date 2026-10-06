@@ -1,0 +1,81 @@
+{
+  "selection": "top 3 pure REJECTED-BEFORE and top 2 pure ADMITTED-BEFORE by whole request demand cost; ties by ascending request sequence",
+  "examples": [
+    {
+      "request_sequence": 82777,
+      "full_block_key_json": "\"14338612\"",
+      "request_category": "REJECTED-BEFORE",
+      "actual_missing_chunks": 64,
+      "demand_dt_pct_of_window": 0.31751154261684733,
+      "last_event_type": "rejection",
+      "last_event_request_sequences_json": "[79526]",
+      "last_event_trace_elapsed_s_min": 329450.6600251198,
+      "last_event_trace_elapsed_s_max": 329450.6600251198,
+      "last_event_lag_s_min": 17371.274935007095,
+      "last_event_lag_s_max": 17371.274935007095,
+      "prior_event_count_min": 1,
+      "prior_event_count_max": 1
+    },
+    {
+      "request_sequence": 82795,
+      "full_block_key_json": "\"525850\"",
+      "request_category": "REJECTED-BEFORE",
+      "actual_missing_chunks": 64,
+      "demand_dt_pct_of_window": 0.31751154261684733,
+      "last_event_type": "rejection",
+      "last_event_request_sequences_json": "[81189]",
+      "last_event_trace_elapsed_s_min": 339939.664755106,
+      "last_event_trace_elapsed_s_max": 339939.664755106,
+      "last_event_lag_s_min": 6941.602139949799,
+      "last_event_lag_s_max": 6941.602139949799,
+      "prior_event_count_min": 17,
+      "prior_event_count_max": 17
+    },
+    {
+      "request_sequence": 82821,
+      "full_block_key_json": "\"325469\"",
+      "request_category": "REJECTED-BEFORE",
+      "actual_missing_chunks": 64,
+      "demand_dt_pct_of_window": 0.31751154261684733,
+      "last_event_type": "rejection",
+      "last_event_request_sequences_json": "[81555]",
+      "last_event_trace_elapsed_s_min": 341833.8620150089,
+      "last_event_trace_elapsed_s_max": 341833.8620150089,
+      "last_event_lag_s_min": 5092.407732963562,
+      "last_event_lag_s_max": 5092.407732963562,
+      "prior_event_count_min": 30,
+      "prior_event_count_max": 30
+    },
+    {
+      "request_sequence": 82782,
+      "full_block_key_json": "\"1849666\"",
+      "request_category": "ADMITTED-BEFORE",
+      "actual_missing_chunks": 64,
+      "demand_dt_pct_of_window": 0.31751154261684733,
+      "last_event_type": "eviction",
+      "last_event_request_sequences_json": "[44040, 44046, 44060, 44069]",
+      "last_event_trace_elapsed_s_min": 180989.8351840973,
+      "last_event_trace_elapsed_s_max": 181167.04992604256,
+      "last_event_lag_s_min": 165659.91056609154,
+      "last_event_lag_s_max": 165837.1253080368,
+      "prior_event_count_min": 2,
+      "prior_event_count_max": 2
+    },
+    {
+      "request_sequence": 82829,
+      "full_block_key_json": "\"131795\"",
+      "request_category": "ADMITTED-BEFORE",
+      "actual_missing_chunks": 64,
+      "demand_dt_pct_of_window": 0.31751154261684733,
+      "last_event_type": "eviction",
+      "last_event_request_sequences_json": "[31065, 31066]",
+      "last_event_trace_elapsed_s_min": 127053.51223611832,
+      "last_event_trace_elapsed_s_max": 127062.90080809593,
+      "last_event_lag_s_min": 219885.3267300129,
+      "last_event_lag_s_max": 219894.7153019905,
+      "prior_event_count_min": 1,
+      "prior_event_count_max": 1
+    }
+  ],
+  "causal_or_profit_claim": false
+}

@@ -1,0 +1,73 @@
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parent
+PROJECT=ROOT.parents[1]
+OUT=PROJECT/"outputs"/"fa01"
+OLD=PROJECT/"outputs"/"fa00"
+def read(path):return json.loads(path.read_text(encoding="utf-8"))
+
+def main():
+    p=read(OUT/"FA01_protocol.json");v=read(OUT/"FA01_verdict.json");a=read(OUT/"FA01_audit.json")
+    batch=read(OUT/"FA01_batch.json");checks=read(OUT/"FA01_preflight.json")
+    old_data=read(OLD/"FA00_data_audit.json")
+    names={"ACCEPT_CHEAP_BASELINE":"接受便宜基线，收口围绕当前采样器叠加复杂控制的路线",
+           "CONTINUE_BASELINE_RESEARCH":"当前采样器通过强基线资格筛查，可以继续研究",
+           "UNDETERMINED":"不确定，不追加模型、种子或截止时间"}
+    lines=["# FA01：主动采样器与便宜采样对照", "",
+        f"**裁决：{names[v['verdict']]}。**", "",
+        "这是 ASP-POTASSCO 同一个历史测试折上的开发筛查。三种子不是独立数据集；不作独立确认、显著性或等价声明。", "",
+        "## 主结果", "", "最终完成训练的模型在 129 个测试实例上的平均 PAR-10，越低越好。不按测试成绩挑选中间模型。", "",
+        "| 方法 | seed 7 | seed 42 | seed 99 | 平均 PAR-10 秒 |", "|---|---:|---:|---:|---:|"]
+    for z in v["summary"]:
+        lines.append(f"| {z['arm']} | {z['seed7_par10_s']:.3f} | {z['seed42_par10_s']:.3f} | {z['seed99_par10_s']:.3f} | {z['mean_par10_s']:.3f} |")
+    lines += ["", "FIXED-100 是原 Uncertainty + PredCost Pareto 采样器，本轮直接复用三条 FA00 完整轨迹，没有重新运行或覆盖。RANDOM-100、CHEAP-100 为六条新轨迹。", "",
+        "## 判据", "", "| 对照 | 原采样器相对对照的均值改善 | 原采样器更好的种子 | 继续门槛 | 便宜对照相对原采样器的均值差 | 收口门槛 |", "|---|---:|---:|---|---:|---|"]
+    for c in v["comparisons"]:
+        lines.append(f"| {c['control']} | {100*c['pareto_relative_advantage']:.3f}% | {c['pareto_positive_seeds']}/3 | {'通过' if c['continuation_pass'] else '未通过'} | {100*c['control_relative_to_pareto']:.3f}% | {'通过' if c['closure_pass'] else '未通过'} |")
+    lines += ["", "继续要求：原采样器对两个对照都至少改善 5%，且各比较至少 2/3 种子同向。收口要求：任一便宜对照的均值不高于原采样器的 102%，包括更好情况。其余记不确定。这些是冻结的投资筛查尺度，不是统计置信保证。", "",
+        f"继续门槛：{v['continuation_gate']}；收口门槛：{v['closure_gate']}。", "",
+        "## 成本与数据量", "", "| 方法 | 平均获取成本（模拟 CPU 秒） | 剩余预算 | 末次拟合后采集成本 | 实际执行次数 | 已获得成对标签 | 本机墙钟秒 | 拟合秒 | 预测秒 | 候选与采样秒 |", "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
+    for z in v["summary"]:
+        lines.append(f"| {z['arm']} | {z['mean_train_cost_s']:.1f} | {z['mean_remaining_s']:.1f} | {z['mean_training_cost_after_last_fit_s']:.1f} | {z['mean_executions']:.1f} | {z['mean_labels']:.1f} | {z['mean_local_wall_s']:.1f} | {z['mean_fit_s']:.1f} | {z['mean_predict_s']:.1f} | {z['mean_selection_s']:.1f} |")
+    lines += ["", f"每轨迹获取预算 {p['budget_s']:.0f} 模拟 CPU 秒；初始 20 个实例全算法测量计费；批量 {p['batch_size']}；截止始终 100 秒，预算尾部可进一步截短。重启与缓存语义完全继承 FA00。成功运行以真实完成时间计费，超时只提供下界；评分使用原 600 秒截止对应的 PAR-10，不把 6,000 秒惩罚当作执行成本。", "",
+        "同获取预算不要求执行次数或标签数相等。成对标签数包含零权重平局，模型拟合仍按 FA00 排除零权重样本；标签总数不能直接解释为有效信息量。", "",
+        "预算尾部尚未完成批次的观测也计费，但按继承协议不重新拟合；上表单列末次完整拟合后的采集成本。结果覆盖这条共同运行协议，不是所有预算截断或终端拟合实现的比较。", "",
+        f"特征前置成本共同单列。已知成本部分 {old_data['feature_known_cost_lower_bound_s']:.2f} 秒，有 {old_data['feature_missing_cost_cells']} 项缺失，不能视作零。当前不能给出精确端到端加速结论。", "",
+        "本机墙钟的记录范围含初始化、模型拟合、预测、候选生成、采样、检查点及日志落盘；中断期间未落盘的计算时间无法精确还原，下文单列恢复边界。六条新轨迹最初同时运行，FA00 基线来自上一批运行；本机时间受并行资源竞争影响，不适合作为算法速度排名。模拟矩阵秒数与本机秒数来自不同环境，未直接相加成生产收益。", "",
+        "## 实现与权限", "",
+        "原 FA00 文件均未修改。新执行循环是原 run.py 去掉旧 CLI 后的受控副本：仅改输出目录与协议文件名，并让两条新臂在没有合法候选时按固定 100 秒规则终止。模型、特征、初始样本、随机森林参数、标签推导、缓存和预算派发仍使用原实现。", "",
+        "两条对照复用同一候选引擎，其表包含原不确定性与合法 PredCost。RANDOM 从按实例、算法对排序的候选中均匀无放回抽样，不使用分数；CHEAP 按预测成本选择，完全相同成本以预登记随机流破并列。两个选中集合均使用独立的执行随机流洗牌，避免把执行顺序同时改成另一项干预。", "",
+        "为了只比较采样，随机臂也保留了成本回归器及共享候选引擎的计算，即使其分数不用于选择。因此报告的是受控实现的完整开销，不声称已将随机或成本对照的计算优化到最低。", "",
+        "仍沿用 FA00 的受控改编边界：作者模型包装器、直接重拟合适配、训练侧中位数填充、未加权单算法成本回归、重启感知预测成本与原始运行状态。不是 FrugalAS 最强方法的完整忠实复现。", "",
+        "## 独立审计", "",
+        f"冻结前 {len(checks['checks'])} 项针对性预检通过：抽样唯一性、最低成本选择、分数与行顺序不变性、实际初始模型一致、两隐藏世界反馈/状态/动作一致、输出隔离等。", "",
+        f"六条新轨迹与三条旧基线均重新验账。原运行矩阵 {a['raw_runtime_cells']:,} 个单元来自独立 ARFF 解析；共核对 {a['events']:,} 个事件、{a['observation_events']:,} 个观测事件、{a['test_predictions']:,} 个最终测试选择。最大账目误差 {a['max_ledger_error_s']:.3g} 秒；预算、缓存、成对标签方向、最终模型选择和新臂零验证费均通过。", "",
+        "新臂的三个初始预测和初始费用逐项匹配各自 FA00 基线。原轨迹、模型、数据、协议和冻结源文件哈希均保持不变。未读取未购买成绩控制采样，也没有按真实成本构造对照。", "",
+        f"每一批新增采样都独立重建并核对精确执行顺序，共 {sum(c['batches_checked'] for c in a['independent_selection_audits'])} 批、{sum(c['selections_checked'] for c in a['independent_selection_audits']):,} 项。随机抽样由候选资格与种子重算；成本排序由已付款前缀重新拟合回归器后重算。", "",
+        f"成本审计额外重拟合 {sum(c['cost_regressor_refits_for_audit'] for c in a['independent_selection_audits'])} 个成本回归器，属于验算，未产生额外采集轨迹或策略成绩。独立审计墙钟 {a['audit_total_wall_s']:.1f} 秒，单列于正式回放之外。", "",
+        f"六条正式矩阵回放已记录的活跃墙钟约 {batch['parallel_wall_s']:.1f} 秒（并行批次口径）。三条随机轨迹连续完成；三条成本优先轨迹停在第 69–70 轮后，原执行会话不可恢复且进程已消失，具体终止原因未确定。从完整检查点续跑后完成。停顿等待不计为计算时间；审计文件单列恢复准备、再次加载及收尾记账的合计开销估算。既有三条基线只复核、不重跑。没有训练 GRL、DQN 或 GNN。", "",
+        "中断日志仅缺 gzip 结束标记，最后事件均为完整轮结束：恢复前缓存、标签、预测和账目逐项匹配检查点，未丢弃任何已落盘观测。恢复后又独立核对最终日志的整个旧前缀逐字不变。恢复只补齐原轨迹，未更改策略、模拟获取预算或正式轨迹数量。未落盘的计算进度不可恢复，因此计时不是精确的连续执行耗时，不作速度优势主张。", "",
+        "恢复工具首次入口因同名模块 run 的搜索顺序错误而退出，发生在恢复写盘前；改为直接核对冻结哈希后启动成功。审计首次因 CRLF 换行处理误报前缀不一致，改为比较完整解压字节前缀后通过。两项均未改变采样、观测或测试成绩，也未额外重跑正式轨迹。", "",
+        "## 研究含义", ""]
+    if v["verdict"]=="ACCEPT_CHEAP_BASELINE":
+        lines += ["至少一个便宜采样规则达到冻结的收口尺度，当前没有依据围绕这份主动采样器叠加复杂反馈控制。不能把结果推广为主动学习没有价值；也不能把便宜规则的表现归因于单独某一种机制，轨迹改变会同时影响标签覆盖与后续模型。"]
+        lines += ["CHEAP 的平均 PAR-10 仅略低，不是已证实的稳定支配；它获得更多批次，也支付了更多拟合开销，不能称为端到端更便宜。RANDOM 的均值则在冻结的 2% 收口尺度内。两者足以挡住当前继续门槛，但不构成统计等价结论。"]
+    elif v["verdict"]=="CONTINUE_BASELINE_RESEARCH":
+        lines += ["当前成本敏感采样对随机和单纯省钱都有可重复方向的质量收益。这使它成为值得保留的强对手，但没有建立新的算法贡献、学习控制优势或 CCF B 论文缺口。下一步应先在新数据划分或场景确认，并纳入已有成熟方法；本轮不自动扩大实验。"]
+    else:
+        lines += ["未同时满足继续或收口的冻结条件，当前证据记不确定。不按结果补种子、调倍率或改变截止，也不启动 GRL。"]
+    lines += ["", "## 复算", "",
+        "在项目根目录使用 `work/fa00/.venv/Scripts/python.exe work/fa01/audit.py` 可重做独立审计和统计（包括成本回归器验算）；再运行 `work/fa00/.venv/Scripts/python.exe work/fa01/report.py` 重建报告。不要再次运行正式回放入口，它会拒绝覆盖已完成矩阵。", "",
+        "- [原作者固定代码与数据](https://github.com/stacs-cp/JAIR2026-FrugalAS/tree/7a5727651a92fd2fa4960dcbbd7f6dab94130028)",
+        "- [CP 2026：训练数据选择与学习形式](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CP.2026.38)", "",
+        "冻结协议、来源哈希、逐运行、逐批和逐实例表均随报告保存。"]
+    report=OUT/"FA01_report.md";report.write_text("\n".join(lines)+"\n",encoding="utf-8")
+    files=[report,OUT/"FA01_verdict.json",OUT/"FA01_audit.json",OUT/"FA01_summary.csv",OUT/"FA01_per_run.csv",ROOT/"audit.py",ROOT/"audit_base.py",ROOT/"report.py",ROOT/"recover.py",ROOT/"recovery_base.py",OUT/"FA01_recovery.json"]
+    (OUT/"FA01_delivery_manifest.json").write_text(json.dumps({str(f.relative_to(PROJECT)):hashlib.sha256(f.read_bytes()).hexdigest() for f in files},indent=2),encoding="utf-8")
+    state=read(OUT/"RUN_STATE.json");state.update(audit_complete=True,report_complete=True,verdict=v["verdict"])
+    (OUT/"RUN_STATE.json").write_text(json.dumps(state,indent=2),encoding="utf-8")
+    print(report)
+
+if __name__=="__main__":main()

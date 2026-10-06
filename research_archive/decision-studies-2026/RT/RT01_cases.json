@@ -1,0 +1,110 @@
+{
+  "task": "RT-01 qualification check -- delayed completion feedback for runtime prediction",
+  "verdict": "stop on this dataset",
+  "verdict_reason": "the recoverable predictive value of the unfinished records is bounded at 0.02% of completed-only RMSLE by an oracle regression, and the unfinished class is dominated by stale batch-completion records rather than feedback latency",
+  "data": {
+    "repo": "gsadra/non-clairvoyant-with-predictions",
+    "note": "the repo named in the task (zhiyunjiang0810/...) returns 404; the dataset lives under a different account",
+    "source": "Alibaba PAI 2020 GPU trace via the ATLAS release",
+    "files": {
+      "pai_group_tag_table.tar.gz": {
+        "sha256": "722FEF30B7FB7AA50DABD79155614B5423A9D65CF45A9B26C590D57725423A14",
+        "bytes": 55064781
+      },
+      "pai_job_table.tar.gz": {
+        "sha256": "5AAD7F7CAAC501136D14ED6A48E40546F825D7B0617A3A4F337E2348FE0A6CB0",
+        "bytes": 62065432
+      },
+      "pai_task_table.tar.gz": {
+        "sha256": "CD1D6DC3215D2A8607CCF6B6DD952B5DB776DF86926C73259FEA7C1499AC40E5",
+        "bytes": 35514117
+      }
+    }
+  },
+  "join_map": {
+    "task.col0 == job.col0 (job_name)": "1,055,501 / 1,055,501",
+    "group_tag.col0 == job.col1 (inst_id)": "1,053,971",
+    "group_tag.col1 == job.col2 (user)": "1,430",
+    "official notebook header bug": "its task_cols lists task_name at index 1, but index 1 is framework (24 distinct values); index 0 is the job name"
+  },
+  "timing_semantics": {
+    "job.start_time == min(task.start_time)": "1,051,838 / 1,051,838 exactly equal",
+    "group_tag_table_has_timestamp": false,
+    "consequence": "no submission or queue-entry time exists, so queueing delay and response time cannot be reconstructed from this trace"
+  },
+  "oracle_regression": {
+    "COMPLETED": {
+      "n_train": 387490,
+      "rmsle": 1.8726139261664654,
+      "spearman": 0.47048148817193336,
+      "median_pred": 666.4955928157996,
+      "median_true": 636.0
+    },
+    "ALLFINAL_oracle": {
+      "n_train": 388446,
+      "rmsle": 1.8722732362015262,
+      "spearman": 0.47040831882745715,
+      "median_pred": 670.5619449409619,
+      "median_true": 636.0
+    },
+    "COMPLETED_plus_groupcensoring": {
+      "n_train": 387490,
+      "rmsle": 1.8649861601081195,
+      "spearman": 0.47788379180533097,
+      "median_pred": 719.2181416070473,
+      "median_true": 636.0
+    }
+  },
+  "targeted_bias": {
+    "bins": [
+      {
+        "bin": "0.00",
+        "n": 59734,
+        "median_true": 580.5,
+        "median_pred_completed": 755.8954983947131,
+        "log_ratio": -0.2636142249146358,
+        "rmsle_completed": 1.8343529731072266,
+        "rmsle_with_share": 1.832644253762917
+      },
+      {
+        "bin": "0.01-0.10",
+        "n": 16035,
+        "median_true": 679.0,
+        "median_pred_completed": 628.4485907087629,
+        "log_ratio": 0.0772486148852245,
+        "rmsle_completed": 1.7319434245475898,
+        "rmsle_with_share": 1.7117801879610648
+      },
+      {
+        "bin": "0.10-0.30",
+        "n": 3821,
+        "median_true": 3305.0,
+        "median_pred_completed": 1671.8314127874123,
+        "log_ratio": 0.681221351875541,
+        "rmsle_completed": 2.3299888197809784,
+        "rmsle_with_share": 2.3111865775528972
+      },
+      {
+        "bin": "0.30-0.60",
+        "n": 1022,
+        "median_true": 2232.0,
+        "median_pred_completed": 1584.3087239740062,
+        "log_ratio": 0.34256680596315636,
+        "rmsle_completed": 2.5633363457128726,
+        "rmsle_with_share": 2.6378687740454447
+      },
+      {
+        "bin": ">0.60",
+        "n": 749,
+        "median_true": 315.0,
+        "median_pred_completed": 708.2082082284517,
+        "log_ratio": -0.8084069344723499,
+        "rmsle_completed": 3.2856820638882196,
+        "rmsle_with_share": 3.239176339232039
+      }
+    ],
+    "overall_completed": 1.8704226229600787,
+    "overall_with_share": 1.8649861601081195,
+    "split_half_median_abs_diff": 0.06060606060606061
+  }
+}

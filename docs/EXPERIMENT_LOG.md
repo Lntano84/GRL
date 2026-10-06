@@ -208,3 +208,8 @@ the manuscript were then checked against authoritative records. Five materially 
 and their prose were corrected, an unsupported related-work claim was removed, and duplicate/unused
 entries were deleted. The rebuilt anonymous PDF is 16 pages. Detailed provenance is in
 `paper/dasfaa2027/notes/REFERENCE_AUDIT.md`.
+
+
+## 2026-10-06 — Local result archive integration
+
+将已定位本地实验报告、结果、方案、日志、代码快照与更正/作废记录整合为research_archive/decision-studies-2026。大文件使用同仓库Release及SHA-256对象清单；排除检查点、环境与第三方原始数据。没有运行新科研实验；这是归档核验，不是重做科学审计。

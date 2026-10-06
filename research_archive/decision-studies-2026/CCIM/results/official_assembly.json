@@ -1,0 +1,132 @@
+{
+  "layout": {
+    "gsrl_diffpool_utils.py": "diffpool/utils.py",
+    "gsrl_diffpool_set2set.py": "diffpool/set2set.py",
+    "gsrl_diffpool_encoders.py": "diffpool/encoders.py",
+    "gsrl_rl_alg_utils.py": "rl_alg/utils.py",
+    "gsrl_rl_alg_replay.py": "rl_alg/replay.py",
+    "gsrl_rl_alg_dqn.py": "rl_alg/dqn.py",
+    "gsrl_icm.py": "icm.py",
+    "gsrl_utils.py": "utils.py",
+    "gsrl_expts_net_env.py": "expts/net_env.py",
+    "gsrl_expts_influence.py": "expts/influence.py",
+    "gsrl_expts_change_baseline.py": "expts/change_baseline.py",
+    "gsrl_expts_gengraph.py": "expts/gengraph.py",
+    "gsrl_expts_gendata.py": "expts/gendata.py",
+    "gsrl_expts_graphembed.py": "expts/graphembed.py",
+    "gsrl_train.py": "train.py",
+    "gsrl_ge_alias.py": "ge/alias.py",
+    "gsrl_ge_utils.py": "ge/utils.py",
+    "gsrl_ge_walker.py": "ge/walker.py",
+    "gsrl_ge_models_deepwalk.py": "ge/models/deepwalk.py"
+  },
+  "patches_applied": [
+    {
+      "patch": "init.xavier_uniform -> _",
+      "file": "diffpool/encoders.py",
+      "from": "init.xavier_uniform(",
+      "to": "init.xavier_uniform_("
+    },
+    {
+      "patch": "init.constant -> _",
+      "file": "diffpool/encoders.py",
+      "from": "init.constant(",
+      "to": "init.constant_("
+    },
+    {
+      "patch": "init.xavier_uniform -> _",
+      "file": "rl_alg/dqn.py",
+      "from": "init.xavier_uniform(",
+      "to": "init.xavier_uniform_("
+    },
+    {
+      "patch": "init.constant -> _",
+      "file": "rl_alg/dqn.py",
+      "from": "init.constant(",
+      "to": "init.constant_("
+    },
+    {
+      "patch": "numba import",
+      "file": "icm.py",
+      "from": "from numba import jit",
+      "to": "def jit(*a, **k):\n    def deco(f): return f\n    return deco if not a or not callable(a[0]) else a[0]"
+    },
+    {
+      "patch": "np.int removed in numpy 2",
+      "file": "icm.py",
+      "from": "dtype=np.int)",
+      "to": "dtype=int)"
+    },
+    {
+      "patch": "nx.to_numpy_matrix removed",
+      "file": "expts/net_env.py",
+      "from": "nx.to_numpy_matrix(",
+      "to": "nx.to_numpy_array("
+    },
+    {
+      "patch": "matplotlib/PIL/tensorboard not installed",
+      "file": "expts/net_env.py",
+      "from": "import matplotlib.pyplot as plt",
+      "to": "plt = None"
+    },
+    {
+      "patch": "random.sample on a set removed",
+      "file": "expts/net_env.py",
+      "from": "random.sample(self.possible_actions,1)[0]",
+      "to": "random.sample(sorted(self.possible_actions),1)[0]"
+    },
+    {
+      "patch": "matplotlib/PIL/tensorboard not installed",
+      "file": "expts/change_baseline.py",
+      "from": "import matplotlib.pyplot as plt",
+      "to": "plt = None"
+    },
+    {
+      "patch": "random.sample on a set removed",
+      "file": "expts/change_baseline.py",
+      "from": "random.sample(s1,1)[0]",
+      "to": "random.sample(sorted(s1),1)[0]"
+    },
+    {
+      "patch": "random.sample on a set removed",
+      "file": "expts/change_baseline.py",
+      "from": "random.sample(list(self.fullgraph.neighbors(u)),1)[0]",
+      "to": "random.sample(sorted(self.fullgraph.neighbors(u)),1)[0]"
+    },
+    {
+      "patch": "nx.to_numpy_matrix removed",
+      "file": "expts/graphembed.py",
+      "from": "nx.to_numpy_matrix(",
+      "to": "nx.to_numpy_array("
+    },
+    {
+      "patch": "matplotlib/PIL/tensorboard not installed",
+      "file": "train.py",
+      "from": "import matplotlib.pyplot as plt",
+      "to": "plt = None"
+    }
+  ],
+  "probes": {
+    "diffpool.encoders.GcnEncoderGraph (authors' graph representation)": {
+      "ok": true,
+      "detail": "signature (self, input_dim, hidden_dim, embedding_dim, label_dim, num_layers, pred_hidden_dims=[], concat=True, bn=True, dropout=0.0, args=None, use_cuda=True) | forward output shape (1, 1)"
+    },
+    "rl_alg.dqn.DQNTrainer (authors' Q-network)": {
+      "ok": true,
+      "detail": "signature (self, input_dim, state_dim, action_dim, replayBuff, lr=0.001, gamma=0.99, eta=0.001, gcn_num_layers=2, num_pooling=1, assign_hidden_dim=40, assign_dim=40, num_aggs=1, use_cuda=Tru"
+    },
+    "icm.py (authors' IC sampling)": {
+      "ok": true,
+      "detail": "sampled 20 live-edge graphs from karate"
+    },
+    "expts/net_env.py (authors' environment)": {
+      "ok": true,
+      "detail": "NetworkEnv ran one step, frontier size 11"
+    },
+    "ge.walker.RandomWalker (authors' random walks, DeepWalk's walk stage)": {
+      "ok": true,
+      "detail": "9600 walks / 96000 tokens on a 120-node graph in 0.04 s"
+    }
+  },
+  "note": "compatibility patches only; none of them changes an algorithm.  Anything that would is recorded as a reproduction deviation instead."
+}

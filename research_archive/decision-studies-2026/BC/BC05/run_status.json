@@ -1,0 +1,229 @@
+{
+  "status": "completed",
+  "started_unix": 1790748315.960033,
+  "budget_seconds": 3600,
+  "frozen_targets_sha256": "245c175cf4a0bed32327cd14e45d8d664d73cad6cf145931884ee2ab43c023eb",
+  "attempted": [
+    "BASE-CONTROL",
+    "BASE-CF",
+    "HIGH-CONTROL",
+    "HIGH-CF"
+  ],
+  "arms": {
+    "BASE-CONTROL": {
+      "status": "completed",
+      "started_unix": 1790748315.960033,
+      "latest_progress": {
+        "arm": "BASE-CONTROL",
+        "windows": 1008,
+        "trace_elapsed_s": 604641.9793410301,
+        "wall_seconds": 598.6656278999999
+      },
+      "exit_code": 0,
+      "wall_seconds": 600.136950600001,
+      "control_gate": {
+        "passed": true,
+        "arm": "BASE-CONTROL",
+        "reference_arm": "STATIC-BASE",
+        "max_errors": {
+          "time_elapsed_phy": 0.0,
+          "time_log": 0.0,
+          "service_time_used_stats": 0.0,
+          "service_time_writes_stats": 0.0,
+          "service_time_used_demand_stats": 0.0,
+          "service_time_used_prefetch_stats": 0.0,
+          "service_time_nocache_stats": 0.0,
+          "flashcache/keys_written_stats": 0.0,
+          "flashcache/prefetches_stats": 0.0,
+          "fetches_chunks_prefetch_stats": 0.0,
+          "fetches_chunks_demandmiss_stats": 0.0,
+          "fetches_ios_stats": 0.0,
+          "iops_requests_stats": 0.0,
+          "chunk_queries_stats": 0.0,
+          "puts_ios_stats": 0.0,
+          "puts_chunks_stats": 0.0
+        },
+        "max_required_field_error": 0.0,
+        "frozen_targets_rejected_at_expected_request": 1489
+      },
+      "child_run_audit": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc05\\BASE-CONTROL\\run_audit.json"
+    },
+    "BASE-CF": {
+      "status": "completed",
+      "started_unix": 1790748917.6002786,
+      "latest_progress": {
+        "arm": "BASE-CF",
+        "windows": 982,
+        "trace_elapsed_s": 589202.9718871117,
+        "wall_seconds": 598.8236042000008
+      },
+      "exit_code": 0,
+      "wall_seconds": 617.0228519000011,
+      "preintervention_gate": {
+        "passed": true,
+        "cf_arm": "BASE-CF",
+        "control_arm": "BASE-CONTROL",
+        "request_sequence": 21498,
+        "snapshot_sha256": "67efcc9688d73a742fa40b4c1bdd7c257d9d5def622662c5153c65b3df67bd77",
+        "component_hashes": {
+          "cache_and_history": "3e6ab2979f5d1a6d94c259a4cf6599e4384acf8ae9272fe4a1b81199698e8f06",
+          "ap_state": "3480f57e5f30b361ecb14cdd76b4da6508f15c1738d861b1b93a956437b9ef28",
+          "prefetch_state": "ad90842481d221bb31e684551a4817cfb6c78bfa391a3586dba520da39fea97f",
+          "simulator_time_state": "7a31108bf1281ef42a40c357914a2443f78a475099796e0a9cfac4c9ef4dd889",
+          "cumulative_counters": "7eee68ea38ebb1489f1e9a3fcb6d06a1e19c117e2d75e39488100e4ed6319950",
+          "frequency_counters": "4fc37646aaa76a2794832ac6edba244b93e0d4d370d46e0600dc27d64b869b6c",
+          "checkpoint_index": "be47addbcb8f60566a3d7fd5a36f8195798e2848b368195d9a5d20e007c59a0c"
+        }
+      },
+      "child_run_audit": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc05\\BASE-CF\\run_audit.json"
+    },
+    "HIGH-CONTROL": {
+      "status": "completed",
+      "started_unix": 1790749535.9180045,
+      "latest_progress": {
+        "arm": "HIGH-CONTROL",
+        "windows": 987,
+        "trace_elapsed_s": 592226.0675861835,
+        "wall_seconds": 598.9276205999995
+      },
+      "exit_code": 0,
+      "wall_seconds": 613.9614287000004,
+      "control_gate": {
+        "passed": true,
+        "arm": "HIGH-CONTROL",
+        "reference_arm": "STATIC-HIGH",
+        "max_errors": {
+          "time_elapsed_phy": 0.0,
+          "time_log": 0.0,
+          "service_time_used_stats": 0.0,
+          "service_time_writes_stats": 0.0,
+          "service_time_used_demand_stats": 0.0,
+          "service_time_used_prefetch_stats": 0.0,
+          "service_time_nocache_stats": 0.0,
+          "flashcache/keys_written_stats": 0.0,
+          "flashcache/prefetches_stats": 0.0,
+          "fetches_chunks_prefetch_stats": 0.0,
+          "fetches_chunks_demandmiss_stats": 0.0,
+          "fetches_ios_stats": 0.0,
+          "iops_requests_stats": 0.0,
+          "chunk_queries_stats": 0.0,
+          "puts_ios_stats": 0.0,
+          "puts_chunks_stats": 0.0
+        },
+        "max_required_field_error": 0.0
+      },
+      "child_run_audit": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc05\\HIGH-CONTROL\\run_audit.json"
+    },
+    "HIGH-CF": {
+      "status": "completed",
+      "started_unix": 1790750151.3471608,
+      "latest_progress": {
+        "arm": "HIGH-CF",
+        "windows": 355,
+        "trace_elapsed_s": 213012.60673809052,
+        "wall_seconds": 178.68695639999896
+      },
+      "exit_code": 0,
+      "wall_seconds": 605.0975726999986,
+      "child_run_audit": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc05\\HIGH-CF\\run_audit.json"
+    }
+  },
+  "wall_seconds": 2440.484700679779,
+  "remaining_budget_seconds": 1159.515299320221,
+  "current_arm": null,
+  "completed": [
+    "BASE-CONTROL",
+    "BASE-CF",
+    "HIGH-CONTROL",
+    "HIGH-CF"
+  ],
+  "uncompleted": [],
+  "child_process_wall_seconds": 2436.218803900001,
+  "replay_completion_unix": 1790750756.4447336,
+  "finalized_at_unix": 1790754272.3850784,
+  "post_completion_finalize_delay_seconds": 3515.940344810486,
+  "finalization": "all four child replay processes completed; coordinator had exited on a transient partial progress.json read; no replay was restarted",
+  "gates": {
+    "BASE-CONTROL": {
+      "passed": true,
+      "arm": "BASE-CONTROL",
+      "reference_arm": "STATIC-BASE",
+      "max_errors": {
+        "time_elapsed_phy": 0.0,
+        "time_log": 0.0,
+        "service_time_used_stats": 0.0,
+        "service_time_writes_stats": 0.0,
+        "service_time_used_demand_stats": 0.0,
+        "service_time_used_prefetch_stats": 0.0,
+        "service_time_nocache_stats": 0.0,
+        "flashcache/keys_written_stats": 0.0,
+        "flashcache/prefetches_stats": 0.0,
+        "fetches_chunks_prefetch_stats": 0.0,
+        "fetches_chunks_demandmiss_stats": 0.0,
+        "fetches_ios_stats": 0.0,
+        "iops_requests_stats": 0.0,
+        "chunk_queries_stats": 0.0,
+        "puts_ios_stats": 0.0,
+        "puts_chunks_stats": 0.0
+      },
+      "max_required_field_error": 0.0,
+      "frozen_targets_rejected_at_expected_request": 1489
+    },
+    "HIGH-CONTROL": {
+      "passed": true,
+      "arm": "HIGH-CONTROL",
+      "reference_arm": "STATIC-HIGH",
+      "max_errors": {
+        "time_elapsed_phy": 0.0,
+        "time_log": 0.0,
+        "service_time_used_stats": 0.0,
+        "service_time_writes_stats": 0.0,
+        "service_time_used_demand_stats": 0.0,
+        "service_time_used_prefetch_stats": 0.0,
+        "service_time_nocache_stats": 0.0,
+        "flashcache/keys_written_stats": 0.0,
+        "flashcache/prefetches_stats": 0.0,
+        "fetches_chunks_prefetch_stats": 0.0,
+        "fetches_chunks_demandmiss_stats": 0.0,
+        "fetches_ios_stats": 0.0,
+        "iops_requests_stats": 0.0,
+        "chunk_queries_stats": 0.0,
+        "puts_ios_stats": 0.0,
+        "puts_chunks_stats": 0.0
+      },
+      "max_required_field_error": 0.0
+    },
+    "BASE-CF": {
+      "passed": true,
+      "cf_arm": "BASE-CF",
+      "control_arm": "BASE-CONTROL",
+      "request_sequence": 21498,
+      "snapshot_sha256": "67efcc9688d73a742fa40b4c1bdd7c257d9d5def622662c5153c65b3df67bd77",
+      "component_hashes": {
+        "cache_and_history": "3e6ab2979f5d1a6d94c259a4cf6599e4384acf8ae9272fe4a1b81199698e8f06",
+        "ap_state": "3480f57e5f30b361ecb14cdd76b4da6508f15c1738d861b1b93a956437b9ef28",
+        "prefetch_state": "ad90842481d221bb31e684551a4817cfb6c78bfa391a3586dba520da39fea97f",
+        "simulator_time_state": "7a31108bf1281ef42a40c357914a2443f78a475099796e0a9cfac4c9ef4dd889",
+        "cumulative_counters": "7eee68ea38ebb1489f1e9a3fcb6d06a1e19c117e2d75e39488100e4ed6319950",
+        "frequency_counters": "4fc37646aaa76a2794832ac6edba244b93e0d4d370d46e0600dc27d64b869b6c",
+        "checkpoint_index": "be47addbcb8f60566a3d7fd5a36f8195798e2848b368195d9a5d20e007c59a0c"
+      }
+    },
+    "HIGH-CF": {
+      "passed": true,
+      "cf_arm": "HIGH-CF",
+      "control_arm": "HIGH-CONTROL",
+      "request_sequence": 21498,
+      "snapshot_sha256": "c3b7c450d514665db279ebf4184226b02114c370f44b86b6743f42640426e80c",
+      "component_hashes": {
+        "cache_and_history": "c225730b651d9fee2428d2d4bc16e815614714d3f825e6b2301158d00d788e1b",
+        "ap_state": "8998d1725512d5a85e03961ec29d2fee82de69cf031d57d976b4a04ab28c58d2",
+        "prefetch_state": "ad90842481d221bb31e684551a4817cfb6c78bfa391a3586dba520da39fea97f",
+        "simulator_time_state": "7a31108bf1281ef42a40c357914a2443f78a475099796e0a9cfac4c9ef4dd889",
+        "cumulative_counters": "080fee938f08200a070fa04c0a659c1ffc5252fd50cc7e012a0f0518f8ebdedc",
+        "frequency_counters": "7751b9bcf19628814c74a994a82a7de6c0303074da69ed35db5fbfbfba786733",
+        "checkpoint_index": "be47addbcb8f60566a3d7fd5a36f8195798e2848b368195d9a5d20e007c59a0c"
+      }
+    }
+  }
+}

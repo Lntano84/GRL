@@ -1,0 +1,52 @@
+{
+  "protocol": "BC05 frozen privileged counterfactual; no model training",
+  "targets_count": 1489,
+  "targets_sha256": "245c175cf4a0bed32327cd14e45d8d664d73cad6cf145931884ee2ab43c023eb",
+  "source_partition_unique_events": {
+    "before_peak": 1489,
+    "peak": 59,
+    "warmup": 64
+  },
+  "selection": {
+    "source_window": 578,
+    "category": "REJECTED-BEFORE",
+    "time_rule": "evaluation_start <= latest_actual_rejection < peak_578_start",
+    "dedupe": "(rejection request sequence, complete block key, chunk id)"
+  },
+  "constants": {
+    "evaluation_start_trace_s": 86401.23277902603,
+    "peak_578_start_trace_s": 346810.0965330601,
+    "evaluation_write_cap_chunks": 148731,
+    "cache_capacity_chunks": 3002,
+    "full_trace_requests": 147794,
+    "get_requests": 127305
+  },
+  "example_82821_check": {
+    "missing_chunks": 64,
+    "latest_rejection_sequence": 81555,
+    "prior_rejections_each": 30
+  },
+  "source_sha256": {
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\outputs\\BC04_peak_578_chunks.csv": "fbae24e5ecc67f6a0f1c1670b07fc9773da5ed8ed19719a2085050857ed24a70",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\outputs\\BC04_peak_578_requests.csv": "34c495f1c6c402269a9a6d33687b038ec197c2033c3bc14097fc964fb0d69586",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc04\\audit.json": "83c91264b96f16d7cd6af1ee501885c290975edf7ff64d4d6fd3d78d589e37fb",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc03\\STATIC-BASE\\config.json": "e87f0a84e487efe3be775dc1b819b0361cddda10ea89bb736d290c785e3d449d",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc03\\STATIC-HIGH\\config.json": "1995423e439cce2fb9858c5ef66031745c16ca42799616cf48fb1f850047805b",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\data\\tectonic\\201910\\Region1\\full_0_0.1.trace": "3e15491e59bce748bc5bfd746edfda9cc43a0925b273bc627bfd2d51d62f95b6",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_admit_threshold_binary.model": "fb390089b9dd2af2de7235f98c22995ec2f841257e536e6a121558e97e84f64e",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_offset_end.model": "364ae73b736d4d75f3787743fdef1849182df206f0024652fc958891b8e78013",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_offset_start.model": "2d240d8e79b1abb674e96712ab0e96a04a4c3837dd1cca8b49b498d5979ce9f7",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_pred_net_pf_st_binary.model": "a7f073e64bfd57d7bb32e82d17d6445e50efd33a52f27bfc557fdfcdc726b6d6",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_size.model": "f745bacf02cb79ab1efeead2fe066d1da72b7a4d38762eccf67e31778923d5d9"
+  },
+  "parent_configs_sha256": {
+    "BASE": "e87f0a84e487efe3be775dc1b819b0361cddda10ea89bb736d290c785e3d449d",
+    "HIGH": "1995423e439cce2fb9858c5ef66031745c16ca42799616cf48fb1f850047805b"
+  },
+  "arms": [
+    "BASE-CONTROL",
+    "BASE-CF",
+    "HIGH-CONTROL",
+    "HIGH-CF"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "protocol": "BC06 HIGH-CONTROL legal decision snapshot; no retraining or policy change",
+  "snapshot_frozen_before_BC05_target_link": true,
+  "validation": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\snapshot_validation.json",
+  "validation_sha256": "d190fc208491386bedb8c81c9ea2280fbd2e87c6ec910df9450907f517467e1e",
+  "files": {
+    "candidate_decisions.jsonl.gz": {
+      "sha256": "5794441b856c02e7c1e7583332059be2576e29e9cca1d9379ecc515d84c70665",
+      "bytes": 134138617
+    },
+    "get_request_contexts.jsonl.gz": {
+      "sha256": "de8cd6e2e5c652d98e28e7493924aba29752f1c96a659f6ce109c46c50f37c89",
+      "bytes": 20703413
+    },
+    "check_only_calls.jsonl.gz": {
+      "sha256": "57e94f76b8972854f1be994bde8464ba6fe572c86f154eed25f3892da30506d2",
+      "bytes": 1054134
+    },
+    "feature_schema.json": {
+      "sha256": "06f286307b0bbf32f411ac90d1b9c4de5a364fa0aeb915b6bc745487910eedd9",
+      "bytes": 883
+    },
+    "config.json": {
+      "sha256": "a1d4051dec5d741fa57fa35aa47aa5e7257fc451ca6b61b9657055712dd32000",
+      "bytes": 1524
+    },
+    "run_audit.json": {
+      "sha256": "0ffbae4768f196fbc50a2ad50e9fed80c592ea4eaf4fb2847b17b8ab64fe7bff",
+      "bytes": 2147
+    }
+  },
+  "counts": {
+    "trace_requests": 147794,
+    "get_contexts": 127305,
+    "actual_candidate_decisions": 2375547,
+    "actual_accepts": 141064,
+    "actual_rejects": 2234483,
+    "check_only_items": 49204,
+    "demand_candidates": 2343380,
+    "prefetch_candidates": 32167
+  },
+  "label_firewall": "snapshot generation/validation contains no BC05 target or outcome input; any later join is a separate sidecar"
+}

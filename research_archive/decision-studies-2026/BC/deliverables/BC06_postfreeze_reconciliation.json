@@ -1,0 +1,32 @@
+{
+  "frozen_manifest_sha256": "3aa12ef277732b45e69b8d10b241dd36cba569d4bc2b656b710b98d3838be057",
+  "snapshot_artifact_hashes_unchanged": true,
+  "candidate_creation_decision_counts_corrected": {
+    "same_request": 2375547,
+    "delayed_to_later_request": 0,
+    "pending_undecided": 0,
+    "maximum_delay_seconds": 0.0,
+    "note": "The initial verifier had its same-request and delayed counter condition reversed; raw snapshot scan agrees with the run audit."
+  },
+  "label_firewall_replay_on_saved_prefix": {
+    "candidate_id": 295912,
+    "request_sequence": 21498,
+    "label_rows": 1489,
+    "outcome_cells_perturbed": 8934,
+    "original_label_sha256": "f55a48345253dcd86465835206ff4ecc747503d810e9a41bd979f7e2a51c24e4",
+    "perturbed_label_sha256": "119258dac948300b94652003afaa5439b67f4d1af6efe8f7870431449d55e229",
+    "saved_prefix_sha256": "b4a72076a002ae624cc90a0d373bd5d5f128d93f5a0e4ebb74aa299428f38e22",
+    "author_model_sha256": "fb390089b9dd2af2de7235f98c22995ec2f841257e536e6a121558e97e84f64e",
+    "score_before": 0.09175315451917042,
+    "score_after_label_perturbation": 0.09175315451917042,
+    "decision_before": false,
+    "decision_after_label_perturbation": false,
+    "model_score_matches_frozen_replay": true,
+    "score_function_inputs": [
+      "saved legal prefix features",
+      "frozen author model"
+    ],
+    "score_function_reads_future_labels": false,
+    "interpretation": "Deterministic inference replay on one sealed decision prefix; no solver replay or retraining."
+  }
+}

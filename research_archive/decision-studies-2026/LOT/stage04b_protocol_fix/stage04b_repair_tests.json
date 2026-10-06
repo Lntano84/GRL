@@ -1,0 +1,143 @@
+[
+  {
+    "test": "R1_original_F_both_carryovers_broken",
+    "expected_cost": 42.0,
+    "expected_accounting": "per machine 10 (lost, t=1) + 10 (lost, t=2 shortfall) + 1 (recovery setup) = 21; two machines -> 42",
+    "original": {
+      "nominal_objective": 2.0,
+      "nominal_feasible": true,
+      "repair_objective": 42.0,
+      "repair_feasible": true,
+      "repair_max_violation": 0.0,
+      "n_restored_events": 2,
+      "restored_positions": [
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          1
+        ]
+      ],
+      "matches_42": true,
+      "repair_log": "p1 cancelled m0 t1: down period: removed X=1 Y=1 Z=1 | p1 cancelled m1 t1: down period: removed X=1 Y=1 Z=1 | p1 cancelled m0 t2: no current setup and no in-flow carry-over: reinstating it would charge a setup the plan never paid for: removed X=2 Y=0 | p1 cancelled m1 t2: no current setup and no in-flow carry-over: reinstating it would charge a setup the plan never paid for: removed X=2 Y=0 | p1 note: feasible base plan established, cost=60 | p1 note m0 t2: recovery period (delta=1) | p1 note m1 t2: recovery period (delta=1) | p2 note m0 t2: restore (feasible=True, cost=51) vs keep (cost=60) | p2 restored m0 t2: set Y=1, X=m_i=1 | p2 note m1 t2: restore (feasible=True, cost=42) vs keep (cost=51) | p2 restored m1 t2: set Y=1, X=m_i=1"
+    },
+    "swapped": {
+      "nominal_objective": 2.0,
+      "nominal_feasible": true,
+      "repair_objective": 42.0,
+      "repair_feasible": true,
+      "repair_max_violation": 0.0,
+      "n_restored_events": 2,
+      "restored_positions": [
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "matches_42": true,
+      "repair_log": "p1 cancelled m0 t1: down period: removed X=1 Y=1 Z=1 | p1 cancelled m1 t1: down period: removed X=1 Y=1 Z=1 | p1 cancelled m1 t2: no current setup and no in-flow carry-over: reinstating it would charge a setup the plan never paid for: removed X=2 Y=0 | p1 cancelled m0 t2: no current setup and no in-flow carry-over: reinstating it would charge a setup the plan never paid for: removed X=2 Y=0 | p1 note: feasible base plan established, cost=60 | p1 note m0 t2: recovery period (delta=1) | p1 note m1 t2: recovery period (delta=1) | p2 note m0 t2: restore (feasible=True, cost=51) vs keep (cost=60) | p2 restored m0 t2: set Y=1, X=m_i=1 | p2 note m1 t2: restore (feasible=True, cost=42) vs keep (cost=51) | p2 restored m1 t2: set Y=1, X=m_i=1"
+    },
+    "label_invariant": true,
+    "two_restorations": true,
+    "passed": true
+  },
+  {
+    "test": "R2_zero_production_setup_in_recovery_period",
+    "nominal_objective": 3.0,
+    "nominal_feasible": true,
+    "nominal_max_violation": 0.0,
+    "nominal_cost_breakdown": {
+      "setup": 3.0,
+      "production": 0.0,
+      "inventory": 0.0,
+      "lost_sales": 0.0,
+      "total": 3.0
+    },
+    "repair_objective": 12.0,
+    "repair_feasible": true,
+    "repair_max_violation": 0.0,
+    "repair_log": "p1 cancelled m0 t1: down period: removed X=1 Y=1 Z=0 | p1 note: feasible base plan established, cost=12 | p1 note m0 t2: recovery period (delta=1)",
+    "vulnerable_position": [
+      0,
+      0,
+      2
+    ],
+    "position_is_recovery_period": true,
+    "pattern_preserved": true,
+    "next_period_production_preserved": true,
+    "other_item_cancelled_by_outage": true,
+    "repaired_plan": {
+      "X": [
+        [
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      ],
+      "Y": [
+        [
+          [
+            0.0,
+            1.0,
+            1.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      ],
+      "Z": [
+        [
+          [
+            0.0,
+            1.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      ],
+      "L": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "passed": true
+  }
+]

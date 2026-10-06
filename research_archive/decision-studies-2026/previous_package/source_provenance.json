@@ -1,0 +1,59 @@
+{
+  "archive_date": "2026-10-01",
+  "target_repository": "https://github.com/Lntano84/GRL",
+  "source_repositories": {
+    "mapf_lns_unified": {
+      "url": "https://github.com/ChristinaTan0704/mapf-lns-unified",
+      "head": "d8fab81b25b564fe23c278298ac989f092bbb7d7",
+      "submodules": {
+        "json": {
+          "head": "633de8e44bbbc29383d72f8c920343ea5d1eaa21",
+          "working_tree_status": ""
+        },
+        "lns-removal-replan": {
+          "head": "fd2c59aa167f94dfbe21971cbff2c7d52ace8ff2",
+          "working_tree_status": ""
+        },
+        "pbs-replan": {
+          "head": "35404c4b9af2e44e1478db03660dfd99b71e79e9",
+          "working_tree_status": "M src/driver.cpp"
+        },
+        "pp-replan": {
+          "head": "531d643d416a2980f9b23fa1b385d4a0ea24e52d",
+          "working_tree_status": "M inc/PIBT/graph.h\n M inc/PIBT/grid.h\n M inc/PIBT/mapf.h\n M inc/PIBT/pibt.h\n M inc/PIBT/pps.h\n M inc/PIBT/problem.h\n M inc/PIBT/simplegrid.h\n M inc/PIBT/solver.h\n M inc/PIBT/winpibt.h\n M src/PIBT/graph.cpp\n M src/PIBT/grid.cpp\n M src/PIBT/mapf.cpp\n M src/PIBT/pibt.cpp\n M src/PIBT/pps.cpp\n M src/PIBT/problem.cpp\n M src/PIBT/simplegrid.cpp\n M src/PIBT/solver.cpp\n M src/PIBT/winpibt.cpp\n M src/driver.cpp"
+        }
+      },
+      "note": "The source tree has no top-level license; data payload is not redistributed. The changed PP/PBS submodule patches include their upstream research-use license files."
+    },
+    "baleen_fast24": {
+      "url": "https://github.com/wonglkd/Baleen-FAST24",
+      "head": "4e3a9205b1f1bd72bffd66dd52bd5b06509089e9",
+      "note": "Upstream source is referenced by commit; trace payload redistribution follows the official Apache-2.0 data terms."
+    },
+    "mt_kahypar": {
+      "url": "https://github.com/kahypar/mt-kahypar",
+      "head": "6d12d9cf210390624f3757e9b5399469d2d2ae68",
+      "note": "Only the local source diff and build manifest are archived; build outputs and dependency checkouts are excluded."
+    },
+    "sat_solver_data": {
+      "url": "https://github.com/mathefuchs/al-for-sat-solver-benchmarking-data",
+      "license": "CC-BY-4.0"
+    },
+    "suitesparse": {
+      "url": "https://suitesparse-collection-website.herokuapp.com/about",
+      "license": "CC-BY-4.0",
+      "note": "Matrices and transformed unweighted simple graph files are included with transformation provenance."
+    }
+  },
+  "excluded": [
+    "build directories, compiled binaries, dependency caches, and vendored third-party source trees",
+    "embedded Python 3.11 runtime, Python installers, and package installer scripts",
+    "raw MAPF data files from an upstream repository with no declared top-level redistribution license; source URLs and hashes are preserved",
+    "the separate 6-call synthetic interface smoke set is only partially archived locally and is not represented as complete"
+  ],
+  "source_commits": {
+    "mapf_lns_unified": "d8fab81b25b564fe23c278298ac989f092bbb7d7",
+    "baleen_fast24": "4e3a9205b1f1bd72bffd66dd52bd5b06509089e9",
+    "mt_kahypar": "6d12d9cf210390624f3757e9b5399469d2d2ae68"
+  }
+}

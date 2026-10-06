@@ -1,0 +1,339 @@
+{
+  "dataset": "nethept",
+  "oracle_scope": "top-30-by-degree",
+  "oracle_note": "Restricted oracle over the configured top-N-by-degree universe; not a full-graph oracle.",
+  "pool_sizes": [
+    5,
+    10
+  ],
+  "steps": 2,
+  "mc_runs": 2,
+  "random_repeats": 2,
+  "restricted_oracle_seed_sequence": [
+    1265,
+    658
+  ],
+  "feature_dqn": {
+    "status": "loaded",
+    "checkpoint": "C:\\Users\\windows\\Desktop\\GRL-main\\param\\dqn_model.pth",
+    "embedding": "C:\\Users\\windows\\Desktop\\GRL-main\\param\\node2vec_NetHEPT.txt.pth"
+  },
+  "progress": [
+    {
+      "step": 1,
+      "restricted_oracle_node": 1265,
+      "restricted_oracle_gain": 112.5,
+      "oracle_gain_runtime_seconds": 0.045825899999954345
+    },
+    {
+      "step": 2,
+      "restricted_oracle_node": 658,
+      "restricted_oracle_gain": 69.5,
+      "oracle_gain_runtime_seconds": 0.04792639999982384
+    }
+  ],
+  "summary": [
+    {
+      "retriever": "Degree",
+      "M": 5,
+      "recall_at_m": 0.5,
+      "mean_candidate_loss": 13.5,
+      "mean_runtime_seconds": 2.495000001090375e-05,
+      "observations": 2
+    },
+    {
+      "retriever": "Degree",
+      "M": 10,
+      "recall_at_m": 0.5,
+      "mean_candidate_loss": 10.75,
+      "mean_runtime_seconds": 2.495000001090375e-05,
+      "observations": 2
+    },
+    {
+      "retriever": "DegreeDiscount",
+      "M": 5,
+      "recall_at_m": 0.5,
+      "mean_candidate_loss": 10.75,
+      "mean_runtime_seconds": 9.939999995367543e-05,
+      "observations": 2
+    },
+    {
+      "retriever": "DegreeDiscount",
+      "M": 10,
+      "recall_at_m": 1.0,
+      "mean_candidate_loss": 0.0,
+      "mean_runtime_seconds": 9.939999995367543e-05,
+      "observations": 2
+    },
+    {
+      "retriever": "FeatureDQN",
+      "M": 5,
+      "recall_at_m": 0.0,
+      "mean_candidate_loss": 57.5,
+      "mean_runtime_seconds": 0.003464349999944716,
+      "observations": 2
+    },
+    {
+      "retriever": "FeatureDQN",
+      "M": 10,
+      "recall_at_m": 0.0,
+      "mean_candidate_loss": 57.5,
+      "mean_runtime_seconds": 0.003464349999944716,
+      "observations": 2
+    },
+    {
+      "retriever": "Random",
+      "M": 5,
+      "recall_at_m": 0.5,
+      "mean_candidate_loss": 23.875,
+      "mean_runtime_seconds": 1.6099999925245356e-05,
+      "observations": 4
+    },
+    {
+      "retriever": "Random",
+      "M": 10,
+      "recall_at_m": 0.5,
+      "mean_candidate_loss": 23.0,
+      "mean_runtime_seconds": 1.6099999925245356e-05,
+      "observations": 4
+    }
+  ],
+  "records": [
+    {
+      "step": 1,
+      "retriever": "Degree",
+      "M": 5,
+      "restricted_oracle_node": 1265,
+      "restricted_oracle_gain": 112.5,
+      "recalled": 1.0,
+      "candidate_loss": 0.0,
+      "runtime_seconds": 2.6700000034907134e-05,
+      "oracle_gain_runtime_seconds": 0.045825899999954345
+    },
+    {
+      "step": 1,
+      "retriever": "Degree",
+      "M": 10,
+      "restricted_oracle_node": 1265,
+      "restricted_oracle_gain": 112.5,
+      "recalled": 1.0,
+      "candidate_loss": 0.0,
+      "runtime_seconds": 2.6700000034907134e-05,
+      "oracle_gain_runtime_seconds": 0.045825899999954345
+    },
+    {
+      "step": 1,
+      "retriever": "DegreeDiscount",
+      "M": 5,
+      "restricted_oracle_node": 1265,
+      "restricted_oracle_gain": 112.5,
+      "recalled": 1.0,
+      "candidate_loss": 0.0,
+      "runtime_seconds": 0.00010279999992235389,
+      "oracle_gain_runtime_seconds": 0.045825899999954345
+    },
+    {
+      "step": 1,
+      "retriever": "DegreeDiscount",
+      "M": 10,
+      "restricted_oracle_node": 1265,
+      "restricted_oracle_gain": 112.5,
+      "recalled": 1.0,
+      "candidate_loss": 0.0,
+      "runtime_seconds": 0.00010279999992235389,
+      "oracle_gain_runtime_seconds": 0.045825899999954345
+    },
+    {
+      "step": 1,
+      "retriever": "FeatureDQN",
+      "M": 5,
+      "restricted_oracle_node": 1265,
+      "restricted_oracle_gain": 112.5,
+      "recalled": 0.0,
+      "candidate_loss": 79.0,
+      "runtime_seconds": 0.006153599999834114,
+      "oracle_gain_runtime_seconds": 0.045825899999954345
+    },
+    {
+      "step": 1,
+      "retriever": "FeatureDQN",
+      "M": 10,
+      "restricted_oracle_node": 1265,
+      "restricted_oracle_gain": 112.5,
+      "recalled": 0.0,
+      "candidate_loss": 79.0,
+      "runtime_seconds": 0.006153599999834114,
+      "oracle_gain_runtime_seconds": 0.045825899999954345
+    },
+    {
+      "step": 1,
+      "retriever": "Random",
+      "M": 5,
+      "restricted_oracle_node": 1265,
+      "restricted_oracle_gain": 112.5,
+      "recalled": 0.0,
+      "candidate_loss": 59.5,
+      "runtime_seconds": 2.5499999992462108e-05,
+      "oracle_gain_runtime_seconds": 0.045825899999954345,
+      "repeat": 0
+    },
+    {
+      "step": 1,
+      "retriever": "Random",
+      "M": 10,
+      "restricted_oracle_node": 1265,
+      "restricted_oracle_gain": 112.5,
+      "recalled": 0.0,
+      "candidate_loss": 59.5,
+      "runtime_seconds": 2.5499999992462108e-05,
+      "oracle_gain_runtime_seconds": 0.045825899999954345,
+      "repeat": 0
+    },
+    {
+      "step": 1,
+      "retriever": "Random",
+      "M": 5,
+      "restricted_oracle_node": 1265,
+      "restricted_oracle_gain": 112.5,
+      "recalled": 1.0,
+      "candidate_loss": 0.0,
+      "runtime_seconds": 1.0799999927257886e-05,
+      "oracle_gain_runtime_seconds": 0.045825899999954345,
+      "repeat": 1
+    },
+    {
+      "step": 1,
+      "retriever": "Random",
+      "M": 10,
+      "restricted_oracle_node": 1265,
+      "restricted_oracle_gain": 112.5,
+      "recalled": 1.0,
+      "candidate_loss": 0.0,
+      "runtime_seconds": 1.0799999927257886e-05,
+      "oracle_gain_runtime_seconds": 0.045825899999954345,
+      "repeat": 1
+    },
+    {
+      "step": 2,
+      "retriever": "Degree",
+      "M": 5,
+      "restricted_oracle_node": 658,
+      "restricted_oracle_gain": 69.5,
+      "recalled": 0.0,
+      "candidate_loss": 27.0,
+      "runtime_seconds": 2.3199999986900366e-05,
+      "oracle_gain_runtime_seconds": 0.04792639999982384
+    },
+    {
+      "step": 2,
+      "retriever": "Degree",
+      "M": 10,
+      "restricted_oracle_node": 658,
+      "restricted_oracle_gain": 69.5,
+      "recalled": 0.0,
+      "candidate_loss": 21.5,
+      "runtime_seconds": 2.3199999986900366e-05,
+      "oracle_gain_runtime_seconds": 0.04792639999982384
+    },
+    {
+      "step": 2,
+      "retriever": "DegreeDiscount",
+      "M": 5,
+      "restricted_oracle_node": 658,
+      "restricted_oracle_gain": 69.5,
+      "recalled": 0.0,
+      "candidate_loss": 21.5,
+      "runtime_seconds": 9.599999998499698e-05,
+      "oracle_gain_runtime_seconds": 0.04792639999982384
+    },
+    {
+      "step": 2,
+      "retriever": "DegreeDiscount",
+      "M": 10,
+      "restricted_oracle_node": 658,
+      "restricted_oracle_gain": 69.5,
+      "recalled": 1.0,
+      "candidate_loss": 0.0,
+      "runtime_seconds": 9.599999998499698e-05,
+      "oracle_gain_runtime_seconds": 0.04792639999982384
+    },
+    {
+      "step": 2,
+      "retriever": "FeatureDQN",
+      "M": 5,
+      "restricted_oracle_node": 658,
+      "restricted_oracle_gain": 69.5,
+      "recalled": 0.0,
+      "candidate_loss": 36.0,
+      "runtime_seconds": 0.0007751000000553177,
+      "oracle_gain_runtime_seconds": 0.04792639999982384
+    },
+    {
+      "step": 2,
+      "retriever": "FeatureDQN",
+      "M": 10,
+      "restricted_oracle_node": 658,
+      "restricted_oracle_gain": 69.5,
+      "recalled": 0.0,
+      "candidate_loss": 36.0,
+      "runtime_seconds": 0.0007751000000553177,
+      "oracle_gain_runtime_seconds": 0.04792639999982384
+    },
+    {
+      "step": 2,
+      "retriever": "Random",
+      "M": 5,
+      "restricted_oracle_node": 658,
+      "restricted_oracle_gain": 69.5,
+      "recalled": 1.0,
+      "candidate_loss": 0.0,
+      "runtime_seconds": 1.8599999975776882e-05,
+      "oracle_gain_runtime_seconds": 0.04792639999982384,
+      "repeat": 0
+    },
+    {
+      "step": 2,
+      "retriever": "Random",
+      "M": 10,
+      "restricted_oracle_node": 658,
+      "restricted_oracle_gain": 69.5,
+      "recalled": 1.0,
+      "candidate_loss": 0.0,
+      "runtime_seconds": 1.8599999975776882e-05,
+      "oracle_gain_runtime_seconds": 0.04792639999982384,
+      "repeat": 0
+    },
+    {
+      "step": 2,
+      "retriever": "Random",
+      "M": 5,
+      "restricted_oracle_node": 658,
+      "restricted_oracle_gain": 69.5,
+      "recalled": 0.0,
+      "candidate_loss": 36.0,
+      "runtime_seconds": 9.499999805484549e-06,
+      "oracle_gain_runtime_seconds": 0.04792639999982384,
+      "repeat": 1
+    },
+    {
+      "step": 2,
+      "retriever": "Random",
+      "M": 10,
+      "restricted_oracle_node": 658,
+      "restricted_oracle_gain": 69.5,
+      "recalled": 0.0,
+      "candidate_loss": 32.5,
+      "runtime_seconds": 9.499999805484549e-06,
+      "oracle_gain_runtime_seconds": 0.04792639999982384,
+      "repeat": 1
+    }
+  ],
+  "metadata": {
+    "config_path": "configs\\smoke\\candidate_benchmark_nethept.yaml",
+    "dataset": "nethept",
+    "random_seed": 20260715,
+    "model_version": "candidate_retrieval_benchmark_v1",
+    "timestamp_utc": "2026-08-31T06:11:32.070501+00:00",
+    "git_commit": "e043f5d3334774bb26215b61b9ddf256fbb12d65"
+  }
+}

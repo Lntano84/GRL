@@ -1,0 +1,124 @@
+{
+  "snapshot_validation_passed": true,
+  "replay_simulation_completed": true,
+  "runner_exit_code": 1,
+  "runner_exit_note": "post-run verifier compared admission-only captured scores with the simulator-wide ml_predictions counter, which also includes prefetch-model predictions; all simulation and logged admission data are complete.",
+  "trace_request_count": 147794,
+  "get_request_context_count": 127305,
+  "actual_candidate_rows": 2375547,
+  "actual_accepted_rows": 141064,
+  "actual_rejected_rows": 2234483,
+  "candidate_source_counts": {
+    "demand": 2343380,
+    "prefetch": 32167
+  },
+  "candidate_creation_decision_same_request": 0,
+  "candidate_creation_decision_delayed": 2375547,
+  "unique_decision_requests": 72899,
+  "unique_candidate_blocks": 13688,
+  "check_only_rows": 49204,
+  "author_feature_names": [
+    "feat_metadata|op",
+    "feat_metadata|ns",
+    "feat_metadata|user",
+    "feat_metadata_size|start",
+    "feat_metadata_size|end",
+    "feat_metadata_size|size",
+    "feat_dynamic_b|0",
+    "feat_dynamic_b|1",
+    "feat_dynamic_b|2",
+    "feat_dynamic_b|3",
+    "feat_dynamic_b|4",
+    "feat_dynamic_b|5",
+    "feat_dynamic_c_combined|0",
+    "feat_dynamic_c_combined|1",
+    "feat_dynamic_c_combined|2",
+    "feat_dynamic_c_combined|3",
+    "feat_dynamic_c_combined|4",
+    "feat_dynamic_c_combined|5"
+  ],
+  "admission_model_input_rows_actual_plus_check_only": 2424751,
+  "simulator_wide_ml_predictions_counter": 2806666,
+  "additional_shared_counter_predictions_outside_admission_rows": 381915,
+  "completed_windows_in_request_contexts": 1007,
+  "context_window_indices_min_max": [
+    0,
+    1006
+  ],
+  "window_load_max_abs_errors_pct_points": {
+    "total_get_dt_pct": 0.0,
+    "demand_read_dt_pct": 0.0,
+    "extra_prefetch_dt_pct": 0.0,
+    "put_dt_pct": 0.0
+  },
+  "window_write_eviction_errors": {
+    "writes": 0,
+    "evictions": 0
+  },
+  "control_reproduction_max_errors": {
+    "time_elapsed_phy": 0.0,
+    "time_log": 0.0,
+    "service_time_used_stats": 0.0,
+    "service_time_writes_stats": 0.0,
+    "service_time_used_demand_stats": 0.0,
+    "service_time_used_prefetch_stats": 0.0,
+    "service_time_nocache_stats": 0.0,
+    "flashcache/keys_written_stats": 0.0,
+    "flashcache/prefetches_stats": 0.0,
+    "fetches_chunks_prefetch_stats": 0.0,
+    "fetches_chunks_demandmiss_stats": 0.0,
+    "fetches_ios_stats": 0.0,
+    "iops_requests_stats": 0.0,
+    "chunk_queries_stats": 0.0,
+    "puts_ios_stats": 0.0,
+    "puts_chunks_stats": 0.0,
+    "flashcache/evictions_stats": 0.0
+  },
+  "evaluation_write_count": 119276,
+  "evaluation_write_count_from_raw_windows": 119276,
+  "evaluation_window_component_max_abs_error_s": 4.291678123991005e-12,
+  "max_cache_occupancy_chunks_at_request_start": 3001,
+  "missing_history_value_counts_at_decision": {
+    "prior_block_get_count": 0,
+    "seconds_since_block_last_get": 441842,
+    "prior_chunk_get_count": 0,
+    "seconds_since_chunk_last_get": 675780,
+    "prior_actual_rejection_count": 0,
+    "seconds_since_latest_actual_rejection": 677975
+  },
+  "window_context_fields_missing": {
+    "evaluation_cumulative_writes_before_request": 17987,
+    "last_completed_window": 228
+  },
+  "future_label_firewall": {
+    "snapshot_generator_reads_no_BC05_targets": true,
+    "candidate_snapshot_has_no_target_oracle_label_fields": true,
+    "target_file_not_read_by_this_validation": true
+  },
+  "artifact_sha256": {
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\candidate_decisions.jsonl.gz": "5794441b856c02e7c1e7583332059be2576e29e9cca1d9379ecc515d84c70665",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\get_request_contexts.jsonl.gz": "de8cd6e2e5c652d98e28e7493924aba29752f1c96a659f6ce109c46c50f37c89",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\check_only_calls.jsonl.gz": "57e94f76b8972854f1be994bde8464ba6fe572c86f154eed25f3892da30506d2",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\feature_schema.json": "06f286307b0bbf32f411ac90d1b9c4de5a364fa0aeb915b6bc745487910eedd9",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\raw\\ml-ap-0.798545_6_lru_366.475GB\\full_0_0.1_cache_perf.txt.stats.lzma": "9bb0aaf2a1024b9d67f8eccde503c62c1c6508730435b0232d10d0c67d4f871f",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc03\\STATIC-HIGH\\raw\\ml-ap-0.798545_6_lru_366.475GB\\full_0_0.1_cache_perf.txt.stats.lzma": "a613cbc71ce5b2ca839d956cfe2037d5ba08fca11a313ab47f559d33e89f45c8",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\config.json": "a1d4051dec5d741fa57fa35aa47aa5e7257fc451ca6b61b9657055712dd32000",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\preflight.json": "bcb115d8c62e5f717de89069b6abfbde7930ab63e77626240af6168693918234",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py": "7a6ef0dc3a87805d993f91b5d2445e3486f97d249d60eb738c7079560447e459",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\admission_policies.py": "3f58b86806cf449a73dc7c91abdaf1f95edaae65ad1cd9273ac722dfbf7ecad8",
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\prefetchers.py": "7ce7beaca51784aafc7b9e0af4a61ad7ee2f336558ef2dadb27851d3aeeb3dff"
+  },
+  "artifact_bytes": {
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\candidate_decisions.jsonl.gz": 134138617,
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\get_request_contexts.jsonl.gz": 20703413,
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\check_only_calls.jsonl.gz": 1054134,
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\feature_schema.json": 883,
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\raw\\ml-ap-0.798545_6_lru_366.475GB\\full_0_0.1_cache_perf.txt.stats.lzma": 491880,
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc03\\STATIC-HIGH\\raw\\ml-ap-0.798545_6_lru_366.475GB\\full_0_0.1_cache_perf.txt.stats.lzma": 491964,
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\config.json": 1524,
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\preflight.json": 4229,
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py": 35386,
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\admission_policies.py": 39121,
+    "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim\\prefetchers.py": 12444
+  }
+}

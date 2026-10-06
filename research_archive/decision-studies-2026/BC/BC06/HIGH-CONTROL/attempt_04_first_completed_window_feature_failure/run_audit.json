@@ -1,0 +1,73 @@
+{
+  "completed": false,
+  "mode": "read_only_observation",
+  "started_unix": 1790756081.8079708,
+  "recorder": {
+    "completed": false,
+    "arm": "HIGH-CONTROL",
+    "elapsed_wall_seconds": 2.4138206000025093,
+    "request_sequence": 246,
+    "get_request_count": 228,
+    "candidate_counts": {
+      "generated": 3442,
+      "currently_pending": 0,
+      "decided": 3442
+    },
+    "actual_decision_counts": {
+      "batches": 278,
+      "items": 3442,
+      "rejected": 3087,
+      "source/demand": 3345,
+      "created_and_decided_same_request": 3442,
+      "delay_positive": 0,
+      "get_requests": 228,
+      "accepted": 355,
+      "source/prefetch": 97
+    },
+    "check_only_counts": {
+      "calls": 5,
+      "items": 97,
+      "accept": 97,
+      "reject": 0
+    },
+    "candidate_source_counts": {
+      "demand": 3345,
+      "prefetch": 97
+    },
+    "unique_candidate_creation_requests": 136,
+    "unique_actual_decision_requests": 136,
+    "unique_candidate_blocks": 71,
+    "unique_candidate_chunks": 2872,
+    "model_input_vector_lengths": {
+      "18": 3539
+    },
+    "predicted_items_by_call_kind": {
+      "actual": 3442,
+      "check_only": 97
+    },
+    "model_feature_names": [
+      "feat_metadata|op",
+      "feat_metadata|ns",
+      "feat_metadata|user",
+      "feat_metadata_size|start",
+      "feat_metadata_size|end",
+      "feat_metadata_size|size",
+      "feat_dynamic_b|0",
+      "feat_dynamic_b|1",
+      "feat_dynamic_b|2",
+      "feat_dynamic_b|3",
+      "feat_dynamic_b|4",
+      "feat_dynamic_b|5",
+      "feat_dynamic_c_combined|0",
+      "feat_dynamic_c_combined|1",
+      "feat_dynamic_c_combined|2",
+      "feat_dynamic_c_combined|3",
+      "feat_dynamic_c_combined|4",
+      "feat_dynamic_c_combined|5"
+    ],
+    "max_cache_occupancy_chunks": 355,
+    "evaluation_writes_recorded_independently": 0,
+    "completed_window_component_max_abs_error": 0.0,
+    "wall_seconds": 2.4138326000029338
+  }
+}

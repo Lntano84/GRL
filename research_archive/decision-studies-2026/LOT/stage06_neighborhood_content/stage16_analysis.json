@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "budget_s": 20.0,
+    "methods": [
+      "AB",
+      "RINS-LP-ONE",
+      "FULL"
+    ],
+    "seed": 0,
+    "n_runs": 96,
+    "scope": "32 frozen stage 15 states (8 nominal instances x 4 disruption cells)",
+    "design": "baseline screen: AB vs FULL vs RINS-LP-ONE",
+    "rins_tol": 1e-06,
+    "lp_budget_s": 5.0,
+    "method_cycle": [
+      "AB",
+      "RINS-LP-ONE",
+      "FULL"
+    ],
+    "note": "AB and FULL are re-run inside this batch; no old-batch objective values are used. RINS-LP-ONE is a single-shot LP-guided neighbourhood, NOT the full RINS algorithm."
+  },
+  "primary_D": {
+    "large_rho0.75_s2": -0.09958506205952698,
+    "large_rho0.75_s3": -0.08409281822502983,
+    "large_rho0.75_s4": -0.07479141483816686,
+    "large_rho0.75_s5": -0.023617592221760034,
+    "large_rho1.10_s2": -0.12890403802374026,
+    "large_rho1.10_s3": -0.060358217856961535,
+    "large_rho1.10_s4": -0.032344961833075676,
+    "large_rho1.10_s5": -0.09544687036660544
+  },
+  "mean_D": -0.07489262192810833,
+  "positive": 0,
+  "negative": 8,
+  "tie": 0,
+  "by_rho": {
+    "0.75": {
+      "mean": -0.07052172183612093,
+      "positive": 0,
+      "n": 4
+    },
+    "1.10": {
+      "mean": -0.07926352202009573,
+      "positive": 0,
+      "n": 4
+    }
+  },
+  "by_cell": {
+    "single/1p": {
+      "mean": -0.08851253863579311,
+      "positive": 0,
+      "n": 8
+    },
+    "single/2p": {
+      "mean": -0.07833136636684408,
+      "positive": 0,
+      "n": 8
+    },
+    "all/1p": {
+      "mean": -0.06704577686370017,
+      "positive": 0,
+      "n": 8
+    },
+    "all/2p": {
+      "mean": -0.06568080584609595,
+      "positive": 0,
+      "n": 8
+    }
+  },
+  "leave_one_out": {
+    "large_rho0.75_s2": -0.0713651304807628,
+    "large_rho0.75_s3": -0.07357830817140526,
+    "large_rho0.75_s4": -0.07490708008381425,
+    "large_rho0.75_s5": -0.08221762617187237,
+    "large_rho1.10_s2": -0.06717670534301805,
+    "large_rho1.10_s3": -0.07696896536684358,
+    "large_rho1.10_s4": -0.08097085908454156,
+    "large_rho1.10_s5": -0.07195630072260874
+  },
+  "D_full": {
+    "large_rho0.75_s2": 0.1907663873240253,
+    "large_rho0.75_s3": 0.3325598926623494,
+    "large_rho0.75_s4": 0.022709587250430357,
+    "large_rho0.75_s5": 0.2727831062517593,
+    "large_rho1.10_s2": 0.12265950324016242,
+    "large_rho1.10_s3": 0.14579615352966316,
+    "large_rho1.10_s4": 0.11812477738730856,
+    "large_rho1.10_s5": 0.1453669028626518
+  },
+  "D_full_vs_rins": {
+    "large_rho0.75_s2": 0.2903514493835523,
+    "large_rho0.75_s3": 0.41665271088737926,
+    "large_rho0.75_s4": 0.09750100208859722,
+    "large_rho0.75_s5": 0.2964006984735193,
+    "large_rho1.10_s2": 0.2515635412639027,
+    "large_rho1.10_s3": 0.20615437138662468,
+    "large_rho1.10_s4": 0.15046973922038423,
+    "large_rho1.10_s5": 0.24081377322925723
+  },
+  "neighbourhood_structure": {
+    "AB": {
+      "fixed": 1224,
+      "free": 1296
+    },
+    "FULL": {
+      "fixed": 0,
+      "free": 2520
+    },
+    "RINS-LP-ONE": {
+      "fixed": [
+        1818,
+        2069
+      ],
+      "free": [
+        451,
+        702
+      ]
+    }
+  },
+  "rins_fixed_by_group": {
+    "A": {
+      "min": 518,
+      "max": 661,
+      "mean": 596.625
+    },
+    "B": {
+      "min": 361,
+      "max": 401,
+      "mean": 382.09375
+    },
+    "C": {
+      "min": 523,
+      "max": 612,
+      "mean": 571.90625
+    },
+    "short_Y": {
+      "min": 383,
+      "max": 411,
+      "mean": 399.03125
+    },
+    "structural": {
+      "min": 0,
+      "max": 0,
+      "mean": 0
+    }
+  },
+  "integrity": {
+    "n_runs": 96,
+    "start_adopted": 96,
+    "select_errors": 0,
+    "final_source_none": 0,
+    "worse_than_repair": 0,
+    "proven_optimal": 0,
+    "runs_le_20s_plus_tol": 96
+  },
+  "ab_passes": false,
+  "rins_passes_reverse": true,
+  "verdict": "RINS-LP-ONE reaches the criteria in reverse: a generic LP-information rule is more competitive; stop pushing fixed AB as the core contribution"
+}

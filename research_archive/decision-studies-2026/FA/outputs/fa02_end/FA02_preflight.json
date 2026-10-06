@@ -1,0 +1,311 @@
+{
+  "checks": [
+    "boundary_completion_becomes_censor",
+    "boundary_hidden_duration_invariance",
+    "nine_prefix_budgets",
+    "nine_hidden_suffix_invariance",
+    "nine_arm_agnostic_input_identity",
+    "nine_complete_label_counts",
+    "training_interface_has_no_outcome_argument"
+  ],
+  "passed": true,
+  "inputs": [
+    {
+      "arm": "FIXED-100",
+      "seed": 7,
+      "mode": "COMPLETE",
+      "limit_s": 78557.04623367003,
+      "last_complete_round": 21,
+      "complete_cost_s": 78557.04623367003,
+      "label_count": 26913,
+      "paid_count": 6191,
+      "input_sha256": "7dbe6de11f4120a3ed2e2ba7f5018ec784caa24fb0c38d7cb39fb0c5aef7bf65",
+      "boundary": null
+    },
+    {
+      "arm": "FIXED-100",
+      "seed": 7,
+      "mode": "ALL",
+      "limit_s": 86460.00000000001,
+      "last_complete_round": 21,
+      "complete_cost_s": 78557.04623367003,
+      "label_count": 27962,
+      "paid_count": 6424,
+      "input_sha256": "a4276a96154c7a085898c250268a97eaaee18c449112ec845b032b671cc4d9fd",
+      "boundary": {
+        "event_id": 51925,
+        "i": 101,
+        "a": 4,
+        "original_kind": 1,
+        "original_charge_s": 100.0,
+        "actual_cap_s": 34.50964232994011,
+        "kind": 1,
+        "value": 34.50964232994011
+      }
+    },
+    {
+      "arm": "FIXED-100",
+      "seed": 42,
+      "mode": "COMPLETE",
+      "limit_s": 81551.56828357012,
+      "last_complete_round": 22,
+      "complete_cost_s": 81551.56828357012,
+      "label_count": 27972,
+      "paid_count": 6367,
+      "input_sha256": "4a0200cdea000866138b6d2dec4b245db1e5006a349378aef1f3762496c5089a",
+      "boundary": null
+    },
+    {
+      "arm": "FIXED-100",
+      "seed": 42,
+      "mode": "ALL",
+      "limit_s": 86460.00000000001,
+      "last_complete_round": 22,
+      "complete_cost_s": 81551.56828357012,
+      "label_count": 28563,
+      "paid_count": 6488,
+      "input_sha256": "e2798432e3970804392ff084cc90589a23757056fdb80431f62ac09985c6518d",
+      "boundary": {
+        "event_id": 53452,
+        "i": 737,
+        "a": 5,
+        "original_kind": 1,
+        "original_charge_s": 100.0,
+        "actual_cap_s": 40.36562552989926,
+        "kind": 1,
+        "value": 40.36562552989926
+      }
+    },
+    {
+      "arm": "FIXED-100",
+      "seed": 99,
+      "mode": "COMPLETE",
+      "limit_s": 82195.63260487014,
+      "last_complete_round": 19,
+      "complete_cost_s": 82195.63260487014,
+      "label_count": 25754,
+      "paid_count": 5976,
+      "input_sha256": "253b65a2bee50f68342b7f8e9e199afb8b851e05da94a84887837ec9904ff1a7",
+      "boundary": null
+    },
+    {
+      "arm": "FIXED-100",
+      "seed": 99,
+      "mode": "ALL",
+      "limit_s": 86460.00000000001,
+      "last_complete_round": 19,
+      "complete_cost_s": 82195.63260487014,
+      "label_count": 26370,
+      "paid_count": 6097,
+      "input_sha256": "71258e4184f3c7bc13901dfb2e2a51f3eb5e747825ee09394e285d910474fb12",
+      "boundary": {
+        "event_id": 47806,
+        "i": 542,
+        "a": 4,
+        "original_kind": 1,
+        "original_charge_s": 100.0,
+        "actual_cap_s": 10.167392229865072,
+        "kind": 1,
+        "value": 10.167392229865072
+      }
+    },
+    {
+      "arm": "RANDOM-100",
+      "seed": 7,
+      "mode": "COMPLETE",
+      "limit_s": 54643.57801350996,
+      "last_complete_round": 1,
+      "complete_cost_s": 54643.57801350996,
+      "label_count": 1501,
+      "paid_count": 1296,
+      "input_sha256": "550e88fd2f666c0035d4f292ea59a6e8230c70eba01fdd8960c7a6fb553ec1d5",
+      "boundary": null
+    },
+    {
+      "arm": "RANDOM-100",
+      "seed": 7,
+      "mode": "ALL",
+      "limit_s": 86460.00000000001,
+      "last_complete_round": 1,
+      "complete_cost_s": 54643.57801350996,
+      "label_count": 2399,
+      "paid_count": 2091,
+      "input_sha256": "aa1e7aae1fcb058a43c5b8e55b901e5dcc01681006de0ee6a8c137e1bf3dfc97",
+      "boundary": {
+        "event_id": 3731,
+        "i": 675,
+        "a": 2,
+        "original_kind": 1,
+        "original_charge_s": 100.0,
+        "actual_cap_s": 65.2266478700767,
+        "kind": 1,
+        "value": 65.2266478700767
+      }
+    },
+    {
+      "arm": "RANDOM-100",
+      "seed": 42,
+      "mode": "COMPLETE",
+      "limit_s": 51405.78349638993,
+      "last_complete_round": 1,
+      "complete_cost_s": 51405.78349638993,
+      "label_count": 1487,
+      "paid_count": 1307,
+      "input_sha256": "bafefba3f20ad1a01274aa697c95c5fef4af19c2989aa5994307500aff9ab163",
+      "boundary": null
+    },
+    {
+      "arm": "RANDOM-100",
+      "seed": 42,
+      "mode": "ALL",
+      "limit_s": 86460.00000000001,
+      "last_complete_round": 1,
+      "complete_cost_s": 51405.78349638993,
+      "label_count": 2797,
+      "paid_count": 2271,
+      "input_sha256": "b1f51c850f9ac5eae957f27fd141e9fdf8f77206c5cf4af9062d1c21db56c0ae",
+      "boundary": {
+        "event_id": 3952,
+        "i": 1183,
+        "a": 0,
+        "original_kind": 2,
+        "original_charge_s": 78.4425,
+        "actual_cap_s": 33.21760561018891,
+        "kind": 1,
+        "value": 33.21760561018891
+      }
+    },
+    {
+      "arm": "RANDOM-100",
+      "seed": 99,
+      "mode": "COMPLETE",
+      "limit_s": 80697.92878968989,
+      "last_complete_round": 2,
+      "complete_cost_s": 80697.92878968989,
+      "label_count": 2997,
+      "paid_count": 2286,
+      "input_sha256": "c87ed08711d909a19a1c12b7c9f3f401fc7796fedbd9d045c1f277987214b1cb",
+      "boundary": null
+    },
+    {
+      "arm": "RANDOM-100",
+      "seed": 99,
+      "mode": "ALL",
+      "limit_s": 86460.00000000001,
+      "last_complete_round": 2,
+      "complete_cost_s": 80697.92878968989,
+      "label_count": 3256,
+      "paid_count": 2442,
+      "input_sha256": "05e5ec5b799f0e958784152111cb5d363f48b87a620a6798fb44fd1db649f20a",
+      "boundary": {
+        "event_id": 5661,
+        "i": 861,
+        "a": 6,
+        "original_kind": 1,
+        "original_charge_s": 100.0,
+        "actual_cap_s": 90.89468549017329,
+        "kind": 1,
+        "value": 90.89468549017329
+      }
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 7,
+      "mode": "COMPLETE",
+      "limit_s": 83239.80953846982,
+      "last_complete_round": 44,
+      "complete_cost_s": 83239.80953846982,
+      "label_count": 28634,
+      "paid_count": 6396,
+      "input_sha256": "028c6cd0da3ac0ff632ae41494299e5b1d6212f0f991ccc4e54fde9342548350",
+      "boundary": null
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 7,
+      "mode": "ALL",
+      "limit_s": 86460.00000000001,
+      "last_complete_round": 44,
+      "complete_cost_s": 83239.80953846982,
+      "label_count": 29173,
+      "paid_count": 6491,
+      "input_sha256": "f73aa5be1b4da56ee60092f85c7e48abd36f8477f352a20dab6f15df9aea5139",
+      "boundary": {
+        "event_id": 79175,
+        "i": 643,
+        "a": 3,
+        "original_kind": 1,
+        "original_charge_s": 100.0,
+        "actual_cap_s": 21.150432630136493,
+        "kind": 1,
+        "value": 21.150432630136493
+      }
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 42,
+      "mode": "COMPLETE",
+      "limit_s": 83238.02038596991,
+      "last_complete_round": 43,
+      "complete_cost_s": 83238.02038596991,
+      "label_count": 28593,
+      "paid_count": 6509,
+      "input_sha256": "a8e9bba8514f840cbf1048afe58821e083785b92fa82a740994d1d950015db06",
+      "boundary": null
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 42,
+      "mode": "ALL",
+      "limit_s": 86460.00000000001,
+      "last_complete_round": 43,
+      "complete_cost_s": 83238.02038596991,
+      "label_count": 29068,
+      "paid_count": 6601,
+      "input_sha256": "b1f7799533aa31e300e3b97e1ad961fdf5387bf85cd8f0373f4cf7a8cce840c4",
+      "boundary": {
+        "event_id": 77935,
+        "i": 1255,
+        "a": 5,
+        "original_kind": 2,
+        "original_charge_s": 48.4761,
+        "actual_cap_s": 21.43521403010527,
+        "kind": 1,
+        "value": 21.43521403010527
+      }
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 99,
+      "mode": "COMPLETE",
+      "limit_s": 85773.36610437007,
+      "last_complete_round": 44,
+      "complete_cost_s": 85773.36610437007,
+      "label_count": 27537,
+      "paid_count": 6174,
+      "input_sha256": "d234f1e45268ac55dfa0f358de3c4ac417158df862647523a355a41bcd01002b",
+      "boundary": null
+    },
+    {
+      "arm": "CHEAP-100",
+      "seed": 99,
+      "mode": "ALL",
+      "limit_s": 86460.00000000001,
+      "last_complete_round": 44,
+      "complete_cost_s": 85773.36610437007,
+      "label_count": 27664,
+      "paid_count": 6194,
+      "input_sha256": "76eb9e9b5358680ab73bc33aafa871008ca44c4443b9e38eddfd6e8a8e7e77bc",
+      "boundary": {
+        "event_id": 77696,
+        "i": 1249,
+        "a": 4,
+        "original_kind": 2,
+        "original_charge_s": 19.4233,
+        "actual_cap_s": 6.745428629918024,
+        "kind": 1,
+        "value": 6.745428629918024
+      }
+    }
+  ]
+}

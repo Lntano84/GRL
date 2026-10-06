@@ -1,0 +1,36 @@
+{
+  "graph": "er1024_p001_seed20260930",
+  "seed": 0,
+  "k_low": 4,
+  "k_high": 32,
+  "diagnostic_common_config": "--preset-type=default --c-t=20 --t=1 --seed=0; extra c-t is only to make learned coarsener invoke the model at both k",
+  "aligned_edge_rows": 10472,
+  "alignment_errors": 0,
+  "raw_feature_rows_changed": 0,
+  "raw_feature_cells_changed": 0,
+  "raw_feature_cells_total": 335104,
+  "max_abs_raw_feature_delta": 0.0,
+  "normalized_feature_rows_changed": 0,
+  "normalized_feature_cells_changed": 0,
+  "max_abs_normalized_feature_delta": 0.0,
+  "predictions_changed": 0,
+  "max_abs_prediction_delta": 0.0,
+  "direction_checks": [
+    {
+      "k": 4,
+      "directed_arcs": 10472,
+      "undirected_pairs": 5236,
+      "reverse_missing": 0,
+      "reverse_raw_vector_mismatch_pairs": 0,
+      "reverse_max_prediction_delta": 0.0
+    },
+    {
+      "k": 32,
+      "directed_arcs": 10472,
+      "undirected_pairs": 5236,
+      "reverse_missing": 0,
+      "reverse_raw_vector_mismatch_pairs": 0,
+      "reverse_max_prediction_delta": 0.0
+    }
+  ]
+}

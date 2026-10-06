@@ -1,0 +1,99 @@
+========================================================================================================
+  TRAINING-CONTRIBUTION DIAGNOSTIC -- epoch 0 / earliest / mid / last, no new training
+========================================================================================================
+    train graphs     : ['interact__ia-crime-moreno', 'interact__ia-infect-dublin', 'interact__ia-infect-hyper']
+    validation graphs: ['interact__ia-enron-only', 'interact__rt-twitter-copen']   (reported separately, never pooled)
+    checkpoints      : [0, 500, 1000, 2000]   observations per graph: 20
+
+    seed 0: loaded snapshots from seed0.pt
+
+    seed 1: loaded snapshots from seed1.pt
+
+    seed 2: loaded snapshots from seed2.pt
+
+    seed 3: loaded snapshots from seed3.pt
+
+    seed 4: loaded snapshots from seed4.pt
+
+  REBUILD GATE: ALL PASS
+    seed 0 ep0    : train spread  105.54   val spread   34.22
+    seed 0 ep500  : train spread  105.81   val spread   34.55
+    seed 0 ep1000 : train spread  105.52   val spread   34.17
+    seed 0 ep2000 : train spread  105.70   val spread   34.01
+    seed 1 ep0    : train spread  103.98   val spread   32.15
+    seed 1 ep500  : train spread  105.79   val spread   34.80
+    seed 1 ep1000 : train spread  105.66   val spread   34.60
+    seed 1 ep2000 : train spread  104.62   val spread   34.11
+    seed 2 ep0    : train spread  104.74   val spread   32.58
+    seed 2 ep500  : train spread  105.37   val spread   34.37
+    seed 2 ep1000 : train spread  106.00   val spread   34.67
+    seed 2 ep2000 : train spread  105.60   val spread   33.92
+    seed 3 ep0    : train spread  105.48   val spread   33.16
+    seed 3 ep500  : train spread  106.12   val spread   34.44
+    seed 3 ep1000 : train spread  106.05   val spread   34.43
+    seed 3 ep2000 : train spread  105.40   val spread   34.55
+    seed 4 ep0    : train spread  104.92   val spread   32.55
+    seed 4 ep500  : train spread  105.68   val spread   34.52
+    seed 4 ep1000 : train spread  105.90   val spread   34.47
+    seed 4 ep2000 : train spread  105.66   val spread   34.47
+
+========================================================================================================
+  (1) FINAL SPREAD BY CHECKPOINT -- mean over 20 paired observations per graph
+========================================================================================================
+
+    TRAIN graphs
+       seed         ep0       ep500      ep1000      ep2000   ep2000-ep0   ep2000-ep500
+          0      105.54      105.81      105.52      105.70        +0.16          -0.12
+          1      103.98      105.79      105.66      104.62        +0.64          -1.18
+          2      104.74      105.37      106.00      105.60        +0.86          +0.23
+          3      105.48      106.12      106.05      105.40        -0.08          -0.71
+          4      104.92      105.68      105.90      105.66        +0.73          -0.02
+       mean      104.93      105.75      105.83      105.39        +0.46          -0.36
+
+    VALIDATION graphs
+       seed         ep0       ep500      ep1000      ep2000   ep2000-ep0   ep2000-ep500
+          0       34.22       34.55       34.17       34.01        -0.21          -0.54
+          1       32.15       34.80       34.60       34.11        +1.96          -0.69
+          2       32.58       34.37       34.67       33.92        +1.33          -0.45
+          3       33.16       34.44       34.43       34.55        +1.40          +0.11
+          4       32.55       34.52       34.47       34.47        +1.93          -0.04
+       mean       32.93       34.53       34.47       34.21        +1.28          -0.32
+
+========================================================================================================
+  (2) DID THE DECISIONS ACTUALLY CHANGE?  survey actions vs the untrained network
+========================================================================================================
+     seed  checkpoint  decisions changed  of total  train spread   val spread
+        0         ep0                  0       500        105.54        34.22
+        0       ep500                357       500        105.81        34.55
+        0      ep1000                413       500        105.52        34.17
+        0      ep2000                406       500        105.70        34.01
+        1         ep0                  0       500        103.98        32.15
+        1       ep500                499       500        105.79        34.80
+        1      ep1000                470       500        105.66        34.60
+        1      ep2000                458       500        104.62        34.11
+        2         ep0                  0       500        104.74        32.58
+        2       ep500                470       500        105.37        34.37
+        2      ep1000                472       500        106.00        34.67
+        2      ep2000                460       500        105.60        33.92
+        3         ep0                  0       500        105.48        33.16
+        3       ep500                491       500        106.12        34.44
+        3      ep1000                481       500        106.05        34.43
+        3      ep2000                439       500        105.40        34.55
+        4         ep0                  0       500        104.92        32.55
+        4       ep500                490       500        105.68        34.52
+        4      ep1000                488       500        105.90        34.47
+        4      ep2000                490       500        105.66        34.47
+
+    across all five seeds and all trained checkpoints: 6,884/7,500 decisions differ from the untrained network (91.8%)
+
+========================================================================================================
+  (3) RECOVERY GATE AND RAW CURVE
+========================================================================================================
+    seed 0: rebuilt=False  exact=n/a  selected epn/a
+    seed 1: rebuilt=False  exact=n/a  selected epn/a
+    seed 2: rebuilt=False  exact=n/a  selected epn/a
+    seed 3: rebuilt=False  exact=n/a  selected epn/a
+    seed 4: rebuilt=False  exact=n/a  selected epn/a
+
+    snapshots: C:\Users\windows\Desktop\im算法与基准阅读包\06_CCIM\results\geodqn_snapshots
+    artifact : C:\Users\windows\Desktop\im算法与基准阅读包\06_CCIM\results\xplore_geodqn_diagnostic.json

@@ -1,0 +1,112 @@
+{
+  "order_rng_seed": 20240118,
+  "arms": [
+    "random",
+    "degree",
+    "learned"
+  ],
+  "wall_seconds": 10.0,
+  "batch_size": 32,
+  "restarts": 6,
+  "checkpoints_seconds": [
+    1.0,
+    3.0,
+    5.0,
+    10.0
+  ],
+  "seeds": [
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209
+  ],
+  "groups": [
+    {
+      "seed": 200,
+      "order": [
+        "random",
+        "degree",
+        "learned"
+      ]
+    },
+    {
+      "seed": 201,
+      "order": [
+        "degree",
+        "random",
+        "learned"
+      ]
+    },
+    {
+      "seed": 202,
+      "order": [
+        "random",
+        "learned",
+        "degree"
+      ]
+    },
+    {
+      "seed": 203,
+      "order": [
+        "learned",
+        "random",
+        "degree"
+      ]
+    },
+    {
+      "seed": 204,
+      "order": [
+        "random",
+        "learned",
+        "degree"
+      ]
+    },
+    {
+      "seed": 205,
+      "order": [
+        "degree",
+        "learned",
+        "random"
+      ]
+    },
+    {
+      "seed": 206,
+      "order": [
+        "degree",
+        "random",
+        "learned"
+      ]
+    },
+    {
+      "seed": 207,
+      "order": [
+        "random",
+        "degree",
+        "learned"
+      ]
+    },
+    {
+      "seed": 208,
+      "order": [
+        "degree",
+        "learned",
+        "random"
+      ]
+    },
+    {
+      "seed": 209,
+      "order": [
+        "degree",
+        "random",
+        "learned"
+      ]
+    }
+  ],
+  "note": "run order was randomised and written to disk before any result existed; the comparison script reads this file and refuses to run without it"
+}

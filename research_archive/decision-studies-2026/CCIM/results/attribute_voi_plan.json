@@ -1,0 +1,56 @@
+{
+  "created_before_outcomes": "2026-09-25",
+  "purpose": "Minimum attribute-assisted global-survey value-of-information probe; last paid survey only",
+  "data": {
+    "contacts": "_data/highschool/HighSchool2013_proximity_net.csv.gz",
+    "contacts_sha256": "ECF4A90312C8D72057F72E936C366B470E63876DA7DB846300044795F045E2EA",
+    "metadata": "_data/highschool/HighSchool2013_metadata.txt",
+    "metadata_sha256": "B960986186214D2DEDE8496A6D5C270805D150B88A0B76419815F1B5CCCA4DD8",
+    "date_utc": "2013-12-03",
+    "date_rule": "Earliest 07:00-16:00 observation day; December 2 starts at 11:00",
+    "membership": "All 329 IDs in metadata, including two IDs with no contacts anywhere; class is the sole attribute",
+    "graph": "Simple undirected unweighted edge if at least one 20-second contact on the selected day; no duration threshold"
+  },
+  "state_generation": {
+    "free_queries": 5,
+    "random_paid_queries_before_decision": 4,
+    "last_paid_query": 1,
+    "global_action_scope": "Every registered member not yet queried",
+    "development_states": 20,
+    "confirmation_states": 80,
+    "state_randomness": "Independent SHA256-derived NumPy PCG64 streams indexed by split and state; no gain-based state selection"
+  },
+  "model": {
+    "connection_model": "Beta-Bernoulli, same-class and different-class blocks; Beta(1,1) prior in each block",
+    "observations": "Each queried member reveals all incident edges and incident nonedges; unordered pairs counted once; pairs between two unqueried members remain unknown",
+    "posterior_predictive": "Conditional independence of unknown pairs within two block probabilities; known present/absent pairs remain fixed",
+    "seed_solver": "Greedy k=10 on 100 sampled live-edge graphs of the posterior predictive network, IC p=0.1; all registered members eligible",
+    "planning": "For each candidate, 16 common posterior graph draws. Simulate that candidate's full-neighborhood survey, update posterior, rerun the same seed solver, and estimate final IC influence on the drawn graph minus the no-survey seed set. Drawn hidden graph is never passed to the solver except through that candidate's simulated survey result.",
+    "final_confirmation": "Independent 3000 live-edge samples of the held-out true graph per state, shared across methods and distinct from planning and seed-selection streams"
+  },
+  "comparators": [
+    "uniform_global_random",
+    "observed_degree_max",
+    "predicted_residual_degree_max",
+    "seed_related_uncertainty_max",
+    "residual_plus_seed_distance_proxy"
+  ],
+  "candidate_pool": "At most 8 distinct nodes, containing all cheap-rule choices, then filled uniformly without replacement from remaining globally legal nodes; random baseline itself samples from the full legal set",
+  "baseline_selection": "Choose B* by highest mean independent confirmation influence on 20 development states, fixed rule-order tie break; freeze before reading 80 confirmation outcomes",
+  "primary_comparison": "VOI planner minus B* mean paired full-graph final IC influence across 80 confirmation states",
+  "effect_threshold": 3.29,
+  "decision_rules": {
+    "continue": "Mean >= 3.29, unadjusted paired 95% CI lower > 0, and total CPU time <= 6 hours; requires later cost-matched and cross-graph work",
+    "stop_for_practical_gain": "Paired 95% CI upper < 3.29 on this configuration",
+    "uncertain": "Otherwise, including time cap, interval covering both zero and 3.29, or insufficient completed states"
+  },
+  "budgets": {
+    "planner_posterior_draws_per_candidate": 16,
+    "seed_solver_live_edge_samples": 100,
+    "planning_truth_ic_samples_per_draw": 100,
+    "confirmation_ic_samples_per_state": 3000,
+    "candidate_pool_max": 8,
+    "cpu_seconds_max": 21600
+  },
+  "interpretation": "One real static contact graph under an assumed survey protocol. Split units are simulated initial states on the same graph. This is not cross-graph generalization, observed real-world diffusion, or a faithful implementation of IM-META."
+}

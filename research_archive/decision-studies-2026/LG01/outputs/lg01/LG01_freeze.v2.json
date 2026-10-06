@@ -1,0 +1,256 @@
+{
+ "spec_sha256": "4afae3146d6a0ac3d38d2e62fa2f1b62bf99af991cc898a6024bca1fd43aaf38",
+ "split": {
+  "train": [
+   44,
+   26,
+   33,
+   22,
+   24,
+   43,
+   27,
+   19,
+   39,
+   41,
+   29,
+   18,
+   25,
+   28,
+   32,
+   37,
+   14,
+   17
+  ],
+  "validation": [
+   15,
+   38,
+   36,
+   34,
+   40,
+   21
+  ],
+  "test": [
+   31,
+   20,
+   30,
+   42,
+   23,
+   35,
+   16,
+   45
+  ]
+ },
+ "split_seed": 20261006,
+ "family_count": 32,
+ "state_counts": {
+  "train": 72,
+  "validation": 24,
+  "test": 32
+ },
+ "rhos": [
+  0.75,
+  1.1
+ ],
+ "faults": [
+  "D1_m0_2p",
+  "D2_all_1p"
+ ],
+ "nominal_protocol": [
+  120,
+  20,
+  20
+ ],
+ "scale": "large",
+ "tau": 6,
+ "kappa": 4,
+ "actions": [
+  "RINS",
+  "RC-EXPAND",
+  "LOSS-EXPAND",
+  "RANDOM-EXPAND",
+  "FULL"
+ ],
+ "expansion_fraction": 0.1,
+ "quota": "ceil separately in each of four strata",
+ "online_budget_s": 20.0,
+ "delivery_reserve_s": 0.2,
+ "max_wall_s": 20.2,
+ "LP_cap_s": 5.0,
+ "solver_seeds": {
+  "labels": [
+   0
+  ],
+  "test": [
+   0,
+   1
+  ]
+ },
+ "solver_threads": 1,
+ "label_runs": 480,
+ "test_runs_max": 192,
+ "network": {
+  "message_rounds": 2,
+  "hidden": 32,
+  "seed": 7,
+  "epochs": 50,
+  "patience": 5,
+  "delta": 0.02,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "batch_states": 1,
+  "training_cap_s": 1800
+ },
+ "model_training_total_cap_s": 3600,
+ "total_compute_cap_s": 43200,
+ "source_path": "C:\\Users\\windows\\Desktop\\im算法与基准阅读包\\08_LOT_REOPT\\stage06_neighborhood_content",
+ "source_commit": null,
+ "source_commit_note": "Source is not a Git checkout; exact file SHA-256 snapshots substitute for an unavailable commit.",
+ "code_hashes": {
+  "work/lg01/core.py": "662d5763fe0ef2093f249f3776729ffed1ffee0a52099096f60eb07869ab8a6e",
+  "work/lg01/features.py": "70d8d97b0a43d5ec5ab3763d9cdb379d5e350133a4c171b83bae323967b05225",
+  "work/lg01/models.py": "5073e98b680d96b52f41f5dec292fc105f8a0506a231125c46a24a0c33b5314e",
+  "work/lg01/preflight.py": "5b70b53b5838f9272653d606fb3a7b99e42a8b31748cf1321eb9e6c5f0f22a56",
+  "work/lg01/report.py": "316b2e2862b9be37a26330f35b77211df86340fd83180ecc2c85ade8993dc560",
+  "work/lg01/run.py": "978f313583391dd554498e379f5dc3fc716dc0ac02299e2dff236fef20bc32d9",
+  "work/lg01/source/lsp_checker.py": "9fcac480ae04a442000be8ba51f02e90c790264918d05f41c870bce44ca9ee72",
+  "work/lg01/source/lsp_gen.py": "13168f61fbccbe2755b7d13c71668fe27e0ba8766a2e7f6ec51065a393354161",
+  "work/lg01/source/lsp_highs.py": "5b7e11a355ee9ac80fda9b2374560e88eca66df8d5b8e208dd35c0d51b08ef3b",
+  "work/lg01/source/lsp_independent.py": "fffaf8bf14ff0fd252776bb0658f79e6a63c18d851118c17d38c19962c51d46f",
+  "work/lg01/source/lsp_model.py": "c844ee41e65d4c58a3e9328b5f3667d883cb5e1f82a4dd67a961eb385247b5f6",
+  "work/lg01/source/lsp_release.py": "ab134fbc04d25861ea20239f7957bbb872f527823bb1c28cb2dce6feb57e0bda",
+  "work/lg01/source/lsp_repair3.py": "7d965f807a75fea0824d9564085aea14bc6731d94b7afc958ab69f9291b57d80",
+  "work/lg01/source/lsp_select.py": "b1c1b4ce2566ea6ec3e75fc5d8e34473c1fe5c81e8afd9f1fad69a190b242cb0"
+ },
+ "dependencies": {
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "highspy": "1.15.1",
+  "scikit-learn": "1.7.2",
+  "torch": "2.8.0"
+ },
+ "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+ "platform": "Windows-11-10.0.26200-SP0",
+ "seed_overlap_audit": {
+  "overlap": [],
+  "examined": [
+   {
+    "path": "C:\\Users\\windows\\Desktop\\im算法与基准阅读包\\08_LOT_REOPT\\stage06_neighborhood_content\\stage06_nominal.json",
+    "sha256": "3dfa44625632c8f2a26cefecb2b52f530ac7ca76785a18815546f9bd55f02a16",
+    "families": [
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   {
+    "path": "C:\\Users\\windows\\Desktop\\im算法与基准阅读包\\08_LOT_REOPT\\stage06_neighborhood_content\\stage06_states.json",
+    "sha256": "a2381342f7e5aa57412efc2c3faa48d52ec83e30f4fac99500a008d589af3a0e",
+    "families": [
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   {
+    "path": "C:\\Users\\windows\\Desktop\\im算法与基准阅读包\\08_LOT_REOPT\\stage06_neighborhood_content\\stage10_nominal.json",
+    "sha256": "0e2e29a69e976cf5682342f4da1c486aa80086269086b590eba12b19632788ac",
+    "families": [
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13
+    ]
+   },
+   {
+    "path": "C:\\Users\\windows\\Desktop\\im算法与基准阅读包\\08_LOT_REOPT\\stage06_neighborhood_content\\stage10_states.json",
+    "sha256": "3a02767cf8d0cced45cbf737709354be1039a3ae37d5fe10c2d7a28d50468b7c",
+    "families": [
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13
+    ]
+   },
+   {
+    "path": "C:\\Users\\windows\\Desktop\\im算法与基准阅读包\\08_LOT_REOPT\\stage06_neighborhood_content\\stage15_states.json",
+    "sha256": "0aaaaee248606cc906bde2339384c5b421bbc094e27e462b9aa7ea4ad88a16ae",
+    "families": [
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   {
+    "path": "C:\\Users\\windows\\Desktop\\im算法与基准阅读包\\08_LOT_REOPT\\stage06_neighborhood_content\\stage19_nominal_plus.json",
+    "sha256": "eca1482bc37f5d85011290a229207ff8d8a68d3722185d677aea420ad0725837",
+    "families": [
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   {
+    "path": "C:\\Users\\windows\\Desktop\\im算法与基准阅读包\\08_LOT_REOPT\\stage06_neighborhood_content\\stage19_states.json",
+    "sha256": "773249171aee8922916139d50ce7cb2c9bcea218e6e8c07e53833c21801f166a",
+    "families": [
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   {
+    "path": "C:\\Users\\windows\\Desktop\\im算法与基准阅读包\\08_LOT_REOPT\\stage06_neighborhood_content\\stage20_nominal_bar.json",
+    "sha256": "731a9ac1f9edfae9328297d5c6818fc90e632b202db4e58a0b9fb3d86f93029c",
+    "families": [
+     2,
+     3,
+     4,
+     5
+    ]
+   },
+   {
+    "path": "C:\\Users\\windows\\Desktop\\im算法与基准阅读包\\08_LOT_REOPT\\stage06_neighborhood_content\\stage20_states.json",
+    "sha256": "6f07d6f39edfea75e48925b96c06dfe1410dc73d15b58f466932cd0d945f5d79",
+    "families": [
+     2,
+     3,
+     4,
+     5
+    ]
+   }
+  ]
+ },
+ "bootstrap": {
+  "draws": 20000,
+  "seed": 20261006
+ },
+ "decisions": {
+  "main_gain": 0.02,
+  "positive_families": 6,
+  "inference_p95_s": 0.1,
+  "cheap_margin": 0.005,
+  "oracle_space": 0.02
+ },
+ "engineering_notes": [
+  "Complete far Y fixes checked independently. State build timed online.",
+  "FULL fixed policy skips unneeded relaxed LP/graph. Others pay only their required inputs.",
+  "Interrupted solver reserves are charged once in full; delivered prevalidated reference is retained, timing unqualified.",
+  "Tree early_stopping=False: fixed 100 iterations, no implicit validation split.",
+  "Filesystem-only amendment v2: canonical state IDs contain |, encoded as %7C in Windows filenames. First completed NOM-160 retained; no action labels/test outcomes existed before this fix. No seed, action, model, budget or decision threshold changed."
+ ],
+ "created_utc_unix": 1791258741.3871562,
+ "amendment": "LG01_path_amendment.json"
+}

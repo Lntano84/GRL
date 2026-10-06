@@ -1,0 +1,288 @@
+{
+  "config_id": "n6_m6_s0_HET",
+  "n": 6,
+  "m": 6,
+  "s": 0,
+  "model": "HET",
+  "graph_seed": 60600,
+  "prob_seed": 121200,
+  "edges": [
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      4,
+      5
+    ]
+  ],
+  "probs": [
+    0.2,
+    0.8,
+    0.5,
+    0.8,
+    0.2,
+    0.5
+  ],
+  "eps": 6e-10,
+  "V3_G": 3.1056,
+  "V3_R": 3.208,
+  "V3_OPT": 3.208,
+  "d_G": 0.10240000000000027,
+  "d_R": 0.0,
+  "d_robust": 0.0,
+  "d_G_over_n": 0.017066666666666713,
+  "d_R_over_n": 0.0,
+  "d_robust_over_n": 0.0,
+  "G_first_action": [
+    [
+      0,
+      5
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "R_first_action": [
+    [
+      0,
+      2
+    ]
+  ],
+  "OPT_first_action": [
+    [
+      0,
+      2
+    ]
+  ],
+  "A_R": [
+    [
+      [
+        0,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        2
+      ]
+    ]
+  ],
+  "n_A_R": 2,
+  "R_best_lookahead": 3.208,
+  "max_Q3_star_over_A_R": 3.208,
+  "OPT_root_value_check": 3.208,
+  "n_matchings_root": 13,
+  "first_action_table": [
+    {
+      "action": [],
+      "greedy_score": 0.0,
+      "lookahead_score": 3.06,
+      "Q3_star": 3.06
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ]
+      ],
+      "greedy_score": 0.4,
+      "lookahead_score": 3.208,
+      "Q3_star": 3.208
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 2.7696,
+      "Q3_star": 2.7696
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "greedy_score": 1.4,
+      "lookahead_score": 3.144,
+      "Q3_star": 3.144
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ]
+      ],
+      "greedy_score": 1.6,
+      "lookahead_score": 3.0832000000000006,
+      "Q3_star": 3.1120000000000005
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "greedy_score": 2.6,
+      "lookahead_score": 3.1056,
+      "Q3_star": 3.108
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.081600000000001,
+      "Q3_star": 3.1200000000000006
+    },
+    {
+      "action": [
+        [
+          1,
+          2
+        ]
+      ],
+      "greedy_score": 1.0,
+      "lookahead_score": 3.208,
+      "Q3_star": 3.208
+    },
+    {
+      "action": [
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.144,
+      "Q3_star": 3.144
+    },
+    {
+      "action": [
+        [
+          1,
+          5
+        ]
+      ],
+      "greedy_score": 1.6,
+      "lookahead_score": 2.776,
+      "Q3_star": 2.776
+    },
+    {
+      "action": [
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 2.7744000000000004,
+      "Q3_star": 2.7840000000000003
+    },
+    {
+      "action": [
+        [
+          2,
+          4
+        ]
+      ],
+      "greedy_score": 0.4,
+      "lookahead_score": 3.104,
+      "Q3_star": 3.184
+    },
+    {
+      "action": [
+        [
+          4,
+          5
+        ]
+      ],
+      "greedy_score": 1.0,
+      "lookahead_score": 3.08,
+      "Q3_star": 3.112
+    }
+  ],
+  "timing_seconds": {
+    "OPT_seconds": 0.0018234999988635536,
+    "G_seconds": 0.0001171000003523659,
+    "R_seconds": 0.0007158999978855718
+  },
+  "cache_sizes": {
+    "OPT": {
+      "G_states": 0,
+      "OPT_states": 87,
+      "R_states": 0,
+      "matching_enumerations": 61,
+      "transitions": 1264
+    },
+    "G": {
+      "G_states": 7,
+      "OPT_states": 0,
+      "R_states": 0,
+      "matching_enumerations": 5,
+      "transitions": 18
+    },
+    "R": {
+      "G_states": 56,
+      "OPT_states": 0,
+      "R_states": 6,
+      "matching_enumerations": 42,
+      "transitions": 317
+    }
+  },
+  "timeout": false,
+  "wall_seconds": 0.003162900000461377
+}

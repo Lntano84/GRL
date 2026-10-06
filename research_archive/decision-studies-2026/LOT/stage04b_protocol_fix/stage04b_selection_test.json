@@ -1,0 +1,108 @@
+[
+  {
+    "case": "A no incumbent",
+    "repair_cost": 4.0,
+    "solver_present": false,
+    "solver_cost": null,
+    "selected_cost": 4.0,
+    "selected_source": "repair",
+    "reason": "no_incumbent",
+    "n_errors": 0,
+    "errors": [],
+    "expect_source": "repair",
+    "expect_reason": "no_incumbent",
+    "expect_errors": 0,
+    "passed": true
+  },
+  {
+    "case": "B incumbent worse",
+    "repair_cost": 4.0,
+    "solver_present": true,
+    "solver_cost": 90.0,
+    "selected_cost": 4.0,
+    "selected_source": "repair",
+    "reason": "incumbent_worse_or_tied",
+    "n_errors": 0,
+    "errors": [],
+    "expect_source": "repair",
+    "expect_reason": "incumbent_worse_or_tied",
+    "expect_errors": 0,
+    "passed": true
+  },
+  {
+    "case": "C incumbent better",
+    "repair_cost": 62.0,
+    "solver_present": true,
+    "solver_cost": 4.0,
+    "selected_cost": 4.0,
+    "selected_source": "solver",
+    "reason": "incumbent_better",
+    "n_errors": 0,
+    "errors": [],
+    "expect_source": "solver",
+    "expect_reason": "incumbent_better",
+    "expect_errors": 0,
+    "passed": true
+  },
+  {
+    "case": "D invalid incumbent (model violation)",
+    "repair_cost": 4.0,
+    "solver_present": true,
+    "solver_cost": 70.0,
+    "selected_cost": 4.0,
+    "selected_source": "repair",
+    "reason": "incumbent_worse_or_tied",
+    "n_errors": 1,
+    "errors": [
+      "INVALID INCUMBENT (failed: model): [\"violates the original model: ['activation']\"]"
+    ],
+    "expect_source": "repair",
+    "expect_reason": "incumbent_worse_or_tied",
+    "expect_errors": 1,
+    "passed": true
+  },
+  {
+    "case": "E solver claims infeasible but repair is a witness",
+    "repair_cost": 4.0,
+    "solver_present": false,
+    "solver_cost": null,
+    "selected_cost": 4.0,
+    "selected_source": "repair",
+    "reason": "no_incumbent",
+    "n_errors": 1,
+    "errors": [
+      "solver reported INFEASIBLE while the validated repaired plan is a feasible witness for the same subproblem"
+    ],
+    "expect_source": "repair",
+    "expect_reason": "no_incumbent",
+    "expect_errors": 1,
+    "passed": true
+  },
+  {
+    "case": "F over-kappa candidate is rejected",
+    "candidate_model_feasible": true,
+    "candidate_flips_vs_reference": 2,
+    "kappa": 1.0,
+    "candidate_kappa_ok": false,
+    "candidate_fixing_ok": true,
+    "selected_source": "repair",
+    "n_errors": 1,
+    "errors": [
+      "INVALID INCUMBENT (failed: kappa): ['stability budget exceeded: 2 flips > kappa=1']"
+    ],
+    "passed": true
+  },
+  {
+    "case": "G fixing-violating candidate is rejected",
+    "candidate_model_feasible": true,
+    "candidate_flips_vs_reference": 2,
+    "candidate_kappa_ok": true,
+    "candidate_fixing_ok": false,
+    "selected_source": "repair",
+    "n_errors": 1,
+    "errors": [
+      "INVALID INCUMBENT (failed: fixings): [\"fixing conditions violated: ['Y[0,0,2]=0 wanted 1', 'Y[1,0,2]=0 wanted 1']\"]"
+    ],
+    "passed": true
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "g": {
+    "A": 0.0,
+    "AB": 0.024944219320312724,
+    "RECOVERY": 0.013306518598176597,
+    "END": 2.1834212858060213e-05
+  },
+  "coverage_R": 0.533450994288715,
+  "recovery_vs_end_per_instance": {
+    "large_rho0.75_s2": 0.009374202491128764,
+    "large_rho0.75_s3": 0.005512761707196002,
+    "large_rho0.75_s4": -0.0033895428262184835,
+    "large_rho0.75_s5": 0.0010261080972636207,
+    "large_rho1.10_s2": 0.013944463473659085,
+    "large_rho1.10_s3": 0.01817623053299921,
+    "large_rho1.10_s4": 0.002359228055966181,
+    "large_rho1.10_s5": 0.0592740235505539
+  },
+  "recovery_vs_end_positive": 7,
+  "proven_optimal": {
+    "A": 0,
+    "AB": 0,
+    "RECOVERY": 0,
+    "END": 0
+  },
+  "meta": {
+    "budget_s": 20.0,
+    "methods": [
+      "A",
+      "AB",
+      "RECOVERY",
+      "END"
+    ],
+    "seeds": [
+      0,
+      1
+    ],
+    "n_runs": 128,
+    "shuffle_seed": 20261004,
+    "scope": "16 development states, stage 11 instances",
+    "rule": "RECOVERY releases Z_{i,j,r_j} with r_j the first period with positive capacity after the outage (known at fault time); END releases Z_{i,j,tau}",
+    "note": "no stage 12/13 plan pool, no Q, no change-position guidance; every run starts from its own LP solution"
+  }
+}

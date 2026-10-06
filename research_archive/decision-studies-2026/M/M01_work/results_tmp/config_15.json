@@ -1,0 +1,663 @@
+{
+  "config_id": "n6_m10_s3_HET",
+  "n": 6,
+  "m": 10,
+  "s": 3,
+  "model": "HET",
+  "graph_seed": 61003,
+  "prob_seed": 122003,
+  "edges": [
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ]
+  ],
+  "probs": [
+    0.2,
+    0.8,
+    0.8,
+    0.5,
+    0.2,
+    0.8,
+    0.5,
+    0.5,
+    0.2,
+    0.2
+  ],
+  "eps": 6e-10,
+  "V3_G": 3.8564800000000004,
+  "V3_R": 4.076,
+  "V3_OPT": 4.076,
+  "d_G": 0.21951999999999927,
+  "d_R": 0.0,
+  "d_robust": 0.0,
+  "d_G_over_n": 0.036586666666666545,
+  "d_R_over_n": 0.0,
+  "d_robust_over_n": 0.0,
+  "G_first_action": [
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      5
+    ]
+  ],
+  "R_first_action": [
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "OPT_first_action": [
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "A_R": [
+    [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ]
+    ]
+  ],
+  "n_A_R": 1,
+  "R_best_lookahead": 4.0472,
+  "max_Q3_star_over_A_R": 4.076,
+  "OPT_root_value_check": 4.076,
+  "n_matchings_root": 36,
+  "first_action_table": [
+    {
+      "action": [],
+      "greedy_score": 0.0,
+      "lookahead_score": 3.7040000000000006,
+      "Q3_star": 3.8840000000000003
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ]
+      ],
+      "greedy_score": 0.4,
+      "lookahead_score": 3.7888000000000006,
+      "Q3_star": 3.9328000000000007
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "greedy_score": 0.8,
+      "lookahead_score": 3.9334400000000014,
+      "Q3_star": 4.033280000000001
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "greedy_score": 1.2000000000000002,
+      "lookahead_score": 3.813760000000002,
+      "Q3_star": 3.893632000000002
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.8412800000000007,
+      "Q3_star": 3.8720000000000003
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 2.4000000000000004,
+      "lookahead_score": 3.8918400000000006,
+      "Q3_star": 3.8969600000000004
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 0.8,
+      "lookahead_score": 3.957760000000001,
+      "Q3_star": 4.011520000000001
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "greedy_score": 0.8,
+      "lookahead_score": 3.708800000000001,
+      "Q3_star": 3.824000000000001
+    },
+    {
+      "action": [
+        [
+          0,
+          3
+        ]
+      ],
+      "greedy_score": 1.6,
+      "lookahead_score": 3.8496,
+      "Q3_star": 3.9896000000000003
+    },
+    {
+      "action": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "greedy_score": 2.6,
+      "lookahead_score": 3.9052000000000002,
+      "Q3_star": 3.9692000000000003
+    },
+    {
+      "action": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.996000000000001,
+      "Q3_star": 3.996000000000001
+    },
+    {
+      "action": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "greedy_score": 3.0,
+      "lookahead_score": 3.9496000000000007,
+      "Q3_star": 3.9496000000000007
+    },
+    {
+      "action": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "greedy_score": 3.2,
+      "lookahead_score": 3.8564800000000004,
+      "Q3_star": 3.8628800000000005
+    },
+    {
+      "action": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "greedy_score": 2.6,
+      "lookahead_score": 3.9248000000000003,
+      "Q3_star": 3.9304
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ]
+      ],
+      "greedy_score": 1.6,
+      "lookahead_score": 3.896,
+      "Q3_star": 3.9224
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "greedy_score": 2.6,
+      "lookahead_score": 3.9160000000000004,
+      "Q3_star": 3.9292000000000002
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 3.0,
+      "lookahead_score": 3.9168000000000007,
+      "Q3_star": 3.9248000000000007
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.992160000000001,
+      "Q3_star": 3.9954880000000013
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "greedy_score": 3.0,
+      "lookahead_score": 3.91312,
+      "Q3_star": 3.9173440000000004
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "greedy_score": 2.6,
+      "lookahead_score": 3.9128000000000003,
+      "Q3_star": 3.9272000000000005
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.9808000000000012,
+      "Q3_star": 3.9968000000000012
+    },
+    {
+      "action": [
+        [
+          1,
+          2
+        ]
+      ],
+      "greedy_score": 1.0,
+      "lookahead_score": 3.9800000000000004,
+      "Q3_star": 4.03
+    },
+    {
+      "action": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 1.4,
+      "lookahead_score": 4.035200000000001,
+      "Q3_star": 4.0624
+    },
+    {
+      "action": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "greedy_score": 1.4,
+      "lookahead_score": 3.8640000000000003,
+      "Q3_star": 3.9040000000000004
+    },
+    {
+      "action": [
+        [
+          1,
+          4
+        ]
+      ],
+      "greedy_score": 0.4,
+      "lookahead_score": 3.884000000000001,
+      "Q3_star": 4.015200000000001
+    },
+    {
+      "action": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "greedy_score": 1.4,
+      "lookahead_score": 4.0472,
+      "Q3_star": 4.076
+    },
+    {
+      "action": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "greedy_score": 1.4,
+      "lookahead_score": 3.964000000000001,
+      "Q3_star": 4.0056
+    },
+    {
+      "action": [
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "greedy_score": 0.8,
+      "lookahead_score": 3.7952000000000012,
+      "Q3_star": 3.900160000000001
+    },
+    {
+      "action": [
+        [
+          1,
+          5
+        ]
+      ],
+      "greedy_score": 1.6,
+      "lookahead_score": 3.7688,
+      "Q3_star": 3.8264000000000005
+    },
+    {
+      "action": [
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "greedy_score": 2.6,
+      "lookahead_score": 3.8664,
+      "Q3_star": 3.8920000000000003
+    },
+    {
+      "action": [
+        [
+          1,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.8968000000000007,
+      "Q3_star": 3.903200000000001
+    },
+    {
+      "action": [
+        [
+          2,
+          3
+        ]
+      ],
+      "greedy_score": 1.0,
+      "lookahead_score": 3.9640000000000004,
+      "Q3_star": 4.0360000000000005
+    },
+    {
+      "action": [
+        [
+          2,
+          5
+        ]
+      ],
+      "greedy_score": 1.0,
+      "lookahead_score": 3.8520000000000003,
+      "Q3_star": 3.968
+    },
+    {
+      "action": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 1.4,
+      "lookahead_score": 3.9360000000000004,
+      "Q3_star": 3.9744
+    },
+    {
+      "action": [
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 0.4,
+      "lookahead_score": 3.9232000000000005,
+      "Q3_star": 3.9776000000000007
+    },
+    {
+      "action": [
+        [
+          3,
+          5
+        ]
+      ],
+      "greedy_score": 0.4,
+      "lookahead_score": 3.6432000000000007,
+      "Q3_star": 3.795200000000001
+    }
+  ],
+  "timing_seconds": {
+    "OPT_seconds": 0.028040999997756444,
+    "G_seconds": 0.00021049999850220047,
+    "R_seconds": 0.005183200002647936
+  },
+  "cache_sizes": {
+    "OPT": {
+      "G_states": 0,
+      "OPT_states": 549,
+      "R_states": 0,
+      "matching_enumerations": 440,
+      "transitions": 24144
+    },
+    "G": {
+      "G_states": 10,
+      "OPT_states": 0,
+      "R_states": 0,
+      "matching_enumerations": 10,
+      "transitions": 36
+    },
+    "R": {
+      "G_states": 232,
+      "OPT_states": 0,
+      "R_states": 11,
+      "matching_enumerations": 187,
+      "transitions": 1441
+    }
+  },
+  "timeout": false,
+  "wall_seconds": 0.037128299998585135
+}

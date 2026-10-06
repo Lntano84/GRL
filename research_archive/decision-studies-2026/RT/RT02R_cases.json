@@ -1,0 +1,123 @@
+{
+  "task": "RT-02R -- corrected controlled completion-feedback experiment",
+  "supersedes": "RT02_report.md",
+  "verdict": "STOP expanding the '7-day recent group-wise KM' scheme on this dataset",
+  "verdict_reason": "KM does not beat HISTORY in 0/3 windows, the direction is consistent, and the gap is concentrated on fallback rows while the group-level KM rows contribute ~0; this is a group-sample-size issue, not a scenario-difficulty issue, so raising the censoring share would not help",
+  "protocol_fixes": {
+    "frozen_clock": {
+      "t0": 494319.0,
+      "t1": 6451192.0,
+      "note": "the superseded run recomputed t0 after the class-A filter; earliest class-A start is 542323, i.e. the first 0.56 days of the frozen window contain no class-A job"
+    },
+    "fallback_rules_separated": {
+      "sparse_group": "use that METHOD's global estimate (KM -> global KM)",
+      "median_unidentifiable": "use that JOB's HISTORY prediction",
+      "superseded_bug": "both cases fell through to the history global median"
+    },
+    "blindness_check": "all three windows, inputs AND predictions, abort on mismatch"
+  },
+  "diagnostics": {
+    "0.4": {
+      "T": 2877068.2,
+      "n_recent": 72406,
+      "n_test": 22570,
+      "n_history": 214892,
+      "censored_recent": 881,
+      "censored_share": 0.01216749993094495,
+      "gl_hist": 696.0,
+      "gl_rec": 696.0,
+      "gl_km": 728.0,
+      "gl_full": 728.5,
+      "km_returns_global_km_distinct_from_gl_hist": true
+    },
+    "0.6": {
+      "T": 4068442.8,
+      "n_recent": 82430,
+      "n_test": 24103,
+      "n_history": 372694,
+      "censored_recent": 895,
+      "censored_share": 0.010857697440252336,
+      "gl_hist": 651.0,
+      "gl_rec": 555.0,
+      "gl_km": 574.0,
+      "gl_full": 574.0,
+      "km_returns_global_km_distinct_from_gl_hist": true
+    },
+    "0.8": {
+      "T": 5259817.4,
+      "n_recent": 95211,
+      "n_test": 30328,
+      "n_history": 544901,
+      "censored_recent": 781,
+      "censored_share": 0.00820283370618941,
+      "gl_hist": 683.0,
+      "gl_rec": 754.0,
+      "gl_km": 769.0,
+      "gl_full": 768.0,
+      "km_returns_global_km_distinct_from_gl_hist": true
+    }
+  },
+  "scores": {
+    "0.4": {
+      "scores": {
+        "HISTORY": 1.537888967619423,
+        "RECENT": 1.5944973452421334,
+        "KM": 1.5908248369254092,
+        "FULL_LABEL": 1.5907669692185118
+      },
+      "km_vs_min_relative": -0.03442112559525568
+    },
+    "0.6": {
+      "scores": {
+        "HISTORY": 1.3550360646294421,
+        "RECENT": 1.6782661770865557,
+        "KM": 1.6757577920251607,
+        "FULL_LABEL": 1.6757766260620652
+      },
+      "km_vs_min_relative": -0.23668870207039502
+    },
+    "0.8": {
+      "scores": {
+        "HISTORY": 1.1769731900418978,
+        "RECENT": 1.4828921797963,
+        "KM": 1.4797630048435975,
+        "FULL_LABEL": 1.4799707827305368
+      },
+      "km_vs_min_relative": -0.25726143752766445
+    }
+  },
+  "decomposition": {
+    "0.4": {
+      "total": 0.05293586930598611,
+      "fallback_contribution": 0.05378461042448028,
+      "group_km_contribution": -0.0008487411184941694,
+      "n_fallback": 19800,
+      "n_group_km": 2770
+    },
+    "0.6": {
+      "total": 0.3207217273957187,
+      "fallback_contribution": 0.31931235944199343,
+      "group_km_contribution": 0.001409367953725298,
+      "n_fallback": 21397,
+      "n_group_km": 2706
+    },
+    "0.8": {
+      "total": 0.30278981480169975,
+      "fallback_contribution": 0.3030399804489674,
+      "group_km_contribution": -0.000250165647267655,
+      "n_fallback": 27672,
+      "n_group_km": 2656
+    }
+  },
+  "retracted_from_RT02": [
+    "'structural inability to answer' / 'no power' -- censoring was NOT zero (881/895/781 records) and RECENT and FULL-LABEL do not see identical labels",
+    "'the small censoring share explains the poor result' -- the gap is almost entirely a fallback artefact, not a censoring effect",
+    "forcing the result into interpretation category 4 ('differences small or inconsistent') -- HISTORY beats KM in all three windows, consistently"
+  ],
+  "not_concluded": [
+    "that the online completion-feedback problem is worthless",
+    "any information-value upper bound",
+    "any scheduling benefit"
+  ],
+  "per_job_outputs": "in rt02r_results.json under 'per_job': predictions, fallback reason and error for every test job, for all four methods"
+}

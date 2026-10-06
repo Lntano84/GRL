@@ -1,0 +1,97 @@
+{
+  "read_sites": [
+    {
+      "site": "limeqo.py:89",
+      "cap": "timeout_tolerance = min(alpha*best, beta*pred)",
+      "revealed": "x >= cap",
+      "implies_x_ge_b": "only if cap >= b",
+      "verdict": "VIOLATION when cap < b"
+    },
+    {
+      "site": "limeqo_plus.py:114",
+      "cap": "same as above",
+      "revealed": "x >= cap",
+      "implies_x_ge_b": "only if cap >= b",
+      "verdict": "VIOLATION when cap < b"
+    },
+    {
+      "site": "limeqo.py:114",
+      "cap": "current best b (random fallback)",
+      "revealed": "x >= b",
+      "implies_x_ge_b": "yes",
+      "verdict": "LEGAL"
+    },
+    {
+      "site": "limeqo_plus.py:139",
+      "cap": "current best b (random fallback)",
+      "revealed": "x >= b",
+      "implies_x_ge_b": "yes",
+      "verdict": "LEGAL"
+    },
+    {
+      "site": "greedy.py:74",
+      "cap": "current best b",
+      "revealed": "x >= b",
+      "implies_x_ge_b": "yes",
+      "verdict": "LEGAL"
+    },
+    {
+      "site": "random.py:60",
+      "cap": "current best b",
+      "revealed": "x >= b",
+      "implies_x_ge_b": "yes",
+      "verdict": "LEGAL"
+    },
+    {
+      "site": "qo_advisor.py:68",
+      "cap": "current best b",
+      "revealed": "x >= b",
+      "implies_x_ge_b": "yes",
+      "verdict": "LEGAL"
+    }
+  ],
+  "snapshot": {
+    "keys_only_equal": true,
+    "value_snapshot_equal": false,
+    "pass": true
+  },
+  "check4": {
+    "check4": {
+      "feedback_identical": true,
+      "next_action_A": [
+        0,
+        1
+      ],
+      "next_action_B": [
+        0,
+        1
+      ],
+      "stop_A": true,
+      "stop_B": true,
+      "state_identical": true,
+      "pass": true
+    },
+    "privileged_stop_demo": [
+      {
+        "world": "W_same_hidden_optimum",
+        "opt_time": 100.0,
+        "min_observed_sum": 200.0,
+        "continue": true
+      },
+      {
+        "world": "W_different_hidden_optimum",
+        "opt_time": 260.0,
+        "min_observed_sum": 200.0,
+        "continue": false
+      }
+    ],
+    "privileged_stop_exposed": true
+  },
+  "bounds": {
+    "bound_after_caps_10_then_2": 10,
+    "bound_kept_max": true,
+    "prune_legal_when_L_ge_b": true,
+    "prune_refused_when_L_below_b": true
+  },
+  "all_pass": true
+}

@@ -1,0 +1,33 @@
+{
+  "name": "FA02-END",
+  "budget_s": 86460.00000000001,
+  "arms": [
+    "FIXED-100",
+    "RANDOM-100",
+    "CHEAP-100"
+  ],
+  "seeds": [
+    7,
+    42,
+    99
+  ],
+  "modes": [
+    "COMPLETE",
+    "ALL"
+  ],
+  "terminal_round_seed": 0,
+  "model": {
+    "n_estimators": 100,
+    "max_features": "sqrt",
+    "max_depth": 2147483648,
+    "min_samples_split": 2,
+    "bootstrap": true,
+    "n_jobs": 1
+  },
+  "fits": 18,
+  "no_new_acquisition": true,
+  "development_only": true,
+  "continuation": "ALL active mean >=5% better than each control; >=2/3 paired signs each",
+  "closure": "any control ALL mean <=1.02*active mean",
+  "wall_limit_s": 3600
+}

@@ -1,0 +1,87 @@
+﻿artifact,field,source_or_update,author_model_input_used,description
+candidate_decisions.jsonl.gz,candidate_id,candidate creation,no,monotonic instrumentation ID assigned when QueueCache.insert creates an actual candidate
+candidate_decisions.jsonl.gz,full_block_key,audit key only,no,complete native block identity for this request
+candidate_decisions.jsonl.gz,chunk_id,audit key only,no,chunk identifier within the complete block key
+candidate_decisions.jsonl.gz,chunk_key,audit key only,no,"full native (block, chunk) key"
+candidate_decisions.jsonl.gz,candidate_created_request_sequence,audit/time join,no,trace request sequence at QueueCache.insert
+candidate_decisions.jsonl.gz,candidate_created_physical_time_s,candidate creation,no,author physical timestamp at candidate insertion
+candidate_decisions.jsonl.gz,candidate_created_trace_elapsed_s,candidate creation,no,physical time relative to trace start
+candidate_decisions.jsonl.gz,candidate_creation_window_index,candidate creation,no,completed author statistics window count before this GET
+candidate_decisions.jsonl.gz,candidate_source,candidate provenance,no,"demand miss from sim_cache.run_get, prefetch only with explicit prefetch metadata, otherwise unknown"
+candidate_decisions.jsonl.gz,candidate_source_basis,candidate provenance,no,code path or explicit metadata that established source
+candidate_decisions.jsonl.gz,candidate_source_metadata_field_present,candidate provenance,no,whether metadata explicitly carried a prefetch flag
+candidate_decisions.jsonl.gz,candidate_metadata_fields_present,candidate provenance,no,metadata key names passed to QueueCache.insert; values such as Episode are not exported
+candidate_decisions.jsonl.gz,candidate_metadata_size,candidate creation,no,author metadata size used by insertion path
+candidate_decisions.jsonl.gz,candidate_metadata_acc_chunk_range,candidate creation,no,author request chunk range attached to candidate
+candidate_decisions.jsonl.gz,candidate_metadata_promotion,candidate provenance,no,author promotion flag when supplied
+candidate_decisions.jsonl.gz,candidate_metadata_at_episode_start,candidate provenance,no,author episode-start metadata when supplied
+candidate_decisions.jsonl.gz,candidate_model_input_vector,author input; verified equal to scorer input here,yes: see exact ordered feature names in BC06_feature_schema.json,feature vector stored by QueueCache.insert before scoring
+candidate_decisions.jsonl.gz,candidate_request_context_sequence,audit join,no,GET context table sequence for candidate creation
+candidate_decisions.jsonl.gz,candidate_key_history_at_request_start,new legal features,no,"new GET-count, gap, and actual rejection history frozen before candidate request"
+candidate_decisions.jsonl.gz,candidate_current_request_chunk_count,current request feature,no,current GET width; recorded separately from historic features
+candidate_decisions.jsonl.gz,decision_batch_id,audit/execution context,no,instrumentation ID for one actual NewMLAP.batchAccept call
+candidate_decisions.jsonl.gz,decision_batch_position,audit/execution context,no,candidate order within author batch
+candidate_decisions.jsonl.gz,decision_batch_size,audit/execution context,no,number of actual candidates scored in this author batch
+candidate_decisions.jsonl.gz,actual_decision_request_sequence,audit/time join,no,trace request sequence at author scoring call
+candidate_decisions.jsonl.gz,actual_decision_physical_time_s,decision time,no,physical timestamp passed to NewMLAP.batchAccept
+candidate_decisions.jsonl.gz,actual_decision_trace_elapsed_s,decision time,no,decision physical time relative to trace start
+candidate_decisions.jsonl.gz,actual_decision_window_index,decision time,no,author completed-window count at decision request start
+candidate_decisions.jsonl.gz,candidate_to_decision_delay_s,execution timing,no,physical delay from insert to batch scoring
+candidate_decisions.jsonl.gz,author_model_input_vector,existing author input,yes: see exact ordered feature names in BC06_feature_schema.json,exact ordered numeric vector passed to the author booster
+candidate_decisions.jsonl.gz,author_model_score,author model output,no,unmodified author booster prediction for this candidate
+candidate_decisions.jsonl.gz,threshold,author decision parameter,no,"actual threshold used at this decision, including HIGH-CONTROL evaluation schedule"
+candidate_decisions.jsonl.gz,author_decision_accept,"observed action, not an outcome label",no,author output decision; equals score > threshold
+candidate_decisions.jsonl.gz,author_decision_rule,decision rule,no,author comparator used by LearnedAP.batchAccept
+candidate_decisions.jsonl.gz,legal_key_history_at_decision_request_start,new legal features,no,new per-key GET count/gap and actual rejection count/gap frozen before this GET
+candidate_decisions.jsonl.gz,decision_request_context_sequence,audit join,no,GET context table sequence at the actual decision
+candidate_decisions.jsonl.gz,decision_current_request_chunk_count,current request feature,no,current GET width at the actual decision
+get_request_contexts.jsonl.gz,request_sequence,audit key,no,trace request sequence after author pre-request checkpoint handling
+get_request_contexts.jsonl.gz,physical_time_s,decision time,no,physical timestamp of the GET or check-only call
+get_request_contexts.jsonl.gz,trace_elapsed_s,decision time,no,physical time relative to trace origin
+get_request_contexts.jsonl.gz,window_index_at_request_start,request context,no,number of fully ended author windows before this GET
+get_request_contexts.jsonl.gz,operation,current request,no,"author operation, always GET in this context table"
+get_request_contexts.jsonl.gz,current_request_chunk_count,current request feature,no,requested chunks in this GET
+get_request_contexts.jsonl.gz,current_request_chunk_start,current request feature,no,first requested chunk index
+get_request_contexts.jsonl.gz,current_request_chunk_end_exclusive,current request feature,no,exclusive end of requested chunk range
+get_request_contexts.jsonl.gz,cache_occupancy_chunks_at_request_start,new legal feature,no,cache entries at GET entry before processing this request
+get_request_contexts.jsonl.gz,cache_capacity_chunks,configuration,no,"frozen configured capacity, 3,002 entries"
+get_request_contexts.jsonl.gz,cache_occupancy_fraction_at_request_start,new legal feature,no,occupancy divided by configured capacity
+get_request_contexts.jsonl.gz,evaluation_cumulative_writes_before_request,new legal feature,no,"successful writes since evaluation start, before this GET; the cap is not enforced online"
+get_request_contexts.jsonl.gz,evaluation_write_cap_chunks,known budget reference,no,"frozen post-hoc BC05 qualification cap, 148,731 writes"
+get_request_contexts.jsonl.gz,evaluation_write_budget_fraction_before_request,new legal feature,no,observed evaluation writes so far divided by that cap
+get_request_contexts.jsonl.gz,last_completed_window,new legal history,no,last ended 10-minute author window with total/demand/prefetch/PUT DT and write/eviction counts
+get_request_contexts.jsonl.gz,last_six_completed_windows,new legal history,no,up to six ended windows with same load and event measures; active window excluded
+get_request_contexts.jsonl.gz,completed_window_count,request context,no,number of fully ended windows before this GET
+get_request_contexts.jsonl.gz,full_block_key,audit key only,no,complete native block identity for this request
+get_request_contexts.jsonl.gz,requested_chunks,current request,no,all chunks in the current GET request
+get_request_contexts.jsonl.gz,author_current_request_metadata,current request; overlaps author meta inputs,no,"op, namespace, user, pipeline, byte offset/end/size, repeat count from the current trace request"
+check_only_calls.jsonl.gz,decision_kind,check-only provenance,no,check_only qualification call; stored outside actual candidates
+check_only_calls.jsonl.gz,decision_batch_id,audit/execution context,no,instrumentation ID for one actual NewMLAP.batchAccept call
+check_only_calls.jsonl.gz,request_sequence,audit key,no,trace request sequence after author pre-request checkpoint handling
+check_only_calls.jsonl.gz,physical_time_s,decision time,no,physical timestamp of the GET or check-only call
+check_only_calls.jsonl.gz,full_block_key,audit key only,no,complete native block identity for this request
+check_only_calls.jsonl.gz,chunk_id,audit key only,no,chunk identifier within the complete block key
+check_only_calls.jsonl.gz,chunk_key,audit key only,no,"full native (block, chunk) key"
+check_only_calls.jsonl.gz,author_model_input_vector,existing author input,yes: see exact ordered feature names in BC06_feature_schema.json,exact ordered numeric vector passed to the author booster
+check_only_calls.jsonl.gz,author_model_score,author model output,no,unmodified author booster prediction for this candidate
+check_only_calls.jsonl.gz,threshold,author decision parameter,no,"actual threshold used at this decision, including HIGH-CONTROL evaluation schedule"
+check_only_calls.jsonl.gz,author_decision,audit context,no,author_decision recorded from the original simulator/admission call for trace audit
+check_only_calls.jsonl.gz,current_request_chunk_count,current request feature,no,requested chunks in this GET
+check_only_calls.jsonl.gz,legal_key_history_at_request_start,audit context,no,legal_key_history_at_request_start recorded from the original simulator/admission call for trace audit
+BC06_BC05_label_links.csv (sparse sidecar),candidate_id,candidate creation,no,monotonic instrumentation ID assigned when QueueCache.insert creates an actual candidate
+BC06_BC05_label_links.csv (sparse sidecar),bc05_event_id,future sidecar only,no,joined after snapshot freeze from BC05 event records: bc05_event_id
+BC06_BC05_label_links.csv (sparse sidecar),reject_request_sequence,future sidecar only,no,joined after snapshot freeze from BC05 event records: reject_request_sequence
+BC06_BC05_label_links.csv (sparse sidecar),full_block_key_json,future sidecar only,no,joined after snapshot freeze from BC05 event records: full_block_key_json
+BC06_BC05_label_links.csv (sparse sidecar),chunk,future sidecar only,no,joined after snapshot freeze from BC05 event records: chunk
+BC06_BC05_label_links.csv (sparse sidecar),high_control_candidate_found,future sidecar provenance,no,exact join located an actual candidate for a BC05 event
+BC06_BC05_label_links.csv (sparse sidecar),high_control_original_decision_accept,future sidecar only,no,joined after snapshot freeze from BC05 event records: high_control_original_decision_accept
+BC06_BC05_label_links.csv (sparse sidecar),high_control_model_score,future sidecar only,no,joined after snapshot freeze from BC05 event records: high_control_model_score
+BC06_BC05_label_links.csv (sparse sidecar),high_control_threshold,future sidecar only,no,joined after snapshot freeze from BC05 event records: high_control_threshold
+BC06_BC05_label_links.csv (sparse sidecar),high_control_decision_matches_score,future sidecar only,no,joined after snapshot freeze from BC05 event records: high_control_decision_matches_score
+BC06_BC05_label_links.csv (sparse sidecar),bc05_high_cf_intervention_changed_reject_to_accept,future sidecar only,no,joined after snapshot freeze from BC05 event records: bc05_high_cf_intervention_changed_reject_to_accept
+BC06_BC05_label_links.csv (sparse sidecar),bc05_high_cf_write_success,future sidecar only,no,joined after snapshot freeze from BC05 event records: bc05_high_cf_write_success
+BC06_BC05_label_links.csv (sparse sidecar),bc05_high_cf_evicted_after_write,future sidecar only,no,joined after snapshot freeze from BC05 event records: bc05_high_cf_evicted_after_write
+BC06_BC05_label_links.csv (sparse sidecar),bc05_high_cf_evicted_before_corresponding_peak,future sidecar only,no,joined after snapshot freeze from BC05 event records: bc05_high_cf_evicted_before_corresponding_peak
+BC06_BC05_label_links.csv (sparse sidecar),bc05_high_cf_corresponding_peak_chunk_missing,future sidecar only,no,joined after snapshot freeze from BC05 event records: bc05_high_cf_corresponding_peak_chunk_missing
+BC06_BC05_label_links.csv (sparse sidecar),bc05_high_cf_corresponding_peak_hit,future sidecar only,no,joined after snapshot freeze from BC05 event records: bc05_high_cf_corresponding_peak_hit
+BC06_BC05_label_links.csv (sparse sidecar),bc05_outcome_interpretation,future sidecar provenance,no,"explicit warning that intervention outcomes are privileged future results, not ground truth"

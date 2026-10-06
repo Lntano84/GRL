@@ -1,0 +1,217 @@
+{
+  "status": "completed",
+  "started_unix": 1790761151.0924277,
+  "budget_seconds": 3500,
+  "calibration_sha256": "6d294e4a4982ef3532197f0213a13a1a7cca5d39b6c3b4d74eae60614863caf6",
+  "preflight_sha256": "887e2b58630caf010eda27218303fcf1a378926860e4f37a873c79184bc8e2ad",
+  "arms": {
+    "HIGH-CONTROL": {
+      "status": "completed",
+      "started_unix": 1790761151.0934277,
+      "latest_progress": {
+        "arm": "HIGH-CONTROL",
+        "completed_windows": 976,
+        "trace_elapsed_s": 585609.0081391335,
+        "request_sequence": 143306,
+        "get_requests": 123310,
+        "supplemented": 0,
+        "wall_seconds": 568.4442453000011
+      },
+      "exit_code": 0,
+      "wall_seconds": 591.0470000000023,
+      "gate": {
+        "passed": true,
+        "arm": "HIGH-CONTROL",
+        "reference": "BC03 STATIC-HIGH",
+        "compared_windows": 1008,
+        "max_errors_by_required_field": {
+          "time_elapsed_phy": 0.0,
+          "time_log": 0.0,
+          "service_time_used_stats": 0.0,
+          "service_time_writes_stats": 0.0,
+          "service_time_used_demand_stats": 0.0,
+          "service_time_used_prefetch_stats": 0.0,
+          "service_time_nocache_stats": 0.0,
+          "flashcache/keys_written_stats": 0.0,
+          "flashcache/prefetches_stats": 0.0,
+          "fetches_chunks_prefetch_stats": 0.0,
+          "fetches_chunks_demandmiss_stats": 0.0,
+          "fetches_ios_stats": 0.0,
+          "iops_requests_stats": 0.0,
+          "chunk_queries_stats": 0.0,
+          "puts_ios_stats": 0.0,
+          "puts_chunks_stats": 0.0,
+          "flashcache/evictions_stats": 0.0
+        },
+        "decision_audit_sha256": "63aea01dfa90ed49d733064e457441283db112e3a766f76b5d484e2533bbd9be",
+        "stats_sha256": "0fbc9b85e39bd790c0ff48129823c409dfb47354f4258fd50d116601b1b4d87e"
+      }
+    },
+    "HIGH-SCORE": {
+      "status": "completed",
+      "started_unix": 1790762037.0020964,
+      "attempt": 2,
+      "prior_failed_attempt_archive": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\arms\\HIGH-SCORE\\attempts\\01_failed_empty_event_queue",
+      "latest_progress": {
+        "arm": "HIGH-SCORE",
+        "completed_windows": 985,
+        "trace_elapsed_s": 591017.0704681873,
+        "request_sequence": 144422,
+        "get_requests": 124286,
+        "supplemented": 14955,
+        "wall_seconds": 569.0854169000013
+      },
+      "exit_code": 0,
+      "wall_seconds": 586.4379999999983,
+      "gate": {
+        "passed": true,
+        "arm": "HIGH-SCORE",
+        "reference": "BC03 STATIC-HIGH",
+        "compared_windows": 144,
+        "max_errors_by_required_field": {
+          "time_elapsed_phy": 0.0,
+          "time_log": 0.0,
+          "service_time_used_stats": 0.0,
+          "service_time_writes_stats": 0.0,
+          "service_time_used_demand_stats": 0.0,
+          "service_time_used_prefetch_stats": 0.0,
+          "service_time_nocache_stats": 0.0,
+          "flashcache/keys_written_stats": 0.0,
+          "flashcache/prefetches_stats": 0.0,
+          "fetches_chunks_prefetch_stats": 0.0,
+          "fetches_chunks_demandmiss_stats": 0.0,
+          "fetches_ios_stats": 0.0,
+          "iops_requests_stats": 0.0,
+          "chunk_queries_stats": 0.0,
+          "puts_ios_stats": 0.0,
+          "puts_chunks_stats": 0.0,
+          "flashcache/evictions_stats": 0.0
+        },
+        "decision_audit_sha256": "3b503e6e4392e590f935e41e4ee0ea3d5cbf71b05e9e34564a209cb7f4f57ed8",
+        "stats_sha256": "847cdcb07846340d15e412e2b1a1d4bfd3fbff87fc86fc59e7af159f1f24213d"
+      }
+    },
+    "HIGH-RECENCY": {
+      "status": "completed",
+      "started_unix": 1790762623.6287167,
+      "attempt": 1,
+      "prior_failed_attempt_archive": null,
+      "latest_progress": {
+        "arm": "HIGH-RECENCY",
+        "completed_windows": 971,
+        "trace_elapsed_s": 582617.3247580528,
+        "request_sequence": 142816,
+        "get_requests": 122887,
+        "supplemented": 21718,
+        "wall_seconds": 568.7878009999986
+      },
+      "exit_code": 0,
+      "wall_seconds": 594.280999999999,
+      "gate": {
+        "passed": true,
+        "arm": "HIGH-RECENCY",
+        "reference": "BC03 STATIC-HIGH",
+        "compared_windows": 144,
+        "max_errors_by_required_field": {
+          "time_elapsed_phy": 0.0,
+          "time_log": 0.0,
+          "service_time_used_stats": 0.0,
+          "service_time_writes_stats": 0.0,
+          "service_time_used_demand_stats": 0.0,
+          "service_time_used_prefetch_stats": 0.0,
+          "service_time_nocache_stats": 0.0,
+          "flashcache/keys_written_stats": 0.0,
+          "flashcache/prefetches_stats": 0.0,
+          "fetches_chunks_prefetch_stats": 0.0,
+          "fetches_chunks_demandmiss_stats": 0.0,
+          "fetches_ios_stats": 0.0,
+          "iops_requests_stats": 0.0,
+          "chunk_queries_stats": 0.0,
+          "puts_ios_stats": 0.0,
+          "puts_chunks_stats": 0.0,
+          "flashcache/evictions_stats": 0.0
+        },
+        "decision_audit_sha256": "1933c895d58787ba89558834a1d79739cd7fac784a8c1a21d69be04d8f3bf01c",
+        "stats_sha256": "55aa542bcc66aad552b8fe0875421f41f7c4b6af01fa85fefb66abac09725037"
+      }
+    },
+    "HIGH-RANDOM": {
+      "status": "completed",
+      "started_unix": 1790763218.124472,
+      "attempt": 1,
+      "prior_failed_attempt_archive": null,
+      "latest_progress": {
+        "arm": "HIGH-RANDOM",
+        "completed_windows": 963,
+        "trace_elapsed_s": 577813.322977066,
+        "request_sequence": 142006,
+        "get_requests": 122144,
+        "supplemented": 21413,
+        "wall_seconds": 568.7491194000031
+      },
+      "exit_code": 0,
+      "wall_seconds": 598.280999999999,
+      "gate": {
+        "passed": true,
+        "arm": "HIGH-RANDOM",
+        "reference": "BC03 STATIC-HIGH",
+        "compared_windows": 144,
+        "max_errors_by_required_field": {
+          "time_elapsed_phy": 0.0,
+          "time_log": 0.0,
+          "service_time_used_stats": 0.0,
+          "service_time_writes_stats": 0.0,
+          "service_time_used_demand_stats": 0.0,
+          "service_time_used_prefetch_stats": 0.0,
+          "service_time_nocache_stats": 0.0,
+          "flashcache/keys_written_stats": 0.0,
+          "flashcache/prefetches_stats": 0.0,
+          "fetches_chunks_prefetch_stats": 0.0,
+          "fetches_chunks_demandmiss_stats": 0.0,
+          "fetches_ios_stats": 0.0,
+          "iops_requests_stats": 0.0,
+          "chunk_queries_stats": 0.0,
+          "puts_ios_stats": 0.0,
+          "puts_chunks_stats": 0.0,
+          "flashcache/evictions_stats": 0.0
+        },
+        "decision_audit_sha256": "e0573c30a9111e98ab11b2550661e4fbe1853605fce986ed8a9f658c76eb752d",
+        "stats_sha256": "10830fceccecf8054d43793f70b4c71079d45a6f14a5203e96d1d4ab77b42a47"
+      }
+    }
+  },
+  "completed": [
+    "HIGH-CONTROL",
+    "HIGH-SCORE",
+    "HIGH-RECENCY",
+    "HIGH-RANDOM"
+  ],
+  "attempted": [
+    "HIGH-CONTROL",
+    "HIGH-SCORE",
+    "HIGH-SCORE#2",
+    "HIGH-RECENCY",
+    "HIGH-RANDOM"
+  ],
+  "wall_seconds": 2468.5319999999992,
+  "remaining_budget_seconds": 1031.4680000000008,
+  "current_arm": null,
+  "uncompleted": [],
+  "attempt_history": [
+    {
+      "arm": "HIGH-SCORE",
+      "attempt": 1,
+      "status": "failed_instrumentation",
+      "archive": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\arms\\HIGH-SCORE\\attempts\\01_failed_empty_event_queue",
+      "progress_windows": 167,
+      "failure": "empty event queue key remained in bookkeeping after the matching supplement write; recorder now deletes drained keys",
+      "replay_wall_seconds": 97.57800000000134,
+      "no_strategy_or_calibration_change": true
+    }
+  ],
+  "resume_started_unix": 1790762037.0000978,
+  "resume_budget_seconds": 2750.0,
+  "resume_policy_sha256": "82b9f1b2c13cea27608be7f4ae5f51c134f481e49d3cbfab99c7ae6db191c067",
+  "resume_preflight_sha256": "49f68be743d61c167967f17a3792936d5c281e203134e0def1057a64be3d8ca6",
+  "resume_wall_seconds": 1779.5939999999973
+}

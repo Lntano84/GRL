@@ -1,0 +1,126 @@
+{
+  "script": "audit_checkpoint_selection.py",
+  "scope": "implementation audit of the pre-registered checkpoint; rule unchanged",
+  "checkpoint": {
+    "file": "swap_ranker.pt",
+    "sha256": "81e51fac85eb5d8088ef4873d1a64d552ddd1dce53d10984fe3cf20ec2fc4ac3",
+    "recorded_sha256": "81e51fac85eb5d8088ef4873d1a64d552ddd1dce53d10984fe3cf20ec2fc4ac3",
+    "selected_epoch": 1,
+    "selected_metric": 0.7453890184439262,
+    "label": "selected by the pre-registered validation rule"
+  },
+  "checks": {
+    "shared_state_detected_before_repair": {
+      "pass": true,
+      "shared_states": 1,
+      "detail": [
+        {
+          "split_a": "train",
+          "split_b": "val",
+          "seed_set_size": 52
+        }
+      ],
+      "note": "the three trajectories share the degree-52 initial set; repaired, not ignored"
+    },
+    "split_disjoint_after_repair": {
+      "pass": true,
+      "states": 403,
+      "clashes": 0
+    },
+    "state_keys_are_namespaced_per_trajectory": {
+      "pass": true,
+      "sample": [
+        "0:1",
+        "0:10",
+        "0:100"
+      ],
+      "note": "raw state ids restart at 1 in every trajectory; an unprefixed key would collide"
+    },
+    "no_state_key_appears_in_both_splits": {
+      "pass": true,
+      "train_keys": 261,
+      "val_keys": 143,
+      "overlap": []
+    },
+    "every_group_maps_to_a_distinct_seed_set": {
+      "pass": true,
+      "groups": 260,
+      "distinct": 260,
+      "note": "duplicate S inside one split would mean the same state was counted twice"
+    },
+    "states_with_identical_S_are_merged": {
+      "pass": true,
+      "train_keys": 261,
+      "train_groups": 260,
+      "merged_groups": {
+        "1": [
+          "0:1",
+          "1:1"
+        ]
+      },
+      "note": "the degree-52 initial set begins all three trajectories; one state, not three"
+    },
+    "reloaded_model_reproduces_selected_metric": {
+      "pass": true,
+      "reported": 0.7453890184439262,
+      "recomputed": 0.7453890184439262,
+      "selected_epoch": 1
+    },
+    "selected_epoch_is_the_recorded_one": {
+      "pass": true,
+      "selected_epoch": 1
+    },
+    "eval_mode_does_not_change_scores": {
+      "pass": true,
+      "mode_sensitive_modules": [],
+      "note": "no dropout/batch-norm/layer-norm anywhere: train() vs eval() cannot alter the validation score, so the score cannot have been taken in a wrong mode"
+    },
+    "scores_computed_under_no_grad": {
+      "pass": true,
+      "note": "RankModel.predict wraps the forward pass in torch.no_grad()"
+    },
+    "metric_matches_an_independent_reimplementation": {
+      "pass": true,
+      "vectorised": 0.7453890184439262,
+      "naive": 0.7453890184439262,
+      "usable_states": 116,
+      "comparable_pairs": 4717
+    },
+    "metric_invariant_to_row_order": {
+      "pass": true,
+      "permuted": 0.7453890184439262
+    },
+    "metric_scale_references": {
+      "pass": true,
+      "model": 0.7453890184439262,
+      "random": 0.5889336442654229,
+      "deg_diff_feature": 0.6923892304430782,
+      "deg_v_feature": 0.7326690693237227,
+      "chance": 0.5,
+      "note": "the metric separates signal from chance, so 0.7365 is not a degenerate scale artefact"
+    },
+    "curve_length_matches_max_epochs": {
+      "pass": true,
+      "epochs": 40,
+      "max_epochs": 40
+    },
+    "recorded_selection_matches_the_frozen_rule": {
+      "pass": true,
+      "argmax_over_curve": 1,
+      "selected_epoch": 1,
+      "rule": "max_metric_ties_earliest_epoch"
+    },
+    "train_rows_and_states_match_the_split_block": {
+      "pass": true,
+      "train_rows": 9998,
+      "recorded": 9998
+    },
+    "val_rows_and_states_match_the_split_block": {
+      "pass": true,
+      "val_rows": 4998,
+      "recorded": 4998
+    }
+  },
+  "all_pass": true,
+  "selection_rule_changed": false
+}

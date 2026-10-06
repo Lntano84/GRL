@@ -1,0 +1,32 @@
+{
+  "bc06_snapshot_manifest_sha256": "3aa12ef277732b45e69b8d10b241dd36cba569d4bc2b656b710b98d3838be057",
+  "bc05_frozen_targets_sha256": "245c175cf4a0bed32327cd14e45d8d664d73cad6cf145931884ee2ab43c023eb",
+  "bc05_target_events_sha256": "e0c62649e8d66c6177be656587f6d5a04095cc8378dfda40a84c4cf31b2b72d6",
+  "exact_key": "(reject request sequence, complete block key, chunk)",
+  "target_events_expected": 1489,
+  "target_events_linked": 1489,
+  "target_requests": 35,
+  "target_blocks": 31,
+  "HIGH_CONTROL_decisions_on_targets": {
+    "reject": 1489
+  },
+  "HIGH_CF_post_intervention_outcomes": {
+    "manifest_events": 1489,
+    "high_cf_write_success": 1489,
+    "high_cf_peak_hit": 478,
+    "high_cf_evicted_before_peak": 1011
+  },
+  "HIGH_CF_target_hit_unique_blocks": 10,
+  "nonmembers_labeled_negative": false,
+  "sidecar_path": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\outputs\\BC06_BC05_label_links.csv",
+  "sidecar_sha256": "f55a48345253dcd86465835206ff4ecc747503d810e9a41bd979f7e2a51c24e4",
+  "snapshot_hashes_unchanged_after_label_link": {
+    "candidate_decisions.jsonl.gz": true,
+    "get_request_contexts.jsonl.gz": true,
+    "check_only_calls.jsonl.gz": true,
+    "feature_schema.json": true,
+    "config.json": true,
+    "run_audit.json": true
+  },
+  "interpretation": "membership and forced-branch outcomes are descriptive privileged information; not accept/reject truth and not per-item net utility"
+}

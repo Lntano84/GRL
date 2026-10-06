@@ -1,0 +1,136 @@
+{
+  "passed": true,
+  "boundary_cases": [
+    {
+      "arm": "LEAD",
+      "time_hex": "0x1.4ba6862d98fffp+18",
+      "theta_hex": "0x1.c6a6a08be684dp-1"
+    },
+    {
+      "arm": "LEAD",
+      "time_hex": "0x1.4ba6862d99000p+18",
+      "theta_hex": "0x1.544cc789441efp-1"
+    },
+    {
+      "arm": "LEAD",
+      "time_hex": "0x1.52ae862d98fffp+18",
+      "theta_hex": "0x1.544cc789441efp-1"
+    },
+    {
+      "arm": "LEAD",
+      "time_hex": "0x1.52ae862d99000p+18",
+      "theta_hex": "0x1.c6a6a08be684dp-1"
+    },
+    {
+      "arm": "DURING",
+      "time_hex": "0x1.52ae862d98fffp+18",
+      "theta_hex": "0x1.c6a6a08be684dp-1"
+    },
+    {
+      "arm": "DURING",
+      "time_hex": "0x1.52ae862d99000p+18",
+      "theta_hex": "0x1.544cc789441efp-1"
+    },
+    {
+      "arm": "DURING",
+      "time_hex": "0x1.59b6862d98fffp+18",
+      "theta_hex": "0x1.544cc789441efp-1"
+    },
+    {
+      "arm": "DURING",
+      "time_hex": "0x1.59b6862d99000p+18",
+      "theta_hex": "0x1.c6a6a08be684dp-1"
+    },
+    {
+      "arm": "PREV-DAY",
+      "time_hex": "0x1.ee8d0c5b31fffp+17",
+      "theta_hex": "0x1.c6a6a08be684dp-1"
+    },
+    {
+      "arm": "PREV-DAY",
+      "time_hex": "0x1.ee8d0c5b32000p+17",
+      "theta_hex": "0x1.544cc789441efp-1"
+    },
+    {
+      "arm": "PREV-DAY",
+      "time_hex": "0x1.fc9d0c5b31fffp+17",
+      "theta_hex": "0x1.544cc789441efp-1"
+    },
+    {
+      "arm": "PREV-DAY",
+      "time_hex": "0x1.fc9d0c5b32000p+17",
+      "theta_hex": "0x1.c6a6a08be684dp-1"
+    },
+    {
+      "arm": "NEXT-DAY",
+      "time_hex": "0x1.a006862d98fffp+18",
+      "theta_hex": "0x1.c6a6a08be684dp-1"
+    },
+    {
+      "arm": "NEXT-DAY",
+      "time_hex": "0x1.a006862d99000p+18",
+      "theta_hex": "0x1.544cc789441efp-1"
+    },
+    {
+      "arm": "NEXT-DAY",
+      "time_hex": "0x1.a70e862d98fffp+18",
+      "theta_hex": "0x1.544cc789441efp-1"
+    },
+    {
+      "arm": "NEXT-DAY",
+      "time_hex": "0x1.a70e862d99000p+18",
+      "theta_hex": "0x1.c6a6a08be684dp-1"
+    }
+  ],
+  "checks": [
+    "all_warmup_thresholds_original",
+    "left_closed_right_open",
+    "strict_pred_greater_than_threshold",
+    "check_only_preserved",
+    "original_prefetch_qualifier_routes_to_same_interface",
+    "only_output_dir_differs_in_source_config"
+  ],
+  "theta0": 0.798545,
+  "thetaL": 0.664648280626407,
+  "thetaH": 0.8879900141503271,
+  "intervals": {
+    "LEAD": [
+      339610.0965330601,
+      346810.0965330601
+    ],
+    "DURING": [
+      346810.0965330601,
+      354010.0965330601
+    ],
+    "PREV-DAY": [
+      253210.09653306007,
+      260410.09653306007
+    ],
+    "NEXT-DAY": [
+      426010.0965330601,
+      433210.0965330601
+    ]
+  },
+  "evaluation_start_s": 86401.23277902603,
+  "write_budget_chunks": 148731,
+  "compute_budget_seconds": 7200,
+  "inputs_sha256": {
+    "runs\\example\\baleen\\prefetch_ml-on-partial-hit\\config.json": "a03b82db9bbeeda2b8c93f61ba064ad81ad5cf647baa4b0eea71aa0715492796",
+    "runs\\example\\baleen\\prefetch_ml-on-partial-hit\\ml-ap-0.798545_6_lru_366.475GB\\full_0_0.1_cache_perf.txt.stats.lzma": "c58d866626b772b1d4d6e9b7b4e26dce3e8425500f44753cae8be08481dba591",
+    "data\\tectonic\\201910\\Region1\\full_0_0.1.trace": "3e15491e59bce748bc5bfd746edfda9cc43a0925b273bc627bfd2d51d62f95b6",
+    "tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_admit_threshold_binary.model": "fb390089b9dd2af2de7235f98c22995ec2f841257e536e6a121558e97e84f64e",
+    "tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_offset_end.model": "364ae73b736d4d75f3787743fdef1849182df206f0024652fc958891b8e78013",
+    "tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_offset_start.model": "2d240d8e79b1abb674e96712ab0e96a04a4c3837dd1cca8b49b498d5979ce9f7",
+    "tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_pred_net_pf_st_binary.model": "a7f073e64bfd57d7bb32e82d17d6445e50efd33a52f27bfc557fdfcdc726b6d6",
+    "tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_size.model": "f745bacf02cb79ab1efeead2fe066d1da72b7a4d38762eccf67e31778923d5d9"
+  },
+  "config_sha256": {
+    "STATIC-BASE": "e87f0a84e487efe3be775dc1b819b0361cddda10ea89bb736d290c785e3d449d",
+    "STATIC-LOW": "06102d158e29c95b3603ea6373c73cac9941206d3529ae1474d53ae821009aa2",
+    "STATIC-HIGH": "1995423e439cce2fb9858c5ef66031745c16ca42799616cf48fb1f850047805b",
+    "LEAD": "83cf698e0c7a5392a3ec05ce8bfd78ef5252451e1489ed4ac13f0be450280021",
+    "DURING": "742855029c2f23a83454cb5ed0230304c868e2f2029d5490577f238ed88e22d9",
+    "PREV-DAY": "08a355b12d62b96851c206480e5ed924ed473e5093f985b20de6b358cbef21dd",
+    "NEXT-DAY": "3397570a01b292ba3bc150c87602673465950b1e3b797a158068f1e99d9cb2f4"
+  }
+}

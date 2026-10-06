@@ -1,0 +1,387 @@
+{
+  "plan_rng_seed": 20240120,
+  "graphs": {
+    "train": [
+      "interact__ia-crime-moreno",
+      "interact__ia-infect-dublin",
+      "interact__ia-infect-hyper"
+    ],
+    "validation": [
+      "interact__ia-enron-only",
+      "interact__rt-twitter-copen"
+    ],
+    "development_evaluation": "interact__soc-wiki-Vote"
+  },
+  "graph_role_note": "the development-evaluation graph is never trained on and never used for checkpoint selection; it took part in the direction choice in the previous round, so it is a development graph and NOT a final independent test set",
+  "graph_sizes": {
+    "interact__ia-crime-moreno": {
+      "n": 829,
+      "m": 1475
+    },
+    "interact__ia-infect-dublin": {
+      "n": 410,
+      "m": 2765
+    },
+    "interact__ia-infect-hyper": {
+      "n": 113,
+      "m": 2196
+    },
+    "interact__ia-enron-only": {
+      "n": 143,
+      "m": 623
+    },
+    "interact__rt-twitter-copen": {
+      "n": 761,
+      "m": 1029
+    },
+    "interact__soc-wiki-Vote": {
+      "n": 889,
+      "m": 2914
+    }
+  },
+  "train_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "episodes": 2000,
+  "budget": 5,
+  "t_max": 5,
+  "extra_seeds": 5,
+  "select_samples": 100,
+  "eval_samples": 1000,
+  "hyperparameters": {
+    "lr": 0.0001,
+    "gamma": 0.99,
+    "batch_size": 100,
+    "buffer_size": 4000,
+    "epsilon": 0.1,
+    "eps_min": 0.01,
+    "eps_decay": 0.999,
+    "target_sync_every": 200
+  },
+  "deviations_from_paper": [
+    "episodes: 2000/seed here vs 10000 in train.py; the published count is not reachable at this scale and the per-episode cost is measured and reported",
+    "node embeddings: DeepWalk recomputed per step -> end-to-end GCN encoder (gensim is not installed and the published loop retrains DeepWalk at every step)",
+    "graph pooling: DiffPool -> mean+max pooling (the authors' diffpool module does not port to this tensor pipeline)",
+    "reward: raw final influence with 1x100 samples, matching train.py opt_reward=0 / norm_reward=0, which already differs from the paper's Eq. (1); the official code also averages times_mean_env=5 repeats per step, which is not done here"
+  ],
+  "checkpoint_rule": "highest mean final spread over the validation graphs, evaluated at the fixed points [500, 1000, 2000], ties to the earliest; never the development graph, never discovered-node counts, never the training reward.  Evaluating at fixed points also shows whether training was still improving when the episode budget ran out.",
+  "validation_observations": [
+    [
+      "interact__ia-enron-only",
+      "interact__ia-enron-only_0",
+      [
+        26,
+        37,
+        81,
+        118,
+        130
+      ]
+    ],
+    [
+      "interact__ia-enron-only",
+      "interact__ia-enron-only_1",
+      [
+        50,
+        96,
+        100,
+        103,
+        105
+      ]
+    ],
+    [
+      "interact__ia-enron-only",
+      "interact__ia-enron-only_2",
+      [
+        73,
+        74,
+        83,
+        88,
+        100
+      ]
+    ],
+    [
+      "interact__ia-enron-only",
+      "interact__ia-enron-only_3",
+      [
+        14,
+        63,
+        99,
+        114,
+        124
+      ]
+    ],
+    [
+      "interact__ia-enron-only",
+      "interact__ia-enron-only_4",
+      [
+        7,
+        8,
+        10,
+        76,
+        125
+      ]
+    ],
+    [
+      "interact__rt-twitter-copen",
+      "interact__rt-twitter-copen_0",
+      [
+        33,
+        378,
+        387,
+        539,
+        577
+      ]
+    ],
+    [
+      "interact__rt-twitter-copen",
+      "interact__rt-twitter-copen_1",
+      [
+        16,
+        269,
+        270,
+        574,
+        722
+      ]
+    ],
+    [
+      "interact__rt-twitter-copen",
+      "interact__rt-twitter-copen_2",
+      [
+        108,
+        234,
+        312,
+        616,
+        648
+      ]
+    ],
+    [
+      "interact__rt-twitter-copen",
+      "interact__rt-twitter-copen_3",
+      [
+        105,
+        317,
+        382,
+        389,
+        651
+      ]
+    ],
+    [
+      "interact__rt-twitter-copen",
+      "interact__rt-twitter-copen_4",
+      [
+        29,
+        50,
+        317,
+        484,
+        609
+      ]
+    ]
+  ],
+  "dev_observations": [
+    {
+      "i": 0,
+      "initial_nodes": [
+        312,
+        402,
+        476,
+        488,
+        876
+      ]
+    },
+    {
+      "i": 1,
+      "initial_nodes": [
+        211,
+        230,
+        234,
+        248,
+        282
+      ]
+    },
+    {
+      "i": 2,
+      "initial_nodes": [
+        58,
+        283,
+        423,
+        444,
+        451
+      ]
+    },
+    {
+      "i": 3,
+      "initial_nodes": [
+        340,
+        367,
+        438,
+        519,
+        742
+      ]
+    },
+    {
+      "i": 4,
+      "initial_nodes": [
+        18,
+        120,
+        411,
+        437,
+        454
+      ]
+    },
+    {
+      "i": 5,
+      "initial_nodes": [
+        214,
+        457,
+        487,
+        493,
+        803
+      ]
+    },
+    {
+      "i": 6,
+      "initial_nodes": [
+        271,
+        290,
+        395,
+        476,
+        822
+      ]
+    },
+    {
+      "i": 7,
+      "initial_nodes": [
+        55,
+        178,
+        259,
+        304,
+        363
+      ]
+    },
+    {
+      "i": 8,
+      "initial_nodes": [
+        102,
+        116,
+        188,
+        211,
+        722
+      ]
+    },
+    {
+      "i": 9,
+      "initial_nodes": [
+        358,
+        375,
+        477,
+        591,
+        705
+      ]
+    },
+    {
+      "i": 10,
+      "initial_nodes": [
+        156,
+        324,
+        410,
+        571,
+        733
+      ]
+    },
+    {
+      "i": 11,
+      "initial_nodes": [
+        2,
+        397,
+        398,
+        583,
+        866
+      ]
+    },
+    {
+      "i": 12,
+      "initial_nodes": [
+        58,
+        141,
+        389,
+        679,
+        760
+      ]
+    },
+    {
+      "i": 13,
+      "initial_nodes": [
+        140,
+        227,
+        472,
+        483,
+        861
+      ]
+    },
+    {
+      "i": 14,
+      "initial_nodes": [
+        166,
+        242,
+        382,
+        423,
+        451
+      ]
+    },
+    {
+      "i": 15,
+      "initial_nodes": [
+        151,
+        225,
+        461,
+        679,
+        857
+      ]
+    },
+    {
+      "i": 16,
+      "initial_nodes": [
+        308,
+        323,
+        456,
+        782,
+        835
+      ]
+    },
+    {
+      "i": 17,
+      "initial_nodes": [
+        117,
+        133,
+        192,
+        492,
+        751
+      ]
+    },
+    {
+      "i": 18,
+      "initial_nodes": [
+        443,
+        449,
+        505,
+        623,
+        647
+      ]
+    },
+    {
+      "i": 19,
+      "initial_nodes": [
+        35,
+        42,
+        438,
+        565,
+        690
+      ]
+    }
+  ],
+  "statistics_note": "5 model seeds x 20 observations is not 100 independent replicates; the observations are shared, so models are correlated and are reported separately"
+}

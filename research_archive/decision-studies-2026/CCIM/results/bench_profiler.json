@@ -1,0 +1,160 @@
+{
+  "threads": 1,
+  "updates": 3,
+  "total_op_calls": 1664781,
+  "calls_per_update": 554927.0,
+  "cpu_ms_per_update": 1171.5282333333278,
+  "top_operators": [
+    {
+      "name": "aten::bmm",
+      "cpu_ms_per_update": 97.34853333334085,
+      "calls_per_update": 8600.0
+    },
+    {
+      "name": "aten::mm",
+      "cpu_ms_per_update": 95.69643333335046,
+      "calls_per_update": 9200.0
+    },
+    {
+      "name": "aten::addmm",
+      "cpu_ms_per_update": 82.23500000002447,
+      "calls_per_update": 6400.0
+    },
+    {
+      "name": "aten::matmul",
+      "cpu_ms_per_update": 48.960333333305464,
+      "calls_per_update": 9600.0
+    },
+    {
+      "name": "aten::view",
+      "cpu_ms_per_update": 40.231233333339084,
+      "calls_per_update": 33000.0
+    },
+    {
+      "name": "aten::expand",
+      "cpu_ms_per_update": 38.51246666664964,
+      "calls_per_update": 22000.0
+    },
+    {
+      "name": "aten::add",
+      "cpu_ms_per_update": 37.054433333331986,
+      "calls_per_update": 6114.0
+    },
+    {
+      "name": "aten::native_batch_norm",
+      "cpu_ms_per_update": 36.28216666669348,
+      "calls_per_update": 1800.0
+    },
+    {
+      "name": "aten::div",
+      "cpu_ms_per_update": 35.61283333335463,
+      "calls_per_update": 9036.0
+    },
+    {
+      "name": "aten::t",
+      "cpu_ms_per_update": 28.47246666664022,
+      "calls_per_update": 15600.0
+    },
+    {
+      "name": "aten::transpose",
+      "cpu_ms_per_update": 26.096800000018217,
+      "calls_per_update": 20400.0
+    },
+    {
+      "name": "aten::copy_",
+      "cpu_ms_per_update": 25.558199999990276,
+      "calls_per_update": 13685.0
+    },
+    {
+      "name": "aten::sum",
+      "cpu_ms_per_update": 24.318133333332938,
+      "calls_per_update": 5402.0
+    },
+    {
+      "name": "aten::reshape",
+      "cpu_ms_per_update": 23.064566666645618,
+      "calls_per_update": 24400.0
+    },
+    {
+      "name": "aten::add_",
+      "cpu_ms_per_update": 22.426666666696235,
+      "calls_per_update": 9806.0
+    },
+    {
+      "name": "aten::linalg_vector_norm",
+      "cpu_ms_per_update": 22.055833333328305,
+      "calls_per_update": 3600.0
+    },
+    {
+      "name": "aten::linear",
+      "cpu_ms_per_update": 20.243099999991518,
+      "calls_per_update": 6400.0
+    },
+    {
+      "name": "aten::clamp_min",
+      "cpu_ms_per_update": 18.844666666676204,
+      "calls_per_update": 7400.0
+    },
+    {
+      "name": "aten::as_strided",
+      "cpu_ms_per_update": 18.073033333336706,
+      "calls_per_update": 47608.0
+    },
+    {
+      "name": "aten::max",
+      "cpu_ms_per_update": 17.376600000014335,
+      "calls_per_update": 1200.0
+    },
+    {
+      "name": "aten::cat",
+      "cpu_ms_per_update": 16.673566666664815,
+      "calls_per_update": 2804.0
+    },
+    {
+      "name": "aten::mul",
+      "cpu_ms_per_update": 15.902566666675995,
+      "calls_per_update": 5093.0
+    },
+    {
+      "name": "aten::empty",
+      "cpu_ms_per_update": 14.25683333333969,
+      "calls_per_update": 29404.0
+    },
+    {
+      "name": "aten::_to_copy",
+      "cpu_ms_per_update": 13.69786666669105,
+      "calls_per_update": 6439.0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: AddmmBackward0",
+      "cpu_ms_per_update": 13.423133333336564,
+      "calls_per_update": 1800.0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: ViewBackward0",
+      "cpu_ms_per_update": 12.120466666663376,
+      "calls_per_update": 5400.0
+    },
+    {
+      "name": "aten::_unsafe_view",
+      "cpu_ms_per_update": 11.343399999995285,
+      "calls_per_update": 9600.0
+    },
+    {
+      "name": "aten::_batch_norm_impl_index",
+      "cpu_ms_per_update": 9.403466666659725,
+      "calls_per_update": 1800.0
+    },
+    {
+      "name": "AddmmBackward0",
+      "cpu_ms_per_update": 9.257766666683601,
+      "calls_per_update": 1800.0
+    },
+    {
+      "name": "aten::fill_",
+      "cpu_ms_per_update": 8.917166666666612,
+      "calls_per_update": 11403.0
+    }
+  ],
+  "verdict": "many small repeated ops -> launch/Python bound, batching is the lever"
+}

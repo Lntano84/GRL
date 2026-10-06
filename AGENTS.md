@@ -1,7 +1,7 @@
 # GRL Agent Guide
 
 ## Project purpose
-GRL is a research codebase for Influence Maximization, with the current research direction centered on learning conditional marginal gain Δ(v|S) and using the learned signal in sequential decision making / a learning-augmented oracle.
+GRL began as an Influence Maximization codebase and now also preserves audited explorations of related decision and optimization tasks. Read the current research state and research_archive/decision-studies-2026/README.md before proposing work. Conditional marginal gain learning is historical; no current GRL advantage or permission to resume training is implied by the archived experiments.
 
 ## First-read order
 Whenever starting a fresh Codex/agent session in this repository, read in this order:

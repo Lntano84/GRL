@@ -1,0 +1,490 @@
+{
+  "graphs": [
+    "congress_twitter",
+    "email_eu_core",
+    "ca_grqc",
+    "nethept"
+  ],
+  "budgets": [
+    2,
+    5,
+    10
+  ],
+  "pool_size": 40,
+  "oracle_mc": 40,
+  "eval_mc": 200,
+  "state_mc": 150,
+  "state_contexts": 4,
+  "rank_rows": [
+    {
+      "graph": "congress_twitter",
+      "budget": 2,
+      "method": "degree",
+      "spread": 322.72,
+      "spread_stderr": 8.481011614188487,
+      "gap_to_oracle": 0.10108353527756878,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "budget": 2,
+      "method": "degree_discount",
+      "spread": 322.72,
+      "spread_stderr": 8.481011614188487,
+      "gap_to_oracle": 0.10108353527756878,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "budget": 2,
+      "method": "random",
+      "spread": 356.395,
+      "spread_stderr": 4.401652516385181,
+      "gap_to_oracle": 0.007283919667975848,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "budget": 2,
+      "method": "mc_greedy_oracle",
+      "spread": 359.01,
+      "spread_stderr": 3.9422581726721044,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 3240
+    },
+    {
+      "graph": "congress_twitter",
+      "budget": 5,
+      "method": "degree",
+      "spread": 365.83,
+      "spread_stderr": 0.8631080465387866,
+      "gap_to_oracle": -0.0062991692798590624,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "budget": 5,
+      "method": "degree_discount",
+      "spread": 365.83,
+      "spread_stderr": 0.8631080465387866,
+      "gap_to_oracle": -0.0062991692798590624,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "budget": 5,
+      "method": "random",
+      "spread": 349.075,
+      "spread_stderr": 5.817275726231308,
+      "gap_to_oracle": 0.039789294162953265,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "budget": 5,
+      "method": "mc_greedy_oracle",
+      "spread": 363.54,
+      "spread_stderr": 2.5960916778881287,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 7800
+    },
+    {
+      "graph": "congress_twitter",
+      "budget": 10,
+      "method": "degree",
+      "spread": 365.96,
+      "spread_stderr": 0.794318575887534,
+      "gap_to_oracle": 0.00566506813025591,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "budget": 10,
+      "method": "degree_discount",
+      "spread": 365.89,
+      "spread_stderr": 0.809592181286356,
+      "gap_to_oracle": 0.005855262264125391,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "budget": 10,
+      "method": "random",
+      "spread": 368.64,
+      "spread_stderr": 0.8604080427332138,
+      "gap_to_oracle": -0.0016166501378906666,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "congress_twitter",
+      "budget": 10,
+      "method": "mc_greedy_oracle",
+      "spread": 368.045,
+      "spread_stderr": 0.8171076275497616,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 14600
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 2,
+      "method": "degree",
+      "spread": 701.855,
+      "spread_stderr": 0.9435146395260648,
+      "gap_to_oracle": -0.008043030211632265,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 2,
+      "method": "degree_discount",
+      "spread": 701.855,
+      "spread_stderr": 0.9435146395260648,
+      "gap_to_oracle": -0.008043030211632265,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 2,
+      "method": "random",
+      "spread": 150.645,
+      "spread_stderr": 20.227544212657158,
+      "gap_to_oracle": 0.7836353060301183,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 2,
+      "method": "mc_greedy_oracle",
+      "spread": 696.255,
+      "spread_stderr": 4.66671724823778,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 3240
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 5,
+      "method": "degree",
+      "spread": 699.76,
+      "spread_stderr": 3.300236658180743,
+      "gap_to_oracle": 0.004516776088827494,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 5,
+      "method": "degree_discount",
+      "spread": 700.59,
+      "spread_stderr": 3.2987133097618533,
+      "gap_to_oracle": 0.003336012575842594,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 5,
+      "method": "random",
+      "spread": 545.105,
+      "spread_stderr": 20.92107238826442,
+      "gap_to_oracle": 0.22453000633059947,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 5,
+      "method": "mc_greedy_oracle",
+      "spread": 702.935,
+      "spread_stderr": 3.5376834051395836,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 7800
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 10,
+      "method": "degree",
+      "spread": 700.245,
+      "spread_stderr": 0.969961275000193,
+      "gap_to_oracle": 0.00559512060041032,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 10,
+      "method": "degree_discount",
+      "spread": 700.7,
+      "spread_stderr": 0.9898737293210685,
+      "gap_to_oracle": 0.004948983576758806,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 10,
+      "method": "random",
+      "spread": 705.065,
+      "spread_stderr": 1.012967854870035,
+      "gap_to_oracle": -0.0012496716061831893,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 10,
+      "method": "mc_greedy_oracle",
+      "spread": 704.185,
+      "spread_stderr": 0.9586468979765177,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 14600
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 2,
+      "method": "degree",
+      "spread": 810.145,
+      "spread_stderr": 32.86133472449042,
+      "gap_to_oracle": 0.0363619062345742,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 2,
+      "method": "degree_discount",
+      "spread": 810.145,
+      "spread_stderr": 32.86133472449042,
+      "gap_to_oracle": 0.0363619062345742,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 2,
+      "method": "random",
+      "spread": 185.895,
+      "spread_stderr": 27.968700718392338,
+      "gap_to_oracle": 0.7788846398601191,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 2,
+      "method": "mc_greedy_oracle",
+      "spread": 840.715,
+      "spread_stderr": 30.557301400401837,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 3240
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 5,
+      "method": "degree",
+      "spread": 904.05,
+      "spread_stderr": 25.772079611471014,
+      "gap_to_oracle": -0.007247547476728181,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 5,
+      "method": "degree_discount",
+      "spread": 904.05,
+      "spread_stderr": 25.772079611471014,
+      "gap_to_oracle": -0.007247547476728181,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 5,
+      "method": "random",
+      "spread": 417.785,
+      "spread_stderr": 35.30061747158256,
+      "gap_to_oracle": 0.5345247313505171,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 5,
+      "method": "mc_greedy_oracle",
+      "spread": 897.545,
+      "spread_stderr": 26.425420334878307,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 7800
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 10,
+      "method": "degree",
+      "spread": 950.62,
+      "spread_stderr": 27.61659515581166,
+      "gap_to_oracle": -0.0024781971379459677,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 10,
+      "method": "degree_discount",
+      "spread": 960.21,
+      "spread_stderr": 26.527434468866378,
+      "gap_to_oracle": -0.012591350564712639,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 10,
+      "method": "random",
+      "spread": 559.355,
+      "spread_stderr": 35.70197326304248,
+      "gap_to_oracle": 0.4101310808103177,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 10,
+      "method": "mc_greedy_oracle",
+      "spread": 948.27,
+      "spread_stderr": 26.97165707738403,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 14600
+    },
+    {
+      "graph": "nethept",
+      "budget": 2,
+      "method": "degree",
+      "spread": 10.51,
+      "spread_stderr": 0.2795523206843399,
+      "gap_to_oracle": 0.40755355129650506,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "nethept",
+      "budget": 2,
+      "method": "degree_discount",
+      "spread": 10.51,
+      "spread_stderr": 0.2795523206843399,
+      "gap_to_oracle": 0.40755355129650506,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "nethept",
+      "budget": 2,
+      "method": "random",
+      "spread": 2.93,
+      "spread_stderr": 0.05590617139457861,
+      "gap_to_oracle": 0.8348365276211951,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "nethept",
+      "budget": 2,
+      "method": "mc_greedy_oracle",
+      "spread": 17.74,
+      "spread_stderr": 1.2692170815112755,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 3240
+    },
+    {
+      "graph": "nethept",
+      "budget": 5,
+      "method": "degree",
+      "spread": 43.53,
+      "spread_stderr": 1.8345831951699545,
+      "gap_to_oracle": -0.006590357266736124,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "nethept",
+      "budget": 5,
+      "method": "degree_discount",
+      "spread": 43.53,
+      "spread_stderr": 1.8345831951699545,
+      "gap_to_oracle": -0.006590357266736124,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "nethept",
+      "budget": 5,
+      "method": "random",
+      "spread": 10.015,
+      "spread_stderr": 0.2003094481046763,
+      "gap_to_oracle": 0.768412533240837,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "nethept",
+      "budget": 5,
+      "method": "mc_greedy_oracle",
+      "spread": 43.245,
+      "spread_stderr": 1.9966158556417406,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 7800
+    },
+    {
+      "graph": "nethept",
+      "budget": 10,
+      "method": "degree",
+      "spread": 56.725,
+      "spread_stderr": 1.83433826624208,
+      "gap_to_oracle": 0.05046869768998996,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "nethept",
+      "budget": 10,
+      "method": "degree_discount",
+      "spread": 56.725,
+      "spread_stderr": 1.83433826624208,
+      "gap_to_oracle": 0.05046869768998996,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "nethept",
+      "budget": 10,
+      "method": "random",
+      "spread": 20.17,
+      "spread_stderr": 0.40847949764951486,
+      "gap_to_oracle": 0.6623702711750921,
+      "oracle_cascades": 0
+    },
+    {
+      "graph": "nethept",
+      "budget": 10,
+      "method": "mc_greedy_oracle",
+      "spread": 59.74,
+      "spread_stderr": 1.899897891993146,
+      "gap_to_oracle": 0.0,
+      "oracle_cascades": 14600
+    }
+  ],
+  "state_rows": [
+    {
+      "graph": "congress_twitter",
+      "budget": 10,
+      "between_sd": 15.362413307548538,
+      "within_sd": 86.62073420839387,
+      "state_dependence_ratio": 5.638484818386676,
+      "rho_no_overexposure": 0.9954887218045113,
+      "n_candidates": 20
+    },
+    {
+      "graph": "email_eu_core",
+      "budget": 10,
+      "between_sd": 46.21968631979235,
+      "within_sd": 89.6211991523045,
+      "state_dependence_ratio": 1.9390265553127868,
+      "rho_no_overexposure": 1.0,
+      "n_candidates": 20
+    },
+    {
+      "graph": "ca_grqc",
+      "budget": 10,
+      "between_sd": 69.00455567987079,
+      "within_sd": 44.26722714901744,
+      "state_dependence_ratio": 0.64151166126457,
+      "rho_no_overexposure": 0.9683972911963881,
+      "n_candidates": 20
+    },
+    {
+      "graph": "nethept",
+      "budget": 10,
+      "between_sd": 0.9861962385009047,
+      "within_sd": 0.07362921252600477,
+      "state_dependence_ratio": 0.07465979857916202,
+      "rho_no_overexposure": 0.9984301412872841,
+      "n_candidates": 20
+    }
+  ]
+}

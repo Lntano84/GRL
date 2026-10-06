@@ -1,0 +1,161 @@
+{
+ "ok": true,
+ "diagnostic_state": "large_rho0.75_s2|D1_m0_2p",
+ "LG01_instances_used": 0,
+ "relax": {
+  "status": "Optimal",
+  "objective": 671.0856476391807,
+  "prep_s": 0.00686160000077507,
+  "solve_s": 0.12109919999966223,
+  "allocated_s": 4.993129899999985,
+  "optimal": true,
+  "dual_valid": true,
+  "primal_valid": true,
+  "dual_residual": 1.652011860642233e-13,
+  "gap": null,
+  "dual_bound": null,
+  "start_status": null
+ },
+ "checks": {
+  "stratified_matched_ceil_10pct": true,
+  "RINS_subset_expansions_FULL_and_anchor_values": true,
+  "all_arms_all_YZ_fixing_checks": [
+   [
+    "RINS",
+    "short_Y",
+    1296
+   ],
+   [
+    "RINS",
+    "far_Y",
+    1302
+   ],
+   [
+    "RINS",
+    "short_Z",
+    2593
+   ],
+   [
+    "RINS",
+    "far_Z",
+    2599
+   ],
+   [
+    "RC-EXPAND",
+    "short_Y",
+    1296
+   ],
+   [
+    "RC-EXPAND",
+    "far_Y",
+    1302
+   ],
+   [
+    "RC-EXPAND",
+    "short_Z",
+    2593
+   ],
+   [
+    "RC-EXPAND",
+    "far_Z",
+    2599
+   ],
+   [
+    "LOSS-EXPAND",
+    "short_Y",
+    1296
+   ],
+   [
+    "LOSS-EXPAND",
+    "far_Y",
+    1361
+   ],
+   [
+    "LOSS-EXPAND",
+    "short_Z",
+    2651
+   ],
+   [
+    "LOSS-EXPAND",
+    "far_Z",
+    2660
+   ],
+   [
+    "RANDOM-EXPAND",
+    "short_Y",
+    1296
+   ],
+   [
+    "RANDOM-EXPAND",
+    "far_Y",
+    1302
+   ],
+   [
+    "RANDOM-EXPAND",
+    "short_Z",
+    2593
+   ],
+   [
+    "RANDOM-EXPAND",
+    "far_Z",
+    2599
+   ]
+  ],
+  "real_bipartite_coefficients_including_kappa": true,
+  "outcome_table_independent_inputs_and_action": true,
+  "first_log_fsync_atomic_resume_accounting": true,
+  "real_ledger_first_creation_resume_conservation": true,
+  "finite_message_gradients_and_actual_scorer_loading": true,
+  "windows_state_filename_roundtrip": true,
+  "real_repair_record_numpy_json_roundtrip": true
+ },
+ "action_meta": {
+  "quota": {
+   "short_Y": 41,
+   "far_Y": 55,
+   "short_Z": 38,
+   "far_Z": 55
+  },
+  "strata_counts": {
+   "short_Y": 410,
+   "far_Y": 545,
+   "short_Z": 380,
+   "far_Z": 542
+  },
+  "fr_count": 1877,
+  "n_binary": 2520,
+  "fixed_counts": [
+   1877,
+   1688,
+   1688,
+   1688,
+   0
+  ],
+  "fallback": false,
+  "rc_zero_fraction": 0.7384123601491742,
+  "distinct_actions": 5,
+  "structural_pins": 144
+ },
+ "graph_shapes": {
+  "v": [
+   4824,
+   23
+  ],
+  "r": [
+   7381,
+   24
+  ],
+  "masks": [
+   5,
+   4824
+  ],
+  "ei": [
+   2,
+   23856
+  ],
+  "ev": [
+   23856,
+   2
+  ]
+ }
+}

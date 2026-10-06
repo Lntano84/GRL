@@ -1,0 +1,76 @@
+{
+  "protocol": "BC07; one frozen warmup calibration; no model training or outcome labels",
+  "q": 0.01,
+  "parent_threshold_schedule": {
+    "warmup": 0.798545,
+    "evaluation": 0.8879900141503271,
+    "rule": "score > threshold; parent HIGH; supplemental decisions disabled during warmup"
+  },
+  "evaluation_start_trace_elapsed_s": 86401.23277902603,
+  "calibration_scope": {
+    "source": "BC06 frozen actual candidate snapshot",
+    "input_file": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\outputs\\BC06_candidate_decisions.jsonl.gz",
+    "input_sha256": "5794441b856c02e7c1e7583332059be2576e29e9cca1d9379ecc515d84c70665",
+    "snapshot_manifest_sha256": "3aa12ef277732b45e69b8d10b241dd36cba569d4bc2b656b710b98d3838be057",
+    "selection": "candidate_source=demand AND candidate_created_trace_elapsed_s < evaluation_start AND author_model_score <= evaluation_HIGH_threshold",
+    "warmup_uses_base_policy": true,
+    "interpretation": "scores captured under the actual BASE warmup; HIGH rejection membership is recomputed from the saved scores, not claimed as an observed warmup HIGH decision",
+    "counts": {
+      "snapshot_actual_candidates_read": 2375547,
+      "warmup_actual_demand_candidates": 285552,
+      "warmup_demand_candidates_rejected_by_high": 274259,
+      "warmup_pool_with_finite_block_gap": 170211,
+      "warmup_pool_without_block_history": 104048,
+      "warmup_non_demand_candidates_ignored": 4661,
+      "warmup_high_accepts_excluded": 11293,
+      "evaluation_candidates_not_used_for_calibration": 2085334
+    },
+    "high_rejected_demand_pool_chunks": 274259,
+    "requested_supplement_chunks": 2743,
+    "hash_algorithm": "SHA-256 over UTF-8 ASCII string \"seed:request_sequence\"; first 8 digest bytes interpreted unsigned big-endian",
+    "hash_seed": "BC07-request-hash-v1-seed-20260930",
+    "tie_rule": "preserve the complete group with identical primary cutoff value and request hash; do not split candidates to hit exactly q"
+  },
+  "rules": {
+    "SCORE": {
+      "status": "calibrated",
+      "cutoff_score": 0.8607630967110786,
+      "cutoff_request_hash64": 5993915802606417727,
+      "sort_order": "score descending, request SHA256 hash ascending",
+      "calibration_selected_chunks": 2781,
+      "calibration_pool_chunks": 274259,
+      "calibration_fraction_of_high_rejected_demand_chunks": 0.010140050098629397,
+      "calibration_q": 0.01
+    },
+    "RECENCY": {
+      "status": "calibrated",
+      "cutoff_block_gap_seconds": 0.09638190269470215,
+      "cutoff_request_hash64": 11715109303760617172,
+      "sort_order": "block gap ascending, request SHA256 hash ascending; missing gaps excluded",
+      "calibration_selected_chunks": 2771,
+      "valid_history_chunks": 170211,
+      "requested_calibration_chunks": 2743,
+      "calibration_pool_chunks": 274259,
+      "calibration_fraction_of_high_rejected_demand_chunks": 0.010103588214060433,
+      "calibration_q": 0.01
+    },
+    "RANDOM": {
+      "status": "calibrated",
+      "cutoff_request_hash64": 213486430594701369,
+      "sort_order": "request SHA256 hash ascending; all candidate chunks in one request share one hash",
+      "calibration_selected_chunks": 2775,
+      "calibration_pool_chunks": 274259,
+      "calibration_fraction_of_high_rejected_demand_chunks": 0.010118172967888018,
+      "calibration_q": 0.01
+    }
+  },
+  "calibration_actual_fractions": {
+    "SCORE": 2781,
+    "RECENCY": 2771,
+    "RANDOM": 2775
+  },
+  "future_labels_read": false,
+  "peak_window_or_position_read": false,
+  "write_budget_used_for_selection": false,
+  "calibration_datetime_local": "2026-09-30 Asia/Shanghai"
+}

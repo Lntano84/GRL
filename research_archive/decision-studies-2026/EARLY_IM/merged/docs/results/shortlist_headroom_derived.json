@@ -1,0 +1,969 @@
+{
+  "script": "derive_shortlist_headroom.py",
+  "source": "docs\\results\\shortlist_headroom.json",
+  "source_code_version": "75b0635",
+  "note": "derived from stored per-trial paired marginals; no new simulation",
+  "pooled_across_graphs": false,
+  "multiplicity": {
+    "top8_recovery_tests": 9,
+    "bonferroni_threshold": 0.005555555555555556,
+    "smallest_observed_p": 0.016,
+    "reading": "the smallest top-8 recovery p-value does not survive a Bonferroni correction over the nine tests, so no screening advantage is established"
+  },
+  "blocks": [
+    {
+      "graph": "congress_twitter",
+      "seed_fraction": 0.010526315789473684,
+      "n": 475,
+      "seed_size": 5,
+      "target_size": 95,
+      "candidate_count": 50,
+      "mc_per_batch": 1000,
+      "reference": 81,
+      "reference_rank_by_score": {
+        "degree": 14,
+        "static_delta2": 10,
+        "state_delta2": 40
+      },
+      "headroom": {
+        "reference_batch1": {
+          "mean": 0.321,
+          "sd": 3.6886256248093274,
+          "se": 0.11664458410059167,
+          "n": 1000,
+          "ci95_low": 0.09237661516284035,
+          "ci95_high": 0.5496233848371597,
+          "min": -13.0,
+          "p05": -5.0,
+          "median": 0.0,
+          "p95": 5.0,
+          "max": 34.0,
+          "negative_share": 0.412
+        },
+        "runner_up": 172,
+        "runner_up_batch1": {
+          "mean": 0.255,
+          "sd": 3.8015753313593565,
+          "se": 0.12021636743804898,
+          "n": 1000,
+          "ci95_low": 0.019375919821424004,
+          "ci95_high": 0.490624080178576,
+          "min": -12.0,
+          "p05": -5.0,
+          "median": 0.0,
+          "p95": 5.0,
+          "max": 35.0,
+          "negative_share": 0.419
+        },
+        "gap_batch1_paired": {
+          "mean": 0.066,
+          "sd": 3.380479847595604,
+          "se": 0.10690015902700988,
+          "n": 1000,
+          "ci95_low": -0.14352431169293936,
+          "ci95_high": 0.27552431169293934
+        },
+        "gap_batch2_paired": {
+          "mean": -0.17,
+          "sd": 3.8883286898100575,
+          "se": 0.12295974951178129,
+          "n": 1000,
+          "ci95_low": -0.41100110904309134,
+          "ci95_high": 0.07100110904309131
+        },
+        "pool_mean_batch2": 0.16624,
+        "pool_best_batch2": 172,
+        "pool_best_batch2_value": 0.487,
+        "pool_best_batch2_flagged": "argmax over batch 2; selection on the evaluation batch, upward-biased"
+      },
+      "methods": {
+        "degree": {
+          "chosen": 172,
+          "contains_reference": false,
+          "chosen_batch2_mean": 0.487,
+          "chosen_batch2_summary": {
+            "mean": 0.487,
+            "sd": 4.126721580140827,
+            "se": 0.1304983946261409,
+            "n": 1000,
+            "ci95_low": 0.23122314653276382,
+            "ci95_high": 0.7427768534672361,
+            "min": -10.0,
+            "p05": -5.0,
+            "median": 0.0,
+            "p95": 6.0,
+            "max": 35.0,
+            "negative_share": 0.397
+          },
+          "gain_vs_reference_batch2": {
+            "mean": 0.17,
+            "sd": 3.8883286898100575,
+            "se": 0.12295974951178129,
+            "n": 1000,
+            "ci95_low": -0.07100110904309131,
+            "ci95_high": 0.41100110904309134,
+            "min": -33.0,
+            "p05": -5.0,
+            "median": 0.0,
+            "p95": 6.0,
+            "max": 27.0,
+            "negative_share": 0.408
+          },
+          "draws_beating_it": 0,
+          "draws_total": 100,
+          "percentile_in_random_distribution": 86.0
+        },
+        "static_delta2": {
+          "chosen": 172,
+          "contains_reference": false,
+          "chosen_batch2_mean": 0.487,
+          "chosen_batch2_summary": {
+            "mean": 0.487,
+            "sd": 4.126721580140827,
+            "se": 0.1304983946261409,
+            "n": 1000,
+            "ci95_low": 0.23122314653276382,
+            "ci95_high": 0.7427768534672361,
+            "min": -10.0,
+            "p05": -5.0,
+            "median": 0.0,
+            "p95": 6.0,
+            "max": 35.0,
+            "negative_share": 0.397
+          },
+          "gain_vs_reference_batch2": {
+            "mean": 0.17,
+            "sd": 3.8883286898100575,
+            "se": 0.12295974951178129,
+            "n": 1000,
+            "ci95_low": -0.07100110904309131,
+            "ci95_high": 0.41100110904309134,
+            "min": -33.0,
+            "p05": -5.0,
+            "median": 0.0,
+            "p95": 6.0,
+            "max": 27.0,
+            "negative_share": 0.408
+          },
+          "draws_beating_it": 0,
+          "draws_total": 100,
+          "percentile_in_random_distribution": 86.0
+        },
+        "state_delta2": {
+          "chosen": 28,
+          "contains_reference": false,
+          "chosen_batch2_mean": 0.277,
+          "chosen_batch2_summary": {
+            "mean": 0.277,
+            "sd": 3.5911378419659696,
+            "se": 0.1135617497223427,
+            "n": 1000,
+            "ci95_low": 0.05441897054420833,
+            "ci95_high": 0.49958102945579175,
+            "min": -11.0,
+            "p05": -4.0,
+            "median": 0.0,
+            "p95": 4.0,
+            "max": 42.0,
+            "negative_share": 0.311
+          },
+          "gain_vs_reference_batch2": {
+            "mean": -0.04,
+            "sd": 3.6351616195156993,
+            "se": 0.11495390380496003,
+            "n": 1000,
+            "ci95_low": -0.2653096514577216,
+            "ci95_high": 0.18530965145772163,
+            "min": -35.0,
+            "p05": -5.0,
+            "median": 0.0,
+            "p95": 5.0,
+            "max": 30.0,
+            "negative_share": 0.404
+          },
+          "draws_beating_it": 65,
+          "draws_total": 100,
+          "percentile_in_random_distribution": 31.0
+        }
+      },
+      "random_distribution": {
+        "repeats": 100,
+        "mean": 0.32504,
+        "quantiles": {
+          "min": 0.103,
+          "p05": 0.153,
+          "median": 0.317,
+          "p95": 0.487,
+          "max": 0.487
+        },
+        "median_mc_ci_width": 0.4933676400316503
+      },
+      "score_correlations_with_contracted_marginal": {
+        "degree": {
+          "vs_batch1_marginal": 0.23881728609009156,
+          "vs_batch2_marginal": 0.4096714785372938
+        },
+        "static_delta2": {
+          "vs_batch1_marginal": 0.35022333867563643,
+          "vs_batch2_marginal": 0.2116460574745312
+        },
+        "state_delta2": {
+          "vs_batch1_marginal": -0.20224773438879665,
+          "vs_batch2_marginal": -0.082122704397878
+        }
+      },
+      "top8_recovery": {
+        "degree": {
+          "overlap_with_batch1_top8": 2,
+          "overlap_with_batch2_top8": 4,
+          "null_mean_overlap": 1.28,
+          "p_ge_observed_batch2_under_null": 0.015836772425202605,
+          "flagged": "batch-2 top-8 is independent of every score; batch-1 top-8 is not"
+        },
+        "static_delta2": {
+          "overlap_with_batch1_top8": 3,
+          "overlap_with_batch2_top8": 2,
+          "null_mean_overlap": 1.28,
+          "p_ge_observed_batch2_under_null": 0.378152196962945,
+          "flagged": "batch-2 top-8 is independent of every score; batch-1 top-8 is not"
+        },
+        "state_delta2": {
+          "overlap_with_batch1_top8": 1,
+          "overlap_with_batch2_top8": 1,
+          "null_mean_overlap": 1.28,
+          "p_ge_observed_batch2_under_null": 0.7801548171081119,
+          "flagged": "batch-2 top-8 is independent of every score; batch-1 top-8 is not"
+        }
+      },
+      "marginal_tail": {
+        "batch1_marginal_min": -0.068,
+        "batch1_marginal_median": 0.06,
+        "batch1_marginal_max": 0.321,
+        "batch1_sd_across_candidates": 0.09409392966605232,
+        "reference_minus_median": 0.261,
+        "reference_in_sd_units": 2.605694127880146
+      },
+      "headroom_resolvability": {
+        "batch1": {
+          "paired_sd": 3.3804798475956037,
+          "gap": 0.066,
+          "trials_at_which_ci_width_equals_gap": 10079,
+          "trials_used": 1000
+        },
+        "batch2": {
+          "paired_sd": 3.8883286898100575,
+          "gap": -0.17,
+          "trials_at_which_ci_width_equals_gap": 2010,
+          "trials_used": 1000
+        },
+        "note": "trials needed for the reference-vs-runner-up gap to reach a 95% CI half-width equal to the gap itself; below that count the headroom is not measurable and no screening score can be credited or blamed for finding it"
+      },
+      "state_conditioning": {
+        "share_negative_static_delta2": 0.0,
+        "share_negative_state_delta2": 1.0,
+        "static_delta2_note": "g(delta) with delta >= 0 is never negative, so a 0% negative share is a structural fact about the closed form, not evidence of quality",
+        "reference_static_delta2_score": 0.501071126274159,
+        "reference_state_delta2_score": -0.04766381218373278,
+        "reference_percentile_in_static_delta2": 80.0,
+        "reference_percentile_in_state_delta2": 20.0,
+        "state_delta2_range": [
+          -0.23595221901023927,
+          -0.0011897208104235113
+        ],
+        "static_delta2_range": [
+          0.01103376710550421,
+          1.071035273442355
+        ],
+        "reading": "the reference candidate is a high scorer under the state-free closed form and a low or bottom scorer under the state-conditioned one; the difference between the two scores is the current-state exposure input alone"
+      },
+      "shortlist_ceiling_batch2": {
+        "degree": {
+          "shortlist": [
+            214,
+            1,
+            172,
+            75,
+            210,
+            256,
+            360,
+            45
+          ],
+          "best_in_shortlist_batch2": 172,
+          "value": 0.487,
+          "flagged": "selection on the evaluation batch; upward-biased"
+        },
+        "static_delta2": {
+          "shortlist": [
+            275,
+            172,
+            199,
+            381,
+            115,
+            443,
+            45,
+            99
+          ],
+          "best_in_shortlist_batch2": 172,
+          "value": 0.487,
+          "flagged": "selection on the evaluation batch; upward-biased"
+        },
+        "state_delta2": {
+          "shortlist": [
+            437,
+            28,
+            425,
+            225,
+            83,
+            144,
+            397,
+            1
+          ],
+          "best_in_shortlist_batch2": 1,
+          "value": 0.478,
+          "flagged": "selection on the evaluation batch; upward-biased"
+        }
+      },
+      "caveats": [
+        "candidate pool is degree-stratified, so the degree column's correlation is restricted by construction",
+        "no CI is attached to any negative-marginal share, so none is a conclusion",
+        "pool-best and shortlist-best on batch 2 are upward-biased ceilings"
+      ]
+    },
+    {
+      "graph": "email_eu_core",
+      "seed_fraction": 0.04975124378109453,
+      "n": 1005,
+      "seed_size": 50,
+      "target_size": 201,
+      "candidate_count": 50,
+      "mc_per_batch": 1000,
+      "reference": 733,
+      "reference_rank_by_score": {
+        "degree": 1,
+        "static_delta2": 8,
+        "state_delta2": 37
+      },
+      "headroom": {
+        "reference_batch1": {
+          "mean": 0.04,
+          "sd": 1.8078716768620497,
+          "se": 0.05716992216192007,
+          "n": 1000,
+          "ci95_low": -0.07205304743736335,
+          "ci95_high": 0.15205304743736334,
+          "min": -11.0,
+          "p05": -2.0,
+          "median": 0.0,
+          "p95": 3.0,
+          "max": 15.0,
+          "negative_share": 0.163
+        },
+        "runner_up": 219,
+        "runner_up_batch1": {
+          "mean": 0.026,
+          "sd": 1.1546964969202946,
+          "se": 0.03651470936485734,
+          "n": 1000,
+          "ci95_low": -0.04556883035512038,
+          "ci95_high": 0.09756883035512037,
+          "min": -9.0,
+          "p05": -1.0,
+          "median": 0.0,
+          "p95": 2.0,
+          "max": 7.0,
+          "negative_share": 0.087
+        },
+        "gap_batch1_paired": {
+          "mean": 0.014,
+          "sd": 2.1179716711986494,
+          "se": 0.06697614500700977,
+          "n": 1000,
+          "ci95_low": -0.11727324421373915,
+          "ci95_high": 0.14527324421373916
+        },
+        "gap_batch2_paired": {
+          "mean": -0.003,
+          "sd": 1.8398345034268708,
+          "se": 0.05818067548593777,
+          "n": 1000,
+          "ci95_low": -0.11703412395243804,
+          "ci95_high": 0.11103412395243803
+        },
+        "pool_mean_batch2": 0.0006599999999999999,
+        "pool_best_batch2": 716,
+        "pool_best_batch2_value": 0.062,
+        "pool_best_batch2_flagged": "argmax over batch 2; selection on the evaluation batch, upward-biased"
+      },
+      "methods": {
+        "degree": {
+          "chosen": 733,
+          "contains_reference": true,
+          "chosen_batch2_mean": 0.04,
+          "chosen_batch2_summary": {
+            "mean": 0.04,
+            "sd": 1.625546062097288,
+            "se": 0.05140427997744935,
+            "n": 1000,
+            "ci95_low": -0.060752388755800725,
+            "ci95_high": 0.14075238875580073,
+            "min": -10.0,
+            "p05": -2.0,
+            "median": 0.0,
+            "p95": 3.0,
+            "max": 11.0,
+            "negative_share": 0.168
+          },
+          "gain_vs_reference_batch2": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "se": 0.0,
+            "n": 1000,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0,
+            "min": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0,
+            "negative_share": 0.0
+          },
+          "draws_beating_it": 15,
+          "draws_total": 100,
+          "percentile_in_random_distribution": 68.0
+        },
+        "static_delta2": {
+          "chosen": 733,
+          "contains_reference": true,
+          "chosen_batch2_mean": 0.04,
+          "chosen_batch2_summary": {
+            "mean": 0.04,
+            "sd": 1.625546062097288,
+            "se": 0.05140427997744935,
+            "n": 1000,
+            "ci95_low": -0.060752388755800725,
+            "ci95_high": 0.14075238875580073,
+            "min": -10.0,
+            "p05": -2.0,
+            "median": 0.0,
+            "p95": 3.0,
+            "max": 11.0,
+            "negative_share": 0.168
+          },
+          "gain_vs_reference_batch2": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "se": 0.0,
+            "n": 1000,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0,
+            "min": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0,
+            "negative_share": 0.0
+          },
+          "draws_beating_it": 15,
+          "draws_total": 100,
+          "percentile_in_random_distribution": 68.0
+        },
+        "state_delta2": {
+          "chosen": 78,
+          "contains_reference": false,
+          "chosen_batch2_mean": 0.0,
+          "chosen_batch2_summary": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "se": 0.0,
+            "n": 1000,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0,
+            "min": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0,
+            "negative_share": 0.0
+          },
+          "gain_vs_reference_batch2": {
+            "mean": -0.04,
+            "sd": 1.625546062097288,
+            "se": 0.05140427997744935,
+            "n": 1000,
+            "ci95_low": -0.14075238875580073,
+            "ci95_high": 0.060752388755800725,
+            "min": -11.0,
+            "p05": -3.0,
+            "median": 0.0,
+            "p95": 2.0,
+            "max": 10.0,
+            "negative_share": 0.194
+          },
+          "draws_beating_it": 69,
+          "draws_total": 100,
+          "percentile_in_random_distribution": 3.0
+        }
+      },
+      "random_distribution": {
+        "repeats": 100,
+        "mean": 0.016479999999999998,
+        "quantiles": {
+          "min": -0.028,
+          "p05": 0.0,
+          "median": 0.013,
+          "p95": 0.043,
+          "max": 0.043
+        },
+        "median_mc_ci_width": 0.09776325965105706
+      },
+      "score_correlations_with_contracted_marginal": {
+        "degree": {
+          "vs_batch1_marginal": -0.3976360323818508,
+          "vs_batch2_marginal": 0.07947399152315734
+        },
+        "static_delta2": {
+          "vs_batch1_marginal": -0.43874845565567455,
+          "vs_batch2_marginal": -0.01791946127827905
+        },
+        "state_delta2": {
+          "vs_batch1_marginal": 0.4772138262411742,
+          "vs_batch2_marginal": 0.05504587270360859
+        }
+      },
+      "top8_recovery": {
+        "degree": {
+          "overlap_with_batch1_top8": 1,
+          "overlap_with_batch2_top8": 4,
+          "null_mean_overlap": 1.28,
+          "p_ge_observed_batch2_under_null": 0.015836772425202605,
+          "flagged": "batch-2 top-8 is independent of every score; batch-1 top-8 is not"
+        },
+        "static_delta2": {
+          "overlap_with_batch1_top8": 3,
+          "overlap_with_batch2_top8": 4,
+          "null_mean_overlap": 1.28,
+          "p_ge_observed_batch2_under_null": 0.015836772425202605,
+          "flagged": "batch-2 top-8 is independent of every score; batch-1 top-8 is not"
+        },
+        "state_delta2": {
+          "overlap_with_batch1_top8": 2,
+          "overlap_with_batch2_top8": 0,
+          "null_mean_overlap": 1.28,
+          "p_ge_observed_batch2_under_null": 1.0,
+          "flagged": "batch-2 top-8 is independent of every score; batch-1 top-8 is not"
+        }
+      },
+      "marginal_tail": {
+        "batch1_marginal_min": -0.06,
+        "batch1_marginal_median": 0.0,
+        "batch1_marginal_max": 0.04,
+        "batch1_sd_across_candidates": 0.017460171820460415,
+        "reference_minus_median": 0.04,
+        "reference_in_sd_units": 2.5956216505780603
+      },
+      "headroom_resolvability": {
+        "batch1": {
+          "paired_sd": 2.1179716711986494,
+          "gap": 0.014,
+          "trials_at_which_ci_width_equals_gap": 87922,
+          "trials_used": 1000
+        },
+        "batch2": {
+          "paired_sd": 1.8398345034268708,
+          "gap": -0.003,
+          "trials_at_which_ci_width_equals_gap": 1444865,
+          "trials_used": 1000
+        },
+        "note": "trials needed for the reference-vs-runner-up gap to reach a 95% CI half-width equal to the gap itself; below that count the headroom is not measurable and no screening score can be credited or blamed for finding it"
+      },
+      "state_conditioning": {
+        "share_negative_static_delta2": 0.0,
+        "share_negative_state_delta2": 0.44,
+        "static_delta2_note": "g(delta) with delta >= 0 is never negative, so a 0% negative share is a structural fact about the closed form, not evidence of quality",
+        "reference_static_delta2_score": 0.08644027872237858,
+        "reference_state_delta2_score": -0.0031947643603044695,
+        "reference_percentile_in_static_delta2": 84.0,
+        "reference_percentile_in_state_delta2": 26.0,
+        "state_delta2_range": [
+          -0.01169690759409131,
+          0.0
+        ],
+        "static_delta2_range": [
+          0.0,
+          0.13540147732190352
+        ],
+        "reading": "the reference candidate is a high scorer under the state-free closed form and a low or bottom scorer under the state-conditioned one; the difference between the two scores is the current-state exposure input alone"
+      },
+      "shortlist_ceiling_batch2": {
+        "degree": {
+          "shortlist": [
+            733,
+            979,
+            507,
+            672,
+            696,
+            817,
+            906,
+            958
+          ],
+          "best_in_shortlist_batch2": 507,
+          "value": 0.041,
+          "flagged": "selection on the evaluation batch; upward-biased"
+        },
+        "static_delta2": {
+          "shortlist": [
+            696,
+            672,
+            821,
+            906,
+            979,
+            348,
+            219,
+            733
+          ],
+          "best_in_shortlist_batch2": 219,
+          "value": 0.043,
+          "flagged": "selection on the evaluation batch; upward-biased"
+        },
+        "state_delta2": {
+          "shortlist": [
+            78,
+            289,
+            386,
+            402,
+            439,
+            472,
+            475,
+            576
+          ],
+          "best_in_shortlist_batch2": 78,
+          "value": 0.0,
+          "flagged": "selection on the evaluation batch; upward-biased"
+        }
+      },
+      "caveats": [
+        "candidate pool is degree-stratified, so the degree column's correlation is restricted by construction",
+        "no CI is attached to any negative-marginal share, so none is a conclusion",
+        "pool-best and shortlist-best on batch 2 are upward-biased ceilings"
+      ]
+    },
+    {
+      "graph": "ca_grqc",
+      "seed_fraction": 0.009919877909194963,
+      "n": 5242,
+      "seed_size": 52,
+      "target_size": 1048,
+      "candidate_count": 50,
+      "mc_per_batch": 1000,
+      "reference": 8150,
+      "reference_rank_by_score": {
+        "degree": 13,
+        "static_delta2": 1,
+        "state_delta2": 50
+      },
+      "headroom": {
+        "reference_batch1": {
+          "mean": 1.096,
+          "sd": 11.300300173004254,
+          "se": 0.3573468679028823,
+          "n": 1000,
+          "ci95_low": 0.39560013891035084,
+          "ci95_high": 1.7963998610896494,
+          "min": -80.0,
+          "p05": -3.0,
+          "median": 0.0,
+          "p95": 6.0,
+          "max": 180.0,
+          "negative_share": 0.176
+        },
+        "runner_up": 15960,
+        "runner_up_batch1": {
+          "mean": 0.656,
+          "sd": 5.755663645488676,
+          "se": 0.18201006565572136,
+          "n": 1000,
+          "ci95_low": 0.29926027131478616,
+          "ci95_high": 1.0127397286852138,
+          "min": -23.0,
+          "p05": -1.0,
+          "median": 0.0,
+          "p95": 4.0,
+          "max": 121.0,
+          "negative_share": 0.092
+        },
+        "gap_batch1_paired": {
+          "mean": 0.44,
+          "sd": 12.659794627086175,
+          "se": 0.4003378573155429,
+          "n": 1000,
+          "ci95_low": -0.344662200338464,
+          "ci95_high": 1.224662200338464
+        },
+        "gap_batch2_paired": {
+          "mean": 0.53,
+          "sd": 13.669202610247607,
+          "se": 0.4322581404670131,
+          "n": 1000,
+          "ci95_low": -0.3172259553153457,
+          "ci95_high": 1.3772259553153456
+        },
+        "pool_mean_batch2": 0.2635,
+        "pool_best_batch2": 9314,
+        "pool_best_batch2_value": 0.961,
+        "pool_best_batch2_flagged": "argmax over batch 2; selection on the evaluation batch, upward-biased"
+      },
+      "methods": {
+        "degree": {
+          "chosen": 3058,
+          "contains_reference": false,
+          "chosen_batch2_mean": 0.392,
+          "chosen_batch2_summary": {
+            "mean": 0.392,
+            "sd": 4.72994038017394,
+            "se": 0.14957384798152384,
+            "n": 1000,
+            "ci95_low": 0.09883525795621328,
+            "ci95_high": 0.6851647420437867,
+            "min": -78.0,
+            "p05": -2.0,
+            "median": 0.0,
+            "p95": 4.0,
+            "max": 70.0,
+            "negative_share": 0.1
+          },
+          "gain_vs_reference_batch2": {
+            "mean": -0.555,
+            "sd": 13.4986286340502,
+            "se": 0.42686411772366156,
+            "n": 1000,
+            "ci95_low": -1.3916536707383766,
+            "ci95_high": 0.28165367073837655,
+            "min": -195.0,
+            "p05": -6.0,
+            "median": 0.0,
+            "p95": 6.0,
+            "max": 138.0,
+            "negative_share": 0.274
+          },
+          "draws_beating_it": 76,
+          "draws_total": 100,
+          "percentile_in_random_distribution": 15.0
+        },
+        "static_delta2": {
+          "chosen": 8150,
+          "contains_reference": true,
+          "chosen_batch2_mean": 0.947,
+          "chosen_batch2_summary": {
+            "mean": 0.947,
+            "sd": 12.710082257798334,
+            "se": 0.4019280918273815,
+            "n": 1000,
+            "ci95_low": 0.1592209400183323,
+            "ci95_high": 1.7347790599816677,
+            "min": -138.0,
+            "p05": -3.0,
+            "median": 0.0,
+            "p95": 5.0,
+            "max": 195.0,
+            "negative_share": 0.188
+          },
+          "gain_vs_reference_batch2": {
+            "mean": 0.0,
+            "sd": 0.0,
+            "se": 0.0,
+            "n": 1000,
+            "ci95_low": 0.0,
+            "ci95_high": 0.0,
+            "min": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.0,
+            "max": 0.0,
+            "negative_share": 0.0
+          },
+          "draws_beating_it": 3,
+          "draws_total": 100,
+          "percentile_in_random_distribution": 70.0
+        },
+        "state_delta2": {
+          "chosen": 15960,
+          "contains_reference": false,
+          "chosen_batch2_mean": 0.417,
+          "chosen_batch2_summary": {
+            "mean": 0.417,
+            "sd": 4.843254174622678,
+            "se": 0.15315714478926537,
+            "n": 1000,
+            "ci95_low": 0.11681199621303984,
+            "ci95_high": 0.7171880037869601,
+            "min": -118.0,
+            "p05": -1.0,
+            "median": 0.0,
+            "p95": 4.0,
+            "max": 56.0,
+            "negative_share": 0.08
+          },
+          "gain_vs_reference_batch2": {
+            "mean": -0.53,
+            "sd": 13.669202610247607,
+            "se": 0.4322581404670131,
+            "n": 1000,
+            "ci95_low": -1.3772259553153456,
+            "ci95_high": 0.3172259553153457,
+            "min": -195.0,
+            "p05": -6.0,
+            "median": 0.0,
+            "p95": 6.0,
+            "max": 138.0,
+            "negative_share": 0.254
+          },
+          "draws_beating_it": 65,
+          "draws_total": 100,
+          "percentile_in_random_distribution": 24.0
+        }
+      },
+      "random_distribution": {
+        "repeats": 100,
+        "mean": 0.63335,
+        "quantiles": {
+          "min": 0.079,
+          "p05": 0.102,
+          "median": 0.631,
+          "p95": 0.947,
+          "max": 0.961
+        },
+        "median_mc_ci_width": 0.8016839813851839
+      },
+      "score_correlations_with_contracted_marginal": {
+        "degree": {
+          "vs_batch1_marginal": 0.4179374203251189,
+          "vs_batch2_marginal": 0.4149730765463273
+        },
+        "static_delta2": {
+          "vs_batch1_marginal": 0.8277146227697643,
+          "vs_batch2_marginal": 0.7715383677732397
+        },
+        "state_delta2": {
+          "vs_batch1_marginal": 0.6336852449767328,
+          "vs_batch2_marginal": 0.515437577755326
+        }
+      },
+      "top8_recovery": {
+        "degree": {
+          "overlap_with_batch1_top8": 2,
+          "overlap_with_batch2_top8": 3,
+          "null_mean_overlap": 1.28,
+          "p_ge_observed_batch2_under_null": 0.10456708047526196,
+          "flagged": "batch-2 top-8 is independent of every score; batch-1 top-8 is not"
+        },
+        "static_delta2": {
+          "overlap_with_batch1_top8": 5,
+          "overlap_with_batch2_top8": 2,
+          "null_mean_overlap": 1.28,
+          "p_ge_observed_batch2_under_null": 0.378152196962945,
+          "flagged": "batch-2 top-8 is independent of every score; batch-1 top-8 is not"
+        },
+        "state_delta2": {
+          "overlap_with_batch1_top8": 4,
+          "overlap_with_batch2_top8": 3,
+          "null_mean_overlap": 1.28,
+          "p_ge_observed_batch2_under_null": 0.10456708047526196,
+          "flagged": "batch-2 top-8 is independent of every score; batch-1 top-8 is not"
+        }
+      },
+      "marginal_tail": {
+        "batch1_marginal_min": 0.0,
+        "batch1_marginal_median": 0.136,
+        "batch1_marginal_max": 1.096,
+        "batch1_sd_across_candidates": 0.25237742846776134,
+        "reference_minus_median": 0.9600000000000001,
+        "reference_in_sd_units": 3.4613238010370986
+      },
+      "headroom_resolvability": {
+        "batch1": {
+          "paired_sd": 12.659794627086175,
+          "gap": 0.44,
+          "trials_at_which_ci_width_equals_gap": 3181,
+          "trials_used": 1000
+        },
+        "batch2": {
+          "paired_sd": 13.669202610247606,
+          "gap": 0.53,
+          "trials_at_which_ci_width_equals_gap": 2556,
+          "trials_used": 1000
+        },
+        "note": "trials needed for the reference-vs-runner-up gap to reach a 95% CI half-width equal to the gap itself; below that count the headroom is not measurable and no screening score can be credited or blamed for finding it"
+      },
+      "state_conditioning": {
+        "share_negative_static_delta2": 0.0,
+        "share_negative_state_delta2": 0.06,
+        "static_delta2_note": "g(delta) with delta >= 0 is never negative, so a 0% negative share is a structural fact about the closed form, not evidence of quality",
+        "reference_static_delta2_score": 0.4858990783606575,
+        "reference_state_delta2_score": -0.012564952673796703,
+        "reference_percentile_in_static_delta2": 98.0,
+        "reference_percentile_in_state_delta2": 0.0,
+        "state_delta2_range": [
+          -0.012564952673796703,
+          0.15289671237402302
+        ],
+        "static_delta2_range": [
+          0.0,
+          0.4858990783606575
+        ],
+        "reading": "the reference candidate is a high scorer under the state-free closed form and a low or bottom scorer under the state-conditioned one; the difference between the two scores is the current-state exposure input alone"
+      },
+      "shortlist_ceiling_batch2": {
+        "degree": {
+          "shortlist": [
+            733,
+            844,
+            1608,
+            2055,
+            3058,
+            3200,
+            4034,
+            4650
+          ],
+          "best_in_shortlist_batch2": 1608,
+          "value": 0.843,
+          "flagged": "selection on the evaluation batch; upward-biased"
+        },
+        "static_delta2": {
+          "shortlist": [
+            8150,
+            15960,
+            13529,
+            11563,
+            9314,
+            6919,
+            2655,
+            3058
+          ],
+          "best_in_shortlist_batch2": 9314,
+          "value": 0.961,
+          "flagged": "selection on the evaluation batch; upward-biased"
+        },
+        "state_delta2": {
+          "shortlist": [
+            15960,
+            9391,
+            5445,
+            4775,
+            6919,
+            9314,
+            13389,
+            11405
+          ],
+          "best_in_shortlist_batch2": 9314,
+          "value": 0.961,
+          "flagged": "selection on the evaluation batch; upward-biased"
+        }
+      },
+      "caveats": [
+        "candidate pool is degree-stratified, so the degree column's correlation is restricted by construction",
+        "no CI is attached to any negative-marginal share, so none is a conclusion",
+        "pool-best and shortlist-best on batch 2 are upward-biased ceilings"
+      ]
+    }
+  ]
+}

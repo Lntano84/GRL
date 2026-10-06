@@ -1,0 +1,60 @@
+{
+  "completed": false,
+  "arm": "HIGH-SCORE",
+  "started_unix": 1790761743.5931985,
+  "calibration_sha256": "6d294e4a4982ef3532197f0213a13a1a7cca5d39b6c3b4d74eae60614863caf6",
+  "policy_sha256": "c624c45811a9b5b3ff1def8ed66f9c7d3848e6bd86ed4c581663dcb94b8511d5",
+  "config_sha256": "0b2987bc3b1211dc973221976f3b3eaaac13c82dcfbf45719c2c1c13a7aee91e",
+  "replay_mode": "online branch-local decisions; demand candidates only; no learned model training",
+  "trace_request_sequence": 27507,
+  "get_requests": 23721,
+  "actual_candidate_decisions": 377494,
+  "actual_decision_batches": 27863,
+  "parent_accepts": 28271,
+  "parent_rejects": 349223,
+  "effective_accepts": 28587,
+  "effective_rejects": 348907,
+  "phase_source_candidate_counts": {
+    "warmup|demand": 285552,
+    "warmup|prefetch": 4661,
+    "evaluation|demand": 85459,
+    "evaluation|prefetch": 1822
+  },
+  "evaluation": {
+    "demand_candidates": 85459,
+    "high_parent_rejected_demand_candidates": 80798,
+    "all_sources_high_parent_rejected": 80798,
+    "supplemented_parent_rejections": 316,
+    "supplement_successful_cache_writes": 316,
+    "supplement_rate_of_parent_rejected_demand": 0.003910987895739994,
+    "supplement_rate_of_all_demand_candidates": 0.003697679589042699,
+    "effective_demand_accepts": 4977,
+    "unknown_source_candidates": 0,
+    "write_count_live": 6799,
+    "write_cap": 148731,
+    "resource_eligible_live_counter": true
+  },
+  "check_only": {
+    "calls": 428,
+    "items": 9430,
+    "changed_decisions": 0
+  },
+  "supplement_unique_requests": 39,
+  "supplement_unique_blocks": 36,
+  "supplement_event_count": 316,
+  "supplement_write_success_count": 316,
+  "write_count_full_trace_live": 28587,
+  "max_cache_entries_observed": 3001,
+  "max_cache_capacity": 3002,
+  "rule_reason_counts": {
+    "warmup_parent_unchanged": 268425,
+    "parent_accept": 28271,
+    "below_score_cutoff": 80482,
+    "score_tail": 316
+  },
+  "check_only_unchanged": true,
+  "supplement_events_path": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\arms\\HIGH-SCORE\\supplement_events.jsonl",
+  "wall_seconds": 95.8105570000007,
+  "stats_path": null,
+  "error": "AssertionError(('empty supplement event queue', {'tuple': ['394873', 57]}))"
+}

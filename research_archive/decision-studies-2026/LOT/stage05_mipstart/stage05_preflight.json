@@ -1,0 +1,1154 @@
+{
+  "check1_model_transfer": {
+    "cases": [
+      {
+        "case": "small instance, no fixing",
+        "n_cols_match": true,
+        "n_rows_match": true,
+        "objective_vector_match": true,
+        "col_lower_match": true,
+        "col_upper_match": true,
+        "row_lower_match": true,
+        "row_upper_match": true,
+        "matrix_match": true,
+        "integrality_match": true,
+        "scipy_objective": 90.57520340070849,
+        "scipy_status": 1,
+        "scipy_solution_passes_checker": true,
+        "highs_objective": 85.02316345336996,
+        "highs_status": "Time limit reached",
+        "highs_solution_passes_checker": true,
+        "both_proved_optimal": false,
+        "objective_abs_diff_if_both_optimal": null,
+        "n_fixed": 0,
+        "passed": true
+      },
+      {
+        "case": "small instance, fixed/release Y",
+        "n_cols_match": true,
+        "n_rows_match": true,
+        "objective_vector_match": true,
+        "col_lower_match": true,
+        "col_upper_match": true,
+        "row_lower_match": true,
+        "row_upper_match": true,
+        "matrix_match": true,
+        "integrality_match": true,
+        "scipy_objective": 2540.5832301656956,
+        "scipy_status": 0,
+        "scipy_solution_passes_checker": true,
+        "highs_objective": 2540.5832301656956,
+        "highs_status": "Optimal",
+        "highs_solution_passes_checker": true,
+        "both_proved_optimal": true,
+        "objective_abs_diff_if_both_optimal": 0.0,
+        "n_fixed": 18,
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "check2_repair_feasible": {
+    "cases": [
+      {
+        "state": "large_rho0.75_s0|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 48,
+            "n_released": 384,
+            "fixings_match_repair": true,
+            "stability_lhs": -35.0,
+            "stability_rhs": -31.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 432,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -35.0,
+            "stability_rhs": -31.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 420,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -35.0,
+            "stability_rhs": -31.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 408,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -35.0,
+            "stability_rhs": -31.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "large_rho0.75_s0|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 72,
+            "n_released": 360,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.0,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 432,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.0,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 420,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.0,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 408,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.0,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "large_rho0.75_s1|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 48,
+            "n_released": 384,
+            "fixings_match_repair": true,
+            "stability_lhs": -29.0,
+            "stability_rhs": -25.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 432,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -29.0,
+            "stability_rhs": -25.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 420,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -29.0,
+            "stability_rhs": -25.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 408,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -29.0,
+            "stability_rhs": -25.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "large_rho0.75_s1|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 72,
+            "n_released": 360,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.0,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 432,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.0,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 420,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.0,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 408,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.0,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "large_rho1.10_s0|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 48,
+            "n_released": 384,
+            "fixings_match_repair": true,
+            "stability_lhs": -15.000000000000007,
+            "stability_rhs": -11.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 432,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -15.000000000000007,
+            "stability_rhs": -11.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 420,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -15.000000000000007,
+            "stability_rhs": -11.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 408,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -15.000000000000007,
+            "stability_rhs": -11.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "large_rho1.10_s0|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 72,
+            "n_released": 360,
+            "fixings_match_repair": true,
+            "stability_lhs": -14.000000000000007,
+            "stability_rhs": -10.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 432,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -14.000000000000007,
+            "stability_rhs": -10.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 420,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -14.000000000000007,
+            "stability_rhs": -10.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 408,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -14.000000000000007,
+            "stability_rhs": -10.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "large_rho1.10_s1|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 48,
+            "n_released": 384,
+            "fixings_match_repair": true,
+            "stability_lhs": -16.0,
+            "stability_rhs": -12.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 432,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -16.0,
+            "stability_rhs": -12.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 420,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -16.0,
+            "stability_rhs": -12.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 408,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -16.0,
+            "stability_rhs": -12.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "large_rho1.10_s1|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 72,
+            "n_released": 360,
+            "fixings_match_repair": true,
+            "stability_lhs": -17.0,
+            "stability_rhs": -13.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 432,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -17.0,
+            "stability_rhs": -13.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 420,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -17.0,
+            "stability_rhs": -13.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 408,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -17.0,
+            "stability_rhs": -13.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "medium_rho0.75_s0|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 24,
+            "n_released": 192,
+            "fixings_match_repair": true,
+            "stability_lhs": -31.000000000000004,
+            "stability_rhs": -27.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 216,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -31.000000000000004,
+            "stability_rhs": -27.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 204,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -31.000000000000004,
+            "stability_rhs": -27.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 192,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -31.000000000000004,
+            "stability_rhs": -27.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "medium_rho0.75_s0|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 36,
+            "n_released": 180,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.000000000000004,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 216,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.000000000000004,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 204,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.000000000000004,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 192,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -28.000000000000004,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "medium_rho0.75_s1|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 24,
+            "n_released": 192,
+            "fixings_match_repair": true,
+            "stability_lhs": -31.999999999999993,
+            "stability_rhs": -28.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 216,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -31.999999999999993,
+            "stability_rhs": -28.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 204,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -31.999999999999993,
+            "stability_rhs": -28.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 192,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -31.999999999999993,
+            "stability_rhs": -28.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "medium_rho0.75_s1|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 36,
+            "n_released": 180,
+            "fixings_match_repair": true,
+            "stability_lhs": -27.999999999999993,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 216,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -27.999999999999993,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 204,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -27.999999999999993,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 192,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -27.999999999999993,
+            "stability_rhs": -24.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "medium_rho1.10_s0|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 24,
+            "n_released": 192,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 216,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 204,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 192,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "medium_rho1.10_s0|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 36,
+            "n_released": 180,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 216,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 204,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 192,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "medium_rho1.10_s1|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 24,
+            "n_released": 192,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 216,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 204,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 192,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "medium_rho1.10_s1|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 36,
+            "n_released": 180,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 216,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 204,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 192,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -13.0,
+            "stability_rhs": -9.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "small_rho0.75_s0|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -6.999999999999909,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 36,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -6.999999999999909,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 24,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -6.999999999999909,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -6.999999999999909,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "small_rho0.75_s0|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -6.999999999999909,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 36,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -6.999999999999909,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 24,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -6.999999999999909,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -6.999999999999909,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "small_rho0.75_s1|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -7.999999999999853,
+            "stability_rhs": -4.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 36,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -7.999999999999853,
+            "stability_rhs": -4.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 24,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -7.999999999999853,
+            "stability_rhs": -4.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -7.999999999999853,
+            "stability_rhs": -4.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "small_rho0.75_s1|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -7.0,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 36,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -7.0,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 24,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -7.0,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -7.0,
+            "stability_rhs": -3.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "small_rho1.10_s0|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -5.0,
+            "stability_rhs": -1.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 36,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -5.0,
+            "stability_rhs": -1.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 24,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -5.0,
+            "stability_rhs": -1.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -5.0,
+            "stability_rhs": -1.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "small_rho1.10_s0|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 36,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 24,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "small_rho1.10_s1|D1_m0_2p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 36,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 24,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      },
+      {
+        "state": "small_rho1.10_s1|D2_all_1p",
+        "repair_model_feasible": true,
+        "repair_max_violation": 0.0,
+        "methods": {
+          "FULL": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "EMPTY": {
+            "n_fixed": 36,
+            "n_released": 0,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-12": {
+            "n_fixed": 24,
+            "n_released": 12,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          },
+          "SHORTAGE-24": {
+            "n_fixed": 12,
+            "n_released": 24,
+            "fixings_match_repair": true,
+            "stability_lhs": -4.0,
+            "stability_rhs": 0.0,
+            "stability_ok": true,
+            "repair_vector_subproblem_feasible": true
+          }
+        },
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "check3_mip_start_adoption": {
+    "cases": [
+      {
+        "state": "large_rho1.10_s0|D1_m0_2p",
+        "method": "FULL",
+        "cold_status": "Time limit reached",
+        "cold_objective": 23667.941913093222,
+        "warm_status": "Time limit reached",
+        "warm_objective": 9394.143455754334,
+        "set_solution_status": "HighsStatus.kOk",
+        "start_adopted": true,
+        "start_reported_objective": 9394.14345575,
+        "start_message": "MIP start solution is feasible, objective value is 9394.14345575",
+        "repair_cost": 9394.143455754334,
+        "warm_selected_cost": 9394.143455754334,
+        "warm_selected_source": "solver",
+        "warm_select_errors": [],
+        "passed": true
+      },
+      {
+        "state": "large_rho1.10_s0|D1_m0_2p",
+        "method": "SHORTAGE-12",
+        "cold_status": "Time limit reached",
+        "cold_objective": 25766.644719261403,
+        "warm_status": "Time limit reached",
+        "warm_objective": 9394.143455754334,
+        "set_solution_status": "HighsStatus.kOk",
+        "start_adopted": true,
+        "start_reported_objective": 9394.14345575,
+        "start_message": "MIP start solution is feasible, objective value is 9394.14345575",
+        "repair_cost": 9394.143455754334,
+        "warm_selected_cost": 9394.143455754334,
+        "warm_selected_source": "solver",
+        "warm_select_errors": [],
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "all_passed": true,
+  "wall_s": 35.33127880000029,
+  "highspy_version": "1.15.1"
+}

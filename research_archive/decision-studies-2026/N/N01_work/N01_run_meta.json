@@ -1,0 +1,39 @@
+{
+  "n_cases": 40,
+  "n_dev_worlds": 256,
+  "n_confirm_worlds": 2048,
+  "dev_world_seed_range": [
+    0,
+    255
+  ],
+  "confirm_world_seed_range": [
+    1000000,
+    1002047
+  ],
+  "world_seed_overlap": 0,
+  "verdict_counts": {
+    "not_significant": 4,
+    "both_significant_same_side": 32,
+    "identical_by_construction": 4
+  },
+  "max_bfs_depth": {
+    "dev": 23,
+    "confirm": 25
+  },
+  "t_tables": {
+    "T95": {
+      "19": 2.093024054408307,
+      "39": 2.02269092003676,
+      "99": 1.984216951508683,
+      "255": 1.969310569849874,
+      "2047": 1.961123559863062
+    },
+    "T_BONF_80": {
+      "39": 3.479924403320799,
+      "99": 3.322736366563675,
+      "255": 3.263705552933068,
+      "2047": 3.231723227703862
+    }
+  },
+  "seconds_total": null
+}

@@ -1,0 +1,710 @@
+{
+  "python": "3.13.14",
+  "scipy": "1.17.1",
+  "numpy": "2.5.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "solver": "scipy.optimize.milp / linprog -> HiGHS",
+  "wall_time_s": 1.4054369999998926,
+  "hand": {
+    "A_ample": {
+      "modes": {
+        "paper_literal": {
+          "objective": 5.0,
+          "expectation": null,
+          "agreement": "not-specified",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[3] Y=[1] Z=[0] i0 I=[0] L=[0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 3.0,
+            "inventory": 0.0,
+            "lost_sales": 0.0,
+            "total": 5.0
+          },
+          "notes": []
+        },
+        "audited_v1": {
+          "objective": 5.0,
+          "expectation": 5.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[3] Y=[1] Z=[0] i0 I=[0] L=[0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 3.0,
+            "inventory": 0.0,
+            "lost_sales": 0.0,
+            "total": 5.0
+          },
+          "notes": [
+            "D2 applied: Z_ijT fixed to 0 for all (i,j). Because (1.9) is kept exactly as published, X_ijT >= m_i (Y_ijT - Z_ijT) then degenerates to X_ijT >= m_i Y_ijT, so the final setup can no longer be used to exit below the minimum quantity."
+          ]
+        }
+      },
+      "mode_differs": false,
+      "delta_audited_minus_paper": 0.0
+    },
+    "B_short": {
+      "modes": {
+        "paper_literal": {
+          "objective": 14.0,
+          "expectation": null,
+          "agreement": "not-specified",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[2] Y=[1] Z=[0] i0 I=[0] L=[1]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 2.0,
+            "inventory": 0.0,
+            "lost_sales": 10.0,
+            "total": 14.0
+          },
+          "notes": []
+        },
+        "audited_v1": {
+          "objective": 14.0,
+          "expectation": 14.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[2] Y=[1] Z=[0] i0 I=[0] L=[1]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 2.0,
+            "inventory": 0.0,
+            "lost_sales": 10.0,
+            "total": 14.0
+          },
+          "notes": [
+            "D2 applied: Z_ijT fixed to 0 for all (i,j). Because (1.9) is kept exactly as published, X_ijT >= m_i (Y_ijT - Z_ijT) then degenerates to X_ijT >= m_i Y_ijT, so the final setup can no longer be used to exit below the minimum quantity."
+          ]
+        }
+      },
+      "mode_differs": false,
+      "delta_audited_minus_paper": 0.0
+    },
+    "C_incompat": {
+      "modes": {
+        "paper_literal": {
+          "objective": 30.0,
+          "expectation": null,
+          "agreement": "not-specified",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[3]",
+          "status": "optimal",
+          "cost": {
+            "setup": 0.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 30.0,
+            "total": 30.0
+          },
+          "notes": []
+        },
+        "audited_v1": {
+          "objective": 30.0,
+          "expectation": 30.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[3]",
+          "status": "optimal",
+          "cost": {
+            "setup": 0.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 30.0,
+            "total": 30.0
+          },
+          "notes": [
+            "D2 applied: Z_ijT fixed to 0 for all (i,j). Because (1.9) is kept exactly as published, X_ijT >= m_i (Y_ijT - Z_ijT) then degenerates to X_ijT >= m_i Y_ijT, so the final setup can no longer be used to exit below the minimum quantity."
+          ]
+        }
+      },
+      "mode_differs": false,
+      "delta_audited_minus_paper": 0.0
+    },
+    "D_down": {
+      "modes": {
+        "paper_literal": {
+          "objective": 30.0,
+          "expectation": null,
+          "agreement": "not-specified",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[3]",
+          "status": "optimal",
+          "cost": {
+            "setup": 0.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 30.0,
+            "total": 30.0
+          },
+          "notes": [
+            "activation upper bound was negative for 1 (i,j,t) combination(s) because c_jt < s_i; clipped to 0 since the right-hand side of (1.8) cannot be negative. Affected (i,j,t,raw value): [(0, 0, 1, -1.0)]"
+          ]
+        },
+        "audited_v1": {
+          "objective": 30.0,
+          "expectation": 30.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[3]",
+          "status": "optimal",
+          "cost": {
+            "setup": 0.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 30.0,
+            "total": 30.0
+          },
+          "notes": [
+            "D2 applied: Z_ijT fixed to 0 for all (i,j). Because (1.9) is kept exactly as published, X_ijT >= m_i (Y_ijT - Z_ijT) then degenerates to X_ijT >= m_i Y_ijT, so the final setup can no longer be used to exit below the minimum quantity."
+          ]
+        }
+      },
+      "mode_differs": false,
+      "delta_audited_minus_paper": 0.0
+    },
+    "E_early": {
+      "modes": {
+        "paper_literal": {
+          "objective": 8.0,
+          "expectation": null,
+          "agreement": "not-specified",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[3,0] Y=[1,0] Z=[0,0] i0 I=[3,0] L=[0,0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 3.0,
+            "inventory": 3.0,
+            "lost_sales": 0.0,
+            "total": 8.0
+          },
+          "notes": [
+            "activation upper bound was negative for 1 (i,j,t) combination(s) because c_jt < s_i; clipped to 0 since the right-hand side of (1.8) cannot be negative. Affected (i,j,t,raw value): [(0, 0, 2, -1.0)]"
+          ]
+        },
+        "audited_v1": {
+          "objective": 8.0,
+          "expectation": 8.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[3,0] Y=[1,0] Z=[0,0] i0 I=[3,0] L=[0,0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 3.0,
+            "inventory": 3.0,
+            "lost_sales": 0.0,
+            "total": 8.0
+          },
+          "notes": [
+            "D2 applied: Z_ijT fixed to 0 for all (i,j). Because (1.9) is kept exactly as published, X_ijT >= m_i (Y_ijT - Z_ijT) then degenerates to X_ijT >= m_i Y_ijT, so the final setup can no longer be used to exit below the minimum quantity."
+          ]
+        }
+      },
+      "mode_differs": false,
+      "delta_audited_minus_paper": 0.0
+    },
+    "F_carryover": {
+      "modes": {
+        "paper_literal": {
+          "objective": 11.0,
+          "expectation": 11.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[1,1] Y=[1,0] Z=[1,0] i0 I=[0,0] L=[0,1]",
+          "status": "optimal",
+          "cost": {
+            "setup": 1.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 10.0,
+            "total": 11.0
+          },
+          "notes": []
+        },
+        "audited_v1": {
+          "objective": 1.0,
+          "expectation": 1.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[1,2] Y=[1,0] Z=[1,0] i0 I=[0,0] L=[0,0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 1.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 0.0,
+            "total": 1.0
+          },
+          "notes": [
+            "D2 applied: Z_ijT fixed to 0 for all (i,j). Because (1.9) is kept exactly as published, X_ijT >= m_i (Y_ijT - Z_ijT) then degenerates to X_ijT >= m_i Y_ijT, so the final setup can no longer be used to exit below the minimum quantity."
+          ]
+        }
+      },
+      "mode_differs": true,
+      "delta_audited_minus_paper": -10.0
+    },
+    "G_terminal_Z": {
+      "modes": {
+        "paper_literal": {
+          "objective": 1.0,
+          "expectation": 1.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[1] Y=[1] Z=[1] i0 I=[0] L=[0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 1.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 0.0,
+            "total": 1.0
+          },
+          "notes": []
+        },
+        "audited_v1": {
+          "objective": 10.0,
+          "expectation": 10.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[1]",
+          "status": "optimal",
+          "cost": {
+            "setup": 0.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 10.0,
+            "total": 10.0
+          },
+          "notes": [
+            "D2 applied: Z_ijT fixed to 0 for all (i,j). Because (1.9) is kept exactly as published, X_ijT >= m_i (Y_ijT - Z_ijT) then degenerates to X_ijT >= m_i Y_ijT, so the final setup can no longer be used to exit below the minimum quantity."
+          ]
+        }
+      },
+      "mode_differs": true,
+      "delta_audited_minus_paper": 9.0
+    }
+  },
+  "enum": {
+    "MI0_basic": {
+      "milp_objective": 21.0,
+      "enum_objective": 21.0,
+      "delta": 0.0,
+      "agree": true,
+      "expectation": 21.0,
+      "expectation_agreement": "match",
+      "all_zero_witness_ok": true,
+      "n_slots": 6,
+      "n_configs": 64,
+      "n_feasible": 32,
+      "enum_time_s": 0.11411319999979241,
+      "check_ok": true,
+      "max_violation": 0.0,
+      "failed": [],
+      "plan": "(i0,j0) X=[2,2] Y=[1,0] Z=[1,0] i0 I=[0,0] L=[0,0] (i1,j0) X=[2,2] Y=[1,1] Z=[0,0] i1 I=[0,0] L=[0,0]",
+      "milp_assignment_status": "optimal",
+      "milp_assignment_objective": 21.0
+    },
+    "MI1_incompat": {
+      "milp_objective": 39.0,
+      "enum_objective": 39.0,
+      "delta": 0.0,
+      "agree": true,
+      "expectation": 39.0,
+      "expectation_agreement": "match",
+      "all_zero_witness_ok": true,
+      "n_slots": 6,
+      "n_configs": 64,
+      "n_feasible": 6,
+      "enum_time_s": 0.10560239999995247,
+      "check_ok": true,
+      "max_violation": 0.0,
+      "failed": [],
+      "plan": "(i0,j0) X=[0,0] Y=[0,0] Z=[0,0] i0 I=[0,0] L=[2,1] (i1,j0) X=[2,2] Y=[1,0] Z=[1,0] i1 I=[0,0] L=[0,0]",
+      "milp_assignment_status": "optimal",
+      "milp_assignment_objective": 39.0
+    },
+    "MI2_zero_demand": {
+      "milp_objective": 0.0,
+      "enum_objective": 0.0,
+      "delta": 0.0,
+      "agree": true,
+      "expectation": 0.0,
+      "expectation_agreement": "match",
+      "all_zero_witness_ok": true,
+      "n_slots": 6,
+      "n_configs": 64,
+      "n_feasible": 1,
+      "enum_time_s": 0.09943370000019058,
+      "check_ok": true,
+      "max_violation": 0.0,
+      "failed": [],
+      "plan": "(i0,j0) X=[0,0] Y=[0,0] Z=[0,0] i0 I=[0,0] L=[0,0] (i1,j0) X=[0,0] Y=[0,0] Z=[0,0] i1 I=[0,0] L=[0,0]",
+      "milp_assignment_status": "optimal",
+      "milp_assignment_objective": 0.0
+    },
+    "MI3_initial_inv": {
+      "milp_objective": 3.0,
+      "enum_objective": 3.0,
+      "delta": 0.0,
+      "agree": true,
+      "expectation": 3.0,
+      "expectation_agreement": "match",
+      "all_zero_witness_ok": true,
+      "n_slots": 6,
+      "n_configs": 64,
+      "n_feasible": 32,
+      "enum_time_s": 0.10740069999974367,
+      "check_ok": true,
+      "max_violation": 0.0,
+      "failed": [],
+      "plan": "(i0,j0) X=[0,0] Y=[0,0] Z=[0,0] i0 I=[2,0] L=[0,0] (i1,j0) X=[0,0] Y=[0,0] Z=[0,0] i1 I=[1,0] L=[0,0]",
+      "milp_assignment_status": "optimal",
+      "milp_assignment_objective": 3.0
+    },
+    "MI4_tight": {
+      "milp_objective": 57.0,
+      "enum_objective": 57.0,
+      "delta": 0.0,
+      "agree": true,
+      "expectation": 57.0,
+      "expectation_agreement": "match",
+      "all_zero_witness_ok": true,
+      "n_slots": 6,
+      "n_configs": 64,
+      "n_feasible": 12,
+      "enum_time_s": 0.10239099999989776,
+      "check_ok": true,
+      "max_violation": 0.0,
+      "failed": [],
+      "plan": "(i0,j0) X=[1,3] Y=[1,0] Z=[1,0] i0 I=[0,0] L=[2,0] (i1,j0) X=[0,2] Y=[0,1] Z=[0,0] i1 I=[0,0] L=[1,0]",
+      "milp_assignment_status": "optimal",
+      "milp_assignment_objective": 57.0
+    },
+    "MI5_zero_cap": {
+      "milp_objective": 42.0,
+      "enum_objective": 42.0,
+      "delta": 0.0,
+      "agree": true,
+      "expectation": 42.0,
+      "expectation_agreement": "match",
+      "all_zero_witness_ok": true,
+      "n_slots": 6,
+      "n_configs": 64,
+      "n_feasible": 1,
+      "enum_time_s": 0.09925500000008469,
+      "check_ok": true,
+      "max_violation": 0.0,
+      "failed": [],
+      "plan": "(i0,j0) X=[0,0] Y=[0,0] Z=[0,0] i0 I=[0,0] L=[2,2] (i1,j0) X=[0,0] Y=[0,0] Z=[0,0] i1 I=[0,0] L=[1,1]",
+      "milp_assignment_status": "optimal",
+      "milp_assignment_objective": 42.0
+    },
+    "MI6_cheap_lost": {
+      "milp_objective": 12.0,
+      "enum_objective": 12.0,
+      "delta": 0.0,
+      "agree": true,
+      "expectation": 12.0,
+      "expectation_agreement": "match",
+      "all_zero_witness_ok": true,
+      "n_slots": 6,
+      "n_configs": 64,
+      "n_feasible": 32,
+      "enum_time_s": 0.1079368999999133,
+      "check_ok": true,
+      "max_violation": 0.0,
+      "failed": [],
+      "plan": "(i0,j0) X=[2,2] Y=[1,0] Z=[1,0] i0 I=[0,0] L=[0,0] (i1,j0) X=[0,1] Y=[0,1] Z=[0,0] i1 I=[0,0] L=[1,0]",
+      "milp_assignment_status": "optimal",
+      "milp_assignment_objective": 12.0
+    },
+    "MI7_setup_time": {
+      "milp_objective": 112.0,
+      "enum_objective": 112.0,
+      "delta": 0.0,
+      "agree": true,
+      "expectation": 112.0,
+      "expectation_agreement": "match",
+      "all_zero_witness_ok": true,
+      "n_slots": 6,
+      "n_configs": 64,
+      "n_feasible": 20,
+      "enum_time_s": 0.10616849999996703,
+      "check_ok": true,
+      "max_violation": 0.0,
+      "failed": [],
+      "plan": "(i0,j0) X=[1,2] Y=[1,0] Z=[1,0] i0 I=[0,0] L=[1,0] (i1,j0) X=[0,1] Y=[0,1] Z=[0,0] i1 I=[0,0] L=[3,0]",
+      "milp_assignment_status": "optimal",
+      "milp_assignment_objective": 112.0
+    }
+  },
+  "fixrelease": {
+    "MI0_basic": {
+      "reference_objective": 21.0,
+      "reference_check_ok": true,
+      "fix_all_delta": 0.0,
+      "fix_all_ok": true,
+      "fix_Y_only_objective": 21.0,
+      "fix_Y_only_ok": true,
+      "reference_feasible_under_Y_fix": true,
+      "sweep": [
+        {
+          "k": 0,
+          "objective": 21.0,
+          "n_subsets": 1
+        },
+        {
+          "k": 1,
+          "objective": 21.0,
+          "n_subsets": 2
+        },
+        {
+          "k": 2,
+          "objective": 21.0,
+          "n_subsets": 1
+        }
+      ],
+      "monotone": true,
+      "tau": 1,
+      "n_Y": 2
+    },
+    "MI1_incompat": {
+      "reference_objective": 39.0,
+      "reference_check_ok": true,
+      "fix_all_delta": 0.0,
+      "fix_all_ok": true,
+      "fix_Y_only_objective": 39.0,
+      "fix_Y_only_ok": true,
+      "reference_feasible_under_Y_fix": true,
+      "sweep": [
+        {
+          "k": 0,
+          "objective": 39.0,
+          "n_subsets": 1
+        },
+        {
+          "k": 1,
+          "objective": 39.0,
+          "n_subsets": 2
+        },
+        {
+          "k": 2,
+          "objective": 39.0,
+          "n_subsets": 1
+        }
+      ],
+      "monotone": true,
+      "tau": 1,
+      "n_Y": 2
+    },
+    "MI2_zero_demand": {
+      "reference_objective": 0.0,
+      "reference_check_ok": true,
+      "fix_all_delta": 0.0,
+      "fix_all_ok": true,
+      "fix_Y_only_objective": 0.0,
+      "fix_Y_only_ok": true,
+      "reference_feasible_under_Y_fix": true,
+      "sweep": [
+        {
+          "k": 0,
+          "objective": 0.0,
+          "n_subsets": 1
+        },
+        {
+          "k": 1,
+          "objective": 0.0,
+          "n_subsets": 2
+        },
+        {
+          "k": 2,
+          "objective": 0.0,
+          "n_subsets": 1
+        }
+      ],
+      "monotone": true,
+      "tau": 1,
+      "n_Y": 2
+    },
+    "MI3_initial_inv": {
+      "reference_objective": 3.0,
+      "reference_check_ok": true,
+      "fix_all_delta": 0.0,
+      "fix_all_ok": true,
+      "fix_Y_only_objective": 3.0,
+      "fix_Y_only_ok": true,
+      "reference_feasible_under_Y_fix": true,
+      "sweep": [
+        {
+          "k": 0,
+          "objective": 3.0,
+          "n_subsets": 1
+        },
+        {
+          "k": 1,
+          "objective": 3.0,
+          "n_subsets": 2
+        },
+        {
+          "k": 2,
+          "objective": 3.0,
+          "n_subsets": 1
+        }
+      ],
+      "monotone": true,
+      "tau": 1,
+      "n_Y": 2
+    },
+    "MI4_tight": {
+      "reference_objective": 57.0,
+      "reference_check_ok": true,
+      "fix_all_delta": 0.0,
+      "fix_all_ok": true,
+      "fix_Y_only_objective": 57.0,
+      "fix_Y_only_ok": true,
+      "reference_feasible_under_Y_fix": true,
+      "sweep": [
+        {
+          "k": 0,
+          "objective": 57.0,
+          "n_subsets": 1
+        },
+        {
+          "k": 1,
+          "objective": 57.0,
+          "n_subsets": 2
+        },
+        {
+          "k": 2,
+          "objective": 57.0,
+          "n_subsets": 1
+        }
+      ],
+      "monotone": true,
+      "tau": 1,
+      "n_Y": 2
+    },
+    "MI5_zero_cap": {
+      "reference_objective": 42.0,
+      "reference_check_ok": true,
+      "fix_all_delta": 0.0,
+      "fix_all_ok": true,
+      "fix_Y_only_objective": 42.0,
+      "fix_Y_only_ok": true,
+      "reference_feasible_under_Y_fix": true,
+      "sweep": [
+        {
+          "k": 0,
+          "objective": 42.0,
+          "n_subsets": 1
+        },
+        {
+          "k": 1,
+          "objective": 42.0,
+          "n_subsets": 2
+        },
+        {
+          "k": 2,
+          "objective": 42.0,
+          "n_subsets": 1
+        }
+      ],
+      "monotone": true,
+      "tau": 1,
+      "n_Y": 2
+    },
+    "MI6_cheap_lost": {
+      "reference_objective": 12.0,
+      "reference_check_ok": true,
+      "fix_all_delta": 0.0,
+      "fix_all_ok": true,
+      "fix_Y_only_objective": 12.0,
+      "fix_Y_only_ok": true,
+      "reference_feasible_under_Y_fix": true,
+      "sweep": [
+        {
+          "k": 0,
+          "objective": 12.0,
+          "n_subsets": 1
+        },
+        {
+          "k": 1,
+          "objective": 12.0,
+          "n_subsets": 2
+        },
+        {
+          "k": 2,
+          "objective": 12.0,
+          "n_subsets": 1
+        }
+      ],
+      "monotone": true,
+      "tau": 1,
+      "n_Y": 2
+    },
+    "MI7_setup_time": {
+      "reference_objective": 112.0,
+      "reference_check_ok": true,
+      "fix_all_delta": 0.0,
+      "fix_all_ok": true,
+      "fix_Y_only_objective": 112.0,
+      "fix_Y_only_ok": true,
+      "reference_feasible_under_Y_fix": true,
+      "sweep": [
+        {
+          "k": 0,
+          "objective": 112.0,
+          "n_subsets": 1
+        },
+        {
+          "k": 1,
+          "objective": 112.0,
+          "n_subsets": 2
+        },
+        {
+          "k": 2,
+          "objective": 112.0,
+          "n_subsets": 1
+        }
+      ],
+      "monotone": true,
+      "tau": 1,
+      "n_Y": 2
+    }
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "claim": "limeqo.py:89-90 marks hints explored using the hidden ground-truth runtime",
+  "worlds": {
+    "A_hidden_below_best": {
+      "hidden_b": 5.0,
+      "matrix_item_reads": [
+        [
+          "(0, 0)",
+          10.0
+        ],
+        [
+          "(0, 0)",
+          10.0
+        ],
+        [
+          "(np.int64(1), np.int64(2))",
+          3.0
+        ],
+        [
+          "(np.int64(1), np.int64(2))",
+          3.0
+        ],
+        [
+          "(np.int64(2), np.int64(2))",
+          9.0
+        ],
+        [
+          "(np.int64(2), np.int64(2))",
+          9.0
+        ],
+        [
+          "(np.int64(0), np.int64(2))",
+          4.0
+        ],
+        [
+          "(np.int64(0), np.int64(2))",
+          4.0
+        ],
+        [
+          "(2, 1)",
+          5.0
+        ],
+        [
+          "(0, 2)",
+          4.0
+        ],
+        [
+          "(2, 0)",
+          8.0
+        ],
+        [
+          "(1, 2)",
+          3.0
+        ]
+      ],
+      "n_hidden_item_reads": 12
+    },
+    "B_hidden_above_best": {
+      "hidden_b": 20.0,
+      "matrix_item_reads": [
+        [
+          "(0, 0)",
+          10.0
+        ],
+        [
+          "(0, 0)",
+          10.0
+        ],
+        [
+          "(np.int64(1), np.int64(1))",
+          7.0
+        ],
+        [
+          "(np.int64(1), np.int64(1))",
+          7.0
+        ],
+        [
+          "(np.int64(2), np.int64(1))",
+          5.0
+        ],
+        [
+          "(np.int64(2), np.int64(1))",
+          5.0
+        ],
+        [
+          "(np.int64(0), np.int64(1))",
+          20.0
+        ],
+        [
+          "(np.int64(0), np.int64(1))",
+          20.0
+        ],
+        [
+          "(1, 0)",
+          6.0
+        ],
+        [
+          "(1, 2)",
+          3.0
+        ],
+        [
+          "(1, 1)",
+          7.0
+        ],
+        [
+          "(2, 2)",
+          9.0
+        ],
+        [
+          "(0, 0)",
+          10.0
+        ],
+        [
+          "(1, 0)",
+          6.0
+        ],
+        [
+          "(1, 2)",
+          3.0
+        ],
+        [
+          "(2, 2)",
+          9.0
+        ],
+        [
+          "(np.int64(2), np.int64(1))",
+          5.0
+        ],
+        [
+          "(np.int64(2), np.int64(1))",
+          5.0
+        ]
+      ],
+      "n_hidden_item_reads": 18
+    }
+  },
+  "identical_legal_feedback": true,
+  "reads_only_in_A": [
+    [
+      "(np.int64(1), np.int64(2))",
+      3.0
+    ],
+    [
+      "(np.int64(1), np.int64(2))",
+      3.0
+    ],
+    [
+      "(np.int64(2), np.int64(2))",
+      9.0
+    ],
+    [
+      "(np.int64(2), np.int64(2))",
+      9.0
+    ],
+    [
+      "(np.int64(0), np.int64(2))",
+      4.0
+    ],
+    [
+      "(np.int64(0), np.int64(2))",
+      4.0
+    ],
+    [
+      "(2, 1)",
+      5.0
+    ],
+    [
+      "(0, 2)",
+      4.0
+    ],
+    [
+      "(2, 0)",
+      8.0
+    ]
+  ],
+  "reads_only_in_B": [
+    [
+      "(np.int64(1), np.int64(1))",
+      7.0
+    ],
+    [
+      "(np.int64(1), np.int64(1))",
+      7.0
+    ],
+    [
+      "(np.int64(2), np.int64(1))",
+      5.0
+    ],
+    [
+      "(np.int64(2), np.int64(1))",
+      5.0
+    ],
+    [
+      "(np.int64(0), np.int64(1))",
+      20.0
+    ],
+    [
+      "(np.int64(0), np.int64(1))",
+      20.0
+    ],
+    [
+      "(1, 0)",
+      6.0
+    ],
+    [
+      "(1, 1)",
+      7.0
+    ],
+    [
+      "(2, 2)",
+      9.0
+    ],
+    [
+      "(1, 0)",
+      6.0
+    ],
+    [
+      "(2, 2)",
+      9.0
+    ],
+    [
+      "(np.int64(2), np.int64(1))",
+      5.0
+    ],
+    [
+      "(np.int64(2), np.int64(1))",
+      5.0
+    ]
+  ],
+  "branch_fires": {
+    "A_hidden_5.0": false,
+    "B_hidden_20.0": true
+  },
+  "consequence": "a cell whose hidden runtime is below the current best can be permanently marked explored after a timeout, so it can never be selected again"
+}

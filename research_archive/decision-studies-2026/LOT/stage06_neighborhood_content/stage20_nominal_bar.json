@@ -1,0 +1,153 @@
+{
+ "meta": {
+  "protocol": "NOM-160",
+  "stages": [
+   {
+    "stage": "06",
+    "role": "nominal solve",
+    "budget_s": 120.0
+   },
+   {
+    "stage": "18",
+    "role": "one no-disruption RINS-LP-ONE",
+    "budget_s": 20.0
+   },
+   {
+    "stage": "19",
+    "role": "one no-disruption RINS-LP-ONE",
+    "budget_s": 20.0
+   }
+  ],
+  "sum_of_stage_budgets_s": 160.0,
+  "frozen_output": "Sbar_N = the stage 19 no-disruption delivered plan",
+  "historical_versions_kept": [
+   "stage06_nominal.json",
+   "stage19_nominal_plus.json",
+   "stage20_nominal_bar"
+  ],
+  "no_further_seeds": true,
+  "no_selection_on_post_disruption_performance": true,
+  "budget_note": "160 s is the SUM OF THE STAGE BUDGETS, not measured wall clock; the earlier 20 s polishing cost must not be reported as the complete nominal generation cost",
+  "stability_note": "each polishing stage limits short-term-Y changes RELATIVE TO ITS OWN INPUT plan; this does NOT mean the final plan changes only four positions relative to the original.  These are pre-freeze search limits.  The post-disruption stability constraint stays anchored on the new repair solution, per the original protocol.",
+  "provenance_caution": "this protocol was settled DURING development and is NOT an independently pre-confirmed best practice; it is frozen and will not be tuned further",
+  "wall_clock_s": {
+   "stage18_total": 160.4620630999998,
+   "stage19_no_fault_total": 160.4526055000024,
+   "note": "measured wall clock for the two polishing stages only; the 120 s stage is the stage 06 budget, whose measured wall clock is recorded in stage06_nominal.json"
+  }
+ },
+ "plans": {
+  "large_rho0.75_s2": {
+   "file": "stage20_nominal_bar\\large_rho0.75_s2.json",
+   "sha256": "32968c919d11348dbd7d4eb282f506c35746f94f5b78333d9a22ed6c1739fb87",
+   "objective": 1431.1895158174398,
+   "old_nominal_objective": 2664.7484471729335,
+   "stage18_objective": 1532.9295130384612,
+   "identical_to_stage18": false,
+   "gain_vs_old": 0.46291759083833695,
+   "rho": 0.75,
+   "inst_seed": 2,
+   "feasible_undisrupted": true,
+   "max_violation": 0.0,
+   "wall_s_stage19": 20.0617929
+  },
+  "large_rho0.75_s3": {
+   "file": "stage20_nominal_bar\\large_rho0.75_s3.json",
+   "sha256": "da1a4884dd54fe97df39692c44755504e096286bbe804a7406cccc9858e9370b",
+   "objective": 1384.8772890153002,
+   "old_nominal_objective": 3709.3236447967565,
+   "stage18_objective": 1542.0230516757601,
+   "identical_to_stage18": false,
+   "gain_vs_old": 0.6266496478521271,
+   "rho": 0.75,
+   "inst_seed": 3,
+   "feasible_undisrupted": true,
+   "max_violation": 0.0,
+   "wall_s_stage19": 20.053412199999002
+  },
+  "large_rho0.75_s4": {
+   "file": "stage20_nominal_bar\\large_rho0.75_s4.json",
+   "sha256": "d280c016f08379eeb1322a6198d0c8818aecc78f624062a47e1229d2a4944fa9",
+   "objective": 1476.3054046239745,
+   "old_nominal_objective": 1501.0941139952959,
+   "stage18_objective": 1476.3054046239745,
+   "identical_to_stage18": true,
+   "gain_vs_old": 0.016513760956229463,
+   "rho": 0.75,
+   "inst_seed": 4,
+   "feasible_undisrupted": true,
+   "max_violation": 0.0,
+   "wall_s_stage19": 20.052184399999533
+  },
+  "large_rho0.75_s5": {
+   "file": "stage20_nominal_bar\\large_rho0.75_s5.json",
+   "sha256": "b1a8a6610c07b2b5b764d6cbf91385898d491430f0a4e72251d670dacb24065c",
+   "objective": 1284.5123921569607,
+   "old_nominal_objective": 2369.826706394755,
+   "stage18_objective": 1510.6970420810094,
+   "identical_to_stage18": false,
+   "gain_vs_old": 0.4579720159744911,
+   "rho": 0.75,
+   "inst_seed": 5,
+   "feasible_undisrupted": true,
+   "max_violation": 0.0,
+   "wall_s_stage19": 20.050947300002008
+  },
+  "large_rho1.10_s2": {
+   "file": "stage20_nominal_bar\\large_rho1.10_s2.json",
+   "sha256": "247bde20b39c9a82d39c0969b5dfa31decd4470907d75152d1b91a80d892ccf5",
+   "objective": 4594.73622639087,
+   "old_nominal_objective": 7143.606579912253,
+   "stage18_objective": 4868.52296031711,
+   "identical_to_stage18": false,
+   "gain_vs_old": 0.35680441315018385,
+   "rho": 1.1,
+   "inst_seed": 2,
+   "feasible_undisrupted": true,
+   "max_violation": 0.0,
+   "wall_s_stage19": 20.054105700000946
+  },
+  "large_rho1.10_s3": {
+   "file": "stage20_nominal_bar\\large_rho1.10_s3.json",
+   "sha256": "ffc5a8b2ef1c5312108654c5a1704197b236ff270f220111f6350e0e60783ee3",
+   "objective": 4405.295989791021,
+   "old_nominal_objective": 6022.7491672198785,
+   "stage18_objective": 4509.664761786442,
+   "identical_to_stage18": false,
+   "gain_vs_old": 0.26855728713262667,
+   "rho": 1.1,
+   "inst_seed": 3,
+   "feasible_undisrupted": true,
+   "max_violation": 0.0,
+   "wall_s_stage19": 20.046281799997814
+  },
+  "large_rho1.10_s4": {
+   "file": "stage20_nominal_bar\\large_rho1.10_s4.json",
+   "sha256": "2b39474da96591f0e5e0fd249ebb54f5f0c8c4bb5f3d4b5edc7bd95804134f8b",
+   "objective": 4561.696783802797,
+   "old_nominal_objective": 5777.5436110910105,
+   "stage18_objective": 4611.745174362664,
+   "identical_to_stage18": false,
+   "gain_vs_old": 0.2104435568351543,
+   "rho": 1.1,
+   "inst_seed": 4,
+   "feasible_undisrupted": true,
+   "max_violation": 0.0,
+   "wall_s_stage19": 20.05439440000191
+  },
+  "large_rho1.10_s5": {
+   "file": "stage20_nominal_bar\\large_rho1.10_s5.json",
+   "sha256": "93f20ea1082b8be304f3b81d431866d0eec68771a1f369637de088d67cebb839",
+   "objective": 4193.6739873750685,
+   "old_nominal_objective": 5879.183615055142,
+   "stage18_objective": 4571.856251060678,
+   "identical_to_stage18": false,
+   "gain_vs_old": 0.2866911016971639,
+   "rho": 1.1,
+   "inst_seed": 5,
+   "feasible_undisrupted": true,
+   "max_violation": 0.0,
+   "wall_s_stage19": 20.079486800001177
+  }
+ }
+}

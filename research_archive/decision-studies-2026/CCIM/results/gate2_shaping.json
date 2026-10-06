@@ -1,0 +1,1944 @@
+{
+  "script": "run_gate2_shaping.py",
+  "setting": {
+    "p0": 1,
+    "p1": 0,
+    "K": 4,
+    "T": 8,
+    "graphs": [
+      "football",
+      "polbooks"
+    ]
+  },
+  "shaping": {
+    "r_t": "sigma(S_t) - sigma(S_{t-1})",
+    "c_t": "sigma(S_T) - sigma(S_T \\ {a_t})",
+    "r'_t": "r_t + omega * c_t",
+    "source": "Chen et al. IJCAI 2023, Section 5.5, Eqs. (6)-(7)",
+    "omega_control": 0.0,
+    "omega_treatment": 1.0,
+    "omega_note": "1.0 is THIS round's pre-fixed setting, not a claimed paper default; no weight is swept",
+    "no_scaling": "no rescaling is applied to either arm; r_t and c_t are both node counts, so omega=1 makes the shaped reward numerically larger -- mean_abs_reward is recorded for both arms so this is visible",
+    "fairness_caveat": "the shaping term does not guarantee the original objective's optimal policy is preserved, so final quality is judged ONLY by raw sigma(S), never by shaped return"
+  },
+  "pipeline": {
+    "buffering": "whole episode, inserted at episode end",
+    "updates_per_episode": 8,
+    "insertion": "each transition inserted once, with its own arm's reward",
+    "checkpoint_reported": "the policy at the pre-determined budget, NOT best validation",
+    "frozen": [
+      "graph",
+      "diffusion params",
+      "budget",
+      "network",
+      "optimiser",
+      "exploration schedule",
+      "training seeds"
+    ]
+  },
+  "cost_views": {
+    "primary": "same total query cap (36369); counts training, leave-one-out and validation queries",
+    "auxiliary": "same episode count (2000), from the common checkpoint"
+  },
+  "graphs": {
+    "football": {
+      "n": 115,
+      "m": 613,
+      "baselines": {
+        "degree": {
+          "method": "degree",
+          "seeds": [
+            15,
+            29,
+            38,
+            41,
+            63,
+            64,
+            79,
+            87
+          ],
+          "sigma": 8,
+          "normalized": 0.06956521739130435,
+          "n": 115,
+          "cost": {
+            "decision_evaluations": 0,
+            "scoring_evaluations": 1,
+            "queries_issued": 1,
+            "distinct_queries": 1,
+            "cached_repeats": 0,
+            "total_evaluations": 1
+          },
+          "note": "no cascade query is used to choose; degrees are read directly"
+        },
+        "greedy": {
+          "method": "greedy",
+          "seeds": [
+            15,
+            29,
+            38,
+            41,
+            65,
+            98,
+            11,
+            33
+          ],
+          "sigma": 37,
+          "normalized": 0.3217391304347826,
+          "n": 115,
+          "cost": {
+            "decision_evaluations": 893,
+            "scoring_evaluations": 1,
+            "queries_issued": 894,
+            "distinct_queries": 893,
+            "cached_repeats": 1,
+            "total_evaluations": 894
+          },
+          "marginal_gains": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            10,
+            21
+          ],
+          "note": "the paper's Greedy baseline"
+        },
+        "random_plus": {
+          "method": "random+",
+          "seeds": [
+            15,
+            20,
+            32,
+            43,
+            67,
+            86,
+            100,
+            108
+          ],
+          "sigma": 37,
+          "normalized": 0.3217391304347826,
+          "n": 115,
+          "cost": {
+            "decision_evaluations": 50,
+            "scoring_evaluations": 0,
+            "queries_issued": 50,
+            "distinct_queries": 50,
+            "cached_repeats": 0,
+            "total_evaluations": 50
+          },
+          "mean_sigma": 9.66,
+          "mean_normalized": 0.084,
+          "runs": 50,
+          "best_sigma": 37
+        }
+      },
+      "search": [
+        {
+          "budget": 5000,
+          "per_seed": [
+            {
+              "search_seed": 0,
+              "sigma": 115,
+              "normalized": 1.0,
+              "used": 5000,
+              "seeds": [
+                9,
+                13,
+                19,
+                38,
+                41,
+                63,
+                64,
+                76
+              ]
+            },
+            {
+              "search_seed": 1,
+              "sigma": 115,
+              "normalized": 1.0,
+              "used": 5000,
+              "seeds": [
+                5,
+                41,
+                59,
+                74,
+                87,
+                91,
+                103,
+                112
+              ]
+            },
+            {
+              "search_seed": 2,
+              "sigma": 115,
+              "normalized": 1.0,
+              "used": 5000,
+              "seeds": [
+                4,
+                11,
+                20,
+                38,
+                41,
+                73,
+                81,
+                93
+              ]
+            },
+            {
+              "search_seed": 3,
+              "sigma": 115,
+              "normalized": 1.0,
+              "used": 5000,
+              "seeds": [
+                6,
+                42,
+                47,
+                67,
+                83,
+                87,
+                99,
+                111
+              ]
+            },
+            {
+              "search_seed": 4,
+              "sigma": 115,
+              "normalized": 1.0,
+              "used": 5000,
+              "seeds": [
+                9,
+                23,
+                28,
+                41,
+                64,
+                76,
+                87,
+                112
+              ]
+            }
+          ],
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        {
+          "budget": 36369,
+          "per_seed": [
+            {
+              "search_seed": 0,
+              "sigma": 115,
+              "normalized": 1.0,
+              "used": 19216,
+              "seeds": [
+                9,
+                13,
+                19,
+                38,
+                41,
+                63,
+                64,
+                76
+              ]
+            },
+            {
+              "search_seed": 1,
+              "sigma": 115,
+              "normalized": 1.0,
+              "used": 15383,
+              "seeds": [
+                5,
+                41,
+                59,
+                74,
+                87,
+                91,
+                103,
+                112
+              ]
+            },
+            {
+              "search_seed": 2,
+              "sigma": 115,
+              "normalized": 1.0,
+              "used": 17977,
+              "seeds": [
+                4,
+                11,
+                20,
+                38,
+                41,
+                73,
+                81,
+                93
+              ]
+            },
+            {
+              "search_seed": 3,
+              "sigma": 115,
+              "normalized": 1.0,
+              "used": 15938,
+              "seeds": [
+                6,
+                42,
+                47,
+                67,
+                83,
+                87,
+                99,
+                111
+              ]
+            },
+            {
+              "search_seed": 4,
+              "sigma": 115,
+              "normalized": 1.0,
+              "used": 18118,
+              "seeds": [
+                9,
+                23,
+                28,
+                41,
+                64,
+                76,
+                87,
+                112
+              ]
+            }
+          ],
+          "mean": 1.0,
+          "median": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      ],
+      "arms": {
+        "omega_0.0": {
+          "omega": 0.0,
+          "runs": [
+            {
+              "omega": 0.0,
+              "train_seed": 0,
+              "episodes": 4000,
+              "queries_issued": 36378,
+              "queries_distinct": 6256,
+              "cache_hits": 30164,
+              "final_normalized": 0.11304347826086956,
+              "final_sigma": 13,
+              "final_seeds": [
+                24,
+                30,
+                56,
+                63,
+                87,
+                88,
+                101,
+                113
+              ],
+              "common_episode_normalized": 0.06956521739130435,
+              "mean_abs_reward": 1.160625,
+              "seconds": 191.74907302856445,
+              "diagnostics": {
+                "episodes": 4000,
+                "steps": 32000,
+                "fraction_of_steps_with_r_gt_1": 0.02759375,
+                "first_extra_step_histogram": {
+                  "3": 2,
+                  "4": 4,
+                  "5": 9,
+                  "6": 549,
+                  "7": 302,
+                  "none": 3134
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0015,
+                  1.0025,
+                  1.00925,
+                  1.524,
+                  1.74775
+                ]
+              }
+            },
+            {
+              "omega": 0.0,
+              "train_seed": 1,
+              "episodes": 4000,
+              "queries_issued": 36378,
+              "queries_distinct": 14171,
+              "cache_hits": 22249,
+              "final_normalized": 0.10434782608695652,
+              "final_sigma": 12,
+              "final_seeds": [
+                24,
+                29,
+                30,
+                63,
+                85,
+                88,
+                101,
+                113
+              ],
+              "common_episode_normalized": 0.11304347826086956,
+              "mean_abs_reward": 1.5490625,
+              "seconds": 205.03344082832336,
+              "diagnostics": {
+                "episodes": 4000,
+                "steps": 32000,
+                "fraction_of_steps_with_r_gt_1": 0.08121875,
+                "first_extra_step_histogram": {
+                  "3": 88,
+                  "4": 297,
+                  "5": 606,
+                  "6": 830,
+                  "7": 356,
+                  "none": 1823
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.12625,
+                  1.42525,
+                  1.886,
+                  2.54675,
+                  2.40825
+                ]
+              }
+            },
+            {
+              "omega": 0.0,
+              "train_seed": 2,
+              "episodes": 4000,
+              "queries_issued": 36378,
+              "queries_distinct": 6791,
+              "cache_hits": 29629,
+              "final_normalized": 0.06956521739130435,
+              "final_sigma": 8,
+              "final_seeds": [
+                15,
+                19,
+                24,
+                29,
+                41,
+                45,
+                79,
+                98
+              ],
+              "common_episode_normalized": 0.11304347826086956,
+              "mean_abs_reward": 1.11921875,
+              "seconds": 202.15386843681335,
+              "diagnostics": {
+                "episodes": 4000,
+                "steps": 32000,
+                "fraction_of_steps_with_r_gt_1": 0.01696875,
+                "first_extra_step_histogram": {
+                  "3": 2,
+                  "4": 5,
+                  "5": 12,
+                  "6": 170,
+                  "7": 331,
+                  "none": 3480
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.00275,
+                  1.0035,
+                  1.01425,
+                  1.24475,
+                  1.6885
+                ]
+              }
+            },
+            {
+              "omega": 0.0,
+              "train_seed": 3,
+              "episodes": 4000,
+              "queries_issued": 36378,
+              "queries_distinct": 6408,
+              "cache_hits": 30012,
+              "final_normalized": 0.12173913043478261,
+              "final_sigma": 14,
+              "final_seeds": [
+                0,
+                23,
+                44,
+                60,
+                63,
+                78,
+                94,
+                98
+              ],
+              "common_episode_normalized": 0.06956521739130435,
+              "mean_abs_reward": 1.38440625,
+              "seconds": 202.68168115615845,
+              "diagnostics": {
+                "episodes": 4000,
+                "steps": 32000,
+                "fraction_of_steps_with_r_gt_1": 0.04575,
+                "first_extra_step_histogram": {
+                  "4": 2,
+                  "5": 7,
+                  "6": 1013,
+                  "7": 422,
+                  "none": 2556
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0015,
+                  1.0075,
+                  3.05275,
+                  2.0135
+                ]
+              }
+            },
+            {
+              "omega": 0.0,
+              "train_seed": 4,
+              "episodes": 4000,
+              "queries_issued": 36378,
+              "queries_distinct": 7690,
+              "cache_hits": 28730,
+              "final_normalized": 0.24347826086956523,
+              "final_sigma": 28,
+              "final_seeds": [
+                9,
+                12,
+                16,
+                19,
+                53,
+                70,
+                86,
+                93
+              ],
+              "common_episode_normalized": 0.16521739130434782,
+              "mean_abs_reward": 2.00440625,
+              "seconds": 195.58879733085632,
+              "diagnostics": {
+                "episodes": 4000,
+                "steps": 32000,
+                "fraction_of_steps_with_r_gt_1": 0.1303125,
+                "first_extra_step_histogram": {
+                  "3": 435,
+                  "4": 742,
+                  "5": 625,
+                  "6": 613,
+                  "7": 473,
+                  "none": 1112
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.521,
+                  2.36875,
+                  2.3755,
+                  2.9925,
+                  3.7775
+                ]
+              }
+            }
+          ],
+          "final_mean": 0.13043478260869565,
+          "final_median": 0.11304347826086956,
+          "final_min": 0.06956521739130435,
+          "final_max": 0.24347826086956523,
+          "final_best_of_n": 0.24347826086956523,
+          "common_episode_mean": 0.10608695652173913,
+          "common_episode_median": 0.11304347826086956,
+          "mean_abs_reward": 1.4435437500000001,
+          "mean_queries": 36378.0,
+          "mean_episodes": 4000.0,
+          "diagnostics": {
+            "episodes": 4000,
+            "steps": 32000,
+            "fraction_of_steps_with_r_gt_1": 0.02759375,
+            "first_extra_step_histogram": {
+              "3": 2,
+              "4": 4,
+              "5": 9,
+              "6": 549,
+              "7": 302,
+              "none": 3134
+            },
+            "mean_raw_reward_by_step": [
+              1.0,
+              1.0,
+              1.0,
+              1.0015,
+              1.0025,
+              1.00925,
+              1.524,
+              1.74775
+            ]
+          }
+        },
+        "omega_1.0": {
+          "omega": 1.0,
+          "runs": [
+            {
+              "omega": 1.0,
+              "train_seed": 0,
+              "episodes": 2010,
+              "queries_issued": 36378,
+              "queries_distinct": 8011,
+              "cache_hits": 28389,
+              "final_normalized": 0.12173913043478261,
+              "final_sigma": 14,
+              "final_seeds": [
+                15,
+                38,
+                63,
+                64,
+                87,
+                88,
+                101,
+                113
+              ],
+              "common_episode_normalized": 0.12173913043478261,
+              "mean_abs_reward": 2.4996890547263684,
+              "seconds": 98.56659245491028,
+              "diagnostics": {
+                "episodes": 2010,
+                "steps": 16080,
+                "fraction_of_steps_with_r_gt_1": 0.010261194029850746,
+                "first_extra_step_histogram": {
+                  "3": 1,
+                  "4": 4,
+                  "5": 8,
+                  "6": 26,
+                  "7": 120,
+                  "none": 1851
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.000497512437811,
+                  1.0049751243781095,
+                  1.019402985074627,
+                  1.1104477611940298,
+                  1.6218905472636815
+                ],
+                "mean_loo_by_step": [
+                  1.42636815920398,
+                  1.5024875621890548,
+                  1.2054726368159203,
+                  1.26318407960199,
+                  1.2074626865671643,
+                  1.3701492537313433,
+                  1.6432835820895522,
+                  1.6218905472636815
+                ],
+                "loo_discrimination": {
+                  "sampled_episodes": 213,
+                  "mean_distinct_values_per_episode": 1.2112676056338028,
+                  "fraction_of_episodes_with_all_loo_equal": 0.9061032863849765,
+                  "mean_within_episode_spread": 1.272300469483568,
+                  "max_within_episode_spread": 31.0
+                },
+                "early_small_reward_vs_later": {
+                  "mean_loo_when_raw_le_1": 1.3080113100848256,
+                  "n_raw_le_1": 15915,
+                  "mean_loo_when_raw_gt_1": 10.763636363636364,
+                  "n_raw_gt_1": 165
+                }
+              }
+            },
+            {
+              "omega": 1.0,
+              "train_seed": 1,
+              "episodes": 2010,
+              "queries_issued": 36378,
+              "queries_distinct": 9059,
+              "cache_hits": 27341,
+              "final_normalized": 0.19130434782608696,
+              "final_sigma": 22,
+              "final_seeds": [
+                38,
+                63,
+                64,
+                79,
+                87,
+                88,
+                101,
+                113
+              ],
+              "common_episode_normalized": 0.19130434782608696,
+              "mean_abs_reward": 2.8875621890547265,
+              "seconds": 97.35959362983704,
+              "diagnostics": {
+                "episodes": 2010,
+                "steps": 16080,
+                "fraction_of_steps_with_r_gt_1": 0.029104477611940297,
+                "first_extra_step_histogram": {
+                  "3": 6,
+                  "4": 174,
+                  "5": 87,
+                  "6": 101,
+                  "7": 64,
+                  "none": 1578
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0149253731343284,
+                  1.5129353233830847,
+                  1.2656716417910447,
+                  1.3746268656716418,
+                  1.3208955223880596
+                ],
+                "mean_loo_by_step": [
+                  2.282587064676617,
+                  1.6417910447761195,
+                  1.5975124378109453,
+                  1.5402985074626865,
+                  2.0169154228855724,
+                  1.608457711442786,
+                  1.6029850746268657,
+                  1.3208955223880596
+                ],
+                "loo_discrimination": {
+                  "sampled_episodes": 213,
+                  "mean_distinct_values_per_episode": 1.2300469483568075,
+                  "fraction_of_episodes_with_all_loo_equal": 0.7981220657276995,
+                  "mean_within_episode_spread": 1.267605633802817,
+                  "max_within_episode_spread": 15.0
+                },
+                "early_small_reward_vs_later": {
+                  "mean_loo_when_raw_le_1": 1.5204330002562132,
+                  "n_raw_le_1": 15612,
+                  "mean_loo_when_raw_gt_1": 7.739316239316239,
+                  "n_raw_gt_1": 468
+                }
+              }
+            },
+            {
+              "omega": 1.0,
+              "train_seed": 2,
+              "episodes": 2010,
+              "queries_issued": 36378,
+              "queries_distinct": 7750,
+              "cache_hits": 28650,
+              "final_normalized": 0.0782608695652174,
+              "final_sigma": 9,
+              "final_seeds": [
+                0,
+                1,
+                10,
+                13,
+                23,
+                27,
+                48,
+                84
+              ],
+              "common_episode_normalized": 0.0782608695652174,
+              "mean_abs_reward": 2.605223880597015,
+              "seconds": 104.10806488990784,
+              "diagnostics": {
+                "episodes": 2010,
+                "steps": 16080,
+                "fraction_of_steps_with_r_gt_1": 0.013805970149253732,
+                "first_extra_step_histogram": {
+                  "3": 3,
+                  "4": 6,
+                  "5": 8,
+                  "6": 73,
+                  "7": 129,
+                  "none": 1791
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0059701492537314,
+                  1.007462686567164,
+                  1.0129353233830847,
+                  1.2407960199004975,
+                  1.6527363184079602
+                ],
+                "mean_loo_by_step": [
+                  1.5492537313432835,
+                  1.6417910447761195,
+                  1.182587064676617,
+                  1.3134328358208955,
+                  1.2194029850746269,
+                  1.5462686567164179,
+                  1.8164179104477611,
+                  1.6527363184079602
+                ],
+                "loo_discrimination": {
+                  "sampled_episodes": 213,
+                  "mean_distinct_values_per_episode": 1.1267605633802817,
+                  "fraction_of_episodes_with_all_loo_equal": 0.9107981220657277,
+                  "mean_within_episode_spread": 0.7230046948356808,
+                  "max_within_episode_spread": 22.0
+                },
+                "early_small_reward_vs_later": {
+                  "mean_loo_when_raw_le_1": 1.380249716231555,
+                  "n_raw_le_1": 15858,
+                  "mean_loo_when_raw_gt_1": 9.346846846846846,
+                  "n_raw_gt_1": 222
+                }
+              }
+            },
+            {
+              "omega": 1.0,
+              "train_seed": 3,
+              "episodes": 2010,
+              "queries_issued": 36378,
+              "queries_distinct": 9040,
+              "cache_hits": 27360,
+              "final_normalized": 0.2,
+              "final_sigma": 23,
+              "final_seeds": [
+                15,
+                38,
+                63,
+                64,
+                79,
+                87,
+                88,
+                113
+              ],
+              "common_episode_normalized": 0.2,
+              "mean_abs_reward": 2.745646766169154,
+              "seconds": 99.33897042274475,
+              "diagnostics": {
+                "episodes": 2010,
+                "steps": 16080,
+                "fraction_of_steps_with_r_gt_1": 0.016853233830845773,
+                "first_extra_step_histogram": {
+                  "3": 2,
+                  "4": 2,
+                  "5": 9,
+                  "6": 127,
+                  "7": 122,
+                  "none": 1748
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0054726368159204,
+                  1.0029850746268656,
+                  1.0124378109452736,
+                  1.5079601990049751,
+                  1.6213930348258707
+                ],
+                "mean_loo_by_step": [
+                  1.8199004975124378,
+                  1.7786069651741294,
+                  1.237810945273632,
+                  1.4228855721393034,
+                  1.2522388059701492,
+                  1.6492537313432836,
+                  2.032835820895522,
+                  1.6213930348258707
+                ],
+                "loo_discrimination": {
+                  "sampled_episodes": 213,
+                  "mean_distinct_values_per_episode": 1.215962441314554,
+                  "fraction_of_episodes_with_all_loo_equal": 0.8591549295774648,
+                  "mean_within_episode_spread": 1.2018779342723005,
+                  "max_within_episode_spread": 16.0
+                },
+                "early_small_reward_vs_later": {
+                  "mean_loo_when_raw_le_1": 1.4649250426971978,
+                  "n_raw_le_1": 15809,
+                  "mean_loo_when_raw_gt_1": 9.590405904059041,
+                  "n_raw_gt_1": 271
+                }
+              }
+            },
+            {
+              "omega": 1.0,
+              "train_seed": 4,
+              "episodes": 2010,
+              "queries_issued": 36378,
+              "queries_distinct": 10061,
+              "cache_hits": 26339,
+              "final_normalized": 0.16521739130434782,
+              "final_sigma": 19,
+              "final_seeds": [
+                18,
+                24,
+                31,
+                44,
+                45,
+                70,
+                86,
+                99
+              ],
+              "common_episode_normalized": 0.14782608695652175,
+              "mean_abs_reward": 3.9695273631840795,
+              "seconds": 95.36879181861877,
+              "diagnostics": {
+                "episodes": 2010,
+                "steps": 16080,
+                "fraction_of_steps_with_r_gt_1": 0.07754975124378109,
+                "first_extra_step_histogram": {
+                  "3": 44,
+                  "4": 188,
+                  "5": 158,
+                  "6": 240,
+                  "7": 349,
+                  "none": 1031
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.1114427860696516,
+                  1.2164179104477613,
+                  1.1766169154228856,
+                  1.6149253731343283,
+                  2.9562189054726367
+                ],
+                "mean_loo_by_step": [
+                  3.2771144278606967,
+                  1.7263681592039801,
+                  2.5228855721393035,
+                  2.1666666666666665,
+                  2.726865671641791,
+                  2.3870646766169155,
+                  2.9174129353233833,
+                  2.9562189054726367
+                ],
+                "loo_discrimination": {
+                  "sampled_episodes": 213,
+                  "mean_distinct_values_per_episode": 1.8967136150234742,
+                  "fraction_of_episodes_with_all_loo_equal": 0.5023474178403756,
+                  "mean_within_episode_spread": 3.4507042253521125,
+                  "max_within_episode_spread": 24.0
+                },
+                "early_small_reward_vs_later": {
+                  "mean_loo_when_raw_le_1": 2.2693318950987664,
+                  "n_raw_le_1": 14833,
+                  "mean_loo_when_raw_gt_1": 6.340817963111467,
+                  "n_raw_gt_1": 1247
+                }
+              }
+            }
+          ],
+          "final_mean": 0.15130434782608698,
+          "final_median": 0.16521739130434782,
+          "final_min": 0.0782608695652174,
+          "final_max": 0.2,
+          "final_best_of_n": 0.2,
+          "common_episode_mean": 0.14782608695652175,
+          "common_episode_median": 0.14782608695652175,
+          "mean_abs_reward": 2.9415298507462686,
+          "mean_queries": 36378.0,
+          "mean_episodes": 2010.0,
+          "diagnostics": {
+            "episodes": 2010,
+            "steps": 16080,
+            "fraction_of_steps_with_r_gt_1": 0.010261194029850746,
+            "first_extra_step_histogram": {
+              "3": 1,
+              "4": 4,
+              "5": 8,
+              "6": 26,
+              "7": 120,
+              "none": 1851
+            },
+            "mean_raw_reward_by_step": [
+              1.0,
+              1.0,
+              1.0,
+              1.000497512437811,
+              1.0049751243781095,
+              1.019402985074627,
+              1.1104477611940298,
+              1.6218905472636815
+            ],
+            "mean_loo_by_step": [
+              1.42636815920398,
+              1.5024875621890548,
+              1.2054726368159203,
+              1.26318407960199,
+              1.2074626865671643,
+              1.3701492537313433,
+              1.6432835820895522,
+              1.6218905472636815
+            ],
+            "loo_discrimination": {
+              "sampled_episodes": 213,
+              "mean_distinct_values_per_episode": 1.2112676056338028,
+              "fraction_of_episodes_with_all_loo_equal": 0.9061032863849765,
+              "mean_within_episode_spread": 1.272300469483568,
+              "max_within_episode_spread": 31.0
+            },
+            "early_small_reward_vs_later": {
+              "mean_loo_when_raw_le_1": 1.3080113100848256,
+              "n_raw_le_1": 15915,
+              "mean_loo_when_raw_gt_1": 10.763636363636364,
+              "n_raw_gt_1": 165
+            }
+          }
+        }
+      }
+    },
+    "polbooks": {
+      "n": 105,
+      "m": 441,
+      "baselines": {
+        "degree": {
+          "method": "degree",
+          "seeds": [
+            1,
+            47,
+            16,
+            44,
+            6,
+            10,
+            79,
+            87
+          ],
+          "sigma": 35,
+          "normalized": 0.3333333333333333,
+          "n": 105,
+          "cost": {
+            "decision_evaluations": 0,
+            "scoring_evaluations": 1,
+            "queries_issued": 1,
+            "distinct_queries": 1,
+            "cached_repeats": 0,
+            "total_evaluations": 1
+          },
+          "note": "no cascade query is used to choose; degrees are read directly"
+        },
+        "greedy": {
+          "method": "greedy",
+          "seeds": [
+            0,
+            15,
+            18,
+            31,
+            1,
+            8,
+            89,
+            76
+          ],
+          "sigma": 48,
+          "normalized": 0.45714285714285713,
+          "n": 105,
+          "cost": {
+            "decision_evaluations": 813,
+            "scoring_evaluations": 1,
+            "queries_issued": 814,
+            "distinct_queries": 813,
+            "cached_repeats": 1,
+            "total_evaluations": 814
+          },
+          "marginal_gains": [
+            1,
+            1,
+            1,
+            4,
+            2,
+            35,
+            2,
+            2
+          ],
+          "note": "the paper's Greedy baseline"
+        },
+        "random_plus": {
+          "method": "random+",
+          "seeds": [
+            2,
+            10,
+            12,
+            23,
+            50,
+            60,
+            80,
+            88
+          ],
+          "sigma": 42,
+          "normalized": 0.4,
+          "n": 105,
+          "cost": {
+            "decision_evaluations": 50,
+            "scoring_evaluations": 0,
+            "queries_issued": 50,
+            "distinct_queries": 50,
+            "cached_repeats": 0,
+            "total_evaluations": 50
+          },
+          "mean_sigma": 17.04,
+          "mean_normalized": 0.16228571428571428,
+          "runs": 50,
+          "best_sigma": 42
+        }
+      },
+      "search": [
+        {
+          "budget": 5000,
+          "per_seed": [
+            {
+              "search_seed": 0,
+              "sigma": 89,
+              "normalized": 0.8476190476190476,
+              "used": 5000,
+              "seeds": [
+                1,
+                6,
+                13,
+                19,
+                20,
+                55,
+                62,
+                79
+              ]
+            },
+            {
+              "search_seed": 1,
+              "sigma": 91,
+              "normalized": 0.8666666666666667,
+              "used": 5000,
+              "seeds": [
+                0,
+                4,
+                34,
+                55,
+                62,
+                71,
+                85,
+                93
+              ]
+            },
+            {
+              "search_seed": 2,
+              "sigma": 91,
+              "normalized": 0.8666666666666667,
+              "used": 5000,
+              "seeds": [
+                6,
+                15,
+                40,
+                55,
+                62,
+                63,
+                79,
+                85
+              ]
+            },
+            {
+              "search_seed": 3,
+              "sigma": 91,
+              "normalized": 0.8666666666666667,
+              "used": 5000,
+              "seeds": [
+                10,
+                44,
+                53,
+                59,
+                72,
+                79,
+                85,
+                94
+              ]
+            },
+            {
+              "search_seed": 4,
+              "sigma": 89,
+              "normalized": 0.8476190476190476,
+              "used": 5000,
+              "seeds": [
+                0,
+                8,
+                19,
+                29,
+                38,
+                40,
+                45,
+                87
+              ]
+            }
+          ],
+          "mean": 0.8590476190476191,
+          "median": 0.8666666666666667,
+          "min": 0.8476190476190476,
+          "max": 0.8666666666666667
+        },
+        {
+          "budget": 36369,
+          "per_seed": [
+            {
+              "search_seed": 0,
+              "sigma": 89,
+              "normalized": 0.8476190476190476,
+              "used": 16082,
+              "seeds": [
+                1,
+                6,
+                13,
+                19,
+                20,
+                55,
+                62,
+                79
+              ]
+            },
+            {
+              "search_seed": 1,
+              "sigma": 92,
+              "normalized": 0.8761904761904762,
+              "used": 15868,
+              "seeds": [
+                3,
+                19,
+                23,
+                24,
+                30,
+                44,
+                80,
+                85
+              ]
+            },
+            {
+              "search_seed": 2,
+              "sigma": 91,
+              "normalized": 0.8666666666666667,
+              "used": 13885,
+              "seeds": [
+                6,
+                15,
+                40,
+                55,
+                62,
+                63,
+                79,
+                85
+              ]
+            },
+            {
+              "search_seed": 3,
+              "sigma": 91,
+              "normalized": 0.8666666666666667,
+              "used": 18807,
+              "seeds": [
+                10,
+                44,
+                53,
+                59,
+                72,
+                79,
+                85,
+                94
+              ]
+            },
+            {
+              "search_seed": 4,
+              "sigma": 91,
+              "normalized": 0.8666666666666667,
+              "used": 15719,
+              "seeds": [
+                4,
+                7,
+                14,
+                20,
+                29,
+                85,
+                87,
+                94
+              ]
+            }
+          ],
+          "mean": 0.8647619047619047,
+          "median": 0.8666666666666667,
+          "min": 0.8476190476190476,
+          "max": 0.8761904761904762
+        }
+      ],
+      "arms": {
+        "omega_0.0": {
+          "omega": 0.0,
+          "runs": [
+            {
+              "omega": 0.0,
+              "train_seed": 0,
+              "episodes": 4000,
+              "queries_issued": 36378,
+              "queries_distinct": 8281,
+              "cache_hits": 28139,
+              "final_normalized": 0.3523809523809524,
+              "final_sigma": 37,
+              "final_seeds": [
+                1,
+                6,
+                7,
+                21,
+                34,
+                47,
+                51,
+                54
+              ],
+              "common_episode_normalized": 0.3619047619047619,
+              "mean_abs_reward": 4.2181875,
+              "seconds": 181.58731293678284,
+              "diagnostics": {
+                "episodes": 4000,
+                "steps": 32000,
+                "fraction_of_steps_with_r_gt_1": 0.11375,
+                "first_extra_step_histogram": {
+                  "3": 1021,
+                  "4": 1509,
+                  "5": 257,
+                  "6": 126,
+                  "7": 233,
+                  "none": 854
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  8.62725,
+                  13.25175,
+                  3.05075,
+                  2.3405,
+                  3.47525
+                ]
+              }
+            },
+            {
+              "omega": 0.0,
+              "train_seed": 1,
+              "episodes": 4000,
+              "queries_issued": 36378,
+              "queries_distinct": 16253,
+              "cache_hits": 20167,
+              "final_normalized": 0.3523809523809524,
+              "final_sigma": 37,
+              "final_seeds": [
+                1,
+                11,
+                13,
+                22,
+                44,
+                47,
+                49,
+                86
+              ],
+              "common_episode_normalized": 0.4,
+              "mean_abs_reward": 4.17265625,
+              "seconds": 180.94370937347412,
+              "diagnostics": {
+                "episodes": 4000,
+                "steps": 32000,
+                "fraction_of_steps_with_r_gt_1": 0.118,
+                "first_extra_step_histogram": {
+                  "3": 415,
+                  "4": 1142,
+                  "5": 1022,
+                  "6": 421,
+                  "7": 280,
+                  "none": 720
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  3.8115,
+                  10.01625,
+                  8.92575,
+                  4.14975,
+                  3.478
+                ]
+              }
+            },
+            {
+              "omega": 0.0,
+              "train_seed": 2,
+              "episodes": 4000,
+              "queries_issued": 36378,
+              "queries_distinct": 16830,
+              "cache_hits": 19590,
+              "final_normalized": 0.3523809523809524,
+              "final_sigma": 37,
+              "final_seeds": [
+                1,
+                11,
+                34,
+                47,
+                54,
+                57,
+                84,
+                86
+              ],
+              "common_episode_normalized": 0.3904761904761905,
+              "mean_abs_reward": 4.20303125,
+              "seconds": 181.5334129333496,
+              "diagnostics": {
+                "episodes": 4000,
+                "steps": 32000,
+                "fraction_of_steps_with_r_gt_1": 0.1260625,
+                "first_extra_step_histogram": {
+                  "3": 350,
+                  "4": 1348,
+                  "5": 1050,
+                  "6": 391,
+                  "7": 146,
+                  "none": 715
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  3.63875,
+                  11.49225,
+                  8.95975,
+                  4.06975,
+                  2.46375
+                ]
+              }
+            },
+            {
+              "omega": 0.0,
+              "train_seed": 3,
+              "episodes": 4000,
+              "queries_issued": 36378,
+              "queries_distinct": 7332,
+              "cache_hits": 29088,
+              "final_normalized": 0.6761904761904762,
+              "final_sigma": 71,
+              "final_seeds": [
+                6,
+                17,
+                34,
+                48,
+                54,
+                57,
+                61,
+                86
+              ],
+              "common_episode_normalized": 0.3619047619047619,
+              "mean_abs_reward": 2.01796875,
+              "seconds": 182.0109531879425,
+              "diagnostics": {
+                "episodes": 4000,
+                "steps": 32000,
+                "fraction_of_steps_with_r_gt_1": 0.038125,
+                "first_extra_step_histogram": {
+                  "3": 435,
+                  "4": 269,
+                  "5": 90,
+                  "6": 105,
+                  "7": 161,
+                  "none": 2940
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  4.20625,
+                  3.0205,
+                  1.6395,
+                  1.904,
+                  2.3735
+                ]
+              }
+            },
+            {
+              "omega": 0.0,
+              "train_seed": 4,
+              "episodes": 4000,
+              "queries_issued": 36378,
+              "queries_distinct": 17050,
+              "cache_hits": 19370,
+              "final_normalized": 0.3523809523809524,
+              "final_sigma": 37,
+              "final_seeds": [
+                0,
+                1,
+                34,
+                40,
+                44,
+                47,
+                49,
+                86
+              ],
+              "common_episode_normalized": 0.3619047619047619,
+              "mean_abs_reward": 4.721,
+              "seconds": 181.16769576072693,
+              "diagnostics": {
+                "episodes": 4000,
+                "steps": 32000,
+                "fraction_of_steps_with_r_gt_1": 0.13221875,
+                "first_extra_step_histogram": {
+                  "3": 256,
+                  "4": 788,
+                  "5": 981,
+                  "6": 768,
+                  "7": 357,
+                  "none": 850
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  2.8005,
+                  6.85025,
+                  8.71775,
+                  8.448,
+                  7.9515
+                ]
+              }
+            }
+          ],
+          "final_mean": 0.41714285714285715,
+          "final_median": 0.3523809523809524,
+          "final_min": 0.3523809523809524,
+          "final_max": 0.6761904761904762,
+          "final_best_of_n": 0.6761904761904762,
+          "common_episode_mean": 0.37523809523809526,
+          "common_episode_median": 0.3619047619047619,
+          "mean_abs_reward": 3.8665687500000003,
+          "mean_queries": 36378.0,
+          "mean_episodes": 4000.0,
+          "diagnostics": {
+            "episodes": 4000,
+            "steps": 32000,
+            "fraction_of_steps_with_r_gt_1": 0.11375,
+            "first_extra_step_histogram": {
+              "3": 1021,
+              "4": 1509,
+              "5": 257,
+              "6": 126,
+              "7": 233,
+              "none": 854
+            },
+            "mean_raw_reward_by_step": [
+              1.0,
+              1.0,
+              1.0,
+              8.62725,
+              13.25175,
+              3.05075,
+              2.3405,
+              3.47525
+            ]
+          }
+        },
+        "omega_1.0": {
+          "omega": 1.0,
+          "runs": [
+            {
+              "omega": 1.0,
+              "train_seed": 0,
+              "episodes": 2010,
+              "queries_issued": 36378,
+              "queries_distinct": 12976,
+              "cache_hits": 23424,
+              "final_normalized": 0.3523809523809524,
+              "final_sigma": 37,
+              "final_seeds": [
+                13,
+                18,
+                22,
+                34,
+                40,
+                49,
+                54,
+                104
+              ],
+              "common_episode_normalized": 0.38095238095238093,
+              "mean_abs_reward": 10.131343283582089,
+              "seconds": 91.07526445388794,
+              "diagnostics": {
+                "episodes": 2010,
+                "steps": 16080,
+                "fraction_of_steps_with_r_gt_1": 0.08793532338308457,
+                "first_extra_step_histogram": {
+                  "3": 407,
+                  "4": 334,
+                  "5": 158,
+                  "6": 97,
+                  "7": 209,
+                  "none": 805
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  6.454726368159204,
+                  6.097512437810945,
+                  3.4601990049751246,
+                  2.863681592039801,
+                  5.116915422885572
+                ],
+                "mean_loo_by_step": [
+                  8.814925373134328,
+                  6.822388059701493,
+                  7.65771144278607,
+                  8.187064676616915,
+                  7.619402985074627,
+                  4.557213930348259,
+                  5.282089552238806,
+                  5.116915422885572
+                ],
+                "loo_discrimination": {
+                  "sampled_episodes": 213,
+                  "mean_distinct_values_per_episode": 2.0140845070422535,
+                  "fraction_of_episodes_with_all_loo_equal": 0.45539906103286387,
+                  "mean_within_episode_spread": 11.248826291079812,
+                  "max_within_episode_spread": 70.0
+                },
+                "early_small_reward_vs_later": {
+                  "mean_loo_when_raw_le_1": 5.629005863902905,
+                  "n_raw_le_1": 14666,
+                  "mean_loo_when_raw_gt_1": 18.45898161244696,
+                  "n_raw_gt_1": 1414
+                }
+              }
+            },
+            {
+              "omega": 1.0,
+              "train_seed": 1,
+              "episodes": 2010,
+              "queries_issued": 36378,
+              "queries_distinct": 14482,
+              "cache_hits": 21918,
+              "final_normalized": 0.6761904761904762,
+              "final_sigma": 71,
+              "final_seeds": [
+                1,
+                10,
+                16,
+                40,
+                47,
+                49,
+                79,
+                80
+              ],
+              "common_episode_normalized": 0.6761904761904762,
+              "mean_abs_reward": 11.498569651741294,
+              "seconds": 91.55064940452576,
+              "diagnostics": {
+                "episodes": 2010,
+                "steps": 16080,
+                "fraction_of_steps_with_r_gt_1": 0.12412935323383084,
+                "first_extra_step_histogram": {
+                  "3": 591,
+                  "4": 470,
+                  "5": 260,
+                  "6": 179,
+                  "7": 108,
+                  "none": 402
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  9.264676616915423,
+                  8.648258706467661,
+                  5.061691542288557,
+                  3.764179104477612,
+                  4.397014925373134
+                ],
+                "mean_loo_by_step": [
+                  9.955721393034827,
+                  8.924875621890548,
+                  9.3,
+                  8.774626865671642,
+                  6.266169154228856,
+                  5.4144278606965175,
+                  4.819900497512438,
+                  4.397014925373134
+                ],
+                "loo_discrimination": {
+                  "sampled_episodes": 213,
+                  "mean_distinct_values_per_episode": 2.192488262910798,
+                  "fraction_of_episodes_with_all_loo_equal": 0.1784037558685446,
+                  "mean_within_episode_spread": 13.314553990610328,
+                  "max_within_episode_spread": 42.0
+                },
+                "early_small_reward_vs_later": {
+                  "mean_loo_when_raw_le_1": 6.170335132064754,
+                  "n_raw_le_1": 14084,
+                  "mean_loo_when_raw_gt_1": 14.719939879759519,
+                  "n_raw_gt_1": 1996
+                }
+              }
+            },
+            {
+              "omega": 1.0,
+              "train_seed": 2,
+              "episodes": 2010,
+              "queries_issued": 36378,
+              "queries_distinct": 9661,
+              "cache_hits": 26739,
+              "final_normalized": 0.3333333333333333,
+              "final_sigma": 35,
+              "final_seeds": [
+                1,
+                13,
+                22,
+                34,
+                40,
+                47,
+                49,
+                54
+              ],
+              "common_episode_normalized": 0.3333333333333333,
+              "mean_abs_reward": 8.212437810945273,
+              "seconds": 91.69765162467957,
+              "diagnostics": {
+                "episodes": 2010,
+                "steps": 16080,
+                "fraction_of_steps_with_r_gt_1": 0.0542910447761194,
+                "first_extra_step_histogram": {
+                  "3": 189,
+                  "4": 168,
+                  "5": 130,
+                  "6": 144,
+                  "7": 121,
+                  "none": 1258
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  3.735820895522388,
+                  3.591044776119403,
+                  2.824875621890547,
+                  3.408457711442786,
+                  3.0248756218905473
+                ],
+                "mean_loo_by_step": [
+                  10.306965174129353,
+                  4.695522388059701,
+                  9.04726368159204,
+                  6.439303482587064,
+                  4.59502487562189,
+                  3.9353233830845773,
+                  4.070149253731343,
+                  3.0248756218905473
+                ],
+                "loo_discrimination": {
+                  "sampled_episodes": 213,
+                  "mean_distinct_values_per_episode": 1.5727699530516432,
+                  "fraction_of_episodes_with_all_loo_equal": 0.647887323943662,
+                  "mean_within_episode_spread": 9.347417840375586,
+                  "max_within_episode_spread": 39.0
+                },
+                "early_small_reward_vs_later": {
+                  "mean_loo_when_raw_le_1": 4.579535740119682,
+                  "n_raw_le_1": 15207,
+                  "mean_loo_when_raw_gt_1": 26.4020618556701,
+                  "n_raw_gt_1": 873
+                }
+              }
+            },
+            {
+              "omega": 1.0,
+              "train_seed": 3,
+              "episodes": 2010,
+              "queries_issued": 36378,
+              "queries_distinct": 10497,
+              "cache_hits": 25903,
+              "final_normalized": 0.3523809523809524,
+              "final_sigma": 37,
+              "final_seeds": [
+                1,
+                11,
+                13,
+                16,
+                22,
+                40,
+                47,
+                54
+              ],
+              "common_episode_normalized": 0.3523809523809524,
+              "mean_abs_reward": 11.025,
+              "seconds": 94.80885672569275,
+              "diagnostics": {
+                "episodes": 2010,
+                "steps": 16080,
+                "fraction_of_steps_with_r_gt_1": 0.07904228855721393,
+                "first_extra_step_histogram": {
+                  "3": 500,
+                  "4": 189,
+                  "5": 87,
+                  "6": 115,
+                  "7": 122,
+                  "none": 997
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  7.30547263681592,
+                  3.4437810945273633,
+                  2.3691542288557215,
+                  4.339303482587065,
+                  3.491044776119403
+                ],
+                "mean_loo_by_step": [
+                  13.421890547263681,
+                  9.99452736318408,
+                  12.538308457711443,
+                  11.565174129353235,
+                  4.811940298507463,
+                  3.637810945273632,
+                  4.790547263681592,
+                  3.491044776119403
+                ],
+                "loo_discrimination": {
+                  "sampled_episodes": 213,
+                  "mean_distinct_values_per_episode": 1.9295774647887325,
+                  "fraction_of_episodes_with_all_loo_equal": 0.4835680751173709,
+                  "mean_within_episode_spread": 16.220657276995304,
+                  "max_within_episode_spread": 78.0
+                },
+                "early_small_reward_vs_later": {
+                  "mean_loo_when_raw_le_1": 6.328043757174691,
+                  "n_raw_le_1": 14809,
+                  "mean_loo_when_raw_gt_1": 27.878048780487806,
+                  "n_raw_gt_1": 1271
+                }
+              }
+            },
+            {
+              "omega": 1.0,
+              "train_seed": 4,
+              "episodes": 2010,
+              "queries_issued": 36378,
+              "queries_distinct": 11702,
+              "cache_hits": 24698,
+              "final_normalized": 0.3523809523809524,
+              "final_sigma": 37,
+              "final_seeds": [
+                1,
+                10,
+                13,
+                16,
+                22,
+                34,
+                40,
+                49
+              ],
+              "common_episode_normalized": 0.3619047619047619,
+              "mean_abs_reward": 10.279539800995025,
+              "seconds": 93.44808459281921,
+              "diagnostics": {
+                "episodes": 2010,
+                "steps": 16080,
+                "fraction_of_steps_with_r_gt_1": 0.07350746268656716,
+                "first_extra_step_histogram": {
+                  "3": 433,
+                  "4": 219,
+                  "5": 138,
+                  "6": 110,
+                  "7": 107,
+                  "none": 1003
+                },
+                "mean_raw_reward_by_step": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  7.548258706467662,
+                  4.347761194029851,
+                  2.9422885572139306,
+                  2.710945273631841,
+                  3.3144278606965174
+                ],
+                "mean_loo_by_step": [
+                  11.024378109452737,
+                  10.32139303482587,
+                  9.625870646766169,
+                  10.232338308457711,
+                  6.105472636815921,
+                  4.057711442786069,
+                  3.691044776119403,
+                  3.3144278606965174
+                ],
+                "loo_discrimination": {
+                  "sampled_episodes": 213,
+                  "mean_distinct_values_per_episode": 1.7605633802816902,
+                  "fraction_of_episodes_with_all_loo_equal": 0.5492957746478874,
+                  "mean_within_episode_spread": 11.605633802816902,
+                  "max_within_episode_spread": 78.0
+                },
+                "early_small_reward_vs_later": {
+                  "mean_loo_when_raw_le_1": 5.9977849375755135,
+                  "n_raw_le_1": 14898,
+                  "mean_loo_when_raw_gt_1": 23.666666666666668,
+                  "n_raw_gt_1": 1182
+                }
+              }
+            }
+          ],
+          "final_mean": 0.4133333333333334,
+          "final_median": 0.3523809523809524,
+          "final_min": 0.3333333333333333,
+          "final_max": 0.6761904761904762,
+          "final_best_of_n": 0.6761904761904762,
+          "common_episode_mean": 0.42095238095238097,
+          "common_episode_median": 0.3619047619047619,
+          "mean_abs_reward": 10.229378109452735,
+          "mean_queries": 36378.0,
+          "mean_episodes": 2010.0,
+          "diagnostics": {
+            "episodes": 2010,
+            "steps": 16080,
+            "fraction_of_steps_with_r_gt_1": 0.08793532338308457,
+            "first_extra_step_histogram": {
+              "3": 407,
+              "4": 334,
+              "5": 158,
+              "6": 97,
+              "7": 209,
+              "none": 805
+            },
+            "mean_raw_reward_by_step": [
+              1.0,
+              1.0,
+              1.0,
+              6.454726368159204,
+              6.097512437810945,
+              3.4601990049751246,
+              2.863681592039801,
+              5.116915422885572
+            ],
+            "mean_loo_by_step": [
+              8.814925373134328,
+              6.822388059701493,
+              7.65771144278607,
+              8.187064676616915,
+              7.619402985074627,
+              4.557213930348259,
+              5.282089552238806,
+              5.116915422885572
+            ],
+            "loo_discrimination": {
+              "sampled_episodes": 213,
+              "mean_distinct_values_per_episode": 2.0140845070422535,
+              "fraction_of_episodes_with_all_loo_equal": 0.45539906103286387,
+              "mean_within_episode_spread": 11.248826291079812,
+              "max_within_episode_spread": 70.0
+            },
+            "early_small_reward_vs_later": {
+              "mean_loo_when_raw_le_1": 5.629005863902905,
+              "n_raw_le_1": 14666,
+              "mean_loo_when_raw_gt_1": 18.45898161244696,
+              "n_raw_gt_1": 1414
+            }
+          }
+        }
+      }
+    }
+  }
+}

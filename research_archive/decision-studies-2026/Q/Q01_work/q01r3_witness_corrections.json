@@ -1,0 +1,120 @@
+{
+  "inequality": {
+    "ceb": {
+      "full_optimum": 3688.4883341789246,
+      "default_sum": 10587.665450334549,
+      "holds": true
+    },
+    "job": {
+      "full_optimum": 68.0623927116394,
+      "default_sum": 181.0845799446106,
+      "holds": true
+    },
+    "stack": {
+      "full_optimum": 3942.0963950157166,
+      "default_sum": 5272.4370493888855,
+      "holds": true
+    },
+    "dsb": {
+      "full_optimum": 9870.77386212349,
+      "default_sum": 17090.730572223663,
+      "holds": true
+    }
+  },
+  "valid_stop_witness": {
+    "A": {
+      "observations": [
+        {
+          "q": 0,
+          "h": 0,
+          "x": 100.0,
+          "cap": 101.0,
+          "kind": "completed",
+          "value_or_bound": 100.0,
+          "charged": 100.0
+        },
+        {
+          "q": 1,
+          "h": 0,
+          "x": 100.0,
+          "cap": 101.0,
+          "kind": "completed",
+          "value_or_bound": 100.0,
+          "charged": 100.0
+        }
+      ],
+      "min_observed_sum": 200.0,
+      "opt_time": 100.0,
+      "continue": true,
+      "legal_next_action": [
+        0,
+        1
+      ],
+      "legal_next_cap": 2
+    },
+    "B": {
+      "observations": [
+        {
+          "q": 0,
+          "h": 0,
+          "x": 100.0,
+          "cap": 101.0,
+          "kind": "completed",
+          "value_or_bound": 100.0,
+          "charged": 100.0
+        },
+        {
+          "q": 1,
+          "h": 0,
+          "x": 100.0,
+          "cap": 101.0,
+          "kind": "completed",
+          "value_or_bound": 100.0,
+          "charged": 100.0
+        }
+      ],
+      "min_observed_sum": 200.0,
+      "opt_time": 198.0,
+      "continue": false,
+      "legal_next_action": [
+        0,
+        1
+      ],
+      "legal_next_cap": 2
+    }
+  },
+  "witness_checks": {
+    "identical_history": true,
+    "stop_differs": true,
+    "legal_next_identical": true
+  },
+  "previous_check4_actual": {
+    "calls": [
+      {
+        "q": 0,
+        "h": 0,
+        "cap": 10.0,
+        "kind": "cancelled",
+        "value_or_bound": 10.0,
+        "charged": 10.0
+      },
+      {
+        "q": 0,
+        "h": 1,
+        "cap": 2.0,
+        "kind": "cancelled",
+        "value_or_bound": 2.0,
+        "charged": 2.0
+      }
+    ],
+    "policy_best_get_0": Infinity,
+    "spent": 12.0,
+    "action_on_exhaustion": "STOP",
+    "next_if_budget_remained": [
+      0,
+      1
+    ],
+    "next_cap_if_budget_remained": 2
+  },
+  "all_pass": true
+}

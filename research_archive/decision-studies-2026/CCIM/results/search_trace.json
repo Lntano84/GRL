@@ -1,0 +1,780 @@
+{
+  "script": "audit_search_trace.py",
+  "note": "non-learning search only; no model is trained in this run",
+  "budget": 36369,
+  "checkpoints": [
+    100,
+    300,
+    1000,
+    3000,
+    5000
+  ],
+  "columns": [
+    "cumulative_queries",
+    "phase",
+    "restart",
+    "S",
+    "u",
+    "v",
+    "value_before",
+    "value_after",
+    "delta",
+    "accepted",
+    "duplicate_query",
+    "best_so_far"
+  ],
+  "phase_codes": {
+    "init": 0,
+    "1swap": 1,
+    "2swap": 2
+  },
+  "grouping_constraint": "when splitting this table into train/test, group by (graph, search_seed) or by trajectory; rows sharing a current set S are highly dependent and a random row split leaks across the boundary",
+  "graphs": {
+    "football": {
+      "n": 115,
+      "per_seed": [
+        {
+          "search_seed": 0,
+          "final_normalized": 1.0,
+          "final_sigma": 115,
+          "queries_used": 19216,
+          "queries_distinct": 16019,
+          "cache_hits": 3198,
+          "budget_exhausted": false,
+          "checkpoint_curve": {
+            "100": 0.6695652173913044,
+            "300": 0.6782608695652174,
+            "1000": 0.6782608695652174,
+            "3000": 1.0,
+            "5000": 1.0
+          },
+          "checkpoint_reached": {
+            "100": true,
+            "300": true,
+            "1000": true,
+            "3000": true,
+            "5000": true
+          },
+          "matches_previous_full_budget": true,
+          "matches_previous_5000_run": true,
+          "decomposition": {
+            "by_phase": {
+              "init": {
+                "queries": 7,
+                "accepted": 0,
+                "duplicate_queries": 0,
+                "delta_positive": 0,
+                "delta_zero": 0,
+                "delta_negative": 0
+              },
+              "1swap": {
+                "queries": 17996,
+                "accepted": 49,
+                "duplicate_queries": 3194,
+                "delta_positive": 49,
+                "delta_zero": 1963,
+                "delta_negative": 15984
+              },
+              "2swap": {
+                "queries": 1213,
+                "accepted": 1,
+                "duplicate_queries": 3,
+                "delta_positive": 1,
+                "delta_zero": 9,
+                "delta_negative": 1203
+              }
+            },
+            "proposal_queries_only": {
+              "queries": 19209,
+              "accepted": 50,
+              "delta_positive": 50,
+              "delta_zero": 1972,
+              "delta_negative": 17187,
+              "duplicate_queries": 3197,
+              "acceptance_rate": 0.0026029465354781615,
+              "strictly_positive_rate": 0.0026029465354781615,
+              "non_positive_queries": 19159
+            },
+            "total_queries": 19216,
+            "note": "zero- and negative-gain proposals are NOT counted as waste: they may be what the search needs to find a good solution.  This only sizes the task a ranker faces."
+          }
+        },
+        {
+          "search_seed": 1,
+          "final_normalized": 1.0,
+          "final_sigma": 115,
+          "queries_used": 15383,
+          "queries_distinct": 11966,
+          "cache_hits": 3418,
+          "budget_exhausted": false,
+          "checkpoint_curve": {
+            "100": 0.7739130434782608,
+            "300": 0.782608695652174,
+            "1000": 1.0,
+            "3000": 1.0,
+            "5000": 1.0
+          },
+          "checkpoint_reached": {
+            "100": true,
+            "300": true,
+            "1000": true,
+            "3000": true,
+            "5000": true
+          },
+          "matches_previous_full_budget": true,
+          "matches_previous_5000_run": true,
+          "decomposition": {
+            "by_phase": {
+              "init": {
+                "queries": 7,
+                "accepted": 0,
+                "duplicate_queries": 0,
+                "delta_positive": 0,
+                "delta_zero": 0,
+                "delta_negative": 0
+              },
+              "1swap": {
+                "queries": 14164,
+                "accepted": 56,
+                "duplicate_queries": 3414,
+                "delta_positive": 56,
+                "delta_zero": 1041,
+                "delta_negative": 13067
+              },
+              "2swap": {
+                "queries": 1212,
+                "accepted": 0,
+                "duplicate_queries": 3,
+                "delta_positive": 0,
+                "delta_zero": 5,
+                "delta_negative": 1207
+              }
+            },
+            "proposal_queries_only": {
+              "queries": 15376,
+              "accepted": 56,
+              "delta_positive": 56,
+              "delta_zero": 1046,
+              "delta_negative": 14274,
+              "duplicate_queries": 3417,
+              "acceptance_rate": 0.0036420395421436005,
+              "strictly_positive_rate": 0.0036420395421436005,
+              "non_positive_queries": 15320
+            },
+            "total_queries": 15383,
+            "note": "zero- and negative-gain proposals are NOT counted as waste: they may be what the search needs to find a good solution.  This only sizes the task a ranker faces."
+          }
+        },
+        {
+          "search_seed": 2,
+          "final_normalized": 1.0,
+          "final_sigma": 115,
+          "queries_used": 17977,
+          "queries_distinct": 14223,
+          "cache_hits": 3755,
+          "budget_exhausted": false,
+          "checkpoint_curve": {
+            "100": 0.24347826086956523,
+            "300": 0.5826086956521739,
+            "1000": 1.0,
+            "3000": 1.0,
+            "5000": 1.0
+          },
+          "checkpoint_reached": {
+            "100": true,
+            "300": true,
+            "1000": true,
+            "3000": true,
+            "5000": true
+          },
+          "matches_previous_full_budget": true,
+          "matches_previous_5000_run": true,
+          "decomposition": {
+            "by_phase": {
+              "init": {
+                "queries": 7,
+                "accepted": 0,
+                "duplicate_queries": 0,
+                "delta_positive": 0,
+                "delta_zero": 0,
+                "delta_negative": 0
+              },
+              "1swap": {
+                "queries": 16716,
+                "accepted": 52,
+                "duplicate_queries": 3753,
+                "delta_positive": 52,
+                "delta_zero": 2132,
+                "delta_negative": 14532
+              },
+              "2swap": {
+                "queries": 1254,
+                "accepted": 2,
+                "duplicate_queries": 1,
+                "delta_positive": 2,
+                "delta_zero": 19,
+                "delta_negative": 1233
+              }
+            },
+            "proposal_queries_only": {
+              "queries": 17970,
+              "accepted": 54,
+              "delta_positive": 54,
+              "delta_zero": 2151,
+              "delta_negative": 15765,
+              "duplicate_queries": 3754,
+              "acceptance_rate": 0.003005008347245409,
+              "strictly_positive_rate": 0.003005008347245409,
+              "non_positive_queries": 17916
+            },
+            "total_queries": 17977,
+            "note": "zero- and negative-gain proposals are NOT counted as waste: they may be what the search needs to find a good solution.  This only sizes the task a ranker faces."
+          }
+        },
+        {
+          "search_seed": 3,
+          "final_normalized": 1.0,
+          "final_sigma": 115,
+          "queries_used": 15938,
+          "queries_distinct": 12755,
+          "cache_hits": 3184,
+          "budget_exhausted": false,
+          "checkpoint_curve": {
+            "100": 0.5217391304347826,
+            "300": 0.6695652173913044,
+            "1000": 0.8173913043478261,
+            "3000": 0.8173913043478261,
+            "5000": 1.0
+          },
+          "checkpoint_reached": {
+            "100": true,
+            "300": true,
+            "1000": true,
+            "3000": true,
+            "5000": true
+          },
+          "matches_previous_full_budget": true,
+          "matches_previous_5000_run": true,
+          "decomposition": {
+            "by_phase": {
+              "init": {
+                "queries": 7,
+                "accepted": 0,
+                "duplicate_queries": 0,
+                "delta_positive": 0,
+                "delta_zero": 0,
+                "delta_negative": 0
+              },
+              "1swap": {
+                "queries": 14716,
+                "accepted": 43,
+                "duplicate_queries": 3180,
+                "delta_positive": 43,
+                "delta_zero": 2258,
+                "delta_negative": 12415
+              },
+              "2swap": {
+                "queries": 1215,
+                "accepted": 1,
+                "duplicate_queries": 3,
+                "delta_positive": 1,
+                "delta_zero": 23,
+                "delta_negative": 1191
+              }
+            },
+            "proposal_queries_only": {
+              "queries": 15931,
+              "accepted": 44,
+              "delta_positive": 44,
+              "delta_zero": 2281,
+              "delta_negative": 13606,
+              "duplicate_queries": 3183,
+              "acceptance_rate": 0.002761910740066537,
+              "strictly_positive_rate": 0.002761910740066537,
+              "non_positive_queries": 15887
+            },
+            "total_queries": 15938,
+            "note": "zero- and negative-gain proposals are NOT counted as waste: they may be what the search needs to find a good solution.  This only sizes the task a ranker faces."
+          }
+        },
+        {
+          "search_seed": 4,
+          "final_normalized": 1.0,
+          "final_sigma": 115,
+          "queries_used": 18118,
+          "queries_distinct": 13855,
+          "cache_hits": 4264,
+          "budget_exhausted": false,
+          "checkpoint_curve": {
+            "100": 0.5304347826086957,
+            "300": 0.5304347826086957,
+            "1000": 0.782608695652174,
+            "3000": 1.0,
+            "5000": 1.0
+          },
+          "checkpoint_reached": {
+            "100": true,
+            "300": true,
+            "1000": true,
+            "3000": true,
+            "5000": true
+          },
+          "matches_previous_full_budget": true,
+          "matches_previous_5000_run": true,
+          "decomposition": {
+            "by_phase": {
+              "init": {
+                "queries": 7,
+                "accepted": 0,
+                "duplicate_queries": 0,
+                "delta_positive": 0,
+                "delta_zero": 0,
+                "delta_negative": 0
+              },
+              "1swap": {
+                "queries": 16761,
+                "accepted": 52,
+                "duplicate_queries": 4260,
+                "delta_positive": 52,
+                "delta_zero": 1028,
+                "delta_negative": 15681
+              },
+              "2swap": {
+                "queries": 1350,
+                "accepted": 1,
+                "duplicate_queries": 3,
+                "delta_positive": 1,
+                "delta_zero": 9,
+                "delta_negative": 1340
+              }
+            },
+            "proposal_queries_only": {
+              "queries": 18111,
+              "accepted": 53,
+              "delta_positive": 53,
+              "delta_zero": 1037,
+              "delta_negative": 17021,
+              "duplicate_queries": 4263,
+              "acceptance_rate": 0.002926398321462095,
+              "strictly_positive_rate": 0.002926398321462095,
+              "non_positive_queries": 18058
+            },
+            "total_queries": 18118,
+            "note": "zero- and negative-gain proposals are NOT counted as waste: they may be what the search needs to find a good solution.  This only sizes the task a ranker faces."
+          }
+        }
+      ],
+      "checkpoint_table": {
+        "100": [
+          0.6695652173913044,
+          0.7739130434782608,
+          0.24347826086956523,
+          0.5217391304347826,
+          0.5304347826086957
+        ],
+        "300": [
+          0.6782608695652174,
+          0.782608695652174,
+          0.5826086956521739,
+          0.6695652173913044,
+          0.5304347826086957
+        ],
+        "1000": [
+          0.6782608695652174,
+          1.0,
+          1.0,
+          0.8173913043478261,
+          0.782608695652174
+        ],
+        "3000": [
+          1.0,
+          1.0,
+          1.0,
+          0.8173913043478261,
+          1.0
+        ],
+        "5000": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "all_regressions_pass": true
+    },
+    "polbooks": {
+      "n": 105,
+      "per_seed": [
+        {
+          "search_seed": 0,
+          "final_normalized": 0.8476190476190476,
+          "final_sigma": 89,
+          "queries_used": 16082,
+          "queries_distinct": 12406,
+          "cache_hits": 3677,
+          "budget_exhausted": false,
+          "checkpoint_curve": {
+            "100": 0.7333333333333333,
+            "300": 0.7428571428571429,
+            "1000": 0.8,
+            "3000": 0.8476190476190476,
+            "5000": 0.8476190476190476
+          },
+          "checkpoint_reached": {
+            "100": true,
+            "300": true,
+            "1000": true,
+            "3000": true,
+            "5000": true
+          },
+          "matches_previous_full_budget": true,
+          "matches_previous_5000_run": true,
+          "decomposition": {
+            "by_phase": {
+              "init": {
+                "queries": 7,
+                "accepted": 0,
+                "duplicate_queries": 0,
+                "delta_positive": 0,
+                "delta_zero": 0,
+                "delta_negative": 0
+              },
+              "1swap": {
+                "queries": 14874,
+                "accepted": 60,
+                "duplicate_queries": 3673,
+                "delta_positive": 60,
+                "delta_zero": 822,
+                "delta_negative": 13992
+              },
+              "2swap": {
+                "queries": 1201,
+                "accepted": 0,
+                "duplicate_queries": 3,
+                "delta_positive": 0,
+                "delta_zero": 6,
+                "delta_negative": 1195
+              }
+            },
+            "proposal_queries_only": {
+              "queries": 16075,
+              "accepted": 60,
+              "delta_positive": 60,
+              "delta_zero": 828,
+              "delta_negative": 15187,
+              "duplicate_queries": 3676,
+              "acceptance_rate": 0.0037325038880248835,
+              "strictly_positive_rate": 0.0037325038880248835,
+              "non_positive_queries": 16015
+            },
+            "total_queries": 16082,
+            "note": "zero- and negative-gain proposals are NOT counted as waste: they may be what the search needs to find a good solution.  This only sizes the task a ranker faces."
+          }
+        },
+        {
+          "search_seed": 1,
+          "final_normalized": 0.8761904761904762,
+          "final_sigma": 92,
+          "queries_used": 15868,
+          "queries_distinct": 13720,
+          "cache_hits": 2149,
+          "budget_exhausted": false,
+          "checkpoint_curve": {
+            "100": 0.4095238095238095,
+            "300": 0.4380952380952381,
+            "1000": 0.4857142857142857,
+            "3000": 0.8095238095238095,
+            "5000": 0.8666666666666667
+          },
+          "checkpoint_reached": {
+            "100": true,
+            "300": true,
+            "1000": true,
+            "3000": true,
+            "5000": true
+          },
+          "matches_previous_full_budget": true,
+          "matches_previous_5000_run": true,
+          "decomposition": {
+            "by_phase": {
+              "init": {
+                "queries": 7,
+                "accepted": 0,
+                "duplicate_queries": 0,
+                "delta_positive": 0,
+                "delta_zero": 0,
+                "delta_negative": 0
+              },
+              "1swap": {
+                "queries": 14660,
+                "accepted": 70,
+                "duplicate_queries": 2146,
+                "delta_positive": 70,
+                "delta_zero": 1031,
+                "delta_negative": 13559
+              },
+              "2swap": {
+                "queries": 1201,
+                "accepted": 0,
+                "duplicate_queries": 2,
+                "delta_positive": 0,
+                "delta_zero": 1,
+                "delta_negative": 1200
+              }
+            },
+            "proposal_queries_only": {
+              "queries": 15861,
+              "accepted": 70,
+              "delta_positive": 70,
+              "delta_zero": 1032,
+              "delta_negative": 14759,
+              "duplicate_queries": 2148,
+              "acceptance_rate": 0.004413340899060589,
+              "strictly_positive_rate": 0.004413340899060589,
+              "non_positive_queries": 15791
+            },
+            "total_queries": 15868,
+            "note": "zero- and negative-gain proposals are NOT counted as waste: they may be what the search needs to find a good solution.  This only sizes the task a ranker faces."
+          }
+        },
+        {
+          "search_seed": 2,
+          "final_normalized": 0.8666666666666667,
+          "final_sigma": 91,
+          "queries_used": 13885,
+          "queries_distinct": 12100,
+          "cache_hits": 1786,
+          "budget_exhausted": false,
+          "checkpoint_curve": {
+            "100": 0.38095238095238093,
+            "300": 0.4666666666666667,
+            "1000": 0.4857142857142857,
+            "3000": 0.8666666666666667,
+            "5000": 0.8666666666666667
+          },
+          "checkpoint_reached": {
+            "100": true,
+            "300": true,
+            "1000": true,
+            "3000": true,
+            "5000": true
+          },
+          "matches_previous_full_budget": true,
+          "matches_previous_5000_run": true,
+          "decomposition": {
+            "by_phase": {
+              "init": {
+                "queries": 7,
+                "accepted": 0,
+                "duplicate_queries": 0,
+                "delta_positive": 0,
+                "delta_zero": 0,
+                "delta_negative": 0
+              },
+              "1swap": {
+                "queries": 12669,
+                "accepted": 72,
+                "duplicate_queries": 1782,
+                "delta_positive": 72,
+                "delta_zero": 884,
+                "delta_negative": 11713
+              },
+              "2swap": {
+                "queries": 1209,
+                "accepted": 0,
+                "duplicate_queries": 3,
+                "delta_positive": 0,
+                "delta_zero": 0,
+                "delta_negative": 1209
+              }
+            },
+            "proposal_queries_only": {
+              "queries": 13878,
+              "accepted": 72,
+              "delta_positive": 72,
+              "delta_zero": 884,
+              "delta_negative": 12922,
+              "duplicate_queries": 1785,
+              "acceptance_rate": 0.005188067444876783,
+              "strictly_positive_rate": 0.005188067444876783,
+              "non_positive_queries": 13806
+            },
+            "total_queries": 13885,
+            "note": "zero- and negative-gain proposals are NOT counted as waste: they may be what the search needs to find a good solution.  This only sizes the task a ranker faces."
+          }
+        },
+        {
+          "search_seed": 3,
+          "final_normalized": 0.8666666666666667,
+          "final_sigma": 91,
+          "queries_used": 18807,
+          "queries_distinct": 15310,
+          "cache_hits": 3498,
+          "budget_exhausted": false,
+          "checkpoint_curve": {
+            "100": 0.7619047619047619,
+            "300": 0.8380952380952381,
+            "1000": 0.8666666666666667,
+            "3000": 0.8666666666666667,
+            "5000": 0.8666666666666667
+          },
+          "checkpoint_reached": {
+            "100": true,
+            "300": true,
+            "1000": true,
+            "3000": true,
+            "5000": true
+          },
+          "matches_previous_full_budget": true,
+          "matches_previous_5000_run": true,
+          "decomposition": {
+            "by_phase": {
+              "init": {
+                "queries": 7,
+                "accepted": 0,
+                "duplicate_queries": 0,
+                "delta_positive": 0,
+                "delta_zero": 0,
+                "delta_negative": 0
+              },
+              "1swap": {
+                "queries": 17439,
+                "accepted": 58,
+                "duplicate_queries": 3488,
+                "delta_positive": 58,
+                "delta_zero": 1660,
+                "delta_negative": 15721
+              },
+              "2swap": {
+                "queries": 1361,
+                "accepted": 3,
+                "duplicate_queries": 9,
+                "delta_positive": 3,
+                "delta_zero": 8,
+                "delta_negative": 1350
+              }
+            },
+            "proposal_queries_only": {
+              "queries": 18800,
+              "accepted": 61,
+              "delta_positive": 61,
+              "delta_zero": 1668,
+              "delta_negative": 17071,
+              "duplicate_queries": 3497,
+              "acceptance_rate": 0.00324468085106383,
+              "strictly_positive_rate": 0.00324468085106383,
+              "non_positive_queries": 18739
+            },
+            "total_queries": 18807,
+            "note": "zero- and negative-gain proposals are NOT counted as waste: they may be what the search needs to find a good solution.  This only sizes the task a ranker faces."
+          }
+        },
+        {
+          "search_seed": 4,
+          "final_normalized": 0.8666666666666667,
+          "final_sigma": 91,
+          "queries_used": 15719,
+          "queries_distinct": 13029,
+          "cache_hits": 2691,
+          "budget_exhausted": false,
+          "checkpoint_curve": {
+            "100": 0.819047619047619,
+            "300": 0.8285714285714286,
+            "1000": 0.8380952380952381,
+            "3000": 0.8476190476190476,
+            "5000": 0.8476190476190476
+          },
+          "checkpoint_reached": {
+            "100": true,
+            "300": true,
+            "1000": true,
+            "3000": true,
+            "5000": true
+          },
+          "matches_previous_full_budget": true,
+          "matches_previous_5000_run": true,
+          "decomposition": {
+            "by_phase": {
+              "init": {
+                "queries": 7,
+                "accepted": 0,
+                "duplicate_queries": 0,
+                "delta_positive": 0,
+                "delta_zero": 0,
+                "delta_negative": 0
+              },
+              "1swap": {
+                "queries": 14510,
+                "accepted": 64,
+                "duplicate_queries": 2685,
+                "delta_positive": 64,
+                "delta_zero": 1415,
+                "delta_negative": 13031
+              },
+              "2swap": {
+                "queries": 1202,
+                "accepted": 1,
+                "duplicate_queries": 5,
+                "delta_positive": 1,
+                "delta_zero": 12,
+                "delta_negative": 1189
+              }
+            },
+            "proposal_queries_only": {
+              "queries": 15712,
+              "accepted": 65,
+              "delta_positive": 65,
+              "delta_zero": 1427,
+              "delta_negative": 14220,
+              "duplicate_queries": 2690,
+              "acceptance_rate": 0.004136965376782077,
+              "strictly_positive_rate": 0.004136965376782077,
+              "non_positive_queries": 15647
+            },
+            "total_queries": 15719,
+            "note": "zero- and negative-gain proposals are NOT counted as waste: they may be what the search needs to find a good solution.  This only sizes the task a ranker faces."
+          }
+        }
+      ],
+      "checkpoint_table": {
+        "100": [
+          0.7333333333333333,
+          0.4095238095238095,
+          0.38095238095238093,
+          0.7619047619047619,
+          0.819047619047619
+        ],
+        "300": [
+          0.7428571428571429,
+          0.4380952380952381,
+          0.4666666666666667,
+          0.8380952380952381,
+          0.8285714285714286
+        ],
+        "1000": [
+          0.8,
+          0.4857142857142857,
+          0.4857142857142857,
+          0.8666666666666667,
+          0.8380952380952381
+        ],
+        "3000": [
+          0.8476190476190476,
+          0.8095238095238095,
+          0.8666666666666667,
+          0.8666666666666667,
+          0.8476190476190476
+        ],
+        "5000": [
+          0.8476190476190476,
+          0.8666666666666667,
+          0.8666666666666667,
+          0.8666666666666667,
+          0.8476190476190476
+        ]
+      },
+      "all_regressions_pass": true
+    }
+  }
+}

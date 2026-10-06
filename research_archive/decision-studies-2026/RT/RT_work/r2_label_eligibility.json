@@ -1,0 +1,40 @@
+{
+  "classes": {
+    "A_COMPLETE": 732355,
+    "B_COMPLETE_NONOK": 1218,
+    "C_PARTIAL": 25508,
+    "D_NO_END": 295846,
+    "E_NEVER_LAUNCHED": 574
+  },
+  "class_status_breakdown": {
+    "A_COMPLETE": {
+      "Terminated": 732355
+    },
+    "B_COMPLETE_NONOK": {
+      "Failed": 985,
+      "Running": 233
+    },
+    "C_PARTIAL": {
+      "Failed": 24635,
+      "Running": 828,
+      "Waiting": 45
+    },
+    "D_NO_END": {
+      "Running": 61867,
+      "Failed": 230935,
+      "Waiting": 3044
+    },
+    "E_NEVER_LAUNCHED": {
+      "Waiting": 574
+    }
+  },
+  "support": {
+    "A_COMPLETE": "YES for a completion-time target. Every task ended and the job is archived Terminated, so max(end) is a genuine completion time. This is the only class that supports a supervised run-time label without further assumptions.",
+    "B_COMPLETE_NONOK": "MIXED. Every task ended, so an end timestamp exists, but the job did not succeed. Usable for a 'time until this attempt stopped' target; NOT usable as a successful service duration without stating that assumption, because failure can truncate.",
+    "C_PARTIAL": "NO for a completion-time target. max(end over the ended tasks) is a lower bound on the job end only; the remaining tasks' end times are missing. Usable only as a censored lower bound, and only after deciding why those tasks lack an end.",
+    "D_NO_END": "NO label at all. Observation time is a lower bound; whether the job was still executing, had failed silently, or was never recorded cannot be told from the tables.",
+    "E_NEVER_LAUNCHED": "NO label and NO start. These are submissions that never began, so they are queue records rather than service records."
+  },
+  "workload_tag_non_empty": 102610,
+  "group_tag_non_empty": 1053971
+}

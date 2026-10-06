@@ -1,0 +1,2832 @@
+{
+  "pairs": [
+    {
+      "graph": "barth5",
+      "k": 4,
+      "seed": 100,
+      "input_sha256": "507C0146ED64D87800522939F56BF848939AA0F1C70E2D1AA6E82B7E174A5329",
+      "model": {
+        "mode": "model",
+        "returncode": 0,
+        "wall_seconds": 0.36647870000160765,
+        "graph_sha256": "507C0146ED64D87800522939F56BF848939AA0F1C70E2D1AA6E82B7E174A5329",
+        "partition_sha256": "B25BC0FA7521101F0F294AF4F7FE12137FB758A7027F584EA1C7554A2BB084D3",
+        "partition_file": "input.graph.part4.epsilon0.03.seed100.KaHyPar",
+        "score_rows": 91756,
+        "score_sha256": "2577AF47399806FEB43E591A4B05D6677B03BE67AD9A653E02595B921DE52D21",
+        "coarsening_pass_events": [
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "0",
+            "k": "4",
+            "nodes": "15606",
+            "arcs": "91756",
+            "active_nodes": "15606",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "1",
+            "k": "4",
+            "nodes": "6242",
+            "arcs": "36278",
+            "active_nodes": "6242",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "2",
+            "k": "4",
+            "nodes": "2496",
+            "arcs": "14200",
+            "active_nodes": "2496",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "3",
+            "k": "4",
+            "nodes": "1003",
+            "arcs": "5542",
+            "active_nodes": "1003",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "4",
+            "k": "4",
+            "nodes": "796",
+            "arcs": "4366",
+            "active_nodes": "796",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "0",
+            "k": "2",
+            "nodes": "796",
+            "arcs": "4366",
+            "active_nodes": "796",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "1",
+            "k": "2",
+            "nodes": "413",
+            "arcs": "2202",
+            "active_nodes": "413",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "0",
+            "k": "2",
+            "nodes": "402",
+            "arcs": "2142",
+            "active_nodes": "402",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "0",
+            "k": "2",
+            "nodes": "394",
+            "arcs": "2138",
+            "active_nodes": "394",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "1",
+            "k": "2",
+            "nodes": "390",
+            "arcs": "2114",
+            "active_nodes": "390",
+            "source": null
+          }
+        ],
+        "rating_entry_events": [
+          {
+            "event": "MODEL",
+            "context": "-1",
+            "pass": "-1",
+            "k": "4",
+            "nodes": "15606",
+            "arcs": "91756",
+            "active_nodes": "-1",
+            "source": "model"
+          }
+        ],
+        "cut": 381,
+        "sizes": [
+          3778,
+          3943,
+          3943,
+          3942
+        ],
+        "max_block_size": 3943,
+        "capacity_bound": 4019,
+        "balanced": true
+      },
+      "replay": {
+        "mode": "replay",
+        "returncode": 0,
+        "wall_seconds": 0.18650659999548225,
+        "graph_sha256": "507C0146ED64D87800522939F56BF848939AA0F1C70E2D1AA6E82B7E174A5329",
+        "partition_sha256": "B25BC0FA7521101F0F294AF4F7FE12137FB758A7027F584EA1C7554A2BB084D3",
+        "partition_file": "input.graph.part4.epsilon0.03.seed100.KaHyPar",
+        "score_rows": null,
+        "score_sha256": null,
+        "coarsening_pass_events": [
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "0",
+            "k": "4",
+            "nodes": "15606",
+            "arcs": "91756",
+            "active_nodes": "15606",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "1",
+            "k": "4",
+            "nodes": "6242",
+            "arcs": "36278",
+            "active_nodes": "6242",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "2",
+            "k": "4",
+            "nodes": "2496",
+            "arcs": "14200",
+            "active_nodes": "2496",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "3",
+            "k": "4",
+            "nodes": "1003",
+            "arcs": "5542",
+            "active_nodes": "1003",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "4",
+            "k": "4",
+            "nodes": "796",
+            "arcs": "4366",
+            "active_nodes": "796",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "0",
+            "k": "2",
+            "nodes": "796",
+            "arcs": "4366",
+            "active_nodes": "796",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "1",
+            "k": "2",
+            "nodes": "413",
+            "arcs": "2202",
+            "active_nodes": "413",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "0",
+            "k": "2",
+            "nodes": "402",
+            "arcs": "2142",
+            "active_nodes": "402",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "0",
+            "k": "2",
+            "nodes": "394",
+            "arcs": "2138",
+            "active_nodes": "394",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "1",
+            "k": "2",
+            "nodes": "390",
+            "arcs": "2114",
+            "active_nodes": "390",
+            "source": null
+          }
+        ],
+        "rating_entry_events": [
+          {
+            "event": "MODEL",
+            "context": "-1",
+            "pass": "-1",
+            "k": "4",
+            "nodes": "15606",
+            "arcs": "91756",
+            "active_nodes": "-1",
+            "source": "replay"
+          }
+        ],
+        "cut": 381,
+        "sizes": [
+          3778,
+          3943,
+          3943,
+          3942
+        ],
+        "max_block_size": 3943,
+        "capacity_bound": 4019,
+        "balanced": true
+      },
+      "partition_hash_equal": true,
+      "cut_equal": true,
+      "balanced_both": true,
+      "score_hash": "2577AF47399806FEB43E591A4B05D6677B03BE67AD9A653E02595B921DE52D21",
+      "score_rows": 91756
+    },
+    {
+      "graph": "barth5",
+      "k": 32,
+      "seed": 100,
+      "input_sha256": "507C0146ED64D87800522939F56BF848939AA0F1C70E2D1AA6E82B7E174A5329",
+      "model": {
+        "mode": "model",
+        "returncode": 0,
+        "wall_seconds": 0.45884859999932814,
+        "graph_sha256": "507C0146ED64D87800522939F56BF848939AA0F1C70E2D1AA6E82B7E174A5329",
+        "partition_sha256": "BBC27AB1E98B1F9025DBC0848160D06B631B0A249E5D6D3EDDA7153FC129AD0B",
+        "partition_file": "input.graph.part32.epsilon0.03.seed100.KaHyPar",
+        "score_rows": 91756,
+        "score_sha256": "2577AF47399806FEB43E591A4B05D6677B03BE67AD9A653E02595B921DE52D21",
+        "coarsening_pass_events": [
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "0",
+            "k": "32",
+            "nodes": "15606",
+            "arcs": "91756",
+            "active_nodes": "15606",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "1",
+            "k": "32",
+            "nodes": "6242",
+            "arcs": "36256",
+            "active_nodes": "6242",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "0",
+            "k": "2",
+            "nodes": "5120",
+            "arcs": "29610",
+            "active_nodes": "5120",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "1",
+            "k": "2",
+            "nodes": "2048",
+            "arcs": "11582",
+            "active_nodes": "2048",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "2",
+            "k": "2",
+            "nodes": "819",
+            "arcs": "4474",
+            "active_nodes": "819",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "3",
+            "k": "2",
+            "nodes": "446",
+            "arcs": "2362",
+            "active_nodes": "446",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "4",
+            "k": "2",
+            "nodes": "420",
+            "arcs": "2224",
+            "active_nodes": "420",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "0",
+            "k": "2",
+            "nodes": "2668",
+            "arcs": "15312",
+            "active_nodes": "2668",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "1",
+            "k": "2",
+            "nodes": "1067",
+            "arcs": "5970",
+            "active_nodes": "1067",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "2",
+            "k": "2",
+            "nodes": "441",
+            "arcs": "2360",
+            "active_nodes": "441",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "3",
+            "k": "2",
+            "nodes": "393",
+            "arcs": "2094",
+            "active_nodes": "393",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1412",
+            "arcs": "8018",
+            "active_nodes": "1412",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "1",
+            "k": "2",
+            "nodes": "564",
+            "arcs": "3100",
+            "active_nodes": "564",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "2",
+            "k": "2",
+            "nodes": "384",
+            "arcs": "2088",
+            "active_nodes": "384",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "3",
+            "k": "2",
+            "nodes": "378",
+            "arcs": "2056",
+            "active_nodes": "378",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "4",
+            "pass": "0",
+            "k": "2",
+            "nodes": "682",
+            "arcs": "3830",
+            "active_nodes": "682",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "4",
+            "pass": "1",
+            "k": "2",
+            "nodes": "358",
+            "arcs": "1974",
+            "active_nodes": "358",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "4",
+            "pass": "2",
+            "k": "2",
+            "nodes": "348",
+            "arcs": "1916",
+            "active_nodes": "348",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "6",
+            "pass": "0",
+            "k": "2",
+            "nodes": "390",
+            "arcs": "2188",
+            "active_nodes": "390",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "7",
+            "pass": "0",
+            "k": "2",
+            "nodes": "730",
+            "arcs": "4072",
+            "active_nodes": "730",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "7",
+            "pass": "1",
+            "k": "2",
+            "nodes": "360",
+            "arcs": "1954",
+            "active_nodes": "360",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "7",
+            "pass": "2",
+            "k": "2",
+            "nodes": "341",
+            "arcs": "1848",
+            "active_nodes": "341",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "8",
+            "pass": "0",
+            "k": "2",
+            "nodes": "359",
+            "arcs": "1960",
+            "active_nodes": "359",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "9",
+            "pass": "0",
+            "k": "2",
+            "nodes": "371",
+            "arcs": "2048",
+            "active_nodes": "371",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1256",
+            "arcs": "7154",
+            "active_nodes": "1256",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "1",
+            "k": "2",
+            "nodes": "502",
+            "arcs": "2754",
+            "active_nodes": "502",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "2",
+            "k": "2",
+            "nodes": "390",
+            "arcs": "2126",
+            "active_nodes": "390",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "11",
+            "pass": "0",
+            "k": "2",
+            "nodes": "599",
+            "arcs": "3368",
+            "active_nodes": "599",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "11",
+            "pass": "1",
+            "k": "2",
+            "nodes": "360",
+            "arcs": "1988",
+            "active_nodes": "360",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "14",
+            "pass": "0",
+            "k": "2",
+            "nodes": "657",
+            "arcs": "3730",
+            "active_nodes": "657",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "14",
+            "pass": "1",
+            "k": "2",
+            "nodes": "351",
+            "arcs": "1948",
+            "active_nodes": "351",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "16",
+            "pass": "0",
+            "k": "2",
+            "nodes": "355",
+            "arcs": "1968",
+            "active_nodes": "355",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "0",
+            "k": "2",
+            "nodes": "2452",
+            "arcs": "14094",
+            "active_nodes": "2452",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "1",
+            "k": "2",
+            "nodes": "980",
+            "arcs": "5490",
+            "active_nodes": "980",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "2",
+            "k": "2",
+            "nodes": "438",
+            "arcs": "2368",
+            "active_nodes": "438",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "3",
+            "k": "2",
+            "nodes": "403",
+            "arcs": "2168",
+            "active_nodes": "403",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1185",
+            "arcs": "6744",
+            "active_nodes": "1185",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "1",
+            "k": "2",
+            "nodes": "474",
+            "arcs": "2600",
+            "active_nodes": "474",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "2",
+            "k": "2",
+            "nodes": "378",
+            "arcs": "2066",
+            "active_nodes": "378",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "19",
+            "pass": "0",
+            "k": "2",
+            "nodes": "592",
+            "arcs": "3328",
+            "active_nodes": "592",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "19",
+            "pass": "1",
+            "k": "2",
+            "nodes": "358",
+            "arcs": "1970",
+            "active_nodes": "358",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "22",
+            "pass": "0",
+            "k": "2",
+            "nodes": "593",
+            "arcs": "3356",
+            "active_nodes": "593",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "22",
+            "pass": "1",
+            "k": "2",
+            "nodes": "362",
+            "arcs": "2012",
+            "active_nodes": "362",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1267",
+            "arcs": "7212",
+            "active_nodes": "1267",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "1",
+            "k": "2",
+            "nodes": "506",
+            "arcs": "2798",
+            "active_nodes": "506",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "2",
+            "k": "2",
+            "nodes": "389",
+            "arcs": "2124",
+            "active_nodes": "389",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "26",
+            "pass": "0",
+            "k": "2",
+            "nodes": "678",
+            "arcs": "3780",
+            "active_nodes": "678",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "26",
+            "pass": "1",
+            "k": "2",
+            "nodes": "360",
+            "arcs": "1944",
+            "active_nodes": "360",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "26",
+            "pass": "2",
+            "k": "2",
+            "nodes": "352",
+            "arcs": "1898",
+            "active_nodes": "352",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "27",
+            "pass": "0",
+            "k": "2",
+            "nodes": "381",
+            "arcs": "2068",
+            "active_nodes": "381",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "29",
+            "pass": "0",
+            "k": "2",
+            "nodes": "589",
+            "arcs": "3330",
+            "active_nodes": "589",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "29",
+            "pass": "1",
+            "k": "2",
+            "nodes": "352",
+            "arcs": "1960",
+            "active_nodes": "352",
+            "source": null
+          }
+        ],
+        "rating_entry_events": [
+          {
+            "event": "MODEL",
+            "context": "-1",
+            "pass": "-1",
+            "k": "32",
+            "nodes": "15606",
+            "arcs": "91756",
+            "active_nodes": "-1",
+            "source": "model"
+          }
+        ],
+        "cut": 1710,
+        "sizes": [
+          485,
+          500,
+          500,
+          487,
+          484,
+          440,
+          489,
+          492,
+          453,
+          501,
+          500,
+          498,
+          446,
+          486,
+          500,
+          498,
+          501,
+          485,
+          496,
+          480,
+          489,
+          481,
+          500,
+          501,
+          468,
+          484,
+          499,
+          494,
+          482,
+          493,
+          498,
+          496
+        ],
+        "max_block_size": 501,
+        "capacity_bound": 502,
+        "balanced": true
+      },
+      "replay": {
+        "mode": "replay",
+        "returncode": 0,
+        "wall_seconds": 0.41726940000080504,
+        "graph_sha256": "507C0146ED64D87800522939F56BF848939AA0F1C70E2D1AA6E82B7E174A5329",
+        "partition_sha256": "BBC27AB1E98B1F9025DBC0848160D06B631B0A249E5D6D3EDDA7153FC129AD0B",
+        "partition_file": "input.graph.part32.epsilon0.03.seed100.KaHyPar",
+        "score_rows": null,
+        "score_sha256": null,
+        "coarsening_pass_events": [
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "0",
+            "k": "32",
+            "nodes": "15606",
+            "arcs": "91756",
+            "active_nodes": "15606",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "1",
+            "k": "32",
+            "nodes": "6242",
+            "arcs": "36256",
+            "active_nodes": "6242",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "0",
+            "k": "2",
+            "nodes": "5120",
+            "arcs": "29610",
+            "active_nodes": "5120",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "1",
+            "k": "2",
+            "nodes": "2048",
+            "arcs": "11582",
+            "active_nodes": "2048",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "2",
+            "k": "2",
+            "nodes": "819",
+            "arcs": "4474",
+            "active_nodes": "819",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "3",
+            "k": "2",
+            "nodes": "446",
+            "arcs": "2362",
+            "active_nodes": "446",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "4",
+            "k": "2",
+            "nodes": "420",
+            "arcs": "2224",
+            "active_nodes": "420",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "0",
+            "k": "2",
+            "nodes": "2668",
+            "arcs": "15312",
+            "active_nodes": "2668",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "1",
+            "k": "2",
+            "nodes": "1067",
+            "arcs": "5970",
+            "active_nodes": "1067",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "2",
+            "k": "2",
+            "nodes": "441",
+            "arcs": "2360",
+            "active_nodes": "441",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "3",
+            "k": "2",
+            "nodes": "393",
+            "arcs": "2094",
+            "active_nodes": "393",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1412",
+            "arcs": "8018",
+            "active_nodes": "1412",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "1",
+            "k": "2",
+            "nodes": "564",
+            "arcs": "3100",
+            "active_nodes": "564",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "2",
+            "k": "2",
+            "nodes": "384",
+            "arcs": "2088",
+            "active_nodes": "384",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "3",
+            "k": "2",
+            "nodes": "378",
+            "arcs": "2056",
+            "active_nodes": "378",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "4",
+            "pass": "0",
+            "k": "2",
+            "nodes": "682",
+            "arcs": "3830",
+            "active_nodes": "682",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "4",
+            "pass": "1",
+            "k": "2",
+            "nodes": "358",
+            "arcs": "1974",
+            "active_nodes": "358",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "4",
+            "pass": "2",
+            "k": "2",
+            "nodes": "348",
+            "arcs": "1916",
+            "active_nodes": "348",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "6",
+            "pass": "0",
+            "k": "2",
+            "nodes": "390",
+            "arcs": "2188",
+            "active_nodes": "390",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "7",
+            "pass": "0",
+            "k": "2",
+            "nodes": "730",
+            "arcs": "4072",
+            "active_nodes": "730",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "7",
+            "pass": "1",
+            "k": "2",
+            "nodes": "360",
+            "arcs": "1954",
+            "active_nodes": "360",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "7",
+            "pass": "2",
+            "k": "2",
+            "nodes": "341",
+            "arcs": "1848",
+            "active_nodes": "341",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "8",
+            "pass": "0",
+            "k": "2",
+            "nodes": "359",
+            "arcs": "1960",
+            "active_nodes": "359",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "9",
+            "pass": "0",
+            "k": "2",
+            "nodes": "371",
+            "arcs": "2048",
+            "active_nodes": "371",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1256",
+            "arcs": "7154",
+            "active_nodes": "1256",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "1",
+            "k": "2",
+            "nodes": "502",
+            "arcs": "2754",
+            "active_nodes": "502",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "2",
+            "k": "2",
+            "nodes": "390",
+            "arcs": "2126",
+            "active_nodes": "390",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "11",
+            "pass": "0",
+            "k": "2",
+            "nodes": "599",
+            "arcs": "3368",
+            "active_nodes": "599",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "11",
+            "pass": "1",
+            "k": "2",
+            "nodes": "360",
+            "arcs": "1988",
+            "active_nodes": "360",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "14",
+            "pass": "0",
+            "k": "2",
+            "nodes": "657",
+            "arcs": "3730",
+            "active_nodes": "657",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "14",
+            "pass": "1",
+            "k": "2",
+            "nodes": "351",
+            "arcs": "1948",
+            "active_nodes": "351",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "16",
+            "pass": "0",
+            "k": "2",
+            "nodes": "355",
+            "arcs": "1968",
+            "active_nodes": "355",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "0",
+            "k": "2",
+            "nodes": "2452",
+            "arcs": "14094",
+            "active_nodes": "2452",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "1",
+            "k": "2",
+            "nodes": "980",
+            "arcs": "5490",
+            "active_nodes": "980",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "2",
+            "k": "2",
+            "nodes": "438",
+            "arcs": "2368",
+            "active_nodes": "438",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "3",
+            "k": "2",
+            "nodes": "403",
+            "arcs": "2168",
+            "active_nodes": "403",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1185",
+            "arcs": "6744",
+            "active_nodes": "1185",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "1",
+            "k": "2",
+            "nodes": "474",
+            "arcs": "2600",
+            "active_nodes": "474",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "2",
+            "k": "2",
+            "nodes": "378",
+            "arcs": "2066",
+            "active_nodes": "378",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "19",
+            "pass": "0",
+            "k": "2",
+            "nodes": "592",
+            "arcs": "3328",
+            "active_nodes": "592",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "19",
+            "pass": "1",
+            "k": "2",
+            "nodes": "358",
+            "arcs": "1970",
+            "active_nodes": "358",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "22",
+            "pass": "0",
+            "k": "2",
+            "nodes": "593",
+            "arcs": "3356",
+            "active_nodes": "593",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "22",
+            "pass": "1",
+            "k": "2",
+            "nodes": "362",
+            "arcs": "2012",
+            "active_nodes": "362",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1267",
+            "arcs": "7212",
+            "active_nodes": "1267",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "1",
+            "k": "2",
+            "nodes": "506",
+            "arcs": "2798",
+            "active_nodes": "506",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "2",
+            "k": "2",
+            "nodes": "389",
+            "arcs": "2124",
+            "active_nodes": "389",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "26",
+            "pass": "0",
+            "k": "2",
+            "nodes": "678",
+            "arcs": "3780",
+            "active_nodes": "678",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "26",
+            "pass": "1",
+            "k": "2",
+            "nodes": "360",
+            "arcs": "1944",
+            "active_nodes": "360",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "26",
+            "pass": "2",
+            "k": "2",
+            "nodes": "352",
+            "arcs": "1898",
+            "active_nodes": "352",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "27",
+            "pass": "0",
+            "k": "2",
+            "nodes": "381",
+            "arcs": "2068",
+            "active_nodes": "381",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "29",
+            "pass": "0",
+            "k": "2",
+            "nodes": "589",
+            "arcs": "3330",
+            "active_nodes": "589",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "29",
+            "pass": "1",
+            "k": "2",
+            "nodes": "352",
+            "arcs": "1960",
+            "active_nodes": "352",
+            "source": null
+          }
+        ],
+        "rating_entry_events": [
+          {
+            "event": "MODEL",
+            "context": "-1",
+            "pass": "-1",
+            "k": "32",
+            "nodes": "15606",
+            "arcs": "91756",
+            "active_nodes": "-1",
+            "source": "replay"
+          }
+        ],
+        "cut": 1710,
+        "sizes": [
+          485,
+          500,
+          500,
+          487,
+          484,
+          440,
+          489,
+          492,
+          453,
+          501,
+          500,
+          498,
+          446,
+          486,
+          500,
+          498,
+          501,
+          485,
+          496,
+          480,
+          489,
+          481,
+          500,
+          501,
+          468,
+          484,
+          499,
+          494,
+          482,
+          493,
+          498,
+          496
+        ],
+        "max_block_size": 501,
+        "capacity_bound": 502,
+        "balanced": true
+      },
+      "partition_hash_equal": true,
+      "cut_equal": true,
+      "balanced_both": true,
+      "score_hash": "2577AF47399806FEB43E591A4B05D6677B03BE67AD9A653E02595B921DE52D21",
+      "score_rows": 91756
+    },
+    {
+      "graph": "wing_nodal",
+      "k": 4,
+      "seed": 100,
+      "input_sha256": "B7F60E0F96640232559A528F46251C7B810BFAFCFC6B41657DEB7AF7E54A5ED8",
+      "model": {
+        "mode": "model",
+        "returncode": 0,
+        "wall_seconds": 0.27814049999869894,
+        "graph_sha256": "B7F60E0F96640232559A528F46251C7B810BFAFCFC6B41657DEB7AF7E54A5ED8",
+        "partition_sha256": "ED694C4F8FA7D607507DC95F8B3988C7091308D42DA42F8C0A081B0F323BD44D",
+        "partition_file": "input.graph.part4.epsilon0.03.seed100.KaHyPar",
+        "score_rows": 150976,
+        "score_sha256": "3ED1AFFA8F403DDBF875344C7A2742209B7ACB322EBB785635D29066E3CB7C96",
+        "coarsening_pass_events": [
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "0",
+            "k": "4",
+            "nodes": "10937",
+            "arcs": "150976",
+            "active_nodes": "10937",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "1",
+            "k": "4",
+            "nodes": "4374",
+            "arcs": "58708",
+            "active_nodes": "4374",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "2",
+            "k": "4",
+            "nodes": "1749",
+            "arcs": "21994",
+            "active_nodes": "1749",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "3",
+            "k": "4",
+            "nodes": "793",
+            "arcs": "11236",
+            "active_nodes": "793",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "4",
+            "k": "4",
+            "nodes": "738",
+            "arcs": "10674",
+            "active_nodes": "738",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "0",
+            "k": "2",
+            "nodes": "738",
+            "arcs": "10674",
+            "active_nodes": "738",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "1",
+            "k": "2",
+            "nodes": "396",
+            "arcs": "5684",
+            "active_nodes": "396",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "0",
+            "k": "2",
+            "nodes": "375",
+            "arcs": "4938",
+            "active_nodes": "375",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "0",
+            "k": "2",
+            "nodes": "363",
+            "arcs": "4994",
+            "active_nodes": "363",
+            "source": null
+          }
+        ],
+        "rating_entry_events": [
+          {
+            "event": "MODEL",
+            "context": "-1",
+            "pass": "-1",
+            "k": "4",
+            "nodes": "10937",
+            "arcs": "150976",
+            "active_nodes": "-1",
+            "source": "model"
+          }
+        ],
+        "cut": 3643,
+        "sizes": [
+          2752,
+          2753,
+          2804,
+          2628
+        ],
+        "max_block_size": 2804,
+        "capacity_bound": 2817,
+        "balanced": true
+      },
+      "replay": {
+        "mode": "replay",
+        "returncode": 0,
+        "wall_seconds": 0.23649660000228323,
+        "graph_sha256": "B7F60E0F96640232559A528F46251C7B810BFAFCFC6B41657DEB7AF7E54A5ED8",
+        "partition_sha256": "ED694C4F8FA7D607507DC95F8B3988C7091308D42DA42F8C0A081B0F323BD44D",
+        "partition_file": "input.graph.part4.epsilon0.03.seed100.KaHyPar",
+        "score_rows": null,
+        "score_sha256": null,
+        "coarsening_pass_events": [
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "0",
+            "k": "4",
+            "nodes": "10937",
+            "arcs": "150976",
+            "active_nodes": "10937",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "1",
+            "k": "4",
+            "nodes": "4374",
+            "arcs": "58708",
+            "active_nodes": "4374",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "2",
+            "k": "4",
+            "nodes": "1749",
+            "arcs": "21994",
+            "active_nodes": "1749",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "3",
+            "k": "4",
+            "nodes": "793",
+            "arcs": "11236",
+            "active_nodes": "793",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "4",
+            "k": "4",
+            "nodes": "738",
+            "arcs": "10674",
+            "active_nodes": "738",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "0",
+            "k": "2",
+            "nodes": "738",
+            "arcs": "10674",
+            "active_nodes": "738",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "1",
+            "k": "2",
+            "nodes": "396",
+            "arcs": "5684",
+            "active_nodes": "396",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "0",
+            "k": "2",
+            "nodes": "375",
+            "arcs": "4938",
+            "active_nodes": "375",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "0",
+            "k": "2",
+            "nodes": "363",
+            "arcs": "4994",
+            "active_nodes": "363",
+            "source": null
+          }
+        ],
+        "rating_entry_events": [
+          {
+            "event": "MODEL",
+            "context": "-1",
+            "pass": "-1",
+            "k": "4",
+            "nodes": "10937",
+            "arcs": "150976",
+            "active_nodes": "-1",
+            "source": "replay"
+          }
+        ],
+        "cut": 3643,
+        "sizes": [
+          2752,
+          2753,
+          2804,
+          2628
+        ],
+        "max_block_size": 2804,
+        "capacity_bound": 2817,
+        "balanced": true
+      },
+      "partition_hash_equal": true,
+      "cut_equal": true,
+      "balanced_both": true,
+      "score_hash": "3ED1AFFA8F403DDBF875344C7A2742209B7ACB322EBB785635D29066E3CB7C96",
+      "score_rows": 150976
+    },
+    {
+      "graph": "wing_nodal",
+      "k": 32,
+      "seed": 100,
+      "input_sha256": "B7F60E0F96640232559A528F46251C7B810BFAFCFC6B41657DEB7AF7E54A5ED8",
+      "model": {
+        "mode": "model",
+        "returncode": 0,
+        "wall_seconds": 0.7411196000030031,
+        "graph_sha256": "B7F60E0F96640232559A528F46251C7B810BFAFCFC6B41657DEB7AF7E54A5ED8",
+        "partition_sha256": "D73B5B90789657C0563AD1152257480AE7BFF8E88D234AABCD6C0E2CF5A169CB",
+        "partition_file": "input.graph.part32.epsilon0.03.seed100.KaHyPar",
+        "score_rows": 150976,
+        "score_sha256": "3ED1AFFA8F403DDBF875344C7A2742209B7ACB322EBB785635D29066E3CB7C96",
+        "coarsening_pass_events": [
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "0",
+            "k": "32",
+            "nodes": "10937",
+            "arcs": "150976",
+            "active_nodes": "10937",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "0",
+            "k": "2",
+            "nodes": "5120",
+            "arcs": "75212",
+            "active_nodes": "5120",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "1",
+            "k": "2",
+            "nodes": "2048",
+            "arcs": "27500",
+            "active_nodes": "2048",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "2",
+            "k": "2",
+            "nodes": "819",
+            "arcs": "10242",
+            "active_nodes": "819",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "3",
+            "k": "2",
+            "nodes": "391",
+            "arcs": "5346",
+            "active_nodes": "391",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "4",
+            "k": "2",
+            "nodes": "380",
+            "arcs": "5218",
+            "active_nodes": "380",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "0",
+            "k": "2",
+            "nodes": "2582",
+            "arcs": "36074",
+            "active_nodes": "2582",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "1",
+            "k": "2",
+            "nodes": "1032",
+            "arcs": "12972",
+            "active_nodes": "1032",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "2",
+            "k": "2",
+            "nodes": "412",
+            "arcs": "5188",
+            "active_nodes": "412",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "3",
+            "k": "2",
+            "nodes": "363",
+            "arcs": "4708",
+            "active_nodes": "363",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1294",
+            "arcs": "17976",
+            "active_nodes": "1294",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "1",
+            "k": "2",
+            "nodes": "517",
+            "arcs": "6810",
+            "active_nodes": "517",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "2",
+            "k": "2",
+            "nodes": "360",
+            "arcs": "4930",
+            "active_nodes": "360",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "4",
+            "pass": "0",
+            "k": "2",
+            "nodes": "636",
+            "arcs": "8426",
+            "active_nodes": "636",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "4",
+            "pass": "1",
+            "k": "2",
+            "nodes": "323",
+            "arcs": "4466",
+            "active_nodes": "323",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "6",
+            "pass": "0",
+            "k": "2",
+            "nodes": "321",
+            "arcs": "3940",
+            "active_nodes": "321",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "7",
+            "pass": "0",
+            "k": "2",
+            "nodes": "658",
+            "arcs": "8492",
+            "active_nodes": "658",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "7",
+            "pass": "1",
+            "k": "2",
+            "nodes": "330",
+            "arcs": "4306",
+            "active_nodes": "330",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "8",
+            "pass": "0",
+            "k": "2",
+            "nodes": "329",
+            "arcs": "4082",
+            "active_nodes": "329",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "9",
+            "pass": "0",
+            "k": "2",
+            "nodes": "329",
+            "arcs": "3926",
+            "active_nodes": "329",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1288",
+            "arcs": "16910",
+            "active_nodes": "1288",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "1",
+            "k": "2",
+            "nodes": "515",
+            "arcs": "6258",
+            "active_nodes": "515",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "2",
+            "k": "2",
+            "nodes": "353",
+            "arcs": "4520",
+            "active_nodes": "353",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "11",
+            "pass": "0",
+            "k": "2",
+            "nodes": "639",
+            "arcs": "7942",
+            "active_nodes": "639",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "13",
+            "pass": "0",
+            "k": "2",
+            "nodes": "326",
+            "arcs": "3926",
+            "active_nodes": "326",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "14",
+            "pass": "0",
+            "k": "2",
+            "nodes": "649",
+            "arcs": "8442",
+            "active_nodes": "649",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "14",
+            "pass": "1",
+            "k": "2",
+            "nodes": "322",
+            "arcs": "4310",
+            "active_nodes": "322",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "16",
+            "pass": "0",
+            "k": "2",
+            "nodes": "334",
+            "arcs": "3922",
+            "active_nodes": "334",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "0",
+            "k": "2",
+            "nodes": "2538",
+            "arcs": "36658",
+            "active_nodes": "2538",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "1",
+            "k": "2",
+            "nodes": "1015",
+            "arcs": "13206",
+            "active_nodes": "1015",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "2",
+            "k": "2",
+            "nodes": "406",
+            "arcs": "5382",
+            "active_nodes": "406",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "3",
+            "k": "2",
+            "nodes": "364",
+            "arcs": "4934",
+            "active_nodes": "364",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1279",
+            "arcs": "17308",
+            "active_nodes": "1279",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "1",
+            "k": "2",
+            "nodes": "511",
+            "arcs": "6248",
+            "active_nodes": "511",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "2",
+            "k": "2",
+            "nodes": "368",
+            "arcs": "4746",
+            "active_nodes": "368",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "19",
+            "pass": "0",
+            "k": "2",
+            "nodes": "660",
+            "arcs": "8694",
+            "active_nodes": "660",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "19",
+            "pass": "1",
+            "k": "2",
+            "nodes": "325",
+            "arcs": "4314",
+            "active_nodes": "325",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "20",
+            "pass": "0",
+            "k": "2",
+            "nodes": "332",
+            "arcs": "4198",
+            "active_nodes": "332",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "21",
+            "pass": "0",
+            "k": "2",
+            "nodes": "328",
+            "arcs": "3942",
+            "active_nodes": "328",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "22",
+            "pass": "0",
+            "k": "2",
+            "nodes": "619",
+            "arcs": "7890",
+            "active_nodes": "619",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "22",
+            "pass": "1",
+            "k": "2",
+            "nodes": "328",
+            "arcs": "4200",
+            "active_nodes": "328",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1259",
+            "arcs": "17586",
+            "active_nodes": "1259",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "1",
+            "k": "2",
+            "nodes": "503",
+            "arcs": "6522",
+            "active_nodes": "503",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "2",
+            "k": "2",
+            "nodes": "357",
+            "arcs": "4864",
+            "active_nodes": "357",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "26",
+            "pass": "0",
+            "k": "2",
+            "nodes": "620",
+            "arcs": "8160",
+            "active_nodes": "620",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "26",
+            "pass": "1",
+            "k": "2",
+            "nodes": "330",
+            "arcs": "4458",
+            "active_nodes": "330",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "29",
+            "pass": "0",
+            "k": "2",
+            "nodes": "639",
+            "arcs": "8386",
+            "active_nodes": "639",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "29",
+            "pass": "1",
+            "k": "2",
+            "nodes": "327",
+            "arcs": "4300",
+            "active_nodes": "327",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "30",
+            "pass": "0",
+            "k": "2",
+            "nodes": "330",
+            "arcs": "4030",
+            "active_nodes": "330",
+            "source": null
+          }
+        ],
+        "rating_entry_events": [
+          {
+            "event": "MODEL",
+            "context": "-1",
+            "pass": "-1",
+            "k": "32",
+            "nodes": "10937",
+            "arcs": "150976",
+            "active_nodes": "-1",
+            "source": "model"
+          }
+        ],
+        "cut": 12464,
+        "sizes": [
+          334,
+          309,
+          348,
+          351,
+          349,
+          339,
+          349,
+          337,
+          342,
+          336,
+          352,
+          261,
+          349,
+          352,
+          340,
+          351,
+          352,
+          352,
+          310,
+          352,
+          332,
+          352,
+          349,
+          352,
+          328,
+          352,
+          352,
+          352,
+          352,
+          351,
+          352,
+          348
+        ],
+        "max_block_size": 352,
+        "capacity_bound": 352,
+        "balanced": true
+      },
+      "replay": {
+        "mode": "replay",
+        "returncode": 0,
+        "wall_seconds": 0.701173800000106,
+        "graph_sha256": "B7F60E0F96640232559A528F46251C7B810BFAFCFC6B41657DEB7AF7E54A5ED8",
+        "partition_sha256": "D73B5B90789657C0563AD1152257480AE7BFF8E88D234AABCD6C0E2CF5A169CB",
+        "partition_file": "input.graph.part32.epsilon0.03.seed100.KaHyPar",
+        "score_rows": null,
+        "score_sha256": null,
+        "coarsening_pass_events": [
+          {
+            "event": "PASS",
+            "context": "0",
+            "pass": "0",
+            "k": "32",
+            "nodes": "10937",
+            "arcs": "150976",
+            "active_nodes": "10937",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "0",
+            "k": "2",
+            "nodes": "5120",
+            "arcs": "75212",
+            "active_nodes": "5120",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "1",
+            "k": "2",
+            "nodes": "2048",
+            "arcs": "27500",
+            "active_nodes": "2048",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "2",
+            "k": "2",
+            "nodes": "819",
+            "arcs": "10242",
+            "active_nodes": "819",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "3",
+            "k": "2",
+            "nodes": "391",
+            "arcs": "5346",
+            "active_nodes": "391",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "1",
+            "pass": "4",
+            "k": "2",
+            "nodes": "380",
+            "arcs": "5218",
+            "active_nodes": "380",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "0",
+            "k": "2",
+            "nodes": "2582",
+            "arcs": "36074",
+            "active_nodes": "2582",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "1",
+            "k": "2",
+            "nodes": "1032",
+            "arcs": "12972",
+            "active_nodes": "1032",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "2",
+            "k": "2",
+            "nodes": "412",
+            "arcs": "5188",
+            "active_nodes": "412",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "2",
+            "pass": "3",
+            "k": "2",
+            "nodes": "363",
+            "arcs": "4708",
+            "active_nodes": "363",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1294",
+            "arcs": "17976",
+            "active_nodes": "1294",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "1",
+            "k": "2",
+            "nodes": "517",
+            "arcs": "6810",
+            "active_nodes": "517",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "3",
+            "pass": "2",
+            "k": "2",
+            "nodes": "360",
+            "arcs": "4930",
+            "active_nodes": "360",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "4",
+            "pass": "0",
+            "k": "2",
+            "nodes": "636",
+            "arcs": "8426",
+            "active_nodes": "636",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "4",
+            "pass": "1",
+            "k": "2",
+            "nodes": "323",
+            "arcs": "4466",
+            "active_nodes": "323",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "6",
+            "pass": "0",
+            "k": "2",
+            "nodes": "321",
+            "arcs": "3940",
+            "active_nodes": "321",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "7",
+            "pass": "0",
+            "k": "2",
+            "nodes": "658",
+            "arcs": "8492",
+            "active_nodes": "658",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "7",
+            "pass": "1",
+            "k": "2",
+            "nodes": "330",
+            "arcs": "4306",
+            "active_nodes": "330",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "8",
+            "pass": "0",
+            "k": "2",
+            "nodes": "329",
+            "arcs": "4082",
+            "active_nodes": "329",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "9",
+            "pass": "0",
+            "k": "2",
+            "nodes": "329",
+            "arcs": "3926",
+            "active_nodes": "329",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1288",
+            "arcs": "16910",
+            "active_nodes": "1288",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "1",
+            "k": "2",
+            "nodes": "515",
+            "arcs": "6258",
+            "active_nodes": "515",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "10",
+            "pass": "2",
+            "k": "2",
+            "nodes": "353",
+            "arcs": "4520",
+            "active_nodes": "353",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "11",
+            "pass": "0",
+            "k": "2",
+            "nodes": "639",
+            "arcs": "7942",
+            "active_nodes": "639",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "13",
+            "pass": "0",
+            "k": "2",
+            "nodes": "326",
+            "arcs": "3926",
+            "active_nodes": "326",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "14",
+            "pass": "0",
+            "k": "2",
+            "nodes": "649",
+            "arcs": "8442",
+            "active_nodes": "649",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "14",
+            "pass": "1",
+            "k": "2",
+            "nodes": "322",
+            "arcs": "4310",
+            "active_nodes": "322",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "16",
+            "pass": "0",
+            "k": "2",
+            "nodes": "334",
+            "arcs": "3922",
+            "active_nodes": "334",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "0",
+            "k": "2",
+            "nodes": "2538",
+            "arcs": "36658",
+            "active_nodes": "2538",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "1",
+            "k": "2",
+            "nodes": "1015",
+            "arcs": "13206",
+            "active_nodes": "1015",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "2",
+            "k": "2",
+            "nodes": "406",
+            "arcs": "5382",
+            "active_nodes": "406",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "17",
+            "pass": "3",
+            "k": "2",
+            "nodes": "364",
+            "arcs": "4934",
+            "active_nodes": "364",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1279",
+            "arcs": "17308",
+            "active_nodes": "1279",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "1",
+            "k": "2",
+            "nodes": "511",
+            "arcs": "6248",
+            "active_nodes": "511",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "18",
+            "pass": "2",
+            "k": "2",
+            "nodes": "368",
+            "arcs": "4746",
+            "active_nodes": "368",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "19",
+            "pass": "0",
+            "k": "2",
+            "nodes": "660",
+            "arcs": "8694",
+            "active_nodes": "660",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "19",
+            "pass": "1",
+            "k": "2",
+            "nodes": "325",
+            "arcs": "4314",
+            "active_nodes": "325",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "20",
+            "pass": "0",
+            "k": "2",
+            "nodes": "332",
+            "arcs": "4198",
+            "active_nodes": "332",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "21",
+            "pass": "0",
+            "k": "2",
+            "nodes": "328",
+            "arcs": "3942",
+            "active_nodes": "328",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "22",
+            "pass": "0",
+            "k": "2",
+            "nodes": "619",
+            "arcs": "7890",
+            "active_nodes": "619",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "22",
+            "pass": "1",
+            "k": "2",
+            "nodes": "328",
+            "arcs": "4200",
+            "active_nodes": "328",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "0",
+            "k": "2",
+            "nodes": "1259",
+            "arcs": "17586",
+            "active_nodes": "1259",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "1",
+            "k": "2",
+            "nodes": "503",
+            "arcs": "6522",
+            "active_nodes": "503",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "25",
+            "pass": "2",
+            "k": "2",
+            "nodes": "357",
+            "arcs": "4864",
+            "active_nodes": "357",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "26",
+            "pass": "0",
+            "k": "2",
+            "nodes": "620",
+            "arcs": "8160",
+            "active_nodes": "620",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "26",
+            "pass": "1",
+            "k": "2",
+            "nodes": "330",
+            "arcs": "4458",
+            "active_nodes": "330",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "29",
+            "pass": "0",
+            "k": "2",
+            "nodes": "639",
+            "arcs": "8386",
+            "active_nodes": "639",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "29",
+            "pass": "1",
+            "k": "2",
+            "nodes": "327",
+            "arcs": "4300",
+            "active_nodes": "327",
+            "source": null
+          },
+          {
+            "event": "PASS",
+            "context": "30",
+            "pass": "0",
+            "k": "2",
+            "nodes": "330",
+            "arcs": "4030",
+            "active_nodes": "330",
+            "source": null
+          }
+        ],
+        "rating_entry_events": [
+          {
+            "event": "MODEL",
+            "context": "-1",
+            "pass": "-1",
+            "k": "32",
+            "nodes": "10937",
+            "arcs": "150976",
+            "active_nodes": "-1",
+            "source": "replay"
+          }
+        ],
+        "cut": 12464,
+        "sizes": [
+          334,
+          309,
+          348,
+          351,
+          349,
+          339,
+          349,
+          337,
+          342,
+          336,
+          352,
+          261,
+          349,
+          352,
+          340,
+          351,
+          352,
+          352,
+          310,
+          352,
+          332,
+          352,
+          349,
+          352,
+          328,
+          352,
+          352,
+          352,
+          352,
+          351,
+          352,
+          348
+        ],
+        "max_block_size": 352,
+        "capacity_bound": 352,
+        "balanced": true
+      },
+      "partition_hash_equal": true,
+      "cut_equal": true,
+      "balanced_both": true,
+      "score_hash": "3ED1AFFA8F403DDBF875344C7A2742209B7ACB322EBB785635D29066E3CB7C96",
+      "score_rows": 150976
+    }
+  ]
+}

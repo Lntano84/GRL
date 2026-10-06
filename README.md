@@ -1,5 +1,11 @@
 # GRL
 
+## 截至2026-10-06的完整实验归档
+
+[实验总索引与最新裁决](research_archive/decision-studies-2026/README.md) · [更正/撤回记录](research_archive/decision-studies-2026/CORRECTIONS.md) · [完整结果Release](https://github.com/Lntano84/GRL/releases/tag/experiments-2026-10-06)
+
+覆盖原IM实验及后续CCIM、TAIM、N/M/RT/Q、LOT、MP/SB/BC/GP、FA和LG01。报告、汇总、审计与代码快照可浏览；完整方案和大轨迹以校验清单归档。不同问题的实验不构成同一GRL方法的成绩。当前没有已建立的GRL学习优势；LG01停止当前GNN、不进入RL。旧说明保留在下方，当前研究状态以docs/RESEARCH_STATE.md为准。
+
 本仓库用于研究影响最大化（Influence Maximization）中的 GRL 方法，并逐步从历史实验脚本整理为一个可审计、可复现、可扩展的实验代码库。
 
 ## 当前整理状态

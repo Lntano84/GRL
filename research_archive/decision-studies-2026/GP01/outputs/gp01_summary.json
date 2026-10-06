@@ -1,0 +1,210 @@
+{
+  "protocol": "GP01 frozen; 4 graphs, k=4/32, eps=0.03, c-t=160, one thread",
+  "evaluation_runs": {
+    "expected": 144,
+    "valid": 144,
+    "all_valid": true
+  },
+  "teacher_runs": {
+    "expected": 80,
+    "valid": 80,
+    "all_valid": true,
+    "total_solver_wall_seconds": 26.632477499988454,
+    "by_graph_k": {
+      "barth5_k4": {
+        "runs": 10,
+        "total_wall_seconds": 1.5521426999985124,
+        "mean_wall_seconds": 0.15521426999985125
+      },
+      "barth5_k32": {
+        "runs": 10,
+        "total_wall_seconds": 3.8580475999988266,
+        "mean_wall_seconds": 0.3858047599998827
+      },
+      "wing_nodal_k4": {
+        "runs": 10,
+        "total_wall_seconds": 1.6988662000076147,
+        "mean_wall_seconds": 0.16988662000076146
+      },
+      "wing_nodal_k32": {
+        "runs": 10,
+        "total_wall_seconds": 6.418105999997351,
+        "mean_wall_seconds": 0.6418105999997351
+      },
+      "as-22july06_k4": {
+        "runs": 10,
+        "total_wall_seconds": 2.5164497999940068,
+        "mean_wall_seconds": 0.25164497999940066
+      },
+      "as-22july06_k32": {
+        "runs": 10,
+        "total_wall_seconds": 6.205166399988229,
+        "mean_wall_seconds": 0.6205166399988229
+      },
+      "PGPgiantcompo_k4": {
+        "runs": 10,
+        "total_wall_seconds": 1.2055063999941922,
+        "mean_wall_seconds": 0.12055063999941922
+      },
+      "PGPgiantcompo_k32": {
+        "runs": 10,
+        "total_wall_seconds": 3.1781924000097206,
+        "mean_wall_seconds": 0.31781924000097206
+      }
+    }
+  },
+  "wall_clock": {
+    "started_utc": "2026-09-30T15:07:05.428856+00:00",
+    "deadline_utc": "2026-09-30T17:07:05.428856+00:00",
+    "scope": "teacher generation through formal evaluation summary; excludes data acquisition, graph conversion, build, and the initial interface audit",
+    "teacher_evaluation_batch_elapsed_seconds": 274.521902,
+    "teacher_evaluation_batch_within_two_hour_budget": true
+  },
+  "comparisons": {
+    "BASE": {
+      "control": "BASE",
+      "overall_equal_weight_gain": 0.017056225868610938,
+      "by_k": {
+        "4": 0.0379793682984896,
+        "32": -0.0038669165612677248
+      },
+      "by_graph": {
+        "barth5": 0.02799611809029752,
+        "wing_nodal": 0.008040654617696798,
+        "as-22july06": 0.005497778075175467,
+        "PGPgiantcompo": 0.026690352691273966
+      },
+      "by_seed_overall_direction": {
+        "100": 0.007382248421394618,
+        "101": 0.03456289927294778,
+        "102": 0.007947286786885149
+      },
+      "positive_cells": 6,
+      "positive_graphs": 4,
+      "positive_seeds": 3,
+      "meets_frozen_gate": false
+    },
+    "AUTHOR": {
+      "control": "AUTHOR",
+      "overall_equal_weight_gain": 0.03087830188306581,
+      "by_k": {
+        "4": 0.057297040699466596,
+        "32": 0.004459563066665026
+      },
+      "by_graph": {
+        "barth5": 0.050654579316389135,
+        "wing_nodal": 0.015608739284046304,
+        "as-22july06": 0.028240764748363446,
+        "PGPgiantcompo": 0.029009124183464352
+      },
+      "by_seed_overall_direction": {
+        "100": 0.031155695469972485,
+        "101": 0.026636102371413593,
+        "102": 0.03388780614722369
+      },
+      "positive_cells": 6,
+      "positive_graphs": 4,
+      "positive_seeds": 3,
+      "meets_frozen_gate": true
+    },
+    "CAL-TIE": {
+      "control": "CAL-TIE",
+      "overall_equal_weight_gain": 0.0146412803193798,
+      "by_k": {
+        "4": 0.025650928310638095,
+        "32": 0.0036316323281215053
+      },
+      "by_graph": {
+        "barth5": 0.005055358848466501,
+        "wing_nodal": 0.0028099524307226486,
+        "as-22july06": 0.009547894483129774,
+        "PGPgiantcompo": 0.041151915515200276
+      },
+      "by_seed_overall_direction": {
+        "100": 0.014234859683382855,
+        "101": 0.025307282857705702,
+        "102": 0.0032148142540769625
+      },
+      "positive_cells": 5,
+      "positive_graphs": 4,
+      "positive_seeds": 3,
+      "meets_frozen_gate": true
+    },
+    "CAL-EXACT": {
+      "control": "CAL-EXACT",
+      "overall_equal_weight_gain": 0.013306711845436258,
+      "by_k": {
+        "4": 0.024121473436388735,
+        "32": 0.0024919502544837814
+      },
+      "by_graph": {
+        "barth5": -0.009893072755741968,
+        "wing_nodal": -0.000511492218670655,
+        "as-22july06": 0.00968456743248305,
+        "PGPgiantcompo": 0.05394684492367461
+      },
+      "by_seed_overall_direction": {
+        "100": 0.012051729785427576,
+        "101": 0.027953491748647016,
+        "102": -0.0017030737964060458
+      },
+      "positive_cells": 4,
+      "positive_graphs": 2,
+      "positive_seeds": 2,
+      "meets_frozen_gate": false
+    }
+  },
+  "evaluation_time_by_method": {
+    "BASE": {
+      "method": "BASE",
+      "runs": 24,
+      "total_solver_process_wall_s": "8.1173",
+      "mean_solver_process_wall_s": "0.3382",
+      "median_solver_process_wall_s": "0.284242",
+      "max_solver_process_wall_s": "0.6805"
+    },
+    "AUTHOR": {
+      "method": "AUTHOR",
+      "runs": 24,
+      "total_solver_process_wall_s": "8.2989",
+      "mean_solver_process_wall_s": "0.3458",
+      "median_solver_process_wall_s": "0.295194",
+      "max_solver_process_wall_s": "0.6881"
+    },
+    "K": {
+      "method": "K",
+      "runs": 24,
+      "total_solver_process_wall_s": "9.2998",
+      "mean_solver_process_wall_s": "0.3875",
+      "median_solver_process_wall_s": "0.319379",
+      "max_solver_process_wall_s": "0.7847"
+    },
+    "AVG": {
+      "method": "AVG",
+      "runs": 24,
+      "total_solver_process_wall_s": "9.1852",
+      "mean_solver_process_wall_s": "0.3827",
+      "median_solver_process_wall_s": "0.318974",
+      "max_solver_process_wall_s": "0.7455"
+    },
+    "CAL-TIE": {
+      "method": "CAL-TIE",
+      "runs": 24,
+      "total_solver_process_wall_s": "9.3571",
+      "mean_solver_process_wall_s": "0.3899",
+      "median_solver_process_wall_s": "0.325438",
+      "max_solver_process_wall_s": "0.7824"
+    },
+    "CAL-EXACT": {
+      "method": "CAL-EXACT",
+      "runs": 24,
+      "total_solver_process_wall_s": "9.2420",
+      "mean_solver_process_wall_s": "0.3851",
+      "median_solver_process_wall_s": "0.319389",
+      "max_solver_process_wall_s": "0.7473"
+    }
+  },
+  "evaluation_results_sha256": "E6574CD3E9C3867FD204BB26F2519F3748E6D6655CDCCA632A9C1B1D79AAE482",
+  "teacher_results_sha256": "202449A43A3868337E8E802556AD2EE268C46E8F470D68FD93343F58BD787935",
+  "rating_manifest_sha256": "19570BACD3CB9A0C924CAD1B3CD40CA2412A3C83A57A91094DC89A01CC1C0DC8"
+}

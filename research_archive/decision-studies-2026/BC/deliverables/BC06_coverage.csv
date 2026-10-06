@@ -1,0 +1,9 @@
+﻿population,candidate_or_event_count,unique_requests,unique_blocks,decision_or_outcome,interpretation
+all actual HIGH-CONTROL candidates,2375547,72899,13688,accept=141064; reject=2234483,actual QueueCache admission decisions only; check_only excluded
+all actual HIGH-CONTROL rejections,2234483,65080,13614,author model returned reject,"observed action, not a label that rejection was wrong"
+BC05 frozen manifest events,1489,35,31,membership provenance only,"sparse sidecar lists members; other candidates are unlabeled, not negative"
+BC05 targets matched in HIGH-CONTROL,1489,35,31,accept=0; reject=1489,"exact join on request sequence, complete block key, and chunk"
+BC05 HIGH-CF target write success,1489,35,31,write_success=true,post-intervention outcome; does not establish positive net utility
+BC05 HIGH-CF target hit at corresponding peak request,478,12,10,corresponding_peak_chunk_missing=false,"peak hit outcome, still clustered and not an independent sample"
+BC05 HIGH-CF target evicted before corresponding peak,1011,24,23,evicted_before_corresponding_peak=true,does not imply the forced write had zero global effect
+check_only model calls,49204,,,separate file,qualification predictions; not actual admission candidates or rejection history

@@ -1,0 +1,146 @@
+{
+  "truth_table": [
+    {
+      "hidden": 1.0,
+      "observable": false,
+      "line89": false,
+      "line92": false,
+      "legit": "cell still running",
+      "official": "not selected yet"
+    },
+    {
+      "hidden": 2.0,
+      "observable": true,
+      "line89": false,
+      "line92": false,
+      "legit": "is an improvement -> measure it",
+      "official": "measured (mask set)"
+    },
+    {
+      "hidden": 3.0,
+      "observable": true,
+      "line89": false,
+      "line92": false,
+      "legit": "is an improvement -> measure it",
+      "official": "measured (mask set)"
+    },
+    {
+      "hidden": 5.0,
+      "observable": true,
+      "line89": false,
+      "line92": false,
+      "legit": "is an improvement -> measure it",
+      "official": "measured (mask set)"
+    },
+    {
+      "hidden": 9.99,
+      "observable": true,
+      "line89": false,
+      "line92": false,
+      "legit": "is an improvement -> measure it",
+      "official": "measured (mask set)"
+    },
+    {
+      "hidden": 10.0,
+      "observable": true,
+      "line89": true,
+      "line92": true,
+      "legit": "times out -> record a bound",
+      "official": "timeout recorded"
+    },
+    {
+      "hidden": 20.0,
+      "observable": true,
+      "line89": true,
+      "line92": true,
+      "legit": "times out -> record a bound",
+      "official": "timeout recorded"
+    }
+  ],
+  "source_scan": [
+    {
+      "file": "strategies/limeqo.py",
+      "line": 89,
+      "code": "if dataset.matrix[select, hint] >= min_observed[select]:",
+      "masked_in_line": false
+    },
+    {
+      "file": "strategies/limeqo.py",
+      "line": 92,
+      "code": "if dataset.matrix[select, hint] >= timeout_tolerance:",
+      "masked_in_line": false
+    },
+    {
+      "file": "strategies/limeqo.py",
+      "line": 114,
+      "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+      "masked_in_line": false
+    },
+    {
+      "file": "strategies/limeqo_plus.py",
+      "line": 114,
+      "code": "if dataset.matrix[select, hint] >= min_observed[select]:",
+      "masked_in_line": false
+    },
+    {
+      "file": "strategies/limeqo_plus.py",
+      "line": 117,
+      "code": "if dataset.matrix[select, hint] >= timeout_tolerance:",
+      "masked_in_line": false
+    },
+    {
+      "file": "strategies/limeqo_plus.py",
+      "line": 139,
+      "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+      "masked_in_line": false
+    },
+    {
+      "file": "strategies/greedy.py",
+      "line": 74,
+      "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+      "masked_in_line": false
+    },
+    {
+      "file": "strategies/random.py",
+      "line": 60,
+      "code": "if dataset.matrix[file_i, hint_i] >= min_observed[file_i]:",
+      "masked_in_line": false
+    },
+    {
+      "file": "strategies/qo_advisor.py",
+      "line": 68,
+      "code": "if dataset.matrix[select, hint] >= min_observed[select]:",
+      "masked_in_line": false
+    }
+  ],
+  "matrix_scan": {
+    "ceb": {
+      "rows": 3133,
+      "cols": 49,
+      "cells": 153517,
+      "cells_below_default": 32198,
+      "share": 0.20973572959346523
+    },
+    "job": {
+      "rows": 113,
+      "cols": 49,
+      "cells": 5537,
+      "cells_below_default": 911,
+      "share": 0.16452952862560954
+    },
+    "stack": {
+      "rows": 6191,
+      "cols": 49,
+      "cells": 303359,
+      "cells_below_default": 62738,
+      "share": 0.20681107203016888
+    },
+    "dsb": {
+      "rows": 964,
+      "cols": 49,
+      "cells": 47236,
+      "cells_below_default": 10945,
+      "share": 0.23170886611906175
+    }
+  }
+}

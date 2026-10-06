@@ -1,0 +1,72 @@
+{
+  "as_of": "2026-10-05",
+  "coverage": [
+    {
+      "method": "FrugalAS fixed official PC/Hard path",
+      "status": "official source static call sites verified; not executed this stage",
+      "censor_semantics": "clipped runtimes; one complete plus sufficient bound can yield pair preference; double timeout handling",
+      "target": "weighted pair classification plus hard votes; separate predicted cost regressor",
+      "loss_information": "pair sample weight uses timeout_limit times penalty; not an identified native regret interval",
+      "acquisition": "active pair queries, free label propagation, dynamic timeout",
+      "cost_and_cache": "shared algorithm runs in instance_cost_table; official runtime cost adjustment differs from restart adapter",
+      "coverage_limit": "Hard body does not read timeout_predictor_dict; find_runtime_for_each_row has no call sites. penalty_type affects called cost regressor, not the pair sample weight.",
+      "locators": "Algorithm_Selection_Pareto.py hard 416/calls 511,515,742,744,840,842; cost regressor 931/calls 735,833; propagation 636/call818; ActiveRFModel.py 56",
+      "source": "https://github.com/stacs-cp/JAIR2026-FrugalAS/blob/7a5727651a92fd2fa4960dcbbd7f6dab94130028/Algorithm_Selection_Pareto.py",
+      "code": "https://github.com/stacs-cp/JAIR2026-FrugalAS/tree/7a5727651a92fd2fa4960dcbbd7f6dab94130028"
+    },
+    {
+      "method": "On the Effect of Training Data Selection, CP2026",
+      "status": "formal paper definitions verified; separate artifact not run",
+      "censor_semantics": "dynamic time limits and timeout filtering in frugal mechanism",
+      "target": "PC, PR, single regression and multiclass formulations; final selection performance",
+      "loss_information": "different classification/regression formulations already compared",
+      "acquisition": "fine queries and coarse instance queries; average uncertainty then query all algorithms",
+      "cost_and_cache": "frugal data collection; runtime sharing implementation not separately verified",
+      "coverage_limit": "Do not claim coarse acquisition, changing learning formulation, or dynamic cutoff as new. A native pair-regret refinement purchase policy was not verified in the checked definitions; absence of a word is not proof of absence.",
+      "locators": "sections 3.1, 3.2, 5.3",
+      "source": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CP.2026.38",
+      "code": "separate artifact not checked in FA05-Q"
+    },
+    {
+      "method": "Run2Survive, ACML2020",
+      "status": "formal paper equations verified; source implementation not run",
+      "censor_semantics": "right-censored lower bounds used by random survival forests",
+      "target": "choose algorithm minimizing expected loss; native PAR10 and risk-averse losses",
+      "loss_information": "runtime distributions, not pair weight point imputation",
+      "acquisition": "no paid adaptive acquisition policy defined in the checked method",
+      "cost_and_cache": "passive training setup; purchase/cache policy not specified in checked method",
+      "coverage_limit": "Censor-aware learning and loss-aware selection are existing contributions. A survival learner trained with support only through 100 seconds does not automatically provide validated estimates of a 600-second tail.",
+      "locators": "sections 2.2, 3, 4.1 equations13,15 and 4.2",
+      "source": "https://proceedings.mlr.press/v129/tornede20a.html",
+      "code": "https://github.com/alexandertornede/algorithm_survival_analysis"
+    },
+    {
+      "method": "Algorithm Selection as Superset Learning",
+      "status": "formal paper definitions verified; source implementation not run",
+      "censor_semantics": "precise runtime or interval above censoring threshold",
+      "target": "per-algorithm regression with optimistic interval loss; select lowest predicted runtime; evaluate PAR10",
+      "loss_information": "interval observations rather than fabricated exact runtime",
+      "acquisition": "no paid adaptive acquisition policy defined in the checked method",
+      "cost_and_cache": "passive learning formulation; acquisition cache not verified",
+      "coverage_limit": "Interval-aware training is mature. Its runtime interval (c,infinity) is distinct from this audit native score set (c,600] union {6000}.",
+      "locators": "section3 equation5; section4",
+      "source": "https://epub.ub.uni-muenchen.de/91670/1/_PAKDD__Superset_Learning_for_Algorithm_Selection_with_Right_Censored_Data.pdf",
+      "code": "https://github.com/JonasHanselle/Superset_Learning_AS"
+    },
+    {
+      "method": "Budget-constrained Active Learning to Effectively De-censor Survival Data",
+      "status": "arXiv2510.12144v1 preprint; publication venue and executable code not verified",
+      "censor_semantics": "pay to partially extend a censored record or reveal an event",
+      "target": "survival prediction; MAE-PO, C-index and IBS",
+      "loss_information": "Bayesian information gain with nonuniform probe costs",
+      "acquisition": "one batch of probes; probe depth input; multiple depth actions discussed in appendixA.6",
+      "cost_and_cache": "known individual probe costs; not a verified solver restart/actual completion-time cost model",
+      "coverage_limit": "Paid partial de-censoring, budgeted information gain and multiple probe depths are already considered. Native algorithm-selection decision loss and runtime sharing are possible specialization axes, not established novelty.",
+      "locators": "sections3,4,6; appendixA.6",
+      "source": "https://arxiv.org/html/2510.12144v1",
+      "code": "not located/verified in reviewed paper; no claim that code does not exist"
+    }
+  ],
+  "source_boundary": "Only FrugalAS code call sites and local adapter are statically audited. Other methods checked in primary papers, not executed.",
+  "novelty_boundary": "A missing verified implementation of the precise proposed combination is not proof of a literature gap."
+}

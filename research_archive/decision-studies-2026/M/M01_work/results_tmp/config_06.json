@@ -1,0 +1,319 @@
+{
+  "config_id": "n6_m6_s3_HOM",
+  "n": 6,
+  "m": 6,
+  "s": 3,
+  "model": "HOM",
+  "graph_seed": 60603,
+  "prob_seed": null,
+  "edges": [
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "probs": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+  ],
+  "eps": 6e-10,
+  "V3_G": 3.3125,
+  "V3_R": 3.375,
+  "V3_OPT": 3.375,
+  "d_G": 0.0625,
+  "d_R": 0.0,
+  "d_robust": 0.0,
+  "d_G_over_n": 0.010416666666666666,
+  "d_R_over_n": 0.0,
+  "d_robust_over_n": 0.0,
+  "G_first_action": [
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      4
+    ]
+  ],
+  "R_first_action": [
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      5
+    ]
+  ],
+  "OPT_first_action": [
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      5
+    ]
+  ],
+  "A_R": [
+    [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    [
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        4
+      ]
+    ]
+  ],
+  "n_A_R": 2,
+  "R_best_lookahead": 3.375,
+  "max_Q3_star_over_A_R": 3.375,
+  "OPT_root_value_check": 3.375,
+  "n_matchings_root": 14,
+  "first_action_table": [
+    {
+      "action": [],
+      "greedy_score": 0.0,
+      "lookahead_score": 3.0,
+      "Q3_star": 3.0
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ]
+      ],
+      "greedy_score": 1.0,
+      "lookahead_score": 3.125,
+      "Q3_star": 3.25
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.3125,
+      "Q3_star": 3.3125
+    },
+    {
+      "action": [
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.3125,
+      "Q3_star": 3.3125
+    },
+    {
+      "action": [
+        [
+          0,
+          4
+        ]
+      ],
+      "greedy_score": 1.0,
+      "lookahead_score": 3.0,
+      "Q3_star": 3.0
+    },
+    {
+      "action": [
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.125,
+      "Q3_star": 3.125
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ]
+      ],
+      "greedy_score": 1.0,
+      "lookahead_score": 3.25,
+      "Q3_star": 3.25
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.3125,
+      "Q3_star": 3.3125
+    },
+    {
+      "action": [
+        [
+          0,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.3125,
+      "Q3_star": 3.3125
+    },
+    {
+      "action": [
+        [
+          1,
+          4
+        ]
+      ],
+      "greedy_score": 1.0,
+      "lookahead_score": 3.125,
+      "Q3_star": 3.125
+    },
+    {
+      "action": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.375,
+      "Q3_star": 3.375
+    },
+    {
+      "action": [
+        [
+          2,
+          5
+        ]
+      ],
+      "greedy_score": 1.0,
+      "lookahead_score": 3.25,
+      "Q3_star": 3.25
+    },
+    {
+      "action": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 2.0,
+      "lookahead_score": 3.375,
+      "Q3_star": 3.375
+    },
+    {
+      "action": [
+        [
+          3,
+          4
+        ]
+      ],
+      "greedy_score": 1.0,
+      "lookahead_score": 3.125,
+      "Q3_star": 3.125
+    }
+  ],
+  "timing_seconds": {
+    "OPT_seconds": 0.0016517000003659632,
+    "G_seconds": 8.620000153314322e-05,
+    "R_seconds": 0.0007110000005923212
+  },
+  "cache_sizes": {
+    "OPT": {
+      "G_states": 0,
+      "OPT_states": 86,
+      "R_states": 0,
+      "matching_enumerations": 60,
+      "transitions": 1359
+    },
+    "G": {
+      "G_states": 7,
+      "OPT_states": 0,
+      "R_states": 0,
+      "matching_enumerations": 6,
+      "transitions": 20
+    },
+    "R": {
+      "G_states": 50,
+      "OPT_states": 0,
+      "R_states": 7,
+      "matching_enumerations": 41,
+      "transitions": 296
+    }
+  },
+  "timeout": false,
+  "wall_seconds": 0.0029910000012023374
+}

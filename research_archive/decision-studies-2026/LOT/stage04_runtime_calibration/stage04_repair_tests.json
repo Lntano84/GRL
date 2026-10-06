@@ -1,0 +1,157 @@
+[
+  {
+    "test": "R1_independent_two_machine_recovery",
+    "original": {
+      "nominal_objective": 4.0,
+      "nominal_feasible": true,
+      "repair_objective": 22.0,
+      "repair_feasible": true,
+      "repair_max_violation": 0.0,
+      "exact_optimum": 22.0,
+      "exact_optimum_feasible": true,
+      "repair_is_optimal": true,
+      "repair_log": "p1 cancelled m0 t1: down period: removed X=1 Y=1 Z=0 | p1 cancelled m1 t1: down period: removed X=1 Y=1 Z=0 | p1 note: feasible base plan established, cost=22 | p1 note m0 t2: recovery period (delta=1) | p1 note m1 t2: recovery period (delta=1)"
+    },
+    "swapped": {
+      "nominal_objective": 4.0,
+      "nominal_feasible": true,
+      "repair_objective": 22.0,
+      "repair_feasible": true,
+      "repair_max_violation": 0.0,
+      "exact_optimum": 22.0,
+      "exact_optimum_feasible": true,
+      "repair_is_optimal": true,
+      "repair_log": "p1 cancelled m0 t1: down period: removed X=1 Y=1 Z=0 | p1 cancelled m1 t1: down period: removed X=1 Y=1 Z=0 | p1 note: feasible base plan established, cost=22 | p1 note m0 t2: recovery period (delta=1) | p1 note m1 t2: recovery period (delta=1)"
+    },
+    "label_invariant": true,
+    "hand_expectation_42_matches": false,
+    "passed": true
+  },
+  {
+    "test": "R2_preserve_zero_production_setup",
+    "nominal_objective": 2.0,
+    "exact_optimum": 2.0,
+    "nominal_is_optimal": true,
+    "nominal_feasible": true,
+    "nominal_max_violation": 0.0,
+    "repair_objective": 31.0,
+    "repair_feasible": true,
+    "repair_max_violation": 0.0,
+    "repair_log": "p1 cancelled m1 t1: down period: removed X=3 Y=1 Z=0 | p1 note: feasible base plan established, cost=31 | p1 note m0 t2: recovery period (delta=1) | p1 note m1 t2: recovery period (delta=1)",
+    "vulnerable_position": [
+      0,
+      0,
+      3
+    ],
+    "pattern_preserved": true,
+    "next_period_production_preserved": true,
+    "machine1_disruption_applied": true,
+    "repaired_plan": {
+      "X": [
+        [
+          [
+            0.0,
+            0.0,
+            0.0,
+            2.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      ],
+      "Y": [
+        [
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      ],
+      "Z": [
+        [
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      ],
+      "L": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          3.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "passed": true
+  }
+]

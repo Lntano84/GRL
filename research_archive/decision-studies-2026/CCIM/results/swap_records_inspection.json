@@ -1,0 +1,172 @@
+{
+  "script": "inspect_swap_records.py",
+  "scope": "diagnostic only; no configuration is chosen here",
+  "records_file": "swap_records.json",
+  "frozen": {
+    "graph": "ca-GrQc",
+    "file_sha256": "F8CE6E931E068B878044B783DA99EF603F566C87BCBCE7991CD53720879F1660",
+    "n": 5241,
+    "m": 14484,
+    "K": 4,
+    "T": 52,
+    "initial_set": "degree top-52",
+    "restarts": 6,
+    "query_budget": 5000,
+    "time_limit_seconds": 60.0,
+    "acceptance_rule": "first strictly improving swap (true sigma)",
+    "search_seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "per_seed": {
+    "0": {
+      "rows": 4999,
+      "states": 126,
+      "positives": 125,
+      "positive_rate": 0.02500500100020004,
+      "delta_unique": {
+        "-583": 50,
+        "-578": 31,
+        "-577": 24,
+        "-576": 25,
+        "-573": 9,
+        "-572": 1,
+        "-571": 3,
+        "-566": 8,
+        "-563": 3,
+        "-562": 2,
+        "-558": 1,
+        "-556": 1
+      },
+      "delta_max": 59.0,
+      "delta_min": -583.0,
+      "delta_mean_positive": 3.504,
+      "candidates_per_state": {
+        "min": 1,
+        "max": 652,
+        "mean": 39.67460317460318
+      },
+      "feature_pearson_with_delta": {
+        "deg_v": 0.004047957102815411,
+        "deg_u": -0.5578391844257617,
+        "deg_diff": 0.5086501206184076,
+        "active_neighbours_v": 0.020810929097056143,
+        "active_neighbours_u": -0.04732870812849142,
+        "one_round_gain_v": 0.018964565731728417,
+        "one_round_loss_u": -0.0977903318606053,
+        "f1_delta": 0.06589313741867026
+      },
+      "feature_pairwise_accuracy_alone": {
+        "deg_v": 0.6747986736144007,
+        "deg_u": 0.36191378493604925,
+        "deg_diff": 0.6896020843202274,
+        "active_neighbours_v": 0.5106584557081951,
+        "active_neighbours_u": 0.48969682614874466,
+        "one_round_gain_v": 0.5553055423969683,
+        "one_round_loss_u": 0.49917100900047373,
+        "f1_delta": 0.5056845097110374
+      },
+      "best_single_feature_pairwise": 0.6896020843202274
+    },
+    "1": {
+      "rows": 4999,
+      "states": 135,
+      "positives": 134,
+      "positive_rate": 0.026805361072214443,
+      "delta_unique": {
+        "-596": 1,
+        "-595": 10,
+        "-594": 51,
+        "-593": 12,
+        "-588": 54,
+        "-587": 13,
+        "-585": 1,
+        "-584": 18,
+        "-583": 32,
+        "-582": 41,
+        "-581": 9,
+        "-579": 1
+      },
+      "delta_max": 44.0,
+      "delta_min": -596.0,
+      "delta_mean_positive": 3.3805970149253732,
+      "candidates_per_state": {
+        "min": 1,
+        "max": 634,
+        "mean": 37.02962962962963
+      },
+      "feature_pearson_with_delta": {
+        "deg_v": 0.0264191153720018,
+        "deg_u": -0.40136078892808985,
+        "deg_diff": 0.3707636259773961,
+        "active_neighbours_v": 0.02787795302104202,
+        "active_neighbours_u": 0.033693497252014606,
+        "one_round_gain_v": 0.03646338840076068,
+        "one_round_loss_u": -0.04966062920477626,
+        "f1_delta": 0.05951339280473342
+      },
+      "feature_pairwise_accuracy_alone": {
+        "deg_v": 0.6232905097389142,
+        "deg_u": 0.4009531703273933,
+        "deg_diff": 0.6425611272275176,
+        "active_neighbours_v": 0.4656029838375466,
+        "active_neighbours_u": 0.4860132615002072,
+        "one_round_gain_v": 0.48559883961873185,
+        "one_round_loss_u": 0.4301699129714049,
+        "f1_delta": 0.5677579776212184
+      },
+      "best_single_feature_pairwise": 0.6425611272275176
+    },
+    "2": {
+      "rows": 4999,
+      "states": 144,
+      "positives": 143,
+      "positive_rate": 0.028605721144228845,
+      "delta_unique": {
+        "-586": 9,
+        "-585": 11,
+        "-584": 2,
+        "-583": 2,
+        "-582": 18,
+        "-577": 7,
+        "-574": 1,
+        "-572": 12,
+        "-563": 22,
+        "-562": 11,
+        "-561": 2,
+        "-556": 48
+      },
+      "delta_max": 50.0,
+      "delta_min": -586.0,
+      "delta_mean_positive": 3.0839160839160837,
+      "candidates_per_state": {
+        "min": 1,
+        "max": 549,
+        "mean": 34.71527777777778
+      },
+      "feature_pearson_with_delta": {
+        "deg_v": 0.022996704651843766,
+        "deg_u": -0.5841901951147657,
+        "deg_diff": 0.5296544613829455,
+        "active_neighbours_v": 0.01225930897938447,
+        "active_neighbours_u": -0.04894980860429767,
+        "one_round_gain_v": 0.018313212033091324,
+        "one_round_loss_u": -0.1943803608229112,
+        "f1_delta": 0.09372915952488983
+      },
+      "feature_pairwise_accuracy_alone": {
+        "deg_v": 0.7326690693237227,
+        "deg_u": 0.3955904176383295,
+        "deg_diff": 0.6923892304430782,
+        "active_neighbours_v": 0.5283018867924528,
+        "active_neighbours_u": 0.47530209879160484,
+        "one_round_gain_v": 0.4761500953996184,
+        "one_round_loss_u": 0.47159211363154546,
+        "f1_delta": 0.5119779520881916
+      },
+      "best_single_feature_pairwise": 0.7326690693237227
+    }
+  }
+}

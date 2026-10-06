@@ -1,69 +1,13 @@
-# GRL Research State
+# Research state — 2026-10-06
 
-Last updated: **2026-09-18**  
-Current target: **DASFAA 2027**, conditional on the post-fix algorithmic gates.
+本页更新至本地最新交付物整合。原2026-09-18状态完整保留在[历史快照](history/RESEARCH_STATE_before_2026-10-06.md)。
 
-## Source of truth
+- [全实验总索引](../research_archive/decision-studies-2026/README.md)覆盖早期IM、CCIM/调查式IM、TAIM、N/M/RT/Q、LOT01–20、MP/SB/BC/GP、FA00–06及LG01。
+- 当前没有已建立的GRL/GNN/RL决策优势，也没有自动进入训练或投稿的结论。
+- LOT底座、验解和RINS等非学习基线有实证；AB曾获有效确认，但随后被更强RINS压过，不作为当前算法核心贡献。
+- LG01接受固定LOSS-EXPAND，停止当前GNN配置，不进入RL。相对廉价基线家庭平均G −0.09%，95%区间[−0.51%,+0.31%]，3/8正；不能外推所有GRL无效。
+- FA低预算保留开发线索；随机整实例强对照后主动优势不确定，权重处理FA06也不确定。
+- 其他配置依各自冻结判据收口；协议失败和数据资格阻断不算方法价值被否定。
+- 多个原始解释已撤回，阅读顺序以[更正说明](../research_archive/decision-studies-2026/CORRECTIONS.md)和最终报告为准。
 
-This file is the current research-state source of truth. `DECISIONS.md` records durable route
-choices, `EXPERIMENT_LOG.md` records experiment provenance, and `paper/dasfaa2027/notes/CLAIMS.md`
-is the claim ledger. Older entries in those files are historical unless explicitly marked current.
-
-## Current scope
-
-The project studies targeted influence maximization under the threshold-dependent overexposure
-model. A node is counted only when it is positive at the end of the process; a previously positive
-node may later turn negative, while its historical activation still contributes to downstream
-exposure. The literal sampled-window rule is `kappa <= delta <= tau`.
-
-The model contract is implemented in `src/grl/diffusion/contract.py` and the state machine in
-`src/grl/diffusion/overexposure.py`. The current default research question is whether a state-aware
-proposal plus audited verification can reduce expensive Monte-Carlo oracle work in a setting where
-standard coverage/RR guarantees do not apply.
-
-## Confirmed post-fix findings
-
-- The old state machine was wrong: it froze positive nodes and rejected the `delta=tau=1`
-  boundary. The corrected implementation is covered by state-machine tests and the audit probes.
-- The old pre-fix spread, calibration, surrogate-gap, learned-ranking and baseline tables are
-  withdrawn and must not be used as current evidence.
-- A one-hop exact counterexample supports the narrow statement that the objective has no
-  non-negative seed-independent coverage representation. This does **not** prove that all RR-like
-  algorithms, Monte-Carlo estimation, or signed decompositions are impossible.
-- The corrected MC=300 sweep covers 8 graphs and 24 unique graph/fraction cells. In the saturated
-  cells, degree is negatively correlated on 7/8 graphs and the state-conditioned `delta2` score is
-  better on all 8.
-- The old claim that 8--35% of candidates have negative marginal gain is false. The corrected
-  average is 0.5%, the worst cell is 4.0%, and the mean beyond two paired standard errors is 0.2%.
-- Corrected Stage 4b finds only one currently usable state-dependence/headroom cell:
-  Congress-Twitter with `k=1`. This is not enough to claim a general learning advantage.
-
-## What is not yet established
-
-- No post-fix multi-graph quality--cost Pareto curve has established sample savings.
-- Sequential-vs-static and random-pruning controls have not been re-derived under the frozen
-  contract.
-- The learning predictor has not shown an independent advantage over degree or `delta2` in a valid
-  post-fix end-to-end experiment.
-- Weight normalisation (`sum_to_one` versus `clip_to_one`) remains an external-validity choice and
-  needs sensitivity evidence.
-
-## Submission state
-
-The DASFAA draft compiles, is anonymous, and contains the corrected analytic/measurement material.
-The rebuilt anonymous PDF is 16 pages and the pre-fix withdrawn tables have been removed from the
-submission artifact. All 12 cited references were checked against official proceedings, publisher
-records, or DBLP; false/duplicate/unused entries and the stale reference TODO were removed. The
-audit trail is `paper/dasfaa2027/notes/REFERENCE_AUDIT.md`. The manuscript is format-ready, but the
-title and algorithmic claims must remain conditional until the post-fix quality--cost experiments
-pass.
-
-## Immediate gates
-
-1. Re-run sequential selection, Full-MC, degree, `delta2`, and random-pruning under the corrected
-   contract.
-2. Use at least three graphs, multiple budgets, repeated candidate pools, and independent seeds.
-3. Require a pre-registered quality loss threshold (about 1%) and a meaningful online-cascade
-   reduction (about 30%), with paired uncertainty and failure rates.
-4. If those gates fail, remove the sample-efficiency framing and retarget the work as a model/
-   measurement study or a longer-cycle journal/meeting paper.
+此次工作只归档和核验文件，不新增扩散、求解器运行、模型拟合、统计实验或自动跟进。LG01跟进保持暂停。

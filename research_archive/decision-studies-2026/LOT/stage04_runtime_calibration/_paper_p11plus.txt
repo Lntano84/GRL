@@ -1,0 +1,962 @@
+
+===== PAGE 11 =====
+3.2.3. Ground-truth label definition
+To train the GNN, a dataset of (feature graph, ground-truth label) pairs is required. The
+ground-truth labels must represent the ideal set of setup decision variables to change. We assume
+that a dataset consisting of (instance, nominal solution, disruption) triplets is available. For each
+triplet, we solve the baseline reoptimization model – defined by equations (1.1) to (1.15) and the
+neighborhood constraint (2) – with a long time limit, equivalent to the time used to solve the
+nominal problem. This long solving time is intended to produce a high-quality near-optimal new
+solution S⋆. We then compare this new solution S⋆to the repaired solution Sr. The ground-
+truth label yijt for a setup decision variable Yijt in the short-term horizon is set to 1 if its value
+changed (i.e., Y ⋆
+ijt̸ = Y r
+ijt) and 0 otherwise.
+This label definition process reveals a critical challenge: the resulting ground-truth labels
+are significantly imbalanced. As we will see in Section 4, our dataset shows that positive labels
+(yijt = 1) represent only about 1% of labels. Such a class imbalance must be specifically addressed
+by our loss function.
+3.2.4. Focal loss function
+Training the GNN with a standard Binary Cross-Entropy loss, LBCE = −[y log(p) + (1 −
+y) log(1−p)], where p is the model’s predicted probability and y is the ground-truth label, would
+fail on our dataset. The loss signal would be dominated by the large number (approximately
+99%) of “easy” negative labels, preventing the model from learning to identify the rare positive
+labels cases. To handle this significant class imbalance, we employ the Focal Loss (Lin et al.,
+2017) defined as
+LFL = −[α(1 −p)γy log(p) + (1 −α)pγ(1 −y) log(1 −p)],
+(4)
+where α ∈[0, 1] is a class-balancing parameter and γ ≥0 is the focusing parameter.
+The
+focusing parameter γ dynamically down-weights the contribution to the loss of well-classified
+elements (e.g., p ≃0 for a y = 0 label), thereby focusing training efforts on the few hard-to-
+classify elements (e.g., p ≃0 for a y = 1 label), which are the ones that matter the most for our
+task.
+4. Numerical experiments
+This section presents the numerical experiments conducted to validate the proposed GNN-
+aided fix-and-optimize framework. The primary aim is to compare the solutions obtained by the
+GNN-aided approach against those obtained from the baseline reoptimization approach. To this
+end, we first present the experimental setup, including the implementation environment and the
+data generation. We then detail the training and selection of the GNN predictor, which is a
+critical component of the GNN-aided strategy. Finally, we present a comparative analysis of the
+two reoptimization strategies on a held-out test set.
+4.1. Experimental setup
+In this section, we provide details about the implementation environment used for our exper-
+iments, and then describe the instance generation process and dataset preparation.
+4.1.1. Implementation environment
+All experiments were conducted on a machine equipped with an AMD Ryzen Threadripper
+PRO 7955WX 16-Core CPU, 64 GB of RAM, and an NVIDIA RTX A400 GPU. The project
+code was implemented in Python 3.12.3. The MILP models were solved using Gurobi 12.0.2
+(via GurobiPy 12.0.2), while GNN models were implemented using PyTorch 2.7.0 and PyTorch
+Geometric 2.6.1, with CUDA 12.6 support for GPU acceleration.
+11
+
+===== PAGE 12 =====
+To ensure deterministic solver behavior and enhance reproducibility, we use Gurobi work units
+(wu)1 as the computational metric for the solver runs. In our experiments, we set the short-term
+reoptimization budget to 10wu, while we allocate 6000wu for long-term runs to compute nominal
+and ground-truth solutions.
+4.1.2. Instance, solution and disruption generation
+Instances. To evaluate our approach across different conditions, we generate two sets of instances,
+inspired by the benchmark used in (Charles, 2021):
+• Set 1. It includes 250 instances with fixed dimensions: M = 3 machines, N = 30 items
+and T = 30 periods. For a given instance, all machines have an identical capacity c in
+{3000, 3500, 4000}. No machine-item incompatibilities are considered in this set;
+• Set 2. It includes 250 instances with varying dimensions: M ∈{2, 3, 4} machines, N ∈
+{30, 35, 40} items and T = 30 periods.
+Capacities are assigned as in Set 1.
+This set
+introduces incompatibilities: each item is incompatible with exactly one machine.
+The characteristics of these two instance sets are summarized in Table 3.
+Instance
+Number of
+Machine-item
+Set
+Count
+Machines
+Items
+Periods
+Incompatibilities
+Set 1
+250
+3
+30
+30
+None
+Set 2
+250
+{2, 3, 4}
+{30, 35, 40}
+30
+1 per item
+Table 3: Characteristics of the generated instance sets.
+For both sets, items are categorized into three groups based on their demands and costs:
+• High priority (6 to 8 items). The total demand per period of this group accounts for 40–
+50% of the total machine capacity per period. The items have low inventory unit costs
+in [0.05, 0.15], but very high initial lost sales unit costs in [5, 9], decreasing over time to
+[0.1, 0.2];
+• Medium priority (9 to 11 items). The total demand per period of this group accounts for
+40–50% of the total machine capacity per period. The items have higher inventory costs
+in [0.2, 0.3], and moderate initial lost sales costs in [0.9, 1.1], decreasing to [0.1, 0.2];
+• Low priority (remaining items). The total demand per period of this group of items ac-
+counts for 20–30% of the total machine capacity per period. These items have low inventory
+costs in [0.05, 0.35], and moderate initial lost sales costs in [0.9, 1.1], decreasing to [0.1, 0.2].
+Unit lost sales costs are decreasing over time to reflect the different impact of a lost sale in a
+forthcoming period (which is likely to result in a real loss) with respect to a lost sale in a far-
+away period (for which the sale may refer to a forecast demand). By construction, the cumulative
+demand of these three priority groups is designed to slightly exceed the total available machine
+capacity, leading to difficult trade-offs between production and lost sales. The characteristics of
+these item categories are summarized in Table 4.
+Priority
+Item count
+Capacity share
+Unit inv. cost
+Unit lost sales cost
+High
+6 −8
+40% −50%
+[0.05, 0.15]
+[5, 9] →[0.1, 0.2]
+Medium
+9 −11
+40% −50%
+[0.20, 0.30]
+[0.9, 1.1] →[0.1, 0.2]
+Low
+remainder
+20% −30%
+[0.05, 0.35]
+[0.9, 1.1] →[0.1, 0.2]
+Table 4: Characteristics of the item categories.
+1Work units approximate the solver’s effort, roughly corresponding to one second of single-threaded execution
+according to Gurobi’s documentation, though their exact value depends on hardware and model characteris-
+tics. Unlike wall-clock time, work units isolate the solver’s performance from system-level variability, such as
+background processes or thread contention.
+12
+
+===== PAGE 13 =====
+Finally, to ensure diverse and challenging scenarios, other parameters are generated as follows:
+• Demands. Item demands are time-varying. They are generated independently for each
+period to fluctuate around the target capacity share defined by the priority category;
+• Production. Without loss of generality, unit production times are set to 1 and unit pro-
+duction costs to 0;
+• Setups.
+Setup times are generated to consume between 10% and 20% of a machine’s
+capacity per period. Setup costs are scaled to be approximately 10% of the corresponding
+setup time;
+• Minimum Production. The minimum production quantity is randomized within a range of
+[60%, 140%] of the item’s average demand, ensuring that production batches are significant
+relative to demand.
+Nominal solutions. For each of the 500 generated instances, we solve the nominal problem (1.1)
+– (1.15) using a long computing budget of 6000wu. This provides a high-quality nominal solution
+So for each instance, which would serve as the operational plan to execute, assuming no disruption
+occurs.
+Disruptions. We generate multiple disruption scenarios for each (instance, solution) pair. We
+consider two types of disruptions:
+• Machine Breakdown (MB). A single machine becomes unavailable for a duration ∆t of 4
+or 5 periods;
+• Plant Shutdown (PS). All machines become unavailable for a duration ∆t of 1 or 2 periods.
+These disruptions make the nominal solution infeasible, calling for a reoptimization process.
+To quantify the impact of these disruptions, Table 5 summarizes the deterioration in solution
+quality. Let z0 and zr denote the objective values of the nominal solution So and the repaired
+solution Sr computed by Algorithm 1 (see Section 2.3 and Appendix Appendix A), respectively.
+We report the cost increase of the repaired solution with respect to the nominal one, computed
+as (zr −z0)/z0. To measure the operational instability, the table also gives the average number
+of setup variables that differ between So and Sr. This number is given both as an absolute count
+and as a percentage relative to the total number of setups in So.
+Instance
+Cost
+Setup modifications
+Set
+Increase
+Count
+Relative
+Set 1
+104.18%
+7.94
+4.17%
+Set 2
+98.53%
+8.34
+4.38%
+All
+101.45%
+8.13
+4.27%
+Table 5: Disruption impact on cost increase and setups relative to nominal solution.
+The results in Table 5 reveal a critical insight: while the repairing heuristic modifies a lim-
+ited number of setups (4.27% of the setups in So on average), the solution worsening is signif-
+icant, with costs doubling on average (+101.45%). This relevant degradation is typically due
+to high penalties associated with lost sales that the repairing heuristic cannot efficiently miti-
+gate. Consequently, the repaired solution Sr is unsatisfactory, necessitating a more sophisticated
+reoptimization process to recover solution quality.
+4.1.3. Preparing datasets
+The reoptimization problem definition includes the neighborhood constraint (2), which de-
+pends on two parameters τ and κ. To simplify the analysis and interpretation of the results, in
+all our instances, we used the same values for these parameters and set the short-term horizon to
+τ = 10 periods and the maximum number of setup changes to κ = 10. This implies that a very
+small fraction of the setup variables in the first τ periods are allowed to change; e.g., for instances
+13
+
+===== PAGE 14 =====
+in Set 1, the first τ periods involve 900 setup variables, among which only 10 (i.e., around 1%)
+are allowed to change their value. Though the resulting neighborhood constraint is binding, the
+reoptimization problem includes feasible solutions whose value considerably improves over the
+repaired solution Sr, as shown in Section 4.3.
+For each of the (instance, nominal solution, disruption) triplets that we have generated, we
+compute the corresponding feature graph as detailed in Section 3. These graphs serve as inputs
+for our GNN predictor.
+To ensure a rigorous evaluation, we partition all the data at the instance level. Each set of
+instances (Set 1 and Set 2) is split into two subsets A and B, as follows.
+• Subset A. This subset includes 150 instances from Set 1 and 150 instances from Set 2, and
+is used for the selection of the GNN configuration. All the (instance, nominal solution,
+disruption) triplets generated from these instances are used exclusively for training (70%),
+validating (15%) and testing (15%) the GNN;
+• Subset B. This held-out subset includes 100 instances from Set 1 and 100 instances from Set
+2, and is reserved exclusively for the final comparative analysis of reoptimization strategies,
+presented in Section 4.3. The GNN never encounters the related data during the model
+selection phase.
+To ensure that both learning and evaluation of the final GNN are performed across uniform
+and variable instance structure, the selection is done using the union of subsets A from both Set
+1 and Set 2. Conversely, the final comparative analysis is performed on the union of subsets B
+only.
+4.2. Selection of GNN configuration
+This section describes the process of training, testing and selecting the final GNN config-
+uration used in the GNN-aided strategy. This is performed entirely on reoptimization triplets
+related to instances from subset A.
+4.2.1. Ground-truth label computation
+As detailed in Section 3.2.3, the ground-truth labels are computed by solving the reopti-
+mization problem with a long computing budget (6000wu) to find a near-optimal solution S⋆.
+For each setup decision variable Yijt of the short-term horizon (t ≤τ ), the ground-truth label
+yijt is set to 1 if Yijt changes between the repaired solution Sr and the near-optimal one S⋆
+(i.e., Y ⋆
+ijt̸ = Y r
+ijt), and is set to 0 otherwise. This computation is performed for all triples from
+instances in subset A.
+As anticipated, the resulting labels are extremely imbalanced: across our training set, only
+1.05% of the ground-truth labels within the short-term horizon are positive (i.e., equal to 1).
+This confirms the necessity of the focal loss function discussed in Section 3.2.4.
+4.2.2. Model training, validation and selection
+We considered several GNN and training configurations by varying hyperparameters, as sum-
+marized in Table 6. The parameters we tuned include the embedding dimension δ, the number
+of graph convolution blocks ν, the initial learning rate ρ, and the focal loss parameters α and γ.
+Hyperparameter
+Tested values
+δ
+GNN embedding dimension
+{32, 64}
+ν
+GNN number of convolution blocks
+{3, 4}
+ρ
+Adam optimizer initial learning rate
+{0.0005, 0.0002}
+α
+Focal loss class-balancing parameter
+{0.25, 0.5}
+γ
+Focal loss focusing parameter
+{2, 3}
+Table 6: Hyperparameters and the values tested in the grid search.
+14
+
+===== PAGE 15 =====
+We evaluated the performance of the GNN for different configurations of the parameters, by
+using standard classification metrics based on the confusion matrix components:
+- true positives (TP), i.e., number of setups that are correctly predicted to change;
+- true negatives (TN), i.e., number of setups that are correctly predicted to remain fixed;
+- false positives (FP), i.e., number of setups that are predicted to change but should have
+remained fixed;
+- false negatives (FN), i.e., number of setups that are predicted to remain fixed but should
+have changed.
+A commonly used metric for evaluating the performance of a GNN is the accuracy, defined
+as
+accuracy =
+TP + TN
+TP + TN + FP + FN .
+Accuracy represents a measure of how often the GNN correctly predicts the labels. However,
+given the significant class imbalance previously described (where positive labels are about 1%),
+the accuracy tends to be a meaningless metric. Indeed, a trivial model predicting no change for
+setup variables would achieve near-perfect accuracy (about 99%) but fail to identify any relevant
+setup variable fixes.
+For this reason, we focus on the following metrics
+precision =
+TP
+TP + FP ,
+recall =
+TP
+TP + FN .
+The values of these metrics describe the behavior of our GNN network and determine the
+performance of the “fix-and-optimize” heuristic.
+• Precision indicates how reliable the model’s positive predictions are.
+A high precision
+corresponds to a low value for FP. This indicates that subset Y does not contain too
+many irrelevant setup variables, which would otherwise increase the solution space of the
+reoptimization problem and prevent the solver from finding high-quality solutions in a
+limited time.
+• Recall reports how well the model is able to identify all the relevant (positive) instances. A
+high recall corresponds to a low value for FN. This indicates that the setup variables that
+need to change are included in the subset of selected free setup variables Y, thus allowing
+the MILP solver to identify setup changes to apply and find high-quality solutions.
+In addition, we make use of the F1-score, defined as
+F1-score = 2 precision · recall
+precision + recall.
+This value is the harmonic mean of precision and recall, providing a balanced aggregate measure.
+While we report the F1-score, our selection policy is based on the highest recall achieved on the
+validation set, subject to a precision of at least 33% (ensuring that at least one out of three
+predicted changes is relevant).
+We performed a grid search over the possible configurations in Table 6 by training each model
+on the training set of subset A and evaluating its performance on the validation set of subset A.
+The configuration that achieved the best score on our primary selection metric was selected as
+the final configuration, and corresponds to δ = 64, ν = 4, ρ = 0.0005, α = 0.1, and γ = 2. On the
+test set of subset A, this configuration achieved a final F1-score of 45.88%, with a recall of 75.71%
+and a precision of 32.91%. This configuration has been used for all the remaining experiments.
+It is worth noting that these results corroborate the choice of using a GNN architecture for
+our prediction problem. Indeed, we have worked on an heterogeneous dataset with instances
+of different sizes (number of items, machines, disruptions) in a rather transparent way, without
+noticing limitations in our evaluation metrics.
+15
+
+===== PAGE 16 =====
+4.3. Comparative analysis of the reoptimization strategies
+We now present the comparison of the two reoptimization strategies presented in Section 3.
+This experiment is performed on subset B, i.e., the held-out set of instances whose related
+reoptimization triplets have never been used during the GNN selection phase. Both the baseline
+and the GNN-aided strategies are run on each triplet related to subset B with an identical short
+time frame of 10wu. For the GNN-aided strategy, we use the best GNN configuration selected
+in Section 4.2.2, and a setup selection budget that we fix to λ = 3κ = 30 to account for the
+observed precision of the GNN.
+Our computational analysis is based on the comparison with two reference solutions: (i) the
+best-known solution, obtained from the long-term run, having value z⋆; and (ii) the repaired
+solution having value zr. For a given solution with value z, we define the following metrics:
+• Gap to best known: relative cost difference from the best-known solution, computed as
+(z −z⋆)/z⋆;
+• Improvement over repaired (µ): relative cost reduction compared to the repaired solution,
+computed as µ(z) = (zr −z)/zr.
+In the following, we will denote by zB and zG the values of the solutions produced by the baseline
+and the GNN-aided strategies, respectively.
+Table 7 compares the performance of these approaches on the instances of subset B, broken
+down by instance set (Set 1 and Set 2) and disruption type (MB for Machine Breakdown and
+PS for Plant Shutdown). Besides gap to best known and improvement over repaired, the table
+reports the percentage of instances for which the GNN-aided approach wins over the baseline,
+where column “Total” is further partitioned into cases where µ(zG) exceeds µ(zB) by a margin
+smaller than 5% (∆µ < 5%) and cases where the improvement exceeds 5% (∆µ ≥5%). The
+last three columns are defined analogously, but referring to the cases where baseline has the best
+performance.
+Inst.
+Disr.
+Gap to best
+Imp. over rep.
+(G) win over (B)
+(G) loss vs (B)
+Set
+Type
+(B)
+(G)
+µ(zB)
+µ(zG)
+Total
+∆µ<5%
+∆µ≥5%
+Total
+∆µ<5%
+∆µ≥5%
+Set 1
+MB
+20.93%
+4.56%
+13.87%
+25.29%
+94.17%
+19.83%
+74.33%
+5.83%
+5.00%
+0.83%
+PS
+8.30%
+2.93%
+10.66%
+15.07%
+82.00%
+36.00%
+46.00%
+18.00%
+16.50%
+1.50%
+All
+17.77%
+4.15%
+13.07%
+22.74%
+91.13%
+23.88%
+67.25%
+8.88%
+7.88%
+1.00%
+Set 2
+MB
+18.25%
+9.61%
+11.99%
+17.84%
+70.46%
+25.44%
+45.02%
+29.54%
+20.64%
+8.90%
+PS
+6.37%
+3.92%
+10.24%
+12.18%
+63.30%
+41.49%
+21.81%
+36.70%
+30.85%
+5.85%
+All
+15.27%
+8.18%
+11.55%
+16.42%
+68.67%
+29.47%
+39.20%
+31.33%
+23.20%
+8.13%
+All
+MB
+19.63%
+7.00%
+12.96%
+21.69%
+82.70%
+22.55%
+60.15%
+17.30%
+12.56%
+4.73%
+PS
+7.36%
+3.41%
+10.46%
+13.67%
+72.94%
+38.66%
+34.28%
+27.06%
+23.45%
+3.61%
+All
+16.56%
+6.10%
+12.33%
+19.68%
+80.26%
+26.58%
+53.68%
+19.74%
+15.29%
+4.45%
+Table 7: Results of the comparison between GNN-aided (G) and baseline (B) strategies.
+The results show that the baseline approach produces solutions with a large gap to the
+best-known solution; the average value of this gap equals 16.56%. In contrast, the GNN-aided
+approach substantially reduces the gap to the best-known solution: it never exceeds 9.61% on
+a single group of homogeneous instances, and has an average value equal to 6.10%. Overall,
+the GNN-aided strategy outperforms the baseline for most of the instances, achieving a global
+average cost improvement of 19.68% compared to 12.33% for the baseline, within the same time
+limit. Specifically, the GNN strategy wins in 80.26% of cases. Notably, a significant portion of
+these wins (53.68% out of 80.26%) are substantial (∆µ ≥5%), while the vast majority of losses
+(15.29% out of 19.74%) are marginal (∆µ < 5%).
+Breaking down the results by instance set and disruption type reveals two key trends.
+First, the GNN-aided approach yields larger improvements on the uniform instances of Set 1
+(on average, µ(zG) = 22.74%) compared to the heterogeneous instances of Set 2 (on average,
+16
+
+===== PAGE 17 =====
+µ(zG) = 16.42%). This is likely because the structural homogeneity of instances in Set 1, all hav-
+ing 3 machines and 30 periods, facilitates the GNN in predicting good neighborhoods. Indeed, the
+number of instances of this type in the training Set A is proportionally larger. However, this also
+confirms the generalization quality of our GNN, a remarkable feature for the approach. Second,
+regarding disruption types, the GNN-aided approach is more effective for machine breakdowns
+(on average, µ(zG) = 21.69%) than for plant shutdown (on average, µ(zG) = 13.67%). When
+a machine breakdown occurs, the disruption affects a single machine, and recovery involves re-
+allocating critical productions from the broken machine to alternative ones. These adjustments
+involve a limited number of setup variables and are easily mastered by the GNN’s predictive
+capabilities. In contrast, when a plant shutdown occurs, the disruption is global as produc-
+tions across all the machines are canceled for a few periods. In this case, recovery requires an
+overall restructuring of the production, involving simultaneous adjustments across machines and
+propagating over subsequent time frames. The improvement of the best-known solution over
+the repaired one is more consistent for MB instances rather than PS instances. For the lat-
+ter set, although there is smaller room for improvement, the GNN-aided approach consistently
+outperforms the baseline, halving the gap to the best-known solution.
+4.4. Evaluating the integration of imperfect GNN predictions
+In this section, we computationally evaluate the reliability of the GNN prediction and its
+integration within the reoptimization framework. Specifically, we investigate the impact of the
+setup selection budget λ. We compare the proposed configuration (λ = 30) with two alternatives
+to define the subset Y of free setup variables:
+• Tight GNN-aided approach (T). Assuming the GNN is highly accurate, the tight approach
+optimistically restricts the solver to the GNN’s top predictions by setting the budget λ to
+exactly the maximum allowed changes κ, i.e. λ = κ = 10.
+• Perfect-predictor approach (P). This approach is obtained by substituting the GNN pre-
+dictions with the exact ground-truth labels known from the long-term solution. Thus, it
+simulates an ideal perfect predictor capable of exactly forecasting the κ setup variables to
+change, establishing a theoretical ceiling for the tight GNN-aided fix-and-optimize strategy.
+In the following, we will denote by zT and zP the values of the solutions produced by the tight
+and the perfect-predictor approaches, respectively.
+Figure 4 visually summarizes the average improvement µ over the repaired solution achieved
+by these different configurations.
+For each combination of instance set and disruption type,
+it compares the results obtained with the proposed GNN-aided approach (λ = 30), the tight
+approach, and the perfect predictor approach, alongside the baseline and long-term ones.
+The relative positions of the metrics in Figure 4 reveal interesting insights about the integra-
+tion of the GNN predictions in a MILP reoptimization process under strict time limits.
+First, the improvement obtained with the tight approach is unsatisfactory and frequently
+worse than the baseline. Because the GNN is limited to identifying exactly κ = 10 variables,
+any misclassification may then trap the solver in a restricted sub-optimal space. This shows that
+rigidly integrating imperfect GNN predictions into an optimization scheme can be counterpro-
+ductive.
+Conversely, our proposed approach achieves performance comparable to – and occasionally
+exceeding – what could be obtained by an ideal perfect predictor. By setting the budget to
+λ = 30, we provide the solver with a “buffer zone”. Even if the GNN’s predictions contain noise,
+the critical κ setup variables are very likely included within the top 30. Then, the MILP solver
+can efficiently explore the buffered Y to identify the best subset of setup variables to change
+Interestingly, in certain cases (such as Set 1 & Machine Breakdown), the buffered GNN
+approach actually outperforms the perfect predictor one. While the latter points directly to the
+global long-term optimum, finding that specific solution within a tight 10wu time limit may be
+computationally prohibitive. The former, by offering a slightly larger solution space, allows the
+17
+
+===== PAGE 18 =====
+µ(zB)
+13.87%
+µ(zG)
+25.29%
+µ(zP )
+24.91%
+µ(zT )
+15.15%
+µ(z⋆)
+28.50%
+µ(zB)
+10.66%
+µ(zG)
+15.07%
+µ(zP )
+15.40%
+µ(zT )
+13.37%
+µ(z⋆)
+17.46%
+µ(zB)
+13.07%
+µ(zG)
+22.74%
+µ(zP )
+22.53%
+µ(zT )
+14.71%
+µ(z⋆)
+25.74%
+µ(zB)
+11.99%
+µ(zG)
+17.84%
+µ(zP )
+18.79%
+µ(zT )
+9.53%
+µ(z⋆)
+24.41%
+µ(zB)
+10.24%
+µ(zG)
+12.18%
+µ(zP )
+12.77%
+µ(zT )
+10.00%
+µ(z⋆)
+15.39%
+µ(zB)
+11.55%
+µ(zG)
+16.42%
+µ(zP )
+17.28%
+µ(zT )
+9.65%
+µ(z⋆)
+22.15%
+µ(zB)
+12.96%
+µ(zG)
+21.69%
+µ(zP )
+21.95%
+µ(zT )
+12.43%
+µ(z⋆)
+26.52%
+µ(zB)
+10.46%
+µ(zG)
+13.67%
+µ(zP )
+14.12%
+µ(zT )
+11.74%
+µ(z⋆)
+16.46%
+µ(zB)
+12.33%
+µ(zG)
+19.68%
+µ(zP )
+19.99%
+µ(zT )
+12.26%
+µ(z⋆)
+24.00%
+Set 1 & MB
+µ (%)
+0%
+10%
+20%
+30%
+Set 1 & PS
+µ (%)
+0%
+10%
+20%
+30%
+Set 1 & All disr.
+µ (%)
+0%
+10%
+20%
+30%
+Set 2 & MB
+µ (%)
+0%
+10%
+20%
+30%
+Set 2 & PS
+µ (%)
+0%
+10%
+20%
+30%
+Set 2 & All disr.
+µ (%)
+0%
+10%
+20%
+30%
+All sets & MB
+µ (%)
+0%
+10%
+20%
+30%
+All sets & PS
+µ (%)
+0%
+10%
+20%
+30%
+All sets & All disr.
+µ (%)
+0%
+10%
+20%
+30%
+Figure 4: Visual comparison of average improvement over repaired µ for the GNN-aided alternatives, baseline,
+and best-known solutions across different instance sets and disruption types.
+solver to find high-quality alternative solutions that are much easier to reach within the short
+time limit.
+Ultimately, these results demonstrate that our GNN-aided approach is most effective when
+the GNN is used to define a limited yet flexible subset Y rather than an optimistically tight
+one. By providing a buffered neighborhood constraint, the approach successfully leverages the
+prediction capabilities of the GNN, while retaining enough combinatorial flexibility for the MILP
+solver to compensate its inaccuracies.
+5. Conclusion
+In this paper, we considered the problem of reoptimizing a given MILP after an unpre-
+dictable event made a nominal solution infeasible. In this setting, the requirement to compute
+a new solution within a very limited time budget makes solving the MILP on the disrupted in-
+stance impractical. At the same time, applying a simple repairing heuristic often fails to provide
+a high-quality alternative. We therefore introduced a novel reoptimization strategy aided by
+Machine Learning (ML). More specifically, our fix-and-optimize strategy is based on very large
+neighborhood search scheme and incorporates a Graph Neural Network (GNN) for capturing
+the intricate relationships among the instance, the nominal solution, and the disruption. We
+evaluated the proposed approach on a variant of the Lot Sizing Problem, under disruption sce-
+narios in which some machines become unavailable for a certain period of time. Computational
+results show that the proposed approach outperforms a baseline approach that simply solves the
+MILP formulation for the disrupted instance, consistently producing better solutions within the
+same limited time budget. Moreover, the experiments demonstrate the ability of our approach
+to handle instances of different sizes, validating the choice of employing GNN within ML-aided
+reoptimization approaches.
+As regards future work, various directions could be explored. As to the specific application
+considered in this paper, while we focused on machine breakdowns and plant shutdowns, the
+18
+
+===== PAGE 19 =====
+graph-based nature of our approach offers flexibility to integrate other types of disruptions (e.g.,
+last-minute sales order cancellations, sudden demand peaks or preventative maintenance). More
+in general, the generic framework of our reoptimization approach, encoding the (instance, nominal
+solution, disruption) triplet into a feature graph to guide a fix-and-optimize heuristic, naturally
+adapts to any combinatorial optimization problem. Finally, our approach could evolve from a
+supervised-learning single prediction to an iterative scheme, by employing Deep Reinforcement
+Learning to train an agent capable of performing a number of sequential iterations. Such an
+agent would dynamically learn a policy to select, at each iteration, a promising neighborhood
+by using the improvement in the objective function as a reward signal. The resulting approach
+would eliminate the reliance on computationally expensive ground-truth labels and mitigate the
+risks associated with single-shot prediction errors.
+Acknowledgements
+Enrico Malaguti and Michele Monaci were funded by the Air Force Office of Scientific Research
+under award number FA8655-25-1-7013.
+References
+Ahuja, R.K., Orlin, J.B., Sharma, D., 2000. Very large-scale neighborhood search. International
+Transactions in Operational Research 7, 301–317.
+Basso, S., Ceselli, A., Tettamanzi, A., 2020. Random sampling and machine learning to under-
+stand good decompositions. Annals of Operations Research 284, 501–526.
+Bengio, Y., Lodi, A., Prouvost, A., 2021. Machine learning for combinatorial optimization: a
+methodological tour d’horizon. European Journal of Operational Research 290, 405–421.
+Bitran, G.R., Yanasse, H.H., 1982. Computational complexity of the capacitated lot size problem.
+Management Science 28, 1174–1186.
+Cappart, Q., Chételat, D., Khalil, E.B., Lodi, A., Morris, C., Veličković, P., 2023. Combinatorial
+optimization and reasoning with graph neural networks. Journal of Machine Learning Research
+24, 1–61.
+Charles, M., 2021. Modeling and solving complex multi-item lot-sizing problems with inventory
+constraints. Ph.D. thesis. Université de Lyon.
+Gasse, M., Chetelat, D., Ferroni, N., Charlin, L., Lodi, A., 2019. Exact combinatorial optimiza-
+tion with graph convolutional neural networks, in: Wallach, H., Larochelle, H., Beygelzimer,
+A., d'Alché-Buc, F., Fox, E., Garnett, R. (Eds.), Advances in Neural Information Processing
+Systems 32.
+Güner Gören, H., Tunali, S., 2018. Fix-and-optimize heuristics for capacitated lot sizing with
+setup carryover and backordering. Journal of Enterprise Information Management 31, 879–890.
+He, K., Zhang, X., Ren, S., Sun, J., 2016. Deep residual learning for image recognition, in:
+Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 770–778.
+Khalil, E., Le Bodic, P., Song, L., Nemhauser, G., Dilkina, B., 2016. Learning to branch in
+Mixed Integer Programming, in: Proceedings of the AAAI conference on artificial intelligence
+30 (1).
+Lang, J.C., Shen, Z.J.M., 2011.
+Fix-and-optimize heuristics for capacitated lot-sizing with
+sequence-dependent setups and substitutions. European Journal of Operational Research 214,
+595–605.
+19
+
+===== PAGE 20 =====
+Li, G., Muller, M., Thabet, A., Ghanem, B., 2019. DeepGCNs: Can GCNs go as deep as CNNs?,
+in: Proceedings of the IEEE/CVF international conference on computer vision, pp. 9267–9276.
+Lin, T.Y., Goyal, P., Girshick, R., He, K., Dollár, P., 2017. Focal loss for dense object detection,
+in: Proceedings of the IEEE international conference on computer vision, pp. 2980–2988.
+Lodi, A., Mossina, L., Rachelson, E., 2020. Learning to handle parameter perturbations in com-
+binatorial optimization: an application to facility location. EURO Journal on Transportation
+and Logistics 9, 100023.
+Lodi, A., Zarpellon, G., 2017. On learning and branching: a survey. Top 25, 207–236.
+Morabit, M., Desaulniers, G., Lodi, A., 2024. Learning to repeatedly solve routing problems.
+Networks 83, 503–526.
+Pochet, Y., Wolsey, L.A., 2006. Production planning by Mixed Integer Programming. Springer,
+New York.
+Seeanner, F., Almada-Lobo, B., Meyr, H., 2013. Combining the principles of variable neighbor-
+hood decomposition search and the fix&optimize heuristic to solve multi-level lot-sizing and
+scheduling problems. Computers & Operations Research 40, 303–317.
+Wagner, H.M., Whitin, T.M., 1958. Dynamic version of the economic lot size model. Management
+Science 5, 89–96.
+Xavier, Á.S., Qiu, F., Ahmed, S., 2021. Learning to solve large-scale security-constrained unit
+commitment problems. INFORMS Journal on Computing 33, 739–756.
+Zhang, H., D’Ariano, A., Zhu, Y., Wu, Y., Hu, L., Lu, G., 2026. Learning to reschedule plat-
+forms: A graph neural network based deep reinforcement learning method for the train plat-
+forming and rescheduling problem. Transportation Research Part C: Emerging Technologies
+183, 105453.
+20
+
+===== PAGE 21 =====
+Appendix A. Repairing heuristic algorithm
+Algorithm 1: Repairing heuristic
+Input: Original solution So, set of disrupted machines Mp, disruption duration ∆t
+Output: Repaired solution Sr feasible w.r.t. disrupted instance
+1 Sr ←So // Initialize repaired solution as a copy of original solution
+2 Procedure CancelDisruptedProductions
+3 for j ∈Mp do
+4
+for t ∈{1, . . . , ∆t} do
+5
+for i ∈{1, . . . , N} do
+6
+Y r
+ijt ←0,
+Zr
+ijt ←0,
+Xr
+ijt ←0
+7 Procedure AssessBrokenCarryOvers
+8 t ←∆t,
+t′ ←∆t + 1
+9 for j ∈Mp do
+10
+cused
+jt′
+←PN
+i=1(siY o
+ijt′ + biXo
+ijt′) // Capacity of machine j used
+11
+for i ∈{1, . . . , N} do
+// If production of item i at period t′ in So depended on a now broken carry-over
+12
+if Zo
+ijt = 1 and Xo
+ijt′ > 0 then
+13
+cneed ←si + bimi // Capacity needed to setup and produce min quantity of i at t′
+14
+cavail ←cjt′ −(cused
+jt′
+−(siY o
+ijt′ + biXo
+ijt′)) // Capacity available on j at t′
+// If needed capacity larger than available one, then cancel prod.
+of i at t′
+15
+if cneed > cavail then
+16
+Y r
+ijt′ ←0,
+Xr
+ijt′ ←0
+// Else, produce min quantity of i at t′
+17
+else
+18
+Y r
+ijt′ ←1,
+Xr
+ijt′ ←mi
+19 Procedure RecomputeInventoryFlow
+20 for i ∈{1, . . . , N} do
+21
+Ir
+i0 ←Io
+i0
+22
+for t ∈{1, . . . , T} do
+23
+β ←Ir
+i(t−1) +
+  PM
+j=1 Xr
+ijt
+
+−dit // Flow balance of item i at period t
+24
+if β ≥0 then
+25
+Ir
+it ←β,
+Lr
+it ←0
+26
+else
+27
+Ir
+it ←0,
+Lr
+it ←min(−β, dit)
+28 Call(CancelDisruptedProductions)
+29 Call(AssessBrokenCarryOvers)
+30 Call(RecomputeInventoryFlow)
+31 return Sr
+21
+
+===== PAGE 22 =====
+Appendix B. Notations
+Category
+Symbol
+Description
+Indices
+i
+Item index
+j
+Machine index
+t
+Period index
+Instance
+M
+Number of machines
+N
+Number of items
+T
+Number of periods
+fi
+Setup cost of item i
+pi
+Unit production cost of item i
+hi
+Unit inventory cost of item i
+li
+Unit lost sales cost of item i
+dit
+Demand of item i at period t
+si
+Setup time of item i
+bi
+Unit production time of item i
+cjt
+Capacity of machine j at period t
+mi
+Minimum production of item i
+Disruption
+∆t
+Disruption duration
+Neighborhood
+τ
+Number of periods in the short-term horizon
+κ
+Bound on the number of setup changes
+Solution
+Yijt
+Setup decision variable
+Zijt
+Carry-over decision variable
+Xijt
+Production quantity decision variable
+Iit
+Inventory decision variable
+Lit
+Lost-sales decision variable
+So
+Original solution (feasible w.r.t. original optimization problem)
+Sr
+Repaired solution (feasible w.r.t. reoptimization problem)
+Sn
+New solution (feasible w.r.t. reoptimization problem)
+S⋆
+Optimal (or near-optimal) new solution (feasible w.r.t. reoptimization problem)
+Prediction
+δ
+GNN embedding dimension
+ν
+GNN number of convolution blocks
+yijt
+Ground-truth label associated to setup variable Yijt
+σijt
+Change-likelihood score associated to setup variable Yijt
+λ
+Setup selection budget
+Y
+Subset of selected free setup decision variables in the short-term horizon
+α
+Focal loss class-balancing parameter
+γ
+Focal loss focusing parameter
+ρ
+Adam optimizer initial learning rate
+Table B.8: Table of notations
+22

@@ -1,0 +1,42 @@
+{
+  "dataset": "docs\\results\\overexposure_ranking_dataset_congress_20260917.json",
+  "top_k": 5,
+  "summary": {
+    "analytic_only": {
+      "n_features": 1,
+      "spearman": 0.6931643506260131,
+      "recall": 0.4166666666666667,
+      "regret": 0.5024867019254154
+    },
+    "analytic+threshold": {
+      "n_features": 6,
+      "spearman": 0.4166078110202902,
+      "recall": 0.38333333333333336,
+      "regret": 0.6696484547274704
+    },
+    "threshold_only": {
+      "n_features": 5,
+      "spearman": -0.028274574235093646,
+      "recall": 0.10000000000000002,
+      "regret": 0.966860893612763
+    },
+    "delta_only": {
+      "n_features": 5,
+      "spearman": NaN,
+      "recall": 0.21666666666666667,
+      "regret": 0.836659856861813
+    },
+    "analytic+structural": {
+      "n_features": 4,
+      "spearman": 0.6765592963165261,
+      "recall": 0.4666666666666666,
+      "regret": 0.47220379751549785
+    },
+    "all": {
+      "n_features": 14,
+      "spearman": 0.4254990346714354,
+      "recall": 0.4166666666666667,
+      "regret": 0.6171990120540901
+    }
+  }
+}

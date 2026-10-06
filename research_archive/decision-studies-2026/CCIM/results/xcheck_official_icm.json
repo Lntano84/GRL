@@ -1,0 +1,78 @@
+{
+  "script": "xcheck_official_icm.py",
+  "samples": 4000,
+  "patches": [
+    "numba.jit -> no-op decorator (numba not installed; speed annotation only)",
+    "np.int -> int (removed in numpy 2.x)"
+  ],
+  "cases": [
+    {
+      "graph": "karate",
+      "seeds": [
+        0
+      ],
+      "authors": 3.392000000000005,
+      "ours": 3.4115,
+      "relative_difference": 0.00574882075471562
+    },
+    {
+      "graph": "karate",
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "authors": 6.63625000000009,
+      "ours": 6.59375,
+      "relative_difference": 0.006404219250343124
+    },
+    {
+      "graph": "karate",
+      "seeds": [
+        3,
+        7,
+        11,
+        19
+      ],
+      "authors": 6.435750000000098,
+      "ours": 6.31675,
+      "relative_difference": 0.018490463426966017
+    },
+    {
+      "graph": "gnp40",
+      "seeds": [
+        0
+      ],
+      "authors": 3.192499999999958,
+      "ours": 3.13725,
+      "relative_difference": 0.01730618637430196
+    },
+    {
+      "graph": "gnp40",
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "authors": 9.945750000000109,
+      "ours": 9.9915,
+      "relative_difference": 0.0045999547545324485
+    },
+    {
+      "graph": "gnp40",
+      "seeds": [
+        3,
+        7,
+        11,
+        19
+      ],
+      "authors": 10.695000000000128,
+      "ours": 10.596,
+      "relative_difference": 0.009256661991596719
+    }
+  ],
+  "worst_relative_difference": 0.018490463426966017,
+  "tolerance": 0.08,
+  "pass": true,
+  "note": "the published icm.py was executed directly; the only edits are the two mechanical patches listed"
+}

@@ -1,0 +1,8 @@
+{
+  "attempt": 5,
+  "trace_requests_completed": 147793,
+  "last_GET_seen_before_run_get": 1,
+  "reason": "author final checkpoint is performed after the final trace request; live window index 1007 differs from settled-endpoint search result 1008 at exact final timestamp",
+  "fix": "use BC04 final-endpoint exception so the last GET is processed in window 1007 before final settlement",
+  "completed": false
+}

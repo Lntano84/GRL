@@ -1,0 +1,26 @@
+[
+  {
+    "run": "featurediag_er1024_s0_k4_ct20",
+    "k": 4,
+    "seed": 0,
+    "graph": "er1024_p001_seed20260930",
+    "extra_configuration": "--c-t=20 (same for both k; diagnostic trigger only)",
+    "command": "\"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\gp00\\scripts\\..\\mt-kahypar\\build-gp00\\mt-kahypar\\application\\MtKaHyPar.exe\" -h input.graph --input-file-format=metis --instance-type=graph --preset-type=default -k 4 -e 0.03 -o cut -t 1 --seed 0 --c-t 20 --write-partition-file=true --partition-output-folder .",
+    "exit_code": 0,
+    "wall_seconds": 0.352103,
+    "feature_rows": 10472,
+    "dump_sha256": "154898E395375232FBB6CB8CEC0DE1EA51E2AF451C19CFD5EB06EB988DC08D2F"
+  },
+  {
+    "run": "featurediag_er1024_s0_k32_ct20",
+    "k": 32,
+    "seed": 0,
+    "graph": "er1024_p001_seed20260930",
+    "extra_configuration": "--c-t=20 (same for both k; diagnostic trigger only)",
+    "command": "\"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\gp00\\scripts\\..\\mt-kahypar\\build-gp00\\mt-kahypar\\application\\MtKaHyPar.exe\" -h input.graph --input-file-format=metis --instance-type=graph --preset-type=default -k 32 -e 0.03 -o cut -t 1 --seed 0 --c-t 20 --write-partition-file=true --partition-output-folder .",
+    "exit_code": 0,
+    "wall_seconds": 0.384544,
+    "feature_rows": 10472,
+    "dump_sha256": "0E784A948F2EF33426142F9F4CB89E853EBF94B0F2C903BDD738434296769296"
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "full_replay_started": false,
+  "checks": {
+    "BC06_snapshot_manifest_and_candidate_hash": true,
+    "four_configs_differ_from_STATIC_HIGH_only_by_output_directory": true,
+    "closing_control_matches_saved_HIGH_decisions_on_small_prefix": true,
+    "all_methods_leave_check_only_unchanged": true,
+    "all_methods_leave_warmup_parent_decisions_unchanged": true,
+    "online_policy_source_has_no_label_or_peak_interface": true,
+    "online_replay_source_has_no_result_sidecar_reference": true,
+    "saved_prefix_author_score_reproduced": true,
+    "saved_prefix_rule_output_invariant_to_unread_future_outcome_change": true
+  },
+  "small_prefix_rows": 64,
+  "prefix_examples_per_phase": {
+    "warmup": 32,
+    "evaluation": 32
+  },
+  "one_evaluation_prefix_candidate": {
+    "candidate_id": 290214,
+    "request_sequence": 20937,
+    "author_score_recomputed": 0.13045742451047054,
+    "parent_decision": false,
+    "recency_rule_decision": false,
+    "supplement_applied": false,
+    "synthetic_future_side_table_sha256_before": "d2feccc6c170d5bfcd97c803859af018cd81cfa304058d2d3db52399956e36ce",
+    "synthetic_future_side_table_sha256_after": "7605be46c430f5e17ce8fd2082250775224c2966264d79c885c583b19de901b7",
+    "synthetic_side_table_changed": true,
+    "saved_feature_vector_sha256_unchanged": true
+  },
+  "calibration_sha256": "6d294e4a4982ef3532197f0213a13a1a7cca5d39b6c3b4d74eae60614863caf6",
+  "snapshot_sha256": "5794441b856c02e7c1e7583332059be2576e29e9cca1d9379ecc515d84c70665",
+  "policy_sha256": "c624c45811a9b5b3ff1def8ed66f9c7d3848e6bd86ed4c581663dcb94b8511d5",
+  "replay_sha256": "82b9f1b2c13cea27608be7f4ae5f51c134f481e49d3cbfab99c7ae6db191c067",
+  "notes": "This is an interface/prefix check, not an end-to-end leakage proof; the full HIGH-CONTROL replay is the execution-level reference."
+}

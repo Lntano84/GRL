@@ -1,0 +1,144 @@
+{
+  "results": {
+    "check1": {
+      "legal": {
+        "5": {
+          "kind": "cancelled",
+          "value_or_bound": 2,
+          "charged": 2,
+          "state": {
+            "mask": [],
+            "bounds": [
+              [
+                0,
+                1
+              ]
+            ],
+            "explored": [],
+            "counted": [],
+            "spent": 2.0
+          },
+          "eligible": true
+        },
+        "20": {
+          "kind": "cancelled",
+          "value_or_bound": 2,
+          "charged": 2,
+          "state": {
+            "mask": [],
+            "bounds": [
+              [
+                0,
+                1
+              ]
+            ],
+            "explored": [],
+            "counted": [],
+            "spent": 2.0
+          },
+          "eligible": true
+        }
+      },
+      "official_defect_differs": true
+    },
+    "check2": {
+      "5": {
+        "kind": "completed",
+        "value_or_bound": 5,
+        "charged": 5,
+        "state": {
+          "mask": [
+            [
+              0,
+              1
+            ]
+          ],
+          "bounds": [],
+          "explored": [
+            [
+              0,
+              1
+            ]
+          ],
+          "counted": [
+            [
+              0,
+              1
+            ]
+          ],
+          "spent": 5.0
+        }
+      },
+      "20": {
+        "kind": "cancelled",
+        "value_or_bound": 10,
+        "charged": 10,
+        "state": {
+          "mask": [],
+          "bounds": [
+            [
+              0,
+              1
+            ]
+          ],
+          "explored": [],
+          "counted": [],
+          "spent": 10.0
+        }
+      }
+    },
+    "check3": {
+      "sequence": [
+        {
+          "cap": 2,
+          "kind": "cancelled",
+          "value_or_bound": 2,
+          "charged": 2,
+          "cumulative_spent": 2.0
+        },
+        {
+          "cap": 10,
+          "kind": "completed",
+          "value_or_bound": 5.0,
+          "charged": 5.0,
+          "cumulative_spent": 7.0
+        }
+      ],
+      "total_charged": 7.0,
+      "eligible_after_first_run": true
+    },
+    "check4": {
+      "A": {
+        "next_action": [
+          0,
+          1
+        ],
+        "next_cap": 2,
+        "spent": 12.0,
+        "stop_by_budget": false,
+        "hidden": {
+          "(0, 1)": 5.0,
+          "(0, 2)": 7.0,
+          "(1, 0)": 9.0
+        },
+        "opt_time_A_only": null
+      },
+      "B": {
+        "next_action": [
+          0,
+          1
+        ],
+        "next_cap": 2,
+        "spent": 12.0,
+        "stop_by_budget": false,
+        "hidden": {
+          "(0, 1)": 5.0,
+          "(0, 2)": 90.0,
+          "(1, 0)": 9.0
+        },
+        "opt_time_A_only": null
+      }
+    }
+  },
+  "all_pass": true
+}

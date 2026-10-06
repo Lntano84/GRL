@@ -1,0 +1,55 @@
+{
+ "gnn": {
+  "name": "gnn",
+  "seed": 7,
+  "epochs": 13,
+  "wall_s": 37.39343810081482,
+  "best_regret": 0.007585921824753094,
+  "selected_epoch": 8,
+  "stopped": "patience",
+  "validation_training_cap_ok": true,
+  "partial_batch": 0,
+  "best_hash": "b57e2271d42484d5b44de0d826409fab0f93dad9bdcc62340b89c48038972a38",
+  "message": true
+ },
+ "mlp": {
+  "name": "mlp",
+  "seed": 7,
+  "epochs": 10,
+  "wall_s": 5.818125247955322,
+  "best_regret": 0.006561488384700433,
+  "selected_epoch": 5,
+  "stopped": "patience",
+  "validation_training_cap_ok": true,
+  "partial_batch": 0,
+  "best_hash": "80141de2dcb472130dbc0bc016ef1a8355ec7848fb55991ddf14af70f700068c",
+  "message": false
+ },
+ "tree": {
+  "wall_s": 0.2014390000003914,
+  "params": {
+   "categorical_features": "from_dtype",
+   "early_stopping": false,
+   "interaction_cst": null,
+   "l2_regularization": 1,
+   "learning_rate": 0.05,
+   "loss": "squared_error",
+   "max_bins": 255,
+   "max_depth": 3,
+   "max_features": 1.0,
+   "max_iter": 100,
+   "max_leaf_nodes": 31,
+   "min_samples_leaf": 20,
+   "monotonic_cst": null,
+   "n_iter_no_change": 10,
+   "quantile": null,
+   "random_state": 7,
+   "scoring": "loss",
+   "tol": 1e-07,
+   "validation_fraction": 0.1,
+   "verbose": 0,
+   "warm_start": false
+  },
+  "hash": "f684a1fa84007828d7ad355046b24f17caf72f4c54e7b8e1abd5ac885148a13b"
+ }
+}

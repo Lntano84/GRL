@@ -1,0 +1,117 @@
+{
+  "plan_sha256": "c085050576132f30cb9cab7ac7b24778c88cef9b9010af9af38d82ea34e9708f",
+  "script_sha256": "2ea94940243a4a029ee746c8af9725554e878f3c88109056e452f183ff23b89b",
+  "graph": {
+    "n": 329,
+    "m": 2573,
+    "rows": 47338,
+    "first_utc": "2013-12-03T07:00:20+00:00",
+    "last_utc": "2013-12-03T15:59:40+00:00",
+    "classes": {
+      "2BIO1": 36,
+      "2BIO2": 35,
+      "2BIO3": 40,
+      "MP": 33,
+      "MP*1": 29,
+      "MP*2": 38,
+      "PC": 44,
+      "PC*": 40,
+      "PSI*": 34
+    }
+  },
+  "baseline": "observed_degree",
+  "development_means": {
+    "random_global": 203.54593333333332,
+    "observed_degree": 203.58415,
+    "residual_degree": 203.53566666666666,
+    "seed_uncertainty": 203.35903333333334,
+    "residual_seed_distance": 203.41363333333334
+  },
+  "confirmation_means": {
+    "voi": 203.57430833333333,
+    "random_global": 203.42576666666668,
+    "observed_degree": 203.63226666666665,
+    "residual_degree": 203.44289583333335,
+    "seed_uncertainty": 203.50048750000002,
+    "residual_seed_distance": 203.49864583333334
+  },
+  "paired_contrasts": {
+    "random_global": {
+      "mean": 0.14854166666666585,
+      "ci95": [
+        -0.08343824949381287,
+        0.38052158282714454
+      ],
+      "p_two_sided": 0.20621273235388532,
+      "wins": 35,
+      "losses": 33,
+      "ties": 12,
+      "n": 80
+    },
+    "observed_degree": {
+      "mean": -0.057958333333333556,
+      "ci95": [
+        -0.2662529680213329,
+        0.1503363013546658
+      ],
+      "p_two_sided": 0.5812484564339045,
+      "wins": 29,
+      "losses": 38,
+      "ties": 13,
+      "n": 80
+    },
+    "residual_degree": {
+      "mean": 0.1314124999999997,
+      "ci95": [
+        -0.04403647359183055,
+        0.30686147359182997
+      ],
+      "p_two_sided": 0.1399802178142209,
+      "wins": 39,
+      "losses": 30,
+      "ties": 11,
+      "n": 80
+    },
+    "seed_uncertainty": {
+      "mean": 0.0738208333333322,
+      "ci95": [
+        -0.16247743718965516,
+        0.3101191038563196
+      ],
+      "p_two_sided": 0.5358459507493325,
+      "wins": 36,
+      "losses": 35,
+      "ties": 9,
+      "n": 80
+    },
+    "residual_seed_distance": {
+      "mean": 0.0756624999999996,
+      "ci95": [
+        -0.16657715813195934,
+        0.31790215813195855
+      ],
+      "p_two_sided": 0.5359236589378001,
+      "wins": 41,
+      "losses": 34,
+      "ties": 5,
+      "n": 80
+    }
+  },
+  "primary": {
+    "mean": -0.057958333333333556,
+    "ci95": [
+      -0.2662529680213329,
+      0.1503363013546658
+    ],
+    "p_two_sided": 0.5812484564339045,
+    "wins": 29,
+    "losses": 38,
+    "ties": 13,
+    "n": 80
+  },
+  "delta": 3.29,
+  "decision": "stop_for_practical_gain_in_this_configuration",
+  "measured_cpu_seconds": 438.953125,
+  "mean_planning_cpu_seconds": 3.9109375,
+  "state_count": 80
+}

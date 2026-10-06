@@ -1,0 +1,151 @@
+{
+  "primary_ab_vs_mr_mean": {
+    "stats": {
+      "mean": 0.01701560054210726,
+      "median": 0.017192487571780077,
+      "min": -0.0022714822024172566,
+      "max": 0.05478211037989659,
+      "pos": 6,
+      "neg": 2,
+      "tie": 0,
+      "rho0.75": {
+        "n": 4,
+        "mean": 0.015033887424724088,
+        "pos": 4
+      },
+      "rho1.10": {
+        "n": 4,
+        "mean": 0.018997313659490436,
+        "pos": 2
+      }
+    },
+    "per_instance": {
+      "large_rho0.75_s2": 0.02531952242591217,
+      "large_rho0.75_s3": 0.01689985700093662,
+      "large_rho0.75_s4": 0.000431052129424025,
+      "large_rho0.75_s5": 0.017485118142623535,
+      "large_rho1.10_s2": -0.0022714822024172566,
+      "large_rho1.10_s3": 0.024257829871641608,
+      "large_rho1.10_s4": -0.0007792034111591985,
+      "large_rho1.10_s5": 0.05478211037989659
+    }
+  },
+  "per_random_set": {
+    "MR-Z-1": {
+      "mean": 0.014103234422860064,
+      "median": 0.012916821067550358,
+      "min": -0.001750505983869564,
+      "max": 0.03556055382424737,
+      "pos": 6,
+      "neg": 2,
+      "tie": 0,
+      "rho0.75": {
+        "n": 4,
+        "mean": 0.01318004023024898,
+        "pos": 3
+      },
+      "rho1.10": {
+        "n": 4,
+        "mean": 0.015026428615471148,
+        "pos": 3
+      }
+    },
+    "MR-Z-2": {
+      "mean": 0.02138496713785269,
+      "median": 0.022465245229573553,
+      "min": 0.0005520419456940433,
+      "max": 0.06570704014296336,
+      "pos": 8,
+      "neg": 0,
+      "tie": 0,
+      "rho0.75": {
+        "n": 4,
+        "mean": 0.020214784304177336,
+        "pos": 4
+      },
+      "rho1.10": {
+        "n": 4,
+        "mean": 0.022555149971528046,
+        "pos": 4
+      }
+    },
+    "MR-Z-3": {
+      "mean": 0.015558600065609036,
+      "median": 0.010973791073943086,
+      "min": -0.011509369830978838,
+      "max": 0.06307873717247899,
+      "pos": 6,
+      "neg": 2,
+      "tie": 0,
+      "rho0.75": {
+        "n": 4,
+        "mean": 0.011706837739745977,
+        "pos": 4
+      },
+      "rho1.10": {
+        "n": 4,
+        "mean": 0.019410362391472095,
+        "pos": 2
+      }
+    }
+  },
+  "control_ab_vs_abc": {
+    "stats": {
+      "mean": 0.12793974587377666,
+      "median": 0.06513982280511282,
+      "min": 0.018606982370444863,
+      "max": 0.34357868455245566,
+      "pos": 8,
+      "neg": 0,
+      "tie": 0,
+      "rho0.75": {
+        "n": 4,
+        "mean": 0.20905760230942866,
+        "pos": 4
+      },
+      "rho1.10": {
+        "n": 4,
+        "mean": 0.04682188943812466,
+        "pos": 4
+      }
+    },
+    "per_instance": {
+      "large_rho0.75_s2": 0.19830402703898675,
+      "large_rho0.75_s3": 0.34357868455245566,
+      "large_rho0.75_s4": 0.018606982370444863,
+      "large_rho0.75_s5": 0.27574071527582733,
+      "large_rho1.10_s2": 0.03346804067903836,
+      "large_rho1.10_s3": 0.0673068790752199,
+      "large_rho1.10_s4": 0.06297276653500573,
+      "large_rho1.10_s5": 0.023539871463234652
+    }
+  },
+  "seed_direction_same": 6,
+  "seed_direction_opposite": 2,
+  "worst_random_choice_mean": 0.02601841335877402,
+  "meta": {
+    "budget_s": 20.0,
+    "lp_budget_s": 5.0,
+    "kappa": 4.0,
+    "methods": [
+      "AB",
+      "ABC",
+      "MR-Z-1",
+      "MR-Z-2",
+      "MR-Z-3"
+    ],
+    "seeds": [
+      0,
+      1
+    ],
+    "n_runs": 160,
+    "shuffle_seed": 20261003,
+    "scope": "16 large development states (stage 09B), 8 nominal instances, seeds 2-5",
+    "solver": "highspy",
+    "solver_version": "1.15.1",
+    "matched_random_file": "stage11_matched_random.json",
+    "protocol": "same LP for every method, then MIP from S_LP; unreleased binaries fixed to S_r; kappa and fixings relative to S_r; 20 s total including the LP",
+    "output_rule": "best valid among {solver incumbent, S_LP, S_r}",
+    "note": "this is a MECHANISM development experiment on the stage 09B development set; stage 10 remains the independent confirmation and this round is NOT a second confirmation"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "budget_s": 20.0,
+    "methods": [
+      "AB",
+      "RINS-LP-ONE",
+      "RINS-AB"
+    ],
+    "seed": 1,
+    "n_runs": 96,
+    "rins_tol": 1e-06,
+    "lp_budget_s": 5.0,
+    "method_cycle": [
+      "AB",
+      "RINS-LP-ONE",
+      "RINS-AB"
+    ],
+    "scope": "32 frozen stage 15 states",
+    "design": "seed-1 confirmation of RINS-LP-ONE vs AB, plus the targeted RINS-intersect-AB control",
+    "timing": "end-to-end clock covers LP, selection, assembly, submission, verification and DELIVERY SELECTION; overrun is reported separately",
+    "note": "no FULL arm; nothing inherited from earlier stages"
+  },
+  "seed1_G": {
+    "large_rho0.75_s2": 0.10859230623310719,
+    "large_rho0.75_s3": 0.0818582955876112,
+    "large_rho0.75_s4": 0.066290871865162,
+    "large_rho0.75_s5": 0.034643933714898115,
+    "large_rho1.10_s2": 0.1318994097882624,
+    "large_rho1.10_s3": 0.05999465036750594,
+    "large_rho1.10_s4": 0.03503828449804197,
+    "large_rho1.10_s5": 0.09613243780429943
+  },
+  "mean_G_seed1": 0.07680627373236103,
+  "positive_seed1": 8,
+  "negative_seed1": 0,
+  "by_rho_seed1": {
+    "0.75": {
+      "mean": 0.07284635185019463,
+      "positive": 4,
+      "n": 4
+    },
+    "1.10": {
+      "mean": 0.08076619561452744,
+      "positive": 4,
+      "n": 4
+    }
+  },
+  "leave_one_out_seed1": {
+    "large_rho0.75_s2": 0.07226541194654015,
+    "large_rho0.75_s3": 0.07608455632446814,
+    "large_rho0.75_s4": 0.07830847399910375,
+    "large_rho0.75_s5": 0.08282946516342717,
+    "large_rho1.10_s2": 0.06893582572437512,
+    "large_rho1.10_s3": 0.07920793421305461,
+    "large_rho1.10_s4": 0.08277312933726375,
+    "large_rho1.10_s5": 0.07404539315065554
+  },
+  "seed0_G": {
+    "large_rho0.75_s2": 0.09958506205952698,
+    "large_rho0.75_s3": 0.08409281822502983,
+    "large_rho0.75_s4": 0.07479141483816686,
+    "large_rho0.75_s5": 0.023617592221760034,
+    "large_rho1.10_s2": 0.12890403802374026,
+    "large_rho1.10_s3": 0.060358217856961535,
+    "large_rho1.10_s4": 0.032344961833075676,
+    "large_rho1.10_s5": 0.09544687036660544
+  },
+  "G_int_AB": {
+    "large_rho0.75_s2": 0.0020336695643512434,
+    "large_rho0.75_s3": 0.0025222136378140894,
+    "large_rho0.75_s4": 0.004479584700915092,
+    "large_rho0.75_s5": -0.002779515036991359,
+    "large_rho1.10_s2": -0.0056162701256568925,
+    "large_rho1.10_s3": -0.0060114422148976835,
+    "large_rho1.10_s4": -0.003017518079201649,
+    "large_rho1.10_s5": -0.0012177032985346752
+  },
+  "G_R_int": {
+    "large_rho0.75_s2": 0.10655863666875594,
+    "large_rho0.75_s3": 0.0793360819497971,
+    "large_rho0.75_s4": 0.06181128716424691,
+    "large_rho0.75_s5": 0.03742344875188947,
+    "large_rho1.10_s2": 0.13751567991391928,
+    "large_rho1.10_s3": 0.06600609258240361,
+    "large_rho1.10_s4": 0.038055802577243614,
+    "large_rho1.10_s5": 0.0973501411028341
+  },
+  "mean_G_int_AB": -0.0012008726065252293,
+  "mean_G_R_int": 0.07800714633888625,
+  "integrity": {
+    "n_runs": 96,
+    "start_adopted": 96,
+    "select_errors": 0,
+    "final_source_none": 0,
+    "worse_than_repair": 0,
+    "fixing_conflicts": 0,
+    "max_total_s": 20.108627100002195,
+    "max_overrun_s": 0.10862710000219522,
+    "runs_over_budget": 96
+  },
+  "passes_seed1": true,
+  "verdict": "seed 1 CONFIRMS the Stage 16 direction: RINS-LP-ONE still passes all four criteria over AB"
+}

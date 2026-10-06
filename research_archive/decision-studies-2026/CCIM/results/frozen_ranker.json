@@ -1,0 +1,69 @@
+{
+  "features": [
+    "vis_deg",
+    "nbr_surveyed",
+    "nbr_frontier",
+    "nbr_edges",
+    "clustering",
+    "nbr_deg_mean",
+    "nbr_deg_max",
+    "reveal_step",
+    "n_revealers"
+  ],
+  "weights": [
+    0.012600747463618635,
+    0.012600747463618635,
+    0.0,
+    -0.03353217248094024,
+    -0.008418229071890326,
+    0.006281713294030346,
+    -0.023823537430536293,
+    -0.005189298657756651,
+    0.012600747463618635
+  ],
+  "bias": 5.278221698228104,
+  "standardiser_mean": [
+    1.3895833333333334,
+    1.3895833333333334,
+    0.0,
+    0.28958333333333336,
+    0.1304166666666667,
+    25.282638888888886,
+    28.414583333333333,
+    1.4875,
+    1.3895833333333334
+  ],
+  "standardiser_std": [
+    0.7986289249220933,
+    0.7986289249220933,
+    1.0,
+    0.7538068893217199,
+    0.3068746464130119,
+    23.88979303642671,
+    26.427041781599183,
+    1.494381839870031,
+    0.7986289249220933
+  ],
+  "config": {
+    "L2": 0.01,
+    "lr": 0.5,
+    "epochs": 400
+  },
+  "trained_on": {
+    "dev": 20,
+    "train": 40,
+    "namespaces": [
+      "valprobe",
+      "rstates"
+    ]
+  },
+  "candidate_pool_max": 8,
+  "candidate_rule": "degree_min + degree_max + fixed-seed fill",
+  "tie_break": "sorted(frontier) then fixed RNG within a degree tie",
+  "random_arm_scope": "candidate pool (<=8), NOT the full frontier",
+  "state_rule": "5 fixed free seeds + 4 uniform-random-frontier surveys, fixed RNG streams",
+  "budgets": {
+    "sim_samples": 300,
+    "conf_samples": 3000
+  }
+}

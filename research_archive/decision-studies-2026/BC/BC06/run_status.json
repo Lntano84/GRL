@@ -1,0 +1,93 @@
+{
+  "status": "failed",
+  "arm": "HIGH-CONTROL",
+  "budget_seconds": 1800,
+  "attempts": 1,
+  "started_unix": 1790757329.3095372,
+  "wall_seconds": 810.2659999999996,
+  "remaining_budget_seconds": 989.7340000000004,
+  "latest_progress": {
+    "arm": "HIGH-CONTROL",
+    "completed_windows": 1008,
+    "trace_elapsed_s": 604641.9793410301,
+    "request_sequence": 147794,
+    "candidate_items_decided": 2375547,
+    "wall_seconds": 783.7360103999999
+  },
+  "exit_code": 1,
+  "replay_audit": {
+    "completed": false,
+    "mode": "read_only_observation",
+    "started_unix": 1790757330.487135,
+    "recorder": {
+      "completed": false,
+      "arm": "HIGH-CONTROL",
+      "elapsed_wall_seconds": 785.030901099999,
+      "request_sequence": 147794,
+      "get_request_count": 127305,
+      "candidate_counts": {
+        "generated": 2375547,
+        "currently_pending": 0,
+        "decided": 2375547
+      },
+      "actual_decision_counts": {
+        "batches": 176373,
+        "items": 2375547,
+        "rejected": 2234483,
+        "source/demand": 2343380,
+        "created_and_decided_same_request": 2375547,
+        "delay_positive": 0,
+        "get_requests": 127305,
+        "accepted": 141064,
+        "source/prefetch": 32167
+      },
+      "check_only_counts": {
+        "calls": 2211,
+        "items": 49204,
+        "accept": 32167,
+        "reject": 17037
+      },
+      "candidate_source_counts": {
+        "demand": 2343380,
+        "prefetch": 32167
+      },
+      "unique_candidate_creation_requests": 72899,
+      "unique_actual_decision_requests": 72899,
+      "unique_candidate_blocks": 13688,
+      "unique_candidate_chunks": 671724,
+      "model_input_vector_lengths": {
+        "18": 2424751
+      },
+      "predicted_items_by_call_kind": {
+        "actual": 2375547,
+        "check_only": 49204
+      },
+      "model_feature_names": [
+        "feat_metadata|op",
+        "feat_metadata|ns",
+        "feat_metadata|user",
+        "feat_metadata_size|start",
+        "feat_metadata_size|end",
+        "feat_metadata_size|size",
+        "feat_dynamic_b|0",
+        "feat_dynamic_b|1",
+        "feat_dynamic_b|2",
+        "feat_dynamic_b|3",
+        "feat_dynamic_b|4",
+        "feat_dynamic_b|5",
+        "feat_dynamic_c_combined|0",
+        "feat_dynamic_c_combined|1",
+        "feat_dynamic_c_combined|2",
+        "feat_dynamic_c_combined|3",
+        "feat_dynamic_c_combined|4",
+        "feat_dynamic_c_combined|5"
+      ],
+      "max_cache_occupancy_chunks": 3001,
+      "evaluation_writes_recorded_independently": 119276,
+      "completed_windows_recorded": 1008,
+      "completed_window_component_max_abs_error": 4.291678123991005e-12,
+      "wall_seconds": 785.0309894999991
+    }
+  },
+  "console_tail": "o - 0.14998 \n Service Time Saved (No Prefetch Cost) ratio          - 0.30489 \n Service Time Spent on All Prefetches ratio           - 0.00674 \n Service Time Spent on Wasted Prefetch ratio          - 0.00322 \n Net Service Time From Good Prefetching ratio         - 0.01722 \n Net Service Time From Prefetch ratio                 - 0.01400 \n Potential ST Saved (PF) (Analysis) from Admitted Eps - 0.00 \n Wasted hits from late/readmits: 0 IOs, 141064 chunks \n IOPS saved ratio                                     - 0.42737 \n IOPS saved ratio (FlashPrefetchFirstHit)             - 0.0508 \n IOPS saved ratio (Flash)                             - 0.4274 \n IOPS saved ratio (AdmitBuffer)                       - 0.0000 \n IOPS saved ratio (FlashPrefetch)                     - 0.1071 \n IOPS saved ratio (Partial)                           - 0.02350 \n IOPS saved ratio lost from late/readmits             - 0.00000 \n IOPS SR (Analysis) from Admitted Episodes            - 0.00000 \n IOPS SR (Analysis, ConstantThisEA)                   - -1.00000 \n GETs                                                 - 127305 / 127305 \n     Saved                                            - 54406 \n     Misses                                           - 72899 \n     iops_requests/op/GET_TEMP                        - 31263 \n     iops_requests/op/GET_PERM                        - 95897 \n     iops_requests/op/GET_NOT_INIT                    - 145 \n GET (No Cache) ST                                    - 19.2% \n     service_time_nocache/op/GET_TEMP                 - 2.8% \n     service_time_nocache/op/GET_PERM                 - 16.4% \n     service_time_nocache/op/GET_NOT_INIT             - 0.0% \n PUTs                                                 - 20489 \n     puts_ios/op/PUT_TEMP                             - 8585 \n     puts_ios/op/PUT_PERM                             - 11904 \n PUT ST                                               - 4.9% \n     service_time_writes/op/PUT_TEMP                  - 2.6% \n     service_time_writes/op/PUT_PERM                  - 2.3% \n Episodes admitted                                    - 4128 (Analysis: -1) \n Chunk hit ratio                                      - 0.24347 \n Chunk hit ratio (Flash)                              - 0.24347 \n Flash Cache Hit Rate                                 - 0.24347 \n Client Bandwidth [GET]                               - 640.37 MB/s \n Backend Bandwidth [GET+PUT]                          - 687.60 MB/s \n Backend Bandwidth [GET]                              - 493.04 MB/s \n Backend Bandwidth [PUT]                              - 194.56 MB/s \n Chunks Queried                                       - 3097546 \n Chunks Saved                                         - 739268 \n Chunks Fetched from Backend                          - 2384919 \n    Demand [Not Prefetch]                             - 2344453 \n   Prefetch                                           - 40466 \n Prefetches                                           - 32167 \n    Good                                              - 13962 \n    Wasted                                            - 15389 (0.5243) \n    Failed (Exists)                                   - 63645 \n Flash writes                                         - 141064 \n Acceptance Ratio                                     - 0.05938 \n Flash write rate                                     - 29.16 MB/s \n Writing Chunks from Admitted Episodes                - 0.0 MB/s (WR Ratio: 0.00) \n Analysis Closest Write Rate                          - -1.00 \n Flash Wasted % of WR                                 - 0.31 \n Flash Wasted (by admit)                              -  \n Flash Wasted (by evict)                              - Prefetch: 0.109 \n Flash prefetch ratio                                 - 0.23 \n Flash prefetch write rate                            - 6.65 MB/s \n Cache Size                                           - -1.00 GB (Analysis) vs 366.48 (Sim, 3002 items) \n Flash Avg Eviction Age                               - (1647.8,1.9h)\n Assumed Flash EA \n     Too Short/Bonus Hits                             - 0 (STSR: 0.00) \n     Too Long/Extra Writes                            - 0 (WRR: 0.00) \n Flash Mean Time in System                            - (3019.0,3.4h) \n Analysis Mean Time in System                         - -1 \n Time to warmup                                       - 2894, 1 hr 59 mins 43 secs \n Simulator RAM usage                                  - 0.6 GB \n Simulator Time                                       - 13 mins 3.6 secs \n \nResults written to C:/Users/windows/Documents/Codex/2026-09-29/mp01-pp-pbs-socs-2025-https/work/bc06/HIGH-CONTROL/raw/ml-ap-0.798545_6_lru_366.475GB/full_0_0.1_cache_perf.txt.stats.lzma\nResults written to C:/Users/windows/Documents/Codex/2026-09-29/mp01-pp-pbs-socs-2025-https/work/bc06/HIGH-CONTROL/raw/ml-ap-0.798545_6_lru_366.475GB/full_0_0.1_cache_perf.txt.lzma\nCommand:\nC:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\BCacheSim\\cachesim/../run_py.sh py bc06/replay.py --config C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\HIGH-CONTROL\\config.json\nRemoved file C:/Users/windows/Documents/Codex/2026-09-29/mp01-pp-pbs-socs-2025-https/work/bc06/HIGH-CONTROL/raw/ml-ap-0.798545_6_lru_366.475GB/full_0_0.1_cache_perf.txt.part.lzma\nRemoved file C:/Users/windows/Documents/Codex/2026-09-29/mp01-pp-pbs-socs-2025-https/work/bc06/HIGH-CONTROL/raw/ml-ap-0.798545_6_lru_366.475GB/full_0_0.1_cache_perf.txt.stats.part.lzma\nComplete\nTraceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 674, in <module>\n    main()\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc06\\replay.py\", line 602, in main\n    raise AssertionError(('prediction item count mismatch', recorder.decisions['items'],\nAssertionError: ('prediction item count mismatch', 2375547, 49204, 2806666)\n"
+}

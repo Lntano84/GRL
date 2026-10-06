@@ -1,0 +1,541 @@
+{
+  "dataset": "nethept",
+  "dataset_path": "..\\codex\\GRL_最终实验_v2\\marginal_dataset.json",
+  "dataset_sha256": "70ff9f53f98f425da22a425235367f390fbbc0dfc67792bb781f096f55f3f026",
+  "split_samples": {
+    "train": 3200,
+    "validation": 400,
+    "test": 400
+  },
+  "split_contexts": {
+    "train": 160,
+    "validation": 20,
+    "test": 20
+  },
+  "feature_names": [
+    "nearest_seed_distance_norm",
+    "unreachable_flag",
+    "empty_seed_set_flag",
+    "neighborhood_overlap_1hop",
+    "neighborhood_overlap_2hop",
+    "neighborhood_jaccard_2hop",
+    "candidate_2hop_seed_fraction",
+    "seed_union_2hop_graph_coverage",
+    "direct_seed_neighbor_fraction"
+  ],
+  "feature_definition": "Topology-only shortest-path and k-hop neighborhood overlap; local coverage is a community-coverage proxy, not Louvain.",
+  "same_labels_and_split": true,
+  "models": [
+    "Direct-MLP",
+    "Direct-MLP+Overlap"
+  ],
+  "seeds": [
+    20260821
+  ],
+  "aggregate_metrics": [
+    {
+      "model": "Direct-MLP",
+      "seed_set_size": 0,
+      "seeds": 1,
+      "mae_mean": 2.895682951211929,
+      "mae_std": 0.0,
+      "spearman_mean": 0.2833559543880695,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 10.175,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP",
+      "seed_set_size": 1,
+      "seeds": 1,
+      "mae_mean": 2.749166822806001,
+      "mae_std": 0.0,
+      "spearman_mean": 0.13364397324525748,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 12.2,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP",
+      "seed_set_size": 2,
+      "seeds": 1,
+      "mae_mean": 2.3130820491164923,
+      "mae_std": 0.0,
+      "spearman_mean": 0.014035871979542203,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 5.125,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP",
+      "seed_set_size": 3,
+      "seeds": 1,
+      "mae_mean": 2.2648794518411157,
+      "mae_std": 0.0,
+      "spearman_mean": -0.3035348546764974,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 6.475,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP",
+      "seed_set_size": 4,
+      "seeds": 1,
+      "mae_mean": 3.011973833590746,
+      "mae_std": 0.0,
+      "spearman_mean": 0.00023283978467836253,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 18.55,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP",
+      "seed_set_size": 5,
+      "seeds": 1,
+      "mae_mean": 2.44418329782784,
+      "mae_std": 0.0,
+      "spearman_mean": 0.019347071942421593,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 9.275,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP",
+      "seed_set_size": 6,
+      "seeds": 1,
+      "mae_mean": 3.128393446728587,
+      "mae_std": 0.0,
+      "spearman_mean": 0.16117871699455855,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 17.6,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP",
+      "seed_set_size": 7,
+      "seeds": 1,
+      "mae_mean": 2.9458031868189574,
+      "mae_std": 0.0,
+      "spearman_mean": -0.09958528800935812,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 11.05,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP",
+      "seed_set_size": 8,
+      "seeds": 1,
+      "mae_mean": 2.3623456759005785,
+      "mae_std": 0.0,
+      "spearman_mean": 0.33593496867026207,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 8.375,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP",
+      "seed_set_size": 9,
+      "seeds": 1,
+      "mae_mean": 2.261807990595698,
+      "mae_std": 0.0,
+      "spearman_mean": 0.22734929082715077,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 5.425,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP+Overlap",
+      "seed_set_size": 0,
+      "seeds": 1,
+      "mae_mean": 2.839828048981726,
+      "mae_std": 0.0,
+      "spearman_mean": -0.6732309320057532,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 11.325000000000001,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP+Overlap",
+      "seed_set_size": 1,
+      "seeds": 1,
+      "mae_mean": 2.702617466636002,
+      "mae_std": 0.0,
+      "spearman_mean": -0.03081911355274233,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 12.25,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP+Overlap",
+      "seed_set_size": 2,
+      "seeds": 1,
+      "mae_mean": 2.2666822519898413,
+      "mae_std": 0.0,
+      "spearman_mean": 0.06925030438653554,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 5.375,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP+Overlap",
+      "seed_set_size": 3,
+      "seeds": 1,
+      "mae_mean": 2.2130279874056575,
+      "mae_std": 0.0,
+      "spearman_mean": 0.08136118247996627,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 6.574999999999999,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP+Overlap",
+      "seed_set_size": 4,
+      "seeds": 1,
+      "mae_mean": 2.9564512203633786,
+      "mae_std": 0.0,
+      "spearman_mean": -0.045533086152905106,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 16.9,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP+Overlap",
+      "seed_set_size": 5,
+      "seeds": 1,
+      "mae_mean": 2.387795191630721,
+      "mae_std": 0.0,
+      "spearman_mean": 0.203483589810278,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 4.225,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP+Overlap",
+      "seed_set_size": 6,
+      "seeds": 1,
+      "mae_mean": 3.069359607882798,
+      "mae_std": 0.0,
+      "spearman_mean": 0.02552322244135609,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 10.925,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP+Overlap",
+      "seed_set_size": 7,
+      "seeds": 1,
+      "mae_mean": 2.886428291685879,
+      "mae_std": 0.0,
+      "spearman_mean": 0.13397012928802757,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 8.05,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP+Overlap",
+      "seed_set_size": 8,
+      "seeds": 1,
+      "mae_mean": 2.295586219392717,
+      "mae_std": 0.0,
+      "spearman_mean": 0.11093571245676064,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 7.2250000000000005,
+      "ranking_loss_std": 0.0
+    },
+    {
+      "model": "Direct-MLP+Overlap",
+      "seed_set_size": 9,
+      "seeds": 1,
+      "mae_mean": 2.1871754010766744,
+      "mae_std": 0.0,
+      "spearman_mean": -0.021679852115735927,
+      "spearman_std": 0.0,
+      "top_1_mean": 0.0,
+      "top_1_std": 0.0,
+      "ranking_loss_mean": 5.699999999999999,
+      "ranking_loss_std": 0.0
+    }
+  ],
+  "aggregate_metrics_csv": "C:\\Users\\windows\\Desktop\\GRL-main\\outputs\\overlap_experiment\\smoke_nethept\\20260831_180558\\aggregate_metrics.csv",
+  "seed_results": [
+    {
+      "seed": 20260821,
+      "metrics": [
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP",
+          "seed_set_size": 0,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.895682951211929,
+          "spearman": 0.2833559543880695,
+          "top_1": 0.0,
+          "ranking_loss": 10.175
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP",
+          "seed_set_size": 1,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.749166822806001,
+          "spearman": 0.13364397324525748,
+          "top_1": 0.0,
+          "ranking_loss": 12.2
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP",
+          "seed_set_size": 2,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.3130820491164923,
+          "spearman": 0.014035871979542203,
+          "top_1": 0.0,
+          "ranking_loss": 5.125
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP",
+          "seed_set_size": 3,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.2648794518411157,
+          "spearman": -0.3035348546764974,
+          "top_1": 0.0,
+          "ranking_loss": 6.475
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP",
+          "seed_set_size": 4,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 3.011973833590746,
+          "spearman": 0.00023283978467836253,
+          "top_1": 0.0,
+          "ranking_loss": 18.55
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP",
+          "seed_set_size": 5,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.44418329782784,
+          "spearman": 0.019347071942421593,
+          "top_1": 0.0,
+          "ranking_loss": 9.275
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP",
+          "seed_set_size": 6,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 3.128393446728587,
+          "spearman": 0.16117871699455855,
+          "top_1": 0.0,
+          "ranking_loss": 17.6
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP",
+          "seed_set_size": 7,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.9458031868189574,
+          "spearman": -0.09958528800935812,
+          "top_1": 0.0,
+          "ranking_loss": 11.05
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP",
+          "seed_set_size": 8,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.3623456759005785,
+          "spearman": 0.33593496867026207,
+          "top_1": 0.0,
+          "ranking_loss": 8.375
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP",
+          "seed_set_size": 9,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.261807990595698,
+          "spearman": 0.22734929082715077,
+          "top_1": 0.0,
+          "ranking_loss": 5.425
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP+Overlap",
+          "seed_set_size": 0,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.839828048981726,
+          "spearman": -0.6732309320057532,
+          "top_1": 0.0,
+          "ranking_loss": 11.325000000000001
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP+Overlap",
+          "seed_set_size": 1,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.702617466636002,
+          "spearman": -0.03081911355274233,
+          "top_1": 0.0,
+          "ranking_loss": 12.25
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP+Overlap",
+          "seed_set_size": 2,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.2666822519898413,
+          "spearman": 0.06925030438653554,
+          "top_1": 0.0,
+          "ranking_loss": 5.375
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP+Overlap",
+          "seed_set_size": 3,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.2130279874056575,
+          "spearman": 0.08136118247996627,
+          "top_1": 0.0,
+          "ranking_loss": 6.574999999999999
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP+Overlap",
+          "seed_set_size": 4,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.9564512203633786,
+          "spearman": -0.045533086152905106,
+          "top_1": 0.0,
+          "ranking_loss": 16.9
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP+Overlap",
+          "seed_set_size": 5,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.387795191630721,
+          "spearman": 0.203483589810278,
+          "top_1": 0.0,
+          "ranking_loss": 4.225
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP+Overlap",
+          "seed_set_size": 6,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 3.069359607882798,
+          "spearman": 0.02552322244135609,
+          "top_1": 0.0,
+          "ranking_loss": 10.925
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP+Overlap",
+          "seed_set_size": 7,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.886428291685879,
+          "spearman": 0.13397012928802757,
+          "top_1": 0.0,
+          "ranking_loss": 8.05
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP+Overlap",
+          "seed_set_size": 8,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.295586219392717,
+          "spearman": 0.11093571245676064,
+          "top_1": 0.0,
+          "ranking_loss": 7.2250000000000005
+        },
+        {
+          "seed": 20260821,
+          "model": "Direct-MLP+Overlap",
+          "seed_set_size": 9,
+          "contexts": 2,
+          "samples": 40,
+          "mae": 2.1871754010766744,
+          "spearman": -0.021679852115735927,
+          "top_1": 0.0,
+          "ranking_loss": 5.699999999999999
+        }
+      ],
+      "checkpoints": {
+        "Direct-MLP": "C:\\Users\\windows\\Desktop\\GRL-main\\outputs\\overlap_experiment\\smoke_nethept\\20260831_180558\\seed_20260821\\direct_mlp.pth",
+        "Direct-MLP+Overlap": "C:\\Users\\windows\\Desktop\\GRL-main\\outputs\\overlap_experiment\\smoke_nethept\\20260831_180558\\seed_20260821\\direct_mlp_overlap.pth"
+      }
+    }
+  ],
+  "cross_graph_protocol": {
+    "status": "protocol_only",
+    "training_graph": "NetHEPT",
+    "test_graph": "not run; requires teacher-specified graph file and matched preprocessing",
+    "data_preparation": "Regenerate embeddings and marginal labels on the test graph with the same feature definitions and IC parameters; use a graph-specific disjoint test split.",
+    "forbidden_leakage": [
+      "test-graph marginal labels in training",
+      "test-graph test split for tuning",
+      "cross-graph node-id reuse",
+      "embedding/cache files carrying labels"
+    ]
+  }
+}

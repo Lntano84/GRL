@@ -1,0 +1,74 @@
+{
+  "completed": false,
+  "mode": "read_only_observation",
+  "started_unix": 1790757330.487135,
+  "recorder": {
+    "completed": false,
+    "arm": "HIGH-CONTROL",
+    "elapsed_wall_seconds": 785.030901099999,
+    "request_sequence": 147794,
+    "get_request_count": 127305,
+    "candidate_counts": {
+      "generated": 2375547,
+      "currently_pending": 0,
+      "decided": 2375547
+    },
+    "actual_decision_counts": {
+      "batches": 176373,
+      "items": 2375547,
+      "rejected": 2234483,
+      "source/demand": 2343380,
+      "created_and_decided_same_request": 2375547,
+      "delay_positive": 0,
+      "get_requests": 127305,
+      "accepted": 141064,
+      "source/prefetch": 32167
+    },
+    "check_only_counts": {
+      "calls": 2211,
+      "items": 49204,
+      "accept": 32167,
+      "reject": 17037
+    },
+    "candidate_source_counts": {
+      "demand": 2343380,
+      "prefetch": 32167
+    },
+    "unique_candidate_creation_requests": 72899,
+    "unique_actual_decision_requests": 72899,
+    "unique_candidate_blocks": 13688,
+    "unique_candidate_chunks": 671724,
+    "model_input_vector_lengths": {
+      "18": 2424751
+    },
+    "predicted_items_by_call_kind": {
+      "actual": 2375547,
+      "check_only": 49204
+    },
+    "model_feature_names": [
+      "feat_metadata|op",
+      "feat_metadata|ns",
+      "feat_metadata|user",
+      "feat_metadata_size|start",
+      "feat_metadata_size|end",
+      "feat_metadata_size|size",
+      "feat_dynamic_b|0",
+      "feat_dynamic_b|1",
+      "feat_dynamic_b|2",
+      "feat_dynamic_b|3",
+      "feat_dynamic_b|4",
+      "feat_dynamic_b|5",
+      "feat_dynamic_c_combined|0",
+      "feat_dynamic_c_combined|1",
+      "feat_dynamic_c_combined|2",
+      "feat_dynamic_c_combined|3",
+      "feat_dynamic_c_combined|4",
+      "feat_dynamic_c_combined|5"
+    ],
+    "max_cache_occupancy_chunks": 3001,
+    "evaluation_writes_recorded_independently": 119276,
+    "completed_windows_recorded": 1008,
+    "completed_window_component_max_abs_error": 4.291678123991005e-12,
+    "wall_seconds": 785.0309894999991
+  }
+}

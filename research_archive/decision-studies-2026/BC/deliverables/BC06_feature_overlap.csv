@@ -1,0 +1,13 @@
+﻿feature,author_input,relation,interpretation
+meta op / namespace / user / byte offset / end / size,exact existing inputs,already present,"Stored in feat_metadata|op, feat_metadata|ns, feat_metadata|user, feat_metadata_size|start/end/size; not a new signal."
+prior_block_get_count,feat_dynamic_b|0..5,partial overlap,"Exact all-time count; the author input has six rolling hourly occurrence buckets, so recent count information overlaps but the all-time total is not a duplicate."
+prior_chunk_get_count,feat_dynamic_c_combined|0..5,partial overlap,Exact all-time count for this chunk; the author input sums six recent bucket histories over every chunk in the current request.
+seconds_since_block_last_get / seconds_since_chunk_last_get,none in captured 18-vector,new temporal form,"DynamicFeatures has a last-access helper, but sim_features.collect_features does not include it in meta+block+chunk."
+prior_actual_rejection_count / seconds_since_latest_actual_rejection,none,new decision history,Counts only completed actual admission rejections; check_only and current-request decisions are excluded.
+cache occupancy at request start,none,new competition context,Observed cache entries before current GET processing.
+last completed window writes / evictions,none,new competition context,Measured successful writes and evictions from the immediately preceding completed window.
+evaluation cumulative writes / budget fraction,none,new resource context,Observed writes before the request against the frozen post-hoc cap; no online limiter was added.
+last six completed windows total / demand / prefetch / PUT DT,none,new load history,Derived from completed author windows only; no current or future window value is used.
+current request chunk count,feat_metadata_size|start/end/size,partly overlapping,Explicit chunk count is current-request metadata and is related to existing byte offset/size fields.
+block key / chunk key / request sequence,not treated as predictor,audit only,Retained for exact joins and replay lookup; not proposed as a feature.
+score / threshold / accept decision,author model output/action,not a predictor feature,Logged verbatim to audit behavior; not used as a future label.

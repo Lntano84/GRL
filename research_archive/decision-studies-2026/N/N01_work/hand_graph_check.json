@@ -1,0 +1,224 @@
+{
+  "hand_graph": {
+    "n": 24,
+    "m": 22,
+    "edges": [
+      "a->a1",
+      "a1->a2",
+      "a2->P",
+      "c->c1",
+      "c1->c2",
+      "c2->P",
+      "b->b1",
+      "b1->b2",
+      "b2->Q",
+      "d->d1",
+      "d1->d2",
+      "d2->Q",
+      "P->P0",
+      "P->P1",
+      "P->P2",
+      "P->P3",
+      "P->P4",
+      "Q->Q0",
+      "Q->Q1",
+      "Q->Q2",
+      "Q->Q3",
+      "Q->Q4"
+    ],
+    "candidates": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "label_to_index": {
+      "a": 0,
+      "a1": 1,
+      "a2": 2,
+      "c": 3,
+      "c1": 4,
+      "c2": 5,
+      "b": 6,
+      "b1": 7,
+      "b2": 8,
+      "d": 9,
+      "d1": 10,
+      "d2": 11,
+      "P": 12,
+      "Q": 13,
+      "P0": 14,
+      "P1": 15,
+      "P2": 16,
+      "P3": 17,
+      "P4": 18,
+      "Q0": 19,
+      "Q1": 20,
+      "Q2": 21,
+      "Q3": 22,
+      "Q4": 23
+    },
+    "index_to_label": {
+      "0": "a",
+      "1": "a1",
+      "2": "a2",
+      "3": "c",
+      "4": "c1",
+      "5": "c2",
+      "6": "b",
+      "7": "b1",
+      "8": "b2",
+      "9": "d",
+      "10": "d1",
+      "11": "d2",
+      "12": "P",
+      "13": "Q",
+      "14": "P0",
+      "15": "P1",
+      "16": "P2",
+      "17": "P3",
+      "18": "P4",
+      "19": "Q0",
+      "20": "Q1",
+      "21": "Q2",
+      "22": "Q3",
+      "23": "Q4"
+    },
+    "propagation": {
+      "model": "IC",
+      "p": 1.0,
+      "U": [],
+      "k": 2,
+      "rounds_cap": 100
+    },
+    "two_hop_regions": {
+      "a": [
+        1,
+        2
+      ],
+      "b": [
+        7,
+        8
+      ],
+      "c": [
+        4,
+        5
+      ],
+      "d": [
+        10,
+        11
+      ]
+    },
+    "two_hop_regions_named": {
+      "a": [
+        "a1",
+        "a2"
+      ],
+      "b": [
+        "b1",
+        "b2"
+      ],
+      "c": [
+        "c1",
+        "c2"
+      ],
+      "d": [
+        "d1",
+        "d2"
+      ]
+    },
+    "r2_sizes": {
+      "a": 2,
+      "b": 2,
+      "c": 2,
+      "d": 2
+    },
+    "disjointness_holds": true,
+    "intersection_size": 0,
+    "activations": {
+      "{a,c}": 12,
+      "{b,c}": 18,
+      "{a,d}": 18,
+      "{b,d}": 12
+    },
+    "activations_expected": {
+      "{a,c}": 12,
+      "{b,c}": 18,
+      "{a,d}": 18,
+      "{b,d}": 12
+    },
+    "activations_all_match": true,
+    "delta_c": -6,
+    "delta_d": 6,
+    "signs_strictly_opposite": true
+  },
+  "summed_proxy_identity": {
+    "class": "Sigma_hat(S) = sum_{v in S} phi(v) + const, const independent of S",
+    "claim": "delta_hat_c == delta_hat_d identically",
+    "inits": [
+      {
+        "init_seed": 1,
+        "S_hat": {
+          "S_ac": -1.221133460296,
+          "S_bc": -0.186676003076,
+          "S_ad": -1.674576558731,
+          "S_bd": -0.64011910151
+        },
+        "delta_hat_c": -1.034457457221,
+        "delta_hat_d": -1.034457457221,
+        "difference": 0.0
+      },
+      {
+        "init_seed": 2,
+        "S_hat": {
+          "S_ac": 0.081812534096,
+          "S_bc": -0.490795206802,
+          "S_ad": 1.12567201106,
+          "S_bd": 0.553064270162
+        },
+        "delta_hat_c": 0.572607740898,
+        "delta_hat_d": 0.572607740898,
+        "difference": 0.0
+      },
+      {
+        "init_seed": 3,
+        "S_hat": {
+          "S_ac": -0.316230668624,
+          "S_bc": -0.765823939698,
+          "S_ad": -1.055408823723,
+          "S_bd": -1.505002094797
+        },
+        "delta_hat_c": 0.449593271074,
+        "delta_hat_d": 0.449593271074,
+        "difference": 0.0
+      },
+      {
+        "init_seed": 4,
+        "S_hat": {
+          "S_ac": -1.21795927892,
+          "S_bc": 0.14585462778,
+          "S_ad": -1.084047469144,
+          "S_bd": 0.279766437556
+        },
+        "delta_hat_c": -1.363813906701,
+        "delta_hat_d": -1.363813906701,
+        "difference": 0.0
+      },
+      {
+        "init_seed": 5,
+        "S_hat": {
+          "S_ac": 1.130703957334,
+          "S_bc": -0.057088975879,
+          "S_ad": 0.543752496053,
+          "S_bd": -0.644040437159
+        },
+        "delta_hat_c": 1.187792933212,
+        "delta_hat_d": 1.187792933212,
+        "difference": 0.0
+      }
+    ],
+    "max_abs_deviation": 0.0,
+    "is_official_simba_run": false,
+    "note": "arithmetic identity on the DEFINITION of a summed local proxy; NOT a forward pass of the official SIMBA SpreadPredictor, which could not be run (no torch, no network to fetch yl489/rethink-IM)."
+  }
+}

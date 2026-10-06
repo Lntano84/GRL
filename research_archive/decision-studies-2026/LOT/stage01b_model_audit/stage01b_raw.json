@@ -1,0 +1,786 @@
+{
+  "python": "3.13.14",
+  "scipy": "1.17.1",
+  "numpy": "2.5.2",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "solver": "scipy.optimize.milp / linprog -> HiGHS",
+  "wall_time_s": 0.5324798999999985,
+  "hand": {
+    "A_ample": {
+      "modes": {
+        "paper_literal": {
+          "objective": 5.0,
+          "expectation": null,
+          "agreement": "not-specified",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[3] Y=[1] Z=[0] i0 I=[0] L=[0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 3.0,
+            "inventory": 0.0,
+            "lost_sales": 0.0,
+            "total": 5.0
+          }
+        },
+        "audited_v1": {
+          "objective": 5.0,
+          "expectation": 5.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[3] Y=[1] Z=[0] i0 I=[0] L=[0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 3.0,
+            "inventory": 0.0,
+            "lost_sales": 0.0,
+            "total": 5.0
+          }
+        }
+      },
+      "mode_differs": false,
+      "delta_audited_minus_paper": 0.0
+    },
+    "B_short": {
+      "modes": {
+        "paper_literal": {
+          "objective": 14.0,
+          "expectation": null,
+          "agreement": "not-specified",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[2] Y=[1] Z=[0] i0 I=[0] L=[1]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 2.0,
+            "inventory": 0.0,
+            "lost_sales": 10.0,
+            "total": 14.0
+          }
+        },
+        "audited_v1": {
+          "objective": 14.0,
+          "expectation": 14.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[2] Y=[1] Z=[0] i0 I=[0] L=[1]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 2.0,
+            "inventory": 0.0,
+            "lost_sales": 10.0,
+            "total": 14.0
+          }
+        }
+      },
+      "mode_differs": false,
+      "delta_audited_minus_paper": 0.0
+    },
+    "C_incompat": {
+      "modes": {
+        "paper_literal": {
+          "objective": 30.0,
+          "expectation": null,
+          "agreement": "not-specified",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[3]",
+          "status": "optimal",
+          "cost": {
+            "setup": 0.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 30.0,
+            "total": 30.0
+          }
+        },
+        "audited_v1": {
+          "objective": 30.0,
+          "expectation": 30.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[3]",
+          "status": "optimal",
+          "cost": {
+            "setup": 0.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 30.0,
+            "total": 30.0
+          }
+        }
+      },
+      "mode_differs": false,
+      "delta_audited_minus_paper": 0.0
+    },
+    "D_down": {
+      "modes": {
+        "paper_literal": {
+          "objective": 30.0,
+          "expectation": null,
+          "agreement": "not-specified",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[3]",
+          "status": "optimal",
+          "cost": {
+            "setup": 0.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 30.0,
+            "total": 30.0
+          }
+        },
+        "audited_v1": {
+          "objective": 30.0,
+          "expectation": 30.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[3]",
+          "status": "optimal",
+          "cost": {
+            "setup": 0.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 30.0,
+            "total": 30.0
+          }
+        }
+      },
+      "mode_differs": false,
+      "delta_audited_minus_paper": 0.0
+    },
+    "E_early": {
+      "modes": {
+        "paper_literal": {
+          "objective": 8.0,
+          "expectation": null,
+          "agreement": "not-specified",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[3,0] Y=[1,0] Z=[0,0] i0 I=[3,0] L=[0,0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 3.0,
+            "inventory": 3.0,
+            "lost_sales": 0.0,
+            "total": 8.0
+          }
+        },
+        "audited_v1": {
+          "objective": 8.0,
+          "expectation": 8.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[3,0] Y=[1,0] Z=[0,0] i0 I=[3,0] L=[0,0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 2.0,
+            "production": 3.0,
+            "inventory": 3.0,
+            "lost_sales": 0.0,
+            "total": 8.0
+          }
+        }
+      },
+      "mode_differs": false,
+      "delta_audited_minus_paper": 0.0
+    },
+    "F_carryover": {
+      "modes": {
+        "paper_literal": {
+          "objective": 11.0,
+          "expectation": 11.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[1,1] Y=[1,0] Z=[1,0] i0 I=[0,0] L=[0,1]",
+          "status": "optimal",
+          "cost": {
+            "setup": 1.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 10.0,
+            "total": 11.0
+          }
+        },
+        "audited_v1": {
+          "objective": 1.0,
+          "expectation": 1.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[1,2] Y=[1,0] Z=[1,0] i0 I=[0,0] L=[0,0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 1.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 0.0,
+            "total": 1.0
+          }
+        }
+      },
+      "mode_differs": true,
+      "delta_audited_minus_paper": -10.0
+    },
+    "G_terminal_Z": {
+      "modes": {
+        "paper_literal": {
+          "objective": 1.0,
+          "expectation": 1.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[1] Y=[1] Z=[1] i0 I=[0] L=[0]",
+          "status": "optimal",
+          "cost": {
+            "setup": 1.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 0.0,
+            "total": 1.0
+          }
+        },
+        "audited_v1": {
+          "objective": 10.0,
+          "expectation": 10.0,
+          "agreement": "match",
+          "check_ok": true,
+          "max_violation": 0.0,
+          "failed": [],
+          "plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[1]",
+          "status": "optimal",
+          "cost": {
+            "setup": 0.0,
+            "production": 0.0,
+            "inventory": 0.0,
+            "lost_sales": 10.0,
+            "total": 10.0
+          }
+        }
+      },
+      "mode_differs": true,
+      "delta_audited_minus_paper": 9.0
+    }
+  },
+  "negative_U": {
+    "D_down": {
+      "negative_U": {
+        "(0, 0, 1)": -1.0
+      },
+      "enumerated": true,
+      "milp_objective": 30.0,
+      "independent_objective": 30.0,
+      "delta": 0.0,
+      "n_configs": 4,
+      "n_optimal": 1,
+      "n_lp_infeasible": 2,
+      "n_binary_infeasible": 1,
+      "agree": true
+    },
+    "E_early": {
+      "negative_U": {
+        "(0, 0, 2)": -1.0
+      },
+      "enumerated": true,
+      "milp_objective": 8.0,
+      "independent_objective": 8.0,
+      "delta": 0.0,
+      "n_configs": 16,
+      "n_optimal": 2,
+      "n_lp_infeasible": 6,
+      "n_binary_infeasible": 8,
+      "agree": true
+    },
+    "G_terminal_Z": {
+      "negative_U": {},
+      "enumerated": true,
+      "milp_objective": 1.0,
+      "independent_objective": 1.0,
+      "delta": 0.0,
+      "n_configs": 4,
+      "n_optimal": 2,
+      "n_lp_infeasible": 1,
+      "n_binary_infeasible": 1,
+      "agree": true
+    },
+    "C_incompat": {
+      "negative_U": {},
+      "enumerated": true,
+      "milp_objective": 30.0,
+      "independent_objective": 30.0,
+      "delta": 0.0,
+      "n_configs": 4,
+      "n_optimal": 1,
+      "n_lp_infeasible": 0,
+      "n_binary_infeasible": 3,
+      "agree": true
+    },
+    "A_ample": {
+      "negative_U": {},
+      "enumerated": true,
+      "milp_objective": 5.0,
+      "independent_objective": 5.0,
+      "delta": 0.0,
+      "n_configs": 4,
+      "n_optimal": 3,
+      "n_lp_infeasible": 0,
+      "n_binary_infeasible": 1,
+      "agree": true
+    },
+    "B_short": {
+      "negative_U": {},
+      "enumerated": true,
+      "milp_objective": 14.0,
+      "independent_objective": 14.0,
+      "delta": 0.0,
+      "n_configs": 4,
+      "n_optimal": 3,
+      "n_lp_infeasible": 0,
+      "n_binary_infeasible": 1,
+      "agree": true
+    }
+  },
+  "independent": {
+    "MI0_basic": {
+      "milp_objective": 21.0,
+      "independent_of_milp_binaries": 21.0,
+      "delta_of_milp_binaries": 0.0,
+      "ok_of_milp_binaries": true,
+      "independent_enum_objective": 21.0,
+      "delta_enum": 0.0,
+      "ok_enum": true,
+      "n_configs": 64,
+      "n_optimal": 32,
+      "n_lp_infeasible": 0,
+      "n_binary_infeasible": 32,
+      "checker_ok": true,
+      "max_violation": 0.0,
+      "expectation": 21.0,
+      "expectation_agreement": "match",
+      "plan": "(i0,j0) X=[2,2] Y=[1,0] Z=[1,0] i0 I=[0,0] L=[0,0] (i1,j0) X=[2,2] Y=[1,1] Z=[0,0] i1 I=[0,0] L=[0,0]"
+    },
+    "MI1_incompat": {
+      "milp_objective": 39.0,
+      "independent_of_milp_binaries": 39.0,
+      "delta_of_milp_binaries": 0.0,
+      "ok_of_milp_binaries": true,
+      "independent_enum_objective": 39.0,
+      "delta_enum": 0.0,
+      "ok_enum": true,
+      "n_configs": 64,
+      "n_optimal": 6,
+      "n_lp_infeasible": 0,
+      "n_binary_infeasible": 58,
+      "checker_ok": true,
+      "max_violation": 0.0,
+      "expectation": 39.0,
+      "expectation_agreement": "match",
+      "plan": "(i0,j0) X=[0,0] Y=[0,0] Z=[0,0] i0 I=[0,0] L=[2,1] (i1,j0) X=[2,2] Y=[1,0] Z=[1,0] i1 I=[0,0] L=[0,0]"
+    },
+    "MI2_zero_demand": {
+      "milp_objective": 0.0,
+      "independent_of_milp_binaries": 0.0,
+      "delta_of_milp_binaries": 0.0,
+      "ok_of_milp_binaries": true,
+      "independent_enum_objective": 0.0,
+      "delta_enum": 0.0,
+      "ok_enum": true,
+      "n_configs": 64,
+      "n_optimal": 32,
+      "n_lp_infeasible": 0,
+      "n_binary_infeasible": 32,
+      "checker_ok": true,
+      "max_violation": 0.0,
+      "expectation": 0.0,
+      "expectation_agreement": "match",
+      "plan": "(i0,j0) X=[0,0] Y=[0,0] Z=[0,0] i0 I=[0,0] L=[0,0] (i1,j0) X=[0,0] Y=[0,0] Z=[0,0] i1 I=[0,0] L=[0,0]"
+    },
+    "MI3_initial_inv": {
+      "milp_objective": 3.0,
+      "independent_of_milp_binaries": 3.0,
+      "delta_of_milp_binaries": 0.0,
+      "ok_of_milp_binaries": true,
+      "independent_enum_objective": 3.0,
+      "delta_enum": 0.0,
+      "ok_enum": true,
+      "n_configs": 64,
+      "n_optimal": 32,
+      "n_lp_infeasible": 0,
+      "n_binary_infeasible": 32,
+      "checker_ok": true,
+      "max_violation": 0.0,
+      "expectation": 3.0,
+      "expectation_agreement": "match",
+      "plan": "(i0,j0) X=[0,0] Y=[0,0] Z=[0,0] i0 I=[2,0] L=[0,0] (i1,j0) X=[0,0] Y=[0,0] Z=[0,0] i1 I=[1,0] L=[0,0]"
+    },
+    "MI4_tight": {
+      "milp_objective": 57.0,
+      "independent_of_milp_binaries": 57.0,
+      "delta_of_milp_binaries": 0.0,
+      "ok_of_milp_binaries": true,
+      "independent_enum_objective": 57.0,
+      "delta_enum": 0.0,
+      "ok_enum": true,
+      "n_configs": 64,
+      "n_optimal": 12,
+      "n_lp_infeasible": 20,
+      "n_binary_infeasible": 32,
+      "checker_ok": true,
+      "max_violation": 0.0,
+      "expectation": 57.0,
+      "expectation_agreement": "match",
+      "plan": "(i0,j0) X=[0,3] Y=[0,1] Z=[0,0] i0 I=[0,0] L=[3,0] (i1,j0) X=[1,2] Y=[1,0] Z=[1,0] i1 I=[0,0] L=[0,0]"
+    },
+    "MI5_zero_cap": {
+      "milp_objective": 42.0,
+      "independent_of_milp_binaries": 42.0,
+      "delta_of_milp_binaries": 0.0,
+      "ok_of_milp_binaries": true,
+      "independent_enum_objective": 42.0,
+      "delta_enum": 0.0,
+      "ok_enum": true,
+      "n_configs": 64,
+      "n_optimal": 1,
+      "n_lp_infeasible": 31,
+      "n_binary_infeasible": 32,
+      "checker_ok": true,
+      "max_violation": 0.0,
+      "expectation": 42.0,
+      "expectation_agreement": "match",
+      "plan": "(i0,j0) X=[0,0] Y=[0,0] Z=[0,0] i0 I=[0,0] L=[2,2] (i1,j0) X=[0,0] Y=[0,0] Z=[0,0] i1 I=[0,0] L=[1,1]"
+    },
+    "MI6_cheap_lost": {
+      "milp_objective": 12.0,
+      "independent_of_milp_binaries": 12.0,
+      "delta_of_milp_binaries": 0.0,
+      "ok_of_milp_binaries": true,
+      "independent_enum_objective": 12.0,
+      "delta_enum": 0.0,
+      "ok_enum": true,
+      "n_configs": 64,
+      "n_optimal": 32,
+      "n_lp_infeasible": 0,
+      "n_binary_infeasible": 32,
+      "checker_ok": true,
+      "max_violation": 0.0,
+      "expectation": 12.0,
+      "expectation_agreement": "match",
+      "plan": "(i0,j0) X=[2,2] Y=[1,0] Z=[1,0] i0 I=[0,0] L=[0,0] (i1,j0) X=[0,1] Y=[0,1] Z=[0,0] i1 I=[0,0] L=[1,0]"
+    },
+    "MI7_setup_time": {
+      "milp_objective": 112.0,
+      "independent_of_milp_binaries": 112.0,
+      "delta_of_milp_binaries": 0.0,
+      "ok_of_milp_binaries": true,
+      "independent_enum_objective": 112.0,
+      "delta_enum": 0.0,
+      "ok_enum": true,
+      "n_configs": 64,
+      "n_optimal": 20,
+      "n_lp_infeasible": 12,
+      "n_binary_infeasible": 32,
+      "checker_ok": true,
+      "max_violation": 0.0,
+      "expectation": 112.0,
+      "expectation_agreement": "match",
+      "plan": "(i0,j0) X=[1,2] Y=[1,0] Z=[1,0] i0 I=[0,0] L=[1,0] (i1,j0) X=[0,1] Y=[0,1] Z=[0,0] i1 I=[0,0] L=[3,0]"
+    }
+  },
+  "tau": {
+    "H_minlot_stock": {
+      "tau": 1,
+      "reference_objective": 10.0,
+      "reference_ok": true,
+      "reference_plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[1]",
+      "frozen_objective": 10.0,
+      "frozen_status": "optimal",
+      "released_objective": 2.0,
+      "released_status": "optimal",
+      "expectation": 2.0,
+      "expectation_ok": true,
+      "frozen_plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[1]",
+      "released_plan": "(i0,j0) X=[2] Y=[1] Z=[0] i0 I=[1] L=[0]"
+    },
+    "I_tau_freedom": {
+      "tau": 1,
+      "reference_objective": 10.0,
+      "reference_ok": true,
+      "reference_plan": "(i0,j0) X=[0,0] Y=[0,0] Z=[0,0] i0 I=[0,0] L=[0,1]",
+      "frozen_objective": 1.0,
+      "frozen_status": "optimal",
+      "released_objective": 1.0,
+      "released_status": "optimal",
+      "expectation": 1.0,
+      "expectation_ok": true,
+      "frozen_plan": "(i0,j0) X=[0,1] Y=[0,1] Z=[0,0] i0 I=[0,0] L=[0,0]",
+      "released_plan": "(i0,j0) X=[0,1] Y=[0,1] Z=[0,0] i0 I=[0,0] L=[0,0]",
+      "beyond_tau_forced_off_objective": 10.0,
+      "beyond_tau_forced_off_status": "optimal",
+      "beyond_tau_forced_off_plan": "(i0,j0) X=[0,0] Y=[0,0] Z=[0,0] i0 I=[0,0] L=[0,1]"
+    },
+    "J_release_matters": {
+      "tau": 1,
+      "reference_objective": 30.0,
+      "reference_ok": true,
+      "reference_plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[3]",
+      "frozen_objective": 30.0,
+      "frozen_status": "optimal",
+      "released_objective": 5.0,
+      "released_status": "optimal",
+      "expectation": 5.0,
+      "expectation_ok": true,
+      "frozen_plan": "(i0,j0) X=[0] Y=[0] Z=[0] i0 I=[0] L=[3]",
+      "released_plan": "(i0,j0) X=[3] Y=[1] Z=[0] i0 I=[0] L=[0]"
+    }
+  },
+  "negative_control": {
+    "fixing": {
+      "X[0,0,1]": 1.0
+    },
+    "flat_index": 0,
+    "fixed_status": "FAILED(status=2)",
+    "fixed_ok": false,
+    "unfixed_status": "optimal",
+    "unfixed_objective": 30.0,
+    "passed": true
+  },
+  "model_consistency": {
+    "A_ample": {
+      "paper_literal": {
+        "U": {
+          "i0,j0,t1": 3.0
+        },
+        "frozen_Z_T": false,
+        "notes": []
+      },
+      "audited_v1": {
+        "U": {
+          "i0,j0,t1": 5.0
+        },
+        "frozen_Z_T": true,
+        "notes": [
+          "D2 applied: Z_ijT fixed to 0 for all (i,j), because Z_ijT would describe a carry-over out of the last period, where no successor period exists. Effect on constraint (1.9), which is otherwise kept exactly as published: X_ijT >= m_i (Y_ijT - Z_ijT) degenerates to X_ijT >= m_i Y_ijT, so a setup in the final period must produce at least the minimum lot. A setup that produces more than the remaining demand is LEGAL and leaves end-of-horizon inventory, which is charged the holding cost h_i through the objective (1.1); this is an accepted feature of the main model, not a defect. It is exactly the mechanism instance H exercises."
+        ]
+      }
+    },
+    "B_short": {
+      "paper_literal": {
+        "U": {
+          "i0,j0,t1": 2.0
+        },
+        "frozen_Z_T": false,
+        "notes": []
+      },
+      "audited_v1": {
+        "U": {
+          "i0,j0,t1": 3.0
+        },
+        "frozen_Z_T": true,
+        "notes": [
+          "D2 applied: Z_ijT fixed to 0 for all (i,j), because Z_ijT would describe a carry-over out of the last period, where no successor period exists. Effect on constraint (1.9), which is otherwise kept exactly as published: X_ijT >= m_i (Y_ijT - Z_ijT) degenerates to X_ijT >= m_i Y_ijT, so a setup in the final period must produce at least the minimum lot. A setup that produces more than the remaining demand is LEGAL and leaves end-of-horizon inventory, which is charged the holding cost h_i through the objective (1.1); this is an accepted feature of the main model, not a defect. It is exactly the mechanism instance H exercises."
+        ]
+      }
+    },
+    "C_incompat": {
+      "paper_literal": {
+        "U": {
+          "i0,j0,t1": 3.0
+        },
+        "frozen_Z_T": false,
+        "notes": []
+      },
+      "audited_v1": {
+        "U": {
+          "i0,j0,t1": 5.0
+        },
+        "frozen_Z_T": true,
+        "notes": [
+          "D2 applied: Z_ijT fixed to 0 for all (i,j), because Z_ijT would describe a carry-over out of the last period, where no successor period exists. Effect on constraint (1.9), which is otherwise kept exactly as published: X_ijT >= m_i (Y_ijT - Z_ijT) degenerates to X_ijT >= m_i Y_ijT, so a setup in the final period must produce at least the minimum lot. A setup that produces more than the remaining demand is LEGAL and leaves end-of-horizon inventory, which is charged the holding cost h_i through the objective (1.1); this is an accepted feature of the main model, not a defect. It is exactly the mechanism instance H exercises."
+        ]
+      }
+    },
+    "D_down": {
+      "paper_literal": {
+        "U": {
+          "i0,j0,t1": -1.0
+        },
+        "frozen_Z_T": false,
+        "notes": [
+          "paper_literal: U_ijt is negative for 1 (i,j,t) combination(s) because c_jt < s_i. The negative value is KEPT, not clipped: (1.8) then forces X = 0 and may make some binary configurations infeasible, which is the published formulation's behaviour. Affected (i,j,t,value): [(0, 0, 1, -1.0)]"
+        ]
+      },
+      "audited_v1": {
+        "U": {
+          "i0,j0,t1": 0.0
+        },
+        "frozen_Z_T": true,
+        "notes": [
+          "D2 applied: Z_ijT fixed to 0 for all (i,j), because Z_ijT would describe a carry-over out of the last period, where no successor period exists. Effect on constraint (1.9), which is otherwise kept exactly as published: X_ijT >= m_i (Y_ijT - Z_ijT) degenerates to X_ijT >= m_i Y_ijT, so a setup in the final period must produce at least the minimum lot. A setup that produces more than the remaining demand is LEGAL and leaves end-of-horizon inventory, which is charged the holding cost h_i through the objective (1.1); this is an accepted feature of the main model, not a defect. It is exactly the mechanism instance H exercises."
+        ]
+      }
+    },
+    "E_early": {
+      "paper_literal": {
+        "U": {
+          "i0,j0,t1": 3.0,
+          "i0,j0,t2": -1.0
+        },
+        "frozen_Z_T": false,
+        "notes": [
+          "paper_literal: U_ijt is negative for 1 (i,j,t) combination(s) because c_jt < s_i. The negative value is KEPT, not clipped: (1.8) then forces X = 0 and may make some binary configurations infeasible, which is the published formulation's behaviour. Affected (i,j,t,value): [(0, 0, 2, -1.0)]"
+        ]
+      },
+      "audited_v1": {
+        "U": {
+          "i0,j0,t1": 5.0,
+          "i0,j0,t2": 0.0
+        },
+        "frozen_Z_T": true,
+        "notes": [
+          "D2 applied: Z_ijT fixed to 0 for all (i,j), because Z_ijT would describe a carry-over out of the last period, where no successor period exists. Effect on constraint (1.9), which is otherwise kept exactly as published: X_ijT >= m_i (Y_ijT - Z_ijT) degenerates to X_ijT >= m_i Y_ijT, so a setup in the final period must produce at least the minimum lot. A setup that produces more than the remaining demand is LEGAL and leaves end-of-horizon inventory, which is charged the holding cost h_i through the objective (1.1); this is an accepted feature of the main model, not a defect. It is exactly the mechanism instance H exercises."
+        ]
+      }
+    },
+    "F_carryover": {
+      "paper_literal": {
+        "U": {
+          "i0,j0,t1": 1.0,
+          "i0,j0,t2": 1.0
+        },
+        "frozen_Z_T": false,
+        "notes": []
+      },
+      "audited_v1": {
+        "U": {
+          "i0,j0,t1": 2.0,
+          "i0,j0,t2": 2.0
+        },
+        "frozen_Z_T": true,
+        "notes": [
+          "D2 applied: Z_ijT fixed to 0 for all (i,j), because Z_ijT would describe a carry-over out of the last period, where no successor period exists. Effect on constraint (1.9), which is otherwise kept exactly as published: X_ijT >= m_i (Y_ijT - Z_ijT) degenerates to X_ijT >= m_i Y_ijT, so a setup in the final period must produce at least the minimum lot. A setup that produces more than the remaining demand is LEGAL and leaves end-of-horizon inventory, which is charged the holding cost h_i through the objective (1.1); this is an accepted feature of the main model, not a defect. It is exactly the mechanism instance H exercises."
+        ]
+      }
+    },
+    "G_terminal_Z": {
+      "paper_literal": {
+        "U": {
+          "i0,j0,t1": 1.0
+        },
+        "frozen_Z_T": false,
+        "notes": []
+      },
+      "audited_v1": {
+        "U": {
+          "i0,j0,t1": 1.0
+        },
+        "frozen_Z_T": true,
+        "notes": [
+          "D2 applied: Z_ijT fixed to 0 for all (i,j), because Z_ijT would describe a carry-over out of the last period, where no successor period exists. Effect on constraint (1.9), which is otherwise kept exactly as published: X_ijT >= m_i (Y_ijT - Z_ijT) degenerates to X_ijT >= m_i Y_ijT, so a setup in the final period must produce at least the minimum lot. A setup that produces more than the remaining demand is LEGAL and leaves end-of-horizon inventory, which is charged the holding cost h_i through the objective (1.1); this is an accepted feature of the main model, not a defect. It is exactly the mechanism instance H exercises."
+        ]
+      }
+    },
+    "H_minlot_stock": {
+      "paper_literal": {
+        "U": {
+          "i0,j0,t1": 1.0
+        },
+        "frozen_Z_T": false,
+        "notes": []
+      },
+      "audited_v1": {
+        "U": {
+          "i0,j0,t1": 3.0
+        },
+        "frozen_Z_T": true,
+        "notes": [
+          "D2 applied: Z_ijT fixed to 0 for all (i,j), because Z_ijT would describe a carry-over out of the last period, where no successor period exists. Effect on constraint (1.9), which is otherwise kept exactly as published: X_ijT >= m_i (Y_ijT - Z_ijT) degenerates to X_ijT >= m_i Y_ijT, so a setup in the final period must produce at least the minimum lot. A setup that produces more than the remaining demand is LEGAL and leaves end-of-horizon inventory, which is charged the holding cost h_i through the objective (1.1); this is an accepted feature of the main model, not a defect. It is exactly the mechanism instance H exercises."
+        ]
+      }
+    },
+    "I_tau_freedom": {
+      "paper_literal": {
+        "U": {
+          "i0,j0,t1": -1.0,
+          "i0,j0,t2": 1.0
+        },
+        "frozen_Z_T": false,
+        "notes": [
+          "paper_literal: U_ijt is negative for 1 (i,j,t) combination(s) because c_jt < s_i. The negative value is KEPT, not clipped: (1.8) then forces X = 0 and may make some binary configurations infeasible, which is the published formulation's behaviour. Affected (i,j,t,value): [(0, 0, 1, -1.0)]"
+        ]
+      },
+      "audited_v1": {
+        "U": {
+          "i0,j0,t1": 0.0,
+          "i0,j0,t2": 2.0
+        },
+        "frozen_Z_T": true,
+        "notes": [
+          "D2 applied: Z_ijT fixed to 0 for all (i,j), because Z_ijT would describe a carry-over out of the last period, where no successor period exists. Effect on constraint (1.9), which is otherwise kept exactly as published: X_ijT >= m_i (Y_ijT - Z_ijT) degenerates to X_ijT >= m_i Y_ijT, so a setup in the final period must produce at least the minimum lot. A setup that produces more than the remaining demand is LEGAL and leaves end-of-horizon inventory, which is charged the holding cost h_i through the objective (1.1); this is an accepted feature of the main model, not a defect. It is exactly the mechanism instance H exercises."
+        ]
+      }
+    },
+    "J_release_matters": {
+      "paper_literal": {
+        "U": {
+          "i0,j0,t1": 3.0
+        },
+        "frozen_Z_T": false,
+        "notes": []
+      },
+      "audited_v1": {
+        "U": {
+          "i0,j0,t1": 5.0
+        },
+        "frozen_Z_T": true,
+        "notes": [
+          "D2 applied: Z_ijT fixed to 0 for all (i,j), because Z_ijT would describe a carry-over out of the last period, where no successor period exists. Effect on constraint (1.9), which is otherwise kept exactly as published: X_ijT >= m_i (Y_ijT - Z_ijT) degenerates to X_ijT >= m_i Y_ijT, so a setup in the final period must produce at least the minimum lot. A setup that produces more than the remaining demand is LEGAL and leaves end-of-horizon inventory, which is charged the holding cost h_i through the objective (1.1); this is an accepted feature of the main model, not a defect. It is exactly the mechanism instance H exercises."
+        ]
+      }
+    },
+    "D_fix_X": {
+      "paper_literal": {
+        "U": {
+          "i0,j0,t1": -1.0
+        },
+        "frozen_Z_T": false,
+        "notes": [
+          "paper_literal: U_ijt is negative for 1 (i,j,t) combination(s) because c_jt < s_i. The negative value is KEPT, not clipped: (1.8) then forces X = 0 and may make some binary configurations infeasible, which is the published formulation's behaviour. Affected (i,j,t,value): [(0, 0, 1, -1.0)]"
+        ]
+      },
+      "audited_v1": {
+        "U": {
+          "i0,j0,t1": 0.0
+        },
+        "frozen_Z_T": true,
+        "notes": [
+          "D2 applied: Z_ijT fixed to 0 for all (i,j), because Z_ijT would describe a carry-over out of the last period, where no successor period exists. Effect on constraint (1.9), which is otherwise kept exactly as published: X_ijT >= m_i (Y_ijT - Z_ijT) degenerates to X_ijT >= m_i Y_ijT, so a setup in the final period must produce at least the minimum lot. A setup that produces more than the remaining demand is LEGAL and leaves end-of-horizon inventory, which is charged the holding cost h_i through the objective (1.1); this is an accepted feature of the main model, not a defect. It is exactly the mechanism instance H exercises."
+        ]
+      }
+    }
+  }
+}

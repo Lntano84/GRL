@@ -1,0 +1,600 @@
+{
+  "protocol_passed": true,
+  "run_status": {
+    "status": "completed",
+    "started_unix": 1790748315.960033,
+    "budget_seconds": 3600,
+    "frozen_targets_sha256": "245c175cf4a0bed32327cd14e45d8d664d73cad6cf145931884ee2ab43c023eb",
+    "attempted": [
+      "BASE-CONTROL",
+      "BASE-CF",
+      "HIGH-CONTROL",
+      "HIGH-CF"
+    ],
+    "arms": {
+      "BASE-CONTROL": {
+        "status": "completed",
+        "started_unix": 1790748315.960033,
+        "latest_progress": {
+          "arm": "BASE-CONTROL",
+          "windows": 1008,
+          "trace_elapsed_s": 604641.9793410301,
+          "wall_seconds": 598.6656278999999
+        },
+        "exit_code": 0,
+        "wall_seconds": 600.136950600001,
+        "control_gate": {
+          "passed": true,
+          "arm": "BASE-CONTROL",
+          "reference_arm": "STATIC-BASE",
+          "max_errors": {
+            "time_elapsed_phy": 0.0,
+            "time_log": 0.0,
+            "service_time_used_stats": 0.0,
+            "service_time_writes_stats": 0.0,
+            "service_time_used_demand_stats": 0.0,
+            "service_time_used_prefetch_stats": 0.0,
+            "service_time_nocache_stats": 0.0,
+            "flashcache/keys_written_stats": 0.0,
+            "flashcache/prefetches_stats": 0.0,
+            "fetches_chunks_prefetch_stats": 0.0,
+            "fetches_chunks_demandmiss_stats": 0.0,
+            "fetches_ios_stats": 0.0,
+            "iops_requests_stats": 0.0,
+            "chunk_queries_stats": 0.0,
+            "puts_ios_stats": 0.0,
+            "puts_chunks_stats": 0.0
+          },
+          "max_required_field_error": 0.0,
+          "frozen_targets_rejected_at_expected_request": 1489
+        },
+        "child_run_audit": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc05\\BASE-CONTROL\\run_audit.json"
+      },
+      "BASE-CF": {
+        "status": "completed",
+        "started_unix": 1790748917.6002786,
+        "latest_progress": {
+          "arm": "BASE-CF",
+          "windows": 982,
+          "trace_elapsed_s": 589202.9718871117,
+          "wall_seconds": 598.8236042000008
+        },
+        "exit_code": 0,
+        "wall_seconds": 617.0228519000011,
+        "preintervention_gate": {
+          "passed": true,
+          "cf_arm": "BASE-CF",
+          "control_arm": "BASE-CONTROL",
+          "request_sequence": 21498,
+          "snapshot_sha256": "67efcc9688d73a742fa40b4c1bdd7c257d9d5def622662c5153c65b3df67bd77",
+          "component_hashes": {
+            "cache_and_history": "3e6ab2979f5d1a6d94c259a4cf6599e4384acf8ae9272fe4a1b81199698e8f06",
+            "ap_state": "3480f57e5f30b361ecb14cdd76b4da6508f15c1738d861b1b93a956437b9ef28",
+            "prefetch_state": "ad90842481d221bb31e684551a4817cfb6c78bfa391a3586dba520da39fea97f",
+            "simulator_time_state": "7a31108bf1281ef42a40c357914a2443f78a475099796e0a9cfac4c9ef4dd889",
+            "cumulative_counters": "7eee68ea38ebb1489f1e9a3fcb6d06a1e19c117e2d75e39488100e4ed6319950",
+            "frequency_counters": "4fc37646aaa76a2794832ac6edba244b93e0d4d370d46e0600dc27d64b869b6c",
+            "checkpoint_index": "be47addbcb8f60566a3d7fd5a36f8195798e2848b368195d9a5d20e007c59a0c"
+          }
+        },
+        "child_run_audit": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc05\\BASE-CF\\run_audit.json"
+      },
+      "HIGH-CONTROL": {
+        "status": "completed",
+        "started_unix": 1790749535.9180045,
+        "latest_progress": {
+          "arm": "HIGH-CONTROL",
+          "windows": 987,
+          "trace_elapsed_s": 592226.0675861835,
+          "wall_seconds": 598.9276205999995
+        },
+        "exit_code": 0,
+        "wall_seconds": 613.9614287000004,
+        "control_gate": {
+          "passed": true,
+          "arm": "HIGH-CONTROL",
+          "reference_arm": "STATIC-HIGH",
+          "max_errors": {
+            "time_elapsed_phy": 0.0,
+            "time_log": 0.0,
+            "service_time_used_stats": 0.0,
+            "service_time_writes_stats": 0.0,
+            "service_time_used_demand_stats": 0.0,
+            "service_time_used_prefetch_stats": 0.0,
+            "service_time_nocache_stats": 0.0,
+            "flashcache/keys_written_stats": 0.0,
+            "flashcache/prefetches_stats": 0.0,
+            "fetches_chunks_prefetch_stats": 0.0,
+            "fetches_chunks_demandmiss_stats": 0.0,
+            "fetches_ios_stats": 0.0,
+            "iops_requests_stats": 0.0,
+            "chunk_queries_stats": 0.0,
+            "puts_ios_stats": 0.0,
+            "puts_chunks_stats": 0.0
+          },
+          "max_required_field_error": 0.0
+        },
+        "child_run_audit": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc05\\HIGH-CONTROL\\run_audit.json"
+      },
+      "HIGH-CF": {
+        "status": "completed",
+        "started_unix": 1790750151.3471608,
+        "latest_progress": {
+          "arm": "HIGH-CF",
+          "windows": 355,
+          "trace_elapsed_s": 213012.60673809052,
+          "wall_seconds": 178.68695639999896
+        },
+        "exit_code": 0,
+        "wall_seconds": 605.0975726999986,
+        "child_run_audit": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc05\\HIGH-CF\\run_audit.json"
+      }
+    },
+    "wall_seconds": 2440.484700679779,
+    "remaining_budget_seconds": 1159.515299320221,
+    "current_arm": null,
+    "completed": [
+      "BASE-CONTROL",
+      "BASE-CF",
+      "HIGH-CONTROL",
+      "HIGH-CF"
+    ],
+    "uncompleted": [],
+    "child_process_wall_seconds": 2436.218803900001,
+    "replay_completion_unix": 1790750756.4447336,
+    "finalized_at_unix": 1790754272.3850784,
+    "post_completion_finalize_delay_seconds": 3515.940344810486,
+    "finalization": "all four child replay processes completed; coordinator had exited on a transient partial progress.json read; no replay was restarted",
+    "gates": {
+      "BASE-CONTROL": {
+        "passed": true,
+        "arm": "BASE-CONTROL",
+        "reference_arm": "STATIC-BASE",
+        "max_errors": {
+          "time_elapsed_phy": 0.0,
+          "time_log": 0.0,
+          "service_time_used_stats": 0.0,
+          "service_time_writes_stats": 0.0,
+          "service_time_used_demand_stats": 0.0,
+          "service_time_used_prefetch_stats": 0.0,
+          "service_time_nocache_stats": 0.0,
+          "flashcache/keys_written_stats": 0.0,
+          "flashcache/prefetches_stats": 0.0,
+          "fetches_chunks_prefetch_stats": 0.0,
+          "fetches_chunks_demandmiss_stats": 0.0,
+          "fetches_ios_stats": 0.0,
+          "iops_requests_stats": 0.0,
+          "chunk_queries_stats": 0.0,
+          "puts_ios_stats": 0.0,
+          "puts_chunks_stats": 0.0
+        },
+        "max_required_field_error": 0.0,
+        "frozen_targets_rejected_at_expected_request": 1489
+      },
+      "HIGH-CONTROL": {
+        "passed": true,
+        "arm": "HIGH-CONTROL",
+        "reference_arm": "STATIC-HIGH",
+        "max_errors": {
+          "time_elapsed_phy": 0.0,
+          "time_log": 0.0,
+          "service_time_used_stats": 0.0,
+          "service_time_writes_stats": 0.0,
+          "service_time_used_demand_stats": 0.0,
+          "service_time_used_prefetch_stats": 0.0,
+          "service_time_nocache_stats": 0.0,
+          "flashcache/keys_written_stats": 0.0,
+          "flashcache/prefetches_stats": 0.0,
+          "fetches_chunks_prefetch_stats": 0.0,
+          "fetches_chunks_demandmiss_stats": 0.0,
+          "fetches_ios_stats": 0.0,
+          "iops_requests_stats": 0.0,
+          "chunk_queries_stats": 0.0,
+          "puts_ios_stats": 0.0,
+          "puts_chunks_stats": 0.0
+        },
+        "max_required_field_error": 0.0
+      },
+      "BASE-CF": {
+        "passed": true,
+        "cf_arm": "BASE-CF",
+        "control_arm": "BASE-CONTROL",
+        "request_sequence": 21498,
+        "snapshot_sha256": "67efcc9688d73a742fa40b4c1bdd7c257d9d5def622662c5153c65b3df67bd77",
+        "component_hashes": {
+          "cache_and_history": "3e6ab2979f5d1a6d94c259a4cf6599e4384acf8ae9272fe4a1b81199698e8f06",
+          "ap_state": "3480f57e5f30b361ecb14cdd76b4da6508f15c1738d861b1b93a956437b9ef28",
+          "prefetch_state": "ad90842481d221bb31e684551a4817cfb6c78bfa391a3586dba520da39fea97f",
+          "simulator_time_state": "7a31108bf1281ef42a40c357914a2443f78a475099796e0a9cfac4c9ef4dd889",
+          "cumulative_counters": "7eee68ea38ebb1489f1e9a3fcb6d06a1e19c117e2d75e39488100e4ed6319950",
+          "frequency_counters": "4fc37646aaa76a2794832ac6edba244b93e0d4d370d46e0600dc27d64b869b6c",
+          "checkpoint_index": "be47addbcb8f60566a3d7fd5a36f8195798e2848b368195d9a5d20e007c59a0c"
+        }
+      },
+      "HIGH-CF": {
+        "passed": true,
+        "cf_arm": "HIGH-CF",
+        "control_arm": "HIGH-CONTROL",
+        "request_sequence": 21498,
+        "snapshot_sha256": "c3b7c450d514665db279ebf4184226b02114c370f44b86b6743f42640426e80c",
+        "component_hashes": {
+          "cache_and_history": "c225730b651d9fee2428d2d4bc16e815614714d3f825e6b2301158d00d788e1b",
+          "ap_state": "8998d1725512d5a85e03961ec29d2fee82de69cf031d57d976b4a04ab28c58d2",
+          "prefetch_state": "ad90842481d221bb31e684551a4817cfb6c78bfa391a3586dba520da39fea97f",
+          "simulator_time_state": "7a31108bf1281ef42a40c357914a2443f78a475099796e0a9cfac4c9ef4dd889",
+          "cumulative_counters": "080fee938f08200a070fa04c0a659c1ffc5252fd50cc7e012a0f0518f8ebdedc",
+          "frequency_counters": "7751b9bcf19628814c74a994a82a7de6c0303074da69ed35db5fbfbfba786733",
+          "checkpoint_index": "be47addbcb8f60566a3d7fd5a36f8195798e2848b368195d9a5d20e007c59a0c"
+        }
+      }
+    }
+  },
+  "preflight": {
+    "passed": true,
+    "checks": {
+      "frozen_target_count_and_sha256": true,
+      "frozen_input_hashes_unchanged": true,
+      "configs_only_change_output_directory": true,
+      "actual_batch_accept_and_write_hooks_resolve": true,
+      "actual_reject_overridden_and_counted_as_accept": true,
+      "check_only_decision_unchanged_and_not_counted": true,
+      "parent_accept_unchanged": true,
+      "noncandidate_has_no_forced_decision": true,
+      "parent_threshold_schedules_frozen": true
+    },
+    "targets": 1489,
+    "targets_sha256": "245c175cf4a0bed32327cd14e45d8d664d73cad6cf145931884ee2ab43c023eb",
+    "no_simulator_replay": true
+  },
+  "frozen_manifest": {
+    "protocol": "BC05 frozen privileged counterfactual; no model training",
+    "targets_count": 1489,
+    "targets_sha256": "245c175cf4a0bed32327cd14e45d8d664d73cad6cf145931884ee2ab43c023eb",
+    "source_partition_unique_events": {
+      "before_peak": 1489,
+      "peak": 59,
+      "warmup": 64
+    },
+    "selection": {
+      "source_window": 578,
+      "category": "REJECTED-BEFORE",
+      "time_rule": "evaluation_start <= latest_actual_rejection < peak_578_start",
+      "dedupe": "(rejection request sequence, complete block key, chunk id)"
+    },
+    "constants": {
+      "evaluation_start_trace_s": 86401.23277902603,
+      "peak_578_start_trace_s": 346810.0965330601,
+      "evaluation_write_cap_chunks": 148731,
+      "cache_capacity_chunks": 3002,
+      "full_trace_requests": 147794,
+      "get_requests": 127305
+    },
+    "example_82821_check": {
+      "missing_chunks": 64,
+      "latest_rejection_sequence": 81555,
+      "prior_rejections_each": 30
+    },
+    "source_sha256": {
+      "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\outputs\\BC04_peak_578_chunks.csv": "fbae24e5ecc67f6a0f1c1670b07fc9773da5ed8ed19719a2085050857ed24a70",
+      "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\outputs\\BC04_peak_578_requests.csv": "34c495f1c6c402269a9a6d33687b038ec197c2033c3bc14097fc964fb0d69586",
+      "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc04\\audit.json": "83c91264b96f16d7cd6af1ee501885c290975edf7ff64d4d6fd3d78d589e37fb",
+      "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc03\\STATIC-BASE\\config.json": "e87f0a84e487efe3be775dc1b819b0361cddda10ea89bb736d290c785e3d449d",
+      "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc03\\STATIC-HIGH\\config.json": "1995423e439cce2fb9858c5ef66031745c16ca42799616cf48fb1f850047805b",
+      "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\data\\tectonic\\201910\\Region1\\full_0_0.1.trace": "3e15491e59bce748bc5bfd746edfda9cc43a0925b273bc627bfd2d51d62f95b6",
+      "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_admit_threshold_binary.model": "fb390089b9dd2af2de7235f98c22995ec2f841257e536e6a121558e97e84f64e",
+      "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_offset_end.model": "364ae73b736d4d75f3787743fdef1849182df206f0024652fc958891b8e78013",
+      "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_offset_start.model": "2d240d8e79b1abb674e96712ab0e96a04a4c3837dd1cca8b49b498d5979ce9f7",
+      "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_pred_net_pf_st_binary.model": "a7f073e64bfd57d7bb32e82d17d6445e50efd33a52f27bfc557fdfcdc726b6d6",
+      "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc01\\Baleen-FAST24\\tmp\\example\\201910_Region1_0_0.1\\ea_5892.86_wr_35.599_prefetch_size.model": "f745bacf02cb79ab1efeead2fe066d1da72b7a4d38762eccf67e31778923d5d9"
+    },
+    "parent_configs_sha256": {
+      "BASE": "e87f0a84e487efe3be775dc1b819b0361cddda10ea89bb736d290c785e3d449d",
+      "HIGH": "1995423e439cce2fb9858c5ef66031745c16ca42799616cf48fb1f850047805b"
+    },
+    "arms": [
+      "BASE-CONTROL",
+      "BASE-CF",
+      "HIGH-CONTROL",
+      "HIGH-CF"
+    ]
+  },
+  "summaries": {
+    "BASE-CONTROL": {
+      "arm": "BASE-CONTROL",
+      "parent_policy": "BASE",
+      "counterfactual": false,
+      "evaluation_write_chunks": 148731,
+      "evaluation_write_bytes_sample": 19494469632,
+      "resource_eligible": true,
+      "write_cap_chunks": 148731,
+      "evaluation_peak_dt_pct": 39.75748541944802,
+      "peak_window": 578,
+      "evaluation_average_dt_pct_time_weighted": 18.444585185090627,
+      "window_578_dt_pct": 39.75748541944802,
+      "window_578_get_dt_pct": 28.064224516767627,
+      "evaluation_prefetch_read_chunks": 41697,
+      "evaluation_prefetch_read_bytes_sample": 5465309184,
+      "evaluation_prefetch_read_gib_sample": 5.0899658203125,
+      "evaluation_prefetch_write_chunks": 34175,
+      "evaluation_demand_read_chunks": 2040485,
+      "evaluation_windows": 864,
+      "run_seconds": 600.136950600001,
+      "max_cache_entries_observed": 3001,
+      "parent_actual_accepts": 170519,
+      "parent_actual_rejects": 2193211,
+      "effective_actual_accepts": 170519,
+      "effective_actual_rejects": 2193211,
+      "actual_rejection_change": 0,
+      "actual_acceptance_change": 0,
+      "intervention_status_counts_json": "{\"parent_reject_unchanged\": 1489}",
+      "peak_change_vs_BASE_pct": 0.0,
+      "average_change_vs_BASE_pct": 0.0
+    },
+    "BASE-CF": {
+      "arm": "BASE-CF",
+      "parent_policy": "BASE",
+      "counterfactual": true,
+      "evaluation_write_chunks": 150416,
+      "evaluation_write_bytes_sample": 19715325952,
+      "resource_eligible": false,
+      "write_cap_chunks": 148731,
+      "evaluation_peak_dt_pct": 37.90462968509451,
+      "peak_window": 578,
+      "evaluation_average_dt_pct_time_weighted": 18.449075190300253,
+      "window_578_dt_pct": 37.90462968509451,
+      "window_578_get_dt_pct": 26.21136878241413,
+      "evaluation_prefetch_read_chunks": 41613,
+      "evaluation_prefetch_read_bytes_sample": 5454299136,
+      "evaluation_prefetch_read_gib_sample": 5.0797119140625,
+      "evaluation_prefetch_write_chunks": 34152,
+      "evaluation_demand_read_chunks": 2041501,
+      "evaluation_windows": 864,
+      "run_seconds": 617.0228519000011,
+      "max_cache_entries_observed": 3001,
+      "parent_actual_accepts": 170715,
+      "parent_actual_rejects": 2194043,
+      "effective_actual_accepts": 172204,
+      "effective_actual_rejects": 2192554,
+      "actual_rejection_change": -1489,
+      "actual_acceptance_change": 1489,
+      "intervention_status_counts_json": "{\"overridden\": 1489}",
+      "peak_gain_vs_BASE": 0.046603946773936304,
+      "peak_gain_vs_parent": 0.046603946773936304,
+      "writes_change_vs_parent_chunks": 1685,
+      "average_dt_change_vs_parent_pct": 0.004490005209625281,
+      "peak_change_vs_BASE_pct": -4.660394677393631,
+      "average_change_vs_BASE_pct": 0.024343215987610023
+    },
+    "HIGH-CONTROL": {
+      "arm": "HIGH-CONTROL",
+      "parent_policy": "HIGH",
+      "counterfactual": false,
+      "evaluation_write_chunks": 119276,
+      "evaluation_write_bytes_sample": 15633743872,
+      "resource_eligible": true,
+      "write_cap_chunks": 148731,
+      "evaluation_peak_dt_pct": 40.20166248751846,
+      "peak_window": 578,
+      "evaluation_average_dt_pct_time_weighted": 18.57759888599209,
+      "window_578_dt_pct": 40.20166248751846,
+      "window_578_get_dt_pct": 28.50840158483808,
+      "evaluation_prefetch_read_chunks": 34201,
+      "evaluation_prefetch_read_bytes_sample": 4482793472,
+      "evaluation_prefetch_read_gib_sample": 4.1749267578125,
+      "evaluation_prefetch_write_chunks": 27506,
+      "evaluation_demand_read_chunks": 2058794,
+      "evaluation_windows": 864,
+      "run_seconds": 613.9614287000004,
+      "max_cache_entries_observed": 3001,
+      "parent_actual_accepts": 141064,
+      "parent_actual_rejects": 2234483,
+      "effective_actual_accepts": 141064,
+      "effective_actual_rejects": 2234483,
+      "actual_rejection_change": 0,
+      "actual_acceptance_change": 0,
+      "intervention_status_counts_json": "{\"parent_reject_unchanged\": 1489}",
+      "peak_change_vs_BASE_pct": 1.1172162006331643,
+      "average_change_vs_BASE_pct": 0.7211531165741913
+    },
+    "HIGH-CF": {
+      "arm": "HIGH-CF",
+      "parent_policy": "HIGH",
+      "counterfactual": true,
+      "evaluation_write_chunks": 120790,
+      "evaluation_write_bytes_sample": 15832186880,
+      "resource_eligible": true,
+      "write_cap_chunks": 148731,
+      "evaluation_peak_dt_pct": 37.52731621213825,
+      "peak_window": 578,
+      "evaluation_average_dt_pct_time_weighted": 18.579956167776185,
+      "window_578_dt_pct": 37.52731621213825,
+      "window_578_get_dt_pct": 25.834055309457867,
+      "evaluation_prefetch_read_chunks": 34072,
+      "evaluation_prefetch_read_bytes_sample": 4465885184,
+      "evaluation_prefetch_read_gib_sample": 4.1591796875,
+      "evaluation_prefetch_write_chunks": 27482,
+      "evaluation_demand_read_chunks": 2059163,
+      "evaluation_windows": 864,
+      "run_seconds": 605.0975726999986,
+      "max_cache_entries_observed": 3001,
+      "parent_actual_accepts": 141089,
+      "parent_actual_rejects": 2234710,
+      "effective_actual_accepts": 142578,
+      "effective_actual_rejects": 2233221,
+      "actual_rejection_change": -1489,
+      "actual_acceptance_change": 1489,
+      "intervention_status_counts_json": "{\"overridden\": 1489}",
+      "peak_gain_vs_BASE": 0.05609432245981132,
+      "peak_gain_vs_parent": 0.06652327565335195,
+      "writes_change_vs_parent_chunks": 1514,
+      "average_dt_change_vs_parent_pct": 0.0023572817840964433,
+      "peak_change_vs_BASE_pct": -5.609432245981127,
+      "average_change_vs_BASE_pct": 0.7339334624612892
+    }
+  },
+  "intervention_status": {
+    "BASE-CONTROL": {
+      "parent_reject_unchanged": 1489
+    },
+    "BASE-CF": {
+      "overridden": 1489
+    },
+    "HIGH-CONTROL": {
+      "parent_reject_unchanged": 1489
+    },
+    "HIGH-CF": {
+      "overridden": 1489
+    }
+  },
+  "audits": {
+    "BASE-CONTROL": {
+      "stats_sha256": "4fba335b1f040f343f3031e55f9c6ef63e303aa8c6fff0898a7845a1df14a0e6",
+      "run_wall_seconds": 600.136950600001,
+      "request_cost_max_error_s": 1.734723475976807e-18,
+      "target_status_counts": {
+        "parent_reject_unchanged": 1489
+      },
+      "parent_actual_accepts": 170519,
+      "parent_actual_rejects": 2193211,
+      "effective_actual_accepts": 170519,
+      "effective_actual_rejects": 2193211,
+      "check_only_items_not_counted_as_actual": 53416,
+      "max_cache_entries_observed": 3001,
+      "pre_first_target_state_sha256": "67efcc9688d73a742fa40b4c1bdd7c257d9d5def622662c5153c65b3df67bd77",
+      "pre_first_target_component_hashes": {
+        "cache_and_history": "3e6ab2979f5d1a6d94c259a4cf6599e4384acf8ae9272fe4a1b81199698e8f06",
+        "ap_state": "3480f57e5f30b361ecb14cdd76b4da6508f15c1738d861b1b93a956437b9ef28",
+        "prefetch_state": "ad90842481d221bb31e684551a4817cfb6c78bfa391a3586dba520da39fea97f",
+        "simulator_time_state": "7a31108bf1281ef42a40c357914a2443f78a475099796e0a9cfac4c9ef4dd889",
+        "cumulative_counters": "7eee68ea38ebb1489f1e9a3fcb6d06a1e19c117e2d75e39488100e4ed6319950",
+        "frequency_counters": "4fc37646aaa76a2794832ac6edba244b93e0d4d370d46e0600dc27d64b869b6c",
+        "checkpoint_index": "be47addbcb8f60566a3d7fd5a36f8195798e2848b368195d9a5d20e007c59a0c"
+      },
+      "request_cost_record_count": 74
+    },
+    "BASE-CF": {
+      "stats_sha256": "50efb88e676da3ac3f5d41ee5a306605bfb03a2073730433f76023a4f27efba3",
+      "run_wall_seconds": 617.0228519000011,
+      "request_cost_max_error_s": 8.673617379884035e-19,
+      "target_status_counts": {
+        "overridden": 1489
+      },
+      "parent_actual_accepts": 170715,
+      "parent_actual_rejects": 2194043,
+      "effective_actual_accepts": 172204,
+      "effective_actual_rejects": 2192554,
+      "check_only_items_not_counted_as_actual": 53424,
+      "max_cache_entries_observed": 3001,
+      "pre_first_target_state_sha256": "67efcc9688d73a742fa40b4c1bdd7c257d9d5def622662c5153c65b3df67bd77",
+      "pre_first_target_component_hashes": {
+        "cache_and_history": "3e6ab2979f5d1a6d94c259a4cf6599e4384acf8ae9272fe4a1b81199698e8f06",
+        "ap_state": "3480f57e5f30b361ecb14cdd76b4da6508f15c1738d861b1b93a956437b9ef28",
+        "prefetch_state": "ad90842481d221bb31e684551a4817cfb6c78bfa391a3586dba520da39fea97f",
+        "simulator_time_state": "7a31108bf1281ef42a40c357914a2443f78a475099796e0a9cfac4c9ef4dd889",
+        "cumulative_counters": "7eee68ea38ebb1489f1e9a3fcb6d06a1e19c117e2d75e39488100e4ed6319950",
+        "frequency_counters": "4fc37646aaa76a2794832ac6edba244b93e0d4d370d46e0600dc27d64b869b6c",
+        "checkpoint_index": "be47addbcb8f60566a3d7fd5a36f8195798e2848b368195d9a5d20e007c59a0c"
+      },
+      "request_cost_record_count": 74
+    },
+    "HIGH-CONTROL": {
+      "stats_sha256": "936bf76a75727d7558e07bfe658a7458f9c867f6726706248cb06708345f3c9c",
+      "run_wall_seconds": 613.9614287000004,
+      "request_cost_max_error_s": 1.734723475976807e-18,
+      "target_status_counts": {
+        "parent_reject_unchanged": 1489
+      },
+      "parent_actual_accepts": 141064,
+      "parent_actual_rejects": 2234483,
+      "effective_actual_accepts": 141064,
+      "effective_actual_rejects": 2234483,
+      "check_only_items_not_counted_as_actual": 49204,
+      "max_cache_entries_observed": 3001,
+      "pre_first_target_state_sha256": "c3b7c450d514665db279ebf4184226b02114c370f44b86b6743f42640426e80c",
+      "pre_first_target_component_hashes": {
+        "cache_and_history": "c225730b651d9fee2428d2d4bc16e815614714d3f825e6b2301158d00d788e1b",
+        "ap_state": "8998d1725512d5a85e03961ec29d2fee82de69cf031d57d976b4a04ab28c58d2",
+        "prefetch_state": "ad90842481d221bb31e684551a4817cfb6c78bfa391a3586dba520da39fea97f",
+        "simulator_time_state": "7a31108bf1281ef42a40c357914a2443f78a475099796e0a9cfac4c9ef4dd889",
+        "cumulative_counters": "080fee938f08200a070fa04c0a659c1ffc5252fd50cc7e012a0f0518f8ebdedc",
+        "frequency_counters": "7751b9bcf19628814c74a994a82a7de6c0303074da69ed35db5fbfbfba786733",
+        "checkpoint_index": "be47addbcb8f60566a3d7fd5a36f8195798e2848b368195d9a5d20e007c59a0c"
+      },
+      "request_cost_record_count": 74
+    },
+    "HIGH-CF": {
+      "stats_sha256": "324b2cf0877cd950b9a157c2ec7f98b31e3407e32cbc381d46cbdc2129508aba",
+      "run_wall_seconds": 605.0975726999986,
+      "request_cost_max_error_s": 8.673617379884035e-19,
+      "target_status_counts": {
+        "overridden": 1489
+      },
+      "parent_actual_accepts": 141089,
+      "parent_actual_rejects": 2234710,
+      "effective_actual_accepts": 142578,
+      "effective_actual_rejects": 2233221,
+      "check_only_items_not_counted_as_actual": 49191,
+      "max_cache_entries_observed": 3001,
+      "pre_first_target_state_sha256": "c3b7c450d514665db279ebf4184226b02114c370f44b86b6743f42640426e80c",
+      "pre_first_target_component_hashes": {
+        "cache_and_history": "c225730b651d9fee2428d2d4bc16e815614714d3f825e6b2301158d00d788e1b",
+        "ap_state": "8998d1725512d5a85e03961ec29d2fee82de69cf031d57d976b4a04ab28c58d2",
+        "prefetch_state": "ad90842481d221bb31e684551a4817cfb6c78bfa391a3586dba520da39fea97f",
+        "simulator_time_state": "7a31108bf1281ef42a40c357914a2443f78a475099796e0a9cfac4c9ef4dd889",
+        "cumulative_counters": "080fee938f08200a070fa04c0a659c1ffc5252fd50cc7e012a0f0518f8ebdedc",
+        "frequency_counters": "7751b9bcf19628814c74a994a82a7de6c0303074da69ed35db5fbfbfba786733",
+        "checkpoint_index": "be47addbcb8f60566a3d7fd5a36f8195798e2848b368195d9a5d20e007c59a0c"
+      },
+      "request_cost_record_count": 74
+    }
+  },
+  "counterfactual_budget_pass": {
+    "BASE-CF": false,
+    "HIGH-CF": true
+  },
+  "verdict": "至少一条反事实臂在容量与写入预算内，且完整评价段峰值相对 BASE-CONTROL 下降至少 5%；这是使用未来峰值信息的可实现见证，尚非在线可部署收益。",
+  "all_windows": {
+    "rows": 4032,
+    "windows_per_arm": 1008
+  },
+  "target_event_rows": 5956,
+  "intervention_request_cost_rows": 140,
+  "peak_request_cost_rows": 156,
+  "independent_deliverable_verification": {
+    "passed": true,
+    "checks": [
+      "frozen_inputs_and_target_hashes",
+      "all_four_arm_csv_row_counts",
+      "peak_and_duration_weighted_average_recomputed_from_windows",
+      "write_and_prefetch_totals_recomputed",
+      "request_service_cost_sums",
+      "counterfactual_gate_and_target_statuses"
+    ],
+    "high_cf_peak_gain_recomputed": 0.05609432245981132,
+    "high_cf_writes": 120790,
+    "base_cf_writes": 150416,
+    "high_cf_peak_dt": 37.52731621213825,
+    "peak_window": 578
+  },
+  "service_time_tolerance_s": 1e-09,
+  "dt_tolerance_percentage_points": 1e-08,
+  "implementation_sha256": {
+    "build_deliverables.py": "ce24fc6021c458f1172f30b4a3dfa6dfbcef24420df7856dda42cf280f852f98",
+    "finalize_completed_runs.py": "fb1557ea292cd6aca89a77554d319d9b8f1eea4f654d8002c11575910320a158",
+    "preflight.py": "9a4d6875b90fbc94f7fa0c3e028d236261d676374c9faf8d1adfc087e2bb1e6e",
+    "prepare_manifest.py": "2964c6e1ffcb5ed92a26604c8577321a294442e5eaebe080c02323f6c246724a",
+    "replay.py": "adab59bb544d9342c5830fdd68d6c11dff15ab623f60696dd7673b1700b5a205",
+    "run_all.py": "7813dfbd7155dd0c62a33fd3a19e884f7735ae91094f96fcefa1739c2f0ba749",
+    "verify_deliverables.py": "1a4f3fa9e651bf22cb38dfbbd4ebed699cda152c8e074b2c626225074288d87a"
+  },
+  "deliverable_sha256": {
+    "BC05_all_windows.csv": "3d2ab5125fe19bdb9795c0f080028ccd9f6f9a6f8b0d0d1d6ed459b87c9d44e4",
+    "BC05_four_arm_summary.csv": "efafd1ea3dbb837b24113c9ce52c3497d9a52eccbfc6030af6d888e36bda9708",
+    "BC05_frozen_manifest.json": "61d23eca87217815903234c641820f45663462484ce0cb13f5daa0e356be880f",
+    "BC05_frozen_targets.json": "245c175cf4a0bed32327cd14e45d8d664d73cad6cf145931884ee2ab43c023eb",
+    "BC05_intervention_request_costs.csv": "8d6a4f6bafa649cc456bf3242ea657ce120cea471be4ff773709f71d0cd77613",
+    "BC05_peak_request_costs.csv": "c882f73e86f6e243320f0043859acb1b2e8d698e14c818910c37b33345f16ad3",
+    "BC05_report.md": "7dc182cb42075bddcdf08b556d4ee45fd71d160854760838dc6bce7bb43c6c5b",
+    "BC05_target_events.csv": "e0c62649e8d66c6177be656587f6d5a04095cc8378dfda40a84c4cf31b2b72d6"
+  }
+}

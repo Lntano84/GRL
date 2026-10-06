@@ -1,0 +1,156 @@
+{
+  "task": "RT-01R -- data and test qualification review for the delayed-completion-feedback direction",
+  "supersedes": "RT01_report.md (its main conclusion is withdrawn)",
+  "status": "protocol NOT yet qualified; the method's value is NOT judged",
+  "headline": "RT-01 found many jobs without an end record, but did not separate genuine completion latency from failure, waiting, partial task completion and missing records. ALLFINAL added only 956 observable labels, and the main comparison contained a train/predict feature inconsistency. No predictive information-value bound was established and no scheduling benefit was tested.",
+  "label_eligibility": {
+    "classes": {
+      "A_COMPLETE": 732355,
+      "B_COMPLETE_NONOK": 1218,
+      "C_PARTIAL": 25508,
+      "D_NO_END": 295846,
+      "E_NEVER_LAUNCHED": 574
+    },
+    "class_status_breakdown": {
+      "A_COMPLETE": {
+        "Terminated": 732355
+      },
+      "B_COMPLETE_NONOK": {
+        "Failed": 985,
+        "Running": 233
+      },
+      "C_PARTIAL": {
+        "Failed": 24635,
+        "Running": 828,
+        "Waiting": 45
+      },
+      "D_NO_END": {
+        "Running": 61867,
+        "Failed": 230935,
+        "Waiting": 3044
+      },
+      "E_NEVER_LAUNCHED": {
+        "Waiting": 574
+      }
+    },
+    "support": {
+      "A_COMPLETE": "YES for a completion-time target. Every task ended and the job is archived Terminated, so max(end) is a genuine completion time. This is the only class that supports a supervised run-time label without further assumptions.",
+      "B_COMPLETE_NONOK": "MIXED. Every task ended, so an end timestamp exists, but the job did not succeed. Usable for a 'time until this attempt stopped' target; NOT usable as a successful service duration without stating that assumption, because failure can truncate.",
+      "C_PARTIAL": "NO for a completion-time target. max(end over the ended tasks) is a lower bound on the job end only; the remaining tasks' end times are missing. Usable only as a censored lower bound, and only after deciding why those tasks lack an end.",
+      "D_NO_END": "NO label at all. Observation time is a lower bound; whether the job was still executing, had failed silently, or was never recorded cannot be told from the tables.",
+      "E_NEVER_LAUNCHED": "NO label and NO start. These are submissions that never began, so they are queue records rather than service records."
+    },
+    "workload_tag_non_empty": 102610,
+    "group_tag_non_empty": 1053971
+  },
+  "claim_verification": {
+    "T_split": 4068442.8,
+    "t0": 494319.0,
+    "span": 5956873.0,
+    "launched": 1054927,
+    "train": 503707,
+    "unfinished_at_T": 116215,
+    "unfinished_with_usable_final": 956,
+    "unfinished_without_any_end": 115259,
+    "completed_training_rows": 387490,
+    "allfinal_training_rows": 388446,
+    "oracle_rows_added": 956,
+    "oracle_coverage_of_unfinished": 0.008226132599062084,
+    "unfinished_status_mix": {
+      "Running": 34504,
+      "Failed": 79014,
+      "Terminated": 895,
+      "Waiting": 1802
+    },
+    "buckets_total": 491912,
+    "buckets_single": 485558,
+    "buckets_multi": 6354,
+    "buckets_multi_pure": 6095,
+    "buckets_multi_mixed": 259,
+    "jobs_with_partial_task_ends": 25508,
+    "task_rows_lacking_end_in_partial_jobs": 25533
+  },
+  "corrected_regression": {
+    "T": 4068442.8,
+    "n_test": 78070,
+    "n_classA_train": 372694,
+    "n_unfinished": 114413,
+    "n_unrescuable": 113457,
+    "n_rescued": 956,
+    "results": {
+      "COMPLETED_only": {
+        "n_train": 372694,
+        "use_share": false,
+        "rmsle": 1.8196500556812365,
+        "spearman": 0.5063903568548964,
+        "median_pred": 827.4370589844752,
+        "median_true": 674.0
+      },
+      "COMPLETED_plus_groupcensoring": {
+        "n_train": 372694,
+        "use_share": true,
+        "rmsle": 1.8138633361931786,
+        "spearman": 0.5104563478339109,
+        "median_pred": 763.9724062390483,
+        "median_true": 674.0
+      },
+      "A_plus_rescued_oracle": {
+        "n_train": 373650,
+        "use_share": false,
+        "rmsle": 1.81952552929067,
+        "spearman": 0.5064671139397249,
+        "median_pred": 834.5290956326494,
+        "median_true": 674.0
+      }
+    }
+  },
+  "retractions": [
+    "the oracle supplied 956 records (0.82% of the unfinished), not all 116,215",
+    "'similar covariate marginals imply the extra labels are useless' -- invalid inference",
+    "'RMSLE barely moved implies scheduling would not improve' -- not tested",
+    "'99.9% batch coherence implies stale bookkeeping' -- inflated by single-record buckets; the multi-record figure is 95.92%, and the official docs say same-group instances are repeated instances, so coherence is expected by construction",
+    "'23% are still running' -- the set is 68% Failed, 29.7% Running",
+    "'the official header makes groupby(job_name) collapse to 24 groups' -- the official task_cols is correct; column 0 is job_name",
+    "'group_tag column 3 is a workload tag' -- it is `group`; `workload` is column 4",
+    "'the data contains no submission time' -- the two documented columns are item-wise equal in this batch, so no positive waiting time is OBSERVABLE; the cause is unverified",
+    "'the class-A oracle row used only class A' -- the rescue filter skipped classA() and admitted 61 ineligible records (59 Failed + 2 Running, all with only some tasks ended); the admissible count is 895, so the corrected class-A oracle training set is 373,589",
+    "'same group implies the whole group shares a completion state by design' -- the official definition only says same-group instances are similar/repeated workloads; it guarantees neither the same outcome nor the same completion state at a frozen instant",
+    "'the old ranker was wrong in sign' -- in the recorded example it was wrong in magnitude only (old -0.857, new -1, same sign)",
+    "'this round did not train a model' -- r4_corrected_regression.py refits a lightweight ridge estimator; no neural network was trained and no scheduling experiment was run"
+  ],
+  "test_fix": {
+    "tautology_removed": "the check 'consistent path reproduces the training design' compared an object with itself; it is replaced by guard_switch_consistency(), which compares the switch values RECORDED while building the fit matrix and the predict matrix and raises SwitchMismatch when they differ",
+    "guard_tests": [
+      "accepts a consistent run (switch on)",
+      "accepts a consistent run (switch off)",
+      "rejects the fit/predict switch mismatch that caused the old defect"
+    ]
+  },
+  "implementation_fixes": {
+    "feature_toggle": "one Design object now builds both fit and predict matrices; the old code trained with the group feature and predicted with it zeroed for two of three variants. Measured effect ~0.004 RMSLE",
+    "spearman": "average ranks with tie correction; the old positional ranking was not Spearman",
+    "tests": "RT_work/r3_estimator_lib.py, 13 checks, all passing"
+  },
+  "field_semantics_corrections": {
+    "task_table.col1": "task_name = task ROLE (ps/worker/evaluator), per the official docs; not a globally unique id and not a mislabelled framework column",
+    "group_tag columns": "inst_id, user, gpu_type_spec, group, workload",
+    "workload_non_empty_share": 0.0978,
+    "job_table.start_time": "documented as job SUBMISSION time",
+    "task_table.start_time": "documented as task LAUNCH time",
+    "observed": "the two are item-wise equal for 1,051,838 / 1,051,838 comparable records"
+  },
+  "data_files": {
+    "pai_group_tag_table.tar.gz": {
+      "sha256": "722FEF30B7FB7AA50DABD79155614B5423A9D65CF45A9B26C590D57725423A14",
+      "bytes": 55064781
+    },
+    "pai_job_table.tar.gz": {
+      "sha256": "5AAD7F7CAAC501136D14ED6A48E40546F825D7B0617A3A4F337E2348FE0A6CB0",
+      "bytes": 62065432
+    },
+    "pai_task_table.tar.gz": {
+      "sha256": "CD1D6DC3215D2A8607CCF6B6DD952B5DB776DF86926C73259FEA7C1499AC40E5",
+      "bytes": 35514117
+    }
+  }
+}

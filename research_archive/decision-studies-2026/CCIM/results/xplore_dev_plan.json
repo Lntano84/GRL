@@ -1,0 +1,719 @@
+{
+  "plan_rng_seed": 20240119,
+  "graphs": [
+    "mammal__bhp",
+    "interact__soc-wiki-Vote",
+    "rt__damascus"
+  ],
+  "reasons": {
+    "mammal__bhp": "mammal family; n=1686, m=4623, mean degree 5.5 -- the densest of the mammal set, chosen to cover a moderately dense, non-star-like structure",
+    "interact__soc-wiki-Vote": "interact family; n=889, m=2914, mean degree 6.6 -- mid-size, densely connected, structurally unlike both the mammal and the retweet families",
+    "rt__damascus": "retweet family; n=3052, m=3869, mean degree 2.5 -- sparse and star-like.  Already inspected in a smoke test, so it is a DEVELOPMENT graph and must never be presented as an unseen test graph."
+  },
+  "groups_per_graph": 20,
+  "budgets": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    8,
+    10,
+    15,
+    20
+  ],
+  "t_max": 20,
+  "primary_checkpoint": 5,
+  "select_samples": 100,
+  "eval_samples": 1000,
+  "extra_seeds": 5,
+  "main_policies": [
+    "random",
+    "degree_max",
+    "degree_min"
+  ],
+  "reference_policies": [
+    "change"
+  ],
+  "generated": {
+    "mammal__bhp": {
+      "n": 1686,
+      "m": 4623,
+      "entries": [
+        {
+          "group": 0,
+          "initial_nodes": [
+            280,
+            426,
+            493,
+            827,
+            1564
+          ],
+          "policy_seed_offset": 0
+        },
+        {
+          "group": 1,
+          "initial_nodes": [
+            135,
+            594,
+            828,
+            1027,
+            1285
+          ],
+          "policy_seed_offset": 1
+        },
+        {
+          "group": 2,
+          "initial_nodes": [
+            85,
+            700,
+            759,
+            1297,
+            1302
+          ],
+          "policy_seed_offset": 2
+        },
+        {
+          "group": 3,
+          "initial_nodes": [
+            446,
+            720,
+            1205,
+            1314,
+            1556
+          ],
+          "policy_seed_offset": 3
+        },
+        {
+          "group": 4,
+          "initial_nodes": [
+            657,
+            1096,
+            1298,
+            1334,
+            1478
+          ],
+          "policy_seed_offset": 4
+        },
+        {
+          "group": 5,
+          "initial_nodes": [
+            286,
+            358,
+            487,
+            506,
+            740
+          ],
+          "policy_seed_offset": 5
+        },
+        {
+          "group": 6,
+          "initial_nodes": [
+            186,
+            335,
+            356,
+            701,
+            1584
+          ],
+          "policy_seed_offset": 6
+        },
+        {
+          "group": 7,
+          "initial_nodes": [
+            445,
+            612,
+            1001,
+            1149,
+            1383
+          ],
+          "policy_seed_offset": 7
+        },
+        {
+          "group": 8,
+          "initial_nodes": [
+            44,
+            231,
+            901,
+            1542,
+            1581
+          ],
+          "policy_seed_offset": 8
+        },
+        {
+          "group": 9,
+          "initial_nodes": [
+            643,
+            656,
+            722,
+            961,
+            1319
+          ],
+          "policy_seed_offset": 9
+        },
+        {
+          "group": 10,
+          "initial_nodes": [
+            115,
+            545,
+            1215,
+            1344,
+            1425
+          ],
+          "policy_seed_offset": 10
+        },
+        {
+          "group": 11,
+          "initial_nodes": [
+            602,
+            921,
+            1074,
+            1213,
+            1674
+          ],
+          "policy_seed_offset": 11
+        },
+        {
+          "group": 12,
+          "initial_nodes": [
+            26,
+            274,
+            639,
+            967,
+            977
+          ],
+          "policy_seed_offset": 12
+        },
+        {
+          "group": 13,
+          "initial_nodes": [
+            361,
+            637,
+            1337,
+            1379,
+            1453
+          ],
+          "policy_seed_offset": 13
+        },
+        {
+          "group": 14,
+          "initial_nodes": [
+            51,
+            183,
+            703,
+            1541,
+            1551
+          ],
+          "policy_seed_offset": 14
+        },
+        {
+          "group": 15,
+          "initial_nodes": [
+            251,
+            452,
+            1084,
+            1255,
+            1557
+          ],
+          "policy_seed_offset": 15
+        },
+        {
+          "group": 16,
+          "initial_nodes": [
+            309,
+            325,
+            1058,
+            1392,
+            1468
+          ],
+          "policy_seed_offset": 16
+        },
+        {
+          "group": 17,
+          "initial_nodes": [
+            23,
+            185,
+            254,
+            405,
+            1417
+          ],
+          "policy_seed_offset": 17
+        },
+        {
+          "group": 18,
+          "initial_nodes": [
+            258,
+            284,
+            749,
+            1154,
+            1478
+          ],
+          "policy_seed_offset": 18
+        },
+        {
+          "group": 19,
+          "initial_nodes": [
+            202,
+            239,
+            430,
+            1055,
+            1369
+          ],
+          "policy_seed_offset": 19
+        }
+      ]
+    },
+    "interact__soc-wiki-Vote": {
+      "n": 889,
+      "m": 2914,
+      "entries": [
+        {
+          "group": 0,
+          "initial_nodes": [
+            59,
+            224,
+            644,
+            674,
+            826
+          ],
+          "policy_seed_offset": 0
+        },
+        {
+          "group": 1,
+          "initial_nodes": [
+            5,
+            104,
+            147,
+            162,
+            228
+          ],
+          "policy_seed_offset": 1
+        },
+        {
+          "group": 2,
+          "initial_nodes": [
+            186,
+            237,
+            364,
+            460,
+            756
+          ],
+          "policy_seed_offset": 2
+        },
+        {
+          "group": 3,
+          "initial_nodes": [
+            67,
+            292,
+            334,
+            376,
+            529
+          ],
+          "policy_seed_offset": 3
+        },
+        {
+          "group": 4,
+          "initial_nodes": [
+            139,
+            248,
+            448,
+            555,
+            668
+          ],
+          "policy_seed_offset": 4
+        },
+        {
+          "group": 5,
+          "initial_nodes": [
+            58,
+            278,
+            734,
+            763,
+            834
+          ],
+          "policy_seed_offset": 5
+        },
+        {
+          "group": 6,
+          "initial_nodes": [
+            155,
+            265,
+            267,
+            421,
+            863
+          ],
+          "policy_seed_offset": 6
+        },
+        {
+          "group": 7,
+          "initial_nodes": [
+            78,
+            81,
+            735,
+            765,
+            870
+          ],
+          "policy_seed_offset": 7
+        },
+        {
+          "group": 8,
+          "initial_nodes": [
+            1,
+            77,
+            257,
+            430,
+            540
+          ],
+          "policy_seed_offset": 8
+        },
+        {
+          "group": 9,
+          "initial_nodes": [
+            247,
+            280,
+            318,
+            815,
+            821
+          ],
+          "policy_seed_offset": 9
+        },
+        {
+          "group": 10,
+          "initial_nodes": [
+            36,
+            184,
+            212,
+            440,
+            786
+          ],
+          "policy_seed_offset": 10
+        },
+        {
+          "group": 11,
+          "initial_nodes": [
+            29,
+            260,
+            376,
+            609,
+            771
+          ],
+          "policy_seed_offset": 11
+        },
+        {
+          "group": 12,
+          "initial_nodes": [
+            184,
+            329,
+            536,
+            672,
+            863
+          ],
+          "policy_seed_offset": 12
+        },
+        {
+          "group": 13,
+          "initial_nodes": [
+            10,
+            421,
+            475,
+            674,
+            882
+          ],
+          "policy_seed_offset": 13
+        },
+        {
+          "group": 14,
+          "initial_nodes": [
+            16,
+            152,
+            314,
+            327,
+            573
+          ],
+          "policy_seed_offset": 14
+        },
+        {
+          "group": 15,
+          "initial_nodes": [
+            222,
+            462,
+            639,
+            694,
+            725
+          ],
+          "policy_seed_offset": 15
+        },
+        {
+          "group": 16,
+          "initial_nodes": [
+            142,
+            296,
+            433,
+            642,
+            790
+          ],
+          "policy_seed_offset": 16
+        },
+        {
+          "group": 17,
+          "initial_nodes": [
+            119,
+            343,
+            346,
+            741,
+            845
+          ],
+          "policy_seed_offset": 17
+        },
+        {
+          "group": 18,
+          "initial_nodes": [
+            157,
+            315,
+            535,
+            627,
+            804
+          ],
+          "policy_seed_offset": 18
+        },
+        {
+          "group": 19,
+          "initial_nodes": [
+            276,
+            508,
+            601,
+            632,
+            874
+          ],
+          "policy_seed_offset": 19
+        }
+      ]
+    },
+    "rt__damascus": {
+      "n": 3052,
+      "m": 3869,
+      "entries": [
+        {
+          "group": 0,
+          "initial_nodes": [
+            544,
+            712,
+            1734,
+            1849,
+            2840
+          ],
+          "policy_seed_offset": 0
+        },
+        {
+          "group": 1,
+          "initial_nodes": [
+            1200,
+            2123,
+            2183,
+            2312,
+            2631
+          ],
+          "policy_seed_offset": 1
+        },
+        {
+          "group": 2,
+          "initial_nodes": [
+            229,
+            525,
+            725,
+            2081,
+            2355
+          ],
+          "policy_seed_offset": 2
+        },
+        {
+          "group": 3,
+          "initial_nodes": [
+            474,
+            610,
+            824,
+            1286,
+            2655
+          ],
+          "policy_seed_offset": 3
+        },
+        {
+          "group": 4,
+          "initial_nodes": [
+            456,
+            1501,
+            1662,
+            2309,
+            2866
+          ],
+          "policy_seed_offset": 4
+        },
+        {
+          "group": 5,
+          "initial_nodes": [
+            1420,
+            1694,
+            2117,
+            2770,
+            2881
+          ],
+          "policy_seed_offset": 5
+        },
+        {
+          "group": 6,
+          "initial_nodes": [
+            319,
+            1796,
+            2274,
+            2752,
+            2999
+          ],
+          "policy_seed_offset": 6
+        },
+        {
+          "group": 7,
+          "initial_nodes": [
+            1013,
+            1034,
+            1113,
+            1157,
+            2492
+          ],
+          "policy_seed_offset": 7
+        },
+        {
+          "group": 8,
+          "initial_nodes": [
+            1121,
+            1486,
+            1769,
+            2026,
+            2162
+          ],
+          "policy_seed_offset": 8
+        },
+        {
+          "group": 9,
+          "initial_nodes": [
+            104,
+            352,
+            453,
+            2299,
+            2394
+          ],
+          "policy_seed_offset": 9
+        },
+        {
+          "group": 10,
+          "initial_nodes": [
+            990,
+            1408,
+            1437,
+            1646,
+            2292
+          ],
+          "policy_seed_offset": 10
+        },
+        {
+          "group": 11,
+          "initial_nodes": [
+            508,
+            686,
+            811,
+            1252,
+            2746
+          ],
+          "policy_seed_offset": 11
+        },
+        {
+          "group": 12,
+          "initial_nodes": [
+            1915,
+            2241,
+            2309,
+            2419,
+            2558
+          ],
+          "policy_seed_offset": 12
+        },
+        {
+          "group": 13,
+          "initial_nodes": [
+            686,
+            722,
+            1829,
+            2466,
+            2781
+          ],
+          "policy_seed_offset": 13
+        },
+        {
+          "group": 14,
+          "initial_nodes": [
+            1788,
+            2290,
+            2535,
+            2618,
+            2708
+          ],
+          "policy_seed_offset": 14
+        },
+        {
+          "group": 15,
+          "initial_nodes": [
+            42,
+            977,
+            1500,
+            1767,
+            2113
+          ],
+          "policy_seed_offset": 15
+        },
+        {
+          "group": 16,
+          "initial_nodes": [
+            241,
+            1470,
+            2168,
+            2858,
+            2940
+          ],
+          "policy_seed_offset": 16
+        },
+        {
+          "group": 17,
+          "initial_nodes": [
+            290,
+            480,
+            617,
+            655,
+            1984
+          ],
+          "policy_seed_offset": 17
+        },
+        {
+          "group": 18,
+          "initial_nodes": [
+            557,
+            1063,
+            1510,
+            1662,
+            2977
+          ],
+          "policy_seed_offset": 18
+        },
+        {
+          "group": 19,
+          "initial_nodes": [
+            307,
+            418,
+            1813,
+            2350,
+            3019
+          ],
+          "policy_seed_offset": 19
+        }
+      ]
+    }
+  },
+  "note": "initial survey nodes, policy seeds and the graph choice are fixed here, before any result exists; every method shares the same initial observation"
+}

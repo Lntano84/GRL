@@ -1,0 +1,3084 @@
+
+### [md 0] If you use online code editor, such as Google co-lab and online Python notebook, please install needed package. Thanks.
+
+=== [code 1] ===
+pip install lightgbm xgboost catboost ngboost
+
+### [md 2] Following code implements and evaluates several leakage-free prediction methods, including single-stage LightGBM, CRR++, Scale-Bucket Experts, and a Recency Ensemble. The code loads and preprocesses the data, engineers relevant features, splits the data temporally, trains each model, and reports key performance metrics on the test set.
+
+=== [code 3] ===
+# ============================================================
+# PAI TRACE JOB DURATION PREDICTION — SCRIPT 1: FOUR METHODS
+# ============================================================
+
+import tarfile
+import pathlib
+import warnings
+import time
+import gc
+from dataclasses import dataclass
+from typing import Dict, List, Tuple
+
+import numpy as np
+import pandas as pd
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+from scipy.stats import spearmanr
+
+from lightgbm import LGBMRegressor, early_stopping, log_evaluation
+
+warnings.filterwarnings("ignore")
+RNG = 42
+np.random.seed(RNG)
+
+# ============================================================
+# I/O
+# ============================================================
+ARCHIVES = [
+    "/content/pai_group_tag_table.tar.gz",
+    "/content/pai_job_table.tar.gz",
+    "/content/pai_task_table.tar.gz",
+]
+EXTRACT_DIR = pathlib.Path("/content/extracted")
+
+
+def extract_archives():
+    EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
+    for gz in ARCHIVES:
+        p = pathlib.Path(gz)
+        if not p.exists():
+            print(f"  [WARN] Archive not found: {gz}")
+            continue
+        with tarfile.open(gz, mode="r:gz") as tar:
+            tar.extractall(path=EXTRACT_DIR)
+    print(f"[IO] Extracted to {EXTRACT_DIR}")
+
+
+@dataclass
+class Tables:
+    job: pd.DataFrame
+    gtag: pd.DataFrame
+
+
+def load_tables() -> Tables:
+    job_cols = ["job_name", "inst_id", "user", "status", "start_time", "end_time"]
+    task_cols = [
+        "job_name", "task_name", "inst_num", "status", "start_time", "end_time",
+        "plan_cpu", "plan_mem", "plan_gpu", "gpu_type",
+    ]
+    grp_cols = ["inst_id", "user_from_group_table", "gpu_type_spec", "group", "workload"]
+
+    job = pd.read_csv(EXTRACT_DIR / "pai_job_table.csv", header=None, names=job_cols, low_memory=False)
+    task = pd.read_csv(EXTRACT_DIR / "pai_task_table.csv", header=None, names=task_cols, low_memory=False)
+    gtag = pd.read_csv(EXTRACT_DIR / "pai_group_tag_table.csv", header=None, names=grp_cols, low_memory=False)
+
+    job = job[job.status == "Terminated"].copy()
+    task = task[task.status == "Terminated"].copy()
+
+    for df in (job, task):
+        df["start_time"] = pd.to_numeric(df["start_time"], errors="coerce")
+        df["end_time"] = pd.to_numeric(df["end_time"], errors="coerce")
+
+    for c in ["plan_cpu", "plan_gpu", "plan_mem", "inst_num"]:
+        task[c] = pd.to_numeric(task[c], errors="coerce")
+
+    task["cpu_total"] = (task["plan_cpu"] / 100.0) * task["inst_num"]
+    task["gpu_total"] = (task["plan_gpu"] / 100.0) * task["inst_num"]
+    task["mem_total"] = task["plan_mem"] * task["inst_num"]
+
+    job_span = (
+        task.groupby("job_name")
+        .agg(
+            min_start=("start_time", "min"),
+            max_end=("end_time", "max"),
+            total_inst_num=("inst_num", "sum"),
+            total_plan_cpu=("cpu_total", "sum"),
+            total_plan_mem=("mem_total", "sum"),
+            total_plan_gpu=("gpu_total", "sum"),
+            num_tasks=("task_name", "nunique"),
+        )
+        .reset_index()
+    )
+    job_span["p_star"] = (job_span["max_end"] - job_span["min_start"]).clip(lower=0)
+
+    base = job[["job_name", "inst_id", "user", "start_time"]].merge(
+        job_span, on="job_name", how="inner"
+    )
+    base = base[base["p_star"] > 0].copy()
+    base.rename(columns={"start_time": "submit_time"}, inplace=True)
+
+    gkeep = gtag[["inst_id", "group", "workload", "gpu_type_spec"]].copy()
+    base = base.merge(gkeep, on="inst_id", how="left")
+    for c in ["group", "workload", "gpu_type_spec", "user"]:
+        base[c] = base[c].fillna("Unknown").astype(str)
+
+    base.dropna(subset=["submit_time"], inplace=True)
+
+    del job, task, gtag, job_span
+    gc.collect()
+
+    return Tables(job=base, gtag=gkeep)
+
+
+# ============================================================
+# SPLIT & METRICS
+# ============================================================
+def time_split(df, train_frac=0.70, val_frac=0.15):
+    qt = df["submit_time"].quantile([train_frac, train_frac + val_frac]).values
+    t_train, t_val = int(qt[0]), int(qt[1])
+    idx_tr = df.index[df["submit_time"] < t_train]
+    idx_va = df.index[(df["submit_time"] >= t_train) & (df["submit_time"] < t_val)]
+    idx_te = df.index[df["submit_time"] >= t_val]
+    return (idx_tr, idx_va, idx_te), (t_train, t_val)
+
+
+def compute_metrics(y_true, y_pred):
+    y_true = np.asarray(y_true, dtype=float).clip(min=1e-9)
+    y_pred = np.asarray(y_pred, dtype=float).clip(min=1e-9)
+    mae = float(mean_absolute_error(y_true, y_pred))
+    rmsle = float(np.sqrt(mean_squared_error(np.log1p(y_true), np.log1p(y_pred))))
+    rel = np.abs(y_pred - y_true) / y_true
+    cov25 = float(100.0 * np.mean(rel <= 0.25))
+    cov50 = float(100.0 * np.mean(rel <= 0.50))
+    rho = float(spearmanr(y_true, y_pred)[0]) if len(y_true) > 1 else np.nan
+    return {"MAE": mae, "RMSLE": rmsle, "Cov25": cov25, "Cov50": cov50, "Spearman": rho}
+
+
+def print_metrics(tag, m):
+    print(
+        f"[{tag:22s}]  Cov@25% {m['Cov25']:5.1f}% | Cov@50% {m['Cov50']:5.1f}% "
+        f"| RMSLE {m['RMSLE']:.3f} | MAE {m['MAE']:7.1f} | ρ {m['Spearman']:.3f}"
+    )
+
+
+# ============================================================
+# LEAKAGE-FREE FEATURE LAYER
+# ============================================================
+def add_core_features(df):
+    df = df.copy()
+    for c in ["total_inst_num", "total_plan_cpu", "total_plan_mem", "total_plan_gpu", "num_tasks"]:
+        df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0)
+
+    for c in ["total_plan_cpu", "total_plan_gpu", "total_plan_mem", "total_inst_num", "num_tasks"]:
+        df[f"log1p_{c}"] = np.log1p(df[c])
+
+    df["cpu_per_inst"] = df["total_plan_cpu"] / np.maximum(1.0, df["total_inst_num"])
+    df["mem_per_gpu"] = df["total_plan_mem"] / np.maximum(1.0, df["total_plan_gpu"])
+    df["tasks_per_inst"] = df["num_tasks"] / np.maximum(1.0, df["total_inst_num"])
+
+    hour = ((df["submit_time"] // 3600) % 24).astype(int)
+    wday = (((df["submit_time"] // 3600) // 24) % 7).astype(int)
+    how = (wday * 24 + hour).astype(int)
+    df["hour"] = hour
+    df["wday"] = wday
+    df["how"] = how
+    df["sin24"] = np.sin(2 * np.pi * hour / 24.0)
+    df["cos24"] = np.cos(2 * np.pi * hour / 24.0)
+    df["sin168"] = np.sin(2 * np.pi * how / 168.0)
+    df["cos168"] = np.cos(2 * np.pi * how / 168.0)
+    return df
+
+
+def add_causal_histories_strict(df, idx_tr, idx_va, idx_te, mu0):
+    """
+    Fully vectorized causal histories. No slow groupby.apply().
+    TRAIN: per-group expanding mean/count via transform.
+    VAL/TEST: frozen end-of-train aggregates via map().
+    """
+    df = df.copy()
+    df["y_log"] = np.log1p(df["p_star"].clip(lower=0))
+
+    for pref in ["grp", "usr"]:
+        df[f"{pref}_hist_mean"] = mu0
+        df[f"{pref}_hist_count"] = 0.0
+        df[f"{pref}_dt_prev_log1p"] = 0.0
+        for w in (3, 5, 10):
+            df[f"{pref}_roll_mean_w{w}"] = mu0
+
+    # ------ STEP 1: TRAIN expanding stats (vectorized) ------
+    df_tr = df.loc[idx_tr].sort_values("submit_time").copy()
+
+    for key, pref in [("group", "grp"), ("user", "usr")]:
+        grp = df_tr.groupby(key)
+
+        # Expanding mean excluding current row
+        csum = grp["y_log"].transform("cumsum")
+        exp_cnt = grp.cumcount() + 1
+        shifted_csum = csum - df_tr["y_log"]
+        shifted_cnt = exp_cnt - 1
+        hist_mean = (shifted_csum / shifted_cnt.replace(0, np.nan)).fillna(mu0)
+
+        df.loc[df_tr.index, f"{pref}_hist_mean"] = hist_mean.values
+        df.loc[df_tr.index, f"{pref}_hist_count"] = shifted_cnt.astype(float).values
+
+        # Time since previous (per-group shift)
+        prev_ts = grp["submit_time"].shift(1)
+        dt = (df_tr["submit_time"] - prev_ts).fillna(0)
+        df.loc[df_tr.index, f"{pref}_dt_prev_log1p"] = np.log1p(dt).values
+
+        # Rolling means on shifted y_log (groupby.rolling — fast C path)
+        shifted_y = grp["y_log"].shift(1)
+        df_tr[f"_sy_{pref}"] = shifted_y
+
+        for w in (3, 5, 10):
+            roll = (
+                df_tr.groupby(key)[f"_sy_{pref}"]
+                .rolling(w, min_periods=1)
+                .mean()
+                .reset_index(level=0, drop=True)
+                .fillna(mu0)
+            )
+            df.loc[df_tr.index, f"{pref}_roll_mean_w{w}"] = roll.values
+
+        df_tr.drop(columns=[f"_sy_{pref}"], inplace=True)
+
+    # ------ STEP 2: FROZEN stats for val/test (vectorized) ------
+    for key, pref in [("group", "grp"), ("user", "usr")]:
+        train_stats = df.loc[idx_tr].groupby(key)["y_log"].agg(["mean", "count"])
+        mean_map = train_stats["mean"]
+        count_map = train_stats["count"]
+        last_ts_map = df.loc[idx_tr].groupby(key)["submit_time"].last()
+
+        df_tr_sorted = df.loc[idx_tr].sort_values("submit_time")
+        roll_maps = {}
+        for w in (3, 5, 10):
+            roll_maps[w] = df_tr_sorted.groupby(key)["y_log"].apply(lambda s: s.tail(w).mean())
+
+        for split_idx in [idx_va, idx_te]:
+            entities = df.loc[split_idx, key]
+            df.loc[split_idx, f"{pref}_hist_mean"] = entities.map(mean_map).fillna(mu0).values
+            df.loc[split_idx, f"{pref}_hist_count"] = entities.map(count_map).fillna(0.0).values
+
+            last_ts = entities.map(last_ts_map)
+            dt = df.loc[split_idx, "submit_time"].values - last_ts.values
+            dt = np.where(np.isnan(dt), 0.0, np.maximum(dt, 0.0))
+            df.loc[split_idx, f"{pref}_dt_prev_log1p"] = np.log1p(dt)
+
+            for w in (3, 5, 10):
+                df.loc[split_idx, f"{pref}_roll_mean_w{w}"] = entities.map(roll_maps[w]).fillna(mu0).values
+
+    # EB shrinkage
+    n = df["grp_hist_count"].values
+    mu = df["grp_hist_mean"].values
+    lam = 10.0
+    df["grp_mean_eb"] = (n * mu + lam * mu0) / (n + lam)
+
+    return df
+
+
+def fit_scale_buckets(train_series, quantiles):
+    edges = np.quantile(train_series.dropna(), quantiles).tolist()
+    def bucketize(series):
+        return np.searchsorted(edges, series, side="right").astype(int)
+    return edges, bucketize
+
+
+def map_from_train(series, train_idx):
+    cats = series.loc[train_idx].astype(str).unique()
+    mapping = {c: i for i, c in enumerate(cats)}
+    return series.astype(str).map(mapping).fillna(len(mapping)).astype(int)
+
+
+def build_feature_table(df_raw, idx_tr, idx_va, idx_te, t_train):
+    df = add_core_features(df_raw)
+
+    mu0 = float(np.log1p(df.loc[idx_tr, "p_star"].clip(lower=0)).mean())
+    if not np.isfinite(mu0):
+        mu0 = float(np.log1p(df["p_star"].clip(lower=0)).mean())
+
+    df = add_causal_histories_strict(df, idx_tr, idx_va, idx_te, mu0)
+
+    _, inst_bucketize = fit_scale_buckets(df.loc[idx_tr, "total_inst_num"], [0.5, 0.9, 0.99])
+    _, gpu_bucketize = fit_scale_buckets(df.loc[idx_tr, "total_plan_gpu"], [0.5, 0.9, 0.99])
+    df["inst_bucket"] = inst_bucketize(df["total_inst_num"])
+    df["gpu_bucket"] = gpu_bucketize(df["total_plan_gpu"])
+    df["scale_bucket"] = np.maximum(df["inst_bucket"], df["gpu_bucket"])
+
+    for c in ["user", "group", "workload", "gpu_type_spec"]:
+        df[f"{c}_code"] = map_from_train(df[c], idx_tr)
+
+    FEATURES = [
+        "log1p_total_plan_cpu", "log1p_total_plan_gpu", "log1p_total_plan_mem",
+        "log1p_total_inst_num", "log1p_num_tasks",
+        "cpu_per_inst", "mem_per_gpu", "tasks_per_inst",
+        "sin24", "cos24", "sin168", "cos168", "wday", "hour",
+        "inst_bucket", "gpu_bucket", "scale_bucket",
+        "grp_hist_mean", "grp_hist_count", "grp_mean_eb",
+        "grp_roll_mean_w3", "grp_roll_mean_w5", "grp_roll_mean_w10",
+        "grp_dt_prev_log1p",
+        "usr_hist_mean", "usr_hist_count", "usr_dt_prev_log1p",
+        "user_code", "group_code", "workload_code", "gpu_type_spec_code",
+    ]
+
+    df[FEATURES] = df[FEATURES].replace([np.inf, -np.inf], np.nan).fillna(0.0)
+    return df, FEATURES, mu0
+
+
+# ============================================================
+# M1 — Single-Stage LGBM
+# ============================================================
+def train_m1_single_stage(df, FEATS, idx_tr, idx_va, idx_te):
+    y_log = np.log1p(df["p_star"].values)
+    X_tr, y_tr = df.loc[idx_tr, FEATS], y_log[idx_tr]
+    X_va, y_va = df.loc[idx_va, FEATS], y_log[idx_va]
+    X_te = df.loc[idx_te, FEATS]
+    y_te = df.loc[idx_te, "p_star"].values
+
+    mono_features = ["log1p_total_inst_num", "log1p_total_plan_gpu", "log1p_num_tasks"]
+    mono_vec = [1 if f in mono_features else 0 for f in FEATS]
+
+    try:
+        model = LGBMRegressor(
+            n_estimators=800, learning_rate=0.05, num_leaves=63,
+            min_child_samples=20, subsample=0.8, colsample_bytree=0.8,
+            monotone_constraints=mono_vec, random_state=RNG, n_jobs=-1,
+        )
+    except TypeError:
+        model = LGBMRegressor(
+            n_estimators=800, learning_rate=0.05, num_leaves=63,
+            min_child_samples=20, subsample=0.8, colsample_bytree=0.8,
+            random_state=RNG, n_jobs=-1,
+        )
+
+    model.fit(
+        X_tr, y_tr,
+        eval_set=[(X_va, y_va)],
+        callbacks=[early_stopping(50, verbose=False), log_evaluation(0)],
+    )
+    yhat = np.expm1(model.predict(X_te)).clip(min=0)
+    return compute_metrics(y_te, yhat), yhat
+
+
+# ============================================================
+# M2 — CRR++
+# ============================================================
+def train_m2_crr_plus(df, FEATS, idx_tr, idx_va, idx_te, K=5, min_family=1500):
+    y_log = np.log1p(df["p_star"].values)
+    X_tr = df.loc[idx_tr, FEATS].copy()
+    X_va = df.loc[idx_va, FEATS].copy()
+    X_te = df.loc[idx_te, FEATS].copy()
+    y_tr, y_va = y_log[idx_tr], y_log[idx_va]
+    y_te = df.loc[idx_te, "p_star"].values
+
+    scaler = StandardScaler().fit(X_tr.values)
+    Z_tr = scaler.transform(X_tr.values)
+    Z_va = scaler.transform(X_va.values)
+    Z_te = scaler.transform(X_te.values)
+
+    kmeans = KMeans(n_clusters=K, n_init=10, random_state=RNG).fit(Z_tr)
+    fam_tr = kmeans.labels_
+    fam_va = kmeans.predict(Z_va)
+
+    router = RandomForestClassifier(
+        n_estimators=150, max_depth=12, class_weight="balanced",
+        n_jobs=-1, random_state=RNG,
+    )
+    router.fit(Z_tr, fam_tr)
+
+    fallback = LGBMRegressor(
+        n_estimators=600, learning_rate=0.05, num_leaves=63,
+        min_child_samples=20, subsample=0.8, colsample_bytree=0.8,
+        random_state=RNG, n_jobs=-1,
+    )
+    fallback.fit(
+        X_tr, y_tr,
+        eval_set=[(X_va, y_va)],
+        callbacks=[early_stopping(50, verbose=False), log_evaluation(0)],
+    )
+
+    experts = {}
+    for k in range(K):
+        mask_tr = fam_tr == k
+        if mask_tr.sum() < min_family:
+            continue
+        model = LGBMRegressor(
+            n_estimators=600, learning_rate=0.05, num_leaves=63,
+            min_child_samples=20, subsample=0.8, colsample_bytree=0.8,
+            random_state=RNG + 100 + k, n_jobs=-1,
+        )
+        mask_va = fam_va == k
+        if mask_va.sum() >= 200:
+            model.fit(
+                X_tr[mask_tr], y_tr[mask_tr],
+                eval_set=[(X_va[mask_va], y_va[mask_va])],
+                callbacks=[early_stopping(50, verbose=False), log_evaluation(0)],
+            )
+        else:
+            model.fit(X_tr[mask_tr], y_tr[mask_tr])
+        experts[k] = model
+
+    fam_hat = router.predict(Z_te)
+    y_pred_log = np.zeros(len(X_te), dtype=float)
+    for i, k in enumerate(fam_hat):
+        model = experts.get(k, fallback)
+        y_pred_log[i] = model.predict(X_te.iloc[i : i + 1])[0]
+
+    yhat = np.expm1(y_pred_log).clip(min=0)
+    return compute_metrics(y_te, yhat), yhat
+
+
+# ============================================================
+# M3 — Scale-Bucket Experts
+# ============================================================
+def train_m3_scale_experts(df, FEATS, idx_tr, idx_va, idx_te, min_bucket=2000):
+    X_tr = df.loc[idx_tr, FEATS]
+    X_va = df.loc[idx_va, FEATS]
+    X_te = df.loc[idx_te, FEATS]
+    y_tr_log = np.log1p(df.loc[idx_tr, "p_star"].values)
+    y_va_log = np.log1p(df.loc[idx_va, "p_star"].values)
+    y_te = df.loc[idx_te, "p_star"].values
+
+    global_model = LGBMRegressor(
+        n_estimators=500, learning_rate=0.05, num_leaves=63,
+        min_child_samples=20, subsample=0.8, colsample_bytree=0.8,
+        random_state=RNG, n_jobs=-1,
+    )
+    global_model.fit(
+        X_tr, y_tr_log,
+        eval_set=[(X_va, y_va_log)],
+        callbacks=[early_stopping(40, verbose=False), log_evaluation(0)],
+    )
+
+    experts = {}
+    for b in sorted(df.loc[idx_tr, "scale_bucket"].unique()):
+        tr_mask = df.loc[idx_tr, "scale_bucket"].values == b
+        if tr_mask.sum() < min_bucket:
+            continue
+        model = LGBMRegressor(
+            n_estimators=400, learning_rate=0.05, num_leaves=63,
+            min_child_samples=20, random_state=RNG + 200 + b, n_jobs=-1,
+        )
+        va_mask = df.loc[idx_va, "scale_bucket"].values == b
+        if va_mask.sum() >= 200:
+            model.fit(
+                X_tr[tr_mask], y_tr_log[tr_mask],
+                eval_set=[(X_va[va_mask], y_va_log[va_mask])],
+                callbacks=[early_stopping(30, verbose=False), log_evaluation(0)],
+            )
+        else:
+            model.fit(X_tr[tr_mask], y_tr_log[tr_mask])
+        experts[b] = model
+
+    buckets_te = df.loc[idx_te, "scale_bucket"].values
+    y_pred_log = global_model.predict(X_te)
+    for b, model in experts.items():
+        mask = buckets_te == b
+        if mask.any():
+            y_pred_log[mask] = model.predict(X_te[mask])
+
+    yhat = np.expm1(y_pred_log).clip(min=0)
+    return compute_metrics(y_te, yhat), yhat
+
+
+# ============================================================
+# M4 — Recency Ensemble
+# ============================================================
+def train_m4_recency_ensemble(df, FEATS, idx_tr, idx_va, idx_te, recent_q=0.70, mix=0.30):
+    y_tr_log = np.log1p(df.loc[idx_tr, "p_star"].values)
+    y_va_log = np.log1p(df.loc[idx_va, "p_star"].values)
+    y_te = df.loc[idx_te, "p_star"].values
+
+    X_tr = df.loc[idx_tr, FEATS].values
+    X_va = df.loc[idx_va, FEATS].values
+    X_te = df.loc[idx_te, FEATS].values
+
+    full = LGBMRegressor(
+        n_estimators=500, learning_rate=0.04, num_leaves=63,
+        min_child_samples=60, subsample=0.8, colsample_bytree=0.8,
+        reg_alpha=0.2, reg_lambda=0.8, random_state=RNG, n_jobs=-1,
+    )
+    full.fit(
+        X_tr, y_tr_log,
+        eval_set=[(X_va, y_va_log)],
+        callbacks=[early_stopping(40, verbose=False), log_evaluation(0)],
+    )
+
+    t_cut = df.loc[idx_tr, "submit_time"].quantile(recent_q)
+    tr_recent_mask = df.loc[idx_tr, "submit_time"].values >= t_cut
+    if tr_recent_mask.sum() >= 1000:
+        recent = LGBMRegressor(
+            n_estimators=300, learning_rate=0.05, num_leaves=31,
+            min_child_samples=40, random_state=RNG + 1, n_jobs=-1,
+        )
+        recent.fit(
+            X_tr[tr_recent_mask], y_tr_log[tr_recent_mask],
+            eval_set=[(X_va, y_va_log)],
+            callbacks=[early_stopping(30, verbose=False), log_evaluation(0)],
+        )
+        y_full = np.expm1(full.predict(X_te))
+        y_recent = np.expm1(recent.predict(X_te))
+        yhat = ((1.0 - mix) * y_full + mix * y_recent).clip(min=0)
+    else:
+        yhat = np.expm1(full.predict(X_te)).clip(min=0)
+
+    return compute_metrics(y_te, yhat), yhat
+
+
+# ============================================================
+# RECURRING SIGNATURE MASK
+# ============================================================
+def compute_recurring_mask(df, idx_tr, idx_te):
+    """
+    Compute recurring mask using same signature definition as Script 2.
+    A test job is 'recurring' if its (user, group, workload, cpu_b, gpu_b,
+    mem_b, inst_b) signature appeared at least once in training.
+    """
+    train_df = df.loc[idx_tr]
+
+    def qbin(col, q=10):
+        edges = np.quantile(train_df[col].clip(lower=1e-6), np.linspace(0, 1, q + 1))
+        edges[0], edges[-1] = -np.inf, np.inf
+        return np.searchsorted(edges, df[col].values, side="right") - 1
+
+    cpu_b = qbin("total_plan_cpu", 10)
+    gpu_b = qbin("total_plan_gpu", 10)
+    mem_b = qbin("total_plan_mem", 10)
+    inst_b = qbin("total_inst_num", 10)
+
+    sig = (
+        df["user"].astype(str) + "|" + df["group"].astype(str) + "|"
+        + df["workload"].astype(str) + "|"
+        + pd.Series(cpu_b, index=df.index).astype(str) + "-"
+        + pd.Series(gpu_b, index=df.index).astype(str) + "-"
+        + pd.Series(mem_b, index=df.index).astype(str) + "-"
+        + pd.Series(inst_b, index=df.index).astype(str)
+    )
+
+    train_sigs = set(sig.loc[idx_tr].unique())
+    rec_mask = sig.loc[idx_te].isin(train_sigs).values
+    return rec_mask
+
+
+# ============================================================
+# DRIVER
+# ============================================================
+def main():
+    print("=" * 78)
+    print("PAI TRACE — FOUR LEAKAGE-FREE METHODS (BUG-FIXED) + RECURRING ANALYSIS")
+    print("=" * 78)
+    t0 = time.time()
+
+    extract_archives()
+    tbl = load_tables()
+    df_raw = tbl.job.copy()
+    print(f"Loaded jobs: {len(df_raw):,}")
+
+    splits, (t_train, t_val) = time_split(df_raw, train_frac=0.70, val_frac=0.15)
+    idx_tr, idx_va, idx_te = splits
+    print(f"Split sizes  | train {len(idx_tr):,} | val {len(idx_va):,} | test {len(idx_te):,}")
+    print(f"Cut times    | train< {t_train} | val< {t_val}")
+
+    df, FEATS, mu0 = build_feature_table(df_raw, idx_tr, idx_va, idx_te, t_train)
+    print(f"Features: {len(FEATS)}")
+    print()
+
+    results = {}
+
+    print("Training M1: Single-Stage LGBM ...")
+    m1, y1 = train_m1_single_stage(df, FEATS, idx_tr, idx_va, idx_te)
+    print_metrics("M1 Single-Stage", m1)
+    results["M1"] = (m1, y1)
+
+    print("\nTraining M2: CRR++ ...")
+    m2, y2 = train_m2_crr_plus(df, FEATS, idx_tr, idx_va, idx_te)
+    print_metrics("M2 CRR++", m2)
+    results["M2"] = (m2, y2)
+
+    print("\nTraining M3: Scale-Experts ...")
+    m3, y3 = train_m3_scale_experts(df, FEATS, idx_tr, idx_va, idx_te)
+    print_metrics("M3 Scale-Experts", m3)
+    results["M3"] = (m3, y3)
+
+    print("\nTraining M4: Recency-Ensemble ...")
+    m4, y4 = train_m4_recency_ensemble(df, FEATS, idx_tr, idx_va, idx_te)
+    print_metrics("M4 Recency-Ensemble", m4)
+    results["M4"] = (m4, y4)
+
+    # ============================================================
+    # RECURRING vs NON-RECURRING ANALYSIS
+    # ============================================================
+    print("\n" + "=" * 78)
+    print("RECURRING vs NON-RECURRING ANALYSIS")
+    print("=" * 78)
+
+    rec_mask = compute_recurring_mask(df, idx_tr, idx_te)
+    n_rec = rec_mask.sum()
+    n_new = (~rec_mask).sum()
+    print(f"Recurring    : {n_rec:,} ({100 * n_rec / len(rec_mask):.1f}%)")
+    print(f"Non-recurring: {n_new:,} ({100 * n_new / len(rec_mask):.1f}%)")
+    print()
+
+    y_te = df.loc[idx_te, "p_star"].values
+
+    for name, (m_all, yhat) in results.items():
+        m_rec = compute_metrics(y_te[rec_mask], yhat[rec_mask])
+        m_new = compute_metrics(y_te[~rec_mask], yhat[~rec_mask])
+        print(
+            f"[{name}]  All: Cov@25={m_all['Cov25']:5.1f}%  Cov@50={m_all['Cov50']:5.1f}%  "
+            f"RMSLE={m_all['RMSLE']:.3f}  ρ={m_all['Spearman']:.3f}"
+        )
+        print(
+            f"       Rec: Cov@25={m_rec['Cov25']:5.1f}%  Cov@50={m_rec['Cov50']:5.1f}%  "
+            f"RMSLE={m_rec['RMSLE']:.3f}  ρ={m_rec['Spearman']:.3f}"
+        )
+        print(
+            f"       New: Cov@25={m_new['Cov25']:5.1f}%  Cov@50={m_new['Cov50']:5.1f}%  "
+            f"RMSLE={m_new['RMSLE']:.3f}  ρ={m_new['Spearman']:.3f}"
+        )
+        print()
+
+    print(f"Total wall time: {time.time() - t0:.1f}s")
+    print("=" * 78)
+    return df, idx_tr, idx_te, results, rec_mask
+
+
+if __name__ == "__main__":
+    df, idx_tr, idx_te, results, rec_mask = main()
+
+=== [code 4] ===
+# ============================================================
+# PAI TRACE JOB DURATION PREDICTION — LEAKAGE-FREE VERSION
+# ============================================================
+
+
+import tarfile, pathlib, warnings, gc, time
+import numpy as np
+import pandas as pd
+
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+from sklearn.isotonic import IsotonicRegression
+from sklearn.linear_model import Ridge
+from scipy.stats import spearmanr
+
+from lightgbm import LGBMRegressor, LGBMClassifier, early_stopping, log_evaluation
+
+warnings.filterwarnings("ignore")
+np.random.seed(42)
+RANDOM_STATE = 42
+
+# ============================================================
+# CONFIGURATION
+# ============================================================
+ARCHIVES = [
+    "/content/pai_group_tag_table.tar.gz",
+    "/content/pai_job_table.tar.gz",
+    "/content/pai_task_table.tar.gz",
+]
+EXTRACT_DIR = pathlib.Path("/content/extracted")
+
+# ============================================================
+# 1. DATA LOADING
+# ============================================================
+def extract_archives():
+    """Extract tar.gz archives."""
+    EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
+    for gz in ARCHIVES:
+        with tarfile.open(gz, mode="r:gz") as tar:
+            tar.extractall(path=EXTRACT_DIR)
+    print(f"[IO] Extracted files to {EXTRACT_DIR}")
+
+
+def load_tables():
+    """
+    Load PAI CSVs and compute job-level p_star and resource totals.
+
+    Key points:
+    - p_star = job makespan (envelope across all tasks)
+    - Resources are per-instance percentages converted to counts, then summed
+    """
+    job_cols   = ["job_name", "inst_id", "user", "status", "start_time", "end_time"]
+    task_cols  = ["job_name", "task_name", "inst_num", "status", "start_time", "end_time",
+                  "plan_cpu", "plan_mem", "plan_gpu", "gpu_type"]
+    group_cols = ["inst_id", "user_from_group_table", "gpu_type_spec", "group", "workload"]
+
+    job  = pd.read_csv(EXTRACT_DIR / "pai_job_table.csv",  header=None, names=job_cols,  low_memory=False)
+    task = pd.read_csv(EXTRACT_DIR / "pai_task_table.csv", header=None, names=task_cols, low_memory=False)
+    gtag = pd.read_csv(EXTRACT_DIR / "pai_group_tag_table.csv", header=None, names=group_cols, low_memory=False)
+
+    # Keep only terminated
+    job  = job[job.status  == "Terminated"].copy()
+    task = task[task.status == "Terminated"].copy()
+
+    # Timestamps to numeric
+    for df in (job, task):
+        df["start_time"] = pd.to_numeric(df["start_time"], errors="coerce")
+        df["end_time"]   = pd.to_numeric(df["end_time"],   errors="coerce")
+
+    # Convert resource fields to numeric
+    for c in ["plan_cpu", "plan_gpu", "plan_mem", "inst_num"]:
+        task[c] = pd.to_numeric(task[c], errors="coerce")
+
+    # Convert percentages to counts per instance, then sum per task
+    task["cpu_per_inst"] = task["plan_cpu"] / 100.0  # 600.0 -> 6 vCPU
+    task["gpu_per_inst"] = task["plan_gpu"] / 100.0  # 50.0 -> 0.5 GPU
+    task["mem_per_inst"] = task["plan_mem"]          # GB
+
+    task["cpu_total"] = task["cpu_per_inst"] * task["inst_num"]
+    task["gpu_total"] = task["gpu_per_inst"] * task["inst_num"]
+    task["mem_total"] = task["mem_per_inst"] * task["inst_num"]
+
+    # Job envelope makespan p_star
+    job_span = (task.groupby("job_name")
+                    .agg(min_start=("start_time", "min"),
+                         max_end=("end_time", "max"),
+                         total_inst_num=("inst_num", "sum"),
+                         total_plan_cpu=("cpu_total", "sum"),
+                         total_plan_mem=("mem_total", "sum"),
+                         total_plan_gpu=("gpu_total", "sum"),
+                         num_tasks=("task_name", "nunique"))
+                    .reset_index())
+    job_span["p_star"] = (job_span["max_end"] - job_span["min_start"]).clip(lower=0)
+
+    # Merge job metadata + group tags
+    base = job[["job_name", "inst_id", "user", "start_time"]].merge(job_span, on="job_name", how="inner")
+    base = base[base["p_star"] > 0].copy()
+
+    base = base.merge(gtag[["inst_id", "group", "workload", "gpu_type_spec"]],
+                      on="inst_id", how="left")
+
+    for c in ["group", "workload", "gpu_type_spec", "user"]:
+        base[c] = base[c].fillna("Unknown").astype(str)
+
+    base.rename(columns={"start_time": "submit_time"}, inplace=True)
+
+    # Cleanup
+    del job, task, gtag, job_span
+    gc.collect()
+    return base
+
+
+# ============================================================
+# 2. TIME-BASED SPLITTING
+# ============================================================
+def time_split(df, train_frac=0.70, val_frac=0.15):
+    """Split indices by submit_time quantiles (train/val/test)."""
+    qt = df["submit_time"].quantile([train_frac, train_frac + val_frac]).values
+    t_train, t_val = int(qt[0]), int(qt[1])
+    idx_tr = df.index[df["submit_time"] < t_train]
+    idx_va = df.index[(df["submit_time"] >= t_train) & (df["submit_time"] < t_val)]
+    idx_te = df.index[df["submit_time"] >= t_val]
+    return (idx_tr, idx_va, idx_te), (t_train, t_val)
+
+
+# ============================================================
+# 3. FEATURE ENGINEERING (LEAKAGE-FREE)
+# ============================================================
+def add_basic_features(df):
+    """Basic features: logs, ratios, temporal (no leakage)."""
+    df = df.copy()
+
+    # Log transforms
+    for c in ["total_plan_cpu", "total_plan_gpu", "total_plan_mem", "total_inst_num", "num_tasks"]:
+        df[f"log_{c}"] = np.log1p(df[c].clip(lower=0))
+
+    # Per-instance ratios
+    df["cpu_per_inst"]   = df["total_plan_cpu"] / np.maximum(1.0, df["total_inst_num"])
+    df["gpu_per_inst"]   = df["total_plan_gpu"] / np.maximum(1.0, df["total_inst_num"])
+    df["mem_per_inst"]   = df["total_plan_mem"] / np.maximum(1.0, df["total_inst_num"])
+    df["tasks_per_inst"] = df["num_tasks"]      / np.maximum(1.0, df["total_inst_num"])
+
+    # Temporal (cyclic)
+    hour = ((df["submit_time"] // 3600) % 24).astype(int)
+    dow  = ((df["submit_time"] // 86400) % 7).astype(int)
+    df["hour"] = hour
+    df["dow"]  = dow
+    df["sin_hour"]   = np.sin(2 * np.pi * hour / 24.0)
+    df["cos_hour"]   = np.cos(2 * np.pi * hour / 24.0)
+    df["is_weekend"] = (df["dow"] >= 5).astype(int)
+    return df
+
+
+def fit_label_encoder_from_train(train_series):
+    """Train-only label encoder (unseen values -> -1)."""
+    classes = pd.Index(train_series.dropna().unique().tolist())
+    mapping = {v: i for i, v in enumerate(classes)}
+    def _transform(s):
+        return s.map(mapping).fillna(-1).astype(int)
+    return _transform
+
+
+def make_signatures(df, idx_tr, global_mean_log):
+    """
+    Create recurrence signatures and compute train-only statistics.
+
+    Leakage prevention:
+    - Quantile edges computed on train only
+    - Signature stats computed on train only
+    - EB shrinkage uses train-only prior
+    """
+    df = df.copy()
+    train_df = df.loc[idx_tr]
+
+    # Train-only quantile buckets
+    def qbin(col, q=10):
+        edges = np.quantile(train_df[col].clip(lower=1e-6), np.linspace(0, 1, q + 1))
+        edges[0], edges[-1] = -np.inf, np.inf
+        return np.searchsorted(edges, df[col].values, side="right") - 1
+
+    df["cpu_b"]  = qbin("total_plan_cpu", 10)
+    df["gpu_b"]  = qbin("total_plan_gpu", 10)
+    df["mem_b"]  = qbin("total_plan_mem", 10)
+    df["inst_b"] = qbin("total_inst_num", 10)
+
+    # Signature: user|group|workload|resource_buckets
+    df["task_signature"] = (
+        df["user"].astype(str) + "|" + df["group"].astype(str) + "|" +
+        df["workload"].astype(str) + "|" + df["cpu_b"].astype(str) + "-" +
+        df["gpu_b"].astype(str) + "-" + df["mem_b"].astype(str) + "-" +
+        df["inst_b"].astype(str)
+    )
+
+    # Train-only signature statistics (on p_star in log domain)
+    df["p_star_log"] = np.log1p(df["p_star"])
+    sig_stats = (df.loc[idx_tr].groupby("task_signature")["p_star_log"]
+                   .agg(sig_mean="mean",
+                        sig_median="median",
+                        sig_std="std",
+                        sig_count="count",
+                        sig_q25=lambda x: x.quantile(0.25),
+                        sig_q75=lambda x: x.quantile(0.75))
+                   .reset_index())
+
+    # EB shrinkage on signature means (log scale)
+    n_s = sig_stats["sig_count"].astype(float)
+    mu_s = sig_stats["sig_mean"].astype(float)
+    lambda_shrink = 5.0
+    sig_stats["sig_mean_shrink"] = (n_s * mu_s + lambda_shrink * global_mean_log) / (n_s + lambda_shrink)
+
+    # Merge stats back to full dataset
+    df = df.merge(sig_stats, on="task_signature", how="left")
+    return df
+
+
+def add_causal_histories_no_leak(df, idx_tr, idx_va, idx_te, global_mean_log):
+    """
+    Compute strictly causal histories WITHOUT leakage.
+
+    Critical fix:
+    - Train: Expanding stats computed ONLY within training data
+    - Val/Test: Use FROZEN aggregate statistics from training data
+    - No cross-contamination between samples in same split
+
+    Returns: df with history features added
+    """
+    df = df.sort_values("submit_time").reset_index(drop=True).copy()
+
+    # Initialize all history columns with global prior
+    for key, prefix in [("group", "gro"), ("user", "use")]:
+        df[f"{prefix}_hist_mean"]  = global_mean_log
+        df[f"{prefix}_hist_count"] = 0.0
+        df[f"{prefix}_ewm"]        = global_mean_log
+        df[f"{prefix}_dt_prev"]    = 0.0
+
+    # === TRAIN: Compute expanding stats ONLY on training data ===
+    df_tr = df.loc[idx_tr].copy()
+    df_tr["p_star_log"] = np.log1p(df_tr["p_star"])
+
+    for key, prefix in [("group", "gro"), ("user", "use")]:
+        grp = df_tr.groupby(key)["p_star_log"]
+
+        # Expanding mean/count with shift(1) for causality
+        hist_mean = grp.apply(
+            lambda s: s.expanding().mean().shift(1)
+        ).reset_index(level=0, drop=True)
+
+        hist_count = grp.apply(
+            lambda s: s.expanding().count().shift(1)
+        ).reset_index(level=0, drop=True)
+
+        ewm = grp.apply(
+            lambda s: s.ewm(span=10, adjust=False).mean().shift(1)
+        ).reset_index(level=0, drop=True)
+
+        # Assign to training indices
+        df.loc[idx_tr, f"{prefix}_hist_mean"]  = hist_mean.fillna(global_mean_log)
+        df.loc[idx_tr, f"{prefix}_hist_count"] = hist_count.fillna(0)
+        df.loc[idx_tr, f"{prefix}_ewm"]        = ewm.fillna(global_mean_log)
+
+        # Time since previous submission (within group/user)
+        dt = df_tr.groupby(key)["submit_time"].diff()
+        df.loc[idx_tr, f"{prefix}_dt_prev"] = np.log1p(dt).fillna(0)
+
+    # === VAL/TEST: Use FROZEN final statistics from training ===
+    # Compute final (non-shifted) aggregates from full training data
+    train_stats = {}
+    for key in ["group", "user"]:
+        stats = (df_tr.groupby(key)["p_star_log"]
+                 .agg(mean="mean", count="count")
+                 .to_dict("index"))
+        train_stats[key] = stats
+
+    # Apply frozen stats to validation and test
+    for idx_split in [idx_va, idx_te]:
+        for key, prefix in [("group", "gro"), ("user", "use")]:
+            for i in df.loc[idx_split].index:
+                entity = df.loc[i, key]
+                if entity in train_stats[key]:
+                    df.loc[i, f"{prefix}_hist_mean"]  = train_stats[key][entity]["mean"]
+                    df.loc[i, f"{prefix}_hist_count"] = train_stats[key][entity]["count"]
+                    df.loc[i, f"{prefix}_ewm"]        = train_stats[key][entity]["mean"]
+                # dt_prev remains 0 for val/test (no previous submission info)
+
+    return df
+
+
+def engineer_all_features(df, idx_tr, idx_va, idx_te):
+    """
+    Complete feature engineering pipeline (leakage-free).
+
+    Order of operations:
+    1. Basic features (logs, ratios, temporal)
+    2. Signatures and signature stats (train-only)
+    3. Causal histories (sequential, no leakage)
+    4. Group-level EB shrinkage
+    5. Flags
+    """
+    # Global prior (log scale, train only)
+    global_mean_log = np.log1p(df.loc[idx_tr, "p_star"]).mean()
+
+    df = add_basic_features(df)
+    df = make_signatures(df, idx_tr, global_mean_log)
+    df = add_causal_histories_no_leak(df, idx_tr, idx_va, idx_te, global_mean_log)
+
+    # Group-level EB shrinkage (using historical mean)
+    n   = df["gro_hist_count"].fillna(0.0)
+    mu  = df["gro_hist_mean"].fillna(global_mean_log)
+    lam = 5.0
+    df["grp_mean_eb"] = (n * mu + lam * global_mean_log) / (n + lam)
+
+    # Fill remaining NaNs
+    for c in ["sig_mean", "sig_median", "sig_q25", "sig_q75"]:
+        if c in df.columns:
+            df[c] = df[c].fillna(global_mean_log)
+
+    df["sig_count"] = df["sig_count"].fillna(0)
+    df["sig_std"]   = df["sig_std"].fillna(1.0)
+
+    # Flags
+    df["is_recurring"] = (df["sig_count"] > 0).astype(int)
+    df["global_mean"]  = global_mean_log
+
+    return df, global_mean_log
+
+
+# ============================================================
+# 4. MATRIX PREPARATION
+# ============================================================
+def prepare_matrices(df, idx_tr, idx_va, idx_te):
+    """
+    Prepare feature matrices and target vectors.
+
+    Returns: feature_names, X_train, X_val, X_test, y_train_log, y_val_log, y_test
+    """
+    NUM_FEATS = [
+        # Resources/logs/ratios
+        "log_total_plan_cpu", "log_total_plan_gpu", "log_total_plan_mem",
+        "log_total_inst_num", "log_num_tasks",
+        "cpu_per_inst", "gpu_per_inst", "mem_per_inst", "tasks_per_inst",
+        # Temporal
+        "hour", "dow", "sin_hour", "cos_hour", "is_weekend",
+        # Signature stats
+        "sig_mean", "sig_median", "sig_q25", "sig_q75", "sig_count", "sig_mean_shrink",
+        # Histories
+        "gro_hist_mean", "gro_hist_count", "gro_ewm", "gro_dt_prev",
+        "use_hist_mean", "use_hist_count", "use_ewm", "use_dt_prev",
+        # Priors
+        "grp_mean_eb",
+    ]
+
+    # Filter to existing columns
+    NUM_FEATS = [f for f in NUM_FEATS if f in df.columns]
+
+    # Train-only encoders for categoricals
+    for c in ["user", "group", "workload", "gpu_type_spec"]:
+        enc = fit_label_encoder_from_train(df.loc[idx_tr, c])
+        df[f"{c}_enc"] = enc(df[c])
+        NUM_FEATS.append(f"{c}_enc")
+
+    # Extract matrices
+    Xtr = df.loc[idx_tr, NUM_FEATS].replace([np.inf, -np.inf], np.nan).fillna(0).values
+    Xva = df.loc[idx_va, NUM_FEATS].replace([np.inf, -np.inf], np.nan).fillna(0).values
+    Xte = df.loc[idx_te, NUM_FEATS].replace([np.inf, -np.inf], np.nan).fillna(0).values
+
+    ytr_log = np.log1p(df.loc[idx_tr, "p_star"].values)
+    yva_log = np.log1p(df.loc[idx_va, "p_star"].values)
+    yte     = df.loc[idx_te, "p_star"].values
+
+    return NUM_FEATS, Xtr, Xva, Xte, ytr_log, yva_log, yte
+
+
+# ============================================================
+# 5. METRICS
+# ============================================================
+def rmsle(y, yhat):
+    y = np.maximum(y, 0)
+    yhat = np.maximum(yhat, 0)
+    return float(np.sqrt(mean_squared_error(np.log1p(y), np.log1p(yhat))))
+
+
+def coverage_at(y, yhat, pct=0.25):
+    y = np.maximum(y, 1e-12)
+    rel = np.abs(yhat - y) / y
+    return 100.0 * float(np.mean(rel <= pct))
+
+
+def metrics(y, yhat):
+    return dict(
+        MAE=float(mean_absolute_error(y, yhat)),
+        RMSLE=rmsle(y, yhat),
+        Cov25=coverage_at(y, yhat, 0.25),
+        Cov50=coverage_at(y, yhat, 0.50),
+        Spearman=float(spearmanr(y, yhat).correlation) if np.std(y) > 0 and np.std(yhat) > 0 else np.nan
+    )
+
+
+def print_metrics(tag, y, yhat):
+    m = metrics(y, yhat)
+    print(f"[{tag:16s}]  Cov@25% {m['Cov25']:5.1f}% | Cov@50% {m['Cov50']:5.1f}% | "
+          f"RMSLE {m['RMSLE']:.3f} | MAE {m['MAE']:7.1f} | ρ {m['Spearman']:.3f}")
+    return m
+
+
+# ============================================================
+# 6. LIGHTGBM HELPER
+# ============================================================
+def fit_lgbm(params, Xtr, ytr_log, Xva=None, yva_log=None, n_estimators=600, es=50):
+    """Train LightGBM with early stopping."""
+    model = LGBMRegressor(n_estimators=n_estimators, random_state=RANDOM_STATE, **params)
+    if Xva is not None and yva_log is not None:
+        model.fit(Xtr, ytr_log,
+                  eval_set=[(Xva, yva_log)],
+                  callbacks=[early_stopping(es, verbose=False), log_evaluation(0)])
+    else:
+        model.fit(Xtr, ytr_log)
+    return model
+
+
+# ============================================================
+# 7. PREDICTION METHODS
+# ============================================================
+def method_cqr(Xtr, Xva, Xte, ytr_log, yva_log, df, idx_va, idx_te):
+    """
+    M1: Conformal Quantile Regression
+
+    Combines quantile predictions with conformal intervals,
+    blended with priors using Ridge regression.
+    """
+    # Base L2 model
+    base = fit_lgbm(
+        dict(learning_rate=0.05, num_leaves=63, min_child_samples=20, subsample=0.8),
+        Xtr, ytr_log, Xva, yva_log
+    )
+    base_va = base.predict(Xva)
+    base_te = base.predict(Xte)
+
+    # Quantile models
+    qL = fit_lgbm(
+        dict(objective="quantile", alpha=0.1, learning_rate=0.05, num_leaves=63),
+        Xtr, ytr_log, Xva, yva_log, n_estimators=400, es=40
+    )
+    qM = fit_lgbm(
+        dict(objective="quantile", alpha=0.5, learning_rate=0.05, num_leaves=63),
+        Xtr, ytr_log, Xva, yva_log, n_estimators=400, es=40
+    )
+    qU = fit_lgbm(
+        dict(objective="quantile", alpha=0.9, learning_rate=0.05, num_leaves=63),
+        Xtr, ytr_log, Xva, yva_log, n_estimators=400, es=40
+    )
+
+    qL_va, qM_va, qU_va = qL.predict(Xva), qM.predict(Xva), qU.predict(Xva)
+    qL_te, qM_te, qU_te = qL.predict(Xte), qM.predict(Xte), qU.predict(Xte)
+
+    # Conformal calibration
+    r = np.maximum(qL_va - yva_log, yva_log - qU_va)
+    k = np.quantile(np.maximum(r, 0.0), 0.60)
+    L_va, U_va = qL_va - k, qU_va + k
+    L_te, U_te = qL_te - k, qU_te + k
+
+    # Clipped median
+    qM_clip_va = np.clip(qM_va, L_va, U_va)
+    qM_clip_te = np.clip(qM_te, L_te, U_te)
+
+    # Blender features
+    Z_va = np.c_[
+        L_va, qM_va, U_va, qM_clip_va, base_va,
+        df.loc[idx_va, "grp_mean_eb"].values,
+        df.loc[idx_va, "sig_median"].fillna(df.loc[idx_va, "grp_mean_eb"]).values
+    ]
+
+    ridge = Ridge(alpha=1.0, fit_intercept=True, random_state=RANDOM_STATE)
+    ridge.fit(Z_va, yva_log)
+
+    Z_te = np.c_[
+        L_te, qM_te, U_te, qM_clip_te, base_te,
+        df.loc[idx_te, "grp_mean_eb"].values,
+        df.loc[idx_te, "sig_median"].fillna(df.loc[idx_te, "grp_mean_eb"]).values
+    ]
+
+    yhat_log = ridge.predict(Z_te)
+    return np.expm1(yhat_log).clip(min=0)
+
+
+def method_hras(df, idx_te):
+    """
+    M3: Hierarchical Recurrence-Aware Shrinkage
+
+    Uses signature-level EB shrinkage with hierarchical fallbacks.
+    """
+    pred_log = (df.loc[idx_te, "sig_mean_shrink"]
+                .fillna(df.loc[idx_te, "grp_mean_eb"])
+                .fillna(df.loc[idx_te, "global_mean"])
+                .values)
+    return np.expm1(pred_log).clip(min=0)
+
+
+def method_isotonic(Xtr, Xva, Xte, ytr_log, yva_log):
+    """
+    M4: Isotonic Calibration
+
+    Quantile median + isotonic regression for calibration.
+    """
+    qmed = fit_lgbm(
+        dict(objective="quantile", alpha=0.5, learning_rate=0.05, num_leaves=63),
+        Xtr, ytr_log, Xva, yva_log, n_estimators=800, es=60
+    )
+    pred_va = qmed.predict(Xva)
+    pred_te = qmed.predict(Xte)
+
+    iso = IsotonicRegression(out_of_bounds="clip")
+    iso.fit(pred_va, yva_log)
+    yhat_log = iso.predict(pred_te)
+    return np.expm1(yhat_log).clip(min=0)
+
+
+def method_meta_stack(Xtr, Xva, Xte, ytr_log, yva_log, df, idx_va, idx_te):
+    """
+    M5: Meta-Learning Stack
+
+    Ensemble of diverse base models with meta-learner.
+    """
+    base_models = []
+
+    # Base model 1: Standard L2
+    m1 = fit_lgbm(
+        dict(learning_rate=0.05, num_leaves=63, min_child_samples=20, subsample=0.8),
+        Xtr, ytr_log, Xva, yva_log
+    )
+    base_models.append(m1)
+
+    # Base model 2: Regularized
+    m2 = fit_lgbm(
+        dict(learning_rate=0.03, num_leaves=127, min_child_samples=50,
+             reg_alpha=0.5, reg_lambda=1.0, subsample=0.7),
+        Xtr, ytr_log, Xva, yva_log, n_estimators=400
+    )
+    base_models.append(m2)
+
+    # Base model 3: Quantile median
+    m3 = fit_lgbm(
+        dict(objective="quantile", alpha=0.5, learning_rate=0.05, num_leaves=63),
+        Xtr, ytr_log, Xva, yva_log, n_estimators=400
+    )
+    base_models.append(m3)
+
+    # Base model 4: Huber
+    m4 = fit_lgbm(
+        dict(objective="huber", alpha=0.9, learning_rate=0.05, num_leaves=63),
+        Xtr, ytr_log, Xva, yva_log, n_estimators=400
+    )
+    base_models.append(m4)
+
+    # Generate meta-features
+    va_preds = np.column_stack([m.predict(Xva) for m in base_models])
+    te_preds = np.column_stack([m.predict(Xte) for m in base_models])
+
+    # Dispersion
+    va_std = np.std(va_preds, axis=1).reshape(-1, 1)
+    te_std = np.std(te_preds, axis=1).reshape(-1, 1)
+
+    # Context priors
+    va_ctx = np.column_stack([
+        df.loc[idx_va, "grp_mean_eb"].values,
+        df.loc[idx_va, "sig_median"].fillna(df.loc[idx_va, "grp_mean_eb"]).values
+    ])
+    te_ctx = np.column_stack([
+        df.loc[idx_te, "grp_mean_eb"].values,
+        df.loc[idx_te, "sig_median"].fillna(df.loc[idx_te, "grp_mean_eb"]).values
+    ])
+
+    Z_va = np.hstack([va_preds, va_std, va_ctx])
+    Z_te = np.hstack([te_preds, te_std, te_ctx])
+
+    # Meta-learner
+    meta = LGBMRegressor(
+        n_estimators=200, learning_rate=0.05, num_leaves=31,
+        min_child_samples=30, random_state=RANDOM_STATE
+    )
+    meta.fit(Z_va, yva_log)
+    yhat_log = meta.predict(Z_te)
+    return np.expm1(yhat_log).clip(min=0)
+
+
+def method_two_stage(Xtr, Xva, Xte, ytr_log, yva_log):
+    """
+    M6: Two-Stage Classification + Regression
+
+    Classify by duration tertiles, then blend expert predictions.
+    """
+    # Classify into duration tertiles
+    p30, p70 = np.percentile(ytr_log, [30, 70])
+    y_class = np.zeros_like(ytr_log, dtype=int)
+    y_class[ytr_log < p30] = 0
+    y_class[(ytr_log >= p30) & (ytr_log < p70)] = 1
+    y_class[ytr_log >= p70] = 2
+
+    # Train classifier
+    clf = LGBMClassifier(
+        n_estimators=300, learning_rate=0.05, num_leaves=31,
+        min_child_samples=20, random_state=RANDOM_STATE
+    )
+    clf.fit(Xtr, y_class)
+    probs_te = clf.predict_proba(Xte)
+
+    # Train per-class experts
+    experts = {}
+    for c in range(3):
+        mask = (y_class == c)
+        if mask.sum() > 100:
+            expert = LGBMRegressor(
+                n_estimators=400, learning_rate=0.05, num_leaves=63,
+                min_child_samples=20, random_state=RANDOM_STATE
+            )
+            expert.fit(Xtr[mask], ytr_log[mask])
+            experts[c] = expert
+
+    # Fallback
+    fallback = fit_lgbm(
+        dict(learning_rate=0.05, num_leaves=63),
+        Xtr, ytr_log, n_estimators=400
+    )
+
+    # Blend predictions weighted by class probabilities
+    yhat_log = np.zeros(len(Xte))
+    for c in range(3):
+        model = experts.get(c, fallback)
+        yhat_log += probs_te[:, c] * model.predict(Xte)
+
+    return np.expm1(yhat_log).clip(min=0)
+
+
+def method_recency(Xtr, Xva, Xte, ytr_log, yva_log, df, idx_tr):
+    """
+    M7: Recency Ensemble
+
+    Combines full-history model with recent-window models,
+    weighted by validation performance.
+    """
+    times_tr = df.loc[idx_tr, "submit_time"].values
+    tmax, tmin = times_tr.max(), times_tr.min()
+
+    models = []
+
+    # Full history with time-decay weights
+    time_w = np.exp(-0.5 * (tmax - times_tr) / (tmax - tmin + 1.0))
+    m1 = LGBMRegressor(
+        n_estimators=400, learning_rate=0.05, num_leaves=63,
+        min_child_samples=20, random_state=RANDOM_STATE
+    )
+    m1.fit(Xtr, ytr_log, sample_weight=time_w)
+    models.append(("full", m1))
+
+    # Recent 50%
+    cut50 = np.percentile(times_tr, 50)
+    mask50 = times_tr >= cut50
+    if mask50.sum() > 1000:
+        m2 = fit_lgbm(
+            dict(learning_rate=0.06, num_leaves=63),
+            Xtr[mask50], ytr_log[mask50], n_estimators=300
+        )
+        models.append(("recent_50", m2))
+
+    # Recent 20%
+    cut20 = np.percentile(times_tr, 80)
+    mask20 = times_tr >= cut20
+    if mask20.sum() > 500:
+        m3 = fit_lgbm(
+            dict(learning_rate=0.08, num_leaves=31),
+            Xtr[mask20], ytr_log[mask20], n_estimators=200
+        )
+        models.append(("recent_20", m3))
+
+    # Validation-adaptive weights (inverse MAE)
+    errs = []
+    for name, model in models:
+        pred_va = model.predict(Xva)
+        errs.append(np.mean(np.abs(pred_va - yva_log)))
+    errs = np.array(errs)
+    w = 1.0 / (errs + 1e-2)
+    w = w / w.sum()
+
+    # Weighted ensemble
+    yhat_log = np.zeros(len(Xte))
+    for i, (name, model) in enumerate(models):
+        yhat_log += w[i] * model.predict(Xte)
+
+    return np.expm1(yhat_log).clip(min=0)
+
+
+# ============================================================
+# 8. MAIN PIPELINE
+# ============================================================
+def main():
+    print("=" * 78)
+    print("PAI TRACE — JOB DURATION PREDICTION (LEAKAGE-FREE)")
+    print("=" * 78)
+
+    t0 = time.time()
+
+    # Load data
+    print("\n[1/6] Extracting & loading ...")
+    extract_archives()
+    df = load_tables()
+    print(f"  Loaded jobs: {len(df):,}")
+
+    # Time-based splits
+    print("\n[2/6] Time-based splits ...")
+    (idx_tr, idx_va, idx_te), (t_train, t_val) = time_split(df, 0.70, 0.15)
+    print(f"  Train: {len(idx_tr):,}  (< {t_train})")
+    print(f"  Val  : {len(idx_va):,}  ([{t_train}, {t_val}))")
+    print(f"  Test : {len(idx_te):,}  (>= {t_val})")
+
+    # Feature engineering (leakage-free!)
+    print("\n[3/6] Feature engineering ...")
+    df, global_mean_log = engineer_all_features(df, idx_tr, idx_va, idx_te)
+    print(f"  Feature columns: {df.shape[1]}")
+
+    # Prepare matrices
+    print("\n[4/6] Preparing matrices ...")
+    NUM_FEATS, Xtr, Xva, Xte, ytr_log, yva_log, yte = prepare_matrices(df, idx_tr, idx_va, idx_te)
+    print(f"  #Features: {Xtr.shape[1]}")
+
+    # Run methods
+    print("\n[5/6] Running methods ...")
+    results, predictions = {}, {}
+
+    print("  M1: CQR ...", end=" ")
+    yhat = method_cqr(Xtr, Xva, Xte, ytr_log, yva_log, df, idx_va, idx_te)
+    results["M1 CQR"] = print_metrics("M1 CQR", yte, yhat)
+    predictions["M1"] = yhat
+
+    print("  M3: HRAS ...", end=" ")
+    yhat = method_hras(df, idx_te)
+    results["M3 HRAS"] = print_metrics("M3 HRAS", yte, yhat)
+    predictions["M3"] = yhat
+
+    print("  M4: Isotonic ...", end=" ")
+    yhat = method_isotonic(Xtr, Xva, Xte, ytr_log, yva_log)
+    results["M4 Iso"] = print_metrics("M4 Iso", yte, yhat)
+    predictions["M4"] = yhat
+
+    print("  M5: Meta-Stack ...", end=" ")
+    yhat = method_meta_stack(Xtr, Xva, Xte, ytr_log, yva_log, df, idx_va, idx_te)
+    results["M5 Meta"] = print_metrics("M5 Meta", yte, yhat)
+    predictions["M5"] = yhat
+
+    print("  M6: Two-Stage ...", end=" ")
+    yhat = method_two_stage(Xtr, Xva, Xte, ytr_log, yva_log)
+    results["M6 Two"] = print_metrics("M6 Two", yte, yhat)
+    predictions["M6"] = yhat
+
+    print("  M7: Recency ...", end=" ")
+    yhat = method_recency(Xtr, Xva, Xte, ytr_log, yva_log, df, idx_tr)
+    results["M7 Rec"] = print_metrics("M7 Rec", yte, yhat)
+    predictions["M7"] = yhat
+
+    # Recurring vs new analysis
+    print("\n[6/6] Recurring vs new signatures ...")
+    rec_mask = df.loc[idx_te, "is_recurring"].values.astype(bool)
+    new_mask = ~rec_mask
+    print(f"  Recurring: {rec_mask.sum():,} ({100*rec_mask.mean():.1f}%)")
+    print(f"  New      : {new_mask.sum():,} ({100*new_mask.mean():.1f}%)")
+
+    if rec_mask.any():
+        for k, yhat in predictions.items():
+            m = metrics(yte[rec_mask], yhat[rec_mask])
+            print(f"  [{k:8s}] on Recurring  Cov@25% {m['Cov25']:5.1f}% | "
+                  f"Cov@50% {m['Cov50']:5.1f}% | RMSLE {m['RMSLE']:.3f} | MAE {m['MAE']:7.1f}")
+
+    print("\n" + "=" * 78)
+    print(f"Total wall time: {time.time()-t0:.1f}s")
+    print("=" * 78)
+
+    return df, idx_te, predictions, results
+
+
+if __name__ == "__main__":
+    df, idx_te, predictions, results = main()
+
+=== [code 5] ===
+# ============================================================
+# ABLATION STUDY - LEAKAGE-FREE
+# ============================================================
+
+def engineer_features_by_config(df, idx_tr, idx_va, idx_te, config="all"):
+    """
+    Engineer features for different ablation configurations.
+
+    Configs:
+    - "resources": Resources + Temporal only (14 features)
+    - "group": Resources + Temporal + Signatures + Group features (27 features)
+    - "all": All features including User (33 features)
+
+    All configurations are leakage-free.
+    """
+    # Global prior (train only)
+    global_mean_log = np.log1p(df.loc[idx_tr, "p_star"]).mean()
+
+    # ALWAYS add basic features (resources + temporal)
+    df = add_basic_features(df)
+
+    # Resources + Temporal features (14)
+    RESOURCE_TEMPORAL = [
+        # Resources (9)
+        "log_total_plan_cpu", "log_total_plan_gpu", "log_total_plan_mem",
+        "log_total_inst_num", "log_num_tasks",
+        "cpu_per_inst", "gpu_per_inst", "mem_per_inst", "tasks_per_inst",
+        # Temporal (5)
+        "hour", "dow", "sin_hour", "cos_hour", "is_weekend",
+    ]
+
+    if config == "resources":
+        # Resources + Temporal only (14 features)
+        return df, RESOURCE_TEMPORAL, global_mean_log
+
+    # ============================================
+    # Add Group features (for "group" and "all")
+    # ============================================
+    if config in ["group", "all"]:
+        # Add signatures (train-only)
+        df = make_signatures(df, idx_tr, global_mean_log)
+
+        # Add causal histories (leakage-free)
+        df = add_causal_histories_no_leak(df, idx_tr, idx_va, idx_te, global_mean_log)
+
+        # Group-level EB shrinkage
+        n = df["gro_hist_count"].fillna(0.0)
+        mu = df["gro_hist_mean"].fillna(global_mean_log)
+        lam = 5.0
+        df["grp_mean_eb"] = (n * mu + lam * global_mean_log) / (n + lam)
+
+        # Fill NaNs for signature features
+        for c in ["sig_mean", "sig_median", "sig_q25", "sig_q75"]:
+            if c in df.columns:
+                df[c] = df[c].fillna(global_mean_log)
+        df["sig_count"] = df["sig_count"].fillna(0)
+
+        # Group feature list
+        GROUP_FEATS = RESOURCE_TEMPORAL + [
+            # Signatures (6)
+            "sig_mean", "sig_median", "sig_q25", "sig_q75", "sig_count", "sig_mean_shrink",
+            # Group histories (4)
+            "gro_hist_mean", "gro_hist_count", "gro_ewm", "gro_dt_prev",
+            # Group EB (1)
+            "grp_mean_eb",
+        ]  # 14 + 6 + 4 + 1 = 25 (before encodings)
+
+        # Add group encodings
+        enc_group = fit_label_encoder_from_train(df.loc[idx_tr, "group"])
+        df["group_enc"] = enc_group(df["group"])
+        enc_workload = fit_label_encoder_from_train(df.loc[idx_tr, "workload"])
+        df["workload_enc"] = enc_workload(df["workload"])
+
+        GROUP_FEATS += ["group_enc", "workload_enc"]  # 27 total
+
+        if config == "group":
+            return df, GROUP_FEATS, global_mean_log
+
+    # ============================================
+    # Add User features (for "all" only)
+    # ============================================
+    if config == "all":
+        # Fill NaNs for user features (already computed in add_causal_histories_no_leak)
+        for c in ["use_hist_mean", "use_ewm"]:
+            df[c] = df[c].fillna(global_mean_log)
+        for c in ["use_hist_count", "use_dt_prev"]:
+            df[c] = df[c].fillna(0.0)
+
+        # All features list
+        ALL_FEATS = GROUP_FEATS + [
+            # User histories (4)
+            "use_hist_mean", "use_hist_count", "use_ewm", "use_dt_prev",
+        ]  # 27 + 4 = 31 (before user encodings)
+
+        # Add user encodings
+        enc_user = fit_label_encoder_from_train(df.loc[idx_tr, "user"])
+        df["user_enc"] = enc_user(df["user"])
+        enc_gpu = fit_label_encoder_from_train(df.loc[idx_tr, "gpu_type_spec"])
+        df["gpu_type_spec_enc"] = enc_gpu(df["gpu_type_spec"])
+
+        ALL_FEATS += ["user_enc", "gpu_type_spec_enc"]  # 33 total
+
+        return df, ALL_FEATS, global_mean_log
+
+    raise ValueError(f"Unknown config: {config}")
+
+
+def train_lgbm_simple(X_tr, y_tr_log, X_te, y_te):
+    """Simple LGBM training without validation set."""
+    model = LGBMRegressor(
+        n_estimators=600,
+        learning_rate=0.05,
+        num_leaves=63,
+        min_child_samples=20,
+        subsample=0.8,
+        colsample_bytree=0.8,
+        random_state=RANDOM_STATE,
+        n_jobs=-1
+    )
+    model.fit(X_tr, y_tr_log)
+    yhat_log = model.predict(X_te)
+    yhat = np.expm1(yhat_log).clip(min=0)
+    return yhat
+
+
+# ============================================================
+# OVERFITTING ANALYSIS FUNCTIONS
+# ============================================================
+
+def analysis_train_test_gap(df, idx_tr, idx_te):
+    """
+    Analysis 1: Train-Test Performance Gap (5-fold CV)
+    """
+    from sklearn.model_selection import KFold
+
+    print("\n" + "="*70)
+    print("[Analysis 1] Train-Test Performance Gap ...")
+    print("="*70)
+
+    # Use the SAME feature engineering as main methods
+    df_eng, feats, gm_log = engineer_features_by_config(
+        df.copy(), idx_tr, pd.Index([]), idx_te, config="all"
+    )
+
+    X_te = df_eng.loc[idx_te, feats].replace([np.inf, -np.inf], np.nan).fillna(0).values
+    y_te = df_eng.loc[idx_te, "p_star"].values
+
+    # 5-fold CV on training data
+    kf = KFold(n_splits=5, shuffle=True, random_state=RANDOM_STATE)
+    cv_scores = []
+
+    for fold, (train_idx, val_idx) in enumerate(kf.split(idx_tr)):
+        fold_tr_idx = idx_tr[train_idx]
+        fold_va_idx = idx_tr[val_idx]
+
+        # Engineer features for this fold
+        df_fold, fold_feats, _ = engineer_features_by_config(
+            df.copy(), fold_tr_idx, fold_va_idx, pd.Index([]), config="all"
+        )
+
+        X_fold_tr = df_fold.loc[fold_tr_idx, fold_feats].replace([np.inf, -np.inf], np.nan).fillna(0).values
+        y_fold_tr_log = np.log1p(df_fold.loc[fold_tr_idx, "p_star"].values)
+
+        X_fold_va = df_fold.loc[fold_va_idx, fold_feats].replace([np.inf, -np.inf], np.nan).fillna(0).values
+        y_fold_va = df_fold.loc[fold_va_idx, "p_star"].values
+
+        # Train and evaluate
+        yhat_va = train_lgbm_simple(X_fold_tr, y_fold_tr_log, X_fold_va, y_fold_va)
+        cov25 = coverage_at(y_fold_va, yhat_va, 0.25)
+        cv_scores.append(cov25)
+
+    # Test performance
+    df_final, final_feats, _ = engineer_features_by_config(
+        df.copy(), idx_tr, pd.Index([]), idx_te, config="all"
+    )
+    X_tr_final = df_final.loc[idx_tr, final_feats].replace([np.inf, -np.inf], np.nan).fillna(0).values
+    y_tr_final_log = np.log1p(df_final.loc[idx_tr, "p_star"].values)
+
+    yhat_te = train_lgbm_simple(X_tr_final, y_tr_final_log, X_te, y_te)
+    test_cov25 = coverage_at(y_te, yhat_te, 0.25)
+
+    # Summary
+    print("\n" + "="*70)
+    print("TRAIN-TEST GAP SUMMARY")
+    print("="*70)
+    cv_mean = np.mean(cv_scores)
+    cv_std = np.std(cv_scores)
+    gap = cv_mean - test_cov25
+
+    print(f"Training Cov@25% (5-fold CV): {cv_mean:.1f}% ± {cv_std:.1f}%")
+    print(f"Test Cov@25%:                 {test_cov25:.1f}%")
+    print(f"Gap:                          {gap:+.1f}%")
+
+    if gap >= 5.0:
+        print("⚠ CHECK - Possible overfitting (gap >= 5%)")
+    else:
+        print("✓ PASS - Minimal overfitting (gap < 5%)")
+
+    return {"train_mean": cv_mean, "train_std": cv_std, "test": test_cov25, "gap": gap}
+
+
+def analysis_seen_unseen_users(df, idx_tr, idx_te):
+    """
+    Analysis 2: Seen vs Unseen Users
+    """
+    print("\n" + "="*70)
+    print("[Analysis 2] Seen vs Unseen Users ...")
+    print("="*70)
+
+    # Identify train users
+    train_users = set(df.loc[idx_tr, "user"].unique())
+
+    # Split test by user presence
+    df_test = df.loc[idx_te].copy()
+    df_test["user_seen"] = df_test["user"].isin(train_users)
+
+    idx_te_seen = df.loc[idx_te].index[df_test["user_seen"].values]
+    idx_te_unseen = df.loc[idx_te].index[~df_test["user_seen"].values]
+
+    print(f"\nTotal train users: {len(train_users):,}")
+    print(f"Total test jobs: {len(idx_te):,}")
+    print(f"  - From SEEN users: {len(idx_te_seen):,} ({100*len(idx_te_seen)/len(idx_te):.1f}%)")
+    print(f"  - From UNSEEN users: {len(idx_te_unseen):,} ({100*len(idx_te_unseen)/len(idx_te):.1f}%)")
+
+    # Train model
+    df_eng, feats, _ = engineer_features_by_config(
+        df.copy(), idx_tr, pd.Index([]), idx_te, config="all"
+    )
+
+    X_tr = df_eng.loc[idx_tr, feats].replace([np.inf, -np.inf], np.nan).fillna(0).values
+    y_tr_log = np.log1p(df_eng.loc[idx_tr, "p_star"].values)
+
+    # Evaluate on seen users
+    if len(idx_te_seen) > 0:
+        X_te_seen = df_eng.loc[idx_te_seen, feats].replace([np.inf, -np.inf], np.nan).fillna(0).values
+        y_te_seen = df_eng.loc[idx_te_seen, "p_star"].values
+        yhat_seen = train_lgbm_simple(X_tr, y_tr_log, X_te_seen, y_te_seen)
+        m_seen = metrics(y_te_seen, yhat_seen)
+    else:
+        m_seen = None
+
+    # Evaluate on unseen users
+    if len(idx_te_unseen) > 0:
+        X_te_unseen = df_eng.loc[idx_te_unseen, feats].replace([np.inf, -np.inf], np.nan).fillna(0).values
+        y_te_unseen = df_eng.loc[idx_te_unseen, "p_star"].values
+        yhat_unseen = train_lgbm_simple(X_tr, y_tr_log, X_te_unseen, y_te_unseen)
+        m_unseen = metrics(y_te_unseen, yhat_unseen)
+    else:
+        m_unseen = None
+
+    # Summary
+    print("\n" + "="*70)
+    print("SEEN vs UNSEEN USERS ANALYSIS")
+    print("="*70)
+    print("\nBest Model:")
+    if m_seen:
+        print(f"  Seen users    - Cov@25%: {m_seen['Cov25']:5.1f}% | Cov@50%: {m_seen['Cov50']:5.1f}% | RMSLE: {m_seen['RMSLE']:.3f}")
+    if m_unseen:
+        print(f"  Unseen users  - Cov@25%: {m_unseen['Cov25']:5.1f}% | Cov@50%: {m_unseen['Cov50']:5.1f}% | RMSLE: {m_unseen['RMSLE']:.3f}")
+
+    if m_seen and m_unseen:
+        gap = m_seen['Cov25'] - m_unseen['Cov25']
+        print(f"  Gap           - {gap:+.1f}% (positive = better on seen)")
+
+    return {"seen": m_seen, "unseen": m_unseen}
+
+
+def analysis_feature_ablation(df, idx_tr, idx_te):
+    """
+    Analysis 3: Feature Ablation Study
+    """
+    print("\n" + "="*70)
+    print("[Analysis 3] Feature Ablation ...")
+    print("="*70)
+
+    results = {}
+
+    for config, desc in [
+        ("resources", "Resources only (no User, no Group)"),
+        ("group", "Group + Resources (no User)"),
+        ("all", "All features (User + Group + Resources)")
+    ]:
+
+        print(f"\n[Ablation] {desc} ...")
+
+        # Engineer features for this config
+        df_eng, feats, _ = engineer_features_by_config(
+            df.copy(), idx_tr, pd.Index([]), idx_te, config=config
+        )
+
+        print(f"  Features: {len(feats)}")
+
+        # Prepare matrices
+        X_tr = df_eng.loc[idx_tr, feats].replace([np.inf, -np.inf], np.nan).fillna(0).values
+        y_tr_log = np.log1p(df_eng.loc[idx_tr, "p_star"].values)
+
+        X_te = df_eng.loc[idx_te, feats].replace([np.inf, -np.inf], np.nan).fillna(0).values
+        y_te = df_eng.loc[idx_te, "p_star"].values
+
+        # Train and predict
+        yhat = train_lgbm_simple(X_tr, y_tr_log, X_te, y_te)
+
+        # Metrics
+        m = print_metrics(f"{config[:15]}", y_te, yhat)
+        results[config] = m
+
+    # Summary
+    print("\n" + "="*70)
+    print("ABLATION SUMMARY")
+    print("="*70)
+    print(f"{'Configuration':<30} {'Cov@25%':<10} {'Cov@50%':<10} {'RMSLE':<10}")
+    print("-" * 70)
+    print(f"{'Resources only':<30} {results['resources']['Cov25']:5.1f}%     {results['resources']['Cov50']:5.1f}%     {results['resources']['RMSLE']:.3f}")
+    print(f"{'Group + Resources':<30} {results['group']['Cov25']:5.1f}%     {results['group']['Cov50']:5.1f}%     {results['group']['RMSLE']:.3f}")
+    print(f"{'All features':<30} {results['all']['Cov25']:5.1f}%     {results['all']['Cov50']:5.1f}%     {results['all']['RMSLE']:.3f}")
+
+    # Incremental gains
+    group_gain = results['group']['Cov25'] - results['resources']['Cov25']
+    user_gain = results['all']['Cov25'] - results['group']['Cov25']
+
+    print(f"\n→ Group adds: {group_gain:+.1f}%")
+    print(f"→ User adds:  {user_gain:+.1f}%")
+
+    if group_gain > abs(user_gain):
+        print("→ Group is the PRIMARY predictive signal")
+    else:
+        print("→ User is the PRIMARY predictive signal")
+
+    return results
+
+
+# ============================================================
+# MAIN OVERFITTING ANALYSIS
+# ============================================================
+
+def run_overfitting_analysis():
+    """
+    Complete overfitting analysis pipeline.
+    """
+    print("=" * 78)
+    print("PAI TRACE — OVERFITTING ANALYSIS")
+    print("=" * 78)
+
+    t0 = time.time()
+
+    # Load data
+    print("\n[1/5] Extracting & loading ...")
+    extract_archives()
+    df = load_tables()
+    print(f"  Loaded jobs: {len(df):,}")
+
+    # Time-based splits
+    print("\n[2/5] Time-based splits ...")
+    (idx_tr, idx_va, idx_te), (t_train, t_val) = time_split(df, 0.70, 0.15)
+    print(f"  Train: {len(idx_tr):,}")
+    print(f"  Val  : {len(idx_va):,}")
+    print(f"  Test : {len(idx_te):,}")
+
+    # Feature engineering (for baseline)
+    print("\n[3/5] Feature engineering ...")
+    df_eng, feats, gm = engineer_features_by_config(
+        df.copy(), idx_tr, pd.Index([]), idx_te, config="all"
+    )
+    print(f"  Feature columns: {df_eng.shape[1]}")
+
+    # Train best model
+    print("\n[4/5] Training best model (LGBM with all features) ...")
+    X_tr = df_eng.loc[idx_tr, feats].replace([np.inf, -np.inf], np.nan).fillna(0).values
+    y_tr_log = np.log1p(df_eng.loc[idx_tr, "p_star"].values)
+    X_te = df_eng.loc[idx_te, feats].replace([np.inf, -np.inf], np.nan).fillna(0).values
+    y_te = df_eng.loc[idx_te, "p_star"].values
+
+    yhat_te = train_lgbm_simple(X_tr, y_tr_log, X_te, y_te)
+
+    print("\nBest Model (All Features) on Test Set:")
+    print_metrics("Test", y_te, yhat_te)
+
+    # Run analyses
+    print("\n" + "=" * 78)
+    print("[5/5] OVERFITTING ANALYSES")
+    print("=" * 78)
+
+    r1 = analysis_train_test_gap(df, idx_tr, idx_te)
+    r2 = analysis_seen_unseen_users(df, idx_tr, idx_te)
+    r3 = analysis_feature_ablation(df, idx_tr, idx_te)
+
+    # Final summary
+    print("\n" + "=" * 78)
+    print("FINAL SUMMARY FOR REBUTTAL")
+    print("=" * 78)
+
+    print(f"\n1. Train-Test Gap ({'Minimal' if r1['gap'] < 5 else 'Moderate'} Overfitting):")
+    print(f"   Train: {r1['train_mean']:.1f}% | Test: {r1['test']:.1f}% | Gap: {r1['gap']:+.1f}%")
+
+    print(f"\n2. Seen vs Unseen Users (Generalization Test):")
+    if r2['seen'] and r2['unseen']:
+        gap = r2['seen']['Cov25'] - r2['unseen']['Cov25']
+        print(f"   Best Model:")
+        print(f"     Seen: {r2['seen']['Cov25']:.1f}% | Unseen: {r2['unseen']['Cov25']:.1f}% | Gap: {gap:+.1f}%")
+
+    print(f"\n3. Ablation Study (Feature Importance Hierarchy):")
+    print(f"   Resources only:     {r3['resources']['Cov25']:.1f}%")
+    print(f"   + Group:            {r3['group']['Cov25']:.1f}%")
+    print(f"   + Group + User:     {r3['all']['Cov25']:.1f}%")
+
+    group_gain = r3['group']['Cov25'] - r3['resources']['Cov25']
+    user_gain = r3['all']['Cov25'] - r3['group']['Cov25']
+    print(f"\n   → Group adds: {group_gain:+.1f}%")
+    print(f"   → User adds:  {user_gain:+.1f}%")
+    print(f"   → {'Group' if group_gain > abs(user_gain) else 'User'} is the PRIMARY predictive signal")
+
+    print("\n" + "=" * 78)
+    print(f"Total wall time: {time.time()-t0:.1f}s")
+    print("=" * 78)
+
+    return df, idx_te, {"gap": r1, "users": r2, "ablation": r3}
+
+
+if __name__ == "__main__":
+    df, idx_te, results = run_overfitting_analysis()
+
+=== [code 6] ===
+# =====================================================================
+# TOTAL COMPLETION TIME SCHEDULING EVALUATION
+# =====================================================================
+
+import numpy as np
+import pandas as pd
+import heapq
+from dataclasses import dataclass
+from typing import List, Dict, Tuple, Optional
+from scipy.stats import spearmanr
+import time
+
+EPS = 1e-12
+
+
+@dataclass
+class Job:
+    job_id: int
+    arrival_time: float   # r_j
+    true_size: float      # p*_j
+    predicted_size: float # \hat p_j
+
+def build_jobs_from_df(scheduling_df: pd.DataFrame) -> List[Job]:
+    """Build job list from dataframe."""
+    jobs: List[Job] = [
+        Job(
+            job_id=int(row.job_id),
+            arrival_time=float(row.submit_time),
+            true_size=float(row.p_star),
+            predicted_size=float(row.y_pred),
+        )
+        for row in scheduling_df.itertuples(index=False)
+    ]
+    return jobs
+
+
+def simulate_srpt(jobs: List[Job]) -> Tuple[float, pd.DataFrame]:
+    """Optimal ΣC_j with release times (preemptive SRPT on true remaining time)."""
+    J = sorted(jobs, key=lambda x: x.arrival_time)
+    n, i, t, totalC = len(J), 0, 0.0, 0.0
+    metrics = []
+    ready: List[Tuple[float, float, int, Job]] = []
+
+    while i < n or ready:
+        if not ready and i < n and t < J[i].arrival_time:
+            t = J[i].arrival_time
+        while i < n and J[i].arrival_time <= t + EPS:
+            heapq.heappush(ready, (J[i].true_size, J[i].arrival_time, J[i].job_id, J[i]))
+            i += 1
+        if not ready:
+            continue
+        rem, rj, jid, job = heapq.heappop(ready)
+        next_arrival = J[i].arrival_time if i < n else float('inf')
+        run = min(rem, next_arrival - t)
+        if run <= EPS:
+            heapq.heappush(ready, (rem, rj, jid, job))
+            t = next_arrival
+            continue
+        t += run
+        rem -= run
+        if rem <= EPS:
+            Cj = t
+            totalC += Cj
+            metrics.append({
+                'job_id': jid, 'arrival_time': rj, 'completion_time': Cj,
+                'flow_time': Cj - rj, 'wait_time': Cj - rj - job.true_size,
+                'slowdown': (Cj - rj) / max(job.true_size, EPS),
+            })
+        else:
+            heapq.heappush(ready, (rem, rj, jid, job))
+
+    return totalC, pd.DataFrame(metrics)
+
+def simulate_fifo(jobs: List[Job]) -> Tuple[float, pd.DataFrame]:
+    """FIFO (non-preemptive)."""
+    J = sorted(jobs, key=lambda x: x.arrival_time)
+    t, totalC = 0.0, 0.0
+    metrics = []
+
+    for job in J:
+        if t < job.arrival_time:
+            t = job.arrival_time
+        start = t
+        t += job.true_size
+        Cj = t
+        totalC += Cj
+        metrics.append({
+            'job_id': job.job_id, 'arrival_time': job.arrival_time, 'completion_time': Cj,
+            'flow_time': Cj - job.arrival_time, 'wait_time': start - job.arrival_time,
+            'slowdown': (Cj - job.arrival_time) / max(job.true_size, EPS),
+        })
+
+    return totalC, pd.DataFrame(metrics)
+
+def simulate_sjf_or_spjf(jobs: List[Job], use_predictions: bool) -> Tuple[float, pd.DataFrame]:
+    """SJF (oracle true size) or SPJF (predicted size), non-preemptive."""
+    J = sorted(jobs, key=lambda x: x.arrival_time)
+    n, i, t, totalC = len(J), 0, 0.0, 0.0
+    metrics = []
+    ready: List[Tuple[float, float, int, Job]] = []
+
+    while i < n or ready:
+        if not ready and i < n and t < J[i].arrival_time:
+            t = J[i].arrival_time
+        while i < n and J[i].arrival_time <= t + EPS:
+            key = J[i].predicted_size if use_predictions else J[i].true_size
+            heapq.heappush(ready, (key, J[i].arrival_time, J[i].job_id, J[i]))
+            i += 1
+        if not ready:
+            continue
+        _, rj, jid, job = heapq.heappop(ready)
+        start = t
+        t += job.true_size
+        Cj = t
+        totalC += Cj
+        metrics.append({
+            'job_id': jid, 'arrival_time': rj, 'completion_time': Cj,
+            'flow_time': Cj - rj, 'wait_time': start - rj,
+            'slowdown': (Cj - rj) / max(job.true_size, EPS),
+        })
+
+    return totalC, pd.DataFrame(metrics)
+
+def simulate_rr(jobs: List[Job]) -> Tuple[float, pd.DataFrame]:
+    """Round Robin (equal sharing), preemptive."""
+    J = sorted(jobs, key=lambda x: x.arrival_time)
+    n, i, t, totalC = len(J), 0, 0.0, 0.0
+    metrics = []
+    active: List[Tuple[Job, float]] = []
+
+    while i < n or active:
+        if not active and i < n and t < J[i].arrival_time:
+            t = J[i].arrival_time
+        while i < n and J[i].arrival_time <= t + EPS:
+            active.append((J[i], J[i].true_size))
+            i += 1
+        if not active:
+            continue
+        k = len(active)
+        rate = 1.0 / k
+        time_to_finish = min(rem / rate for (_, rem) in active)
+        next_arrival = J[i].arrival_time if i < n else float('inf')
+        dt = min(time_to_finish, next_arrival - t)
+        t += dt
+        finished_idx = []
+        for idx, (job, rem) in enumerate(active):
+            rem_new = rem - rate * dt
+            active[idx] = (job, rem_new)
+            if rem_new <= EPS and dt == time_to_finish:
+                finished_idx.append(idx)
+        for idx in reversed(finished_idx):
+            job, _ = active.pop(idx)
+            Cj = t
+            totalC += Cj
+            metrics.append({
+                'job_id': job.job_id, 'arrival_time': job.arrival_time, 'completion_time': Cj,
+                'flow_time': Cj - job.arrival_time,
+                'wait_time': Cj - job.arrival_time - job.true_size,
+                'slowdown': (Cj - job.arrival_time) / max(job.true_size, EPS),
+            })
+
+    return totalC, pd.DataFrame(metrics)
+
+def simulate_prr(jobs: List[Job], lam: float = 0.7) -> Tuple[float, pd.DataFrame]:
+    """Preferential Round Robin with λ parameter."""
+    assert 0.0 < lam < 1.0
+    J = sorted(jobs, key=lambda x: x.arrival_time)
+    n, i, t, totalC = len(J), 0, 0.0, 0.0
+    metrics = []
+    active: List[Tuple[Job, float]] = []
+
+    while i < n or active:
+        if not active and i < n and t < J[i].arrival_time:
+            t = J[i].arrival_time
+        while i < n and J[i].arrival_time <= t + EPS:
+            active.append((J[i], J[i].true_size))
+            i += 1
+        if not active:
+            continue
+        k = len(active)
+        min_idx = min(range(k), key=lambda idx: active[idx][0].predicted_size)
+        base = (1.0 - lam) / k
+        rates = [base] * k
+        rates[min_idx] += lam
+        time_to_finish = min(rem / max(rates[idx], EPS) for idx, (_, rem) in enumerate(active))
+        next_arrival = J[i].arrival_time if i < n else float('inf')
+        dt = min(time_to_finish, next_arrival - t)
+        t += dt
+        finished_idx = []
+        for idx, (job, rem) in enumerate(active):
+            rem_new = rem - rates[idx] * dt
+            active[idx] = (job, rem_new)
+            if rem_new <= EPS and dt == time_to_finish:
+                finished_idx.append(idx)
+        for idx in reversed(finished_idx):
+            job, _ = active.pop(idx)
+            Cj = t
+            totalC += Cj
+            metrics.append({
+                'job_id': job.job_id, 'arrival_time': job.arrival_time, 'completion_time': Cj,
+                'flow_time': Cj - job.arrival_time,
+                'wait_time': Cj - job.arrival_time - job.true_size,
+                'slowdown': (Cj - job.arrival_time) / max(job.true_size, EPS),
+            })
+
+    return totalC, pd.DataFrame(metrics)
+
+# ======================== MAIN EVALUATION ========================
+
+def evaluate_total_completion_all_methods(
+    df: pd.DataFrame,
+    idx_te: pd.Index,
+    predictions: Dict[str, np.ndarray],
+    sample_size: Optional[int] = 10000,
+    prr_lambda: float = 0.7,
+    seed: int = 42,
+    verbose: bool = True
+) -> Dict:
+    """
+    Complete evaluation of total completion time for all prediction methods.
+
+    Args:
+        df: Full dataframe with columns [submit_time, p_star, ...]
+        idx_te: Test set indices into df
+        predictions: Dict mapping method name -> prediction array (aligned with idx_te)
+        sample_size: Number of jobs to evaluate (None = all)
+        prr_lambda: Lambda parameter for PRR
+        seed: Random seed for consistent sampling
+        verbose: Print detailed output
+
+    Returns:
+        Dictionary with complete results
+    """
+
+    if verbose:
+        print("="*80)
+        print("TOTAL COMPLETION TIME SCHEDULING EVALUATION")
+        print(f"Sample size: {sample_size:,} | PRR λ: {prr_lambda:.2f} | Seed: {seed}")
+        print("="*80)
+
+    start_time = time.time()
+
+    # ============ Data preparation ============
+    test_df = df.loc[idx_te].copy().reset_index(drop=True)
+    test_df['original_idx'] = np.arange(len(test_df))
+
+    test_df = test_df.sort_values('submit_time').reset_index(drop=True)
+
+    t0 = float(test_df['submit_time'].min())
+    test_df['submit_time'] = test_df['submit_time'] - t0
+
+    if sample_size is not None and sample_size < len(test_df):
+        np.random.seed(seed)
+        test_df = test_df.iloc[:sample_size].copy()
+
+    selected_original_indices = test_df['original_idx'].values
+
+    base_df = test_df[['submit_time', 'p_star']].copy()
+    base_df['job_id'] = np.arange(len(base_df))
+
+    if verbose:
+        print(f"\nActual jobs being evaluated: {len(base_df):,}")
+        print("Computing baselines...")
+
+    # ============ Baselines ============
+    baseline_df = base_df.copy()
+    baseline_df['y_pred'] = baseline_df['p_star']
+    baseline_jobs = build_jobs_from_df(baseline_df)
+
+    srpt_total, srpt_metrics = simulate_srpt(baseline_jobs)
+    fifo_total, fifo_metrics = simulate_fifo(baseline_jobs)
+    sjf_total, sjf_metrics = simulate_sjf_or_spjf(baseline_jobs, use_predictions=False)
+    rr_total, rr_metrics = simulate_rr(baseline_jobs)
+
+    results = {
+        'meta': {
+            'n_jobs': len(base_df),
+            'sample_size': sample_size,
+            'prr_lambda': prr_lambda,
+            'seed': seed
+        },
+        'baselines': {
+            'SRPT': {
+                'total_completion': srpt_total,
+                'avg_flow_time': float(srpt_metrics['flow_time'].mean()),
+                'ratio_vs_opt': 1.0,
+                'ratio_vs_fifo': srpt_total / fifo_total
+            },
+            'SJF': {
+                'total_completion': sjf_total,
+                'avg_flow_time': float(sjf_metrics['flow_time'].mean()),
+                'ratio_vs_opt': sjf_total / srpt_total,
+                'ratio_vs_fifo': sjf_total / fifo_total
+            },
+            'RR': {
+                'total_completion': rr_total,
+                'avg_flow_time': float(rr_metrics['flow_time'].mean()),
+                'ratio_vs_opt': rr_total / srpt_total,
+                'ratio_vs_fifo': rr_total / fifo_total
+            },
+            'FIFO': {
+                'total_completion': fifo_total,
+                'avg_flow_time': float(fifo_metrics['flow_time'].mean()),
+                'ratio_vs_opt': fifo_total / srpt_total,
+                'ratio_vs_fifo': 1.0
+            }
+        },
+        'methods': {}
+    }
+
+    # ============ Evaluate Each Prediction Method ============
+    methods_to_eval = list(predictions.keys())
+
+    if verbose:
+        print(f"\nEvaluating {len(methods_to_eval)} prediction methods...")
+        print("-"*80)
+
+    for i, method_name in enumerate(methods_to_eval):
+        if method_name not in predictions:
+            continue
+
+        method_start = time.time()
+
+        all_predictions = predictions[method_name]
+        y_pred = all_predictions[selected_original_indices]
+
+        try:
+            rho, _ = spearmanr(base_df['p_star'].values, y_pred)
+            pred_quality = float(rho) if not np.isnan(rho) else 0.5
+        except:
+            pred_quality = 0.5
+
+        sched_df = base_df.copy()
+        sched_df['y_pred'] = y_pred
+        jobs = build_jobs_from_df(sched_df)
+
+        spjf_total, spjf_metrics = simulate_sjf_or_spjf(jobs, use_predictions=True)
+        prr_total, prr_metrics = simulate_prr(jobs, lam=prr_lambda)
+
+        results['methods'][method_name] = {
+            'prediction_quality': pred_quality,
+            'SPJF': {
+                'total_completion': spjf_total,
+                'avg_flow_time': float(spjf_metrics['flow_time'].mean()),
+                'ratio_vs_opt': spjf_total / srpt_total,
+                'ratio_vs_fifo': spjf_total / fifo_total
+            },
+            'PRR': {
+                'total_completion': prr_total,
+                'avg_flow_time': float(prr_metrics['flow_time'].mean()),
+                'ratio_vs_opt': prr_total / srpt_total,
+                'ratio_vs_fifo': prr_total / fifo_total,
+                'lambda': prr_lambda
+            }
+        }
+
+        if verbose:
+            print(f"[{i+1}/{len(methods_to_eval)}] {method_name:8s}: "
+                  f"ρ={pred_quality:.3f}, "
+                  f"SPJF/OPT={spjf_total/srpt_total:.4f}, "
+                  f"PRR/OPT={prr_total/srpt_total:.4f}, "
+                  f"time={time.time() - method_start:.1f}s")
+
+    total_time = time.time() - start_time
+
+    # ============ Print Summary ============
+    if verbose:
+        print("\n" + "="*80)
+        print(f"SUMMARY (n={len(base_df):,} jobs, runtime={total_time:.1f}s)")
+        print("="*80)
+
+        print("\nBASELINES:")
+        print(f"{'Policy':12s} {'ΣC_j':>16s} {'Avg Flow':>12s} {'ρ_TC':>10s} {'ratio/FIFO':>11s}")
+        print("-"*80)
+        for name in ['SRPT', 'SJF', 'RR', 'FIFO']:
+            r = results['baselines'][name]
+            print(f"{name:12s} {r['total_completion']:16.3f} {r['avg_flow_time']:12.3f} "
+                  f"{r['ratio_vs_opt']:10.4f} {r['ratio_vs_fifo']:11.4f}")
+
+        print(f"\nPREDICTION METHODS (PRR with λ={prr_lambda:.2f}):")
+        print(f"{'Method':8s} {'ρ':>6s} {'SPJF ρ_TC':>10s} {'PRR ρ_TC':>10s} {'Improvement':>12s}")
+        print("-"*80)
+
+        sorted_methods = sorted(results['methods'].items(),
+                               key=lambda x: x[1]['PRR']['ratio_vs_opt'])
+
+        for method_name, method_data in sorted_methods:
+            spjf_ratio = method_data['SPJF']['ratio_vs_opt']
+            prr_ratio = method_data['PRR']['ratio_vs_opt']
+            improvement = (spjf_ratio - prr_ratio) / spjf_ratio * 100
+
+            print(f"{method_name:8s} {method_data['prediction_quality']:6.3f} "
+                  f"{spjf_ratio:10.4f} "
+                  f"{prr_ratio:10.4f} "
+                  f"{improvement:11.1f}%")
+
+        if sorted_methods:
+            best = sorted_methods[0]
+            print("\n" + "="*80)
+            print(f"*** BEST: {best[0]} achieves ρ_TC={best[1]['PRR']['ratio_vs_opt']:.4f} "
+                  f"with PRR(λ={prr_lambda:.2f}) ***")
+            print("="*80)
+
+    # Save results
+    summary_rows = []
+    for method_name, method_data in results['methods'].items():
+        summary_rows.append({
+            'method': method_name,
+            'spearman_rho': method_data['prediction_quality'],
+            'spjf_total': method_data['SPJF']['total_completion'],
+            'spjf_ratio_tc': method_data['SPJF']['ratio_vs_opt'],
+            'prr_total': method_data['PRR']['total_completion'],
+            'prr_ratio_tc': method_data['PRR']['ratio_vs_opt'],
+            'prr_lambda': prr_lambda
+        })
+
+    summary_df = pd.DataFrame(summary_rows)
+    summary_df.to_csv(f"total_completion_results_{sample_size}.csv", index=False)
+
+    if verbose:
+        print(f"\n[INFO] Results saved to: total_completion_results_{sample_size}.csv")
+
+    return results
+
+# ======================== LAMBDA SWEEP ========================
+
+def sweep_prr_lambda_range(
+    df: pd.DataFrame,
+    idx_te: pd.Index,
+    predictions: Dict[str, np.ndarray],
+    sample_size: int = 10000,
+    lambda_values: Optional[List[float]] = None,
+    seed: int = 42
+) -> pd.DataFrame:
+    """Sweep PRR λ values to find optimal setting. Uses M5 predictions by default."""
+
+    if lambda_values is None:
+        lambda_values = [0.5, 0.6, 0.7, 0.8, 0.9, 0.95]
+
+    print(f"\nRunning λ sweep: {lambda_values}")
+    print("-"*50)
+
+    sweep_results = []
+
+    for lam in lambda_values:
+        results = evaluate_total_completion_all_methods(
+            df=df, idx_te=idx_te, predictions=predictions,
+            sample_size=sample_size, prr_lambda=lam, seed=seed, verbose=False
+        )
+
+        if results and 'M5' in results['methods']:
+            m5_prr = results['methods']['M5']['PRR']
+            sweep_results.append({
+                'lambda': lam,
+                'ratio_vs_opt': m5_prr['ratio_vs_opt'],
+                'total_completion': m5_prr['total_completion'],
+                'avg_flow_time': m5_prr['avg_flow_time']
+            })
+            print(f"λ={lam:.2f}: ρ_TC={m5_prr['ratio_vs_opt']:.4f}")
+
+    sweep_df = pd.DataFrame(sweep_results)
+    best_lambda = sweep_df.loc[sweep_df['ratio_vs_opt'].idxmin(), 'lambda']
+
+    print(f"\n*** Optimal λ={best_lambda:.2f} for M5 ***")
+
+    return sweep_df
+
+# ======================== MAIN EXECUTION ========================
+
+if __name__ == "__main__":
+    print("\nStarting TOTAL COMPLETION TIME evaluation...\n")
+
+    # After running the PAI prediction pipeline (Document 1), call:
+    #
+    #   results = evaluate_total_completion_all_methods(
+    #       df=df, idx_te=idx_te, predictions=predictions,
+    #       sample_size=10000, prr_lambda=0.7, verbose=True
+    #   )
+    #
+    # For lambda sweep:
+    #
+    #   sweep_df = sweep_prr_lambda_range(
+    #       df=df, idx_te=idx_te, predictions=predictions,
+    #       sample_size=10000,
+    #       lambda_values=[0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95]
+    #   )
+
+    print("Usage: run the prediction pipeline first, then call")
+    print("  evaluate_total_completion_all_methods(df, idx_te, predictions)")
+
+=== [code 7] ===
+results = evaluate_total_completion_all_methods(
+    df=df, idx_te=idx_te, predictions=predictions,
+    sample_size=10000, prr_lambda=0.7, verbose=True
+)
+
+=== [code 8] ===
+# =====================================================================
+# MAX-STRETCH (1|r,pmtn|S_max)
+# =====================================================================
+
+from typing import Dict, Tuple, Optional, List
+import numpy as np, heapq, time, math
+
+EPS = 1e-9
+
+# --------------------------- Preparation ----------------------------
+def _prepare_jobs(
+    df,
+    idx_te,
+    y_pred: np.ndarray,
+    sample_size: Optional[int] = 5000,
+    seed: int = 42,
+    clip_ratio: Optional[Tuple[float, float]] = (0.1, 10.0),
+):
+    cols = ["submit_time", "p_star"]
+    te = df.loc[idx_te, cols].reset_index(drop=True).copy()
+
+    n_all = len(te)
+    y_pred = np.asarray(y_pred[:n_all], dtype=np.float64)
+
+    if sample_size and sample_size < n_all:
+        rng = np.random.RandomState(seed)
+        pick = np.sort(rng.choice(n_all, size=sample_size, replace=False))
+        te = te.iloc[pick].copy()
+        y_pred = y_pred[pick]
+
+    sort_idx = np.argsort(te["submit_time"].values)
+    te = te.iloc[sort_idx].reset_index(drop=True)
+    y_pred = y_pred[sort_idx]
+
+    r0 = float(te["submit_time"].iloc[0])
+    r = te["submit_time"].to_numpy(dtype=np.float64) - r0
+    p = np.maximum(te["p_star"].to_numpy(dtype=np.float64), 1.0)
+    q = np.maximum(y_pred.astype(np.float64), 1.0)
+
+    if clip_ratio:
+        lo, hi = clip_ratio
+        q = np.clip(q, lo * p, hi * p)
+
+    return r, p, q
+
+# ------------------------------ Metrics -----------------------------
+def _stretch_array(r: np.ndarray, C: np.ndarray, p: np.ndarray) -> np.ndarray:
+    return np.maximum((C - r) / np.maximum(p, EPS), 1.0)
+
+def _compute_metrics(r: np.ndarray, C: np.ndarray, p: np.ndarray, normS: float) -> Dict:
+    s = _stretch_array(r, C, p)
+    tau = 10.0
+    bsld = (C - r) / np.maximum(p, tau)
+    return {
+        "n": int(s.size),
+        "max": float(np.max(s)),
+        "p99": float(np.percentile(s, 99)),
+        "p95": float(np.percentile(s, 95)),
+        "p90": float(np.percentile(s, 90)),
+        "median": float(np.median(s)),
+        "mean": float(np.mean(s)),
+        "max_over_OPT": float(np.max(s) / normS),
+        "p99_over_OPT": float(np.percentile(s, 99) / normS),
+        "p95_over_OPT": float(np.percentile(s, 95) / normS),
+        "med_over_OPT": float(np.median(s) / normS),
+        "bsld10_max": float(np.max(bsld)),
+        "bsld10_p99": float(np.percentile(bsld, 99)),
+        "bsld10_med": float(np.median(bsld)),
+    }
+
+# ---------------------- EDF feasibility & OPT(S*) --------------------
+def _edf_feasible_fast(r: np.ndarray, p: np.ndarray, d: np.ndarray) -> bool:
+    """EDF is feasibility-optimal on a preemptive uniprocessor."""
+    n = len(r)
+    rem = p.copy()
+    heap = []  # (deadline, j)
+    i, t = 0, 0.0
+
+    while i < n or heap:
+        if not heap and i < n:
+            t = max(t, r[i])
+        while i < n and r[i] <= t + EPS:
+            heapq.heappush(heap, (d[i], i)); i += 1
+        if not heap:
+            continue
+        dj, j = heapq.heappop(heap)
+        if t > dj + EPS:
+            return False
+        next_arr = r[i] if i < n else math.inf
+        dt = min(rem[j], next_arr - t, dj - t)
+        if dt <= 1e-12:
+            t = min(next_arr, dj)
+            if rem[j] > EPS:
+                heapq.heappush(heap, (dj, j))
+            continue
+        rem[j] -= dt
+        t += dt
+        if rem[j] > EPS:
+            if t >= dj - EPS:
+                return False
+            heapq.heappush(heap, (dj, j))
+    return True
+
+def _opt_max_stretch_fast(r: np.ndarray, p: np.ndarray, tol: float = 1e-3) -> float:
+    """Exact S* via bisection on S with EDF-feasibility; O(log(1/tol) * n log n)."""
+    def quick_feasible(S: float) -> bool:
+        d = r + S * p
+        if np.sum(p) > (np.max(d) - r[0]) + 1e-12:
+            return False
+        return _edf_feasible_fast(r, p, d)
+
+    lo, hi = 1.0, 2.0
+    while not quick_feasible(hi):
+        hi *= 2.0
+        if hi > 1e12:
+            raise RuntimeError("Failed to bracket S*; check inputs.")
+    for _ in range(60):
+        mid = 0.5 * (lo + hi)
+        if quick_feasible(mid):
+            hi = mid
+        else:
+            lo = mid
+        if hi - lo <= tol * max(1.0, hi):
+            break
+    return hi
+
+def _edf_schedule_fast(r: np.ndarray, p: np.ndarray, S: float, slack: float = 0.0) -> np.ndarray:
+    """Construct EDF schedule at S and return completion times."""
+    d = r + (1.0 + slack) * S * p
+    n = len(r)
+    rem = p.copy()
+    C = np.full(n, np.nan, dtype=np.float64)
+    heap = []
+    i, t = 0, 0.0
+
+    while i < n or heap:
+        if not heap and i < n:
+            t = max(t, r[i])
+        while i < n and r[i] <= t + EPS:
+            heapq.heappush(heap, (d[i], i)); i += 1
+        if not heap:
+            continue
+        dj, j = heapq.heappop(heap)
+        next_arr = r[i] if i < n else math.inf
+        dt = min(rem[j], next_arr - t, dj - t)
+        if dt <= 1e-12:
+            t = min(next_arr, dj)
+            if rem[j] > EPS:
+                heapq.heappush(heap, (dj, j))
+            continue
+        rem[j] -= dt
+        t += dt
+        if rem[j] <= EPS:
+            C[j] = t
+        else:
+            heapq.heappush(heap, (dj, j))
+    return C
+
+# -------------------- Scheduling Algorithms --------------------
+def _srpt_fast(r: np.ndarray, p_true: np.ndarray, key: np.ndarray) -> np.ndarray:
+    """SRPT/SPRPT: preemptive, event-driven. key=p for SRPT, key=q for SPRPT."""
+    n = len(r)
+    rem_t = p_true.copy()
+    rem_k = key.copy()
+    C = np.full(n, np.nan, dtype=np.float64)
+    heap = []
+    i, t = 0, 0.0
+    active = -1
+
+    while i < n or active >= 0 or heap:
+        if active < 0 and not heap and i < n:
+            t = max(t, r[i])
+        while i < n and r[i] <= t + EPS:
+            if active < 0 or rem_k[i] < rem_k[active]:
+                if active >= 0:
+                    heapq.heappush(heap, (rem_k[active], active))
+                active = i
+            else:
+                heapq.heappush(heap, (rem_k[i], i))
+            i += 1
+        if active < 0:
+            if not heap:
+                continue
+            _, active = heapq.heappop(heap)
+        next_arr = r[i] if i < n else math.inf
+        dt = min(rem_t[active], next_arr - t)
+        if dt <= 1e-12:
+            t = next_arr
+            continue
+        rem_t[active] -= dt
+        rem_k[active] = max(0.0, rem_k[active] - dt)
+        t += dt
+        if rem_t[active] <= EPS:
+            C[active] = t
+            active = -1
+    return C
+
+def _fifo_fast(r: np.ndarray, p: np.ndarray) -> np.ndarray:
+    """FIFO: non-preemptive, process in arrival order."""
+    n = len(r)
+    C = np.full(n, np.nan, dtype=np.float64)
+    t = 0.0
+    for j in range(n):
+        if t < r[j]:
+            t = r[j]
+        t += p[j]
+        C[j] = t
+    return C
+
+def _las_fast(r: np.ndarray, p: np.ndarray) -> np.ndarray:
+    """Least-Attained-Service / Foreground-Background baseline."""
+    n = len(r)
+    rem = p.copy()
+    att = np.zeros(n, dtype=np.float64)
+    C = np.full(n, np.nan, dtype=np.float64)
+    active = np.zeros(n, dtype=bool)
+    i, t = 0, 0.0
+    done = 0
+
+    while done < n:
+        if not active.any() and i < n:
+            t = max(t, r[i])
+        while i < n and r[i] <= t + EPS:
+            active[i] = True; i += 1
+        if not active.any():
+            continue
+        idx = np.flatnonzero(active)
+        j = idx[np.argmin(att[idx])]
+        next_arr = r[i] if i < n else math.inf
+        dt = min(rem[j], next_arr - t)
+        if dt <= 1e-12:
+            t = next_arr; continue
+        rem[j] -= dt; att[j] += dt; t += dt
+        if rem[j] <= EPS:
+            C[j] = t; active[j] = False; done += 1
+    return C
+
+def _edf_pred_deadlines(r: np.ndarray, p_true: np.ndarray, p_pred: np.ndarray,
+                        factor: float) -> np.ndarray:
+    """EDF-P: EDF with predicted deadlines d_j = r_j + factor * p_hat_j."""
+    n = len(r)
+    d = r + factor * p_pred
+    rem = p_true.copy()
+    C = np.full(n, np.nan, dtype=np.float64)
+    heap = []; i, t = 0, 0.0
+    while i < n or heap:
+        if not heap and i < n:
+            t = max(t, r[i])
+        while i < n and r[i] <= t + EPS:
+            heapq.heappush(heap, (d[i], i)); i += 1
+        if not heap:
+            continue
+        dj, j = heapq.heappop(heap)
+        next_arr = r[i] if i < n else math.inf
+        dt = min(rem[j], next_arr - t)
+        if dt <= 1e-12:
+            t = next_arr; heapq.heappush(heap, (dj, j)); continue
+        rem[j] -= dt; t += dt
+        if rem[j] <= EPS:
+            C[j] = t
+        else:
+            heapq.heappush(heap, (dj, j))
+    return C
+
+# ------------------------- Main Runner ------------------------------
+def run_max_stretch(
+    df,
+    idx_te,
+    y_pred: np.ndarray,
+    sample_size: Optional[int] = 5000,
+    clip_ratio: Optional[Tuple[float, float]] = (0.1, 10.0),
+    verbose: bool = True,
+) -> Dict[str, Dict]:
+    """
+    Evaluate max-stretch for all baselines and prediction-based algorithms.
+
+    Args:
+        df: Full dataframe with columns [submit_time, p_star, ...]
+        idx_te: Test set indices into df
+        y_pred: Prediction array aligned with idx_te
+        sample_size: Number of jobs to evaluate
+        clip_ratio: (lo, hi) to clip prediction/true ratio for robustness
+        verbose: Print results
+    """
+    r, p, q = _prepare_jobs(df, idx_te, y_pred,
+                            sample_size=sample_size, clip_ratio=clip_ratio)
+    n = len(p)
+    t0 = time.time()
+
+    # 1) Bisection to find S*
+    S_bisect = _opt_max_stretch_fast(r, p, tol=1e-3)
+
+    # 2) Build EDF schedule at S* and get realized max stretch
+    C_opt = _edf_schedule_fast(r, p, S_bisect, slack=0.0)
+    s_opt = _stretch_array(r, C_opt, p)
+    S_emp = float(np.max(s_opt))
+
+    # 3) Normalization anchor so OPT's max/OPT = 1.000
+    normS = S_emp
+
+    results: Dict[str, Dict] = {}
+
+    # OPT
+    results["OPT (EDF at S*)"] = _compute_metrics(r, C_opt, p, normS)
+
+    # Clairvoyant
+    C_srpt = _srpt_fast(r, p, p.copy())
+    results["SRPT (true)"] = _compute_metrics(r, C_srpt, p, normS)
+
+    # Non-clairvoyant baselines
+    C_fifo = _fifo_fast(r, p)
+    results["FIFO"] = _compute_metrics(r, C_fifo, p, normS)
+
+    C_las = _las_fast(r, p)
+    results["LAS/FB"] = _compute_metrics(r, C_las, p, normS)
+
+    # Prediction-based
+    C_sprpt = _srpt_fast(r, p, q.copy())
+    results["SPRPT (pred)"] = _compute_metrics(r, C_sprpt, p, normS)
+
+    # FIX: use S* directly as factor, not clamped to [5, 20]
+    C_edfp = _edf_pred_deadlines(r, p, q, factor=float(S_bisect))
+    results["EDF-P (pred)"] = _compute_metrics(r, C_edfp, p, normS)
+
+    elapsed = time.time() - t0
+    results["_meta"] = {
+        "n": n,
+        "S_bisect": float(S_bisect),
+        "S_emp": float(S_emp),
+        "elapsed_sec": float(elapsed),
+    }
+
+    if verbose:
+        print("\n" + "=" * 96)
+        print(f"MAX-STRETCH  1|r_j,pmtn|S_max  (n={n:,}, time={elapsed:.2f}s)")
+        print(f"S* (bisection) = {S_bisect:.4f}   |   S_emp (EDF realized) = {S_emp:.4f}")
+        print("-" * 96)
+        hdr = f"{'Algorithm':22s} {'S_max':>10s} {'S_99':>10s} {'S_med':>10s} {'ρ_max':>9s} {'ρ_99':>9s} {'ρ_med':>9s}"
+        print(hdr)
+        print("-" * 96)
+        order = ["OPT (EDF at S*)", "SRPT (true)", "FIFO", "LAS/FB",
+                 "SPRPT (pred)", "EDF-P (pred)"]
+        for name in order:
+            m = results[name]
+            print(f"{name:22s} {m['max']:10.2f} {m['p99']:10.2f} {m['median']:10.2f} "
+                  f"{m['max_over_OPT']:9.3f} {m['p99_over_OPT']:9.3f} {m['med_over_OPT']:9.3f}")
+
+        print(f"\nBounded Slowdown (tau=10):  {'max':>10s} {'p99':>10s} {'median':>10s}")
+        for name in order:
+            m = results[name]
+            print(f"  {name:22s} {m['bsld10_max']:10.2f} {m['bsld10_p99']:10.2f} {m['bsld10_med']:10.2f}")
+        print("=" * 96)
+
+    return results
+
+# -------------------- Multi-method evaluation -----------------------
+def run_max_stretch_all_methods(
+    df,
+    idx_te,
+    predictions: Dict[str, np.ndarray],
+    sample_size: Optional[int] = 5000,
+    clip_ratio: Optional[Tuple[float, float]] = (0.1, 10.0),
+    verbose: bool = True,
+) -> Dict[str, Dict]:
+    """
+    Evaluate max-stretch across all prediction methods.
+
+    Args:
+        df: Full dataframe
+        idx_te: Test indices
+        predictions: Dict mapping method name -> prediction array
+        sample_size: Number of jobs
+        clip_ratio: Prediction clipping bounds
+        verbose: Print results
+    """
+    # Prepare shared job data (same sample for all methods)
+    r, p, _ = _prepare_jobs(df, idx_te,
+                            np.zeros(len(df.loc[idx_te])),  # dummy
+                            sample_size=sample_size, clip_ratio=None)
+    n = len(p)
+
+    # Shared OPT computation (only depends on r, p)
+    t0 = time.time()
+    S_bisect = _opt_max_stretch_fast(r, p, tol=1e-3)
+    C_opt = _edf_schedule_fast(r, p, S_bisect, slack=0.0)
+    s_opt = _stretch_array(r, C_opt, p)
+    S_emp = float(np.max(s_opt))
+    normS = S_emp
+
+    # Shared baselines
+    C_srpt = _srpt_fast(r, p, p.copy())
+    C_fifo = _fifo_fast(r, p)
+    C_las = _las_fast(r, p)
+
+    all_results = {
+        "_meta": {
+            "n": n,
+            "S_bisect": float(S_bisect),
+            "S_emp": float(S_emp),
+            "sample_size": sample_size,
+        },
+        "baselines": {
+            "OPT (EDF at S*)": _compute_metrics(r, C_opt, p, normS),
+            "SRPT (true)": _compute_metrics(r, C_srpt, p, normS),
+            "FIFO": _compute_metrics(r, C_fifo, p, normS),
+            "LAS/FB": _compute_metrics(r, C_las, p, normS),
+        },
+        "methods": {},
+    }
+
+    if verbose:
+        print("=" * 96)
+        print(f"MAX-STRETCH  1|r_j,pmtn|S_max  (n={n:,})")
+        print(f"S* = {S_bisect:.4f}   |   S_emp = {S_emp:.4f}")
+        print("-" * 96)
+
+    # Per-method evaluation
+    for method_name, y_pred_raw in predictions.items():
+        # Re-prepare with this method's predictions (same sample via same seed)
+        _, _, q = _prepare_jobs(df, idx_te, y_pred_raw,
+                                sample_size=sample_size, clip_ratio=clip_ratio)
+
+        C_sprpt = _srpt_fast(r, p, q.copy())
+        C_edfp = _edf_pred_deadlines(r, p, q, factor=float(S_bisect))
+
+        all_results["methods"][method_name] = {
+            "SPRPT": _compute_metrics(r, C_sprpt, p, normS),
+            "EDF-P": _compute_metrics(r, C_edfp, p, normS),
+        }
+
+        if verbose:
+            m_sprpt = all_results["methods"][method_name]["SPRPT"]
+            m_edfp = all_results["methods"][method_name]["EDF-P"]
+            print(f"{method_name:8s}  SPRPT ρ_max={m_sprpt['max_over_OPT']:.3f}  "
+                  f"ρ_99={m_sprpt['p99_over_OPT']:.3f}  ρ_med={m_sprpt['med_over_OPT']:.3f}  |  "
+                  f"EDF-P ρ_max={m_edfp['max_over_OPT']:.3f}  "
+                  f"ρ_99={m_edfp['p99_over_OPT']:.3f}  ρ_med={m_edfp['med_over_OPT']:.3f}")
+
+    elapsed = time.time() - t0
+    all_results["_meta"]["elapsed_sec"] = float(elapsed)
+
+    if verbose:
+        print("-" * 96)
+        print(f"\nBASELINES:")
+        print(f"{'Algorithm':22s} {'ρ_max':>9s} {'ρ_99':>9s} {'ρ_med':>9s}")
+        for name in ["OPT (EDF at S*)", "SRPT (true)", "FIFO", "LAS/FB"]:
+            m = all_results["baselines"][name]
+            print(f"{name:22s} {m['max_over_OPT']:9.3f} {m['p99_over_OPT']:9.3f} {m['med_over_OPT']:9.3f}")
+        print(f"\nTotal time: {elapsed:.1f}s")
+        print("=" * 96)
+
+    return all_results
+
+# -------------------------- Usage -----------------------------------
+if __name__ == "__main__":
+    # After running the prediction pipeline:
+    #
+    #   # Single method:
+    #   results = run_max_stretch(df, idx_te, predictions["M5"],
+    #                             sample_size=5000, verbose=True)
+    #
+    #   # All methods:
+    #   results = run_max_stretch_all_methods(df, idx_te, predictions,
+    #                                        sample_size=5000, verbose=True)
+
+    print("Usage: run the prediction pipeline first, then call")
+    print("  run_max_stretch(df, idx_te, y_pred)")
+    print("  run_max_stretch_all_methods(df, idx_te, predictions)")
+
+=== [code 9] ===
+# Single method:
+results = run_max_stretch(df, idx_te, predictions["M5"], sample_size=5000)
+
+# All methods at once (shared OPT + baselines, efficient):
+results = run_max_stretch_all_methods(df, idx_te, predictions, sample_size=5000)
+
+=== [code 10] ===
+# =====================================================================
+# MAKESPAN EVALUATION (P||C_max)
+# =====================================================================
+
+
+from dataclasses import dataclass
+from typing import List, Dict, Tuple, Optional
+import numpy as np
+import pandas as pd
+import time
+
+@dataclass
+class Job:
+    job_id: int
+    true_size: float
+    pred_size: float
+
+    def __post_init__(self):
+        self.pred_size = max(self.pred_size, 1e-9)
+        self.true_size = max(self.true_size, 1e-9)
+
+# ======================== Core Algorithms ========================
+
+def makespan_LPT(jobs: List[Job], m: int, use_predictions: bool = False) -> Tuple[float, List[List[int]]]:
+    """Longest Processing Time First. LPPT when use_predictions=True."""
+    if not jobs or m <= 0:
+        return 0.0, []
+
+    key = (lambda j: j.pred_size) if use_predictions else (lambda j: j.true_size)
+    sorted_jobs = sorted(jobs, key=key, reverse=True)
+
+    if use_predictions:
+        perceived_loads = [0.0] * m
+        actual_loads = [0.0] * m
+        assignments = [[] for _ in range(m)]
+        for job in sorted_jobs:
+            min_idx = int(np.argmin(perceived_loads))
+            perceived_loads[min_idx] += job.pred_size
+            actual_loads[min_idx] += job.true_size
+            assignments[min_idx].append(job.job_id)
+        return max(actual_loads), assignments
+    else:
+        loads = [0.0] * m
+        assignments = [[] for _ in range(m)]
+        for job in sorted_jobs:
+            min_idx = int(np.argmin(loads))
+            loads[min_idx] += job.true_size
+            assignments[min_idx].append(job.job_id)
+        return max(loads), assignments
+
+def makespan_SPT(jobs: List[Job], m: int, use_predictions: bool = False) -> Tuple[float, List[List[int]]]:
+    """Shortest Processing Time First. SPPT when use_predictions=True."""
+    if not jobs or m <= 0:
+        return 0.0, []
+
+    key = (lambda j: j.pred_size) if use_predictions else (lambda j: j.true_size)
+    sorted_jobs = sorted(jobs, key=key)
+
+    if use_predictions:
+        perceived_loads = [0.0] * m
+        actual_loads = [0.0] * m
+        assignments = [[] for _ in range(m)]
+        for job in sorted_jobs:
+            min_idx = int(np.argmin(perceived_loads))
+            perceived_loads[min_idx] += job.pred_size
+            actual_loads[min_idx] += job.true_size
+            assignments[min_idx].append(job.job_id)
+        return max(actual_loads), assignments
+    else:
+        loads = [0.0] * m
+        assignments = [[] for _ in range(m)]
+        for job in sorted_jobs:
+            min_idx = int(np.argmin(loads))
+            loads[min_idx] += job.true_size
+            assignments[min_idx].append(job.job_id)
+        return max(loads), assignments
+
+def makespan_random(jobs: List[Job], m: int, seed: int = 42) -> Tuple[float, List[List[int]]]:
+    """Random assignment baseline."""
+    if not jobs or m <= 0:
+        return 0.0, []
+    rng = np.random.RandomState(seed)
+    loads = [0.0] * m
+    assignments = [[] for _ in range(m)]
+    for job in jobs:
+        idx = rng.randint(m)
+        loads[idx] += job.true_size
+        assignments[idx].append(job.job_id)
+    return max(loads), assignments
+
+def compute_lower_bound(jobs: List[Job], m: int) -> float:
+    """McNaughton's preemptive bound: OPT_pre = max(Σp/m, max_j p_j)."""
+    if not jobs or m <= 0:
+        return 0.0
+    total = sum(j.true_size for j in jobs)
+    mx = max(j.true_size for j in jobs)
+    return max(total / m, mx)
+
+# ======================== Data Preparation ========================
+
+def _sample_jobs(df: pd.DataFrame, idx_te, y_pred: np.ndarray,
+                 m: int, n_samples: Optional[int] = None,
+                 seed: int = 42) -> Tuple[List[Job], np.ndarray]:
+    """
+    Sample jobs from test set. Returns (jobs_with_oracle_pred, true_sizes).
+    Jobs are created with true_size only; predictions are set per-method later.
+    """
+    test_df = df.loc[idx_te].copy().reset_index(drop=True)
+
+    if n_samples is None:
+        n_samples = min(len(test_df), m * max(10, int(np.log2(m) * 10)))
+
+    if len(test_df) > n_samples:
+        rng = np.random.RandomState(seed)
+        pick = rng.choice(len(test_df), size=n_samples, replace=False)
+        test_df = test_df.iloc[pick].copy().reset_index(drop=True)
+    else:
+        pick = np.arange(len(test_df))
+
+    true_sizes = test_df['p_star'].values.astype(np.float64)
+    return pick, true_sizes
+
+# ======================== Main Evaluation ========================
+
+def evaluate_makespan(
+    df: pd.DataFrame,
+    idx_te,
+    predictions: Dict[str, np.ndarray],
+    machine_counts: List[int] = [5, 10, 20, 50, 100],
+    n_random_trials: int = 10,
+    seed: int = 42,
+    verbose: bool = True,
+) -> pd.DataFrame:
+    """
+    Evaluate makespan (P||C_max) for all prediction methods.
+
+    Args:
+        df: Full dataframe with column p_star
+        idx_te: Test set indices
+        predictions: Dict mapping method name -> prediction array
+        machine_counts: List of m values to evaluate
+        n_random_trials: Number of random assignment trials for averaging
+        seed: Random seed for sampling
+        verbose: Print results
+
+    Returns:
+        DataFrame with results for all methods and machine counts.
+    """
+    if verbose:
+        print("=" * 80)
+        print("MAKESPAN EVALUATION  P||C_max")
+        print("=" * 80)
+
+    all_rows = []
+
+    for m in machine_counts:
+        if verbose:
+            print(f"\n--- m = {m} machines ---")
+
+        # Sample ONCE per m (same jobs for all methods)
+        pick, true_sizes = _sample_jobs(df, idx_te, None, m, seed=seed)
+        n = len(true_sizes)
+
+        # Oracle baselines (same for all prediction methods)
+        oracle_jobs = [Job(i, true_sizes[i], true_sizes[i]) for i in range(n)]
+        opt_pre = compute_lower_bound(oracle_jobs, m)
+        lpt_ms, _ = makespan_LPT(oracle_jobs, m, use_predictions=False)
+        spt_ms, _ = makespan_SPT(oracle_jobs, m, use_predictions=False)
+
+        # Random baseline (averaged)
+        random_ms = np.mean([makespan_random(oracle_jobs, m, seed=seed + i)[0]
+                             for i in range(n_random_trials)])
+
+        if verbose:
+            print(f"  n={n}, OPT_pre={opt_pre:.1f}")
+            print(f"  LPT={lpt_ms:.1f} (ρ={lpt_ms/opt_pre:.4f}), "
+                  f"SPT={spt_ms:.1f} (ρ={spt_ms/opt_pre:.4f}), "
+                  f"Random={random_ms:.1f} (ρ={random_ms/opt_pre:.4f})")
+
+        # Per-method evaluation
+        for method_name, y_pred_all in predictions.items():
+            y_pred = y_pred_all[:len(df.loc[idx_te])][pick]
+
+            # Build jobs with this method's predictions
+            jobs = [Job(i, true_sizes[i], float(y_pred[i])) for i in range(n)]
+
+            lppt_ms, _ = makespan_LPT(jobs, m, use_predictions=True)
+            sppt_ms, _ = makespan_SPT(jobs, m, use_predictions=True)
+
+            row = {
+                'method': method_name,
+                'm': m,
+                'n_jobs': n,
+                'OPT_pre': opt_pre,
+                'LPT': lpt_ms,
+                'LPT_ratio': lpt_ms / opt_pre,
+                'SPT': spt_ms,
+                'SPT_ratio': spt_ms / opt_pre,
+                'LPPT': lppt_ms,
+                'LPPT_ratio': lppt_ms / opt_pre,
+                'SPPT': sppt_ms,
+                'SPPT_ratio': sppt_ms / opt_pre,
+                'Random': random_ms,
+                'Random_ratio': random_ms / opt_pre,
+            }
+            all_rows.append(row)
+
+            if verbose:
+                print(f"  {method_name:8s}: LPPT ρ={lppt_ms/opt_pre:.4f}, "
+                      f"SPPT ρ={sppt_ms/opt_pre:.4f}")
+
+    results_df = pd.DataFrame(all_rows)
+
+    # Print summary table
+    if verbose:
+        print("\n" + "=" * 80)
+        print("SUMMARY TABLE")
+        print("=" * 80)
+
+        # Baselines (same across methods, print once per m)
+        print(f"\n{'m':>5s}  {'OPT_pre':>10s}  {'LPT ρ':>8s}  {'SPT ρ':>8s}  {'Rand ρ':>8s}")
+        print("-" * 50)
+        for m in machine_counts:
+            sub = results_df[results_df['m'] == m].iloc[0]
+            print(f"{m:5d}  {sub['OPT_pre']:10.1f}  {sub['LPT_ratio']:8.4f}  "
+                  f"{sub['SPT_ratio']:8.4f}  {sub['Random_ratio']:8.4f}")
+
+        # Per-method prediction results
+        print(f"\n{'Method':>8s} {'m':>5s}  {'LPPT ρ':>8s}  {'SPPT ρ':>8s}")
+        print("-" * 40)
+        for method_name in predictions.keys():
+            for m in machine_counts:
+                sub = results_df[(results_df['method'] == method_name) &
+                                 (results_df['m'] == m)]
+                if len(sub) > 0:
+                    row = sub.iloc[0]
+                    print(f"{method_name:>8s} {m:5d}  {row['LPPT_ratio']:8.4f}  "
+                          f"{row['SPPT_ratio']:8.4f}")
+        print("=" * 80)
+
+    # Save
+    results_df.to_csv('makespan_results.csv', index=False)
+    if verbose:
+        print(f"\n[INFO] Results saved to makespan_results.csv")
+
+    return results_df
+
+# ======================== Usage ========================
+
+if __name__ == "__main__":
+    # After running the prediction pipeline:
+    #
+    #   results_df = evaluate_makespan(
+    #       df=df, idx_te=idx_te, predictions=predictions,
+    #       machine_counts=[5, 10, 20, 50, 100],
+    #       verbose=True
+    #   )
+
+    print("Usage: run the prediction pipeline first, then call")
+    print("  evaluate_makespan(df, idx_te, predictions)")
+
+=== [code 11] ===
+results_df = evaluate_makespan(
+    df=df, idx_te=idx_te, predictions=predictions,
+    machine_counts=[5, 10, 20, 50, 100],
+    verbose=True
+)

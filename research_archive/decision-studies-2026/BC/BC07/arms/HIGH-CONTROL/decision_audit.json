@@ -1,0 +1,62 @@
+{
+  "completed": true,
+  "arm": "HIGH-CONTROL",
+  "started_unix": 1790761152.4425583,
+  "calibration_sha256": "6d294e4a4982ef3532197f0213a13a1a7cca5d39b6c3b4d74eae60614863caf6",
+  "policy_sha256": "c624c45811a9b5b3ff1def8ed66f9c7d3848e6bd86ed4c581663dcb94b8511d5",
+  "config_sha256": "296448224b81a7af19a8e90391bebcdba325cc51d0fc110424a0919fb889244a",
+  "replay_mode": "online branch-local decisions; demand candidates only; no learned model training",
+  "trace_request_sequence": 147794,
+  "get_requests": 127305,
+  "actual_candidate_decisions": 2375547,
+  "actual_decision_batches": 176373,
+  "parent_accepts": 141064,
+  "parent_rejects": 2234483,
+  "effective_accepts": 141064,
+  "effective_rejects": 2234483,
+  "phase_source_candidate_counts": {
+    "warmup|demand": 285552,
+    "warmup|prefetch": 4661,
+    "evaluation|demand": 2057828,
+    "evaluation|prefetch": 27506
+  },
+  "evaluation": {
+    "demand_candidates": 2057828,
+    "high_parent_rejected_demand_candidates": 1966058,
+    "all_sources_high_parent_rejected": 1966058,
+    "supplemented_parent_rejections": 0,
+    "supplement_successful_cache_writes": 0,
+    "supplement_rate_of_parent_rejected_demand": 0.0,
+    "supplement_rate_of_all_demand_candidates": 0.0,
+    "effective_demand_accepts": 91770,
+    "unknown_source_candidates": 0,
+    "write_count_live": 119276,
+    "write_cap": 148731,
+    "resource_eligible_live_counter": true
+  },
+  "check_only": {
+    "calls": 2211,
+    "items": 49204,
+    "changed_decisions": 0
+  },
+  "supplement_unique_requests": 0,
+  "supplement_unique_blocks": 0,
+  "supplement_event_count": 0,
+  "supplement_write_success_count": 0,
+  "write_count_full_trace_live": 141064,
+  "max_cache_entries_observed": 3001,
+  "max_cache_capacity": 3002,
+  "rule_reason_counts": {
+    "warmup_parent_unchanged": 268425,
+    "parent_accept": 141064,
+    "control": 1966058
+  },
+  "check_only_unchanged": true,
+  "supplement_events_path": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\arms\\HIGH-CONTROL\\supplement_events.jsonl",
+  "wall_seconds": 589.5200822000006,
+  "stats_path": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\arms\\HIGH-CONTROL\\raw\\ml-ap-0.798545_6_lru_366.475GB\\full_0_0.1_cache_perf.txt.stats.lzma",
+  "error": null,
+  "run_completed_unix": 1790761741.9257948,
+  "stats_sha256": "0fbc9b85e39bd790c0ff48129823c409dfb47354f4258fd50d116601b1b4d87e",
+  "supplement_events_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,349 @@
+{
+  "dataset": "nethept",
+  "dataset_path": "C:\\Users\\windows\\Desktop\\codex\\GRL_最终实验_v2\\marginal_dataset.json",
+  "split_samples": {
+    "train": 3200,
+    "validation": 400,
+    "test": 400
+  },
+  "split_contexts": {
+    "train": 160,
+    "validation": 20,
+    "test": 20
+  },
+  "training": {
+    "TotalSpread-Diff": {
+      "epochs": 8,
+      "training_examples": 3273,
+      "epoch_losses": [
+        8651.113541170445,
+        7828.946262862043,
+        7178.678574576029,
+        3572.5439670469705,
+        516.2666139183975,
+        382.2944211448111,
+        368.66027938098443,
+        374.5990435716582
+      ],
+      "seconds": 268.6233069
+    },
+    "MarginalGain-MLP": {
+      "epochs": 8,
+      "training_examples": 3200,
+      "epoch_losses": [
+        8.300095854699611,
+        4.915172431096434,
+        4.505448994636535,
+        4.203356184512376,
+        4.234527816101909,
+        4.056077724695205,
+        4.009524879790843,
+        4.024634361714124
+      ],
+      "seconds": 18.22444760000053
+    }
+  },
+  "overall": {
+    "TotalSpread-Diff": {
+      "mae": 2.298756835401058,
+      "rmse": 3.2080358395700865,
+      "contexts": 20,
+      "samples": 400,
+      "spearman": 0.7506477635733431,
+      "kendall": 0.5573684210526315,
+      "pairwise_accuracy": 0.8134515398111916,
+      "top_1_recall": 0.6,
+      "top_5_recall": 0.5900000000000001,
+      "top_10_recall": 0.7950000000000002
+    },
+    "MarginalGain-MLP": {
+      "mae": 0.8525845835208892,
+      "rmse": 1.9917635862944512,
+      "contexts": 20,
+      "samples": 400,
+      "spearman": 0.8800905845671079,
+      "kendall": 0.6928947368421052,
+      "pairwise_accuracy": 0.8896887304978203,
+      "top_1_recall": 0.75,
+      "top_5_recall": 0.7500000000000001,
+      "top_10_recall": 0.8400000000000001
+    }
+  },
+  "by_seed_set_size": {
+    "0": {
+      "TotalSpread-Diff": {
+        "mae": 2.848194665312767,
+        "rmse": 4.117995345839181,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.5811293807550025,
+        "kendall": 0.3868421052631579,
+        "pairwise_accuracy": 0.7160538706550339,
+        "top_1_recall": 0.5,
+        "top_5_recall": 0.30000000000000004,
+        "top_10_recall": 0.7
+      },
+      "MarginalGain-MLP": {
+        "mae": 1.3648237991333008,
+        "rmse": 3.100963416070351,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.8775048221955921,
+        "kendall": 0.6710526315789473,
+        "pairwise_accuracy": 0.8757270461154965,
+        "top_1_recall": 0.5,
+        "top_5_recall": 0.8,
+        "top_10_recall": 0.8
+      }
+    },
+    "1": {
+      "TotalSpread-Diff": {
+        "mae": 2.5385375595092774,
+        "rmse": 3.1586506539566948,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.7429754183498258,
+        "kendall": 0.5921052631578947,
+        "pairwise_accuracy": 0.8108877491833806,
+        "top_1_recall": 0.5,
+        "top_5_recall": 0.7,
+        "top_10_recall": 0.8
+      },
+      "MarginalGain-MLP": {
+        "mae": 0.9415190720558166,
+        "rmse": 1.9830279932172252,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.8498169656302855,
+        "kendall": 0.6947368421052632,
+        "pairwise_accuracy": 0.8648991055346948,
+        "top_1_recall": 0.5,
+        "top_5_recall": 0.8,
+        "top_10_recall": 0.8
+      }
+    },
+    "2": {
+      "TotalSpread-Diff": {
+        "mae": 1.8768182563781735,
+        "rmse": 2.1479673014437877,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.8251683648029976,
+        "kendall": 0.6368421052631579,
+        "pairwise_accuracy": 0.8427986512524085,
+        "top_1_recall": 0.5,
+        "top_5_recall": 0.7,
+        "top_10_recall": 0.8
+      },
+      "MarginalGain-MLP": {
+        "mae": 0.41943351387977595,
+        "rmse": 0.6303563260682803,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.9268054425127195,
+        "kendall": 0.7657894736842106,
+        "pairwise_accuracy": 0.9119781631342325,
+        "top_1_recall": 0.5,
+        "top_5_recall": 0.8,
+        "top_10_recall": 0.8500000000000001
+      }
+    },
+    "3": {
+      "TotalSpread-Diff": {
+        "mae": 1.965069236755371,
+        "rmse": 2.5425730903124055,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.7156859540482585,
+        "kendall": 0.4789473684210526,
+        "pairwise_accuracy": 0.7992614672776616,
+        "top_1_recall": 0.0,
+        "top_5_recall": 0.4,
+        "top_10_recall": 0.8
+      },
+      "MarginalGain-MLP": {
+        "mae": 0.6293724012374877,
+        "rmse": 1.3993035652200403,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.855430923443754,
+        "kendall": 0.605263157894737,
+        "pairwise_accuracy": 0.8822796636561818,
+        "top_1_recall": 0.5,
+        "top_5_recall": 0.4,
+        "top_10_recall": 0.9
+      }
+    },
+    "4": {
+      "TotalSpread-Diff": {
+        "mae": 2.08681999206543,
+        "rmse": 2.821595697949069,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.7485711291873175,
+        "kendall": 0.5421052631578946,
+        "pairwise_accuracy": 0.7949290593799265,
+        "top_1_recall": 1.0,
+        "top_5_recall": 0.5,
+        "top_10_recall": 0.8500000000000001
+      },
+      "MarginalGain-MLP": {
+        "mae": 0.7922451335191727,
+        "rmse": 1.9704313949944343,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.8897107802304188,
+        "kendall": 0.7236842105263158,
+        "pairwise_accuracy": 0.8941720310036785,
+        "top_1_recall": 1.0,
+        "top_5_recall": 0.9,
+        "top_10_recall": 0.8
+      }
+    },
+    "5": {
+      "TotalSpread-Diff": {
+        "mae": 2.355814666748047,
+        "rmse": 3.2202943021457293,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.6791393436275672,
+        "kendall": 0.4921052631578947,
+        "pairwise_accuracy": 0.7842860307964994,
+        "top_1_recall": 0.5,
+        "top_5_recall": 0.7,
+        "top_10_recall": 0.75
+      },
+      "MarginalGain-MLP": {
+        "mae": 0.8685479295253753,
+        "rmse": 1.8056418887746852,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.8707465343721462,
+        "kendall": 0.6578947368421053,
+        "pairwise_accuracy": 0.8805804807798826,
+        "top_1_recall": 1.0,
+        "top_5_recall": 0.8,
+        "top_10_recall": 0.8
+      }
+    },
+    "6": {
+      "TotalSpread-Diff": {
+        "mae": 2.364132785797119,
+        "rmse": 4.063643063514271,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.8723919945981241,
+        "kendall": 0.6842105263157894,
+        "pairwise_accuracy": 0.8739383764566463,
+        "top_1_recall": 1.0,
+        "top_5_recall": 0.7,
+        "top_10_recall": 0.8
+      },
+      "MarginalGain-MLP": {
+        "mae": 1.0304812783002855,
+        "rmse": 2.931035634511472,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.9099275045283275,
+        "kendall": 0.7657894736842106,
+        "pairwise_accuracy": 0.9143294489433142,
+        "top_1_recall": 1.0,
+        "top_5_recall": 0.6000000000000001,
+        "top_10_recall": 0.9
+      }
+    },
+    "7": {
+      "TotalSpread-Diff": {
+        "mae": 2.343015365600586,
+        "rmse": 3.3050600354906754,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.7757479974098531,
+        "kendall": 0.5947368421052631,
+        "pairwise_accuracy": 0.8357626416137054,
+        "top_1_recall": 0.0,
+        "top_5_recall": 0.8,
+        "top_10_recall": 0.75
+      },
+      "MarginalGain-MLP": {
+        "mae": 0.9864014387130737,
+        "rmse": 2.1062263367680516,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.8448881311235321,
+        "kendall": 0.6447368421052632,
+        "pairwise_accuracy": 0.8630837247858525,
+        "top_1_recall": 0.5,
+        "top_5_recall": 0.8,
+        "top_10_recall": 0.8500000000000001
+      }
+    },
+    "8": {
+      "TotalSpread-Diff": {
+        "mae": 2.1056587219238283,
+        "rmse": 2.7117576488512145,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.7149973069612878,
+        "kendall": 0.5157894736842106,
+        "pairwise_accuracy": 0.7991766467065868,
+        "top_1_recall": 1.0,
+        "top_5_recall": 0.4,
+        "top_10_recall": 0.8500000000000001
+      },
+      "MarginalGain-MLP": {
+        "mae": 0.7362070363759995,
+        "rmse": 1.5904611191323024,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.844501566088539,
+        "kendall": 0.6421052631578947,
+        "pairwise_accuracy": 0.8726702844311378,
+        "top_1_recall": 1.0,
+        "top_5_recall": 0.7,
+        "top_10_recall": 0.8500000000000001
+      }
+    },
+    "9": {
+      "TotalSpread-Diff": {
+        "mae": 2.5035071039199828,
+        "rmse": 3.432141372794763,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.8506707459931961,
+        "kendall": 0.6499999999999999,
+        "pairwise_accuracy": 0.8774209047900651,
+        "top_1_recall": 1.0,
+        "top_5_recall": 0.7,
+        "top_10_recall": 0.8500000000000001
+      },
+      "MarginalGain-MLP": {
+        "mae": 0.756814232468605,
+        "rmse": 1.0333343045322527,
+        "contexts": 2,
+        "samples": 40,
+        "spearman": 0.931573175545763,
+        "kendall": 0.7578947368421053,
+        "pairwise_accuracy": 0.9371673565937315,
+        "top_1_recall": 1.0,
+        "top_5_recall": 0.9,
+        "top_10_recall": 0.8500000000000001
+      }
+    }
+  },
+  "artifacts": {
+    "metrics_csv": "C:\\Users\\windows\\Desktop\\codex\\GRL_最终实验_v2\\comparison_metrics.csv",
+    "curve": "C:\\Users\\windows\\Desktop\\codex\\GRL_最终实验_v2\\performance_vs_seed_size.png",
+    "total_model": "C:\\Users\\windows\\Desktop\\codex\\GRL_最终实验_v2\\models\\total_spread_nethept.pth",
+    "direct_model": "C:\\Users\\windows\\Desktop\\codex\\GRL_最终实验_v2\\models\\direct_marginal_nethept.pth",
+    "embeddings": "C:\\Users\\windows\\Desktop\\codex\\GRL_最终实验_v2\\models\\comparison_node2vec_nethept.pth"
+  },
+  "metadata": {
+    "config_path": "configs\\student_a_nethept.yaml",
+    "dataset": "nethept",
+    "random_seed": 20260821,
+    "model_version": "marginal_model_comparison_v1",
+    "timestamp_utc": "2026-08-21T04:09:08.006683+00:00",
+    "git_commit": "e043f5d3334774bb26215b61b9ddf256fbb12d65"
+  }
+}

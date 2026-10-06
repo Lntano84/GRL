@@ -1,0 +1,44 @@
+﻿model,feature,source,request_aggregation,author_model_input,notes
+OLD and NEW,feat_metadata|op,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_metadata|ns,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_metadata|user,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_metadata_size|start,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_metadata_size|end,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_metadata_size|size,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_b|0,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_b|1,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_b|2,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_b|3,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_b|4,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_b|5,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_c_combined|0,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_c_combined|1,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_c_combined|2,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_c_combined|3,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_c_combined|4,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,feat_dynamic_c_combined|5,frozen BC06 author_model_input_vector,mean across R_q candidate chunks,True,Exact author feature order; identifiers excluded.
+OLD and NEW,author_score_mean,frozen BC06 author_model_score,mean across R_q candidate chunks,derived from author model,Ranking baseline and OLD/NEW input.
+NEW only,prior_block_get_count,legal_key_history_at_decision_request_start.prior_block_get_count,same for request,False,partial overlap with author rolling-hour inputs; count can add resolution/context
+NEW only,seconds_since_block_last_get_s,legal_key_history_at_decision_request_start.seconds_since_block_last_get,same for request; missing remains NaN,False,not directly in the author 18-vector
+NEW only,prior_chunk_get_count_mean,legal_key_history_at_decision_request_start.prior_chunk_get_count,mean across R_q,False,partial overlap with author rolling-hour inputs; count can add resolution/context
+NEW only,seconds_since_chunk_last_get_mean_known_s,legal_key_history_at_decision_request_start.seconds_since_chunk_last_get,mean over known chunks; missing fraction is separate,False,not directly in the author 18-vector
+NEW only,chunk_get_gap_missing_fraction,legal_key_history_at_decision_request_start.seconds_since_chunk_last_get,missing R_q chunks divided by |R_q|,False,not directly in the author 18-vector
+NEW only,prior_actual_rejection_count_mean,legal_key_history_at_decision_request_start.prior_actual_rejection_count,mean across R_q,False,not directly in the author 18-vector
+NEW only,seconds_since_latest_actual_rejection_mean_known_s,legal_key_history_at_decision_request_start.seconds_since_latest_actual_rejection,mean over known chunks; missing fraction is separate,False,not directly in the author 18-vector
+NEW only,reject_gap_missing_fraction,legal_key_history_at_decision_request_start.seconds_since_latest_actual_rejection,missing R_q chunks divided by |R_q|,False,not directly in the author 18-vector
+NEW only,current_request_chunk_count,BC06 GET request context,one current-request scalar,False,"related to, but not identical with, author byte-size features"
+NEW only,cache_occupancy_fraction_at_request_start,BC06 GET request context,request start state,False,not directly in the author 18-vector
+NEW only,last_total_get_dt_pct,BC06 last_completed_window,last ended window,False,not directly in the author 18-vector
+NEW only,last_demand_read_dt_pct,BC06 last_completed_window,last ended window,False,not directly in the author 18-vector
+NEW only,last_extra_prefetch_dt_pct,BC06 last_completed_window,last ended window,False,not directly in the author 18-vector
+NEW only,last_put_dt_pct,BC06 last_completed_window,last ended window,False,not directly in the author 18-vector
+NEW only,last_writes,BC06 last_completed_window,last ended window,False,not directly in the author 18-vector
+NEW only,last_evictions,BC06 last_completed_window,last ended window,False,not directly in the author 18-vector
+NEW only,last6_mean_total_get_dt_pct,BC06 last_six_completed_windows,mean across available ended windows; active window excluded,False,not directly in the author 18-vector
+NEW only,last6_max_total_get_dt_pct,BC06 last_six_completed_windows,maximum across available ended windows; active window excluded,False,not directly in the author 18-vector
+NEW only,last6_mean_demand_read_dt_pct,BC06 last_six_completed_windows,mean across available ended windows; active window excluded,False,not directly in the author 18-vector
+NEW only,last6_max_demand_read_dt_pct,BC06 last_six_completed_windows,maximum across available ended windows; active window excluded,False,not directly in the author 18-vector
+NEW only,last6_mean_extra_prefetch_dt_pct,BC06 last_six_completed_windows,mean across available ended windows; active window excluded,False,not directly in the author 18-vector
+NEW only,last6_max_extra_prefetch_dt_pct,BC06 last_six_completed_windows,maximum across available ended windows; active window excluded,False,not directly in the author 18-vector
+NEW only,last6_mean_put_dt_pct,BC06 last_six_completed_windows,mean across available ended windows; active window excluded,False,not directly in the author 18-vector
+NEW only,last6_max_put_dt_pct,BC06 last_six_completed_windows,maximum across available ended windows; active window excluded,False,not directly in the author 18-vector

@@ -1,0 +1,128 @@
+{
+  "verdict": "CLOSE_CURRENT_HYPOTHESIS",
+  "continuation_gate": false,
+  "closure_gate": true,
+  "fixed_controls": [
+    {
+      "arm": "FIXED-100",
+      "free_relative_advantage": -0.07060145557866004,
+      "free_positive_seeds": 1,
+      "pass_gate": false
+    },
+    {
+      "arm": "FIXED-600",
+      "free_relative_advantage": 0.07520598247860122,
+      "free_positive_seeds": 3,
+      "pass_gate": true
+    },
+    {
+      "arm": "GEOMETRIC",
+      "free_relative_advantage": 0.06107581869806733,
+      "free_positive_seeds": 2,
+      "pass_gate": true
+    }
+  ],
+  "closure_controls": [
+    {
+      "arm": "PAID-DYN",
+      "relative_to_free": 0.13106942202641184,
+      "within_2pct_or_better": false
+    },
+    {
+      "arm": "SMALL32-DYN",
+      "relative_to_free": 0.04388919253434994,
+      "within_2pct_or_better": false
+    },
+    {
+      "arm": "FIXED-100",
+      "relative_to_free": -0.06594560021450746,
+      "within_2pct_or_better": true
+    },
+    {
+      "arm": "FIXED-600",
+      "relative_to_free": 0.08132187390243481,
+      "within_2pct_or_better": false
+    },
+    {
+      "arm": "GEOMETRIC",
+      "relative_to_free": 0.06504872269172818,
+      "within_2pct_or_better": false
+    }
+  ],
+  "paid_validation_fraction": 0.1527357977630792,
+  "summary": [
+    {
+      "arm": "FREE-DYN",
+      "mean_par10_s": 713.9110533379845,
+      "seed7_par10_s": 869.7281342651163,
+      "seed42_par10_s": 727.6917621248062,
+      "seed99_par10_s": 544.313263624031,
+      "mean_train_cost_s": 345840.00000000006,
+      "mean_validation_cost_s": 0.0,
+      "pooled_validation_fraction": 0.0,
+      "mean_remaining_budget_s": 0.0,
+      "mean_local_wall_s": 479.4670744000002
+    },
+    {
+      "arm": "PAID-DYN",
+      "mean_par10_s": 807.482962477261,
+      "seed7_par10_s": 1007.0089545286822,
+      "seed42_par10_s": 682.7866244736433,
+      "seed99_par10_s": 732.6533084294573,
+      "mean_train_cost_s": 293017.8517016167,
+      "mean_validation_cost_s": 52822.14829838332,
+      "pooled_validation_fraction": 0.1527357977630792,
+      "mean_remaining_budget_s": 1.697723443309466e-11,
+      "mean_local_wall_s": 413.4495600666667
+    },
+    {
+      "arm": "SMALL32-DYN",
+      "mean_par10_s": 745.2440330103359,
+      "seed7_par10_s": 868.0232757697675,
+      "seed42_par10_s": 724.5741476697674,
+      "seed99_par10_s": 643.1346755914728,
+      "mean_train_cost_s": 329129.4653573667,
+      "mean_validation_cost_s": 16710.534642633338,
+      "pooled_validation_fraction": 0.04831868679919423,
+      "mean_remaining_budget_s": 1.2732925824820995e-11,
+      "mean_local_wall_s": 405.97418106666674
+    },
+    {
+      "arm": "FIXED-100",
+      "mean_par10_s": 666.8317604258399,
+      "seed7_par10_s": 683.5386672976745,
+      "seed42_par10_s": 681.1995660705426,
+      "seed99_par10_s": 635.7570479093024,
+      "mean_train_cost_s": 345840.00000000006,
+      "mean_validation_cost_s": 0.0,
+      "pooled_validation_fraction": 0.0,
+      "mean_remaining_budget_s": 0.0,
+      "mean_local_wall_s": 890.2443457666667
+    },
+    {
+      "arm": "FIXED-600",
+      "mean_par10_s": 771.9676379950905,
+      "seed7_par10_s": 915.4072374131783,
+      "seed42_par10_s": 767.5892075465116,
+      "seed99_par10_s": 632.9064690255815,
+      "mean_train_cost_s": 345840.00000000006,
+      "mean_validation_cost_s": 0.0,
+      "pooled_validation_fraction": 0.0,
+      "mean_remaining_budget_s": 0.0,
+      "mean_local_wall_s": 414.39303916666677
+    },
+    {
+      "arm": "GEOMETRIC",
+      "mean_par10_s": 760.3500554731266,
+      "seed7_par10_s": 1005.6197656387596,
+      "seed42_par10_s": 731.4718482813954,
+      "seed99_par10_s": 543.9585524992248,
+      "mean_train_cost_s": 345840.00000000006,
+      "mean_validation_cost_s": 0.0,
+      "pooled_validation_fraction": 0.0,
+      "mean_remaining_budget_s": 0.0,
+      "mean_local_wall_s": 449.32168140000005
+    }
+  ],
+  "warning": "One scenario, one test split, three algorithmic seeds; no significance or equivalence claim"
+}

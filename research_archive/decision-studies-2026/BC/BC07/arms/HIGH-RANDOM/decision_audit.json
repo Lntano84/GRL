@@ -1,0 +1,63 @@
+{
+  "completed": true,
+  "arm": "HIGH-RANDOM",
+  "started_unix": 1790763219.346939,
+  "calibration_sha256": "6d294e4a4982ef3532197f0213a13a1a7cca5d39b6c3b4d74eae60614863caf6",
+  "policy_sha256": "c624c45811a9b5b3ff1def8ed66f9c7d3848e6bd86ed4c581663dcb94b8511d5",
+  "config_sha256": "60d780f4ee16be88afb1204f8e3db69f57ddf7987dd46d32a3d9348c6bbe71c8",
+  "replay_mode": "online branch-local decisions; demand candidates only; no learned model training",
+  "trace_request_sequence": 147794,
+  "get_requests": 127305,
+  "actual_candidate_decisions": 2377641,
+  "actual_decision_batches": 176702,
+  "parent_accepts": 141715,
+  "parent_rejects": 2235926,
+  "effective_accepts": 164511,
+  "effective_rejects": 2213130,
+  "phase_source_candidate_counts": {
+    "warmup|demand": 285552,
+    "warmup|prefetch": 4661,
+    "evaluation|demand": 2059304,
+    "evaluation|prefetch": 28124
+  },
+  "evaluation": {
+    "demand_candidates": 2059304,
+    "high_parent_rejected_demand_candidates": 1967501,
+    "all_sources_high_parent_rejected": 1967501,
+    "supplemented_parent_rejections": 22796,
+    "supplement_successful_cache_writes": 22796,
+    "supplement_rate_of_parent_rejected_demand": 0.01158627111244162,
+    "supplement_rate_of_all_demand_candidates": 0.01106975949155637,
+    "effective_demand_accepts": 114599,
+    "unknown_source_candidates": 0,
+    "write_count_live": 142723,
+    "write_cap": 148731,
+    "resource_eligible_live_counter": true
+  },
+  "check_only": {
+    "calls": 2361,
+    "items": 52664,
+    "changed_decisions": 0
+  },
+  "supplement_unique_requests": 681,
+  "supplement_unique_blocks": 615,
+  "supplement_event_count": 22796,
+  "supplement_write_success_count": 22796,
+  "write_count_full_trace_live": 164511,
+  "max_cache_entries_observed": 3001,
+  "max_cache_capacity": 3002,
+  "rule_reason_counts": {
+    "warmup_parent_unchanged": 268425,
+    "parent_accept": 141715,
+    "no_calibration_cutoff": 1944705,
+    "request_hash_sample": 22796
+  },
+  "check_only_unchanged": true,
+  "supplement_events_path": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\arms\\HIGH-RANDOM\\supplement_events.jsonl",
+  "wall_seconds": 596.864834,
+  "stats_path": "C:\\Users\\windows\\Documents\\Codex\\2026-09-29\\mp01-pp-pbs-socs-2025-https\\work\\bc07\\arms\\HIGH-RANDOM\\raw\\ml-ap-0.798545_6_lru_366.475GB\\full_0_0.1_cache_perf.txt.stats.lzma",
+  "error": null,
+  "run_completed_unix": 1790763816.1841092,
+  "stats_sha256": "10830fceccecf8054d43793f70b4c71079d45a6f14a5203e96d1d4ab77b42a47",
+  "supplement_events_sha256": "c0f6fd201563c00ad4831516696313d21c745c1e4c01d64bb640b6ad474cadcb"
+}

@@ -1,0 +1,414 @@
+{
+  "formal_runs": 18,
+  "hard_failures": 0,
+  "raw_matrix_entries_checked": 14234,
+  "test_predictions_checked": 2322,
+  "events": 1141995,
+  "observation_events": 543193,
+  "max_ledger_error_s": 0.0,
+  "split_disjoint_and_complete": true,
+  "train_only_preprocessing_reconstructed": true,
+  "initial_sample_streams_reconstructed": true,
+  "initial_model_fairness": [
+    {
+      "seed": 7,
+      "all_six_initial_predictions_equal": true,
+      "initial_cost_s": 11082.498713000003
+    },
+    {
+      "seed": 42,
+      "all_six_initial_predictions_equal": true,
+      "initial_cost_s": 8872.8333318
+    },
+    {
+      "seed": 99,
+      "all_six_initial_predictions_equal": true,
+      "initial_cost_s": 6532.684123629999
+    }
+  ],
+  "source_and_policy_hashes_unchanged": true,
+  "serial_parallel_prefix_checks": [
+    {
+      "round": 0,
+      "equal": true
+    },
+    {
+      "round": 1,
+      "equal": true
+    },
+    {
+      "round": 2,
+      "equal": true
+    },
+    {
+      "round": 3,
+      "equal": true
+    },
+    {
+      "round": 4,
+      "equal": true
+    },
+    {
+      "round": 5,
+      "equal": true
+    },
+    {
+      "round": 6,
+      "equal": true
+    },
+    {
+      "round": 7,
+      "equal": true
+    },
+    {
+      "round": 8,
+      "equal": true
+    },
+    {
+      "round": 9,
+      "equal": true
+    },
+    {
+      "round": 10,
+      "equal": true
+    },
+    {
+      "round": 11,
+      "equal": true
+    },
+    {
+      "round": 12,
+      "equal": true
+    },
+    {
+      "round": 13,
+      "equal": true
+    },
+    {
+      "round": 14,
+      "equal": true
+    },
+    {
+      "round": 15,
+      "equal": true
+    },
+    {
+      "round": 16,
+      "equal": true
+    },
+    {
+      "round": 17,
+      "equal": true
+    },
+    {
+      "round": 18,
+      "equal": true
+    },
+    {
+      "round": 19,
+      "equal": true
+    },
+    {
+      "round": 20,
+      "equal": true
+    },
+    {
+      "round": 21,
+      "equal": true
+    },
+    {
+      "round": 22,
+      "equal": true
+    }
+  ],
+  "per_run": [
+    {
+      "arm": "FREE-DYN",
+      "seed": 7,
+      "events": 62039,
+      "observation_events": 28991,
+      "pair_labels": 32972,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7587,
+      "cache_checks": 21404,
+      "native_timeout_score_cost_checks": 270,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "PAID-DYN",
+      "seed": 7,
+      "events": 61298,
+      "observation_events": 29686,
+      "pair_labels": 31563,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7742,
+      "cache_checks": 21944,
+      "native_timeout_score_cost_checks": 291,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "SMALL32-DYN",
+      "seed": 7,
+      "events": 62560,
+      "observation_events": 29687,
+      "pair_labels": 32822,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7669,
+      "cache_checks": 22018,
+      "native_timeout_score_cost_checks": 265,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "FIXED-100",
+      "seed": 7,
+      "events": 83061,
+      "observation_events": 41316,
+      "pair_labels": 41672,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 10566,
+      "cache_checks": 30750,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "FIXED-600",
+      "seed": 7,
+      "events": 59188,
+      "observation_events": 27858,
+      "pair_labels": 31281,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7325,
+      "cache_checks": 20533,
+      "native_timeout_score_cost_checks": 338,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "GEOMETRIC",
+      "seed": 7,
+      "events": 59893,
+      "observation_events": 28439,
+      "pair_labels": 31405,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7396,
+      "cache_checks": 21043,
+      "native_timeout_score_cost_checks": 336,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "FREE-DYN",
+      "seed": 42,
+      "events": 63182,
+      "observation_events": 29721,
+      "pair_labels": 33382,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7596,
+      "cache_checks": 22125,
+      "native_timeout_score_cost_checks": 256,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "PAID-DYN",
+      "seed": 42,
+      "events": 60191,
+      "observation_events": 29478,
+      "pair_labels": 30664,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7569,
+      "cache_checks": 21909,
+      "native_timeout_score_cost_checks": 277,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "SMALL32-DYN",
+      "seed": 42,
+      "events": 56417,
+      "observation_events": 27083,
+      "pair_labels": 29287,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7074,
+      "cache_checks": 20009,
+      "native_timeout_score_cost_checks": 337,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "FIXED-100",
+      "seed": 42,
+      "events": 82942,
+      "observation_events": 41125,
+      "pair_labels": 41744,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 10565,
+      "cache_checks": 30560,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "FIXED-600",
+      "seed": 42,
+      "events": 59317,
+      "observation_events": 27945,
+      "pair_labels": 31323,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7208,
+      "cache_checks": 20737,
+      "native_timeout_score_cost_checks": 317,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "GEOMETRIC",
+      "seed": 42,
+      "events": 61139,
+      "observation_events": 28564,
+      "pair_labels": 32524,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7340,
+      "cache_checks": 21224,
+      "native_timeout_score_cost_checks": 302,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "FREE-DYN",
+      "seed": 99,
+      "events": 62508,
+      "observation_events": 28674,
+      "pair_labels": 33758,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7577,
+      "cache_checks": 21097,
+      "native_timeout_score_cost_checks": 235,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "PAID-DYN",
+      "seed": 99,
+      "events": 58076,
+      "observation_events": 27618,
+      "pair_labels": 30413,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7427,
+      "cache_checks": 20191,
+      "native_timeout_score_cost_checks": 263,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "SMALL32-DYN",
+      "seed": 99,
+      "events": 56460,
+      "observation_events": 26408,
+      "pair_labels": 30007,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 7077,
+      "cache_checks": 19331,
+      "native_timeout_score_cost_checks": 320,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "FIXED-100",
+      "seed": 99,
+      "events": 81712,
+      "observation_events": 39976,
+      "pair_labels": 41665,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 10548,
+      "cache_checks": 29428,
+      "native_timeout_score_cost_checks": 0,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "FIXED-600",
+      "seed": 99,
+      "events": 56040,
+      "observation_events": 25455,
+      "pair_labels": 30540,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 6916,
+      "cache_checks": 18539,
+      "native_timeout_score_cost_checks": 352,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    },
+    {
+      "arm": "GEOMETRIC",
+      "seed": 99,
+      "events": 55972,
+      "observation_events": 25169,
+      "pair_labels": 30758,
+      "exact_scores_checked": 129,
+      "max_ledger_error_s": 0.0,
+      "actual_dispatch_checks": 6949,
+      "cache_checks": 18220,
+      "native_timeout_score_cost_checks": 341,
+      "fixed_budget_violations": 0,
+      "wrong_labels": 0,
+      "validation_permissions_violations": 0,
+      "final_prediction_checkpoint_mismatch": 0
+    }
+  ]
+}

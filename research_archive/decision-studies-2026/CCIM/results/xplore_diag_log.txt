@@ -1,0 +1,80 @@
+========================================================================================================
+  TRAINING-CONTRIBUTION DIAGNOSTIC -- epoch 0 / earliest / mid / last, no new training
+========================================================================================================
+    train graphs     : ['interact__ia-crime-moreno', 'interact__ia-infect-dublin', 'interact__ia-infect-hyper']
+    validation graphs: ['interact__ia-enron-only', 'interact__rt-twitter-copen']   (reported separately, never pooled)
+    checkpoints      : [0, 500, 1000, 2000]   observations per graph: 20
+
+    seed 0: re-executing the identical training to recover the weights
+      val curve recorded [33.148, 32.178, 32.533]
+      val curve rebuilt  [np.float64(33.148), np.float64(32.178), np.float64(32.533)]
+      [PASS] exact reproduction of the previous round
+
+    seed 1: re-executing the identical training to recover the weights
+      val curve recorded [33.364, 32.522, 32.914]
+      val curve rebuilt  [np.float64(33.364), np.float64(32.522), np.float64(32.914)]
+      [PASS] exact reproduction of the previous round
+
+    seed 2: re-executing the identical training to recover the weights
+      val curve recorded [33.7, 32.952, 31.903]
+      val curve rebuilt  [np.float64(33.7), np.float64(32.952), np.float64(31.903)]
+      [PASS] exact reproduction of the previous round
+
+    seed 3: re-executing the identical training to recover the weights
+      val curve recorded [33.356, 33.338, 32.364]
+      val curve rebuilt  [np.float64(33.356), np.float64(33.338), np.float64(32.364)]
+      [PASS] exact reproduction of the previous round
+
+    seed 4: re-executing the identical training to recover the weights
+      val curve recorded [33.109, 33.148, 33.098]
+      val curve rebuilt  [np.float64(33.109), np.float64(33.148), np.float64(33.098)]
+      [PASS] exact reproduction of the previous round
+
+  REBUILD GATE: ALL PASS
+    seed 0 ep0    : train spread  105.54   val spread   34.22
+    seed 0 ep500  : train spread  105.81   val spread   34.55
+    seed 0 ep1000 : train spread  105.52   val spread   34.17
+    seed 0 ep2000 : train spread  105.70   val spread   34.01
+    seed 1 ep0    : train spread  103.98   val spread   32.15
+    seed 1 ep500  : train spread  105.79   val spread   34.80
+    seed 1 ep1000 : train spread  105.66   val spread   34.60
+    seed 1 ep2000 : train spread  104.62   val spread   34.11
+    seed 2 ep0    : train spread  104.74   val spread   32.58
+    seed 2 ep500  : train spread  105.37   val spread   34.37
+    seed 2 ep1000 : train spread  106.00   val spread   34.67
+    seed 2 ep2000 : train spread  105.60   val spread   33.92
+    seed 3 ep0    : train spread  105.48   val spread   33.16
+    seed 3 ep500  : train spread  106.12   val spread   34.44
+    seed 3 ep1000 : train spread  106.05   val spread   34.43
+    seed 3 ep2000 : train spread  105.40   val spread   34.55
+    seed 4 ep0    : train spread  104.92   val spread   32.55
+    seed 4 ep500  : train spread  105.68   val spread   34.52
+    seed 4 ep1000 : train spread  105.90   val spread   34.47
+    seed 4 ep2000 : train spread  105.66   val spread   34.47
+
+========================================================================================================
+  (1) FINAL SPREAD BY CHECKPOINT -- mean over 20 paired observations per graph
+========================================================================================================
+
+    TRAIN graphs
+       seed         ep0       ep500      ep1000      ep2000   ep2000-ep0   ep2000-ep500
+          0      105.54      105.81      105.52      105.70        +0.16          -0.12
+          1      103.98      105.79      105.66      104.62        +0.64          -1.18
+          2      104.74      105.37      106.00      105.60        +0.86          +0.23
+          3      105.48      106.12      106.05      105.40        -0.08          -0.71
+          4      104.92      105.68      105.90      105.66        +0.73          -0.02
+       mean      104.93      105.75      105.83      105.39        +0.46          -0.36
+
+    VALIDATION graphs
+       seed         ep0       ep500      ep1000      ep2000   ep2000-ep0   ep2000-ep500
+          0       34.22       34.55       34.17       34.01        -0.21          -0.54
+          1       32.15       34.80       34.60       34.11        +1.96          -0.69
+          2       32.58       34.37       34.67       33.92        +1.33          -0.45
+          3       33.16       34.44       34.43       34.55        +1.40          +0.11
+          4       32.55       34.52       34.47       34.47        +1.93          -0.04
+       mean       32.93       34.53       34.47       34.21        +1.28          -0.32
+
+========================================================================================================
+  (2) DID THE DECISIONS ACTUALLY CHANGE?  survey actions vs the untrained network
+========================================================================================================
+     seed  checkpoint  decisions changed  of total  train spread   val spread

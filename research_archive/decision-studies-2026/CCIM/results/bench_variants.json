@@ -1,0 +1,50 @@
+{
+  "threads": 1,
+  "updates": 12,
+  "updates_ms": {
+    "published": {
+      "mean_ms": 1242.1239500001395,
+      "median_ms": 1170.6429000003027,
+      "min_ms": 1144.3546999998944
+    },
+    "compute_loss_off_only": {
+      "mean_ms": 1279.161175000013,
+      "median_ms": 1243.0395000001226,
+      "min_ms": 1133.6757999997644
+    },
+    "fast": {
+      "mean_ms": 423.19033333342304,
+      "median_ms": 424.6762499999477,
+      "min_ms": 408.9165000000321
+    }
+  },
+  "episodes": [
+    {
+      "variant": "published",
+      "episodes": 5,
+      "mean_s": 16.759177520000048,
+      "median_s": 16.79623219999985,
+      "replay_size": 130,
+      "warmup_episodes": 21,
+      "updates_active": true
+    },
+    {
+      "variant": "compute_loss_off_only",
+      "episodes": 5,
+      "mean_s": 17.23702092000003,
+      "median_s": 17.155306699999983,
+      "replay_size": 130,
+      "warmup_episodes": 21,
+      "updates_active": true
+    },
+    {
+      "variant": "fast",
+      "episodes": 5,
+      "mean_s": 6.191933919999883,
+      "median_s": 5.914926299999934,
+      "replay_size": 130,
+      "warmup_episodes": 21,
+      "updates_active": true
+    }
+  ]
+}

@@ -1,0 +1,836 @@
+
+
+===== PAGE 1 =====
+Learning to reoptimize: a GNN-aided fix-and-optimize approach
+and an application to the Lot Sizing problem
+Mathieu Lerougea,c, Andrea Lodia,b,∗, Enrico Malagutia, Michele Monacia, Filippo Focaccic
+aDEI “Guglielmo Marconi” Università di Bologna, Bologna, Italy
+bJacobs Technion-Cornell Institute, Cornell Tech and Technion-IIT, New York, USA
+cDecisionBrain, Paris, France
+Abstract
+In many operational contexts, solutions to NP-hard combinatorial optimization problems, mod-
+eled by means of Mixed-Integer Linear Programming (MILP), may become infeasible due to
+unpredictable disruptions. Typically, reoptimizing by solving the MILP formulation on the per-
+turbed instance is not possible as new solutions must be obtained in a very short computing
+time, while simple repairing heuristics may result in low-quality solutions. To bridge this gap,
+we propose a learning-to-reoptimize framework, and apply it to the Lot Sizing Problem (LSP)
+under machine breakdown disruptions. We design a fix-and-optimize strategy aided by a Graph
+Neural Network (GNN) that efficiently computes a new solution within the neighborhood of a
+repaired solution. By representing the instance, the original solution and the disruption as a
+feature graph, we train a GNN to predict the likelihood that specific binary variables require to
+be modified. These predictions guide the selection of a small subset of variables to be reoptimized
+by an MILP solver, while the other variables are hard-fixed. Numerical experiments on a large
+dataset demonstrate that our approach handles effectively different problem sizes, and that it
+significantly outperforms a baseline alternative approach, yielding larger cost reductions within
+the same limited time budget.
+Keywords:
+Machine Learning in OR, Reoptimization, Mathematical Programming, Graph
+Neural Network, Lot Sizing Problem
+1. Introduction
+In various operational contexts, solutions to optimization problems, especially NP-hard ones,
+are obtained after a long computational process, lasting tens of minutes or hours.
+In many
+relevant settings, the temporal dimension plays a role, and decisions are made before the time at
+which they are actually implemented. In the time between decision and implementation, some
+input data may change, possibly making the decisions suboptimal or even infeasible, thus calling
+for recourse actions. In some cases these changes can be described by statistical distributions,
+allowing for the use of stochastic optimization approaches; or, at least, the decision maker can
+estimate intervals of variability, resulting in the possibility to adopt robust optimization schemes.
+In this paper, we consider instead situations where uncertain events are very rare but have a
+major impact; e.g., disruption of a connection in a transportation or telecommunication system,
+cancellation of a large customer demand, unavailability of a production equipment or of a major
+warehouse or of labor force. These situations are hardly manageable with statistical approaches
+and explicitly considering them at decision time could result in overconservative solutions.
+∗Corresponding author
+arXiv:2605.27339v1  [math.OC]  26 May 2026
+
+
+===== PAGE 2 =====
+In these settings, a viable alternative is represented by reoptimization approaches, in which
+the decision maker computes an optimal (or near-optimal) solution to the nominal problem and
+possibly takes recourse actions when a disruptive and unexpected event occurs. At this time,
+the decision maker must compute a new high-quality solution that is feasible with respect to
+the disrupted instance. In many practical contexts, in order to ensure operational continuity
+and stability, the new solution must be close to the nominal one and be obtained in short
+computing time. For this reason, a naive approach based on solving from scratch the perturbed
+instance is not recommendable. Consequently, decision-makers typically resort to basic repairing
+approaches, such as manual adjustments or simple heuristics, to quickly restore feasibility, though
+these approaches generally produce low-quality solutions.
+In this paper, we present a solution approach based on the idea of fixing, at the time the
+disruption occurs, a (possibly, large) part of the solution and exploiting the possibility to reop-
+timize the remaining part. This approach is inspired by a classical fix-and-optimize framework,
+an iterative approach that (i) typically requires large computing times; and (ii) may converge to
+a solution that is considerably different from the nominal one. To overcome these drawbacks, we
+use a single-iteration scheme, which turns out to be most suitable for a fast reoptimization and
+allows to control the deviation of the newly computed solution. The effectiveness of the resulting
+approach is strongly dependent on the capability to properly select the part of the solution that
+is fixed. We make use of Machine Learning (ML) tools for effectively performing this selection,
+resulting in an approach that we denote as learning-to-reoptimize.
+The synergy between ML and optimization is an active and growing research field (Bengio
+et al., 2021).
+Recent works have shown that ML can effectively guide branching strategies
+within branch-and-bound procedures (Khalil et al., 2016; Lodi and Zarpellon, 2017) or assist in
+designing decompositions schemes in integer programming (Basso et al., 2020; Xavier et al., 2021).
+In the specific context of reoptimization, Lodi et al. (2020) and Morabit et al. (2024) propose
+using ML models to reduce the feasible solution space of the reoptimization problem, thereby
+accelerating solution computation in most cases. Specifically, Lodi et al. (2020) predict bounds
+on sums of binary variables, while Morabit et al. (2024) predict whether specific binary variables
+should be fixed.
+In both cases, the considered perturbation is only on the data (capacities
+of facilities in Lodi et al. (2020) and demands of clients in Morabit et al. (2024)). Moreover,
+these approaches typically rely on ML models (such as Random Forest, Logistic Regression
+or Multilayer Perceptrons) that require fixed-size input vectors.
+This limits their ability to
+generalize across instances of varying dimensions (e.g., varying number of items).
+In this paper, we make a step forward in the reoptimization direction by 1) considering
+more general perturbations that disrupt the structure of the problem, for example by making
+machines disappear, and 2) enhancing generalization through Graph Neural Networks (GNNs).
+By processing data represented as graphs, GNNs are able to capture the rich relational structure
+of combinatorial optimization problems and, crucially, to generalize to instances of arbitrary size.
+Consequently, recent years have seen growing interest in employing GNNs within optimization
+contexts (Gasse et al., 2019; Cappart et al., 2023; Zhang et al., 2026). Notably, Zhang et al. (2026)
+use GNNs within a Deep Reinforcement Learning framework to tackle the train platforming
+and rescheduling problem, demonstrating the potential of graph-based learning for dynamic
+reoptimizing tasks.
+To illustrate our methodology, we consider a specific optimization problem where time plays
+a crucial role, namely a Lot Sizing Problem (LSP) with setups. In detail, we consider a planning
+horizon divided into time periods, each characterized by the demand for a set of heterogeneous
+products.
+The problem involves a number of homogeneous machines, with setup times and
+penalties for unsatisfied demand. We model this problem by means of a Mixed-Integer Linear
+Programming (MILP) formulation, and use a general-purpose solver for both computing an
+initial nominal solution and for reoptimization. We apply our learning-to-reoptimize framework
+to manage machine breakdown disruptions, where the selection of the decisions to be fixed is
+2
+
+
+===== PAGE 3 =====
+guided by a GNN.
+The main contributions of this paper are as follows:
+• We design a new graph representation for encoding an instance of the specific LSP appli-
+cation considered in the paper, along with a feasible solution and a disruption;
+• We propose a novel GNN-aided reoptimization strategy for fast reoptimization of a decision
+problem modeled as an MILP. By using a GNN to identify critical decision variables, we
+manage to reduce the practical computational effort needed to tackle the problem, thus
+allowing the solver to compute high-quality solutions in a short time frame;
+• We perform a computational analysis on a large dataset, validating the generalization ca-
+pabilities of our GNN and showing significant cost reduction over a baseline reoptimization
+strategy.
+The remainder of this paper is structured as follows. Section 2 introduces the considered LSP
+and details the possible disruptions. Section 3 presents our proposed GNN-aided reoptimization
+strategy, as opposed to a baseline strategy. Section 4 provides a detailed computational analysis
+on the performance of the proposed method. Finally, Section 5 concludes the paper and outlines
+future research directions.
+2. Mathematical formulation
+In this section, we give details on the specific application under consideration and formulate
+it as an MILP. Then, we introduce a specific disruption that makes a given nominal solution
+infeasible, and describe a straightforward deterministic procedure to derive a feasible repaired
+solution. Finally, we address the reoptimization task, whose goal is to improve this repaired
+solution within a very short computing time.
+2.1. Nominal optimization problem
+As illustrative problem, we consider a Lot Sizing application in which the decision maker
+is required to determine a production plan that satisfies demands over a discretized planning
+horizon while minimizing operational costs. Since the founding work by Wagner and Whitin
+(1958), the uncapacitated single-item single-machine LSP has been extended to capacitated,
+multi-item, multi-machine variants, which are known to be NP-hard (Bitran and Yanasse, 1982).
+For a review on various LSP variants, the reader is referred to Pochet and Wolsey (2006). Among
+heuristic approaches for this class of problems, we mention the fix-and-optimize heuristic, which
+has been successfully applied to various LSP variants (Lang and Shen, 2011; Seeanner et al.,
+2013; Güner Gören and Tunali, 2018).
+In this work, we consider a multi-item, multi-machine, capacitated LSP including lost sales
+costs, setup costs and machine-item incompatibilities. For each setup, we require a minimum
+production quantity. In addition, we consider the possibility to perform a setup carry-over for
+(at most) one item produced on the same machine in two consecutive periods.
+Parameters. An instance of our LSP consists of the following parameters:
+- M, N, T: number of machines, items, and periods, respectively;
+- fi: setup cost for item i;
+- pi: unitary production cost for item i;
+- hi: unitary inventory cost for item i;
+- si: setup time of item i;
+- bi: unitary production time for item i;
+- mi: minimum per-setup production quantity of item i;
+- lit: lost sale cost per unit of unsatisfied demand of item i at period t;
+- Ii0: initial inventory of item i;
+- dit: demand of item i at period t;
+- cjt: time availability of machine j for period t;
+3
+
+
+===== PAGE 4 =====
+- wij: compatibility between item i and machine j (1 if compatible, 0 otherwise).
+Decision variables. The MILP formulation uses the following decision variables:
+- Xijt ≥0 quantity of item i produced on machine j at period t;
+- Iit ≥0 inventory of item i at the end of period t;
+- Lit ≥0 quantity of lost sales for item i at the end of period t;
+- Yijt ∈{0, 1} binary variable equal to 1 if machine j is set up in order to produce item i at
+period t, and 0 otherwise;
+- Zijt ∈{0, 1} binary variable equal to 1 if the production of item i on machine j at period
+t is carried over to period t + 1, and 0 otherwise.
+MILP formulation. Model (1.1) – (1.15) below defines the MILP formulation for the problem.
+min
+N
+X
+i=1
+T
+X
+t=1
+ M
+X
+j=1
+(fiYijt+piXijt)+hiIit+litLit
+
+(1.1)
+Ii(t−1)+
+M
+X
+j=1
+Xijt+Lit = dit+Iit ∀i ∈1, ..., N,
+∀t ∈1, ..., T
+(1.2)
+Lit ≤dit
+∀i ∈1, ..., N,
+∀t ∈1, ..., T
+(1.3)
+N
+X
+i=1
+(siYijt+biXijt) ≤cjt
+∀j ∈1, ..., M, ∀t ∈1, ..., T
+(1.4)
+Yijt ≤wij
+∀j ∈1, ..., M, ∀i ∈1, ..., N,
+∀t ∈1, ..., T
+(1.5)
+Zijt ≤Yijt
+∀j ∈1, ..., M, ∀i ∈1, ..., N,
+∀t ∈1, ..., T
+(1.6)
+Zij(t−1)+Zijt ≤1
+∀j ∈1, ..., M, ∀i ∈1, ..., N,
+∀t ∈1, ..., T
+(1.7)
+Xijt ≤Mijt(Yijt+Zij(t−1))
+∀j ∈1, ..., M, ∀i ∈1, ..., N,
+∀t ∈1, ..., T
+(1.8)
+Xijt ≥mi(Yijt−Zijt)
+∀j ∈1, ..., M, ∀i ∈1, ..., N,
+∀t ∈1, ..., T
+(1.9)
+Xijt+Xij(t+1) ≥miZijt
+∀j ∈1, ..., M, ∀i ∈1, ..., N,
+∀t ∈1, ..., T−1
+(1.10)
+N
+X
+i=1
+Zijt ≤1
+∀j ∈1, ..., M, ∀t ∈1, ..., T
+(1.11)
+Yijt, Zijt ∈{0,1}
+∀j ∈1, ..., M, ∀i ∈1, ..., N,
+∀t ∈1, ..., T
+(1.12)
+Zij0 = 0
+∀j ∈1, ..., M, ∀i ∈1, ..., N
+(1.13)
+Xijt ≥0
+∀j ∈1, ..., M, ∀i ∈1, ..., N,
+∀t ∈1, ..., T
+(1.14)
+Iit, Lit ≥0
+∀i ∈1, ..., N,
+∀t ∈1, ..., T
+(1.15)
+The objective function (1.1) minimizes the total setup, production, inventory and lost sales
+costs. Equations (1.2) impose the inventory flow conservation, while constraints (1.3) define a
+natural upper bound on lost sales. Constraints (1.4) enforce machine capacity limits, whereas
+constraints (1.5) enforce machine-item compatibility. Constraints (1.6) to (1.11) manage the
+setup carry-over logic. Specifically, constraints (1.6) ensure that a carry-over can occur at the
+end of a given period only after a setup is performed. Constraints (1.7) prevent two consec-
+utive carry-overs for the same product on the same machine. Constraints (1.8) impose that a
+production can be performed only when a setup or a carry-over occur. In these constraints,
+Mijt = min
+PT
+t′=t dit′, (cjt −si)/bi
+
+represents an upper bound on the production quantity.
+Constraints (1.9) and (1.10) impose the minimum production quantity for the case without and
+with carry-over, respectively. Constraints (1.11) impose that, for each machine and period, at
+4
+
+
+===== PAGE 5 =====
+most one carry-over may occur. Finally, constraints (1.12) to (1.15) define the domain of the
+variables, where we assume that all initial carry-over variables are fixed to 0.
+Nominal solution. We assume that a high-quality feasible solution to model (1.1) – (1.15) is
+available. Computing such a solution may require a significant effort, e.g., by running an MILP
+solver for a long time. This solution, which we denote as nominal solution, corresponds to the
+operational plan that would be executed in the nominal case, i.e., when no disruptions occur.
+2.2. Disruption and repaired solution
+The reoptimization phase begins when an unexpected disruption invalidates the nominal
+solution So. In this section, we first define the exact nature of the disruption that we consider
+in this work. We then present how to construct a repaired solution, feasible with respect to the
+perturbed instance, which will serve as the starting point for the reoptimization.
+Disruption. In this work, we consider two types of disruptions, both occurring at period t = 1
+and lasting for ∆t periods:
+• Machine breakdown. A single machine j ∈{1, . . . , M} becomes unavailable. This disrup-
+tion is modeled by setting cjt = 0 for t = 1, . . . , ∆t;
+• Plant shutdown.
+All machines become unavailable, e.g., due to a power outage.
+This
+disruption can be modeled by setting cjt = 0
+∀j ∈1, . . . , M and for t = 1, . . . , ∆t.
+We call perturbed instance the instance affected by the disruption. For both disruption types,
+the nominal solution So is usually infeasible with respect to the perturbed instance.
+Repaired solution. In order to build a new solution, feasible with respect to the perturbed in-
+stance, we apply a repairing heuristic. We call repaired solution, denoted by Sr, the resulting
+solution. This heuristic repairing algorithm involves three main steps:
+(i) Cancel all productions (setup, carry-over, and quantity variables) on all affected machines
+during periods {1, . . . , ∆t};
+(ii) Identify, for each machine affected by the disruption, if a carry-over has been broken and, in
+case, the associated product. For the resulting machine and product, redefine the produc-
+tion in period ∆t+1 at the minimum quantity, if possible; otherwise, cancel the production;
+(iii) Recompute the inventory and lost sales for all affected items across the horizon.
+The repairing heuristic, detailed in Algorithm 1 in Appendix A, is extremely fast in practice
+and returns a repaired solution Sr that is feasible for the perturbed instance, though likely
+suboptimal. This solution represents the starting point upon which we seek to improve, leading
+to the definition of a reoptimization problem, defined in the following section.
+2.3. Reoptimization problem
+As already mentioned, the repaired solution Sr provided by the heuristic algorithm described
+in the previous section is feasible for the perturbed instance. Better solutions can be obtained
+by solving formulation (1.1) – (1.15) in the perturbed setting. However, in practical applica-
+tions, organizational issues make it desirable not to deviate too much from the nominal solution
+planned at the beginning of the production period, or at least from the repaired solution (which
+implements minimal changes to restore feasibility). Therefore, in order to ensure operational
+stability, an additional constraint is imposed to force the new solution to be close to the repaired
+one for what concerns the setup variables in a short-term horizon right after the disruption.
+More specifically, we denote by τ ≤T the number of periods in the short-term horizon, and by
+κ ≪NMτ the maximum number of setup variables that can be changed. Operational stability
+is enforced by imposing that the total number of setup variables within the short-term horizon
+5
+
+
+===== PAGE 6 =====
+that flip their value with respect to the repaired solution Sr is at most κ, and reads:
+N
+X
+i=1
+M
+X
+j=1
+
+τ
+X
+t=1
+s.t.
+Y r
+ijt=1
+(1 −Yijt) +
+τ
+X
+t=1
+s.t.
+Y r
+ijt=0
+Yijt
+
+≤κ.
+(2)
+Reoptimization problem. In order to compute the updated production plan, we define the reop-
+timization problem as a new MILP obtained by adding the neighborhood constraint (2) to the
+original formulation (1.1)–(1.15). The repaired solution Sr, though likely having a large cost, is
+by construction feasible for the resulting formulation, and can thus be used to warm start the
+solver and easy the search for an improved solution within a limited time.
+The reoptimization process starting from the repaired solution forms the basis for the reopti-
+mization strategies that will be presented in the next section and compared in the computational
+experiments in Section 4.
+3. Reoptimization framework
+As presented in Section 2, when a disruption occurs, it can make the high-quality nominal
+solution So infeasible. A simple repairing heuristic may provide a new feasible solution Sr, but
+this solution is likely suboptimal. The goal is now to compute a new high-quality solution that
+improves upon Sr within a short time limit. To do this, we solve the reoptimization problem
+defined in Section 2.3.
+In this section, we define and compare two strategies for solving this reoptimization problem,
+both of which use the repaired solution Sr as an effective feasible warm start for the MILP solver.
+3.1. Reoptimization strategies
+Baseline strategy. The first strategy is a full-model approach. It consists of solving the reopti-
+mization problem (as defined in Section 2.3) for a limited time. In this approach, all the setup
+variables are free to be changed by the solver, bounded only by the neighborhood constraint (2).
+GNN-aided strategy. The second strategy is a “fix-and-optimize” heuristic, designed to accelerate
+the reoptimization by drastically reducing the MILP solution space for the short-term horizon.
+The core idea is to fix the vast majority of the setup variables of the short-term horizon (i.e.,
+periods t ≤τ ) to their reference values in Sr and to only allow a small subset of them to
+be free and re-optimized by the solver.
+By the temporal structure of the problem, the set-
+up variables in the short-term horizon are more relevant for the reoptimization process, while
+variables corresponding to far away periods tend to be less important and their value somehow
+depends on those of the former variables. Let Y be the subset of indices (i, j, t) for setup variables
+Yijt in the short-term horizon that we allow to change. We formulate a new MILP by adding
+the following hard-fixing constraints to the baseline model:
+Yijt = Y r
+ijt
+∀j ∈1, . . . , M,
+∀i ∈1, . . . , N,
+∀t ∈1, . . . , τ ,
+(i, j, t) /∈Y.
+(3)
+The feasible region of the resulting MILP corresponds to a neighborhood of the repaired
+solution. Though the neighborhood has an exponential size (as it happens in Very Large Neigh-
+borhood Search algorithms, see Ahuja et al. (2000)), it can be explored successfully, provided
+that Y is properly defined. Indeed, the challenging part of the fix-and-optimize approach con-
+sists in effectively finding a trade-off between the size of the neighborhood and the quality of
+the solutions it contains. Indeed, a too large Y leaves a large number of setup variables unfixed,
+thus preventing an efficient exploration of the solution space, while a small subset Y can result
+in solutions of poor quality. In the following section, we describe the use of ML tools to select a
+small subset Y that is likely to contain the setup variables of the short-term horizon whose value
+6
+
+
+===== PAGE 7 =====
+should be changed to obtain a high-quality solution, while fixing all the other variables in the
+short-term horizon.
+A visual comparison of the workflows of both the baseline and the GNN-aided strategies is
+provided in Figure 1.
+Baseline
+GNN-aided
+Reoptimization triplet
+(instance, nominal solution So, disruption)
+Apply repairing heuristic to So
+to obtain Sr
+Formulate reoptimization MILP
+(1.1) – (1.15) and (2)
+Solve reoptimization MILP
+using Sr as warm start
+Get GNN likelihood predictions
+and select Y
+Add (3) to the reoptimiza-
+tion MILP and define
+the reduced reopt. MILP
+Solve reduced reopt. MILP
+using Sr as warm start
+New solution Sn
+Figure 1:
+Comparison of baseline and GNN-aided reoptimization strategies.
+3.2. GNN likelihood prediction
+To select the subset Y, we develop a method to predict the likelihood that each setup decision
+variable Yijt of the short-term horizon (t ≤τ ) will change its value from the repaired solution Sr.
+We design and train a GNN to perform this prediction. The GNN takes the entire reoptimization
+information (instance, nominal solution So, disruption) as a graph-structured input and outputs
+a change likelihood score σijt ∈[0, 1] for each short-term horizon variable Yijt. The subset Y
+is then formed by selecting the λ variables with the highest prediction scores (where λ is a
+parameter such that λ ≥κ).
+3.2.1. Graph representation
+To represent the reoptimization triplet (instance, nominal solution So, disruption), we build
+a feature graph for the GNN, as depicted in Figure 2. The graph contains three distinct node
+types, namely:
+• Machine-Period (MP) nodes. There are M·T such nodes, where each node (j, t) is associated
+with a set of features related with machine j and period t;
+• Item-Period (IP) nodes. There are N ·T such nodes, where each node (i, t) is associated
+with a set of features related with item i and period t;
+• Production (Pr) nodes. There are N·M·T such nodes, where each node (i, j, t) is associated
+with a set of features related with item i, machine j and period t. The GNN’s prediction
+7
+
+
+===== PAGE 8 =====
+task is to output a score σijt for each of these nodes whose period t is in the short-term
+horizon, i.e., t ≤τ .
+M, T
+M, t
+M, 2
+M, 1
+j, T
+j, t
+j, 2
+j, 1
+2, T
+2, t
+2, 2
+2, 1
+1, T
+1, t
+1, 2
+1, 1
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+Machine-Period nodes
+N, T
+N, t
+N, 2
+N, 1
+i, T
+i, t
+i, 2
+i, 1
+2, T
+2, t
+2, 2
+2, 1
+1, T
+1, t
+1, 2
+1, 1
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+Item-Period nodes
+N, M, T
+N, j, T
+N, 2, T
+i, M, T
+i, j, T
+i, 2, T
+2, M, T
+2, j, T
+2, 2, T
+i, 1, T
+i, 1, t
+i, 1, 2
+i, 1, 1
+2, 1, T
+2, 1, t
+2, 1, 2
+2, 1, 1
+N, 1, T
+N, 1, t
+N, 1, 2
+N, 1, 1
+i, 1, T
+i, 1, t
+i, 1, 2
+i, 1, 1
+2, 1, T
+2, 1, t
+2, 1, 2
+2, 1, 1
+1, M, T
+1, M, t
+1, M, 2
+1, M, 1
+1, j, T
+i, j, t
+1, j, 2
+1, j, 1
+1, 2, T
+1, 2, t
+1, 2, 2
+1, 2, 1
+1, 1, T
+1, 1, t
+1, 1, 2
+1, 1, 1
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+Production nodes
+Figure 2: GNN feature graph structure. Machine-Period (resp. Item-Period and Production) nodes are repre-
+sented in blue (resp. green and orange). For readability purposes, only few arcs of each type are represented.
+Resource (resp. Time and Competition) arcs are represented in purple (resp. red and pink).
+The features of each node are described in Table 1. They encode information about the
+instance (e.g., item demand, machine capacity), the nominal solution (e.g., item inventory level,
+item production quantity), and the disruption (e.g., machine capacity after disruption).
+8
+
+
+===== PAGE 9 =====
+While most features are self-descriptive, we give specific clarification for what concerns the
+normalized time since end of disruption in an MP node. Given a machine j and a period t, this
+feature measures the time elapsed since the machine was brought back online. More into details,
+if a disruption lasting for ∆t periods occurs on machine j (i.e., starting at period 1 and ending
+at period ∆t), then this figure is computed as (t −∆t)/(T −∆t) for any period t > ∆t, and set
+to 0 for any period t ≤∆t. If no disruption occurs on machine j, then the value is set to −1.
+Node
+Feature
+Type
+Indices
+Count
+Count
+Description
+Value set
+MP
+(j, t)
+M ·T
+8
+Normalized period t/T
+[0, 1]
+Is machine j perturbed at period t?
+{0, 1}
+Normalized time since end of disruption on machine j at t
+{−1} ∪[0, 1]
+Capacity of machine j at period t before disruption
+R+
+Capacity of machine j at period t after disruption
+R+
+Capacity left of machine j at period t in solution So
+R+
+Capacity utilization of machine j at period t in solution So
+[0, 1]
+Total setup cost of machine j at period t in solution So
+R+
+IP
+(i, t)
+N ·T
+9
+Normalized period t/T
+[0, 1]
+Demand dit of item i at period t
+R+
+Minimum per-setup production quantity mi of item i;
+R+
+Quantity of item i produced at period t in solution So
+R+
+Inventory of item i at period t in solution So
+R+
+Ratio of lost sales unit cost to inventory unit cost lit/hi
+R+
+Total setup cost of item i at period t in solution So
+R+
+Total inventory cost of item i at period t in solution So
+R+
+Total lost sales cost of item i at period t in solution So
+R+
+Pr
+(i, j, t)
+N ·M ·T
+8
+Normalized period t/T
+[0, 1]
+Compatibility wij between item i and machine j
+{0, 1}
+Is item i produced on machine j at t in solution So (Xo
+ijt > 0)?
+{0, 1}
+Is item i set on machine j at period t in solution So (Y o
+ijt = 1)?
+{0, 1}
+Is item i carried over on j from t to t+1 in solution So (Zo
+ijt = 1)?
+{0, 1}
+Time si · Y o
+ijt used to set up item i on machine j at t in solution So
+R+
+Quantity Xo
+ijt of item i produced on machine j at t in solution So
+R+
+Setup cost fi · Y o
+ijt when setting up item i on j at t in solution So
+R+
+Table 1: Summary of the feature graph nodes (types, feature counts, descriptions and value sets).
+The interdependencies between the information encoded in the nodes are captured by arcs,
+which are divided into three categories:
+• Resources arcs. These arcs connect each Pr node (i, j, t) to either the MP node (j, t) or to
+the IP node (i, t). They allow the bidirectional flow of information between a production
+and its required resources (machine and item);
+• Time arcs. These arcs link nodes representing the same entity (machine or item) across
+consecutive periods, modeling its temporal evolution;
+• Competition arcs. These arcs connect Pr nodes that compete for the same resource (same
+machine and period) or contribute to the same demand (same item and period), explicitly
+representing production conflicts and alternatives.
+The details of these connections are summarized in Table 2.
+3.2.2. GNN architecture
+The GNN architecture is shown in Figure 3. The model first projects the input features of
+each node, i.e., 8 features (for MP and Pr nodes) or 9 features (for IP nodes), into a common
+embedding space of dimension δ. This projection is followed by a stack of ν graph convolution
+blocks. Each block is heterogeneous, meaning that it learns a different message-passing function
+for each of the edge types (e.g., “involved in”, “precedes”) detailed in Table 2. This allows the
+9
+
+
+===== PAGE 10 =====
+Category
+Source
+Relation
+Target
+Count
+Purpose
+Resource
+MP
+involved
+in
+Pr
+N ·M ·T
+Send information about machine j at period t
+to all production nodes that involve j at t
+IP
+involved
+in
+Pr
+N ·M ·T
+Send information about item i at period t to
+all production nodes that involve i at t
+Pr
+involves
+MP
+N ·M ·T
+Send information from all production nodes
+that
+involve
+machine
+j
+and
+period
+t
+to
+machine-period node (j, t)
+Pr
+involves
+IP
+N ·M ·T
+Send information from all production nodes
+that involve item i and period t to item-period
+node (i, t)
+Time
+MP
+precedes
+MP
+M ·(T −1)
+Propagate information about machine j at pe-
+riod t to period t+1
+IP
+precedes
+IP
+N ·(T −1)
+Propagate information about item i at period
+t to period t+1
+Pr
+precedes
+Pr
+N ·M ·(T −1)
+Propagate the production information for item
+i and machine j at period t to period t+1
+Competition
+Pr
+item
+competes
+with
+Pr
+N ·(N −1)·M ·T
+Send information from each production node
+(i, j, t) to all the other production nodes in-
+volving the same machine j, at the same pe-
+riod t, but different items
+Pr
+machine
+competes
+with
+Pr
+N ·M ·(M −1)·T
+Send information from each production node
+(i, j, t) to all the other production nodes in-
+volving the same item i, at the same period t,
+but different machines
+Table 2: Summary of the feature graph edges (types, counts and purposes).
+model to learn different relational logic for resource, temporal, and competition dependencies.
+Within each block, the messages passing are followed by a normalization layer and a ReLU
+activation. Residual connections from the block’s input to its output are also added to mitigate
+the vanishing gradient problem (He et al., 2016; Li et al., 2019), enabling a stable training of such
+a deep graph network. A final prediction head operates exclusively on the subset of Pr nodes
+within the short-term horizon (t ≤τ ), meaning that the model outputs prediction for exactly
+N ·M ·τ nodes. It consists of a two-layer perceptron and a sigmoid activation function, which
+takes the final embedding of each node and outputs a single scalar score. This score σijt ∈[0, 1]
+represents the likelihood that the corresponding setup variable Yijt should change its value.
+Linear
+projection
+Graph conv.
++ Norm. layer
++ Resid. co.
++ ReLU
+Filter
++ 2-MLP
++ Sigmoid
+M ·T [8]
+N ·T [9]
+N ·M·T [8]
+Machine-Period
+Item-Period
+Production
+M ·T [δ]
+N ·T [δ]
+N ·M ·T [δ]
+Machine-Period
+Item-Period
+Production
+M ·T [δ]
+N ·T [δ]
+N ·M ·T [δ]
+Machine-Period
+Item-Period
+Production
+N·M·τ [1]
+Production
+Repeated ν times
+Figure 3: Schematic diagram of the GNN architecture.
+By means of the scores computed by the GNN, we can determine the subset Y used to define
+the reduced MILP solved in the GNN-aided strategy. A threshold-based approach, in which we
+select every setup decision variable Yijt with a score σijt larger than the threshold, could be
+used. However, we opt for a rank-based selection to strictly control the size of subset Y. We
+set a budget of λ variables (where λ ≥κ) and define subset Y by selecting the λ variables with
+highest prediction scores.
+10

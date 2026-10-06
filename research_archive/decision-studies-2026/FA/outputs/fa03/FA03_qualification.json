@@ -1,0 +1,118 @@
+{
+  "stage": "FA03",
+  "qualification": "NOT_QUALIFIED",
+  "checked_utc": "2026-10-01T09:47:33.457796+00:00",
+  "checks": {
+    "repetition_one": true,
+    "unique_complete_matrix": true,
+    "expected_shape": true,
+    "finite_nonnegative": true,
+    "successful_runtime_within_native_cutoff": true,
+    "timeout_at_native_cutoff": true,
+    "cv_ids_match": true,
+    "frozen_ids_match": true,
+    "feature_ids_unique_match": true,
+    "feature_status_ids_unique_match": true,
+    "inherited_description_matches": true,
+    "inherited_cv_matches": true,
+    "test_fold_matches": true,
+    "train_validation_match": true,
+    "feature_no_infinity": true,
+    "46_features": true,
+    "independent_status_counts_match": true,
+    "independent_memout_values_match": true,
+    "feedback_status_supported": false
+  },
+  "unsupported_statuses": [
+    "memout"
+  ],
+  "status_counts": {
+    "memout": 1720,
+    "timeout": 2024,
+    "ok": 3096
+  },
+  "native_cutoff_s": 3600,
+  "planned_cap_s": 600,
+  "planned_budget_s": 249300,
+  "memout_runtime_histogram": {
+    "3600.0": 1720
+  },
+  "memout_fraction": 0.25146198830409355,
+  "split_status_counts": {
+    "train": {
+      "timeout": 1664,
+      "ok": 2499,
+      "memout": 1377
+    },
+    "validation": {
+      "timeout": 178,
+      "memout": 175,
+      "ok": 267
+    },
+    "test": {
+      "ok": 330,
+      "timeout": 182,
+      "memout": 168
+    }
+  },
+  "feature_shape": [
+    1368,
+    46
+  ],
+  "feature_missing_values": 0,
+  "feature_status_counts": {
+    "ok": 1368
+  },
+  "feature_cost_file_available": false,
+  "feature_cost_handling": "unknown; not zero; no end-to-end speed claim",
+  "actual_trajectories": 0,
+  "model_fits": 0,
+  "test_scores_computed": 0,
+  "file_hashes": {
+    "work\\fa03\\source\\QBF-2011\\algorithm_runs.arff": "0415a08a59cb630d9f3c40c73520ad54ecb32e63712ef36e0c37a036b3120096",
+    "work\\fa03\\source\\QBF-2011\\cv.arff": "18ebae1b1ec70089dca8c317e6758930b70aee63124c6cc55709d9cd552fca49",
+    "work\\fa03\\source\\QBF-2011\\description.txt": "dfe29e646a217b34ff298eb4541001bb861e60695c097c57c428b7b42a8f925e",
+    "work\\fa03\\source\\QBF-2011\\feature_runstatus.arff": "c9575f828a856f4d4c97bb18572fcf45cb40014a66ad4834a92e73a79ab7c5b3",
+    "work\\fa03\\source\\QBF-2011\\feature_values.arff": "100b606db5b39fb7db113fa3fa67c4aa5ea68bdf6b61c731a4a474c49a3ab613",
+    "work\\fa03\\source\\QBF-2011\\manifest.json": "cba4bcc9306cf4a7c32dfab055d76ee4b04f1bbeb6ca0cef825a8326e3499c24",
+    "work\\fa03\\qualify.py": "fbf989ebe40f52f58edcde994dfa6a2cfe0c7b4fe2d5cffae245090a6394b111"
+  },
+  "numerical_data_qualification": "PASSED",
+  "cost_feedback_qualification": "NOT_QUALIFIED",
+  "provenance": [
+    {
+      "file": "QBF-2011_readme.txt",
+      "url": "https://raw.githubusercontent.com/coseal/aslib_data/master/QBF-2011/readme.txt",
+      "bytes": 340,
+      "sha256": "19976c26d55d06756f5f6e0adeb022614476992580dd352c0e926f0c439aaf03"
+    },
+    {
+      "file": "ASLib_format.md",
+      "url": "https://raw.githubusercontent.com/coseal/aslib-spec/master/format.md",
+      "bytes": 28709,
+      "sha256": "c5bf05b2a930c87c9c66d8571fb96c3985bbb1c96fb2e7a295d26cd3ba0e5034"
+    },
+    {
+      "file": "kotthoff_evaluation_2012.pdf",
+      "url": "https://www.cs.uwyo.edu/~larsko/papers/kotthoff_evaluation_2012.pdf",
+      "bytes": 150133,
+      "sha256": "f2a476e2beffaca0491c227de9cd84543eaaea8c9e9ebcb02f6925bb86bebc43"
+    },
+    {
+      "file": "kotthoff_ranking_2013.pdf",
+      "url": "https://www.eecs.uwyo.edu/~larsko/papers/kotthoff_ranking_2013.pdf",
+      "bytes": 71074,
+      "sha256": "10a09e96729c3c7b8ff363071c03a7a5c8847253d249112ca6d3808e21fdf4f9"
+    }
+  ],
+  "provenance_finding": {
+    "source": "kotthoff_evaluation_2012.pdf",
+    "section": "4",
+    "printed_page": 5,
+    "pdf_page": 5,
+    "url": "https://www.cs.uwyo.edu/~larsko/papers/kotthoff_evaluation_2012.pdf",
+    "finding": "Source paper assigns timeout runtime to memory-out or unsolved runs; recorded 3600 is not an established measurement of the memory-failure event time."
+  },
+  "reason": "1720 memout rows record 3600 seconds. The data author documents assignment of timeout values to unsuccessful/memory-out runs. Actual failure event times are not provided in the acquired tables; using these assigned values as execution costs or 600-second censored feedback would introduce an unfrozen assumption.",
+  "scope": "Numerical dataset checks passed; frozen actual-cost/feedback replay not qualified; strategy/research-value comparison not performed."
+}

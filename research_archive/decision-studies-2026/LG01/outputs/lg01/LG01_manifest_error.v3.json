@@ -1,0 +1,7 @@
+{
+  "phase": "stopped_error",
+  "updated_utc_unix": 1791282616.9271843,
+  "error": "[Errno 13] Permission denied",
+  "charged_s": 23693.626765848756,
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-10-06\\lg01-gnn-rins-rl-lp-20\\work\\lg01\\run.py\", line 281, in main\n    audit_report(d,ledger)\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-10-06\\lg01-gnn-rins-rl-lp-20\\work\\lg01\\report.py\", line 152, in audit_report\n    save(OUT/'LG01_delivery_manifest.json',dict(files={p.relative_to(OUT).as_posix():sha(p) for p in sorted(OUT.rglob('*')) if p.is_file() and p.name not in ['RUN_STATE.json','events.jsonl','LG01_delivery_manifest.json']}))\n                                                                                     ^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-10-06\\lg01-gnn-rins-rl-lp-20\\work\\lg01\\core.py\", line 37, in sha\n    for b in iter(lambda: f.read(1048576), b''): h.update(b)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-10-06\\lg01-gnn-rins-rl-lp-20\\work\\lg01\\core.py\", line 37, in <lambda>\n    for b in iter(lambda: f.read(1048576), b''): h.update(b)\n                          ^^^^^^^^^^^^^^^\nPermissionError: [Errno 13] Permission denied\n"
+}

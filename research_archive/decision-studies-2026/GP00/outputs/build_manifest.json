@@ -1,0 +1,35 @@
+{
+  "source_commit": "6d12d9cf210390624f3757e9b5399469d2d2ae68",
+  "source_commit_date": "2026-04-02T22:50:29+08:00",
+  "source_commit_subject": "reproduction instructions in README",
+  "source_build_worktree": "work/gp00/mt-kahypar",
+  "compiler": "g++.exe (x86_64-posix-seh-rev1, Built by MinGW-Builds project) 14.2.0",
+  "archiver": "GNU ar (GNU Binutils) 2.43",
+  "cmake": "cmake version 4.1.2",
+  "powershell": "7.6.5",
+  "dependency_commits": {
+    "build-gp00\\external_tools\\kahypar-shared-resources": "6d5c8e2444e4310667ec1925e995f26179d7ee88",
+    "build-gp00\\external_tools\\growt": "04b2a1afe4c5844c960a5a8289bb608fe2c6c68c",
+    "build-gp00\\external_tools\\parlay": "e1f1dc0ccf930492a2723f7fbef8510d35bf57f5",
+    "build-gp00\\external_tools\\WHFC": "30b0eeb0e49577d06c3deb09a44b035d81c529d2",
+    "build-gp00\\_deps\\tbb-src": "0c0ff192a2304e114bc9e6557582dfba101360ff"
+  },
+  "configure_options": [
+    "KAHYPAR_DISABLE_GROWT:BOOL=ON",
+    "KAHYPAR_ENABLE_ARCH_COMPILE_OPTIMIZATIONS:BOOL=ON",
+    "KAHYPAR_ENABLE_EXTENDED_INSTRUCTIONS:BOOL=ON",
+    "KAHYPAR_ENABLE_SOED_METRIC:BOOL=ON",
+    "KAHYPAR_ENABLE_STEINER_TREE_METRIC:BOOL=ON",
+    "KAHYPAR_DISABLE_HWLOC:BOOL=ON"
+  ],
+  "executable_sha256": "97FF64629F934FA1B287549CAE986A61FB1748099BDE57CA8381744E5D019437",
+  "build_type": "Release",
+  "thread_count": 1,
+  "gp00_executable_sha256_before_gp01": "9943FEF864D3CD595387233BB43307450A51C1A4F89B55624B1A045EE309C1ED",
+  "gp01_instrumentation": [
+    "directed-arc score export/replay via EdgeMetadata",
+    "endpoint-keyed undirected score replay duplicated onto validated opposite arcs",
+    "score injection after original model inference",
+    "optional scoring-entry and coarsening-context audit log"
+  ]
+}

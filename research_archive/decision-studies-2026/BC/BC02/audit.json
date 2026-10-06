@@ -1,0 +1,46 @@
+{
+  "protocol_passed": true,
+  "manual_checks": [
+    "first_get_is_charged",
+    "later_get_same_block_is_free",
+    "put_then_first_get_both_charged",
+    "hostname_and_repeat_parser_semantics",
+    "checkpoint_before_current_request_and_final_settlement",
+    "mandatory_missing_fields_fail"
+  ],
+  "reference_checks": {
+    "Baleen": {
+      "put_seconds": 0.0,
+      "get_nocache_seconds": 0.0,
+      "put_dt_percentage_points": 0.0,
+      "get_nocache_dt_percentage_points": 0.0
+    },
+    "RejectX": {
+      "put_seconds": 0.0,
+      "get_nocache_seconds": 0.0,
+      "put_dt_percentage_points": 0.0,
+      "get_nocache_dt_percentage_points": 0.0
+    }
+  },
+  "dt_inequality_max_positive_violation_pp": 0.0,
+  "service_time_tolerance_s": 1e-09,
+  "dt_tolerance_pp": 1e-08,
+  "n_windows": 1008,
+  "evaluation_index_start": 144,
+  "evaluation_actual_start_s": 86401.23277902603,
+  "requests": 147794,
+  "unique_get_blocks": 13688,
+  "parsed_start": 1572074461.57806,
+  "parsed_end": 1572679103.557401,
+  "p_baleen_pct": 39.75748541944802,
+  "p_lb_pct": 16.942899459927695,
+  "upper_gain_fraction": 0.573843786115311,
+  "baleen_peak_window": 578,
+  "lb_peak_window": 145,
+  "verdict": "当前方向尚未被此下界排除；这里只保留空间，后续才可检验容量、写入成本与合法时间信息。",
+  "wall_seconds": 7.37209740000003,
+  "inputs_sha256": {
+    "runs\\example\\baleen\\prefetch_ml-on-partial-hit\\ml-ap-0.798545_6_lru_366.475GB\\full_0_0.1_cache_perf.txt.stats.lzma": "c58d866626b772b1d4d6e9b7b4e26dce3e8425500f44753cae8be08481dba591",
+    "runs\\example\\rejectx\\rejectx-ap-1_0.508154_lru_366.475GB\\full_0_0.1_cache_perf.txt.stats.lzma": "da5b7a80ced4fa410548b1248d0544b3a7ba9e4e50e9caece08b7cd08bb118fb"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "task": "Q02 -- one four-arm cost-quality screening on JOB",
+  "question": "can prediction-driven early cutoff plus retry beat running straight to the current best, once all re-run costs are charged?",
+  "gate": {
+    "all_seeds_better": false,
+    "mean_relative_reduction": 0.017948234258439152,
+    "beats_both_cheap_arms": true,
+    "passed": false
+  },
+  "gate_not_met": "2 of 3 seeds better; mean +1.79% < 2%",
+  "reading": "mixed direction / small difference -> record as undetermined; do not change the multiplier, do not add seeds",
+  "critical_fact": "the retry branch fired 1 time in 239 exploration actions, so this round did not test retry; it tested early cutoff without retry",
+  "why_retry_barely_fires": {
+    "mechanism": "a timeout cannot reveal a bound above its cap, and the cap is at most b_q; so a timed-out class stays retry-feasible only if its cap was strictly below b_q",
+    "frozen_cap": "cap_new = min(b_q, 15 * x_hat), so on JOB the cap frequently equals b_q and the timeout is then legally pruned",
+    "measured": "at B = D, seed 0: of 25 exploratory timeouts, 23 reached b_q and were pruned legally, 2 left a retry-feasible bound",
+    "retry_feasible_pairs": 185,
+    "topped_by_a_retry": 1,
+    "example_rank": "seed 1 decision 3: 1 retry-feasible class among 1788 candidates, ranked 63"
+  },
+  "execution_deviations": {
+    "init_cost_separate": "the column-0 baseline costs exactly D = 181.0846; charging it to B would exhaust the 0.25D budget and make all four arms identical (the first implementation did exactly that).  It is therefore charged as a separate line item identical across arms, and the budget B applies to exploration on top of it.  Aggregate simulated spend = init_cost + B.",
+    "budget_currency": "simulated execution seconds; wall-clock policy time is measured and reported separately because adding it would mix units"
+  },
+  "protocol": {
+    "workload": "JOB",
+    "queries": 113,
+    "hints": 49,
+    "D": 181.0845799446106,
+    "equivalence": "from EXPLAIN hint_list, joined on CSV row labels; 113/113 matched, 0 conflicts, 1393/1393 multi-hint classes have identical matrix values",
+    "init": "column 0 and its equivalence class only; the unexplained init_mask is unused",
+    "budgets": [
+      45.27114498615265,
+      90.5422899723053,
+      181.0845799446106
+    ],
+    "budget_fracs": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "arms": [
+      "RANDOM-BEST",
+      "GREEDY-BEST",
+      "MF-BEST",
+      "MF-RETRY"
+    ],
+    "predictor": {
+      "name": "censored_als",
+      "rank": 5,
+      "lambda": 0.2,
+      "iters": 50
+    },
+    "caps": {
+      "new": "min(b_q, 15.0 * x_hat)",
+      "retry": "min(b_q, 2.0 * L)"
+    },
+    "replays": 36,
+    "prune": "completed candidates and L >= b_q are excluded by every arm",
+    "fallback": "a non-positive or non-finite prediction may not produce a zero-cost action; the arm draws a uniformly random feasible candidate and the count is logged"
+  },
+  "cost_curve_P_over_D_mean": {
+    "0.25": {
+      "RANDOM-BEST": 0.7790547482592002,
+      "GREEDY-BEST": 0.6169973895581361,
+      "MF-BEST": 0.6017587198347506,
+      "MF-RETRY": 0.5916698871276154
+    },
+    "0.5": {
+      "RANDOM-BEST": 0.7070085447673766,
+      "GREEDY-BEST": 0.5813924586132795,
+      "MF-BEST": 0.5634578443265889,
+      "MF-RETRY": 0.5634578443265889
+    },
+    "1.0": {
+      "RANDOM-BEST": 0.5820752592685782,
+      "GREEDY-BEST": 0.5007642749533511,
+      "MF-BEST": 0.4825581194641677,
+      "MF-RETRY": 0.4740169306457183
+    }
+  },
+  "relative_vs_MF_BEST_full_budget": {
+    "RANDOM-BEST": -0.2064379123838518,
+    "GREEDY-BEST": -0.03814786885811306,
+    "MF-BEST": 0.0,
+    "MF-RETRY": 0.017948234258439152
+  },
+  "not_concluded": [
+    "that retry is useless (it fired once)",
+    "any cross-workload generalisation",
+    "statistical significance",
+    "that the direction is invalid"
+  ],
+  "declined": "the multiplier was not changed and no seeds were added, per the pre-registered reading; making retry testable would require a NEW pre-registration with the retry-incidence rate fixed as a design parameter before running"
+}

@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "kind": "gnn",
+      "identical_interrupted_prefix": true,
+      "prefix_steps": 1838,
+      "partial_steps_upper_bound": 1839,
+      "note": "Prefix observed to match; no general bitwise reproducibility guarantee for external libraries."
+    },
+    {
+      "kind": "mlp",
+      "identical_interrupted_prefix": true,
+      "prefix_steps": 1199,
+      "partial_steps_upper_bound": 1200,
+      "note": "Prefix observed to match; no general bitwise reproducibility guarantee for external libraries."
+    },
+    {
+      "kind": "guard",
+      "identical_interrupted_prefix": true,
+      "prefix_steps": 401,
+      "partial_steps_upper_bound": 402,
+      "note": "Prefix observed to match; no general bitwise reproducibility guarantee for external libraries."
+    }
+  ],
+  "extra_physical_steps_lower": 3438,
+  "extra_physical_steps_upper": 3441,
+  "bound_reason": "Each serial runner logs after stepping; at kill at most one physical step may have completed without a row.",
+  "scope": "Persisted action/observation hash and update-prefix checks, not independently rerun physics."
+}

@@ -1,0 +1,271 @@
+{
+  "stage": "GRID22_PRIOR_V1_CLOSED_LOOP_DEVELOPMENT",
+  "weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "methods": [
+    {
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "method": "OLDNN32",
+      "rule": "OLDNN",
+      "budget": 32,
+      "checkpoint": null
+    },
+    {
+      "method": "OLDNN128",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "method": "GNN0_32",
+      "rule": "GNN_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "method": "GNN1_32",
+      "rule": "GNN_seed1",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "method": "MLP0_32",
+      "rule": "MLP_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/mlp_seed0/final.pt"
+    },
+    {
+      "method": "BIAS0_32",
+      "rule": "BIAS_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/bias_seed0/final.pt"
+    }
+  ],
+  "execution_order": [
+    {
+      "week": "2035-03-05_0",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "OLDNN32",
+      "rule": "OLDNN",
+      "budget": 32,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "OLDNN128",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "GNN0_32",
+      "rule": "GNN_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "GNN1_32",
+      "rule": "GNN_seed1",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "MLP0_32",
+      "rule": "MLP_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/mlp_seed0/final.pt"
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "BIAS0_32",
+      "rule": "BIAS_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/bias_seed0/final.pt"
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "OLDNN128",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "GNN0_32",
+      "rule": "GNN_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "GNN1_32",
+      "rule": "GNN_seed1",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "MLP0_32",
+      "rule": "MLP_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/mlp_seed0/final.pt"
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "BIAS0_32",
+      "rule": "BIAS_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/bias_seed0/final.pt"
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "OLDNN32",
+      "rule": "OLDNN",
+      "budget": 32,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "GNN0_32",
+      "rule": "GNN_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "GNN1_32",
+      "rule": "GNN_seed1",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "MLP0_32",
+      "rule": "MLP_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/mlp_seed0/final.pt"
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "BIAS0_32",
+      "rule": "BIAS_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/bias_seed0/final.pt"
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "OLDNN32",
+      "rule": "OLDNN",
+      "budget": 32,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "OLDNN128",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "GNN1_32",
+      "rule": "GNN_seed1",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "MLP0_32",
+      "rule": "MLP_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/mlp_seed0/final.pt"
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "BIAS0_32",
+      "rule": "BIAS_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/bias_seed0/final.pt"
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "OLDNN32",
+      "rule": "OLDNN",
+      "budget": 32,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "OLDNN128",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "GNN0_32",
+      "rule": "GNN_seed0",
+      "budget": 32,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    }
+  ],
+  "environment_seed": 0,
+  "new_model_fits": 0,
+  "caps": {
+    "wall_s": 7200,
+    "episode_s": 600,
+    "physical_steps": 60000,
+    "public_forecasts": 1000000
+  },
+  "role": "Change only actual disconnected-grid topology search; original PPO other stages, unsafe QP and ALWAYS_RESTORE cadence6 unchanged. Author N1 label is not exhaustive N-1 contingency safety.",
+  "fairness": "Every comparator gets same known endpoint mask, cooldown pool, exact full-vector canonical aliases, strict admission including illegal/ambiguous rejection, and same-state full fallback with no duplicate forecasts. FULL is a stronger engineered complete baseline; its physical trajectory must reproduce GRID19 exactly.",
+  "primary": "Complete/survival first, then cost only on jointly completed full weeks, total controller walltime including features/prior/forward/forecast, and public query count. A failed shorter episode is never rewarded for lower cumulative cost.",
+  "selection": "All four existing development weeks, both GNN fitting seeds; seed0 fixed for MLP/bias comparators before closed-loop results. No checkpoint/horizon/hyperparameter change or best-week choice. Strong original PPO included at both32 and128.",
+  "investment_screen": {
+    "auxiliary_role": "Against FULL, no lost complete week or earlier failure by>1step, each jointly-complete-week cost regret<=1%, mean controller walltime reduction>=10% and N1 query reduction>=30%. Both GNN seeds separately. Development resource screen, not statistical guarantee.",
+    "graph_increment": "After survival parity, average both GNN seeds and require >=0.5% mean joint-complete cost gain versus each of OLDNN32, MLP0_32, BIAS0_32; otherwise report any speed/quality tradeoff without unique-GNN claim. Also report OLDNN128 and every individual week/seed.",
+    "interpretation": "Even passing auxiliary and graph screens is developmental, not final independent confirmation or RL benefit. Slight weakness warrants diagnosis, no universal failure. Any major lost survival is a material warning. Do not launch RL from one-step scores alone."
+  },
+  "timing": "Single instrumented CPU wallclock; vector/forecast logging included in controller timing, costs also report physical and startup separately. No uninstrumented production speed claim.",
+  "scope": "Same old development split, two dates overlap training variants. Not final-test. True final confirmation must isolate date families and retain all failures.",
+  "provenance": "V0 and V1 checkpoint/source/metrics sealed, no previous artifact overwritten."
+}

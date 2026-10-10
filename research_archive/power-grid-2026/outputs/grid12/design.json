@@ -1,0 +1,33 @@
+{
+  "source": {
+    "scenario": "2035-01-29_4",
+    "policy": "gnn",
+    "steps": 1719,
+    "complete": false,
+    "raw_cost": 2555296.1684570312,
+    "eligible": 145,
+    "offered": 139,
+    "selected": 133,
+    "simulations": 11320,
+    "illegal": 0,
+    "ambiguous": 0,
+    "exceptions": 1,
+    "wall_s": 375.6970285,
+    "neural_inference_wall_s": 1.9414534999953048,
+    "path": "outputs\\grid08\\v2\\train\\gnn\\e3_2035-01-29_4"
+  },
+  "states": [
+    1714,
+    1716
+  ],
+  "forecast_horizon": 6,
+  "physical_cap": 1716,
+  "forecast_step_cap": 100,
+  "wall_cap_s": 180,
+  "candidates": [
+    "saved_base",
+    "isolated_default_unsafe_QP_on_saved_base"
+  ],
+  "selection": "Fixed earlier warning state and first overflow state from already-observed training failure; not natural occurrence or independent evaluation.",
+  "scope": "Public forecast environment only; no actual-future branch, model fit, parameter search or deployed policy."
+}

@@ -1,0 +1,765 @@
+{
+  "native_size": 4460,
+  "forecast_size": 4712,
+  "native_schema": [
+    {
+      "name": "year",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "month",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "day",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "hour_of_day",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "minute_of_hour",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "day_of_week",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "gen_p",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "gen_q",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "gen_v",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "load_p",
+      "shape": [
+        99
+      ],
+      "size": 99
+    },
+    {
+      "name": "load_q",
+      "shape": [
+        99
+      ],
+      "size": 99
+    },
+    {
+      "name": "load_v",
+      "shape": [
+        99
+      ],
+      "size": 99
+    },
+    {
+      "name": "p_or",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "q_or",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "v_or",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "a_or",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "p_ex",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "q_ex",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "v_ex",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "a_ex",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "rho",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "line_status",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "timestep_overflow",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "topo_vect",
+      "shape": [
+        540
+      ],
+      "size": 540
+    },
+    {
+      "name": "time_before_cooldown_line",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "time_before_cooldown_sub",
+      "shape": [
+        118
+      ],
+      "size": 118
+    },
+    {
+      "name": "time_next_maintenance",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "duration_next_maintenance",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "target_dispatch",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "actual_dispatch",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "storage_charge",
+      "shape": [
+        7
+      ],
+      "size": 7
+    },
+    {
+      "name": "storage_power_target",
+      "shape": [
+        7
+      ],
+      "size": 7
+    },
+    {
+      "name": "storage_power",
+      "shape": [
+        7
+      ],
+      "size": 7
+    },
+    {
+      "name": "gen_p_before_curtail",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "curtailment",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "curtailment_limit",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "curtailment_limit_effective",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "_shunt_p",
+      "shape": [
+        14
+      ],
+      "size": 14
+    },
+    {
+      "name": "_shunt_q",
+      "shape": [
+        14
+      ],
+      "size": 14
+    },
+    {
+      "name": "_shunt_v",
+      "shape": [
+        14
+      ],
+      "size": 14
+    },
+    {
+      "name": "_shunt_bus",
+      "shape": [
+        14
+      ],
+      "size": 14
+    },
+    {
+      "name": "current_step",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "max_step",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "delta_time",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "gen_margin_up",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "gen_margin_down",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "active_alert",
+      "shape": [
+        22
+      ],
+      "size": 22
+    },
+    {
+      "name": "attack_under_alert",
+      "shape": [
+        22
+      ],
+      "size": 22
+    },
+    {
+      "name": "time_since_last_alert",
+      "shape": [
+        22
+      ],
+      "size": 22
+    },
+    {
+      "name": "alert_duration",
+      "shape": [
+        22
+      ],
+      "size": 22
+    },
+    {
+      "name": "total_number_of_alert",
+      "shape": [
+        1
+      ],
+      "size": 1
+    },
+    {
+      "name": "time_since_last_attack",
+      "shape": [
+        22
+      ],
+      "size": 22
+    },
+    {
+      "name": "was_alert_used_after_attack",
+      "shape": [
+        22
+      ],
+      "size": 22
+    }
+  ],
+  "forecast_schema": [
+    {
+      "name": "year",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "month",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "day",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "hour_of_day",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "minute_of_hour",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "day_of_week",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "gen_p",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "gen_q",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "gen_v",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "load_p",
+      "shape": [
+        99
+      ],
+      "size": 99
+    },
+    {
+      "name": "load_q",
+      "shape": [
+        99
+      ],
+      "size": 99
+    },
+    {
+      "name": "load_v",
+      "shape": [
+        99
+      ],
+      "size": 99
+    },
+    {
+      "name": "p_or",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "q_or",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "v_or",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "a_or",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "p_ex",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "q_ex",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "v_ex",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "a_ex",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "rho",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "line_status",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "timestep_overflow",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "topo_vect",
+      "shape": [
+        540
+      ],
+      "size": 540
+    },
+    {
+      "name": "time_before_cooldown_line",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "time_before_cooldown_sub",
+      "shape": [
+        118
+      ],
+      "size": 118
+    },
+    {
+      "name": "time_next_maintenance",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "duration_next_maintenance",
+      "shape": [
+        186
+      ],
+      "size": 186
+    },
+    {
+      "name": "target_dispatch",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "actual_dispatch",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "storage_charge",
+      "shape": [
+        7
+      ],
+      "size": 7
+    },
+    {
+      "name": "storage_power_target",
+      "shape": [
+        7
+      ],
+      "size": 7
+    },
+    {
+      "name": "storage_power",
+      "shape": [
+        7
+      ],
+      "size": 7
+    },
+    {
+      "name": "gen_p_before_curtail",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "curtailment",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "curtailment_limit",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "curtailment_limit_effective",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "is_alarm_illegal",
+      "shape": [
+        1
+      ],
+      "size": 1
+    },
+    {
+      "name": "time_since_last_alarm",
+      "shape": [
+        1
+      ],
+      "size": 1
+    },
+    {
+      "name": "last_alarm",
+      "shape": [
+        0
+      ],
+      "size": 0
+    },
+    {
+      "name": "attention_budget",
+      "shape": [
+        1
+      ],
+      "size": 1
+    },
+    {
+      "name": "was_alarm_used_after_game_over",
+      "shape": [
+        1
+      ],
+      "size": 1
+    },
+    {
+      "name": "_shunt_p",
+      "shape": [
+        14
+      ],
+      "size": 14
+    },
+    {
+      "name": "_shunt_q",
+      "shape": [
+        14
+      ],
+      "size": 14
+    },
+    {
+      "name": "_shunt_v",
+      "shape": [
+        14
+      ],
+      "size": 14
+    },
+    {
+      "name": "_shunt_bus",
+      "shape": [
+        14
+      ],
+      "size": 14
+    },
+    {
+      "name": "current_step",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "max_step",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "delta_time",
+      "shape": [],
+      "size": 1
+    },
+    {
+      "name": "gen_margin_up",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "gen_margin_down",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "active_alert",
+      "shape": [
+        22
+      ],
+      "size": 22
+    },
+    {
+      "name": "attack_under_alert",
+      "shape": [
+        22
+      ],
+      "size": 22
+    },
+    {
+      "name": "time_since_last_alert",
+      "shape": [
+        22
+      ],
+      "size": 22
+    },
+    {
+      "name": "alert_duration",
+      "shape": [
+        22
+      ],
+      "size": 22
+    },
+    {
+      "name": "total_number_of_alert",
+      "shape": [
+        1
+      ],
+      "size": 1
+    },
+    {
+      "name": "time_since_last_attack",
+      "shape": [
+        22
+      ],
+      "size": 22
+    },
+    {
+      "name": "was_alert_used_after_attack",
+      "shape": [
+        22
+      ],
+      "size": 22
+    },
+    {
+      "name": "gen_p_delta",
+      "shape": [
+        62
+      ],
+      "size": 62
+    },
+    {
+      "name": "timestep_protection_engaged",
+      "shape": [
+        186
+      ],
+      "size": 186
+    }
+  ],
+  "physical_steps": 0,
+  "public_forecasts": 1
+}

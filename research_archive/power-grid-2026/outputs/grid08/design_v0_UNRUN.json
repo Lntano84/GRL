@@ -1,0 +1,57 @@
+{
+  "stage": "GRID08",
+  "task": "Binary learned residual safe-continuous restoration over immutable NN20",
+  "training_weeks": [
+    "2035-01-29_4",
+    "2035-04-16_2",
+    "2035-07-23_10",
+    "2035-10-29_15"
+  ],
+  "evaluation_weeks": [
+    "2035-02-05_3",
+    "2035-05-07_3",
+    "2035-08-20_12",
+    "2035-11-05_12"
+  ],
+  "test_split_unopened": true,
+  "environment_seed": 0,
+  "cadence": 6,
+  "proposal_current_rho_lt": 0.9,
+  "proposal_forecast_rho_le": 0.93,
+  "baselines": [
+    "NN20",
+    "ALWAYS_RESTORE",
+    "IMMEDIATE_COST"
+  ],
+  "models": [
+    "mlp",
+    "gnn"
+  ],
+  "training_seed": 20261009,
+  "training_epochs": 2,
+  "ppo": {
+    "rollout": 256,
+    "epochs": 4,
+    "minibatch": 32,
+    "learning_rate": 0.0003,
+    "gamma": 0.995,
+    "gae_lambda": 0.95,
+    "clip": 0.2,
+    "entropy": 0.01,
+    "cost_scale": 10000.0,
+    "blackout_penalty": 100.0
+  },
+  "screen": "Completion first, no cost ranking incomplete pairs. No preset large improvement threshold; assess paired directions and safety. One seed is a development pilot, no statistical generalization claim.",
+  "adaptation": "Preserve v0 checkpoints, logs and hashes; v1 may use training-only imitation warm start or reward/credit diagnosis. All tried versions reported. No selection on sealed final test.",
+  "caps": {
+    "process_wall_s": 7200,
+    "physical_steps": 80000,
+    "output_bytes": 1073741824
+  },
+  "limits": [
+    "Separate restoration helper does not change original optimizer memory.",
+    "One-step forecast acceptance is not guaranteed future safety.",
+    "Existing author model train identity unknown; our fine-tune weeks disjoint from our evaluation.",
+    "This auxiliary binary task does not yet learn topology-action ranking or validate original IM framework."
+  ]
+}

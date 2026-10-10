@@ -1,0 +1,118 @@
+{
+  "same_pool_NN20_NN352_actions_and_states_identical_all_weeks": false,
+  "same_prior_observation_first_divergence_omission_witnesses": 2,
+  "cost_screens_applicable": false,
+  "cost_screen_status": "NOT_APPLICABLE_INCOMPLETE_EPISODES",
+  "existing_NN_shortlist_value_screen_passed": false,
+  "accepted_cheap_comparators_by_102pct_screen": [],
+  "comparisons": [
+    {
+      "NN20_vs": "NN352",
+      "all_four_pairs_complete": false,
+      "NN20_has_no_extra_failures": true,
+      "NN20_completed_weeks": 3,
+      "other_completed_weeks": 3,
+      "equal_week_mean_relative_cost_improvement": null,
+      "positive_cost_weeks": null,
+      "per_week_relative_cost_improvement": null,
+      "other_cost_mean_over_NN20": null
+    },
+    {
+      "NN20_vs": "FULL",
+      "all_four_pairs_complete": false,
+      "NN20_has_no_extra_failures": true,
+      "NN20_completed_weeks": 3,
+      "other_completed_weeks": 3,
+      "equal_week_mean_relative_cost_improvement": null,
+      "positive_cost_weeks": null,
+      "per_week_relative_cost_improvement": null,
+      "other_cost_mean_over_NN20": null
+    },
+    {
+      "NN20_vs": "LOCAL20",
+      "all_four_pairs_complete": false,
+      "NN20_has_no_extra_failures": true,
+      "NN20_completed_weeks": 3,
+      "other_completed_weeks": 2,
+      "equal_week_mean_relative_cost_improvement": null,
+      "positive_cost_weeks": null,
+      "per_week_relative_cost_improvement": null,
+      "other_cost_mean_over_NN20": null
+    },
+    {
+      "NN20_vs": "RANDOM20",
+      "all_four_pairs_complete": false,
+      "NN20_has_no_extra_failures": true,
+      "NN20_completed_weeks": 3,
+      "other_completed_weeks": 2,
+      "equal_week_mean_relative_cost_improvement": null,
+      "positive_cost_weeks": null,
+      "per_week_relative_cost_improvement": null,
+      "other_cost_mean_over_NN20": null
+    }
+  ],
+  "training_or_RL_justified": false,
+  "descriptive_jointly_complete_week_cost_comparisons": [
+    {
+      "scenario": "2035-04-16_2",
+      "other": "NN352",
+      "other_cost_reduction_relative_to_NN20": 0.09692609035115743,
+      "scope": "Single complete paired week, descriptive only; no aggregate screen or generalization."
+    },
+    {
+      "scenario": "2035-04-16_2",
+      "other": "FULL",
+      "other_cost_reduction_relative_to_NN20": 0.09742968555476282,
+      "scope": "Single complete paired week, descriptive only; no aggregate screen or generalization."
+    },
+    {
+      "scenario": "2035-04-16_2",
+      "other": "LOCAL20",
+      "other_cost_reduction_relative_to_NN20": -0.0009878609945526068,
+      "scope": "Single complete paired week, descriptive only; no aggregate screen or generalization."
+    },
+    {
+      "scenario": "2035-07-23_10",
+      "other": "NN352",
+      "other_cost_reduction_relative_to_NN20": 0.0,
+      "scope": "Single complete paired week, descriptive only; no aggregate screen or generalization."
+    },
+    {
+      "scenario": "2035-07-23_10",
+      "other": "FULL",
+      "other_cost_reduction_relative_to_NN20": 0.0,
+      "scope": "Single complete paired week, descriptive only; no aggregate screen or generalization."
+    },
+    {
+      "scenario": "2035-07-23_10",
+      "other": "LOCAL20",
+      "other_cost_reduction_relative_to_NN20": 0.004751494026813983,
+      "scope": "Single complete paired week, descriptive only; no aggregate screen or generalization."
+    },
+    {
+      "scenario": "2035-07-23_10",
+      "other": "RANDOM20",
+      "other_cost_reduction_relative_to_NN20": -0.007508557395230772,
+      "scope": "Single complete paired week, descriptive only; no aggregate screen or generalization."
+    },
+    {
+      "scenario": "2035-10-29_15",
+      "other": "NN352",
+      "other_cost_reduction_relative_to_NN20": 0.0,
+      "scope": "Single complete paired week, descriptive only; no aggregate screen or generalization."
+    },
+    {
+      "scenario": "2035-10-29_15",
+      "other": "FULL",
+      "other_cost_reduction_relative_to_NN20": 0.0008263713051132537,
+      "scope": "Single complete paired week, descriptive only; no aggregate screen or generalization."
+    },
+    {
+      "scenario": "2035-10-29_15",
+      "other": "RANDOM20",
+      "other_cost_reduction_relative_to_NN20": 0.3109567048753846,
+      "scope": "Single complete paired week, descriptive only; no aggregate screen or generalization."
+    }
+  ],
+  "reason": "This only assesses existing baselines on four development weeks; no new algorithm or learnable improvement demonstrated."
+}

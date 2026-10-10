@@ -1,0 +1,135 @@
+{
+  "stage": "GRID04",
+  "environment_seed": 0,
+  "shortlist_hash_seed": "GRID04-cheap-v1",
+  "data_root": "work/grid03/formal_env_initialized",
+  "selected_development_weeks": [
+    "2035-01-29_4",
+    "2035-04-16_2",
+    "2035-07-23_10",
+    "2035-10-29_15"
+  ],
+  "selection_rule": "Months 1,4,7,10; smallest SHA256(GRID04-seasons-v1:name) within frozen development subset; no outcomes.",
+  "plan": [
+    {
+      "policy": "FULL",
+      "scenario": "2035-01-29_4"
+    },
+    {
+      "policy": "NN20",
+      "scenario": "2035-01-29_4"
+    },
+    {
+      "policy": "NN352",
+      "scenario": "2035-01-29_4"
+    },
+    {
+      "policy": "LOCAL20",
+      "scenario": "2035-01-29_4"
+    },
+    {
+      "policy": "RANDOM20",
+      "scenario": "2035-01-29_4"
+    },
+    {
+      "policy": "NN20",
+      "scenario": "2035-04-16_2"
+    },
+    {
+      "policy": "NN352",
+      "scenario": "2035-04-16_2"
+    },
+    {
+      "policy": "LOCAL20",
+      "scenario": "2035-04-16_2"
+    },
+    {
+      "policy": "RANDOM20",
+      "scenario": "2035-04-16_2"
+    },
+    {
+      "policy": "FULL",
+      "scenario": "2035-04-16_2"
+    },
+    {
+      "policy": "NN352",
+      "scenario": "2035-07-23_10"
+    },
+    {
+      "policy": "LOCAL20",
+      "scenario": "2035-07-23_10"
+    },
+    {
+      "policy": "RANDOM20",
+      "scenario": "2035-07-23_10"
+    },
+    {
+      "policy": "FULL",
+      "scenario": "2035-07-23_10"
+    },
+    {
+      "policy": "NN20",
+      "scenario": "2035-07-23_10"
+    },
+    {
+      "policy": "LOCAL20",
+      "scenario": "2035-10-29_15"
+    },
+    {
+      "policy": "RANDOM20",
+      "scenario": "2035-10-29_15"
+    },
+    {
+      "policy": "FULL",
+      "scenario": "2035-10-29_15"
+    },
+    {
+      "policy": "NN20",
+      "scenario": "2035-10-29_15"
+    },
+    {
+      "policy": "NN352",
+      "scenario": "2035-10-29_15"
+    }
+  ],
+  "policies": [
+    "FULL",
+    "NN20",
+    "NN352",
+    "LOCAL20",
+    "RANDOM20"
+  ],
+  "top_k": 20,
+  "same_pool_policies": [
+    "NN20",
+    "NN352",
+    "LOCAL20",
+    "RANDOM20"
+  ],
+  "full_pool_size": 421,
+  "shared_pool_size": 352,
+  "score_version": "Installed Grid2Op 1.12.5 unnormalized components; no normalized composite.",
+  "metrics_order": [
+    "native episode completion and survived steps",
+    "raw operational cost only for jointly complete episodes",
+    "physical losses/redispatch/curtailment/storage; terminal renewable/assistant values",
+    "act and end-to-end time; simulation calls; continuous solver status"
+  ],
+  "local_rule": "For each action, find affected substations. Descending max incident observed rho, then descending sum(max(rho-0.9,0)^2) on incident lines; break ties by SHA256(seed:row). No extra simulation, forecast, cooldown prefilter or future data.",
+  "random_rule": "Uniform hash permutation of all 352 rows using seed:current_step:row; first 20. One seed only, no significance claim.",
+  "caps": {
+    "physical_steps": 40400,
+    "main_runs": 20,
+    "per_run_after_import_s": 900,
+    "total_runner_s": 3600,
+    "preflight_physical_steps": 0,
+    "output_bytes": 3221225472
+  },
+  "scope": "Development baseline screen. Published model training IDs unknown. No training/tuning, no validation/test execution; no competition score certification.",
+  "decision_rules": [
+    "If NN20 and NN352 have identical actions and states throughout all four weeks, stop treating top20 misses within this pool as an evidenced training target.",
+    "An existing NN advantage over cheap shortlists requires no extra premature failures, all four paired episodes complete, mean operational reduction >=2% against each cheap arm, and >=3/4 weeks positive against each. This confirms an existing baseline, not a new contribution.",
+    "If a cheap arm has no extra failures and complete-episode mean cost <=1.02 times NN20, accept that cheap comparator as a serious baseline; this is a screen, not equivalence.",
+    "Incomplete matrix, mixed survival, unqualified metering or directions outside the above are inconclusive. No outcome-selected extra scenes/seeds/budget or automatic training."
+  ]
+}

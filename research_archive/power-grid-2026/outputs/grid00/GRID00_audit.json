@@ -1,0 +1,76 @@
+{
+  "status": "PASS_INTERFACE_CHECKS_WITH_DISCLOSED_POSTPROCESSING_FAILURE",
+  "actual_steps": 96,
+  "trajectory_count": 4,
+  "scenario_count_executed": 1,
+  "per_run": [
+    {
+      "agent": "DoNothingAgent",
+      "repeat": 0,
+      "steps": 24,
+      "wall_s": 0.029868699999951787,
+      "terminated": false,
+      "highres_calls": 0,
+      "rho_max_over_steps": 0.9804580807685852,
+      "sum_rewards": 4950.4864501953125
+    },
+    {
+      "agent": "DoNothingAgent",
+      "repeat": 1,
+      "steps": 24,
+      "wall_s": 0.02851480000003903,
+      "terminated": false,
+      "highres_calls": 0,
+      "rho_max_over_steps": 0.9804580807685852,
+      "sum_rewards": 4950.4864501953125
+    },
+    {
+      "agent": "RecoPowerlineAgent",
+      "repeat": 0,
+      "steps": 24,
+      "wall_s": 0.028737299999875177,
+      "terminated": false,
+      "highres_calls": 0,
+      "rho_max_over_steps": 0.9804580807685852,
+      "sum_rewards": 4950.4864501953125
+    },
+    {
+      "agent": "RecoPowerlineAgent",
+      "repeat": 1,
+      "steps": 24,
+      "wall_s": 0.0340264000001298,
+      "terminated": false,
+      "highres_calls": 0,
+      "rho_max_over_steps": 0.9804580807685852,
+      "sum_rewards": 4950.4864501953125
+    }
+  ],
+  "illegal_count": 0,
+  "ambiguous_count": 0,
+  "exception_steps": 0,
+  "replay_observation_and_action_arrays_equal": true,
+  "replay_rewards_and_flags_equal": true,
+  "forecast_does_not_advance_observed_physical_state": true,
+  "forecast_actual_vector_shapes": {
+    "forecast": [
+      4712
+    ],
+    "actual": [
+      4460
+    ]
+  },
+  "original_worker_exit": 1,
+  "original_failure_stage": "postprocessing after all smoke steps and replay checks",
+  "original_failure": {
+    "type": "ValueError",
+    "error": "operands could not be broadcast together with shapes (4712,) (4460,) ",
+    "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-24\\influence-maximization-im-ccf-b-grl\\work\\grid00\\probe.py\", line 162, in <module>\n    main()\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-24\\influence-maximization-im-ccf-b-grl\\work\\grid00\\probe.py\", line 149, in main\n    forecast_difference = float(np.max(np.abs(sim1.astype(float)-actual1.astype(float))))\n                                              ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~\nValueError: operands could not be broadcast together with shapes (4712,) (4460,) \n",
+    "elapsed_s": 3.6670228999998926
+  },
+  "smoke_elapsed_to_failure_s": 3.6670228999998926,
+  "first_import_s": 8.116281000000072,
+  "audit_scope": "Saved array/log/hash consistency; no new simulation, no independent AC feasibility solver.",
+  "strong_baseline_executed": false,
+  "training_runs": 0,
+  "warning": "One bundled test chronic and short prefixes; no comparative performance or learning-value conclusion."
+}

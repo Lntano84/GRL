@@ -1,0 +1,209 @@
+{
+  "scenario": "2035-01-08_5",
+  "offline_only": true,
+  "model_fits": 0,
+  "new_simulations": 0,
+  "new_physical_steps": 0,
+  "raw_costs": {
+    "NN20": 6707772.520812988,
+    "FALLBACK90": 8414074.452331543,
+    "NN352": 8494068.36553955
+  },
+  "relative_cost_increase": 0.25437683317736437,
+  "first_action_difference_step": 221,
+  "common_prior_observation": true,
+  "first_step_more_search_improves_topology_forecast_rho": true,
+  "first_step_more_search_improves_final_cost": true,
+  "first_step_more_search_worsens_final_rho": true,
+  "prefix_costs_exactly_equal": true,
+  "marginal_price_profiles": {
+    "NN20": {
+      "149.0": 1341,
+      "148.0": 629,
+      "140.0": 47
+    },
+    "FALLBACK90": {
+      "149.0": 1201,
+      "148.0": 769,
+      "140.0": 47
+    },
+    "NN352": {
+      "149.0": 1203,
+      "148.0": 767,
+      "140.0": 47
+    }
+  },
+  "different_price_steps": 140,
+  "descriptive_fee_difference": {
+    "loss_cost": -90419.56523572188,
+    "redispatch_cost": 1793685.5142224776,
+    "curtailment_change_cost": -4.2810103421410375,
+    "storage_cost": 3040.1127874457356
+  },
+  "blocks": [
+    {
+      "first_step": 1,
+      "last_step": 220,
+      "cost": {
+        "NN20": 268593.66778564453,
+        "FALLBACK90": 268593.66778564453,
+        "NN352": 268593.66778564453
+      },
+      "redispatch_cost": {
+        "NN20": 39186.21148825563,
+        "FALLBACK90": 39186.21148825563,
+        "NN352": 39186.21148825563
+      }
+    },
+    {
+      "first_step": 221,
+      "last_step": 288,
+      "cost": {
+        "NN20": 139470.84057617188,
+        "FALLBACK90": 130619.87548828125,
+        "NN352": 130619.87548828125
+      },
+      "redispatch_cost": {
+        "NN20": 55658.99317107929,
+        "FALLBACK90": 41989.008540418676,
+        "NN352": 41989.008540418676
+      }
+    },
+    {
+      "first_step": 289,
+      "last_step": 576,
+      "cost": {
+        "NN20": 570265.4827880859,
+        "FALLBACK90": 583384.8336181641,
+        "NN352": 585612.6667480469
+      },
+      "redispatch_cost": {
+        "NN20": 273316.35461627285,
+        "FALLBACK90": 287689.131203615,
+        "NN352": 289885.3722840915
+      }
+    },
+    {
+      "first_step": 577,
+      "last_step": 864,
+      "cost": {
+        "NN20": 760638.2996826172,
+        "FALLBACK90": 1067123.2333984375,
+        "NN352": 1066464.1181640625
+      },
+      "redispatch_cost": {
+        "NN20": 412783.36388310796,
+        "FALLBACK90": 741399.5115539855,
+        "NN352": 740751.2259297048
+      }
+    },
+    {
+      "first_step": 865,
+      "last_step": 1152,
+      "cost": {
+        "NN20": 933884.3510742188,
+        "FALLBACK90": 1216779.5251464844,
+        "NN352": 1212377.8002929688
+      },
+      "redispatch_cost": {
+        "NN20": 605936.317098936,
+        "FALLBACK90": 922209.8562955328,
+        "NN352": 922449.0365039901
+      }
+    },
+    {
+      "first_step": 1153,
+      "last_step": 1440,
+      "cost": {
+        "NN20": 1240494.1875,
+        "FALLBACK90": 1620425.6357421875,
+        "NN352": 1619626.2810058594
+      },
+      "redispatch_cost": {
+        "NN20": 855330.6769945358,
+        "FALLBACK90": 1247438.697457154,
+        "NN352": 1248736.592940415
+      }
+    },
+    {
+      "first_step": 1441,
+      "last_step": 1728,
+      "cost": {
+        "NN20": 1364760.1416015625,
+        "FALLBACK90": 1718097.8540039062,
+        "NN352": 1754785.927734375
+      },
+      "redispatch_cost": {
+        "NN20": 1057478.8944534038,
+        "FALLBACK90": 1414967.9727416402,
+        "NN352": 1451147.6086033904
+      }
+    },
+    {
+      "first_step": 1729,
+      "last_step": 2017,
+      "cost": {
+        "NN20": 1429665.5498046875,
+        "FALLBACK90": 1809049.8271484375,
+        "NN352": 1855988.0283203125
+      },
+      "redispatch_cost": {
+        "NN20": 1103633.9751570811,
+        "FALLBACK90": 1502129.9118045482,
+        "NN352": 1548217.160056344
+      }
+    }
+  ],
+  "persistent_dispatch_description": {
+    "NN20": {
+      "optim_module_calls": 43,
+      "steps_without_redispatch_commands": 1984,
+      "steps_with_zero_command_but_nonzero_actual_dispatch": 1855,
+      "zero_command_dispatch_fees": 4317553.026195187,
+      "dispatch_fees_when_optim_not_called": 4281827.21683807,
+      "rho_above_one_steps": 27,
+      "highest_actual_rho": 1.9887199401855469,
+      "solve_statuses": {
+        "optimal": 29,
+        "optimal_inaccurate": 6,
+        "user_limit": 8
+      }
+    },
+    "FALLBACK90": {
+      "optim_module_calls": 54,
+      "steps_without_redispatch_commands": 1973,
+      "steps_with_zero_command_but_nonzero_actual_dispatch": 1844,
+      "zero_command_dispatch_fees": 6034013.6962445695,
+      "dispatch_fees_when_optim_not_called": 5985274.98252363,
+      "rho_above_one_steps": 33,
+      "highest_actual_rho": 1.9958348274230957,
+      "solve_statuses": {
+        "optimal": 48,
+        "optimal_inaccurate": 3,
+        "user_limit": 3
+      }
+    },
+    "NN352": {
+      "optim_module_calls": 54,
+      "steps_without_redispatch_commands": 1972,
+      "steps_with_zero_command_but_nonzero_actual_dispatch": 1843,
+      "zero_command_dispatch_fees": 6113870.269873289,
+      "dispatch_fees_when_optim_not_called": 6067756.27746619,
+      "rho_above_one_steps": 35,
+      "highest_actual_rho": 1.9964944124221802,
+      "solve_statuses": {
+        "optimal": 47,
+        "optimal_inaccurate": 5,
+        "user_limit": 2
+      }
+    }
+  },
+  "most_cost_disadvantage_appears_after_step": 576,
+  "limitations": [
+    "First-decision and whole-week contrasts are different estimands.",
+    "This is descriptive accounting, not a counterfactual intervention isolating a single decision.",
+    "Zero redispatch command does not imply zero cumulative actual redispatch.",
+    "Finite user_limit/optimal_inaccurate solver returns do not certify an exact QP optimum.",
+    "A rho surrogate limitation does not establish a learnable or novel RL advantage."
+  ]
+}

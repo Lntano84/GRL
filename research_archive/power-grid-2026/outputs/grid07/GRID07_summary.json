@@ -1,0 +1,26 @@
+{
+  "stage": "GRID07",
+  "engineering_and_saved_data_audit_passed": true,
+  "native_new_physical_steps": 2017,
+  "native_new_simulations": 24185,
+  "model_fits": 0,
+  "same_state_first_decision": {
+    "step": 221,
+    "old_topology_forecast_rho": 0.952896237373352,
+    "expanded_topology_forecast_rho": 0.9515050053596497,
+    "old_actual_after_rho": 0.9654420614242554,
+    "expanded_actual_after_rho": 0.9715386033058167,
+    "old_native_cost": 2347.657470703125,
+    "expanded_native_cost": 2097.054443359375
+  },
+  "first_sustained_positive_full_rule_cumulative_cost_difference_step": 575,
+  "single_intervention_week_relative_cost_change_vs_nn20": 0.16086860421391158,
+  "first_intervention_extra_cost": 1079070.0028076172,
+  "full_rule_extra_cost": 1706301.9315185547,
+  "arithmetic_ratio_of_extra_costs": 0.6324027318232471,
+  "ratio_warning": "Not a causal share decomposition: later decisions and trajectories interact; no additivity or independent mechanisms inferred.",
+  "interpretation": "The first expansion is cheaper immediately but a single expanded decision followed by original NN20 has higher week cost. Delayed consequences are present in this exposed context. The controller surrogate and cumulative dispatch-state handling deserve cheap non-learning checks before any neural training.",
+  "training_readiness": false,
+  "reason_no_training": "One exposed week, archived baseline, no demonstrated legal predictive policy advantage over an economic or restoration baseline, no novelty confirmation.",
+  "next_work_not_executed": "Qualify a bounded safety-checked redispatch restoration baseline using only present observations. Compare to controller-aware candidate evaluation before designing or training a predictor."
+}

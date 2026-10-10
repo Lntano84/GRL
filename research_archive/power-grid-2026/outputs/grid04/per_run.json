@@ -1,0 +1,1374 @@
+[
+  {
+    "policy": "FULL",
+    "scenario": "2035-01-29_4",
+    "exit": 0,
+    "wall_s": 120.78099999999995,
+    "steps": 1719,
+    "native_horizon": 2017,
+    "completed_native_week": false,
+    "premature_end": true,
+    "initial_observation_hash": "7b5769d653b109a1a2294084c3c700526e45ded822ead05a8ede1ab75c030f00",
+    "final_observation_hash": "5d3883bd1800961285793109075472db8e5350e29f53a3de1e9e91cc68ec7a28",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 1,
+    "terminal_exception_types": [
+      "BackendError"
+    ],
+    "native_raw_cost_sum": 5873727.5595703125,
+    "verified_physical_cost_sum": 5873726.5595703125,
+    "unverified_or_error_terminal_count": 1,
+    "unverified_or_error_terminal_cost_sum": 1.0,
+    "losses_mwh": 12425.779210994637,
+    "redispatch_mwh": 26964.359074143886,
+    "physical_curtailed_mwh": 10370.47906855059,
+    "storage_throughput_mwh": 16.317718936673675,
+    "terminal_renewable_component": 0.5369525736041237,
+    "terminal_assistant_component": -2.5087719298245617,
+    "act_time": {
+      "sum": 90.1563510999822,
+      "p50": 0.0038666999998895335,
+      "p95": 0.013219629999730373,
+      "max": 4.009237100000064
+    },
+    "simulate_calls": 19492,
+    "max_after_rho": 1.0445908308029175,
+    "overloaded_after_steps": 18,
+    "modules": {
+      "reconnect": {
+        "calls": 1719,
+        "simulate_calls": 47,
+        "wall_s": 0.18528050000531948
+      },
+      "recover_topo": {
+        "calls": 1161,
+        "simulate_calls": 1302,
+        "wall_s": 4.566422699995201
+      },
+      "topo_12_unsafe": {
+        "calls": 27,
+        "simulate_calls": 11272,
+        "wall_s": 34.42851090000022
+      },
+      "optim": {
+        "calls": 23,
+        "simulate_calls": 23,
+        "wall_s": 29.99030180000136
+      },
+      "topo_n1_unsafe": {
+        "calls": 6,
+        "simulate_calls": 5092,
+        "wall_s": 15.916743200000383
+      }
+    },
+    "solver_statuses": {
+      "optimal_inaccurate": 3,
+      "optimal": 17,
+      "user_limit": 3
+    },
+    "shortlist_calls": 0,
+    "construction_s": 0.3146353000001909
+  },
+  {
+    "policy": "NN20",
+    "scenario": "2035-01-29_4",
+    "exit": 0,
+    "wall_s": 44.125,
+    "steps": 462,
+    "native_horizon": 2017,
+    "completed_native_week": false,
+    "premature_end": true,
+    "initial_observation_hash": "7b5769d653b109a1a2294084c3c700526e45ded822ead05a8ede1ab75c030f00",
+    "final_observation_hash": "3476955ecb32685dcd6e450f65f9d567a154c0b7f0a2ea519db1e89db4f7f3c8",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 1,
+    "terminal_exception_types": [
+      "BackendError"
+    ],
+    "native_raw_cost_sum": 1163678.398803711,
+    "verified_physical_cost_sum": 1163677.398803711,
+    "unverified_or_error_terminal_count": 1,
+    "unverified_or_error_terminal_cost_sum": 1.0,
+    "losses_mwh": 3057.533986536165,
+    "redispatch_mwh": 4744.11533926705,
+    "physical_curtailed_mwh": 868.9566016495228,
+    "storage_throughput_mwh": 10.172884808387607,
+    "terminal_renewable_component": 0.8886461719931997,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 18.304290400013087,
+      "p50": 0.003882500000145228,
+      "p95": 0.011529484999846316,
+      "max": 2.990864400000646
+    },
+    "simulate_calls": 944,
+    "max_after_rho": 1.0466241836547852,
+    "overloaded_after_steps": 8,
+    "modules": {
+      "reconnect": {
+        "calls": 462,
+        "simulate_calls": 28,
+        "wall_s": 0.0970809999944322
+      },
+      "recover_topo": {
+        "calls": 238,
+        "simulate_calls": 199,
+        "wall_s": 0.6897971999987931
+      },
+      "topo_12_unsafe": {
+        "calls": 11,
+        "simulate_calls": 220,
+        "wall_s": 0.6776505000007091
+      },
+      "optim": {
+        "calls": 11,
+        "simulate_calls": 11,
+        "wall_s": 15.323783699998785
+      }
+    },
+    "solver_statuses": {
+      "optimal_inaccurate": 1,
+      "optimal": 9,
+      "user_limit": 1
+    },
+    "shortlist_calls": 11,
+    "construction_s": 9.764452100000199
+  },
+  {
+    "policy": "NN352",
+    "scenario": "2035-01-29_4",
+    "exit": 0,
+    "wall_s": 134.23400000000038,
+    "steps": 1719,
+    "native_horizon": 2017,
+    "completed_native_week": false,
+    "premature_end": true,
+    "initial_observation_hash": "7b5769d653b109a1a2294084c3c700526e45ded822ead05a8ede1ab75c030f00",
+    "final_observation_hash": "5d3883bd1800961285793109075472db8e5350e29f53a3de1e9e91cc68ec7a28",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 1,
+    "terminal_exception_types": [
+      "BackendError"
+    ],
+    "native_raw_cost_sum": 6236347.088989258,
+    "verified_physical_cost_sum": 6236346.088989258,
+    "unverified_or_error_terminal_count": 1,
+    "unverified_or_error_terminal_cost_sum": 1.0,
+    "losses_mwh": 12687.372425133119,
+    "redispatch_mwh": 29169.661682415517,
+    "physical_curtailed_mwh": 2945.5547304451466,
+    "storage_throughput_mwh": 15.619019777009573,
+    "terminal_renewable_component": 0.867671390516624,
+    "terminal_assistant_component": -2.5087719298245617,
+    "act_time": {
+      "sum": 93.41685919999782,
+      "p50": 0.004615699999703793,
+      "p95": 0.015575480000097734,
+      "max": 4.382586700000502
+    },
+    "simulate_calls": 18764,
+    "max_after_rho": 1.1890274286270142,
+    "overloaded_after_steps": 18,
+    "modules": {
+      "reconnect": {
+        "calls": 1719,
+        "simulate_calls": 48,
+        "wall_s": 0.19712279998293525
+      },
+      "recover_topo": {
+        "calls": 1194,
+        "simulate_calls": 1498,
+        "wall_s": 5.273373999989417
+      },
+      "topo_12_unsafe": {
+        "calls": 26,
+        "simulate_calls": 9152,
+        "wall_s": 25.07466399999521
+      },
+      "optim": {
+        "calls": 23,
+        "simulate_calls": 23,
+        "wall_s": 37.92439729999933
+      },
+      "topo_n1_unsafe": {
+        "calls": 7,
+        "simulate_calls": 6260,
+        "wall_s": 19.756199500000548
+      }
+    },
+    "solver_statuses": {
+      "optimal_inaccurate": 3,
+      "optimal": 15,
+      "user_limit": 5
+    },
+    "shortlist_calls": 26,
+    "construction_s": 9.649735699999837
+  },
+  {
+    "policy": "LOCAL20",
+    "scenario": "2035-01-29_4",
+    "exit": 0,
+    "wall_s": 99.14099999999962,
+    "steps": 1719,
+    "native_horizon": 2017,
+    "completed_native_week": false,
+    "premature_end": true,
+    "initial_observation_hash": "7b5769d653b109a1a2294084c3c700526e45ded822ead05a8ede1ab75c030f00",
+    "final_observation_hash": "5d3883bd1800961285793109075472db8e5350e29f53a3de1e9e91cc68ec7a28",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 1,
+    "terminal_exception_types": [
+      "BackendError"
+    ],
+    "native_raw_cost_sum": 6651699.166320801,
+    "verified_physical_cost_sum": 6651698.166320801,
+    "unverified_or_error_terminal_count": 1,
+    "unverified_or_error_terminal_cost_sum": 1.0,
+    "losses_mwh": 11833.144957597086,
+    "redispatch_mwh": 32757.594091133757,
+    "physical_curtailed_mwh": 9487.394795912627,
+    "storage_throughput_mwh": 33.467686238077775,
+    "terminal_renewable_component": 0.576066870649228,
+    "terminal_assistant_component": -2.5087719298245617,
+    "act_time": {
+      "sum": 58.907583499989414,
+      "p50": 0.0037706999992224155,
+      "p95": 0.011026870000114283,
+      "max": 4.60644130000037
+    },
+    "simulate_calls": 8748,
+    "max_after_rho": 1.2458045482635498,
+    "overloaded_after_steps": 22,
+    "modules": {
+      "reconnect": {
+        "calls": 1719,
+        "simulate_calls": 50,
+        "wall_s": 0.20142589998613403
+      },
+      "recover_topo": {
+        "calls": 1212,
+        "simulate_calls": 860,
+        "wall_s": 3.427290099994025
+      },
+      "topo_12_unsafe": {
+        "calls": 25,
+        "simulate_calls": 500,
+        "wall_s": 1.494429500001388
+      },
+      "optim": {
+        "calls": 24,
+        "simulate_calls": 24,
+        "wall_s": 32.471748000000844
+      },
+      "topo_n1_unsafe": {
+        "calls": 7,
+        "simulate_calls": 5536,
+        "wall_s": 16.099437799998668
+      }
+    },
+    "solver_statuses": {
+      "user_limit": 4,
+      "optimal": 20
+    },
+    "shortlist_calls": 25,
+    "construction_s": 9.567862199999581
+  },
+  {
+    "policy": "RANDOM20",
+    "scenario": "2035-01-29_4",
+    "exit": 0,
+    "wall_s": 116.17200000000048,
+    "steps": 1486,
+    "native_horizon": 2017,
+    "completed_native_week": false,
+    "premature_end": true,
+    "initial_observation_hash": "7b5769d653b109a1a2294084c3c700526e45ded822ead05a8ede1ab75c030f00",
+    "final_observation_hash": "2c24d06352be414ee0be4240c504f6826b6bad13388a7952394d07541bbb80cc",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 1,
+    "terminal_exception_types": [
+      "BackendError"
+    ],
+    "native_raw_cost_sum": 7730802.551086426,
+    "verified_physical_cost_sum": 7730801.551086426,
+    "unverified_or_error_terminal_count": 1,
+    "unverified_or_error_terminal_cost_sum": 1.0,
+    "losses_mwh": 9997.6925301519,
+    "redispatch_mwh": 41876.401015992735,
+    "physical_curtailed_mwh": 5101.980343018347,
+    "storage_throughput_mwh": 96.66050651545325,
+    "terminal_renewable_component": 0.729345758170557,
+    "terminal_assistant_component": -2.5714285714285716,
+    "act_time": {
+      "sum": 79.44499599999745,
+      "p50": 0.003735949999281729,
+      "p95": 0.01583037499949569,
+      "max": 4.5509039999997185
+    },
+    "simulate_calls": 5866,
+    "max_after_rho": 1.2233030796051025,
+    "overloaded_after_steps": 28,
+    "modules": {
+      "reconnect": {
+        "calls": 1486,
+        "simulate_calls": 38,
+        "wall_s": 0.15539969999190362
+      },
+      "recover_topo": {
+        "calls": 886,
+        "simulate_calls": 1095,
+        "wall_s": 4.208246199989844
+      },
+      "topo_12_unsafe": {
+        "calls": 34,
+        "simulate_calls": 680,
+        "wall_s": 1.9647113999990324
+      },
+      "optim": {
+        "calls": 42,
+        "simulate_calls": 42,
+        "wall_s": 60.904935299997305
+      },
+      "topo_n1_unsafe": {
+        "calls": 3,
+        "simulate_calls": 2459,
+        "wall_s": 7.7026907999998
+      }
+    },
+    "solver_statuses": {
+      "user_limit": 7,
+      "optimal": 32,
+      "optimal_inaccurate": 3
+    },
+    "shortlist_calls": 34,
+    "construction_s": 9.381023199999618
+  },
+  {
+    "policy": "NN20",
+    "scenario": "2035-04-16_2",
+    "exit": 0,
+    "wall_s": 98.3130000000001,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "c4241ce01d235f7329f247663949909dea21d67bda1ab900dbc044aa1d56a123",
+    "final_observation_hash": "c50d70d1d089cf74457db2ae740558184db395c748d9c6fea5157d9bec4eb795",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 5585047.532775879,
+    "verified_physical_cost_sum": 5585047.532775879,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 13488.459251187842,
+    "redispatch_mwh": 24066.66215225855,
+    "physical_curtailed_mwh": 5358.1094364455585,
+    "storage_throughput_mwh": 19.640992070393015,
+    "terminal_renewable_component": 0.830185226958097,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 55.15949809998256,
+      "p50": 0.003615399999944202,
+      "p95": 0.010305159999916203,
+      "max": 5.764670800000204
+    },
+    "simulate_calls": 10183,
+    "max_after_rho": 1.1683709621429443,
+    "overloaded_after_steps": 14,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 102,
+        "wall_s": 0.3661153000266495
+      },
+      "recover_topo": {
+        "calls": 1565,
+        "simulate_calls": 838,
+        "wall_s": 3.590939700020499
+      },
+      "topo_n1_unsafe": {
+        "calls": 8,
+        "simulate_calls": 6958,
+        "wall_s": 22.088951500001713
+      },
+      "topo_12_unsafe": {
+        "calls": 11,
+        "simulate_calls": 220,
+        "wall_s": 0.6802098000016485
+      },
+      "optim": {
+        "calls": 11,
+        "simulate_calls": 11,
+        "wall_s": 22.51547380000011
+      }
+    },
+    "solver_statuses": {
+      "optimal": 6,
+      "user_limit": 5
+    },
+    "shortlist_calls": 11,
+    "construction_s": 9.571644800000286
+  },
+  {
+    "policy": "NN352",
+    "scenario": "2035-04-16_2",
+    "exit": 0,
+    "wall_s": 117.5619999999999,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "c4241ce01d235f7329f247663949909dea21d67bda1ab900dbc044aa1d56a123",
+    "final_observation_hash": "cf94058166ecd38cc9fa86c7f33ce710d527e6376918aabe53365ee2106665eb",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 5043710.710998535,
+    "verified_physical_cost_sum": 5043710.710998535,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 13819.85039626622,
+    "redispatch_mwh": 20108.824977520857,
+    "physical_curtailed_mwh": 4641.233563142518,
+    "storage_throughput_mwh": 14.338921352755277,
+    "terminal_renewable_component": 0.8528072221002564,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 74.31394870000804,
+      "p50": 0.003989699999692675,
+      "p95": 0.012251499999911172,
+      "max": 6.128597500000069
+    },
+    "simulate_calls": 14571,
+    "max_after_rho": 1.188647985458374,
+    "overloaded_after_steps": 12,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 115,
+        "wall_s": 0.4205700999882538
+      },
+      "recover_topo": {
+        "calls": 1626,
+        "simulate_calls": 1206,
+        "wall_s": 4.47062779999942
+      },
+      "topo_n1_unsafe": {
+        "calls": 8,
+        "simulate_calls": 6958,
+        "wall_s": 21.660279200000332
+      },
+      "topo_12_unsafe": {
+        "calls": 12,
+        "simulate_calls": 4224,
+        "wall_s": 12.890861300001234
+      },
+      "optim": {
+        "calls": 13,
+        "simulate_calls": 13,
+        "wall_s": 28.91950319999887
+      }
+    },
+    "solver_statuses": {
+      "optimal": 5,
+      "user_limit": 8
+    },
+    "shortlist_calls": 12,
+    "construction_s": 9.630609100000584
+  },
+  {
+    "policy": "LOCAL20",
+    "scenario": "2035-04-16_2",
+    "exit": 0,
+    "wall_s": 91.875,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "c4241ce01d235f7329f247663949909dea21d67bda1ab900dbc044aa1d56a123",
+    "final_observation_hash": "6e85703411d42e4ac55c4b9f4d38eaa162cf5090c9895e6d48289c53366aaabc",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 5590564.7833862305,
+    "verified_physical_cost_sum": 5590564.7833862305,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 13367.055341527392,
+    "redispatch_mwh": 24225.95676150928,
+    "physical_curtailed_mwh": 6105.903611740757,
+    "storage_throughput_mwh": 17.8247934213529,
+    "terminal_renewable_component": 0.8065791060311229,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 46.75412599997162,
+      "p50": 0.004112399999939953,
+      "p95": 0.01257771999989923,
+      "max": 6.291379499999493
+    },
+    "simulate_calls": 8650,
+    "max_after_rho": 1.1209056377410889,
+    "overloaded_after_steps": 9,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 98,
+        "wall_s": 0.3898742000119455
+      },
+      "recover_topo": {
+        "calls": 1622,
+        "simulate_calls": 912,
+        "wall_s": 3.9314893999962806
+      },
+      "topo_n1_unsafe": {
+        "calls": 6,
+        "simulate_calls": 5408,
+        "wall_s": 18.02194789999976
+      },
+      "topo_12_unsafe": {
+        "calls": 9,
+        "simulate_calls": 180,
+        "wall_s": 0.5678554000014628
+      },
+      "optim": {
+        "calls": 9,
+        "simulate_calls": 9,
+        "wall_s": 17.127538300000197
+      }
+    },
+    "solver_statuses": {
+      "optimal": 7,
+      "user_limit": 2
+    },
+    "shortlist_calls": 9,
+    "construction_s": 10.232058199999301
+  },
+  {
+    "policy": "RANDOM20",
+    "scenario": "2035-04-16_2",
+    "exit": 0,
+    "wall_s": 96.90700000000015,
+    "steps": 1519,
+    "native_horizon": 2017,
+    "completed_native_week": false,
+    "premature_end": true,
+    "initial_observation_hash": "c4241ce01d235f7329f247663949909dea21d67bda1ab900dbc044aa1d56a123",
+    "final_observation_hash": "557e24e3682f00b344acb725824b7b8a035efcb03756e599c2ef0cb3f44bfafd",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 1,
+    "terminal_exception_types": [
+      "ImpossibleRedispatching",
+      "ImpossibleRedispatching"
+    ],
+    "native_raw_cost_sum": 6979627.11517334,
+    "verified_physical_cost_sum": 6979626.11517334,
+    "unverified_or_error_terminal_count": 1,
+    "unverified_or_error_terminal_cost_sum": 1.0,
+    "losses_mwh": 10877.885841247233,
+    "redispatch_mwh": 35954.526479429536,
+    "physical_curtailed_mwh": 10417.517913259537,
+    "storage_throughput_mwh": 56.991511926908665,
+    "terminal_renewable_component": 0.5181643792331991,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 57.3724798000012,
+      "p50": 0.003771000000597269,
+      "p95": 0.008589830000164509,
+      "max": 6.059397600000011
+    },
+    "simulate_calls": 7911,
+    "max_after_rho": 1.4973946809768677,
+    "overloaded_after_steps": 15,
+    "modules": {
+      "reconnect": {
+        "calls": 1519,
+        "simulate_calls": 52,
+        "wall_s": 0.21949400000903552
+      },
+      "recover_topo": {
+        "calls": 1124,
+        "simulate_calls": 517,
+        "wall_s": 2.2860980999794265
+      },
+      "topo_n1_unsafe": {
+        "calls": 6,
+        "simulate_calls": 5405,
+        "wall_s": 17.710498600000392
+      },
+      "topo_12_unsafe": {
+        "calls": 18,
+        "simulate_calls": 360,
+        "wall_s": 1.1337864999995872
+      },
+      "optim": {
+        "calls": 22,
+        "simulate_calls": 22,
+        "wall_s": 31.31965340000079
+      }
+    },
+    "solver_statuses": {
+      "optimal": 15,
+      "user_limit": 7
+    },
+    "shortlist_calls": 18,
+    "construction_s": 10.367698500000188
+  },
+  {
+    "policy": "FULL",
+    "scenario": "2035-04-16_2",
+    "exit": 0,
+    "wall_s": 117.76500000000033,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "c4241ce01d235f7329f247663949909dea21d67bda1ab900dbc044aa1d56a123",
+    "final_observation_hash": "cf94058166ecd38cc9fa86c7f33ce710d527e6376918aabe53365ee2106665eb",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 5040898.107849121,
+    "verified_physical_cost_sum": 5040898.107849121,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 13800.475568632919,
+    "redispatch_mwh": 20108.824977520857,
+    "physical_curtailed_mwh": 4641.233563142518,
+    "storage_throughput_mwh": 14.338921352755277,
+    "terminal_renewable_component": 0.8528072221002564,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 82.1039355999801,
+      "p50": 0.004840499999772874,
+      "p95": 0.01471646000027249,
+      "max": 5.960557600000357
+    },
+    "simulate_calls": 15371,
+    "max_after_rho": 1.188382625579834,
+    "overloaded_after_steps": 13,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 115,
+        "wall_s": 0.49492340000597324
+      },
+      "recover_topo": {
+        "calls": 1632,
+        "simulate_calls": 1211,
+        "wall_s": 4.9393138000014005
+      },
+      "topo_n1_unsafe": {
+        "calls": 8,
+        "simulate_calls": 6958,
+        "wall_s": 22.560975899999903
+      },
+      "topo_12_unsafe": {
+        "calls": 12,
+        "simulate_calls": 5031,
+        "wall_s": 17.44153280000046
+      },
+      "optim": {
+        "calls": 13,
+        "simulate_calls": 13,
+        "wall_s": 29.61518640000031
+      }
+    },
+    "solver_statuses": {
+      "optimal": 5,
+      "user_limit": 8
+    },
+    "shortlist_calls": 0,
+    "construction_s": 0.31458459999976185
+  },
+  {
+    "policy": "NN352",
+    "scenario": "2035-07-23_10",
+    "exit": 0,
+    "wall_s": 65.98499999999967,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "4ed2b54c70ebb7bff4d1bd0752fbd8afa13d5c75755c3c230fb28209ac20f7cc",
+    "final_observation_hash": "927d3ee93c7889cc23ef234521057953cd0c9485b27151e052cc6a615eaebefd",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 1063420.9329833984,
+    "verified_physical_cost_sum": 1063420.9329833984,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 7353.607339791954,
+    "redispatch_mwh": 194.28240648781258,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 0.21200686941544214,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 21.218057800024326,
+      "p50": 0.003055599999242986,
+      "p95": 0.00759223999975802,
+      "max": 2.6115475999995397
+    },
+    "simulate_calls": 7766,
+    "max_after_rho": 1.4022750854492188,
+    "overloaded_after_steps": 2,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 103,
+        "wall_s": 0.391657700016367
+      },
+      "recover_topo": {
+        "calls": 1796,
+        "simulate_calls": 436,
+        "wall_s": 1.383775199986303
+      },
+      "topo_12_unsafe": {
+        "calls": 2,
+        "simulate_calls": 704,
+        "wall_s": 1.6360040999998091
+      },
+      "topo_n1_unsafe": {
+        "calls": 5,
+        "simulate_calls": 4496,
+        "wall_s": 11.85046919999968
+      },
+      "optim": {
+        "calls": 1,
+        "simulate_calls": 1,
+        "wall_s": 0.3787491000002774
+      }
+    },
+    "solver_statuses": {
+      "optimal": 1
+    },
+    "shortlist_calls": 2,
+    "construction_s": 10.120615499999985
+  },
+  {
+    "policy": "LOCAL20",
+    "scenario": "2035-07-23_10",
+    "exit": 0,
+    "wall_s": 60.96900000000005,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "4ed2b54c70ebb7bff4d1bd0752fbd8afa13d5c75755c3c230fb28209ac20f7cc",
+    "final_observation_hash": "927d3ee93c7889cc23ef234521057953cd0c9485b27151e052cc6a615eaebefd",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 1058368.0947723389,
+    "verified_physical_cost_sum": 1058368.0947723389,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 7317.550217879315,
+    "redispatch_mwh": 194.28240648781258,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 0.21200686941544214,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 17.204406799991375,
+      "p50": 0.002753600000687584,
+      "p95": 0.00709166000051482,
+      "max": 2.8171433999996225
+    },
+    "simulate_calls": 6180,
+    "max_after_rho": 1.4022750854492188,
+    "overloaded_after_steps": 1,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 103,
+        "wall_s": 0.38312980001592223
+      },
+      "recover_topo": {
+        "calls": 1787,
+        "simulate_calls": 424,
+        "wall_s": 1.280238499999541
+      },
+      "topo_12_unsafe": {
+        "calls": 2,
+        "simulate_calls": 40,
+        "wall_s": 0.10747600000013335
+      },
+      "topo_n1_unsafe": {
+        "calls": 4,
+        "simulate_calls": 3587,
+        "wall_s": 9.64841720000004
+      },
+      "optim": {
+        "calls": 1,
+        "simulate_calls": 1,
+        "wall_s": 0.4217685999992682
+      }
+    },
+    "solver_statuses": {
+      "optimal": 1
+    },
+    "shortlist_calls": 2,
+    "construction_s": 10.330479700000069
+  },
+  {
+    "policy": "RANDOM20",
+    "scenario": "2035-07-23_10",
+    "exit": 0,
+    "wall_s": 60.76599999999962,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "4ed2b54c70ebb7bff4d1bd0752fbd8afa13d5c75755c3c230fb28209ac20f7cc",
+    "final_observation_hash": "927d3ee93c7889cc23ef234521057953cd0c9485b27151e052cc6a615eaebefd",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 1071405.6900939941,
+    "verified_physical_cost_sum": 1071405.6900939941,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 7410.41717347751,
+    "redispatch_mwh": 194.28240648781258,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 0.21200686941544214,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 17.386672399997224,
+      "p50": 0.0028444999998100684,
+      "p95": 0.007173440000406116,
+      "max": 2.878562700000657
+    },
+    "simulate_calls": 6208,
+    "max_after_rho": 1.4022750854492188,
+    "overloaded_after_steps": 1,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 103,
+        "wall_s": 0.3853558000155317
+      },
+      "recover_topo": {
+        "calls": 1799,
+        "simulate_calls": 452,
+        "wall_s": 1.3817454999680194
+      },
+      "topo_12_unsafe": {
+        "calls": 2,
+        "simulate_calls": 40,
+        "wall_s": 0.09081549999973504
+      },
+      "topo_n1_unsafe": {
+        "calls": 4,
+        "simulate_calls": 3587,
+        "wall_s": 9.739322400000674
+      },
+      "optim": {
+        "calls": 1,
+        "simulate_calls": 1,
+        "wall_s": 0.446839700000055
+      }
+    },
+    "solver_statuses": {
+      "optimal": 1
+    },
+    "shortlist_calls": 2,
+    "construction_s": 10.390377800000351
+  },
+  {
+    "policy": "FULL",
+    "scenario": "2035-07-23_10",
+    "exit": 0,
+    "wall_s": 55.76499999999942,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "4ed2b54c70ebb7bff4d1bd0752fbd8afa13d5c75755c3c230fb28209ac20f7cc",
+    "final_observation_hash": "927d3ee93c7889cc23ef234521057953cd0c9485b27151e052cc6a615eaebefd",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 1063420.9329833984,
+    "verified_physical_cost_sum": 1063420.9329833984,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 7353.607339791954,
+    "redispatch_mwh": 194.28240648781258,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 0.21200686941544214,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 21.628486099998554,
+      "p50": 0.0027928999998039217,
+      "p95": 0.007591219999994788,
+      "max": 2.961017200000242
+    },
+    "simulate_calls": 7902,
+    "max_after_rho": 1.4022750854492188,
+    "overloaded_after_steps": 2,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 103,
+        "wall_s": 0.39428560000851576
+      },
+      "recover_topo": {
+        "calls": 1796,
+        "simulate_calls": 436,
+        "wall_s": 1.3735811000115064
+      },
+      "topo_12_unsafe": {
+        "calls": 2,
+        "simulate_calls": 842,
+        "wall_s": 2.136886200000845
+      },
+      "topo_n1_unsafe": {
+        "calls": 5,
+        "simulate_calls": 4496,
+        "wall_s": 11.855433300000186
+      },
+      "optim": {
+        "calls": 1,
+        "simulate_calls": 1,
+        "wall_s": 0.45350260000031994
+      }
+    },
+    "solver_statuses": {
+      "optimal": 1
+    },
+    "shortlist_calls": 0,
+    "construction_s": 0.3296730000001844
+  },
+  {
+    "policy": "NN20",
+    "scenario": "2035-07-23_10",
+    "exit": 0,
+    "wall_s": 63.78099999999995,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "4ed2b54c70ebb7bff4d1bd0752fbd8afa13d5c75755c3c230fb28209ac20f7cc",
+    "final_observation_hash": "927d3ee93c7889cc23ef234521057953cd0c9485b27151e052cc6a615eaebefd",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 1063420.9329833984,
+    "verified_physical_cost_sum": 1063420.9329833984,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 7353.607339791954,
+    "redispatch_mwh": 194.28240648781258,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 0.21200686941544214,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 19.887245899993104,
+      "p50": 0.002945199999885517,
+      "p95": 0.007884180000655756,
+      "max": 2.8580959000000803
+    },
+    "simulate_calls": 7102,
+    "max_after_rho": 1.4022750854492188,
+    "overloaded_after_steps": 2,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 103,
+        "wall_s": 0.3901088000038726
+      },
+      "recover_topo": {
+        "calls": 1796,
+        "simulate_calls": 436,
+        "wall_s": 1.4306841000116037
+      },
+      "topo_12_unsafe": {
+        "calls": 2,
+        "simulate_calls": 40,
+        "wall_s": 0.1009900999997626
+      },
+      "topo_n1_unsafe": {
+        "calls": 5,
+        "simulate_calls": 4496,
+        "wall_s": 11.968809199999669
+      },
+      "optim": {
+        "calls": 1,
+        "simulate_calls": 1,
+        "wall_s": 0.4481981999997515
+      }
+    },
+    "solver_statuses": {
+      "optimal": 1
+    },
+    "shortlist_calls": 2,
+    "construction_s": 10.148619300000064
+  },
+  {
+    "policy": "LOCAL20",
+    "scenario": "2035-10-29_15",
+    "exit": 0,
+    "wall_s": 38.3130000000001,
+    "steps": 102,
+    "native_horizon": 2017,
+    "completed_native_week": false,
+    "premature_end": true,
+    "initial_observation_hash": "3700c9d52c9c4f42ba60625411b39d023c9d3e8ea63c89e67e2af5e4651779a5",
+    "final_observation_hash": "28c00ab603e9beaa34f989b377623ca15af7d4d8bb74555ba14127d509ec2401",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 1,
+    "terminal_exception_types": [
+      "BackendError"
+    ],
+    "native_raw_cost_sum": 92693.56896972656,
+    "verified_physical_cost_sum": 92692.56896972656,
+    "unverified_or_error_terminal_count": 1,
+    "unverified_or_error_terminal_cost_sum": 1.0,
+    "losses_mwh": 426.1209043098148,
+    "redispatch_mwh": 197.27709576365424,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 1.1219984044631321,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": -2.9215686274509802,
+    "act_time": {
+      "sum": 15.457717799998136,
+      "p50": 0.0032520999998268962,
+      "p95": 0.015309640000168623,
+      "max": 4.948771399999714
+    },
+    "simulate_calls": 3674,
+    "max_after_rho": 1.288881778717041,
+    "overloaded_after_steps": 5,
+    "modules": {
+      "reconnect": {
+        "calls": 102,
+        "simulate_calls": 6,
+        "wall_s": 0.02425639999910345
+      },
+      "recover_topo": {
+        "calls": 40,
+        "simulate_calls": 34,
+        "wall_s": 0.12040600000182167
+      },
+      "topo_n1_unsafe": {
+        "calls": 4,
+        "simulate_calls": 3503,
+        "wall_s": 10.605590200000734
+      },
+      "optim": {
+        "calls": 3,
+        "simulate_calls": 3,
+        "wall_s": 4.3176325000004
+      },
+      "topo_12_unsafe": {
+        "calls": 1,
+        "simulate_calls": 20,
+        "wall_s": 0.05552280000028986
+      }
+    },
+    "solver_statuses": {
+      "optimal": 3
+    },
+    "shortlist_calls": 1,
+    "construction_s": 10.632439500000146
+  },
+  {
+    "policy": "RANDOM20",
+    "scenario": "2035-10-29_15",
+    "exit": 0,
+    "wall_s": 90.26600000000053,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "3700c9d52c9c4f42ba60625411b39d023c9d3e8ea63c89e67e2af5e4651779a5",
+    "final_observation_hash": "998ea908440138ce980943a2b33cffaa65d5ad1c0705ef9b4f4ad2e108bad908",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 4154600.1276245117,
+    "verified_physical_cost_sum": 4154600.1276245117,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 9887.736282745152,
+    "redispatch_mwh": 18032.69113670604,
+    "physical_curtailed_mwh": 2080.5593795999885,
+    "storage_throughput_mwh": 17.421864783080913,
+    "terminal_renewable_component": 0.9335747021673976,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 44.0376775000359,
+      "p50": 0.004872299999988172,
+      "p95": 0.01102603999988787,
+      "max": 5.2000089000002845
+    },
+    "simulate_calls": 5965,
+    "max_after_rho": 1.0667816400527954,
+    "overloaded_after_steps": 10,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 98,
+        "wall_s": 0.43958369996926194
+      },
+      "recover_topo": {
+        "calls": 1532,
+        "simulate_calls": 801,
+        "wall_s": 3.6040490999967005
+      },
+      "topo_n1_unsafe": {
+        "calls": 3,
+        "simulate_calls": 2727,
+        "wall_s": 8.112252299999454
+      },
+      "optim": {
+        "calls": 13,
+        "simulate_calls": 13,
+        "wall_s": 23.78974670000025
+      },
+      "topo_12_unsafe": {
+        "calls": 14,
+        "simulate_calls": 280,
+        "wall_s": 0.9301091999996061
+      }
+    },
+    "solver_statuses": {
+      "optimal": 10,
+      "user_limit": 1,
+      "optimal_inaccurate": 2
+    },
+    "shortlist_calls": 14,
+    "construction_s": 10.204664899999443
+  },
+  {
+    "policy": "FULL",
+    "scenario": "2035-10-29_15",
+    "exit": 0,
+    "wall_s": 104.3130000000001,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "3700c9d52c9c4f42ba60625411b39d023c9d3e8ea63c89e67e2af5e4651779a5",
+    "final_observation_hash": "f51eb145c41a1ee472c2aa3690d988af7662ce855a348e12ce60ef9b8c08a286",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 6024537.0859375,
+    "verified_physical_cost_sum": 6024537.0859375,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 11154.276522684353,
+    "redispatch_mwh": 29344.88377972399,
+    "physical_curtailed_mwh": 7697.407489152004,
+    "storage_throughput_mwh": 10.895201838885743,
+    "terminal_renewable_component": 0.7550367210527702,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 69.24141990000771,
+      "p50": 0.0038807000000815606,
+      "p95": 0.012228760000107282,
+      "max": 4.887522099999842
+    },
+    "simulate_calls": 15599,
+    "max_after_rho": 1.086929440498352,
+    "overloaded_after_steps": 11,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 100,
+        "wall_s": 0.4003989000011643
+      },
+      "recover_topo": {
+        "calls": 1413,
+        "simulate_calls": 891,
+        "wall_s": 3.7518858000066757
+      },
+      "topo_n1_unsafe": {
+        "calls": 10,
+        "simulate_calls": 8773,
+        "wall_s": 28.877781100000902
+      },
+      "optim": {
+        "calls": 10,
+        "simulate_calls": 10,
+        "wall_s": 17.189007899999524
+      },
+      "topo_12_unsafe": {
+        "calls": 9,
+        "simulate_calls": 3789,
+        "wall_s": 12.309124399998836
+      }
+    },
+    "solver_statuses": {
+      "optimal": 8,
+      "optimal_inaccurate": 1,
+      "user_limit": 1
+    },
+    "shortlist_calls": 0,
+    "construction_s": 0.3519480000004478
+  },
+  {
+    "policy": "NN20",
+    "scenario": "2035-10-29_15",
+    "exit": 0,
+    "wall_s": 99.3119999999999,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "3700c9d52c9c4f42ba60625411b39d023c9d3e8ea63c89e67e2af5e4651779a5",
+    "final_observation_hash": "2723ea4cf6c3a25dca4dec927185e79488c477afba7c34a5263b65a2d1ffc901",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 6029519.7080078125,
+    "verified_physical_cost_sum": 6029519.7080078125,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 11115.620467463734,
+    "redispatch_mwh": 29415.61969922808,
+    "physical_curtailed_mwh": 7697.407489152004,
+    "storage_throughput_mwh": 12.260797326142589,
+    "terminal_renewable_component": 0.7550367210527702,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 55.694836800030316,
+      "p50": 0.0036055999999007327,
+      "p95": 0.011924399999770678,
+      "max": 5.029287499999555
+    },
+    "simulate_calls": 12031,
+    "max_after_rho": 1.086929440498352,
+    "overloaded_after_steps": 12,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 100,
+        "wall_s": 0.3615678999949523
+      },
+      "recover_topo": {
+        "calls": 1418,
+        "simulate_calls": 901,
+        "wall_s": 3.4807522999881257
+      },
+      "topo_n1_unsafe": {
+        "calls": 10,
+        "simulate_calls": 8773,
+        "wall_s": 27.66811079999934
+      },
+      "optim": {
+        "calls": 11,
+        "simulate_calls": 11,
+        "wall_s": 17.523044999999
+      },
+      "topo_12_unsafe": {
+        "calls": 10,
+        "simulate_calls": 200,
+        "wall_s": 0.5939086999997016
+      }
+    },
+    "solver_statuses": {
+      "optimal": 9,
+      "optimal_inaccurate": 1,
+      "user_limit": 1
+    },
+    "shortlist_calls": 10,
+    "construction_s": 9.825598600000376
+  },
+  {
+    "policy": "NN352",
+    "scenario": "2035-10-29_15",
+    "exit": 0,
+    "wall_s": 108.32899999999972,
+    "steps": 2017,
+    "native_horizon": 2017,
+    "completed_native_week": true,
+    "premature_end": false,
+    "initial_observation_hash": "3700c9d52c9c4f42ba60625411b39d023c9d3e8ea63c89e67e2af5e4651779a5",
+    "final_observation_hash": "2723ea4cf6c3a25dca4dec927185e79488c477afba7c34a5263b65a2d1ffc901",
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "native_raw_cost_sum": 6029519.7080078125,
+    "verified_physical_cost_sum": 6029519.7080078125,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "losses_mwh": 11115.620467463734,
+    "redispatch_mwh": 29415.61969922808,
+    "physical_curtailed_mwh": 7697.407489152004,
+    "storage_throughput_mwh": 12.260797326142589,
+    "terminal_renewable_component": 0.7550367210527702,
+    "terminal_assistant_component": 1.0,
+    "act_time": {
+      "sum": 64.96947300000647,
+      "p50": 0.0035584999995990074,
+      "p95": 0.011705559999791138,
+      "max": 5.0435813999993115
+    },
+    "simulate_calls": 15351,
+    "max_after_rho": 1.086929440498352,
+    "overloaded_after_steps": 12,
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 100,
+        "wall_s": 0.3582099000004746
+      },
+      "recover_topo": {
+        "calls": 1418,
+        "simulate_calls": 901,
+        "wall_s": 3.598490499989566
+      },
+      "topo_n1_unsafe": {
+        "calls": 10,
+        "simulate_calls": 8773,
+        "wall_s": 27.217719499998566
+      },
+      "optim": {
+        "calls": 11,
+        "simulate_calls": 11,
+        "wall_s": 17.502571299999545
+      },
+      "topo_12_unsafe": {
+        "calls": 10,
+        "simulate_calls": 3520,
+        "wall_s": 10.257766699999593
+      }
+    },
+    "solver_statuses": {
+      "optimal": 9,
+      "optimal_inaccurate": 1,
+      "user_limit": 1
+    },
+    "shortlist_calls": 10,
+    "construction_s": 9.613469899999473
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "source": "outputs\\grid08\\v1\\train\\gnn\\e0_2035-10-29_15",
+  "physical_steps": 0,
+  "forecast_steps": 0,
+  "qualified": false,
+  "scope": "One training counterexample, two-step branches. Actual branches are privileged offline diagnostics, never policy input.",
+  "error": "Traceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-24\\influence-maximization-im-ccf-b-grl\\work\\grid08\\ramp_counterexample.py\", line 33, in <module>\n    assert digest(action_vector(act))==rows[i]['action_hash']\n                  ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-24\\influence-maximization-im-ccf-b-grl\\work\\grid01\\trace_agent.py\", line 15, in action_vector\n    fields=[action._get_array_from_attr_name(name).astype(dt_float) for name in type(action).attr_list_vect]\n                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: type object 'NoneType' has no attribute 'attr_list_vect'\n"
+}

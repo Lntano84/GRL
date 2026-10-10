@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "kind": "gnn",
+      "loss": 6.443647384643555,
+      "gradient_l1": {
+        "encoder": 0.2997828237712383,
+        "head": 12.984333312138915,
+        "plans": 2.7803740522358567,
+        "edge": 0.1637708256021142
+      },
+      "weights_unchanged": true
+    },
+    {
+      "kind": "mlp",
+      "loss": 6.438606262207031,
+      "gradient_l1": {
+        "encoder": 9.582095813471824,
+        "head": 27.08859977312386,
+        "plans": 2.6698122792877257
+      },
+      "weights_unchanged": true
+    }
+  ],
+  "optimizer_steps": 0,
+  "model_fits": 0,
+  "forecasts": 0
+}

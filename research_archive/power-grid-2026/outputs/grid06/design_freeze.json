@@ -1,0 +1,110 @@
+{
+  "stage": "GRID06",
+  "environment_seed": 0,
+  "data_root": "work/grid03/formal_env_initialized",
+  "split": "validation",
+  "selected_weeks": [
+    "2035-01-08_5",
+    "2035-04-30_12",
+    "2035-07-16_5",
+    "2035-10-01_5"
+  ],
+  "selection": "Pre-existing GRID03 monthly validation subset; take January, April, July, October. Naming only; no outcome/initial-load selection.",
+  "policies": [
+    "NN20",
+    "FALLBACK90",
+    "NN352"
+  ],
+  "plan": [
+    {
+      "scenario": "2035-01-08_5",
+      "policy": "NN20"
+    },
+    {
+      "scenario": "2035-01-08_5",
+      "policy": "FALLBACK90"
+    },
+    {
+      "scenario": "2035-01-08_5",
+      "policy": "NN352"
+    },
+    {
+      "scenario": "2035-04-30_12",
+      "policy": "FALLBACK90"
+    },
+    {
+      "scenario": "2035-04-30_12",
+      "policy": "NN352"
+    },
+    {
+      "scenario": "2035-04-30_12",
+      "policy": "NN20"
+    },
+    {
+      "scenario": "2035-07-16_5",
+      "policy": "NN352"
+    },
+    {
+      "scenario": "2035-07-16_5",
+      "policy": "NN20"
+    },
+    {
+      "scenario": "2035-07-16_5",
+      "policy": "FALLBACK90"
+    },
+    {
+      "scenario": "2035-10-01_5",
+      "policy": "NN352"
+    },
+    {
+      "scenario": "2035-10-01_5",
+      "policy": "FALLBACK90"
+    },
+    {
+      "scenario": "2035-10-01_5",
+      "policy": "NN20"
+    }
+  ],
+  "initial_top_k": 20,
+  "expanded_top_k": 352,
+  "rule": "Exact frozen GRID05 fallback.py reused; no candidate or selected forecast max rho >= original rho_safe=0.9 expands to remaining332. Cache first20 original float32 rewards; preserve full neural tie order and all downstream modules.",
+  "quality_screen": {
+    "no_earlier_end_than_NN20_any_week": true,
+    "maximum_complete_week_relative_cost_regression": 0.02,
+    "meaningful_benefit_vs_NN20": "A new full native completion, or >=5% lower raw cost on a jointly complete week; both-incomplete end-step gains are reported but do not meet this benefit screen.",
+    "meaningful_benefit_weeks_required": 2,
+    "full_search_quality_retention": "No earlier end than concurrent NN352 on any week; no >2% raw cost regression on jointly complete pairs."
+  },
+  "verdict_order": [
+    "Any earlier end or >2% complete-week cost regression vs NN20: DO_NOT_PROMOTE_RULE_AS_GENERAL_IMPROVEMENT.",
+    "Otherwise, >=2 meaningful benefit weeks vs NN20 and full-search quality retention: VALIDATION_QUALITY_SCREEN_SUPPORTED.",
+    "Otherwise, >=2 meaningful benefit weeks but NN352 retention fails: BENEFIT_VS_NN20_WITH_FULLSEARCH_QUALITY_TRADEOFF.",
+    "Otherwise, zero meaningful benefits: NO_PRACTICAL_INCREMENTAL_BENEFIT_CONFIRMED.",
+    "Otherwise: LIMITED_SIGNAL_NOT_CONFIRMED."
+  ],
+  "cost_order": "Completion/end-step first; no cost ranking of incomplete episodes. Raw costs only; competition normalized score not certified.",
+  "compute_order": "Record all simulations and end-to-end worker wall; compare equal-prior-state prefixes. Do not infer speed from incomparable different-length trajectories.",
+  "qualification": "Pure file/hash/AST checks only. Reuse unchanged GRID05 zero-physical preflight, including its source full-greedy equality test. No new preflight simulations or physical steps.",
+  "caps": {
+    "main_runs": 12,
+    "physical_steps": 24300,
+    "per_run_after_import_s": 900,
+    "import_s": 180,
+    "total_runner_including_qualification_s": 2700,
+    "output_bytes": 2147483648
+  },
+  "restrictions": [
+    "No training or model changes",
+    "No threshold/seed/pool tuning",
+    "No replacement weeks or automated retries",
+    "Other validation and all test outcomes remain sealed",
+    "No automatic next-stage or GRL branch"
+  ],
+  "limitations": [
+    "Four previously unrun validation weeks, one environment seed: not a population guarantee.",
+    "Suffix groups are a partition convention, not proven statistical independence.",
+    "Pretrained LJN training identities unknown: cannot certify these weeks unseen by the released model.",
+    "Synthetic public France2035 modified IEEE118 benchmark, not RTE production logs.",
+    "Existing author neural shortlist plus physics search/continuous control is not our novel architecture."
+  ]
+}

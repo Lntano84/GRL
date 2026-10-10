@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "engineering_gate_passed": true,
+  "rows_and_vectors_checked": 2017,
+  "physical_steps": 2017,
+  "native_simulations": 24185,
+  "ledgers_recomputed": 2017,
+  "max_ledger_abs_residual": 0.012592914724336879,
+  "topology_calls_reconstructed": 24,
+  "expansion_events": 1,
+  "intervention_step": 221,
+  "forced_production_expansions": 0,
+  "illegal_actual_steps": 0,
+  "ambiguous_actual_steps": 0,
+  "exception_actual_steps": 0,
+  "exception_simulation_calls": 2804,
+  "completed_native_week": true,
+  "counterfactual_raw_cost": 7786842.5236206055,
+  "archived_nn20_raw_cost": 6707772.520812988,
+  "archived_fallback_raw_cost": 8414074.452331543,
+  "relative_cost_change_vs_archived_nn20": 0.16086860421391158,
+  "relative_cost_change_vs_archived_fallback": -0.0745455643712698,
+  "operational_cost_components": {
+    "loss": 2189784.77672588,
+    "redispatch": 5590555.805284059,
+    "curtailment_change": 1746.7660779356959,
+    "storage": 4754.558321728216
+  },
+  "process_wall_s": 202.79105759999993,
+  "scope": "Single post-hoc intervention on an exposed week, archived baseline; not a deployable policy or generalization test. Exact engineering gate reproduction reduces but does not quantify later cross-run solver noise. No training."
+}

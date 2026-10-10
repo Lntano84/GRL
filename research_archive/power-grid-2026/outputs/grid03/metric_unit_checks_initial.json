@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "physical_steps": 0,
+  "checks": [
+    {
+      "kind": "renewable_transform",
+      "usage_percent": 50,
+      "expected": -1,
+      "actual": -1.0
+    },
+    {
+      "kind": "renewable_transform",
+      "usage_percent": 80,
+      "expected": 0,
+      "actual": 0.0
+    },
+    {
+      "kind": "renewable_transform",
+      "usage_percent": 100,
+      "expected": 1,
+      "actual": 1.0
+    },
+    {
+      "kind": "assistant_no_attack",
+      "blackout": false,
+      "expected": 1,
+      "actual": 1
+    },
+    {
+      "kind": "assistant_no_attack",
+      "blackout": true,
+      "expected": 0,
+      "actual": 0.0
+    },
+    {
+      "kind": "raw_cost_hand_fixture",
+      "actual": 36.66667175292969,
+      "expected": 36.666666666666664
+    },
+    {
+      "kind": "independent_ledger_hand_fixture",
+      "actual": {
+        "marginal_cost": 20.0,
+        "losses_mwh": 0.8333333333333333,
+        "redispatch_mwh": 0.3333333333333333,
+        "curtailed_mwh": 0.41666666666666663,
+        "storage_throughput_mwh": 0.25,
+        "recomputed_raw_cost": 36.66666666666666
+      },
+      "expected": 36.666666666666664
+    },
+    {
+      "kind": "installed_helper_hand_fixture",
+      "actual": [
+        40.0,
+        0.0,
+        100.0,
+        100.0
+      ],
+      "expected_total": 40,
+      "expected_operational": 0
+    },
+    {
+      "kind": "installed_helper_hand_fixture",
+      "actual": [
+        88.0,
+        80.0,
+        100.0,
+        100.0
+      ],
+      "expected_total": 88,
+      "expected_operational": 80
+    }
+  ],
+  "source_sha256": {
+    "utils/l2rpn_idf_2023_scores.py": "eb491fc36f180e67aee2109639a09d392fd343f28f0f0909c2c000580d1cfffd",
+    "utils/l2rpn_2020_scores.py": "2fedc1eb185527fd893d5ae6db4a2e16f9a95e5d46417d4baa149832ba3c5f82",
+    "Reward/l2RPNSandBoxScore.py": "d5af0bd78242fc488d6a361fb9eb6d510d4e398d0db595b3e0bdabcb27cab977",
+    "Reward/_alertTrustScore.py": "f1f1ffccdcd6673a89fb1edd7941d241a54cbc5b93765e0672545faba0e3f6cd",
+    "Reward/_newRenewableSourcesUsageScore.py": "66f4af6a502832b5e57f157898d5be8901cff4f534ebd0a811081a8b469756ff"
+  },
+  "normalizer_load_read_twice": true,
+  "status": "Raw reward and arithmetic qualification only; competition-exact normalization not certified.",
+  "unmodified_installed_grid2op": "1.12.5"
+}

@@ -1,0 +1,33 @@
+{
+  "status": "FAIL_QUALIFICATION",
+  "actual_steps": 0,
+  "versions": {
+    "torch": "2.8.0",
+    "stable-baselines3": "2.3.0",
+    "gymnasium": "0.29.1",
+    "numpy": "2.4.6",
+    "scipy": "1.18.1",
+    "cvxpy": "1.9.3",
+    "lightsim2grid": "1.1.0",
+    "grid2op": "1.12.5"
+  },
+  "torch_threads": 1,
+  "native_max_episode_duration": 575,
+  "mapping_keys": [
+    "curriculum_id_actions",
+    "g2op_id_actions",
+    "vect_actions"
+  ],
+  "vector_shape": [
+    352,
+    1605
+  ],
+  "curriculum_shape": [
+    352
+  ],
+  "mapping_count": 352,
+  "mapping_original_type": "<class 'grid2op.Space.GridObjects.ActionIDF2023_l2rpn_idf_2023'>",
+  "error": "AssertionError: 2.0",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-24\\influence-maximization-im-ccf-b-grl\\work\\grid02\\preflight.py\", line 49, in <module>\n    assert np.array_equal(array, vectors, equal_nan=True), float(np.max(np.abs(array-vectors)))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 2.0\n",
+  "wall_s": 10.566767500000424
+}

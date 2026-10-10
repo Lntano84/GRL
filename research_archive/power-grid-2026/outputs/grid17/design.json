@@ -1,0 +1,61 @@
+{
+  "stage": "GRID17_BORROWED_DISCONNECTED_ENDPOINT_FEASIBILITY_PROBE",
+  "seed": 0,
+  "targets": [
+    {
+      "week": "2035-01-29_4",
+      "step": 521,
+      "call_file": "outputs/grid15/runs/2035-01-29_4/call000.json",
+      "state_hash": "62fdcae2ddd09b29fccc8f3b5a4b6cffdcfea5ec64b2ed9ecc3858cda1dfd691",
+      "candidate_ids": [
+        58,
+        172,
+        202
+      ]
+    },
+    {
+      "week": "2035-04-16_2",
+      "step": 111,
+      "call_file": "outputs/grid15/runs/2035-04-16_2/call000.json",
+      "state_hash": "6790850e462a154822ebdda43f129d93eaa389ad06e03c4a92665adadeb6e19e",
+      "candidate_ids": [
+        46,
+        65,
+        76
+      ]
+    },
+    {
+      "week": "2035-07-23_10",
+      "step": 548,
+      "call_file": "outputs/grid15/runs/2035-07-23_10/call000.json",
+      "state_hash": "9002936f28e47fd03bd2457d19c84d8dc12a2291a40dee5363dc23e6e367d95c",
+      "candidate_ids": [
+        94,
+        176,
+        196
+      ]
+    },
+    {
+      "week": "2035-10-29_15",
+      "step": 101,
+      "call_file": "outputs/grid15/runs/2035-10-29_15/call002.json",
+      "state_hash": "e132238c407894ffe8312689578677def6a60bcd64ba119489bef3a9ae830e79",
+      "candidate_ids": [
+        46,
+        65,
+        76
+      ]
+    }
+  ],
+  "selection": "First actual original N1 call per exposed week with a line-cooldown conflict removable by masking; first three eligible original pool IDs. Engineering-selected cases only.",
+  "mask": "Clear set-bus assignments at endpoints of currently disconnected lines unless original incoming base explicitly reconnects/changes status or sets either endpoint bus. Preserve all other fields; copy only.",
+  "replay": "Use already saved physical actions, assert every observation equals original prefix. No agent search in prefix; paired original/masked public one-step forecasts only, no target action applied.",
+  "criteria": "Engineering applicability: at least one original illegal candidate becomes strictly legal/nonterminal. Beneficial applicability separately requires its maximum rho improve current rho. Does not establish closed-loop quality or novelty.",
+  "scope": "Implementation of known 2025 paper enhancement, not a new algorithm. No fit, no sealed evaluation, no superiority claim from engineer-selected targets.",
+  "reference": "https://arxiv.org/html/2503.15190v2#S4.SS4.SSS2",
+  "caps": {
+    "physical_steps": 1277,
+    "public_forecasts": 24,
+    "wall_s": 180
+  }
+}

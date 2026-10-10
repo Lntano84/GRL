@@ -1,0 +1,22 @@
+{
+  "stage": "GRID18_KNOWN_MASKED_N1_FULL_BASELINE",
+  "weeks": [
+    "2035-01-29_4",
+    "2035-04-16_2",
+    "2035-07-23_10",
+    "2035-10-29_15"
+  ],
+  "seed": 0,
+  "variant": "Only N1 full-search candidate set-bus assignments at disconnected endpoints cleared unless incoming base intentionally reconnects. No masking in NN20/reversion/reconnection modules; those remain original.",
+  "controller": "Original NN20, full N1, unsafe QP, ALWAYS_RESTORE cadence6. Original library and model assets immutable; modified candidates are copies.",
+  "reference": "https://arxiv.org/html/2503.15190v2#S4.SS4.SSS2",
+  "measure": "Full survival first; cost only jointly complete against GRID16 FULL. One wall run per cell with different insertion overhead, so no end-to-end speed superiority claim.",
+  "training": "None. Store all actual source candidate public forecasts for later legal input audit, without promising any new learned model.",
+  "scope": "Known engineering baseline improvement. Cannot claim GNN, RL, or novel algorithm contribution from it.",
+  "caps": {
+    "physical_steps": 8500,
+    "public_forecasts": 70000,
+    "wall_s": 1800,
+    "episode_s": 420
+  }
+}

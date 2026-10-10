@@ -1,7 +1,7 @@
 # GRL Agent Guide
 
 ## Project purpose
-GRL began as an Influence Maximization codebase and now also preserves audited explorations of related decision and optimization tasks. Read the current research state and research_archive/decision-studies-2026/README.md before proposing work. Conditional marginal gain learning is historical; no current GRL advantage or permission to resume training is implied by the archived experiments.
+GRL began as an Influence Maximization codebase and now also preserves audited explorations of related decision and optimization tasks, including Grid2Op/L2RPN auxiliary search. Read the current research state, research_archive/power-grid-2026/README.md and research_archive/decision-studies-2026/README.md before proposing work. Conditional marginal gain learning is historical; no current GRL advantage or permission to resume training is implied by archive contents alone. Current direct user authorization takes precedence over historical task scope.
 
 ## First-read order
 Whenever starting a fresh Codex/agent session in this repository, read in this order:
@@ -13,7 +13,7 @@ Whenever starting a fresh Codex/agent session in this repository, read in this o
 6. Existing technical docs such as `docs/EXPERIMENT_PROTOCOL.md`, `docs/CODEBASE_GUIDE.md`, and `docs/PAPER_CODE_MAPPING.md` as needed
 
 ## Workspace rules
-- Primary workspace: `/workspace/GRL`.
+- Primary Linux workspace: `/workspace/GRL`. The documented Windows integration checkout is `C:/Users/windows/Documents/Codex/2026-09-24/influence-maximization-im-ccf-b-grl/work/GRL-results-integration`; Grid2Op scratch/results are preserved in its parent Codex workspace and selectively archived here.
 - Do not create GRL temporary worktrees, clones, test folders, or experiment scratch directories directly under `/workspace`.
 - Keep all GRL-specific temporary material inside `/workspace/GRL` (or a documented project-local subdirectory).
 - Do not delete or overwrite experiment outputs merely to make the Git working tree look clean.
@@ -35,7 +35,7 @@ After a meaningful experiment or technical decision:
 - Do not claim a result as confirmed until the command/config/result artifact can be located.
 
 ## Git discipline
-- Main repository remote: **`Lntano84/GRL`**, branch **`main`** (local branch is `master`;
+- Main repository remote: **`Lntano84/GRL`**, branch **`main`** (this Windows integration branch is `main`;
   push with `HEAD:main`).  Git remote name in this working copy: `lntano-src`.
 - **Push after every meaningful unit of work, without being asked.**  A stage, a fix, a corrected
   test, an experiment result — if it is worth committing it is worth pushing immediately.  Do not

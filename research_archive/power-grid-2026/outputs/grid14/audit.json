@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "physical_step_rows": 13523,
+  "action_roundtrips": 13523,
+  "forecast_cost_scalar_checks": 32,
+  "schema_qualification_forecasts": 1,
+  "audit_wall_s": 25.629710199998954,
+  "observation_roundtrips": 13523,
+  "common_prefix_exact_step_checks": 846,
+  "delivery_gates": 7,
+  "max_independent_ledger_residual": 0.019078296036695974,
+  "preserved_failed_attempts": [
+    {
+      "attempt": "invalid_attempt_01",
+      "physical_steps": 200,
+      "public_forecasts_committed_or_recorded": 388,
+      "shadow_qp_calls": 0,
+      "wall_s": 23.72424839999985
+    },
+    {
+      "attempt": "invalid_attempt_02",
+      "physical_steps": 200,
+      "public_forecasts_committed_or_recorded": 436,
+      "shadow_qp_calls": 8,
+      "wall_s": 42.41468159999931
+    }
+  ],
+  "prior_deliveries_verified": {
+    "grid08": 904,
+    "grid09": 208,
+    "grid10": 224,
+    "grid11_failure_context": 25,
+    "grid12": 10,
+    "grid13": 14
+  },
+  "scope": "Stored-vector decoding, math.fsum ledger calculation, candidate rule and prefix recomputation; one public forecast for schema qualification only, no independent AC solver or model fit."
+}

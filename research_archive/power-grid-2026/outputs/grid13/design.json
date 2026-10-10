@@ -1,0 +1,38 @@
+{
+  "source": {
+    "scenario": "2035-01-29_4",
+    "policy": "gnn",
+    "steps": 1719,
+    "complete": false,
+    "raw_cost": 2555296.1684570312,
+    "eligible": 145,
+    "offered": 139,
+    "selected": 133,
+    "simulations": 11320,
+    "illegal": 0,
+    "ambiguous": 0,
+    "exceptions": 1,
+    "wall_s": 375.6970285,
+    "neural_inference_wall_s": 1.9414534999953048,
+    "path": "outputs\\grid08\\v2\\train\\gnn\\e3_2035-01-29_4"
+  },
+  "states": [
+    1717,
+    1718
+  ],
+  "line": 81,
+  "candidate_specs": [
+    "saved_base",
+    "default_remembered_bus_reconnection",
+    "1_1",
+    "1_2",
+    "2_1",
+    "2_2"
+  ],
+  "public_forecast_horizon": 6,
+  "physical_cap": 1718,
+  "forecast_cap": 100,
+  "wall_cap_s": 180,
+  "motivation": "GRID12 archived state line 81 cooldown falls from 3 to 1; check the subsequent two public states. Direct reconnection is outside the GRID11 bus-topology candidate pool.",
+  "scope": "One already-seen training failure; public one-action-then-noop forecasts only. Not a deployed rescue, closed-loop policy or independent evaluation."
+}

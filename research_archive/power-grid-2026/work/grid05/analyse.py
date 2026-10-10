@@ -1,0 +1,128 @@
+"""Apply the frozen development screen; consumes audited saved runs only."""
+import hashlib
+import json
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[2]
+OUT=ROOT/'outputs/grid05';OLD=ROOT/'outputs/grid04'
+def load(p):return json.loads(p.read_text(encoding='utf-8'))
+def lines(p):return [json.loads(s) for s in p.read_text(encoding='utf-8').splitlines() if s]
+def save(name,obj):(OUT/name).write_text(json.dumps(obj,indent=2,allow_nan=False),encoding='utf-8')
+
+audit=load(OUT/'GRID05_audit.json');assert audit['passed']
+design=load(OUT/'design_freeze.json')
+runs=load(OUT/'per_run.json');historical=load(OLD/'per_run.json')
+lookup={(r['scenario'],r['policy']):r for r in runs}
+old={(r['scenario'],r['policy']):r for r in historical}
+comparisons=[]
+for scene in design['selected_development_weeks']:
+    n,f=lookup[(scene,'NN20')],lookup[(scene,'FALLBACK90')]
+    h=old[(scene,'NN352')]
+    jointly_complete=n['completed_native_week'] and f['completed_native_week']
+    rows=lines(OUT/'runs'/f'{scene}__FALLBACK90'/'steps.jsonl')
+    histrows=lines(OLD/'runs_v3'/f'{scene}__NN352'/'steps.jsonl')
+    equal_full=len(rows)==len(histrows) and all(a['action_hash']==b['action_hash'] and a['observation_hash']==b['observation_hash'] for a,b in zip(rows,histrows))
+    comparisons.append(dict(scenario=scene,NN20_steps=n['steps'],fallback_steps=f['steps'],historical_NN352_steps=h['steps'],
+        no_earlier_end=f['steps']>=n['steps'],jointly_complete=jointly_complete,
+        NN20_cost=n['native_raw_cost_sum'] if jointly_complete else None,
+        fallback_cost=f['native_raw_cost_sum'] if jointly_complete else None,
+        cost_reduction_relative_to_new_NN20=(n['native_raw_cost_sum']-f['native_raw_cost_sum'])/abs(n['native_raw_cost_sum']) if jointly_complete else None,
+        fallback_matches_historical_NN352_entire_action_and_state_trace=equal_full,
+        NN20_simulates=n['simulate_calls'],fallback_simulates=f['simulate_calls'],historical_NN352_simulates=h['simulate_calls'],
+        expansions=f['expansions'],fallback_decisions=f['fallback_decisions'],changed_original_topology_selection=f['expanded_changed_original_selection']))
+april=design['selected_development_weeks'][1]
+n,f,h=lookup[(april,'NN20')],lookup[(april,'FALLBACK90')],old[(april,'NN352')]
+gap=n['native_raw_cost_sum']-h['native_raw_cost_sum']
+assert gap>0
+recovery=(n['native_raw_cost_sum']-f['native_raw_cost_sum'])/gap if n['completed_native_week'] and f['completed_native_week'] else None
+screen=dict(exact_NN20_calibration=audit['NN20_exact_GRID04_calibration'],
+    no_earlier_end=all(c['no_earlier_end'] for c in comparisons),
+    january_end_at_least_1719=comparisons[0]['fallback_steps']>=1719,
+    april_joint_completion_and_80pct_gap_recovery=recovery is not None and recovery>=.8,
+    no_more_than_2pct_cost_regression=all(c['cost_reduction_relative_to_new_NN20']>=-.02 for c in comparisons if c['jointly_complete']))
+if not screen['exact_NN20_calibration']:verdict='CALIBRATION_FAILED'
+elif not screen['no_earlier_end'] or not screen['no_more_than_2pct_cost_regression']:verdict='DO_NOT_PROMOTE_RULE_HERE'
+elif all(screen.values()):verdict='SUPPORTED_ON_THIS_DEVELOPMENT_SET_ONLY'
+else:verdict='MIXED_OR_INCONCLUSIVE'
+summary=dict(verdict=verdict,screen=screen,april_historical_gap=gap,april_gap_recovery_fraction=recovery,
+    comparisons=comparisons,no_training_branch=True,independent_confirmation=False)
+save('GRID05_summary.json',summary)
+
+table=['| 开发周 | 新 NN20 结束步 | FALLBACK90 结束步 | 共同完整周成本降幅 | 扩展 / 触发检查 |',
+       '|---|---:|---:|---:|---:|']
+for c in comparisons:
+    reduction=f"{100*c['cost_reduction_relative_to_new_NN20']:.4f}%" if c['jointly_complete'] else '不比较（均提前结束）'
+    table.append(f"| {c['scenario']} | {c['NN20_steps']} | {c['fallback_steps']} | {reduction} | {c['expansions']} / {c['fallback_decisions']} |")
+cost_table=['| 开发周 | NN20 原始成本 | 回退原始成本 | 历史 NN352 原始成本 |', '|---|---:|---:|---:|']
+for c in comparisons:
+    if c['jointly_complete']:
+        cost_table.append(f"| {c['scenario']} | {c['NN20_cost']:.6f} | {c['fallback_cost']:.6f} | {old[(c['scenario'],'NN352')]['native_raw_cost_sum']:.6f} |")
+counter_table=['| 开发周 | NN20 总模拟数 | 回退总模拟数 | 历史 NN352 总模拟数 |', '|---|---:|---:|---:|']
+for c in comparisons:counter_table.append(f"| {c['scenario']} | {c['NN20_simulates']} | {c['fallback_simulates']} | {c['historical_NN352_simulates']} |")
+paired=load(OUT/'paired_trajectories.json')
+prefix_table=['| 开发周 | 相同决策前状态前缀步数 | NN20 模拟数 / 动作秒 | 回退模拟数 / 动作秒 |', '|---|---:|---:|---:|']
+for p in paired:prefix_table.append(f"| {p['scenario']} | {p['same_prior_prefix_steps']} | {p['same_prior_NN20_simulates']} / {p['same_prior_NN20_act_s']:.6f} | {p['same_prior_fallback_simulates']} / {p['same_prior_fallback_act_s']:.6f} |")
+status_cn={'SUPPORTED_ON_THIS_DEVELOPMENT_SET_ONLY':'固定回退规则通过本开发集筛查；不构成独立确认或学习贡献。',
+    'DO_NOT_PROMOTE_RULE_HERE':'命中更早终止或完整周成本退化规则；当前不推广这条回退规则。',
+    'MIXED_OR_INCONCLUSIVE':'部分筛查未通过；结果混合或不确定，不调整阈值继续寻找赢家。',
+    'CALIBRATION_FAILED':'新 NN20 未精确重现历史轨迹；不能宣称干净的增量规则效果。'}
+details=load(OUT/'expansion_audit.json')
+expansions=sum(e['expanded'] for e in details)
+same_full=sum(c['fallback_matches_historical_NN352_entire_action_and_state_trace'] for c in comparisons)
+report=f'''# GRID05：固定阈值回退检查
+
+**裁决：{verdict}。{status_cn[verdict]}**
+
+本轮仅比较同一作者控制器的原 NN20 与 FALLBACK90。原 20 项搜索无候选，或它选中的拓扑动作已模拟最大线路负载率 rho≥0.9 时，扩展至同库 352 项。0.9 直接取作者 rho_safe；这是控制器阈值，不是安全认证。其余模块、参数、原生限制不变。没有训练、扫阈值、增加种子、改变候选池或进入验证/测试周。
+
+## 冻结筛查与结果
+
+{chr(10).join(table)}
+
+四个 NN20 的动作、状态、原始成本和模拟调用逐步重现 GRID04：**{screen['exact_NN20_calibration']}**。其余冻结判据：各周不更早结束 **{screen['no_earlier_end']}**；一月≥1719步 **{screen['january_end_at_least_1719']}**；四月完整且恢复历史 NN352 成本差的≥80% **{screen['april_joint_completion_and_80pct_gap_recovery']}**；共同完整周无>2%成本退化 **{screen['no_more_than_2pct_cost_regression']}**。
+
+四月历史成本差为 {gap:.6f}，本轮恢复比例 **{recovery:.6%}**。这是结果前固定的开发筛查尺度，不能当作显著性、等价检验或泛化保证。
+
+{chr(10).join(cost_table)}
+
+原始成本来自已核对的 native operational cost。提前结束周不排名成本；终止错误的成本另列，未冒充物理账目。未使用尚未认证的归一化比赛综合分数。
+
+## 扩展、缓存与成本
+
+本轮 {len(details)} 次 Top-20 模块调用中扩展 {expansions} 次。每次仅新增 332 项，前20项原始 float32 奖励复用；合并后按完整神经排序破并列。生产 forced_test 全为 False。逐调用重建 eligibility、奖励、触发条件、池内身份、合并顺序和返回动作；未重新运行神经网络来认证其排名准确性。
+
+{chr(10).join(counter_table)}
+
+总模拟数包含重连、恢复、N−1 与其他作者模块。不同策略走过的状态/长度可能不同，整周总数及墙钟不能单独解释为同质量加速。历史 NN352 只作质量与模拟数描述，不作跨批时间显著性比较。回退与历史 NN352 的完整动作/状态轨迹一致周数为 {same_full}/4，详细逐周值见 GRID05_summary.json。
+
+{chr(10).join(prefix_table)}
+
+以上时间仅描述相同决策前状态的共同前缀，包含已有遥测与两次神经排序等实际开销；不是多次重复的延迟实验。原生五分钟步长不是我们已经认证的生产决策时限。
+
+## 完整性与资源
+
+- 8/8 正式运行退出0；{audit['physical_steps']} 次实际推进及对应完整向量重读、哈希与状态链核对。
+- {audit['public_ledgers_recomputed']} 个合格物理账目独立重算；最大原始成本残差 {audit['max_cost_abs_residual']:.9f}，均在既定 float32 计量容差内。其余终止错误账目分开保存。
+- {audit['topology_module_calls_reconstructed']} 次拓扑模块调用及 {audit['fallback_decisions_reconstructed']} 次回退判断复核；缓存项未重复模拟。每步 native 高精度调用计数与事件数一致由冻结 worker 在线断言，离线复核事件与步日志；并非独立于 worker 的第二份 native 计数记录。
+- 正式矩阵含调度墙钟 {audit['matrix_orchestration_wall_s']:.3f} 秒；加成功及失败预检 {audit['total_runner_including_preflight_s']:.3f} 秒，低于1800秒。审计另计 {audit['audit_wall_s']:.3f} 秒。正式原始文件 {audit['main_persisted_bytes']:,} 字节。
+- 预检11个人工语义用例通过；真实环境704次一步模拟、0实际推进，缓存扩展与原生全扫描奖励/顺序/选择逐项一致。首次预检因哈希侧文件换行差异退出，发生于环境构造前，0模拟/0推进；失败墙钟 {audit['failed_preflight_wall_s']:.5f} 秒计入预算，原日志及错误哈希保留。未改规则或重跑正式轨迹。
+- {audit['reused_assets_unchanged']} 项复用文件与启动时的生产源码哈希未变；未修改 GRID04 历史结果。
+
+本审计基于留存向量、算术及原生反馈；不是独立 AC 潮流求解、QP 残差认证、神经模型重训或完整比赛复现。原作者连续优化对 finite user_limit 的处理沿用；状态分布见 per_run.json。
+
+## 研究含义与下一步边界
+
+这四个周均为已经看过的开发轨迹、同一环境种子0；作者预训练模型的训练周身份未知，不能称未见分布。环境是合成法国2035情景及修改IEEE118电网，不能称RTE实际生产日志。
+
+无论本轮规则筛查通过与否，均没有自动启动 GRL 的依据。通过仅说明当前应保留一个更强的便宜控制规则，再用事先封存的轨迹检查稳健性；不通过也只能收口该固定规则，不能否定整个电网控制领域。不能把“神经排序+物理筛查+连续优化”作为我们的新架构，作者已经具备该结构。
+
+交付封存的首次复核还发现 analysis.log 在写入完成前已进入哈希清单。只修正交付清单范围，排除生成器当前仍在写入的日志；原清单保留，详见 artifact_sealing_correction.md。没有重新求解、仿真、推断或拟合，主数据审计与裁决不变。
+
+主要文件：GRID05_summary.json、GRID05_per_run.csv、GRID05_audit.json、GRID05_postrun_review.json、calibration.json、paired_trajectories.json、expansion_audit.json；逐步动作与反馈位于 runs/。本轮无待续求解、不启动训练或自动化。
+'''
+(OUT/'GRID05_report.md').write_text(report,encoding='utf-8')
+(OUT/'RUN_STATE.md').write_text(f'# GRID05\n\nCOMPLETE: 8/8 main runs; saved-data audit passed. Verdict: {verdict}.\nNo pending jobs, training, parameter changes or automations.\n',encoding='utf-8')
+files={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(OUT.glob('*')) if p.is_file() and not p.name.startswith('delivery_manifest') and p.name not in ('analysis.log','GRID05_postrun_review.json')}
+files.update({str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'work/grid05').glob('*.py'))})
+save('delivery_manifest.json',files)
+print(json.dumps(summary,indent=2),flush=True)

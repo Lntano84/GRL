@@ -1,0 +1,29 @@
+{
+  "provisional": false,
+  "results": [
+    {
+      "week": "2035-09-03_4",
+      "method": "GNN1_32",
+      "actual_failed_step": 181,
+      "full_complete": true,
+      "shared_inputs": [
+        {
+          "step": 113,
+          "same_observation": true,
+          "same_base_vector": true,
+          "actual_chosen": 711,
+          "full_chosen": 125,
+          "full_chosen_rank_1based": 63,
+          "saved_feedback_K128_canonical_choice": 125,
+          "saved_choice_predicted_rho": 0.9926198720932007,
+          "hypothetical_choice_predicted_rho": 0.9923954606056213,
+          "hypothetical_required_queries": 128,
+          "warning": "Saved full feedback at a shared observation/base only; no actual K128 trajectory, continuous-controller-state equality, survival guarantee or causal failure attribution."
+        }
+      ]
+    }
+  ],
+  "new_forecasts": 0,
+  "new_fits": 0,
+  "scope": "Failure diagnosis only; excludes policy-outcome claims."
+}

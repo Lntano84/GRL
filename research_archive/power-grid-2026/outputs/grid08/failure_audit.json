@@ -1,0 +1,296 @@
+{
+  "scope": "Descriptive classification of actual terminal feedback in completed archived runs. Repeated episodes are not independent cases. Terminal no-choice does not exclude effects of earlier decisions.",
+  "records": [
+    {
+      "version": "v0",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "gnn",
+      "episode": "e0_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v0",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "gnn",
+      "episode": "e1_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v0",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "mlp",
+      "episode": "e0_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v0",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "mlp",
+      "episode": "e1_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v0",
+      "phase": "evaluate",
+      "scenario": "2035-11-05_12",
+      "policy": "IMMEDIATE_COST",
+      "episode": "2035-11-05_12__IMMEDIATE_COST",
+      "steps": 1192,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v1",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "gnn",
+      "episode": "e0_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v1",
+      "phase": "train",
+      "scenario": "2035-10-29_15",
+      "policy": "gnn",
+      "episode": "e0_2035-10-29_15",
+      "steps": 133,
+      "category": "redispatch_feasibility",
+      "terminal_exceptions": [
+        "Grid2OpException EnvError ImpossibleRedispatching \"\nThis is an attempt to explain why the dispatch did not succeed and caused a game over.\nTo compensate the decrease of loads and / or increase of renewable energy (due to naturl causes but also through curtailment) and / or variation in the storage units, the generators should decrease their total production of -128.53MW (in total).\nBut, if you take into account the generator constraints (pmin and max_ramp_down) you can have at most -98.73MW.\nIndeed at time t, generators are in state:\n\t[294.63  -0.    50.96  -0.   291.82  83.92  -0.    -0.    -0.   293.19\n  24.77  91.25   0.53  51.71  53.87  -0.    53.47 101.47 101.47  -0.  ]\ntheir ramp max is:\n\t[ 3.5  8.5 11.2 11.2  3.5 11.2  8.5  5.3  5.3  3.5  9.9 11.2  5.7 11.2\n 11.2  8.5 11.2  5.3  5.3  5.7]\n and pmax is:\n\t[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]\nWrapping up, each generator can decrease at minimum of:\n\t[ 3.5  8.5 11.2 11.2  3.5 11.2  8.5  5.3  5.3  3.5  9.9 11.2  5.7 11.2\n 11.2  8.5 11.2  5.3  5.3  5.7]\nNB: if you did not do any dispatch during this episode, it would have been possible to meet these constraints. This situation is caused by not having enough degree of freedom to \"compensate\" the variation of the load due to (most likely) an \"over usage\" of redispatching feature (some generators stuck at pmin as a consequence of your redispatching. They can't increase their productions to meet the decrease in demand or increase of renewables)\"",
+        "Grid2OpException EnvError ImpossibleRedispatching \"Game over due to infeasible redispatching state. The routine used to compute the \"next state\" has diverged. This means that there is no way to compute a physically valid generator state (one that meets all pmin / pmax - ramp min / ramp max with the information provided. As one of the physical constraints would be violated, this means that a generator would be damaged in real life. This is a game over.\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v1",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "gnn",
+      "episode": "e1_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v1",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "mlp",
+      "episode": "e0_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v1",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "mlp",
+      "episode": "e1_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v2",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "gnn",
+      "episode": "e0_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v2",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "gnn",
+      "episode": "e1_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v2",
+      "phase": "train",
+      "scenario": "2035-10-29_15",
+      "policy": "gnn",
+      "episode": "e1_2035-10-29_15",
+      "steps": 133,
+      "category": "redispatch_feasibility",
+      "terminal_exceptions": [
+        "Grid2OpException EnvError ImpossibleRedispatching \"\nThis is an attempt to explain why the dispatch did not succeed and caused a game over.\nTo compensate the decrease of loads and / or increase of renewable energy (due to naturl causes but also through curtailment) and / or variation in the storage units, the generators should decrease their total production of -127.42MW (in total).\nBut, if you take into account the generator constraints (pmin and max_ramp_down) you can have at most -98.74MW.\nIndeed at time t, generators are in state:\n\t[294.59  -0.    51.72  -0.   291.81  85.12  -0.    -0.    -0.   293.2\n  24.25  91.88   0.54  51.15  53.27  -0.    52.87 101.47 101.47  -0.  ]\ntheir ramp max is:\n\t[ 3.5  8.5 11.2 11.2  3.5 11.2  8.5  5.3  5.3  3.5  9.9 11.2  5.7 11.2\n 11.2  8.5 11.2  5.3  5.3  5.7]\n and pmax is:\n\t[0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]\nWrapping up, each generator can decrease at minimum of:\n\t[ 3.5  8.5 11.2 11.2  3.5 11.2  8.5  5.3  5.3  3.5  9.9 11.2  5.7 11.2\n 11.2  8.5 11.2  5.3  5.3  5.7]\nNB: if you did not do any dispatch during this episode, it would have been possible to meet these constraints. This situation is caused by not having enough degree of freedom to \"compensate\" the variation of the load due to (most likely) an \"over usage\" of redispatching feature (some generators stuck at pmin as a consequence of your redispatching. They can't increase their productions to meet the decrease in demand or increase of renewables)\"",
+        "Grid2OpException EnvError ImpossibleRedispatching \"Game over due to infeasible redispatching state. The routine used to compute the \"next state\" has diverged. This means that there is no way to compute a physically valid generator state (one that meets all pmin / pmax - ramp min / ramp max with the information provided. As one of the physical constraints would be violated, this means that a generator would be damaged in real life. This is a game over.\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v2",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "gnn",
+      "episode": "e2_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v2",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "gnn",
+      "episode": "e3_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v2",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "mlp",
+      "episode": "e0_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v2",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "mlp",
+      "episode": "e1_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v2",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "mlp",
+      "episode": "e2_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    },
+    {
+      "version": "v2",
+      "phase": "train",
+      "scenario": "2035-01-29_4",
+      "policy": "mlp",
+      "episode": "e3_2035-01-29_4",
+      "steps": 1719,
+      "category": "disconnected_grid_or_powerflow",
+      "terminal_exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "terminal_choice": 0,
+      "terminal_offered": false,
+      "terminal_proposal_reason": "outside_cadence"
+    }
+  ],
+  "by_category": {
+    "disconnected_grid_or_powerflow": 17,
+    "redispatch_feasibility": 2
+  }
+}

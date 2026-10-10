@@ -1,0 +1,116 @@
+{
+  "status": "PASS_CONSTRUCTION_AND_ASSETS",
+  "versions_unchanged": [
+    "grid2op",
+    "pandapower",
+    "lightsim2grid",
+    "colorama",
+    "deepdiff",
+    "geojson",
+    "networkx",
+    "numpy",
+    "packaging",
+    "pandas",
+    "pandera",
+    "requests",
+    "scipy",
+    "tqdm",
+    "typing_extensions",
+    "cachebox",
+    "certifi",
+    "charset-normalizer",
+    "idna",
+    "orderly-set",
+    "python-dateutil",
+    "pytz",
+    "typing-inspect",
+    "tzdata",
+    "urllib3",
+    "pydantic",
+    "pydantic_core",
+    "typeguard",
+    "annotated-types",
+    "mypy_extensions",
+    "six",
+    "typing-inspection"
+  ],
+  "assets": [
+    {
+      "name": "action_12_unsafe.npz",
+      "shape": [
+        421,
+        1605
+      ],
+      "count": 421,
+      "max_roundtrip_error": 0.0,
+      "intrinsic_ambiguities": 0,
+      "not_single_substation": 0,
+      "sha256": "0e74a28f1cbbdbeaf97efb6cc507657db7720b66ddc20b8d0519ac182b34e048"
+    },
+    {
+      "name": "action_N1_unsafe.npz",
+      "shape": [
+        909,
+        1605
+      ],
+      "count": 909,
+      "max_roundtrip_error": 0.0,
+      "intrinsic_ambiguities": 0,
+      "not_single_substation": 0,
+      "sha256": "6157c1454ae4a45a4f9ce7611c08d1317eca9ab4b3c0cfdc3d0877074cff3118"
+    }
+  ],
+  "versions": {
+    "grid2op": "1.12.5",
+    "numpy": "2.4.6",
+    "cvxpy": "1.9.3",
+    "osqp": "1.1.3",
+    "scs": "3.3.1",
+    "lightsim2grid": "1.1.0"
+  },
+  "installed_cvxpy_solvers": [
+    "CLARABEL",
+    "SCS",
+    "SCIPY",
+    "HIGHS",
+    "OSQP"
+  ],
+  "author_solver_order": [
+    "OSQP",
+    "SCS",
+    "SCIPY"
+  ],
+  "agent_construct_s": 0.3664901000001919,
+  "wall_s": 5.43308930000012,
+  "scenario": "C:\\Users\\windows\\Documents\\Codex\\2026-09-24\\influence-maximization-im-ccf-b-grl\\work\\grid00\\.venv\\Lib\\site-packages\\grid2op\\data\\l2rpn_idf_2023\\chronics\\2035-01-15_0",
+  "initial_rho_max": 0.9981779456138611,
+  "action_dimension": 1605,
+  "reward": "MaxRhoReward",
+  "native_parameters": {
+    "NO_OVERFLOW_DISCONNECTION": false,
+    "IGNORE_MIN_UP_DOWN_TIME": true,
+    "ALLOW_DISPATCH_GEN_SWITCH_OFF": true,
+    "LIMIT_INFEASIBLE_CURTAILMENT_STORAGE_ACTION": false,
+    "NB_TIMESTEP_OVERFLOW_ALLOWED": 3,
+    "NB_TIMESTEP_RECONNECTION": 12,
+    "HARD_OVERFLOW_THRESHOLD": 2.0,
+    "SOFT_OVERFLOW_THRESHOLD": 1.0,
+    "ENV_DC": false,
+    "FORECAST_DC": false,
+    "MAX_SUB_CHANGED": 1,
+    "MAX_LINE_STATUS_CHANGED": 1,
+    "NB_TIMESTEP_COOLDOWN_LINE": 3,
+    "NB_TIMESTEP_COOLDOWN_SUB": 3,
+    "INIT_STORAGE_CAPACITY": 0.5,
+    "ACTIVATE_STORAGE_LOSS": true,
+    "ALARM_BEST_TIME": 12,
+    "ALARM_WINDOW_SIZE": 12,
+    "ALERT_TIME_WINDOW": 12,
+    "MAX_SIMULATE_PER_STEP": -1,
+    "MAX_SIMULATE_PER_EPISODE": -1,
+    "IGNORE_INITIAL_STATE_TIME_SERIE": 0,
+    "ENV_DOES_REDISPATCHING": true,
+    "STOP_EP_IF_GEN_BREAK_CONSTRAINTS": false
+  },
+  "warning": "No agent action/actual step executed in preflight; contextual legality not certified."
+}

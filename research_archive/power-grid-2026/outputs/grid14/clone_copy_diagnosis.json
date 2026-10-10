@@ -1,0 +1,363 @@
+{
+  "physical_steps": 0,
+  "public_forecasts": 0,
+  "rows": [
+    {
+      "name": "_alpha_por_error",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": []
+    },
+    {
+      "name": "_margin_th_limit",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": []
+    },
+    {
+      "name": "_past_dispatch",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        236
+      ]
+    },
+    {
+      "name": "_past_state_of_charge",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        236
+      ]
+    },
+    {
+      "name": "_penalty_curtailment_safe",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": []
+    },
+    {
+      "name": "_penalty_curtailment_unsafe",
+      "source_dtype": "int64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": false,
+      "shape": []
+    },
+    {
+      "name": "_penalty_redispatching_safe",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": []
+    },
+    {
+      "name": "_penalty_redispatching_unsafe",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": []
+    },
+    {
+      "name": "_penalty_storage_safe",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": []
+    },
+    {
+      "name": "_penalty_storage_unsafe",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": []
+    },
+    {
+      "name": "_powerlines_b",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        186
+      ]
+    },
+    {
+      "name": "_powerlines_g",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        186
+      ]
+    },
+    {
+      "name": "_powerlines_ratio",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        186
+      ]
+    },
+    {
+      "name": "_powerlines_x",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        186
+      ]
+    },
+    {
+      "name": "_prev_por_error",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        186
+      ]
+    },
+    {
+      "name": "_storage_power_obs",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": []
+    },
+    {
+      "name": "_storage_setpoint",
+      "source_dtype": "float32",
+      "clone_dtype": "float32",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        7
+      ]
+    },
+    {
+      "name": "_storage_target_bus",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        236
+      ]
+    },
+    {
+      "name": "_th_lim_mw",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        186
+      ]
+    },
+    {
+      "name": "_weight_curtail_target",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": []
+    },
+    {
+      "name": "_weight_redisp_target",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": []
+    },
+    {
+      "name": "_weight_storage_target",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": []
+    },
+    {
+      "name": "bus_ex",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        186
+      ]
+    },
+    {
+      "name": "bus_gen",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        62
+      ]
+    },
+    {
+      "name": "bus_load",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        99
+      ]
+    },
+    {
+      "name": "bus_or",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        186
+      ]
+    },
+    {
+      "name": "bus_storage",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        7
+      ]
+    },
+    {
+      "name": "curtail_down",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        236
+      ]
+    },
+    {
+      "name": "curtail_up",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        236
+      ]
+    },
+    {
+      "name": "flow_computed",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        186
+      ]
+    },
+    {
+      "name": "gen_per_bus",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        236
+      ]
+    },
+    {
+      "name": "load_per_bus",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        236
+      ]
+    },
+    {
+      "name": "redisp_down",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        236
+      ]
+    },
+    {
+      "name": "redisp_up",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        236
+      ]
+    },
+    {
+      "name": "storage_down",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        236
+      ]
+    },
+    {
+      "name": "storage_up",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        236
+      ]
+    },
+    {
+      "name": "vm_ex",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        186
+      ]
+    },
+    {
+      "name": "vm_or",
+      "source_dtype": "float64",
+      "clone_dtype": "float64",
+      "same_numeric_values": true,
+      "same_bytes": true,
+      "shape": [
+        186
+      ]
+    }
+  ],
+  "all_numerically_equal": true
+}

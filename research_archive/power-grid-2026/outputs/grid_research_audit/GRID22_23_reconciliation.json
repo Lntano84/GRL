@@ -1,0 +1,355 @@
+{
+  "passed": true,
+  "sealed_file_hash_checks": 1217,
+  "completed_rollouts": 52,
+  "physical_steps": 101540,
+  "public_forecasts": 274716,
+  "gnn_groups": [
+    {
+      "stage": 22,
+      "method": "GNN0_32",
+      "completed_weeks": 3,
+      "reference": "FULL",
+      "joint_complete_weeks": 3,
+      "lost_complete_weeks": [],
+      "earlier_failures": [],
+      "gained_complete_weeks": [],
+      "mean_cost_gain": -0.005553230289390173,
+      "mean_controller_time_reduction": 0.07034879603485589,
+      "mean_n1_query_reduction": 0.9209624429263435,
+      "worst_cost_regret": 0.02294687125633532,
+      "auxiliary_screen": false
+    },
+    {
+      "stage": 22,
+      "method": "GNN1_32",
+      "completed_weeks": 2,
+      "reference": "FULL",
+      "joint_complete_weeks": 2,
+      "lost_complete_weeks": [
+        "2035-09-03_4"
+      ],
+      "earlier_failures": [],
+      "gained_complete_weeks": [],
+      "mean_cost_gain": -0.01147343562816766,
+      "mean_controller_time_reduction": 0.06635879135474093,
+      "mean_n1_query_reduction": 0.9640131088339599,
+      "worst_cost_regret": 0.02294687125633532,
+      "auxiliary_screen": false
+    },
+    {
+      "stage": 23,
+      "method": "GNN0_128",
+      "completed_weeks": 3,
+      "reference": "FULL",
+      "joint_complete_weeks": 3,
+      "lost_complete_weeks": [],
+      "earlier_failures": [],
+      "gained_complete_weeks": [],
+      "mean_cost_gain": -0.026910131037323037,
+      "mean_controller_time_reduction": 0.14369771201410111,
+      "mean_n1_query_reduction": 0.825295165470407,
+      "worst_cost_regret": 0.08073039311196911,
+      "auxiliary_screen": false
+    },
+    {
+      "stage": 23,
+      "method": "GNN1_128",
+      "completed_weeks": 3,
+      "reference": "FULL",
+      "joint_complete_weeks": 3,
+      "lost_complete_weeks": [],
+      "earlier_failures": [],
+      "gained_complete_weeks": [],
+      "mean_cost_gain": -0.030699484027079168,
+      "mean_controller_time_reduction": 0.06590149122102644,
+      "mean_n1_query_reduction": 0.819369239544481,
+      "worst_cost_regret": 0.08073039311196911,
+      "auxiliary_screen": false
+    }
+  ],
+  "first_physical_differences": [
+    {
+      "stage": 22,
+      "week": "2035-03-05_0",
+      "method": "GNN0_32",
+      "first_physical_difference_step": 1072,
+      "same_full_physical_trace": false,
+      "method_steps": 2017,
+      "full_steps": 2017
+    },
+    {
+      "stage": 22,
+      "week": "2035-03-05_0",
+      "method": "GNN1_32",
+      "first_physical_difference_step": 1072,
+      "same_full_physical_trace": false,
+      "method_steps": 2017,
+      "full_steps": 2017
+    },
+    {
+      "stage": 22,
+      "week": "2035-06-25_8",
+      "method": "GNN0_32",
+      "first_physical_difference_step": 1003,
+      "same_full_physical_trace": false,
+      "method_steps": 1901,
+      "full_steps": 1901
+    },
+    {
+      "stage": 22,
+      "week": "2035-06-25_8",
+      "method": "GNN1_32",
+      "first_physical_difference_step": 1003,
+      "same_full_physical_trace": false,
+      "method_steps": 1901,
+      "full_steps": 1901
+    },
+    {
+      "stage": 22,
+      "week": "2035-09-03_4",
+      "method": "GNN0_32",
+      "first_physical_difference_step": 117,
+      "same_full_physical_trace": false,
+      "method_steps": 2017,
+      "full_steps": 2017
+    },
+    {
+      "stage": 22,
+      "week": "2035-09-03_4",
+      "method": "GNN1_32",
+      "first_physical_difference_step": 113,
+      "same_full_physical_trace": false,
+      "method_steps": 181,
+      "full_steps": 2017
+    },
+    {
+      "stage": 22,
+      "week": "2035-10-01_5",
+      "method": "GNN0_32",
+      "first_physical_difference_step": null,
+      "same_full_physical_trace": true,
+      "method_steps": 2017,
+      "full_steps": 2017
+    },
+    {
+      "stage": 22,
+      "week": "2035-10-01_5",
+      "method": "GNN1_32",
+      "first_physical_difference_step": null,
+      "same_full_physical_trace": true,
+      "method_steps": 2017,
+      "full_steps": 2017
+    },
+    {
+      "stage": 23,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128",
+      "first_physical_difference_step": 1733,
+      "same_full_physical_trace": false,
+      "method_steps": 2017,
+      "full_steps": 2017
+    },
+    {
+      "stage": 23,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128",
+      "first_physical_difference_step": 1733,
+      "same_full_physical_trace": false,
+      "method_steps": 2017,
+      "full_steps": 2017
+    },
+    {
+      "stage": 23,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128",
+      "first_physical_difference_step": 1900,
+      "same_full_physical_trace": false,
+      "method_steps": 1901,
+      "full_steps": 1901
+    },
+    {
+      "stage": 23,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128",
+      "first_physical_difference_step": 1900,
+      "same_full_physical_trace": false,
+      "method_steps": 1901,
+      "full_steps": 1901
+    },
+    {
+      "stage": 23,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128",
+      "first_physical_difference_step": null,
+      "same_full_physical_trace": true,
+      "method_steps": 2017,
+      "full_steps": 2017
+    },
+    {
+      "stage": 23,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128",
+      "first_physical_difference_step": 407,
+      "same_full_physical_trace": false,
+      "method_steps": 2017,
+      "full_steps": 2017
+    },
+    {
+      "stage": 23,
+      "week": "2035-10-01_5",
+      "method": "GNN0_128",
+      "first_physical_difference_step": null,
+      "same_full_physical_trace": true,
+      "method_steps": 2017,
+      "full_steps": 2017
+    },
+    {
+      "stage": 23,
+      "week": "2035-10-01_5",
+      "method": "GNN1_128",
+      "first_physical_difference_step": null,
+      "same_full_physical_trace": true,
+      "method_steps": 2017,
+      "full_steps": 2017
+    }
+  ],
+  "timing_components": [
+    {
+      "stage": 22,
+      "week": "2035-03-05_0",
+      "method": "GNN0_32",
+      "full_controller_s": 185.38625899995895,
+      "method_controller_s": 163.02450499993574,
+      "full_search_s": 29.20579540000108,
+      "method_search_s": 5.8491807999980665,
+      "full_other_controller_s": 156.18046359995787,
+      "method_other_controller_s": 157.17532419993768,
+      "same_full_physical_trace": false
+    },
+    {
+      "stage": 22,
+      "week": "2035-03-05_0",
+      "method": "GNN1_32",
+      "full_controller_s": 185.38625899995895,
+      "method_controller_s": 163.62661439998192,
+      "full_search_s": 29.20579540000108,
+      "method_search_s": 5.567123599999832,
+      "full_other_controller_s": 156.18046359995787,
+      "method_other_controller_s": 158.0594907999821,
+      "same_full_physical_trace": false
+    },
+    {
+      "stage": 22,
+      "week": "2035-09-03_4",
+      "method": "GNN0_32",
+      "full_controller_s": 227.1739457999969,
+      "method_controller_s": 200.18484460000116,
+      "full_search_s": 32.248779900000045,
+      "method_search_s": 8.60875980000003,
+      "full_other_controller_s": 194.92516589999684,
+      "method_other_controller_s": 191.57608480000113,
+      "same_full_physical_trace": false
+    },
+    {
+      "stage": 22,
+      "week": "2035-10-01_5",
+      "method": "GNN0_32",
+      "full_controller_s": 200.82342609999682,
+      "method_controller_s": 206.52275349999536,
+      "full_search_s": 7.536651200000506,
+      "method_search_s": 1.4315974999999526,
+      "full_other_controller_s": 193.28677489999632,
+      "method_other_controller_s": 205.0911559999954,
+      "same_full_physical_trace": true
+    },
+    {
+      "stage": 22,
+      "week": "2035-10-01_5",
+      "method": "GNN1_32",
+      "full_controller_s": 200.82342609999682,
+      "method_controller_s": 197.74220289999312,
+      "full_search_s": 7.536651200000506,
+      "method_search_s": 1.2185042000000976,
+      "full_other_controller_s": 193.28677489999632,
+      "method_other_controller_s": 196.52369869999302,
+      "same_full_physical_trace": true
+    },
+    {
+      "stage": 23,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128",
+      "full_controller_s": 237.1917034000171,
+      "method_controller_s": 217.33402419997492,
+      "full_search_s": 38.113505599999826,
+      "method_search_s": 10.722809200001393,
+      "full_other_controller_s": 199.07819780001728,
+      "method_other_controller_s": 206.61121499997353,
+      "same_full_physical_trace": false
+    },
+    {
+      "stage": 23,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128",
+      "full_controller_s": 237.1917034000171,
+      "method_controller_s": 217.00704700001825,
+      "full_search_s": 38.113505599999826,
+      "method_search_s": 10.225650599999426,
+      "full_other_controller_s": 199.07819780001728,
+      "method_other_controller_s": 206.78139640001882,
+      "same_full_physical_trace": false
+    },
+    {
+      "stage": 23,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128",
+      "full_controller_s": 229.71103099997163,
+      "method_controller_s": 155.74045920001208,
+      "full_search_s": 31.147556500001883,
+      "method_search_s": 8.968147699997644,
+      "full_other_controller_s": 198.56347449996974,
+      "method_other_controller_s": 146.77231150001444,
+      "same_full_physical_trace": true
+    },
+    {
+      "stage": 23,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128",
+      "full_controller_s": 229.71103099997163,
+      "method_controller_s": 210.07457039999008,
+      "full_search_s": 31.147556500001883,
+      "method_search_s": 13.309601699999803,
+      "full_other_controller_s": 198.56347449996974,
+      "method_other_controller_s": 196.76496869999028,
+      "same_full_physical_trace": false
+    },
+    {
+      "stage": 23,
+      "week": "2035-10-01_5",
+      "method": "GNN0_128",
+      "full_controller_s": 168.41310909998174,
+      "method_controller_s": 164.14258699996662,
+      "full_search_s": 5.5160642000000735,
+      "method_search_s": 1.595993200000521,
+      "full_other_controller_s": 162.89704489998167,
+      "method_other_controller_s": 162.5465937999661,
+      "same_full_physical_trace": true
+    },
+    {
+      "stage": 23,
+      "week": "2035-10-01_5",
+      "method": "GNN1_128",
+      "full_controller_s": 168.41310909998174,
+      "method_controller_s": 163.8452966999812,
+      "full_search_s": 5.5160642000000735,
+      "method_search_s": 1.7042958000001818,
+      "full_other_controller_s": 162.89704489998167,
+      "method_other_controller_s": 162.141000899981,
+      "same_full_physical_trace": true
+    }
+  ],
+  "new_fits": 0,
+  "new_RL": false,
+  "final_holdout_opened": false,
+  "scope": "Four exposed development weeks. Reconciles saved artifacts and outcome arithmetic; no independent AC rerun. Two GNN fitting seeds are not independent dates. The deployment revision changed both exact tie handling and budget. Instrumented wall timing is not a causal attribution of all speedup to GNN. Aborted GRID22 work is separately disclosed and is not zero-cost."
+}

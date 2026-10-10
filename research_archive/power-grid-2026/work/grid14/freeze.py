@@ -1,0 +1,34 @@
+"""Freeze GRID14 diagnosis before any outcomes; reuse existing exposed training weeks."""
+import json, hashlib
+from pathlib import Path
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / 'outputs/grid14'
+OUT.mkdir(parents=True, exist_ok=True)
+assert not (OUT / 'design.json').exists()
+design = {'stage': 'GRID14_RESTORED_TOPOLOGY_HEADROOM', 'environment_seed': 0,
+          'engineering_revision': 'V2 after preserved two strict-byte gate failures: scalar int15/float15 copies are numerically identical; actual/shadow QP continuous action differed by 1.28746e-5 while topology and predicted max rho were identical. Use exact discrete gate, continuous atol1e-4, forecast rho atol1e-5, independent cost-rounding gate. Candidate rules/weeks/main budgets unchanged; engineering attempts separately charged.',
+          'continuous_gate_atol': .0001, 'forecast_rho_gate_atol': .00001,
+          'training_weeks': ['2035-01-29_4', '2035-04-16_2', '2035-07-23_10', '2035-10-29_15'],
+          'cadence': 6, 'search_start_step': 100, 'search_end_step': 864,
+          'max_probes_per_week': 3, 'candidate_beam': 8, 'final_rho_lt': 1.,
+          'baseline': 'Original NN20/all-N1/unsafe QP + established ALWAYS_RESTORE',
+          'event_rule': 'First source topology search call in frozen clock window, at least two admissible candidates; up to three calls examined. Original and at least two distinct delivered actions must pass final public one-step validity screen.',
+          'candidate_rule': 'Original source shortlist; eight best admissible source rho-reward candidates, source index tie. All use exact copied pre-call optimizer memory and original unsafe QP dispatch condition.',
+          'interventions': ['AUTHOR', 'FINAL_COST', 'FINAL_RHO'],
+          'continuation': 'One-time intervention only; all subsequent steps use original controller + ALWAYS_RESTORE; replay common prefix with original controller memory.',
+          'primary': 'Whole native week completion first; cost only for jointly complete branches. Compare immediate final-action public prediction, first24/288 realized steps, and remaining full-week cost.',
+          'interpretation': 'Development headroom/mechanism probe, not independent confirmation, fitted action evaluator, optimal oracle, safety proof or policy-performance claim. Single seed; up to one event per exposed training week.',
+          'continuation_gate': 'Consider an action evaluator only if distinct qualified candidates have material delayed differences (>=1% baseline whole-week cost in at least two jointly complete weeks) not uniformly resolved by one of these simple rules. Otherwise retain the best supported simple component or record narrow/inconclusive evidence; no automatic architecture tuning.',
+          'caps': {'phase_wall_s': 2400, 'per_episode_wall_s': 420,
+                   'physical_steps': 24204, 'public_forecasts': 500000,
+                   'output_bytes': 536870912},
+          'restrictions': ['No sealed test evaluation, training, model changes, hidden future attack input, installs or modification of prior sealed stages.',
+                           'Exact discrete shadow-original action plus frozen numerical/forecast gates before interpreting outcomes.',
+                           'Keep every failed attempt/code version/cost; halt on engineering gate failure.'],
+          'budget_note': 'Candidate evaluation adds forecast/QP calls only to baseline diagnosis. Intervention runs read frozen public candidate descriptions after exact before-state/memory verification. All computation counted; no equal-latency deployment claim.'}
+(OUT / 'design.json').write_text(json.dumps(design, indent=2), encoding='utf-8')
+files = [ROOT / 'work/grid14/freeze.py', ROOT / 'work/grid14/run_probe.py', OUT / 'design.json',
+         ROOT / 'work/grid14/check_clone.py', ROOT / 'work/grid14/diagnose_delivery.py', ROOT / 'work/grid08/common.py']
+frozen = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
+(OUT / 'code_freeze.json').write_text(json.dumps(frozen, indent=2), encoding='utf-8')
+print('GRID14_FROZEN')

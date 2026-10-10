@@ -1,0 +1,186 @@
+{
+  "stage": "GRID19_NEW_MASKED_N1_TEACHER_DATA",
+  "seed": 0,
+  "new_training_weeks": [
+    "2035-02-05_0",
+    "2035-03-05_12",
+    "2035-01-08_5",
+    "2035-03-12_8",
+    "2035-06-11_1",
+    "2035-06-25_9",
+    "2035-05-07_14",
+    "2035-04-30_12",
+    "2035-09-10_1",
+    "2035-09-17_8",
+    "2035-08-27_14",
+    "2035-08-06_6",
+    "2035-11-05_8",
+    "2035-11-26_0",
+    "2035-12-24_5",
+    "2035-12-03_7"
+  ],
+  "development_weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "existing_training_weeks": [
+    "2035-01-29_4",
+    "2035-04-16_2",
+    "2035-07-23_10",
+    "2035-10-29_15"
+  ],
+  "weeks": [
+    "2035-02-05_0",
+    "2035-03-05_12",
+    "2035-01-08_5",
+    "2035-03-12_8",
+    "2035-06-11_1",
+    "2035-06-25_9",
+    "2035-05-07_14",
+    "2035-04-30_12",
+    "2035-09-10_1",
+    "2035-09-17_8",
+    "2035-08-27_14",
+    "2035-08-06_6",
+    "2035-11-05_8",
+    "2035-11-26_0",
+    "2035-12-24_5",
+    "2035-12-03_7",
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "strata": [
+    {
+      "quarter": 1,
+      "pool": [
+        "2035-01-01_4",
+        "2035-01-01_8",
+        "2035-01-08_5",
+        "2035-02-05_0",
+        "2035-02-19_4",
+        "2035-02-19_8",
+        "2035-03-05_0",
+        "2035-03-05_10",
+        "2035-03-05_12",
+        "2035-03-12_8"
+      ],
+      "new_training": [
+        "2035-02-05_0",
+        "2035-03-05_12",
+        "2035-01-08_5",
+        "2035-03-12_8"
+      ],
+      "development": [
+        "2035-03-05_0"
+      ]
+    },
+    {
+      "quarter": 2,
+      "pool": [
+        "2035-04-02_9",
+        "2035-04-30_12",
+        "2035-04-30_8",
+        "2035-05-07_0",
+        "2035-05-07_14",
+        "2035-05-07_8",
+        "2035-06-11_1",
+        "2035-06-25_5",
+        "2035-06-25_8",
+        "2035-06-25_9"
+      ],
+      "new_training": [
+        "2035-06-11_1",
+        "2035-06-25_9",
+        "2035-05-07_14",
+        "2035-04-30_12"
+      ],
+      "development": [
+        "2035-06-25_8"
+      ]
+    },
+    {
+      "quarter": 3,
+      "pool": [
+        "2035-07-09_2",
+        "2035-07-16_5",
+        "2035-07-16_7",
+        "2035-08-06_6",
+        "2035-08-20_8",
+        "2035-08-27_14",
+        "2035-09-03_12",
+        "2035-09-03_4",
+        "2035-09-10_1",
+        "2035-09-17_8"
+      ],
+      "new_training": [
+        "2035-09-10_1",
+        "2035-09-17_8",
+        "2035-08-27_14",
+        "2035-08-06_6"
+      ],
+      "development": [
+        "2035-09-03_4"
+      ]
+    },
+    {
+      "quarter": 4,
+      "pool": [
+        "2035-10-01_5",
+        "2035-10-01_8",
+        "2035-10-01_9",
+        "2035-11-05_4",
+        "2035-11-05_8",
+        "2035-11-26_0",
+        "2035-12-03_7",
+        "2035-12-10_6",
+        "2035-12-17_1",
+        "2035-12-24_5"
+      ],
+      "new_training": [
+        "2035-11-05_8",
+        "2035-11-26_0",
+        "2035-12-24_5",
+        "2035-12-03_7"
+      ],
+      "development": [
+        "2035-10-01_5"
+      ]
+    }
+  ],
+  "split": "Public week names only; hash seed20261010, four new training and one development week per quarter. Exclude eight exposed GRID10 weeks. No outcome-based replacement.",
+  "teacher": "Exact GRID18 masked full-search controller, original NN20/QP plus ALWAYS_RESTORE. Save only actual search decisions; no engineered trigger or replay upsampling.",
+  "source_code": "GRID18 collect.py copied, only output-directory literal changed. All simulation and selection semantics identical.",
+  "learner_protocol": {
+    "role": "Supervised candidate priority only, no RL at this stage",
+    "models": [
+      "Original two-message-layer graph encoder with new candidate head",
+      "Same legal-input MLP",
+      "Training-label frequency",
+      "Dual ridge on same flattened legal inputs",
+      "Frozen original PPO prior",
+      "LOCAL",
+      "PREFIX"
+    ],
+    "graph_inputs": "Original common.graph_features current busbar graph/current observations; neutral proposal fields. Incoming base action additionally supplied equally to GNN and MLP. No forecast outcome used as an input.",
+    "targets": "Original pool-ID soft probabilities, exp(-(rho-rho_best)/0.01) on strictly source-admissible public candidates. States with no valid candidate remain in evaluation, but have no supervised preference target.",
+    "fits": "Train using original four + sixteen new training weeks only. Two seeds0,1. GNN/MLP 64 epochs, Adam lr0.001, weight_decay0.0001, batch8, no early stopping or development checkpoint selection. All original trained weights preserved; reuse architecture, not holdout-exposed fitted weights.",
+    "ridge": "Dual ridge alpha1, feature standardization fitted on training only; negative scores clipped for ranking/frequency fallback. One fixed fit; no sweep.",
+    "ranking_budgets": [
+      32,
+      128
+    ],
+    "initial_primary": "32-query shortlist quality/availability and expected public calls with same full-search fallback; compare frozen old-PPO128 quality plus equal32 references. Ranking-only screen, not whole-policy speed or cost.",
+    "interpretation": "Tiny developmental role trial; report all seeds, weeks, baselines, time and checkpoints. Slightly worse/mixed results may motivate one documented diagnostic revision, not automatic field rejection. No sealed final-test access, no GNN+RL novelty claim."
+  },
+  "caps": {
+    "physical_steps": 44000,
+    "public_forecasts": 1000000,
+    "wall_s": 7200,
+    "episode_s": 600
+  },
+  "training_not_yet_started": true
+}

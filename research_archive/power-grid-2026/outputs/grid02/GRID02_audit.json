@@ -1,0 +1,593 @@
+{
+  "status": "PASS_SAVED_ARTIFACT_CONSISTENCY",
+  "actual_steps": 3498,
+  "main_steps": 3450,
+  "main_act_wall_s": {
+    "mean": 0.04786969817390854,
+    "p50": 0.0037052999996376457,
+    "p95": 0.012978895000424017,
+    "max": 5.8732522000000245,
+    "sum": 165.15045869998448
+  },
+  "runs": [
+    {
+      "scenario": 0,
+      "policy": "NN20",
+      "mode": "smoke",
+      "exit": 0,
+      "wall_s": 20.0,
+      "steps": 24,
+      "native_max_episode_duration": 575,
+      "native_done": false,
+      "chronics_done_at_end": false,
+      "reached_recorded_native_horizon": false,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "exception_types": {},
+      "initial_observation_hash": "e3fd6e2b132d70fab659a91d70cfc9daf5157d50ebb08750429f1f688d3a1c55",
+      "final_observation_hash": "be79cd7c7eee8db674724d3c7a9d2207fa693ee78a1473272632f92de3aa2b5a",
+      "nonzero_actions": 4,
+      "simulate_calls": 69,
+      "act_wall_s": {
+        "mean": 0.006987566666642427,
+        "p50": 0.0048960500002976914,
+        "p95": 0.007654059999686069,
+        "max": 0.0536087000000407,
+        "sum": 0.16770159999941825
+      },
+      "max_after_rho": 0.8965588212013245,
+      "overloaded_after_steps": 0,
+      "reward_sum": 27.732418060302734,
+      "module_summary": {
+        "reconnect": {
+          "calls": 24,
+          "simulate_calls": 3,
+          "wall_s": 0.008777100001680083
+        },
+        "recover_topo": {
+          "calls": 24,
+          "simulate_calls": 20,
+          "wall_s": 0.05072970000128407
+        },
+        "topo_12_unsafe": {
+          "calls": 1,
+          "simulate_calls": 20,
+          "wall_s": 0.04612230000020645
+        },
+        "topo_n1_unsafe": {
+          "calls": 0,
+          "simulate_calls": 0,
+          "wall_s": 0
+        },
+        "optim": {
+          "calls": 0,
+          "simulate_calls": 0,
+          "wall_s": 0
+        }
+      },
+      "solver_statuses": {},
+      "nn_calls": 1,
+      "nn_wall_s": {
+        "mean": 0.0013006000008317642,
+        "p50": 0.0013006000008317642,
+        "p95": 0.0013006000008317642,
+        "max": 0.0013006000008317642,
+        "sum": 0.0013006000008317642
+      },
+      "selected_forecast_available": 24
+    },
+    {
+      "scenario": 1,
+      "policy": "NN20",
+      "mode": "smoke",
+      "exit": 0,
+      "wall_s": 19.90599999999995,
+      "steps": 24,
+      "native_max_episode_duration": 575,
+      "native_done": false,
+      "chronics_done_at_end": false,
+      "reached_recorded_native_horizon": false,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "exception_types": {},
+      "initial_observation_hash": "24b2fe693e93ab34c14a6053d867c283642c29d46dfb4f3e8475020acb3ecba8",
+      "final_observation_hash": "bf7c33e660a9a79a6fdabca6b6c3b1f560f5f93518ce9f3ba6be14fb8600fc59",
+      "nonzero_actions": 3,
+      "simulate_calls": 27,
+      "act_wall_s": {
+        "mean": 0.0025980958334533475,
+        "p50": 0.0023713499999757914,
+        "p95": 0.004354260000036447,
+        "max": 0.004626800000551157,
+        "sum": 0.062354300002880336
+      },
+      "max_after_rho": 0.8615423440933228,
+      "overloaded_after_steps": 0,
+      "reward_sum": 29.450130701065063,
+      "module_summary": {
+        "reconnect": {
+          "calls": 24,
+          "simulate_calls": 3,
+          "wall_s": 0.007891299996117596
+        },
+        "recover_topo": {
+          "calls": 24,
+          "simulate_calls": 0,
+          "wall_s": 0.0006876000006741378
+        },
+        "topo_12_unsafe": {
+          "calls": 0,
+          "simulate_calls": 0,
+          "wall_s": 0
+        },
+        "topo_n1_unsafe": {
+          "calls": 0,
+          "simulate_calls": 0,
+          "wall_s": 0
+        },
+        "optim": {
+          "calls": 0,
+          "simulate_calls": 0,
+          "wall_s": 0
+        }
+      },
+      "solver_statuses": {},
+      "nn_calls": 0,
+      "nn_wall_s": null,
+      "selected_forecast_available": 24
+    },
+    {
+      "scenario": 0,
+      "policy": "FULL",
+      "mode": "full",
+      "exit": 0,
+      "wall_s": 56.64000000000033,
+      "steps": 575,
+      "native_max_episode_duration": 575,
+      "native_done": true,
+      "chronics_done_at_end": true,
+      "reached_recorded_native_horizon": true,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "exception_types": {},
+      "initial_observation_hash": "e3fd6e2b132d70fab659a91d70cfc9daf5157d50ebb08750429f1f688d3a1c55",
+      "final_observation_hash": "8a1b60f81f9c5c083547c68666555a83cabc10b7fb51f8ed0bedaae304e38e0b",
+      "nonzero_actions": 46,
+      "simulate_calls": 6548,
+      "act_wall_s": {
+        "mean": 0.06301617947825593,
+        "p50": 0.003541800000675721,
+        "p95": 0.01083711999990555,
+        "max": 3.5599612000005436,
+        "sum": 36.23430319999716
+      },
+      "max_after_rho": 1.0648664236068726,
+      "overloaded_after_steps": 6,
+      "reward_sum": 649.8231947422028,
+      "module_summary": {
+        "reconnect": {
+          "calls": 575,
+          "simulate_calls": 27,
+          "wall_s": 0.10427070000605454
+        },
+        "recover_topo": {
+          "calls": 344,
+          "simulate_calls": 380,
+          "wall_s": 1.2374342999992223
+        },
+        "topo_12_unsafe": {
+          "calls": 9,
+          "simulate_calls": 3720,
+          "wall_s": 10.120957000001908
+        },
+        "topo_n1_unsafe": {
+          "calls": 2,
+          "simulate_calls": 1818,
+          "wall_s": 5.275154899999507
+        },
+        "optim": {
+          "calls": 12,
+          "simulate_calls": 12,
+          "wall_s": 17.833177699997577
+        }
+      },
+      "solver_statuses": {
+        "user_limit": 2,
+        "optimal": 10
+      },
+      "nn_calls": 0,
+      "nn_wall_s": null,
+      "selected_forecast_available": 563
+    },
+    {
+      "scenario": 0,
+      "policy": "NN20",
+      "mode": "full",
+      "exit": 0,
+      "wall_s": 53.10999999999967,
+      "steps": 575,
+      "native_max_episode_duration": 575,
+      "native_done": true,
+      "chronics_done_at_end": true,
+      "reached_recorded_native_horizon": true,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "exception_types": {},
+      "initial_observation_hash": "e3fd6e2b132d70fab659a91d70cfc9daf5157d50ebb08750429f1f688d3a1c55",
+      "final_observation_hash": "08e4ba1e6baf5c5d019e704949e16d0c8ca49dbab1fb538e8f49e1c418c8ae3b",
+      "nonzero_actions": 47,
+      "simulate_calls": 2122,
+      "act_wall_s": {
+        "mean": 0.04538532973912642,
+        "p50": 0.0034633000004760106,
+        "p95": 0.01273360999957731,
+        "max": 2.8224868999996033,
+        "sum": 26.09656459999769
+      },
+      "max_after_rho": 1.7366786003112793,
+      "overloaded_after_steps": 7,
+      "reward_sum": 648.6424448490143,
+      "module_summary": {
+        "reconnect": {
+          "calls": 575,
+          "simulate_calls": 28,
+          "wall_s": 0.10649190000003728
+        },
+        "recover_topo": {
+          "calls": 323,
+          "simulate_calls": 398,
+          "wall_s": 1.266157299992301
+        },
+        "topo_12_unsafe": {
+          "calls": 9,
+          "simulate_calls": 180,
+          "wall_s": 0.46525689999907627
+        },
+        "topo_n1_unsafe": {
+          "calls": 1,
+          "simulate_calls": 909,
+          "wall_s": 2.1960278999995353
+        },
+        "optim": {
+          "calls": 9,
+          "simulate_calls": 9,
+          "wall_s": 20.351932699999452
+        }
+      },
+      "solver_statuses": {
+        "user_limit": 6,
+        "optimal": 3
+      },
+      "nn_calls": 9,
+      "nn_wall_s": {
+        "mean": 0.0005242666666163132,
+        "p50": 0.0004169000003457768,
+        "p95": 0.0009942399999999904,
+        "max": 0.0013466000000335043,
+        "sum": 0.0047183999995468184
+      },
+      "selected_forecast_available": 566
+    },
+    {
+      "scenario": 0,
+      "policy": "NN352",
+      "mode": "full",
+      "exit": 0,
+      "wall_s": 61.25,
+      "steps": 575,
+      "native_max_episode_duration": 575,
+      "native_done": true,
+      "chronics_done_at_end": true,
+      "reached_recorded_native_horizon": true,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "exception_types": {},
+      "initial_observation_hash": "e3fd6e2b132d70fab659a91d70cfc9daf5157d50ebb08750429f1f688d3a1c55",
+      "final_observation_hash": "08e4ba1e6baf5c5d019e704949e16d0c8ca49dbab1fb538e8f49e1c418c8ae3b",
+      "nonzero_actions": 47,
+      "simulate_calls": 5110,
+      "act_wall_s": {
+        "mean": 0.05883197495650244,
+        "p50": 0.003433799999584153,
+        "p95": 0.012845520000155373,
+        "max": 3.7385802999997395,
+        "sum": 33.828385599988906
+      },
+      "max_after_rho": 1.7366786003112793,
+      "overloaded_after_steps": 7,
+      "reward_sum": 648.6424448490143,
+      "module_summary": {
+        "reconnect": {
+          "calls": 575,
+          "simulate_calls": 28,
+          "wall_s": 0.10720000000037544
+        },
+        "recover_topo": {
+          "calls": 323,
+          "simulate_calls": 398,
+          "wall_s": 1.2459103999990475
+        },
+        "topo_12_unsafe": {
+          "calls": 9,
+          "simulate_calls": 3168,
+          "wall_s": 8.11707259999912
+        },
+        "topo_n1_unsafe": {
+          "calls": 1,
+          "simulate_calls": 909,
+          "wall_s": 2.171160900000359
+        },
+        "optim": {
+          "calls": 9,
+          "simulate_calls": 9,
+          "wall_s": 20.464878800001316
+        }
+      },
+      "solver_statuses": {
+        "user_limit": 6,
+        "optimal": 3
+      },
+      "nn_calls": 9,
+      "nn_wall_s": {
+        "mean": 0.000538333333275255,
+        "p50": 0.00042940000003000023,
+        "p95": 0.001008119999823975,
+        "max": 0.0013724000000365777,
+        "sum": 0.004844999999477295
+      },
+      "selected_forecast_available": 566
+    },
+    {
+      "scenario": 1,
+      "policy": "FULL",
+      "mode": "full",
+      "exit": 0,
+      "wall_s": 47.57800000000043,
+      "steps": 575,
+      "native_max_episode_duration": 575,
+      "native_done": true,
+      "chronics_done_at_end": true,
+      "reached_recorded_native_horizon": true,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "exception_types": {},
+      "initial_observation_hash": "24b2fe693e93ab34c14a6053d867c283642c29d46dfb4f3e8475020acb3ecba8",
+      "final_observation_hash": "3b3d79aa90cc54326f3b980532bb4ed5aeb6ff20c268a7a19b8d099e3893b82e",
+      "nonzero_actions": 37,
+      "simulate_calls": 6345,
+      "act_wall_s": {
+        "mean": 0.047324085391323344,
+        "p50": 0.004527200000666198,
+        "p95": 0.013415720000011781,
+        "max": 5.8732522000000245,
+        "sum": 27.21134910001092
+      },
+      "max_after_rho": 1.0332071781158447,
+      "overloaded_after_steps": 4,
+      "reward_sum": 678.6135158538818,
+      "module_summary": {
+        "reconnect": {
+          "calls": 575,
+          "simulate_calls": 71,
+          "wall_s": 0.19329070000094362
+        },
+        "recover_topo": {
+          "calls": 442,
+          "simulate_calls": 496,
+          "wall_s": 1.586463200003891
+        },
+        "topo_12_unsafe": {
+          "calls": 6,
+          "simulate_calls": 2506,
+          "wall_s": 6.936399400000482
+        },
+        "topo_n1_unsafe": {
+          "calls": 3,
+          "simulate_calls": 2678,
+          "wall_s": 8.287844600000426
+        },
+        "optim": {
+          "calls": 6,
+          "simulate_calls": 6,
+          "wall_s": 8.569090700000743
+        }
+      },
+      "solver_statuses": {
+        "user_limit": 1,
+        "optimal": 4,
+        "optimal_inaccurate": 1
+      },
+      "nn_calls": 0,
+      "nn_wall_s": null,
+      "selected_forecast_available": 569
+    },
+    {
+      "scenario": 1,
+      "policy": "NN20",
+      "mode": "full",
+      "exit": 0,
+      "wall_s": 45.17199999999957,
+      "steps": 575,
+      "native_max_episode_duration": 575,
+      "native_done": true,
+      "chronics_done_at_end": true,
+      "reached_recorded_native_horizon": true,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "exception_types": {},
+      "initial_observation_hash": "24b2fe693e93ab34c14a6053d867c283642c29d46dfb4f3e8475020acb3ecba8",
+      "final_observation_hash": "04f83303866cd81308963ef5adbd04739ee9c139e7195cbb0f2c1efbdabd51d1",
+      "nonzero_actions": 37,
+      "simulate_calls": 3947,
+      "act_wall_s": {
+        "mean": 0.03148838086954208,
+        "p50": 0.004217500000777363,
+        "p95": 0.013076350000210367,
+        "max": 4.089148300000488,
+        "sum": 18.105818999986695
+      },
+      "max_after_rho": 1.0332071781158447,
+      "overloaded_after_steps": 4,
+      "reward_sum": 681.1234159469604,
+      "module_summary": {
+        "reconnect": {
+          "calls": 575,
+          "simulate_calls": 71,
+          "wall_s": 0.1898523999916506
+        },
+        "recover_topo": {
+          "calls": 497,
+          "simulate_calls": 481,
+          "wall_s": 1.5201846999980262
+        },
+        "topo_12_unsafe": {
+          "calls": 6,
+          "simulate_calls": 120,
+          "wall_s": 0.3198150000007445
+        },
+        "topo_n1_unsafe": {
+          "calls": 3,
+          "simulate_calls": 2681,
+          "wall_s": 7.905193399999007
+        },
+        "optim": {
+          "calls": 3,
+          "simulate_calls": 3,
+          "wall_s": 6.59786559999975
+        }
+      },
+      "solver_statuses": {
+        "user_limit": 1,
+        "optimal": 2
+      },
+      "nn_calls": 6,
+      "nn_wall_s": {
+        "mean": 0.0005546666667820924,
+        "p50": 0.00041030000011232914,
+        "p95": 0.0010659750000741042,
+        "max": 0.0012747000000672415,
+        "sum": 0.0033280000006925547
+      },
+      "selected_forecast_available": 572
+    },
+    {
+      "scenario": 1,
+      "policy": "NN352",
+      "mode": "full",
+      "exit": 0,
+      "wall_s": 51.39000000000033,
+      "steps": 575,
+      "native_max_episode_duration": 575,
+      "native_done": true,
+      "chronics_done_at_end": true,
+      "reached_recorded_native_horizon": true,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "exception_types": {},
+      "initial_observation_hash": "24b2fe693e93ab34c14a6053d867c283642c29d46dfb4f3e8475020acb3ecba8",
+      "final_observation_hash": "04f83303866cd81308963ef5adbd04739ee9c139e7195cbb0f2c1efbdabd51d1",
+      "nonzero_actions": 37,
+      "simulate_calls": 5939,
+      "act_wall_s": {
+        "mean": 0.04117223860870107,
+        "p50": 0.004442599999492813,
+        "p95": 0.013270740000098152,
+        "max": 4.06568309999966,
+        "sum": 23.674037200003113
+      },
+      "max_after_rho": 1.0332071781158447,
+      "overloaded_after_steps": 4,
+      "reward_sum": 681.1234159469604,
+      "module_summary": {
+        "reconnect": {
+          "calls": 575,
+          "simulate_calls": 71,
+          "wall_s": 0.1990752000010616
+        },
+        "recover_topo": {
+          "calls": 497,
+          "simulate_calls": 481,
+          "wall_s": 1.5585764000043127
+        },
+        "topo_12_unsafe": {
+          "calls": 6,
+          "simulate_calls": 2112,
+          "wall_s": 5.540545099998781
+        },
+        "topo_n1_unsafe": {
+          "calls": 3,
+          "simulate_calls": 2681,
+          "wall_s": 7.997728599999391
+        },
+        "optim": {
+          "calls": 3,
+          "simulate_calls": 3,
+          "wall_s": 6.693564799998967
+        }
+      },
+      "solver_statuses": {
+        "user_limit": 1,
+        "optimal": 2
+      },
+      "nn_calls": 6,
+      "nn_wall_s": {
+        "mean": 0.0006030333330879026,
+        "p50": 0.000452199999926961,
+        "p95": 0.001124024999626272,
+        "max": 0.0013111999996908708,
+        "sum": 0.003618199998527416
+      },
+      "selected_forecast_available": 572
+    }
+  ],
+  "repeat_checks": [
+    {
+      "scenario": 0,
+      "NN20_smoke_matches_main_first24": true
+    },
+    {
+      "scenario": 1,
+      "NN20_smoke_matches_main_first24": true
+    }
+  ],
+  "GRID01_repeat_checks": [
+    {
+      "scenario": 0,
+      "common_steps": 258,
+      "matches_GRID01_actions_observations_rewards_flags_calls": true
+    },
+    {
+      "scenario": 1,
+      "common_steps": 258,
+      "matches_GRID01_actions_observations_rewards_flags_calls": true
+    }
+  ],
+  "NN20_NN352_comparison": [
+    {
+      "scenario": 0,
+      "common_observed_steps": 575,
+      "first_action_difference": null,
+      "different_action_steps_in_common_prefix": 0,
+      "all_observations_actions_rewards_native_flags_identical": true
+    },
+    {
+      "scenario": 1,
+      "common_observed_steps": 575,
+      "first_action_difference": null,
+      "different_action_steps_in_common_prefix": 0,
+      "all_observations_actions_rewards_native_flags_identical": true
+    }
+  ],
+  "source_hashes_and_class_AST_checked": true,
+  "model_and_input_mapping_checked": true,
+  "qualification_physical_steps": 0,
+  "note": "Offline consistency audit, native flags and prefix replay. Not independent AC-physics validation or formal challenge scoring."
+}

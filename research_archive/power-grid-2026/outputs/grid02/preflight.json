@@ -1,0 +1,68 @@
+{
+  "status": "PASS_NO_PHYSICAL_STEPS",
+  "actual_steps": 0,
+  "versions": {
+    "torch": "2.8.0",
+    "stable-baselines3": "2.3.0",
+    "gymnasium": "0.29.1",
+    "numpy": "2.4.6",
+    "scipy": "1.18.1",
+    "cvxpy": "1.9.3",
+    "lightsim2grid": "1.1.0",
+    "grid2op": "1.12.5"
+  },
+  "torch_threads": 1,
+  "native_max_episode_duration": 575,
+  "legacy_mapping_migration_checked": true,
+  "mapping_keys": [
+    "curriculum_id_actions",
+    "g2op_id_actions",
+    "vect_actions"
+  ],
+  "vector_shape": [
+    352,
+    1605
+  ],
+  "curriculum_shape": [
+    352
+  ],
+  "mapping_count": 352,
+  "mapping_original_type": "<class 'grid2op.Space.GridObjects.ActionIDF2023_l2rpn_idf_2023LightSimBackend'>",
+  "ambiguous": 0,
+  "mapping_vector_sha256": "e094dcd0c0c80ba3823a91e337878accaf954951908fb49a30a18abc5eeab248",
+  "mapping_vectors_equal_objects_and_rebuild": true,
+  "construct_s": 10.86758959999952,
+  "policy_class": "<class 'stable_baselines3.common.policies.ActorCriticPolicy'>",
+  "observation_shape": [
+    186
+  ],
+  "action_count": 352,
+  "topk": 20,
+  "initial_top20": [
+    117,
+    318,
+    190,
+    280,
+    331,
+    92,
+    347,
+    228,
+    218,
+    260,
+    238,
+    160,
+    123,
+    21,
+    133,
+    261,
+    306,
+    104,
+    279,
+    7
+  ],
+  "input_exactly_observed_rho": true,
+  "mapping_overlap_with_full421": 328,
+  "unique_mapping_actions": 352,
+  "model_parameters": 55201,
+  "wall_s": 19.89947089999987
+}

@@ -1,0 +1,6248 @@
+[
+  {
+    "target": {
+      "week": "2035-01-29_4",
+      "step": 521,
+      "call_file": "outputs/grid15/runs/2035-01-29_4/call000.json",
+      "state_hash": "62fdcae2ddd09b29fccc8f3b5a4b6cffdcfea5ec64b2ed9ecc3858cda1dfd691",
+      "candidate_ids": [
+        58,
+        172,
+        202
+      ]
+    },
+    "pairs": [
+      {
+        "pool_id": 58,
+        "changed_positions": [
+          271
+        ],
+        "intentional_base_lines": [],
+        "original": {
+          "rho": 1.0732598304748535,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [180] have been modified illegally (cooldown of [3])\""
+          ],
+          "wall_s": 0.0031628000001546752,
+          "action_hash": "4694a91d24343f4079cd20cbc8aa8bab75fc9615c3f98fa62e43333fc5097254",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 1.0727545022964478,
+          "reward": 0.9272454977035522,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.002829600000040955,
+          "action_hash": "ecfd41e9a484beecedb2b6fedd372ca4ae38e92e37dfe52cde002984f7dcc1c1",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        }
+      },
+      {
+        "pool_id": 172,
+        "changed_positions": [
+          271
+        ],
+        "intentional_base_lines": [],
+        "original": {
+          "rho": 1.0732598304748535,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [180] have been modified illegally (cooldown of [3])\""
+          ],
+          "wall_s": 0.00282599999991362,
+          "action_hash": "d8a7900e20629b68a8992990e2f588c0549218fdf9149436d977e1e3b0ca5516",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 1.0832476615905762,
+          "reward": 0.9167523384094238,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.0029650999999830674,
+          "action_hash": "474b294585933f2c49cde8372e19696b1767f9103b52d565bc820982a9d12de7",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        }
+      },
+      {
+        "pool_id": 202,
+        "changed_positions": [
+          271
+        ],
+        "intentional_base_lines": [],
+        "original": {
+          "rho": 1.0732598304748535,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [180] have been modified illegally (cooldown of [3])\""
+          ],
+          "wall_s": 0.0033576999999240797,
+          "action_hash": "25126933823d172e311618b0e31cd98c9a78811f88d3e5b9af300413fb558b40",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 1.2629868984222412,
+          "reward": 0.7370131015777588,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.002739599999586062,
+          "action_hash": "610c5452ed4c581e95270a6e616a4bb208f76b23f1a7796ab6d9c375e65a9b98",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        }
+      }
+    ]
+  },
+  {
+    "target": {
+      "week": "2035-04-16_2",
+      "step": 111,
+      "call_file": "outputs/grid15/runs/2035-04-16_2/call000.json",
+      "state_hash": "6790850e462a154822ebdda43f129d93eaa389ad06e03c4a92665adadeb6e19e",
+      "candidate_ids": [
+        46,
+        65,
+        76
+      ]
+    },
+    "pairs": [
+      {
+        "pool_id": 46,
+        "changed_positions": [
+          469
+        ],
+        "intentional_base_lines": [],
+        "original": {
+          "rho": 1.0402790307998657,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [62] have been modified illegally (cooldown of [1])\""
+          ],
+          "wall_s": 0.002342700000099285,
+          "action_hash": "37635f270e1b629141f7b7ecd7566cf781035a1de1443696e4946c0a17451a95",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 1.8346174955368042,
+          "reward": 0.1653825044631958,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.00283259999969232,
+          "action_hash": "8524508241e7c5d63b873db4fbe1f38876a056c348eed8d97708dca6d5a51c60",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        }
+      },
+      {
+        "pool_id": 65,
+        "changed_positions": [
+          469
+        ],
+        "intentional_base_lines": [],
+        "original": {
+          "rho": 1.0402790307998657,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [62] have been modified illegally (cooldown of [1])\""
+          ],
+          "wall_s": 0.0024597999999969034,
+          "action_hash": "870e487d846e594d2d09631b53240a21b753571847a77b4e182572c7b86e81ee",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 1.6187810897827148,
+          "reward": 0.38121891021728516,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.0023049000001265085,
+          "action_hash": "520defc81888f895d23135b5a9f1042bbc1da61fe75f66bcd1a7a1b00bed644c",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        }
+      },
+      {
+        "pool_id": 76,
+        "changed_positions": [
+          469
+        ],
+        "intentional_base_lines": [],
+        "original": {
+          "rho": 1.0402790307998657,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [62] have been modified illegally (cooldown of [1])\""
+          ],
+          "wall_s": 0.0024055000003500027,
+          "action_hash": "36c7dd96b24f0e56182bee3d91b75f6119f12bacccf6d8dc9fbb227905e08073",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 1.1208852529525757,
+          "reward": 0.8791147470474243,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.002516999999897962,
+          "action_hash": "dbf8b12e9b71d1679d630ecc94f352c6c078fcf3db2e9c424c1af477326a6454",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        }
+      }
+    ]
+  },
+  {
+    "target": {
+      "week": "2035-07-23_10",
+      "step": 548,
+      "call_file": "outputs/grid15/runs/2035-07-23_10/call000.json",
+      "state_hash": "9002936f28e47fd03bd2457d19c84d8dc12a2291a40dee5363dc23e6e367d95c",
+      "candidate_ids": [
+        94,
+        176,
+        196
+      ]
+    },
+    "pairs": [
+      {
+        "pool_id": 94,
+        "changed_positions": [
+          80
+        ],
+        "intentional_base_lines": [
+          180
+        ],
+        "original": {
+          "rho": 0.9780140519142151,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [88] have been modified illegally (cooldown of [2])\""
+          ],
+          "wall_s": 0.0030538000000888132,
+          "action_hash": "29acaf3e3f3a1f3ecd553428f9b1897dfb4a6b70f23fe254b16514ab5b6a5e9a",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 1.870945692062378,
+          "reward": 0.12905430793762207,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.0026297999997950683,
+          "action_hash": "ab1c91522485b1c0d20f38b8578a209a8f500a0a353eafa7162c8baac809ec0d",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        }
+      },
+      {
+        "pool_id": 176,
+        "changed_positions": [
+          80
+        ],
+        "intentional_base_lines": [
+          180
+        ],
+        "original": {
+          "rho": 0.9780140519142151,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [88] have been modified illegally (cooldown of [2])\""
+          ],
+          "wall_s": 0.004203099999813276,
+          "action_hash": "a5e6af4e5f888a124150ded9c94ac150d35914b619afc0eabbce46f8a8caa53e",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 0.8236376047134399,
+          "reward": 1.17636239528656,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.003717600000072707,
+          "action_hash": "c06baa30cfe18fece76b6fc522addf758d64721a9354f426ff9a90aa614cae48",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": true
+        }
+      },
+      {
+        "pool_id": 196,
+        "changed_positions": [
+          80
+        ],
+        "intentional_base_lines": [
+          180
+        ],
+        "original": {
+          "rho": 0.9780140519142151,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [88] have been modified illegally (cooldown of [2])\""
+          ],
+          "wall_s": 0.002982399999837071,
+          "action_hash": "128843279bbb0367ee2b144e2755d1f619cbd7bd188996076b82c7f5bec6837c",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 0.8236830234527588,
+          "reward": 1.1763169765472412,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.0024939999998423446,
+          "action_hash": "344a6d68d98c1c4e96b15297d7f73fab1865cf09093a04c632ef0140b9e5bb1d",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": true
+        }
+      }
+    ]
+  },
+  {
+    "target": {
+      "week": "2035-10-29_15",
+      "step": 101,
+      "call_file": "outputs/grid15/runs/2035-10-29_15/call002.json",
+      "state_hash": "e132238c407894ffe8312689578677def6a60bcd64ba119489bef3a9ae830e79",
+      "candidate_ids": [
+        46,
+        65,
+        76
+      ]
+    },
+    "pairs": [
+      {
+        "pool_id": 46,
+        "changed_positions": [
+          469
+        ],
+        "intentional_base_lines": [],
+        "original": {
+          "rho": 1.2283174991607666,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [62] have been modified illegally (cooldown of [3])\""
+          ],
+          "wall_s": 0.003009499999734544,
+          "action_hash": "37635f270e1b629141f7b7ecd7566cf781035a1de1443696e4946c0a17451a95",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 1.4281615018844604,
+          "reward": 0.5718384981155396,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.002704499999708787,
+          "action_hash": "8524508241e7c5d63b873db4fbe1f38876a056c348eed8d97708dca6d5a51c60",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        }
+      },
+      {
+        "pool_id": 65,
+        "changed_positions": [
+          469
+        ],
+        "intentional_base_lines": [],
+        "original": {
+          "rho": 1.2283174991607666,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [62] have been modified illegally (cooldown of [3])\""
+          ],
+          "wall_s": 0.002808000000186439,
+          "action_hash": "870e487d846e594d2d09631b53240a21b753571847a77b4e182572c7b86e81ee",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 1.2283174991607666,
+          "reward": 0.7716825008392334,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.002629999999953725,
+          "action_hash": "520defc81888f895d23135b5a9f1042bbc1da61fe75f66bcd1a7a1b00bed644c",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        }
+      },
+      {
+        "pool_id": 76,
+        "changed_positions": [
+          469
+        ],
+        "intentional_base_lines": [],
+        "original": {
+          "rho": 1.2283174991607666,
+          "reward": -1.0,
+          "done": false,
+          "illegal": true,
+          "ambiguous": false,
+          "exceptions": [
+            "Grid2OpException IllegalAction \"Powerline with ids [62] have been modified illegally (cooldown of [3])\""
+          ],
+          "wall_s": 0.002666599999884056,
+          "action_hash": "36c7dd96b24f0e56182bee3d91b75f6119f12bacccf6d8dc9fbb227905e08073",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        },
+        "masked": {
+          "rho": 1.2283174991607666,
+          "reward": 0.7716825008392334,
+          "done": false,
+          "illegal": false,
+          "ambiguous": false,
+          "exceptions": [],
+          "wall_s": 0.0026916000001619977,
+          "action_hash": "dbf8b12e9b71d1679d630ecc94f352c6c078fcf3db2e9c424c1af477326a6454",
+          "forecast_layout": [
+            {
+              "name": "year",
+              "size": 1
+            },
+            {
+              "name": "month",
+              "size": 1
+            },
+            {
+              "name": "day",
+              "size": 1
+            },
+            {
+              "name": "hour_of_day",
+              "size": 1
+            },
+            {
+              "name": "minute_of_hour",
+              "size": 1
+            },
+            {
+              "name": "day_of_week",
+              "size": 1
+            },
+            {
+              "name": "gen_p",
+              "size": 62
+            },
+            {
+              "name": "gen_q",
+              "size": 62
+            },
+            {
+              "name": "gen_v",
+              "size": 62
+            },
+            {
+              "name": "load_p",
+              "size": 99
+            },
+            {
+              "name": "load_q",
+              "size": 99
+            },
+            {
+              "name": "load_v",
+              "size": 99
+            },
+            {
+              "name": "p_or",
+              "size": 186
+            },
+            {
+              "name": "q_or",
+              "size": 186
+            },
+            {
+              "name": "v_or",
+              "size": 186
+            },
+            {
+              "name": "a_or",
+              "size": 186
+            },
+            {
+              "name": "p_ex",
+              "size": 186
+            },
+            {
+              "name": "q_ex",
+              "size": 186
+            },
+            {
+              "name": "v_ex",
+              "size": 186
+            },
+            {
+              "name": "a_ex",
+              "size": 186
+            },
+            {
+              "name": "rho",
+              "size": 186
+            },
+            {
+              "name": "line_status",
+              "size": 186
+            },
+            {
+              "name": "timestep_overflow",
+              "size": 186
+            },
+            {
+              "name": "topo_vect",
+              "size": 540
+            },
+            {
+              "name": "time_before_cooldown_line",
+              "size": 186
+            },
+            {
+              "name": "time_before_cooldown_sub",
+              "size": 118
+            },
+            {
+              "name": "time_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "duration_next_maintenance",
+              "size": 186
+            },
+            {
+              "name": "target_dispatch",
+              "size": 62
+            },
+            {
+              "name": "actual_dispatch",
+              "size": 62
+            },
+            {
+              "name": "storage_charge",
+              "size": 7
+            },
+            {
+              "name": "storage_power_target",
+              "size": 7
+            },
+            {
+              "name": "storage_power",
+              "size": 7
+            },
+            {
+              "name": "gen_p_before_curtail",
+              "size": 62
+            },
+            {
+              "name": "curtailment",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit",
+              "size": 62
+            },
+            {
+              "name": "curtailment_limit_effective",
+              "size": 62
+            },
+            {
+              "name": "is_alarm_illegal",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_alarm",
+              "size": 1
+            },
+            {
+              "name": "last_alarm",
+              "size": 0
+            },
+            {
+              "name": "attention_budget",
+              "size": 1
+            },
+            {
+              "name": "was_alarm_used_after_game_over",
+              "size": 1
+            },
+            {
+              "name": "_shunt_p",
+              "size": 14
+            },
+            {
+              "name": "_shunt_q",
+              "size": 14
+            },
+            {
+              "name": "_shunt_v",
+              "size": 14
+            },
+            {
+              "name": "_shunt_bus",
+              "size": 14
+            },
+            {
+              "name": "current_step",
+              "size": 1
+            },
+            {
+              "name": "max_step",
+              "size": 1
+            },
+            {
+              "name": "delta_time",
+              "size": 1
+            },
+            {
+              "name": "gen_margin_up",
+              "size": 62
+            },
+            {
+              "name": "gen_margin_down",
+              "size": 62
+            },
+            {
+              "name": "active_alert",
+              "size": 22
+            },
+            {
+              "name": "attack_under_alert",
+              "size": 22
+            },
+            {
+              "name": "time_since_last_alert",
+              "size": 22
+            },
+            {
+              "name": "alert_duration",
+              "size": 22
+            },
+            {
+              "name": "total_number_of_alert",
+              "size": 1
+            },
+            {
+              "name": "time_since_last_attack",
+              "size": 22
+            },
+            {
+              "name": "was_alert_used_after_attack",
+              "size": 22
+            },
+            {
+              "name": "gen_p_delta",
+              "size": 62
+            },
+            {
+              "name": "timestep_protection_engaged",
+              "size": 186
+            }
+          ],
+          "valid_improving": false
+        }
+      }
+    ]
+  }
+]

@@ -1,5 +1,11 @@
 # GRL
 
+## 当前电网研究与模型归档（2026-10-10）
+
+[Grid2Op/L2RPN实验索引](research_archive/power-grid-2026/README.md) · [GRID22–23完整收尾](research_archive/power-grid-2026/outputs/grid_research_audit/GRID22_23_closeout.md) · [模型版本记录](research_archive/power-grid-2026/outputs/grid_research_audit/POWER_MODEL_CHANGELOG.md)
+
+52条闭环轨迹及审计完成。128候选修订缓解提前失败，但成本质量仍未达标；尚未建立GNN的实用闭环增量或新RL优势。V0/V1初始、最终权重及曲线纳入归档；报告、汇总、代码与校验清单覆盖GRID00–23。大型轨迹、RTE数据和作者PPO依赖保持本地，实际包含项明确列出。此电网模型是独立的辅助排序研究，不是原IM权重直接迁移。当前状态以docs/RESEARCH_STATE.md为准。
+
 ## 截至2026-10-06的完整实验归档
 
 [实验总索引与最新裁决](research_archive/decision-studies-2026/README.md) · [更正/撤回记录](research_archive/decision-studies-2026/CORRECTIONS.md) · [完整结果Release](https://github.com/Lntano84/GRL/releases/tag/experiments-2026-10-06)

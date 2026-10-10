@@ -1,0 +1,231 @@
+{
+  "stage": "GRID23_COMMON_NATIVE_TIE_AND_K128_DEVELOPMENT",
+  "weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "methods": [
+    {
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "method": "OLDNN128",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "method": "GNN0_128",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "method": "GNN1_128",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "method": "MLP0_128",
+      "rule": "MLP_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/mlp_seed0/final.pt"
+    },
+    {
+      "method": "BIAS0_128",
+      "rule": "BIAS_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/bias_seed0/final.pt"
+    }
+  ],
+  "execution_order": [
+    {
+      "week": "2035-03-05_0",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "OLDNN128",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "GNN0_128",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "GNN1_128",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "MLP0_128",
+      "rule": "MLP_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/mlp_seed0/final.pt"
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "BIAS0_128",
+      "rule": "BIAS_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/bias_seed0/final.pt"
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "GNN0_128",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "GNN1_128",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "MLP0_128",
+      "rule": "MLP_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/mlp_seed0/final.pt"
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "BIAS0_128",
+      "rule": "BIAS_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/bias_seed0/final.pt"
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "OLDNN128",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "GNN1_128",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "MLP0_128",
+      "rule": "MLP_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/mlp_seed0/final.pt"
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "BIAS0_128",
+      "rule": "BIAS_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/bias_seed0/final.pt"
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "OLDNN128",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "GNN0_128",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "MLP0_128",
+      "rule": "MLP_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/mlp_seed0/final.pt"
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "BIAS0_128",
+      "rule": "BIAS_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/bias_seed0/final.pt"
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "OLDNN128",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "GNN0_128",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "GNN1_128",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    }
+  ],
+  "environment_seed": 0,
+  "new_model_fits": 0,
+  "caps": {
+    "wall_s": 7200,
+    "episode_s": 600,
+    "physical_steps": 52000,
+    "public_forecasts": 1000000
+  },
+  "motivation": "K32 closed-loop differs from teacher-state ranking; exact native-reward ties can change chosen actions despite best candidates being queried. Test coverage at previously specified K128 without training or changing targets.",
+  "change": "All methods choose smallest canonical action ID on EXACT equal native float32 reward. No near-tie tolerance. GNN, MLP, bias and original PPO all use K128 with identical masked candidates, admission and cached full fallback.",
+  "unchanged": "V1 checkpoints, training labels, original PPO, other control modules, continuous optimizer, restoration cadence6, actual endpoint mask and action equivalence, four exposed development weeks and environment seed0.",
+  "comparison": "Primary both GNN seeds versus FULL on complete-week parity, per-week cost regret<=1%, mean controller reduction>=10%, mean search forecast reduction>=30%. Graph increment against same-K original PPO, MLP and fixed bias requires survival parity and mean two-GNN-seed cost gain>=0.5% for each. No new significance or final-test claim.",
+  "notes": "Two factors change together. This stage tests the final revised configuration, not a causal decomposition of tie handling and budget. Compare exact tie diagnostic separately. No models selected from these results; all specified checkpoints remain archived.",
+  "reservation": "All variants of outputs/grid_final_holdout/reserved_date_families.json remain unopened; original GRID03 test partition was partly consumed and cannot support final-test claims."
+}

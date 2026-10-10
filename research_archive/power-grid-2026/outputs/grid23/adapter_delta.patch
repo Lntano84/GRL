@@ -1,0 +1,11 @@
+--- GRID22/adapter.py
++++ GRID23/canonical_adapter.py
+@@ -103,7 +103,7 @@
+                 if i not in cache: dispatch(i, "fallback")
+         considered = reps if fallback else first
+         valid = [i for i in considered if cache[i]["strict_admissible"]]
+-        chosen = max(valid, key=lambda i: (float(np.float32(cache[i]["reward"])), -considered.index(i))) if valid else None
++        chosen = max(valid, key=lambda i: (float(np.float32(cache[i]["reward"])), -i)) if valid else None
+         assert digest(obs.to_vect()) == before
+         result = None if chosen is None else actions[chosen]
+         log = {"state_hash": before, "rule": self.rule, "budget": self.budget, "eligible": eligible,

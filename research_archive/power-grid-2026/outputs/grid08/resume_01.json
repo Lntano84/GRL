@@ -1,0 +1,46 @@
+{
+  "cause": "No Python processes remained; tool sessions unknown. No failure marker. External interruption observed; exact cause undetermined.",
+  "plans": {
+    "gnn": {
+      "completed_episodes": 11,
+      "checkpoint": "outputs\\grid08\\v2\\train\\gnn\\epoch2_week2.pt",
+      "checkpoint_sha256": "2ef0a6cba0c237aac94c9f65ed6f4217aa0c7ee837492e857eb5cfc8fd8428aa",
+      "partial_folder": "outputs\\grid08\\v2\\train\\gnn\\e2_2035-10-29_15",
+      "partial_steps_logged": 1838,
+      "partial_steps_upper_bound": 1839,
+      "completed_updates": 78,
+      "completed_physical_steps": 19409,
+      "completed_optimizer_wall_s": 108.80026050001106,
+      "archive": "outputs\\grid08\\v2\\train\\gnn\\interrupted_attempt_01"
+    },
+    "mlp": {
+      "completed_episodes": 11,
+      "checkpoint": "outputs\\grid08\\v2\\train\\mlp\\epoch2_week2.pt",
+      "checkpoint_sha256": "79a371e8243f5b29fc815597db732dc35b0fe8870e45ce2dd24ea7f3a7814048",
+      "partial_folder": "outputs\\grid08\\v2\\train\\mlp\\e2_2035-10-29_15",
+      "partial_steps_logged": 1199,
+      "partial_steps_upper_bound": 1200,
+      "completed_updates": 85,
+      "completed_physical_steps": 21293,
+      "completed_optimizer_wall_s": 16.4685449000026,
+      "archive": "outputs\\grid08\\v2\\train\\mlp\\interrupted_attempt_01"
+    },
+    "guard": {
+      "completed_episodes": 3,
+      "completed_physical_steps": 5753,
+      "partial_folder": "outputs\\grid08\\guard_qualification\\2035-01-29_4__ALWAYS_TWO_STEP",
+      "partial_steps_logged": 401,
+      "partial_steps_upper_bound": 402,
+      "archive": "outputs\\grid08\\guard_qualification\\interrupted_attempt_01"
+    }
+  },
+  "partial_steps_logged": 3438,
+  "partial_steps_upper_bound": 3441,
+  "wall_budget": "Original per-invocation caps retained; interrupted attempts are disclosed in addition. No model or training schedule changes.",
+  "rng_scope": "Checkpoint stores model, Adam and Torch RNG. Global NumPy state was not checkpointed; no explicit global NumPy draws in runner. No bitwise continuation claim for external libraries.",
+  "freeze": {
+    "work\\grid08\\pilot_v2_resume.py": "5c3b93a3fce5f8ce6eb3004eb390213666701c16ec1119ad42008db539758d2c",
+    "work\\grid08\\guard_qualification_resume.py": "c8f35a078253080f7f676050665b7044c9ac87512510b6368a92c864e8b046b2",
+    "work\\grid08\\prepare_resume.py": "e9b32e30c8c3aa83fa5f3b7a2b895bab72e474735a819a696cb396a7cddc66ae"
+  }
+}

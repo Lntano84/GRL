@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "input_states": 193,
+  "candidate_descriptors": 169189,
+  "weight_changes": [
+    {
+      "kind": "gnn",
+      "seed": 0,
+      "changed_tensors": 20
+    },
+    {
+      "kind": "gnn",
+      "seed": 1,
+      "changed_tensors": 20
+    },
+    {
+      "kind": "mlp",
+      "seed": 0,
+      "changed_tensors": 14
+    },
+    {
+      "kind": "mlp",
+      "seed": 1,
+      "changed_tensors": 14
+    },
+    {
+      "kind": "bias",
+      "seed": 0,
+      "changed_tensors": 1
+    },
+    {
+      "kind": "bias",
+      "seed": 1,
+      "changed_tensors": 1
+    }
+  ],
+  "fit_diagnostics": [
+    {
+      "method": "GNN_seed0",
+      "train_preference_states": 148,
+      "mean_final_cross_entropy": 5.756849222086571,
+      "mean_target_entropy": 2.9528699226778103,
+      "mean_final_KL": 2.8039792994087613,
+      "train_near_best32": 0.9256756756756757
+    },
+    {
+      "method": "GNN_seed1",
+      "train_preference_states": 148,
+      "mean_final_cross_entropy": 5.754289495783883,
+      "mean_target_entropy": 2.9528699226778103,
+      "mean_final_KL": 2.801419573106073,
+      "train_near_best32": 0.918918918918919
+    },
+    {
+      "method": "MLP_seed0",
+      "train_preference_states": 148,
+      "mean_final_cross_entropy": 5.883035082269359,
+      "mean_target_entropy": 2.9528699226778103,
+      "mean_final_KL": 2.930165159591549,
+      "train_near_best32": 0.918918918918919
+    },
+    {
+      "method": "MLP_seed1",
+      "train_preference_states": 148,
+      "mean_final_cross_entropy": 5.879387881304766,
+      "mean_target_entropy": 2.9528699226778103,
+      "mean_final_KL": 2.9265179586269565,
+      "train_near_best32": 0.918918918918919
+    },
+    {
+      "method": "BIAS_seed0",
+      "train_preference_states": 148,
+      "mean_final_cross_entropy": 6.055733943307722,
+      "mean_target_entropy": 2.9528699226778103,
+      "mean_final_KL": 3.102864020629912,
+      "train_near_best32": 0.8445945945945946
+    },
+    {
+      "method": "BIAS_seed1",
+      "train_preference_states": 148,
+      "mean_final_cross_entropy": 6.054825831103969,
+      "mean_target_entropy": 2.9528699226778103,
+      "mean_final_KL": 3.101955908426159,
+      "train_near_best32": 0.8445945945945946
+    }
+  ],
+  "prediction_replays": 156,
+  "delivery_rows": 676,
+  "permission_checks": [
+    {
+      "week": "2035-03-05_0",
+      "input_unchanged": true
+    },
+    {
+      "week": "2035-06-25_8",
+      "input_unchanged": true
+    },
+    {
+      "week": "2035-09-03_4",
+      "input_unchanged": true
+    },
+    {
+      "week": "2035-10-01_5",
+      "input_unchanged": true
+    }
+  ],
+  "new_forecasts": 0,
+  "refits": 0,
+  "scope": "Independent source/descriptor/target/budget arithmetic plus saved-network/ridge prediction consistency. No independent neural refit or second AC solver; feature producer reused only in permissions check."
+}

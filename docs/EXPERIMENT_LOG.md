@@ -2,6 +2,16 @@
 
 This file is a concise index of experiments worth remembering. Raw logs, checkpoints, copied worktrees, and large outputs remain in their project-local result directories.
 
+## 2026-10-10 — GRID22/23 complete deployment comparisons
+
+[Reports, source snapshots, selected tables and owned model weights](../research_archive/power-grid-2026/README.md) cover GRID00–23. The actual included files have an independent SHA-256 archive manifest; large traces/data and external PPO artifacts stay local.
+
+GRID22: 28 runs, 53,828 physical steps, 139,770 public forecasts. K32 GNN seed0 completed 3/4 weeks; seed1 2/4, losing September at181 steps. GRID23: 24 runs, 47,712 steps, 134,946 forecasts; same weights, shared exact canonical tie handling and K128. Both GNN seeds now complete3/4, matching FULL survival on these weeks. Both fail the quality screen: March cost +8.073%; complete-week mean increases2.691%/3.070%. Public candidate queries decrease82.530%/81.937%. Graph cost gains against PPO/MLP/bias are only0.024%/0.031%/0.015% and fail the fixed increment threshold.
+
+Both saved-data audits pass; a separate reconciliation checks1,217 sealed-file hashes and recomputes comparison arithmetic. No independent AC rerun or new fitting/RL. Earlier GRID22 interruption preserves14 completed runs and archives305 readable partial steps, at least4,253 forecasts and unknown unlogged work. Its costs are not zero and are separate from successful trajectory totals.
+
+This is development evidence on four exposed weeks, not final confirmation. The model's training loss uses next-step risk; the actual controller additionally optimizes continuous actions and evaluates long-term cost. A tiny missed risk optimum can precede a much larger trajectory cost difference, but its causal mechanism remains unproved. Wall-time results have non-search variation and are not attributed wholesale to the GNN.
+
 ## 2026-09-18 — Current-state override after model correction
 
 This entry is the current interpretation of all later evidence. Entries below that predate the

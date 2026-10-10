@@ -1,0 +1,60 @@
+{
+  "status": "BASELINE_QUALIFIED_NO_TOPK_EXPANSION_BENEFIT_IN_BUNDLED_SCENARIOS",
+  "aggregate": {
+    "FULL": {
+      "steps": 1150,
+      "simulate_calls": 12893,
+      "act_total_s": 63.44565230000808,
+      "act_p95_s": 0.012949400000388777,
+      "act_p99_s": 2.3537031019994967,
+      "act_max_s": 5.8732522000000245,
+      "act_over1s_steps": 24,
+      "all_reached_native_horizon": true,
+      "all_native_errors_zero": true,
+      "topo12_simulations": 6226,
+      "topo12_calls": 15,
+      "optim_calls": 18,
+      "optim_wall_s": 26.40226839999832,
+      "N1_wall_s": 13.562999499999933
+    },
+    "NN20": {
+      "steps": 1150,
+      "simulate_calls": 6069,
+      "act_total_s": 44.20238359998439,
+      "act_p95_s": 0.012908575000255943,
+      "act_p99_s": 2.4601215599998234,
+      "act_max_s": 4.089148300000488,
+      "act_over1s_steps": 14,
+      "all_reached_native_horizon": true,
+      "all_native_errors_zero": true,
+      "topo12_simulations": 300,
+      "topo12_calls": 15,
+      "optim_calls": 12,
+      "optim_wall_s": 26.949798299999202,
+      "N1_wall_s": 10.101221299998542
+    },
+    "NN352": {
+      "steps": 1150,
+      "simulate_calls": 11049,
+      "act_total_s": 57.50242279999202,
+      "act_p95_s": 0.013002820000019708,
+      "act_p99_s": 2.5948931829999764,
+      "act_max_s": 4.06568309999966,
+      "act_over1s_steps": 14,
+      "all_reached_native_horizon": true,
+      "all_native_errors_zero": true,
+      "topo12_simulations": 5280,
+      "topo12_calls": 15,
+      "optim_calls": 12,
+      "optim_wall_s": 27.158443600000282,
+      "N1_wall_s": 10.16888949999975
+    }
+  },
+  "NN20_NN352_simulations_saved": 4980,
+  "NN20_NN352_act_total_reduction": 0.23129528378775507,
+  "total_physical_steps": 3498,
+  "all_process_wall_s": 355.0460000000003,
+  "new_training": false,
+  "formal_research_dataset_downloaded": false,
+  "cumulative_dependency_payload_cap_met": false
+}

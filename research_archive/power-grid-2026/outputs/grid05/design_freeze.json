@@ -1,0 +1,81 @@
+{
+  "stage": "GRID05",
+  "environment_seed": 0,
+  "data_root": "work/grid03/formal_env_initialized",
+  "selected_development_weeks": [
+    "2035-01-29_4",
+    "2035-04-16_2",
+    "2035-07-23_10",
+    "2035-10-29_15"
+  ],
+  "plan": [
+    {
+      "scenario": "2035-01-29_4",
+      "policy": "NN20"
+    },
+    {
+      "scenario": "2035-01-29_4",
+      "policy": "FALLBACK90"
+    },
+    {
+      "scenario": "2035-04-16_2",
+      "policy": "FALLBACK90"
+    },
+    {
+      "scenario": "2035-04-16_2",
+      "policy": "NN20"
+    },
+    {
+      "scenario": "2035-07-23_10",
+      "policy": "NN20"
+    },
+    {
+      "scenario": "2035-07-23_10",
+      "policy": "FALLBACK90"
+    },
+    {
+      "scenario": "2035-10-29_15",
+      "policy": "FALLBACK90"
+    },
+    {
+      "scenario": "2035-10-29_15",
+      "policy": "NN20"
+    }
+  ],
+  "policies": [
+    "NN20",
+    "FALLBACK90"
+  ],
+  "rule": "Evaluate original NN top20. If its selected topology has recorded predicted max rho >= original rho_safe=0.9, or no candidate is returned, evaluate remaining332; merge cached original float32 rewards in NN352 full order. Keep original eligibility, null reward, tie order and downstream control.",
+  "no_threshold_sweep": true,
+  "initial_top_k": 20,
+  "expanded_top_k": 352,
+  "metrics_order": [
+    "native termination and full week completion",
+    "raw cost only on jointly completed paired weeks",
+    "actual candidate simulations and same-prior-prefix time; no production deadline claim"
+  ],
+  "calibration": "New NN20 must reproduce all four GRID04 NN20 action/observation traces; otherwise document failure of exact calibration and do not claim a clean incremental effect.",
+  "quality_screen": {
+    "january_end_at_least": 1719,
+    "april_recovery_of_historical_NN352_cost_gap_at_least": 0.8,
+    "no_earlier_end_than_new_NN20_any_week": true,
+    "maximum_relative_cost_regression_any_jointly_complete_week": 0.02
+  },
+  "verdict": "Rule supported on this development set only if all quality screen items hold. Earlier termination or >2% complete-week cost regression makes the rule unsafe to promote here. Other results mixed/inconclusive; no threshold/model/seed tuning or automatic training.",
+  "historical_NN352": "GRID04 quality reference only, not a concurrent wall-time or significance comparison.",
+  "preflight": {
+    "physical_steps": 0,
+    "maximum_native_simulates": 800,
+    "maximum_wall_s": 180,
+    "description": "Synthetic semantic checks plus forced expansion vs source full greedy on the first already exposed development initial observation; force switch absent from production calls."
+  },
+  "caps": {
+    "main_runs": 8,
+    "physical_steps": 16200,
+    "per_run_after_import_s": 900,
+    "total_runner_including_preflight_s": 1800,
+    "output_bytes": 2147483648
+  },
+  "scope": "Post-GRID04 development rule, not independent confirmation; synthetic public grid; pretrained training IDs unknown; validation/test not run; no training or normalized competition score."
+}

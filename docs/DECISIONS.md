@@ -1,5 +1,15 @@
 # GRL Decision Log
 
+## 2026-10-10 — Power-grid closed-loop evidence overrides ranking-only optimism
+
+The user authorized autonomous Grid2Op/L2RPN iteration with every old model and modification preserved. GRID22/23 are complete: 52 developmental trajectories and saved-data audits. The current role is supervised candidate ranking above a frozen published PPO prior, not a newly trained RL policy.
+
+K128 with a common exact-reward tie rule removed the extra lost September week, but March cost remains 8.073% above FULL. Both GNN seeds fail the frozen auxiliary quality gate; matched-budget PPO/MLP/bias controls remove any established practical graph increment. Do not claim that raising the candidate budget solved the model, that near-best one-step rho guarantees whole-week cost, or that the neural architecture combination is new.
+
+Preserve both configurations, both GNN seeds and V0/V1 initial/final weights. Separate public simulation counts from single instrumented wall timing, and compare costs only on jointly completed weeks. The source's N1 label means disconnected-line conditions, not an exhaustive N-minus-one security assessment.
+
+The original suffix-reserved test was partly used at GRID19; it is developmental now. Eight distinct date families remain reserved for the eventual evaluation, with all variants protected. The published PPO's training identity is unknown. No new RL or final evaluation was started by GRID22/23. The next justified model question concerns candidate/object information and alignment to the delivered control outcome, rather than another budget or depth sweep. Earlier IM/LOT/FA/LG decisions remain historical and are not automatically reopened.
+
 ## 2026-09-02 — Use marginal gain as a candidate signal
 
 The intended learning target is conditional marginal gain `Delta(v|S)`, evaluated by within-state

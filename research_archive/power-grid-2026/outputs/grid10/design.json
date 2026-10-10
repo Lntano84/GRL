@@ -1,0 +1,106 @@
+{
+  "stage": "GRID10",
+  "task": "Paired GNN PPO critic warm-fit + raw Huber vs fixed-normalized MSE",
+  "training_weeks": [
+    "2035-01-29_4",
+    "2035-04-16_2",
+    "2035-07-23_10",
+    "2035-10-29_15"
+  ],
+  "evaluation_weeks": [
+    "2035-02-12_5",
+    "2035-05-21_3",
+    "2035-08-20_5",
+    "2035-11-05_12"
+  ],
+  "test_split_unopened": true,
+  "environment_seed": 0,
+  "cadence": 6,
+  "proposal_current_rho_lt": 0.9,
+  "proposal_forecast_rho_le": 0.93,
+  "baselines": [
+    "NN20",
+    "ALWAYS_RESTORE",
+    "IMMEDIATE_COST"
+  ],
+  "models": [
+    "gnn"
+  ],
+  "training_seed": 20261009,
+  "training_epochs": 2,
+  "ppo": {
+    "rollout": 256,
+    "epochs": 4,
+    "minibatch": 32,
+    "learning_rate": 0.00015,
+    "gamma": 0.995,
+    "gae_lambda": 0.95,
+    "clip": 0.2,
+    "entropy": 0.01,
+    "cost_scale": 10000.0,
+    "blackout_penalty": 1000.0
+  },
+  "screen": "Completion first; final checkpoint vs raw control and ALWAYS_RESTORE. One seed, four development weeks; no final-test use or checkpoint selection.",
+  "caps": {
+    "process_wall_s": 7200,
+    "physical_steps": 50000,
+    "output_bytes": 1073741824,
+    "scope": "GRID10 only: two arms with eight training + four evaluation episodes each; at most 48,408 scheduled physical steps. Separate resource ledger; CPU runtime retained."
+  },
+  "limits": [
+    "Separate restoration helper does not change original optimizer memory.",
+    "One-step forecast acceptance is not guaranteed future safety.",
+    "Existing author model train identity unknown; our fine-tune weeks disjoint from our evaluation.",
+    "This auxiliary binary task does not yet learn topology-action ranking or validate original IM framework."
+  ],
+  "revision": {
+    "changed": "Both arms use equal-budget archived critic-only fits. Raw arm continues raw Huber; normalized arm continues MSE in fixed training-return units. Native reward, gamma, bootstrap and actor advantages remain in original units.",
+    "unchanged": [
+      "V2 actor weights",
+      "Physical-step GAE",
+      "Actor architecture and features",
+      "Reward and terminal penalty",
+      "Optimizer reset and learning rate",
+      "Rollout, PPO epochs and minibatch",
+      "Candidates and safety screen",
+      "Training and development weeks"
+    ],
+    "interpretation": "Test a critic-training package; normalization and loss change together, so cannot attribute separately. No adaptive PopArt, no new method novelty claim."
+  },
+  "versions": [
+    "raw",
+    "normalized"
+  ],
+  "source_checkpoint": {
+    "path": "outputs\\grid08\\v2\\train\\gnn\\final.pt",
+    "sha256": "190e9c163c7521f003e34f81207685cebdfcdbbbce22f731691f2316799fcc85",
+    "warm_start": "Identical V2 GNN weights, no bias shift; Adam reset identically in both arms."
+  },
+  "critic_sources": {
+    "raw": {
+      "path": "outputs\\grid08\\critic_capacity_probe\\raw_huber_critic_only.pt",
+      "sha256": "f467fc596f71d0ffb8c2059a1eb91e68ccc788c6c55a5bcd9bcf205143f85429",
+      "objective": "raw_huber"
+    },
+    "normalized": {
+      "path": "outputs\\grid08\\critic_capacity_probe\\static_normalized_mse_critic_only.pt",
+      "sha256": "d66ff4fc1768b2ac3a044c3ef19c9313fcbc58864a6ceb2d81a2c69b4e865f88",
+      "objective": "static_normalized_mse"
+    }
+  },
+  "critic_data": {
+    "samples": 532,
+    "path": "outputs\\grid08\\critic_capacity_probe\\training_data.npz",
+    "sha256": "b4b14216e0c6976406dec7c40b5ca6dad2ec7aea2bb213616863c108b9df73a4",
+    "scope": "Only last V2 training pass. Changing-policy realized returns, not unbiased final-policy labels.",
+    "prior_fit": {
+      "epochs": 64,
+      "minibatch": 64,
+      "learning_rate": 0.0003,
+      "seed": 20261009,
+      "raw_wall_s": 0.5357119,
+      "normalized_wall_s": 0.4465251
+    },
+    "reuse": "Previously audited diagnostic weights promoted explicitly into two new controllers; no evaluation returns used."
+  }
+}

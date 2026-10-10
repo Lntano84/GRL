@@ -1,0 +1,50 @@
+{
+  "source": "https://raw.githubusercontent.com/Grid2Op/grid2op-datasets/master/datasets.json",
+  "entries": {
+    "l2rpn_idf_2023": {
+      "base_url": "https://codalab.lisn.upsaclay.fr/my/datasets/download/",
+      "filename": "073fb805-76e5-423d-97e3-83a62a7ac0d0"
+    }
+  },
+  "downloaded_dataset": false,
+  "HEAD_only": {
+    "url": "https://codalab.lisn.upsaclay.fr/my/datasets/download/073fb805-76e5-423d-97e3-83a62a7ac0d0",
+    "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  "requests_HEAD_only": {
+    "verification": "requests default TLS certificate verification, HEAD only",
+    "status": 403,
+    "url": "https://miniodis-rproxy.lisn.upsaclay.fr/py3-private/dataset_data_file/83df5d4e-2e68-4e93-a7e5-409677b9a995/l2rpn_idf_2023.tar.bz2?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=codalab-py3%2F20261008%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261008T090658Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=2f2e436fb9952223d266f54560ccdac240062629c3a3c126429db3343c64d7cf",
+    "headers": {
+      "Server": "nginx",
+      "Date": "Thu, 08 Oct 2026 09:07:00 GMT",
+      "Content-Length": "0",
+      "Connection": "keep-alive",
+      "Accept-Ranges": "bytes",
+      "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+      "Vary": "Origin, Accept-Encoding",
+      "X-Amz-Id-2": "6c95da722c92daeb0c61ae5b4e761db2ed7bf7174e8815d0719af573e19b687c",
+      "X-Amz-Request-Id": "18DC82AA6CF4BE96",
+      "X-Content-Type-Options": "nosniff",
+      "X-Minio-Error-Code": "SignatureDoesNotMatch",
+      "X-Minio-Error-Desc": "\"The request signature we calculated does not match the signature you provided. Check your key and signing method.\"",
+      "X-Ratelimit-Limit": "9231",
+      "X-Ratelimit-Remaining": "9222",
+      "X-Xss-Protection": "1; mode=block"
+    }
+  },
+  "one_byte_GET_range_probe": {
+    "method": "GET",
+    "requested_range": "bytes=0-0",
+    "TLS_verification": true,
+    "archive_downloaded": false,
+    "status": 206,
+    "final_url_without_query": "https://miniodis-rproxy.lisn.upsaclay.fr/py3-private/dataset_data_file/83df5d4e-2e68-4e93-a7e5-409677b9a995/l2rpn_idf_2023.tar.bz2",
+    "content_range": "bytes 0-0/5358993257",
+    "content_length": "1",
+    "content_type": "application/x-bzip",
+    "application_body_bytes_read": 1,
+    "first_byte_hex": "42"
+  },
+  "HEAD_interpretation": "HEAD failure does not by itself establish GET/download failure; redirects can be presigned for GET."
+}

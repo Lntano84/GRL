@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "physical_steps": 0,
+  "actor_equivalent_training_states": 532,
+  "max_logit_error": 0.0,
+  "max_native_value_error": 0.0,
+  "normalized_loss_and_gradient": true,
+  "raw_huber_hand_check": true,
+  "warm_critic_training_metrics": {
+    "raw": {
+      "mu": 0.0,
+      "sigma": 1.0,
+      "training_rmse": 102.50147247314453
+    },
+    "normalized": {
+      "mu": -44.21317672729492,
+      "sigma": 101.93489837646484,
+      "training_rmse": 88.17780303955078
+    }
+  },
+  "physical_gae": {
+    "passed": true,
+    "physical_equivalence_cases": 200,
+    "max_abs_error": 0.0,
+    "interval_expansion_cases": 3,
+    "terminal_isolation": true,
+    "all_steps_offered_cases": 40,
+    "note": "Mathematical/control-interface tests, not evidence of better learned performance."
+  },
+  "scope": "Math, architecture and training-only warm-start qualification. No policy-performance evidence."
+}

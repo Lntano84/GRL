@@ -1,0 +1,101 @@
+{
+  "matrix_status": "INCOMPLETE_IMPORT_WATCHDOG_STOP",
+  "completed_runs": 9,
+  "failed_attempts": 1,
+  "not_started_runs": 2,
+  "completed_data_audit_passed": true,
+  "resource_acceptance_passed": false,
+  "verdict": "FROZEN_REJECTION_ITEM_CONFIRMED_ON_COMPLETED_DATA",
+  "original_full_matrix_not_accepted": true,
+  "contrasts": [
+    {
+      "scenario": "2035-01-08_5",
+      "reference": "NN20",
+      "reference_steps": 2017,
+      "fallback_steps": 2017,
+      "jointly_complete": true,
+      "cost_reduction_relative_to_reference": -0.2543768331773644,
+      "earlier_end": false,
+      "cost_regression_exceeds_frozen_2pct": true,
+      "meaningful_benefit": false
+    },
+    {
+      "scenario": "2035-01-08_5",
+      "reference": "NN352",
+      "reference_steps": 2017,
+      "fallback_steps": 2017,
+      "jointly_complete": true,
+      "cost_reduction_relative_to_reference": 0.009417620598927982,
+      "earlier_end": false,
+      "cost_regression_exceeds_frozen_2pct": false,
+      "meaningful_benefit": false
+    },
+    {
+      "scenario": "2035-04-30_12",
+      "reference": "NN20",
+      "reference_steps": 176,
+      "fallback_steps": 176,
+      "jointly_complete": false,
+      "cost_reduction_relative_to_reference": null,
+      "earlier_end": false,
+      "cost_regression_exceeds_frozen_2pct": false,
+      "meaningful_benefit": false
+    },
+    {
+      "scenario": "2035-04-30_12",
+      "reference": "NN352",
+      "reference_steps": 176,
+      "fallback_steps": 176,
+      "jointly_complete": false,
+      "cost_reduction_relative_to_reference": null,
+      "earlier_end": false,
+      "cost_regression_exceeds_frozen_2pct": false,
+      "meaningful_benefit": false
+    },
+    {
+      "scenario": "2035-07-16_5",
+      "reference": "NN20",
+      "reference_steps": 2017,
+      "fallback_steps": 2017,
+      "jointly_complete": true,
+      "cost_reduction_relative_to_reference": 0.0,
+      "earlier_end": false,
+      "cost_regression_exceeds_frozen_2pct": false,
+      "meaningful_benefit": false
+    },
+    {
+      "scenario": "2035-07-16_5",
+      "reference": "NN352",
+      "reference_steps": 2017,
+      "fallback_steps": 2017,
+      "jointly_complete": true,
+      "cost_reduction_relative_to_reference": 0.00016353102264173323,
+      "earlier_end": false,
+      "cost_regression_exceeds_frozen_2pct": false,
+      "meaningful_benefit": false
+    }
+  ],
+  "confirmed_rejection_witnesses": [
+    {
+      "scenario": "2035-01-08_5",
+      "reference": "NN20",
+      "reference_steps": 2017,
+      "fallback_steps": 2017,
+      "jointly_complete": true,
+      "cost_reduction_relative_to_reference": -0.2543768331773644,
+      "earlier_end": false,
+      "cost_regression_exceeds_frozen_2pct": true,
+      "meaningful_benefit": false
+    }
+  ],
+  "no_model_training_or_retry": true,
+  "validation_weeks_with_strategy_outcomes": [
+    "2035-01-08_5",
+    "2035-04-30_12",
+    "2035-07-16_5"
+  ],
+  "failed_week_no_strategy_outcome": "2035-10-01_5",
+  "remaining_unrun_validation_weeks": 9,
+  "unrun_test_weeks": 12,
+  "warning": "The missing October outcomes cannot be imputed. A verified rejection witness in completed data suffices for the frozen any-week rejection item; it does not complete the four-week matrix or establish a population failure rate."
+}

@@ -1,0 +1,611 @@
+[
+  {
+    "scenario": "2035-01-08_5",
+    "policy": "NN20",
+    "exit": 0,
+    "wall_s": 198.82899999999972,
+    "steps": 2017,
+    "completed_native_week": true,
+    "initial_observation_hash": "7c4cfe8fba51b69aee4a667742e9a6249fdcb4faab9c65b34d945c0ded52b48c",
+    "native_raw_cost_sum": 6707772.520812988,
+    "verified_physical_cost_sum": 6707772.520812988,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "simulate_calls": 25636,
+    "act_time": {
+      "sum": 150.87842810000438,
+      "p50": 0.004438699999809614,
+      "p95": 0.018950040000709097,
+      "max": 6.473868999999468
+    },
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 144,
+        "wall_s": 0.5326582000234339
+      },
+      "recover_topo": {
+        "calls": 1322,
+        "simulate_calls": 1455,
+        "wall_s": 5.858193700043557
+      },
+      "topo_12_unsafe": {
+        "calls": 26,
+        "simulate_calls": 520,
+        "wall_s": 1.6963061999995261
+      },
+      "optim": {
+        "calls": 43,
+        "simulate_calls": 43,
+        "wall_s": 67.18738100000701
+      },
+      "topo_n1_unsafe": {
+        "calls": 24,
+        "simulate_calls": 21366,
+        "wall_s": 68.93043729999954
+      }
+    },
+    "shortlist_calls": 26,
+    "fallback_decisions": 0,
+    "expansions": 0,
+    "expanded_changed_original_selection": 0,
+    "trigger_reasons": {},
+    "solver_statuses": {
+      "optimal": 29,
+      "optimal_inaccurate": 6,
+      "user_limit": 8
+    },
+    "losses_mwh": 15494.905534067848,
+    "redispatch_mwh": 29643.73492859836,
+    "physical_curtailed_mwh": 2675.141552214821,
+    "storage_throughput_mwh": 24.98153966995111,
+    "terminal_renewable_component": 0.9070445127496597,
+    "terminal_assistant_component": 1.0
+  },
+  {
+    "scenario": "2035-01-08_5",
+    "policy": "FALLBACK90",
+    "exit": 0,
+    "wall_s": 231.9380000000001,
+    "steps": 2017,
+    "completed_native_week": true,
+    "initial_observation_hash": "7c4cfe8fba51b69aee4a667742e9a6249fdcb4faab9c65b34d945c0ded52b48c",
+    "native_raw_cost_sum": 8414074.452331543,
+    "verified_physical_cost_sum": 8414074.452331543,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "simulate_calls": 34967,
+    "act_time": {
+      "sum": 183.6829622000114,
+      "p50": 0.004345700001067598,
+      "p95": 0.018144259999462415,
+      "max": 5.855889899999966
+    },
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 139,
+        "wall_s": 0.5263961000309791
+      },
+      "recover_topo": {
+        "calls": 1375,
+        "simulate_calls": 1051,
+        "wall_s": 4.751280400030737
+      },
+      "topo_12_unsafe": {
+        "calls": 31,
+        "simulate_calls": 6928,
+        "wall_s": 21.785090299999865
+      },
+      "optim": {
+        "calls": 54,
+        "simulate_calls": 54,
+        "wall_s": 68.46566599999096
+      },
+      "topo_n1_unsafe": {
+        "calls": 28,
+        "simulate_calls": 24670,
+        "wall_s": 81.32389000000694
+      }
+    },
+    "shortlist_calls": 50,
+    "fallback_decisions": 31,
+    "expansions": 19,
+    "expanded_changed_original_selection": 6,
+    "trigger_reasons": {
+      "rho_at_least_0.9": 18,
+      "rho_below_0.9": 12,
+      "no_candidate": 1
+    },
+    "solver_statuses": {
+      "optimal": 48,
+      "optimal_inaccurate": 3,
+      "user_limit": 3
+    },
+    "losses_mwh": 14893.768367624303,
+    "redispatch_mwh": 41732.02363410546,
+    "physical_curtailed_mwh": 4427.715342606495,
+    "storage_throughput_mwh": 45.473185161439076,
+    "terminal_renewable_component": 0.84631407525962,
+    "terminal_assistant_component": 1.0
+  },
+  {
+    "scenario": "2035-01-08_5",
+    "policy": "NN352",
+    "exit": 0,
+    "wall_s": 241.54700000000048,
+    "steps": 2017,
+    "completed_native_week": true,
+    "initial_observation_hash": "7c4cfe8fba51b69aee4a667742e9a6249fdcb4faab9c65b34d945c0ded52b48c",
+    "native_raw_cost_sum": 8494068.36553955,
+    "verified_physical_cost_sum": 8494068.36553955,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "simulate_calls": 39330,
+    "act_time": {
+      "sum": 195.06753229999958,
+      "p50": 0.004156099999818252,
+      "p95": 0.01784107999956168,
+      "max": 5.5394390000001295
+    },
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 139,
+        "wall_s": 0.5156823999932385
+      },
+      "recover_topo": {
+        "calls": 1357,
+        "simulate_calls": 1076,
+        "wall_s": 4.680255900044358
+      },
+      "topo_12_unsafe": {
+        "calls": 32,
+        "simulate_calls": 11264,
+        "wall_s": 34.625076499994975
+      },
+      "optim": {
+        "calls": 54,
+        "simulate_calls": 54,
+        "wall_s": 69.54808610000327
+      },
+      "topo_n1_unsafe": {
+        "calls": 28,
+        "simulate_calls": 24670,
+        "wall_s": 78.9865620000055
+      }
+    },
+    "shortlist_calls": 32,
+    "fallback_decisions": 0,
+    "expansions": 0,
+    "expanded_changed_original_selection": 0,
+    "trigger_reasons": {},
+    "solver_statuses": {
+      "optimal": 47,
+      "optimal_inaccurate": 5,
+      "user_limit": 2
+    },
+    "losses_mwh": 14856.79711054611,
+    "redispatch_mwh": 42306.760189463086,
+    "physical_curtailed_mwh": 4427.982839368904,
+    "storage_throughput_mwh": 46.33417290526752,
+    "terminal_renewable_component": 0.8463048195629936,
+    "terminal_assistant_component": 1.0
+  },
+  {
+    "scenario": "2035-04-30_12",
+    "policy": "FALLBACK90",
+    "exit": 0,
+    "wall_s": 39.51599999999962,
+    "steps": 176,
+    "completed_native_week": false,
+    "initial_observation_hash": "d2e832cfc0e559ccbd1526f058424521e7fbb50272989b07b5604c98d4e7d248",
+    "native_raw_cost_sum": 238828.3387451172,
+    "verified_physical_cost_sum": 238827.3387451172,
+    "unverified_or_error_terminal_count": 1,
+    "unverified_or_error_terminal_cost_sum": 1.0,
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 1,
+    "terminal_exception_types": [
+      "BackendError"
+    ],
+    "simulate_calls": 4400,
+    "act_time": {
+      "sum": 16.48109199998362,
+      "p50": 0.0033645500006969087,
+      "p95": 0.025742699999227625,
+      "max": 4.236028699999224
+    },
+    "modules": {
+      "reconnect": {
+        "calls": 176,
+        "simulate_calls": 82,
+        "wall_s": 0.2578327999981411
+      },
+      "recover_topo": {
+        "calls": 123,
+        "simulate_calls": 144,
+        "wall_s": 0.47638730001017393
+      },
+      "topo_12_unsafe": {
+        "calls": 1,
+        "simulate_calls": 352,
+        "wall_s": 0.8500081000001956
+      },
+      "optim": {
+        "calls": 4,
+        "simulate_calls": 4,
+        "wall_s": 2.62925610000093
+      },
+      "topo_n1_unsafe": {
+        "calls": 4,
+        "simulate_calls": 3636,
+        "wall_s": 11.755985300000248
+      }
+    },
+    "shortlist_calls": 2,
+    "fallback_decisions": 1,
+    "expansions": 1,
+    "expanded_changed_original_selection": 0,
+    "trigger_reasons": {
+      "rho_at_least_0.9": 1
+    },
+    "solver_statuses": {
+      "optimal": 4
+    },
+    "losses_mwh": 1413.598640520921,
+    "redispatch_mwh": 216.65947763309427,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 1.7804902320106823,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": 1.0
+  },
+  {
+    "scenario": "2035-04-30_12",
+    "policy": "NN352",
+    "exit": 0,
+    "wall_s": 39.53099999999904,
+    "steps": 176,
+    "completed_native_week": false,
+    "initial_observation_hash": "d2e832cfc0e559ccbd1526f058424521e7fbb50272989b07b5604c98d4e7d248",
+    "native_raw_cost_sum": 238828.3387451172,
+    "verified_physical_cost_sum": 238827.3387451172,
+    "unverified_or_error_terminal_count": 1,
+    "unverified_or_error_terminal_cost_sum": 1.0,
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 1,
+    "terminal_exception_types": [
+      "BackendError"
+    ],
+    "simulate_calls": 4400,
+    "act_time": {
+      "sum": 16.214558300005592,
+      "p50": 0.0032703000006222283,
+      "p95": 0.026524549999521696,
+      "max": 3.9538873999990756
+    },
+    "modules": {
+      "reconnect": {
+        "calls": 176,
+        "simulate_calls": 82,
+        "wall_s": 0.2506667000016023
+      },
+      "recover_topo": {
+        "calls": 123,
+        "simulate_calls": 144,
+        "wall_s": 0.480090899989591
+      },
+      "topo_12_unsafe": {
+        "calls": 1,
+        "simulate_calls": 352,
+        "wall_s": 0.953020099999776
+      },
+      "optim": {
+        "calls": 4,
+        "simulate_calls": 4,
+        "wall_s": 2.401264000000083
+      },
+      "topo_n1_unsafe": {
+        "calls": 4,
+        "simulate_calls": 3636,
+        "wall_s": 11.646192200001678
+      }
+    },
+    "shortlist_calls": 1,
+    "fallback_decisions": 0,
+    "expansions": 0,
+    "expanded_changed_original_selection": 0,
+    "trigger_reasons": {},
+    "solver_statuses": {
+      "optimal": 4
+    },
+    "losses_mwh": 1413.598640520921,
+    "redispatch_mwh": 216.65947763309427,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 1.7804902320106823,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": 1.0
+  },
+  {
+    "scenario": "2035-04-30_12",
+    "policy": "NN20",
+    "exit": 0,
+    "wall_s": 42.34300000000076,
+    "steps": 176,
+    "completed_native_week": false,
+    "initial_observation_hash": "d2e832cfc0e559ccbd1526f058424521e7fbb50272989b07b5604c98d4e7d248",
+    "native_raw_cost_sum": 238828.3387451172,
+    "verified_physical_cost_sum": 238827.3387451172,
+    "unverified_or_error_terminal_count": 1,
+    "unverified_or_error_terminal_cost_sum": 1.0,
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 1,
+    "terminal_exception_types": [
+      "BackendError"
+    ],
+    "simulate_calls": 4068,
+    "act_time": {
+      "sum": 18.660352500013687,
+      "p50": 0.0036577000000761473,
+      "p95": 0.03339855000058378,
+      "max": 4.592428899999504
+    },
+    "modules": {
+      "reconnect": {
+        "calls": 176,
+        "simulate_calls": 82,
+        "wall_s": 0.32751559999633173
+      },
+      "recover_topo": {
+        "calls": 123,
+        "simulate_calls": 144,
+        "wall_s": 0.5856337000022904
+      },
+      "topo_12_unsafe": {
+        "calls": 1,
+        "simulate_calls": 20,
+        "wall_s": 0.060846200000014505
+      },
+      "optim": {
+        "calls": 4,
+        "simulate_calls": 4,
+        "wall_s": 2.885146300000997
+      },
+      "topo_n1_unsafe": {
+        "calls": 4,
+        "simulate_calls": 3636,
+        "wall_s": 14.205349400001069
+      }
+    },
+    "shortlist_calls": 1,
+    "fallback_decisions": 0,
+    "expansions": 0,
+    "expanded_changed_original_selection": 0,
+    "trigger_reasons": {},
+    "solver_statuses": {
+      "optimal": 4
+    },
+    "losses_mwh": 1413.598640520921,
+    "redispatch_mwh": 216.65947763309427,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 1.7804902320106823,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": 1.0
+  },
+  {
+    "scenario": "2035-07-16_5",
+    "policy": "NN352",
+    "exit": 0,
+    "wall_s": 120.42200000000048,
+    "steps": 2017,
+    "completed_native_week": true,
+    "initial_observation_hash": "a06d45808d663cf8fdf44282a0abab6cab63867a92adc028f10f126e8205b068",
+    "native_raw_cost_sum": 2258999.9070129395,
+    "verified_physical_cost_sum": 2258999.9070129395,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "simulate_calls": 15193,
+    "act_time": {
+      "sum": 66.15376989997458,
+      "p50": 0.004496400000789436,
+      "p95": 0.011764060000132292,
+      "max": 5.975767399999313
+    },
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 105,
+        "wall_s": 0.4761063000187278
+      },
+      "recover_topo": {
+        "calls": 1699,
+        "simulate_calls": 766,
+        "wall_s": 3.3753563999471226
+      },
+      "topo_n1_unsafe": {
+        "calls": 11,
+        "simulate_calls": 9809,
+        "wall_s": 36.86105110000062
+      },
+      "topo_12_unsafe": {
+        "calls": 7,
+        "simulate_calls": 2464,
+        "wall_s": 8.524273499999254
+      },
+      "optim": {
+        "calls": 6,
+        "simulate_calls": 6,
+        "wall_s": 9.52987380000377
+      }
+    },
+    "shortlist_calls": 7,
+    "fallback_decisions": 0,
+    "expansions": 0,
+    "expanded_changed_original_selection": 0,
+    "trigger_reasons": {},
+    "solver_statuses": {
+      "optimal": 5,
+      "user_limit": 1
+    },
+    "losses_mwh": 8902.51603643487,
+    "redispatch_mwh": 7217.116471890448,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 1.932490549981594,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": 1.0
+  },
+  {
+    "scenario": "2035-07-16_5",
+    "policy": "NN20",
+    "exit": 0,
+    "wall_s": 94.90599999999904,
+    "steps": 2017,
+    "completed_native_week": true,
+    "initial_observation_hash": "a06d45808d663cf8fdf44282a0abab6cab63867a92adc028f10f126e8205b068",
+    "native_raw_cost_sum": 2258630.490447998,
+    "verified_physical_cost_sum": 2258630.490447998,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "simulate_calls": 12869,
+    "act_time": {
+      "sum": 47.01671330001045,
+      "p50": 0.0034801000001607463,
+      "p95": 0.008890540001084444,
+      "max": 5.1861718999989534
+    },
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 105,
+        "wall_s": 0.3794229999912204
+      },
+      "recover_topo": {
+        "calls": 1699,
+        "simulate_calls": 766,
+        "wall_s": 2.6025568000368366
+      },
+      "topo_n1_unsafe": {
+        "calls": 11,
+        "simulate_calls": 9809,
+        "wall_s": 29.767172500000015
+      },
+      "topo_12_unsafe": {
+        "calls": 7,
+        "simulate_calls": 140,
+        "wall_s": 0.365534700003991
+      },
+      "optim": {
+        "calls": 6,
+        "simulate_calls": 6,
+        "wall_s": 7.9992503999983455
+      }
+    },
+    "shortlist_calls": 7,
+    "fallback_decisions": 0,
+    "expansions": 0,
+    "expanded_changed_original_selection": 0,
+    "trigger_reasons": {},
+    "solver_statuses": {
+      "optimal": 5,
+      "user_limit": 1
+    },
+    "losses_mwh": 8899.877276821833,
+    "redispatch_mwh": 7217.116471890448,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 1.932490549981594,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": 1.0
+  },
+  {
+    "scenario": "2035-07-16_5",
+    "policy": "FALLBACK90",
+    "exit": 0,
+    "wall_s": 92.48499999999876,
+    "steps": 2017,
+    "completed_native_week": true,
+    "initial_observation_hash": "a06d45808d663cf8fdf44282a0abab6cab63867a92adc028f10f126e8205b068",
+    "native_raw_cost_sum": 2258630.490447998,
+    "verified_physical_cost_sum": 2258630.490447998,
+    "unverified_or_error_terminal_count": 0,
+    "unverified_or_error_terminal_cost_sum": 0,
+    "illegal_steps": 0,
+    "ambiguous_steps": 0,
+    "exception_steps": 0,
+    "terminal_exception_types": [],
+    "simulate_calls": 13201,
+    "act_time": {
+      "sum": 47.3517243999504,
+      "p50": 0.003451300000961055,
+      "p95": 0.00891867999889655,
+      "max": 5.194759600000907
+    },
+    "modules": {
+      "reconnect": {
+        "calls": 2017,
+        "simulate_calls": 105,
+        "wall_s": 0.36644069990870776
+      },
+      "recover_topo": {
+        "calls": 1699,
+        "simulate_calls": 766,
+        "wall_s": 2.6436298999815335
+      },
+      "topo_n1_unsafe": {
+        "calls": 11,
+        "simulate_calls": 9809,
+        "wall_s": 29.574634899998273
+      },
+      "topo_12_unsafe": {
+        "calls": 7,
+        "simulate_calls": 472,
+        "wall_s": 1.3414792999992642
+      },
+      "optim": {
+        "calls": 6,
+        "simulate_calls": 6,
+        "wall_s": 7.595059399998718
+      }
+    },
+    "shortlist_calls": 8,
+    "fallback_decisions": 7,
+    "expansions": 1,
+    "expanded_changed_original_selection": 0,
+    "trigger_reasons": {
+      "rho_below_0.9": 6,
+      "rho_at_least_0.9": 1
+    },
+    "solver_statuses": {
+      "optimal": 5,
+      "user_limit": 1
+    },
+    "losses_mwh": 8899.877276821833,
+    "redispatch_mwh": 7217.116471890448,
+    "physical_curtailed_mwh": 0.0,
+    "storage_throughput_mwh": 1.932490549981594,
+    "terminal_renewable_component": 1.0,
+    "terminal_assistant_component": 1.0
+  }
+]

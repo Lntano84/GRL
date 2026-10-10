@@ -1,0 +1,211 @@
+{
+  "passed": true,
+  "physical_steps": 1716,
+  "forecast_steps_including_QP": 16,
+  "qp_solves": 2,
+  "wall_s": 7.4517220999996425,
+  "records": [
+    {
+      "state_step": 1714,
+      "current_rho": 0.9844849109649658,
+      "source_proposal": {
+        "eligible": false,
+        "offered": false,
+        "reason": "outside_cadence",
+        "solve_status": [],
+        "predictions": [
+          null,
+          null
+        ]
+      },
+      "qp_solve_status": [
+        "optimal"
+      ],
+      "qp_wall_s": 0.9507370999999694,
+      "qp_qualified": true,
+      "qp_differs": true,
+      "branches": {
+        "saved_base": [
+          {
+            "horizon_step": 1,
+            "done": false,
+            "rho": 1.0223103761672974,
+            "line_11_rho": 1.0223103761672974,
+            "line_11_overflow": 1,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": []
+          },
+          {
+            "horizon_step": 2,
+            "done": false,
+            "rho": 1.0375021696090698,
+            "line_11_rho": 1.0375021696090698,
+            "line_11_overflow": 2,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": []
+          },
+          {
+            "horizon_step": 3,
+            "done": false,
+            "rho": 1.0597586631774902,
+            "line_11_rho": 1.0557032823562622,
+            "line_11_overflow": 3,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": []
+          },
+          {
+            "horizon_step": 4,
+            "done": true,
+            "rho": 0.0,
+            "line_11_rho": 0.0,
+            "line_11_overflow": 0,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": [
+              "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+            ]
+          }
+        ],
+        "default_unsafe_QP": [
+          {
+            "horizon_step": 1,
+            "done": false,
+            "rho": 1.0223103761672974,
+            "line_11_rho": 1.0223103761672974,
+            "line_11_overflow": 1,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": []
+          },
+          {
+            "horizon_step": 2,
+            "done": false,
+            "rho": 1.0375021696090698,
+            "line_11_rho": 1.0375021696090698,
+            "line_11_overflow": 2,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": []
+          },
+          {
+            "horizon_step": 3,
+            "done": false,
+            "rho": 1.0557032823562622,
+            "line_11_rho": 1.0557032823562622,
+            "line_11_overflow": 3,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": []
+          },
+          {
+            "horizon_step": 4,
+            "done": true,
+            "rho": 0.0,
+            "line_11_rho": 0.0,
+            "line_11_overflow": 0,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": [
+              "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "state_step": 1716,
+      "current_rho": 1.0041298866271973,
+      "source_proposal": {
+        "eligible": false,
+        "offered": false,
+        "reason": "outside_cadence",
+        "solve_status": [],
+        "predictions": [
+          null,
+          null
+        ]
+      },
+      "qp_solve_status": [
+        "optimal"
+      ],
+      "qp_wall_s": 0.5128110000005108,
+      "qp_qualified": true,
+      "qp_differs": true,
+      "branches": {
+        "saved_base": [
+          {
+            "horizon_step": 1,
+            "done": false,
+            "rho": 1.0359536409378052,
+            "line_11_rho": 1.0359536409378052,
+            "line_11_overflow": 2,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": []
+          },
+          {
+            "horizon_step": 2,
+            "done": false,
+            "rho": 1.0511364936828613,
+            "line_11_rho": 1.0511364936828613,
+            "line_11_overflow": 3,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": []
+          },
+          {
+            "horizon_step": 3,
+            "done": true,
+            "rho": 0.0,
+            "line_11_rho": 0.0,
+            "line_11_overflow": 0,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": [
+              "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+            ]
+          }
+        ],
+        "default_unsafe_QP": [
+          {
+            "horizon_step": 1,
+            "done": false,
+            "rho": 1.0359536409378052,
+            "line_11_rho": 1.0359536409378052,
+            "line_11_overflow": 2,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": []
+          },
+          {
+            "horizon_step": 2,
+            "done": false,
+            "rho": 1.0511364936828613,
+            "line_11_rho": 1.0511364936828613,
+            "line_11_overflow": 3,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": []
+          },
+          {
+            "horizon_step": 3,
+            "done": true,
+            "rho": 0.0,
+            "line_11_rho": 0.0,
+            "line_11_overflow": 0,
+            "illegal": false,
+            "ambiguous": false,
+            "exceptions": [
+              "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "Public forecast environment only; no actual-future branch, model fit, parameter search or deployed policy.",
+  "warning": "Only the first action differs; subsequent forecast actions are no-op. Not a closed-loop MPC or causal full-episode survival comparison."
+}

@@ -1,0 +1,276 @@
+{
+  "status": "PASS_BOUNDED_INTEGRATION_AND_SAVED_ARTIFACT_CHECKS",
+  "main_steps": 516,
+  "replay_steps": 48,
+  "failed_integration_steps": 60,
+  "invalid_action_cache_batch_steps": 564,
+  "all_executed_steps": 1188,
+  "runs": [
+    {
+      "scenario": 0,
+      "mode": "full",
+      "steps": 258,
+      "native_done": false,
+      "process_wall_s": 39.625,
+      "after_import_wall_s": 36.103972200000044,
+      "act_wall_s": {
+        "mean": 0.11679640930232515,
+        "p50": 0.003979849999950602,
+        "p95": 0.014806129999806213,
+        "max": 4.074306700000307,
+        "sum": 30.13347359999989
+      },
+      "simulate_calls": 4805,
+      "simulate_wall_s": 13.117249099991568,
+      "nonzero_actions": 22,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "max_after_rho": 1.0475808382034302,
+      "overloaded_after_steps": 4,
+      "module_calls": {
+        "reconnect": 258,
+        "recover_topo": 114,
+        "topo_12_unsafe": 6,
+        "optim": 10,
+        "topo_n1_unsafe": 2
+      },
+      "solver_attempts": 10,
+      "solver_statuses": {
+        "user_limit": 2,
+        "optimal": 8
+      },
+      "selected_forecast_available": 248
+    },
+    {
+      "scenario": 1,
+      "mode": "full",
+      "steps": 258,
+      "native_done": false,
+      "process_wall_s": 23.53099999999995,
+      "after_import_wall_s": 20.208539700000074,
+      "act_wall_s": {
+        "mean": 0.05717925620154015,
+        "p50": 0.004955749999908221,
+        "p95": 0.016249139999786163,
+        "max": 2.8981457999998383,
+        "sum": 14.75224809999736
+      },
+      "simulate_calls": 3072,
+      "simulate_wall_s": 8.700219600012588,
+      "nonzero_actions": 18,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "max_after_rho": 1.0332071781158447,
+      "overloaded_after_steps": 4,
+      "module_calls": {
+        "reconnect": 258,
+        "recover_topo": 199,
+        "topo_12_unsafe": 2,
+        "optim": 4,
+        "topo_n1_unsafe": 2
+      },
+      "solver_attempts": 4,
+      "solver_statuses": {
+        "user_limit": 1,
+        "optimal": 3
+      },
+      "selected_forecast_available": 254
+    },
+    {
+      "scenario": 0,
+      "mode": "replay",
+      "steps": 24,
+      "native_done": false,
+      "process_wall_s": 6.436999999999898,
+      "after_import_wall_s": 3.0699931000003744,
+      "act_wall_s": {
+        "mean": 0.05169343749997779,
+        "p50": 0.005315100000188977,
+        "p95": 0.010993930000154244,
+        "max": 1.111061300000074,
+        "sum": 1.240642499999467
+      },
+      "simulate_calls": 469,
+      "simulate_wall_s": 1.0885079000054247,
+      "nonzero_actions": 4,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "max_after_rho": 0.8965588212013245,
+      "overloaded_after_steps": 0,
+      "module_calls": {
+        "reconnect": 24,
+        "recover_topo": 24,
+        "topo_12_unsafe": 1
+      },
+      "solver_attempts": 0,
+      "solver_statuses": {},
+      "selected_forecast_available": 24
+    },
+    {
+      "scenario": 1,
+      "mode": "replay",
+      "steps": 24,
+      "native_done": false,
+      "process_wall_s": 5.235000000000127,
+      "after_import_wall_s": 1.8746091000002707,
+      "act_wall_s": {
+        "mean": 0.002922999999990831,
+        "p50": 0.0026675999999952182,
+        "p95": 0.00475043999972513,
+        "max": 0.004912299999887182,
+        "sum": 0.07015199999977995
+      },
+      "simulate_calls": 27,
+      "simulate_wall_s": 0.06270379999978104,
+      "nonzero_actions": 3,
+      "illegal": 0,
+      "ambiguous": 0,
+      "exception_steps": 0,
+      "max_after_rho": 0.8615423440933228,
+      "overloaded_after_steps": 0,
+      "module_calls": {
+        "reconnect": 24,
+        "recover_topo": 24
+      },
+      "solver_attempts": 0,
+      "solver_statuses": {},
+      "selected_forecast_available": 24
+    }
+  ],
+  "replay_checks": [
+    {
+      "scenario": 0,
+      "steps": 24,
+      "arrays_actions_rewards_flags_equal": true
+    },
+    {
+      "scenario": 1,
+      "steps": 24,
+      "arrays_actions_rewards_flags_equal": true
+    }
+  ],
+  "failed_prefix_matches_replacement_first60": true,
+  "source_manifest_generated_pycache_entries_ignored": [
+    "__pycache__\\__init__.cpython-312.pyc",
+    "__pycache__\\LJNAgent.cpython-312.pyc",
+    "__pycache__\\make_agent.cpython-312.pyc",
+    "__pycache__\\utils.cpython-312.pyc",
+    "modules\\__pycache__\\__init__.cpython-312.pyc",
+    "modules\\__pycache__\\base_module.cpython-312.pyc",
+    "modules\\__pycache__\\convex_optim.cpython-312.pyc",
+    "modules\\__pycache__\\rewards.cpython-312.pyc",
+    "modules\\__pycache__\\topology_heuristic.cpython-312.pyc",
+    "modules\\__pycache__\\utils.cpython-312.pyc"
+  ],
+  "invalid_vs_corrected_observation_hash_changes": 0,
+  "invalid_vs_corrected_action_vector_hash_changes": 14,
+  "main_act_wall_s": {
+    "mean": 0.08698783275193266,
+    "p50": 0.004560599999877013,
+    "p95": 0.016033049999919058,
+    "max": 4.074306700000307,
+    "sum": 44.88572169999725
+  },
+  "main_simulate_calls": 7877,
+  "main_simulate_wall_s": 21.817468700004156,
+  "main_actual_illegal": 0,
+  "main_actual_ambiguous": 0,
+  "main_actual_exception_steps": 0,
+  "main_module_summary": {
+    "reconnect": {
+      "calls": 516,
+      "returned_non_none": 516,
+      "simulate_calls": 22,
+      "wall_s": {
+        "mean": 0.00018520620154476085,
+        "p50": 5.539999983739108e-05,
+        "p95": 0.0001094250001187902,
+        "max": 0.005224099999850296,
+        "sum": 0.0955663999970966
+      }
+    },
+    "recover_topo": {
+      "calls": 313,
+      "returned_non_none": 8,
+      "simulate_calls": 364,
+      "wall_s": {
+        "mean": 0.004086438338646939,
+        "p50": 0.0035460999997667386,
+        "p95": 0.009850540000115869,
+        "max": 0.013776200000393146,
+        "sum": 1.2790551999964919
+      }
+    },
+    "topo_12_unsafe": {
+      "calls": 8,
+      "returned_non_none": 8,
+      "simulate_calls": 3354,
+      "wall_s": {
+        "mean": 1.290419150000048,
+        "p50": 1.3134993999999551,
+        "p95": 1.390506260000302,
+        "max": 1.4061675000002651,
+        "sum": 10.323353200000383
+      }
+    },
+    "topo_n1_unsafe": {
+      "calls": 4,
+      "returned_non_none": 4,
+      "simulate_calls": 3587,
+      "wall_s": {
+        "mean": 2.852485650000176,
+        "p50": 2.8616485000002285,
+        "p95": 2.972211000000198,
+        "max": 2.9875593000001572,
+        "sum": 11.409942600000704
+      }
+    },
+    "optim": {
+      "calls": 14,
+      "returned_non_none": 14,
+      "simulate_calls": 14,
+      "wall_s": {
+        "mean": 1.4351782071428585,
+        "p50": 1.144991950000076,
+        "p95": 2.8882147750000287,
+        "max": 2.9481619999996838,
+        "sum": 20.09249490000002
+      }
+    }
+  },
+  "main_solver_attempts": 14,
+  "main_solver_statuses": {
+    "user_limit": 3,
+    "optimal": 11
+  },
+  "main_solver_types": {
+    "OSQP": 14
+  },
+  "main_solver_root_dispatches": 0,
+  "main_solver_root_wall_s": 0.0,
+  "main_forecast_sim_done_count": 170,
+  "main_forecast_sim_illegal_count": 98,
+  "main_forecast_sim_ambiguous_count": 0,
+  "main_forecast_sim_exception_count": 268,
+  "selected_forecast_pairs": 502,
+  "selected_rho_abs_max_stats": {
+    "mean": 0.06921445134567075,
+    "p50": 0.05331212282180786,
+    "p95": 0.09905127286911009,
+    "max": 0.7212129831314087,
+    "sum": 34.745654575526714
+  },
+  "selected_p_or_abs_mean_stats": {
+    "mean": 1.5239969310295058,
+    "p50": 1.461274266242981,
+    "p95": 2.211196208000183,
+    "max": 2.9549560546875,
+    "sum": 765.046459376812
+  },
+  "false_safe_at_threshold1": 5,
+  "scope": "Two public bundled prefixes, single Grid2Op seed, no independent AC solver, no untouched research test set.",
+  "warning": "Passive telemetry contributes overhead; timings are qualification measurements, not production comparisons. No learned method evaluated."
+}

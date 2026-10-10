@@ -1,0 +1,6 @@
+{
+  "type": "ValueError",
+  "error": "operands could not be broadcast together with shapes (4712,) (4460,) ",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-24\\influence-maximization-im-ccf-b-grl\\work\\grid00\\probe.py\", line 162, in <module>\n    main()\n  File \"C:\\Users\\windows\\Documents\\Codex\\2026-09-24\\influence-maximization-im-ccf-b-grl\\work\\grid00\\probe.py\", line 149, in main\n    forecast_difference = float(np.max(np.abs(sim1.astype(float)-actual1.astype(float))))\n                                              ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~\nValueError: operands could not be broadcast together with shapes (4712,) (4460,) \n",
+  "elapsed_s": 3.6670228999998926
+}

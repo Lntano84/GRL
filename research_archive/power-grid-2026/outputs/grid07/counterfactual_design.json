@@ -1,0 +1,26 @@
+{
+  "stage": "GRID07_COUNTEREXAMPLE_DIAGNOSIS",
+  "environment_seed": 0,
+  "selected_weeks": [
+    "2035-01-08_5"
+  ],
+  "data_root": "work/grid03/formal_env_initialized",
+  "intervention_step": 221,
+  "policy": "SINGLE_EXPAND_221",
+  "target": "Isolate the archived first topology expansion from later fallback decisions; continuation is unchanged NN20, including all original controller memory and continuous optimization.",
+  "engineering_gate": "Before interpreting any outcome, steps1..220 must exactly match archived NN20 actions/states, and step221 must exactly match archived FALLBACK90 action/state. Native cost must match within the previously frozen rounding tolerance.",
+  "caps": {
+    "import_s": 120,
+    "per_run_after_import_s": 480,
+    "total_runner_s": 650,
+    "physical_steps": 2017,
+    "native_simulations": 60000,
+    "output_bytes": 268435456
+  },
+  "interpretation": "One deterministic intervention on an already exposed synthetic week. Post-hoc causal diagnosis of this controller/context, not a deployable rule, generalization test, optimality claim, or learning evidence.",
+  "restrictions": [
+    "One attempt, stop on failed gate/error/cap; no retries.",
+    "No other scenarios, new seeds, models, thresholds, training, installs or changes to archived GRID06.",
+    "Both branches complete: compare raw cost; otherwise completion/end first, no misleading cumulative-cost ranking."
+  ]
+}

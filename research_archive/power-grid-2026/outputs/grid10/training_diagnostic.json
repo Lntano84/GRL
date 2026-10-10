@@ -1,0 +1,140 @@
+{
+  "results": {
+    "raw": {
+      "episodes": [
+        {
+          "week": "2035-01-29_4",
+          "complete": false,
+          "samples": 139,
+          "restore_probability_min_median_max": [
+            0.9722176790237427,
+            0.9773498177528381,
+            0.9917616844177246
+          ],
+          "final_argmax_restores": 139,
+          "mean_value": -17.632151349842978,
+          "mean_realized_return": -118.67752088347608,
+          "critic_rmse": 205.7366871697982,
+          "critic_explained_variance": -0.00040216474730425666
+        },
+        {
+          "week": "2035-04-16_2",
+          "complete": true,
+          "samples": 163,
+          "restore_probability_min_median_max": [
+            0.9725364446640015,
+            0.976466715335846,
+            0.9904864430427551
+          ],
+          "final_argmax_restores": 163,
+          "mean_value": -16.985526266273546,
+          "mean_realized_return": -22.5274681845866,
+          "critic_rmse": 10.045757672561312,
+          "critic_explained_variance": 0.042867013392975606
+        },
+        {
+          "week": "2035-07-23_10",
+          "complete": true,
+          "samples": 6,
+          "restore_probability_min_median_max": [
+            0.975968599319458,
+            0.9766384363174438,
+            0.978087306022644
+          ],
+          "final_argmax_restores": 6,
+          "mean_value": -13.89433479309082,
+          "mean_realized_return": -3.2302163188410122,
+          "critic_rmse": 10.680146746396998,
+          "critic_explained_variance": -2.110780468333749
+        },
+        {
+          "week": "2035-10-29_15",
+          "complete": true,
+          "samples": 224,
+          "restore_probability_min_median_max": [
+            0.9728452563285828,
+            0.9760954678058624,
+            0.9887650012969971
+          ],
+          "final_argmax_restores": 224,
+          "mean_value": -16.250590171132767,
+          "mean_realized_return": -14.882722633949914,
+          "critic_rmse": 3.8048501253148737,
+          "critic_explained_variance": 0.12366216998764301
+        }
+      ],
+      "samples": 532,
+      "pooled_critic_rmse": 105.34503785933299
+    },
+    "normalized": {
+      "episodes": [
+        {
+          "week": "2035-01-29_4",
+          "complete": false,
+          "samples": 135,
+          "restore_probability_min_median_max": [
+            0.7557060718536377,
+            0.810137927532196,
+            0.9536645412445068
+          ],
+          "final_argmax_restores": 135,
+          "mean_value": -85.58315768771702,
+          "mean_realized_return": -122.12823842524683,
+          "critic_rmse": 181.8882015132,
+          "critic_explained_variance": 0.028200882950889516
+        },
+        {
+          "week": "2035-04-16_2",
+          "complete": true,
+          "samples": 161,
+          "restore_probability_min_median_max": [
+            0.757535457611084,
+            0.8081169724464417,
+            0.921023964881897
+          ],
+          "final_argmax_restores": 161,
+          "mean_value": -72.38374743254289,
+          "mean_realized_return": -22.932032889070186,
+          "critic_rmse": 51.37408914870647,
+          "critic_explained_variance": -1.313145783068681
+        },
+        {
+          "week": "2035-07-23_10",
+          "complete": true,
+          "samples": 6,
+          "restore_probability_min_median_max": [
+            0.7999283671379089,
+            0.8115458786487579,
+            0.8331015706062317
+          ],
+          "final_argmax_restores": 6,
+          "mean_value": -41.185976346333824,
+          "mean_realized_return": -3.2302163188410122,
+          "critic_rmse": 39.86907390557486,
+          "critic_explained_variance": -1352.96011543872
+        },
+        {
+          "week": "2035-10-29_15",
+          "complete": false,
+          "samples": 5,
+          "restore_probability_min_median_max": [
+            0.7786629796028137,
+            0.8257845044136047,
+            0.8707123398780823
+          ],
+          "final_argmax_restores": 5,
+          "mean_value": -74.71698989868165,
+          "mean_realized_return": -853.9431165112488,
+          "critic_rmse": 785.4682417199363,
+          "critic_explained_variance": 0.21147921394149816
+        }
+      ],
+      "samples": 307,
+      "pooled_critic_rmse": 161.28064221200532
+    }
+  },
+  "wall_s": 3.7368275999997422,
+  "physical_steps": 0,
+  "fitting": false,
+  "scope": "Training-only descriptive diagnostic on changing-policy realized trajectories; no unbiased final-policy or causal claim."
+}

@@ -1,0 +1,72 @@
+{
+  "passed_engineering": true,
+  "fits": [
+    {
+      "kind": "gnn",
+      "seed": 0,
+      "rows": 167,
+      "preference_rows": 148,
+      "epochs": 64,
+      "trainable_parameters": 106449,
+      "training_s": 39.80209350000041,
+      "final_training_objective": 5.852201358692066
+    },
+    {
+      "kind": "gnn",
+      "seed": 1,
+      "rows": 167,
+      "preference_rows": 148,
+      "epochs": 64,
+      "trainable_parameters": 106449,
+      "training_s": 40.05232380000052,
+      "final_training_objective": 5.841231784305057
+    },
+    {
+      "kind": "mlp",
+      "seed": 0,
+      "rows": 167,
+      "preference_rows": 148,
+      "epochs": 64,
+      "trainable_parameters": 446737,
+      "training_s": 33.02920890000132,
+      "final_training_objective": 5.95911608515559
+    },
+    {
+      "kind": "mlp",
+      "seed": 1,
+      "rows": 167,
+      "preference_rows": 148,
+      "epochs": 64,
+      "trainable_parameters": 446737,
+      "training_s": 34.0548689999996,
+      "final_training_objective": 5.958775752299541
+    },
+    {
+      "kind": "bias",
+      "seed": 0,
+      "rows": 167,
+      "preference_rows": 148,
+      "epochs": 64,
+      "trainable_parameters": 909,
+      "training_s": 2.3051304000000528,
+      "final_training_objective": 6.067157294299151
+    },
+    {
+      "kind": "bias",
+      "seed": 1,
+      "rows": 167,
+      "preference_rows": 148,
+      "epochs": 64,
+      "trainable_parameters": 909,
+      "training_s": 2.2967986000003293,
+      "final_training_objective": 6.06617749703897
+    }
+  ],
+  "ridge_fit_s": 0.6573549000004277,
+  "development_states": 26,
+  "model_fits": 7,
+  "new_forecasts": 0,
+  "new_physical_steps": 0,
+  "wall_s": 207.89887259999978,
+  "scope": "One metadata-selected development split, two fitting seeds, no sealed final-test or closed-loop learned-policy rollout."
+}

@@ -1,0 +1,268 @@
+{
+  "version": "1",
+  "pip_version": "25.0.1",
+  "install": [
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/51/0b/6539076ed58343f1404dea0462167b079b5264508b8e5bbed01cea9f66b8/stable_baselines3-2.3.0-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=ffa2eac35a4076c3d287036c24befde248d14b1088a12ddc7d7a11075dcc067c",
+          "hashes": {
+            "sha256": "ffa2eac35a4076c3d287036c24befde248d14b1088a12ddc7d7a11075dcc067c"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": true,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "stable_baselines3",
+        "version": "2.3.0",
+        "summary": "Pytorch version of Stable Baselines, implementations of reinforcement learning algorithms.",
+        "description": "\n\n# Stable Baselines3\n\nStable Baselines3 is a set of reliable implementations of reinforcement learning algorithms in PyTorch. It is the next major version of [Stable Baselines](https://github.com/hill-a/stable-baselines).\n\nThese algorithms will make it easier for the research community and industry to replicate, refine, and identify new ideas, and will create good baselines to build projects on top of. We expect these tools will be used as a base around which new ideas can be added, and as a tool for comparing a new approach against existing ones. We also hope that the simplicity of these tools will allow beginners to experiment with a more advanced toolset, without being buried in implementation details.\n\n\n## Links\n\nRepository:\nhttps://github.com/DLR-RM/stable-baselines3\n\nBlog post:\nhttps://araffin.github.io/post/sb3/\n\nDocumentation:\nhttps://stable-baselines3.readthedocs.io/en/master/\n\nRL Baselines3 Zoo:\nhttps://github.com/DLR-RM/rl-baselines3-zoo\n\nSB3 Contrib:\nhttps://github.com/Stable-Baselines-Team/stable-baselines3-contrib\n\n## Quick example\n\nMost of the library tries to follow a sklearn-like syntax for the Reinforcement Learning algorithms using Gym.\n\nHere is a quick example of how to train and run PPO on a cartpole environment:\n\n```python\nimport gymnasium\n\nfrom stable_baselines3 import PPO\n\nenv = gymnasium.make(\"CartPole-v1\", render_mode=\"human\")\n\nmodel = PPO(\"MlpPolicy\", env, verbose=1)\nmodel.learn(total_timesteps=10_000)\n\nvec_env = model.get_env()\nobs = vec_env.reset()\nfor i in range(1000):\n    action, _states = model.predict(obs, deterministic=True)\n    obs, reward, done, info = vec_env.step(action)\n    vec_env.render()\n    # VecEnv resets automatically\n    # if done:\n    #   obs = vec_env.reset()\n\n```\n\nOr just train a model with a one liner if [the environment is registered in Gymnasium](https://gymnasium.farama.org/tutorials/gymnasium_basics/environment_creation/) and if [the policy is registered](https://stable-baselines3.readthedocs.io/en/master/guide/custom_policy.html):\n\n```python\nfrom stable_baselines3 import PPO\n\nmodel = PPO(\"MlpPolicy\", \"CartPole-v1\").learn(10_000)\n```\n\n",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "reinforcement-learning-algorithms",
+          "reinforcement-learning",
+          "machine-learning",
+          "gymnasium",
+          "gym",
+          "openai",
+          "stable",
+          "baselines",
+          "toolbox",
+          "python",
+          "data-science"
+        ],
+        "home_page": "https://github.com/DLR-RM/stable-baselines3",
+        "author": "Antonin Raffin",
+        "author_email": "antonin.raffin@dlr.de",
+        "license": "MIT",
+        "license_file": [
+          "LICENSE",
+          "NOTICE"
+        ],
+        "classifier": [
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11"
+        ],
+        "requires_dist": [
+          "gymnasium <0.30,>=0.28.1",
+          "numpy >=1.20",
+          "torch >=1.13",
+          "cloudpickle",
+          "pandas",
+          "matplotlib",
+          "sphinx <8,>=5 ; extra == 'docs'",
+          "sphinx-autobuild ; extra == 'docs'",
+          "sphinx-rtd-theme >=1.3.0 ; extra == 'docs'",
+          "sphinxcontrib.spelling ; extra == 'docs'",
+          "sphinx-copybutton ; extra == 'docs'",
+          "opencv-python ; extra == 'extra'",
+          "pygame ; extra == 'extra'",
+          "tensorboard >=2.9.1 ; extra == 'extra'",
+          "psutil ; extra == 'extra'",
+          "tqdm ; extra == 'extra'",
+          "rich ; extra == 'extra'",
+          "shimmy[atari] ~=1.3.0 ; extra == 'extra'",
+          "pillow ; extra == 'extra'",
+          "autorom[accept-rom-license] ~=0.6.1 ; extra == 'extra'",
+          "opencv-python ; extra == 'extra_no_roms'",
+          "pygame ; extra == 'extra_no_roms'",
+          "tensorboard >=2.9.1 ; extra == 'extra_no_roms'",
+          "psutil ; extra == 'extra_no_roms'",
+          "tqdm ; extra == 'extra_no_roms'",
+          "rich ; extra == 'extra_no_roms'",
+          "shimmy[atari] ~=1.3.0 ; extra == 'extra_no_roms'",
+          "pillow ; extra == 'extra_no_roms'",
+          "pytest ; extra == 'tests'",
+          "pytest-cov ; extra == 'tests'",
+          "pytest-env ; extra == 'tests'",
+          "pytest-xdist ; extra == 'tests'",
+          "mypy ; extra == 'tests'",
+          "ruff >=0.3.1 ; extra == 'tests'",
+          "black <25,>=24.2.0 ; extra == 'tests'"
+        ],
+        "requires_python": ">=3.8",
+        "project_url": [
+          "Code, https://github.com/DLR-RM/stable-baselines3",
+          "Documentation, https://stable-baselines3.readthedocs.io/",
+          "Changelog, https://stable-baselines3.readthedocs.io/en/master/misc/changelog.html",
+          "SB3-Contrib, https://github.com/Stable-Baselines-Team/stable-baselines3-contrib",
+          "RL-Zoo, https://github.com/DLR-RM/rl-baselines3-zoo",
+          "SBX, https://github.com/araffin/sbx"
+        ],
+        "provides_extra": [
+          "docs",
+          "extra",
+          "extra_no_roms",
+          "tests"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/a8/4d/3cbfd81ed84db450dbe73a89afcd8bc405273918415649ac6683356afe92/gymnasium-0.29.1-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=61c3384b5575985bb7f85e43213bcb40f36fcdff388cae6bc229304c71f2843e",
+          "hashes": {
+            "sha256": "61c3384b5575985bb7f85e43213bcb40f36fcdff388cae6bc229304c71f2843e"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "gymnasium",
+        "version": "0.29.1",
+        "summary": "A standard API for reinforcement learning and a diverse set of reference environments (formerly Gym).",
+        "description": "[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://pre-commit.com/) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8127025.svg)](https://doi.org/10.5281/zenodo.8127025)\n\n\n<p align=\"center\">\n    <img src=\"https://raw.githubusercontent.com/Farama-Foundation/Gymnasium/main/gymnasium-text.png\" width=\"500px\"/>\n</p>\n\nGymnasium is an open source Python library for developing and comparing reinforcement learning algorithms by providing a standard API to communicate between learning algorithms and environments, as well as a standard set of environments compliant with that API. This is a fork of OpenAI's [Gym](https://github.com/openai/gym) library by it's maintainers (OpenAI handed over maintenance a few years ago to an outside team), and is where future maintenance will occur going forward.\n\nThe documentation website is at [gymnasium.farama.org](https://gymnasium.farama.org), and we have a public discord server (which we also use to coordinate development work) that you can join here: https://discord.gg/bnJ6kubTg6\n\n## Environments\n\nGymnasium includes the following families of environments along with a wide variety of third-party environments\n* [Classic Control](https://gymnasium.farama.org/environments/classic_control/) - These are classic reinforcement learning based on real-world problems and physics.\n* [Box2D](https://gymnasium.farama.org/environments/box2d/) - These environments all involve toy games based around physics control, using box2d based physics and PyGame-based rendering\n* [Toy Text](https://gymnasium.farama.org/environments/toy_text/) - These environments are designed to be extremely simple, with small discrete state and action spaces, and hence easy to learn. As a result, they are suitable for debugging implementations of reinforcement learning algorithms.\n* [MuJoCo](https://gymnasium.farama.org/environments/mujoco/) - A physics engine based environments with multi-joint control which are more complex than the Box2D environments.\n* [Atari](https://gymnasium.farama.org/environments/atari/) - A set of 57 Atari 2600 environments simulated through Stella and the Arcade Learning Environment that have a high range of complexity for agents to learn.\n* [Third-party](https://gymnasium.farama.org/environments/third_party_environments/) - A number of environments have been created that are compatible with the Gymnasium API. Be aware of the version that the software was created for and use the `apply_env_compatibility` in `gymnasium.make` if necessary.\n\n## Installation\n\nTo install the base Gymnasium library, use `pip install gymnasium`\n\nThis does not include dependencies for all families of environments (there's a massive number, and some can be problematic to install on certain systems). You can install these dependencies for one family like `pip install \"gymnasium[atari]\"` or use `pip install \"gymnasium[all]\"` to install all dependencies.\n\nWe support and test for Python 3.8, 3.9, 3.10, 3.11 on Linux and macOS. We will accept PRs related to Windows, but do not officially support it.\n\n## API\n\nThe Gymnasium API models environments as simple Python `env` classes. Creating environment instances and interacting with them is very simple- here's an example using the \"CartPole-v1\" environment:\n\n```python\nimport gymnasium as gym\nenv = gym.make(\"CartPole-v1\")\n\nobservation, info = env.reset(seed=42)\nfor _ in range(1000):\n    action = env.action_space.sample()\n    observation, reward, terminated, truncated, info = env.step(action)\n\n    if terminated or truncated:\n        observation, info = env.reset()\nenv.close()\n```\n\n## Notable Related Libraries\n\nPlease note that this is an incomplete list, and just includes libraries that the maintainers most commonly point newcommers to when asked for recommendations.\n\n* [CleanRL](https://github.com/vwxyzjn/cleanrl) is a learning library based on the Gymnasium API. It is designed to cater to newer people in the field and provides very good reference implementations.\n* [PettingZoo](https://github.com/Farama-Foundation/PettingZoo) is a multi-agent version of Gymnasium with a number of implemented environments, i.e. multi-agent Atari environments.\n* The Farama Foundation also has a collection of many other [environments](https://farama.org/projects) that are maintained by the same team as Gymnasium and use the Gymnasium API.\n* [Comet](https://www.comet.com/site/?utm_source=gymnasium&utm_medium=partner&utm_campaign=partner_gymnasium_2023&utm_content=github) is a free ML-Ops tool that tracks rewards, metrics, hyperparameters, and code for ML training runs. Comet has an easy-to use integration with Gymnasium, here's a [tutorial](https://bit.ly/CometGymnasiumIntegration) on how to use them together! Comet is a sponsor of the Farama Foundation!\n\n\n\n## Environment Versioning\n\nGymnasium keeps strict versioning for reproducibility reasons. All environments end in a suffix like \"-v0\".  When changes are made to environments that might impact learning results, the number is increased by one to prevent potential confusion. These inherent from Gym.\n\n## Development Roadmap\n\nWe have a roadmap for future development work for Gymnasium available here: https://github.com/Farama-Foundation/Gymnasium/issues/12\n\n## Support Gymnasium's Development\n\nIf you are financially able to do so and would like to support the development of Gymnasium, please join others in the community in [donating to us](https://github.com/sponsors/Farama-Foundation).\n\n## Citation\n\nYou can cite Gymnasium as:\n\n```\n@misc{towers_gymnasium_2023,\n        title = {Gymnasium},\n        url = {https://zenodo.org/record/8127025},\n        abstract = {An API standard for single-agent reinforcement learning environments, with popular reference environments and related utilities (formerly Gym)},\n        urldate = {2023-07-08},\n        publisher = {Zenodo},\n        author = {Towers, Mark and Terry, Jordan K. and Kwiatkowski, Ariel and Balis, John U. and Cola, Gianluca de and Deleu, Tristan and Goulão, Manuel and Kallinteris, Andreas and KG, Arjun and Krimmel, Markus and Perez-Vicente, Rodrigo and Pierré, Andrea and Schulhoff, Sander and Tai, Jun Jet and Shen, Andrew Tan Jin and Younis, Omar G.},\n        month = mar,\n        year = {2023},\n        doi = {10.5281/zenodo.8127026},\n}\n```\n",
+        "description_content_type": "text/markdown",
+        "keywords": [
+          "Reinforcement Learning",
+          "game",
+          "RL",
+          "AI",
+          "gymnasium"
+        ],
+        "author_email": "Farama Foundation <contact@farama.org>",
+        "license": "MIT License",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Development Status :: 4 - Beta",
+          "License :: OSI Approved :: MIT License",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Intended Audience :: Science/Research",
+          "Topic :: Scientific/Engineering :: Artificial Intelligence"
+        ],
+        "requires_dist": [
+          "numpy >=1.21.0",
+          "cloudpickle >=1.2.0",
+          "typing-extensions >=4.3.0",
+          "farama-notifications >=0.0.1",
+          "importlib-metadata >=4.8.0 ; python_version < \"3.10\"",
+          "autorom[accept-rom-license] ~=0.4.2 ; extra == 'accept-rom-license'",
+          "shimmy[atari] <1.0,>=0.1.0 ; extra == 'all'",
+          "box2d-py ==2.3.5 ; extra == 'all'",
+          "pygame >=2.1.3 ; extra == 'all'",
+          "swig ==4.* ; extra == 'all'",
+          "mujoco-py <2.2,>=2.1 ; extra == 'all'",
+          "cython <3 ; extra == 'all'",
+          "mujoco >=2.3.3 ; extra == 'all'",
+          "imageio >=2.14.1 ; extra == 'all'",
+          "jax >=0.4.0 ; extra == 'all'",
+          "jaxlib >=0.4.0 ; extra == 'all'",
+          "lz4 >=3.1.0 ; extra == 'all'",
+          "opencv-python >=3.0 ; extra == 'all'",
+          "matplotlib >=3.0 ; extra == 'all'",
+          "moviepy >=1.0.0 ; extra == 'all'",
+          "torch >=1.0.0 ; extra == 'all'",
+          "shimmy[atari] <1.0,>=0.1.0 ; extra == 'atari'",
+          "box2d-py ==2.3.5 ; extra == 'box2d'",
+          "pygame >=2.1.3 ; extra == 'box2d'",
+          "swig ==4.* ; extra == 'box2d'",
+          "pygame >=2.1.3 ; extra == 'classic-control'",
+          "pygame >=2.1.3 ; extra == 'classic_control'",
+          "jax >=0.4.0 ; extra == 'jax'",
+          "jaxlib >=0.4.0 ; extra == 'jax'",
+          "mujoco >=2.3.3 ; extra == 'mujoco'",
+          "imageio >=2.14.1 ; extra == 'mujoco'",
+          "mujoco-py <2.2,>=2.1 ; extra == 'mujoco-py'",
+          "cython <3 ; extra == 'mujoco-py'",
+          "mujoco-py <2.2,>=2.1 ; extra == 'mujoco_py'",
+          "cython <3 ; extra == 'mujoco_py'",
+          "lz4 >=3.1.0 ; extra == 'other'",
+          "opencv-python >=3.0 ; extra == 'other'",
+          "matplotlib >=3.0 ; extra == 'other'",
+          "moviepy >=1.0.0 ; extra == 'other'",
+          "torch >=1.0.0 ; extra == 'other'",
+          "pytest ==7.1.3 ; extra == 'testing'",
+          "scipy >=1.7.3 ; extra == 'testing'",
+          "pygame >=2.1.3 ; extra == 'toy-text'",
+          "pygame >=2.1.3 ; extra == 'toy_text'"
+        ],
+        "requires_python": ">=3.8",
+        "project_url": [
+          "Homepage, https://farama.org",
+          "Repository, https://github.com/Farama-Foundation/Gymnasium",
+          "Documentation, https://gymnasium.farama.org",
+          "Bug Report, https://github.com/Farama-Foundation/Gymnasium/issues"
+        ],
+        "provides_extra": [
+          "accept-rom-license",
+          "all",
+          "atari",
+          "box2d",
+          "classic-control",
+          "classic_control",
+          "jax",
+          "mujoco",
+          "mujoco-py",
+          "mujoco_py",
+          "other",
+          "testing",
+          "toy-text",
+          "toy_text"
+        ]
+      }
+    },
+    {
+      "download_info": {
+        "url": "https://files.pythonhosted.org/packages/05/2c/ffc08c54c05cdce6fbed2aeebc46348dbe180c6d2c541c7af7ba0aa5f5f8/Farama_Notifications-0.0.4-py3-none-any.whl",
+        "archive_info": {
+          "hash": "sha256=14de931035a41961f7c056361dc7f980762a143d05791ef5794a751a2caf05ae",
+          "hashes": {
+            "sha256": "14de931035a41961f7c056361dc7f980762a143d05791ef5794a751a2caf05ae"
+          }
+        }
+      },
+      "is_direct": false,
+      "is_yanked": false,
+      "requested": true,
+      "metadata": {
+        "metadata_version": "2.1",
+        "name": "Farama-Notifications",
+        "version": "0.0.4",
+        "summary": "Notifications for all Farama Foundation maintained libraries.",
+        "description": "# Farama-Notifications\nAllows for providing notifications on import to all Farama Packages\n",
+        "description_content_type": "text/markdown",
+        "home_page": "https://github.com/Farama-Foundation/Farama-Notifications",
+        "author": "Jordan Terry",
+        "author_email": "Jkterry@farama.org",
+        "license_file": [
+          "LICENSE"
+        ],
+        "classifier": [
+          "Programming Language :: Python :: 3",
+          "License :: OSI Approved :: MIT License",
+          "Operating System :: OS Independent"
+        ]
+      }
+    }
+  ],
+  "environment": {
+    "implementation_name": "cpython",
+    "implementation_version": "3.12.14",
+    "os_name": "nt",
+    "platform_machine": "AMD64",
+    "platform_release": "11",
+    "platform_system": "Windows",
+    "platform_version": "10.0.26200",
+    "python_full_version": "3.12.14",
+    "platform_python_implementation": "CPython",
+    "python_version": "3.12",
+    "sys_platform": "win32"
+  }
+}

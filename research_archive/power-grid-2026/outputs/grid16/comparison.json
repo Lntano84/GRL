@@ -1,0 +1,196 @@
+{
+  "per_week": [
+    {
+      "week": "2035-01-29_4",
+      "rule": "LOCAL128",
+      "full_complete": false,
+      "alternative_complete": false,
+      "full_steps": 1719,
+      "alternative_steps": 1719,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null,
+      "fallbacks": 3
+    },
+    {
+      "week": "2035-04-16_2",
+      "rule": "LOCAL128",
+      "full_complete": true,
+      "alternative_complete": true,
+      "full_steps": 2017,
+      "alternative_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 0.01173221525356908,
+      "controller_time_reduction": 0.08279858354881486,
+      "n1_query_reduction": 0.8591859185918592,
+      "fallbacks": 0
+    },
+    {
+      "week": "2035-07-23_10",
+      "rule": "LOCAL128",
+      "full_complete": true,
+      "alternative_complete": true,
+      "full_steps": 2017,
+      "alternative_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.0014899550842064084,
+      "controller_time_reduction": 0.11422651368751933,
+      "n1_query_reduction": 0.800711743772242,
+      "fallbacks": 0
+    },
+    {
+      "week": "2035-10-29_15",
+      "rule": "LOCAL128",
+      "full_complete": true,
+      "alternative_complete": true,
+      "full_steps": 2017,
+      "alternative_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 0.06919014001317796,
+      "controller_time_reduction": 0.0769764816495228,
+      "n1_query_reduction": 0.8581605192338135,
+      "fallbacks": 0
+    },
+    {
+      "week": "2035-01-29_4",
+      "rule": "OLDNN128",
+      "full_complete": false,
+      "alternative_complete": false,
+      "full_steps": 1719,
+      "alternative_steps": 1719,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null,
+      "fallbacks": 3
+    },
+    {
+      "week": "2035-04-16_2",
+      "rule": "OLDNN128",
+      "full_complete": true,
+      "alternative_complete": true,
+      "full_steps": 2017,
+      "alternative_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 9.802491972191655e-07,
+      "controller_time_reduction": 0.14109997084177106,
+      "n1_query_reduction": 0.8591859185918592,
+      "fallbacks": 0
+    },
+    {
+      "week": "2035-07-23_10",
+      "rule": "OLDNN128",
+      "full_complete": true,
+      "alternative_complete": true,
+      "full_steps": 2017,
+      "alternative_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 0.00036087345048001413,
+      "controller_time_reduction": 0.3669696514921146,
+      "n1_query_reduction": 0.8576512455516014,
+      "fallbacks": 0
+    },
+    {
+      "week": "2035-10-29_15",
+      "rule": "OLDNN128",
+      "full_complete": true,
+      "alternative_complete": true,
+      "full_steps": 2017,
+      "alternative_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.000440210937646011,
+      "controller_time_reduction": 0.08773077292767867,
+      "n1_query_reduction": 0.7620706031343992,
+      "fallbacks": 1
+    },
+    {
+      "week": "2035-01-29_4",
+      "rule": "ZONE",
+      "full_complete": false,
+      "alternative_complete": false,
+      "full_steps": 1719,
+      "alternative_steps": 1719,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null,
+      "fallbacks": 3
+    },
+    {
+      "week": "2035-04-16_2",
+      "rule": "ZONE",
+      "full_complete": true,
+      "alternative_complete": true,
+      "full_steps": 2017,
+      "alternative_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 0.021802396643218463,
+      "controller_time_reduction": 0.09789031050849878,
+      "n1_query_reduction": 0.5863586358635864,
+      "fallbacks": 0
+    },
+    {
+      "week": "2035-07-23_10",
+      "rule": "ZONE",
+      "full_complete": true,
+      "alternative_complete": false,
+      "full_steps": 2017,
+      "alternative_steps": 1904,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null,
+      "fallbacks": 3
+    },
+    {
+      "week": "2035-10-29_15",
+      "rule": "ZONE",
+      "full_complete": true,
+      "alternative_complete": false,
+      "full_steps": 2017,
+      "alternative_steps": 133,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null,
+      "fallbacks": 0
+    }
+  ],
+  "aggregate": [
+    {
+      "rule": "LOCAL128",
+      "joint_weeks": 3,
+      "lost_complete_weeks": [],
+      "earlier_failures": [],
+      "mean_cost_gain_joint": 0.02647746672751354,
+      "mean_controller_time_reduction_joint": 0.091333859628619,
+      "mean_n1_query_reduction_joint": 0.839352727199305,
+      "simple_qualified": false
+    },
+    {
+      "rule": "OLDNN128",
+      "joint_weeks": 3,
+      "lost_complete_weeks": [],
+      "earlier_failures": [],
+      "mean_cost_gain_joint": -2.6119079322925895e-05,
+      "mean_controller_time_reduction_joint": 0.19860013175385474,
+      "mean_n1_query_reduction_joint": 0.82630258909262,
+      "simple_qualified": true
+    },
+    {
+      "rule": "ZONE",
+      "joint_weeks": 1,
+      "lost_complete_weeks": [
+        "2035-07-23_10",
+        "2035-10-29_15"
+      ],
+      "earlier_failures": [],
+      "mean_cost_gain_joint": 0.021802396643218463,
+      "mean_controller_time_reduction_joint": 0.09789031050849878,
+      "mean_n1_query_reduction_joint": 0.5863586358635864,
+      "simple_qualified": false
+    }
+  ],
+  "scope": "Four reused training weeks, one seed, complete-first development screen. Instrumented single wall timings, not statistical speed guarantees; cached predictions not independently recomputed by an AC solver."
+}

@@ -1,0 +1,479 @@
+{
+  "versus_full": [
+    {
+      "method": "OLDNN32",
+      "reference": "FULL",
+      "joint_complete_weeks": 3,
+      "lost_complete_weeks": [],
+      "earlier_failures": [],
+      "gained_complete_weeks": [],
+      "mean_cost_gain": -0.015981212034281347,
+      "mean_controller_time_reduction": 0.06587135976723979,
+      "mean_n1_query_reduction": 0.8805920725559733,
+      "worst_cost_regret": 0.028203845906909296,
+      "auxiliary_screen": false
+    },
+    {
+      "method": "OLDNN128",
+      "reference": "FULL",
+      "joint_complete_weeks": 3,
+      "lost_complete_weeks": [],
+      "earlier_failures": [],
+      "gained_complete_weeks": [],
+      "mean_cost_gain": -0.02966208569582897,
+      "mean_controller_time_reduction": 0.03818901143151254,
+      "mean_n1_query_reduction": 0.7775173876926292,
+      "worst_cost_regret": 0.08073039311196911,
+      "auxiliary_screen": false
+    },
+    {
+      "method": "GNN0_32",
+      "reference": "FULL",
+      "joint_complete_weeks": 3,
+      "lost_complete_weeks": [],
+      "earlier_failures": [],
+      "gained_complete_weeks": [],
+      "mean_cost_gain": -0.005553230289390173,
+      "mean_controller_time_reduction": 0.07034879603485589,
+      "mean_n1_query_reduction": 0.9209624429263435,
+      "worst_cost_regret": 0.02294687125633532,
+      "auxiliary_screen": false
+    },
+    {
+      "method": "GNN1_32",
+      "reference": "FULL",
+      "joint_complete_weeks": 2,
+      "lost_complete_weeks": [
+        "2035-09-03_4"
+      ],
+      "earlier_failures": [],
+      "gained_complete_weeks": [],
+      "mean_cost_gain": -0.01147343562816766,
+      "mean_controller_time_reduction": 0.06635879135474093,
+      "mean_n1_query_reduction": 0.9640131088339599,
+      "worst_cost_regret": 0.02294687125633532,
+      "auxiliary_screen": false
+    },
+    {
+      "method": "MLP0_32",
+      "reference": "FULL",
+      "joint_complete_weeks": 3,
+      "lost_complete_weeks": [],
+      "earlier_failures": [],
+      "gained_complete_weeks": [],
+      "mean_cost_gain": -0.03584328425659228,
+      "mean_controller_time_reduction": 0.049875209282562095,
+      "mean_n1_query_reduction": 0.9198487796702707,
+      "worst_cost_regret": 0.09698001680104602,
+      "auxiliary_screen": false
+    },
+    {
+      "method": "BIAS0_32",
+      "reference": "FULL",
+      "joint_complete_weeks": 3,
+      "lost_complete_weeks": [],
+      "earlier_failures": [],
+      "gained_complete_weeks": [],
+      "mean_cost_gain": -0.015739855544109508,
+      "mean_controller_time_reduction": 0.05126401109721923,
+      "mean_n1_query_reduction": 0.8805920725559733,
+      "worst_cost_regret": 0.02747977643639378,
+      "auxiliary_screen": false
+    }
+  ],
+  "per_week": [
+    {
+      "week": "2035-03-05_0",
+      "method": "OLDNN32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.028203845906909296,
+      "controller_time_reduction": 0.11514681355094292,
+      "n1_query_reduction": 0.9632491125495928
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "OLDNN32",
+      "reference": "FULL",
+      "complete": false,
+      "reference_complete": false,
+      "steps": 1901,
+      "reference_steps": 1901,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "OLDNN32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.019739790195934748,
+      "controller_time_reduction": 0.12552108605404622,
+      "n1_query_reduction": 0.71375
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "OLDNN32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 0.0,
+      "controller_time_reduction": -0.04305382030326976,
+      "n1_query_reduction": 0.9647771051183269
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "OLDNN128",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.08073039311196911,
+      "controller_time_reduction": 0.07866521919482261,
+      "n1_query_reduction": 0.8663604092712466
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "OLDNN128",
+      "reference": "FULL",
+      "complete": false,
+      "reference_complete": false,
+      "steps": 1901,
+      "reference_steps": 1901,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "OLDNN128",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.008255863975517789,
+      "controller_time_reduction": 0.07223318212045426,
+      "n1_query_reduction": 0.6070833333333333
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "OLDNN128",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 0.0,
+      "controller_time_reduction": -0.03633136702073925,
+      "n1_query_reduction": 0.8591084204733077
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "GNN0_32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.02294687125633532,
+      "controller_time_reduction": 0.12062249985867701,
+      "n1_query_reduction": 0.9632491125495928
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "GNN0_32",
+      "reference": "FULL",
+      "complete": false,
+      "reference_complete": false,
+      "steps": 1901,
+      "reference_steps": 1901,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "GNN0_32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 0.006287180388164801,
+      "controller_time_reduction": 0.11880368193171609,
+      "n1_query_reduction": 0.834861111111111
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "GNN0_32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 0.0,
+      "controller_time_reduction": -0.02837979368582544,
+      "n1_query_reduction": 0.9647771051183269
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "GNN1_32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.02294687125633532,
+      "controller_time_reduction": 0.11737463562486505,
+      "n1_query_reduction": 0.9632491125495928
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "GNN1_32",
+      "reference": "FULL",
+      "complete": false,
+      "reference_complete": false,
+      "steps": 1901,
+      "reference_steps": 1901,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "GNN1_32",
+      "reference": "FULL",
+      "complete": false,
+      "reference_complete": true,
+      "steps": 181,
+      "reference_steps": 2017,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "GNN1_32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 0.0,
+      "controller_time_reduction": 0.01534294708461681,
+      "n1_query_reduction": 0.9647771051183269
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "MLP0_32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.09698001680104602,
+      "controller_time_reduction": 0.05771979950215156,
+      "n1_query_reduction": 0.9599081227813739
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "MLP0_32",
+      "reference": "FULL",
+      "complete": false,
+      "reference_complete": false,
+      "steps": 1901,
+      "reference_steps": 1901,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "MLP0_32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.010549835968730822,
+      "controller_time_reduction": 0.14747323458248318,
+      "n1_query_reduction": 0.834861111111111
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "MLP0_32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 0.0,
+      "controller_time_reduction": -0.05556740623694845,
+      "n1_query_reduction": 0.9647771051183269
+    },
+    {
+      "week": "2035-03-05_0",
+      "method": "BIAS0_32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.02747977643639378,
+      "controller_time_reduction": 0.11613916487737919,
+      "n1_query_reduction": 0.9632491125495928
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "BIAS0_32",
+      "reference": "FULL",
+      "complete": false,
+      "reference_complete": false,
+      "steps": 1901,
+      "reference_steps": 1901,
+      "joint_cost_eligible": false,
+      "cost_gain": null,
+      "controller_time_reduction": null,
+      "n1_query_reduction": null
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "BIAS0_32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": -0.019739790195934748,
+      "controller_time_reduction": 0.12848914560694213,
+      "n1_query_reduction": 0.71375
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "BIAS0_32",
+      "reference": "FULL",
+      "complete": true,
+      "reference_complete": true,
+      "steps": 2017,
+      "reference_steps": 2017,
+      "joint_cost_eligible": true,
+      "cost_gain": 0.0,
+      "controller_time_reduction": -0.09083627719266363,
+      "n1_query_reduction": 0.9647771051183269
+    }
+  ],
+  "mean_two_GNN_seeds_vs_refs": [
+    {
+      "reference": "OLDNN32",
+      "joint_complete_weeks": 2,
+      "mean_cost_gain": 0.002556387369829935,
+      "lost_complete_weeks": [
+        "2035-09-03_4"
+      ],
+      "per_week": [
+        {
+          "week": "2035-03-05_0",
+          "gain": 0.00511277473965987
+        },
+        {
+          "week": "2035-10-01_5",
+          "gain": 0.0
+        }
+      ],
+      "graph_increment_screen": false
+    },
+    {
+      "reference": "OLDNN128",
+      "joint_complete_weeks": 2,
+      "mean_cost_gain": 0.026733550857788786,
+      "lost_complete_weeks": [
+        "2035-09-03_4"
+      ],
+      "per_week": [
+        {
+          "week": "2035-03-05_0",
+          "gain": 0.05346710171557757
+        },
+        {
+          "week": "2035-10-01_5",
+          "gain": 0.0
+        }
+      ],
+      "graph_increment_screen": false
+    },
+    {
+      "reference": "MLP0_32",
+      "joint_complete_weeks": 2,
+      "mean_cost_gain": 0.033744072093766196,
+      "lost_complete_weeks": [
+        "2035-09-03_4"
+      ],
+      "per_week": [
+        {
+          "week": "2035-03-05_0",
+          "gain": 0.06748814418753239
+        },
+        {
+          "week": "2035-10-01_5",
+          "gain": 0.0
+        }
+      ],
+      "graph_increment_screen": false
+    },
+    {
+      "reference": "BIAS0_32",
+      "joint_complete_weeks": 2,
+      "mean_cost_gain": 0.002205836690907886,
+      "lost_complete_weeks": [
+        "2035-09-03_4"
+      ],
+      "per_week": [
+        {
+          "week": "2035-03-05_0",
+          "gain": 0.004411673381815772
+        },
+        {
+          "week": "2035-10-01_5",
+          "gain": 0.0
+        }
+      ],
+      "graph_increment_screen": false
+    }
+  ],
+  "both_gnn_auxiliary_pass": false,
+  "graph_increment_pass": false,
+  "scope": "Four previously exposed developmental weeks; two training seeds are not independent weeks. Single instrumented walltiming, all failures retained. No new RL or final-test claim."
+}

@@ -110,3 +110,7 @@ Human goal: speed with adequate control quality. GRID24 uses published verify/fa
 ## 2026-10-10 — Benchmark actual control cost without audit overhead
 
 Human authorized continued speed validation. Preserve weights/rules and use balanced serial repetitions with candidate archival/verification outside act time. Remove per-instance method-binding measurement cycles before formal repetitions. Keep GRID25 diagnostic rather than selecting its favorable timings. Report source-search acceleration separately from total-control acceleration; do not attribute non-search variation to GNN. Reserved8 date families remain unopened until protocol is finalized.
+
+## 2026-10-10 — Separate source acceleration from whole control and graph increment
+
+Keep all48 GRID26 repetitions rather than the favorable old GRID25 pilot. Exact quality preservation and17%–20% source acceleration are developmental evidence;0.88%–1.40% whole-controller point estimates with a reversed repeat do not establish stable significant total acceleration. Non-search time decomposition is accounting, not identified causality. PPO shares the same query reductions; do not label its non-search variation a graph advantage. Next check static action metadata caching with exact rank equivalence and the same optimization for PPO. Preserve checkpoints, guard and hidden families; no new training is implied by engineering optimization.

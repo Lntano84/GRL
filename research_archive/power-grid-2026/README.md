@@ -1,4 +1,14 @@
-[当前 GRID26 提速核验协议（尚无正式结果）](protocols/GRID26_before_runs/README.md)
+# 最新：GRID26 实际提速核验完成
+
+[贡献核对](outputs/grid26/GRID26_contribution_report.md) · [48条串行结果](outputs/grid26/comparison.csv) · [保存数据审计](outputs/grid26/audit.json) · [增量归档清单](grid26_archive_manifest.json)
+
+48/48条开发回放，95,424物理步与379,368公开预测；所有动作、观测和成本路径与FULL相同，均完成3/4日期，六月同一步失败。两GNN搜索时间减少19.55%/17.14%，总控制仅减少1.40%/0.88%，查询少34.09%。重复0总控制反向；不宣称稳定显著端到端提速。FULL搜索仅占总控制9.80%。原PPO同样省搜索18.31%；156/156 GNN–PPO逐调用选择与查询数量相同，图模块独有增量未建立，排序/查询集合并不都相同。
+
+GRID25四条试点作为测量修订历史保留，不能拿其较有利时间替代正式矩阵。新拟合/RL/预留家族评价均为0。旧模型、旧失败和回放前协议不变。
+
+## 既有记录
+
+[GRID26 回放前封存协议](protocols/GRID26_before_runs/README.md)
 
 # 最新：GRID24 质量补强（2026-10-10）
 

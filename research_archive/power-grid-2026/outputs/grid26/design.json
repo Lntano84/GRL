@@ -1,0 +1,487 @@
+{
+  "stage": "GRID26_CONTROLLED_SERIAL_TIMING_CLASS_TIMER",
+  "weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "methods": [
+    {
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    }
+  ],
+  "repeats": 3,
+  "execution_order": [
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "phase": "pilot",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "phase": "pilot",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "phase": "pilot",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "phase": "pilot",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "repeat": 0,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "phase": "remaining",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "phase": "remaining",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "phase": "remaining",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "phase": "remaining",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 1,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "repeat": 1,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 1,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 1,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "phase": "remaining",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "phase": "remaining",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "phase": "remaining",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "phase": "remaining",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 2,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "repeat": 2,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "repeat": 2,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "repeat": 2,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null
+    }
+  ],
+  "environment_seed": 0,
+  "weights": "Unchanged GRID21 V1 seed0/seed1; author's original PPO remains frozen.",
+  "control": "Unchanged GRID24 K128 guard0.9, masks, full combined aliases, reward tie, restoration cadence6 and continuous optimizer.",
+  "timing": "Single fresh worker process per run. Serial only. Same CPU thread settings. Balanced method positions across weeks in each repeat. No candidate compression, artifact writing, vector hashes or offline ledger reconstruction inside decision time.",
+  "primary": "Pooled total controller wall time ratio to FULL within the same week and repeat; report week-macro paired ratios too. Physical simulation and startup separately, plus controller+physical+startup. Search/source and forecast components are secondary.",
+  "tails": "All-step decision p95/p99/max; N1 search-call p95 separately. No treating physical steps or repeats as independent date families.",
+  "quality": "Every development run must retain GRID24/FULL action-observation-cost path. June failure remains counted, not a cost improvement. Stop if refactor changes decisions.",
+  "continuation": "After timing audit, keep protected configuration fixed for reserved-family quality/cost/speed evaluation. A small or mixed speed effect is a diagnosis, not permission to select a winning repeat.",
+  "caps": {
+    "wall_s": 14400,
+    "episode_s": 720,
+    "physical_steps": 100000,
+    "public_forecasts": 1500000
+  },
+  "new_model_fits": 0,
+  "reserved_family_evaluations": 0,
+  "instrumentation": "Class-level simulation timer delegates to the original unbound function without setting a bound method on each observation. No per-observation reference cycle. Light simulation timers and common ResidualControl checks remain equally enabled. No production-service latency claim. Parent startup/file-save is excluded from act timing and separately counted."
+}

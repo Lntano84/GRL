@@ -1,0 +1,1 @@
+CLOSED AFTER FOUR PILOT RUNS. Valid saved-data quality audit. Timing instrumentation superseded; do not run remaining44. GRID26 is the corrected benchmark. No model failure, no new fits, no reserved families.

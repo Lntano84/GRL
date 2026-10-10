@@ -1,0 +1,1718 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "method": "FULL",
+      "runs": 12,
+      "controller_s": 2077.9079925999213,
+      "search_s": 203.66254070001014,
+      "controller_reduction": 0.0,
+      "search_reduction": 0.0,
+      "source_accounting_contribution": 0.0,
+      "other_accounting_contribution": 0.0,
+      "query_reduction": 0.0,
+      "cpu_reduction": 0.0,
+      "prior_s": 0.0,
+      "feature_s": 0.0,
+      "forward_rank_s": 0.0,
+      "controller_plus_physical_reduction": 0.0,
+      "completion_dates": 3,
+      "dates": 4,
+      "repeats": [
+        {
+          "repeat": 0,
+          "controller_reduction": 0.0,
+          "search_reduction": 0.0
+        },
+        {
+          "repeat": 1,
+          "controller_reduction": 0.0,
+          "search_reduction": 0.0
+        },
+        {
+          "repeat": 2,
+          "controller_reduction": 0.0,
+          "search_reduction": 0.0
+        }
+      ]
+    },
+    {
+      "method": "GNN0_128_GUARD",
+      "runs": 12,
+      "controller_s": 2048.8059753001035,
+      "search_s": 163.83976899999834,
+      "controller_reduction": 0.014005440762275945,
+      "search_reduction": 0.19553311847695032,
+      "source_accounting_contribution": 0.019164838790664992,
+      "other_accounting_contribution": -0.005159398028389098,
+      "query_reduction": 0.3409302119750409,
+      "cpu_reduction": 0.011682704732369542,
+      "prior_s": 19.24983140002223,
+      "feature_s": 0.20650500000920147,
+      "forward_rank_s": 0.18607359999441542,
+      "controller_plus_physical_reduction": 0.01365329828685169,
+      "completion_dates": 3,
+      "dates": 4,
+      "repeats": [
+        {
+          "repeat": 0,
+          "controller_reduction": -0.015309138276871748,
+          "search_reduction": 0.1437479312078439
+        },
+        {
+          "repeat": 1,
+          "controller_reduction": 0.03367394613851504,
+          "search_reduction": 0.21966236846361653
+        },
+        {
+          "repeat": 2,
+          "controller_reduction": 0.024380552218036367,
+          "search_reduction": 0.2237858434993384
+        }
+      ]
+    },
+    {
+      "method": "GNN1_128_GUARD",
+      "runs": 12,
+      "controller_s": 2059.6780257001737,
+      "search_s": 168.75604830000157,
+      "controller_reduction": 0.008773231040387741,
+      "search_reduction": 0.1713937785516727,
+      "source_accounting_contribution": 0.01679886333962884,
+      "other_accounting_contribution": -0.008025632299241045,
+      "query_reduction": 0.3409302119750409,
+      "cpu_reduction": 0.007251333971815543,
+      "prior_s": 19.594696299991483,
+      "feature_s": 0.21054029998049373,
+      "forward_rank_s": 0.1909750999948301,
+      "controller_plus_physical_reduction": 0.008359391186268494,
+      "completion_dates": 3,
+      "dates": 4,
+      "repeats": [
+        {
+          "repeat": 0,
+          "controller_reduction": -0.02798855550017465,
+          "search_reduction": 0.06890821589287466
+        },
+        {
+          "repeat": 1,
+          "controller_reduction": 0.030717435762266154,
+          "search_reduction": 0.2207600609902497
+        },
+        {
+          "repeat": 2,
+          "controller_reduction": 0.02453521322930441,
+          "search_reduction": 0.22570903176199963
+        }
+      ]
+    },
+    {
+      "method": "OLDNN128_GUARD",
+      "runs": 12,
+      "controller_s": 2136.5211800002253,
+      "search_s": 166.3681479999832,
+      "controller_reduction": -0.028207787644613624,
+      "search_reduction": 0.1831185674687259,
+      "source_accounting_contribution": 0.017948048148832343,
+      "other_accounting_contribution": -0.046155835793445996,
+      "query_reduction": 0.3409302119750409,
+      "cpu_reduction": -0.029096547635335535,
+      "prior_s": 19.758128000004945,
+      "feature_s": 0.0,
+      "forward_rank_s": 0.0,
+      "controller_plus_physical_reduction": -0.02862655018524829,
+      "completion_dates": 3,
+      "dates": 4,
+      "repeats": [
+        {
+          "repeat": 0,
+          "controller_reduction": -0.0727880968741057,
+          "search_reduction": 0.1377877618852178
+        },
+        {
+          "repeat": 1,
+          "controller_reduction": -0.033532623925762506,
+          "search_reduction": 0.17939513886505143
+        },
+        {
+          "repeat": 2,
+          "controller_reduction": 0.02319653835820379,
+          "search_reduction": 0.23246574816717713
+        }
+      ]
+    }
+  ],
+  "source_pairs": [
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call008.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call009.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call010.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-10-01_5",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-10-01_5",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call008.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call009.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call010.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-10-01_5",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-10-01_5",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call008.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call009.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN0_128_GUARD",
+      "call": "call010.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "method": "GNN0_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN0_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-10-01_5",
+      "method": "GNN0_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-10-01_5",
+      "method": "GNN0_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call008.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call009.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call010.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-10-01_5",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-10-01_5",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call008.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call009.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call010.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-10-01_5",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 1,
+      "week": "2035-10-01_5",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call008.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call009.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-03-05_0",
+      "method": "GNN1_128_GUARD",
+      "call": "call010.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-06-25_8",
+      "method": "GNN1_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call002.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call003.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call004.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call005.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": true,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call006.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-09-03_4",
+      "method": "GNN1_128_GUARD",
+      "call": "call007.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-10-01_5",
+      "method": "GNN1_128_GUARD",
+      "call": "call000.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    },
+    {
+      "repeat": 2,
+      "week": "2035-10-01_5",
+      "method": "GNN1_128_GUARD",
+      "call": "call001.json",
+      "same_chosen_id": true,
+      "same_query_count": true,
+      "same_feedback_id_set": false,
+      "same_dispatch_order": false
+    }
+  ],
+  "source_pair_checks": 156,
+  "same_chosen_id": 156,
+  "same_query_count": 156,
+  "same_feedback_id_set": 96,
+  "same_dispatch_order": 0,
+  "full_search_fraction": 0.09801326210078405,
+  "maximum_accounting_residual": 5.377642775528102e-17,
+  "new_forecasts": 0,
+  "new_fits": 0,
+  "reserved_family_evaluations": 0,
+  "scope": "Four exposed dates and three timing repetitions, not an independent confirmation. Same-query comparisons do not prove equality of all learned rankings. Decomposition is accounting, not causal identification."
+}

@@ -1,0 +1,796 @@
+{
+  "files": [
+    {
+      "path": "work/grid25/audit.py",
+      "bytes": 13960,
+      "sha256": "ea268e78ac0c53b973fb4b44970e5dea5d78158307f1902b0733206e3afb451a"
+    },
+    {
+      "path": "work/grid25/engine.py",
+      "bytes": 4396,
+      "sha256": "caa095ed8911f060dbb49d0d13707d5cc04e6fdd9fb6ee6328dcbe56cac615ad"
+    },
+    {
+      "path": "work/grid25/preflight.py",
+      "bytes": 4027,
+      "sha256": "fe92bc2d03daa9ca9168fc486340472cce3765662dca42f06fd8a08f7ea60066"
+    },
+    {
+      "path": "work/grid25/prepare.py",
+      "bytes": 4781,
+      "sha256": "4b85e46a235071fab3da3576350180a659c0bb719698457ae363046f98d28938"
+    },
+    {
+      "path": "work/grid25/prepare_audit.py",
+      "bytes": 2247,
+      "sha256": "6cdd22d7c05ed36c4812c20c08d7b7f708e1f89b523a6fbed5230a22ecf771a3"
+    },
+    {
+      "path": "work/grid25/review.py",
+      "bytes": 7875,
+      "sha256": "96d995a210b0cd390b64f54cae44fecd1d6a7fb908da255cbbb93f13d294ee0d"
+    },
+    {
+      "path": "work/grid25/run.py",
+      "bytes": 13196,
+      "sha256": "b04b3d0736870fea51107e8c890a44dfc596a165d754a860849646dd3202a49a"
+    },
+    {
+      "path": "outputs/grid25/analysis_code_freeze.json",
+      "bytes": 194,
+      "sha256": "ef73cdfdee7b20d79652b13a890fc64a32b83cf34a7974160999530d0cbacde1"
+    },
+    {
+      "path": "outputs/grid25/code_freeze.json",
+      "bytes": 980,
+      "sha256": "6b862af451b9df49747fe937b4449cd594303a33ee7d0edd9a274756b489bc29"
+    },
+    {
+      "path": "outputs/grid25/design.json",
+      "bytes": 13083,
+      "sha256": "0332d75894d6faedd4a436beb610df6f1ca59e2e09fb6d51ed556b76588b8153"
+    },
+    {
+      "path": "outputs/grid25/ENGINEERING_NOTES.md",
+      "bytes": 562,
+      "sha256": "5e3c4845cc6d4717191915021e8cbd84dde0bb4db68dec9a30597b178c6f6c6a"
+    },
+    {
+      "path": "outputs/grid25/GRID25_pilot_report.md",
+      "bytes": 1352,
+      "sha256": "600bc662cb163232bc8af70a342b05da26bc3db2152249815765c14f46c78cdc"
+    },
+    {
+      "path": "outputs/grid25/hardware.json",
+      "bytes": 493,
+      "sha256": "950e4252dbb9a3d8852649b0e98a8f178ee4d57e872fb283df296de297c609ba"
+    },
+    {
+      "path": "outputs/grid25/manifest.json",
+      "bytes": 4478,
+      "sha256": "b47e193c47e8bc4a0cbd03f1e0f45a65871ab37318629b9c6fc01faa8589326f"
+    },
+    {
+      "path": "outputs/grid25/pilot_audit.json",
+      "bytes": 625,
+      "sha256": "f89c50881cc401277c6a9e9928a3ec45004406d642a35f08b9b3895ed0426721"
+    },
+    {
+      "path": "outputs/grid25/pilot_finished.json",
+      "bytes": 4998,
+      "sha256": "e5066638e02e36ed66d0708e0e64e17d173c1a13169d52b2b634f94746b2909b"
+    },
+    {
+      "path": "outputs/grid25/pilot_review.csv",
+      "bytes": 2726,
+      "sha256": "ea81e94a68e0b95be237d19674b05b3d6b3d47ddd59e8310e35cc63455a42a6f"
+    },
+    {
+      "path": "outputs/grid25/pilot_review.json",
+      "bytes": 10726,
+      "sha256": "7170b2300aa872e59ba6af444dc1583498f2dde783263d9e06e6d9cadf3fd743"
+    },
+    {
+      "path": "outputs/grid25/preflight.json",
+      "bytes": 13980,
+      "sha256": "79acdb18a06bbd91df393eea2e290b7b4d2a0369aa4d95a621ae512a597b6baa"
+    },
+    {
+      "path": "outputs/grid25/preservation_hashes.json",
+      "bytes": 176287,
+      "sha256": "4748851dedff1267da8eb4948e6c884109a9cf516c83add028c281a4c13e2821"
+    },
+    {
+      "path": "outputs/grid25/RUN_STATE.md",
+      "bytes": 210,
+      "sha256": "0d222572702e30e30f44a0b39f033ff35d284b14d64a7f9a096e9f8558c121f3"
+    },
+    {
+      "path": "outputs/grid25/TIMING_PROTOCOL_STATUS.json",
+      "bytes": 458,
+      "sha256": "a17afcf10e473c9cc82bed465c617799bf3cb47c382491b0a08a7b2e4fbce323"
+    },
+    {
+      "path": "outputs/grid25/runs/r0__2035-03-05_0__FULL/summary.json",
+      "bytes": 982,
+      "sha256": "b6a6efabc76af0bd731e98809a0b8325b08573b0f441cd3f138e98e39b8ae672"
+    },
+    {
+      "path": "outputs/grid25/runs/r0__2035-03-05_0__GNN0_128_GUARD/summary.json",
+      "bytes": 1088,
+      "sha256": "367864588e70127dea1e1d8b314ffc643a748d326176dc37b97f29ceb2faf659"
+    },
+    {
+      "path": "outputs/grid25/runs/r0__2035-03-05_0__GNN1_128_GUARD/summary.json",
+      "bytes": 1086,
+      "sha256": "77aa860a4f180f1cc7dde2770624a74ab1d3de48c158eda20b41d3d9083e245b"
+    },
+    {
+      "path": "outputs/grid25/runs/r0__2035-03-05_0__OLDNN128_GUARD/summary.json",
+      "bytes": 1011,
+      "sha256": "2d0f47b9256276d27517495700f806f7c584ea34498b0e7e0252ba7a7ada42d9"
+    },
+    {
+      "path": "outputs/grid25/runs/r0__2035-03-05_0__FULL/metadata.json",
+      "bytes": 67656,
+      "sha256": "2df8bf241721b45237a604530df857855bee833e0ca2c4a753a5747e41648bbc"
+    },
+    {
+      "path": "outputs/grid25/runs/r0__2035-03-05_0__GNN0_128_GUARD/metadata.json",
+      "bytes": 67771,
+      "sha256": "651a06862208ad2086d39aec08d4f44a4df3b53ae689094226d053398ea31e5a"
+    },
+    {
+      "path": "outputs/grid25/runs/r0__2035-03-05_0__GNN1_128_GUARD/metadata.json",
+      "bytes": 67771,
+      "sha256": "09d8c92f06b21001e00f2e30eba2eb481db416297bf60ac6228f21cdfa3ffc32"
+    },
+    {
+      "path": "outputs/grid25/runs/r0__2035-03-05_0__OLDNN128_GUARD/metadata.json",
+      "bytes": 67667,
+      "sha256": "1370b74353f5140d8bc42ea21e48c053686d24b210d6c2be8dcd7361db5b81b7"
+    },
+    {
+      "path": "work/grid26/audit.py",
+      "bytes": 13960,
+      "sha256": "42220da6841f1b3c5578eb751410897fb65afc9a6163b76c0071f06a82f5328e"
+    },
+    {
+      "path": "work/grid26/engine.py",
+      "bytes": 4475,
+      "sha256": "ab19432ff99e5ee33c982fba8c32e8d6c97fa8678e04540c3c6f94f044929c43"
+    },
+    {
+      "path": "work/grid26/preflight.py",
+      "bytes": 4088,
+      "sha256": "084bff8f4b8b2d588c41e68415347d4a09ed86fada604972752e3f9f578f8af6"
+    },
+    {
+      "path": "work/grid26/prepare.py",
+      "bytes": 5012,
+      "sha256": "47370750b92bd62b44a76cc9570a636da75a8b1a9713a6ac6593b8a2cd5acb71"
+    },
+    {
+      "path": "work/grid26/prepare_from25.py",
+      "bytes": 2965,
+      "sha256": "78b17cc0c0c2a254feadfe2253d06c7c2e1f6b10ca9125b8adc3554b75491ed5"
+    },
+    {
+      "path": "work/grid26/review.py",
+      "bytes": 7977,
+      "sha256": "2194e6e57333054fe33fead03218c69e8812cb11d244d6f5453b67da9bd57b7c"
+    },
+    {
+      "path": "work/grid26/run.py",
+      "bytes": 13770,
+      "sha256": "5ec22dc8a6334f63aee6b692e146c248a5fd668f1f931bbf7ddda684c5c1f58d"
+    },
+    {
+      "path": "work/grid26/timer_preflight.py",
+      "bytes": 1699,
+      "sha256": "fb1890c61bfcc54a46947ddd4b703c1ea7606973acd3ee52b509487cff5e5655"
+    },
+    {
+      "path": "outputs/grid26/analysis_code_freeze.json",
+      "bytes": 299,
+      "sha256": "fc377b4b812c031622fe3b34f5f5e2d82bc75bda5ec155830aa6087f8cecf701"
+    },
+    {
+      "path": "outputs/grid26/audit.json",
+      "bytes": 631,
+      "sha256": "42f781dab532c03670d820b48099caa7c71d3f327109efc82522a24aaa116bfa"
+    },
+    {
+      "path": "outputs/grid26/code_freeze.json",
+      "bytes": 1182,
+      "sha256": "3c0e80a31c9bfd47b24979243aad139803e27baf85cee4cea2abb48a91fbc0f0"
+    },
+    {
+      "path": "outputs/grid26/comparison.csv",
+      "bytes": 26631,
+      "sha256": "9d39430e3192c6cbeb6671de7042b70b10e2b1e927b681d2f2cfa37e641bb605"
+    },
+    {
+      "path": "outputs/grid26/comparison.json",
+      "bytes": 83766,
+      "sha256": "bae631aea609ada2f8b6c61dba5795c38546f36133777f9d6900c2eaf733c42e"
+    },
+    {
+      "path": "outputs/grid26/contribution.csv",
+      "bytes": 1107,
+      "sha256": "c4eba030b1d67c81bb8eb3d266b444fe05e409aa566c3ea7e925b48b4ea40852"
+    },
+    {
+      "path": "outputs/grid26/contribution.json",
+      "bytes": 47143,
+      "sha256": "5de47d4d6793a5c194187b08306e059e2099e14b62c3b3b0118652a152955118"
+    },
+    {
+      "path": "outputs/grid26/design.json",
+      "bytes": 13255,
+      "sha256": "7b5753bd81419b0683ef29d6db6cd5065c6418f62a9421930cb9515cdc7c49ee"
+    },
+    {
+      "path": "outputs/grid26/finished.json",
+      "bytes": 57703,
+      "sha256": "b0ffd64806e98fb2ef4bc8552a430ea3c9f03e899c9c8ba2f5625acda54c8267"
+    },
+    {
+      "path": "outputs/grid26/GRID26_contribution_report.md",
+      "bytes": 2341,
+      "sha256": "637996a79f672265464fa8d187ccfcff6095fcff5e431525489cb0fabc148285"
+    },
+    {
+      "path": "outputs/grid26/GRID26_pilot_report.md",
+      "bytes": 1190,
+      "sha256": "ccec17f6c523c58482927a9431e6bbbf4454c2693a07fb27e24c02f51ab3edd6"
+    },
+    {
+      "path": "outputs/grid26/GRID26_report.md",
+      "bytes": 1196,
+      "sha256": "d08f3c63d62f0656d30f4ee06c42dcfc492d88280ba87cc69060db2da4fb6c8e"
+    },
+    {
+      "path": "outputs/grid26/hardware.json",
+      "bytes": 493,
+      "sha256": "950e4252dbb9a3d8852649b0e98a8f178ee4d57e872fb283df296de297c609ba"
+    },
+    {
+      "path": "outputs/grid26/manifest.json",
+      "bytes": 53918,
+      "sha256": "9f0e8fdf4f01e92e85467fafa6e14c7fdfda864720fef68f0ad73a1c6f5bdb2b"
+    },
+    {
+      "path": "outputs/grid26/pilot_audit.json",
+      "bytes": 625,
+      "sha256": "f89c50881cc401277c6a9e9928a3ec45004406d642a35f08b9b3895ed0426721"
+    },
+    {
+      "path": "outputs/grid26/pilot_finished.json",
+      "bytes": 4996,
+      "sha256": "a6ae9ae35df083310af8819c970063eed59b872c4d9755f396559680e7f9c7e4"
+    },
+    {
+      "path": "outputs/grid26/pilot_review.csv",
+      "bytes": 2731,
+      "sha256": "f13cf1fd951dd1df52cfa629c3d663dfea861c89630cdcbf1f914ca76de5224c"
+    },
+    {
+      "path": "outputs/grid26/pilot_review.json",
+      "bytes": 10760,
+      "sha256": "6cc321821e3fd3a052df4f9ea346184a655471e44f0b3f21c203bd98a1a1f547"
+    },
+    {
+      "path": "outputs/grid26/preflight.json",
+      "bytes": 13980,
+      "sha256": "79acdb18a06bbd91df393eea2e290b7b4d2a0369aa4d95a621ae512a597b6baa"
+    },
+    {
+      "path": "outputs/grid26/preservation_hashes.json",
+      "bytes": 176287,
+      "sha256": "4748851dedff1267da8eb4948e6c884109a9cf516c83add028c281a4c13e2821"
+    },
+    {
+      "path": "outputs/grid26/RUN_STATE.md",
+      "bytes": 216,
+      "sha256": "6eba525420621f3f4442050b8e1fc50b3b0e29472196d9f5d62c94bd2f08c153"
+    },
+    {
+      "path": "outputs/grid26/timer_preflight.json",
+      "bytes": 353,
+      "sha256": "a1c77c2475255d877f9bd00b98c406da295aa2eeb74f6bee9d9322bedca1e6a8"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-03-05_0__FULL/summary.json",
+      "bytes": 986,
+      "sha256": "dc7dcd2cb08ad4ca5b1360732e44afcfd7d3bbfc3031e182479fe534c57696b0"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/summary.json",
+      "bytes": 1081,
+      "sha256": "7ce4285addd211f28542d5cfef8f7cd2feac303949eecf7ac60011efdf69a32a"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/summary.json",
+      "bytes": 1088,
+      "sha256": "e1afd9619ca4068f8522aac3d81283094bb365e7bf24160a5d6df1a056ee9623"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/summary.json",
+      "bytes": 1010,
+      "sha256": "36ce6129d28ad1799702bf10b63b29d8749d96c4e594ac049882dbecb6ad7e9e"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-06-25_8__FULL/summary.json",
+      "bytes": 989,
+      "sha256": "a764129155a372aed00f5b76828df729f0fad82243109358a22f9d33239eaf30"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-06-25_8__GNN0_128_GUARD/summary.json",
+      "bytes": 1088,
+      "sha256": "c1775652b41bde638c8f048e6198af77b8d45d6719786995f19d4b268dc5be91"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-06-25_8__GNN1_128_GUARD/summary.json",
+      "bytes": 1090,
+      "sha256": "63e02cc5385a0b27a3cd884be50ce63a7c742bfacebe6b59a770a8775fd84beb"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-06-25_8__OLDNN128_GUARD/summary.json",
+      "bytes": 1016,
+      "sha256": "4550d9a2cfe5e7ef069e77581aed2cc1756fa2989b887d33b6f1fa45c0532a3c"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-09-03_4__FULL/summary.json",
+      "bytes": 995,
+      "sha256": "430945d585fbbf41fb98bb1ea558896a8ff37da4e84c716d3f63f5f9f6d8462b"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-09-03_4__GNN0_128_GUARD/summary.json",
+      "bytes": 1087,
+      "sha256": "4d5dfbaa82c597d1fb46941f49235c38cd4ad54442dde97d6bb5a12583b75911"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-09-03_4__GNN1_128_GUARD/summary.json",
+      "bytes": 1090,
+      "sha256": "11cf3aebaaa395b6479e3fde5eafa891de304d31eae8eac0df4f4146abb6dc8d"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-09-03_4__OLDNN128_GUARD/summary.json",
+      "bytes": 1013,
+      "sha256": "8232c7d3e98bb4d5fc2102d1bb9454fb0a1aebf2287c5af8c886dedaa1ae654c"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-10-01_5__FULL/summary.json",
+      "bytes": 987,
+      "sha256": "3fabecc3a11cd661e2dd5bc7ddef2fc094e3a28846d122d5c9524415162bc010"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-10-01_5__GNN0_128_GUARD/summary.json",
+      "bytes": 1095,
+      "sha256": "2c18f8cf99d27c6fe1b00519bb725d1a178ec3e355ab8bd406a4549641c96861"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-10-01_5__GNN1_128_GUARD/summary.json",
+      "bytes": 1093,
+      "sha256": "c981e64fafc2c3919ab09177f047b0286dce61adb058a192ca78994fd2279a8f"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-10-01_5__OLDNN128_GUARD/summary.json",
+      "bytes": 1013,
+      "sha256": "a0e35c3b77c5c3bd7540bf98d72d4dfa37f46336df82adb2e01630af244f5174"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-03-05_0__FULL/summary.json",
+      "bytes": 989,
+      "sha256": "2c577ff4fa64a567ad736324da06be4afa8a51b0651693f414650fe0bd32a97d"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-03-05_0__GNN0_128_GUARD/summary.json",
+      "bytes": 1092,
+      "sha256": "1daf9a7dea89cbfd9f7f6c223570e728037be628d89a3348ebf7b294d1d399ce"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-03-05_0__GNN1_128_GUARD/summary.json",
+      "bytes": 1093,
+      "sha256": "493b576634736f74bf19bb91ae24a40b2015c62830e8f09f9b8cd6542b6f6573"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-03-05_0__OLDNN128_GUARD/summary.json",
+      "bytes": 1014,
+      "sha256": "03b46f59cd202a14b6ff03d330155859e673d46c1854267f52f3ddbe3f3e3f88"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-06-25_8__FULL/summary.json",
+      "bytes": 990,
+      "sha256": "4a44f0c1d87e5e271d9005064c976df11e3c50bc3004c891a562d7dc010f969c"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-06-25_8__GNN0_128_GUARD/summary.json",
+      "bytes": 1091,
+      "sha256": "53f6b278e15bf0a0a3671e433a84b68410eadc6c003fcd76ee6ab894c78b842e"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-06-25_8__GNN1_128_GUARD/summary.json",
+      "bytes": 1091,
+      "sha256": "228b1e6529b2fc8b09c9f1c5ee4af70d41d4033a17b28c2c017a4468379ac39c"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-06-25_8__OLDNN128_GUARD/summary.json",
+      "bytes": 1018,
+      "sha256": "4762fea14c5c726635f49fb19eb48d9198d82f3a91c1878546e241e2bd038d9c"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-09-03_4__FULL/summary.json",
+      "bytes": 991,
+      "sha256": "d158cca0ea6c05ddc4bdfe56606dcdb59c298d9977d4e13417768727b1444b77"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-09-03_4__GNN0_128_GUARD/summary.json",
+      "bytes": 1091,
+      "sha256": "4c142ae18c4d0973a5ad7aaba31806b8abdea94bf741534157ff3e379189d07d"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-09-03_4__GNN1_128_GUARD/summary.json",
+      "bytes": 1088,
+      "sha256": "9d62a31dce15fca014d935cd0c2b8c4b0ee1d7b9a6c7f503ae482f09c3d9977d"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-09-03_4__OLDNN128_GUARD/summary.json",
+      "bytes": 1014,
+      "sha256": "6ce5ccdd9ce39817d379bcadee80a72d5b4cbef8d48b0c61e88c28fe2ed07a1a"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-10-01_5__FULL/summary.json",
+      "bytes": 990,
+      "sha256": "aa68f59ab77ceb2bae4be8b9f9d4ec56fec586f6f287763aeaad6dad60d768f2"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-10-01_5__GNN0_128_GUARD/summary.json",
+      "bytes": 1092,
+      "sha256": "ce751921befc12b1318e882091d1aea391af8cdc6f55a97178950ccd58b8616e"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-10-01_5__GNN1_128_GUARD/summary.json",
+      "bytes": 1093,
+      "sha256": "739eebc73ef08a7de6a882c0e5368d2f7cc6b864da4591f72a7c740dc6c19261"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-10-01_5__OLDNN128_GUARD/summary.json",
+      "bytes": 1016,
+      "sha256": "aba5a324e6c9f529f6b3ca775ab7eb141a46cd4c116515c0fbcfbbfbdcd3548c"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-03-05_0__FULL/summary.json",
+      "bytes": 992,
+      "sha256": "de876c91c2e52c7dfe32bbb901d362123da34dac4976a93b24eae99c43ca3dee"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-03-05_0__GNN0_128_GUARD/summary.json",
+      "bytes": 1092,
+      "sha256": "9193a46f960020f56e0d5e2e53ab7ae0e537889d0efad5e78d6ca62c0b4674ff"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-03-05_0__GNN1_128_GUARD/summary.json",
+      "bytes": 1087,
+      "sha256": "c319fc478ebfe9983569e34b897f37409786ffa51069e1552c7d93adda4c349b"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-03-05_0__OLDNN128_GUARD/summary.json",
+      "bytes": 1017,
+      "sha256": "89d631ea449bfa0bb84c3b32ba70a67eba1454d25b846be51d60a0e350e940dd"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-06-25_8__FULL/summary.json",
+      "bytes": 991,
+      "sha256": "d9a2d7312973868c456f2f6f54565247fc371f4f64add2e2adcb385ad0dfbbea"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-06-25_8__GNN0_128_GUARD/summary.json",
+      "bytes": 1089,
+      "sha256": "162239313ec746da6f80f81a7ecc4bb30c536172e81cfe5fcc24116d899bde70"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-06-25_8__GNN1_128_GUARD/summary.json",
+      "bytes": 1090,
+      "sha256": "f1062dea5faf5ee016f204cf8b3d3b8d26a6a6c9016facd395d4a0459b059315"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-06-25_8__OLDNN128_GUARD/summary.json",
+      "bytes": 1019,
+      "sha256": "362318520d8bc061b7d74f9d852200945933af738fcdc494130ca32b0d5a7a8e"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-09-03_4__FULL/summary.json",
+      "bytes": 989,
+      "sha256": "634c5b0e44bfc5226641787bcab272b1f98119fdf39eb680fc492043dfc78f1b"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-09-03_4__GNN0_128_GUARD/summary.json",
+      "bytes": 1089,
+      "sha256": "056c0c9f8937726be12b877afe0c4543c80313530503f160144bff6ce62aada4"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-09-03_4__GNN1_128_GUARD/summary.json",
+      "bytes": 1089,
+      "sha256": "ecb14287f151df784f18b5b415a518b7c232f70fdcf22db653a05f41243903b7"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-09-03_4__OLDNN128_GUARD/summary.json",
+      "bytes": 1013,
+      "sha256": "d6b410516dd2cfb3311ce6cb3c1e860291583d38a5cdde41cb932ed3a0135766"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-10-01_5__FULL/summary.json",
+      "bytes": 990,
+      "sha256": "bdfd5cfa49de404afd4248646d0859308b1947a9786b56bcbb4c38018b9afa62"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-10-01_5__GNN0_128_GUARD/summary.json",
+      "bytes": 1091,
+      "sha256": "d5692d1947c17fadb34c3f8326b4ded3c3a377338efb3fb97d4e6e6d52c37d9a"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-10-01_5__GNN1_128_GUARD/summary.json",
+      "bytes": 1092,
+      "sha256": "d5408d3eab799fa1a3503591ecc24411d9e3ace57134b75af07663f4a5f95be3"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-10-01_5__OLDNN128_GUARD/summary.json",
+      "bytes": 1015,
+      "sha256": "a6719579e342f13754ecb1885ec3ccb43763d4e438586edc8f0bc471e40160df"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-03-05_0__FULL/metadata.json",
+      "bytes": 67657,
+      "sha256": "5b88ffa3d128d49ba866c9c664d9a5d3d996f36e14761c5e68f4dffdfa1d4d1b"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/metadata.json",
+      "bytes": 67771,
+      "sha256": "c989678735cb567af33611eb691fca4bddc46bcff6a45b49e9dabbb151ccaabf"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/metadata.json",
+      "bytes": 67771,
+      "sha256": "453c48531fecd72ef0bf1262bc65538b594d77c8cb47d3f8318bc5d4debe8217"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/metadata.json",
+      "bytes": 67667,
+      "sha256": "06d0bb3097622176beff5010fe786e78efbaa47e2d20313bc13963ac57da6ff6"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-06-25_8__FULL/metadata.json",
+      "bytes": 67659,
+      "sha256": "72781a86db486575330cc4205519d0f78553d8c9ce99f6ce4b59bd12f726034e"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-06-25_8__GNN0_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "be01b79d02c23b8f7e1f42f8e01c949bb74d949a5823e0b60e5c91448a19ee4b"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-06-25_8__GNN1_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "4635e14044ac74e084b52e862da1be369c6624767c1b849712307d8f85991c7d"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-06-25_8__OLDNN128_GUARD/metadata.json",
+      "bytes": 67670,
+      "sha256": "b9491104a2963284676b8e1dc230d8a366aae8889097bcc984970674767f13ae"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-09-03_4__FULL/metadata.json",
+      "bytes": 67661,
+      "sha256": "a4f9ebcae21f2567f03d0db6886697998fd6b49e0ff478f70825639c3eef2adb"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-09-03_4__GNN0_128_GUARD/metadata.json",
+      "bytes": 67774,
+      "sha256": "d548285f602fd95c43346d0475585a25102d46b1ea079a2f898a49c49f9e2381"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-09-03_4__GNN1_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "3c5c8e98461774004db03727cc4740ba701101c5534dab63e6cba8dd8565a695"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-09-03_4__OLDNN128_GUARD/metadata.json",
+      "bytes": 67671,
+      "sha256": "89f36a19487af22f3cfc404250d87810f7db2ab30c77cbcd2abd5e33cc0c213b"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-10-01_5__FULL/metadata.json",
+      "bytes": 67661,
+      "sha256": "16289cf28464700510c38debe1cfa0df91b4dfea58d4cbe2fda5002b3556749b"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-10-01_5__GNN0_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "9f6d514a0ad10fbec4ccf48e277542ee90ff434552722b21258e1d06e7633cfc"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-10-01_5__GNN1_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "3d98974b4f58cbdfcf81cba2812a58226ecafd1d00b75a597db4e6335cbb2226"
+    },
+    {
+      "path": "outputs/grid26/runs/r0__2035-10-01_5__OLDNN128_GUARD/metadata.json",
+      "bytes": 67671,
+      "sha256": "e717e00f9089b46027bc269b0bf2e33f2eb2ed63bf9639df72458b0a0945eaa5"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-03-05_0__FULL/metadata.json",
+      "bytes": 67661,
+      "sha256": "92a8a6aacacf7c1bcfd2fe442add7072addcbbd90aa8f9fb73fa02f312800d1e"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-03-05_0__GNN0_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "97c0b9ea3f68f59ee7599def70ae50b8430c0a8d7496fdf56ebfd2dce668694a"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-03-05_0__GNN1_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "0dcf00b127ff44a8a13a855449e46f5888833139f7786149e1a5697f4b05315e"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-03-05_0__OLDNN128_GUARD/metadata.json",
+      "bytes": 67671,
+      "sha256": "8e7da7d8c754354a19bb27b895cac5c0d62a3727718df07eb788e06205b916e5"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-06-25_8__FULL/metadata.json",
+      "bytes": 67661,
+      "sha256": "4d0f9365fddfb10795e2ccab9c493f0367e806afe2fd98b2a8ebd1f204afa792"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-06-25_8__GNN0_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "f78383678d749e752dbd3f0cdcc79d2b03d250d3171e36fd830bc1d1c477ffc6"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-06-25_8__GNN1_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "1854d302624ff2e7b050b7a94018902937e94482043a0103a7e7db7e33e21eea"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-06-25_8__OLDNN128_GUARD/metadata.json",
+      "bytes": 67671,
+      "sha256": "ed19fe0a82a3d5d21c8c3a028761a206abeb97ce4148441bd895bd9eee8fa409"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-09-03_4__FULL/metadata.json",
+      "bytes": 67661,
+      "sha256": "e9452aeb0e83d27adc7dc1f462384b26a73a7be94cd8e963f6e5e82381d3dba5"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-09-03_4__GNN0_128_GUARD/metadata.json",
+      "bytes": 67774,
+      "sha256": "010dcc470ef7349a3b1a7ac3ba23abef612a555cc7cee301bc65c9f2c6953fd5"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-09-03_4__GNN1_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "6207cbc6e2acfa3741afb399c1cebb201c91f16bc1cad86fa6bb26beb8be9264"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-09-03_4__OLDNN128_GUARD/metadata.json",
+      "bytes": 67670,
+      "sha256": "4a434df08ad1184d0c5fde0ff640b4c6ff5c030ab6e470516cb64ad5fd3e10d5"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-10-01_5__FULL/metadata.json",
+      "bytes": 67661,
+      "sha256": "c817268fc2f8fe54b2b894685b0ed636eaa19f99d54d9e53d29d83e2a2d33229"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-10-01_5__GNN0_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "94c9480dc76e32466131d230b6adfc79a7ce0db38d6fae5bf535a5d4822ca2ef"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-10-01_5__GNN1_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "936fcca98c6f00fb9ea8c8c09d1cea688932ca3aaecdb6811de39e43169e391b"
+    },
+    {
+      "path": "outputs/grid26/runs/r1__2035-10-01_5__OLDNN128_GUARD/metadata.json",
+      "bytes": 67671,
+      "sha256": "eb691c7eb291a616c91e9ddae86eba3947b2d08100c6748cd9bc9953e01eef16"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-03-05_0__FULL/metadata.json",
+      "bytes": 67661,
+      "sha256": "8bef4a2f6e58629d50c2553074f6a3e423c4ec4fa75ceaced39ff9a6e842b797"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-03-05_0__GNN0_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "0d3cb91f952d50e79814f2db165714e4da44cbd94e28e5b614b574ca916d18c2"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-03-05_0__GNN1_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "0cfd3fb448592310f61bc17e3a4ec6a239583c7e2fb0593130c7cd4c92c8f7ca"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-03-05_0__OLDNN128_GUARD/metadata.json",
+      "bytes": 67671,
+      "sha256": "9fdeeaab8b619db7bd3a6fac1d3607d59278e1d4c0bf249a8f1a92c3742467b2"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-06-25_8__FULL/metadata.json",
+      "bytes": 67661,
+      "sha256": "fdfb424bba52d10146e612bd33d00d082ec0e95cfaa49f94d79fca227df96f2c"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-06-25_8__GNN0_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "85c8c6bcc86db97288553bdfab5201b2d273be842eefafb6454ac80119606d1a"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-06-25_8__GNN1_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "2b282dd89f2935117fb081bb4161bece1b097fe92405c47124dcdcb0d337c69c"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-06-25_8__OLDNN128_GUARD/metadata.json",
+      "bytes": 67671,
+      "sha256": "5da4b1a023f2642d02073ed76bb6e0b074edfbb6d6e33e4fcde95f16aca0833f"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-09-03_4__FULL/metadata.json",
+      "bytes": 67660,
+      "sha256": "77e0ab3ca4d7dcfcce33b6fc5cad583354f3260aea2554460b02a979d0d62cf8"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-09-03_4__GNN0_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "21f7e0c5a16895622b6f06fa31a46faa7fe9e34bf53fedfd2c0948af9d29374b"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-09-03_4__GNN1_128_GUARD/metadata.json",
+      "bytes": 67774,
+      "sha256": "6d80174bf652188be62cac8807175631254eaaf8d2be7f3c87c45f9d212e1900"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-09-03_4__OLDNN128_GUARD/metadata.json",
+      "bytes": 67670,
+      "sha256": "d311819f1351eb347ff21349f0ce4cc22fc14e2b8522c0453d0108f638a6edcc"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-10-01_5__FULL/metadata.json",
+      "bytes": 67661,
+      "sha256": "c81f55ee4389327282e763a0395a2eb9c84a3343e0599c2f6460b390133099b3"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-10-01_5__GNN0_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "aa22a80da212af376c91eb32f8b7403f0e511b4479ad3a85124cdc490058e894"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-10-01_5__GNN1_128_GUARD/metadata.json",
+      "bytes": 67775,
+      "sha256": "916dad5e4eca22cffa0fbf87f88bfa76f546691065dd2916d4f778f0794a0c35"
+    },
+    {
+      "path": "outputs/grid26/runs/r2__2035-10-01_5__OLDNN128_GUARD/metadata.json",
+      "bytes": 67671,
+      "sha256": "93af63c5eca1fd6811f6c5e55298c766ae6c7d25fa3b1c999a87214f7a32cdf9"
+    },
+    {
+      "path": "work/grid_research_audit/archive_grid26.py",
+      "bytes": 7774,
+      "sha256": "662ad4ea2243c6dc7f22b6c8c29a66e99eb8e848cf25d48f819d21453e32df34"
+    },
+    {
+      "path": "work/grid_research_audit/grid26_contribution.py",
+      "bytes": 9316,
+      "sha256": "6d351c6782e424dff8ad4d21a6f030eda5a90bb5eea1b50ce964d6f7970b99b4"
+    }
+  ],
+  "preserved_checks": 695,
+  "scope": "Own source, root summaries, individual summary/metadata; raw vectors/forecast logs remain local. GRID25 is instrumentation diagnostic only. GRID26 is completed serial development timing."
+}

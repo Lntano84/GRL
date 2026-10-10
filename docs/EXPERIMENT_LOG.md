@@ -2,6 +2,8 @@
 
 This file is a concise index of experiments worth remembering. Raw logs, checkpoints, copied worktrees, and large outputs remain in their project-local result directories.
 
+Power-grid archive snapshots use `.gitattributes` with `-text` to preserve original bytes across checkouts. The original-file SHA-256 manifests therefore remain verifiable on other operating systems; Git's automatic line-ending normalization is disabled for this archive. This is an artifact transport fix, not an experiment rerun or result change.
+
 ## 2026-10-10 — GRID22/23 complete deployment comparisons
 
 [Reports, source snapshots, selected tables and owned model weights](../research_archive/power-grid-2026/README.md) cover GRID00–23. The actual included files have an independent SHA-256 archive manifest; large traces/data and external PPO artifacts stay local.

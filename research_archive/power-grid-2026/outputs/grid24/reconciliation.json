@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "runs": 12,
+  "checks": {
+    "preservation_hashes.json": 79,
+    "code_freeze.json": 7,
+    "parallel_code_freeze.json": 2
+  },
+  "counts": {
+    "physical_steps": 23856,
+    "public_forecasts": 89064,
+    "model_fits": 0
+  },
+  "all_exact_full_paths": true,
+  "groups": [
+    {
+      "method": "GNN0_128_GUARD",
+      "weeks": 4,
+      "complete_weeks": 3,
+      "joint_complete": 3,
+      "mean_cost_regret": 0.0,
+      "worst_cost_regret": 0.0,
+      "lost_completed": 0,
+      "earlier_failure": 0,
+      "mean_n1_query_reduction": 0.44538980398483996,
+      "pooled_n1_query_reduction": 0.3409302119750409,
+      "mean_controller_reduction_descriptive": -0.10700393409096942,
+      "exact_full_paths": 4,
+      "development_quality_gate": true
+    },
+    {
+      "method": "GNN1_128_GUARD",
+      "weeks": 4,
+      "complete_weeks": 3,
+      "joint_complete": 3,
+      "mean_cost_regret": 0.0,
+      "worst_cost_regret": 0.0,
+      "lost_completed": 0,
+      "earlier_failure": 0,
+      "mean_n1_query_reduction": 0.44538980398483996,
+      "pooled_n1_query_reduction": 0.3409302119750409,
+      "mean_controller_reduction_descriptive": 0.06002753318350032,
+      "exact_full_paths": 4,
+      "development_quality_gate": true
+    },
+    {
+      "method": "OLDNN128_GUARD",
+      "weeks": 4,
+      "complete_weeks": 3,
+      "joint_complete": 3,
+      "mean_cost_regret": 0.0,
+      "worst_cost_regret": 0.0,
+      "lost_completed": 0,
+      "earlier_failure": 0,
+      "mean_n1_query_reduction": 0.44538980398483996,
+      "pooled_n1_query_reduction": 0.3409302119750409,
+      "mean_controller_reduction_descriptive": -0.07160387605212612,
+      "exact_full_paths": 4,
+      "development_quality_gate": true
+    }
+  ],
+  "new_model_fits": 0,
+  "reserved_family_evaluations": 0,
+  "speed_certified": false,
+  "gnn_specific_advantage_established": false,
+  "scope": "Frozen development quality screen, preserved original models and common rule/PPO comparator. Saved-data audit, no independent AC replay."
+}

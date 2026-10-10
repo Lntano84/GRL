@@ -223,3 +223,7 @@ entries were deleted. The rebuilt anonymous PDF is 16 pages. Detailed provenance
 ## 2026-10-06 — Local result archive integration
 
 将已定位本地实验报告、结果、方案、日志、代码快照与更正/作废记录整合为research_archive/decision-studies-2026。大文件使用同仓库Release及SHA-256对象清单；排除检查点、环境与第三方原始数据。没有运行新科研实验；这是归档核验，不是重做科学审计。
+
+## 2026-10-10 — GRID24 quality-first safeguarded auxiliary search
+
+[Report and archived sources](../research_archive/power-grid-2026/outputs/grid24/GRID24_report.md). Keep V1/PPO weights and K128, use author's existing rho_safe=0.9 to trigger cached full complement evaluation. 12 runs on four exposed development weeks: 23,856 physical steps, 89,064 public forecasts. All delivered action/observation/cost paths equal sealed GRID23 FULL; cost regret0 on joint-complete weeks, completion3/4 per method. Pooled search-query reduction34.0930%. All three rankers, including PPO, share the result. Preserved79 old-file hashes and625 historical archive files. Saved-data independent mask/alias/admission/choice/cost and model rank replay passed; no independent AC rerun. No new fits/RL/reserved-family evaluation. Two remaining workers ran concurrently; time is descriptive, not certified speed.

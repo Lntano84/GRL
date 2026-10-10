@@ -102,3 +102,7 @@ Monte-Carlo artefact (`docs/WITHDRAWN_RESULTS.md` W8).
 ## 2026-10-06 — Evidence archive and current stopping decisions
 
 保留全部有效与否定结果，协议/数据资格失败单独标注。LG01接受固定LOSS-EXPAND并停止当前GNN配置，不进入RL；LOT固定AB不再作为核心贡献；FA低预算线索仍不等于新算法贡献。以最终更正报告为准，不覆盖删除历史证据。
+
+## 2026-10-10 — Retain quality protection before speed claims
+
+Human goal: speed with adequate control quality. GRID24 uses published verify/fallback logic and unchanged author threshold; it is not a new threshold sweep or new network. Quality is recovered on all four exposed weeks with fewer public searches. Keep it as the current protected operating point, preserve unguarded models/results as ablations. Do not combine unguarded82% query reduction with guarded0 cost regret. PPO achieves the same result, so graph-specific novelty remains unestablished. Next evidence priority is controlled total-control timing, then untouched date-family evaluation under a frozen protocol. No new training, large K sweep, or final holdout opened this stage.

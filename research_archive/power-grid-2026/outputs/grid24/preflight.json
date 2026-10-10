@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "week": "2035-03-05_0",
+      "rule": "OLDNN",
+      "rank_fidelity": true
+    },
+    {
+      "week": "2035-03-05_0",
+      "rule": "GNN_seed0",
+      "rank_fidelity": true
+    },
+    {
+      "week": "2035-03-05_0",
+      "rule": "GNN_seed1",
+      "rank_fidelity": true
+    },
+    {
+      "test": "safe_shortlist_keeps_budget",
+      "passed": true,
+      "unique_fake_queries": 128
+    },
+    {
+      "test": "unqueried_feedback_invariance",
+      "passed": true,
+      "unique_fake_queries": 128
+    },
+    {
+      "test": "at_safe_boundary_queries_only_complement",
+      "passed": true,
+      "unique_fake_queries": 909
+    },
+    {
+      "test": "above_safe_boundary_queries_only_complement",
+      "passed": true,
+      "unique_fake_queries": 909
+    },
+    {
+      "test": "no_admissible_fallback",
+      "passed": true,
+      "unique_fake_queries": 909
+    },
+    {
+      "test": "illegal_candidates_never_delivered",
+      "passed": true,
+      "unique_fake_queries": 909
+    },
+    {
+      "week": "2035-06-25_8",
+      "rule": "OLDNN",
+      "rank_fidelity": true
+    },
+    {
+      "week": "2035-06-25_8",
+      "rule": "GNN_seed0",
+      "rank_fidelity": true
+    },
+    {
+      "week": "2035-06-25_8",
+      "rule": "GNN_seed1",
+      "rank_fidelity": true
+    },
+    {
+      "week": "2035-09-03_4",
+      "rule": "OLDNN",
+      "rank_fidelity": true
+    },
+    {
+      "week": "2035-09-03_4",
+      "rule": "GNN_seed0",
+      "rank_fidelity": true
+    },
+    {
+      "week": "2035-09-03_4",
+      "rule": "GNN_seed1",
+      "rank_fidelity": true
+    },
+    {
+      "week": "2035-10-01_5",
+      "rule": "OLDNN",
+      "rank_fidelity": true
+    },
+    {
+      "week": "2035-10-01_5",
+      "rule": "GNN_seed0",
+      "rank_fidelity": true
+    },
+    {
+      "week": "2035-10-01_5",
+      "rule": "GNN_seed1",
+      "rank_fidelity": true
+    }
+  ],
+  "fake_feedback_queries": 3892,
+  "new_ac_forecasts": 0,
+  "new_physical_steps": 0,
+  "new_model_fits": 0,
+  "scope": "Saved public-input rank fidelity, cache uniqueness, exact boundary, illegal rejection and unqueried-feedback invariance. No production safety proof."
+}

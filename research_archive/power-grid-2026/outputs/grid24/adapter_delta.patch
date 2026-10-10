@@ -1,0 +1,27 @@
+--- GRID23
++++ GRID24
+@@ -97,7 +97,15 @@
+             outcomes.append(row); cache[i] = row
+ 
+         for i in first: dispatch(i, "shortlist")
+-        fallback = not any(r["strict_admissible"] for r in outcomes) and len(first) < len(reps)
++        shortlist_valid = [i for i in first if cache[i]["strict_admissible"]]
++        shortlist_choice = max(shortlist_valid, key=lambda i: (float(np.float32(cache[i]["reward"])), -i)) if shortlist_valid else None
++        guard_rho = float(self.ctl.base.rho_safe)
++        assert guard_rho == .9  # Author default; no calibration or threshold search.
++        guard_reason = ("no_admissible_shortlist" if shortlist_choice is None else
++                        "shortlist_above_author_safe" if cache[shortlist_choice]["rho"] >= guard_rho else
++                        "shortlist_below_author_safe")
++        fallback = bool(self.rule != "FULL" and len(first) < len(reps) and
++                        (shortlist_choice is None or cache[shortlist_choice]["rho"] >= guard_rho))
+         if fallback:
+             for i in reps:
+                 if i not in cache: dispatch(i, "fallback")
+@@ -109,6 +117,7 @@
+         log = {"state_hash": before, "rule": self.rule, "budget": self.budget, "eligible": eligible,
+                "representatives": reps, "aliases": aliases, "order": order, "shortlist": first, "masked_ids": changed,
+                "rho_limit": limit, "fallback": fallback, "chosen_pool_id": chosen,
++               "guard_rho": guard_rho, "guard_reason": guard_reason, "shortlist_choice": shortlist_choice,
+                "returned_action_hash": None if result is None else digest(action_vector(result)),
+                "public_queries": len(outcomes), "outcomes": outcomes, "source_s": time.perf_counter()-started,
+                "forecast_s": forecast_s, **times,

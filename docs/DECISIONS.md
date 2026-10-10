@@ -106,3 +106,7 @@ Monte-Carlo artefact (`docs/WITHDRAWN_RESULTS.md` W8).
 ## 2026-10-10 — Retain quality protection before speed claims
 
 Human goal: speed with adequate control quality. GRID24 uses published verify/fallback logic and unchanged author threshold; it is not a new threshold sweep or new network. Quality is recovered on all four exposed weeks with fewer public searches. Keep it as the current protected operating point, preserve unguarded models/results as ablations. Do not combine unguarded82% query reduction with guarded0 cost regret. PPO achieves the same result, so graph-specific novelty remains unestablished. Next evidence priority is controlled total-control timing, then untouched date-family evaluation under a frozen protocol. No new training, large K sweep, or final holdout opened this stage.
+
+## 2026-10-10 — Benchmark actual control cost without audit overhead
+
+Human authorized continued speed validation. Preserve weights/rules and use balanced serial repetitions with candidate archival/verification outside act time. Remove per-instance method-binding measurement cycles before formal repetitions. Keep GRID25 diagnostic rather than selecting its favorable timings. Report source-search acceleration separately from total-control acceleration; do not attribute non-search variation to GNN. Reserved8 date families remain unopened until protocol is finalized.

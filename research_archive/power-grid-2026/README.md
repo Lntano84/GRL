@@ -1,3 +1,5 @@
+[当前 GRID26 提速核验协议（尚无正式结果）](protocols/GRID26_before_runs/README.md)
+
 # 最新：GRID24 质量补强（2026-10-10）
 
 [完整报告](outputs/grid24/GRID24_report.md) · [逐运行结果](outputs/grid24/per_run_comparison.csv) · [审计](outputs/grid24/audit.json) · [更改记录](outputs/grid24/POWER_MODEL_CHANGELOG_after_GRID24.md) · [增量归档清单](grid24_archive_manifest.json)

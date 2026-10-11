@@ -1,4 +1,7 @@
-# Research state — reserved-date confirmation
+# Research state — confirmation saved for shutdown
+
+- **最新：** 用户准备关机，GRID44在36/96条后保存停止，剩余60条。全部已完成轨迹、计量与哈希保留，调度器不再派发任务；未重训/调参、尚无整批确认裁决。下次按原 --phase all 跳过已完成身份续跑，不重新准备/解压。
+
 
 - **最新：** GRID44冻结8个首选序列已按官方索引安全解压并逐文件哈希，104文件、50541137字节；尚未运行控制器或读取评价成绩。96条冻结串行确认待运行，不重新训练。
 

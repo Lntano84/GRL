@@ -158,3 +158,7 @@ Full delivered-arm improvement is observed with exact path/cost/native solver be
 ## 2026-10-11 — Give shared solver reuse to all graph controls
 
 Cross-week exact paths support common engineering, with strong magnitude heterogeneity and a preserved June failure. Next test existing MLPs rather than train or conflate common reuse with GNN. Known critical-action offline miss blocks unchanged semantic-stop deployment; it does not reject all possible MLP policies.
+
+## 2026-10-11 — Keep both MLP seeds and both GNN seeds in fair live comparison
+
+All existing rankers pass the known critical-action screen; do not omit MLP or select a best checkpoint. Give exhaustiveFULL and everyranker common caches. Reversed6arm paired order per exposeddate, shared quality gate and all components. Pilot cost/survival must be measured before widening. Offline matched-query counts are not full-controller acceleration or an architecture-proof.

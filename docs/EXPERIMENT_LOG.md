@@ -297,3 +297,7 @@ GRID31六条完整三月回放及审计通过：DC+安全QP共享复用相对原
 ## 2026-10-11 — GRID32 other exposed-week compatibility
 
 GRID32三组其他已暴露周配对通过：2035-06-25_8减少63.26%；2035-09-03_4减少61.89%；2035-10-01_5减少74.46%。11870步动作/观测/成本逐步相同，六月共同1901步失败保留，未新增/提前失败；每周仅一次配对，不作为独立封存泛化或GNN贡献。 No new fits/final dates. GRID33existing-ranker protocol frozen before output.
+
+## 2026-10-11 — GRID33 existing-ranker matched screen
+
+GRID33五个现成排序器130项同状态诊断及独立停止复算通过；查询7358/7530(GNN0/1)、7549/7826(MLP0/1)、7823(PPO)。全部找回1733关键动作；差距仅开发线索，不证明长期质量或图结构必要性。 No new fit/simulation/final date. GRID34common-engineering livecomparisonfrozen.

@@ -150,3 +150,7 @@ Whole-arm DC gains are real and match unchanged output/numeric iteration paths, 
 ## 2026-10-11 — Shared safe-QP cache qualifies; measure rather than add percentages
 
 Isolated safe-QP outputs and converted actions match original at live inputs. This permits a6run three-arm original/DC/DC+safe measured pilot, not an assertion of64%total control speed. Preserve negative parameter copier failure and all previous timings. No numerical clipping, solver loosened tolerance or changed optimization cadence. Treat shared compilation reuse as engineering provided to every strong baseline, not GNN innovation.
+
+## 2026-10-11 — Retain measured22% common acceleration without graph attribution
+
+Full delivered-arm improvement is observed with exact path/cost/native solver behavior. This supports practical shared engineering, not graph-specific novelty. Before fair learned search comparison, check numerical/path compatibility on other exposed dates, including the known June failure. Do not choose only the10%or23%repeat, add component percentages, train immediately or open final date families.

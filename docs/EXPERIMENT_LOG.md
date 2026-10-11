@@ -289,3 +289,7 @@ V0manual8pass but public-state335gen_per_bus includes2negative original author e
 ## 2026-10-11 — GRID30 qualified, GRID31 actual pilot frozen
 
 GRID30安全QP共享编译复用资格通过：9项手工/复制检查、153次真实预求解参数/记忆三向量，最大差4.33e-10MW；306次动作重建相同，2017步实际路径/成本/查询仍原保护控制。隔离原QP42.45s、缓存15.24s，减少64.09%，不构成整套提速。V0原负值setter失败已保留，V1原位原样复制未裁剪。 Saved-data audit reconstructs306actions without new QP/AC solve.6actual delivered-arm profiles frozen before cached safe output; same original numeric/status/warm_start/cadence settings, no new fit/hidden dates.
+
+## 2026-10-11 — GRID31 actual three-arm cache result
+
+GRID31六条完整三月回放及审计通过：DC+安全QP共享复用相对原完整控制，两组减少23.49%/21.33%，汇总点估计22.42%；12102步动作/观测/成本/67950次预测相同，所有6项配对solver状态/迭代比较无差别。局部数值资格与完整时间分开，原10.93%/0.39%及6.45%/6.51%全部保留。仅三月2重复，不是GNN独有或封存泛化证据。 Saved-data check only, no independent new solve/refit. GRID32frozen before3exposed-week compatibility outcomes.

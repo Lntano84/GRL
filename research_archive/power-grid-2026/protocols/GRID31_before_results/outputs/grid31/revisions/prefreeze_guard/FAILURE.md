@@ -1,0 +1,1 @@
+Derived driver text has two planned-count occurrences; preparation continued after derivation failed. No worker/fitted model or measured outcome existed. Preparation now validates all sources before writing a freeze.

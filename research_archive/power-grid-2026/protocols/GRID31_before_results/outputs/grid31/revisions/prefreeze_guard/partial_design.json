@@ -1,0 +1,120 @@
+{
+  "stage": "GRID31_SHARED_DC_SAFE_LIVE_PILOT",
+  "weeks": [
+    "2035-03-05_0"
+  ],
+  "methods": [
+    {
+      "method": "ORIGINAL",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": false,
+      "cache_safe": false
+    },
+    {
+      "method": "DC_ONLY",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": false
+    },
+    {
+      "method": "DC_AND_SAFE",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true
+    }
+  ],
+  "execution_order": [
+    {
+      "method": "ORIGINAL",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": false,
+      "cache_safe": false,
+      "repeat": 0,
+      "week": "2035-03-05_0"
+    },
+    {
+      "method": "DC_ONLY",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": false,
+      "repeat": 0,
+      "week": "2035-03-05_0"
+    },
+    {
+      "method": "DC_AND_SAFE",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true,
+      "repeat": 0,
+      "week": "2035-03-05_0"
+    },
+    {
+      "method": "DC_AND_SAFE",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true,
+      "repeat": 1,
+      "week": "2035-03-05_0"
+    },
+    {
+      "method": "DC_ONLY",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": false,
+      "repeat": 1,
+      "week": "2035-03-05_0"
+    },
+    {
+      "method": "ORIGINAL",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": false,
+      "cache_safe": false,
+      "repeat": 1,
+      "week": "2035-03-05_0"
+    }
+  ],
+  "repeats": 2,
+  "serial_workers": 1,
+  "timing": "Fresh processes, single thread; perf_counter full control; archive/AC physical step/setup separate. Balanced paired orders ORIGINAL,CACHED/CACHED,ORIGINAL. No new learned component.",
+  "gate": "Require exact historical delivered observation/action/cost path. Any difference stops this four-run pilot before widening. Local same-state shadow is not sufficient.",
+  "caps": {
+    "episode_s": 1200,
+    "wall_s": 2800,
+    "physical_steps": 12102,
+    "public_forecasts": 67950
+  },
+  "new_fits": 0,
+  "reserved_evaluations": 0,
+  "purpose": "Measure added safe-QP compilation reuse using real delivered three arms, shared with all comparators; original and previous DC-only control retained.",
+  "change": "No mathematical/model/control change: shared DC cache versus original. Add identical low-overhead component/statistics records to both arms.",
+  "analysis": "Pre-specified all2balanced repeats/3comparisons. Report whole control, each solve phase/compile/backend/iterations, source/forecast, residual. No choosing fastest repeat or adding stage percentages.",
+  "quality_gate": "Every delivered action/observation/cost/forecast count must equal sealed protected FULL. Any mismatch stops stage before reporting speed.",
+  "scope": "Exposed March only; sameGNN0,K128guard,cadence,solvers/tolerances/warm_startFalse. Safe-QP qualification passed153real calls/306reconstructed actions,maxerror4.33e-10MW. No graph-attribution claim."
+}

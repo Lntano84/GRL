@@ -146,3 +146,7 @@ Live-memory isolated DC matches actual flows exactly and identifies compilation 
 ## 2026-10-11 — Extend proven compilation reuse only after numerical qualification
 
 Whole-arm DC gains are real and match unchanged output/numeric iteration paths, but total saving is partly offset elsewhere. Historical10% is plausible, not a chosen robust guarantee. Safe restoration shows analogous repeated compilation overhead; examine bounded topology/coefficient keyed exact parameterization, with same solver/status/warm_start/cadence. Manual tests plus actual-memory isolated action comparison precede deployment. Generic optimization is available to all learned/nonlearned comparators.
+
+## 2026-10-11 — Shared safe-QP cache qualifies; measure rather than add percentages
+
+Isolated safe-QP outputs and converted actions match original at live inputs. This permits a6run three-arm original/DC/DC+safe measured pilot, not an assertion of64%total control speed. Preserve negative parameter copier failure and all previous timings. No numerical clipping, solver loosened tolerance or changed optimization cadence. Treat shared compilation reuse as engineering provided to every strong baseline, not GNN innovation.

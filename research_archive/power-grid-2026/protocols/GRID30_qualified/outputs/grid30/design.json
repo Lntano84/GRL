@@ -1,0 +1,17 @@
+{
+  "stage": "GRID30_SAFE_QP_CACHE_QUALIFICATION",
+  "week": "2035-03-05_0",
+  "motivation": "GRID29C safe restoration QP compilation34-36s versus backend2.3s on153calls. Test same mathematical problem parameterization; no tolerance/solver/cadence relaxation.",
+  "change": "Bounded32entry topology/reactance/scalar-coefficient/delta-time cache. Original parameters are still refreshed by original caller, with per-call shared current parameter values.",
+  "manual_gate": "Real Parameter two-bus tests: unchanged solution under current input/target/bound changes, invalidation for coefficients/reactance/topology/delta_time, original failure semantics. Plus exact unchanged copy of negative original array values.",
+  "live_gate": "Actual delivered original controller stays unchanged. Before each actual safe QP, copy all current CVXPY Parameter values and pre-solve flow into two isolated replicas, alternate order. Compare numerical outputs <=1e-6MW, statuses/qualification, post-solve storage memory, and resulting Grid2Op action; never deploy probes.",
+  "no_speed_claim": "Instrumented control time includes shadow computation and cannot be used as whole-controller acceleration. If numerical qualification fails, preserve failure and do not deploy.",
+  "caps": {
+    "episode_s": 1500,
+    "physical_steps": 2500,
+    "public_forecasts": 15000
+  },
+  "new_fits": 0,
+  "reserved_evaluations": 0,
+  "revision": "V1:replica arrays copied in-place exactly as original parameter updater; negative author values retained, no projection. Scalar values still use setter."
+}

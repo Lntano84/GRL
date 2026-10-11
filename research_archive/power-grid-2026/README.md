@@ -1,3 +1,9 @@
+# 最新：GRID30安全QP复用资格通过，GRID31完整比较已冻结
+
+[资格报告](protocols/GRID30_qualified/outputs/grid30/GRID30_qualification_report.md) · [完整试点协议](protocols/GRID31_before_results/outputs/grid31/design.json)
+
+GRID30安全QP共享编译复用资格通过：9项手工/复制检查、153次真实预求解参数/记忆三向量，最大差4.33e-10MW；306次动作重建相同，2017步实际路径/成本/查询仍原保护控制。隔离原QP42.45s、缓存15.24s，减少64.09%，不构成整套提速。V0原负值setter失败已保留，V1原位原样复制未裁剪。
+
 # 最新：GRID29C组件解释通过，GRID30数值资格已冻结
 
 [报告](protocols/GRID29C_completed/outputs/grid29c/GRID29C_report.md) · [下一资格协议](protocols/GRID30_before_results/outputs/grid30/design.json)

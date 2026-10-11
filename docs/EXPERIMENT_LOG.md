@@ -285,3 +285,7 @@ GRID29C完整组件配对4/4审计通过：两组完整控制提速6.45%/6.51%�
 ## 2026-10-11 — GRID30 replica-copy qualification repair
 
 V0manual8pass but public-state335gen_per_bus includes2negative original author entries(min-0.0006708864). Setter replica refused them before original/shadow safe solve. Retain335step fragment and old code. V1copies arrays in-place exactly as original updater, assertion no clipping; new numeric/action gate still required. No deployment/new fit/hidden dates.
+
+## 2026-10-11 — GRID30 qualified, GRID31 actual pilot frozen
+
+GRID30安全QP共享编译复用资格通过：9项手工/复制检查、153次真实预求解参数/记忆三向量，最大差4.33e-10MW；306次动作重建相同，2017步实际路径/成本/查询仍原保护控制。隔离原QP42.45s、缓存15.24s，减少64.09%，不构成整套提速。V0原负值setter失败已保留，V1原位原样复制未裁剪。 Saved-data audit reconstructs306actions without new QP/AC solve.6actual delivered-arm profiles frozen before cached safe output; same original numeric/status/warm_start/cadence settings, no new fit/hidden dates.

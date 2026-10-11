@@ -1,4 +1,7 @@
-# Research state — GRID29C audited / GRID30 qualification frozen
+# Research state — GRID30 qualified / GRID31 frozen
+
+- **最新：** GRID30安全QP共享编译复用资格通过：9项手工/复制检查、153次真实预求解参数/记忆三向量，最大差4.33e-10MW；306次动作重建相同，2017步实际路径/成本/查询仍原保护控制。隔离原QP42.45s、缓存15.24s，减少64.09%，不构成整套提速。V0原负值setter失败已保留，V1原位原样复制未裁剪。 GRID31六条三臂平衡完整计时已冻结，尚无缓存安全QP实际派发成绩。
+
 
 - GRID30 V0影子setter拒绝原作者负值，非方法裁决；335步片段保留。V1原样复制参数已冻结，数值/动作资格尚未得出。
 

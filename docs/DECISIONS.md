@@ -178,3 +178,7 @@ GRID34全部48条公平闭环和保存数据审计完成；LOCAL_GNN0控制时�
 ## 2026-10-11 — Public nonlearning order screens and quality pilot
 
 GRID35/35B廉价顺序独立诊断通过：STATIC_ID/LOCAL_STRESS/原既有PHYSICS_TAIL查询7879/6965/6748，同FULL选择21/17/17（共26状态）；均找回1733已知关键动作，但最大rho差更大。便宜规则省查询不等于长期质量，GRID36三条三月闭环质量试点已冻结。 不从26个暴露状态认定可部署或图结构必需；静态原规则部件也给完整公平机会。
+
+## 2026-10-11 — Cheap order quality and fair static comparator
+
+GRID36三月廉价规则闭环核验完成：STATIC_ID成本+0.37200%通过0.5%筛查；PHYSICS_TAIL/LOCAL_STRESS成本+3.61164%/+4.01870%未通过，所有结果保留。静态顺序仅单次资格，不能据跨批时间宣告赢过GNN。GRID37冻结同一共有优化下FULL、两GNN、STATIC_ID四日期两平衡重复共32条，公平区分便宜停止与图模型增量。 新旧模型不覆盖，失败规则不原样扩展；先核对训练目标而非堆模块。

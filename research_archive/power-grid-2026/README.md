@@ -1,3 +1,9 @@
+# 最新：静态规则资格通过，公平比较与训练目标核对继续
+
+[GRID36完整结果](protocols/GRID36_completed/outputs/grid36/GRID36_report.md) · [10%幅度分解](protocols/GRID_search_speed_explanation/outputs/grid_speed_review/GRID34_INCREMENT.md) · [GRID37冻结](protocols/GRID37_before_results/outputs/grid37/design.json)
+
+GRID36三月廉价规则闭环核验完成：STATIC_ID成本+0.37200%通过0.5%筛查；PHYSICS_TAIL/LOCAL_STRESS成本+3.61164%/+4.01870%未通过，所有结果保留。静态顺序仅单次资格，不能据跨批时间宣告赢过GNN。GRID37冻结同一共有优化下FULL、两GNN、STATIC_ID四日期两平衡重复共32条，公平区分便宜停止与图模型增量。
+
 # 最新：共有速度与GNN增量已分开，廉价顺序闭环资格待查
 
 [GRID35结果](protocols/GRID35_completed/outputs/grid35/GRID35_report.md) · [原非学习部分](protocols/GRID35B_completed/outputs/grid35b/GRID35B_report.md) · [实际资格试点](protocols/GRID36_before_results/outputs/grid36/design.json)

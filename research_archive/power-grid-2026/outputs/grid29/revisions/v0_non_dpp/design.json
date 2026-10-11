@@ -1,0 +1,36 @@
+{
+  "stage": "GRID29_SHARED_DC_PROGRAM_CACHE",
+  "scope": "Shared engineering improvement for complete controller; apply to strong baselines as well as GNN variants.",
+  "source": "LJN OptimModule.run_dc unchanged mathematical program and _solve_problem; only retain compiled program by topology.",
+  "cache_capacity": 32,
+  "shadow_weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "shadow_source": "GRID26 repeat0 FULL saved physical observations; every64th nonterminal observation plus last nonterminal. No further physics rollout during shadow qualification.",
+  "shadow_state": "Each observation compared at identical zero storage-power accumulator; this does not verify all live controller memory states.",
+  "shadow_checks": "Same convergence, finite/NaN status and max flow discrepancy<=1e-6MW; live trajectory validation still necessary.",
+  "manual_checks": [
+    "two-bus flow",
+    "injection refresh on hit",
+    "topology-key invalidation",
+    "reactance-key invalidation"
+  ],
+  "continuation": "Only if shadow qualifies: balanced serial March protectedGNN0 controller ORIGINAL/CACHED in orders ORIGINAL,CACHED then CACHED,ORIGINAL; preserve exact delivered path and cost. On any difference stop expansion and diagnose.",
+  "change_forbidden": [
+    "warm_start",
+    "solver tolerances",
+    "iteration caps",
+    "objective",
+    "constraints",
+    "topology schedule",
+    "GNN/PPO weights",
+    "restoration cadence"
+  ],
+  "wall_cap_s": 3600,
+  "new_fits": 0,
+  "reserved_evaluations": 0,
+  "warning": "Conventional DPP reuse; never attribute shared engineering saving to GNN. Shadow speed is not end-to-end speed."
+}

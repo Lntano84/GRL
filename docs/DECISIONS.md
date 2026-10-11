@@ -134,3 +134,7 @@ Keep measured quality cost and one-repeat timing visible. Substation completion 
 ## 2026-10-11 — Reject the non-DPP cache before rollout
 
 V0 was blocked by actual Parameter division, unlike its ndarray toy; its object-valued reactance cache key was also wrong. Retain V0 and use value-keyed numeric reciprocal following CVXPY DPP documentation. Added real Parameter mutation and triangle-flow tests. This changes symbolic representation only, not mathematical constraints or solver settings. No valid cache shadow result/live trajectory existed at revision time.
+
+## 2026-10-11 — Diagnose component speed before more total-time repeats
+
+Cache pilot preserved exact quality, but10.93% versus0.39% paired total gains do not identify stable whole-speed magnitude. Keep both. Next one instrumented actual controller plus isolated same-memory DC pairs; never deploy probe output or label instrumented total as acceleration. Include positional solver arguments and null statistics correctly. GNN/PPO matched-query developmental signal does not identify GNN architecture or independent transfer; common engineering changes go to both.

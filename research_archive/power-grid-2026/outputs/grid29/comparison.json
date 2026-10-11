@@ -1,0 +1,67 @@
+{
+  "stage": "GRID29_SHARED_CACHE_PILOT",
+  "passed": true,
+  "paired_repeats": 2,
+  "independent_date_families": 1,
+  "same_trajectory_runs": 4,
+  "physical_rows": 8068,
+  "public_forecasts": 45300,
+  "controller_s": {
+    "ORIGINAL": 393.29419159999634,
+    "CACHED": 368.93536280004173
+  },
+  "pooled_controller_reduction": 0.06193538913162744,
+  "all_pairs_faster": true,
+  "pairs": [
+    {
+      "repeat": 0,
+      "original_controller_s": 216.50947069997255,
+      "cached_controller_s": 192.84551770002508,
+      "controller_reduction": 0.10929754215112253,
+      "original_cpu_s": 211.84375,
+      "cached_cpu_s": 188.96875,
+      "cpu_reduction": 0.10798052810148995,
+      "cost_difference": 0.0,
+      "same_path": true,
+      "public_forecasts": 11325,
+      "cache_counts": [
+        {},
+        {
+          "calls": 154,
+          "hit": 120,
+          "miss": 34,
+          "eviction": 2
+        }
+      ],
+      "original_setup_s": 5.220789299999524,
+      "cached_setup_s": 6.052448399999776
+    },
+    {
+      "repeat": 1,
+      "original_controller_s": 176.78472090002379,
+      "cached_controller_s": 176.08984510001665,
+      "controller_reduction": 0.003930632672718981,
+      "original_cpu_s": 175.125,
+      "cached_cpu_s": 173.453125,
+      "cpu_reduction": 0.009546752319771645,
+      "cost_difference": 0.0,
+      "same_path": true,
+      "public_forecasts": 11325,
+      "cache_counts": [
+        {},
+        {
+          "calls": 154,
+          "hit": 120,
+          "miss": 34,
+          "eviction": 2
+        }
+      ],
+      "original_setup_s": 4.22141769999962,
+      "cached_setup_s": 6.077672700000221
+    }
+  ],
+  "new_fits": 0,
+  "reserved_evaluations": 0,
+  "scope": "Complete decision/control time including DC cache lookup and all controls/forecasts. Setup, physical grid steps, archival separate.",
+  "warning": "Only exposed March, two balanced repetitions. Same source queries, delivery and cost; generic DPP engineering improvement shared with all baselines. Does not establish all-date robust speed or GNN contribution."
+}

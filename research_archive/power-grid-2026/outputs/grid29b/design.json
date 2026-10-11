@@ -1,0 +1,15 @@
+{
+  "stage": "GRID29B_LIVE_DC_PAIR_DIAGNOSTIC",
+  "week": "2035-03-05_0",
+  "change": "Actual delivered controller remains original protectedGNN0. At each real DC call, two isolated optimizer replicas receive the same observation, actual reactance and storage accumulator. Alternate shadow ORIGINAL/CACHED order; never deploy shadow results.",
+  "qualification": "Both replicas must match actual original DC convergence and flows <=1e-6MW, and closed delivery must match sealed FULL exactly.",
+  "scope": "Instrumented one March trajectory, not speed comparison of full control. Measure actual-state paired DC component plus all explicit solve compilation/backend statistics; include positional solver_type.",
+  "missing_data": "None solver statistics remain missing, not zero. Recursive generic fallback records are distinguished from explicit solver calls.",
+  "caps": {
+    "episode_s": 1200,
+    "physical_steps": 2500,
+    "public_forecasts": 15000
+  },
+  "new_fits": 0,
+  "reserved_evaluations": 0
+}

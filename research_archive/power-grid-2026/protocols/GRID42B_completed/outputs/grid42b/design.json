@@ -1,0 +1,9 @@
+{
+  "stage": "GRID42B_OBSERVED_TIE_COMPLETION",
+  "decision_basis": "GRID41 first SoftGNN physical divergence578 has exact fp32 reward and rho tie with FULL; safe-prefix branch has no semantic completion.",
+  "models": "Original GNN0/1, existing PPO and GRID40B SoftGNN0/1, all unchanged.",
+  "policy": "Same PATIENCE64 then complete every substation represented by observed exact fp32 maximum reward, including safe-prefix; repeat only if newly purchased feedback reveals another best-tied group. No rho tolerance or future read.",
+  "scope": "26 existing FULL states only; no new teacher/physical queries, sealed final dates unchanged.",
+  "screen": "Bounded diagnostic, not automatic quality proof. Retain only as candidate if both SoftGNN seeds recover578 and original known1733; report every query increase and unresolved choice.",
+  "baseline_access": "Same policy offered to every ranked comparator; FULL stays exhaustive. A quality fix is not graph-specific novelty."
+}

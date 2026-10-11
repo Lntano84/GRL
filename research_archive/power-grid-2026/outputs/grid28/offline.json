@@ -1,0 +1,6636 @@
+{
+  "passed_engineering": true,
+  "summaries": [
+    {
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "states": 26,
+      "queries": 7235,
+      "query_reduction_to_protected": 0.5142013026253944,
+      "same_full_choice": 24,
+      "changed_choice": 2,
+      "max_rho_regret": 0.00011736154556274414,
+      "march_critical_choice_changed": false
+    },
+    {
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "states": 26,
+      "queries": 7358,
+      "query_reduction_to_protected": 0.5059423890418318,
+      "same_full_choice": 24,
+      "changed_choice": 2,
+      "max_rho_regret": 0.00011736154556274414,
+      "march_critical_choice_changed": false
+    },
+    {
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "states": 26,
+      "queries": 8024,
+      "query_reduction_to_protected": 0.4612233935405895,
+      "same_full_choice": 23,
+      "changed_choice": 3,
+      "max_rho_regret": 0.01659756898880005,
+      "march_critical_choice_changed": false
+    },
+    {
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "states": 26,
+      "queries": 7823,
+      "query_reduction_to_protected": 0.4747196669576311,
+      "same_full_choice": 24,
+      "changed_choice": 2,
+      "max_rho_regret": 0.00011736154556274414,
+      "march_critical_choice_changed": false
+    },
+    {
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "states": 26,
+      "queries": 7224,
+      "query_reduction_to_protected": 0.5149399046531928,
+      "same_full_choice": 25,
+      "changed_choice": 1,
+      "max_rho_regret": 0.0,
+      "march_critical_choice_changed": false
+    },
+    {
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "states": 26,
+      "queries": 7530,
+      "query_reduction_to_protected": 0.49439333915262207,
+      "same_full_choice": 25,
+      "changed_choice": 1,
+      "max_rho_regret": 0.0,
+      "march_critical_choice_changed": false
+    }
+  ],
+  "rows": [
+    {
+      "week": "2035-03-05_0",
+      "call": "call000.json",
+      "step": 578,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 59,
+      "full_choice": 59,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 59,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call000.json",
+      "step": 578,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 59,
+      "full_choice": 59,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 59,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call000.json",
+      "step": 578,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 59,
+      "full_choice": 59,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 59,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call000.json",
+      "step": 578,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 59,
+      "full_choice": 59,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 59,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call000.json",
+      "step": 578,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 59,
+      "full_choice": 59,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 59,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call000.json",
+      "step": 578,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 59,
+      "full_choice": 59,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 59,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call001.json",
+      "step": 1072,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 267,
+      "local_queries": 11,
+      "protected_queries": 909,
+      "choice": 568,
+      "full_choice": 568,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 69,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 568,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 568,
+          "improved": false
+        },
+        {
+          "queries": 267,
+          "phase": "local_completion",
+          "chosen": 568,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call001.json",
+      "step": 1072,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 267,
+      "local_queries": 11,
+      "protected_queries": 909,
+      "choice": 568,
+      "full_choice": 568,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 69,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 568,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 568,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 568,
+          "improved": false
+        },
+        {
+          "queries": 267,
+          "phase": "local_completion",
+          "chosen": 568,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call001.json",
+      "step": 1072,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 267,
+      "local_queries": 11,
+      "protected_queries": 909,
+      "choice": 568,
+      "full_choice": 568,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 69,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 568,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 568,
+          "improved": false
+        },
+        {
+          "queries": 267,
+          "phase": "local_completion",
+          "chosen": 568,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call001.json",
+      "step": 1072,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 267,
+      "local_queries": 11,
+      "protected_queries": 909,
+      "choice": 568,
+      "full_choice": 568,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 69,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 568,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 568,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 568,
+          "improved": false
+        },
+        {
+          "queries": 267,
+          "phase": "local_completion",
+          "chosen": 568,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call001.json",
+      "step": 1072,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 268,
+      "local_queries": 12,
+      "protected_queries": 909,
+      "choice": 568,
+      "full_choice": 568,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 69,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 568,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 568,
+          "improved": false
+        },
+        {
+          "queries": 268,
+          "phase": "local_completion",
+          "chosen": 568,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call001.json",
+      "step": 1072,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 268,
+      "local_queries": 12,
+      "protected_queries": 909,
+      "choice": 568,
+      "full_choice": 568,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 69,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 568,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 568,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 568,
+          "improved": false
+        },
+        {
+          "queries": 268,
+          "phase": "local_completion",
+          "chosen": 568,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call002.json",
+      "step": 1260,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 379,
+      "full_choice": 379,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 379,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call002.json",
+      "step": 1260,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 379,
+      "full_choice": 379,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 379,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call002.json",
+      "step": 1260,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 379,
+      "full_choice": 379,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 379,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call002.json",
+      "step": 1260,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 379,
+      "full_choice": 379,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 379,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call002.json",
+      "step": 1260,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 379,
+      "full_choice": 379,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 379,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call002.json",
+      "step": 1260,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 379,
+      "full_choice": 379,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 379,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call003.json",
+      "step": 1273,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 294,
+      "full_choice": 294,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 294,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call003.json",
+      "step": 1273,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 294,
+      "full_choice": 294,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 294,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call003.json",
+      "step": 1273,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 294,
+      "full_choice": 294,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 294,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call003.json",
+      "step": 1273,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 294,
+      "full_choice": 294,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 294,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call003.json",
+      "step": 1273,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 294,
+      "full_choice": 294,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 294,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call003.json",
+      "step": 1273,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 294,
+      "full_choice": 294,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 294,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call004.json",
+      "step": 1733,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 458,
+      "local_queries": 202,
+      "protected_queries": 909,
+      "choice": 309,
+      "full_choice": 309,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 458,
+          "phase": "local_completion",
+          "chosen": 309,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call004.json",
+      "step": 1733,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 458,
+      "local_queries": 202,
+      "protected_queries": 909,
+      "choice": 309,
+      "full_choice": 309,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 458,
+          "phase": "local_completion",
+          "chosen": 309,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call004.json",
+      "step": 1733,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 486,
+      "local_queries": 230,
+      "protected_queries": 909,
+      "choice": 309,
+      "full_choice": 309,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 486,
+          "phase": "local_completion",
+          "chosen": 309,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call004.json",
+      "step": 1733,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 486,
+      "local_queries": 230,
+      "protected_queries": 909,
+      "choice": 309,
+      "full_choice": 309,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 486,
+          "phase": "local_completion",
+          "chosen": 309,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call004.json",
+      "step": 1733,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 454,
+      "local_queries": 198,
+      "protected_queries": 909,
+      "choice": 309,
+      "full_choice": 309,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 454,
+          "phase": "local_completion",
+          "chosen": 309,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call004.json",
+      "step": 1733,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 454,
+      "local_queries": 198,
+      "protected_queries": 909,
+      "choice": 309,
+      "full_choice": 309,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 454,
+          "phase": "local_completion",
+          "chosen": 309,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call005.json",
+      "step": 1736,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 257,
+      "local_queries": 1,
+      "protected_queries": 640,
+      "choice": 2,
+      "full_choice": 2,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 31,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 2,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 2,
+          "improved": false
+        },
+        {
+          "queries": 257,
+          "phase": "local_completion",
+          "chosen": 2,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call005.json",
+      "step": 1736,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 257,
+      "local_queries": 1,
+      "protected_queries": 640,
+      "choice": 2,
+      "full_choice": 2,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 31,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 2,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 2,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 2,
+          "improved": false
+        },
+        {
+          "queries": 257,
+          "phase": "local_completion",
+          "chosen": 2,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call005.json",
+      "step": 1736,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 261,
+      "local_queries": 5,
+      "protected_queries": 640,
+      "choice": 2,
+      "full_choice": 2,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 31,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 2,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 2,
+          "improved": false
+        },
+        {
+          "queries": 261,
+          "phase": "local_completion",
+          "chosen": 2,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call005.json",
+      "step": 1736,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 261,
+      "local_queries": 5,
+      "protected_queries": 640,
+      "choice": 2,
+      "full_choice": 2,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 31,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 2,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 2,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 2,
+          "improved": false
+        },
+        {
+          "queries": 261,
+          "phase": "local_completion",
+          "chosen": 2,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call005.json",
+      "step": 1736,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 256,
+      "local_queries": 0,
+      "protected_queries": 640,
+      "choice": 2,
+      "full_choice": 2,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 31,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 2,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 2,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "local_completion",
+          "chosen": 2,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call005.json",
+      "step": 1736,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 256,
+      "local_queries": 0,
+      "protected_queries": 640,
+      "choice": 2,
+      "full_choice": 2,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 31,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 2,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 2,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 2,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "local_completion",
+          "chosen": 2,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call006.json",
+      "step": 1741,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 257,
+      "local_queries": 1,
+      "protected_queries": 909,
+      "choice": 235,
+      "full_choice": 115,
+      "same_full_choice": false,
+      "rho_regret": 0.00011736154556274414,
+      "local_substation": 4,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 235,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 235,
+          "improved": false
+        },
+        {
+          "queries": 257,
+          "phase": "local_completion",
+          "chosen": 235,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call006.json",
+      "step": 1741,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 257,
+      "local_queries": 1,
+      "protected_queries": 909,
+      "choice": 235,
+      "full_choice": 115,
+      "same_full_choice": false,
+      "rho_regret": 0.00011736154556274414,
+      "local_substation": 4,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 235,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 235,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 235,
+          "improved": false
+        },
+        {
+          "queries": 257,
+          "phase": "local_completion",
+          "chosen": 235,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call006.json",
+      "step": 1741,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 257,
+      "local_queries": 1,
+      "protected_queries": 909,
+      "choice": 235,
+      "full_choice": 115,
+      "same_full_choice": false,
+      "rho_regret": 0.00011736154556274414,
+      "local_substation": 4,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 235,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 235,
+          "improved": false
+        },
+        {
+          "queries": 257,
+          "phase": "local_completion",
+          "chosen": 235,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call006.json",
+      "step": 1741,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 257,
+      "local_queries": 1,
+      "protected_queries": 909,
+      "choice": 235,
+      "full_choice": 115,
+      "same_full_choice": false,
+      "rho_regret": 0.00011736154556274414,
+      "local_substation": 4,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 235,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 235,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 235,
+          "improved": false
+        },
+        {
+          "queries": 257,
+          "phase": "local_completion",
+          "chosen": 235,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call006.json",
+      "step": 1741,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 286,
+      "local_queries": 30,
+      "protected_queries": 909,
+      "choice": 115,
+      "full_choice": 115,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 11,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 235,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 157,
+          "improved": true
+        },
+        {
+          "queries": 286,
+          "phase": "local_completion",
+          "chosen": 115,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call006.json",
+      "step": 1741,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 409,
+      "local_queries": 25,
+      "protected_queries": 909,
+      "choice": 115,
+      "full_choice": 115,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 11,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 235,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 874,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 157,
+          "improved": true
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": 157,
+          "improved": false
+        },
+        {
+          "queries": 384,
+          "phase": "fallback",
+          "chosen": 157,
+          "improved": false
+        },
+        {
+          "queries": 409,
+          "phase": "local_completion",
+          "chosen": 115,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call007.json",
+      "step": 1744,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 269,
+      "local_queries": 13,
+      "protected_queries": 862,
+      "choice": 217,
+      "full_choice": 217,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 413,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": true
+        },
+        {
+          "queries": 269,
+          "phase": "local_completion",
+          "chosen": 217,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call007.json",
+      "step": 1744,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 392,
+      "local_queries": 8,
+      "protected_queries": 862,
+      "choice": 217,
+      "full_choice": 217,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 413,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 413,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": true
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": false
+        },
+        {
+          "queries": 384,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": false
+        },
+        {
+          "queries": 392,
+          "phase": "local_completion",
+          "chosen": 217,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call007.json",
+      "step": 1744,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 265,
+      "local_queries": 9,
+      "protected_queries": 862,
+      "choice": 217,
+      "full_choice": 217,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 413,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": true
+        },
+        {
+          "queries": 265,
+          "phase": "local_completion",
+          "chosen": 217,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call007.json",
+      "step": 1744,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 328,
+      "local_queries": 8,
+      "protected_queries": 862,
+      "choice": 217,
+      "full_choice": 217,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 413,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": false
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": false
+        },
+        {
+          "queries": 328,
+          "phase": "local_completion",
+          "chosen": 217,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call007.json",
+      "step": 1744,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 272,
+      "local_queries": 16,
+      "protected_queries": 862,
+      "choice": 217,
+      "full_choice": 217,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 413,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": true
+        },
+        {
+          "queries": 272,
+          "phase": "local_completion",
+          "chosen": 217,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call007.json",
+      "step": 1744,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 392,
+      "local_queries": 8,
+      "protected_queries": 862,
+      "choice": 217,
+      "full_choice": 217,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 413,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 413,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": true
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": false
+        },
+        {
+          "queries": 384,
+          "phase": "fallback",
+          "chosen": 217,
+          "improved": false
+        },
+        {
+          "queries": 392,
+          "phase": "local_completion",
+          "chosen": 217,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call008.json",
+      "step": 1800,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 3,
+      "full_choice": 3,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 3,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call008.json",
+      "step": 1800,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 3,
+      "full_choice": 3,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 3,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call008.json",
+      "step": 1800,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 3,
+      "full_choice": 3,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 3,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call008.json",
+      "step": 1800,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 3,
+      "full_choice": 3,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 3,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call008.json",
+      "step": 1800,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 3,
+      "full_choice": 3,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 3,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call008.json",
+      "step": 1800,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 3,
+      "full_choice": 3,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 3,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call009.json",
+      "step": 1940,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 456,
+      "local_queries": 200,
+      "protected_queries": 909,
+      "choice": 404,
+      "full_choice": 404,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 418,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 418,
+          "improved": false
+        },
+        {
+          "queries": 456,
+          "phase": "local_completion",
+          "chosen": 404,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call009.json",
+      "step": 1940,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 456,
+      "local_queries": 200,
+      "protected_queries": 909,
+      "choice": 404,
+      "full_choice": 404,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 418,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 418,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 418,
+          "improved": false
+        },
+        {
+          "queries": 456,
+          "phase": "local_completion",
+          "chosen": 404,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call009.json",
+      "step": 1940,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 485,
+      "local_queries": 229,
+      "protected_queries": 909,
+      "choice": 404,
+      "full_choice": 404,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 418,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 418,
+          "improved": false
+        },
+        {
+          "queries": 485,
+          "phase": "local_completion",
+          "chosen": 404,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call009.json",
+      "step": 1940,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 485,
+      "local_queries": 229,
+      "protected_queries": 909,
+      "choice": 404,
+      "full_choice": 404,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 418,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 418,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 418,
+          "improved": false
+        },
+        {
+          "queries": 485,
+          "phase": "local_completion",
+          "chosen": 404,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call009.json",
+      "step": 1940,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 452,
+      "local_queries": 196,
+      "protected_queries": 909,
+      "choice": 404,
+      "full_choice": 404,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 418,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 418,
+          "improved": false
+        },
+        {
+          "queries": 452,
+          "phase": "local_completion",
+          "chosen": 404,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call009.json",
+      "step": 1940,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 452,
+      "local_queries": 196,
+      "protected_queries": 909,
+      "choice": 404,
+      "full_choice": 404,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 418,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 418,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 418,
+          "improved": false
+        },
+        {
+          "queries": 452,
+          "phase": "local_completion",
+          "chosen": 404,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call010.json",
+      "step": 1957,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 408,
+      "local_queries": 152,
+      "protected_queries": 909,
+      "choice": 689,
+      "full_choice": 689,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 408,
+          "phase": "local_completion",
+          "chosen": 689,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call010.json",
+      "step": 1957,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 408,
+      "local_queries": 152,
+      "protected_queries": 909,
+      "choice": 689,
+      "full_choice": 689,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 408,
+          "phase": "local_completion",
+          "chosen": 689,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call010.json",
+      "step": 1957,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 485,
+      "local_queries": 229,
+      "protected_queries": 909,
+      "choice": 689,
+      "full_choice": 689,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 485,
+          "phase": "local_completion",
+          "chosen": 689,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call010.json",
+      "step": 1957,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 485,
+      "local_queries": 229,
+      "protected_queries": 909,
+      "choice": 689,
+      "full_choice": 689,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 485,
+          "phase": "local_completion",
+          "chosen": 689,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call010.json",
+      "step": 1957,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 379,
+      "local_queries": 123,
+      "protected_queries": 909,
+      "choice": 689,
+      "full_choice": 689,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 379,
+          "phase": "local_completion",
+          "chosen": 689,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-03-05_0",
+      "call": "call010.json",
+      "step": 1957,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 379,
+      "local_queries": 123,
+      "protected_queries": 909,
+      "choice": 689,
+      "full_choice": 689,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 774,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 774,
+          "improved": false
+        },
+        {
+          "queries": 379,
+          "phase": "local_completion",
+          "chosen": 689,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call000.json",
+      "step": 408,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 281,
+      "full_choice": 281,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 281,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call000.json",
+      "step": 408,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 281,
+      "full_choice": 281,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 281,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call000.json",
+      "step": 408,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 281,
+      "full_choice": 281,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 281,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call000.json",
+      "step": 408,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 281,
+      "full_choice": 281,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 281,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call000.json",
+      "step": 408,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 281,
+      "full_choice": 281,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 281,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call000.json",
+      "step": 408,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 281,
+      "full_choice": 281,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 281,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call001.json",
+      "step": 550,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call001.json",
+      "step": 550,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call001.json",
+      "step": 550,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call001.json",
+      "step": 550,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call001.json",
+      "step": 550,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call001.json",
+      "step": 550,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call002.json",
+      "step": 1003,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 277,
+      "local_queries": 21,
+      "protected_queries": 909,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 277,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call002.json",
+      "step": 1003,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 277,
+      "local_queries": 21,
+      "protected_queries": 909,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 277,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call002.json",
+      "step": 1003,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 909,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call002.json",
+      "step": 1003,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 909,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call002.json",
+      "step": 1003,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 278,
+      "local_queries": 22,
+      "protected_queries": 909,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 278,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call002.json",
+      "step": 1003,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 278,
+      "local_queries": 22,
+      "protected_queries": 909,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 278,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call003.json",
+      "step": 1900,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 639,
+      "choice": 1,
+      "full_choice": 0,
+      "same_full_choice": false,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call003.json",
+      "step": 1900,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 639,
+      "choice": 1,
+      "full_choice": 0,
+      "same_full_choice": false,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call003.json",
+      "step": 1900,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 639,
+      "choice": 1,
+      "full_choice": 0,
+      "same_full_choice": false,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call003.json",
+      "step": 1900,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 639,
+      "choice": 1,
+      "full_choice": 0,
+      "same_full_choice": false,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call003.json",
+      "step": 1900,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 639,
+      "choice": 1,
+      "full_choice": 0,
+      "same_full_choice": false,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call003.json",
+      "step": 1900,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 639,
+      "choice": 1,
+      "full_choice": 0,
+      "same_full_choice": false,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call004.json",
+      "step": 1901,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 636,
+      "local_queries": 0,
+      "protected_queries": 636,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 636,
+          "phase": "fallback_no_admissible",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call004.json",
+      "step": 1901,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 636,
+      "local_queries": 0,
+      "protected_queries": 636,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 384,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 448,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 512,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 576,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 636,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call004.json",
+      "step": 1901,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 636,
+      "local_queries": 0,
+      "protected_queries": 636,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 636,
+          "phase": "fallback_no_admissible",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call004.json",
+      "step": 1901,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 636,
+      "local_queries": 0,
+      "protected_queries": 636,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 384,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 448,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 512,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 576,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 636,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call004.json",
+      "step": 1901,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 636,
+      "local_queries": 0,
+      "protected_queries": 636,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 636,
+          "phase": "fallback_no_admissible",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "call": "call004.json",
+      "step": 1901,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 636,
+      "local_queries": 0,
+      "protected_queries": 636,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 384,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 448,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 512,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 576,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 636,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call000.json",
+      "step": 113,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 256,
+      "local_queries": 0,
+      "protected_queries": 904,
+      "choice": 125,
+      "full_choice": 125,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 103,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 125,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 125,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "local_completion",
+          "chosen": 125,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call000.json",
+      "step": 113,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 256,
+      "local_queries": 0,
+      "protected_queries": 904,
+      "choice": 125,
+      "full_choice": 125,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 103,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 125,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 125,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 125,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "local_completion",
+          "chosen": 125,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call000.json",
+      "step": 113,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 904,
+      "local_queries": 0,
+      "protected_queries": 904,
+      "choice": 125,
+      "full_choice": 125,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 904,
+          "phase": "fallback_no_admissible",
+          "chosen": 125,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call000.json",
+      "step": 113,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 448,
+      "local_queries": 0,
+      "protected_queries": 904,
+      "choice": 125,
+      "full_choice": 125,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 103,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": 125,
+          "improved": true
+        },
+        {
+          "queries": 384,
+          "phase": "fallback",
+          "chosen": 125,
+          "improved": false
+        },
+        {
+          "queries": 448,
+          "phase": "fallback",
+          "chosen": 125,
+          "improved": false
+        },
+        {
+          "queries": 448,
+          "phase": "local_completion",
+          "chosen": 125,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call000.json",
+      "step": 113,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 256,
+      "local_queries": 0,
+      "protected_queries": 904,
+      "choice": 125,
+      "full_choice": 125,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 103,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 125,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 125,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "local_completion",
+          "chosen": 125,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call000.json",
+      "step": 113,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 256,
+      "local_queries": 0,
+      "protected_queries": 904,
+      "choice": 125,
+      "full_choice": 125,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 103,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 125,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 125,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 125,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "local_completion",
+          "chosen": 125,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call001.json",
+      "step": 115,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 901,
+      "local_queries": 0,
+      "protected_queries": 901,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 901,
+          "phase": "fallback_no_admissible",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call001.json",
+      "step": 115,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 901,
+      "local_queries": 0,
+      "protected_queries": 901,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 384,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 448,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 512,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 576,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 640,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 704,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 768,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 832,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 896,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 901,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call001.json",
+      "step": 115,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 901,
+      "local_queries": 0,
+      "protected_queries": 901,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 901,
+          "phase": "fallback_no_admissible",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call001.json",
+      "step": 115,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 901,
+      "local_queries": 0,
+      "protected_queries": 901,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 384,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 448,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 512,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 576,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 640,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 704,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 768,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 832,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 896,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 901,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call001.json",
+      "step": 115,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 901,
+      "local_queries": 0,
+      "protected_queries": 901,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 901,
+          "phase": "fallback_no_admissible",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call001.json",
+      "step": 115,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 901,
+      "local_queries": 0,
+      "protected_queries": 901,
+      "choice": null,
+      "full_choice": null,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "full_exhaustion",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 384,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 448,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 512,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 576,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 640,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 704,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 768,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 832,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 896,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        },
+        {
+          "queries": 901,
+          "phase": "fallback",
+          "chosen": null,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call002.json",
+      "step": 117,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 267,
+      "local_queries": 11,
+      "protected_queries": 904,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 267,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call002.json",
+      "step": 117,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 267,
+      "local_queries": 11,
+      "protected_queries": 904,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 267,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call002.json",
+      "step": 117,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 904,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call002.json",
+      "step": 117,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 904,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call002.json",
+      "step": 117,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 904,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call002.json",
+      "step": 117,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 904,
+      "choice": 1,
+      "full_choice": 1,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 1,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 1,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 1,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call003.json",
+      "step": 119,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 256,
+      "local_queries": 0,
+      "protected_queries": 855,
+      "choice": 0,
+      "full_choice": 0,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 103,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 0,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 0,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "local_completion",
+          "chosen": 0,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call003.json",
+      "step": 119,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 256,
+      "local_queries": 0,
+      "protected_queries": 855,
+      "choice": 0,
+      "full_choice": 0,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 103,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 0,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 0,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 0,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "local_completion",
+          "chosen": 0,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call003.json",
+      "step": 119,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 256,
+      "local_queries": 0,
+      "protected_queries": 855,
+      "choice": 711,
+      "full_choice": 0,
+      "same_full_choice": false,
+      "rho_regret": 0.01659756898880005,
+      "local_substation": 104,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 2,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 711,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "local_completion",
+          "chosen": 711,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call003.json",
+      "step": 119,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 448,
+      "local_queries": 0,
+      "protected_queries": 855,
+      "choice": 0,
+      "full_choice": 0,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 103,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 2,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 2,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 711,
+          "improved": true
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": 0,
+          "improved": true
+        },
+        {
+          "queries": 384,
+          "phase": "fallback",
+          "chosen": 0,
+          "improved": false
+        },
+        {
+          "queries": 448,
+          "phase": "fallback",
+          "chosen": 0,
+          "improved": false
+        },
+        {
+          "queries": 448,
+          "phase": "local_completion",
+          "chosen": 0,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call003.json",
+      "step": 119,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 256,
+      "local_queries": 0,
+      "protected_queries": 855,
+      "choice": 0,
+      "full_choice": 0,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 103,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 0,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 0,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "local_completion",
+          "chosen": 0,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call003.json",
+      "step": 119,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 256,
+      "local_queries": 0,
+      "protected_queries": 855,
+      "choice": 0,
+      "full_choice": 0,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 103,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 0,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 0,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 0,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "local_completion",
+          "chosen": 0,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call004.json",
+      "step": 399,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 269,
+      "local_queries": 13,
+      "protected_queries": 909,
+      "choice": 57,
+      "full_choice": 57,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 57,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 57,
+          "improved": false
+        },
+        {
+          "queries": 269,
+          "phase": "local_completion",
+          "chosen": 57,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call004.json",
+      "step": 399,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 269,
+      "local_queries": 13,
+      "protected_queries": 909,
+      "choice": 57,
+      "full_choice": 57,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 57,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 57,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 57,
+          "improved": false
+        },
+        {
+          "queries": 269,
+          "phase": "local_completion",
+          "chosen": 57,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call004.json",
+      "step": 399,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 909,
+      "choice": 57,
+      "full_choice": 57,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 57,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 57,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 57,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call004.json",
+      "step": 399,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 264,
+      "local_queries": 8,
+      "protected_queries": 909,
+      "choice": 57,
+      "full_choice": 57,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 57,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 57,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 57,
+          "improved": false
+        },
+        {
+          "queries": 264,
+          "phase": "local_completion",
+          "chosen": 57,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call004.json",
+      "step": 399,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 266,
+      "local_queries": 10,
+      "protected_queries": 909,
+      "choice": 57,
+      "full_choice": 57,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 57,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 57,
+          "improved": false
+        },
+        {
+          "queries": 266,
+          "phase": "local_completion",
+          "chosen": 57,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call004.json",
+      "step": 399,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 266,
+      "local_queries": 10,
+      "protected_queries": 909,
+      "choice": 57,
+      "full_choice": 57,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 68,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 57,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 57,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 57,
+          "improved": false
+        },
+        {
+          "queries": 266,
+          "phase": "local_completion",
+          "chosen": 57,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call005.json",
+      "step": 407,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 457,
+      "local_queries": 201,
+      "protected_queries": 909,
+      "choice": 168,
+      "full_choice": 168,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 168,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 168,
+          "improved": false
+        },
+        {
+          "queries": 457,
+          "phase": "local_completion",
+          "chosen": 168,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call005.json",
+      "step": 407,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 457,
+      "local_queries": 201,
+      "protected_queries": 909,
+      "choice": 168,
+      "full_choice": 168,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 168,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 168,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 168,
+          "improved": false
+        },
+        {
+          "queries": 457,
+          "phase": "local_completion",
+          "chosen": 168,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call005.json",
+      "step": 407,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 485,
+      "local_queries": 229,
+      "protected_queries": 909,
+      "choice": 168,
+      "full_choice": 168,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 133,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 133,
+          "improved": false
+        },
+        {
+          "queries": 485,
+          "phase": "local_completion",
+          "chosen": 168,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call005.json",
+      "step": 407,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 485,
+      "local_queries": 229,
+      "protected_queries": 909,
+      "choice": 168,
+      "full_choice": 168,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 133,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 133,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 133,
+          "improved": false
+        },
+        {
+          "queries": 485,
+          "phase": "local_completion",
+          "chosen": 168,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call005.json",
+      "step": 407,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 456,
+      "local_queries": 200,
+      "protected_queries": 909,
+      "choice": 168,
+      "full_choice": 168,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "fixed256_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 902,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 168,
+          "improved": true
+        },
+        {
+          "queries": 456,
+          "phase": "local_completion",
+          "chosen": 168,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call005.json",
+      "step": 407,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 519,
+      "local_queries": 199,
+      "protected_queries": 909,
+      "choice": 168,
+      "full_choice": 168,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": 48,
+      "stop_reason": "patience64_experimental_stop_local_complete",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 902,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "fallback",
+          "chosen": 168,
+          "improved": true
+        },
+        {
+          "queries": 256,
+          "phase": "fallback",
+          "chosen": 168,
+          "improved": false
+        },
+        {
+          "queries": 320,
+          "phase": "fallback",
+          "chosen": 168,
+          "improved": false
+        },
+        {
+          "queries": 519,
+          "phase": "local_completion",
+          "chosen": 168,
+          "improved": false
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call006.json",
+      "step": 429,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 13,
+      "full_choice": 13,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 13,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call006.json",
+      "step": 429,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 13,
+      "full_choice": 13,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 13,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call006.json",
+      "step": 429,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 13,
+      "full_choice": 13,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 13,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call006.json",
+      "step": 429,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 13,
+      "full_choice": 13,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 13,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call006.json",
+      "step": 429,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 13,
+      "full_choice": 13,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 13,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call006.json",
+      "step": 429,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 13,
+      "full_choice": 13,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 13,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call007.json",
+      "step": 1200,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 280,
+      "full_choice": 280,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 280,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call007.json",
+      "step": 1200,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 280,
+      "full_choice": 280,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 280,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call007.json",
+      "step": 1200,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 280,
+      "full_choice": 280,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 280,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call007.json",
+      "step": 1200,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 280,
+      "full_choice": 280,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 280,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call007.json",
+      "step": 1200,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 280,
+      "full_choice": 280,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 280,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "call": "call007.json",
+      "step": 1200,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 280,
+      "full_choice": 280,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 280,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call000.json",
+      "step": 554,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call000.json",
+      "step": 554,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call000.json",
+      "step": 554,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call000.json",
+      "step": 554,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call000.json",
+      "step": 554,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call000.json",
+      "step": 554,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 16,
+      "full_choice": 16,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 16,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call001.json",
+      "step": 725,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 76,
+      "full_choice": 76,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 76,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call001.json",
+      "step": 725,
+      "ranker": "GNN0_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 76,
+      "full_choice": 76,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 76,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call001.json",
+      "step": 725,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 76,
+      "full_choice": 76,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 76,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call001.json",
+      "step": 725,
+      "ranker": "OLDNN128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 76,
+      "full_choice": 76,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 76,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call001.json",
+      "step": 725,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "FIXED256",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 76,
+      "full_choice": 76,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 76,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "call": "call001.json",
+      "step": 725,
+      "ranker": "GNN1_128_GUARD",
+      "policy": "PATIENCE64",
+      "queries": 128,
+      "local_queries": 0,
+      "protected_queries": 128,
+      "choice": 76,
+      "full_choice": 76,
+      "same_full_choice": true,
+      "rho_regret": 0.0,
+      "local_substation": null,
+      "stop_reason": "initial_safe",
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 76,
+          "improved": true
+        }
+      ]
+    }
+  ],
+  "hand_checks": 3,
+  "permission_checks": 156,
+  "input_hashes": {
+    "outputs/grid21/models/gnn_seed0/final.pt": "a0aadd5dda448bdd99d7357958b8262b9fada02c9d286c0c8ad390909cb12336",
+    "outputs/grid26/runs/r0__2035-03-05_0__FULL/call000.json": "a4bdedd1de3a0b20b9f5390b16ea263c27cc252eebaf53ac4ead7c3d3f02e14b",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/call000.json": "e8d40afd65f823403452e5de66c4e23229202a2e7a986dbdb92f895070333f93",
+    "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/call000.json": "f995aeb7cf1c2b807e7ce8fb1aba17d3e4bcbb2bd035caf465282c64e8309ede",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/call000.json": "9e771cfe43db31d628f988dc586029371dbe547397d8f1e2a2aa2e3daf4408cc",
+    "outputs/grid26/runs/r0__2035-03-05_0__FULL/call001.json": "4ddf3c7cc4ab627172d0f5aad3996eb3b23d4a5d48d7191ca197351bc0f716f1",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/call001.json": "f307bd95cac821dd5e1d190a6e6b2a7aa750831f65d2080c8977eb816495ba8a",
+    "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/call001.json": "82a61ad694cd7e8896b990b80af245e213a8aec3d817fde7a12f19a5bde8c697",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/call001.json": "507e923dffdfa3786df0a6915dcf8ccb5b79d1bbf7cdcc2227f3619effc41859",
+    "outputs/grid26/runs/r0__2035-03-05_0__FULL/call002.json": "91a522f471b6cc7166406bff7dfea1d1676bf85898a44dfd7e715a314a68ce94",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/call002.json": "64b9eacecbe429e3af429c98b53c22be9e0d2f108a7812943b828b710e261ead",
+    "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/call002.json": "8cc9f431c2ee321b8b749576ffb794683eb7af9b6fcd5b428c91f1a972e108c8",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/call002.json": "fcd4ad2a4e18c8282a0fd1d05ad682336493174423a6ec87ee324c8b4e14e271",
+    "outputs/grid26/runs/r0__2035-03-05_0__FULL/call003.json": "52069eedbc4266b07414adb4f50271cf05ffda89511dec91a88af320250e84c0",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/call003.json": "43834a2f88a52ee66f3463c0757f17413495f6f247268ea2aeb9ddfdeafb94c2",
+    "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/call003.json": "d236ada4b91b49c990f44d5292f2ceeb5dbd09b27a1a15412c306e81aaaa6b1d",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/call003.json": "62588677c4a49e2c5e641012513375081c61566a033e519ca5af294d74604d56",
+    "outputs/grid26/runs/r0__2035-03-05_0__FULL/call004.json": "7233091440ab3beb6584e2af228d8dfdbbe849910cb334590fc1f91b2a9caf71",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/call004.json": "e5728f0b3bf07c54aa6fcc9540c3dd03af2f2ae17346220388fd401f4f45b320",
+    "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/call004.json": "543b77354233ab47e7aa3ad6d5a0b82cf303c69f94235356f367b40d87d71e46",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/call004.json": "2037a7f8d76776a4fecb771ccc0c7dc888971e6e7f43b94280073a8c05567118",
+    "outputs/grid26/runs/r0__2035-03-05_0__FULL/call005.json": "ab39c7fe0068ae34fd69ff5c74cf1b761dc3ba559c72d61a83ec20e844e79a43",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/call005.json": "38baff71b7b738e90df3df6442460e6b9a274f6c81249bb26ad75e134530ebe3",
+    "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/call005.json": "41184c0ea118daca2f146570d67eebdd7b7222bac5a7b0c791dd462af035019a",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/call005.json": "86307eda3c7f309fc92a5e3c17588867d06a5a422f0a3c2105dd173b1e1a5c72",
+    "outputs/grid26/runs/r0__2035-03-05_0__FULL/call006.json": "b8a1fbfcc51ba4a97d6f2f33dabf56b9eebfba00abb0cffd106f128f6f2411f8",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/call006.json": "32b1f4a5b516a3d0066a025c5538aaa3efb9589ea6628d7bf7c2fcca58159add",
+    "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/call006.json": "3450a0aab1b79e0d7f6532b289ac4d418ecfaf7e1d36afa2de530225dc2b20ae",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/call006.json": "7ebe4b78055422d00bf798dd9169373efc56933eb5c9bf515e70238b937ae505",
+    "outputs/grid26/runs/r0__2035-03-05_0__FULL/call007.json": "39dec83213443711c066b9ebd71d88ca565ec63ffaa479aaf591e1fd186060c6",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/call007.json": "d17d4950c625da0441f2670201ad6289bae488a78a68a6056caa65904147a4bc",
+    "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/call007.json": "c0b0b903ca2778c9fdf1f28c7e4b59953f25d4468413f7b470d5a5ee1ec708c3",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/call007.json": "33ee26a72d0536f2434f2a90c5af49e4f430ec1098e768dbe6dfe9990f420340",
+    "outputs/grid26/runs/r0__2035-03-05_0__FULL/call008.json": "1a39f8d59cdbbbb1edb75e956b7ff7ec5ac164f08791d197cd39e2fa4270e269",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/call008.json": "48e1550d0b3defed9249c2625da93ad0eabe2705ff10eebb7c7b533ff5e0674c",
+    "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/call008.json": "f1c85c6fa00ff4e373c044cb617ab7a7bba75f9c32f53332d495cf3f2a392b91",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/call008.json": "59d002962bdd700bc8408b5a749aa8a1dc3bd854f3dc18744810363d7868df80",
+    "outputs/grid26/runs/r0__2035-03-05_0__FULL/call009.json": "b5d7d3a41f478b3c4270a8efe2a5fb7a8a1257b12491e87703a57ef486490bf1",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/call009.json": "8c0b92dc562e8675c29987e4365ed8df3ebfdcf5672d9eeb69ffab38fb91ede3",
+    "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/call009.json": "df04c9cf108305fafbc2b4bb1299f586f115c148ff019d9875159600f4015fa0",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/call009.json": "e9f7b266d9d2713968974069287f8bdfe537d3c876973af3e17db67605da7492",
+    "outputs/grid26/runs/r0__2035-03-05_0__FULL/call010.json": "be2f20fed2b08f773b3335c19fb36d5cbd8e1c844bfa51e8851cb6c386fe5ed0",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN0_128_GUARD/call010.json": "14cb97fd22036c7cd86d9eda2a55fe54dfaed28c9a1b7584b3ba10406319a544",
+    "outputs/grid26/runs/r0__2035-03-05_0__OLDNN128_GUARD/call010.json": "e3eefba3edd18ceecfed99626b691b157762cc892146da3a5b413865e25d097b",
+    "outputs/grid26/runs/r0__2035-03-05_0__GNN1_128_GUARD/call010.json": "7754a92eff2e2e6f0aafb094c5eac6364cdc56f1a123b69de1972370e186c7fe",
+    "outputs/grid26/runs/r0__2035-06-25_8__FULL/call000.json": "49d7d1b5fc06db9839cc67216b6f50ea9926e4d4d1049f4210d0bc3a60264480",
+    "outputs/grid26/runs/r0__2035-06-25_8__GNN0_128_GUARD/call000.json": "588b96b515b3f73ee167dcbdc609beaffe91ebb2527264e6b04cc2affd970c0b",
+    "outputs/grid26/runs/r0__2035-06-25_8__OLDNN128_GUARD/call000.json": "2846ee6a426700839a53f7472dcbd2106be9e4f583358a52ca14cb0ae4070ee0",
+    "outputs/grid26/runs/r0__2035-06-25_8__GNN1_128_GUARD/call000.json": "59ee80825e2ca7bc5c68c8116d455caebf3d4574ddd0654583a2358cb6b535b7",
+    "outputs/grid26/runs/r0__2035-06-25_8__FULL/call001.json": "474d95bf1fd44ef8d23963f0c4cf610be573dc2e93d4f76f7dfdd8bf54bc74ce",
+    "outputs/grid26/runs/r0__2035-06-25_8__GNN0_128_GUARD/call001.json": "18994449c5a617b81dda4d4171270de51a5627ec6ab450db6439cbfe4dbddc7c",
+    "outputs/grid26/runs/r0__2035-06-25_8__OLDNN128_GUARD/call001.json": "f9a6c336e6b51d1150956cc60c03ce4165a007152b39394f3bae0863e6b9deac",
+    "outputs/grid26/runs/r0__2035-06-25_8__GNN1_128_GUARD/call001.json": "5d6025c3c01ac32262465ad0267d852fa5b99155ac9bc8434a108ca3d052bba8",
+    "outputs/grid26/runs/r0__2035-06-25_8__FULL/call002.json": "425d9ea8d65c7e5c5b902a670a1f1d7efb732ca04b539849a91aeec13e3a2412",
+    "outputs/grid26/runs/r0__2035-06-25_8__GNN0_128_GUARD/call002.json": "95805eeb06e84bb07786db1e0ed929e4d40bf7e58a47f923d4fc980a9aff8978",
+    "outputs/grid26/runs/r0__2035-06-25_8__OLDNN128_GUARD/call002.json": "c49b147f6bf77802d8c6d485f20d639555da2a3e3c9b6802278fdcca48f09aa8",
+    "outputs/grid26/runs/r0__2035-06-25_8__GNN1_128_GUARD/call002.json": "0a59bae8ba144e65f1c0d8f7c50853e0687ce1ab4dbbf56a448f396c7584b767",
+    "outputs/grid26/runs/r0__2035-06-25_8__FULL/call003.json": "3867397f3d78138348aaae85d5a1f67eead533a5a73a433c4802cc43c14c1b61",
+    "outputs/grid26/runs/r0__2035-06-25_8__GNN0_128_GUARD/call003.json": "e942828d649bb177a2df64967f256ae8a9384c6a6554fcc0381aec0384b51b2f",
+    "outputs/grid26/runs/r0__2035-06-25_8__OLDNN128_GUARD/call003.json": "e01bed145741b76043e414a425c70cff350ce182c2d75b933ce4fd9ca8f9a1d6",
+    "outputs/grid26/runs/r0__2035-06-25_8__GNN1_128_GUARD/call003.json": "723be4e887f32b90a69b2e3df6519d79bd10bbb925df8fc8b973b10b33f21e47",
+    "outputs/grid26/runs/r0__2035-06-25_8__FULL/call004.json": "3169a489c6412d1ff2ba726fc2f494fc1d8bee3c22c5d456d5d05f886f90839f",
+    "outputs/grid26/runs/r0__2035-06-25_8__GNN0_128_GUARD/call004.json": "cb02ce6a46e2092c1a39bebc7dead1dfba498135f5b7625c3ce56035b4266c13",
+    "outputs/grid26/runs/r0__2035-06-25_8__OLDNN128_GUARD/call004.json": "88d3b94661f82d1dbf38462a2694b435a112bf025ee0f4471a47acab5d576325",
+    "outputs/grid26/runs/r0__2035-06-25_8__GNN1_128_GUARD/call004.json": "a025a7fe2b6a116a599abcd6d0419997c9084b8e8ed869e44bab1a974b894e14",
+    "outputs/grid26/runs/r0__2035-09-03_4__FULL/call000.json": "b8e3fb977468c3a84c4a0da7ae4e02bcf810701fa1bfb44f6644354633c8ffd1",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN0_128_GUARD/call000.json": "a309b0193428a53767890cf4efb91b06beb0c90bef7a0daf4ee0cedb3a987dea",
+    "outputs/grid26/runs/r0__2035-09-03_4__OLDNN128_GUARD/call000.json": "ed99f648d89d4cdfc8bfb33fc6d0eea014cdf2519c88fe9814916d968f5817b5",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN1_128_GUARD/call000.json": "8c34c5ae8188984100965c648d44db52478c4fcefe86d9ee19dd5622b779deda",
+    "outputs/grid26/runs/r0__2035-09-03_4__FULL/call001.json": "f1cd5ec4c8d7f9164f32d862b12afedf76599e52f46c947ac56d3888d5e37c06",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN0_128_GUARD/call001.json": "9252d3a8368350621c6d503a81ab7b5d20c2048ef175f3a9a78ee7dc6c181b1a",
+    "outputs/grid26/runs/r0__2035-09-03_4__OLDNN128_GUARD/call001.json": "3fbd8912a44be62be81e36563d3086eb9fa2f2238fa4414c70ad31f74a453c3c",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN1_128_GUARD/call001.json": "d716d752692308556a8aa269e9ce6caee0bfdf64d6e1bde18c64d07eeec4db44",
+    "outputs/grid26/runs/r0__2035-09-03_4__FULL/call002.json": "5bd7e9b4c35748fe6ce904f6427963d42805eca5d4d4cf8c40fabdaf2edaf654",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN0_128_GUARD/call002.json": "69270f2b5e4547cab3ad31017db7cc5a201b30b76174bc93b1e923dcf4828fd3",
+    "outputs/grid26/runs/r0__2035-09-03_4__OLDNN128_GUARD/call002.json": "27d16111b5c7a515385f7e537acde6f6d8d31dd85e21aa2d6b86a44bc177c1f5",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN1_128_GUARD/call002.json": "49a335325fe3e6a75e4e13fd732f48b08ca58b8f416c0a1ccf0ade99d207a33b",
+    "outputs/grid26/runs/r0__2035-09-03_4__FULL/call003.json": "19dff1a9db220da4edc07b37736bca10c80d858311f185d7c47993bc2d6613a5",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN0_128_GUARD/call003.json": "020337902cea6fe0c08a5ae2ce1ddc99eddc8feee4c8736f899cc29751c4bbbb",
+    "outputs/grid26/runs/r0__2035-09-03_4__OLDNN128_GUARD/call003.json": "1812de477a9ca1c8d021034e94178d32c61b32e8e1e1f12285679123d7f5d59e",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN1_128_GUARD/call003.json": "46c3481dde37ff2a99b65a06839b27934e8a787ca836740487cff294afbd4895",
+    "outputs/grid26/runs/r0__2035-09-03_4__FULL/call004.json": "a2d70372b5929b9f0bc4bdfc14e54fb70b98e62e7b7e3add33ed606ec52201e5",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN0_128_GUARD/call004.json": "af4c983a78ce5d829749e81aaa54956c0bbd6c8eb33362cf14f20cab8dab5515",
+    "outputs/grid26/runs/r0__2035-09-03_4__OLDNN128_GUARD/call004.json": "b9d485b7df54a818bac086dba65dbd97e15d1a912d2fa3f830900ea94b00d6ea",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN1_128_GUARD/call004.json": "279b9d442fb51b20f87657898ac5d60a33d140bf5ad6ef9ff278022cf4adc08e",
+    "outputs/grid26/runs/r0__2035-09-03_4__FULL/call005.json": "7c93a27e42786b1d5057d3737a18eef8e1f01dac51120e9469ec78186a817ed9",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN0_128_GUARD/call005.json": "eba55dc066332fc4fd9db1d012ef0971e86d9c89bd268a19162a991fb7c50183",
+    "outputs/grid26/runs/r0__2035-09-03_4__OLDNN128_GUARD/call005.json": "6e4a1baa6a7996bf84993fe0c13cfe41f91e9d66156864ca2f5df323b74f28f5",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN1_128_GUARD/call005.json": "39695b9203695bbcd188e647f8412605134a045575b8e63a6e5139bf19a588d3",
+    "outputs/grid26/runs/r0__2035-09-03_4__FULL/call006.json": "b56ac0b6b1a2873181c872da29e99218b9d5e1bf9635f226563395d44ab2615b",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN0_128_GUARD/call006.json": "bb0e2ae3718371222f3f33544facb68ef104efd0037b5e455dc939def69d0f6f",
+    "outputs/grid26/runs/r0__2035-09-03_4__OLDNN128_GUARD/call006.json": "9fc4e44e60964248da3fccc4e87616ba1398189b3c1bc162726f55d86d2bc072",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN1_128_GUARD/call006.json": "da4f3fc86e34099c6d0e336d8a19fa63f9c04f795f5eafb484d39f6127723172",
+    "outputs/grid26/runs/r0__2035-09-03_4__FULL/call007.json": "9f968e031864ab1f75fd23810680b60307134abcc58075c4f76dd3ae356876fa",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN0_128_GUARD/call007.json": "beb9ca3a7205c83fd916f13172d8cff4a2b03e1a362677e8162743456c86cae5",
+    "outputs/grid26/runs/r0__2035-09-03_4__OLDNN128_GUARD/call007.json": "1606d0eecb7d2f155b41cf16bb55655213259fe6112483c7a546fe83e653b720",
+    "outputs/grid26/runs/r0__2035-09-03_4__GNN1_128_GUARD/call007.json": "a73469722513946768b56e37177d582ca511df2d90310989cadf56a4a697fb20",
+    "outputs/grid26/runs/r0__2035-10-01_5__FULL/call000.json": "6c3dd2225a6a900408380b111328e1f75dac19a8d511d164b6b5dd03faa41ca3",
+    "outputs/grid26/runs/r0__2035-10-01_5__GNN0_128_GUARD/call000.json": "da4528de35667d0254ef0372c81d6921004b9946c083c342a0f846f8980ba87a",
+    "outputs/grid26/runs/r0__2035-10-01_5__OLDNN128_GUARD/call000.json": "97996909e699eeead3bbf827ca264507967cd0c2c1e2f832b89e3a38a584678d",
+    "outputs/grid26/runs/r0__2035-10-01_5__GNN1_128_GUARD/call000.json": "864dfe4aa29ff7ec27f423fb1afc8ec30275ec863ea6a1ce3decdb8cff817676",
+    "outputs/grid26/runs/r0__2035-10-01_5__FULL/call001.json": "665d50d97174205522d4a28080d4672a08baf280a5d6783ea2b892654d30d49b",
+    "outputs/grid26/runs/r0__2035-10-01_5__GNN0_128_GUARD/call001.json": "03c3adad274fb34704ea46f98c1929bf49acd0c7c87cec3a353df8629a960ab2",
+    "outputs/grid26/runs/r0__2035-10-01_5__OLDNN128_GUARD/call001.json": "17dc6f16077eeb3eb44d12390713b57bf534bc3808dbfff68a415b53ae48fa71",
+    "outputs/grid26/runs/r0__2035-10-01_5__GNN1_128_GUARD/call001.json": "4a7d27bcb6d44878dd1f3ed25a7d3a1e68380c6d937318538db710751bb6e8fc"
+  },
+  "public_subids": [
+    103,
+    68,
+    31,
+    48,
+    46,
+    29,
+    29,
+    95,
+    11,
+    48,
+    48,
+    11,
+    48,
+    95,
+    14,
+    48,
+    16,
+    68,
+    55,
+    95,
+    24,
+    64,
+    48,
+    24,
+    68,
+    29,
+    48,
+    48,
+    53,
+    64,
+    48,
+    37,
+    48,
+    64,
+    37,
+    48,
+    48,
+    48,
+    14,
+    41,
+    37,
+    68,
+    64,
+    48,
+    64,
+    48,
+    99,
+    24,
+    11,
+    68,
+    14,
+    46,
+    64,
+    48,
+    24,
+    68,
+    48,
+    68,
+    58,
+    4,
+    79,
+    16,
+    48,
+    48,
+    11,
+    99,
+    68,
+    64,
+    43,
+    68,
+    26,
+    36,
+    41,
+    16,
+    68,
+    48,
+    99,
+    68,
+    55,
+    95,
+    44,
+    68,
+    64,
+    53,
+    68,
+    24,
+    41,
+    69,
+    79,
+    11,
+    109,
+    26,
+    48,
+    48,
+    18,
+    48,
+    95,
+    48,
+    64,
+    37,
+    68,
+    29,
+    79,
+    68,
+    68,
+    26,
+    16,
+    7,
+    11,
+    48,
+    48,
+    95,
+    55,
+    14,
+    48,
+    11,
+    48,
+    48,
+    99,
+    68,
+    4,
+    48,
+    11,
+    26,
+    11,
+    103,
+    33,
+    48,
+    41,
+    91,
+    16,
+    21,
+    29,
+    48,
+    91,
+    48,
+    67,
+    48,
+    22,
+    48,
+    36,
+    16,
+    14,
+    48,
+    30,
+    16,
+    22,
+    55,
+    48,
+    4,
+    76,
+    22,
+    64,
+    48,
+    48,
+    22,
+    68,
+    11,
+    48,
+    55,
+    48,
+    99,
+    68,
+    26,
+    48,
+    48,
+    48,
+    76,
+    48,
+    45,
+    11,
+    31,
+    58,
+    48,
+    99,
+    48,
+    18,
+    48,
+    55,
+    29,
+    79,
+    14,
+    24,
+    108,
+    91,
+    48,
+    46,
+    14,
+    48,
+    48,
+    48,
+    48,
+    33,
+    76,
+    44,
+    11,
+    18,
+    76,
+    48,
+    26,
+    48,
+    16,
+    58,
+    48,
+    14,
+    68,
+    79,
+    79,
+    41,
+    26,
+    48,
+    99,
+    36,
+    55,
+    91,
+    53,
+    48,
+    68,
+    79,
+    48,
+    58,
+    48,
+    18,
+    48,
+    48,
+    16,
+    36,
+    14,
+    48,
+    48,
+    31,
+    48,
+    31,
+    68,
+    16,
+    4,
+    68,
+    11,
+    14,
+    48,
+    48,
+    48,
+    48,
+    93,
+    48,
+    68,
+    67,
+    26,
+    7,
+    11,
+    68,
+    58,
+    26,
+    46,
+    58,
+    68,
+    14,
+    14,
+    16,
+    26,
+    67,
+    48,
+    99,
+    58,
+    91,
+    11,
+    30,
+    49,
+    99,
+    109,
+    107,
+    48,
+    68,
+    11,
+    81,
+    48,
+    55,
+    48,
+    45,
+    48,
+    99,
+    68,
+    48,
+    48,
+    30,
+    64,
+    41,
+    31,
+    48,
+    68,
+    76,
+    99,
+    26,
+    36,
+    11,
+    79,
+    41,
+    91,
+    48,
+    68,
+    48,
+    50,
+    48,
+    16,
+    36,
+    58,
+    48,
+    81,
+    3,
+    48,
+    48,
+    16,
+    11,
+    76,
+    99,
+    50,
+    31,
+    48,
+    48,
+    11,
+    91,
+    11,
+    48,
+    48,
+    68,
+    14,
+    46,
+    48,
+    14,
+    14,
+    99,
+    14,
+    99,
+    36,
+    26,
+    48,
+    68,
+    31,
+    30,
+    99,
+    47,
+    18,
+    36,
+    79,
+    91,
+    48,
+    11,
+    48,
+    68,
+    48,
+    48,
+    53,
+    48,
+    11,
+    14,
+    16,
+    99,
+    48,
+    48,
+    76,
+    103,
+    99,
+    33,
+    48,
+    79,
+    16,
+    33,
+    23,
+    91,
+    7,
+    44,
+    48,
+    68,
+    44,
+    95,
+    41,
+    26,
+    44,
+    48,
+    48,
+    99,
+    48,
+    22,
+    48,
+    58,
+    48,
+    79,
+    76,
+    53,
+    79,
+    14,
+    48,
+    55,
+    33,
+    48,
+    48,
+    21,
+    95,
+    79,
+    16,
+    48,
+    48,
+    36,
+    76,
+    48,
+    68,
+    81,
+    48,
+    79,
+    18,
+    48,
+    14,
+    48,
+    68,
+    48,
+    48,
+    7,
+    48,
+    48,
+    79,
+    69,
+    36,
+    14,
+    53,
+    79,
+    48,
+    48,
+    18,
+    91,
+    48,
+    26,
+    48,
+    79,
+    11,
+    14,
+    48,
+    81,
+    48,
+    22,
+    48,
+    79,
+    91,
+    48,
+    33,
+    11,
+    18,
+    57,
+    48,
+    48,
+    82,
+    99,
+    76,
+    79,
+    79,
+    58,
+    55,
+    11,
+    48,
+    48,
+    79,
+    53,
+    18,
+    41,
+    76,
+    44,
+    68,
+    76,
+    69,
+    33,
+    48,
+    74,
+    48,
+    55,
+    11,
+    48,
+    68,
+    36,
+    11,
+    55,
+    11,
+    76,
+    69,
+    76,
+    48,
+    68,
+    48,
+    48,
+    48,
+    69,
+    16,
+    10,
+    79,
+    48,
+    99,
+    58,
+    48,
+    99,
+    16,
+    16,
+    48,
+    74,
+    76,
+    3,
+    69,
+    58,
+    55,
+    41,
+    48,
+    55,
+    4,
+    48,
+    69,
+    31,
+    48,
+    48,
+    48,
+    91,
+    69,
+    31,
+    99,
+    99,
+    79,
+    99,
+    48,
+    48,
+    48,
+    14,
+    99,
+    99,
+    55,
+    68,
+    48,
+    16,
+    48,
+    11,
+    48,
+    48,
+    79,
+    48,
+    11,
+    16,
+    68,
+    48,
+    79,
+    14,
+    91,
+    99,
+    48,
+    69,
+    53,
+    14,
+    76,
+    26,
+    48,
+    79,
+    48,
+    48,
+    91,
+    36,
+    55,
+    99,
+    48,
+    36,
+    45,
+    48,
+    99,
+    16,
+    18,
+    69,
+    48,
+    81,
+    79,
+    26,
+    48,
+    36,
+    48,
+    48,
+    76,
+    53,
+    14,
+    26,
+    91,
+    68,
+    48,
+    53,
+    48,
+    22,
+    22,
+    48,
+    68,
+    79,
+    48,
+    58,
+    41,
+    55,
+    55,
+    76,
+    76,
+    95,
+    11,
+    48,
+    55,
+    11,
+    54,
+    55,
+    82,
+    48,
+    55,
+    48,
+    22,
+    79,
+    68,
+    48,
+    14,
+    68,
+    48,
+    55,
+    99,
+    48,
+    14,
+    58,
+    26,
+    53,
+    48,
+    88,
+    76,
+    48,
+    16,
+    99,
+    48,
+    48,
+    48,
+    48,
+    55,
+    14,
+    55,
+    79,
+    11,
+    48,
+    48,
+    65,
+    33,
+    16,
+    76,
+    99,
+    48,
+    26,
+    48,
+    48,
+    10,
+    69,
+    48,
+    99,
+    24,
+    15,
+    48,
+    53,
+    69,
+    4,
+    99,
+    82,
+    48,
+    17,
+    91,
+    48,
+    48,
+    48,
+    48,
+    48,
+    79,
+    99,
+    79,
+    44,
+    11,
+    11,
+    45,
+    49,
+    48,
+    58,
+    10,
+    33,
+    56,
+    48,
+    55,
+    26,
+    69,
+    68,
+    48,
+    58,
+    48,
+    48,
+    11,
+    55,
+    76,
+    53,
+    79,
+    91,
+    58,
+    11,
+    79,
+    99,
+    48,
+    91,
+    3,
+    69,
+    55,
+    48,
+    48,
+    48,
+    11,
+    79,
+    104,
+    48,
+    53,
+    93,
+    39,
+    76,
+    95,
+    74,
+    55,
+    48,
+    84,
+    68,
+    68,
+    74,
+    99,
+    14,
+    4,
+    48,
+    60,
+    48,
+    99,
+    48,
+    31,
+    58,
+    74,
+    48,
+    11,
+    99,
+    48,
+    48,
+    48,
+    76,
+    48,
+    53,
+    76,
+    18,
+    79,
+    48,
+    95,
+    69,
+    91,
+    58,
+    79,
+    48,
+    76,
+    99,
+    48,
+    41,
+    48,
+    74,
+    109,
+    76,
+    76,
+    55,
+    55,
+    31,
+    48,
+    48,
+    76,
+    48,
+    99,
+    55,
+    48,
+    48,
+    79,
+    48,
+    14,
+    79,
+    53,
+    48,
+    48,
+    76,
+    48,
+    95,
+    76,
+    99,
+    48,
+    48,
+    99,
+    11,
+    11,
+    55,
+    48,
+    48,
+    76,
+    58,
+    14,
+    65,
+    58,
+    48,
+    99,
+    10,
+    48,
+    14,
+    29,
+    91,
+    55,
+    48,
+    55,
+    48,
+    68,
+    58,
+    48,
+    53,
+    31,
+    14,
+    48,
+    76,
+    55,
+    14,
+    16,
+    91,
+    99,
+    18,
+    48,
+    109,
+    11,
+    48,
+    41,
+    48,
+    67,
+    48,
+    79,
+    99,
+    79,
+    14,
+    91,
+    11,
+    48,
+    76,
+    11,
+    76,
+    14,
+    76,
+    48,
+    48,
+    95,
+    79,
+    14,
+    93,
+    99,
+    48,
+    43,
+    79,
+    55,
+    14,
+    48,
+    48,
+    14,
+    53,
+    48,
+    48,
+    48,
+    48,
+    48,
+    99,
+    22,
+    33,
+    48,
+    63,
+    48,
+    79,
+    48,
+    10,
+    102,
+    79,
+    14,
+    48,
+    76,
+    48,
+    48,
+    11,
+    76,
+    48,
+    36,
+    48,
+    14,
+    14,
+    55,
+    48,
+    99,
+    48,
+    48,
+    48,
+    48,
+    48,
+    48,
+    16,
+    48,
+    48,
+    79,
+    48,
+    91,
+    53,
+    48,
+    93,
+    18,
+    11
+  ],
+  "wall_s": 1.0371677000000545,
+  "new_forecasts": 0,
+  "new_fits": 0,
+  "reserved_evaluations": 0,
+  "warning": "Local completion is a shared non-learning rule, not a safe-stopping certificate or new graph contribution."
+}

@@ -1,0 +1,54 @@
+{
+  "stage": "GRID27_STAGED_FALLBACK_DEVELOPMENT",
+  "weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "rankers": [
+    {
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    }
+  ],
+  "policies": [
+    "FIXED256",
+    "PATIENCE64"
+  ],
+  "initial": 128,
+  "fixed_limit": 256,
+  "batch": 64,
+  "minimum": 256,
+  "patience": 2,
+  "permission": "Only legal current state/ranking and actually dispatched outcomes; never hidden FULL outcome or global winner rank.",
+  "change": "Experimental replacement of compulsory full complement in rho>=0.9 states. Does not lower author thresholds or relax per-action admission, but may miss a better candidate. Not an exact/safety guarantee.",
+  "offline": "26 stored development FULL states, one row per ranker/policy/state. No forecasting or fitting. Missing FULL action is a diagnostic, not proof of downstream regret.",
+  "pilot": "March GNN0 and PPO with PATIENCE64, plus GNN0 protected controller profiling. No final holdout. No choosing a different schedule based on this screen.",
+  "gate": "If offline identifies inadmissible output, duplicate charging or information leak: repair before AC. If >1% state-level rho regret or missing action at prior known March critical state: retain findings and analyze before closed-loop; do not switch schedule to rescue. Otherwise run frozen March pilot even if exact choice differs.",
+  "quality": "No earlier/new failure; complete-week cost increase <=0.5% to protected baseline as an investment threshold, not equivalence proof. Report all cost/survival outcomes and exact-action disagreement.",
+  "cost": "Same runtime, masks, forecast accounting, thread limits, full controller and cadence6. Includes ranking, decision and optional equal profile wrappers; setup/physical/export separate. Pilot timings only, not formal acceleration proof.",
+  "continuation": "If pilot preserves quality, run same two PATIENCE64 rankers on remaining three exposed weeks. If mild deficit, diagnose existing records before further changes; keep all policies/models and failures. No immediate RL.",
+  "caps": {
+    "offline_s": 120,
+    "pilot_wall_s": 2700,
+    "episode_s": 1200,
+    "total_wall_s": 7200,
+    "new_fits": 0,
+    "reserved_evaluations": 0
+  }
+}

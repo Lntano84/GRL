@@ -126,3 +126,7 @@ User authorizes both whole-controller and expensive-search acceleration experime
 ## 2026-10-11 — Qualify shared DC compilation reuse independently
 
 Use per-optimizer topology/reactance-keyed bounded CVXPY/DC-program reuse, retaining the exact mathematical problem and original solve wrapper/warm_start=False. Frozen stored-state qualification precedes a balanced protected-March pilot. No blind direct-solver substitution or changed tolerances. Apply any engineering improvement to strong baselines; do not count it as GNN novelty. GRID28 remaining runs still serial, no reserved-date opening.
+
+## 2026-10-11 — Retain staged-search tradeoff without graph attribution
+
+Keep measured quality cost and one-repeat timing visible. Substation completion addresses the known omitted action, while the original protected guard remains available. Same stopping logic for GNN and PPO is essential; shared improvement is not GNN benefit. Whole-controller engineering qualification proceeds separately and is granted to all baselines. Do not train RL or open final date families from these developmental results.

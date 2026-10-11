@@ -265,3 +265,7 @@ Six manual checks and130 stored exposed states pass, same convergence/finite fla
 ## 2026-10-11 — GRID29 cache pilot and GRID28 paired ranker review
 
 GRID29工程数值资格130状态流量差0；4条三月闭环逐步动作/观测/成本相同，查询不变。两组控制时间减少10.93%/0.39%，汇总点估计6.19%，幅度不稳定，不能认定跨日期稳定整体提速或GNN贡献。V0非DPP/键缺陷已保留，V1修订与协议不覆盖历史。 Audit8068physicalrows/44sourcecalls/26236paidfeedback; no independentAC/refit. GRID28 matched26same-state/same-pool/same-choice calls, GNN query reduction5.98% vsPPO, directions7/4/15, common feedback6178/6178exact. Both branches4/4same delivered paths. GRID29B frozen before run for actual-memory isolated DC probes, not another total-time sweep.
+
+## 2026-10-11 — GRID29B setup-name repair, no numerical outcome
+
+profile.py shadowed stdlib profile during Torch/cProfile initialization and recursively entered the driver. Failure before control initialization, no delivered physical step/DC pair. Preserve original code/log/setup directory. Rename probe_dc.py only, refreeze before running; existing GRID29 result rows unchanged. Human directs continued diagnosis of10.93% versus0.39%, especially what worked in the10% pair.

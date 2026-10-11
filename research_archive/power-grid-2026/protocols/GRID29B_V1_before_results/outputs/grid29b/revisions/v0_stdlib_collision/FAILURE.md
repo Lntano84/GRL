@@ -1,0 +1,1 @@
+Script profile.py shadowed Python stdlib profile during Torch optimizer initialization, recursively importing the diagnostic. Failure before controller initialization completed, no physical control step or paired numeric outcome. Rename probe_dc.py, retain failure and existing GRID29 results.

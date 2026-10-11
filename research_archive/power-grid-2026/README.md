@@ -1,3 +1,9 @@
+# 控制提速差异的可核查解释
+
+[为什么10%与0.39%差很多](protocols/GRID_common_speed_explanation/outputs/grid_speed_review/WHY_10_PERCENT.md)
+
+已完成用户要求的幅度诊断：三月可复用DC+安全QP占原控制39.7%、安全QP缓存命中77.8%、未复用unsafe占38.6%；其他三周可复用占73.4%–88.1%、命中90.0%–93.8%、unsafe占3.3%–8.2%，支持22%vs62%–74%的组件解释。旧10.93%/0.39%缺逐solver计时，精确波动原因仍不可恢复。GRID32继承的repeats=2/旧四条文案为元数据残留，实际冻结6条execution_order及审计一贯是3单配对；原JSON不改。
+
 # 最新：GRID33现成排序对照通过，GRID34公平闭环已冻结
 
 [同状态结果](protocols/GRID33_completed/outputs/grid33/GRID33_report.md) · [公平闭环协议](protocols/GRID34_before_results/outputs/grid34/design.json)

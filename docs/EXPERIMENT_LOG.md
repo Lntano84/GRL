@@ -301,3 +301,7 @@ GRID32三组其他已暴露周配对通过：2035-06-25_8减少63.26%；2035-09-
 ## 2026-10-11 — GRID33 existing-ranker matched screen
 
 GRID33五个现成排序器130项同状态诊断及独立停止复算通过；查询7358/7530(GNN0/1)、7549/7826(MLP0/1)、7823(PPO)。全部找回1733关键动作；差距仅开发线索，不证明长期质量或图结构必要性。 No new fit/simulation/final date. GRID34common-engineering livecomparisonfrozen.
+
+## 2026-10-11 — Saved-only component heterogeneity review
+
+已完成用户要求的幅度诊断：三月可复用DC+安全QP占原控制39.7%、安全QP缓存命中77.8%、未复用unsafe占38.6%；其他三周可复用占73.4%–88.1%、命中90.0%–93.8%、unsafe占3.3%–8.2%，支持22%vs62%–74%的组件解释。旧10.93%/0.39%缺逐solver计时，精确波动原因仍不可恢复。GRID32继承的repeats=2/旧四条文案为元数据残留，实际冻结6条execution_order及审计一贯是3单配对；原JSON不改。 不把共享工程归于GNN，不推测温度/后台负载；GRID34所有强对照共用相同优化，正在公平闭环试点。

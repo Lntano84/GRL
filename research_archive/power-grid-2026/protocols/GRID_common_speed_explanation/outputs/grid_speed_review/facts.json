@@ -1,0 +1,70 @@
+{
+  "passed_saved_source_check": true,
+  "dates": [
+    {
+      "week": "2035-03-05_0",
+      "paired_repeats": 2,
+      "original_control_s": 182.3823839999868,
+      "cached_control_s": 141.4887376500028,
+      "reduction": 0.22421927739461378,
+      "safe_calls": 153.0,
+      "safe_cache_hit_rate": 0.7777777777777778,
+      "original_dc_safe_fraction": 0.3970630055477653,
+      "original_uncached_unsafe_fraction": 0.3856306489556879,
+      "saved_dc_safe_s": 44.15231105001658
+    },
+    {
+      "week": "2035-06-25_8",
+      "paired_repeats": 1,
+      "original_control_s": 149.84402389997194,
+      "cached_control_s": 55.04561900000772,
+      "reduction": 0.632647218305127,
+      "safe_calls": 251,
+      "safe_cache_hit_rate": 0.900398406374502,
+      "original_dc_safe_fraction": 0.77873064045535,
+      "original_uncached_unsafe_fraction": 0.08211175847901594,
+      "saved_dc_safe_s": 94.44113470002048
+    },
+    {
+      "week": "2035-09-03_4",
+      "paired_repeats": 1,
+      "original_control_s": 161.3788754000052,
+      "cached_control_s": 61.50330849992497,
+      "reduction": 0.6188887278618191,
+      "safe_calls": 257,
+      "safe_cache_hit_rate": 0.914396887159533,
+      "original_dc_safe_fraction": 0.7342381950939827,
+      "original_uncached_unsafe_fraction": 0.060070030702429895,
+      "saved_dc_safe_s": 99.62994449999678
+    },
+    {
+      "week": "2035-10-01_5",
+      "paired_repeats": 1,
+      "original_control_s": 169.38666760001433,
+      "cached_control_s": 43.25432539999747,
+      "reduction": 0.7446414997540585,
+      "safe_calls": 290,
+      "safe_cache_hit_rate": 0.9379310344827586,
+      "original_dc_safe_fraction": 0.8813714610202888,
+      "original_uncached_unsafe_fraction": 0.03332278201096071,
+      "saved_dc_safe_s": 125.39895789997718
+    }
+  ],
+  "history": "GRID29old10.93%/0.39% had no per-solver timings. Restored-delivery-step differences are observed, but cannot recover individual DC contributions or attribute physical/thermal/runtime causes retrospectively.",
+  "measured_mechanism": "GRID29Bisolatedsame-input DC vectors identical; repeated compilation dominates DC. GRID29Cactual DC saves17.47/18.14s while disjoint other components offset5.74/6.27s. GRID31/32cachebothDCandsafeQP; frequency,reuseanduncachedunsafeproportion vary.",
+  "qualification": "Exact delivered trajectories and original solver-status/iteration paths preserved. Shared conventional program reuse granted to all opponents,not GNN novelty.",
+  "metadata_correction": "GRID32design inherited repeats=2 and older four-run wording, but its frozen execution_order has6runs,3singlepairedweeks. All reports/audits useactual6runs/onepairperweek. Original frozen JSON retained,not rewritten.",
+  "input_hashes": {
+    "outputs/grid32/review.json": "1afee0797433475daf7c3e224cf62deab2bd63015efffca5b8f95f933f0e432f",
+    "outputs/grid31/review.json": "946205ea0db71a4769564c73331baf1158b200d87a44924092dc6ab154a5a7bf",
+    "outputs/grid29b/review.json": "14fd17fb539a72eadafca7aed58047ae14cecff073e8c4f9c683219a74a6e84c",
+    "outputs/grid29c/review.json": "afb06e317f9d6b13fef99e9f8e00270baa7f944878a1a4bb03f5736d54140a56",
+    "outputs/grid31/runs/r0__2035-03-05_0__ORIGINAL/components.json": "3bd907c1fd4dacf60ae2fe5551317fd55765abf01b835a72efbf397fffd5abc6",
+    "outputs/grid31/runs/r0__2035-03-05_0__DC_AND_SAFE/components.json": "7de377c72df9dfa06fd4f6913f1e9d75fa1fab79809aac557e2eb3896bf6ee09",
+    "outputs/grid31/runs/r1__2035-03-05_0__ORIGINAL/components.json": "9736adc6916c2a787bc0a2590c0671e8f18ac6aa8031cef2e27ac7c9e17576fa",
+    "outputs/grid31/runs/r1__2035-03-05_0__DC_AND_SAFE/components.json": "cc8b0e340244808e4f11eff2a8e7c46a961d5b8a218023731dfc1b4b38107107"
+  },
+  "new_fits": 0,
+  "new_solves": 0,
+  "reserved_evaluations": 0
+}

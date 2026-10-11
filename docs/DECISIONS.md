@@ -162,3 +162,7 @@ Cross-week exact paths support common engineering, with strong magnitude heterog
 ## 2026-10-11 — Keep both MLP seeds and both GNN seeds in fair live comparison
 
 All existing rankers pass the known critical-action screen; do not omit MLP or select a best checkpoint. Give exhaustiveFULL and everyranker common caches. Reversed6arm paired order per exposeddate, shared quality gate and all components. Pilot cost/survival must be measured before widening. Offline matched-query counts are not full-controller acceleration or an architecture-proof.
+
+## 2026-10-11 — Distinguish measured cache dose from unrecoverable historical noise
+
+已完成用户要求的幅度诊断：三月可复用DC+安全QP占原控制39.7%、安全QP缓存命中77.8%、未复用unsafe占38.6%；其他三周可复用占73.4%–88.1%、命中90.0%–93.8%、unsafe占3.3%–8.2%，支持22%vs62%–74%的组件解释。旧10.93%/0.39%缺逐solver计时，精确波动原因仍不可恢复。GRID32继承的repeats=2/旧四条文案为元数据残留，实际冻结6条execution_order及审计一贯是3单配对；原JSON不改。 不把共享工程归于GNN，不推测温度/后台负载；GRID34所有强对照共用相同优化，正在公平闭环试点。

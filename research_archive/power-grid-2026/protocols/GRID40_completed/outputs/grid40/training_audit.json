@@ -1,0 +1,32 @@
+{
+  "passed_accounting": true,
+  "targets": 167,
+  "positive": 148,
+  "training_only_scaling_verified": true,
+  "frequency_kl": 3.071673064861525,
+  "convergence": [
+    {
+      "seed": 0,
+      "first_kl": 3.2516379485259184,
+      "last_kl": 3.073850631713867,
+      "min_kl": 2.9349371227058203,
+      "frequency_kl": 3.071673064861525,
+      "last_vs_frequency": -0.00217756685234205,
+      "early8_mean_kl": 3.1583130037462386,
+      "late8_mean_kl": 3.0737165760349585,
+      "last_top1": 0.04054054054054054
+    },
+    {
+      "seed": 1,
+      "first_kl": 3.1951862025905298,
+      "last_kl": 2.99230415756638,
+      "min_kl": 2.767590129697645,
+      "frequency_kl": 3.071673064861525,
+      "last_vs_frequency": 0.07936890729514534,
+      "early8_mean_kl": 3.168318584964082,
+      "late8_mean_kl": 2.9476763968532147,
+      "last_top1": 0.07432432432432433
+    }
+  ],
+  "warning": "Training fit only, no validation/dev/final score read. Frequency KL is a fit diagnostic,not downstream baseline. Plateau/poorfit requires a bounded optimization adaptation before published-method comparison,not a claim that SoftGNN is weak."
+}

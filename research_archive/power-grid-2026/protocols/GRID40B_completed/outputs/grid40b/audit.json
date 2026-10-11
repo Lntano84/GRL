@@ -1,0 +1,31 @@
+{
+  "passed_accounting": true,
+  "fits": [
+    {
+      "seed": 0,
+      "initial_weights_exact_original": true,
+      "old_final_training_kl": 3.073850631713867,
+      "new_final_training_kl": 1.1526195165273305,
+      "kl_improvement": 1.9212311151865367,
+      "frequency_kl": 3.071673064861525,
+      "below_frequency": true,
+      "last_top1": 0.24324324324324326
+    },
+    {
+      "seed": 1,
+      "initial_weights_exact_original": true,
+      "old_final_training_kl": 2.99230415756638,
+      "new_final_training_kl": 0.6785031041583499,
+      "kl_improvement": 2.3138010534080298,
+      "frequency_kl": 3.071673064861525,
+      "below_frequency": true,
+      "last_top1": 0.2905405405405405
+    }
+  ],
+  "configuration_qualified": true,
+  "selected_uniform_config": "GRID40B",
+  "selection_uses_only_training_fit": true,
+  "development_predictions_read": 0,
+  "reserved_evaluations": 0,
+  "warning": "Improved training KL is neither downstream quality nor published-method superiority. One optimization adjustment only; original fits and both seeds preserved."
+}

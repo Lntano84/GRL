@@ -269,3 +269,7 @@ GRID29工程数值资格130状态流量差0；4条三月闭环逐步动作/观�
 ## 2026-10-11 — GRID29B setup-name repair, no numerical outcome
 
 profile.py shadowed stdlib profile during Torch/cProfile initialization and recursively entered the driver. Failure before control initialization, no delivered physical step/DC pair. Preserve original code/log/setup directory. Rename probe_dc.py only, refreeze before running; existing GRID29 result rows unchanged. Human directs continued diagnosis of10.93% versus0.39%, especially what worked in the10% pair.
+
+## 2026-10-11 — GRID29B real-memory DC audit and GRID29C freeze
+
+GRID29B真实控制记忆下153组DC配对：原34.611s、缓存13.268s，减少61.67%；154组保存三向量最大流量差0、2017步路径完全相同。实际原DC调用编译29.17s/后端0.070s，确认重复编译是这一DC组成的主要开销，不等于完整控制器根因。旧10.93%组恢复交付步骤省25.42s、其余多1.75s；旧0.39%组对应省10.32s、其余多9.62s。旧两组没有逐solver计时，不能事后识别各自DC收益。 Saved-data audit154DCtriples/2017physicalrows; no independent solve/new fit/reserved evaluation. GRID29C4balanced delivered-arm component traces frozen before results.

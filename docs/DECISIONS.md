@@ -138,3 +138,7 @@ V0 was blocked by actual Parameter division, unlike its ndarray toy; its object-
 ## 2026-10-11 — Diagnose component speed before more total-time repeats
 
 Cache pilot preserved exact quality, but10.93% versus0.39% paired total gains do not identify stable whole-speed magnitude. Keep both. Next one instrumented actual controller plus isolated same-memory DC pairs; never deploy probe output or label instrumented total as acceleration. Include positional solver arguments and null statistics correctly. GNN/PPO matched-query developmental signal does not identify GNN architecture or independent transfer; common engineering changes go to both.
+
+## 2026-10-11 — Explain the10% pair with measured components
+
+Live-memory isolated DC matches actual flows exactly and identifies compilation savings, but old paired trajectories lack per-solver timing. Do not attribute old total variation to a particular optimizer from residual arithmetic. Freeze full-arm component measurement with identical instrumentation/paths and retained two balanced orders. No model or numeric control change. Quota interruptions are not user cancellation; resume current work without repeated confirmation.

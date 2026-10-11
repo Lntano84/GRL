@@ -1,3 +1,9 @@
+# 最新：GRID29B真实记忆诊断通过，GRID29C待运行
+
+[诊断报告](protocols/GRID29B_completed/outputs/grid29b/GRID29B_report.md) · [下一组件协议](protocols/GRID29C_before_results/outputs/grid29c/design.json)
+
+GRID29B真实控制记忆下153组DC配对：原34.611s、缓存13.268s，减少61.67%；154组保存三向量最大流量差0、2017步路径完全相同。实际原DC调用编译29.17s/后端0.070s，确认重复编译是这一DC组成的主要开销，不等于完整控制器根因。旧10.93%组恢复交付步骤省25.42s、其余多1.75s；旧0.39%组对应省10.32s、其余多9.62s。旧两组没有逐solver计时，不能事后识别各自DC收益。
+
 # 最新：GRID29 共有模型复用试点（2026-10-11）
 
 [报告](outputs/grid29/GRID29_report.md) · [匹配排序诊断](outputs/grid28_review/GRID28_ranker_review.md) · [归档清单](grid29_archive_manifest.json)

@@ -1,3 +1,9 @@
+# 最新：GRID34公平试点通过，其他开发周继续
+
+[三月试点审计](protocols/GRID34_pilot_completed/outputs/grid34/pilot_audit.json)
+
+GRID34三月12条公平试点质量门槛通过：GNN1/MLP0/MLP1两次均逐步等同FULL；GNN0/PPO共同成本增加0.1361%，全部2017步完成。优化后FULL141–142秒，各排序器125–128秒；架构间仅小差距，MLP强对照保留，不能把总体节省全部归于GNN。
+
 # 控制提速差异的可核查解释
 
 [为什么10%与0.39%差很多](protocols/GRID_common_speed_explanation/outputs/grid_speed_review/WHY_10_PERCENT.md)

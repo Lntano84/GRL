@@ -154,3 +154,7 @@ Isolated safe-QP outputs and converted actions match original at live inputs. Th
 ## 2026-10-11 — Retain measured22% common acceleration without graph attribution
 
 Full delivered-arm improvement is observed with exact path/cost/native solver behavior. This supports practical shared engineering, not graph-specific novelty. Before fair learned search comparison, check numerical/path compatibility on other exposed dates, including the known June failure. Do not choose only the10%or23%repeat, add component percentages, train immediately or open final date families.
+
+## 2026-10-11 — Give shared solver reuse to all graph controls
+
+Cross-week exact paths support common engineering, with strong magnitude heterogeneity and a preserved June failure. Next test existing MLPs rather than train or conflate common reuse with GNN. Known critical-action offline miss blocks unchanged semantic-stop deployment; it does not reject all possible MLP policies.

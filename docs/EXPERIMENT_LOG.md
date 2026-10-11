@@ -293,3 +293,7 @@ GRID30安全QP共享编译复用资格通过：9项手工/复制检查、153次�
 ## 2026-10-11 — GRID31 actual three-arm cache result
 
 GRID31六条完整三月回放及审计通过：DC+安全QP共享复用相对原完整控制，两组减少23.49%/21.33%，汇总点估计22.42%；12102步动作/观测/成本/67950次预测相同，所有6项配对solver状态/迭代比较无差别。局部数值资格与完整时间分开，原10.93%/0.39%及6.45%/6.51%全部保留。仅三月2重复，不是GNN独有或封存泛化证据。 Saved-data check only, no independent new solve/refit. GRID32frozen before3exposed-week compatibility outcomes.
+
+## 2026-10-11 — GRID32 other exposed-week compatibility
+
+GRID32三组其他已暴露周配对通过：2035-06-25_8减少63.26%；2035-09-03_4减少61.89%；2035-10-01_5减少74.46%。11870步动作/观测/成本逐步相同，六月共同1901步失败保留，未新增/提前失败；每周仅一次配对，不作为独立封存泛化或GNN贡献。 No new fits/final dates. GRID33existing-ranker protocol frozen before output.

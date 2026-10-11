@@ -1,3 +1,9 @@
+# 最新：GRID32其他开发周通过，GRID33现成排序对照已冻结
+
+[结果](protocols/GRID32_completed/outputs/grid32/GRID32_report.md) · [下一步](protocols/GRID33_before_results/outputs/grid33/design.json)
+
+GRID32三组其他已暴露周配对通过：2035-06-25_8减少63.26%；2035-09-03_4减少61.89%；2035-10-01_5减少74.46%。11870步动作/观测/成本逐步相同，六月共同1901步失败保留，未新增/提前失败；每周仅一次配对，不作为独立封存泛化或GNN贡献。
+
 # 最新：GRID31完整控制器共享提速通过，GRID32已冻结
 
 [完整报告](protocols/GRID31_completed/outputs/grid31/GRID31_report.md) · [跨开发周协议](protocols/GRID32_before_results/outputs/grid32/design.json)

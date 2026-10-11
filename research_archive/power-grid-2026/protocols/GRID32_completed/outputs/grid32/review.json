@@ -1,0 +1,584 @@
+{
+  "passed": true,
+  "runs": 6,
+  "paired_date_families": 3,
+  "physical_rows": 11870,
+  "public_forecasts": 36726,
+  "all_paths_identical_to_full": true,
+  "new_or_earlier_failure": 0,
+  "completed_pairs": 2,
+  "pairs": [
+    {
+      "week": "2035-06-25_8",
+      "original_s": 149.84402389997194,
+      "cached_s": 55.04561900000772,
+      "control_reduction": 0.632647218305127,
+      "saved_s": {
+        "controller_s": 94.79840489996423,
+        "run_dc": 42.095799800010354,
+        "compute_optimum_safe": 52.34533490001013,
+        "compute_optimum_unsafe": 0.265989500001524,
+        "all_forecast_s": 0.028643600078794407,
+        "remaining_s": 0.06263709986342292
+      },
+      "steps": 1901,
+      "complete": false,
+      "same_path": true,
+      "solver_path_mismatches": []
+    },
+    {
+      "week": "2035-09-03_4",
+      "original_s": 161.3788754000052,
+      "cached_s": 61.50330849992497,
+      "control_reduction": 0.6188887278618191,
+      "saved_s": {
+        "controller_s": 99.87556690008023,
+        "run_dc": 45.153106999974625,
+        "compute_optimum_safe": 54.47683750002216,
+        "compute_optimum_unsafe": 0.13863270000365446,
+        "all_forecast_s": 0.18638480002846336,
+        "remaining_s": -0.07939509994866967
+      },
+      "steps": 2017,
+      "complete": true,
+      "same_path": true,
+      "solver_path_mismatches": []
+    },
+    {
+      "week": "2035-10-01_5",
+      "original_s": 169.38666760001433,
+      "cached_s": 43.25432539999747,
+      "control_reduction": 0.7446414997540585,
+      "saved_s": {
+        "controller_s": 126.13234220001686,
+        "run_dc": 55.37442579998242,
+        "compute_optimum_safe": 70.02453209999476,
+        "compute_optimum_unsafe": 0.11490119999689341,
+        "all_forecast_s": 0.4978684000343492,
+        "remaining_s": 0.12061470000844565
+      },
+      "steps": 2017,
+      "complete": true,
+      "same_path": true,
+      "solver_path_mismatches": []
+    }
+  ],
+  "configurations": [
+    {
+      "week": "2035-06-25_8",
+      "method": "DC_AND_SAFE",
+      "steps": 1901,
+      "complete": false,
+      "cost": 1156085.3905029297,
+      "controller_s": 55.04561900000772,
+      "run_dc": 10.039619100005439,
+      "compute_optimum_safe": 12.207378900006006,
+      "compute_optimum_unsafe": 12.037966799996866,
+      "remaining_s": 6.430529200022647,
+      "all_forecast_s": 14.33012499997676,
+      "public_forecasts": 5897,
+      "n1_forecasts": 2440,
+      "n1_source_s": 8.383765600003244,
+      "component_calls": {
+        "compute_optimum_unsafe": 9,
+        "run_dc": 251,
+        "compute_optimum_safe": 251
+      },
+      "dc_cache_counts": [
+        {},
+        {
+          "calls": 252,
+          "hit": 227,
+          "miss": 25,
+          "eviction": 0
+        }
+      ],
+      "safe_cache_counts": [
+        {},
+        {
+          "calls": 251,
+          "hit": 226,
+          "miss": 25,
+          "eviction": 0
+        }
+      ],
+      "solver_stats": [
+        {
+          "phase": "compute_optimum_safe",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 251,
+          "wall_s": 10.491758799998934,
+          "statuses": {
+            "optimal": 251
+          },
+          "compilation_s": 7.9635961055755615,
+          "compilation_s_missing": 0,
+          "backend_s": 1.8468685,
+          "backend_s_missing": 0,
+          "iterations": 65375.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "compute_optimum_unsafe",
+          "owner": "base",
+          "solver": "OSQP",
+          "calls": 9,
+          "wall_s": 11.867360100000951,
+          "statuses": {
+            "optimal": 9
+          },
+          "compilation_s": 1.7304728031158447,
+          "compilation_s_missing": 0,
+          "backend_s": 10.073169799999999,
+          "backend_s_missing": 0,
+          "iterations": 417550.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "run_dc",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 251,
+          "wall_s": 9.331877400010853,
+          "statuses": {
+            "optimal": 251
+          },
+          "compilation_s": 8.62151026725769,
+          "compilation_s_missing": 0,
+          "backend_s": 0.1143044,
+          "backend_s_missing": 0,
+          "iterations": 12550.0,
+          "iterations_missing": 0
+        }
+      ]
+    },
+    {
+      "week": "2035-06-25_8",
+      "method": "ORIGINAL",
+      "steps": 1901,
+      "complete": false,
+      "cost": 1156085.3905029297,
+      "controller_s": 149.84402389997194,
+      "run_dc": 52.13541890001579,
+      "compute_optimum_safe": 64.55271380001614,
+      "compute_optimum_unsafe": 12.30395629999839,
+      "remaining_s": 6.49316629988607,
+      "all_forecast_s": 14.358768600055555,
+      "public_forecasts": 5897,
+      "n1_forecasts": 2440,
+      "n1_source_s": 8.478729800002839,
+      "component_calls": {
+        "compute_optimum_unsafe": 9,
+        "run_dc": 251,
+        "compute_optimum_safe": 251
+      },
+      "dc_cache_counts": [
+        {},
+        {}
+      ],
+      "safe_cache_counts": [
+        {},
+        {}
+      ],
+      "solver_stats": [
+        {
+          "phase": "compute_optimum_safe",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 251,
+          "wall_s": 59.74214410000059,
+          "statuses": {
+            "optimal": 251
+          },
+          "compilation_s": 56.20424556732178,
+          "compilation_s_missing": 0,
+          "backend_s": 1.8124685,
+          "backend_s_missing": 0,
+          "iterations": 65375.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "compute_optimum_unsafe",
+          "owner": "base",
+          "solver": "OSQP",
+          "calls": 9,
+          "wall_s": 11.864421799999036,
+          "statuses": {
+            "optimal": 9
+          },
+          "compilation_s": 1.8445370197296143,
+          "compilation_s_missing": 0,
+          "backend_s": 9.9510769,
+          "backend_s_missing": 0,
+          "iterations": 417550.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "run_dc",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 251,
+          "wall_s": 47.343047400016076,
+          "statuses": {
+            "optimal": 251
+          },
+          "compilation_s": 45.94214081764221,
+          "compilation_s_missing": 0,
+          "backend_s": 0.1121562,
+          "backend_s_missing": 0,
+          "iterations": 12550.0,
+          "iterations_missing": 0
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "ORIGINAL",
+      "steps": 2017,
+      "complete": true,
+      "cost": 1289912.7855377197,
+      "controller_s": 161.3788754000052,
+      "run_dc": 53.77930009998272,
+      "compute_optimum_safe": 64.71123410001383,
+      "compute_optimum_unsafe": 9.69403400000192,
+      "remaining_s": 8.148550300013085,
+      "all_forecast_s": 25.04575689999365,
+      "public_forecasts": 9300,
+      "n1_forecasts": 5638,
+      "n1_source_s": 18.847966699999233,
+      "component_calls": {
+        "compute_optimum_unsafe": 8,
+        "run_dc": 257,
+        "compute_optimum_safe": 257
+      },
+      "dc_cache_counts": [
+        {},
+        {}
+      ],
+      "safe_cache_counts": [
+        {},
+        {}
+      ],
+      "solver_stats": [
+        {
+          "phase": "compute_optimum_safe",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 257,
+          "wall_s": 60.44974919998276,
+          "statuses": {
+            "optimal": 257
+          },
+          "compilation_s": 57.45318102836609,
+          "compilation_s_missing": 0,
+          "backend_s": 1.215945,
+          "backend_s_missing": 0,
+          "iterations": 38925.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "compute_optimum_unsafe",
+          "owner": "base",
+          "solver": "OSQP",
+          "calls": 8,
+          "wall_s": 9.549021300001186,
+          "statuses": {
+            "optimal": 7,
+            "optimal_inaccurate": 1
+          },
+          "compilation_s": 2.097460985183716,
+          "compilation_s_missing": 0,
+          "backend_s": 7.3957756,
+          "backend_s_missing": 0,
+          "iterations": 309800.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "run_dc",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 257,
+          "wall_s": 49.01158430000214,
+          "statuses": {
+            "optimal": 257
+          },
+          "compilation_s": 47.56436228752136,
+          "compilation_s_missing": 0,
+          "backend_s": 0.1160196,
+          "backend_s_missing": 0,
+          "iterations": 12850.0,
+          "iterations_missing": 0
+        }
+      ]
+    },
+    {
+      "week": "2035-09-03_4",
+      "method": "DC_AND_SAFE",
+      "steps": 2017,
+      "complete": true,
+      "cost": 1289912.7855377197,
+      "controller_s": 61.50330849992497,
+      "run_dc": 8.626193100008095,
+      "compute_optimum_safe": 10.234396599991669,
+      "compute_optimum_unsafe": 9.555401299998266,
+      "remaining_s": 8.227945399961754,
+      "all_forecast_s": 24.859372099965185,
+      "public_forecasts": 9300,
+      "n1_forecasts": 5638,
+      "n1_source_s": 18.92544789999738,
+      "component_calls": {
+        "compute_optimum_unsafe": 8,
+        "run_dc": 257,
+        "compute_optimum_safe": 257
+      },
+      "dc_cache_counts": [
+        {},
+        {
+          "calls": 258,
+          "hit": 236,
+          "miss": 22,
+          "eviction": 0
+        }
+      ],
+      "safe_cache_counts": [
+        {},
+        {
+          "calls": 257,
+          "hit": 235,
+          "miss": 22,
+          "eviction": 0
+        }
+      ],
+      "solver_stats": [
+        {
+          "phase": "compute_optimum_safe",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 257,
+          "wall_s": 9.419361200025378,
+          "statuses": {
+            "optimal": 257
+          },
+          "compilation_s": 7.5032219886779785,
+          "compilation_s_missing": 0,
+          "backend_s": 1.2535258,
+          "backend_s_missing": 0,
+          "iterations": 38925.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "compute_optimum_unsafe",
+          "owner": "base",
+          "solver": "OSQP",
+          "calls": 8,
+          "wall_s": 9.410765900001934,
+          "statuses": {
+            "optimal": 7,
+            "optimal_inaccurate": 1
+          },
+          "compilation_s": 1.9481728076934814,
+          "compilation_s_missing": 0,
+          "backend_s": 7.4066857,
+          "backend_s_missing": 0,
+          "iterations": 309800.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "run_dc",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 257,
+          "wall_s": 7.745566799992957,
+          "statuses": {
+            "optimal": 257
+          },
+          "compilation_s": 7.022773027420044,
+          "compilation_s_missing": 0,
+          "backend_s": 0.1175429,
+          "backend_s_missing": 0,
+          "iterations": 12850.0,
+          "iterations_missing": 0
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "DC_AND_SAFE",
+      "steps": 2017,
+      "complete": true,
+      "cost": 1544822.9655151367,
+      "controller_s": 43.25432539999747,
+      "run_dc": 7.491779400013911,
+      "compute_optimum_safe": 16.401837399991564,
+      "compute_optimum_unsafe": 5.529533800001445,
+      "remaining_s": 5.93567630004145,
+      "all_forecast_s": 7.895498499949099,
+      "public_forecasts": 3166,
+      "n1_forecasts": 256,
+      "n1_source_s": 1.3581322000009095,
+      "component_calls": {
+        "compute_optimum_unsafe": 3,
+        "run_dc": 290,
+        "compute_optimum_safe": 290
+      },
+      "dc_cache_counts": [
+        {},
+        {
+          "calls": 291,
+          "hit": 273,
+          "miss": 18,
+          "eviction": 0
+        }
+      ],
+      "safe_cache_counts": [
+        {},
+        {
+          "calls": 290,
+          "hit": 272,
+          "miss": 18,
+          "eviction": 0
+        }
+      ],
+      "solver_stats": [
+        {
+          "phase": "compute_optimum_safe",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 290,
+          "wall_s": 15.892417800021576,
+          "statuses": {
+            "optimal": 288,
+            "optimal_inaccurate": 1,
+            "user_limit": 1
+          },
+          "compilation_s": 5.607214450836182,
+          "compilation_s_missing": 0,
+          "backend_s": 9.5294042,
+          "backend_s_missing": 0,
+          "iterations": 402850.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "compute_optimum_unsafe",
+          "owner": "base",
+          "solver": "OSQP",
+          "calls": 3,
+          "wall_s": 5.47537949999969,
+          "statuses": {
+            "optimal": 2,
+            "user_limit": 1
+          },
+          "compilation_s": 0.7530758380889893,
+          "compilation_s_missing": 0,
+          "backend_s": 4.7028169,
+          "backend_s_missing": 0,
+          "iterations": 192825.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "run_dc",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 290,
+          "wall_s": 6.624515699990297,
+          "statuses": {
+            "optimal": 290
+          },
+          "compilation_s": 5.818344831466675,
+          "compilation_s_missing": 0,
+          "backend_s": 0.1309795,
+          "backend_s_missing": 0,
+          "iterations": 14500.0,
+          "iterations_missing": 0
+        }
+      ]
+    },
+    {
+      "week": "2035-10-01_5",
+      "method": "ORIGINAL",
+      "steps": 2017,
+      "complete": true,
+      "cost": 1544822.9655151367,
+      "controller_s": 169.38666760001433,
+      "run_dc": 62.86620519999633,
+      "compute_optimum_safe": 86.42636949998632,
+      "compute_optimum_unsafe": 5.644434999998339,
+      "remaining_s": 6.056291000049896,
+      "all_forecast_s": 8.393366899983448,
+      "public_forecasts": 3166,
+      "n1_forecasts": 256,
+      "n1_source_s": 1.4899694999985513,
+      "component_calls": {
+        "compute_optimum_unsafe": 3,
+        "run_dc": 290,
+        "compute_optimum_safe": 290
+      },
+      "dc_cache_counts": [
+        {},
+        {}
+      ],
+      "safe_cache_counts": [
+        {},
+        {}
+      ],
+      "solver_stats": [
+        {
+          "phase": "compute_optimum_safe",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 290,
+          "wall_s": 80.29889320000075,
+          "statuses": {
+            "optimal": 288,
+            "optimal_inaccurate": 1,
+            "user_limit": 1
+          },
+          "compilation_s": 68.60668015480042,
+          "compilation_s_missing": 0,
+          "backend_s": 9.6608058,
+          "backend_s_missing": 0,
+          "iterations": 402850.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "compute_optimum_unsafe",
+          "owner": "base",
+          "solver": "OSQP",
+          "calls": 3,
+          "wall_s": 5.587783400000262,
+          "statuses": {
+            "optimal": 2,
+            "user_limit": 1
+          },
+          "compilation_s": 0.7240066528320312,
+          "compilation_s_missing": 0,
+          "backend_s": 4.8406573,
+          "backend_s_missing": 0,
+          "iterations": 192825.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "run_dc",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 290,
+          "wall_s": 57.07187129995691,
+          "statuses": {
+            "optimal": 290
+          },
+          "compilation_s": 55.44435524940491,
+          "compilation_s_missing": 0,
+          "backend_s": 0.13723950000000001,
+          "backend_s_missing": 0,
+          "iterations": 14500.0,
+          "iterations_missing": 0
+        }
+      ]
+    }
+  ],
+  "pooled_control_reduction": 0.667498810040993,
+  "new_fits": 0,
+  "reserved_evaluations": 0,
+  "warning": "3already-exposed development date pairs,one timed repeat each. Known June failure retained. No independent final generalization/GNN attribution or universal runtime guarantee."
+}

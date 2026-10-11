@@ -1,0 +1,113 @@
+{
+  "stage": "GRID32_SHARED_CACHE_EXPOSED_WEEK_COMPATIBILITY",
+  "weeks": [
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "methods": [
+    {
+      "method": "ORIGINAL",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": false,
+      "cache_safe": false
+    },
+    {
+      "method": "DC_AND_SAFE",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true
+    }
+  ],
+  "execution_order": [
+    {
+      "method": "DC_AND_SAFE",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true,
+      "repeat": 0,
+      "week": "2035-06-25_8"
+    },
+    {
+      "method": "ORIGINAL",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": false,
+      "cache_safe": false,
+      "repeat": 0,
+      "week": "2035-06-25_8"
+    },
+    {
+      "method": "ORIGINAL",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": false,
+      "cache_safe": false,
+      "repeat": 0,
+      "week": "2035-09-03_4"
+    },
+    {
+      "method": "DC_AND_SAFE",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true,
+      "repeat": 0,
+      "week": "2035-09-03_4"
+    },
+    {
+      "method": "DC_AND_SAFE",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true,
+      "repeat": 0,
+      "week": "2035-10-01_5"
+    },
+    {
+      "method": "ORIGINAL",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": false,
+      "cache_safe": false,
+      "repeat": 0,
+      "week": "2035-10-01_5"
+    }
+  ],
+  "repeats": 2,
+  "serial_workers": 1,
+  "timing": "Fresh processes, single thread; perf_counter full control; archive/AC physical step/setup separate. Balanced paired orders ORIGINAL,CACHED/CACHED,ORIGINAL. No new learned component.",
+  "gate": "Require exact historical delivered observation/action/cost path. Any difference stops this four-run pilot before widening. Local same-state shadow is not sufficient.",
+  "caps": {
+    "episode_s": 1200,
+    "wall_s": 3000,
+    "physical_steps": 12500,
+    "public_forecasts": 90000
+  },
+  "new_fits": 0,
+  "reserved_evaluations": 0,
+  "purpose": "Check whether exact control/cost compatibility of shared DC+safeQP reuse holds beyond March, across three previously exposed dev weeks; report date-specific gain without training/test-date changes.",
+  "change": "No mathematical/model/control change: shared DC cache versus original. Add identical low-overhead component/statistics records to both arms.",
+  "analysis": "All3date pairs, single paired repeat. Report per-date/pooled control/component sums, same physical paths, actual cache reuse and actual native solver states/iterations. March prior2repeats not merged as independent dates.",
+  "quality_gate": "Each original/cached path must equal sealed corresponding FULL actions/observations/cost; retain shared June failure at1901, no earlier/new failure. Any mismatch stops before speed claim.",
+  "scope": "Other3exposed development dates, same fixed GNN0/K128protected guard/cadence. Two overlap original training; no independent final generalization. Shared optimization must be applied to all strong comparators."
+}

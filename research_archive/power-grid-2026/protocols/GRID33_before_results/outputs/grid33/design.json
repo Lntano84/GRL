@@ -1,0 +1,55 @@
+{
+  "stage": "GRID33_EXISTING_RANKERS_MATCHED_STATE_SCREEN",
+  "weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "rankers": [
+    {
+      "method": "GNN0",
+      "kind": "gnn",
+      "seed": 0,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "method": "GNN1",
+      "kind": "gnn",
+      "seed": 1,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    },
+    {
+      "method": "MLP0",
+      "kind": "mlp",
+      "seed": 0,
+      "checkpoint": "outputs/grid21/models/mlp_seed0/final.pt"
+    },
+    {
+      "method": "MLP1",
+      "kind": "mlp",
+      "seed": 1,
+      "checkpoint": "outputs/grid21/models/mlp_seed1/final.pt"
+    },
+    {
+      "method": "PPO",
+      "checkpoint": null
+    }
+  ],
+  "policy": "PATIENCE64",
+  "initial": 128,
+  "batch": 64,
+  "minimum": 256,
+  "patience": 2,
+  "safe": 0.9,
+  "input": "Same26 public feature/prior snapshots from original exact-path guarded GNN0, with eligible representative/alias sets shared. Privileged FULL outcomes exposed only by the diagnostic dispatcher after an action is selected.",
+  "goal": "Measure existing graph ranker increment over same-information MLP and author PPO, after common optimizer engineering. No shared compilation saving is credited to GNN.",
+  "gate": "A ranker missing the known March step1733 FULL action cannot enter this unchanged local-stop closed-loop pilot. Passing is numeric qualification only, not proof of cost/survival, architecture necessity or unseen generalization.",
+  "rule": "Report all4existing supervised checkpoints, never select a new seed or fit. Matched26states are exposed development diagnostics, not independent observations.",
+  "caps": {
+    "wall_s": 180,
+    "new_fits": 0,
+    "new_forecasts": 0,
+    "reserved_evaluations": 0
+  }
+}

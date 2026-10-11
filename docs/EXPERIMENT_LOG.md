@@ -257,3 +257,7 @@ GRID28完成12/12条开发回放，保存数据审计通过。GNN0查询节省50
 ## 2026-10-11 — GRID29 V0 qualification blocked, V1 frozen
 
 First real cached model rejected by is_dcp(dpp=True); no cached comparison/closed trajectory. Actual reactance is a Parameter. Preserve failed code/log and initial protocol; freeze V1 numeric reciprocal and numeric reactance-key invalidation plus real Parameter/triangle checks before rerun. [Revision protocol](../research_archive/power-grid-2026/protocols/GRID29_V1_before_results/README.md).
+
+## 2026-10-11 — GRID29 V1 shadow qualification and live protocol
+
+Six manual checks and130 stored exposed states pass, same convergence/finite flags and max flow difference0MW. Shadow time reduction39.43%, no new AC replay/refit; unified zero storage accumulator limits scope. Freeze4 original/cache protectedMarch live trajectories in balanced2-repeat order before runs. No whole-controller claim yet. [Snapshot](../research_archive/power-grid-2026/protocols/GRID29_PILOT_before_runs/README.md).

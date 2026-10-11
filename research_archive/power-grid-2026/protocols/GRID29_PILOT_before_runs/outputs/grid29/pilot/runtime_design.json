@@ -1,0 +1,78 @@
+{
+  "stage": "GRID29_SHARED_DC_PROGRAM_CACHE_PILOT",
+  "weeks": [
+    "2035-03-05_0"
+  ],
+  "methods": [
+    {
+      "method": "ORIGINAL",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": false
+    },
+    {
+      "method": "CACHED",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true
+    }
+  ],
+  "execution_order": [
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "ORIGINAL",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": false
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "method": "CACHED",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "CACHED",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": true
+    },
+    {
+      "repeat": 1,
+      "week": "2035-03-05_0",
+      "method": "ORIGINAL",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED",
+      "cache_dc": false
+    }
+  ],
+  "repeats": 2,
+  "serial_workers": 1,
+  "timing": "Fresh processes, single thread; perf_counter full control; archive/AC physical step/setup separate. Balanced paired orders ORIGINAL,CACHED/CACHED,ORIGINAL. No new learned component.",
+  "gate": "Require exact historical delivered observation/action/cost path. Any difference stops this four-run pilot before widening. Local same-state shadow is not sufficient.",
+  "caps": {
+    "episode_s": 1200,
+    "wall_s": 1800,
+    "physical_steps": 9000,
+    "public_forecasts": 60000
+  },
+  "new_fits": 0,
+  "reserved_evaluations": 0
+}

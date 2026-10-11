@@ -1,0 +1,61 @@
+{
+  "passed_saved_engineering": true,
+  "all_rankers_qualified": false,
+  "results": [
+    {
+      "method": "FULL",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.0,
+      "passed": true,
+      "controller_s": 139.16762650001328,
+      "queries": 9578
+    },
+    {
+      "method": "LOCAL_GNN0",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.001361164687517435,
+      "passed": true,
+      "controller_s": 126.70081420003407,
+      "queries": 3295
+    },
+    {
+      "method": "LOCAL_GNN1",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.0,
+      "passed": true,
+      "controller_s": 127.2111798000551,
+      "queries": 3613
+    },
+    {
+      "method": "SOFTGNN0",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.013740632698938689,
+      "passed": false,
+      "controller_s": 122.05184319975524,
+      "queries": 3911
+    },
+    {
+      "method": "SOFTGNN1",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.013740632698938689,
+      "passed": false,
+      "controller_s": 121.80050039997877,
+      "queries": 3818
+    },
+    {
+      "method": "LOCAL_PPO",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.001361164687517435,
+      "passed": true,
+      "controller_s": 127.77695530002529,
+      "queries": 3378
+    }
+  ],
+  "warning": "6March pilot trajectories; .5%quality screening,not equivalence; no seed selection or final dates."
+}

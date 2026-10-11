@@ -1,0 +1,26 @@
+{
+  "stage": "GRID35_NONLEARNING_ORDER_SCREEN",
+  "weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "rules": [
+    "STATIC_ID",
+    "LOCAL_STRESS"
+  ],
+  "static_rule": "Eligible representative pool IDs ascending; no learned weights or outcomes.",
+  "stress_rule": "Max current incident line rho on the two public busbars of the candidate original substation, descending; pool ID ascending ties. All candidates at a substation share its legal current-load score; no action forecast/sensitivity information is read.",
+  "public_subids_source": "outputs/grid28/offline.json public_subids: static public candidate-to-substation mapping, not learned weights.",
+  "stopping": "Unchanged GRID28 local_complete PATIENCE64,initial128,batch64,min256,patience2,safe.9,semanticcompletion of incumbent substation including aliases.",
+  "source": "Same26 exposed FULL-state feedback and legal public inputs as GRID33. FULL feedback is consulted only by dispatcher for chosen queries; not an online strategy result.",
+  "gate": "Known March1733 FULL action must be recovered for unchanged closed-loop eligibility. A passed screen does not prove closed-loop cost; a failure rejects only this order/stopping configuration.",
+  "comparisons": "Report both controls and all5existing GRID33 rankers, never choose a better cheap rule to hide the other. No declaration of GNN architecture advantage from a small screen.",
+  "caps": {
+    "wall_s": 120,
+    "new_forecasts": 0,
+    "new_fits": 0,
+    "reserved_evaluations": 0
+  }
+}

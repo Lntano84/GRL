@@ -1,3 +1,9 @@
+# 最新：共有速度与GNN增量已分开，廉价顺序闭环资格待查
+
+[GRID35结果](protocols/GRID35_completed/outputs/grid35/GRID35_report.md) · [原非学习部分](protocols/GRID35B_completed/outputs/grid35b/GRID35B_report.md) · [实际资格试点](protocols/GRID36_before_results/outputs/grid36/design.json)
+
+GRID35/35B廉价顺序独立诊断通过：STATIC_ID/LOCAL_STRESS/原既有PHYSICS_TAIL查询7879/6965/6748，同FULL选择21/17/17（共26状态）；均找回1733已知关键动作，但最大rho差更大。便宜规则省查询不等于长期质量，GRID36三条三月闭环质量试点已冻结。
+
 # 最新：GRID34公平闭环完成，共有提速与模型增量分开
 
 [完整结果](protocols/GRID34_completed/outputs/grid34/GRID34_report.md) · [独立保存数据审计](protocols/GRID34_completed/outputs/grid34/review.json)

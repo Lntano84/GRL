@@ -1,0 +1,13 @@
+{
+  "stage": "GRID35B_GEOMETRIC_PRIOR_COMPONENT",
+  "rule": "PHYSICS_TAIL",
+  "reason": "Source inspection identifies existing public_prior tail as a stronger nonlearned control: distance from endpoints of top3 currently loaded live lines,then local maximum rho,then candidateID. Remove only original PPO prefix; preserve alias canonicalization.",
+  "inputs": "Current public graph edges/line rho and known candidate-to-substation mapping; no learned weights or action forecast values in order.",
+  "feedback": "Same26exposed FULL feedback snapshots dispatched only after choosing next query; unchanged PATIENCE64/semanticcompletion.",
+  "caps": {
+    "new_fits": 0,
+    "new_forecasts": 0,
+    "reserved_evaluations": 0
+  },
+  "gate": "Known1733critical FULL choice required for unchanged local-policy eligibility; no closed-loop assertion from passing."
+}

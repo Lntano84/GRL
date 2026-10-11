@@ -1,0 +1,85 @@
+{
+  "stage": "GRID36_CHEAP_ORDER_CLOSED_LOOP_QUALITY",
+  "weeks": [
+    "2035-03-05_0"
+  ],
+  "methods": [
+    {
+      "method": "STATIC_ID",
+      "rule": "STATIC_ID",
+      "checkpoint": null,
+      "budget": 128,
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    },
+    {
+      "method": "PHYSICS_TAIL",
+      "rule": "PHYSICS_TAIL",
+      "checkpoint": null,
+      "budget": 128,
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    },
+    {
+      "method": "LOCAL_STRESS",
+      "rule": "LOCAL_STRESS",
+      "checkpoint": null,
+      "budget": 128,
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    }
+  ],
+  "execution_order": [
+    {
+      "method": "STATIC_ID",
+      "rule": "STATIC_ID",
+      "checkpoint": null,
+      "budget": 128,
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-03-05_0",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "PHYSICS_TAIL",
+      "rule": "PHYSICS_TAIL",
+      "checkpoint": null,
+      "budget": 128,
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-03-05_0",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "LOCAL_STRESS",
+      "rule": "LOCAL_STRESS",
+      "checkpoint": null,
+      "budget": 128,
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-03-05_0",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    }
+  ],
+  "timing": "Fresh single-thread serial processes,same GRID34component timers/commonDC+safeQPcache. All features/ranking/queries/control accounted. Cross-batch FULL/GNN timing comparison is descriptive only,not certified speed.",
+  "reference": "GRID34 r0 March cachedFULL and bothGNNs: only deterministic trajectory/cost/queries used for qualification,not selecting speed winners.",
+  "quality_gate": "All3rules retained; per-rule closed-loop eligibility requires2017complete,zeroillegal/ambiguity,and cost<=1.005*FULL. Failingrule not expanded unchanged; passingrule only qualifies further controlled comparison. No automatic changingorders/thresholds or modeltraining.",
+  "scope": "One exposed March pilot percheaprule,not independent validation. Previous GNN/MLP/PPO results retained. No learning weights/no author PPO ranking within these cheap orders; author basecontrol otherwise unchanged.",
+  "caps": {
+    "episode_s": 1500,
+    "wall_s": 5000,
+    "physical_steps": 7000,
+    "public_forecasts": 90000,
+    "new_fits": 0,
+    "reserved_evaluations": 0
+  }
+}

@@ -114,3 +114,7 @@ Human authorized continued speed validation. Preserve weights/rules and use bala
 ## 2026-10-10 — Separate source acceleration from whole control and graph increment
 
 Keep all48 GRID26 repetitions rather than the favorable old GRID25 pilot. Exact quality preservation and17%–20% source acceleration are developmental evidence;0.88%–1.40% whole-controller point estimates with a reversed repeat do not establish stable significant total acceleration. Non-search time decomposition is accounting, not identified causality. PPO shares the same query reductions; do not label its non-search variation a graph advantage. Next check static action metadata caching with exact rank equivalence and the same optimization for PPO. Preserve checkpoints, guard and hidden families; no new training is implied by engineering optimization.
+
+## 2026-10-11 — Improve the costly fallback decision before network capacity
+
+The objective is useful same-quality acceleration,not to force GNN attribution.Whole-controller gains remain small and repeated timing reverses;PPO shares present savings.Offline diagnosis identifies16 fallback states with no safe candidate even in the full pool;under unchangedK128/guard better ranking cannot reduce their queries.Prioritize a separately evaluated legal staged-search/stopping design rather than blind depth/GPU/RL changes.Preserve protected baseline and allweights;coverage of privilegedFULL winners is not an online certificate.No guard was removed or threshold changed in this review.

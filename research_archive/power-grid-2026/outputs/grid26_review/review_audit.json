@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "method": "GNN0_128_GUARD",
+      "fallback_calls": 16,
+      "same_prefix_choice": 10,
+      "winner_in_shortlist": 8
+    },
+    {
+      "method": "GNN1_128_GUARD",
+      "fallback_calls": 16,
+      "same_prefix_choice": 9,
+      "winner_in_shortlist": 7
+    },
+    {
+      "method": "OLDNN128_GUARD",
+      "fallback_calls": 16,
+      "same_prefix_choice": 7,
+      "winner_in_shortlist": 5
+    }
+  ],
+  "scope": "Independent read of own shortlist-phase feedback rather than FULL-filtered prefix; different min/max implementation. No new simulation or rank replay.",
+  "new_forecasts": 0,
+  "new_fits": 0
+}

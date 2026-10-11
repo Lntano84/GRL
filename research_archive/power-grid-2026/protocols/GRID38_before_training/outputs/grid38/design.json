@@ -1,0 +1,71 @@
+{
+  "stage": "GRID38_ONE_TARGET_ALIGNMENT_REVISION",
+  "training_weeks": [
+    "2035-01-29_4",
+    "2035-04-16_2",
+    "2035-07-23_10",
+    "2035-10-29_15",
+    "2035-02-05_0",
+    "2035-03-05_12",
+    "2035-01-08_5",
+    "2035-03-12_8",
+    "2035-06-11_1",
+    "2035-06-25_9",
+    "2035-05-07_14",
+    "2035-04-30_12",
+    "2035-09-10_1",
+    "2035-09-17_8",
+    "2035-08-27_14",
+    "2035-08-06_6",
+    "2035-11-05_8",
+    "2035-11-26_0",
+    "2035-12-24_5",
+    "2035-12-03_7"
+  ],
+  "development_weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "change": "Only supervised target changes: q_new=.5*q_original+.5*Uniform(argmax FP32 reward among canonical strictly admissible candidates). Retain all exact reward ties; do not choose a label using arbitrary pool ID. Invalid candidates receive zero target mass.",
+  "hypothesis": "Broad soft target may dilute accurate-best-action ranking for a simulator-screened search. Concentrating half the target on reward-optimal classes may improve early recovery of the exhaustive choice, while retaining half the original multi-action soft supervision. This is a testable model configuration, not novel learning theory or evidence that soft targets are wrong.",
+  "unchanged": "Existing167 cached training states/148 usable, legal feature arrays and public prior, same GNN/MLP architecture, exact original initial weights, residual bound2, KLweight0.1,64epochs,batch8,Adam and shuffle seeds. No new teacher queries,RL,cutoff/stopping/guard changes.",
+  "seeds": [
+    0,
+    1
+  ],
+  "kinds": [
+    "gnn",
+    "mlp"
+  ],
+  "epochs": 64,
+  "batch_size": 8,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "prior_KL_weight": 0.1,
+  "mixture": 0.5,
+  "evaluation": "After all4 fits and final checkpoints are saved, re-infer the same26 exposed FULL-state cached feedback, compare original/new GNN and original/new MLP under unchanged semantic stop. Keep both seeds and all results. Known1733 safety regression blocks unchanged dispatch; no selecting the best seed/checkpoint. Actual closed-loop quality/time must then be measured, offline ranking is not a deployment claim.",
+  "scope": "Development iteration only; two dev dates overlap oldtraining; author PPO original training identity unknown. Final8 date families remain sealed. No sweeps or additional cheap-rule/algorithm portfolio expansion.",
+  "references": [
+    {
+      "url": "https://arxiv.org/html/2503.15190v2",
+      "use": "Soft multi-action imitation and simulation screening are existing approaches; paper cautions single hard-label imitation. Keep multiple candidates rather than assuming hard labels superior."
+    },
+    {
+      "url": "https://arxiv.org/html/2407.19865v2",
+      "use": "Imitation plus small simulation budgets has already been studied; our target revision alone is not a paper contribution."
+    },
+    {
+      "url": "https://arxiv.org/html/2604.01830v1",
+      "use": "GNN risk prior, TopK and reweighted RL policies exist; do not claim GNN+RL/prior composition itself as new."
+    }
+  ],
+  "caps": {
+    "training_s": 1200,
+    "fits": 4,
+    "new_forecasts": 0,
+    "reserved_evaluations": 0
+  },
+  "execution": "Run training only after the GRID37 serial timing comparison has finished; avoid training workload concurrent with benchmark workers."
+}

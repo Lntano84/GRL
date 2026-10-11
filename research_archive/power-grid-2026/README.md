@@ -1,3 +1,9 @@
+# 最新：主对照收敛，单一模型改进已冻结
+
+[训练目标诊断](protocols/GRID_target_alignment/outputs/grid_target_audit/TARGET_ALIGNMENT.md) · [GRID38训练方案](protocols/GRID38_before_training/outputs/grid38/design.json)
+
+按用户投稿目标收敛：主实验只保留2–3个最近且可用的成熟方法，MLP/静态顺序仅少量归因消融，不再扩规则组合。GRID37当前已启动批次跑完保留。训练集167状态/148有效目标峰值均与实际奖励最优对齐，没有代码错误；最优集合原目标均值权重24.44%。GRID38冻结仅改目标为一半原soft标签、一半奖励最优集合均匀标签，原初始化/数据顺序/网络/先验/训练轮数全部相同，两GNN两MLP公平处理；不覆盖原模型、不扫参数。
+
 # 最新：静态规则资格通过，公平比较与训练目标核对继续
 
 [GRID36完整结果](protocols/GRID36_completed/outputs/grid36/GRID36_report.md) · [10%幅度分解](protocols/GRID_search_speed_explanation/outputs/grid_speed_review/GRID34_INCREMENT.md) · [GRID37冻结](protocols/GRID37_before_results/outputs/grid37/design.json)

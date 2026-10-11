@@ -1,3 +1,9 @@
+# 最新：GRID39 before
+
+[方案/报告](protocols/GRID39_before_results/outputs/grid39/design.json)
+
+GRID39已冻结12条有限闭环评价：一版目标修改的两个GNN种子与新运行FULL，4个已暴露开发周、单次计时、轮换顺序。控制/停止/守卫/缓存/物理求解不变；原模型和GRID37结果保留，新旧时间不作配对比较。不扩大规则或消融清单，最终8日期仍封存。
+
 # 最新：GRID38完成
 
 [完整报告](protocols/GRID38_completed/outputs/grid38/GRID38_report.md)

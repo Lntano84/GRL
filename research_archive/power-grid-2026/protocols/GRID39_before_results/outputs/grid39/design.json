@@ -1,0 +1,203 @@
+{
+  "stage": "GRID39_ONE_REVISION_CLOSED_LOOP",
+  "weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "methods": [
+    {
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null,
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true
+    },
+    {
+      "method": "REVISED_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid38/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    },
+    {
+      "method": "REVISED_GNN1",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid38/models/gnn_seed1/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    }
+  ],
+  "execution_order": [
+    {
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null,
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-03-05_0",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "REVISED_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid38/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-03-05_0",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "REVISED_GNN1",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid38/models/gnn_seed1/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-03-05_0",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "REVISED_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid38/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-06-25_8",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "REVISED_GNN1",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid38/models/gnn_seed1/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-06-25_8",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null,
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-06-25_8",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "REVISED_GNN1",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid38/models/gnn_seed1/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-09-03_4",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null,
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-09-03_4",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "REVISED_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid38/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-09-03_4",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null,
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-10-01_5",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "REVISED_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid38/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-10-01_5",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "REVISED_GNN1",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid38/models/gnn_seed1/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-10-01_5",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    }
+  ],
+  "repeats": 1,
+  "serial_workers": 1,
+  "timing": "One fresh serial single-thread process per arm/week; rotate3arm order across4exposed dates. Same DC+safeQP cache and component instrumentation. All feature/model/forecast/solve/guard time included in controller; setup/export/physical stepping separate. Single timing repeat is a development point estimate.",
+  "changes": "Only load the two GRID38 GNN final checkpoints. All control/search/canonicalization/cadence/solver/guard settings remain unchanged. No new algorithms or rule sweep.",
+  "scope": "12development runs, not final confirmation. GRID37 original models remain a historical quality/query reference, not a paired timing opponent. MLP revision already retained in offline ablation; no extra closed-loop ablation batch now.",
+  "priorities": [
+    "No new or earlier failure versus fresh FULL",
+    "Comparable cost increase <=0.5% relative to fresh FULL",
+    "Report both seeds and all dates; do not choose best seed",
+    "Read actual quality before interpreting offline ranking; no stable speed claim from one timing repeat"
+  ],
+  "caps": {
+    "episode_s": 1500,
+    "wall_s": 5000,
+    "physical_steps": 26000,
+    "public_forecasts": 250000,
+    "new_fits": 0,
+    "reserved_evaluations": 0
+  }
+}

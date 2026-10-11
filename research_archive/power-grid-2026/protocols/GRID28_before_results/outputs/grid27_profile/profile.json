@@ -1,0 +1,446 @@
+{
+  "passed": true,
+  "summary": {
+    "repeat": 0,
+    "week": "2035-03-05_0",
+    "method": "FULL_PROFILE",
+    "rule": "FULL",
+    "budget": null,
+    "checkpoint": null,
+    "steps": 2017,
+    "complete": true,
+    "cost": 2964114.382446289,
+    "controller_s": 184.11912809999922,
+    "controller_cpu_s": 183.21875,
+    "physical_s": 2.770112299995617,
+    "setup_s": 5.4420390999998745,
+    "preloop_import_s": 0.02793140000017047,
+    "loop_wall_s": 189.36999570000012,
+    "bookkeeping_s": 2.3634494999973867,
+    "final_save_s": 0.6660728000001654,
+    "public_forecasts": 14344,
+    "n1_calls": 11,
+    "n1_forecasts": 9578,
+    "fallbacks": 0,
+    "all_forecast_s": 37.234245999976565,
+    "n1_source_s": 27.697843499999863,
+    "n1_forecast_s": 26.56989549999753,
+    "n1_prepare_s": 1.0322659999994812,
+    "prior_s": 0.0,
+    "feature_s": 0.0,
+    "forward_rank_s": 0.0,
+    "illegal": 0,
+    "ambiguous": 0,
+    "exception_steps": 0,
+    "exact_full_trajectory": true,
+    "wall_s": 195.5073986,
+    "new_model_fits": 0
+  },
+  "records": [
+    {
+      "component": "base_optimizer.solve_problem",
+      "calls": 34,
+      "inclusive_s": 67.96855440000013,
+      "self_s": 67.96855440000013,
+      "share_of_controller": 0.3691665699070671
+    },
+    {
+      "component": "restoration_optimizer.solve_problem",
+      "calls": 306,
+      "inclusive_s": 65.30616299999701,
+      "self_s": 65.30616299999701,
+      "share_of_controller": 0.35470597250926184
+    },
+    {
+      "component": "n1_search",
+      "calls": 11,
+      "inclusive_s": 27.697964299999967,
+      "self_s": 27.697964299999967,
+      "share_of_controller": 0.1504396049659012
+    },
+    {
+      "component": "base_agent",
+      "calls": 2017,
+      "inclusive_s": 108.6501441000039,
+      "self_s": 11.888734700004306,
+      "share_of_controller": 0.0645728520854889
+    },
+    {
+      "component": "controller",
+      "calls": 2017,
+      "inclusive_s": 184.11351390000004,
+      "self_s": 2.9245276999961334,
+      "share_of_controller": 0.015884372841770703
+    },
+    {
+      "component": "restoration_optimizer.aux_compute_kcl",
+      "calls": 306,
+      "inclusive_s": 2.1231652000014947,
+      "self_s": 2.1231652000014947,
+      "share_of_controller": 0.011531827050754551
+    },
+    {
+      "component": "restoration_optimizer.compute_optimum_safe",
+      "calls": 153,
+      "inclusive_s": 40.348167599999215,
+      "self_s": 1.9709721000006084,
+      "share_of_controller": 0.010705200602879852
+    },
+    {
+      "component": "restoration_optimizer.run_dc",
+      "calls": 153,
+      "inclusive_s": 31.145752399999083,
+      "self_s": 1.9162437999993926,
+      "share_of_controller": 0.010407947572171084
+    },
+    {
+      "component": "restoration_optimizer.update_parameters",
+      "calls": 153,
+      "inclusive_s": 1.0449221000017133,
+      "self_s": 0.8633393000047818,
+      "share_of_controller": 0.004689168555403806
+    },
+    {
+      "component": "base_optimizer.compute_optimum_unsafe",
+      "calls": 34,
+      "inclusive_s": 68.88965780000012,
+      "self_s": 0.7428819999993266,
+      "share_of_controller": 0.0040349129418214115
+    },
+    {
+      "component": "restoration_optimizer.update_inj_param",
+      "calls": 306,
+      "inclusive_s": 0.3210649999980433,
+      "self_s": 0.3210649999980433,
+      "share_of_controller": 0.001743842660959844
+    },
+    {
+      "component": "base_optimizer.aux_compute_kcl",
+      "calls": 34,
+      "inclusive_s": 0.1782214000006661,
+      "self_s": 0.1782214000006661,
+      "share_of_controller": 0.000967997385012519
+    },
+    {
+      "component": "base_optimizer.update_parameters",
+      "calls": 34,
+      "inclusive_s": 0.17378729999950338,
+      "self_s": 0.13367350000089573,
+      "share_of_controller": 0.0007260385029286854
+    },
+    {
+      "component": "base_optimizer.update_inj_param",
+      "calls": 34,
+      "inclusive_s": 0.03572099999882994,
+      "self_s": 0.03572099999882994,
+      "share_of_controller": 0.00019401617644553538
+    },
+    {
+      "component": "restoration_optimizer.update_topo_param",
+      "calls": 306,
+      "inclusive_s": 0.03504670000097576,
+      "self_s": 0.03504670000097576,
+      "share_of_controller": 0.00019035376197323097
+    },
+    {
+      "component": "base_optimizer.update_topo_param",
+      "calls": 34,
+      "inclusive_s": 0.0036033999997471255,
+      "self_s": 0.0036033999997471255,
+      "share_of_controller": 1.9571621460140547e-05
+    },
+    {
+      "component": "restoration_optimizer.update_th_lim_param",
+      "calls": 153,
+      "inclusive_s": 0.00284699999770055,
+      "self_s": 0.00284699999770055,
+      "share_of_controller": 1.5463286411701848e-05
+    },
+    {
+      "component": "base_optimizer.update_th_lim_param",
+      "calls": 34,
+      "inclusive_s": 0.0007894000000305823,
+      "self_s": 0.0007894000000305823,
+      "share_of_controller": 4.287572287927433e-06
+    }
+  ],
+  "solver_records": [
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.18860793113708496,
+      "solver_time_s": 2.4137757,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal_inaccurate",
+      "compilation_s": 0.3512866497039795,
+      "solver_time_s": 2.4196327,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.18660354614257812,
+      "solver_time_s": 1.3710331000000002,
+      "num_iters": 57650
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.18663716316223145,
+      "solver_time_s": 2.4242491,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.18698382377624512,
+      "solver_time_s": 2.4152493,
+      "num_iters": 96750
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.18483495712280273,
+      "solver_time_s": 1.0339889,
+      "num_iters": 42625
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.32216787338256836,
+      "solver_time_s": 2.3922285999999997,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.18741226196289062,
+      "solver_time_s": 0.0863003,
+      "num_iters": 3550
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.3251380920410156,
+      "solver_time_s": 0.2199047,
+      "num_iters": 9225
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.18724298477172852,
+      "solver_time_s": 2.3806905,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.33887457847595215,
+      "solver_time_s": 1.9048735,
+      "num_iters": 78750
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.3359410762786865,
+      "solver_time_s": 1.3795227,
+      "num_iters": 58400
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.18347406387329102,
+      "solver_time_s": 2.4412226,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.18645453453063965,
+      "solver_time_s": 1.0909967,
+      "num_iters": 45775
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.1889657974243164,
+      "solver_time_s": 2.4096622,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.35084056854248047,
+      "solver_time_s": 2.3950378999999997,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.18591785430908203,
+      "solver_time_s": 2.3439689,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.3292098045349121,
+      "solver_time_s": 2.2272098,
+      "num_iters": 94750
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.1805555820465088,
+      "solver_time_s": 2.432516,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.18259000778198242,
+      "solver_time_s": 0.20836000000000002,
+      "num_iters": 8700
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.18117547035217285,
+      "solver_time_s": 0.6480866,
+      "num_iters": 26900
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.33559346199035645,
+      "solver_time_s": 1.8757660999999999,
+      "num_iters": 79650
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.18234825134277344,
+      "solver_time_s": 0.13878539999999998,
+      "num_iters": 5825
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal_inaccurate",
+      "compilation_s": 0.18076229095458984,
+      "solver_time_s": 2.3949456,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.18341732025146484,
+      "solver_time_s": 1.6937621999999999,
+      "num_iters": 70300
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.18476390838623047,
+      "solver_time_s": 1.1128821,
+      "num_iters": 47450
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.3678708076477051,
+      "solver_time_s": 1.6728912999999999,
+      "num_iters": 68825
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.18445706367492676,
+      "solver_time_s": 2.3792358,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.35332798957824707,
+      "solver_time_s": 2.3894415,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.18414664268493652,
+      "solver_time_s": 0.1834652,
+      "num_iters": 7525
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal",
+      "compilation_s": 0.1811220645904541,
+      "solver_time_s": 1.9715659,
+      "num_iters": 81850
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.3484230041503906,
+      "solver_time_s": 2.3990096,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "user_limit",
+      "compilation_s": 0.18082261085510254,
+      "solver_time_s": 2.3645768,
+      "num_iters": 100000
+    },
+    {
+      "owner": "base_optimizer",
+      "solver": "OSQP",
+      "status": "optimal_inaccurate",
+      "compilation_s": 0.35325169563293457,
+      "solver_time_s": 2.3369183,
+      "num_iters": 100000
+    }
+  ],
+  "self_time_sum_s": 184.11351390000004,
+  "root_time_s": 184.11351390000004,
+  "instrumentation": "Class wrappers preserve original calls and parent/child timing. Instrumented single development run, not speed/causal evidence.",
+  "new_fits": 0,
+  "reserved_evaluations": 0
+}

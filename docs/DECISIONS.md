@@ -118,3 +118,7 @@ Keep all48 GRID26 repetitions rather than the favorable old GRID25 pilot. Exact 
 ## 2026-10-11 — Improve the costly fallback decision before network capacity
 
 The objective is useful same-quality acceleration,not to force GNN attribution.Whole-controller gains remain small and repeated timing reverses;PPO shares present savings.Offline diagnosis identifies16 fallback states with no safe candidate even in the full pool;under unchangedK128/guard better ranking cannot reduce their queries.Prioritize a separately evaluated legal staged-search/stopping design rather than blind depth/GPU/RL changes.Preserve protected baseline and allweights;coverage of privilegedFULL winners is not an online certificate.No guard was removed or threshold changed in this review.
+
+## 2026-10-11 — Check closed-loop quality before interpreting staged-search savings
+
+User authorizes both whole-controller and expensive-search acceleration experiments.GRID27 rho-small omissions include a known cost-critical action,so do not deploy that plateau alone.GRID28 semantic substation completion is a shared cheap rule,not graph-specific novelty or stopping proof.Keep all schedules/checkpoints;use matchingPPO,unchanged admission/continuous safeguards andpre-specified pilotgate.Exact-protected profiling is diagnostic;generic optimizer acceleration must be applied to all baselines.No immediate RL or hidden-date evaluation.

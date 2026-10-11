@@ -1,0 +1,205 @@
+{
+  "stage": "GRID28_LOCAL_SUBSTATION_COMPLETION",
+  "weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "rankers": [
+    {
+      "method": "GNN0_128_GUARD",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt"
+    },
+    {
+      "method": "OLDNN128_GUARD",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null
+    },
+    {
+      "method": "GNN1_128_GUARD",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt"
+    }
+  ],
+  "policies": [
+    "FIXED256",
+    "PATIENCE64"
+  ],
+  "initial": 128,
+  "fixed_limit": 256,
+  "batch": 64,
+  "minimum": 256,
+  "patience": 2,
+  "permission": "Only legal current state/ranking and actually dispatched outcomes; never hidden FULL outcome or global winner rank.",
+  "change": "Before experimental stop, query all remaining eligible representatives touching the chosen candidate's original substation; includes physical aliases. No future or FULL winner input. It can still miss a better remote action.",
+  "offline": "26 stored development FULL states, one row per ranker/policy/state. No forecasting or fitting. Missing FULL action is a diagnostic, not proof of downstream regret.",
+  "pilot": "March GNN0 and PPO with PATIENCE64, plus GNN0 protected controller profiling. No final holdout. No choosing a different schedule based on this screen.",
+  "gate": "Same offline critical-state/rho qualification. Do not modify schedules/groups to rescue outcomes. If PATIENCE64-local passes for GNN0/PPO, run protected baseline profile and March pilots; preservation of closed-loop cost remains unproven until run.",
+  "quality": "No earlier/new failure; complete-week cost increase <=0.5% to protected baseline as an investment threshold, not equivalence proof. Report all cost/survival outcomes and exact-action disagreement.",
+  "cost": "Same runtime, masks, forecast accounting, thread limits, full controller and cadence6. Includes ranking, decision and optional equal profile wrappers; setup/physical/export separate. Pilot timings only, not formal acceleration proof.",
+  "continuation": "If pilot preserves quality, run same two PATIENCE64 rankers on remaining three exposed weeks. If mild deficit, diagnose existing records before further changes; keep all policies/models and failures. No immediate RL.",
+  "caps": {
+    "offline_s": 120,
+    "pilot_wall_s": 2700,
+    "episode_s": 1200,
+    "total_wall_s": 7200,
+    "new_fits": 0,
+    "reserved_evaluations": 0,
+    "wall_s": 7200,
+    "physical_steps": 40000,
+    "public_forecasts": 500000
+  },
+  "source": "GRID27 unchanged schedules plus one semantic substation completion.",
+  "methods": [
+    {
+      "method": "PROTECTED_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED"
+    },
+    {
+      "method": "LOCAL_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64"
+    },
+    {
+      "method": "LOCAL_PPO",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null,
+      "policy": "PATIENCE64"
+    }
+  ],
+  "execution_order": [
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "phase": "pilot",
+      "method": "PROTECTED_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "phase": "pilot",
+      "method": "LOCAL_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-03-05_0",
+      "phase": "pilot",
+      "method": "LOCAL_PPO",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null,
+      "policy": "PATIENCE64"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "LOCAL_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "LOCAL_PPO",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null,
+      "policy": "PATIENCE64"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-06-25_8",
+      "phase": "remaining",
+      "method": "PROTECTED_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "LOCAL_PPO",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null,
+      "policy": "PATIENCE64"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "PROTECTED_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-09-03_4",
+      "phase": "remaining",
+      "method": "LOCAL_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "PROTECTED_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PROTECTED"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "LOCAL_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64"
+    },
+    {
+      "repeat": 0,
+      "week": "2035-10-01_5",
+      "phase": "remaining",
+      "method": "LOCAL_PPO",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null,
+      "policy": "PATIENCE64"
+    }
+  ],
+  "repeats": 1,
+  "timing": "Serial fresh worker per trajectory. Same GRID26 act timer and out-of-act archival. Single development repeat, not a stable-speed confirmation."
+}

@@ -276,4 +276,8 @@ GRID29B真实控制记忆下153组DC配对：原34.611s、缓存13.268s，减少
 
 ## 2026-10-11 — GRID29C delivered-arm component results
 
-GRID29C完整组件配对4/4审计通过：两组完整控制提速6.45%/6.51%；DC省17.47/18.14s（9.61/9.94完整控制百分点），非DC部分分别多耗5.74/6.27s。682个配对solver调用的状态/迭代零改变，8068步动作/观测/成本/查询相同。重复编译节省机制成立，但旧10.93%/0.39%仅有逐步计时，具体历史波动成因无法完整追溯。 Sum-disjoint component savings reconstruct total; null stats retained. Unsafe author path still has13user_limit/3optimal_inaccurate/18optimal, restoration153optimal, both unchanged. GRID30 fixed qualification plan before first outcome.
+GRID29C完整组件配对4/4审计通过：两组完整控制提速6.45%/6.51%；DC省17.47/18.14s（9.61/9.94完整控制百分点），非DC部分分别多耗5.74/6.27s。680个配对solver调用的状态/迭代零改变，8068步动作/观测/成本/查询相同。重复编译节省机制成立，但旧10.93%/0.39%仅有逐步计时，具体历史波动成因无法完整追溯。 Sum-disjoint component savings reconstruct total; null stats retained. Unsafe author path still has13user_limit/3optimal_inaccurate/18optimal, restoration153optimal, both unchanged. GRID30 fixed qualification plan before first outcome.
+
+## GRID29C narrative count correction
+
+340+340=680paired explicit in-control solver calls; earlier682 narrative included initial DC incorrectly. Raw per-run statistics/review unchanged, no replay.

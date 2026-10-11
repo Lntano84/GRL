@@ -1,3 +1,9 @@
+# 最新：GRID37完成
+
+[完整报告](protocols/GRID37_completed/outputs/grid37/GRID37_report.md)
+
+GRID37全部32条公平静态/GNN/完整搜索比较及保存数据核验完成；LOCAL_GNN0质量通过8/8、最大可比成本差0.136%；LOCAL_GNN1质量通过8/8、最大可比成本差0.001%；STATIC_ID质量通过8/8、最大可比成本差0.372%。两模型种子和两计时重复均保留，详见质量—时间主表。静态顺序属于必要消融，不扩展为方法清单。
+
 # 最新：主对照收敛，单一模型改进已冻结
 
 [训练目标诊断](protocols/GRID_target_alignment/outputs/grid_target_audit/TARGET_ALIGNMENT.md) · [GRID38训练方案](protocols/GRID38_before_training/outputs/grid38/design.json)

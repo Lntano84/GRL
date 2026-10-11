@@ -253,3 +253,7 @@ GRID28 March3 runs and saved-data audit pass: all complete2017steps, localGNN0/l
 ## 2026-10-11 — GRID28 frozen closed-loop matrix completed
 
 GRID28完成12/12条开发回放，保存数据审计通过。GNN0查询节省50.90%、搜索时间减少43.18%、总控制减少8.83%；共同完成周成本平均增幅0.0454%、最大0.1361%。GNN0/PPO均完成3/4周，没有新增/提前失败；PPO同规则查询节省47.78%、搜索减少37.74%、控制减少3.45%。单次计时、开发数据及不同轨迹，不证明稳定端到端速度或GNN独有贡献；0.5%为投资筛查，不是等价。 Audited physical rows23856, source calls78, paid feedback29982; saved-data checks, no independent AC replay/refit. [Report](../research_archive/power-grid-2026/outputs/grid28/GRID28_accounting_report.md).
+
+## 2026-10-11 — GRID29 V0 qualification blocked, V1 frozen
+
+First real cached model rejected by is_dcp(dpp=True); no cached comparison/closed trajectory. Actual reactance is a Parameter. Preserve failed code/log and initial protocol; freeze V1 numeric reciprocal and numeric reactance-key invalidation plus real Parameter/triangle checks before rerun. [Revision protocol](../research_archive/power-grid-2026/protocols/GRID29_V1_before_results/README.md).

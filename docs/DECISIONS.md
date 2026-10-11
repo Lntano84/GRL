@@ -130,3 +130,7 @@ Use per-optimizer topology/reactance-keyed bounded CVXPY/DC-program reuse, retai
 ## 2026-10-11 — Retain staged-search tradeoff without graph attribution
 
 Keep measured quality cost and one-repeat timing visible. Substation completion addresses the known omitted action, while the original protected guard remains available. Same stopping logic for GNN and PPO is essential; shared improvement is not GNN benefit. Whole-controller engineering qualification proceeds separately and is granted to all baselines. Do not train RL or open final date families from these developmental results.
+
+## 2026-10-11 — Reject the non-DPP cache before rollout
+
+V0 was blocked by actual Parameter division, unlike its ndarray toy; its object-valued reactance cache key was also wrong. Retain V0 and use value-keyed numeric reciprocal following CVXPY DPP documentation. Added real Parameter mutation and triangle-flow tests. This changes symbolic representation only, not mathematical constraints or solver settings. No valid cache shadow result/live trajectory existed at revision time.

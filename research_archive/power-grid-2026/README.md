@@ -1,3 +1,9 @@
+# 最新：GRID39 complete
+
+[方案/报告](protocols/GRID39_completed/outputs/grid39/GRID39_report.md)
+
+GRID39十二条一版目标修订闭环及保存数据核验完成；REVISED_GNN0质量通过4/4、最大可比成本差0.136%、控制时间减少11.03%；REVISED_GNN1质量通过4/4、最大可比成本差0.136%、控制时间减少11.29%。原版查询7312/7484，新版7380/7381；种子0成本不变、种子1四周平均成本增幅0.03403%（以FULL归一化）。没有稳定改进，暂不替换原配置；全模型保留。SoftGNN必要官方源码/论文配置已保存，尚未安装/拟合/回放。仅单次计时开发测量，不把跨批旧/新时间当配对模型提升。
+
 # 最新：GRID39 before
 
 [方案/报告](protocols/GRID39_before_results/outputs/grid39/design.json)

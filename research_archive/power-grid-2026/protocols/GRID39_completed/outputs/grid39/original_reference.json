@@ -1,0 +1,120 @@
+{
+  "summaries": [
+    {
+      "model_seed": 0,
+      "old_queries": 7312,
+      "new_queries": 7380,
+      "query_reduction": -0.009299781181619338,
+      "mean_cost_change_of_full": 0.0,
+      "positive_query_dates": 2
+    },
+    {
+      "model_seed": 1,
+      "old_queries": 7484,
+      "new_queries": 7381,
+      "query_reduction": 0.013762693746659505,
+      "mean_cost_change_of_full": 0.0003402911718793587,
+      "positive_query_dates": 2
+    }
+  ],
+  "rows": [
+    {
+      "week": "2035-03-05_0",
+      "model_seed": 0,
+      "comparable_exposure": true,
+      "old_cost": 2968149.0302734375,
+      "new_cost": 2968149.0302734375,
+      "cost_change_of_full": 0.0,
+      "old_queries": 3007,
+      "new_queries": 2966,
+      "old_complete": true,
+      "new_complete": true
+    },
+    {
+      "week": "2035-03-05_0",
+      "model_seed": 1,
+      "comparable_exposure": true,
+      "old_cost": 2964114.382446289,
+      "new_cost": 2968149.0302734375,
+      "cost_change_of_full": 0.001361164687517435,
+      "old_queries": 3122,
+      "new_queries": 2955,
+      "old_complete": true,
+      "new_complete": true
+    },
+    {
+      "week": "2035-06-25_8",
+      "model_seed": 0,
+      "comparable_exposure": true,
+      "old_cost": 1156094.7462158203,
+      "new_cost": 1156094.7462158203,
+      "cost_change_of_full": 0.0,
+      "old_queries": 1387,
+      "new_queries": 1384,
+      "old_complete": false,
+      "new_complete": false
+    },
+    {
+      "week": "2035-06-25_8",
+      "model_seed": 1,
+      "comparable_exposure": true,
+      "old_cost": 1156094.7462158203,
+      "new_cost": 1156094.7462158203,
+      "cost_change_of_full": 0.0,
+      "old_queries": 1388,
+      "new_queries": 1382,
+      "old_complete": false,
+      "new_complete": false
+    },
+    {
+      "week": "2035-09-03_4",
+      "model_seed": 1,
+      "comparable_exposure": true,
+      "old_cost": 1289912.7855377197,
+      "new_cost": 1289912.7855377197,
+      "cost_change_of_full": 0.0,
+      "old_queries": 2718,
+      "new_queries": 2788,
+      "old_complete": true,
+      "new_complete": true
+    },
+    {
+      "week": "2035-09-03_4",
+      "model_seed": 0,
+      "comparable_exposure": true,
+      "old_cost": 1289912.7855377197,
+      "new_cost": 1289912.7855377197,
+      "cost_change_of_full": 0.0,
+      "old_queries": 2662,
+      "new_queries": 2774,
+      "old_complete": true,
+      "new_complete": true
+    },
+    {
+      "week": "2035-10-01_5",
+      "model_seed": 0,
+      "comparable_exposure": true,
+      "old_cost": 1544822.9655151367,
+      "new_cost": 1544822.9655151367,
+      "cost_change_of_full": 0.0,
+      "old_queries": 256,
+      "new_queries": 256,
+      "old_complete": true,
+      "new_complete": true
+    },
+    {
+      "week": "2035-10-01_5",
+      "model_seed": 1,
+      "comparable_exposure": true,
+      "old_cost": 1544822.9655151367,
+      "new_cost": 1544822.9655151367,
+      "cost_change_of_full": 0.0,
+      "old_queries": 256,
+      "new_queries": 256,
+      "old_complete": true,
+      "new_complete": true
+    }
+  ],
+  "timing_comparison": "Not calculated: GRID37/39 are different timing batches.",
+  "decision": "Do not replace original configuration: mixed query changes, no quality gain, seed1 quality regression. Retain all new models and curves; continue the research, not another mixture sweep."
+}

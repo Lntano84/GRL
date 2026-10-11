@@ -273,3 +273,7 @@ profile.py shadowed stdlib profile during Torch/cProfile initialization and recu
 ## 2026-10-11 — GRID29B real-memory DC audit and GRID29C freeze
 
 GRID29B真实控制记忆下153组DC配对：原34.611s、缓存13.268s，减少61.67%；154组保存三向量最大流量差0、2017步路径完全相同。实际原DC调用编译29.17s/后端0.070s，确认重复编译是这一DC组成的主要开销，不等于完整控制器根因。旧10.93%组恢复交付步骤省25.42s、其余多1.75s；旧0.39%组对应省10.32s、其余多9.62s。旧两组没有逐solver计时，不能事后识别各自DC收益。 Saved-data audit154DCtriples/2017physicalrows; no independent solve/new fit/reserved evaluation. GRID29C4balanced delivered-arm component traces frozen before results.
+
+## 2026-10-11 — GRID29C delivered-arm component results
+
+GRID29C完整组件配对4/4审计通过：两组完整控制提速6.45%/6.51%；DC省17.47/18.14s（9.61/9.94完整控制百分点），非DC部分分别多耗5.74/6.27s。682个配对solver调用的状态/迭代零改变，8068步动作/观测/成本/查询相同。重复编译节省机制成立，但旧10.93%/0.39%仅有逐步计时，具体历史波动成因无法完整追溯。 Sum-disjoint component savings reconstruct total; null stats retained. Unsafe author path still has13user_limit/3optimal_inaccurate/18optimal, restoration153optimal, both unchanged. GRID30 fixed qualification plan before first outcome.

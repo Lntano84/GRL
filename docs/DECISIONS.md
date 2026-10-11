@@ -142,3 +142,7 @@ Cache pilot preserved exact quality, but10.93% versus0.39% paired total gains do
 ## 2026-10-11 — Explain the10% pair with measured components
 
 Live-memory isolated DC matches actual flows exactly and identifies compilation savings, but old paired trajectories lack per-solver timing. Do not attribute old total variation to a particular optimizer from residual arithmetic. Freeze full-arm component measurement with identical instrumentation/paths and retained two balanced orders. No model or numeric control change. Quota interruptions are not user cancellation; resume current work without repeated confirmation.
+
+## 2026-10-11 — Extend proven compilation reuse only after numerical qualification
+
+Whole-arm DC gains are real and match unchanged output/numeric iteration paths, but total saving is partly offset elsewhere. Historical10% is plausible, not a chosen robust guarantee. Safe restoration shows analogous repeated compilation overhead; examine bounded topology/coefficient keyed exact parameterization, with same solver/status/warm_start/cadence. Manual tests plus actual-memory isolated action comparison precede deployment. Generic optimization is available to all learned/nonlearned comparators.

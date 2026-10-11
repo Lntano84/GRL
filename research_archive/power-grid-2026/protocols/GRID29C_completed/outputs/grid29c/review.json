@@ -1,0 +1,334 @@
+{
+  "passed": true,
+  "runs": 4,
+  "same_physical_rows": 8068,
+  "configurations": [
+    {
+      "repeat": 0,
+      "method": "ORIGINAL",
+      "controller_s": 181.9109541000489,
+      "controller_cpu_s": 180.828125,
+      "run_dc": 30.812056399996436,
+      "compute_optimum_safe": 40.80433390000144,
+      "compute_optimum_unsafe": 70.2618949000007,
+      "all_forecast_s": 31.103553300004933,
+      "remaining_control_s": 8.929115600045407,
+      "solver_groups": [
+        {
+          "phase": "compute_optimum_safe",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 153,
+          "wall_s": 37.828301099983946,
+          "statuses": {
+            "optimal": 153
+          },
+          "compilation_s": 34.5531222820282,
+          "compilation_s_missing": 0,
+          "backend_s": 2.2690448,
+          "backend_s_missing": 0,
+          "iterations": 91450.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "compute_optimum_unsafe",
+          "owner": "base",
+          "solver": "OSQP",
+          "calls": 34,
+          "wall_s": 69.35194890000093,
+          "statuses": {
+            "user_limit": 13,
+            "optimal_inaccurate": 3,
+            "optimal": 18
+          },
+          "compilation_s": 8.081787347793579,
+          "compilation_s_missing": 0,
+          "backend_s": 61.0102357,
+          "backend_s_missing": 0,
+          "iterations": 2484500.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "run_dc",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 153,
+          "wall_s": 28.076218700000027,
+          "statuses": {
+            "optimal": 153
+          },
+          "compilation_s": 27.265171766281128,
+          "compilation_s_missing": 0,
+          "backend_s": 0.070223,
+          "backend_s_missing": 0,
+          "iterations": 7650.0,
+          "iterations_missing": 0
+        }
+      ],
+      "cache_counts": [
+        {},
+        {}
+      ]
+    },
+    {
+      "repeat": 0,
+      "method": "CACHED",
+      "controller_s": 170.17402810000203,
+      "controller_cpu_s": 169.8125,
+      "run_dc": 13.337125299995023,
+      "compute_optimum_safe": 41.9338407000032,
+      "compute_optimum_unsafe": 73.693702999999,
+      "all_forecast_s": 31.979328999830614,
+      "remaining_control_s": 9.23003010017419,
+      "solver_groups": [
+        {
+          "phase": "compute_optimum_safe",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 153,
+          "wall_s": 38.88695170000938,
+          "statuses": {
+            "optimal": 153
+          },
+          "compilation_s": 35.62390446662903,
+          "compilation_s_missing": 0,
+          "backend_s": 2.3605263,
+          "backend_s_missing": 0,
+          "iterations": 91450.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "compute_optimum_unsafe",
+          "owner": "base",
+          "solver": "OSQP",
+          "calls": 34,
+          "wall_s": 72.75480769999922,
+          "statuses": {
+            "user_limit": 13,
+            "optimal_inaccurate": 3,
+            "optimal": 18
+          },
+          "compilation_s": 8.554473876953125,
+          "compilation_s_missing": 0,
+          "backend_s": 63.9472206,
+          "backend_s_missing": 0,
+          "iterations": 2484500.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "run_dc",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 153,
+          "wall_s": 12.584949799989772,
+          "statuses": {
+            "optimal": 153
+          },
+          "compilation_s": 12.133229732513428,
+          "compilation_s_missing": 0,
+          "backend_s": 0.0712758,
+          "backend_s_missing": 0,
+          "iterations": 7650.0,
+          "iterations_missing": 0
+        }
+      ],
+      "cache_counts": [
+        {},
+        {
+          "calls": 154,
+          "hit": 120,
+          "miss": 34,
+          "eviction": 2
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "method": "CACHED",
+      "controller_s": 170.681448000003,
+      "controller_cpu_s": 170.640625,
+      "run_dc": 13.508230999988882,
+      "compute_optimum_safe": 42.52695219999987,
+      "compute_optimum_unsafe": 73.6508601999958,
+      "all_forecast_s": 31.819628399971407,
+      "remaining_control_s": 9.17577620004704,
+      "solver_groups": [
+        {
+          "phase": "compute_optimum_safe",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 153,
+          "wall_s": 39.393280800004504,
+          "statuses": {
+            "optimal": 153
+          },
+          "compilation_s": 36.105591773986816,
+          "compilation_s_missing": 0,
+          "backend_s": 2.3864926,
+          "backend_s_missing": 0,
+          "iterations": 91450.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "compute_optimum_unsafe",
+          "owner": "base",
+          "solver": "OSQP",
+          "calls": 34,
+          "wall_s": 72.69184190000306,
+          "statuses": {
+            "user_limit": 13,
+            "optimal_inaccurate": 3,
+            "optimal": 18
+          },
+          "compilation_s": 8.744848728179932,
+          "compilation_s_missing": 0,
+          "backend_s": 63.6957044,
+          "backend_s_missing": 0,
+          "iterations": 2484500.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "run_dc",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 153,
+          "wall_s": 12.740620599992326,
+          "statuses": {
+            "optimal": 153
+          },
+          "compilation_s": 12.276187896728516,
+          "compilation_s_missing": 0,
+          "backend_s": 0.0710918,
+          "backend_s_missing": 0,
+          "iterations": 7650.0,
+          "iterations_missing": 0
+        }
+      ],
+      "cache_counts": [
+        {},
+        {
+          "calls": 154,
+          "hit": 120,
+          "miss": 34,
+          "eviction": 2
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "method": "ORIGINAL",
+      "controller_s": 182.5572491999992,
+      "controller_cpu_s": 181.9375,
+      "run_dc": 31.651450600003955,
+      "compute_optimum_safe": 39.78823530000409,
+      "compute_optimum_unsafe": 71.1525413000054,
+      "all_forecast_s": 31.040414200044324,
+      "remaining_control_s": 8.924607799941441,
+      "solver_groups": [
+        {
+          "phase": "compute_optimum_safe",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 153,
+          "wall_s": 37.17717000000266,
+          "statuses": {
+            "optimal": 153
+          },
+          "compilation_s": 33.92593598365784,
+          "compilation_s_missing": 0,
+          "backend_s": 2.3417019,
+          "backend_s_missing": 0,
+          "iterations": 91450.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "compute_optimum_unsafe",
+          "owner": "base",
+          "solver": "OSQP",
+          "calls": 34,
+          "wall_s": 70.35509219999585,
+          "statuses": {
+            "user_limit": 13,
+            "optimal_inaccurate": 3,
+            "optimal": 18
+          },
+          "compilation_s": 8.272080183029175,
+          "compilation_s_missing": 0,
+          "backend_s": 61.8266278,
+          "backend_s_missing": 0,
+          "iterations": 2484500.0,
+          "iterations_missing": 0
+        },
+        {
+          "phase": "run_dc",
+          "owner": "restore",
+          "solver": "OSQP",
+          "calls": 153,
+          "wall_s": 28.62939720000395,
+          "statuses": {
+            "optimal": 153
+          },
+          "compilation_s": 27.76189374923706,
+          "compilation_s_missing": 0,
+          "backend_s": 0.0710197,
+          "backend_s_missing": 0,
+          "iterations": 7650.0,
+          "iterations_missing": 0
+        }
+      ],
+      "cache_counts": [
+        {},
+        {}
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "repeat": 0,
+      "controller_reduction": 0.06452017174068421,
+      "dc_reduction": 0.5671458883868405,
+      "saved_s": {
+        "controller_s": 11.736926000046878,
+        "run_dc": 17.474931100001413,
+        "compute_optimum_safe": -1.1295068000017636,
+        "compute_optimum_unsafe": -3.4318080999983067,
+        "all_forecast_s": -0.8757756998256809,
+        "remaining_control_s": -0.3009145001287834
+      },
+      "dc_saving_as_baseline_control_pp": 9.606310508596643,
+      "non_dc_delta_s": -5.738005099954535
+    },
+    {
+      "repeat": 1,
+      "controller_reduction": 0.06505247669998446,
+      "dc_reduction": 0.5732192128980277,
+      "saved_s": {
+        "controller_s": 11.875801199996204,
+        "run_dc": 18.143219600015073,
+        "compute_optimum_safe": -2.7387168999957794,
+        "compute_optimum_unsafe": -2.4983188999904087,
+        "all_forecast_s": -0.7792141999270825,
+        "remaining_control_s": -0.25116840010559827
+      },
+      "dc_saving_as_baseline_control_pp": 9.938372581489988,
+      "non_dc_delta_s": -6.267418400018869
+    }
+  ],
+  "pooled_control_reduction": 0.06478679617657601,
+  "solver_path_comparisons": [
+    {
+      "repeat": 0,
+      "matched_solver_calls": 340,
+      "status_iteration_mismatches": []
+    },
+    {
+      "repeat": 1,
+      "matched_solver_calls": 340,
+      "status_iteration_mismatches": []
+    }
+  ],
+  "new_fits": 0,
+  "reserved_evaluations": 0,
+  "independent_ac_replays": 0,
+  "warning": "Single exposed March,2balanced pairs with identical instrumentation. Component accounting identifies measured savings, not thermal/OS-specific causes or independent generalization."
+}

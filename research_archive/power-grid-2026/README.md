@@ -1,3 +1,9 @@
+# 最新：GRID38完成
+
+[完整报告](protocols/GRID38_completed/outputs/grid38/GRID38_report.md)
+
+GRID38一版目标修订的四次拟合与104项已有反馈排序核验完成；GNN0查询7358→7490、同FULL选择24→24/26、关键动作True；GNN1查询7530→7426、同FULL选择25→24/26、关键动作True；MLP0查询7549→7663、同FULL选择25→24/26、关键动作True；MLP1查询7826→7651、同FULL选择26→24/26、关键动作True。原/新模型、全部种子和训练记录保留，未新增教师仿真。离线查询与排序变化尚不是闭环质量或完整提速。
+
 # 最新：GRID37完成
 
 [完整报告](protocols/GRID37_completed/outputs/grid37/GRID37_report.md)

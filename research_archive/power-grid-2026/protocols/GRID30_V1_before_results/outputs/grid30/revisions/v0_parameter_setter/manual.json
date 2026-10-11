@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "analytic_quadratic_target",
+      "passed": true,
+      "status": "optimal",
+      "cache": {
+        "calls": 1,
+        "hit": 0,
+        "miss": 1,
+        "eviction": 0
+      }
+    },
+    {
+      "name": "refresh_target_without_recompile",
+      "passed": true,
+      "status": "optimal",
+      "cache": {
+        "calls": 2,
+        "hit": 1,
+        "miss": 1,
+        "eviction": 0
+      }
+    },
+    {
+      "name": "refresh_bounds_without_recompile",
+      "passed": true,
+      "status": "optimal",
+      "cache": {
+        "calls": 3,
+        "hit": 2,
+        "miss": 1,
+        "eviction": 0
+      }
+    },
+    {
+      "name": "coefficient_invalidation",
+      "passed": true,
+      "status": "optimal",
+      "cache": {
+        "calls": 4,
+        "hit": 2,
+        "miss": 2,
+        "eviction": 0
+      }
+    },
+    {
+      "name": "reactance_invalidation",
+      "passed": true,
+      "status": "optimal",
+      "cache": {
+        "calls": 5,
+        "hit": 2,
+        "miss": 3,
+        "eviction": 0
+      }
+    },
+    {
+      "name": "topology_invalidation",
+      "passed": true,
+      "status": "optimal",
+      "cache": {
+        "calls": 6,
+        "hit": 2,
+        "miss": 4,
+        "eviction": 0
+      }
+    },
+    {
+      "name": "time_resolution_invalidation",
+      "passed": true,
+      "status": "optimal",
+      "cache": {
+        "calls": 7,
+        "hit": 2,
+        "miss": 5,
+        "eviction": 0
+      }
+    },
+    {
+      "name": "same_infeasible_zero_and_nan_semantics",
+      "passed": true,
+      "status": "infeasible",
+      "cache": {
+        "calls": 8,
+        "hit": 3,
+        "miss": 5,
+        "eviction": 0
+      }
+    }
+  ]
+}

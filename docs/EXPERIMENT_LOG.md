@@ -281,3 +281,7 @@ GRID29C完整组件配对4/4审计通过：两组完整控制提速6.45%/6.51%�
 ## GRID29C narrative count correction
 
 340+340=680paired explicit in-control solver calls; earlier682 narrative included initial DC incorrectly. Raw per-run statistics/review unchanged, no replay.
+
+## 2026-10-11 — GRID30 replica-copy qualification repair
+
+V0manual8pass but public-state335gen_per_bus includes2negative original author entries(min-0.0006708864). Setter replica refused them before original/shadow safe solve. Retain335step fragment and old code. V1copies arrays in-place exactly as original updater, assertion no clipping; new numeric/action gate still required. No deployment/new fit/hidden dates.

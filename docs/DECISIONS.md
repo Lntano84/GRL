@@ -122,3 +122,7 @@ The objective is useful same-quality acceleration,not to force GNN attribution.W
 ## 2026-10-11 — Check closed-loop quality before interpreting staged-search savings
 
 User authorizes both whole-controller and expensive-search acceleration experiments.GRID27 rho-small omissions include a known cost-critical action,so do not deploy that plateau alone.GRID28 semantic substation completion is a shared cheap rule,not graph-specific novelty or stopping proof.Keep all schedules/checkpoints;use matchingPPO,unchanged admission/continuous safeguards andpre-specified pilotgate.Exact-protected profiling is diagnostic;generic optimizer acceleration must be applied to all baselines.No immediate RL or hidden-date evaluation.
+
+## 2026-10-11 — Qualify shared DC compilation reuse independently
+
+Use per-optimizer topology/reactance-keyed bounded CVXPY/DC-program reuse, retaining the exact mathematical problem and original solve wrapper/warm_start=False. Frozen stored-state qualification precedes a balanced protected-March pilot. No blind direct-solver substitution or changed tolerances. Apply any engineering improvement to strong baselines; do not count it as GNN novelty. GRID28 remaining runs still serial, no reserved-date opening.

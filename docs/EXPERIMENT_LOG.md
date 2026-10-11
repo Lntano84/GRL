@@ -245,3 +245,7 @@ Read104 saved call logs from repeat0/four exposed dates;26 distinct states and78
 ## 2026-10-11 — GRID27 screen and GRID28 semantic completion qualification
 
 156 legal feedback-replay rows per stage (26 exposed states x3 frozen rankers x2 fixed schedules).GRID27 plateau/fixed cutoff miss known March1733 action; no AC rollout.GRID28 adds only incumbent-substation completion,with aliases;GNN0/PPO PATIENCE64 now recover that action but still change2/26 decisions.78 real-runtime preflight checks and30074 fake feedback dispatches agree;no AC/refit in preflight.March protected/localGNN0/localPPO trial running under frozen design.One protectedFULL profile2017 physical steps exactly matches historical path;hierarchical optimizer solve share72.4%,N1search15.0% in that one instrumented March sample.Solver fine-statistics are partially captured,not zero for missing restoration calls.[Protocol snapshot](../research_archive/power-grid-2026/protocols/GRID28_before_results/README.md).
+
+## 2026-10-11 — GRID28 March gate and GRID29 frozen qualification
+
+GRID28 March3 runs and saved-data audit pass: all complete2017steps, localGNN0/localPPO cost+0.136116% versus protected, query saving54.15%/53.03%, single-repeat source saving46.22%/45.36%, controller saving4.87%/5.06%. No graph-specific speed attribution; remaining3 dates running. GRID29 generic DC-program cache design/code frozen before shadow/live outcomes, using only exposed states and no new weights. [GRID29 protocol](../research_archive/power-grid-2026/protocols/GRID29_before_results/README.md).

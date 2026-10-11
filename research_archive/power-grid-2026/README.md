@@ -198,3 +198,7 @@ GRID22曾中断，305个已保存步及至少4,253次预测另记；未落盘在
 | GRID21 | [GRID21_report.md](outputs/grid21/GRID21_report.md) |
 | GRID22 | [GRID22_report.md](outputs/grid22/GRID22_report.md) |
 | GRID23 | [GRID23_report.md](outputs/grid23/GRID23_report.md) |
+
+## GRID44 before
+
+GRID43并列补查试点关闭：6条保留、18条未运行；不改善原模型成本且增加查询，当前仍用原GRID21权重和GRID28规则。GRID44首次8预留日期家族确认已冻结：96串行回放、两计时重复、原GNN/SoftGNN各两种子、作者PPO及FULL；预处理/缓存/控制/停止一致，先冻结后解压。不重新训练、不按确认结果调参；全部家族及变体持续排除训练。 [协议与结果](protocols/GRID44_before/outputs/grid44/design.json)。

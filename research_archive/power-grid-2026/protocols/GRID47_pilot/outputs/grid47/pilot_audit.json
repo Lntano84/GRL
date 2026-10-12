@@ -1,0 +1,69 @@
+{
+  "passed_saved_engineering": true,
+  "own_rankers_qualified": true,
+  "all_rankers_qualified": true,
+  "field_note": "Compatibility field all_rankers_qualified is the predeclared OWN two-seed continuation gate;not every baseline passing quality.",
+  "results": [
+    {
+      "method": "FULL",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.0,
+      "passed_quality": true,
+      "controller_s": 144.43189180000536,
+      "time_reduction": 0.0,
+      "queries": 9578
+    },
+    {
+      "method": "LOCAL_GNN0",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.0,
+      "passed_quality": true,
+      "controller_s": 139.25554400002966,
+      "time_reduction": 0.03583936854571834,
+      "queries": 6559
+    },
+    {
+      "method": "LOCAL_GNN1",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.0,
+      "passed_quality": true,
+      "controller_s": 139.01062469999852,
+      "time_reduction": 0.037535111064761706,
+      "queries": 6559
+    },
+    {
+      "method": "SOFTGNN0",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.012900478058526418,
+      "passed_quality": false,
+      "controller_s": 138.80252110001038,
+      "time_reduction": 0.038975953508868844,
+      "queries": 6917
+    },
+    {
+      "method": "SOFTGNN1",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.06194530251077283,
+      "passed_quality": false,
+      "controller_s": 149.47366889998648,
+      "time_reduction": -0.03490764426850035,
+      "queries": 7723
+    },
+    {
+      "method": "LOCAL_PPO",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.0,
+      "passed_quality": true,
+      "controller_s": 140.71257060002608,
+      "time_reduction": 0.02575138463968485,
+      "queries": 6559
+    }
+  ],
+  "warning": "Single timing development pilot;remaining18 only when own2seeds quality<=.5%andpositive control reduction. All baseline losses retained;no bestseed selection."
+}

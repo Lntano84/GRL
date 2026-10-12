@@ -1,0 +1,58 @@
+{
+  "passed_saved_engineering": true,
+  "all_rankers_qualified": false,
+  "both_new_seeds_qualified": false,
+  "results": [
+    {
+      "method": "FULL",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.0,
+      "passed_quality": true,
+      "controller_s": 141.15648549996513,
+      "time_reduction_full": 0.0,
+      "queries": 9578
+    },
+    {
+      "method": "LOCAL_GNN0",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.001361164687517435,
+      "passed_quality": true,
+      "controller_s": 126.21607350005252,
+      "time_reduction_full": 0.10584290156413889,
+      "queries": 3007
+    },
+    {
+      "method": "LOCAL_GNN1",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.0,
+      "passed_quality": true,
+      "controller_s": 125.95118990001902,
+      "time_reduction_full": 0.10771942604046958,
+      "queries": 3122
+    },
+    {
+      "method": "FREE_GNN0",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.0,
+      "passed_quality": true,
+      "controller_s": 126.06887479999023,
+      "time_reduction_full": 0.10688570664348707,
+      "queries": 2967
+    },
+    {
+      "method": "FREE_GNN1",
+      "steps": 2017,
+      "complete": true,
+      "cost_regret": 0.013740632698938689,
+      "passed_quality": false,
+      "controller_s": 121.77498220001144,
+      "time_reduction_full": 0.13730508542562492,
+      "queries": 2882
+    }
+  ],
+  "warning": "Continuation of15olddevelopment trajectories only if BOTH newseeds meet original.5%quality/noearlierfailure gate. No seed selection,GRID44reuse or criterion adjustment;oldfastmodels remain default."
+}

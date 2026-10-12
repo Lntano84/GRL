@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "initial_checkpoint_byte_checks": 2,
+  "training_inputs_checked": 334,
+  "development_cached_checks": 52,
+  "fixed_training_evaluation": [
+    {
+      "seed": 0,
+      "old_fixed_final_training_objective": 5.797437145903304,
+      "new_fixed_final_training_objective": 5.661901950836182,
+      "new_max_abs_training_residual": 10.208145141601562
+    },
+    {
+      "seed": 1,
+      "old_fixed_final_training_objective": 5.801527638693114,
+      "new_fixed_final_training_objective": 5.637378926212723,
+      "new_max_abs_training_residual": 9.877341270446777
+    }
+  ],
+  "checkpoints": [
+    {
+      "path": "outputs/grid48/models/gnn_seed0/initial.pt",
+      "sha256": "80a6ffc2e43fd30694a8bb068962d4492040824db51122f3c4dbba99ea2b60c2",
+      "bytes": 478610
+    },
+    {
+      "path": "outputs/grid48/models/gnn_seed0/final.pt",
+      "sha256": "ac7cec840a310f6dc18e395e49b7790128df275a9ca8d75c2ca0193289e091f6",
+      "bytes": 477584
+    },
+    {
+      "path": "outputs/grid48/models/gnn_seed1/initial.pt",
+      "sha256": "0894eb98df7764a860da3975e74a98cb9f217a02fd0fe456bdddc31cba778a69",
+      "bytes": 478610
+    },
+    {
+      "path": "outputs/grid48/models/gnn_seed1/final.pt",
+      "sha256": "245f50eff17ca248a2b2202c5feb98a1a40ef788aa46d64f614138ee5e13e06a",
+      "bytes": 477584
+    }
+  ],
+  "new_forecasts": 0,
+  "GRID44_evaluations": 0,
+  "warning": "Recomputed fixed-final training objective/checkpoint consistency;not retraining independence or closed-loop quality. Higher representational capacity can overfit."
+}

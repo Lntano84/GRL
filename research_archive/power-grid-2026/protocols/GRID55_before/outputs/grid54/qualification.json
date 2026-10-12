@@ -1,0 +1,959 @@
+{
+  "passed": true,
+  "cases": 130,
+  "all_scores_orders_ranks_features_exact": true,
+  "patched_modules": [
+    "guard_adapter",
+    "online_adapter",
+    "prior"
+  ],
+  "new_candidate_forecasts": 0,
+  "new_fits": 0,
+  "metadata_stats_before_mutations": {
+    "builds": 1,
+    "validations": 259,
+    "build_s": 0.23432030000185478,
+    "validation_s": 6.40562239997962
+  },
+  "mutation_checks": [
+    {
+      "name": "same-valued object replacement",
+      "exact": true,
+      "cache_rebuilt": true
+    },
+    {
+      "name": "setter mutation",
+      "exact": true,
+      "cache_rebuilt": true
+    },
+    {
+      "name": "in-place mutation without vector-cache reset",
+      "exact": true,
+      "cache_rebuilt": true
+    },
+    {
+      "name": "restored original object",
+      "exact": true,
+      "cache_rebuilt": true
+    }
+  ],
+  "original_prior_s": 29.96561039998778,
+  "cached_prior_s": 3.6148109000205295,
+  "local_prior_time_reduction": 0.8793680204818386,
+  "first_cached_call_s": 0.23570199999812758,
+  "cached_steady_mean_s": 0.026194642635832575,
+  "wall_s": 41.08515089999855,
+  "rows": [
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN0/call000.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.2302730999981577,
+      "cached_s": 0.23570199999812758,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN0/call001.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.22994530000141822,
+      "cached_s": 0.026642999997420702,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN0/call002.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.2262410999974236,
+      "cached_s": 0.025456700001086574,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN0/call003.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.22862349999923026,
+      "cached_s": 0.02605579999726615,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN0/call004.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.22695139999996172,
+      "cached_s": 0.026209099996776786,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN0/call005.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.23339660000056028,
+      "cached_s": 0.02635290000034729,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN0/call006.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.23961319999943953,
+      "cached_s": 0.026213000001007458,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN0/call007.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.23298719999729656,
+      "cached_s": 0.026499100000364706,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN0/call008.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.24862380000195117,
+      "cached_s": 0.026622699999279575,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN0/call009.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.22776169999997364,
+      "cached_s": 0.027002999999240274,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN0/call010.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.223338200001308,
+      "cached_s": 0.02545550000286312,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN1/call000.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.23253029999978025,
+      "cached_s": 0.0263896999967983,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN1/call001.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.22816809999858378,
+      "cached_s": 0.028367499999149004,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN1/call002.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.22599780000018654,
+      "cached_s": 0.027169500001036795,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN1/call003.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.23219990000143298,
+      "cached_s": 0.025892099998600315,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN1/call004.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.2313060000014957,
+      "cached_s": 0.026199500000075204,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN1/call005.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.23021739999967394,
+      "cached_s": 0.02586669999800506,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN1/call006.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.22695600000224658,
+      "cached_s": 0.026160400000662776,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN1/call007.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.22790700000041397,
+      "cached_s": 0.02537039999879198,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN1/call008.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.23387490000095568,
+      "cached_s": 0.026061200002004625,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN1/call009.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.23133040000175242,
+      "cached_s": 0.02572429999781889,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__LOCAL_GNN1/call010.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.2276467000010598,
+      "cached_s": 0.026189600001089275,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN0/call000.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22949969999899622,
+      "cached_s": 0.026906300001428463,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN0/call001.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22715660000176285,
+      "cached_s": 0.025963899999624118,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN0/call002.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22546800000054645,
+      "cached_s": 0.025795499997911975,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN0/call003.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22790840000016033,
+      "cached_s": 0.025993200000812067,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN0/call004.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22700540000005276,
+      "cached_s": 0.025778499999432825,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN0/call005.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.2303929000008793,
+      "cached_s": 0.026177499999903375,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN0/call006.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22861299999931362,
+      "cached_s": 0.02742209999996703,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN0/call007.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22625369999877876,
+      "cached_s": 0.026955900000757538,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN0/call008.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.2277088000009826,
+      "cached_s": 0.026124199997866526,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN0/call009.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22623899999962305,
+      "cached_s": 0.026093399999808753,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN0/call010.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22821980000298936,
+      "cached_s": 0.026217999999062158,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN1/call000.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.2296853000007104,
+      "cached_s": 0.026383500000520144,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN1/call001.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.22632379999777186,
+      "cached_s": 0.02595360000123037,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN1/call002.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23301469999933033,
+      "cached_s": 0.0261571000010008,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN1/call003.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.22857660000227042,
+      "cached_s": 0.025874300001305528,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN1/call004.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.22794210000211024,
+      "cached_s": 0.026546099998085992,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN1/call005.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.2279963000000862,
+      "cached_s": 0.026098199999978533,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN1/call006.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23288169999796082,
+      "cached_s": 0.026779499999975087,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN1/call007.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.22614539999995031,
+      "cached_s": 0.02592200000071898,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN1/call008.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23029599999790662,
+      "cached_s": 0.025948399998014793,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN1/call009.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23285329999998794,
+      "cached_s": 0.026090100000146776,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-03-05_0__COMPRESSED_GNN1/call010.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23014150000017253,
+      "cached_s": 0.026363300003140466,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__LOCAL_GNN0/call000.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.23450400000001537,
+      "cached_s": 0.026668600003176834,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__LOCAL_GNN0/call001.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.23287369999889052,
+      "cached_s": 0.02639910000289092,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__LOCAL_GNN0/call002.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.22735779999857186,
+      "cached_s": 0.025892599998769583,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__LOCAL_GNN0/call003.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.2300744999993185,
+      "cached_s": 0.02642849999756436,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__LOCAL_GNN0/call004.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.2301573999975517,
+      "cached_s": 0.026032600002508843,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__LOCAL_GNN1/call000.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.23117959999945015,
+      "cached_s": 0.026424599996971665,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__LOCAL_GNN1/call001.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.22557919999962905,
+      "cached_s": 0.025545200001943158,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__LOCAL_GNN1/call002.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.2335073000031116,
+      "cached_s": 0.027017600001272513,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__LOCAL_GNN1/call003.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.23491899999862653,
+      "cached_s": 0.025570600002538413,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__LOCAL_GNN1/call004.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.22946279999814578,
+      "cached_s": 0.025802199997997377,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__COMPRESSED_GNN0/call000.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22899229999893578,
+      "cached_s": 0.025606800001696683,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__COMPRESSED_GNN0/call001.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.2317892999999458,
+      "cached_s": 0.0262098999992304,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__COMPRESSED_GNN0/call002.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22956390000035753,
+      "cached_s": 0.025821400002314476,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__COMPRESSED_GNN0/call003.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.2302492999988317,
+      "cached_s": 0.02622500000143191,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__COMPRESSED_GNN0/call004.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22606420000010985,
+      "cached_s": 0.026114399999642046,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__COMPRESSED_GNN1/call000.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23085490000084974,
+      "cached_s": 0.02648599999884027,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__COMPRESSED_GNN1/call001.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.227349900000263,
+      "cached_s": 0.02661169999919366,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__COMPRESSED_GNN1/call002.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23143899999922724,
+      "cached_s": 0.02654880000045523,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__COMPRESSED_GNN1/call003.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23124599999937345,
+      "cached_s": 0.026886399999057176,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-06-25_8__COMPRESSED_GNN1/call004.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23976670000047307,
+      "cached_s": 0.02714190000187955,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN1/call000.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.22165799999856972,
+      "cached_s": 0.025481599997874582,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN1/call001.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.23023709999688435,
+      "cached_s": 0.026561599999695318,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN1/call002.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.2252939999998489,
+      "cached_s": 0.02585460000045714,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN1/call003.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.2263528999974369,
+      "cached_s": 0.0260796999973536,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN1/call004.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.22964569999749074,
+      "cached_s": 0.025957300000300165,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN1/call005.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.23069780000150786,
+      "cached_s": 0.026254300002619857,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN1/call006.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.22461099999782164,
+      "cached_s": 0.025736499999766238,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN1/call007.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.2301633999995829,
+      "cached_s": 0.026613000001816545,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN0/call000.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22707939999963855,
+      "cached_s": 0.02589119999902323,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN0/call001.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.2279331000027014,
+      "cached_s": 0.026445499999681488,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN0/call002.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.23009569999703672,
+      "cached_s": 0.025770500000362517,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN0/call003.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.23636869999972987,
+      "cached_s": 0.026344699999754084,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN0/call004.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22429750000083004,
+      "cached_s": 0.025932500000635628,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN0/call005.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22574640000311774,
+      "cached_s": 0.026111600000149338,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN0/call006.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22801280000203406,
+      "cached_s": 0.026055600003019208,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN0/call007.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.2289746999995259,
+      "cached_s": 0.026245500001095934,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN1/call000.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.2251432000011846,
+      "cached_s": 0.025904699999955483,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN1/call001.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23148139999830164,
+      "cached_s": 0.026409600002807565,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN1/call002.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.22255470000163768,
+      "cached_s": 0.025701200000185054,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN1/call003.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23412789999929373,
+      "cached_s": 0.025897600000462262,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN1/call004.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.24119680000148946,
+      "cached_s": 0.027040600001782877,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN1/call005.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.24068590000024415,
+      "cached_s": 0.026856799999222858,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN1/call006.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.225808600000164,
+      "cached_s": 0.026986099997884594,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__COMPRESSED_GNN1/call007.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.2438542999989295,
+      "cached_s": 0.027498200000991346,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN0/call000.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.23336440000275616,
+      "cached_s": 0.025819999998930143,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN0/call001.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.2341941999984556,
+      "cached_s": 0.026230400002532406,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN0/call002.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.22625329999937094,
+      "cached_s": 0.025758799998584436,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN0/call003.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.23065320000023348,
+      "cached_s": 0.026307600001018727,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN0/call004.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.2269646000022476,
+      "cached_s": 0.02538510000158567,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN0/call005.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.231750999999349,
+      "cached_s": 0.026261799997882918,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN0/call006.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.22786960000303225,
+      "cached_s": 0.025691699996968964,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-09-03_4__LOCAL_GNN0/call007.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.23372579999704612,
+      "cached_s": 0.026230400002532406,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-10-01_5__COMPRESSED_GNN0/call000.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.22788980000041192,
+      "cached_s": 0.025407600001926767,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-10-01_5__COMPRESSED_GNN0/call001.json",
+      "method": "COMPRESSED_GNN0",
+      "original_s": 0.23268729999836069,
+      "cached_s": 0.02650020000146469,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-10-01_5__COMPRESSED_GNN1/call000.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.2283599000002141,
+      "cached_s": 0.025430699999560602,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-10-01_5__COMPRESSED_GNN1/call001.json",
+      "method": "COMPRESSED_GNN1",
+      "original_s": 0.23070880000159377,
+      "cached_s": 0.026008900000306312,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-10-01_5__LOCAL_GNN0/call000.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.22647909999795957,
+      "cached_s": 0.025984799998695962,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-10-01_5__LOCAL_GNN0/call001.json",
+      "method": "LOCAL_GNN0",
+      "original_s": 0.23878530000001774,
+      "cached_s": 0.026236099998641293,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-10-01_5__LOCAL_GNN1/call000.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.2337002999993274,
+      "cached_s": 0.026963399999658577,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid51/runs/r0__2035-10-01_5__LOCAL_GNN1/call001.json",
+      "method": "LOCAL_GNN1",
+      "original_s": 0.24296920000051614,
+      "cached_s": 0.027206300001125783,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-03-05_0__LOCAL_PPO/call000.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.22767609999937122,
+      "cached_s": 0.02595380000275327,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-03-05_0__LOCAL_PPO/call001.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.2331683999982488,
+      "cached_s": 0.02591000000029453,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-03-05_0__LOCAL_PPO/call002.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.22721029999956954,
+      "cached_s": 0.02604780000183382,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-03-05_0__LOCAL_PPO/call003.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23097550000238698,
+      "cached_s": 0.026012700000137556,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-03-05_0__LOCAL_PPO/call004.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.22782200000074226,
+      "cached_s": 0.026030500001070322,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-03-05_0__LOCAL_PPO/call005.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23154649999924004,
+      "cached_s": 0.02556199999889941,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-03-05_0__LOCAL_PPO/call006.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.22659719999865047,
+      "cached_s": 0.02574379999714438,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-03-05_0__LOCAL_PPO/call007.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23337779999928898,
+      "cached_s": 0.02602389999810839,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-03-05_0__LOCAL_PPO/call008.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.22960240000247722,
+      "cached_s": 0.027614000002358807,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-03-05_0__LOCAL_PPO/call009.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.2287106000003405,
+      "cached_s": 0.02652730000045267,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-03-05_0__LOCAL_PPO/call010.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23995619999914197,
+      "cached_s": 0.026232500000332948,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-06-25_8__LOCAL_PPO/call000.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.22466960000019753,
+      "cached_s": 0.025962899999285582,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-06-25_8__LOCAL_PPO/call001.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.22528969999984838,
+      "cached_s": 0.02678860000014538,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-06-25_8__LOCAL_PPO/call002.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23024969999823952,
+      "cached_s": 0.02622420000261627,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-06-25_8__LOCAL_PPO/call003.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.22565670000039972,
+      "cached_s": 0.025809599999774946,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-06-25_8__LOCAL_PPO/call004.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.2319346999975096,
+      "cached_s": 0.025453300000663148,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-09-03_4__LOCAL_PPO/call000.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23710760000176379,
+      "cached_s": 0.025986399999965215,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-09-03_4__LOCAL_PPO/call001.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23222959999839077,
+      "cached_s": 0.02608479999980773,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-09-03_4__LOCAL_PPO/call002.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.2339252999991004,
+      "cached_s": 0.025848599998425925,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-09-03_4__LOCAL_PPO/call003.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23040490000130376,
+      "cached_s": 0.025877300002321135,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-09-03_4__LOCAL_PPO/call004.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23109420000037062,
+      "cached_s": 0.02638450000085868,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-09-03_4__LOCAL_PPO/call005.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23679059999994934,
+      "cached_s": 0.026013700000476092,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-09-03_4__LOCAL_PPO/call006.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.24023479999959818,
+      "cached_s": 0.02555710000160616,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-09-03_4__LOCAL_PPO/call007.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23249650000070687,
+      "cached_s": 0.025621300002967473,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-10-01_5__LOCAL_PPO/call000.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.23150019999957294,
+      "cached_s": 0.026055900001665577,
+      "scores_order_saved_rank_and_features_exact": true
+    },
+    {
+      "source": "outputs/grid34/runs/r0__2035-10-01_5__LOCAL_PPO/call001.json",
+      "method": "LOCAL_PPO",
+      "original_s": 0.24386409999715397,
+      "cached_s": 0.025847900000371737,
+      "scores_order_saved_rank_and_features_exact": true
+    }
+  ],
+  "limitations": "130old saved cases and runtime mutation probes; no new closed-loop speed evidence. Cache is shared engineering,not GNN-exclusive. Fresh canonical-vector validation remains in paid online cost."
+}

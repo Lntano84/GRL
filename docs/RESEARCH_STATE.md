@@ -1,4 +1,7 @@
-# Research state — preserve fast model and test one scoring change
+# Research state — preserve original fast-search advantage
+
+- **最新：** GRID49冻结原快速控制下的一次评分改动比较：原GNN两种子、新无硬界残差两种子、FULL；先5旧三月试点，两个新种子质量/存活合格才15其他旧开发回放。停止/保护/特征/缓存/控制均沿用原快版，不采用GRID47严格回补。没有GRID44训练/重评或新模型拟合；近期强基线原比较完整保留，不扩baseline菜单。
+
 
 - **最新：** GRID48移除残差硬界的两次固定拟合及旧26状态复核完成；GNN0查询7358→7385、同FULL选择24→25/26、1733匹配True；GNN1查询7530→7279、同FULL选择25→24/26、1733匹配True。原模型全部保留，未训练/评价GRID44日期；仅缓存开发比较，实际质量和提速尚未证明。
 

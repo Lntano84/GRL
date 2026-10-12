@@ -1,0 +1,27 @@
+{
+  "status": "PROPOSED_NOT_EXECUTED_REQUIRES_USER_DECISION",
+  "reason": "Frozen128-run/no-repeat budget complete; two runs in one timing repetition overlap external standby and cannot decide final speed fairly.",
+  "week": "2035-11-12_9",
+  "new_repeat_id": 2,
+  "implementations": [
+    "FULL",
+    "SOFTGNN0",
+    "SOFTGNN1",
+    "LOCAL_PPO",
+    "COMPRESSED_GNN0",
+    "COMPRESSED_GNN1",
+    "LOCAL_GNN0",
+    "LOCAL_GNN1"
+  ],
+  "new_runs": 8,
+  "expected_wall_minutes": [
+    15,
+    20
+  ],
+  "wall_cap_s": 2400,
+  "new_fits": 0,
+  "unchanged": "Same frozen weights,models,controller,prior cache,fresh-field validation,legal inputs,masks,stop,timers,physicalbackend. All8implementations measured together;no new baselines.",
+  "data_rule": "Keep original128/raw audit unchanged. New8form a supplemental complete paired repetition. If authorized, publish raw results plus explicitly repaired128-cell timing view using original7date repeat0/1 and affecteddate repeat0/2 for ALL methods,not only replacing the slow seed. No unseen/independent-confirmation claim.",
+  "qualification": "Prevent system idle standby for this bounded run without changing the permanent power plan; check power-event log. Compare each supplemental physical path/cost/query trace against its historical counterpart. New failure/nondeterminism/standby makes timing qualification unresolved,not a license to keep repeating.",
+  "decision_rule": "Apply exactly the prior frozen symmetric quality/time version-selection rule to qualified paired timing view;retain all model seeds. Do not choose fastest seed,delete failure,subtract sleep duration,or use CPUtime as replacement primary metric."
+}

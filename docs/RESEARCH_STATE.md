@@ -1,4 +1,7 @@
-# Research state — preserve original fast-search advantage
+# Research state — fresh compressed-candidate confirmation
+
+- **最新：** GRID51软压缩候选保留：旧开发完成周成本与FULL相同、控制减少14.3%–15.1%，不声称已胜PPO/SoftGNN。GRID52新版新八日期确认已在解压前冻结：两模型种子、三类主对照、两次平衡计时共96条；全部先前暴露/训练/开发/已提取日期排除，按季度固定哈希选日期和变体。Q1/Q3剩余各两日期，选择受限如实披露。无新训练/教师，原GRID44结果及质量损失完整保留。
+
 
 - **最新：** GRID51原快速控制20条评分改动比较与保存数据核验完成；FULL质量4/4、查询22597、控制328.62s；LOCAL_GNN0质量4/4、查询7312、控制295.48s；LOCAL_GNN1质量4/4、查询7484、控制279.75s；COMPRESSED_GNN0质量4/4、查询7682、控制278.91s；COMPRESSED_GNN1质量4/4、查询7682、控制281.65s。全部种子保留；旧开发非独立确认，实际改动不自动成为默认。
 

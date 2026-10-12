@@ -1,4 +1,7 @@
-# Research state — retain fast advantage,one soft-compression followup
+# Research state — preserve original fast-search advantage
+
+- **最新：** GRID51冻结原快速控制下的一次评分改动比较：原GNN两种子、新软压缩残差两种子、FULL；先5旧三月试点，两个新种子质量/存活合格才15其他旧开发回放。停止/保护/特征/缓存/控制均沿用原快版，不采用GRID47严格回补。没有GRID44训练/重评或新模型拟合；近期强基线原比较完整保留，不扩baseline菜单。
+
 
 - **最新：** GRID50一版软压缩两次拟合及旧26状态复核完成；GNN0查询7358→7728、同FULL选择24→25/26、1733True；GNN1查询7530→7728、同FULL选择25→25/26、1733True。不挑种子，不重训/评价GRID44，原快模型仍默认；缓存表现不等于闭环质量/提速。
 

@@ -360,3 +360,9 @@ GRID62冻结全部剩余三个未用日期、四既有同频次策略、两平�
 ## GRID62 complete
 
 GRID62冻结全部剩余三个未用日期、四既有同频次策略、两平衡计时重复，共24条。主方法FRAME、对照FULL/加强首个安全候选，NO_LOCAL只作已有内部消融。原控制/缓存/参数均不变，无训练；三个日期不能包装成八日期或跨电网确认。保存数据审计通过，裁决FRAMEWORK_CONFIRMED_IN_LIMITED_FRESH_MATRIX。全部失败/较慢/较差结果保留；非独立AC重求解。
+
+## 2026-10-13 — ICAPS 2027 guide-based first draft
+
+用户明确确认目标ICAPS2027，按其提供的LAMDA-NeSy Research-Starter-Kit公开写作章节完成4340词英文初稿、中文导读、写作要求映射和两个月安排。正文以渐进搜索/变电站补全为主线，GNN辅助；保留FIRST的新日期竞争力、无搜索日期/共同失败和计时变异。八行统一主表复算通过，旧V1/V2与GRID61/62原材料不变；无新仿真或训练。官方AAAI2027样式原样保留，但应用内XeTeX被其PDFLaTeX要求拒绝，未宣称正式格式/8页认证；另交付9页可视核对的单栏PDF阅读版。当前是AI辅助作者重写工作稿，非直接提交或匿名认证。摘要/全文截止12/7与12/14 UTC-12，拟在最终政策和作者文本确认后精修。
+
+[ICAPS2027初稿与导读](protocols/GRID_ICAPS_draft_v1/README.md)

@@ -1,5 +1,9 @@
 # GRL Experiment Log
 
+## 2026-10-13 — GRID59 post-audit evidence update
+
+只读复算16条GRID59回放的查询/控制比例与8条GNN—STATIC差值分解，无新采集或拟合。两种子平均查询少2.901%，控制平均多0.570%；六月共同1901步失败，完整周成本只比较三周。九月查询少但控制路径和成本不同，图/先验/前向约0.039秒不能单独解释搜索外耗时增加。贡献表、同批差异CSV、来源哈希及收尾记录归档GRID59_closeout；原历史证据不覆盖。
+
 This file is a concise index of experiments worth remembering. Raw logs, checkpoints, copied worktrees, and large outputs remain in their project-local result directories.
 
 Power-grid archive snapshots use `.gitattributes` with `-text` to preserve original bytes across checkouts. The original-file SHA-256 manifests therefore remain verifiable on other operating systems; Git's automatic line-ending normalization is disabled for this archive. This is an artifact transport fix, not an experiment rerun or result change.

@@ -1,5 +1,9 @@
 # GRL Decision Log
 
+## 2026-10-13 — GRID59 evidence closeout
+
+GRID59按冻结条件停止频次先验修订；不挑种子、不扫尺度/先验、不安排最终八日期确认或RL。原PPO先验版、两频次先验拟合、STATIC、全部较差结果及共同失败均保留。新的只读证据表覆盖GRID56早期贡献快照：框架提速已有测量，当前GNN增量未建立。建议先评估框架主线的具体贡献；是否仍要求GNN为核心涉及研究目标选择，尚未启动新实验。
+
 ## 2026-10-10 — Power-grid closed-loop evidence overrides ranking-only optimism
 
 The user authorized autonomous Grid2Op/L2RPN iteration with every old model and modification preserved. GRID22/23 are complete: 52 developmental trajectories and saved-data audits. The current role is supervised candidate ranking above a frozen published PPO prior, not a newly trained RL policy.

@@ -1,5 +1,7 @@
 # Research state — frequency-prior pilot
 
+- **当前收尾（2026-10-13）：** GRID59全部16条与审计完成，频次先验GNN两种子质量均4/4通过、无新增提前失败；相对强STATIC查询平均减少2.901%、各2/4日期正向，实际控制平均多0.570%，裁决WEAK_OR_MIXED_STOP_REVISION。本次先验改动停止。只读差异复算及当前贡献表已归档，无新回放或拟合，无未结作业。框架相对FULL约15.75%控制提速保留，但GNN对强教师频次顺序的增量未建立；当前需要明确论文以框架为主还是另立学习假设，不自动进入RL或扩大试验。
+
 - **最新：** GRID59有限频次先验闭环及保存数据审计完成；STATIC_ID质量4/4、对STATIC查询少0.000%、对STATIC控制少0.000%；FREQUENCY_GNN0质量4/4、对STATIC查询少3.127%、对STATIC控制少-0.635%；FREQUENCY_GNN1质量4/4、对STATIC查询少2.675%、对STATIC控制少-0.506%；裁决WEAK_OR_MIXED_STOP_REVISION。单次旧开发配对，不是封存确认。原新先验/模型/失败全部保留。
 
 

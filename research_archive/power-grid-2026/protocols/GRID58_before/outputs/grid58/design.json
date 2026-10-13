@@ -1,0 +1,54 @@
+{
+  "stage": "GRID58_ONE_FREQUENCY_PRIOR_REVISION",
+  "change": "Only the rank prior changes: public teacher-frequency order/STATIC_ID replaces original PPO+physical-tail order. Same soft-compressed residual architecture/scale2,zero-head original initialization,167oldtraining states/148targets,optimizer,shuffle,64epochs,two seeds,K128/stopping/guard.",
+  "motivation": "GRID49 completely free residual improved one seed but overcorrected another. Test sublinear correction growth without reintroducing hard peak-mass ceiling. This is a bounded engineering hypothesis,not known power-grid theory or guaranteed calibration.",
+  "training_weeks": [
+    "2035-01-29_4",
+    "2035-04-16_2",
+    "2035-07-23_10",
+    "2035-10-29_15",
+    "2035-02-05_0",
+    "2035-03-05_12",
+    "2035-01-08_5",
+    "2035-03-12_8",
+    "2035-06-11_1",
+    "2035-06-25_9",
+    "2035-05-07_14",
+    "2035-04-30_12",
+    "2035-09-10_1",
+    "2035-09-17_8",
+    "2035-08-27_14",
+    "2035-08-06_6",
+    "2035-11-05_8",
+    "2035-11-26_0",
+    "2035-12-24_5",
+    "2035-12-03_7"
+  ],
+  "development_weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5"
+  ],
+  "kinds": [
+    "gnn"
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "epochs": 64,
+  "batch_size": 8,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "prior_KL_weight": 0.1,
+  "evaluation": "After two fixed fits, replay only26existing olddevelopment FULL-feedback states. Both known1733choices must match before any separately frozen olddevelopment closedloop; otherwise preserve models and stop this revision. Cached diagnostics are not deployment scores.",
+  "scope": "One bounded prior revision motivated by audited strong ablation. No new teacher,model menu,constant/epoch selection,held-date labels or alternative frequency transform.",
+  "caps": {
+    "training_s": 600,
+    "fits": 2,
+    "new_forecasts": 0,
+    "GRID44_evaluations": 0
+  },
+  "cap_note": "Training600s/twofits;no new simulation. No using GRID52/55/57evaluation feedback to fit or select a checkpoint."
+}

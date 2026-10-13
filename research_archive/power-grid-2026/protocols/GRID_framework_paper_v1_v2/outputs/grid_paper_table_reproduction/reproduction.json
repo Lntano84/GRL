@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "method": "FULL",
+      "completed_families": 2,
+      "quality_families": 3,
+      "macro_control_reduction_full": 0.0,
+      "macro_query_reduction_full": 0.0,
+      "worst_complete_cost_delta_full": 0.0
+    },
+    {
+      "method": "FIRST_SAFE_BEST",
+      "completed_families": 2,
+      "quality_families": 3,
+      "macro_control_reduction_full": -0.07754153262315895,
+      "macro_query_reduction_full": 0.8924338363280018,
+      "worst_complete_cost_delta_full": -0.0021813807209499956
+    },
+    {
+      "method": "NO_LOCAL",
+      "completed_families": 2,
+      "quality_families": 3,
+      "macro_control_reduction_full": 0.09383906190954135,
+      "macro_query_reduction_full": 0.840203938982772,
+      "worst_complete_cost_delta_full": 0.00013870809132911119
+    },
+    {
+      "method": "FRAME",
+      "completed_families": 2,
+      "quality_families": 3,
+      "macro_control_reduction_full": 0.06085801417167369,
+      "macro_query_reduction_full": 0.835428916025931,
+      "worst_complete_cost_delta_full": 0.00013870809132911119
+    }
+  ],
+  "sources": [
+    {
+      "path": "outputs/grid62/design.json",
+      "sha256": "138eb6e37e298f169c757ee04a5d78a8b90d639a5beffc1c6cb1a0097e1a4d26"
+    },
+    {
+      "path": "outputs/grid62/finished.json",
+      "sha256": "0d95109b3d31f1baa1b1970957a04ac36d7d53369c141382f495ddd0f666240a"
+    },
+    {
+      "path": "outputs/grid62/review.json",
+      "sha256": "247dc190475e7997f734aa0b7186d0bcc8a6063a61cc0ac09ea02333b2dac2d7"
+    }
+  ],
+  "scope": "Independent aggregate re-computation from saved summary receipts; no raw-vector or AC re-solve."
+}

@@ -1,0 +1,209 @@
+{
+  "verdict": "FRAMEWORK_CONFIRMED_IN_LIMITED_FRESH_MATRIX",
+  "frame": {
+    "method": "FRAME",
+    "families": 3,
+    "runs": 6,
+    "completed_families": 2,
+    "completed": 4,
+    "quality_families": 3,
+    "quality_pass": 6,
+    "macro_control_reduction_full": 0.06085801417167369,
+    "macro_query_reduction_full": 0.835428916025931,
+    "worst_complete_cost_delta_full": 0.00013870809132911119,
+    "pooled_controller_s": 131.9779368000036
+  },
+  "completion_gains": [
+    {
+      "week": "2035-04-09_3",
+      "cost_gain_of_full": 7.818464771344388e-05
+    },
+    {
+      "week": "2035-11-19_0",
+      "cost_gain_of_full": 0.0
+    }
+  ],
+  "sources_checked": 13,
+  "v1_retained": true,
+  "new_fits": 0,
+  "timing_review": {
+    "frozen_primary_verdict_unchanged": "FRAMEWORK_CONFIRMED_IN_LIMITED_FRESH_MATRIX",
+    "active_families": [
+      "2035-04-09_3",
+      "2035-11-19_0"
+    ],
+    "inactive_families": [
+      "2035-05-14_14"
+    ],
+    "active_only_descriptive": {
+      "FIRST_SAFE_BEST": {
+        "macro_control_reduction_full": 0.11920971257802931,
+        "macro_query_reduction_full": 0.8924338363280018
+      },
+      "NO_LOCAL": {
+        "macro_control_reduction_full": 0.13740174727016702,
+        "macro_query_reduction_full": 0.840203938982772
+      },
+      "FRAME": {
+        "macro_control_reduction_full": 0.08249632070115126,
+        "macro_query_reduction_full": 0.835428916025931
+      }
+    },
+    "frame_vs_first_active_descriptive": [
+      {
+        "week": "2035-04-09_3",
+        "frame_control_reduction_first": -0.1035563940777211,
+        "frame_cost_gain_of_full_vs_first": 0.008630166346944437
+      },
+      {
+        "week": "2035-11-19_0",
+        "frame_control_reduction_first": 0.018582912430725074,
+        "frame_cost_gain_of_full_vs_first": -0.002320088812279107
+      }
+    ],
+    "repeat_pairs": [
+      {
+        "week": "2035-04-09_3",
+        "method": "FULL",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 1.0082347619150462,
+        "cpu_ratio_r0_r1": 0.9995049504950495,
+        "n1_source_delta_r0_r1_s": 0.3370619999996052,
+        "outside_n1_delta_r0_r1_s": 0.18024520000926714,
+        "solver_iteration_total_equal": true
+      },
+      {
+        "week": "2035-04-09_3",
+        "method": "FIRST_SAFE_BEST",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 1.2736578445887419,
+        "cpu_ratio_r0_r1": 1.2838014369693012,
+        "n1_source_delta_r0_r1_s": 0.19545389999893814,
+        "outside_n1_delta_r0_r1_s": 13.002564300020822,
+        "solver_iteration_total_equal": true
+      },
+      {
+        "week": "2035-04-09_3",
+        "method": "NO_LOCAL",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 0.9678572875565761,
+        "cpu_ratio_r0_r1": 0.973170731707317,
+        "n1_source_delta_r0_r1_s": -0.1799660999995467,
+        "outside_n1_delta_r0_r1_s": -1.2661194000420437,
+        "solver_iteration_total_equal": true
+      },
+      {
+        "week": "2035-04-09_3",
+        "method": "FRAME",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 1.705624743038416,
+        "cpu_ratio_r0_r1": 1.6988795518207283,
+        "n1_source_delta_r0_r1_s": 0.7894951000007495,
+        "outside_n1_delta_r0_r1_s": 30.769756900001994,
+        "solver_iteration_total_equal": true
+      },
+      {
+        "week": "2035-05-14_14",
+        "method": "FULL",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 0.9671047916567296,
+        "cpu_ratio_r0_r1": 0.9553571428571429,
+        "n1_source_delta_r0_r1_s": 0,
+        "outside_n1_delta_r0_r1_s": -0.23032390001571912,
+        "solver_iteration_total_equal": true
+      },
+      {
+        "week": "2035-05-14_14",
+        "method": "FIRST_SAFE_BEST",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 1.9641972695224796,
+        "cpu_ratio_r0_r1": 1.9564220183486238,
+        "n1_source_delta_r0_r1_s": 0,
+        "outside_n1_delta_r0_r1_s": 6.590499399987493,
+        "solver_iteration_total_equal": true
+      },
+      {
+        "week": "2035-05-14_14",
+        "method": "NO_LOCAL",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 0.9925652715279534,
+        "cpu_ratio_r0_r1": 1.0089485458612975,
+        "n1_source_delta_r0_r1_s": 0,
+        "outside_n1_delta_r0_r1_s": -0.05104589999154996,
+        "solver_iteration_total_equal": true
+      },
+      {
+        "week": "2035-05-14_14",
+        "method": "FRAME",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 0.97935138706482,
+        "cpu_ratio_r0_r1": 0.9886104783599089,
+        "n1_source_delta_r0_r1_s": 0,
+        "outside_n1_delta_r0_r1_s": -0.14115570000012667,
+        "solver_iteration_total_equal": true
+      },
+      {
+        "week": "2035-11-19_0",
+        "method": "FULL",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 0.9306289745395357,
+        "cpu_ratio_r0_r1": 0.9337571780147662,
+        "n1_source_delta_r0_r1_s": -0.30449420000059035,
+        "outside_n1_delta_r0_r1_s": -5.005020900011004,
+        "solver_iteration_total_equal": true
+      },
+      {
+        "week": "2035-11-19_0",
+        "method": "FIRST_SAFE_BEST",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 0.9660906395141058,
+        "cpu_ratio_r0_r1": 0.9695906432748538,
+        "n1_source_delta_r0_r1_s": -0.0005942000007053139,
+        "outside_n1_delta_r0_r1_s": -2.2737036000289663,
+        "solver_iteration_total_equal": true
+      },
+      {
+        "week": "2035-11-19_0",
+        "method": "NO_LOCAL",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 1.4035520342067624,
+        "cpu_ratio_r0_r1": 1.3968175037294879,
+        "n1_source_delta_r0_r1_s": 1.0361957000004622,
+        "outside_n1_delta_r0_r1_s": 24.354781099998036,
+        "solver_iteration_total_equal": true
+      },
+      {
+        "week": "2035-11-19_0",
+        "method": "FRAME",
+        "physical_paths_identical": true,
+        "control_ratio_r0_r1": 0.9564898733969935,
+        "cpu_ratio_r0_r1": 0.9522451888809693,
+        "n1_source_delta_r0_r1_s": -0.07439400000112073,
+        "outside_n1_delta_r0_r1_s": -2.8036513000270133,
+        "solver_iteration_total_equal": true
+      }
+    ],
+    "scope": "Post-run diagnostic, not a replacement primary criterion, date deletion, retimed score, or new confirmation.",
+    "interpretation": "The inactive May family has no topology query for any policy, so its time differences cannot be effects of the uncalled search. Same physical paths can have large wall and process-CPU variation in continuous optimization/compilation. No OS power events were observed; load/clock causes were not separately measured. Do not claim exclusive framework superiority over first-safe from the all-date timing ratio.",
+    "sources": [
+      {
+        "path": "outputs/grid62/review.json",
+        "sha256": "247dc190475e7997f734aa0b7186d0bcc8a6063a61cc0ac09ea02333b2dac2d7"
+      },
+      {
+        "path": "outputs/grid62/finished.json",
+        "sha256": "0d95109b3d31f1baa1b1970957a04ac36d7d53369c141382f495ddd0f666240a"
+      },
+      {
+        "path": "outputs/grid62/per_family.csv",
+        "sha256": "aec6c0b8cb14ffc25a7959623475e31917e4e9cedaddfae999ed05afacd39027"
+      },
+      {
+        "path": "outputs/grid62/power_events.json",
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    ]
+  },
+  "stable_superiority_over_first_safe_established": false,
+  "warning": "Draft, not submission-ready. Author/venue metadata and final literature positioning remain. Do not broaden small fresh-date evidence or rename adopted policies as full published reproductions."
+}

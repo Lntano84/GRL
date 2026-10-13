@@ -1,5 +1,8 @@
 # Research state — frequency-prior pilot
 
+- **最新：** GRID59有限频次先验闭环及保存数据审计完成；STATIC_ID质量4/4、对STATIC查询少0.000%、对STATIC控制少0.000%；FREQUENCY_GNN0质量4/4、对STATIC查询少3.127%、对STATIC控制少-0.635%；FREQUENCY_GNN1质量4/4、对STATIC查询少2.675%、对STATIC控制少-0.506%；裁决WEAK_OR_MIXED_STOP_REVISION。单次旧开发配对，不是封存确认。原新先验/模型/失败全部保留。
+
+
 - **最新：** GRID59冻结16条四旧开发周有限配对试点：频次先验GNN两种子、强STATIC_ID、FULL；原快控制/停止/合法信息/DC安全QP缓存不变，单次平衡串行计时。无新拟合或最终八日期评价；先验证两种子质量，再按冻结查询条件看额外学习信号，不新增先验/常数变体。
 
 

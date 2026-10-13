@@ -1,5 +1,7 @@
 # 当前电网论文证据
 
+用户核对材料（2026-10-13）：[六页数据工作簿](../research_archive/power-grid-2026/protocols/GRID_data_review_20261013/outputs/grid_data_review_20261013/GRID_数据与对比.xlsx)、[详细解释](../research_archive/power-grid-2026/protocols/GRID_data_review_20261013/outputs/grid_data_review_20261013/当前情况详细说明.md)、[128条正式逐次成绩](../research_archive/power-grid-2026/protocols/GRID_data_review_20261013/outputs/grid_data_review_20261013/GRID55B_128_runs.csv)、[16条新先验逐次成绩](../research_archive/power-grid-2026/protocols/GRID_data_review_20261013/outputs/grid_data_review_20261013/GRID59_16_runs.csv)。仅导出已有冻结数据，未新增实验。宏平均与汇总比例、完整周与共同失败、总控制与单步p95均分开展示。
+
 **当前结论（2026-10-13，GRID57—59之后）：整体有界搜索框架的工程提速保留，GNN相对强作者频次顺序的实用增量未建立。GRID56的方法稿与贡献表属于较早证据快照，必须与本页及后续收尾一起读取。**
 
 - GRID55B：原软压缩候选相对同共有缓存FULL完整控制时间宏平均减少15.752%；两种子均16/16完成，最坏完整周成本变化+0.08045%，守住0.5%投资尺度。PPO/SoftGNN仍略快，不能写成全面支配。

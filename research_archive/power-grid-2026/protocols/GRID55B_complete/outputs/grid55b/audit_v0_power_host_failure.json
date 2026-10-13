@@ -1,0 +1,8 @@
+{
+  "stage": "power_log_access_probe_before_scientific_audit",
+  "error": "WindowsPowerShell5 Get-WinEvent autoload failed: Microsoft.PowerShell.Diagnostics could not be loaded. Filtered empty event list was NOT accepted as proof; system-log access guard stopped audit.",
+  "old_audit_source_sha256": "832592dbabb5b764b284a99897109297611e9b334bcdf13f9fcbcfd38ee61be6",
+  "runs_repeated": 0,
+  "model_or_data_changed": false,
+  "repair": "Use already-installed workspace PowerShell7 for both event-log subprocesses; all scientific checks and selection code unchanged."
+}

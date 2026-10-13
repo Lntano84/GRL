@@ -1,0 +1,229 @@
+{
+  "stage": "GRID55B_EXTERNAL_STANDBY_REPAIR",
+  "reservation_sha256": "966d0310fb7c99e1fbc06957e8ee074600e8ea5e95bdd84807cd3a3cea2434dd",
+  "weeks": [
+    "2035-11-12_9"
+  ],
+  "families": [
+    {
+      "quarter": 4,
+      "date": "2035-11-12",
+      "primary_episode": "2035-11-12_9",
+      "reserved_all_variants": [
+        "2035-11-12_0",
+        "2035-11-12_1",
+        "2035-11-12_2",
+        "2035-11-12_3",
+        "2035-11-12_4",
+        "2035-11-12_5",
+        "2035-11-12_6",
+        "2035-11-12_7",
+        "2035-11-12_8",
+        "2035-11-12_9",
+        "2035-11-12_10",
+        "2035-11-12_11",
+        "2035-11-12_12",
+        "2035-11-12_13",
+        "2035-11-12_14",
+        "2035-11-12_15"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null,
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true
+    },
+    {
+      "method": "SOFTGNN0",
+      "rule": "SOFTGNN",
+      "budget": 128,
+      "checkpoint": "outputs/grid40b/models/softgnn_seed0/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    },
+    {
+      "method": "SOFTGNN1",
+      "rule": "SOFTGNN",
+      "budget": 128,
+      "checkpoint": "outputs/grid40b/models/softgnn_seed1/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    },
+    {
+      "method": "LOCAL_PPO",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null,
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    },
+    {
+      "method": "COMPRESSED_GNN0",
+      "rule": "COMPRESSEDGNN",
+      "budget": 128,
+      "checkpoint": "outputs/grid50/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    },
+    {
+      "method": "COMPRESSED_GNN1",
+      "rule": "COMPRESSEDGNN",
+      "budget": 128,
+      "checkpoint": "outputs/grid50/models/gnn_seed1/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    },
+    {
+      "method": "LOCAL_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    },
+    {
+      "method": "LOCAL_GNN1",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true
+    }
+  ],
+  "execution_order": [
+    {
+      "method": "SOFTGNN1",
+      "rule": "SOFTGNN",
+      "budget": 128,
+      "checkpoint": "outputs/grid40b/models/softgnn_seed1/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-11-12_9",
+      "repeat": 2,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "SOFTGNN0",
+      "rule": "SOFTGNN",
+      "budget": 128,
+      "checkpoint": "outputs/grid40b/models/softgnn_seed0/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-11-12_9",
+      "repeat": 2,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "FULL",
+      "rule": "FULL",
+      "budget": null,
+      "checkpoint": null,
+      "policy": "PROTECTED",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-11-12_9",
+      "repeat": 2,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "LOCAL_GNN1",
+      "rule": "GNN_seed1",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed1/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-11-12_9",
+      "repeat": 2,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "LOCAL_GNN0",
+      "rule": "GNN_seed0",
+      "budget": 128,
+      "checkpoint": "outputs/grid21/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-11-12_9",
+      "repeat": 2,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "COMPRESSED_GNN1",
+      "rule": "COMPRESSEDGNN",
+      "budget": 128,
+      "checkpoint": "outputs/grid50/models/gnn_seed1/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-11-12_9",
+      "repeat": 2,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "COMPRESSED_GNN0",
+      "rule": "COMPRESSEDGNN",
+      "budget": 128,
+      "checkpoint": "outputs/grid50/models/gnn_seed0/final.pt",
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-11-12_9",
+      "repeat": 2,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "LOCAL_PPO",
+      "rule": "OLDNN",
+      "budget": 128,
+      "checkpoint": null,
+      "policy": "PATIENCE64",
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-11-12_9",
+      "repeat": 2,
+      "stage_phase": "pilot"
+    }
+  ],
+  "repeats": 1,
+  "serial_workers": 1,
+  "choice_before_access": "All original/soft-compressed weights frozen and preserved. No selecting one seed or weaker SoftGNN. No new baseline families. This is matched version selection and engineering ablation,not an independent confirmation.",
+  "scope": "Keep original128/raw audit unchanged. New8form a supplemental complete paired repetition. If authorized, publish raw results plus explicitly repaired128-cell timing view using original7date repeat0/1 and affecteddate repeat0/2 for ALL methods,not only replacing the slow seed. No unseen/independent-confirmation claim.",
+  "timing": "Repeat the original affected repetition order for ALL eight methods, one fresh single-thread process each. Scoped Windows awake request; cold prior cache charged as before.",
+  "primary": "Report completion and steps for every family/seed. Require no earlier failure than FULL. Operating cost primary only on FULL-completed weeks when our method also completes; average normalized cost within family,not total across unequal survival. Speed primary on equal-horizon pairs only: mean paired control-time reduction over date families,repeat averaged,own seeds both reported and equally averaged.",
+  "secondary": "Pooled equal-horizon control time; topology source time/queries; per-family p95 decision latency; reported training/teacher costs and graph attribution limits. No causal allocation of shared cache savings to GNN.",
+  "investment_screen": "For both own seeds: no earlier failure on all8families; comparable complete-week cost<=0.5%ofFULL per family; mean equal-horizon control reduction>=5%,positive in>=ceil(0.75*n_comparable)families. This is practical screening,not equivalence or acceptance guarantee. Other/mixed outcomes remain visible; no test-based model retuning or family replacement.",
+  "statistics": "Fixed10000 date-family bootstrap resamples,seed20261011; same estimator as GRID44. Average two timing repeats and report both model seeds plus their equal-weight family average. Runs are not independent grids.",
+  "sealed_use": "GRID52dates already exposed;not called sealed/unseen again. They remain excluded from training/tuning. Historical GRID44/51/52results are immutable.",
+  "baseline_note": "SoftGNN official GAT/converter unchanged but IDF2023/909actions/basecontext/148states/64epochs is a resource-matched adaptation,not original WCCI2022 full-paper reproduction. Recent-method success/failure cannot refute published results.",
+  "caps": {
+    "episode_s": 1500,
+    "wall_s": 2400,
+    "physical_steps": 17000,
+    "public_forecasts": 200000,
+    "new_fits": 0,
+    "reserved_evaluations": 0
+  },
+  "model_status": "Candidate qualified on old development only; this confirmation cannot be used to choose the better seed. All outcomes retained. No automatic default-model change.",
+  "version_selection": "Apply same original quality/survival/time investment screen to EACH version/BOTH seeds,relativeFULL. If only one version meets it,prefer that version as the engineering candidate. If both meet it,require>=2%seed-average paired control improvement,>=6/8positive families,and BOTHmatched seed mean directions positive to prefer faster version. Symmetric rule for old. Otherwise retain both/no clear preferred version;report quality-time frontier,do not tune new parameters or pick a seed. Screening is not significance,equivalence or paper acceptance.",
+  "authorization": "User continued on 2026-10-13 after the saved shutdown handoff; execute the concrete eight-arm supplemental plan.",
+  "qualification": "Prevent system idle standby for this bounded run without changing the permanent power plan; check power-event log. Compare each supplemental physical path/cost/query trace against its historical counterpart. New failure/nondeterminism/standby makes timing qualification unresolved,not a license to keep repeating.",
+  "source_proposal_sha256": "8b81b7c2bd83c51504ae01fa0e162414eae0566bf365cd519f3679513ea9ffa4",
+  "view_rule": "Qualified128 uses original repeat0/1 for seven dates and repeat0/2 for the affected date, for ALL8methods. Physical source repeat2 is retained in provenance; logical slot1 is only a reporting index. No time subtraction or CPU substitution."
+}

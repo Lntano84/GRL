@@ -1,4 +1,7 @@
-# Research state — frequency-prior residual revision
+# Research state — frequency-prior pilot
+
+- **最新：** GRID59冻结16条四旧开发周有限配对试点：频次先验GNN两种子、强STATIC_ID、FULL；原快控制/停止/合法信息/DC安全QP缓存不变，单次平衡串行计时。无新拟合或最终八日期评价；先验证两种子质量，再按冻结查询条件看额外学习信号，不新增先验/常数变体。
+
 
 - **最新：** GRID58两个固定频次先验GNN拟合及52项旧开发缓存核验完成；seed0查询7457、STATIC7879、同FULL22/26、1733=True；seed1查询7520、STATIC7879、同FULL22/26、1733=True。旧开发闭环资格=True，尚未运行闭环，无新教师；缓存结果不作质量/提速证明。
 

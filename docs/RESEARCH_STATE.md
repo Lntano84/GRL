@@ -1,5 +1,8 @@
 # Research state — framework mechanism
 
+- **最新：** GRID61同频次顺序的框架机制矩阵：FULL/加强首个安全候选/去局部补全/现有FRAME，四旧开发日期、两个平衡重复32条；仅改变停止/补全策略。原GRID28基础控制、合法反馈和共有DC/safeQP缓存不变；无GNN拟合、阈值调节或外部基线扩散。裁决LOCAL_COMPLETION_SUPPORTED_IN_MATRIX；FULL质量8/8、控制减少0.000%;FIRST_SAFE_BEST质量4/8、控制减少7.032%;NO_LOCAL质量6/8、控制减少14.251%;FRAME质量8/8、控制减少13.059%。保留全部共同失败、较慢和较差结果；同排序机制比较不是新独立确认。
+
+
 - **最新：** GRID61同频次顺序的框架机制矩阵：FULL/加强首个安全候选/去局部补全/现有FRAME，四旧开发日期、两个平衡重复32条；仅改变停止/补全策略。原GRID28基础控制、合法反馈和共有DC/safeQP缓存不变；无GNN拟合、阈值调节或外部基线扩散。
 
 

@@ -1,0 +1,55 @@
+{
+  "passed_saved_data": true,
+  "runs": 32,
+  "physical_rows": 63616,
+  "public_forecasts": 218902,
+  "matched_feedback": 70358,
+  "exact_repeat_paths": 16,
+  "summaries": [
+    {
+      "method": "FULL",
+      "runs": 8,
+      "completed": 6,
+      "quality_pass": 8,
+      "macro_control_reduction_full": 0.0,
+      "macro_query_reduction_full": 0.0,
+      "worst_complete_cost_delta_full": 0.0
+    },
+    {
+      "method": "FIRST_SAFE_BEST",
+      "runs": 8,
+      "completed": 6,
+      "quality_pass": 4,
+      "macro_control_reduction_full": 0.07031520420340959,
+      "macro_query_reduction_full": 0.5145010757429679,
+      "worst_complete_cost_delta_full": 0.0395163973008905
+    },
+    {
+      "method": "NO_LOCAL",
+      "runs": 8,
+      "completed": 6,
+      "quality_pass": 6,
+      "macro_control_reduction_full": 0.14250604146281978,
+      "macro_query_reduction_full": 0.7183994003973074,
+      "worst_complete_cost_delta_full": 0.0481016995489406
+    },
+    {
+      "method": "FRAME",
+      "runs": 8,
+      "completed": 6,
+      "quality_pass": 8,
+      "macro_control_reduction_full": 0.13058775855001117,
+      "macro_query_reduction_full": 0.6936707730938854,
+      "worst_complete_cost_delta_full": 0.003720046656812149
+    }
+  ],
+  "frame_quality_passed": true,
+  "first_safe_competitive": false,
+  "first_safe_mean_time_ratio_frame": 1.072133242284732,
+  "local_completion_help_observed": true,
+  "verdict": "LOCAL_COMPLETION_SUPPORTED_IN_MATRIX",
+  "local_query_total": 1676,
+  "new_fits": 0,
+  "independent_ac_resolve": false,
+  "warning": "Four olddevelopment families,two timing repeats;same frequency order/sharedcache/basecontrol. Mechanism ablation,not new independent generalization or global optimality. First-safe reference has stronger best-admissible exhausted fallback;not full SoftGNN reproduction."
+}

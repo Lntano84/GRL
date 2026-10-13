@@ -1,5 +1,11 @@
 # 当前电网论文证据
 
+**用户已选框架主线（2026-10-13），GNN不要求成为核心。GRID60/61后续机制证据：** 同一作者频次排序、同一基础控制与共有缓存，32条闭环/四开发日期/两重复；FRAME质量8/8（完成6/8，六月共同失败），查询减少69.37%、控制减少13.06%，最坏完整周成本+0.37200%。去变电站补全后质量6/8、最坏成本+4.81017%；三月补全降低的成本相当于FULL的4.438%。普通首个安全候选强参照质量4/8、最坏+3.95164%，控制减少7.03%。此为同排序机制消融，不能外推为完整SoftGNN原代理失败或新独立泛化确认。
+
+方法与机制材料：[闭环报告](../research_archive/power-grid-2026/protocols/GRID61_complete/outputs/grid61/GRID61_report.md)、[逐次数据](../research_archive/power-grid-2026/protocols/GRID61_complete/outputs/grid61/per_run.csv)、[方法与性质工作稿](../research_archive/power-grid-2026/protocols/GRID61_mechanism/outputs/grid61_mechanism/框架方法与机制工作稿.md)、[机制图PDF](../research_archive/power-grid-2026/protocols/GRID61_figure_v1/outputs/grid61_figure_v1/framework_mechanism.pdf)。第一阶段26固定状态/104项合法反馈扰动、90项原FRAME复算支持接口资格；单状态1733步从256次漏选，经198次同变电站补查恢复909次FULL选择。不能把单步性质写成全周安全或全局最优保证。
+
+框架贡献候选具体化为：反馈驱动渐进补查与停止前的变电站语义补全，取得质量—实际控制成本权衡。Top-k、物理验证、混合控制及普通首个安全停止已有来源；共享编译复用属于系统实现、已有同路径机制证据，不当成新GNN或新求解算法。九月普通安全停止成本比FRAME更低（差相当于FULL的0.729%）、六月共同失败及补全额外开销完整保留，不宣称逐日期全面支配。图形修复仅缩短标签，旧图、首次绘图环境错误及原数值报告均保留。
+
 用户核对材料（2026-10-13）：[六页数据工作簿](../research_archive/power-grid-2026/protocols/GRID_data_review_20261013/outputs/grid_data_review_20261013/GRID_数据与对比.xlsx)、[详细解释](../research_archive/power-grid-2026/protocols/GRID_data_review_20261013/outputs/grid_data_review_20261013/当前情况详细说明.md)、[128条正式逐次成绩](../research_archive/power-grid-2026/protocols/GRID_data_review_20261013/outputs/grid_data_review_20261013/GRID55B_128_runs.csv)、[16条新先验逐次成绩](../research_archive/power-grid-2026/protocols/GRID_data_review_20261013/outputs/grid_data_review_20261013/GRID59_16_runs.csv)。仅导出已有冻结数据，未新增实验。宏平均与汇总比例、完整周与共同失败、总控制与单步p95均分开展示。
 
 **当前结论（2026-10-13，GRID57—59之后）：整体有界搜索框架的工程提速保留，GNN相对强作者频次顺序的实用增量未建立。GRID56的方法稿与贡献表属于较早证据快照，必须与本页及后续收尾一起读取。**

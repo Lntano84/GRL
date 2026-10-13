@@ -1,0 +1,139 @@
+{
+  "teacher": [
+    {
+      "stage": "grid18",
+      "training_episodes": 4,
+      "states": 26,
+      "training_episode_wall_s": 507.60164810000015,
+      "training_control_s": 493.1800700000126,
+      "training_n1_forecasts": 23264,
+      "training_all_forecasts": 37502,
+      "physical_steps": 7770,
+      "early_failed_training_weeks": [
+        "2035-01-29_4"
+      ],
+      "whole_invocation_wall_s_including_nontraining": 520.9555832000001
+    },
+    {
+      "stage": "grid19",
+      "training_episodes": 16,
+      "states": 141,
+      "training_episode_wall_s": 2533.243361099999,
+      "training_control_s": 2475.008768600001,
+      "training_n1_forecasts": 123257,
+      "training_all_forecasts": 184015,
+      "physical_steps": 29986,
+      "early_failed_training_weeks": [
+        "2035-04-30_12",
+        "2035-09-17_8"
+      ],
+      "whole_invocation_wall_s_including_nontraining": 3280.0111933999997
+    }
+  ],
+  "teacher_training_episode_wall_s": 3040.8450091999994,
+  "teacher_training_n1_forecasts": 146521,
+  "teacher_training_all_forecasts": 221517,
+  "teacher_states": 167,
+  "valid_preference_targets": 148,
+  "no_target_states_retained": 19,
+  "current_candidate_fits": [
+    {
+      "kind": "gnn",
+      "seed": 0,
+      "epochs": 64,
+      "preference_rows": 148,
+      "training_s": 44.361548900000344,
+      "final_training_objective": 5.751005610904178,
+      "same_original_initial_bytes": true,
+      "frozen_unused_tensors_checked": 6,
+      "trainable_parameters": 106449
+    },
+    {
+      "kind": "gnn",
+      "seed": 1,
+      "epochs": 64,
+      "preference_rows": 148,
+      "training_s": 43.12514519999968,
+      "final_training_objective": 5.767823966773781,
+      "same_original_initial_bytes": true,
+      "frozen_unused_tensors_checked": 6,
+      "trainable_parameters": 106449
+    }
+  ],
+  "current_candidate_fit_invocation_wall_s": 89.98978749999878,
+  "original_gnn_fits": [
+    {
+      "kind": "gnn",
+      "seed": 0,
+      "rows": 167,
+      "preference_rows": 148,
+      "epochs": 64,
+      "trainable_parameters": 106449,
+      "training_s": 39.80209350000041,
+      "final_training_objective": 5.852201358692066
+    },
+    {
+      "kind": "gnn",
+      "seed": 1,
+      "rows": 167,
+      "preference_rows": 148,
+      "epochs": 64,
+      "trainable_parameters": 106449,
+      "training_s": 40.05232380000052,
+      "final_training_objective": 5.841231784305057
+    }
+  ],
+  "softgnn_fits": [
+    {
+      "seed": 0,
+      "epochs": 64,
+      "positive_training_states": 148,
+      "trainable_parameters": 3843309,
+      "training_s": 283.31182389999594,
+      "first": {
+        "epoch": 1,
+        "training_kl": 3.637492018776971,
+        "eval_training_kl": 3.255045259321058,
+        "eval_training_top1": 0.02027027027027027,
+        "wall_s": 5.189946499995131
+      },
+      "last": {
+        "epoch": 64,
+        "training_kl": 1.4614288581384194,
+        "eval_training_kl": 1.1526195165273305,
+        "eval_training_top1": 0.24324324324324326,
+        "wall_s": 283.2979036999968
+      },
+      "checkpoint": "outputs/grid40b/models/softgnn_seed0/final.pt"
+    },
+    {
+      "seed": 1,
+      "epochs": 64,
+      "positive_training_states": 148,
+      "trainable_parameters": 3843309,
+      "training_s": 279.27957310000056,
+      "first": {
+        "epoch": 1,
+        "training_kl": 3.651547908782959,
+        "eval_training_kl": 3.2825100937405147,
+        "eval_training_top1": 0.02702702702702703,
+        "wall_s": 4.259201400003803
+      },
+      "last": {
+        "epoch": 64,
+        "training_kl": 1.1224604635625273,
+        "eval_training_kl": 0.6785031041583499,
+        "eval_training_top1": 0.2905405405405405,
+        "wall_s": 279.2601050000012
+      },
+      "checkpoint": "outputs/grid40b/models/softgnn_seed1/final.pt"
+    }
+  ],
+  "current_candidate_extra_teacher_queries": 0,
+  "excluded_or_unidentified": [
+    "Author PPO pretraining cost/exposure unknown",
+    "Trace acquisition/extraction separate",
+    "Feature/canonicalization/preprocessing outside recorded fit timer not reconstructed",
+    "Earlier abandoned model runs are research cost, not charged as one final fit"
+  ]
+}

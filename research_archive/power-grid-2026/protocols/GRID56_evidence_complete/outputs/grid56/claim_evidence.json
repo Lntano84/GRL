@@ -1,0 +1,47 @@
+[
+  {
+    "claim": "最终候选相对同共有缓存FULL减少完整控制时间",
+    "status": "SUPPORTED",
+    "evidence": "GRID52确认14.606%；GRID55B同日期工程版15.752%。两种子及八家族展示。"
+  },
+  {
+    "claim": "约70%拓扑查询减少等于约70%完整控制提速",
+    "status": "REJECTED",
+    "evidence": "主表查询70.00%/70.62%，完整控制15.44%/16.07%，计量不同。"
+  },
+  {
+    "claim": "最终候选质量达到预设工程尺度",
+    "status": "SUPPORTED_SCREEN_ONLY",
+    "evidence": "两种子最坏成本+0.08045%，全周完成；0.5%是投资尺度，不是等价证明。"
+  },
+  {
+    "claim": "新版更快，因此胜过旧版",
+    "status": "REJECTED",
+    "evidence": "新版相对旧版平均控制时间多3.50%；采用新版因为原版质量尾部超尺度。"
+  },
+  {
+    "claim": "最终候选全面快于PPO及SoftGNN",
+    "status": "REJECTED",
+    "evidence": "PPO/SoftGNN仍略快；质量、查询和控制时间分别展示。"
+  },
+  {
+    "claim": "全部收益来自图消息传递",
+    "status": "NOT_ESTABLISHED",
+    "evidence": "共有缓存/停止有作用；GRID37静态顺序在开发周已达到近似成绩。"
+  },
+  {
+    "claim": "图模型比等信息MLP普遍更好",
+    "status": "NOT_ESTABLISHED_FOR_FINAL_MODEL",
+    "evidence": "GRID34原版与MLP仅开发证据，当前软压缩版没有同配置MLP闭环。"
+  },
+  {
+    "claim": "论文在RTE生产电网中节省实际电费",
+    "status": "REJECTED",
+    "evidence": "目前为公开Grid2Op/LightSim2Grid轨迹回放，运行成本指标是模拟奖励账目。"
+  },
+  {
+    "claim": "本轮训练了新的RL策略",
+    "status": "REJECTED",
+    "evidence": "监督候选排序使用已有作者PPO先验；最终拟合是CE+.1KL，不是RL。"
+  }
+]

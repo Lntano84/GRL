@@ -1,0 +1,51 @@
+{
+  "passed_engineering": true,
+  "hand_checks": 10,
+  "permission_checks": 104,
+  "existing_frame_replay_equivalent": 90,
+  "summaries": [
+    {
+      "policy": "FULL",
+      "states": 26,
+      "queries": 22597,
+      "query_reduction_full": 0.0,
+      "same_full_choice": 26,
+      "local_queries": 0,
+      "max_rho_difference_full": 0.0
+    },
+    {
+      "policy": "FIRST_SAFE_BEST",
+      "states": 26,
+      "queries": 13730,
+      "query_reduction_full": 0.39239722087002704,
+      "same_full_choice": 18,
+      "local_queries": 0,
+      "max_rho_difference_full": 0.03483158349990845
+    },
+    {
+      "policy": "NO_LOCAL",
+      "states": 26,
+      "queries": 7041,
+      "query_reduction_full": 0.6884099659246803,
+      "same_full_choice": 18,
+      "local_queries": 0,
+      "max_rho_difference_full": 0.016815245151519775
+    },
+    {
+      "policy": "FRAME",
+      "states": 26,
+      "queries": 7879,
+      "query_reduction_full": 0.6513253971766164,
+      "same_full_choice": 21,
+      "local_queries": 838,
+      "max_rho_difference_full": 0.016815245151519775
+    }
+  ],
+  "existing_local_changed_calls": 12,
+  "existing_local_query_count": 2637,
+  "wall_s": 0.8302598000000216,
+  "new_fits": 0,
+  "new_forecasts": 0,
+  "new_physical_rollouts": 0,
+  "warning": "Olddevelopment FULL states and already-exposed FRAME traces. Same-state choice/query diagnostics are not causal whole-week cost or complete control speed. Published first-safe fallback strengthened to best admissible;not complete paper reproduction."
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="450" viewBox="0 0 1280 450"><rect width="100%" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#536780"/></marker></defs>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#172033">
+<text x="28" y="40" font-size="26" text-anchor="start">渐进拓扑搜索与变电站补全</text>
+<text x="28" y="64" font-size="16" text-anchor="start">输入当前电网状态 输出经过预测验证的拓扑提案</text>
+<rect x="28" y="78" width="235" height="84" rx="8" fill="#f6f7f9" stroke="#7f91aa"/>
+<text x="145.5" y="114" font-size="18" text-anchor="middle">公开状态与基础动作</text>
+<text x="145.5" y="141" font-size="16" text-anchor="middle">当前合法性与断线端点处理</text>
+<rect x="293" y="78" width="235" height="84" rx="8" fill="#f6f7f9" stroke="#7f91aa"/>
+<text x="410.5" y="114" font-size="18" text-anchor="middle">规范化代表与别名</text>
+<text x="410.5" y="141" font-size="16" text-anchor="middle">保留原始变电站信息</text>
+<rect x="558" y="78" width="235" height="84" rx="8" fill="#f6f7f9" stroke="#7f91aa"/>
+<text x="675.5" y="114" font-size="18" text-anchor="middle">相同排序 首批 128</text>
+<text x="675.5" y="141" font-size="16" text-anchor="middle">选择最佳可接纳候选</text>
+<rect x="965" y="78" width="280" height="84" rx="8" fill="#f6f7f9" stroke="#7f91aa"/>
+<text x="1105.0" y="114" font-size="18" text-anchor="middle">返回拓扑提案</text>
+<text x="1105.0" y="141" font-size="16" text-anchor="middle">接入原连续控制与恢复</text>
+<rect x="558" y="263" width="235" height="84" rx="8" fill="#eef4fc" stroke="#7f91aa"/>
+<text x="675.5" y="299" font-size="18" text-anchor="middle">渐进扩展 每批 64</text>
+<text x="675.5" y="326" font-size="16" text-anchor="middle">达到条件则停止全局扩展</text>
+<rect x="910" y="263" width="335" height="84" rx="8" fill="#eef4fc" stroke="#7f91aa"/>
+<text x="1077.5" y="299" font-size="18" text-anchor="middle">原最佳候选的变电站补全</text>
+<text x="1077.5" y="326" font-size="16" text-anchor="middle">查询该站所有未查询代表</text>
+<polyline points="263,120 293,120" fill="none" stroke="#536780" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="528,120 558,120" fill="none" stroke="#536780" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="793,120 965,120" fill="none" stroke="#536780" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="676,162 676,263" fill="none" stroke="#536780" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="793,305 910,305" fill="none" stroke="#536780" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="1108,263 1108,162" fill="none" stroke="#536780" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="820" y="102" font-size="16" text-anchor="start">首批达标或池耗尽</text>
+<text x="696" y="223" font-size="16" text-anchor="start">需要继续评估</text>
+<text x="811" y="288" font-size="16" text-anchor="start">条件停止</text>
+<text x="28" y="395" font-size="16" text-anchor="start">全局渐进评估定位有效变电站 局部补查完成同站配置比较</text>
+<text x="28" y="428" font-size="16" text-anchor="start">复用已查询反馈 保留最佳候选 每个代表最多评估一次</text>
+</g></svg>

@@ -1,0 +1,15 @@
+﻿id,claim,status,source,locator,limit
+C01,FRAME相对同排序FULL有有限质量—计算改善,SUPPORTED_IN_FIXED_MATRICES,tables/main_results_unified.csv,method=FRAME;stage=GRID61/GRID62,不是对所有成熟策略全面领先，也不是生产或跨电网保证
+C02,开发组FRAME控制减少13.1121%、查询减少69.3671%,OFFLINE_UNIFIED_ESTIMATOR,tables/main_results_unified.csv,GRID61/FRAME,四旧日期；原报告13.0588%保留；无新实验
+C03,封存FRAME控制减少6.0858%、查询减少83.5429%,FROZEN_SCREEN_PASSED,outputs/grid62/review.json,summaries[method=FRAME],3日期，查询分母仅2日期；质量3/3不等于完成3/3
+C04,三月补全把完整周成本差4.81017%降到0.37200%,CONTROLLED_DEVELOPMENT_MECHANISM,outputs/grid61/per_run.csv,week=2035-03-05_0;FRAME vs NO_LOCAL,强质量修复集中一个旧日期
+C05,1733步额外198次补查找回FULL同选动作309,SINGLE_STATE_WITNESS,outputs/grid60/qualification.json,known critical state1733;also GRID61 method draft,不是全池或整周最优证明
+C06,补全不降低同状态已观测选择键，新增查询|L|,CONDITIONAL_PROPERTY,work/grid60/policies.py,"run, local completion branch",只在触发补全时，不推导长期安全/整周成本
+C07,新日期FIRST_SAFE_BEST也全部通过质量,ADVERSE_COMPETITIVE_REFERENCE,outputs/grid62/review.json,summaries[FIRST_SAFE_BEST],其五月无搜索计时差不能归因停止政策
+C08,两有调用日期FRAME少8.2496%、FIRST少11.9210%控制时间,POSTHOC_DESCRIPTIVE_ONLY,outputs/grid62_timing_review/review.json,active_only_descriptive,不换主判据，不删五月，不当新确认
+C09,同路径重复仍有接近两倍控制/CPU计时差,TIMING_LIMITATION,outputs/grid62_timing_review/review.json,repeat_pairs,未定位负载/频率根因，无待机不排除所有变化
+C10,共有缓存属于共享工程优化,ATTRIBUTION_BOUNDARY,outputs/grid62/design.json,cache_attribution;methods cache flags,缓存收益不归GNN、不同批比例不相加
+C11,没有建立GNN对强频次顺序稳定增量,NOT_ESTABLISHED,outputs/grid57_prior_review/review.json;outputs/grid59/review.json,historical comparable ranking results,不否定所有GNN或RL，不用新训练救当前主张
+C12,共同失败不计为质量收益,FAILURES_RETAINED,tables/all_families.csv,June1901 development;May747 fresh,失败成本不作完整周成本比
+C13,FULL穷举当前canonical动作池,REFERENCE_SCOPE,work/grid60/policies.py,FULL branch,不是所有电网拓扑/全周最优
+C14,benchmark成本含curtailment前后变化,ACCOUNTING_DEFINITION,work/grid03/score_adapter.py,public_cost_ledger,不声称现实财务/总弃电收益

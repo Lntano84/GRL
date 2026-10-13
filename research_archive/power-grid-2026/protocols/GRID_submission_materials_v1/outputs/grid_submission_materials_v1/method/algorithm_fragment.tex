@@ -1,0 +1,27 @@
+% A fragment for author-written manuscript, not a standalone document.
+% Requires algorithm + algpseudocode; adapt to the chosen venue's permitted packages.
+\begin{algorithm}[t]
+\caption{Progressive topology search with incumbent-substation completion}
+\begin{algorithmic}[1]
+\Require Public state $x$, base action $b$, ranked canonical pool $A$, alias map
+\State $C \gets \textsc{Query}(A[1:\min(128,|A|)])$
+\State $a \gets \textsc{BestAdmissible}(C)$; $\textit{stale} \gets 0$
+\If{$C=A$ or ($a\ne\varnothing$ and $\rho(a)<0.9$)}
+  \State \Return $a$
+\EndIf
+\For{each next batch $B$ of at most $64$ representatives}
+  \State Save old incumbent key; $C \gets C\cup\textsc{Query}(B)$
+  \State $a\gets\textsc{BestAdmissible}(C)$
+  \State Reset $\textit{stale}$ if key improved, otherwise increment it
+  \If{$a\ne\varnothing$ and ($\rho(a)<0.9$ or ($|C|\ge256$ and $\textit{stale}\ge2$))}
+    \State \textbf{break}
+  \EndIf
+\EndFor
+\If{$a\ne\varnothing$ and $C\ne A$}
+  \State $s\gets\textsc{OriginalSubstation}(a)$
+  \State $L\gets$ unqueried representatives with an original alias at $s$
+  \State $C\gets C\cup\textsc{Query}(L)$; $a\gets\textsc{BestAdmissible}(C)$
+\EndIf
+\State \Return $a$ (no topology proposal if $a=\varnothing$)
+\end{algorithmic}
+\end{algorithm}

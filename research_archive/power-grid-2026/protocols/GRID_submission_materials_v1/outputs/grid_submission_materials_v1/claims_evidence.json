@@ -1,0 +1,114 @@
+[
+  {
+    "id": "C01",
+    "claim": "FRAME相对同排序FULL有有限质量—计算改善",
+    "status": "SUPPORTED_IN_FIXED_MATRICES",
+    "source": "tables/main_results_unified.csv",
+    "locator": "method=FRAME;stage=GRID61/GRID62",
+    "limit": "不是对所有成熟策略全面领先，也不是生产或跨电网保证"
+  },
+  {
+    "id": "C02",
+    "claim": "开发组FRAME控制减少13.1121%、查询减少69.3671%",
+    "status": "OFFLINE_UNIFIED_ESTIMATOR",
+    "source": "tables/main_results_unified.csv",
+    "locator": "GRID61/FRAME",
+    "limit": "四旧日期；原报告13.0588%保留；无新实验"
+  },
+  {
+    "id": "C03",
+    "claim": "封存FRAME控制减少6.0858%、查询减少83.5429%",
+    "status": "FROZEN_SCREEN_PASSED",
+    "source": "outputs/grid62/review.json",
+    "locator": "summaries[method=FRAME]",
+    "limit": "3日期，查询分母仅2日期；质量3/3不等于完成3/3"
+  },
+  {
+    "id": "C04",
+    "claim": "三月补全把完整周成本差4.81017%降到0.37200%",
+    "status": "CONTROLLED_DEVELOPMENT_MECHANISM",
+    "source": "outputs/grid61/per_run.csv",
+    "locator": "week=2035-03-05_0;FRAME vs NO_LOCAL",
+    "limit": "强质量修复集中一个旧日期"
+  },
+  {
+    "id": "C05",
+    "claim": "1733步额外198次补查找回FULL同选动作309",
+    "status": "SINGLE_STATE_WITNESS",
+    "source": "outputs/grid60/qualification.json",
+    "locator": "known critical state1733;also GRID61 method draft",
+    "limit": "不是全池或整周最优证明"
+  },
+  {
+    "id": "C06",
+    "claim": "补全不降低同状态已观测选择键，新增查询|L|",
+    "status": "CONDITIONAL_PROPERTY",
+    "source": "work/grid60/policies.py",
+    "locator": "run, local completion branch",
+    "limit": "只在触发补全时，不推导长期安全/整周成本"
+  },
+  {
+    "id": "C07",
+    "claim": "新日期FIRST_SAFE_BEST也全部通过质量",
+    "status": "ADVERSE_COMPETITIVE_REFERENCE",
+    "source": "outputs/grid62/review.json",
+    "locator": "summaries[FIRST_SAFE_BEST]",
+    "limit": "其五月无搜索计时差不能归因停止政策"
+  },
+  {
+    "id": "C08",
+    "claim": "两有调用日期FRAME少8.2496%、FIRST少11.9210%控制时间",
+    "status": "POSTHOC_DESCRIPTIVE_ONLY",
+    "source": "outputs/grid62_timing_review/review.json",
+    "locator": "active_only_descriptive",
+    "limit": "不换主判据，不删五月，不当新确认"
+  },
+  {
+    "id": "C09",
+    "claim": "同路径重复仍有接近两倍控制/CPU计时差",
+    "status": "TIMING_LIMITATION",
+    "source": "outputs/grid62_timing_review/review.json",
+    "locator": "repeat_pairs",
+    "limit": "未定位负载/频率根因，无待机不排除所有变化"
+  },
+  {
+    "id": "C10",
+    "claim": "共有缓存属于共享工程优化",
+    "status": "ATTRIBUTION_BOUNDARY",
+    "source": "outputs/grid62/design.json",
+    "locator": "cache_attribution;methods cache flags",
+    "limit": "缓存收益不归GNN、不同批比例不相加"
+  },
+  {
+    "id": "C11",
+    "claim": "没有建立GNN对强频次顺序稳定增量",
+    "status": "NOT_ESTABLISHED",
+    "source": "outputs/grid57_prior_review/review.json;outputs/grid59/review.json",
+    "locator": "historical comparable ranking results",
+    "limit": "不否定所有GNN或RL，不用新训练救当前主张"
+  },
+  {
+    "id": "C12",
+    "claim": "共同失败不计为质量收益",
+    "status": "FAILURES_RETAINED",
+    "source": "tables/all_families.csv",
+    "locator": "June1901 development;May747 fresh",
+    "limit": "失败成本不作完整周成本比"
+  },
+  {
+    "id": "C13",
+    "claim": "FULL穷举当前canonical动作池",
+    "status": "REFERENCE_SCOPE",
+    "source": "work/grid60/policies.py",
+    "locator": "FULL branch",
+    "limit": "不是所有电网拓扑/全周最优"
+  },
+  {
+    "id": "C14",
+    "claim": "benchmark成本含curtailment前后变化",
+    "status": "ACCOUNTING_DEFINITION",
+    "source": "work/grid03/score_adapter.py",
+    "locator": "public_cost_ledger",
+    "limit": "不声称现实财务/总弃电收益"
+  }
+]

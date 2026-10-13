@@ -1,4 +1,9 @@
-# Grid paper evidence — framework manuscript
+# Grid paper evidence — submission material package
+
+完成一次正式投稿定位与作者重写素材包：ECAI框架/搜索主方向、ECML2027 ADS应用备选、ICAPS2027较早但规划范围有条件，PAIS待当届细则与单位标准。官方来源17条、8行统一主表/28日期方法行、14项主张证据、6条BibTeX、代码映射/算法/性质、SVG与科学图、标准与AI使用事实说明已准备。按先平均重复再算比例统一GRID61 FRAME为13.1121%，原13.0588%保留，不改科学裁决。独立便携表格复算通过；769MB原始记录另建本地raw包并CRC/哈希校验，未推入Git。轻量附件齐全但尚不是匿名投稿或完整独立仿真安装包。无新运行/训练；两个离线材料目录/换行错误留档，未损及历史结果。
+
+[材料入口](../research_archive/power-grid-2026/protocols/GRID_submission_materials_v1/outputs/grid_submission_materials_v1/README.md) · [投稿定位](../research_archive/power-grid-2026/protocols/GRID_submission_materials_v1/outputs/grid_submission_materials_v1/01_投稿定位.md)
+
 
 完整框架英文论文V1/V2与来源表、伪代码、单步性质、三日期封存主表、计时反例、科学图、表格独立复算和轻量复现入口完成。V1保留。原冻结确认通过，但FIRST_SAFE_BEST新日期也质量3/3，FRAME对它稳定优势未建立；主张限定为相对FULL有限质量—计算改善与已有具体机制，不扩大为普遍补全必要或GNN创新。尚需作者/目标会议格式和最终文献定位；不是可直接投稿或一键完整仿真复现的认证。
 

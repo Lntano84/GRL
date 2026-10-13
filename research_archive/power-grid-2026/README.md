@@ -336,3 +336,7 @@ GRID59冻结16条四旧开发周有限配对试点：频次先验GNN两种子、
 ## GRID59 complete
 
 GRID59有限频次先验闭环及保存数据审计完成；STATIC_ID质量4/4、对STATIC查询少0.000%、对STATIC控制少0.000%；FREQUENCY_GNN0质量4/4、对STATIC查询少3.127%、对STATIC控制少-0.635%；FREQUENCY_GNN1质量4/4、对STATIC查询少2.675%、对STATIC控制少-0.506%；裁决WEAK_OR_MIXED_STOP_REVISION。单次旧开发配对，不是封存确认。原新先验/模型/失败全部保留。
+
+## GRID60 before
+
+用户已选择以框架作用为论文主线、GNN可替换辅助。GRID60仅做机制/近邻方法资格核对：共同频次排序下FULL、首个安全候选加增强回退、无变电站补全、现有完整框架；不新增训练/参数。

@@ -13,7 +13,8 @@ Whenever starting a fresh Codex/agent session in this repository, read in this o
 6. Existing technical docs such as `docs/EXPERIMENT_PROTOCOL.md`, `docs/CODEBASE_GUIDE.md`, and `docs/PAPER_CODE_MAPPING.md` as needed
 
 ## Workspace rules
-- Primary Linux workspace: `/workspace/GRL`. The documented Windows integration checkout is `C:/Users/windows/Documents/Codex/2026-09-24/influence-maximization-im-ccf-b-grl/work/GRL-results-integration`; Grid2Op scratch/results are preserved in its parent Codex workspace and selectively archived here.
+- Primary Linux workspace: `/workspace/GRL`. The canonical Windows integration checkout is `D:/Codex/GRL研究/work/GRL-results-integration`; Grid2Op scratch/results are preserved in its parent D: workspace and selectively archived here.
+- Store all new project materials, downloads, generated artifacts, and scratch files on D:. The old C: `outputs`, `tmp`, and `work` paths are compatibility junctions; use D: paths for new commands and deliverable links.
 - Do not create GRL temporary worktrees, clones, test folders, or experiment scratch directories directly under `/workspace`.
 - Keep all GRL-specific temporary material inside `/workspace/GRL` (or a documented project-local subdirectory).
 - Do not delete or overwrite experiment outputs merely to make the Git working tree look clean.

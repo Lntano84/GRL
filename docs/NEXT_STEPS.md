@@ -1,5 +1,7 @@
 # Next steps
 
+工作区：`D:/Codex/GRL研究`。后续文件与临时工作统一保存D盘。
+
 1. 用户已确认暂定ICAPS2027长文；先由作者继续修改中文重写稿V2（保留其手改V1），提供署名/单位标准，再以确认中文稿整理英文。材料在 `research_archive/power-grid-2026/protocols/GRID_ICAPS_draft_v1` 与 `GRID_ICAPS_cn_v1`，旧稿保留。
 2. 精修具体搜索贡献、最邻近结构补全方法定位与FIRST竞争解释；时间点估计不得超出重复变异的支持。没有自动新实验/训练任务。
 3. 正式AAAI2027样式需要PDFLaTeX；当前应用内XeTeX不支持该模板，阅读PDF不算8页/匿名/AI政策认证。最终准备真实匿名稿、第三方资产依赖与当届政策核对。

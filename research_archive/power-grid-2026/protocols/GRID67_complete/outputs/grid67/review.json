@@ -1,0 +1,65 @@
+{
+  "passed_saved_data": true,
+  "runs": 24,
+  "dates": 4,
+  "physical_rows": 47712,
+  "matched_full_feedback": 42249,
+  "equal_input_budget_checks": 0,
+  "repeated_paths_equal": 24,
+  "historical_reference_checks": 8,
+  "summaries": [
+    {
+      "method": "FULL",
+      "quality_dates": 4,
+      "complete_dates": 3,
+      "max_complete_cost_delta": 0.0,
+      "macro_query_reduction": 0.0,
+      "macro_time_reduction": 0.0
+    },
+    {
+      "method": "FRAME",
+      "quality_dates": 4,
+      "complete_dates": 3,
+      "max_complete_cost_delta": 0.003720046656812137,
+      "macro_query_reduction": 0.6936707730938854,
+      "macro_time_reduction": 0.15280304973570924
+    },
+    {
+      "method": "FRAME_P64",
+      "quality_dates": 3,
+      "complete_dates": 3,
+      "max_complete_cost_delta": 0.005298044945348801,
+      "macro_query_reduction": 0.728734151630495,
+      "macro_time_reduction": 0.15583312703421848
+    },
+    {
+      "method": "FRAME_P256",
+      "quality_dates": 4,
+      "complete_dates": 3,
+      "max_complete_cost_delta": 0.003720046656812137,
+      "macro_query_reduction": 0.5793587423514692,
+      "macro_time_reduction": 0.12997208618976158
+    },
+    {
+      "method": "FRAME_S1",
+      "quality_dates": 4,
+      "complete_dates": 3,
+      "max_complete_cost_delta": 0.003720046656812137,
+      "macro_query_reduction": 0.7010536644421139,
+      "macro_time_reduction": 0.15551307207520554
+    },
+    {
+      "method": "FRAME_S3",
+      "quality_dates": 4,
+      "complete_dates": 3,
+      "max_complete_cost_delta": 0.003720046656812137,
+      "macro_query_reduction": 0.6586997912529864,
+      "macro_time_reduction": 0.14789984276264942
+    }
+  ],
+  "timing_qualified": true,
+  "power_events": [],
+  "verdict": "PARAMETER_SENSITIVITY_REPORTED_NO_SELECTION",
+  "independent_ac_resolve": false,
+  "new_fits": 0
+}

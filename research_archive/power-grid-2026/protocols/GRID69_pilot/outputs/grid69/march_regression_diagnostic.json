@@ -1,0 +1,65 @@
+{
+  "first_divergence": 1260,
+  "rows": [
+    {
+      "version": "old",
+      "step": 1260,
+      "state": "f77cddb971493da32d7f8e3401129d74886f76ca3270ba8e97b6bba375b82b41",
+      "stop": "initial_safe",
+      "queries": 128,
+      "choice": 62,
+      "prefix": 62,
+      "prefix_rho": 0.8880305886268616,
+      "pre_extra": 62,
+      "local": 0,
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 62,
+          "improved": true
+        }
+      ]
+    },
+    {
+      "version": "verify",
+      "step": 1260,
+      "state": "f77cddb971493da32d7f8e3401129d74886f76ca3270ba8e97b6bba375b82b41",
+      "stop": "minimum_verified_plateau_local_complete",
+      "queries": 454,
+      "choice": 379,
+      "prefix": 62,
+      "prefix_rho": 0.8880305886268616,
+      "pre_extra": 62,
+      "local": 198,
+      "events": [
+        {
+          "queries": 128,
+          "phase": "shortlist",
+          "chosen": 62,
+          "improved": true
+        },
+        {
+          "queries": 192,
+          "phase": "verification",
+          "chosen": 62,
+          "improved": false
+        },
+        {
+          "queries": 256,
+          "phase": "verification",
+          "chosen": 62,
+          "improved": false
+        },
+        {
+          "queries": 454,
+          "phase": "local_completion",
+          "chosen": 379,
+          "improved": true
+        }
+      ]
+    }
+  ],
+  "new_physical_runs": 0,
+  "scope": "Branch diagnosis only; not proof a single-action change repairs the week."
+}

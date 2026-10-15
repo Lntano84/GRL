@@ -1,0 +1,62 @@
+{
+  "stage": "GRID74_PROBE_THEN_CONDITIONAL_VERIFY",
+  "frozen_utc": "2026-10-15T12:56:33.072793+00:00",
+  "authorization": "User: start the conference-comparison contribution direction.",
+  "models": [
+    "plain",
+    "struct"
+  ],
+  "feature_names": [
+    "query_fraction",
+    "pool_size_909",
+    "has_admissible",
+    "best_reward_half",
+    "best_rho_half",
+    "last_quality_gain",
+    "stale_fraction",
+    "admissible_fraction",
+    "mean_quality",
+    "std_quality",
+    "top_two_quality_gap",
+    "public_rho_limit_half",
+    "represented_station_fraction",
+    "incumbent_station_coverage",
+    "unseen_station_candidate_fraction",
+    "remaining_incumbent_station_fraction",
+    "best_other_station_gap",
+    "top8_incumbent_station_fraction",
+    "top8_station_entropy",
+    "station_best_std"
+  ],
+  "plain_features": 12,
+  "struct_features": 20,
+  "forest": {
+    "n_estimators": 128,
+    "max_depth": 4,
+    "min_samples_leaf": 4,
+    "class_weight": "balanced",
+    "random_state": 0,
+    "n_jobs": 1
+  },
+  "label": "Same teacher final-action-change target from GRID72. Fit only stable-probe training cases. Improved-probe cases always defer; no classifier needed for them.",
+  "calibration": "Zero omitted teacher changes; threshold=min residual in-support positive portable probability. Outside-training-support always defer. Same10% total safe-calibration query saving screen; stopped cost192, not128. No closed-loop quality guarantee.",
+  "support_indices": [
+    1,
+    3,
+    8,
+    9,
+    10,
+    13
+  ],
+  "split": "Unchanged GRID64:14 train families129 states,4 calibration families22 states; all13 evaluation families excluded.",
+  "qualification": "Zero omitted teacher-action changes and>=10% total safe-state calibration query saving. Structural/plain feature contrast reported; passing only enables separately frozen pilot.",
+  "next_baseline": "One literature DQN family; same20 legal features and RETURN/GLOBAL64/DELEGATE_GUARD mode actions. Delegate available at initial128; matches our complete action option. Complete source/action/utility mapping must be frozen before DQN fits. No full A*/RRT* reproduction claim.",
+  "caps": {
+    "fits": 2,
+    "wall_s": 600,
+    "new_physical_queries": 0
+  },
+  "read_evaluation_results": false,
+  "change": "One fixed64-candidate probe after initial safe128. If probe changes incumbent, defer to exact GRID70. Otherwise predict residual need using prefix192 feedback and the same two fixed forests. Retain GRID72/73, no parameter sweep.",
+  "probe_batch": 64
+}

@@ -1,0 +1,209 @@
+{
+  "stage": "GRID76_QUALIFIED_CONTEXT_BASELINE",
+  "frozen_utc": "2026-10-15T13:10:52.882160+00:00",
+  "weeks": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5",
+    "2035-04-09_3",
+    "2035-05-14_14",
+    "2035-11-19_0",
+    "2035-01-01_8",
+    "2035-02-19_8",
+    "2035-04-02_9",
+    "2035-07-09_2",
+    "2035-12-10_6",
+    "2035-12-17_1"
+  ],
+  "pilot": [
+    "2035-07-09_2",
+    "2035-12-10_6",
+    "2035-03-05_0"
+  ],
+  "methods": [
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true
+    }
+  ],
+  "execution_order": [
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-07-09_2",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-12-10_6",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-03-05_0",
+      "repeat": 0,
+      "stage_phase": "pilot"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-06-25_8",
+      "repeat": 0,
+      "stage_phase": "remaining"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-09-03_4",
+      "repeat": 0,
+      "stage_phase": "remaining"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-10-01_5",
+      "repeat": 0,
+      "stage_phase": "remaining"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-04-09_3",
+      "repeat": 0,
+      "stage_phase": "remaining"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-05-14_14",
+      "repeat": 0,
+      "stage_phase": "remaining"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-11-19_0",
+      "repeat": 0,
+      "stage_phase": "remaining"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-01-01_8",
+      "repeat": 0,
+      "stage_phase": "remaining"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-02-19_8",
+      "repeat": 0,
+      "stage_phase": "remaining"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-04-02_9",
+      "repeat": 0,
+      "stage_phase": "remaining"
+    },
+    {
+      "method": "CONTEXT_GATE",
+      "policy": "CONTEXT_GATE",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "week": "2035-12-17_1",
+      "repeat": 0,
+      "stage_phase": "remaining"
+    }
+  ],
+  "repeats": 1,
+  "environment_seed": 0,
+  "quality_threshold": 0.005,
+  "scope": "Qualified ordinary operating-context cheap baseline after structural candidates failed. Same13 exposed-date regression, not structural innovation success or independent confirmation. Current FRAME_GUARD preserved.",
+  "timing": "One fresh serial worker/date; graph-context construction and first JSON load/prediction counted in choose/controller. No matched fresh FULL timing claim.",
+  "repair": "Initial safe128: fixed GRID75_plain classifier with actual public graph context can return early. Otherwise delegate exact GRID70 with prefix cached once. Unsafe prefixes always old guard fallback.",
+  "decision": "Stress pilot July9/December10/March5 must all meet original relative-FULL quality. Saving not required on stress pilot: useful gating may defer these. If quality passes, finish remaining10 same dates. Main competitiveness only after all13: compare same-seven query totals with current10305/11201 benchmarks; only if genuinely competitive, prepare stronger same-information/action conference adaptation. No DQN retraining until then.",
+  "caps": {
+    "episode_s": 1200,
+    "wall_s": 10800,
+    "physical_steps": 30000,
+    "public_forecasts": 800000,
+    "new_fits": 0
+  },
+  "method_role": "Cheap context baseline, not a selected structural model or claimed new algorithm. GRID75 structural main failed and is not run.",
+  "model": "outputs/grid75/models/plain.json"
+}

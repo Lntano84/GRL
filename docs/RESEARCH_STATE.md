@@ -1,5 +1,7 @@
 # Research state — budget-matched framework comparison
 
+- **最新：** GRID77相同信息与核查权限会议适配：25维(共享24维+模式位)、返回/继续64/完整FRAME_GUARD，保留ICAPS2022式DoubleDQN内核；2种子×3既定费用共6拟合，129训练22校准，排除13评价家族。不把停止/参数控制作为新颖性，不把普通上下文结果冒充结构优势。
+
 - **最新：** GRID76 complete完成保存数据核验，13条、质量13/13、完成11/13；裁决REGRESSION_REPORTED_ALL_DATES。所有不利结果保留，修复开发不作为独立确认；单次计时仅描述。
 
 - **最新：** GRID76 pilot完成保存数据核验，3条、质量3/3、完成3/3；裁决PILOT_PASSED_CONTINUE_FIXED_REGRESSION。所有不利结果保留，修复开发不作为独立确认；单次计时仅描述。

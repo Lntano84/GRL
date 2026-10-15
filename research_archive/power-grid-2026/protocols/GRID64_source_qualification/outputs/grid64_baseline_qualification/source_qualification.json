@@ -1,0 +1,88 @@
+{
+  "phase": "SOURCE_AND_MAPPING_QUALIFICATION_ONLY",
+  "formal_training_started": false,
+  "new_closed_loop_runs": 0,
+  "new_fits": 0,
+  "global_budget_baseline_completed": "GRID63: 63/63 audited, GLOBAL_COMPETITIVE_NO_MATERIAL_STRUCTURE_GAIN",
+  "preferred_source": {
+    "paper": "Bhatia et al. ICAPS 2022",
+    "doi": "10.1609/icaps.v32i1.19842",
+    "repository": "https://github.com/bhatiaabhinav/Metareasoning.jl",
+    "commit": "facb41ad6544b60895b1543e57c70a11dc280224",
+    "files": [
+      {
+        "path": "README.md",
+        "sha256": "b7817fa8820bcf436a5e76dc380904a25130cc29029fd9243c9de739bed6a3c3"
+      },
+      {
+        "path": "aastar_dqn.jl",
+        "sha256": "4e9f3b5b0ec2e46f3c23b406e55d609ea79968ce135ea6d516ef3ab714f3c5db"
+      },
+      {
+        "path": "rrt_dqn.jl",
+        "sha256": "9c342bb17f61797286e62f05ebc3003c936e8d53efe8f5e2f557fabfc8c087bc"
+      },
+      {
+        "path": "src/rl/dqn.jl",
+        "sha256": "a1b638dcd43482220762816fdb80272e64fc7860551a2f862658b8ed129fae0b"
+      },
+      {
+        "path": "src/rl/dqn_qmodel.jl",
+        "sha256": "716e6db0e7e465329918a9b87de9e539634239f99cdf184c545b67806bff6b95"
+      },
+      {
+        "path": "src/rl/hyperparams.jl",
+        "sha256": "1324b132b26bc955fac0b876231204d543d26d82bb62164a75eb568085ea798e"
+      },
+      {
+        "path": "src/anytime_algos_control_env/common.jl",
+        "sha256": "54a33d45243b3aae75106f03fc36740d2990a7e9da4b8fc25e2299625da55490"
+      }
+    ]
+  },
+  "AAAI2024": {
+    "paper": "Budd, Lacerda, Hawes, Stop! Planner Time",
+    "doi": "10.1609/aaai.v38i18.29983",
+    "primary_fulltext": "https://ojs.aaai.org/index.php/AAAI/article/view/29983/31725",
+    "method": "DQN over contextual abstract metalevel MDP; performance profiles implicit in learned value, not a fitted curve with a simple threshold",
+    "official_implementation_verified": false
+  },
+  "training_pool_check": {
+    "previous_training_date_families": 20,
+    "overlap_with_seven_evaluation_families": [
+      "2035-03-05",
+      "2035-06-25"
+    ],
+    "nonoverlap_training_weeks": [
+      "2035-01-29_4",
+      "2035-04-16_2",
+      "2035-07-23_10",
+      "2035-10-29_15",
+      "2035-02-05_0",
+      "2035-01-08_5",
+      "2035-03-12_8",
+      "2035-06-11_1",
+      "2035-05-07_14",
+      "2035-04-30_12",
+      "2035-09-10_1",
+      "2035-09-17_8",
+      "2035-08-27_14",
+      "2035-08-06_6",
+      "2035-11-05_8",
+      "2035-11-26_0",
+      "2035-12-24_5",
+      "2035-12-03_7"
+    ],
+    "rule": "Any new baseline fit/normalization/validation must exclude all seven evaluation date families, including their variants."
+  },
+  "implementation_requirements": [
+    "Freeze mapping of quality/time/context/action to grid task before fitting.",
+    "Retain original DQN replay/target/update algorithm or record every change.",
+    "Do not label a hand-designed stop threshold as the published DQN method.",
+    "If tuning action disabled, name stopping-only adaptation; do not claim full method.",
+    "Do not sum grid cost and seconds without an explicit source-consistent normalization.",
+    "Record training and calibration costs separately from online full controller time.",
+    "Evaluate same controller/order/cache/actions/feedback and all fixed seeds.",
+    "If complete return/counterfactuals needed, count actual generation cost; one-step FULL logs do not supply long-term counterfactual values."
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "calls": [
+    {
+      "step": 0,
+      "in_control": false,
+      "phase": "run_dc",
+      "owner": "setup",
+      "wall_s": 0.3405144999996992
+    },
+    {
+      "step": 1844,
+      "in_control": true,
+      "phase": "compute_optimum_unsafe",
+      "owner": "base",
+      "wall_s": 0.7269734000001336
+    },
+    {
+      "step": 1846,
+      "in_control": true,
+      "phase": "compute_optimum_unsafe",
+      "owner": "base",
+      "wall_s": 0.4327350999992632
+    },
+    {
+      "step": 1878,
+      "in_control": true,
+      "phase": "run_dc",
+      "owner": "restore",
+      "wall_s": 0.3314513999994233
+    },
+    {
+      "step": 1878,
+      "in_control": true,
+      "phase": "compute_optimum_safe",
+      "owner": "restore",
+      "wall_s": 0.3113854999992327
+    },
+    {
+      "step": 1884,
+      "in_control": true,
+      "phase": "run_dc",
+      "owner": "restore",
+      "wall_s": 0.004869899999903282
+    },
+    {
+      "step": 1884,
+      "in_control": true,
+      "phase": "compute_optimum_safe",
+      "owner": "restore",
+      "wall_s": 0.007678699999814853
+    },
+    {
+      "step": 1890,
+      "in_control": true,
+      "phase": "run_dc",
+      "owner": "restore",
+      "wall_s": 0.004810200000065379
+    },
+    {
+      "step": 1890,
+      "in_control": true,
+      "phase": "compute_optimum_safe",
+      "owner": "restore",
+      "wall_s": 0.007556299999123439
+    },
+    {
+      "step": 1896,
+      "in_control": true,
+      "phase": "run_dc",
+      "owner": "restore",
+      "wall_s": 0.004574500000671833
+    },
+    {
+      "step": 1896,
+      "in_control": true,
+      "phase": "compute_optimum_safe",
+      "owner": "restore",
+      "wall_s": 0.007473300000128802
+    },
+    {
+      "step": 1900,
+      "in_control": true,
+      "phase": "compute_optimum_unsafe",
+      "owner": "base",
+      "wall_s": 0.6538272999987385
+    },
+    {
+      "step": 1901,
+      "in_control": true,
+      "phase": "compute_optimum_unsafe",
+      "owner": "base",
+      "wall_s": 0.9128863000005367
+    }
+  ],
+  "solver_records": [
+    {
+      "step": 0,
+      "in_control": false,
+      "phase": "run_dc",
+      "owner": "setup",
+      "solver": "OSQP",
+      "wall_s": 0.3211019000009401,
+      "status": "optimal",
+      "compilation_s": 0.3169441223144531,
+      "backend_s": 0.0004595,
+      "iterations": 50
+    },
+    {
+      "step": 1844,
+      "in_control": true,
+      "phase": "compute_optimum_unsafe",
+      "owner": "base",
+      "solver": "OSQP",
+      "wall_s": 0.7081715000003896,
+      "status": "optimal",
+      "compilation_s": 0.2002105712890625,
+      "backend_s": 0.4991265,
+      "iterations": 20125
+    },
+    {
+      "step": 1846,
+      "in_control": true,
+      "phase": "compute_optimum_unsafe",
+      "owner": "base",
+      "solver": "OSQP",
+      "wall_s": 0.4139190999994753,
+      "status": "optimal",
+      "compilation_s": 0.19613122940063477,
+      "backend_s": 0.2104396,
+      "iterations": 8800
+    },
+    {
+      "step": 1878,
+      "in_control": true,
+      "phase": "run_dc",
+      "owner": "restore",
+      "solver": "OSQP",
+      "wall_s": 0.31448590000036347,
+      "status": "optimal",
+      "compilation_s": 0.31028032302856445,
+      "backend_s": 0.0004371,
+      "iterations": 50
+    },
+    {
+      "step": 1878,
+      "in_control": true,
+      "phase": "compute_optimum_safe",
+      "owner": "restore",
+      "solver": "OSQP",
+      "wall_s": 0.29450790000009874,
+      "status": "optimal",
+      "compilation_s": 0.284912109375,
+      "backend_s": 0.0050193,
+      "iterations": 150
+    },
+    {
+      "step": 1884,
+      "in_control": true,
+      "phase": "run_dc",
+      "owner": "restore",
+      "solver": "OSQP",
+      "wall_s": 0.003666100001282757,
+      "status": "optimal",
+      "compilation_s": 0.0,
+      "backend_s": 0.0004495,
+      "iterations": 50
+    },
+    {
+      "step": 1884,
+      "in_control": true,
+      "phase": "compute_optimum_safe",
+      "owner": "restore",
+      "solver": "OSQP",
+      "wall_s": 0.007542900000771624,
+      "status": "optimal",
+      "compilation_s": 0.0010027885437011719,
+      "backend_s": 0.00426,
+      "iterations": 125
+    },
+    {
+      "step": 1890,
+      "in_control": true,
+      "phase": "run_dc",
+      "owner": "restore",
+      "solver": "OSQP",
+      "wall_s": 0.0036029000002599787,
+      "status": "optimal",
+      "compilation_s": 0.0,
+      "backend_s": 0.0004411,
+      "iterations": 50
+    },
+    {
+      "step": 1890,
+      "in_control": true,
+      "phase": "compute_optimum_safe",
+      "owner": "restore",
+      "solver": "OSQP",
+      "wall_s": 0.007416000000375789,
+      "status": "optimal",
+      "compilation_s": 0.0010023117065429688,
+      "backend_s": 0.0041025,
+      "iterations": 125
+    },
+    {
+      "step": 1896,
+      "in_control": true,
+      "phase": "run_dc",
+      "owner": "restore",
+      "solver": "OSQP",
+      "wall_s": 0.00338000000010652,
+      "status": "optimal",
+      "compilation_s": 0.0,
+      "backend_s": 0.0004336,
+      "iterations": 50
+    },
+    {
+      "step": 1896,
+      "in_control": true,
+      "phase": "compute_optimum_safe",
+      "owner": "restore",
+      "solver": "OSQP",
+      "wall_s": 0.007346299998971517,
+      "status": "optimal",
+      "compilation_s": 0.0,
+      "backend_s": 0.0041331,
+      "iterations": 125
+    },
+    {
+      "step": 1900,
+      "in_control": true,
+      "phase": "compute_optimum_unsafe",
+      "owner": "base",
+      "solver": "OSQP",
+      "wall_s": 0.6352511000004597,
+      "status": "optimal",
+      "compilation_s": 0.39375734329223633,
+      "backend_s": 0.2343294,
+      "iterations": 9600
+    },
+    {
+      "step": 1901,
+      "in_control": true,
+      "phase": "compute_optimum_unsafe",
+      "owner": "base",
+      "solver": "OSQP",
+      "wall_s": 0.8943085999999312,
+      "status": "optimal",
+      "compilation_s": 0.18301677703857422,
+      "backend_s": 0.7037647,
+      "iterations": 28575
+    }
+  ],
+  "cache_counts": [
+    {},
+    {
+      "calls": 5,
+      "hit": 3,
+      "miss": 2,
+      "eviction": 0
+    }
+  ],
+  "safe_cache_counts": [
+    {},
+    {
+      "calls": 4,
+      "hit": 3,
+      "miss": 1,
+      "eviction": 0
+    }
+  ],
+  "prior_cache_modules": [
+    "guard_adapter",
+    "online_adapter",
+    "prior"
+  ],
+  "prior_cache_stats": [
+    null
+  ],
+  "warning": "Both arms carry same component timers. Null stats remain null. Explicit solver records only for additive solve accounting."
+}

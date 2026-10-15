@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "source_stage": "GRID65",
+  "runs": 70,
+  "date_method_groups": 35,
+  "max_partition_error_s": 0.0,
+  "costs_and_queries_exact_across_repeats": true,
+  "quantile": "Linear interpolation per run, then date means; active-search and all-decision quantiles separate. Two repeats measure timing variation, not independent dates.",
+  "partition": "Forecast + disjoint outer run_dc/safe/unsafe calls + residual controller. Solver/backend compilation nested in outer calls, never added twice.",
+  "independent_ac_resolve": false
+}

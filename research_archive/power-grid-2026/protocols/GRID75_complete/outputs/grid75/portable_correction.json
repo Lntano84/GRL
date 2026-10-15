@@ -1,0 +1,7 @@
+{
+  "original_train_sha256": "fb4b14461e2df6ebf29324be50ec5a2e3f0c6e1aa7c85835bf0d99f9642953e0",
+  "correction": "Explicit float32 value promoted to double before comparison with double tree threshold; frozen feature/fit sources unchanged.",
+  "hand_check": "Adjacent float32 split with upper rounded midpoint; naive numpy scalar comparison disagrees with sklearn double threshold semantics.",
+  "original_failure": "Portable inference parity assertion before any model artifact persisted. One interrupted plain fit, deterministic refit under same data/seed/parameters.",
+  "new_physical_queries": 0
+}

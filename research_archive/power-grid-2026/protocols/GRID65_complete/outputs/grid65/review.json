@@ -1,0 +1,103 @@
+{
+  "passed_saved_data": true,
+  "runs": 70,
+  "dates": 7,
+  "repetitions": 2,
+  "physical_rows": 127330,
+  "public_forecasts": 375942,
+  "matched_full_feedback": 97320,
+  "equal_input_budget_checks": 68,
+  "repeat_path_equal_groups": 35,
+  "historical_reference_checks": 42,
+  "summaries": [
+    {
+      "method": "FULL",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.0,
+      "time_eligible_dates": 7,
+      "macro_query_reduction_full": 0.0,
+      "query_eligible_dates": 6,
+      "max_complete_cost_delta_full": 0.0
+    },
+    {
+      "method": "FRAME",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.13583188152084186,
+      "time_eligible_dates": 7,
+      "macro_query_reduction_full": 0.7409234874045671,
+      "query_eligible_dates": 6,
+      "max_complete_cost_delta_full": 0.003720046656812149
+    },
+    {
+      "method": "GLOBAL_MATCH",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.13786662696452698,
+      "time_eligible_dates": 7,
+      "macro_query_reduction_full": 0.7409234874045671,
+      "query_eligible_dates": 6,
+      "max_complete_cost_delta_full": 0.004187700775040726
+    },
+    {
+      "method": "META_DQN0",
+      "quality_dates": 6,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.13542333660134467,
+      "time_eligible_dates": 7,
+      "macro_query_reduction_full": 0.6927749314205138,
+      "query_eligible_dates": 6,
+      "max_complete_cost_delta_full": 0.029732233673905824
+    },
+    {
+      "method": "META_DQN1",
+      "quality_dates": 5,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.12079139580572869,
+      "time_eligible_dates": 7,
+      "macro_query_reduction_full": 0.6304519779761817,
+      "query_eligible_dates": 6,
+      "max_complete_cost_delta_full": 0.039827861336260664
+    }
+  ],
+  "seed_comparison": [
+    {
+      "seed": 0,
+      "meta_quality_all_dates": false,
+      "frame_macro_query_reduction_meta": 0.18665351830244306,
+      "frame_macro_time_reduction_meta": 0.0005550331203107042,
+      "worst_frame_cost_harm_of_full": 0.0003311252761881774,
+      "meta_to_frame_mean_query_ratio": 1.1265988848802886,
+      "meta_to_frame_mean_time_ratio": 0.9936960023039023,
+      "matched_horizon_dates": 7
+    },
+    {
+      "seed": 1,
+      "meta_quality_all_dates": false,
+      "frame_macro_query_reduction_meta": 0.2795786824217241,
+      "frame_macro_time_reduction_meta": 0.017431562690297615,
+      "worst_frame_cost_harm_of_full": 0.000571368135339487,
+      "meta_to_frame_mean_query_ratio": 1.224554498742757,
+      "meta_to_frame_mean_time_ratio": 1.0001731605105388,
+      "matched_horizon_dates": 7
+    }
+  ],
+  "verdict": "FRAME_ADVANTAGE_OVER_ADAPTED_STOPPING_IN_MATRIX",
+  "timing_qualified": true,
+  "power_events": [],
+  "training_fits": 6,
+  "training_wall_s": 202.76013669999998,
+  "calibration_quality_matched": true,
+  "selected_calibration": {
+    "costindex": 1,
+    "cost_level": 0.0025,
+    "feasible": true,
+    "mean_queries": 403.8181818181818,
+    "mean_regret": 0.0024572814052755184,
+    "max_regret": 0.03790956735610962
+  },
+  "new_online_fits": 0,
+  "independent_ac_resolve": false,
+  "scope": "Seven exposed dates; two DQN seeds, two serial timing repeats; literature stopping-only adaptation. Old control outcomes independently match prior GRID63 receipts; saved data, no independent AC re-solve."
+}

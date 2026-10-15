@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "frozen_files_verified": 276,
+  "summaries_independently_recalculated": [
+    {
+      "method": "FULL",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.0,
+      "macro_query_reduction_full": 0.0,
+      "max_complete_cost_delta_full": 0.0,
+      "controller_mean_sum_s": 448.0726446000075,
+      "query_sum_per_repeat": 30722,
+      "pooled_time_reduction_full": 0.0,
+      "pooled_query_reduction_full": 0.0
+    },
+    {
+      "method": "FRAME",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.13583188152084186,
+      "macro_query_reduction_full": 0.7409234874045671,
+      "max_complete_cost_delta_full": 0.003720046656812149,
+      "controller_mean_sum_s": 380.7727280000439,
+      "query_sum_per_repeat": 9147,
+      "pooled_time_reduction_full": 0.15019867294072797,
+      "pooled_query_reduction_full": 0.7022654775079747
+    },
+    {
+      "method": "GLOBAL_MATCH",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.13786662696452698,
+      "macro_query_reduction_full": 0.7409234874045671,
+      "max_complete_cost_delta_full": 0.004187700775040726,
+      "controller_mean_sum_s": 378.57223549999617,
+      "query_sum_per_repeat": 9147,
+      "pooled_time_reduction_full": 0.15510969022010712,
+      "pooled_query_reduction_full": 0.7022654775079747
+    },
+    {
+      "method": "META_DQN0",
+      "quality_dates": 6,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.13542333660134467,
+      "macro_query_reduction_full": 0.6927749314205138,
+      "max_complete_cost_delta_full": 0.029732233673905824,
+      "controller_mean_sum_s": 378.3723375999948,
+      "query_sum_per_repeat": 10305,
+      "pooled_time_reduction_full": 0.15555581854865042,
+      "pooled_query_reduction_full": 0.6645726189701191
+    },
+    {
+      "method": "META_DQN1",
+      "quality_dates": 5,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.12079139580572869,
+      "macro_query_reduction_full": 0.6304519779761817,
+      "max_complete_cost_delta_full": 0.039827861336260664,
+      "controller_mean_sum_s": 380.8386628000237,
+      "query_sum_per_repeat": 11201,
+      "pooled_time_reduction_full": 0.1500515209090777,
+      "pooled_query_reduction_full": 0.6354078510513639
+    }
+  ],
+  "calibration_choice_independently_recalculated": {
+    "costindex": 1,
+    "feasible": true,
+    "mean_queries": 403.8181818181818,
+    "mean_regret": 0.0024572814052755184,
+    "max_regret": 0.03790956735610962
+  },
+  "paired_pooled_diagnostic": [
+    {
+      "seed": 0,
+      "frame_pooled_time_reduction_meta": -0.00634399019567522,
+      "frame_pooled_query_reduction_meta": 0.11237263464337699
+    },
+    {
+      "seed": 1,
+      "frame_pooled_time_reduction_meta": 0.00017313053116774224,
+      "frame_pooled_query_reduction_meta": 0.18337648424247832
+    }
+  ],
+  "new_rollouts": 0,
+  "new_fits": 0,
+  "no_independent_ac_solve": true,
+  "aggregation_note": "Primary: average repeats within date, then average date ratios. Pooled sums are supplementary, do not replace primary or imply significance."
+}

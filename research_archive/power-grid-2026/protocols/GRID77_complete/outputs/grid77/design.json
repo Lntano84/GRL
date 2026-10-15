@@ -1,0 +1,128 @@
+{
+  "stage": "GRID77_COMMON_CONTEXT_AND_MODE_DQN",
+  "authorization": "User 2026-10-15: begin the published adaptive stopping baseline.",
+  "source_commit": "facb41ad6544b60895b1543e57c70a11dc280224",
+  "source": "Bhatia et al., ICAPS2022, Metareasoning.jl; Python/PyTorch algorithm port, stopping-only restriction, not full original A*/RRT* reproduction.",
+  "evaluation_weeks_excluded": [
+    "2035-03-05_0",
+    "2035-06-25_8",
+    "2035-09-03_4",
+    "2035-10-01_5",
+    "2035-04-09_3",
+    "2035-05-14_14",
+    "2035-11-19_0",
+    "2035-01-01_8",
+    "2035-02-19_8",
+    "2035-04-02_9",
+    "2035-07-09_2",
+    "2035-12-10_6",
+    "2035-12-17_1"
+  ],
+  "training_families": [
+    "2035-01-08",
+    "2035-01-29",
+    "2035-04-16",
+    "2035-04-30",
+    "2035-05-07",
+    "2035-06-11",
+    "2035-08-06",
+    "2035-08-27",
+    "2035-09-10",
+    "2035-09-17",
+    "2035-10-29",
+    "2035-11-26",
+    "2035-12-03",
+    "2035-12-24"
+  ],
+  "calibration_families": [
+    "2035-02-05",
+    "2035-03-12",
+    "2035-07-23",
+    "2035-11-05"
+  ],
+  "monitoring": {
+    "initial": 128,
+    "batch": 64,
+    "order": "same author frequency/representative ID",
+    "stop_mask": "No admissible incumbent -> continue, exhausted pool -> return."
+  },
+  "quality": "q=clip(observed best strict-admissible N1 reward / 2,0,1); zero if none. Training valid rewards verified as 2-rho. This is known one-step search quality, NOT whole-week quality.",
+  "utility": "U=q-expm1(beta*(queries/pool_size)); transition reward U_next-U_current; STOP zero; initial 128-query cost common and included online.",
+  "cost_levels": [
+    0.25,
+    0.0025,
+    0.0
+  ],
+  "beta": "log1p(cost_level); original example .25 and two predefined quality-oriented calibration alternatives; no test feedback.",
+  "seeds": [
+    0,
+    1
+  ],
+  "episodes": 30000,
+  "min_explore_steps": 20000,
+  "epsilon_anneal_steps": 20000,
+  "epsilon_final": 0.1,
+  "hidden": [
+    64,
+    32
+  ],
+  "activation": "relu",
+  "initialization": "Flux-style Glorot uniform, zero biases",
+  "lr": 0.0001,
+  "gamma": 0.99,
+  "batch_size": 256,
+  "replay_capacity": 1000000,
+  "target_retention": 0.995,
+  "target_update_every": 1,
+  "double_q_target": "Source softmax(online nextQ/.001) dot target nextQ, masked legal actions; selected-action target and MSE over all3 outputs; Adam and target retention unchanged.",
+  "deploy": "deterministic argmax with STOP/CONTINUE guard; epsilon disabled explicitly. This replaces the source soft sampler at inference for reproducibility.",
+  "calibration": "One shared cost level across both seeds; feasible if each seed calibration mean AND max one-step FULL-pool regret<=FRAME_GUARD+1e-7. Among feasible minimize mean queries, then regret/index; if none disclose and choose least mean/max regret. Final checkpoint only; no test feedback.",
+  "future_evaluation": "Only after code/data/learning qualification: separately freeze same seven exposed dates against FRAME/GLOBAL_MATCH/FULL and both selected seeds. No new-date generalization claim.",
+  "scope": "One learned literature-based baseline family; six fits for prospective three-cost calibration across two fixed seeds. No GNN or new control RL; no new teacher simulation.",
+  "caps": {
+    "training_wall_s": 3600,
+    "fits": 6,
+    "new_teacher_queries": 0
+  },
+  "features": [
+    "query_fraction",
+    "pool_size_909",
+    "has_admissible",
+    "best_reward_half",
+    "best_rho_half",
+    "last_quality_gain",
+    "stale_fraction",
+    "admissible_fraction",
+    "mean_quality",
+    "std_quality",
+    "top_two_quality_gap",
+    "public_rho_limit_half",
+    "root_rho_max",
+    "root_abs_dispatch",
+    "root_abs_target_dispatch",
+    "root_total_demand",
+    "graph_average_degree",
+    "active_bus_fraction",
+    "radial_load_bus_fraction",
+    "mean_node_rho",
+    "hot_bus_fraction",
+    "substation_cooldown_fraction",
+    "root_generation",
+    "root_curtailment",
+    "initial_monitoring"
+  ],
+  "frozen_utc": "2026-10-15T13:39:03.943166+00:00",
+  "source_mapping": "Same ICAPS2022-style Double DQN core; adapted grid mode actions RETURN/GLOBAL64/DELEGATE_FRAME_GUARD(initial only). Both same public24 operating/search features; explicit initial-monitoring bit added to baseline. Not full original A*/RRT* reproduction.",
+  "changes_from_grid64": [
+    "input12→25 (24 shared context/search plus mode availability)",
+    "outputs2→3, macro verification action gives exact same complete control option as cheap context gate",
+    "episodes15000→30000 prospectively for enlarged controls",
+    "quality calibration reference is repaired FRAME_GUARD, not old FRAME"
+  ],
+  "actions": [
+    "RETURN",
+    "GLOBAL64",
+    "DELEGATE_FRAME_GUARD"
+  ],
+  "training_teacher": "Reuse fully-paid151 GRID64 traces and audited public graph cache. No GRID76 evaluation results are loaded by fit/calibration. No learner feature is a hidden suffix or a date ID."
+}

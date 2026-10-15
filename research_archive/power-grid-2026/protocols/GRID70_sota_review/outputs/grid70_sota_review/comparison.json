@@ -1,0 +1,46 @@
+{
+  "same_dates": 7,
+  "query_dates": 6,
+  "new_physical_runs": 0,
+  "new_fits": 0,
+  "guard_queries": 11618,
+  "guard_quality_dates": 7,
+  "guard_macro_query_reduction_full": 0.6345779325506697,
+  "original_comparison": [
+    {
+      "seed": 0,
+      "meta_quality_all_dates": false,
+      "frame_macro_query_reduction_meta": 0.18665351830244306,
+      "frame_macro_time_reduction_meta": 0.0005550331203107042,
+      "worst_frame_cost_harm_of_full": 0.0003311252761881774,
+      "meta_to_frame_mean_query_ratio": 1.1265988848802886,
+      "meta_to_frame_mean_time_ratio": 0.9936960023039023,
+      "matched_horizon_dates": 7
+    },
+    {
+      "seed": 1,
+      "meta_quality_all_dates": false,
+      "frame_macro_query_reduction_meta": 0.2795786824217241,
+      "frame_macro_time_reduction_meta": 0.017431562690297615,
+      "worst_frame_cost_harm_of_full": 0.000571368135339487,
+      "meta_to_frame_mean_query_ratio": 1.224554498742757,
+      "meta_to_frame_mean_time_ratio": 1.0001731605105388,
+      "matched_horizon_dates": 7
+    }
+  ],
+  "meta": [
+    {
+      "method": "META_DQN0",
+      "queries": 10305,
+      "guard_pooled_query_change": 0.12741387675885485,
+      "guard_macro_query_saving": -0.21437977849303147
+    },
+    {
+      "method": "META_DQN1",
+      "queries": 11201,
+      "guard_pooled_query_change": 0.037228818855459256,
+      "guard_macro_query_saving": -0.011788246632799945
+    }
+  ],
+  "scope": "Same original seven exposed dates, six with actual search. Query totals count one deterministic physical trajectory per date. New FRAME_GUARD has no paired fresh timing result; original timings cannot be transferred. Literature stopping-only power-grid adaptation, not a full original-task SOTA reproduction."
+}

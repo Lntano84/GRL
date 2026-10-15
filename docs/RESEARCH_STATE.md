@@ -1,4 +1,7 @@
-# Research state — author materials ready
+# Research state — budget-matched framework comparison
+
+- **最新：** GRID63同状态等额补查闭环比较完成：7个已有日期、FULL/FRAME/GLOBAL_MATCH、3次平衡计时，共63条；裁决GLOBAL_COMPETITIVE_NO_MATERIAL_STRUCTURE_GAIN。FULL质量7/7、完整周5/7、控制减少0.000%、查询减少0.000%；FRAME质量7/7、完整周5/7、控制减少14.016%、查询减少74.092%；GLOBAL_MATCH质量7/7、完整周5/7、控制减少13.721%、查询减少74.092%。FRAME相对GLOBAL仅三月+0.04677% FULL、四月+0.00782% FULL，其余完整日期成本相同；没有日期达到0.1%尺度。不能把旧NO_LOCAL消融单独解释为同站结构选择的实质优势。同状态配额在新增反馈前确定，轨迹分叉后全周查询总量不强行等量。三次重复用于计时，不增加独立日期。44条后外部会话中断，未完成片段封存；仅续跑未完成条目。保存数据审计，不是独立AC重求解，无新训练/RL。全区间原审计时间资格false保留；逐worker复核6条电源事件均位于中断空档，未重叠63条成功回放，不扣减任何原时间。
+
 
 **存储位置：已迁至 `D:/Codex/GRL研究`，桌面“GRL研究资料”为入口；以后材料默认D盘。**
 

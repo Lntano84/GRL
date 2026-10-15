@@ -1,0 +1,156 @@
+{
+  "passed": true,
+  "independent_arithmetic": [
+    {
+      "method": "FULL",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.0,
+      "macro_query_reduction_full": 0.0,
+      "max_complete_cost_delta_full": 0.0
+    },
+    {
+      "method": "FRAME",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.14016024598497565,
+      "macro_query_reduction_full": 0.7409234874045671,
+      "max_complete_cost_delta_full": 0.003720046656812149
+    },
+    {
+      "method": "GLOBAL_MATCH",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.13721355503804536,
+      "macro_query_reduction_full": 0.7409234874045671,
+      "max_complete_cost_delta_full": 0.004187700775040726
+    }
+  ],
+  "dates": [
+    {
+      "date": "2035-03-05_0",
+      "full_cost": 2964114.382446289,
+      "frame_cost": 2975141.026245117,
+      "global_cost": 2976527.2065429688,
+      "frame_gain_of_full": 0.00046765411822857707,
+      "frame_queries": 3336,
+      "global_queries": 3336,
+      "steps": 2017,
+      "complete": true
+    },
+    {
+      "date": "2035-06-25_8",
+      "full_cost": null,
+      "frame_cost": null,
+      "global_cost": null,
+      "frame_gain_of_full": null,
+      "frame_queries": 1428,
+      "global_queries": 1428,
+      "steps": 1901,
+      "complete": false
+    },
+    {
+      "date": "2035-09-03_4",
+      "full_cost": 1289912.7855377197,
+      "frame_cost": 1265835.7439422607,
+      "global_cost": 1265835.7439422607,
+      "frame_gain_of_full": 0.0,
+      "frame_queries": 2731,
+      "global_queries": 2731,
+      "steps": 2017,
+      "complete": true
+    },
+    {
+      "date": "2035-10-01_5",
+      "full_cost": 1544822.9655151367,
+      "frame_cost": 1544822.9655151367,
+      "global_cost": 1544822.9655151367,
+      "frame_gain_of_full": 0.0,
+      "frame_queries": 256,
+      "global_queries": 256,
+      "steps": 2017,
+      "complete": true
+    },
+    {
+      "date": "2035-04-09_3",
+      "full_cost": 1907577.9569091797,
+      "frame_cost": 1882254.7607421875,
+      "global_cost": 1882403.9040527344,
+      "frame_gain_of_full": 7.818464771344375e-05,
+      "frame_queries": 1012,
+      "global_queries": 1012,
+      "steps": 2017,
+      "complete": true
+    },
+    {
+      "date": "2035-05-14_14",
+      "full_cost": null,
+      "frame_cost": null,
+      "global_cost": null,
+      "frame_gain_of_full": null,
+      "frame_queries": 0,
+      "global_queries": 0,
+      "steps": 747,
+      "complete": false
+    },
+    {
+      "date": "2035-11-19_0",
+      "full_cost": 1914005.4092407227,
+      "frame_cost": 1914270.897277832,
+      "global_cost": 1914270.897277832,
+      "frame_gain_of_full": 0.0,
+      "frame_queries": 384,
+      "global_queries": 384,
+      "steps": 2017,
+      "complete": true
+    }
+  ],
+  "mean_gain_over_five_complete_dates": 0.00010916775318840416,
+  "frozen_files_verified": 249,
+  "events_classified": [
+    {
+      "utc": "2026-10-14T14:14:42.6349470Z",
+      "id": 507,
+      "overlapping_successful_workers": [],
+      "location": "interruption_gap"
+    },
+    {
+      "utc": "2026-10-14T14:14:41.6011747Z",
+      "id": 506,
+      "overlapping_successful_workers": [],
+      "location": "interruption_gap"
+    },
+    {
+      "utc": "2026-10-14T13:48:31.0523795Z",
+      "id": 107,
+      "overlapping_successful_workers": [],
+      "location": "interruption_gap"
+    },
+    {
+      "utc": "2026-10-14T13:48:28.2981046Z",
+      "id": 42,
+      "overlapping_successful_workers": [],
+      "location": "interruption_gap"
+    },
+    {
+      "utc": "2026-10-14T13:48:23.1563712Z",
+      "id": 507,
+      "overlapping_successful_workers": [],
+      "location": "interruption_gap"
+    },
+    {
+      "utc": "2026-10-14T13:47:14.9299280Z",
+      "id": 506,
+      "overlapping_successful_workers": [],
+      "location": "interruption_gap"
+    }
+  ],
+  "successful_run_timing_qualified": true,
+  "raw_audit_full_interval_timing_qualified": false,
+  "qualification_basis": "All six events lie after persisted successful worker 43 and before resumed worker 44; none overlaps any of 63 original-local log/receipt intervals. Raw audit retained unchanged. No observation or timing value subtracted.",
+  "successful_replay_wall_sum_s": 4308.578001299993,
+  "elapsed_including_interruption_gap_s": 6851.585826,
+  "new_simulations": 0,
+  "new_fits": 0,
+  "scope": "Saved data and independent arithmetic, not independent AC re-solve."
+}

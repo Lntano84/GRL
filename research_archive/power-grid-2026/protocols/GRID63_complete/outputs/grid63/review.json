@@ -1,0 +1,143 @@
+{
+  "passed_saved_data": true,
+  "runs": 63,
+  "dates": 7,
+  "repetitions": 3,
+  "physical_rows": 114597,
+  "public_forecasts": 358281,
+  "matched_full_feedback": 118878,
+  "equal_input_budget_checks": 102,
+  "repeat_path_equal_groups": 21,
+  "summaries": [
+    {
+      "method": "FULL",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.0,
+      "macro_query_reduction_full": 0.0,
+      "max_complete_cost_delta_full": 0.0
+    },
+    {
+      "method": "FRAME",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.14016024598497565,
+      "macro_query_reduction_full": 0.7409234874045671,
+      "max_complete_cost_delta_full": 0.003720046656812149
+    },
+    {
+      "method": "GLOBAL_MATCH",
+      "quality_dates": 7,
+      "completed_dates": 5,
+      "macro_time_reduction_full": 0.13721355503804536,
+      "macro_query_reduction_full": 0.7409234874045671,
+      "max_complete_cost_delta_full": 0.004187700775040726
+    }
+  ],
+  "paired_dates": [
+    {
+      "date": "2035-03-05_0",
+      "frame_quality": true,
+      "global_quality": true,
+      "both_complete": true,
+      "cost_gain_of_full": 0.00046765411822857707,
+      "frame_time_reduction_global": 0.009533700791016675,
+      "frame_queries_mean": 3336,
+      "global_queries_mean": 3336
+    },
+    {
+      "date": "2035-06-25_8",
+      "frame_quality": true,
+      "global_quality": true,
+      "both_complete": false,
+      "cost_gain_of_full": null,
+      "frame_time_reduction_global": 0.009889095332310638,
+      "frame_queries_mean": 1428,
+      "global_queries_mean": 1428
+    },
+    {
+      "date": "2035-09-03_4",
+      "frame_quality": true,
+      "global_quality": true,
+      "both_complete": true,
+      "cost_gain_of_full": 0.0,
+      "frame_time_reduction_global": -0.0366560806683085,
+      "frame_queries_mean": 2731,
+      "global_queries_mean": 2731
+    },
+    {
+      "date": "2035-10-01_5",
+      "frame_quality": true,
+      "global_quality": true,
+      "both_complete": true,
+      "cost_gain_of_full": 0.0,
+      "frame_time_reduction_global": 0.006574436516780802,
+      "frame_queries_mean": 256,
+      "global_queries_mean": 256
+    },
+    {
+      "date": "2035-04-09_3",
+      "frame_quality": true,
+      "global_quality": true,
+      "both_complete": true,
+      "cost_gain_of_full": 7.818464771344375e-05,
+      "frame_time_reduction_global": 0.026915108716421,
+      "frame_queries_mean": 1012,
+      "global_queries_mean": 1012
+    },
+    {
+      "date": "2035-05-14_14",
+      "frame_quality": true,
+      "global_quality": true,
+      "both_complete": false,
+      "cost_gain_of_full": null,
+      "frame_time_reduction_global": 0.010432440464931081,
+      "frame_queries_mean": 0,
+      "global_queries_mean": 0
+    },
+    {
+      "date": "2035-11-19_0",
+      "frame_quality": true,
+      "global_quality": true,
+      "both_complete": true,
+      "cost_gain_of_full": 0.0,
+      "frame_time_reduction_global": -0.005174015285843936,
+      "frame_queries_mean": 384,
+      "global_queries_mean": 384
+    }
+  ],
+  "verdict": "GLOBAL_COMPETITIVE_NO_MATERIAL_STRUCTURE_GAIN",
+  "material_gain_dates": 0,
+  "material_loss_dates": 0,
+  "macro_frame_time_reduction_global": 0.003073526552472537,
+  "power_events": [
+    {
+      "utc": "2026-10-14T14:14:42.6349470Z",
+      "id": 507
+    },
+    {
+      "utc": "2026-10-14T14:14:41.6011747Z",
+      "id": 506
+    },
+    {
+      "utc": "2026-10-14T13:48:31.0523795Z",
+      "id": 107
+    },
+    {
+      "utc": "2026-10-14T13:48:28.2981046Z",
+      "id": 42
+    },
+    {
+      "utc": "2026-10-14T13:48:23.1563712Z",
+      "id": 507
+    },
+    {
+      "utc": "2026-10-14T13:47:14.9299280Z",
+      "id": 506
+    }
+  ],
+  "timing_qualified": false,
+  "new_fits": 0,
+  "independent_ac_resolve": false,
+  "scope": "Same seven exposed dates. Equal per-state extra budget, not guaranteed equal whole-week query totals. Saved-vector/cost/feedback audit, no independent AC solve. No GNN/RL."
+}

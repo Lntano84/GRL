@@ -1,0 +1,101 @@
+{
+  "overall": {
+    "all_five_equal_quality_eligible": true,
+    "mean_seed_macro_controller_reduction": 0.02228213817650847,
+    "median_seed_macro_controller_reduction": 0.013247721490121322,
+    "min_seed_macro_controller_reduction": -0.002960664434504545,
+    "max_seed_macro_controller_reduction": 0.07550370876393413,
+    "per_seed_speed_passes": 1,
+    "stronger_five_seed_support": false
+  },
+  "decisions": [
+    {
+      "seed": 0,
+      "baseline": "META_CONTEXT0",
+      "guard_quality_dates": 6,
+      "baseline_quality_dates": 6,
+      "equal_quality_eligible": true,
+      "same_quality_speed_supported": true,
+      "category": "SUPPORTED_EQUAL_QUALITY_SPEED",
+      "macro_controller_reduction": 0.07550370876393413,
+      "repeat_macro_reductions": [
+        0.06751299814040725,
+        0.08302227076571721
+      ]
+    },
+    {
+      "seed": 1,
+      "baseline": "META_CONTEXT1",
+      "guard_quality_dates": 6,
+      "baseline_quality_dates": 6,
+      "equal_quality_eligible": true,
+      "same_quality_speed_supported": false,
+      "category": "BOTH_PASS_TIMING_MIXED_OR_SMALL",
+      "macro_controller_reduction": 0.009421304986723519,
+      "repeat_macro_reductions": [
+        0.010897212313031831,
+        0.007207970340389132
+      ]
+    },
+    {
+      "seed": 2,
+      "baseline": "META_CONTEXT2",
+      "guard_quality_dates": 6,
+      "baseline_quality_dates": 6,
+      "equal_quality_eligible": true,
+      "same_quality_speed_supported": false,
+      "category": "BOTH_PASS_TIMING_MIXED_OR_SMALL",
+      "macro_controller_reduction": 0.016198620076267933,
+      "repeat_macro_reductions": [
+        0.002342034600638828,
+        0.027320611003409084
+      ]
+    },
+    {
+      "seed": 3,
+      "baseline": "META_CONTEXT3",
+      "guard_quality_dates": 6,
+      "baseline_quality_dates": 6,
+      "equal_quality_eligible": true,
+      "same_quality_speed_supported": false,
+      "category": "BOTH_PASS_TIMING_MIXED_OR_SMALL",
+      "macro_controller_reduction": 0.013247721490121322,
+      "repeat_macro_reductions": [
+        0.009236912300014258,
+        0.016942326788130162
+      ]
+    },
+    {
+      "seed": 4,
+      "baseline": "META_CONTEXT4",
+      "guard_quality_dates": 6,
+      "baseline_quality_dates": 6,
+      "equal_quality_eligible": true,
+      "same_quality_speed_supported": false,
+      "category": "BOTH_PASS_TIMING_MIXED_OR_SMALL",
+      "macro_controller_reduction": -0.002960664434504545,
+      "repeat_macro_reductions": [
+        0.00037596661992989056,
+        -0.006377161841575922
+      ]
+    }
+  ],
+  "new_fits": 3,
+  "all_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "new_seeds": [
+    2,
+    3,
+    4
+  ],
+  "old_costindex_fixed": 2,
+  "cost_level": 0,
+  "calibration_reselected": false,
+  "method": "FRAME_GUARD",
+  "scope": "Five-seed variation of current enhanced grid adaptation on six already exposed generated weeks. No new independent scenario confirmation. All seeds reported."
+}

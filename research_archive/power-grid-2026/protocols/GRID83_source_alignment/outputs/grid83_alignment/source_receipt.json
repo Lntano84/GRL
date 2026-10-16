@@ -1,0 +1,319 @@
+{
+  "original_paper": {
+    "title": "Tuning the Hyperparameters of Anytime Planning: A Metareasoning Approach with Deep Reinforcement Learning",
+    "doi": "10.1609/icaps.v32i1.19842",
+    "pages": "556-564",
+    "url": "https://ojs.aaai.org/index.php/ICAPS/article/view/19842",
+    "pdf_url": "https://ojs.aaai.org/index.php/ICAPS/article/download/19842/19601/23855",
+    "author_code": "https://github.com/bhatiaabhinav/Metareasoning.jl",
+    "code_commit": "facb41ad6544b60895b1543e57c70a11dc280224"
+  },
+  "reading": {
+    "full_pdf_text": true,
+    "visually_inspected_pdf_pages": [
+      4,
+      7
+    ],
+    "qualification": "Source reading and saved-log analysis, not original-task reproduction or new simulator audit."
+  },
+  "sources": [
+    {
+      "path": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT0/call000.json",
+      "sha256": "6fa460a571b1e8d1132ba8d29feec9e1e97d673a19c6978939c4c239d4e5f348"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT0/call001.json",
+      "sha256": "632b10b24402f592204f877e8c98f6d97ca0fd217f13c4d706f6baea2559f04d"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT0/call002.json",
+      "sha256": "ec06ef8e3a8e8343d6bda32e42b38c93c3c09e66232fbc0f0b82e8f93ddbd670"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT0/call003.json",
+      "sha256": "bb6679c28599bbb60138ce015207e7a9297a40787845f207f872f52fb955d05e"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT0/call004.json",
+      "sha256": "d2cab73adee150ddc4c482eee5ae06ae21ccecef51ee9b3966f4eb5c6e5aeeed"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call000.json",
+      "sha256": "14fceb670aafd61e18e70ddf5bf55fe31ccba8b0ea0f82cbc6088887904be960"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call001.json",
+      "sha256": "eade249f6093d393f43b676e199062c30eb59de27515612b9397299a0c6a0f18"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call002.json",
+      "sha256": "3d246a725671f2fc4c2ca6db4b1ad9182def7faafb8d7317c2d9fec9be851546"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call003.json",
+      "sha256": "752d70548bc98af814ca9bb01c713f4a68d9fe3f4a36dd56650a800db7a2d4c1"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call004.json",
+      "sha256": "78181133d386adf05e6e4a3e799308c1733a893f2d2c6dcf72ec6a9157b5e2ca"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call005.json",
+      "sha256": "7598d431e30e20fb59f98955b25e5769f3a073d2987cc0e4cbe55f8d95245ad7"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call006.json",
+      "sha256": "3126928c3197bbea9ae76e77e8f85bb887d7e243d5824fc1939c016e0259d2aa"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call007.json",
+      "sha256": "4742959140e0eca7b9028565275fe6a3ccee0269fee033e7e28e3b308b7f8141"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call008.json",
+      "sha256": "389099370e424b96b7068d7c051bde6e7efba62db3c401841599ebccff78ed0e"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call009.json",
+      "sha256": "974a78b1c090fb4664437dda32fec886d7ffc9ca98d53d8982e68fe0c7eae5fc"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-05-05_9__META_CONTEXT0/call000.json",
+      "sha256": "7350a6d8c79400c165fe412fc3fdbfa9d044cc499bd1532bbeb4a35e925ac394"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-05-05_9__META_CONTEXT0/call001.json",
+      "sha256": "5d4b76a6e0c58b6359f265ce03e2b56bc0b2efc72ae83d8bb29ef7038e33caad"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-05-05_9__META_CONTEXT0/call002.json",
+      "sha256": "ff3ff112634614acbb35300251108b2bed02884416be683144ad1016e5fc2c5e"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call000.json",
+      "sha256": "96a7e3c64a181aa2afe3d01fe4dff205197b9bb387bb192940b60bef3f25c02a"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call001.json",
+      "sha256": "53ba845240b11a5d51cdd823ca01ed16414a784f2932be6b02e16d432dc06b65"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call002.json",
+      "sha256": "0a6f469d89d1495a11d7e29f7fa72c7854946ad2f503281377456c06a0308ad8"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call003.json",
+      "sha256": "1c9076ecc5a495ba77f943ff3a26866aadf8e88c31b7418aa01c4721fa555386"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call004.json",
+      "sha256": "1d155ac1213c18ead8345c1ef0d4c8021025ff2489ff9be305fe9741676aa18b"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call005.json",
+      "sha256": "8f8b0d2e0f31e71e4444166291b37983716484d23cc2ae57a1c8d546ec02b79b"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call006.json",
+      "sha256": "1c4a72388053ea5c38efd78b319eb7cc5b0aea7d3cd89bde636aad94af8b626e"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call007.json",
+      "sha256": "21378c35043dc79e007202c331c9d219ffe82c942058d0d5428d8ee7bd8619ba"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call008.json",
+      "sha256": "762310bbf00a715cdf0dd9a875550d0232cf9530404a12a929c2bb4c33c1bec6"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call009.json",
+      "sha256": "fd37da52279d7fe7c44d2f40751f62a51e085192c7dcbd578e6b071aa328ca2b"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT0/call000.json",
+      "sha256": "7f342b42e45e2820f57bb631f67527ee0af197f9a624c720562cf596f3dcb410"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT0/call001.json",
+      "sha256": "6b82d01accac7a477ab258ca083dc2289c8c6afcf558b271165ac95a659d0a0d"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT0/call002.json",
+      "sha256": "83022e10429d185e631b73c3c01bd9beff75bf6fbc9bc9b1dedcbf812b59fc3d"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT0/call003.json",
+      "sha256": "c74ce9d437a5b9b0c0bfae567d3152da728dbfdb22f704e183e91f186024aad0"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT1/call000.json",
+      "sha256": "1ac71e0307edee450948ebe1d4395471adad58c3128cd169701639fca76c5fc8"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT1/call001.json",
+      "sha256": "49e752abf36057afcb94df65c54afbf0bc4aab12ee8fadc249e859aa503f1602"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT1/call002.json",
+      "sha256": "25f79052be5b914818a86ddf285d39e59edd4ec03ae02ecb39177b81114b07b3"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT1/call003.json",
+      "sha256": "aa899cc2014ac5dde5a34e30a824f9f194525cb2fd7a91bf9f77d60166543047"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT1/call004.json",
+      "sha256": "175f0d9b2a4a01689c84389b96b257380aa2de1e7a28e4f8db1de101f5f6ff18"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call000.json",
+      "sha256": "7040f73239617578cf61c775439164619e3253d97365949f3435670e19b7994d"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call001.json",
+      "sha256": "6c82c734603bfda66a23a2336ac0ac178d426be1913c7bccec618a9a04bb1d01"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call002.json",
+      "sha256": "d995073479905098f760f43768849232fbfeefc27dfba1277c427fc230c5afcb"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call003.json",
+      "sha256": "d471b748bca405cdc9a9f96a572bb5239d7b8e69285de9ef3b79b9b70ce015a1"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call004.json",
+      "sha256": "01c6907bbf03ef893cfb654b2f6d70e3691cf45bd921bcb1ed25240cb65ad7b9"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call005.json",
+      "sha256": "f2169c8aff4671b2a8ca92e314d64646d569d6497377b2693b7ea3b256477626"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call006.json",
+      "sha256": "19b4ca3118e0d57347479b3a4c8d564a0a8cce54438c74461d4b760951c880f4"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call007.json",
+      "sha256": "76861ca26191d38ae5bd1a39217c0d82ed692cf1774bd465ab7f5ff8d71c1402"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call008.json",
+      "sha256": "b038311ea840bc841cab0da4fd4cd9e06ec14cee0b8a386d3bfb118e8c953b0b"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call009.json",
+      "sha256": "61bbdcf06d7d521c5f9087d24bd67564d59dbe3a4d8d459092ecd8317c75ef00"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-05-05_9__META_CONTEXT1/call000.json",
+      "sha256": "24d463b4f63f567b6c41c2767313ab1a35f3b61966a5b333996b7f8e5f3f191f"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call000.json",
+      "sha256": "22df40e2f087f2763a6dede561ea93ff8bcfd86120838ad0a94e9245e216ae71"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call001.json",
+      "sha256": "984d180dcd3c228b2cf706c8d44304bc4c98717f888ba5062e4e01409be61cec"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call002.json",
+      "sha256": "f1f66b122ffe897bd53d977e5ecc188a96f67839711ba0d823df2fe8a50f16f1"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call003.json",
+      "sha256": "6de31bd1de46ba92e1070158cfe9cebf217094d49027b40c97d013893fa83e99"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call004.json",
+      "sha256": "902c50c1f31f659b2d1c7847d61f94cf7309f5a3fd4632d68ba5a01849b44a5b"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call005.json",
+      "sha256": "59ab8385a6b84f3f6612ec4245c73efcea88a37848e66a16a7aac295c0fa1c44"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call006.json",
+      "sha256": "f3d534661347e0c98394de8b4a74cc26abb493819d9f213ee59f36b752985b72"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call007.json",
+      "sha256": "32ef5f2b6c953c3743448570d02cb89ff6fc8cb9c03b5f403cfd67dad87a6305"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call008.json",
+      "sha256": "9485f2c8943da455bda661ffb5a4e0cbd2fc81cf455a798b9d474b316142b4ed"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call009.json",
+      "sha256": "b28fa90811df89f83d5d501a695e662a0f69a4f15e0fe173a3e76d164ade3bff"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT1/call000.json",
+      "sha256": "5749677e5d6d7bb591b60291052efbd518ce4d2f10b268247556c2ad69331daa"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT1/call001.json",
+      "sha256": "8081149d29d382e0bce2284dc55413730f299b7e67dc87b6c9b59206df393994"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT1/call002.json",
+      "sha256": "f3c9985cb4384ee4a450ab1f656b607b878964ddffb7cffb916d5683fa5720f4"
+    },
+    {
+      "path": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT1/call003.json",
+      "sha256": "be762d43d67c1b0096ba6121227a1d709d063564241b7ec0f5cef11ea24755d5"
+    },
+    {
+      "path": "outputs/grid82/review.json",
+      "sha256": "7c68a754aa06afc6b553f066fce6c99a9d2888525628d9666def65f306737d05"
+    },
+    {
+      "path": "outputs/grid82/decision.json",
+      "sha256": "9c963f3a9d3dd7ce219ac3896bf49aac0aeec8eeb96d0e2e88ae975e477b87b8"
+    },
+    {
+      "path": "outputs/grid81/review.json",
+      "sha256": "bb2804726c9a91fca3df5bbfdd99097050dec9e93479f9ce925cdcf82c5b74ea"
+    },
+    {
+      "path": "outputs/grid77/selected.json",
+      "sha256": "ecce544f27d2bd436900b2acd34d2e25fa1d830d279d7f0d2d1e252c44a7200d"
+    },
+    {
+      "path": "outputs/grid77/design.json",
+      "sha256": "dc5f6a1a3151928968a4182bf69ecdc7e53498bd1ed01d5a4c68b308bff93f8f"
+    },
+    {
+      "path": "work/grid77/metacontrol.py",
+      "sha256": "d47cebe0d6ac8da9ea73588b476f02967a5dc8572b8d30b9b7e8a1035354bda0"
+    },
+    {
+      "path": "work/grid77/train.py",
+      "sha256": "def3e2590dd6e3d40e4509baf9a42fa4088e254a5276b00feae68e425545c85f"
+    },
+    {
+      "path": "work/grid70/policies.py",
+      "sha256": "9bfdd2f9a49af4385933c9e87b05068b50485892fd49717bd3f96c8a843b1cd7"
+    },
+    {
+      "path": "outputs/grid83_alignment/sources/Bhatia_ICAPS2022.pdf",
+      "sha256": "954a2456a337d04812b651c73b8f0d5aebd44e1ef9c2c19a84478583edbaf84a"
+    },
+    {
+      "path": "outputs/grid83_alignment/reading/Bhatia_ICAPS2022.txt",
+      "sha256": "a02b44781b8b1b1326fed73c110e307f1c14ddb226b06c681005d719ec495f79"
+    },
+    {
+      "path": "work/grid64_baseline_sources/Metareasoning.jl/aastar_dqn.jl",
+      "sha256": "4e9f3b5b0ec2e46f3c23b406e55d609ea79968ce135ea6d516ef3ab714f3c5db"
+    },
+    {
+      "path": "work/grid64_baseline_sources/Metareasoning.jl/src/rl/dqn.jl",
+      "sha256": "a1b638dcd43482220762816fdb80272e64fc7860551a2f862658b8ed129fae0b"
+    }
+  ],
+  "new_training": 0,
+  "new_simulation": 0
+}

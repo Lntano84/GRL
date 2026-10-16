@@ -1,0 +1,83 @@
+{
+  "guard_vs_full": {
+    "stage": "GRID81",
+    "method": "FRAME_GUARD",
+    "baseline": "FULL",
+    "macro_controller_reduction": 0.14979148171235593,
+    "macro_query_reduction_equal_nonzero_horizons": 0.6509677018059689,
+    "pairs": [
+      {
+        "date": "2036-01-07_9",
+        "time_reduction": 0.08761290865828264,
+        "query_reduction": 0.7370064279155188
+      },
+      {
+        "date": "2036-03-03_9",
+        "time_reduction": 0.14029980223931504,
+        "query_reduction": 0.37489294016884867
+      },
+      {
+        "date": "2036-05-05_9",
+        "time_reduction": 0.2568529401253331,
+        "query_reduction": 0.8237577639751552
+      },
+      {
+        "date": "2036-07-07_9",
+        "time_reduction": 0.28882816952111723,
+        "query_reduction": 0.6153846153846154
+      },
+      {
+        "date": "2036-09-01_9",
+        "time_reduction": 0.13083394401280202,
+        "query_reduction": 0.7037967615857064
+      },
+      {
+        "date": "2036-11-03_9",
+        "time_reduction": -0.005678874282714519,
+        "query_reduction": null
+      }
+    ]
+  },
+  "grid82_decisions": {
+    "decisions": [
+      {
+        "baseline": "META_CONTEXT0",
+        "guard_quality_dates": 6,
+        "baseline_quality_dates": 6,
+        "equal_quality_eligible": true,
+        "same_quality_speed_supported": true,
+        "category": "SUPPORTED_EQUAL_QUALITY_SPEED",
+        "macro_controller_reduction": 0.0643508731875382,
+        "repeat_macro_reductions": [
+          0.06328892727724883,
+          0.06539077259375815
+        ]
+      },
+      {
+        "baseline": "META_CONTEXT1",
+        "guard_quality_dates": 6,
+        "baseline_quality_dates": 6,
+        "equal_quality_eligible": true,
+        "same_quality_speed_supported": false,
+        "category": "BOTH_PASS_TIMING_MIXED_OR_SMALL",
+        "macro_controller_reduction": 0.00016868798784739716,
+        "repeat_macro_reductions": [
+          -0.001148864075073049,
+          0.0014187911770285149
+        ]
+      }
+    ],
+    "new_fits": 0,
+    "method": "FRAME_GUARD",
+    "scope": "Final-version comparison on six already exposed generated same-grid scenarios. ICAPS2022-core task adaptation, not original SOTA task reproduction. Calibration mismatch retained; timing repeats/seeds not independent dates."
+  },
+  "selected_meta_configuration": {
+    "costindex": 2,
+    "cost_level": 0.0,
+    "feasible": false,
+    "mean_queries": 329.9090909090909,
+    "mean_regret": 0.003641809929500927,
+    "max_regret": 0.03790956735610962,
+    "calibration_quality_matched": false
+  }
+}

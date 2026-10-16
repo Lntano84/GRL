@@ -1,0 +1,668 @@
+{
+  "scope": "GRID82 repeat0 only; timing repeats not duplicated. Different closed-loop states, not paired independent cases.",
+  "action_names": {
+    "0": "RETURN",
+    "1": "GLOBAL64",
+    "2": "DELEGATE_FRAME_GUARD"
+  },
+  "summaries": [
+    {
+      "method": "META_CONTEXT0",
+      "unique_closed_loop_calls": 32,
+      "first_action_counts": {
+        "1": 25,
+        "2": 4,
+        "0": 3
+      },
+      "immediate_guard_delegations": 4,
+      "immediate_guard_delegation_share": 0.125,
+      "stop_reason_counts": {
+        "meta_context_return": 26,
+        "meta_delegate_guard_verified_plateau_unchanged_incumbent": 1,
+        "meta_delegate_full_exhaustion": 3,
+        "meta_context_exhausted": 2
+      }
+    },
+    {
+      "method": "META_CONTEXT1",
+      "unique_closed_loop_calls": 30,
+      "first_action_counts": {
+        "2": 27,
+        "1": 3
+      },
+      "immediate_guard_delegations": 27,
+      "immediate_guard_delegation_share": 0.9,
+      "stop_reason_counts": {
+        "meta_delegate_patience64_experimental_stop_local_complete": 13,
+        "meta_delegate_guard_verified_plateau_unchanged_incumbent": 10,
+        "meta_context_exhausted": 3,
+        "meta_delegate_full_exhaustion": 2,
+        "meta_delegate_guard_verified_plateau_local_complete": 2
+      }
+    }
+  ],
+  "calls": [
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-01-07_9",
+      "call": "call000",
+      "first_action": 1,
+      "decision_count": 12,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT0/call000.json",
+      "sha256": "6fa460a571b1e8d1132ba8d29feec9e1e97d673a19c6978939c4c239d4e5f348"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-01-07_9",
+      "call": "call001",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_unchanged_incumbent",
+      "source": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT0/call001.json",
+      "sha256": "632b10b24402f592204f877e8c98f6d97ca0fd217f13c4d706f6baea2559f04d"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-01-07_9",
+      "call": "call002",
+      "first_action": 1,
+      "decision_count": 12,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT0/call002.json",
+      "sha256": "ec06ef8e3a8e8343d6bda32e42b38c93c3c09e66232fbc0f0b82e8f93ddbd670"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-01-07_9",
+      "call": "call003",
+      "first_action": 1,
+      "decision_count": 3,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT0/call003.json",
+      "sha256": "bb6679c28599bbb60138ce015207e7a9297a40787845f207f872f52fb955d05e"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-01-07_9",
+      "call": "call004",
+      "first_action": 1,
+      "decision_count": 6,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT0/call004.json",
+      "sha256": "d2cab73adee150ddc4c482eee5ae06ae21ccecef51ee9b3966f4eb5c6e5aeeed"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-03-03_9",
+      "call": "call000",
+      "first_action": 1,
+      "decision_count": 11,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call000.json",
+      "sha256": "14fceb670aafd61e18e70ddf5bf55fe31ccba8b0ea0f82cbc6088887904be960"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-03-03_9",
+      "call": "call001",
+      "first_action": 1,
+      "decision_count": 12,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call001.json",
+      "sha256": "eade249f6093d393f43b676e199062c30eb59de27515612b9397299a0c6a0f18"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-03-03_9",
+      "call": "call002",
+      "first_action": 1,
+      "decision_count": 7,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call002.json",
+      "sha256": "3d246a725671f2fc4c2ca6db4b1ad9182def7faafb8d7317c2d9fec9be851546"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-03-03_9",
+      "call": "call003",
+      "first_action": 1,
+      "decision_count": 7,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call003.json",
+      "sha256": "752d70548bc98af814ca9bb01c713f4a68d9fe3f4a36dd56650a800db7a2d4c1"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-03-03_9",
+      "call": "call004",
+      "first_action": 1,
+      "decision_count": 3,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call004.json",
+      "sha256": "78181133d386adf05e6e4a3e799308c1733a893f2d2c6dcf72ec6a9157b5e2ca"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-03-03_9",
+      "call": "call005",
+      "first_action": 1,
+      "decision_count": 3,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call005.json",
+      "sha256": "7598d431e30e20fb59f98955b25e5769f3a073d2987cc0e4cbe55f8d95245ad7"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-03-03_9",
+      "call": "call006",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_full_exhaustion",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call006.json",
+      "sha256": "3126928c3197bbea9ae76e77e8f85bb887d7e243d5824fc1939c016e0259d2aa"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-03-03_9",
+      "call": "call007",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_full_exhaustion",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call007.json",
+      "sha256": "4742959140e0eca7b9028565275fe6a3ccee0269fee033e7e28e3b308b7f8141"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-03-03_9",
+      "call": "call008",
+      "first_action": 1,
+      "decision_count": 8,
+      "stop_reason": "meta_context_exhausted",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call008.json",
+      "sha256": "389099370e424b96b7068d7c051bde6e7efba62db3c401841599ebccff78ed0e"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-03-03_9",
+      "call": "call009",
+      "first_action": 1,
+      "decision_count": 8,
+      "stop_reason": "meta_context_exhausted",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT0/call009.json",
+      "sha256": "974a78b1c090fb4664437dda32fec886d7ffc9ca98d53d8982e68fe0c7eae5fc"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-05-05_9",
+      "call": "call000",
+      "first_action": 1,
+      "decision_count": 10,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-05-05_9__META_CONTEXT0/call000.json",
+      "sha256": "7350a6d8c79400c165fe412fc3fdbfa9d044cc499bd1532bbeb4a35e925ac394"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-05-05_9",
+      "call": "call001",
+      "first_action": 1,
+      "decision_count": 5,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-05-05_9__META_CONTEXT0/call001.json",
+      "sha256": "5d4b76a6e0c58b6359f265ce03e2b56bc0b2efc72ae83d8bb29ef7038e33caad"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-05-05_9",
+      "call": "call002",
+      "first_action": 1,
+      "decision_count": 6,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-05-05_9__META_CONTEXT0/call002.json",
+      "sha256": "ff3ff112634614acbb35300251108b2bed02884416be683144ad1016e5fc2c5e"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-07-07_9",
+      "call": "call000",
+      "first_action": 0,
+      "decision_count": 1,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call000.json",
+      "sha256": "96a7e3c64a181aa2afe3d01fe4dff205197b9bb387bb192940b60bef3f25c02a"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-07-07_9",
+      "call": "call001",
+      "first_action": 1,
+      "decision_count": 7,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call001.json",
+      "sha256": "53ba845240b11a5d51cdd823ca01ed16414a784f2932be6b02e16d432dc06b65"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-07-07_9",
+      "call": "call002",
+      "first_action": 1,
+      "decision_count": 7,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call002.json",
+      "sha256": "0a6f469d89d1495a11d7e29f7fa72c7854946ad2f503281377456c06a0308ad8"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-07-07_9",
+      "call": "call003",
+      "first_action": 1,
+      "decision_count": 11,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call003.json",
+      "sha256": "1c9076ecc5a495ba77f943ff3a26866aadf8e88c31b7418aa01c4721fa555386"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-07-07_9",
+      "call": "call004",
+      "first_action": 1,
+      "decision_count": 7,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call004.json",
+      "sha256": "1d155ac1213c18ead8345c1ef0d4c8021025ff2489ff9be305fe9741676aa18b"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-07-07_9",
+      "call": "call005",
+      "first_action": 0,
+      "decision_count": 1,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call005.json",
+      "sha256": "8f8b0d2e0f31e71e4444166291b37983716484d23cc2ae57a1c8d546ec02b79b"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-07-07_9",
+      "call": "call006",
+      "first_action": 1,
+      "decision_count": 6,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call006.json",
+      "sha256": "1c4a72388053ea5c38efd78b319eb7cc5b0aea7d3cd89bde636aad94af8b626e"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-07-07_9",
+      "call": "call007",
+      "first_action": 1,
+      "decision_count": 6,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call007.json",
+      "sha256": "21378c35043dc79e007202c331c9d219ffe82c942058d0d5428d8ee7bd8619ba"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-07-07_9",
+      "call": "call008",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_full_exhaustion",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call008.json",
+      "sha256": "762310bbf00a715cdf0dd9a875550d0232cf9530404a12a929c2bb4c33c1bec6"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-07-07_9",
+      "call": "call009",
+      "first_action": 1,
+      "decision_count": 4,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT0/call009.json",
+      "sha256": "fd37da52279d7fe7c44d2f40751f62a51e085192c7dcbd578e6b071aa328ca2b"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-09-01_9",
+      "call": "call000",
+      "first_action": 1,
+      "decision_count": 9,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT0/call000.json",
+      "sha256": "7f342b42e45e2820f57bb631f67527ee0af197f9a624c720562cf596f3dcb410"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-09-01_9",
+      "call": "call001",
+      "first_action": 0,
+      "decision_count": 1,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT0/call001.json",
+      "sha256": "6b82d01accac7a477ab258ca083dc2289c8c6afcf558b271165ac95a659d0a0d"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-09-01_9",
+      "call": "call002",
+      "first_action": 1,
+      "decision_count": 4,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT0/call002.json",
+      "sha256": "83022e10429d185e631b73c3c01bd9beff75bf6fbc9bc9b1dedcbf812b59fc3d"
+    },
+    {
+      "method": "META_CONTEXT0",
+      "date": "2036-09-01_9",
+      "call": "call003",
+      "first_action": 1,
+      "decision_count": 8,
+      "stop_reason": "meta_context_return",
+      "source": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT0/call003.json",
+      "sha256": "c74ce9d437a5b9b0c0bfae567d3152da728dbfdb22f704e183e91f186024aad0"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-01-07_9",
+      "call": "call000",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT1/call000.json",
+      "sha256": "1ac71e0307edee450948ebe1d4395471adad58c3128cd169701639fca76c5fc8"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-01-07_9",
+      "call": "call001",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_unchanged_incumbent",
+      "source": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT1/call001.json",
+      "sha256": "49e752abf36057afcb94df65c54afbf0bc4aab12ee8fadc249e859aa503f1602"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-01-07_9",
+      "call": "call002",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT1/call002.json",
+      "sha256": "25f79052be5b914818a86ddf285d39e59edd4ec03ae02ecb39177b81114b07b3"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-01-07_9",
+      "call": "call003",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT1/call003.json",
+      "sha256": "aa899cc2014ac5dde5a34e30a824f9f194525cb2fd7a91bf9f77d60166543047"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-01-07_9",
+      "call": "call004",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-01-07_9__META_CONTEXT1/call004.json",
+      "sha256": "175f0d9b2a4a01689c84389b96b257380aa2de1e7a28e4f8db1de101f5f6ff18"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-03-03_9",
+      "call": "call000",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_unchanged_incumbent",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call000.json",
+      "sha256": "7040f73239617578cf61c775439164619e3253d97365949f3435670e19b7994d"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-03-03_9",
+      "call": "call001",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_unchanged_incumbent",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call001.json",
+      "sha256": "6c82c734603bfda66a23a2336ac0ac178d426be1913c7bccec618a9a04bb1d01"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-03-03_9",
+      "call": "call002",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_unchanged_incumbent",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call002.json",
+      "sha256": "d995073479905098f760f43768849232fbfeefc27dfba1277c427fc230c5afcb"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-03-03_9",
+      "call": "call003",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call003.json",
+      "sha256": "d471b748bca405cdc9a9f96a572bb5239d7b8e69285de9ef3b79b9b70ce015a1"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-03-03_9",
+      "call": "call004",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call004.json",
+      "sha256": "01c6907bbf03ef893cfb654b2f6d70e3691cf45bd921bcb1ed25240cb65ad7b9"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-03-03_9",
+      "call": "call005",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call005.json",
+      "sha256": "f2169c8aff4671b2a8ca92e314d64646d569d6497377b2693b7ea3b256477626"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-03-03_9",
+      "call": "call006",
+      "first_action": 1,
+      "decision_count": 13,
+      "stop_reason": "meta_context_exhausted",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call006.json",
+      "sha256": "19b4ca3118e0d57347479b3a4c8d564a0a8cce54438c74461d4b760951c880f4"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-03-03_9",
+      "call": "call007",
+      "first_action": 1,
+      "decision_count": 8,
+      "stop_reason": "meta_context_exhausted",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call007.json",
+      "sha256": "76861ca26191d38ae5bd1a39217c0d82ed692cf1774bd465ab7f5ff8d71c1402"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-03-03_9",
+      "call": "call008",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_full_exhaustion",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call008.json",
+      "sha256": "b038311ea840bc841cab0da4fd4cd9e06ec14cee0b8a386d3bfb118e8c953b0b"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-03-03_9",
+      "call": "call009",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_full_exhaustion",
+      "source": "outputs/grid82/runs/r0__2036-03-03_9__META_CONTEXT1/call009.json",
+      "sha256": "61bbdcf06d7d521c5f9087d24bd67564d59dbe3a4d8d459092ecd8317c75ef00"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-05-05_9",
+      "call": "call000",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-05-05_9__META_CONTEXT1/call000.json",
+      "sha256": "24d463b4f63f567b6c41c2767313ab1a35f3b61966a5b333996b7f8e5f3f191f"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-07-07_9",
+      "call": "call000",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_unchanged_incumbent",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call000.json",
+      "sha256": "22df40e2f087f2763a6dede561ea93ff8bcfd86120838ad0a94e9245e216ae71"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-07-07_9",
+      "call": "call001",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_unchanged_incumbent",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call001.json",
+      "sha256": "984d180dcd3c228b2cf706c8d44304bc4c98717f888ba5062e4e01409be61cec"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-07-07_9",
+      "call": "call002",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call002.json",
+      "sha256": "f1f66b122ffe897bd53d977e5ecc188a96f67839711ba0d823df2fe8a50f16f1"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-07-07_9",
+      "call": "call003",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call003.json",
+      "sha256": "6de31bd1de46ba92e1070158cfe9cebf217094d49027b40c97d013893fa83e99"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-07-07_9",
+      "call": "call004",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call004.json",
+      "sha256": "902c50c1f31f659b2d1c7847d61f94cf7309f5a3fd4632d68ba5a01849b44a5b"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-07-07_9",
+      "call": "call005",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call005.json",
+      "sha256": "59ab8385a6b84f3f6612ec4245c73efcea88a37848e66a16a7aac295c0fa1c44"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-07-07_9",
+      "call": "call006",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call006.json",
+      "sha256": "f3d534661347e0c98394de8b4a74cc26abb493819d9f213ee59f36b752985b72"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-07-07_9",
+      "call": "call007",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_unchanged_incumbent",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call007.json",
+      "sha256": "32ef5f2b6c953c3743448570d02cb89ff6fc8cb9c03b5f403cfd67dad87a6305"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-07-07_9",
+      "call": "call008",
+      "first_action": 1,
+      "decision_count": 13,
+      "stop_reason": "meta_context_exhausted",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call008.json",
+      "sha256": "9485f2c8943da455bda661ffb5a4e0cbd2fc81cf455a798b9d474b316142b4ed"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-07-07_9",
+      "call": "call009",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-07-07_9__META_CONTEXT1/call009.json",
+      "sha256": "b28fa90811df89f83d5d501a695e662a0f69a4f15e0fe173a3e76d164ade3bff"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-09-01_9",
+      "call": "call000",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_patience64_experimental_stop_local_complete",
+      "source": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT1/call000.json",
+      "sha256": "5749677e5d6d7bb591b60291052efbd518ce4d2f10b268247556c2ad69331daa"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-09-01_9",
+      "call": "call001",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_unchanged_incumbent",
+      "source": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT1/call001.json",
+      "sha256": "8081149d29d382e0bce2284dc55413730f299b7e67dc87b6c9b59206df393994"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-09-01_9",
+      "call": "call002",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_unchanged_incumbent",
+      "source": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT1/call002.json",
+      "sha256": "f3c9985cb4384ee4a450ab1f656b607b878964ddffb7cffb916d5683fa5720f4"
+    },
+    {
+      "method": "META_CONTEXT1",
+      "date": "2036-09-01_9",
+      "call": "call003",
+      "first_action": 2,
+      "decision_count": 1,
+      "stop_reason": "meta_delegate_guard_verified_plateau_unchanged_incumbent",
+      "source": "outputs/grid82/runs/r0__2036-09-01_9__META_CONTEXT1/call003.json",
+      "sha256": "be762d43d67c1b0096ba6121227a1d709d063564241b7ec0f5cef11ea24755d5"
+    }
+  ],
+  "new_runs": 0,
+  "new_fits": 0
+}

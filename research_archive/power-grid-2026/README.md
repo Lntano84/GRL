@@ -492,3 +492,9 @@ GRID79同批平衡计时：FULL、普通上下文门控、会议适配两种子�
 GRID83原文/作者代码对标与历史行为归因完成，无新训练/回放。META_CONTEXT1在重复0的30次搜索调用中27次首决策委托FRAME_GUARD；META_CONTEXT0为4/32。适配含完整FRAME宏动作，原共同校准质量未匹配、所选费用0如实保留。贡献主线收敛为无需额外元策略训练的分阶段预测核查与实际完整控制提速，GNN/学习门控辅助；中文替换段落独立保存，不覆盖用户稿。新增种子尚未启动，种子研究只能检验该电网适配的训练波动。
 
 [对标方案](protocols/GRID83_source_alignment/outputs/grid83_alignment/ICAPS2022对标与贡献重写方案.md) · [中文替换段落](protocols/GRID83_source_alignment/outputs/grid83_alignment/中文论证替换段落_供用户审改.md)
+
+## GRID84 before
+
+GRID84固定费用种子扩展：保留0/1，仅新增2/3/4各一次拟合，原129/22数据、网络、训练循环、costindex2=0均不变；不重选校准费用。FRAME与五种子同六个已暴露生成场景、两次反向计时，共72条串行回放。所有种子/失败保留，原校准质量匹配False保留；FULL只作质量/时域参照，不混旧计时。
+
+[方案与结果](protocols/GRID84_before/outputs/grid84/)

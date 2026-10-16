@@ -1,0 +1,66 @@
+{
+  "no_change_split": [
+    {
+      "cohort": "old13",
+      "no_action_calls": 4,
+      "no_action_queries": 3062,
+      "no_action_all_exhaustive": true,
+      "same_valid_prefix_calls": 55,
+      "same_valid_prefix_extra_queries": 7635,
+      "matched_full_actual_calls": 70,
+      "material_local_gain_calls": 24
+    },
+    {
+      "cohort": "new6",
+      "no_action_calls": 5,
+      "no_action_queries": 3737,
+      "no_action_all_exhaustive": true,
+      "same_valid_prefix_calls": 18,
+      "same_valid_prefix_extra_queries": 2344,
+      "matched_full_actual_calls": 19,
+      "material_local_gain_calls": 2
+    }
+  ],
+  "compute_components": [
+    {
+      "method": "FULL",
+      "source": "GRID81 same-batch timing; equal six dates",
+      "date_count": 6,
+      "controller_s": 57.35250959165038,
+      "optimizer_s": 32.54428644167441,
+      "forecast_s": 20.06793770833595,
+      "n1_nonforecast_s": 0.6423129666779156,
+      "remainder_s": 4.09797247496211,
+      "decision_p95_s": 0.03164974999995136,
+      "forecast_share": 0.34990513669270235
+    },
+    {
+      "method": "FRAME_GUARD",
+      "source": "GRID81 same-batch timing; equal six dates",
+      "date_count": 6,
+      "controller_s": 47.99028558332839,
+      "optimizer_s": 31.225729716680387,
+      "forecast_s": 12.453411033345068,
+      "n1_nonforecast_s": 0.5555396916758278,
+      "remainder_s": 3.7556051416271052,
+      "decision_p95_s": 0.03141465124986096,
+      "forecast_share": 0.2594985814727331
+    }
+  ],
+  "initial_safe_first_divergences": 7,
+  "first_divergences_same_state_base": 7,
+  "first_divergences_with_positive_step_gain": 7,
+  "first_divergences_old_and_guard_both_complete_better": 3,
+  "first_divergences_old_and_guard_both_complete_worse": 2,
+  "original_source_receipt_sha256": "b1086a37af310e07f7d193033729fdc98c5798ccebe74d5f05c2effc87c3af8d",
+  "extra_sources": [
+    {
+      "path": "work/grid85_mechanism/details.py",
+      "sha256": "38bf61a4c296cf0be9efdc34be41f1d8fc34112296bdc937d517dc433c6aebfc"
+    },
+    {
+      "path": "outputs/grid81/review.json",
+      "sha256": "bb2804726c9a91fca3df5bbfdd99097050dec9e93479f9ce925cdcf82c5b74ea"
+    }
+  ]
+}

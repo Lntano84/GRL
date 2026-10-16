@@ -1,0 +1,26 @@
+{
+  "source": "outputs/grid81/finished.json",
+  "sha256": "853ac84c67986ee3d745527b8bd3f60bb5a02f85a7108a02c29d55332e4205d7",
+  "rows": [
+    {
+      "method": "FULL",
+      "search_forecast_s": 13.151272516655354,
+      "all_forecast_s": 20.06793770833595,
+      "other_forecast_s": 6.916665191680598,
+      "controller_s": 57.35250959165038
+    },
+    {
+      "method": "FRAME_GUARD",
+      "search_forecast_s": 5.306068474990449,
+      "all_forecast_s": 12.453411033345068,
+      "other_forecast_s": 7.147342558354619,
+      "controller_s": 47.99028558332839
+    }
+  ],
+  "mean_controller_s_difference": 9.362224008321995,
+  "mean_search_forecast_s_difference": 7.845204041664904,
+  "search_forecast_difference_share": 0.837963718310027,
+  "net_all_forecast_difference_share": 0.8133245549585654,
+  "interpretation": "Additive observed accounting, not an intervention holding closed-loop state trajectories fixed. Includes complete same-batch six dates and both timing repeats.",
+  "new_runs": 0
+}

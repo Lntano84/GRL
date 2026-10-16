@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid80\generate.py", line 23, in <module>
+    try:main()
+        ^^^^^^
+  File "D:\Codex\GRL研究\work\grid80\generate.py", line 13, in main
+    from chronix2grid.grid2op_utils import add_data
+  File "D:\Codex\GRL研究\work\grid80\generator_packages\chronix2grid\grid2op_utils\__init__.py", line 11, in <module>
+    from chronix2grid.grid2op_utils.add_data import add_data
+  File "D:\Codex\GRL研究\work\grid80\generator_packages\chronix2grid\grid2op_utils\add_data.py", line 13, in <module>
+    from chronix2grid.grid2op_utils.utils import generate_a_scenario, get_last_scenario_id
+  File "D:\Codex\GRL研究\work\grid80\generator_packages\chronix2grid\grid2op_utils\utils.py", line 30, in <module>
+    from chronix2grid.generation.dispatch.PypsaDispatchBackend import PypsaDispatcher
+  File "D:\Codex\GRL研究\work\grid80\generator_packages\chronix2grid\generation\dispatch\PypsaDispatchBackend\__init__.py", line 11, in <module>
+    from chronix2grid.generation._dispatch._PypsaDispatchBackend.PypsaEconomicDispatch import PypsaDispatcher
+  File "D:\Codex\GRL研究\work\grid80\generator_packages\chronix2grid\generation\_dispatch\_PypsaDispatchBackend\PypsaEconomicDispatch.py", line 27, in <module>
+    from chronix2grid.generation.dispatch.EconomicDispatch import Dispatcher
+  File "D:\Codex\GRL研究\work\grid80\generator_packages\chronix2grid\generation\dispatch\EconomicDispatch.py", line 24, in <module>
+    import plotly.express as px
+ModuleNotFoundError: No module named 'plotly'

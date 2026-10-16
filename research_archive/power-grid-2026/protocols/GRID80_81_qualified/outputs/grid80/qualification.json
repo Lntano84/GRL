@@ -1,0 +1,540 @@
+{
+  "passed": true,
+  "static_unchanged": [
+    "alerts_info.json",
+    "chronix2grid_adddata_kwargs.json",
+    "config.py",
+    "difficulty_levels.json",
+    "grid.json",
+    "grid_layout.json",
+    "loads_charac.csv",
+    "maintenance_meta.json",
+    "params.json",
+    "params_forecasts.json",
+    "params_load.json",
+    "params_loss.json",
+    "params_opf.json",
+    "params_res.json",
+    "prods_charac.csv",
+    "storage_units_charac.csv",
+    "wind_extra_params.json"
+  ],
+  "scenarios": [
+    {
+      "scenario": "2036-01-07_9",
+      "steps": 2017,
+      "initial_rho": 1.0558315515518188,
+      "series": {
+        "load_p": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "load_q": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "prod_p": {
+          "rows": 2018,
+          "columns": 62
+        },
+        "load_p_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "load_q_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "prod_p_forecasted": {
+          "rows": 24216,
+          "columns": 62
+        }
+      },
+      "generator_ac_balance_max_mw": 0.031024932861328125,
+      "generator_forecast_failures": 18,
+      "generator_quality": {
+        "amount_curtailed_for": 341322.6156800939,
+        "avg": 2.8711424966499514e-05,
+        "forecast_generation_time": 211.2636268000001,
+        "forecasts_nb_fail": 18,
+        "forecasts_t0_errors": {
+          "1223": "cvxpy failed to find a solution for t0 1223 and returned an infinite cost",
+          "1224": "cvxpy failed to find a solution for t0 1224 and returned an infinite cost",
+          "1225": "cvxpy failed to find a solution for t0 1225 and returned an infinite cost",
+          "1226": "cvxpy failed to find a solution for t0 1226 and returned an infinite cost",
+          "1227": "cvxpy failed to find a solution for t0 1227 and returned an infinite cost",
+          "1228": "cvxpy failed to find a solution for t0 1228 and returned an infinite cost",
+          "1229": "cvxpy failed to find a solution for t0 1229 and returned an infinite cost",
+          "1230": "cvxpy failed to find a solution for t0 1230 and returned an infinite cost",
+          "1231": "cvxpy failed to find a solution for t0 1231 and returned an infinite cost",
+          "1232": "cvxpy failed to find a solution for t0 1232 and returned an infinite cost",
+          "1233": "cvxpy failed to find a solution for t0 1233 and returned an infinite cost",
+          "1332": "cvxpy failed to find a solution for t0 1332 and returned an infinite cost",
+          "1333": "cvxpy failed to find a solution for t0 1333 and returned an infinite cost",
+          "1334": "cvxpy failed to find a solution for t0 1334 and returned an infinite cost",
+          "1335": "cvxpy failed to find a solution for t0 1335 and returned an infinite cost",
+          "1336": "cvxpy failed to find a solution for t0 1336 and returned an infinite cost",
+          "619": "cvxpy failed to find a solution for t0 619 and returned an infinite cost",
+          "620": "cvxpy failed to find a solution for t0 620 and returned an infinite cost"
+        },
+        "generation_time": 349.5122357,
+        "info": [
+          "avg, percent_95, percent_99, max: this 'quality' is the difference between the DC solver and the AC solver. This is the number of MW that will differ from the grid2op observation compared to the generated data by chronix2grid.",
+          "total_load, total_gen: total amount of energy consumed / produced for the generated scenario.",
+          "losses_mwh: total amount of losses for the scenario (in energy)",
+          "losses_avg: average (per step) of the loss (avg[loss_this_step / total_generation_this_step])",
+          "wind_curtailed_opf: total (in energy) wind power curtailed by the OPF",
+          "wind_curtailed_losses: total (in energy) wind power curtailed by the loss",
+          "solar_curtailed_opf: total (in energy) solar power curtailed by the OPF",
+          "iter_num: number of iteration of the loss algorithm",
+          "generation_time: total time spent to generate these data (in seconds)",
+          "saving_time: total time spent to save the generated data (in seconds), this excludes the metadata saving time",
+          "amount_curtailed_for: sum of all the power that has been curtailed for the forecasts"
+        ],
+        "iter_num": 3,
+        "losses_avg": 0.024820124293373994,
+        "losses_mwh": 15270.729675370345,
+        "max": 0.031024932861328125,
+        "percent_95": 0.0,
+        "percent_99": 0.0003662109375,
+        "saving_time": 6.205474599999889,
+        "solar_curtailed_opf": -2.1996437377917268e-05,
+        "total_gen": 608820.7916666666,
+        "total_load": 593550.0619912962,
+        "wind_curtailed_losses": 0.012961666662401209,
+        "wind_curtailed_opf": 0.2581338860521403
+      }
+    },
+    {
+      "scenario": "2036-03-03_9",
+      "steps": 2017,
+      "initial_rho": 0.7806145548820496,
+      "series": {
+        "load_p": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "load_q": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "prod_p": {
+          "rows": 2018,
+          "columns": 62
+        },
+        "load_p_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "load_q_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "prod_p_forecasted": {
+          "rows": 24216,
+          "columns": 62
+        }
+      },
+      "generator_ac_balance_max_mw": 0.0438995361328125,
+      "generator_forecast_failures": 2,
+      "generator_quality": {
+        "amount_curtailed_for": 339869.9526706224,
+        "avg": 4.0515751205926823e-05,
+        "forecast_generation_time": 246.73194070000045,
+        "forecasts_nb_fail": 2,
+        "forecasts_t0_errors": {
+          "1706": "cvxpy failed to find a solution for t0 1706 and returned an infinite cost",
+          "1707": "cvxpy failed to find a solution for t0 1707 and returned an infinite cost"
+        },
+        "generation_time": 390.3406358000002,
+        "info": [
+          "avg, percent_95, percent_99, max: this 'quality' is the difference between the DC solver and the AC solver. This is the number of MW that will differ from the grid2op observation compared to the generated data by chronix2grid.",
+          "total_load, total_gen: total amount of energy consumed / produced for the generated scenario.",
+          "losses_mwh: total amount of losses for the scenario (in energy)",
+          "losses_avg: average (per step) of the loss (avg[loss_this_step / total_generation_this_step])",
+          "wind_curtailed_opf: total (in energy) wind power curtailed by the OPF",
+          "wind_curtailed_losses: total (in energy) wind power curtailed by the loss",
+          "solar_curtailed_opf: total (in energy) solar power curtailed by the OPF",
+          "iter_num: number of iteration of the loss algorithm",
+          "generation_time: total time spent to generate these data (in seconds)",
+          "saving_time: total time spent to save the generated data (in seconds), this excludes the metadata saving time",
+          "amount_curtailed_for: sum of all the power that has been curtailed for the forecasts"
+        ],
+        "iter_num": 3,
+        "losses_avg": 0.026120125759975833,
+        "losses_mwh": 16502.151411120933,
+        "max": 0.0438995361328125,
+        "percent_95": 0.0,
+        "percent_99": 0.00054168701171875,
+        "saving_time": 6.062657499999659,
+        "solar_curtailed_opf": -3.637686798659463e-05,
+        "total_gen": 626632.125,
+        "total_load": 610129.973588879,
+        "wind_curtailed_losses": -0.020046666662286345,
+        "wind_curtailed_opf": -5.854332509140173e-06
+      }
+    },
+    {
+      "scenario": "2036-05-05_9",
+      "steps": 2017,
+      "initial_rho": 0.7788490653038025,
+      "series": {
+        "load_p": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "load_q": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "prod_p": {
+          "rows": 2018,
+          "columns": 62
+        },
+        "load_p_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "load_q_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "prod_p_forecasted": {
+          "rows": 24216,
+          "columns": 62
+        }
+      },
+      "generator_ac_balance_max_mw": 0.013507843017578125,
+      "generator_forecast_failures": 0,
+      "generator_quality": {
+        "amount_curtailed_for": 236037.8735054626,
+        "avg": 2.3095416997655164e-05,
+        "forecast_generation_time": 181.46279539999978,
+        "forecasts_nb_fail": 0,
+        "forecasts_t0_errors": {},
+        "generation_time": 315.5445710999993,
+        "info": [
+          "avg, percent_95, percent_99, max: this 'quality' is the difference between the DC solver and the AC solver. This is the number of MW that will differ from the grid2op observation compared to the generated data by chronix2grid.",
+          "total_load, total_gen: total amount of energy consumed / produced for the generated scenario.",
+          "losses_mwh: total amount of losses for the scenario (in energy)",
+          "losses_avg: average (per step) of the loss (avg[loss_this_step / total_generation_this_step])",
+          "wind_curtailed_opf: total (in energy) wind power curtailed by the OPF",
+          "wind_curtailed_losses: total (in energy) wind power curtailed by the loss",
+          "solar_curtailed_opf: total (in energy) solar power curtailed by the OPF",
+          "iter_num: number of iteration of the loss algorithm",
+          "generation_time: total time spent to generate these data (in seconds)",
+          "saving_time: total time spent to save the generated data (in seconds), this excludes the metadata saving time",
+          "amount_curtailed_for: sum of all the power that has been curtailed for the forecasts"
+        ],
+        "iter_num": 3,
+        "losses_avg": 0.02189179826201757,
+        "losses_mwh": 11212.833986397833,
+        "max": 0.013507843017578125,
+        "percent_95": 1.7123529631453242e-13,
+        "percent_99": 0.00030517578125,
+        "saving_time": 5.929621899999802,
+        "solar_curtailed_opf": -7.951050065457821e-06,
+        "total_gen": 512374.375,
+        "total_load": 501161.54101360217,
+        "wind_curtailed_losses": -0.00464083332917653,
+        "wind_curtailed_opf": 104.60774933042315
+      }
+    },
+    {
+      "scenario": "2036-07-07_9",
+      "steps": 2017,
+      "initial_rho": 0.812519371509552,
+      "series": {
+        "load_p": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "load_q": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "prod_p": {
+          "rows": 2018,
+          "columns": 62
+        },
+        "load_p_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "load_q_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "prod_p_forecasted": {
+          "rows": 24216,
+          "columns": 62
+        }
+      },
+      "generator_ac_balance_max_mw": 0.014225006103515625,
+      "generator_forecast_failures": 0,
+      "generator_quality": {
+        "amount_curtailed_for": 513882.2071365736,
+        "avg": 1.539176157968257e-05,
+        "forecast_generation_time": 189.64776679999977,
+        "forecasts_nb_fail": 0,
+        "forecasts_t0_errors": {},
+        "generation_time": 336.9514817999998,
+        "info": [
+          "avg, percent_95, percent_99, max: this 'quality' is the difference between the DC solver and the AC solver. This is the number of MW that will differ from the grid2op observation compared to the generated data by chronix2grid.",
+          "total_load, total_gen: total amount of energy consumed / produced for the generated scenario.",
+          "losses_mwh: total amount of losses for the scenario (in energy)",
+          "losses_avg: average (per step) of the loss (avg[loss_this_step / total_generation_this_step])",
+          "wind_curtailed_opf: total (in energy) wind power curtailed by the OPF",
+          "wind_curtailed_losses: total (in energy) wind power curtailed by the loss",
+          "solar_curtailed_opf: total (in energy) solar power curtailed by the OPF",
+          "iter_num: number of iteration of the loss algorithm",
+          "generation_time: total time spent to generate these data (in seconds)",
+          "saving_time: total time spent to save the generated data (in seconds), this excludes the metadata saving time",
+          "amount_curtailed_for: sum of all the power that has been curtailed for the forecasts"
+        ],
+        "iter_num": 3,
+        "losses_avg": 0.023680219763194565,
+        "losses_mwh": 9377.645611729007,
+        "max": 0.014225006103515625,
+        "percent_95": 3.166007989108266e-08,
+        "percent_99": 0.00041961669921875,
+        "saving_time": 5.57379839999976,
+        "solar_curtailed_opf": 2.5591948845734198e-05,
+        "total_gen": 389490.0,
+        "total_load": 380112.354388271,
+        "wind_curtailed_losses": 0.017529916658531874,
+        "wind_curtailed_opf": 2276.929288941998
+      }
+    },
+    {
+      "scenario": "2036-09-01_9",
+      "steps": 2017,
+      "initial_rho": 0.76670241355896,
+      "series": {
+        "load_p": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "load_q": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "prod_p": {
+          "rows": 2018,
+          "columns": 62
+        },
+        "load_p_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "load_q_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "prod_p_forecasted": {
+          "rows": 24216,
+          "columns": 62
+        }
+      },
+      "generator_ac_balance_max_mw": 0.022491455078125,
+      "generator_forecast_failures": 89,
+      "generator_quality": {
+        "amount_curtailed_for": 436029.2720176338,
+        "avg": 2.0933195580204912e-05,
+        "forecast_generation_time": 169.3884979000004,
+        "forecasts_nb_fail": 89,
+        "forecasts_t0_errors": {
+          "1424": "cvxpy failed to find a solution for t0 1424 and returned an infinite cost",
+          "1425": "cvxpy failed to find a solution for t0 1425 and returned an infinite cost",
+          "1426": "cvxpy failed to find a solution for t0 1426 and returned an infinite cost",
+          "1427": "cvxpy failed to find a solution for t0 1427 and returned an infinite cost",
+          "1428": "cvxpy failed to find a solution for t0 1428 and returned an infinite cost",
+          "1489": "cvxpy failed to find a solution for t0 1489 and returned an infinite cost",
+          "1490": "cvxpy failed to find a solution for t0 1490 and returned an infinite cost",
+          "1491": "cvxpy failed to find a solution for t0 1491 and returned an infinite cost",
+          "1492": "cvxpy failed to find a solution for t0 1492 and returned an infinite cost",
+          "1493": "cvxpy failed to find a solution for t0 1493 and returned an infinite cost",
+          "1558": "cvxpy failed to find a solution for t0 1558 and returned an infinite cost",
+          "1559": "cvxpy failed to find a solution for t0 1559 and returned an infinite cost",
+          "1560": "cvxpy failed to find a solution for t0 1560 and returned an infinite cost",
+          "1561": "cvxpy failed to find a solution for t0 1561 and returned an infinite cost",
+          "1562": "cvxpy failed to find a solution for t0 1562 and returned an infinite cost",
+          "1563": "cvxpy failed to find a solution for t0 1563 and returned an infinite cost",
+          "1564": "cvxpy failed to find a solution for t0 1564 and returned an infinite cost",
+          "1565": "cvxpy failed to find a solution for t0 1565 and returned an infinite cost",
+          "1566": "cvxpy failed to find a solution for t0 1566 and returned an infinite cost",
+          "1604": "cvxpy failed to find a solution for t0 1604 and returned an infinite cost",
+          "1605": "cvxpy failed to find a solution for t0 1605 and returned an infinite cost",
+          "1606": "cvxpy failed to find a solution for t0 1606 and returned an infinite cost",
+          "1607": "cvxpy failed to find a solution for t0 1607 and returned an infinite cost",
+          "1608": "cvxpy failed to find a solution for t0 1608 and returned an infinite cost",
+          "1609": "cvxpy failed to find a solution for t0 1609 and returned an infinite cost",
+          "1610": "cvxpy failed to find a solution for t0 1610 and returned an infinite cost",
+          "1611": "cvxpy failed to find a solution for t0 1611 and returned an infinite cost",
+          "1612": "cvxpy failed to find a solution for t0 1612 and returned an infinite cost",
+          "1613": "cvxpy failed to find a solution for t0 1613 and returned an infinite cost",
+          "1614": "cvxpy failed to find a solution for t0 1614 and returned an infinite cost",
+          "1615": "cvxpy failed to find a solution for t0 1615 and returned an infinite cost",
+          "1616": "cvxpy failed to find a solution for t0 1616 and returned an infinite cost",
+          "1617": "cvxpy failed to find a solution for t0 1617 and returned an infinite cost",
+          "1618": "cvxpy failed to find a solution for t0 1618 and returned an infinite cost",
+          "1619": "cvxpy failed to find a solution for t0 1619 and returned an infinite cost",
+          "1620": "cvxpy failed to find a solution for t0 1620 and returned an infinite cost",
+          "1621": "cvxpy failed to find a solution for t0 1621 and returned an infinite cost",
+          "1622": "cvxpy failed to find a solution for t0 1622 and returned an infinite cost",
+          "1623": "cvxpy failed to find a solution for t0 1623 and returned an infinite cost",
+          "1624": "cvxpy failed to find a solution for t0 1624 and returned an infinite cost",
+          "1625": "cvxpy failed to find a solution for t0 1625 and returned an infinite cost",
+          "1626": "cvxpy failed to find a solution for t0 1626 and returned an infinite cost",
+          "1627": "cvxpy failed to find a solution for t0 1627 and returned an infinite cost",
+          "1628": "cvxpy failed to find a solution for t0 1628 and returned an infinite cost",
+          "1629": "cvxpy failed to find a solution for t0 1629 and returned an infinite cost",
+          "1630": "cvxpy failed to find a solution for t0 1630 and returned an infinite cost",
+          "1631": "cvxpy failed to find a solution for t0 1631 and returned an infinite cost",
+          "1632": "cvxpy failed to find a solution for t0 1632 and returned an infinite cost",
+          "1633": "cvxpy failed to find a solution for t0 1633 and returned an infinite cost",
+          "1634": "cvxpy failed to find a solution for t0 1634 and returned an infinite cost",
+          "1635": "cvxpy failed to find a solution for t0 1635 and returned an infinite cost",
+          "1639": "cvxpy failed to find a solution for t0 1639 and returned an infinite cost",
+          "1651": "cvxpy failed to find a solution for t0 1651 and returned an infinite cost",
+          "1652": "cvxpy failed to find a solution for t0 1652 and returned an infinite cost",
+          "1653": "cvxpy failed to find a solution for t0 1653 and returned an infinite cost",
+          "1654": "cvxpy failed to find a solution for t0 1654 and returned an infinite cost",
+          "1655": "cvxpy failed to find a solution for t0 1655 and returned an infinite cost",
+          "1656": "cvxpy failed to find a solution for t0 1656 and returned an infinite cost",
+          "1657": "cvxpy failed to find a solution for t0 1657 and returned an infinite cost",
+          "1658": "cvxpy failed to find a solution for t0 1658 and returned an infinite cost",
+          "1659": "cvxpy failed to find a solution for t0 1659 and returned an infinite cost",
+          "1660": "cvxpy failed to find a solution for t0 1660 and returned an infinite cost",
+          "1661": "cvxpy failed to find a solution for t0 1661 and returned an infinite cost",
+          "1662": "cvxpy failed to find a solution for t0 1662 and returned an infinite cost",
+          "1663": "cvxpy failed to find a solution for t0 1663 and returned an infinite cost",
+          "1664": "cvxpy failed to find a solution for t0 1664 and returned an infinite cost",
+          "1665": "cvxpy failed to find a solution for t0 1665 and returned an infinite cost",
+          "1666": "cvxpy failed to find a solution for t0 1666 and returned an infinite cost",
+          "1667": "cvxpy failed to find a solution for t0 1667 and returned an infinite cost",
+          "1668": "cvxpy failed to find a solution for t0 1668 and returned an infinite cost",
+          "1679": "cvxpy failed to find a solution for t0 1679 and returned an infinite cost",
+          "1681": "cvxpy failed to find a solution for t0 1681 and returned an infinite cost",
+          "1682": "cvxpy failed to find a solution for t0 1682 and returned an infinite cost",
+          "1684": "cvxpy failed to find a solution for t0 1684 and returned an infinite cost",
+          "1685": "cvxpy failed to find a solution for t0 1685 and returned an infinite cost",
+          "1691": "cvxpy failed to find a solution for t0 1691 and returned an infinite cost",
+          "1693": "cvxpy failed to find a solution for t0 1693 and returned an infinite cost",
+          "1694": "cvxpy failed to find a solution for t0 1694 and returned an infinite cost",
+          "1695": "cvxpy failed to find a solution for t0 1695 and returned an infinite cost",
+          "1696": "cvxpy failed to find a solution for t0 1696 and returned an infinite cost",
+          "1697": "cvxpy failed to find a solution for t0 1697 and returned an infinite cost",
+          "1698": "cvxpy failed to find a solution for t0 1698 and returned an infinite cost",
+          "1699": "cvxpy failed to find a solution for t0 1699 and returned an infinite cost",
+          "1700": "cvxpy failed to find a solution for t0 1700 and returned an infinite cost",
+          "1701": "cvxpy failed to find a solution for t0 1701 and returned an infinite cost",
+          "1702": "cvxpy failed to find a solution for t0 1702 and returned an infinite cost",
+          "1703": "cvxpy failed to find a solution for t0 1703 and returned an infinite cost",
+          "1704": "cvxpy failed to find a solution for t0 1704 and returned an infinite cost",
+          "1705": "cvxpy failed to find a solution for t0 1705 and returned an infinite cost"
+        },
+        "generation_time": 292.1807023000001,
+        "info": [
+          "avg, percent_95, percent_99, max: this 'quality' is the difference between the DC solver and the AC solver. This is the number of MW that will differ from the grid2op observation compared to the generated data by chronix2grid.",
+          "total_load, total_gen: total amount of energy consumed / produced for the generated scenario.",
+          "losses_mwh: total amount of losses for the scenario (in energy)",
+          "losses_avg: average (per step) of the loss (avg[loss_this_step / total_generation_this_step])",
+          "wind_curtailed_opf: total (in energy) wind power curtailed by the OPF",
+          "wind_curtailed_losses: total (in energy) wind power curtailed by the loss",
+          "solar_curtailed_opf: total (in energy) solar power curtailed by the OPF",
+          "iter_num: number of iteration of the loss algorithm",
+          "generation_time: total time spent to generate these data (in seconds)",
+          "saving_time: total time spent to save the generated data (in seconds), this excludes the metadata saving time",
+          "amount_curtailed_for: sum of all the power that has been curtailed for the forecasts"
+        ],
+        "iter_num": 3,
+        "losses_avg": 0.02467683574436145,
+        "losses_mwh": 9290.71445340438,
+        "max": 0.022491455078125,
+        "percent_95": 0.0,
+        "percent_99": 0.0004119873046875,
+        "saving_time": 5.730940099999316,
+        "solar_curtailed_opf": 3.472075331956148e-05,
+        "total_gen": 372382.3333333333,
+        "total_load": 363091.61887992895,
+        "wind_curtailed_losses": -0.00920208333991468,
+        "wind_curtailed_opf": 3218.354867127588
+      }
+    },
+    {
+      "scenario": "2036-11-03_9",
+      "steps": 2017,
+      "initial_rho": 0.7090903520584106,
+      "series": {
+        "load_p": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "load_q": {
+          "rows": 2018,
+          "columns": 99
+        },
+        "prod_p": {
+          "rows": 2018,
+          "columns": 62
+        },
+        "load_p_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "load_q_forecasted": {
+          "rows": 24216,
+          "columns": 99
+        },
+        "prod_p_forecasted": {
+          "rows": 24216,
+          "columns": 62
+        }
+      },
+      "generator_ac_balance_max_mw": 0.020885467529296875,
+      "generator_forecast_failures": 4,
+      "generator_quality": {
+        "amount_curtailed_for": 272136.10610465554,
+        "avg": 1.5142931798589839e-05,
+        "forecast_generation_time": 3806.9560877999993,
+        "forecasts_nb_fail": 4,
+        "forecasts_t0_errors": {
+          "1914": "cvxpy failed to find a solution for t0 1914 and returned an infinite cost",
+          "1916": "cvxpy failed to find a solution for t0 1916 and returned an infinite cost",
+          "1917": "cvxpy failed to find a solution for t0 1917 and returned an infinite cost",
+          "1919": "cvxpy failed to find a solution for t0 1919 and returned an infinite cost"
+        },
+        "generation_time": 3928.8255738000007,
+        "info": [
+          "avg, percent_95, percent_99, max: this 'quality' is the difference between the DC solver and the AC solver. This is the number of MW that will differ from the grid2op observation compared to the generated data by chronix2grid.",
+          "total_load, total_gen: total amount of energy consumed / produced for the generated scenario.",
+          "losses_mwh: total amount of losses for the scenario (in energy)",
+          "losses_avg: average (per step) of the loss (avg[loss_this_step / total_generation_this_step])",
+          "wind_curtailed_opf: total (in energy) wind power curtailed by the OPF",
+          "wind_curtailed_losses: total (in energy) wind power curtailed by the loss",
+          "solar_curtailed_opf: total (in energy) solar power curtailed by the OPF",
+          "iter_num: number of iteration of the loss algorithm",
+          "generation_time: total time spent to generate these data (in seconds)",
+          "saving_time: total time spent to save the generated data (in seconds), this excludes the metadata saving time",
+          "amount_curtailed_for: sum of all the power that has been curtailed for the forecasts"
+        ],
+        "iter_num": 3,
+        "losses_avg": 0.024785438633733572,
+        "losses_mwh": 11772.026573180608,
+        "max": 0.020885467529296875,
+        "percent_95": 0.0,
+        "percent_99": 0.000270843505859375,
+        "saving_time": 5.919279199999437,
+        "solar_curtailed_opf": -2.1569343516603112e-05,
+        "total_gen": 478241.125,
+        "total_load": 466469.0984268194,
+        "wind_curtailed_losses": 0.010890833334997296,
+        "wind_curtailed_opf": 23.37277028717411
+      }
+    }
+  ],
+  "controller_outcomes_screened": false,
+  "selection_unchanged": true,
+  "independent_real_grid": false
+}

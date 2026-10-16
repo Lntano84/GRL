@@ -1,0 +1,34 @@
+{
+  "overall": "FIXED_RULE_ALREADY_COMPETITIVE",
+  "decisions": [
+    {
+      "baseline": "FIXED_256",
+      "guard_quality_dates": 6,
+      "fixed_quality_dates": 6,
+      "same_horizon_dates": 6,
+      "supported_feedback_computational_advantage": false,
+      "fixed_baseline_competitive": true,
+      "category": "FIXED_BASELINE_COMPETITIVE",
+      "macro_controller_reduction": -0.02020550169085193,
+      "macro_query_reduction_equal_horizons": -0.4558984375,
+      "fixed_relative_control_extra": -0.016097115593367406,
+      "fixed_relative_query_ratio": 0.7323374664068374
+    },
+    {
+      "baseline": "FIXED_512",
+      "guard_quality_dates": 6,
+      "fixed_quality_dates": 6,
+      "same_horizon_dates": 6,
+      "supported_feedback_computational_advantage": true,
+      "fixed_baseline_competitive": false,
+      "category": "FEEDBACK_COMPUTE_ADVANTAGE",
+      "macro_controller_reduction": 0.07098698884716804,
+      "macro_query_reduction_equal_horizons": 0.40892578125,
+      "fixed_relative_control_extra": 0.0853279090662764,
+      "fixed_relative_query_ratio": 1.987284634287846
+    }
+  ],
+  "new_fits": 0,
+  "new_dates": 0,
+  "scope": "Six GRID81-generated already exposed dates; development mechanism test of fixed versus feedback query allocation. Timing repeats are not independent dates; no original conference task comparison in this batch."
+}

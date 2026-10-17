@@ -2,7 +2,7 @@
 
 ## 研究资料入口 2026年10月17日
 
-[研究记录总索引](docs/RECORDS_INDEX.md) · [当前研究状态](docs/RESEARCH_STATE.md)
+[中文论文全文与材料](docs/PAPER_MATERIALS_INDEX.md) · [研究记录总索引](docs/RECORDS_INDEX.md) · [当前研究状态](docs/RESEARCH_STATE.md)
 
 本次补齐实验报告、逐次查询和逐步记录、审计、失败与恢复日志、论文版本及协作材料。逐文件索引覆盖23,885个文件，新增16,120个文件按批次压缩并校验；已有相同归档保留原位置。具体范围与恢复方式见总索引。
 

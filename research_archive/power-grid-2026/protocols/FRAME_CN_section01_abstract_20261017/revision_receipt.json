@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-10-17T04:26:05.072776+00:00",
+  "language": "Chinese",
+  "section_only": "abstract",
+  "sentences": [
+    "在线电网拓扑控制通过预测候选动作的运行后果改善电网状态，大量逐候选仿真带来较高的在线计算开销。",
+    "不同运行状态所需的搜索深度存在差异，统一查询预算难以将评估计算集中到可能改变控制动作的关键候选上。",
+    "本文提出反馈驱动的拓扑搜索框架FRAME，将候选评估组织为前缀筛查、分批核查和同站补查，依据已获得的预测反馈控制全局搜索深度，并利用动作的变电站归属确定补查范围。",
+    "FRAME复用已查询结果并保留最佳已评估动作，可直接接入现有控制器，无需额外训练搜索控制策略。",
+    "在一个公开电网的6个生成时序场景上，相对完整候选搜索，FRAME的查询量和完整控制时间宏平均分别减少65.10%和14.98%，最大可比完整周成本增幅为0.087%；在另外13个时序场景中，相对每次搜索固定查询512个候选的策略，FRAME减少33.57%的查询，质量达标场景数为13/13，对照为11/13。"
+  ],
+  "character_count": 379,
+  "metrics_recomputed": {
+    "generated_dates": 6,
+    "query_active_dates": 5,
+    "query_macro": 0.6509677018059689,
+    "time_macro": 0.14979148171235593,
+    "max_comparable_cost": 0.0008663102138171119,
+    "original_dates": 13,
+    "query_macro_fixed512": 0.33572543400552757,
+    "guard_quality": 13,
+    "fixed512_quality": 11
+  },
+  "source_files": [
+    {
+      "path": "outputs/grid81/review.json",
+      "sha256": "bb2804726c9a91fca3df5bbfdd99097050dec9e93479f9ce925cdcf82c5b74ea"
+    },
+    {
+      "path": "outputs/grid88/review.json",
+      "sha256": "f21b64f9365aefe7f5c9353ec0f79b7f3e1a2f0acc25023b39e309b55a4b5cbf"
+    },
+    {
+      "path": "work/grid70/policies.py",
+      "sha256": "9bfdd2f9a49af4385933c9e87b05068b50485892fd49717bd3f96c8a843b1cd7"
+    }
+  ],
+  "preserved_draft_hashes": {
+    "outputs/grid_icaps_cn_v4/ICAPS2027_中文全文修订稿_V4.docx": "0ff838a83f6a90c0ba1f56d09c0d7155d16a4d67a8446091debe070618f640a2"
+  },
+  "guide_live_browser_read": true,
+  "guide_examples_read": 3,
+  "new_simulations": 0,
+  "new_training": 0,
+  "english_sections": 0,
+  "figures": 0,
+  "awaiting_user_review": true
+}

@@ -564,3 +564,9 @@ GRID88最后一组固定预算对照：原13个已暴露2035日期，FRAME_GUARD
 完成FRAME六篇相关论文阅读筛查：AAAI2024 Stop Planner Time、IJCAI2018在线性能预测、EnergyAI2023电网规则/RL比较、ESWA2024渐进决策、2026 Gibbs先验预印本及IJCAI2013 Rational Lazy A*。取得五PDF并核对方法/实验页，ESWA仅出版方摘要。既有分组候选搜索与动作层次分解前例需明确；预印本速度和质量分开报告。新增训练/回放0；未决定新增基线或第二电网。
 
 [六篇方法与实验对照](protocols/FRAME_related_reading_20261017/六篇相关论文_方法实验与FRAME对照.md)
+
+## FRAME中文逐节重写 01摘要 2026-10-17
+
+[新版摘要和指南核对](protocols/FRAME_CN_section01_abstract_20261017/)
+
+五句中文版摘要，实际重读飞书指南三个案例，等待用户审改；本轮止于摘要，旧稿和结果保留。

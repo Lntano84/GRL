@@ -1,0 +1,5 @@
+﻿对象,停止,后续对象,搜索控制训练,适用范围,来源
+固定512 本实验,"前min(512,M)个代表查询结束",相同全局顺序,无,相同电网接口,work/grid86/policies.py
+FRAME 本实验,分支阈值和连续无改进反馈,全局续查及当前最佳动作所属变电站,无额外训练,相同电网接口,work/grid70/policies.py
+META 电网适配,学习策略返回动作,全局续查64或初始委托完整FRAME,DoubleDQN,本实验电网适配,work/grid77/metacontrol.py
+Bhatia等 ICAPS2022原工作,元控制策略选择停止,底层规划器搜索及元策略调整内部参数,深度强化学习,原文AWA*和RRT*任务,outputs/grid83_alignment/ICAPS2022对标与贡献重写方案.md

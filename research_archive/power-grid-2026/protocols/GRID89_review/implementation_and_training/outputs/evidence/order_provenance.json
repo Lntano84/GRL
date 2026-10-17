@@ -1,0 +1,15 @@
+{
+  "library": "work/grid02/ljn_nn/assets/action_N1_unsafe.npz",
+  "sha256": "6157c1454ae4a45a4f9ce7611c08d1317eca9ab4b3c0cfdc3d0877074cff3118",
+  "actions": 909,
+  "nonincreasing_teacher_counts": true,
+  "total_teacher_counts": 6129,
+  "first128_count_share": 0.44379180943057595,
+  "evidence": [
+    "work/grid02/ljn_nn/README.MD explains teacher collection",
+    "modules/utils.py preserves action_space array row order",
+    "modules/topology_heuristic.py loads the list without reordering",
+    "work/grid36/cheap_rank.py STATIC_ID sorts retained representatives"
+  ],
+  "limitation": "Counts describe external action-library collection, not runtime action success; raw teacher date coverage not independently verified. All comparators share the fixed external library."
+}

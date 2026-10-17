@@ -1,0 +1,75 @@
+{
+  "states": 25,
+  "features": [
+    "query_fraction",
+    "pool_size_909",
+    "has_admissible",
+    "best_reward_half",
+    "best_rho_half",
+    "last_quality_gain",
+    "stale_fraction",
+    "admissible_fraction",
+    "mean_quality",
+    "std_quality",
+    "top_two_quality_gap",
+    "public_rho_limit_half",
+    "root_rho_max",
+    "root_abs_dispatch",
+    "root_abs_target_dispatch",
+    "root_total_demand",
+    "graph_average_degree",
+    "active_bus_fraction",
+    "radial_load_bus_fraction",
+    "mean_node_rho",
+    "hot_bus_fraction",
+    "substation_cooldown_fraction",
+    "root_generation",
+    "root_curtailment",
+    "initial_monitoring"
+  ],
+  "actions": [
+    "RETURN if incumbent exists",
+    "QUERY next64",
+    "DELEGATE complete FRAME at initial prefix only"
+  ],
+  "utility": "q=clip(best strict-admissible reward / 2,0,1); U=q-expm1(log1p(cost_level)*queries/M); transition reward=U_next-U_current; STOP reward0",
+  "network": "25-64-32-3 ReLU DoubleDQN",
+  "training_states": 129,
+  "calibration_states": 22,
+  "family_sets": {
+    "train": [
+      "2035-01-08",
+      "2035-01-29",
+      "2035-04-16",
+      "2035-04-30",
+      "2035-05-07",
+      "2035-06-11",
+      "2035-08-06",
+      "2035-08-27",
+      "2035-09-10",
+      "2035-09-17",
+      "2035-10-29",
+      "2035-11-26",
+      "2035-12-03",
+      "2035-12-24"
+    ],
+    "calibration": [
+      "2035-02-05",
+      "2035-03-12",
+      "2035-07-23",
+      "2035-11-05"
+    ]
+  },
+  "calibration": {
+    "costindex": 2,
+    "cost_level": 0.0,
+    "feasible": false,
+    "mean_queries": 329.9090909090909,
+    "mean_regret": 0.003641809929500927,
+    "max_regret": 0.03790956735610962,
+    "calibration_quality_matched": false
+  },
+  "new_positive_cost": 0.0025,
+  "no_test_selection": true,
+  "warning": "Adapted action space includes FRAME; original tasks A*/RRT* not fully reproduced. Original calibration quality match failed. Zero cost was selected after three predeclared alternatives, not assigned arbitrarily."
+}

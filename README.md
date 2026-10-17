@@ -1,5 +1,11 @@
 # GRL
 
+## 研究资料入口 2026年10月17日
+
+[研究记录总索引](docs/RECORDS_INDEX.md) · [当前研究状态](docs/RESEARCH_STATE.md)
+
+本次补齐实验报告、逐次查询和逐步记录、审计、失败与恢复日志、论文版本及协作材料。逐文件索引覆盖23,885个文件，新增16,120个文件按批次压缩并校验；已有相同归档保留原位置。具体范围与恢复方式见总索引。
+
 ## 当前电网研究与模型归档（2026-10-10）
 
 [Grid2Op/L2RPN实验索引](research_archive/power-grid-2026/README.md) · [GRID22–23完整收尾](research_archive/power-grid-2026/outputs/grid_research_audit/GRID22_23_closeout.md) · [模型版本记录](research_archive/power-grid-2026/outputs/grid_research_audit/POWER_MODEL_CHANGELOG.md)

@@ -1,0 +1,139 @@
+{
+  "stage": "GRID89_REVIEW_EVIDENCE_AND_FINITE_VALIDATION",
+  "frozen_utc": "2026-10-17T09:49:04.590655+00:00",
+  "authorization": "2026-10-17 用户：开始吧，把这些全做完。",
+  "dates": [
+    "2036-01-07",
+    "2036-03-03",
+    "2036-05-05",
+    "2036-07-07",
+    "2036-09-01",
+    "2036-11-03"
+  ],
+  "generation_seed": 20261017,
+  "scenario_id": 10,
+  "environment": "work/grid89_review/fresh_env",
+  "source_static_sha256": {
+    "alerts_info.json": "19405846330e013b9a90380b464de12a804153844f1bd75ec8993b08b1f4ccbd",
+    "chronix2grid_adddata_kwargs.json": "c8acfca2ac10f3e3f6c2008da7755e7a22504fbf65f180bea4bcee9522dea7e0",
+    "config.py": "87738f51c66bbaa638c747f954ca0e1cc6f983311fe02a7e4ca98c1014134ce3",
+    "difficulty_levels.json": "4d75e87444ed05a5a3ab0f6ccbf1dc8c38f0ddf5ac2018adef8f29a8c035246f",
+    "grid.json": "cb8099101396c6c0dd1ce0953a73e1df2b2ee2dfff947bdcf19850190a1d12fe",
+    "grid_layout.json": "9bc9b4f6dba5e5d7a2c8fb395afc02d0a30759c3b71fa17b1aff7ea8daa58dff",
+    "loads_charac.csv": "3e137af7e44a7f3d30573a88bdd9f563b920cd733dd679d9213de20a38bd6578",
+    "maintenance_meta.json": "11d6c48e4a7525fa02603b3f773078ef2c701108e7de10505b09fcc37cc04bbf",
+    "params.json": "21e09b13fa3e2e6aa7dfd0d2b3aaeac8a196053a89409879dae085ee7632492c",
+    "params_forecasts.json": "199dad20c9ecc8f0d09502ca45e53956e8b509b37e90310405c98bed95b73d60",
+    "params_load.json": "44f4c69b0cf24e8d8773b4b97d223292ba2bf6be8ee538c4cf2754520cc102dc",
+    "params_loss.json": "e70221219e30d6b1ec05e1ee324fff39eae9fd94080dc1ad73617e2982bfa4b8",
+    "params_opf.json": "205b3df6a5c8a1695d74e18d8a70a2edbd2f7d428dad7ef283b0ac4a2a2fa8c9",
+    "params_res.json": "003116d451cb60765e6db70e8b5e38a1aaf7100a43d5335e18cebef2009ef604",
+    "prods_charac.csv": "30bc3e7c38393c9292a0f401c8d9c8f098a8ff0a9fbbd277f4331babb475a850",
+    "scenario_params.json": "6c08eaf61286ffb5a3bbb8fb05ce536c7d96de65c28ae4ca79bd0363a8864271",
+    "storage_units_charac.csv": "6eab480cbebb343864325619a05f187dbc2e1eb39d9c0636b10f3b793e80a872",
+    "wind_extra_params.json": "9637da67ad685ff7abf2847e1ee5633b28764aabbe61c5a81b932f5292699c37"
+  },
+  "generation": "Exact prior Chronix2Grid official wrapper; same public grid/calendar dates, independently seeded stochastic series; six predeclared scenarios, no replacement or outcome filtering.",
+  "order": {
+    "dates": "All six exposed GRID81 dates",
+    "orders": [
+      "STATIC_ID",
+      "RANDOM_11",
+      "RANDOM_23",
+      "RANDOM_37",
+      "LOCAL_STRESS"
+    ],
+    "arms": [
+      "FULL",
+      "FRAME_GUARD"
+    ],
+    "repeats": 1,
+    "randomization": "One seeded global candidate priority per run; filter legal representatives each call. IDs and low-ID tie rule unchanged. Random seeds are order replicates, not independent environments."
+  },
+  "parameters": {
+    "dates": [
+      "2035-03-05_0",
+      "2035-06-25_8",
+      "2035-09-03_4",
+      "2035-10-01_5"
+    ],
+    "default": {
+      "p": 128,
+      "h": 64,
+      "qmin": 256,
+      "patience": 2,
+      "safe": 0.9
+    },
+    "single_axis": {
+      "p": [
+        64,
+        256
+      ],
+      "h": [
+        32,
+        128
+      ],
+      "qmin": [
+        128,
+        512
+      ],
+      "patience": [
+        1,
+        3
+      ],
+      "safe": [
+        0.85,
+        0.95
+      ]
+    },
+    "arms": 12,
+    "repeats": 1,
+    "purpose": "Quality/query sensitivity; one timing repeat descriptive, no parameter selection; includes FULL and default."
+  },
+  "meta": {
+    "cost_levels": [
+      0.0,
+      0.0025
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "new_fits": 3,
+    "training": "Reuse cost .0025 seeds0/1; only fit seeds2/3/4 with the exact existing 30000-episode loop. No new teacher data or calibration selection.",
+    "exposed_comparison": "six GRID81 dates; FRAME plus zero-cost and positive-cost five seeds, one timing repeat; report all arms, quality/query primary, time descriptive."
+  },
+  "local_and_sealed": {
+    "dates": "six new independent-seed series",
+    "arms": [
+      "FULL",
+      "FRAME_GUARD",
+      "GLOBAL_MATCH",
+      "FIXED_512"
+    ],
+    "repeats": 3,
+    "mechanism": "Same-state suffix budget derived from public substation/alias metadata; no hidden outcomes to choose budget. Paired FULL feedback and closed-loop outcomes separately."
+  },
+  "metrics": [
+    "survival and complete weeks",
+    "full-week operational cost on jointly completed dates",
+    "queries on matched active horizons",
+    "full controller wall time",
+    "all-step and search-step P50/P95/P99",
+    "disjoint compute accounting",
+    "same-state reward regret and signed equal-budget differences",
+    "per-date grouping and date-cluster bootstrap descriptive intervals"
+  ],
+  "quality_threshold": 0.005,
+  "decision": "Preserve all cases. No general quality guarantee. Efficiency requires comparable quality and matched horizons; report macro and per-date data. The existing 5% and majority-direction screen remains an investment screen, not statistical equivalence. Order robustness reported by each predeclared order, no best order selection. Independent seed validation supports only same-grid generated-series transfer.",
+  "resource": {
+    "max_total_hours": 12,
+    "max_new_model_fits": 3,
+    "no_parallel_timing": true,
+    "max_new_replays": 246
+  },
+  "exclusions": "No second grid, new ranking model, GNN/RL controller redesign, parameter grid search or removal of adverse cases. No graph/table authoring requested; deliver text/CSV evidence and a new manuscript version preserving V1."
+}

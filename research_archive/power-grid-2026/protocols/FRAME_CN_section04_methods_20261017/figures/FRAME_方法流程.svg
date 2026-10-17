@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="740" viewBox="0 0 1600 740"><rect width="1600" height="740" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 Z" fill="#526571"/></marker><marker id="feedback" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto-start-reverse"><path d="M0,0 L7,3.5 L0,7 Z" fill="#77958D"/></marker></defs>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif" fill="#263846">
+<text x="45" y="52" font-size="28" font-weight="bold">FRAME：反馈驱动的拓扑搜索</text>
+<text x="45" y="88" fill="#5D6D79" font-size="18">根据仿真反馈控制搜索深度，按变电站信息补查相关候选</text>
+<rect x="40" y="320" width="180" height="140" rx="12" fill="#F3F5F7" stroke="#A5AFB8" stroke-width="1.5"/>
+<text x="130.0" y="356" text-anchor="middle" font-size="22" font-weight="bold">输入</text>
+<text x="130.0" y="388" text-anchor="middle" font-size="16">当前状态 s</text>
+<text x="130.0" y="414" text-anchor="middle" font-size="16">基础动作 b</text>
+<text x="130.0" y="440" text-anchor="middle" font-size="16">候选序列 O</text>
+<rect x="280" y="125" width="1050" height="85" rx="12" fill="#F0F6F4" stroke="#487C73" stroke-width="1.5"/>
+<text x="805.0" y="161" text-anchor="middle" font-size="22" font-weight="bold">候选仿真与结果缓存</text>
+<text x="805.0" y="190" text-anchor="middle" font-size="18" fill="#5D6D79">共享本次搜索的反馈 · 每个代表最多仿真一次</text>
+<rect x="280" y="280" width="280" height="225" rx="12" fill="#EFF4FA" stroke="#6D89A8" stroke-width="1.5"/>
+<text x="420.0" y="316" text-anchor="middle" font-size="22" font-weight="bold">01  前缀筛查</text>
+<text x="420.0" y="355" text-anchor="middle" font-size="17">评估前 min(p, M) 个候选</text>
+<text x="420.0" y="383" text-anchor="middle" font-size="17">保存仿真结果</text>
+<text x="420.0" y="411" text-anchor="middle" font-size="17">记录前缀最佳动作</text>
+<text x="420.0" y="439" text-anchor="middle" font-size="17">按负载率选择后续分支</text>
+<rect x="620" y="280" width="360" height="225" rx="12" fill="#E6F1ED" stroke="#487C73" stroke-width="1.5"/>
+<text x="800.0" y="316" text-anchor="middle" font-size="22" font-weight="bold">02  分批核查</text>
+<text x="800.0" y="355" text-anchor="middle" font-size="16">每批追加至多 h 个候选</text>
+<text x="800.0" y="383" text-anchor="middle" font-size="16">更新最佳动作与无改进批数</text>
+<text x="800.0" y="411" text-anchor="middle" font-size="16">核查分支：最低查询量与停滞条件</text>
+<text x="800.0" y="439" text-anchor="middle" font-size="16">扩展分支：负载率或停滞条件</text>
+<text x="800.0" y="467" text-anchor="middle" font-size="16">候选耗尽时结束全局搜索</text>
+<rect x="1040" y="280" width="290" height="225" rx="12" fill="#EFF4FA" stroke="#6D89A8" stroke-width="1.5"/>
+<text x="1185.0" y="316" text-anchor="middle" font-size="22" font-weight="bold">03  同站补查</text>
+<text x="1185.0" y="355" text-anchor="middle" font-size="16">检查分支与动作变化条件</text>
+<text x="1185.0" y="383" text-anchor="middle" font-size="16">固定最佳动作所属变电站</text>
+<text x="1185.0" y="411" text-anchor="middle" font-size="16">评估该站尚未查询的候选</text>
+<text x="1185.0" y="439" text-anchor="middle" font-size="16">更新最佳动作，只补查一次</text>
+<rect x="1390" y="320" width="175" height="140" rx="12" fill="#F3F5F7" stroke="#A5AFB8" stroke-width="1.5"/>
+<text x="1477.5" y="356" text-anchor="middle" font-size="22" font-weight="bold">输出</text>
+<text x="1477.5" y="388" text-anchor="middle" font-size="14">最佳已评估动作</text>
+<text x="1477.5" y="414" text-anchor="middle" font-size="14">无合格候选则返回空</text>
+<path d="M220 390 H280" fill="none" stroke="#526571" stroke-width="2.1" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M560 390 H620" fill="none" stroke="#526571" stroke-width="2.1" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M980 390 H1040" fill="none" stroke="#526571" stroke-width="2.1" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1330 390 H1390" fill="none" stroke="#526571" stroke-width="2.1" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M800 505 V560 H1477.5 V460" fill="none" stroke="#526571" stroke-width="2.1" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M420 280 V210" fill="none" stroke="#77958D" stroke-width="2.1" stroke-linejoin="round" marker-end="url(#feedback)" stroke-dasharray="7 5" marker-start="url(#feedback)"/>
+<path d="M800 280 V210" fill="none" stroke="#77958D" stroke-width="2.1" stroke-linejoin="round" marker-end="url(#feedback)" stroke-dasharray="7 5" marker-start="url(#feedback)"/>
+<path d="M1185 280 V210" fill="none" stroke="#77958D" stroke-width="2.1" stroke-linejoin="round" marker-end="url(#feedback)" stroke-dasharray="7 5" marker-start="url(#feedback)"/>
+<text x="1100" y="549" text-anchor="middle" font-size="16" fill="#5D6D79">未触发同站补查时直接返回</text>
+<path d="M310 645 H380" stroke="#526571" stroke-width="2.1" marker-end="url(#arrow)"/><text x="398" y="651" font-size="17">搜索主流程</text>
+<path d="M720 645 H790" stroke="#77958D" stroke-width="2.1" stroke-dasharray="7 5" marker-end="url(#feedback)" marker-start="url(#feedback)"/><text x="808" y="651" font-size="17">候选仿真与反馈复用</text>
+<text x="800" y="708" text-anchor="middle" font-size="17" fill="#5D6D79">p = 128　 h = 64　 q_min = 256　 L = 2　 ρ_safe = 0.9</text></g></svg>

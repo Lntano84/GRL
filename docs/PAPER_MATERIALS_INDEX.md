@@ -48,3 +48,12 @@
 
 - [V2配图与编辑说明](../research_archive/power-grid-2026/paper/FRAME_figures_20261018/motivation_v2/README.md)
 - D盘协作：`D:/Codex/GRL研究/论文协作资料/FRAME_论文配图_20261018/图1_动机图_V2_蓝灰版`。
+
+
+## 2026年10月18日 动机图V3与方法图V1
+
+按作者确认，将免费Noun Project素材署名移到外部论文图注，移除动机图图内英文行。新增方法图展示前缀筛查、分批核查、条件触发同站补查及共享仿真反馈，模块名称与中文V4及冻结实现核对。两图用Draw.io原生布局与Matplotlib SVG制作，采用ColorBrewer Blues/Greys，已检查全尺寸、论文宽度和灰度渲染，PDF为170毫米宽纯矢量。未改论文正文或实验。
+
+- [动机图V3与外部图注](../research_archive/power-grid-2026/paper/FRAME_figures_20261018/motivation_v3/README.md)
+- [方法图V1与编辑说明](../research_archive/power-grid-2026/paper/FRAME_figures_20261018/method_v1/README.md)
+- D盘协作入口：`D:/Codex/GRL研究/论文协作资料/FRAME_论文配图_20261018`。

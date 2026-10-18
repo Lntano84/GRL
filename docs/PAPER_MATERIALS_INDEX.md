@@ -1,5 +1,11 @@
 # FRAME论文材料入口
 
+## 最新中文V2 审稿补强
+
+[Word全文](../research_archive/power-grid-2026/paper/FRAME_CN_review_V2_20261017/FRAME_ICAPS2027_中文合稿_V2.docx) · [在线阅读全文](../research_archive/power-grid-2026/paper/FRAME_CN_review_V2_20261017/FRAME_ICAPS2027_中文合稿_V2.md) · [新增实验完整报告](../research_archive/power-grid-2026/protocols/GRID89_review/complete/GRID89_report.md)
+
+完成冻结的换序、参数、非零成本META与独立生成种子比较；全部结果和原稿保留。当前为中文全文，仍无新增图表。
+
 ## 当前中文全文
 
 [中文合稿V1 Word](../research_archive/power-grid-2026/paper/FRAME_CN_merged_20261017_V1/FRAME_ICAPS2027_中文合稿_V1.docx) · [在线阅读全文](../research_archive/power-grid-2026/paper/FRAME_CN_merged_20261017_V1/FRAME_ICAPS2027_中文合稿_V1.md) · [阅读说明](../research_archive/power-grid-2026/paper/FRAME_CN_merged_20261017_V1/阅读说明.md) · [BibTeX](../research_archive/power-grid-2026/paper/FRAME_CN_merged_20261017_V1/references.bib)

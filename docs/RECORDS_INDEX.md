@@ -1,5 +1,7 @@
 # 研究记录总入口
 
+[GRID89审稿补强完整记录](../research_archive/power-grid-2026/protocols/GRID89_review/complete/GRID89_report.md)：246条回放、3次拟合、审计和中文V2，作为原快照后的新增归档。
+
 ## 2026年10月17日补齐
 
 [本次归档说明](../research_archive/record_sync_20261017/README.md) · [覆盖与校验汇总](../research_archive/record_sync_20261017/sync_summary.json) · [逐文件索引](../research_archive/record_sync_20261017/records_index.jsonl.gz)

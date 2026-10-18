@@ -1,6 +1,12 @@
 # FRAME论文材料入口
 
-## 最新中文V2 审稿补强
+## 最新中文V3 贡献主线重组
+
+[Word全文](../research_archive/power-grid-2026/paper/FRAME_CN_contribution_V3_20261018/FRAME_ICAPS2027_中文合稿_V3.docx) · [在线阅读全文](../research_archive/power-grid-2026/paper/FRAME_CN_contribution_V3_20261018/FRAME_ICAPS2027_中文合稿_V3.md) · [补充材料](../research_archive/power-grid-2026/paper/FRAME_CN_contribution_V3_20261018/补充材料_V3.md) · [贡献与取舍说明](../research_archive/power-grid-2026/paper/FRAME_CN_contribution_V3_20261018/贡献主线与修改说明.md)
+
+围绕反馈决定查询深度、当前最佳动作决定补查位置组织全文。摘要和主结果统一采用固定方法后的G2评价，机制分别解释“查多少”与“查哪里”；META保留为次要对照。逐项参数、换序与单次计时诊断移入补充材料，重要反向案例和适用条件保留在正文。11页、44个可编辑公式、无新增图表，已逐页检查；未新增实验或训练。
+
+## 中文V2 审稿补强
 
 [Word全文](../research_archive/power-grid-2026/paper/FRAME_CN_review_V2_20261017/FRAME_ICAPS2027_中文合稿_V2.docx) · [在线阅读全文](../research_archive/power-grid-2026/paper/FRAME_CN_review_V2_20261017/FRAME_ICAPS2027_中文合稿_V2.md) · [新增实验完整报告](../research_archive/power-grid-2026/protocols/GRID89_review/complete/GRID89_report.md)
 

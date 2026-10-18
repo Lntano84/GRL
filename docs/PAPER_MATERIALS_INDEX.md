@@ -40,3 +40,11 @@
 
 - [配图及编辑说明](../research_archive/power-grid-2026/paper/FRAME_figures_20261018/motivation_v1/README.md)
 - D盘协作：`D:/Codex/GRL研究/论文协作资料/FRAME_论文配图_20261018/图1_动机图_V1`。
+
+
+## 2026年10月18日 动机图V2蓝灰版
+
+按作者反馈，采用ColorBrewer Blues/Greys单一蓝色重点、减轻边框与粗体，替换为用户注册后免费取得的The Noun Project线性SVG（Ary Prasetyo，CC BY 3.0）。署名直接保留在图上。实际检查全尺寸、论文宽度和灰度版本；原V1、中文V4和全部实验记录不改。
+
+- [V2配图与编辑说明](../research_archive/power-grid-2026/paper/FRAME_figures_20261018/motivation_v2/README.md)
+- D盘协作：`D:/Codex/GRL研究/论文协作资料/FRAME_论文配图_20261018/图1_动机图_V2_蓝灰版`。

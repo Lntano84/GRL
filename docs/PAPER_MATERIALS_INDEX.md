@@ -23,3 +23,12 @@
 ## 研究记录与历史稿件
 
 [研究记录总索引](RECORDS_INDEX.md)覆盖实验、审计、冻结清单、失败恢复和历史稿件；[逐文件清单](../research_archive/record_sync_20261017/records_index.jsonl.gz)提供原始路径、SHA256与仓库位置。2026年10月17日补齐快照早于当前合稿最后的公式显示和分页调整，以上当前全文目录保存最终版本及校验值。
+
+
+## 2026年10月18日 中文全文重写V4
+
+按用户最新要求逐节阅读指南及对应论文后重写全文，无图表，原生公式和文字伪代码，已逐页检查。主评价沿用G2，未新增实验或训练。
+
+- [V4中文Word](../research_archive/power-grid-2026/paper/FRAME_CN_rewrite_V4_20261018/FRAME_ICAPS2027_中文重写稿_V4.docx)
+- [写作依据与逐节核对](../research_archive/power-grid-2026/paper/FRAME_CN_rewrite_V4_20261018/写作依据与逐节核对.md)
+- D盘协作目录：`D:/Codex/GRL研究/论文协作资料/FRAME_指南逐节重写_V4_20261018`。旧版本全部保留。

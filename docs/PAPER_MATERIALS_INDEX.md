@@ -32,3 +32,11 @@
 - [V4中文Word](../research_archive/power-grid-2026/paper/FRAME_CN_rewrite_V4_20261018/FRAME_ICAPS2027_中文重写稿_V4.docx)
 - [写作依据与逐节核对](../research_archive/power-grid-2026/paper/FRAME_CN_rewrite_V4_20261018/写作依据与逐节核对.md)
 - D盘协作目录：`D:/Codex/GRL研究/论文协作资料/FRAME_指南逐节重写_V4_20261018`。旧版本全部保留。
+
+
+## 2026年10月18日 动机图V1
+
+按绘图指南，以Matplotlib组件、Draw.io实际布局导出、ColorBrewer Set2和The Noun Project矢量素材制作。作者反馈后精简文字。保存原生Draw.io、SVG、170mm矢量PDF与预览，检查全尺寸、缩小和灰度版本。概念示意，不新增实验或修改中文V4。
+
+- [配图及编辑说明](../research_archive/power-grid-2026/paper/FRAME_figures_20261018/motivation_v1/README.md)
+- D盘协作：`D:/Codex/GRL研究/论文协作资料/FRAME_论文配图_20261018/图1_动机图_V1`。

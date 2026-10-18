@@ -57,3 +57,11 @@
 - [动机图V3与外部图注](../research_archive/power-grid-2026/paper/FRAME_figures_20261018/motivation_v3/README.md)
 - [方法图V1与编辑说明](../research_archive/power-grid-2026/paper/FRAME_figures_20261018/method_v1/README.md)
 - D盘协作入口：`D:/Codex/GRL研究/论文协作资料/FRAME_论文配图_20261018`。
+
+
+## 2026年10月18日 方法图V2：分区与多色版
+
+按作者反馈，重新阅读绘图指南的方法图流程与七个案例并查看图片，采用非等宽主次分区、蓝紫绿功能配色、具体候选和站归属示意。实线主流程、虚线反馈，署名放到外部图注。检查全尺寸、论文宽度与灰度版，修正候选边界和站归属箭头。纯矢量170毫米宽；原V1、动机图、正文和实验保留。
+
+- [方法图V2与编辑说明](../research_archive/power-grid-2026/paper/FRAME_figures_20261018/method_v2/README.md)
+- D盘协作：D:/Codex/GRL研究/论文协作资料/FRAME_论文配图_20261018/图2_方法图_V2_分区与多色版。

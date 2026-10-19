@@ -65,3 +65,12 @@
 
 - [方法图V2与编辑说明](../research_archive/power-grid-2026/paper/FRAME_figures_20261018/method_v2/README.md)
 - D盘协作：D:/Codex/GRL研究/论文协作资料/FRAME_论文配图_20261018/图2_方法图_V2_分区与多色版。
+
+
+## 2026年10月19日 全部实验分类与质量速度指标
+
+应作者要求整理全部GRID00–89及六个B/C轮次，共96轮。按8类组织38项贡献证据，另列60个方法批次的质量/速度多指标、354条逐日期记录及4710个原报告指标。明确早期GNN/原FRAME/最终FRAME_GUARD/学习门控、质量与完整周、宏平均与汇总比。原始结果、失败版本和待机RAW均保留；未新增实验或训练。
+
+- [阅读与文件说明](../research_archive/power-grid-2026/paper/FRAME_experiment_inventory_20261019/README.md)
+- [分类阅读版](../research_archive/power-grid-2026/paper/FRAME_experiment_inventory_20261019/FRAME_实验分类总表_阅读版.md)
+- D盘协作入口：D:/Codex/GRL研究/论文协作资料/FRAME_全部实验分类汇总_20261019。

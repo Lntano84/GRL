@@ -1,0 +1,30 @@
+[
+  {
+    "id": "INHERITED_POSITIVE_TRAINING_LABELS",
+    "historical_file": "outputs/grid89_review/meta_training/design.json",
+    "observed": "Inherited stage GRID84, selected_cost2, zero-cost method list and two repeats remain in a positive-cost training design.",
+    "effective": "train_positive.py and training_finished.json specify costindex1=.0025, seeds2/3/4; evaluation meta/design.json specifies one repeat.",
+    "resolution": "Separate immutable training recipe, checkpoint bindings and evaluation batches in configuration.json."
+  },
+  {
+    "id": "STALE_STOPPING_ONLY_DESCRIPTION",
+    "historical_file": "outputs/grid77/design.json:source",
+    "observed": "An inherited source sentence says stopping-only while source_mapping/actions and executed code include DELEGATE_FRAME.",
+    "resolution": "Use explicit 25-feature, three-action META_CONTEXT_V1 naming; exclude earlier 12-feature two-action results from its primary mean."
+  },
+  {
+    "id": "COST_INDEX_ALIAS",
+    "observed": "Historical cost2 means coefficient0; META_COST0 also means coefficient0.",
+    "resolution": "C0/C0025 identifiers record the actual coefficient and exact checkpoint SHA256."
+  },
+  {
+    "id": "NO_NEW_COMMON_TIMING_BATCH",
+    "observed": "GRID84 has two repetitions; GRID89_META has one. They cannot become one common three-repeat timing result.",
+    "resolution": "Retain two result blocks, pair FRAME within each batch only; additional balanced repetitions would be new experiments."
+  },
+  {
+    "id": "CALIBRATION_LIMIT",
+    "observed": "Original shared calibration quality match failed.",
+    "resolution": "Keep false; do not convert engineering verification or test quality6/6 into calibration success."
+  }
+]

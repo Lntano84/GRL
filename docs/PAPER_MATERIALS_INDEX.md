@@ -74,3 +74,8 @@
 - [阅读与文件说明](../research_archive/power-grid-2026/paper/FRAME_experiment_inventory_20261019/README.md)
 - [分类阅读版](../research_archive/power-grid-2026/paper/FRAME_experiment_inventory_20261019/FRAME_实验分类总表_阅读版.md)
 - D盘协作入口：D:/Codex/GRL研究/论文协作资料/FRAME_全部实验分类汇总_20261019。
+
+## META_UNIFIED_20261019
+
+- [META统一配置与结果说明](../research_archive/power-grid-2026/paper/META_unified_20261019/META_统一配置说明.md)：当前学习适配的25维/三动作、费用、五种子、重复次数与结果一一对应；含机器配置和保存调用复核记录。
+- D盘协作资料：`D:/Codex/GRL研究/论文协作资料/META_统一配置_20261019`。未覆盖论文V4。

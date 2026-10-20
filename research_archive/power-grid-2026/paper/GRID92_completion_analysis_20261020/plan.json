@@ -1,0 +1,77 @@
+{
+  "stage": "GRID92_SAME_STATION_MECHANISM_OFFLINE",
+  "authorization": "User 2026-10-20: 对，我们接下来就回答这3个问题",
+  "questions": [
+    "同站收益是否富集，还是仅由候选数量造成",
+    "哪些补查前可见信息对应补查收益",
+    "一步收益为何能与长期成本相反"
+  ],
+  "scope": "All 25 GRID91 reference scenario entries, one saved FULL trajectory per entry; all 14 first closed-loop divergences. Same public grid, exposed scenarios; G1/G2 share calendar dates.",
+  "execution": "Saved JSON/NPZ only; no simulator, training, model selection, policy changes or new physical replay. Existing historical records are not a new preregistered test set.",
+  "reward": "float32 reward, strict_admissible filter, original smallest-ID tie break; material difference threshold 1e-6 inherited from GRID85",
+  "q1": [
+    "Replay frozen default global stopping and alias-aware completion",
+    "Compare local and other remaining candidate per-query positive-improvement density",
+    "Compare local versus next-global with identical q",
+    "Compute exact expected positive best-reward gain for a uniform q-subset of the entire remaining suffix, without sampling or new seeds",
+    "Retain empty, no-incumbent, exhausted and non-triggered states; aggregate states and scenario/date macros separately"
+  ],
+  "q2": {
+    "purpose": "Descriptive associations, not a fitted predictor or new trigger policy; only variables available before local feedback",
+    "features": {
+      "initial_safe": [
+        false,
+        true
+      ],
+      "incumbent_changed_after_prefix": [
+        false,
+        true
+      ],
+      "local_q": [
+        "1-64",
+        "65-128",
+        ">128"
+      ],
+      "local_fraction_remaining": [
+        "<=0.1",
+        "(0.1,0.3]",
+        ">0.3"
+      ],
+      "observed_top_two_reward_gap": [
+        "<=1e-4",
+        "(1e-4,1e-3]",
+        ">1e-3",
+        "only_one_admissible"
+      ],
+      "incumbent_rho": [
+        "<0.9",
+        "[0.9,1)",
+        ">=1"
+      ]
+    },
+    "reporting": "All predefined bins including empty bins, counts and reward magnitudes by cohort; small samples do not establish an online decision rule"
+  },
+  "q3": [
+    "Verify identical saved physical prefix and observation/base inputs at each first divergence",
+    "Report both choices' one-step predicted reward/rho",
+    "Decompose saved closed-loop cost into loss/redispatch/curtailment-delta/storage using original public ledger formula",
+    "Report cost differences over first 1/6/12/48/288 steps after divergence and whole remaining horizon",
+    "Highlight G2 July reversal and old March positive case, retaining all other cases",
+    "Do not attribute whole-week differences to a single first action; later policies also diverge"
+  ],
+  "validation": [
+    "Independent saved-feedback query-plan replay",
+    "Equal-budget results reproduce GRID85 and GRID89",
+    "Exact random-expectation formula checked against enumeration on small sets",
+    "Closed-loop cost totals reproduce summaries and ledger within saved rounding tolerances",
+    "Record SHA256 for every source used"
+  ],
+  "deliverables": [
+    "Chinese mechanism report",
+    "per-state and per-scenario CSV",
+    "pre-completion feature-bin CSV",
+    "closed-loop first-divergence and cost-window CSV",
+    "source hashes and verification receipt",
+    "D collaboration copy and Git archive"
+  ]
+}

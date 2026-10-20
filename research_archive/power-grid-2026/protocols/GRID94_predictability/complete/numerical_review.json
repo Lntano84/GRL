@@ -1,0 +1,173 @@
+{
+  "passed": true,
+  "normalizers_checked": 18,
+  "checks": [
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2035-01-01",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 2.7755575615628914e-16,
+      "max_mean_error": 2.4424906541753444e-15
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2035-02-19",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 2.220446049250313e-16,
+      "max_mean_error": 1.2212453270876722e-15
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2035-03-05",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 3.885780586188048e-16,
+      "max_mean_error": 2.55351295663786e-15
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2035-04-02",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 3.3306690738754696e-16,
+      "max_mean_error": 2.55351295663786e-15
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2035-04-09",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 2.220446049250313e-16,
+      "max_mean_error": 2.55351295663786e-15
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2035-06-25",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 4.440892098500626e-16,
+      "max_mean_error": 2.55351295663786e-15
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2035-07-09",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 2.220446049250313e-16,
+      "max_mean_error": 2.220446049250313e-16
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2035-09-03",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 4.440892098500626e-16,
+      "max_mean_error": 2.55351295663786e-15
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2035-11-19",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 4.996003610813204e-16,
+      "max_mean_error": 2.55351295663786e-15
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2035-12-10",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 1.6653345369377348e-16,
+      "max_mean_error": 5.551115123125783e-16
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2035-12-17",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 3.885780586188048e-16,
+      "max_mean_error": 5.551115123125783e-16
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2036-01-07",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 5.551115123125783e-16,
+      "max_mean_error": 1.5543122344752192e-15
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2036-03-03",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 1.6653345369377348e-16,
+      "max_mean_error": 1.2212453270876722e-15
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2036-05-05",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 6.661338147750939e-16,
+      "max_mean_error": 2.4424906541753444e-15
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2036-07-07",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 3.3306690738754696e-16,
+      "max_mean_error": 9.992007221626409e-16
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2036-09-01",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 1.1102230246251565e-16,
+      "max_mean_error": 2.220446049250313e-16
+    },
+    {
+      "evaluation": "GROUPED_OOF",
+      "fold": "2036-11-03",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 3.885780586188048e-16,
+      "max_mean_error": 2.3314683517128287e-15
+    },
+    {
+      "evaluation": "OLD_TO_GENERATED",
+      "fold": "G1+G2",
+      "constant_features": [
+        "prefix_valid"
+      ],
+      "max_scale_error": 2.220446049250313e-16,
+      "max_mean_error": 2.1094237467877974e-15
+    }
+  ],
+  "observed_warning": "Weighted StandardScaler sqrt(var) RuntimeWarning in the original fit; installed constant-feature handling replaces near-constant scales by 1.",
+  "resolution": "Long-double centered weighted variances independently reproduce every saved scale and mean; all coefficients/probabilities finite and manual inference previously checked. No classifier refit or protocol change.",
+  "actual_runtime": "D:\\Codex\\GRL研究\\work\\grid02\\.venv\\Scripts\\python.exe",
+  "sklearn_location": "C:\\Users\\windows\\Documents\\Codex\\2026-10-06\\lg01-gnn-rins-rl-lp-20\\work\\lg01\\.venv\\Lib\\site-packages\\sklearn\\__init__.py",
+  "classifier_refits": 0
+}

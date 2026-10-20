@@ -1,0 +1,341 @@
+{
+  "passed": true,
+  "kind": "Read-only witness normalization; no physical or protocol change",
+  "original_audit_sha256": "6dba344dfa03ea4525d7f3560c1989be59aa6b32b3ddf2164febca517948bc9a",
+  "original_failure_log_sha256": "8203e782505e6669ef208e4925fb31efca1a77623153196d64d7b46d880be3a9",
+  "excluded_only": [
+    "base_optimizer",
+    "restore_optimizer",
+    "reconnect",
+    "recover_topology",
+    "topology_search"
+  ],
+  "reason": "Inherited but unseeded and unused RNG objects were incorrectly included in a check specified for explicitly seeded objects. Their values remain in raw witnesses.",
+  "proof_sources": {
+    "work/grid02/ljn_nn/modules/base_module.py": {
+      "sha256": "c02648df3a9bd415cce066f117862d5e0dd7a3839bab55648421839e5459bcc2",
+      "listed_in_original_freeze": true,
+      "note": "Original freeze confirmed"
+    },
+    "work/grid02/ljn_nn/modules/topology_heuristic.py": {
+      "sha256": "e145b2c64acb4edda52c060c6e1bb25d069977f22b9e31afcfba76ed1e5844c2",
+      "listed_in_original_freeze": true,
+      "note": "Original freeze confirmed"
+    },
+    "work/grid02/ljn_nn/modules/convex_optim.py": {
+      "sha256": "f7518a44a5e529bd398e07d21a9bef299309663d523c649a113fa72cc3d7756f",
+      "listed_in_original_freeze": false,
+      "note": "Additional dependency source receipt after replay; do not claim it was included in original freeze"
+    }
+  },
+  "checked_memory_pairs": [
+    {
+      "original_hash_equal": false,
+      "normalized_hash": "dd9c12e7672daa08e923d90e118d596d336d25f0342ac0a6c7afd93bfee05b2c",
+      "unseeded_unused_module_rngs_complete": {
+        "base_optimizer": {
+          "rng_sha256": "fc0a37b0ad486ad5c739b0a31cc18a971c1c90a587a86afd488cdb569b0f6a7a"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "3d0f3ce615bc306add213e5b93da7684efe1ff485e8b290ba69262378184553a"
+        },
+        "reconnect": {
+          "rng_sha256": "c587cb4bea40f738680a3d7e86791f15f5ae821150b4a3c440bfb265facb1570"
+        },
+        "recover_topology": {
+          "rng_sha256": "f9edd4a5d69164dbe9f75d6901f9431373e17a83f7302ebca3977eb333ad7169"
+        },
+        "topology_search": {
+          "rng_sha256": "fb94eaf060e047fdb8362f1346884718585f433762fc50e4ea77b7d730b3e60e"
+        }
+      },
+      "unseeded_unused_module_rngs_skip": {
+        "base_optimizer": {
+          "rng_sha256": "729894f75358012121090acb00da5e25de20d1e579427555ad1af3e6d84045c4"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "59ab5e4198ce50e66e33f7878bb848913709692a648bf73d16b7ddb4be951a09"
+        },
+        "reconnect": {
+          "rng_sha256": "b12f4026c829b3d94d667bfc2f14b5553135f36fd073fbe9936facfc23ef79f3"
+        },
+        "recover_topology": {
+          "rng_sha256": "7b2cbfd0d5a8758df3c6b9460f6e9a2d52a14d6a25f0358a7d66c430543a999c"
+        },
+        "topology_search": {
+          "rng_sha256": "eb672b1ed544cec4ba7f08b6e0e9cb8fd1bd398a3cfc76688dbae6c8f2e694ee"
+        }
+      }
+    },
+    {
+      "original_hash_equal": false,
+      "normalized_hash": "dd9c12e7672daa08e923d90e118d596d336d25f0342ac0a6c7afd93bfee05b2c",
+      "unseeded_unused_module_rngs_complete": {
+        "base_optimizer": {
+          "rng_sha256": "fc0a37b0ad486ad5c739b0a31cc18a971c1c90a587a86afd488cdb569b0f6a7a"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "3d0f3ce615bc306add213e5b93da7684efe1ff485e8b290ba69262378184553a"
+        },
+        "reconnect": {
+          "rng_sha256": "c587cb4bea40f738680a3d7e86791f15f5ae821150b4a3c440bfb265facb1570"
+        },
+        "recover_topology": {
+          "rng_sha256": "f9edd4a5d69164dbe9f75d6901f9431373e17a83f7302ebca3977eb333ad7169"
+        },
+        "topology_search": {
+          "rng_sha256": "fb94eaf060e047fdb8362f1346884718585f433762fc50e4ea77b7d730b3e60e"
+        }
+      },
+      "unseeded_unused_module_rngs_skip": {
+        "base_optimizer": {
+          "rng_sha256": "729894f75358012121090acb00da5e25de20d1e579427555ad1af3e6d84045c4"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "59ab5e4198ce50e66e33f7878bb848913709692a648bf73d16b7ddb4be951a09"
+        },
+        "reconnect": {
+          "rng_sha256": "b12f4026c829b3d94d667bfc2f14b5553135f36fd073fbe9936facfc23ef79f3"
+        },
+        "recover_topology": {
+          "rng_sha256": "7b2cbfd0d5a8758df3c6b9460f6e9a2d52a14d6a25f0358a7d66c430543a999c"
+        },
+        "topology_search": {
+          "rng_sha256": "eb672b1ed544cec4ba7f08b6e0e9cb8fd1bd398a3cfc76688dbae6c8f2e694ee"
+        }
+      }
+    },
+    {
+      "original_hash_equal": false,
+      "normalized_hash": "b262f779b53497c3877a2483644bebcd5ccfedddc95a68164f08ca12d0d4bcee",
+      "unseeded_unused_module_rngs_complete": {
+        "base_optimizer": {
+          "rng_sha256": "fc0a37b0ad486ad5c739b0a31cc18a971c1c90a587a86afd488cdb569b0f6a7a"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "3d0f3ce615bc306add213e5b93da7684efe1ff485e8b290ba69262378184553a"
+        },
+        "reconnect": {
+          "rng_sha256": "c587cb4bea40f738680a3d7e86791f15f5ae821150b4a3c440bfb265facb1570"
+        },
+        "recover_topology": {
+          "rng_sha256": "f9edd4a5d69164dbe9f75d6901f9431373e17a83f7302ebca3977eb333ad7169"
+        },
+        "topology_search": {
+          "rng_sha256": "fb94eaf060e047fdb8362f1346884718585f433762fc50e4ea77b7d730b3e60e"
+        }
+      },
+      "unseeded_unused_module_rngs_skip": {
+        "base_optimizer": {
+          "rng_sha256": "72409029a5e0cf96c96e17512f2f087137609cf40ad4442e8cc91ee4b9601a3a"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "40c556a084ff56d35a4002f5ac783e494d74ed0c1eefa3ace989e1b5569889c6"
+        },
+        "reconnect": {
+          "rng_sha256": "4c528257789b0421d6e25e3b5b5d103d5c1fe2b3532615ef913c033d0625be29"
+        },
+        "recover_topology": {
+          "rng_sha256": "2b7721bc85fe0eeaa0d136fdd961b0c6fc11185debfb7c7d89cc593226e90724"
+        },
+        "topology_search": {
+          "rng_sha256": "fd409931b6c13ab7f865d9e03520435f2bdb2cb0106c8c562aadf561e68cf71e"
+        }
+      }
+    },
+    {
+      "original_hash_equal": false,
+      "normalized_hash": "b262f779b53497c3877a2483644bebcd5ccfedddc95a68164f08ca12d0d4bcee",
+      "unseeded_unused_module_rngs_complete": {
+        "base_optimizer": {
+          "rng_sha256": "fc0a37b0ad486ad5c739b0a31cc18a971c1c90a587a86afd488cdb569b0f6a7a"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "3d0f3ce615bc306add213e5b93da7684efe1ff485e8b290ba69262378184553a"
+        },
+        "reconnect": {
+          "rng_sha256": "c587cb4bea40f738680a3d7e86791f15f5ae821150b4a3c440bfb265facb1570"
+        },
+        "recover_topology": {
+          "rng_sha256": "f9edd4a5d69164dbe9f75d6901f9431373e17a83f7302ebca3977eb333ad7169"
+        },
+        "topology_search": {
+          "rng_sha256": "fb94eaf060e047fdb8362f1346884718585f433762fc50e4ea77b7d730b3e60e"
+        }
+      },
+      "unseeded_unused_module_rngs_skip": {
+        "base_optimizer": {
+          "rng_sha256": "72409029a5e0cf96c96e17512f2f087137609cf40ad4442e8cc91ee4b9601a3a"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "40c556a084ff56d35a4002f5ac783e494d74ed0c1eefa3ace989e1b5569889c6"
+        },
+        "reconnect": {
+          "rng_sha256": "4c528257789b0421d6e25e3b5b5d103d5c1fe2b3532615ef913c033d0625be29"
+        },
+        "recover_topology": {
+          "rng_sha256": "2b7721bc85fe0eeaa0d136fdd961b0c6fc11185debfb7c7d89cc593226e90724"
+        },
+        "topology_search": {
+          "rng_sha256": "fd409931b6c13ab7f865d9e03520435f2bdb2cb0106c8c562aadf561e68cf71e"
+        }
+      }
+    },
+    {
+      "original_hash_equal": false,
+      "normalized_hash": "e158772806040cd2a12990c5d8cc816aeccedd30d8cd753eaee1092b49ef243f",
+      "unseeded_unused_module_rngs_complete": {
+        "base_optimizer": {
+          "rng_sha256": "fc0a37b0ad486ad5c739b0a31cc18a971c1c90a587a86afd488cdb569b0f6a7a"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "3d0f3ce615bc306add213e5b93da7684efe1ff485e8b290ba69262378184553a"
+        },
+        "reconnect": {
+          "rng_sha256": "c587cb4bea40f738680a3d7e86791f15f5ae821150b4a3c440bfb265facb1570"
+        },
+        "recover_topology": {
+          "rng_sha256": "f9edd4a5d69164dbe9f75d6901f9431373e17a83f7302ebca3977eb333ad7169"
+        },
+        "topology_search": {
+          "rng_sha256": "fb94eaf060e047fdb8362f1346884718585f433762fc50e4ea77b7d730b3e60e"
+        }
+      },
+      "unseeded_unused_module_rngs_skip": {
+        "base_optimizer": {
+          "rng_sha256": "2a1e19e0c3786480fc19d49d9c4015719900b1ad0347e10df74fbc41f858a2b9"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "f2e0b46636e2ec0cc01479498f56d72df074e4cf229ab6bfb25921ec2eebbf5a"
+        },
+        "reconnect": {
+          "rng_sha256": "82827a624db620ff7ad086808ec359797b07863bf7e4c325dd3e322eeeb4ba8c"
+        },
+        "recover_topology": {
+          "rng_sha256": "33f48416f76173a3788a7e176733915d2c36459e8aa68f6a90a64126c0a62aef"
+        },
+        "topology_search": {
+          "rng_sha256": "9e567e1da756fc216cbdc249adae692b15549a46b99291b9c0b80cdec3daa68a"
+        }
+      }
+    },
+    {
+      "original_hash_equal": false,
+      "normalized_hash": "e158772806040cd2a12990c5d8cc816aeccedd30d8cd753eaee1092b49ef243f",
+      "unseeded_unused_module_rngs_complete": {
+        "base_optimizer": {
+          "rng_sha256": "fc0a37b0ad486ad5c739b0a31cc18a971c1c90a587a86afd488cdb569b0f6a7a"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "3d0f3ce615bc306add213e5b93da7684efe1ff485e8b290ba69262378184553a"
+        },
+        "reconnect": {
+          "rng_sha256": "c587cb4bea40f738680a3d7e86791f15f5ae821150b4a3c440bfb265facb1570"
+        },
+        "recover_topology": {
+          "rng_sha256": "f9edd4a5d69164dbe9f75d6901f9431373e17a83f7302ebca3977eb333ad7169"
+        },
+        "topology_search": {
+          "rng_sha256": "fb94eaf060e047fdb8362f1346884718585f433762fc50e4ea77b7d730b3e60e"
+        }
+      },
+      "unseeded_unused_module_rngs_skip": {
+        "base_optimizer": {
+          "rng_sha256": "2a1e19e0c3786480fc19d49d9c4015719900b1ad0347e10df74fbc41f858a2b9"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "f2e0b46636e2ec0cc01479498f56d72df074e4cf229ab6bfb25921ec2eebbf5a"
+        },
+        "reconnect": {
+          "rng_sha256": "82827a624db620ff7ad086808ec359797b07863bf7e4c325dd3e322eeeb4ba8c"
+        },
+        "recover_topology": {
+          "rng_sha256": "33f48416f76173a3788a7e176733915d2c36459e8aa68f6a90a64126c0a62aef"
+        },
+        "topology_search": {
+          "rng_sha256": "9e567e1da756fc216cbdc249adae692b15549a46b99291b9c0b80cdec3daa68a"
+        }
+      }
+    },
+    {
+      "original_hash_equal": false,
+      "normalized_hash": "f1ead751f89df802b184ebb23a9edff7a34f48c04e6db167eb84579b6b3f7e2b",
+      "unseeded_unused_module_rngs_complete": {
+        "base_optimizer": {
+          "rng_sha256": "1c3629086cff401db783d4bb48d5b70dbc558f4062b11225baa5435c40c7f734"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "e1cd5dfbcb234b47d5a9f1be81e88d9f8b6f4841130fdc425f863c6c23615ec2"
+        },
+        "reconnect": {
+          "rng_sha256": "b8beea5da9abf9664468ede0b67666c3718a223ff6554d81dc07bc167e4cdaeb"
+        },
+        "recover_topology": {
+          "rng_sha256": "e100edd3cecb598d5072da2ebf0d1b92acea80094dcdd8dd625cdb452efd3f2e"
+        },
+        "topology_search": {
+          "rng_sha256": "1dc6f2d57389d4187277c7ba2ef00eb251c4b22b79f60e94a03f1c2d8a9bdb72"
+        }
+      },
+      "unseeded_unused_module_rngs_skip": {
+        "base_optimizer": {
+          "rng_sha256": "5b8917e5ca760bc36bc05b83af8618fc9b43c11a621e5e81e7d76bbcd48d5eab"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "1be36603c3d5e40cbb41140624106dd29f1d28c68d63d22a3b8e39fda39f6e4a"
+        },
+        "reconnect": {
+          "rng_sha256": "0e8ae0af22edff2c63e01ea22d1a6010b256d9353052892e9cc073a0082b3b8b"
+        },
+        "recover_topology": {
+          "rng_sha256": "bca6b9aaf3bef8b8843c36452cb1659e2fbf875d4ccf1252831f819611e5989c"
+        },
+        "topology_search": {
+          "rng_sha256": "6e14738b346141fff045262f8922d51428fb60dfcb40a91f73d1bd48a0fa61b0"
+        }
+      }
+    },
+    {
+      "original_hash_equal": false,
+      "normalized_hash": "f1ead751f89df802b184ebb23a9edff7a34f48c04e6db167eb84579b6b3f7e2b",
+      "unseeded_unused_module_rngs_complete": {
+        "base_optimizer": {
+          "rng_sha256": "1c3629086cff401db783d4bb48d5b70dbc558f4062b11225baa5435c40c7f734"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "e1cd5dfbcb234b47d5a9f1be81e88d9f8b6f4841130fdc425f863c6c23615ec2"
+        },
+        "reconnect": {
+          "rng_sha256": "b8beea5da9abf9664468ede0b67666c3718a223ff6554d81dc07bc167e4cdaeb"
+        },
+        "recover_topology": {
+          "rng_sha256": "e100edd3cecb598d5072da2ebf0d1b92acea80094dcdd8dd625cdb452efd3f2e"
+        },
+        "topology_search": {
+          "rng_sha256": "1dc6f2d57389d4187277c7ba2ef00eb251c4b22b79f60e94a03f1c2d8a9bdb72"
+        }
+      },
+      "unseeded_unused_module_rngs_skip": {
+        "base_optimizer": {
+          "rng_sha256": "5b8917e5ca760bc36bc05b83af8618fc9b43c11a621e5e81e7d76bbcd48d5eab"
+        },
+        "restore_optimizer": {
+          "rng_sha256": "1be36603c3d5e40cbb41140624106dd29f1d28c68d63d22a3b8e39fda39f6e4a"
+        },
+        "reconnect": {
+          "rng_sha256": "0e8ae0af22edff2c63e01ea22d1a6010b256d9353052892e9cc073a0082b3b8b"
+        },
+        "recover_topology": {
+          "rng_sha256": "bca6b9aaf3bef8b8843c36452cb1659e2fbf875d4ccf1252831f819611e5989c"
+        },
+        "topology_search": {
+          "rng_sha256": "6e14738b346141fff045262f8922d51428fb60dfcb40a91f73d1bd48a0fa61b0"
+        }
+      }
+    }
+  ],
+  "controller_numeric_and_used_seeded_rngs_equal": true,
+  "new_replays": 0,
+  "new_fits": 0,
+  "unchanged_checks": "All physical prefixes, actions, feedback, costs, same-choice negative control, env/agent/opponent RNG witnesses and numerical optimizer parameters still required."
+}

@@ -1,0 +1,228 @@
+{
+  "stage": "GRID95_SINGLE_COMPLETION_LABEL_VALIDITY",
+  "frozen_utc": "2026-10-20T10:17:34.489696+00:00",
+  "authorization": "2026-10-20 user: 我们先研究标签这一块吧，学习先放一下。",
+  "learning_paused": true,
+  "new_fits": 0,
+  "cases": [
+    {
+      "id": "C0_SAME_ACTION",
+      "week": "2035-07-09_2",
+      "cohort": "old13",
+      "step": 100,
+      "reason_for_selection": "same-choice query omission control",
+      "environment": "work/grid03/formal_env_initialized",
+      "reference": "outputs/grid88/runs/r0__2035-07-09_2__FRAME_GUARD",
+      "source": "outputs/grid88/runs/r0__2035-07-09_2__FRAME_GUARD/call000.json",
+      "state_hash": "b824365bff705b2b77908374d83e58ffdd64b8129f4784ea5d8801b698b7e3f8",
+      "base_action_hash": "3dd224155d0c5da980a928daa7cd994e7805b0109984f8e20ec9b3b9b304c817",
+      "completion_budget": 29,
+      "before_choice": 159,
+      "after_choice": 159
+    },
+    {
+      "id": "C1_LOW_RHO",
+      "week": "2035-07-09_2",
+      "cohort": "old13",
+      "step": 709,
+      "reason_for_selection": "first divergence in historically completion-favored whole-policy comparison",
+      "environment": "work/grid03/formal_env_initialized",
+      "reference": "outputs/grid88/runs/r0__2035-07-09_2__FRAME_GUARD",
+      "source": "outputs/grid88/runs/r0__2035-07-09_2__FRAME_GUARD/call003.json",
+      "state_hash": "0c4d74560374debac7c0ce8ab420438663451ace0b709c0a47d400a80cd7a31e",
+      "base_action_hash": "65e7390203902c7ad2e2a0aa9d1760d550230066d7dda8e8ca7ea0678ec135ca",
+      "completion_budget": 182,
+      "before_choice": 148,
+      "after_choice": 417
+    },
+    {
+      "id": "C2_OVERLOAD",
+      "week": "2035-07-09_2",
+      "cohort": "old13",
+      "step": 1901,
+      "reason_for_selection": "overload case omitted by rejected GRID93 gate",
+      "environment": "work/grid03/formal_env_initialized",
+      "reference": "outputs/grid88/runs/r0__2035-07-09_2__FRAME_GUARD",
+      "source": "outputs/grid88/runs/r0__2035-07-09_2__FRAME_GUARD/call010.json",
+      "state_hash": "35e4dc0ea1c24b012d563ef112338e124bc49ef22a2a7922b18be5245960809a",
+      "base_action_hash": "65e7390203902c7ad2e2a0aa9d1760d550230066d7dda8e8ca7ea0678ec135ca",
+      "completion_budget": 161,
+      "before_choice": 216,
+      "after_choice": 869
+    },
+    {
+      "id": "C3_COST_REVERSE",
+      "week": "2036-07-07_10",
+      "cohort": "G2",
+      "step": 113,
+      "reason_for_selection": "first divergence in historically no-completion-favored whole-policy comparison",
+      "environment": "work/grid89_review/fresh_env",
+      "reference": "outputs/grid89_review/sealed/runs/r0__2036-07-07_10__FRAME_GUARD",
+      "source": "outputs/grid89_review/sealed/runs/r0__2036-07-07_10__FRAME_GUARD/call000.json",
+      "state_hash": "56a9dd121b5e502f80adc4d8aee9e1cf9065474ff7b5e2dfdf20759c44bfcd34",
+      "base_action_hash": "65e7390203902c7ad2e2a0aa9d1760d550230066d7dda8e8ca7ea0678ec135ca",
+      "completion_budget": 182,
+      "before_choice": 168,
+      "after_choice": 345
+    }
+  ],
+  "execution_order": [
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "policy": "FRAME_GUARD",
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "week": "2035-07-09_2",
+      "environment": "work/grid03/formal_env_initialized",
+      "method": "FRAME_LABEL_QUAL",
+      "watch_cases": [
+        "C0_SAME_ACTION",
+        "C1_LOW_RHO",
+        "C2_OVERLOAD"
+      ],
+      "omit_case": null,
+      "purpose": "full factual qualification"
+    },
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "policy": "FRAME_GUARD",
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "week": "2036-07-07_10",
+      "environment": "work/grid89_review/fresh_env",
+      "method": "FRAME_LABEL_QUAL",
+      "watch_cases": [
+        "C3_COST_REVERSE"
+      ],
+      "omit_case": null,
+      "purpose": "full factual qualification"
+    },
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "policy": "FRAME_GUARD",
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "week": "2035-07-09_2",
+      "environment": "work/grid03/formal_env_initialized",
+      "method": "SKIP_C0_SAME_ACTION",
+      "watch_cases": [
+        "C0_SAME_ACTION"
+      ],
+      "omit_case": "C0_SAME_ACTION",
+      "purpose": "single completion omission, original FRAME continuation"
+    },
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "policy": "FRAME_GUARD",
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "week": "2035-07-09_2",
+      "environment": "work/grid03/formal_env_initialized",
+      "method": "SKIP_C1_LOW_RHO",
+      "watch_cases": [
+        "C1_LOW_RHO"
+      ],
+      "omit_case": "C1_LOW_RHO",
+      "purpose": "single completion omission, original FRAME continuation"
+    },
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "policy": "FRAME_GUARD",
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "week": "2035-07-09_2",
+      "environment": "work/grid03/formal_env_initialized",
+      "method": "SKIP_C2_OVERLOAD",
+      "watch_cases": [
+        "C2_OVERLOAD"
+      ],
+      "omit_case": "C2_OVERLOAD",
+      "purpose": "single completion omission, original FRAME continuation"
+    },
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "policy": "FRAME_GUARD",
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "week": "2036-07-07_10",
+      "environment": "work/grid89_review/fresh_env",
+      "method": "SKIP_C3_COST_REVERSE",
+      "watch_cases": [
+        "C3_COST_REVERSE"
+      ],
+      "omit_case": "C3_COST_REVERSE",
+      "purpose": "single completion omission, original FRAME continuation"
+    }
+  ],
+  "reconstruction": "Fresh identical seeded environment and agent, full unmodified physical/controller prefix replay. No observation-only reset or opaque environment/agent copying.",
+  "intervention": "Exactly one original completion is omitted at the fixed step and verified state/base hashes. Global prefix queries unchanged; all subsequent searches use unchanged FRAME_GUARD.",
+  "qualification": "First two fresh factual runs must reproduce all historical actions, observations and raw costs. Branch prefix and reviewed controller/optimizer/RNG witnesses must match fresh factual before the intervention. The same-choice omission must reproduce the entire physical trajectory.",
+  "common_future": "Same frozen chronics files, environment/agent seeds0 and original external process. Realized opponent attack fields are recorded every step. Divergence of external attack realizations is reported, never described as an identical external-event pair.",
+  "horizon": {
+    "primary": "until original episode end, including intervention transition",
+    "diagnostic_steps": [
+      1,
+      12,
+      288
+    ],
+    "dt_minutes": 5,
+    "rule": "All horizons fixed before results; clip only to original episode end. Short-window labels never substituted for remaining-week labels."
+  },
+  "label": {
+    "raw_vector": [
+      "survival/complete",
+      "cost_SKIP_minus_COMPLETE",
+      "all_forecasts_COMPLETE_minus_SKIP",
+      "candidate_queries_COMPLETE_minus_SKIP"
+    ],
+    "rules": "Survival differences reported first; cumulative cost compared only when both reach the requested common horizon. When cost and queries favor different branches, label TRADEOFF rather than force a binary class. No money/time conversion coefficient fitted.",
+    "numeric_equality": "Only sum-rounding tolerance max(0.01,32*float64_eps*sum_absolute_costs) for reported-cost equality. Not a safety or practical-equivalence threshold.",
+    "external_mismatch": "Raw outcomes remain reported; fixed-external-event label marked UNRESOLVED_EXTERNAL_DIFFERENCE if realized opponent attacks differ over common live steps.",
+    "scope": "Single-intervention effect under original FRAME continuation on four selected exposed states; not value under arbitrary future learned gates and not population-wide training labels."
+  },
+  "timing": "Instrumentation and reconstruction study only. No online speed comparison; query counts retained separately.",
+  "caps": {
+    "episode_s": 1200,
+    "wall_s": 7200,
+    "physical_steps": 12102,
+    "public_forecasts": 100000
+  },
+  "forbidden": [
+    "training",
+    "threshold tuning",
+    "new gate",
+    "changing controller/reward/order/parameters",
+    "selecting extra cases after results",
+    "independent AC audit claim"
+  ]
+}

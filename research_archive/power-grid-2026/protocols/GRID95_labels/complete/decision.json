@@ -1,0 +1,35 @@
+{
+  "stage": "GRID95_SINGLE_COMPLETION_LABEL_VALIDITY",
+  "label_collection_mechanics_qualified": true,
+  "universal_binary_label_established": false,
+  "state_cases": 4,
+  "primary_horizon": "remaining_week",
+  "new_fits": 0,
+  "results": [
+    {
+      "case_id": "C0_SAME_ACTION",
+      "label": "SKIP_SAME_COST_LESS_COMPUTE",
+      "delta_cost": 0.0,
+      "delta_queries": 29
+    },
+    {
+      "case_id": "C1_LOW_RHO",
+      "label": "SKIP_COST_COMPUTE_DOMINATES",
+      "delta_cost": -1754.9078369140625,
+      "delta_queries": 177
+    },
+    {
+      "case_id": "C2_OVERLOAD",
+      "label": "COMPLETE_SURVIVAL_ADVANTAGE",
+      "delta_cost": null,
+      "delta_queries": null
+    },
+    {
+      "case_id": "C3_COST_REVERSE",
+      "label": "SKIP_COST_COMPUTE_DOMINATES",
+      "delta_cost": -78078.8998413086,
+      "delta_queries": 699
+    }
+  ],
+  "no_threshold_or_weight_selection": true
+}

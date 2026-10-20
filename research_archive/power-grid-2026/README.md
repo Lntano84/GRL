@@ -639,3 +639,4 @@ ExpertOp4Grid外部结构启发式：同六个已暴露G2场景、同合法动�
 
 GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解读_中文.md：增大到56状态和64浅树后仍无可靠门控证据；唯一KEEP为旧试点，未部署。
 
+- [补查标签清理与预训练候选](paper/FRAME_label_cleanup_20261020/README_中文.md)：56例全保留，30/9/5/1/11分组；无新训练、仿真或模型运行。

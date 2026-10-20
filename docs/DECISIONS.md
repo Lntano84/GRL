@@ -702,3 +702,8 @@ ExpertOp4Grid外部结构启发式：同六个已暴露G2场景、同合法动�
 ## 2026-10-20 — e-Energy 2027 官方CFP补核与阅读材料
 
 通过浏览器直接读取官方pages/cfp.php，解决上一份核查中HTTP403导致的官网未验证状态：冬季摘要2027-01-08、全文2027-01-15，23:59 AoE；Full最多10页、9pt ACM sigconf双栏、双盲，参考文献与附录另计。官方轨道为Control and energy systems、Learning、Systems and applied modeling、Theory，并明确接收能源算法及智能电网控制，不要求学习方法。先前记录作为当时访问状态保留。保存2025主会CCMA拓扑控制正式CC BY PDF；2026拥塞管理与STORM-OPF是邻近任务，PDF接口403，提供真实出版与作者代码入口，不声称全文已读。材料见research_archive/power-grid-2026/paper/eenergy2027_reading_20261020。本次不改实验、模型或文稿，也不据主题适配断言录用。
+
+
+## 2026-10-20 — e-Energy暂定与机制去留路线
+
+按用户要求暂定ACM e-Energy 2027，现有三个步骤先查明作用，允许删除不必要设计；之后做跨电网资格与验证，论文成熟后再探索学习/智能体。CCMA为领域学习基线候选，其动作分解/协调和FRAME评估计算分配不同；未定位原实现/权重，不立即移植训练，也不按会议名称删除META/ExpertOp历史对照。前缀视为初始化，反馈核查为核心，同站补查等待最终版本删除对照后决定。默认q_min=256经逻辑证明和保存记录核对为冗余，可在新简化稿/实现中作为派生量，历史冻结代码不改；不能推广到任意p/h/L。证据见research_archive/power-grid-2026/paper/eenergy_mechanism_20261020。无新训练或物理回放，没有宣称已达投稿或录用水准。

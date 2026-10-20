@@ -636,3 +636,6 @@ ExpertOp4Grid外部结构启发式：同六个已暴露G2场景、同合法动�
 [报告](protocols/GRID95_labels/complete/GRID95_report.md)。
 
 - GRID96：单次补查价值标签与逻辑回归/64浅树固定评估，见`protocols/GRID96_value_learning/complete/GRID96_report.md`。
+
+GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解读_中文.md：增大到56状态和64浅树后仍无可靠门控证据；唯一KEEP为旧试点，未部署。
+

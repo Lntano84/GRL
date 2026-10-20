@@ -777,3 +777,8 @@ GRID96解读：56个状态为44 SKIP、11 MIXED、1 KEEP，其中39例取消后�
 ## 2026-10-20 — GRID97 frozen
 
 GRID97将轨迹是否改变与经济价值区分，11 MIXED不二分。TabPFNv2无sample_weight接口，三方法统一每状态一次、等例权重；不能将其新二分类成绩与GRID96日期加权三分类直接比。固定0.5/0.95阈值，无调参。
+
+
+## 2026-10-20 — GRID97 offline completed
+
+LOGISTIC: nonpilot53 AUC=0.5000, BA=0.4614; P>=.95 omission 5, changed-path errors 3. FOREST64: nonpilot53 AUC=0.4982, BA=0.4342; P>=.95 omission 0, changed-path errors 0. TABPFN_V2: nonpilot53 AUC=0.3807, BA=0.4605; P>=.95 omission 0, changed-path errors 0. 全部离线、未增加回放或部署；路径影响不等于经济价值。完整报告 protocols/GRID97_effect_learning/complete/GRID97_report.md。

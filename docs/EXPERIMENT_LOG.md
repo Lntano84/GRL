@@ -952,3 +952,8 @@ GRID96解读：56个状态为44 SKIP、11 MIXED、1 KEEP，其中39例取消后�
 ## 2026-10-20 — GRID97 frozen
 
 GRID97开始前冻结design/data/source/checkpoint。隔离D盘环境tabpfn2.2.1、sklearn1.6.1，复用旧Torch只读；旧环境不变。独立高斯模拟数据预检通过；尚无正式预测结果。
+
+
+## 2026-10-20 — GRID97 offline completed
+
+LOGISTIC: nonpilot53 AUC=0.5000, BA=0.4614; P>=.95 omission 5, changed-path errors 3. FOREST64: nonpilot53 AUC=0.4982, BA=0.4342; P>=.95 omission 0, changed-path errors 0. TABPFN_V2: nonpilot53 AUC=0.3807, BA=0.4605; P>=.95 omission 0, changed-path errors 0. 全部离线、未增加回放或部署；路径影响不等于经济价值。完整报告 protocols/GRID97_effect_learning/complete/GRID97_report.md。

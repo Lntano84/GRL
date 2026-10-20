@@ -55,3 +55,5 @@ python scripts/archive/restore_artifacts.py /path/to/grl-20261006-lot.tar.gz --o
 历史脚本保留原字节，不保证无需改路径即可跨机器执行。部分代码依赖原本的目录布局、Windows文件名处理或作者外部代码；应先读阶段配置、依赖和来源，不能把这次归档称为全套实验的一键复现。模型检查点、虚拟环境、构建产物、未获明确再分发依据的外部输入和无关论文没有加入资产；训练标签、预测、测试方案和统计结果保留。早期模型权重等排除项可在排除清单中定位。
 
 这里的 `in_git=0` 表示文件在 Release 资产内，**不是未归档**。资产所有对象均有大小与内容哈希；详细整合核验见 [INTEGRATION_AUDIT.json](INTEGRATION_AUDIT.json)。
+
+- GRID97补查轨迹影响：相同56例/15特征/日期隔离的LR、浅树、TabPFNv2离线比较，53非试点主成绩，全部误判保留；无新物理回放或部署。见power-grid-2026/protocols/GRID97_effect_learning/complete/GRID97_report.md。

@@ -11,3 +11,7 @@
 完成应简短中文报告真实指标和局限，给GRID96_report.md链接。不要恢复旧自动化或旧任务，不改论文。
 
 执行补充：80ac1fed已加入执行专用postprocess.py（独立收据orchestration_receipt.json，不改变冻结控制/标签/模型）。隐藏postprocess已启动，负责等待74条结束且所有run/worker进程退出，再顺序调用冻结的audit/learn/audit_learning/finalize并推送。应检查postprocess_state.json和postprocess_error.json；它正常运行时不要手动重复审计/拟合/归档。publication.json通过并远端SHA=本地SHA才算发布完成。
+
+## COMPLETE
+74条新回放及3个已核验分支审计完成；56标签和固定简单模型均完成，原始全部轨迹已归档推送08680831，解读/版本/描述性分层推送7becce6a。没有学习门控部署，不再运行audit/learn/finalize或新实验。主解读：学习结果解读_中文.md。唯一KEEP是旧试点，53新标签无KEEP；日期留出LR AUC0.383/RF0.587，不支持替换原补查规则。最终实际Git本地/远端核对见final_verification.json。
+

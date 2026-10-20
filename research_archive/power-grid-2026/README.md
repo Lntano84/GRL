@@ -586,3 +586,9 @@ ExpertOp4Grid外部结构启发式：同六个已暴露G2场景、同合法动�
 ExpertOp4Grid外部结构启发式：同六个已暴露G2场景、同合法动作库/基础控制器/一步公共预测，FRAME与ExpertOp适配两次交错反向计时共24条。原作者影响图/专家评分保留，官方25候选/每站5/最多3线路默认固定，所有图构建查询计入。严格公共接口不改保护参数，原方法外围恢复重连不带入。三次真实校准状态及未来向量接口检查通过，不按评价结果调参、选日期或增预算。 保存数据/原生结构排名重执行审计通过，冻结判读：REPORT_QUALITY_COMPUTE_TRADEOFF_OR_COMPETITIVENESS。
 
 [方案与结果](protocols/GRID90_expert/complete/)
+
+## GRID91_MECHANISM_frozen
+
+用户授权完成第1项机制去留。最终规则另存为模块化纯策略，默认删除冗余qmin条件；原13/G1/G2共25场景做NO_LOCAL删除测试，另3条FRAME分别资格验证三组环境。共28条串行、单次描述性计时；历史FRAME只复用质量和查询，不跨批声称提速。全部输入、日期、模型、阈值和运行上限冻结；不训练、不换网、不扩对照。
+
+[方案与结果](protocols/GRID91_mechanism/frozen/)

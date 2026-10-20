@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-20T04:58:22.452921+00:00",
+  "reason": "Original launcher used grid00 interpreter, which lacks torch; worker failed on import before run directory, observation or control step",
+  "completed_items": 0,
+  "partial_run_directories": 0,
+  "frozen_hashes_verified": 2393,
+  "all_protocol_and_source_hashes_unchanged": true,
+  "new_installs": 0,
+  "new_fits": 0,
+  "old_interpreter": "work/grid00/.venv/Scripts/python.exe",
+  "correct_existing_interpreter": "work/grid02/.venv/Scripts/python.exe",
+  "verified_versions": {
+    "torch": "2.8.0+cpu",
+    "grid2op": "1.12.5",
+    "lightsim2grid": "1.1.0",
+    "cvxpy": "1.9.3"
+  },
+  "recovery": "Restart the same frozen pipeline with the existing GRID02 controller runtime; no complete item repeated; original error and freeze copied to interrupted_attempts/attempt01"
+}

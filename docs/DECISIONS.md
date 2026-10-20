@@ -697,3 +697,8 @@ ExpertOp4Grid外部结构启发式：同六个已暴露G2场景、同合法动�
 ## 2026-10-20 — 2027投稿主题与录用案例核查
 
 按用户要求先重定投稿目标，暂停按原ICAPS定位继续修改/加实验。核实ECML PKDD2025 ADS的SoftGNN、e-Energy2025主会CCMA、ICLR2026 MARL2GRID-TR；ICCPS2025 SEQUIN是非学习网络结构/物理优化的邻近任务。纠正e-Energy2025多目标拓扑论文属于ADELE Workshop，以及SoftGNN2026卷册不能算2026会议案例。ICAPS2027明确接收启发式优化，不以“无学习”直接排除。e-Energy主题优先与ECML ADS/CCF B路线并列待讨论，未擅自定最终目标、未核实e-Energy/ICCPS为CCF B。详细来源与访问限制：research_archive/power-grid-2026/paper/venue_fit_20261020。无新训练/回放/稿件修改。
+
+
+## 2026-10-20 — e-Energy 2027 官方CFP补核与阅读材料
+
+通过浏览器直接读取官方pages/cfp.php，解决上一份核查中HTTP403导致的官网未验证状态：冬季摘要2027-01-08、全文2027-01-15，23:59 AoE；Full最多10页、9pt ACM sigconf双栏、双盲，参考文献与附录另计。官方轨道为Control and energy systems、Learning、Systems and applied modeling、Theory，并明确接收能源算法及智能电网控制，不要求学习方法。先前记录作为当时访问状态保留。保存2025主会CCMA拓扑控制正式CC BY PDF；2026拥塞管理与STORM-OPF是邻近任务，PDF接口403，提供真实出版与作者代码入口，不声称全文已读。材料见research_archive/power-grid-2026/paper/eenergy2027_reading_20261020。本次不改实验、模型或文稿，也不据主题适配断言录用。

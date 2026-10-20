@@ -1,0 +1,148 @@
+{
+  "stage": "GRID98_PRE_COMPLETION_FEATURE_ENRICHMENT",
+  "utc": "2026-10-20T15:00:07.972636+00:00",
+  "authorization": "User: ok来补一下; augment meaningful pre-completion features, no refit in this stage",
+  "samples": 56,
+  "new_features": {
+    "station_remaining_log1p": [
+      "候选结构",
+      "log(1+剩余同站代表数)",
+      "已知候选及别名"
+    ],
+    "station_queried_fraction": [
+      "候选结构",
+      "已查同站代表数/全部同站代表数",
+      "已知候选及已查ID"
+    ],
+    "remaining_best_partition_distance_min": [
+      "候选结构",
+      "剩余意向分区到当前最佳分区的最小成对连接差异",
+      "动作命令与当前拓扑"
+    ],
+    "remaining_best_partition_distance_mean": [
+      "候选结构",
+      "上述成对连接差异的均值",
+      "动作命令与当前拓扑"
+    ],
+    "remaining_best_partition_distance_max": [
+      "候选结构",
+      "上述成对连接差异的最大值",
+      "动作命令与当前拓扑"
+    ],
+    "remaining_seen_nearest_distance_mean": [
+      "候选结构",
+      "每个剩余分区到最近已查同站分区的差异，再取均值",
+      "动作命令及已查ID"
+    ],
+    "remaining_seen_nearest_distance_max": [
+      "候选结构",
+      "上述最近已查差异的最大值",
+      "动作命令及已查ID"
+    ],
+    "remaining_novel_partition_fraction": [
+      "候选结构",
+      "没有相同成对连接签名的剩余分区占比",
+      "动作命令及已查ID"
+    ],
+    "remaining_current_partition_distance_mean": [
+      "候选结构",
+      "剩余分区到当前实际分区的平均成对连接差异",
+      "动作命令与当前拓扑"
+    ],
+    "station_legal_reward_std": [
+      "同站反馈",
+      "同站已查合法、未结束、有限正rho反馈的奖励总体标准差",
+      "仅已查同站反馈"
+    ],
+    "station_best_runnerup_reward_gap": [
+      "同站反馈",
+      "同站已查可接纳奖励第一名与第二名之差；不足两例填0",
+      "仅已查同站反馈"
+    ],
+    "station_runnerup_missing": [
+      "同站反馈",
+      "同站已查可接纳反馈不足两例的指示量",
+      "仅已查同站反馈"
+    ],
+    "station_legal_feedback_fraction": [
+      "同站反馈",
+      "同站已查反馈合法、未结束、有限正rho的比例",
+      "仅已查同站反馈"
+    ],
+    "station_other_best_minus_outside_best": [
+      "同站反馈",
+      "排除当前最佳后，同站可接纳最好奖励减站外可接纳最好奖励；任一缺失填0，沿用原station_support_missing",
+      "仅已查反馈"
+    ],
+    "incumbent_clearance_to_limit": [
+      "当前余量",
+      "rho_limit-incumbent_rho；原特征的确定组合，不是新观测",
+      "原15维"
+    ],
+    "incumbent_clearance_to_safe": [
+      "当前余量",
+      "0.9-incumbent_rho；原特征的确定组合，不是新观测",
+      "原15维及原阈值"
+    ],
+    "current_max_rho": [
+      "当前状态",
+      "当前在线线路最大rho",
+      "当前观测"
+    ],
+    "current_overload_excess_mean": [
+      "当前状态",
+      "当前在线线路max(rho-1,0)之和/在线线路数",
+      "当前观测"
+    ],
+    "station_incident_max_rho": [
+      "当前状态",
+      "当前最佳站所接在线线路最大rho；无在线接线填0",
+      "当前观测与端点归属"
+    ],
+    "station_incident_overload_share": [
+      "当前状态",
+      "该站所接过载在线线路数/全网过载在线线路数；无过载填0",
+      "当前观测与端点归属"
+    ]
+  },
+  "original_features": [
+    "incumbent_rho",
+    "rho_limit",
+    "prefix_safe",
+    "incumbent_changed",
+    "prefix_valid",
+    "gain_since_prefix",
+    "observed_reward_gap",
+    "queried_fraction",
+    "remaining_station_fraction",
+    "observed_admissible_fraction",
+    "station_observed_admissible_fraction",
+    "station_support",
+    "station_support_missing",
+    "last_batch_gain",
+    "improving_batch_fraction"
+  ],
+  "original_feature_count": 15,
+  "new_feature_count": 20,
+  "labels": "All 56 and original economic/physical labels preserved in separate file; no model fitting, no feature selection by labels, no prediction or new physical episodes.",
+  "status": "Exploratory feature design after GRID97 exposed results; not independent evidence or proven improvement.",
+  "structure": "Use current state, masked/deduplicated public action commands and known candidate membership. Intended bus assignment fills unspecified commands from current topology, applies explicit bus changes and line disconnects; partition features describe action intentions, not solved future power flow. Same-bus pair relation is invariant to swapping bus1/bus2.",
+  "missing": "Absent runner-up: gap0 plus runnerup_missing1. No legal feedback: std0 plus legal_fraction0. Other-station best gap missing:0, original station_support_missing supplies indicator. No overloaded live lines: overload_share0.",
+  "duplicated_information": "Two clearance features are deterministic transforms of original rho/limit, not new information. Keep original constant prefix_valid for exact compatibility; explicitly list constants after extraction.",
+  "reconstruction": "One existing Grid2Op template for vector decoding only; no reset, step, simulate or optimizer calls. Existing library/base mask and alias hashes verified for each case.",
+  "leakage_checks": [
+    "extractor accepts only redacted pre-completion prefix and public metadata",
+    "delete all hidden feedback: identical features",
+    "poison all hidden rho/reward/admissibility: identical features",
+    "shuffle visible rows back to chronological prefix required; invalid appended row rejected",
+    "bus1/2 swap invariance",
+    "independent arithmetic checks and original15 exact reproduction"
+  ],
+  "prohibitions": [
+    "no new physical forecasts",
+    "no training or deployment",
+    "no changed labels/splits/cases",
+    "no target-based feature ranking/selection",
+    "no claim new features improve accuracy before separate evaluation"
+  ]
+}

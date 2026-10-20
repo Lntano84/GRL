@@ -957,3 +957,8 @@ GRID97开始前冻结design/data/source/checkpoint。隔离D盘环境tabpfn2.2.1
 ## 2026-10-20 — GRID97 offline completed
 
 LOGISTIC: nonpilot53 AUC=0.5000, BA=0.4614; P>=.95 omission 5, changed-path errors 3. FOREST64: nonpilot53 AUC=0.4982, BA=0.4342; P>=.95 omission 0, changed-path errors 0. TABPFN_V2: nonpilot53 AUC=0.3807, BA=0.4605; P>=.95 omission 0, changed-path errors 0. 全部离线、未增加回放或部署；路径影响不等于经济价值。完整报告 protocols/GRID97_effect_learning/complete/GRID97_report.md。
+
+
+## 2026-10-20 — GRID98 feature definitions frozen
+
+用户授权补充特征，先提取核验、不重训。固定新增20项：9候选结构、5同站反馈、6状态/余量（2为原特征组合）；56例和原15维、原标签/日期折保留。定义与157源项提取前封存；不读取隐藏反馈生成特征，不按标签筛选，无新回放或模型运行。

@@ -1,0 +1,31 @@
+{
+  "stage": "GRID94_COMPLETION_SKIP_PREDICTABILITY",
+  "authorization": "2026-10-20 用户：我们先做你说的可预测问题；学习什么时候不启动补查",
+  "scope": "Offline feasibility of predicting decision-invariant completion. Not prediction of harmful whole-week effects; no simulator calls, new RL, controller changes or deployment.",
+  "primary_label": {
+    "skip_equivalent_1": "The exact float32/tie-broken chosen representative ID after original local completion equals the chosen ID before completion",
+    "retain_0": "Completion changes chosen representative ID; its economic value is unknown, so retain rather than label it good",
+    "eligibility": "Only original FRAME calls with completion_budget > 0",
+    "properties": "Label 1 proves the same returned search action at that saved state under unchanged selection. It does not prove model predictions or off-trajectory decisions are correct.",
+    "forbidden_labels": "Never assign a whole-week cost sign to every call in that week; never call any reward-improving candidate a beneficial whole-week action"
+  },
+  "features": ["incumbent_rho", "rho_limit", "prefix_safe", "incumbent_changed", "prefix_valid", "gain_since_prefix", "observed_reward_gap", "queried_fraction", "remaining_station_fraction", "observed_admissible_fraction", "station_observed_admissible_fraction", "station_support", "station_support_missing", "last_batch_gain", "improving_batch_fraction"],
+  "feature_scope": "Only outcomes revealed before completion, public candidate order and alias-aware station memberships. No station/candidate identity, date, call number, future/full-pool labels, completion feedback, measured cost or total runtime as features. Missing score uses 0.5 plus a flag; absent reward gap/gain uses 0.",
+  "models": {
+    "LOGISTIC": {"C": 1.0, "solver": "lbfgs", "max_iter": 2000, "class_weight": null, "standardize": "training fold only"},
+    "TREE2": {"max_depth": 2, "min_samples_leaf": 10, "criterion": "gini", "random_state": 20261020}
+  },
+  "fit_weights": "Equal total weight per training calendar date; per-call weights normalized to mean 1. No class rebalance or selected seed.",
+  "evaluation": {
+    "grouped_oof": "Leave one calendar date YYYY-MM-DD out. G1/G2 generated seeds for that date always withheld together. All eligible dates included; no random call split.",
+    "cohort_transfer": "Fit once on all eligible old13 calls, evaluate all eligible G1+G2 calls; both generated groups exposed historical data, not sealed new generalization",
+    "thresholds": {"primary": 0.95, "diagnostic_default": 0.5},
+    "decision": "Skip only if predicted P(exact same choice) >= threshold; report both fixed thresholds for both fixed models without selecting a winner or threshold",
+    "baselines": ["ALWAYS_COMPLETE", "ALWAYS_SKIP", "TRAIN_PRIOR_probability_within_each_training_fold"],
+    "metrics": ["ROC AUC", "average precision and class prevalence", "Brier score", "accuracy versus trivial baseline", "skip precision", "skipped calls", "missed choice changes", "missed changed-choice scenarios", "retained changed-choice fraction", "teacher-forced nominal/same-choice query savings", "reward loss and named missed states", "per-cohort and per-calendar counts"],
+    "decision_rule": "Exploratory conservative signal exists only if the same fixed model at 0.95 produces at least one skip and zero missed choice changes in BOTH grouped OOF and cohort transfer; otherwise no demonstrated conservative skip signal. Even passing is not a safe deployment or closed-loop qualification."
+  },
+  "limits": "Exactly two fixed model families. No hyperparameter search, feature selection, threshold sweep, new model after results, or final all-data deployment model. Preserve all fits, prediction errors and adverse cases. No new broad generalization or speed claim.",
+  "runtime": "Existing work/grid02/.venv/Scripts/python.exe; sklearn 1.7.2; no installation",
+  "references": ["outputs/grid91_mechanism/design.json", "outputs/frame_completion_roles_20261020/per_call.csv", "outputs/grid93_trigger/actual_frame_state_screen.csv"]
+}

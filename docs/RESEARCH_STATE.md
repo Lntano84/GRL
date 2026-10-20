@@ -404,3 +404,7 @@
 打开Research-Starter-Kit所链接飞书《论文画图指南》正文，阅读动机/方法/结果/曲线与工具素材规则；按照模块一致性、功能配色、实线主流程/虚线反馈和实际论文尺寸重画方法图，并生成主结果与局部补全案例图。三图均有可编辑SVG、矢量PDF与300dpi PNG，8–9.3pt出版宽度字型。结果数据逐项核对中文来源；方法图插入英文稿，其余两图保留独立素材。无新实验或拟合，科学裁决不变。
 
 交付及验证：`research_archive/power-grid-2026/protocols/GRID_ICAPS_en_from_cn_v2`；D盘工作材料`outputs/grid_icaps_en_from_cn_v2`。下一步为作者通读、AAAI双栏排版、贡献/相关工作精修与匿名复现附件。
+
+## 2026-10-20 — GRID96_VALUE_LEARNING_complete
+
+GRID96单次补查价值学习完成。{'SKIP': 44, 'MIXED': 11, 'KEEP': 1}；全部74条新回放及3复用分支保存数据核验，逻辑回归和64浅树固定日期隔离评估。见protocols/GRID96_value_learning/complete/GRID96_report.md；未部署学习门控，不相加单次收益。

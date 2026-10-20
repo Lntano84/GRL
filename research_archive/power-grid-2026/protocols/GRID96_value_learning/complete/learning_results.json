@@ -1,0 +1,3086 @@
+[
+  {
+    "scheme": "calendar_loo",
+    "model": "LOGISTIC",
+    "headline": {
+      "n": 53,
+      "calendar_dates": 17,
+      "class_counts": {
+        "SKIP": 42,
+        "MIXED": 11
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          34,
+          7
+        ],
+        [
+          0,
+          9,
+          2
+        ]
+      ],
+      "balanced_accuracy": 0.4956709956709957,
+      "macro_f1": 0.3333333333333333,
+      "skip_auc": 0.38311688311688313,
+      "skip_ap": 0.7083912362238387,
+      "skip_brier": 0.2785770680352922,
+      "0.5": {
+        "proposed_skips": 42,
+        "coverage": 0.7924528301886793,
+        "correct_skips": 34,
+        "missed_keep": 0,
+        "disputed_mixed": 8,
+        "precision": 0.8095238095238095,
+        "case_ids": [
+          "S014",
+          "S015",
+          "S016",
+          "S018",
+          "S000",
+          "S001",
+          "S019",
+          "S020",
+          "S021",
+          "S010",
+          "S011",
+          "S003",
+          "S004",
+          "S023",
+          "S026",
+          "S006",
+          "S007",
+          "S008",
+          "S013",
+          "S027",
+          "S028",
+          "S029",
+          "S031",
+          "S032",
+          "S033",
+          "S034",
+          "S035",
+          "S044",
+          "S046",
+          "S036",
+          "S047",
+          "S048",
+          "S049",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S051",
+          "S043",
+          "S052",
+          "S053",
+          "S055"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 13,
+        "coverage": 0.24528301886792453,
+        "correct_skips": 8,
+        "missed_keep": 0,
+        "disputed_mixed": 5,
+        "precision": 0.6153846153846154,
+        "case_ids": [
+          "S020",
+          "S021",
+          "S010",
+          "S011",
+          "S003",
+          "S023",
+          "S031",
+          "S047",
+          "S039",
+          "S042",
+          "S043",
+          "S052",
+          "S055"
+        ]
+      }
+    },
+    "known_pilots_diagnostic": {
+      "n": 3,
+      "calendar_dates": 2,
+      "class_counts": {
+        "SKIP": 2,
+        "KEEP": 1
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.25,
+      "macro_f1": 0.2222222222222222,
+      "skip_auc": 1.0,
+      "skip_ap": 1.0,
+      "skip_brier": 0.11144853844248633,
+      "0.5": {
+        "proposed_skips": 1,
+        "coverage": 0.3333333333333333,
+        "correct_skips": 1,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": 1.0,
+        "case_ids": [
+          "S022"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 1,
+        "coverage": 0.3333333333333333,
+        "correct_skips": 1,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": 1.0,
+        "case_ids": [
+          "S022"
+        ]
+      }
+    },
+    "by_cohort": {
+      "old13": {
+        "n": 31,
+        "calendar_dates": 11,
+        "class_counts": {
+          "SKIP": 23,
+          "MIXED": 8
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            18,
+            4
+          ],
+          [
+            0,
+            7,
+            1
+          ]
+        ],
+        "balanced_accuracy": 0.453804347826087,
+        "macro_f1": 0.30128205128205127,
+        "skip_auc": 0.4184782608695652,
+        "skip_ap": 0.6801443815299517,
+        "skip_brier": 0.30145695419383095,
+        "0.5": {
+          "proposed_skips": 24,
+          "coverage": 0.7741935483870968,
+          "correct_skips": 18,
+          "missed_keep": 0,
+          "disputed_mixed": 6,
+          "precision": 0.75,
+          "case_ids": [
+            "S014",
+            "S015",
+            "S016",
+            "S018",
+            "S000",
+            "S001",
+            "S019",
+            "S020",
+            "S021",
+            "S010",
+            "S011",
+            "S003",
+            "S004",
+            "S023",
+            "S026",
+            "S006",
+            "S007",
+            "S008",
+            "S013",
+            "S027",
+            "S028",
+            "S029",
+            "S031",
+            "S032"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 7,
+          "coverage": 0.22580645161290322,
+          "correct_skips": 4,
+          "missed_keep": 0,
+          "disputed_mixed": 3,
+          "precision": 0.5714285714285714,
+          "case_ids": [
+            "S020",
+            "S021",
+            "S010",
+            "S011",
+            "S003",
+            "S023",
+            "S031"
+          ]
+        }
+      },
+      "G1": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 10,
+          "MIXED": 1
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            2
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.4,
+        "macro_f1": 0.2807017543859649,
+        "skip_auc": 0.0,
+        "skip_ap": 0.7980122655122655,
+        "skip_brier": 0.2464038706669748,
+        "0.5": {
+          "proposed_skips": 9,
+          "coverage": 0.8181818181818182,
+          "correct_skips": 8,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.8888888888888888,
+          "case_ids": [
+            "S033",
+            "S034",
+            "S035",
+            "S036",
+            "S039",
+            "S040",
+            "S041",
+            "S042",
+            "S043"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 3,
+          "coverage": 0.2727272727272727,
+          "correct_skips": 2,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.6666666666666666,
+          "case_ids": [
+            "S039",
+            "S042",
+            "S043"
+          ]
+        }
+      },
+      "G2": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 9,
+          "MIXED": 2
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            1
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "balanced_accuracy": 0.6944444444444444,
+        "macro_f1": 0.46296296296296297,
+        "skip_auc": 0.5,
+        "skip_ap": 0.8321348404681739,
+        "skip_brier": 0.24627058622954578,
+        "0.5": {
+          "proposed_skips": 9,
+          "coverage": 0.8181818181818182,
+          "correct_skips": 8,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.8888888888888888,
+          "case_ids": [
+            "S044",
+            "S046",
+            "S047",
+            "S048",
+            "S049",
+            "S051",
+            "S052",
+            "S053",
+            "S055"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 3,
+          "coverage": 0.2727272727272727,
+          "correct_skips": 2,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.6666666666666666,
+          "case_ids": [
+            "S047",
+            "S052",
+            "S055"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "scheme": "calendar_loo",
+    "model": "FOREST64",
+    "headline": {
+      "n": 53,
+      "calendar_dates": 17,
+      "class_counts": {
+        "SKIP": 42,
+        "MIXED": 11
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          41,
+          1
+        ],
+        [
+          0,
+          11,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.4880952380952381,
+      "macro_f1": 0.29078014184397166,
+      "skip_auc": 0.5865800865800865,
+      "skip_ap": 0.8534042008822145,
+      "skip_brier": 0.17228870477611688,
+      "0.5": {
+        "proposed_skips": 52,
+        "coverage": 0.9811320754716981,
+        "correct_skips": 41,
+        "missed_keep": 0,
+        "disputed_mixed": 11,
+        "precision": 0.7884615384615384,
+        "case_ids": [
+          "S014",
+          "S015",
+          "S016",
+          "S017",
+          "S018",
+          "S000",
+          "S001",
+          "S002",
+          "S019",
+          "S020",
+          "S021",
+          "S010",
+          "S011",
+          "S012",
+          "S003",
+          "S004",
+          "S005",
+          "S023",
+          "S024",
+          "S026",
+          "S006",
+          "S007",
+          "S008",
+          "S009",
+          "S013",
+          "S027",
+          "S028",
+          "S029",
+          "S030",
+          "S031",
+          "S032",
+          "S033",
+          "S034",
+          "S035",
+          "S044",
+          "S045",
+          "S046",
+          "S036",
+          "S037",
+          "S047",
+          "S048",
+          "S049",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S051",
+          "S043",
+          "S052",
+          "S053",
+          "S054",
+          "S055"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 1,
+        "coverage": 0.018867924528301886,
+        "correct_skips": 1,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": 1.0,
+        "case_ids": [
+          "S020"
+        ]
+      }
+    },
+    "known_pilots_diagnostic": {
+      "n": 3,
+      "calendar_dates": 2,
+      "class_counts": {
+        "SKIP": 2,
+        "KEEP": 1
+      },
+      "confusion": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.26666666666666666,
+      "skip_auc": 0.5,
+      "skip_ap": 0.8333333333333333,
+      "skip_brier": 0.17520009287938607,
+      "0.5": {
+        "proposed_skips": 3,
+        "coverage": 1.0,
+        "correct_skips": 2,
+        "missed_keep": 1,
+        "disputed_mixed": 0,
+        "precision": 0.6666666666666666,
+        "case_ids": [
+          "S022",
+          "S025",
+          "S050"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "by_cohort": {
+      "old13": {
+        "n": 31,
+        "calendar_dates": 11,
+        "class_counts": {
+          "SKIP": 23,
+          "MIXED": 8
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            23,
+            0
+          ],
+          [
+            0,
+            8,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.2839506172839506,
+        "skip_auc": 0.701086956521739,
+        "skip_ap": 0.8619686203721382,
+        "skip_brier": 0.1764695174799869,
+        "0.5": {
+          "proposed_skips": 31,
+          "coverage": 1.0,
+          "correct_skips": 23,
+          "missed_keep": 0,
+          "disputed_mixed": 8,
+          "precision": 0.7419354838709677,
+          "case_ids": [
+            "S014",
+            "S015",
+            "S016",
+            "S017",
+            "S018",
+            "S000",
+            "S001",
+            "S002",
+            "S019",
+            "S020",
+            "S021",
+            "S010",
+            "S011",
+            "S012",
+            "S003",
+            "S004",
+            "S005",
+            "S023",
+            "S024",
+            "S026",
+            "S006",
+            "S007",
+            "S008",
+            "S009",
+            "S013",
+            "S027",
+            "S028",
+            "S029",
+            "S030",
+            "S031",
+            "S032"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 1,
+          "coverage": 0.03225806451612903,
+          "correct_skips": 1,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": 1.0,
+          "case_ids": [
+            "S020"
+          ]
+        }
+      },
+      "G1": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 10,
+          "MIXED": 1
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            1
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.45,
+        "macro_f1": 0.3,
+        "skip_auc": 0.2,
+        "skip_ap": 0.8813455988455987,
+        "skip_brier": 0.1498468300965141,
+        "0.5": {
+          "proposed_skips": 10,
+          "coverage": 0.9090909090909091,
+          "correct_skips": 9,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.9,
+          "case_ids": [
+            "S033",
+            "S034",
+            "S035",
+            "S036",
+            "S037",
+            "S039",
+            "S040",
+            "S041",
+            "S042",
+            "S043"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      },
+      "G2": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 9,
+          "MIXED": 2
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.3,
+        "skip_auc": 0.4444444444444444,
+        "skip_ap": 0.8733605900272567,
+        "skip_brier": 0.18294828910844949,
+        "0.5": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 9,
+          "missed_keep": 0,
+          "disputed_mixed": 2,
+          "precision": 0.8181818181818182,
+          "case_ids": [
+            "S044",
+            "S045",
+            "S046",
+            "S047",
+            "S048",
+            "S049",
+            "S051",
+            "S052",
+            "S053",
+            "S054",
+            "S055"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      }
+    }
+  },
+  {
+    "scheme": "calendar_loo",
+    "model": "ALWAYS_KEEP",
+    "headline": {
+      "n": 53,
+      "calendar_dates": 17,
+      "class_counts": {
+        "SKIP": 42,
+        "MIXED": 11
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          42,
+          0,
+          0
+        ],
+        [
+          11,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "skip_auc": 0.5,
+      "skip_ap": 0.7924528301886793,
+      "skip_brier": 0.7924528301886793,
+      "0.5": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "known_pilots_diagnostic": {
+      "n": 3,
+      "calendar_dates": 2,
+      "class_counts": {
+        "SKIP": 2,
+        "KEEP": 1
+      },
+      "confusion": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.16666666666666666,
+      "skip_auc": 0.5,
+      "skip_ap": 0.6666666666666666,
+      "skip_brier": 0.6666666666666666,
+      "0.5": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "by_cohort": {
+      "old13": {
+        "n": 31,
+        "calendar_dates": 11,
+        "class_counts": {
+          "SKIP": 23,
+          "MIXED": 8
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            23,
+            0,
+            0
+          ],
+          [
+            8,
+            0,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.0,
+        "macro_f1": 0.0,
+        "skip_auc": 0.5,
+        "skip_ap": 0.7419354838709677,
+        "skip_brier": 0.7419354838709677,
+        "0.5": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      },
+      "G1": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 10,
+          "MIXED": 1
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.0,
+        "macro_f1": 0.0,
+        "skip_auc": 0.5,
+        "skip_ap": 0.9090909090909091,
+        "skip_brier": 0.9090909090909091,
+        "0.5": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      },
+      "G2": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 9,
+          "MIXED": 2
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            9,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.0,
+        "macro_f1": 0.0,
+        "skip_auc": 0.5,
+        "skip_ap": 0.8181818181818182,
+        "skip_brier": 0.8181818181818182,
+        "0.5": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      }
+    }
+  },
+  {
+    "scheme": "calendar_loo",
+    "model": "ALWAYS_SKIP",
+    "headline": {
+      "n": 53,
+      "calendar_dates": 17,
+      "class_counts": {
+        "SKIP": 42,
+        "MIXED": 11
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          42,
+          0
+        ],
+        [
+          0,
+          11,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.29473684210526313,
+      "skip_auc": 0.5,
+      "skip_ap": 0.7924528301886793,
+      "skip_brier": 0.20754716981132076,
+      "0.5": {
+        "proposed_skips": 53,
+        "coverage": 1.0,
+        "correct_skips": 42,
+        "missed_keep": 0,
+        "disputed_mixed": 11,
+        "precision": 0.7924528301886793,
+        "case_ids": [
+          "S014",
+          "S015",
+          "S016",
+          "S017",
+          "S018",
+          "S000",
+          "S001",
+          "S002",
+          "S019",
+          "S020",
+          "S021",
+          "S010",
+          "S011",
+          "S012",
+          "S003",
+          "S004",
+          "S005",
+          "S023",
+          "S024",
+          "S026",
+          "S006",
+          "S007",
+          "S008",
+          "S009",
+          "S013",
+          "S027",
+          "S028",
+          "S029",
+          "S030",
+          "S031",
+          "S032",
+          "S033",
+          "S034",
+          "S035",
+          "S044",
+          "S045",
+          "S046",
+          "S036",
+          "S037",
+          "S038",
+          "S047",
+          "S048",
+          "S049",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S051",
+          "S043",
+          "S052",
+          "S053",
+          "S054",
+          "S055"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 53,
+        "coverage": 1.0,
+        "correct_skips": 42,
+        "missed_keep": 0,
+        "disputed_mixed": 11,
+        "precision": 0.7924528301886793,
+        "case_ids": [
+          "S014",
+          "S015",
+          "S016",
+          "S017",
+          "S018",
+          "S000",
+          "S001",
+          "S002",
+          "S019",
+          "S020",
+          "S021",
+          "S010",
+          "S011",
+          "S012",
+          "S003",
+          "S004",
+          "S005",
+          "S023",
+          "S024",
+          "S026",
+          "S006",
+          "S007",
+          "S008",
+          "S009",
+          "S013",
+          "S027",
+          "S028",
+          "S029",
+          "S030",
+          "S031",
+          "S032",
+          "S033",
+          "S034",
+          "S035",
+          "S044",
+          "S045",
+          "S046",
+          "S036",
+          "S037",
+          "S038",
+          "S047",
+          "S048",
+          "S049",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S051",
+          "S043",
+          "S052",
+          "S053",
+          "S054",
+          "S055"
+        ]
+      }
+    },
+    "known_pilots_diagnostic": {
+      "n": 3,
+      "calendar_dates": 2,
+      "class_counts": {
+        "SKIP": 2,
+        "KEEP": 1
+      },
+      "confusion": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.26666666666666666,
+      "skip_auc": 0.5,
+      "skip_ap": 0.6666666666666666,
+      "skip_brier": 0.3333333333333333,
+      "0.5": {
+        "proposed_skips": 3,
+        "coverage": 1.0,
+        "correct_skips": 2,
+        "missed_keep": 1,
+        "disputed_mixed": 0,
+        "precision": 0.6666666666666666,
+        "case_ids": [
+          "S022",
+          "S025",
+          "S050"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 3,
+        "coverage": 1.0,
+        "correct_skips": 2,
+        "missed_keep": 1,
+        "disputed_mixed": 0,
+        "precision": 0.6666666666666666,
+        "case_ids": [
+          "S022",
+          "S025",
+          "S050"
+        ]
+      }
+    },
+    "by_cohort": {
+      "old13": {
+        "n": 31,
+        "calendar_dates": 11,
+        "class_counts": {
+          "SKIP": 23,
+          "MIXED": 8
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            23,
+            0
+          ],
+          [
+            0,
+            8,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.2839506172839506,
+        "skip_auc": 0.5,
+        "skip_ap": 0.7419354838709677,
+        "skip_brier": 0.25806451612903225,
+        "0.5": {
+          "proposed_skips": 31,
+          "coverage": 1.0,
+          "correct_skips": 23,
+          "missed_keep": 0,
+          "disputed_mixed": 8,
+          "precision": 0.7419354838709677,
+          "case_ids": [
+            "S014",
+            "S015",
+            "S016",
+            "S017",
+            "S018",
+            "S000",
+            "S001",
+            "S002",
+            "S019",
+            "S020",
+            "S021",
+            "S010",
+            "S011",
+            "S012",
+            "S003",
+            "S004",
+            "S005",
+            "S023",
+            "S024",
+            "S026",
+            "S006",
+            "S007",
+            "S008",
+            "S009",
+            "S013",
+            "S027",
+            "S028",
+            "S029",
+            "S030",
+            "S031",
+            "S032"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 31,
+          "coverage": 1.0,
+          "correct_skips": 23,
+          "missed_keep": 0,
+          "disputed_mixed": 8,
+          "precision": 0.7419354838709677,
+          "case_ids": [
+            "S014",
+            "S015",
+            "S016",
+            "S017",
+            "S018",
+            "S000",
+            "S001",
+            "S002",
+            "S019",
+            "S020",
+            "S021",
+            "S010",
+            "S011",
+            "S012",
+            "S003",
+            "S004",
+            "S005",
+            "S023",
+            "S024",
+            "S026",
+            "S006",
+            "S007",
+            "S008",
+            "S009",
+            "S013",
+            "S027",
+            "S028",
+            "S029",
+            "S030",
+            "S031",
+            "S032"
+          ]
+        }
+      },
+      "G1": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 10,
+          "MIXED": 1
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.31746031746031744,
+        "skip_auc": 0.5,
+        "skip_ap": 0.9090909090909091,
+        "skip_brier": 0.09090909090909091,
+        "0.5": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 10,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.9090909090909091,
+          "case_ids": [
+            "S033",
+            "S034",
+            "S035",
+            "S036",
+            "S037",
+            "S038",
+            "S039",
+            "S040",
+            "S041",
+            "S042",
+            "S043"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 10,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.9090909090909091,
+          "case_ids": [
+            "S033",
+            "S034",
+            "S035",
+            "S036",
+            "S037",
+            "S038",
+            "S039",
+            "S040",
+            "S041",
+            "S042",
+            "S043"
+          ]
+        }
+      },
+      "G2": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 9,
+          "MIXED": 2
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.3,
+        "skip_auc": 0.5,
+        "skip_ap": 0.8181818181818182,
+        "skip_brier": 0.18181818181818182,
+        "0.5": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 9,
+          "missed_keep": 0,
+          "disputed_mixed": 2,
+          "precision": 0.8181818181818182,
+          "case_ids": [
+            "S044",
+            "S045",
+            "S046",
+            "S047",
+            "S048",
+            "S049",
+            "S051",
+            "S052",
+            "S053",
+            "S054",
+            "S055"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 9,
+          "missed_keep": 0,
+          "disputed_mixed": 2,
+          "precision": 0.8181818181818182,
+          "case_ids": [
+            "S044",
+            "S045",
+            "S046",
+            "S047",
+            "S048",
+            "S049",
+            "S051",
+            "S052",
+            "S053",
+            "S054",
+            "S055"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "scheme": "calendar_loo",
+    "model": "TRAIN_PRIOR",
+    "headline": {
+      "n": 53,
+      "calendar_dates": 17,
+      "class_counts": {
+        "SKIP": 42,
+        "MIXED": 11
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          42,
+          0
+        ],
+        [
+          0,
+          11,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.29473684210526313,
+      "skip_auc": 0.12662337662337664,
+      "skip_ap": 0.6662502138418662,
+      "skip_brier": 0.17966907429245277,
+      "0.5": {
+        "proposed_skips": 53,
+        "coverage": 1.0,
+        "correct_skips": 42,
+        "missed_keep": 0,
+        "disputed_mixed": 11,
+        "precision": 0.7924528301886793,
+        "case_ids": [
+          "S014",
+          "S015",
+          "S016",
+          "S017",
+          "S018",
+          "S000",
+          "S001",
+          "S002",
+          "S019",
+          "S020",
+          "S021",
+          "S010",
+          "S011",
+          "S012",
+          "S003",
+          "S004",
+          "S005",
+          "S023",
+          "S024",
+          "S026",
+          "S006",
+          "S007",
+          "S008",
+          "S009",
+          "S013",
+          "S027",
+          "S028",
+          "S029",
+          "S030",
+          "S031",
+          "S032",
+          "S033",
+          "S034",
+          "S035",
+          "S044",
+          "S045",
+          "S046",
+          "S036",
+          "S037",
+          "S038",
+          "S047",
+          "S048",
+          "S049",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S051",
+          "S043",
+          "S052",
+          "S053",
+          "S054",
+          "S055"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "known_pilots_diagnostic": {
+      "n": 3,
+      "calendar_dates": 2,
+      "class_counts": {
+        "SKIP": 2,
+        "KEEP": 1
+      },
+      "confusion": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.26666666666666666,
+      "skip_auc": 0.25,
+      "skip_ap": 0.5833333333333333,
+      "skip_brier": 0.22983072916666666,
+      "0.5": {
+        "proposed_skips": 3,
+        "coverage": 1.0,
+        "correct_skips": 2,
+        "missed_keep": 1,
+        "disputed_mixed": 0,
+        "precision": 0.6666666666666666,
+        "case_ids": [
+          "S022",
+          "S025",
+          "S050"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "by_cohort": {
+      "old13": {
+        "n": 31,
+        "calendar_dates": 11,
+        "class_counts": {
+          "SKIP": 23,
+          "MIXED": 8
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            23,
+            0
+          ],
+          [
+            0,
+            8,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.2839506172839506,
+        "skip_auc": 0.23369565217391303,
+        "skip_ap": 0.6412876511053228,
+        "skip_brier": 0.19781123991935481,
+        "0.5": {
+          "proposed_skips": 31,
+          "coverage": 1.0,
+          "correct_skips": 23,
+          "missed_keep": 0,
+          "disputed_mixed": 8,
+          "precision": 0.7419354838709677,
+          "case_ids": [
+            "S014",
+            "S015",
+            "S016",
+            "S017",
+            "S018",
+            "S000",
+            "S001",
+            "S002",
+            "S019",
+            "S020",
+            "S021",
+            "S010",
+            "S011",
+            "S012",
+            "S003",
+            "S004",
+            "S005",
+            "S023",
+            "S024",
+            "S026",
+            "S006",
+            "S007",
+            "S008",
+            "S009",
+            "S013",
+            "S027",
+            "S028",
+            "S029",
+            "S030",
+            "S031",
+            "S032"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      },
+      "G1": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 10,
+          "MIXED": 1
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.31746031746031744,
+        "skip_auc": 0.0,
+        "skip_ap": 0.8504545454545455,
+        "skip_brier": 0.13554450757575756,
+        "0.5": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 10,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.9090909090909091,
+          "case_ids": [
+            "S033",
+            "S034",
+            "S035",
+            "S036",
+            "S037",
+            "S038",
+            "S039",
+            "S040",
+            "S041",
+            "S042",
+            "S043"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      },
+      "G2": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 9,
+          "MIXED": 2
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.3,
+        "skip_auc": 0.05555555555555555,
+        "skip_ap": 0.7128427128427128,
+        "skip_brier": 0.1726657196969697,
+        "0.5": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 9,
+          "missed_keep": 0,
+          "disputed_mixed": 2,
+          "precision": 0.8181818181818182,
+          "case_ids": [
+            "S044",
+            "S045",
+            "S046",
+            "S047",
+            "S048",
+            "S049",
+            "S051",
+            "S052",
+            "S053",
+            "S054",
+            "S055"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      }
+    }
+  },
+  {
+    "scheme": "old_to_generated",
+    "model": "LOGISTIC",
+    "headline": {
+      "n": 22,
+      "calendar_dates": 6,
+      "class_counts": {
+        "SKIP": 19,
+        "MIXED": 3
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          17,
+          2
+        ],
+        [
+          0,
+          3,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.4473684210526316,
+      "macro_f1": 0.2905982905982906,
+      "skip_auc": 0.3508771929824561,
+      "skip_ap": 0.8656449707390719,
+      "skip_brier": 0.20282677759843948,
+      "0.5": {
+        "proposed_skips": 20,
+        "coverage": 0.9090909090909091,
+        "correct_skips": 17,
+        "missed_keep": 0,
+        "disputed_mixed": 3,
+        "precision": 0.85,
+        "case_ids": [
+          "S033",
+          "S034",
+          "S035",
+          "S036",
+          "S037",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S043",
+          "S044",
+          "S045",
+          "S046",
+          "S047",
+          "S048",
+          "S049",
+          "S051",
+          "S052",
+          "S053",
+          "S055"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 16,
+        "coverage": 0.7272727272727273,
+        "correct_skips": 13,
+        "missed_keep": 0,
+        "disputed_mixed": 3,
+        "precision": 0.8125,
+        "case_ids": [
+          "S033",
+          "S034",
+          "S036",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S043",
+          "S045",
+          "S046",
+          "S047",
+          "S048",
+          "S049",
+          "S052",
+          "S053",
+          "S055"
+        ]
+      }
+    },
+    "known_pilots_diagnostic": {
+      "n": 1,
+      "calendar_dates": 1,
+      "class_counts": {
+        "SKIP": 1
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 1.0,
+      "macro_f1": 0.3333333333333333,
+      "skip_auc": null,
+      "skip_ap": 1.0,
+      "skip_brier": 0.1611813196848054,
+      "0.5": {
+        "proposed_skips": 1,
+        "coverage": 1.0,
+        "correct_skips": 1,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": 1.0,
+        "case_ids": [
+          "S050"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "by_cohort": {
+      "old13": {
+        "n": 0
+      },
+      "G1": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 10,
+          "MIXED": 1
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            1
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.45,
+        "macro_f1": 0.3,
+        "skip_auc": 0.5,
+        "skip_ap": 0.9430122655122654,
+        "skip_brier": 0.1937260282257317,
+        "0.5": {
+          "proposed_skips": 10,
+          "coverage": 0.9090909090909091,
+          "correct_skips": 9,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.9,
+          "case_ids": [
+            "S033",
+            "S034",
+            "S035",
+            "S036",
+            "S037",
+            "S039",
+            "S040",
+            "S041",
+            "S042",
+            "S043"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 8,
+          "coverage": 0.7272727272727273,
+          "correct_skips": 7,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.875,
+          "case_ids": [
+            "S033",
+            "S034",
+            "S036",
+            "S039",
+            "S040",
+            "S041",
+            "S042",
+            "S043"
+          ]
+        }
+      },
+      "G2": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 9,
+          "MIXED": 2
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            1
+          ],
+          [
+            0,
+            2,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.4444444444444444,
+        "macro_f1": 0.2807017543859649,
+        "skip_auc": 0.16666666666666666,
+        "skip_ap": 0.7159531826198493,
+        "skip_brier": 0.21192752697114728,
+        "0.5": {
+          "proposed_skips": 10,
+          "coverage": 0.9090909090909091,
+          "correct_skips": 8,
+          "missed_keep": 0,
+          "disputed_mixed": 2,
+          "precision": 0.8,
+          "case_ids": [
+            "S044",
+            "S045",
+            "S046",
+            "S047",
+            "S048",
+            "S049",
+            "S051",
+            "S052",
+            "S053",
+            "S055"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 8,
+          "coverage": 0.7272727272727273,
+          "correct_skips": 6,
+          "missed_keep": 0,
+          "disputed_mixed": 2,
+          "precision": 0.75,
+          "case_ids": [
+            "S045",
+            "S046",
+            "S047",
+            "S048",
+            "S049",
+            "S052",
+            "S053",
+            "S055"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "scheme": "old_to_generated",
+    "model": "FOREST64",
+    "headline": {
+      "n": 22,
+      "calendar_dates": 6,
+      "class_counts": {
+        "SKIP": 19,
+        "MIXED": 3
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          18,
+          1
+        ],
+        [
+          0,
+          3,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.47368421052631576,
+      "macro_f1": 0.3,
+      "skip_auc": 0.5263157894736842,
+      "skip_ap": 0.9193663955131282,
+      "skip_brier": 0.15498272420553258,
+      "0.5": {
+        "proposed_skips": 21,
+        "coverage": 0.9545454545454546,
+        "correct_skips": 18,
+        "missed_keep": 0,
+        "disputed_mixed": 3,
+        "precision": 0.8571428571428571,
+        "case_ids": [
+          "S033",
+          "S034",
+          "S035",
+          "S036",
+          "S037",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S043",
+          "S044",
+          "S045",
+          "S046",
+          "S047",
+          "S048",
+          "S049",
+          "S051",
+          "S052",
+          "S053",
+          "S054",
+          "S055"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "known_pilots_diagnostic": {
+      "n": 1,
+      "calendar_dates": 1,
+      "class_counts": {
+        "SKIP": 1
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 1.0,
+      "macro_f1": 0.3333333333333333,
+      "skip_auc": null,
+      "skip_ap": 1.0,
+      "skip_brier": 0.07068893122177657,
+      "0.5": {
+        "proposed_skips": 1,
+        "coverage": 1.0,
+        "correct_skips": 1,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": 1.0,
+        "case_ids": [
+          "S050"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "by_cohort": {
+      "old13": {
+        "n": 0
+      },
+      "G1": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 10,
+          "MIXED": 1
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            1
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.45,
+        "macro_f1": 0.3,
+        "skip_auc": 0.6,
+        "skip_ap": 0.9572979797979797,
+        "skip_brier": 0.1381611258466482,
+        "0.5": {
+          "proposed_skips": 10,
+          "coverage": 0.9090909090909091,
+          "correct_skips": 9,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.9,
+          "case_ids": [
+            "S033",
+            "S034",
+            "S035",
+            "S036",
+            "S037",
+            "S039",
+            "S040",
+            "S041",
+            "S042",
+            "S043"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      },
+      "G2": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 9,
+          "MIXED": 2
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.3,
+        "skip_auc": 0.4444444444444444,
+        "skip_ap": 0.8733605900272567,
+        "skip_brier": 0.1718043225644169,
+        "0.5": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 9,
+          "missed_keep": 0,
+          "disputed_mixed": 2,
+          "precision": 0.8181818181818182,
+          "case_ids": [
+            "S044",
+            "S045",
+            "S046",
+            "S047",
+            "S048",
+            "S049",
+            "S051",
+            "S052",
+            "S053",
+            "S054",
+            "S055"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      }
+    }
+  },
+  {
+    "scheme": "old_to_generated",
+    "model": "ALWAYS_KEEP",
+    "headline": {
+      "n": 22,
+      "calendar_dates": 6,
+      "class_counts": {
+        "SKIP": 19,
+        "MIXED": 3
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          19,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "skip_auc": 0.5,
+      "skip_ap": 0.8636363636363636,
+      "skip_brier": 0.8636363636363636,
+      "0.5": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "known_pilots_diagnostic": {
+      "n": 1,
+      "calendar_dates": 1,
+      "class_counts": {
+        "SKIP": 1
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.0,
+      "macro_f1": 0.0,
+      "skip_auc": null,
+      "skip_ap": 1.0,
+      "skip_brier": 1.0,
+      "0.5": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "by_cohort": {
+      "old13": {
+        "n": 0
+      },
+      "G1": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 10,
+          "MIXED": 1
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.0,
+        "macro_f1": 0.0,
+        "skip_auc": 0.5,
+        "skip_ap": 0.9090909090909091,
+        "skip_brier": 0.9090909090909091,
+        "0.5": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      },
+      "G2": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 9,
+          "MIXED": 2
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            9,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.0,
+        "macro_f1": 0.0,
+        "skip_auc": 0.5,
+        "skip_ap": 0.8181818181818182,
+        "skip_brier": 0.8181818181818182,
+        "0.5": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      }
+    }
+  },
+  {
+    "scheme": "old_to_generated",
+    "model": "ALWAYS_SKIP",
+    "headline": {
+      "n": 22,
+      "calendar_dates": 6,
+      "class_counts": {
+        "SKIP": 19,
+        "MIXED": 3
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          19,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.3089430894308943,
+      "skip_auc": 0.5,
+      "skip_ap": 0.8636363636363636,
+      "skip_brier": 0.13636363636363635,
+      "0.5": {
+        "proposed_skips": 22,
+        "coverage": 1.0,
+        "correct_skips": 19,
+        "missed_keep": 0,
+        "disputed_mixed": 3,
+        "precision": 0.8636363636363636,
+        "case_ids": [
+          "S033",
+          "S034",
+          "S035",
+          "S036",
+          "S037",
+          "S038",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S043",
+          "S044",
+          "S045",
+          "S046",
+          "S047",
+          "S048",
+          "S049",
+          "S051",
+          "S052",
+          "S053",
+          "S054",
+          "S055"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 22,
+        "coverage": 1.0,
+        "correct_skips": 19,
+        "missed_keep": 0,
+        "disputed_mixed": 3,
+        "precision": 0.8636363636363636,
+        "case_ids": [
+          "S033",
+          "S034",
+          "S035",
+          "S036",
+          "S037",
+          "S038",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S043",
+          "S044",
+          "S045",
+          "S046",
+          "S047",
+          "S048",
+          "S049",
+          "S051",
+          "S052",
+          "S053",
+          "S054",
+          "S055"
+        ]
+      }
+    },
+    "known_pilots_diagnostic": {
+      "n": 1,
+      "calendar_dates": 1,
+      "class_counts": {
+        "SKIP": 1
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 1.0,
+      "macro_f1": 0.3333333333333333,
+      "skip_auc": null,
+      "skip_ap": 1.0,
+      "skip_brier": 0.0,
+      "0.5": {
+        "proposed_skips": 1,
+        "coverage": 1.0,
+        "correct_skips": 1,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": 1.0,
+        "case_ids": [
+          "S050"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 1,
+        "coverage": 1.0,
+        "correct_skips": 1,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": 1.0,
+        "case_ids": [
+          "S050"
+        ]
+      }
+    },
+    "by_cohort": {
+      "old13": {
+        "n": 0
+      },
+      "G1": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 10,
+          "MIXED": 1
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.31746031746031744,
+        "skip_auc": 0.5,
+        "skip_ap": 0.9090909090909091,
+        "skip_brier": 0.09090909090909091,
+        "0.5": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 10,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.9090909090909091,
+          "case_ids": [
+            "S033",
+            "S034",
+            "S035",
+            "S036",
+            "S037",
+            "S038",
+            "S039",
+            "S040",
+            "S041",
+            "S042",
+            "S043"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 10,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.9090909090909091,
+          "case_ids": [
+            "S033",
+            "S034",
+            "S035",
+            "S036",
+            "S037",
+            "S038",
+            "S039",
+            "S040",
+            "S041",
+            "S042",
+            "S043"
+          ]
+        }
+      },
+      "G2": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 9,
+          "MIXED": 2
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.3,
+        "skip_auc": 0.5,
+        "skip_ap": 0.8181818181818182,
+        "skip_brier": 0.18181818181818182,
+        "0.5": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 9,
+          "missed_keep": 0,
+          "disputed_mixed": 2,
+          "precision": 0.8181818181818182,
+          "case_ids": [
+            "S044",
+            "S045",
+            "S046",
+            "S047",
+            "S048",
+            "S049",
+            "S051",
+            "S052",
+            "S053",
+            "S054",
+            "S055"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 9,
+          "missed_keep": 0,
+          "disputed_mixed": 2,
+          "precision": 0.8181818181818182,
+          "case_ids": [
+            "S044",
+            "S045",
+            "S046",
+            "S047",
+            "S048",
+            "S049",
+            "S051",
+            "S052",
+            "S053",
+            "S054",
+            "S055"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "scheme": "old_to_generated",
+    "model": "TRAIN_PRIOR",
+    "headline": {
+      "n": 22,
+      "calendar_dates": 6,
+      "class_counts": {
+        "SKIP": 19,
+        "MIXED": 3
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          19,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ]
+      ],
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.3089430894308943,
+      "skip_auc": 0.5,
+      "skip_ap": 0.8636363636363636,
+      "skip_brier": 0.13033976124885216,
+      "0.5": {
+        "proposed_skips": 22,
+        "coverage": 1.0,
+        "correct_skips": 19,
+        "missed_keep": 0,
+        "disputed_mixed": 3,
+        "precision": 0.8636363636363636,
+        "case_ids": [
+          "S033",
+          "S034",
+          "S035",
+          "S036",
+          "S037",
+          "S038",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S043",
+          "S044",
+          "S045",
+          "S046",
+          "S047",
+          "S048",
+          "S049",
+          "S051",
+          "S052",
+          "S053",
+          "S054",
+          "S055"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "known_pilots_diagnostic": {
+      "n": 1,
+      "calendar_dates": 1,
+      "class_counts": {
+        "SKIP": 1
+      },
+      "confusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "balanced_accuracy": 1.0,
+      "macro_f1": 0.3333333333333333,
+      "skip_auc": null,
+      "skip_ap": 1.0,
+      "skip_brier": 0.061744719926538134,
+      "0.5": {
+        "proposed_skips": 1,
+        "coverage": 1.0,
+        "correct_skips": 1,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": 1.0,
+        "case_ids": [
+          "S050"
+        ]
+      },
+      "0.95": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    },
+    "by_cohort": {
+      "old13": {
+        "n": 0
+      },
+      "G1": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 10,
+          "MIXED": 1
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.31746031746031744,
+        "skip_auc": 0.5,
+        "skip_ap": 0.9090909090909091,
+        "skip_brier": 0.1074747474747475,
+        "0.5": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 10,
+          "missed_keep": 0,
+          "disputed_mixed": 1,
+          "precision": 0.9090909090909091,
+          "case_ids": [
+            "S033",
+            "S034",
+            "S035",
+            "S036",
+            "S037",
+            "S038",
+            "S039",
+            "S040",
+            "S041",
+            "S042",
+            "S043"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      },
+      "G2": {
+        "n": 11,
+        "calendar_dates": 5,
+        "class_counts": {
+          "SKIP": 9,
+          "MIXED": 2
+        },
+        "confusion": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            9,
+            0
+          ],
+          [
+            0,
+            2,
+            0
+          ]
+        ],
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.3,
+        "skip_auc": 0.5,
+        "skip_ap": 0.8181818181818182,
+        "skip_brier": 0.15320477502295685,
+        "0.5": {
+          "proposed_skips": 11,
+          "coverage": 1.0,
+          "correct_skips": 9,
+          "missed_keep": 0,
+          "disputed_mixed": 2,
+          "precision": 0.8181818181818182,
+          "case_ids": [
+            "S044",
+            "S045",
+            "S046",
+            "S047",
+            "S048",
+            "S049",
+            "S051",
+            "S052",
+            "S053",
+            "S054",
+            "S055"
+          ]
+        },
+        "0.95": {
+          "proposed_skips": 0,
+          "coverage": 0.0,
+          "correct_skips": 0,
+          "missed_keep": 0,
+          "disputed_mixed": 0,
+          "precision": null,
+          "case_ids": []
+        }
+      }
+    }
+  }
+]

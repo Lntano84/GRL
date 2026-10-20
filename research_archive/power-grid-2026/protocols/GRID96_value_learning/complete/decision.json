@@ -1,0 +1,101 @@
+{
+  "label_collection_qualified": true,
+  "learning_diagnostic_completed": true,
+  "states": 56,
+  "primary_counts": {
+    "SKIP": 44,
+    "MIXED": 11,
+    "KEEP": 1
+  },
+  "fixed_threshold_results": [
+    {
+      "scheme": "calendar_loo",
+      "model": "LOGISTIC",
+      "result": {
+        "proposed_skips": 13,
+        "coverage": 0.24528301886792453,
+        "correct_skips": 8,
+        "missed_keep": 0,
+        "disputed_mixed": 5,
+        "precision": 0.6153846153846154,
+        "case_ids": [
+          "S020",
+          "S021",
+          "S010",
+          "S011",
+          "S003",
+          "S023",
+          "S031",
+          "S047",
+          "S039",
+          "S042",
+          "S043",
+          "S052",
+          "S055"
+        ]
+      }
+    },
+    {
+      "scheme": "calendar_loo",
+      "model": "FOREST64",
+      "result": {
+        "proposed_skips": 1,
+        "coverage": 0.018867924528301886,
+        "correct_skips": 1,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": 1.0,
+        "case_ids": [
+          "S020"
+        ]
+      }
+    },
+    {
+      "scheme": "old_to_generated",
+      "model": "LOGISTIC",
+      "result": {
+        "proposed_skips": 16,
+        "coverage": 0.7272727272727273,
+        "correct_skips": 13,
+        "missed_keep": 0,
+        "disputed_mixed": 3,
+        "precision": 0.8125,
+        "case_ids": [
+          "S033",
+          "S034",
+          "S036",
+          "S039",
+          "S040",
+          "S041",
+          "S042",
+          "S043",
+          "S045",
+          "S046",
+          "S047",
+          "S048",
+          "S049",
+          "S052",
+          "S053",
+          "S055"
+        ]
+      }
+    },
+    {
+      "scheme": "old_to_generated",
+      "model": "FOREST64",
+      "result": {
+        "proposed_skips": 0,
+        "coverage": 0.0,
+        "correct_skips": 0,
+        "missed_keep": 0,
+        "disputed_mixed": 0,
+        "precision": null,
+        "case_ids": []
+      }
+    }
+  ],
+  "no_model_or_threshold_selected": true,
+  "learned_gate_deployed": false,
+  "new_gated_closed_loop_runs": 0,
+  "scope": "Conditional individual omission values under original FRAME continuation. Never aggregate overlapping interventions as deployable policy savings. Same public grid and exposed dates; pilot diagnostics excluded headline."
+}

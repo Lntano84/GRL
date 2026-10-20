@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "checks": {
+    "independent_probability_checks": 158,
+    "fits_or_baselines": 90
+  },
+  "valid_states": 56,
+  "unresolved_states": 0,
+  "features": [
+    "incumbent_rho",
+    "rho_limit",
+    "prefix_safe",
+    "incumbent_changed",
+    "prefix_valid",
+    "gain_since_prefix",
+    "observed_reward_gap",
+    "queried_fraction",
+    "remaining_station_fraction",
+    "observed_admissible_fraction",
+    "station_observed_admissible_fraction",
+    "station_support",
+    "station_support_missing",
+    "last_batch_gain",
+    "improving_batch_fraction"
+  ],
+  "classes": [
+    "KEEP",
+    "SKIP",
+    "MIXED"
+  ],
+  "group_isolation_passed": true,
+  "thresholds": [
+    0.5,
+    0.95
+  ],
+  "deployment": false,
+  "independent_saved_export_audit": {
+    "passed": true,
+    "checks": {
+      "fits": 90,
+      "predictions": 395,
+      "metric_groups": 10
+    }
+  }
+}

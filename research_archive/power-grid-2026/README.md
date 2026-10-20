@@ -634,3 +634,5 @@ ExpertOp4Grid外部结构启发式：同六个已暴露G2场景、同合法动�
 学习暂停。固定4状态、2条原轨迹重现及4条只取消一次补查的完整前缀对照已核验；干预前动作/观测/反馈与审阅数值记忆一致，同动作取消29查询后整周轨迹一致。主标签为剩余整周存活/成本/查询向量，短期窗口均保留，权衡不强制二分；不把整策略结果贴给单次调用。具体正负与存活结论见GRID95_report.md，无新拟合。
 
 [报告](protocols/GRID95_labels/complete/GRID95_report.md)。
+
+- GRID96：单次补查价值标签与逻辑回归/64浅树固定评估，见`protocols/GRID96_value_learning/complete/GRID96_report.md`。

@@ -1,0 +1,72 @@
+{
+  "models": [
+    {
+      "model": "LOGISTIC",
+      "auc_delta": -0.02982456140350881,
+      "ba_delta": 0.0,
+      "threshold95": {
+        "proposed_omissions": 9,
+        "correct_redundancy": 6,
+        "changed_path_misclassified": 3,
+        "coverage": 0.16981132075471697,
+        "precision": 0.6666666666666666,
+        "case_ids": [
+          "S018",
+          "S019",
+          "S021",
+          "S010",
+          "S024",
+          "S008",
+          "S033",
+          "S042",
+          "S043"
+        ],
+        "false_omission_ids": [
+          "S021",
+          "S010",
+          "S043"
+        ],
+        "false_omission_original_labels": [
+          "MIXED",
+          "MIXED",
+          "SKIP"
+        ]
+      },
+      "known_KEEP_probability": 0.3980186549761462
+    },
+    {
+      "model": "FOREST64",
+      "auc_delta": 0.019298245614035037,
+      "ba_delta": 0.033333333333333326,
+      "threshold95": {
+        "proposed_omissions": 0,
+        "correct_redundancy": 0,
+        "changed_path_misclassified": 0,
+        "coverage": 0.0,
+        "precision": null,
+        "case_ids": [],
+        "false_omission_ids": [],
+        "false_omission_original_labels": []
+      },
+      "known_KEEP_probability": 0.5766948546245422
+    },
+    {
+      "model": "TABPFN_V2",
+      "auc_delta": -0.0035087719298245723,
+      "ba_delta": 0.01315789473684209,
+      "threshold95": {
+        "proposed_omissions": 0,
+        "correct_redundancy": 0,
+        "changed_path_misclassified": 0,
+        "coverage": 0.0,
+        "precision": null,
+        "case_ids": [],
+        "false_omission_ids": [],
+        "false_omission_original_labels": []
+      },
+      "known_KEEP_probability": 0.6572226285934448
+    }
+  ],
+  "model_selected_for_deployment": false,
+  "extra_fits": 0
+}

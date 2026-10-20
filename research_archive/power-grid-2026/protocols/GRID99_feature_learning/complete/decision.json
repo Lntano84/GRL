@@ -1,0 +1,128 @@
+{
+  "status": "fixed_comparison_completed",
+  "utc": "2026-10-20T15:13:58.034154+00:00",
+  "comparisons": [
+    {
+      "model": "LOGISTIC",
+      "original_auc": 0.5,
+      "enriched_auc": 0.4701754385964912,
+      "original_ba": 0.4614035087719298,
+      "enriched_ba": 0.4614035087719298,
+      "original95": {
+        "proposed_omissions": 5,
+        "correct_redundancy": 2,
+        "changed_path_misclassified": 3,
+        "coverage": 0.09433962264150944,
+        "precision": 0.4,
+        "case_ids": [
+          "S021",
+          "S010",
+          "S024",
+          "S042",
+          "S043"
+        ],
+        "false_omission_ids": [
+          "S021",
+          "S010",
+          "S043"
+        ],
+        "false_omission_original_labels": [
+          "MIXED",
+          "MIXED",
+          "SKIP"
+        ]
+      },
+      "enriched95": {
+        "proposed_omissions": 9,
+        "correct_redundancy": 6,
+        "changed_path_misclassified": 3,
+        "coverage": 0.16981132075471697,
+        "precision": 0.6666666666666666,
+        "case_ids": [
+          "S018",
+          "S019",
+          "S021",
+          "S010",
+          "S024",
+          "S008",
+          "S033",
+          "S042",
+          "S043"
+        ],
+        "false_omission_ids": [
+          "S021",
+          "S010",
+          "S043"
+        ],
+        "false_omission_original_labels": [
+          "MIXED",
+          "MIXED",
+          "SKIP"
+        ]
+      }
+    },
+    {
+      "model": "FOREST64",
+      "original_auc": 0.4982456140350877,
+      "enriched_auc": 0.5175438596491228,
+      "original_ba": 0.4342105263157895,
+      "enriched_ba": 0.4675438596491228,
+      "original95": {
+        "proposed_omissions": 0,
+        "correct_redundancy": 0,
+        "changed_path_misclassified": 0,
+        "coverage": 0.0,
+        "precision": null,
+        "case_ids": [],
+        "false_omission_ids": [],
+        "false_omission_original_labels": []
+      },
+      "enriched95": {
+        "proposed_omissions": 0,
+        "correct_redundancy": 0,
+        "changed_path_misclassified": 0,
+        "coverage": 0.0,
+        "precision": null,
+        "case_ids": [],
+        "false_omission_ids": [],
+        "false_omission_original_labels": []
+      }
+    },
+    {
+      "model": "TABPFN_V2",
+      "original_auc": 0.38070175438596493,
+      "enriched_auc": 0.37719298245614036,
+      "original_ba": 0.4605263157894737,
+      "enriched_ba": 0.47368421052631576,
+      "original95": {
+        "proposed_omissions": 0,
+        "correct_redundancy": 0,
+        "changed_path_misclassified": 0,
+        "coverage": 0.0,
+        "precision": null,
+        "case_ids": [],
+        "false_omission_ids": [],
+        "false_omission_original_labels": []
+      },
+      "enriched95": {
+        "proposed_omissions": 0,
+        "correct_redundancy": 0,
+        "changed_path_misclassified": 0,
+        "coverage": 0.0,
+        "precision": null,
+        "case_ids": [],
+        "false_omission_ids": [],
+        "false_omission_original_labels": []
+      }
+    }
+  ],
+  "descriptive_only": true,
+  "independent_test": false,
+  "feature_set_selected_for_deployment": false,
+  "learned_gate_deployment": false,
+  "new_physical_replays": 0,
+  "extra_hyperparameter_fits": 0,
+  "conclusion": "本轮补充特征没有带来实质改善：浅层森林AUC由0.498升到0.518，但平衡准确率仍只有0.468；逻辑回归与TabPFN的AUC反而略降。不能再简单认为多加特征或换大模型就能解决；目前这批样本和这些输入尚不支持可靠的补查取消门控。该结果也不能区分样本不足、特征信息不足与目标难度，不外推所有学习方法无效。",
+  "practical_redundancy_gate_supported": false,
+  "feature_enrichment_solved_problem": false
+}

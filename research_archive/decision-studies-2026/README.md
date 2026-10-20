@@ -59,3 +59,5 @@ python scripts/archive/restore_artifacts.py /path/to/grl-20261006-lot.tar.gz --o
 - GRID97补查轨迹影响：相同56例/15特征/日期隔离的LR、浅树、TabPFNv2离线比较，53非试点主成绩，全部误判保留；无新物理回放或部署。见power-grid-2026/protocols/GRID97_effect_learning/complete/GRID97_report.md。
 
 - GRID98：56例补查前特征由15维保留扩为35维，候选结构/同站反馈/当前状态；隐藏反馈隔离与1120独立复算通过，无新拟合或回放。见GRID98_feature_enrichment/complete/GRID98_report.md。
+
+- GRID99：原15维/补充35维、固定LR/浅树/TabPFNv2日期隔离比较，108上下文、原15维重现及误判完整保留，无新物理回放或部署。见GRID99_feature_learning/complete/GRID99_report.md。

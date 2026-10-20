@@ -1,0 +1,227 @@
+[
+  {
+    "model": "LOGISTIC",
+    "scheme": "calendar_loo",
+    "auc_delta": -0.02982456140350881,
+    "balanced_accuracy_delta": 0.0,
+    "brier_delta": 0.029336318550910956,
+    "fixed95_original": {
+      "proposed_omissions": 5,
+      "correct_redundancy": 2,
+      "changed_path_misclassified": 3,
+      "coverage": 0.09433962264150944,
+      "precision": 0.4,
+      "case_ids": [
+        "S021",
+        "S010",
+        "S024",
+        "S042",
+        "S043"
+      ],
+      "false_omission_ids": [
+        "S021",
+        "S010",
+        "S043"
+      ],
+      "false_omission_original_labels": [
+        "MIXED",
+        "MIXED",
+        "SKIP"
+      ]
+    },
+    "fixed95_enriched": {
+      "proposed_omissions": 9,
+      "correct_redundancy": 6,
+      "changed_path_misclassified": 3,
+      "coverage": 0.16981132075471697,
+      "precision": 0.6666666666666666,
+      "case_ids": [
+        "S018",
+        "S019",
+        "S021",
+        "S010",
+        "S024",
+        "S008",
+        "S033",
+        "S042",
+        "S043"
+      ],
+      "false_omission_ids": [
+        "S021",
+        "S010",
+        "S043"
+      ],
+      "false_omission_original_labels": [
+        "MIXED",
+        "MIXED",
+        "SKIP"
+      ]
+    }
+  },
+  {
+    "model": "FOREST64",
+    "scheme": "calendar_loo",
+    "auc_delta": 0.019298245614035037,
+    "balanced_accuracy_delta": 0.033333333333333326,
+    "brier_delta": 0.003472616445887755,
+    "fixed95_original": {
+      "proposed_omissions": 0,
+      "correct_redundancy": 0,
+      "changed_path_misclassified": 0,
+      "coverage": 0.0,
+      "precision": null,
+      "case_ids": [],
+      "false_omission_ids": [],
+      "false_omission_original_labels": []
+    },
+    "fixed95_enriched": {
+      "proposed_omissions": 0,
+      "correct_redundancy": 0,
+      "changed_path_misclassified": 0,
+      "coverage": 0.0,
+      "precision": null,
+      "case_ids": [],
+      "false_omission_ids": [],
+      "false_omission_original_labels": []
+    }
+  },
+  {
+    "model": "TABPFN_V2",
+    "scheme": "calendar_loo",
+    "auc_delta": -0.0035087719298245723,
+    "balanced_accuracy_delta": 0.01315789473684209,
+    "brier_delta": -0.005626144349032719,
+    "fixed95_original": {
+      "proposed_omissions": 0,
+      "correct_redundancy": 0,
+      "changed_path_misclassified": 0,
+      "coverage": 0.0,
+      "precision": null,
+      "case_ids": [],
+      "false_omission_ids": [],
+      "false_omission_original_labels": []
+    },
+    "fixed95_enriched": {
+      "proposed_omissions": 0,
+      "correct_redundancy": 0,
+      "changed_path_misclassified": 0,
+      "coverage": 0.0,
+      "precision": null,
+      "case_ids": [],
+      "false_omission_ids": [],
+      "false_omission_original_labels": []
+    }
+  },
+  {
+    "model": "LOGISTIC",
+    "scheme": "old_to_generated",
+    "auc_delta": -0.1176470588235295,
+    "balanced_accuracy_delta": 0.0,
+    "brier_delta": 0.025959928439453328,
+    "fixed95_original": {
+      "proposed_omissions": 8,
+      "correct_redundancy": 7,
+      "changed_path_misclassified": 1,
+      "coverage": 0.36363636363636365,
+      "precision": 0.875,
+      "case_ids": [
+        "S033",
+        "S034",
+        "S036",
+        "S040",
+        "S043",
+        "S046",
+        "S048",
+        "S049"
+      ],
+      "false_omission_ids": [
+        "S043"
+      ],
+      "false_omission_original_labels": [
+        "SKIP"
+      ]
+    },
+    "fixed95_enriched": {
+      "proposed_omissions": 9,
+      "correct_redundancy": 7,
+      "changed_path_misclassified": 2,
+      "coverage": 0.4090909090909091,
+      "precision": 0.7777777777777778,
+      "case_ids": [
+        "S033",
+        "S034",
+        "S036",
+        "S040",
+        "S041",
+        "S043",
+        "S046",
+        "S049",
+        "S053"
+      ],
+      "false_omission_ids": [
+        "S043",
+        "S053"
+      ],
+      "false_omission_original_labels": [
+        "SKIP",
+        "SKIP"
+      ]
+    }
+  },
+  {
+    "model": "FOREST64",
+    "scheme": "old_to_generated",
+    "auc_delta": 0.07058823529411762,
+    "balanced_accuracy_delta": 0.02941176470588236,
+    "brier_delta": -0.018957593935747363,
+    "fixed95_original": {
+      "proposed_omissions": 1,
+      "correct_redundancy": 1,
+      "changed_path_misclassified": 0,
+      "coverage": 0.045454545454545456,
+      "precision": 1.0,
+      "case_ids": [
+        "S046"
+      ],
+      "false_omission_ids": [],
+      "false_omission_original_labels": []
+    },
+    "fixed95_enriched": {
+      "proposed_omissions": 0,
+      "correct_redundancy": 0,
+      "changed_path_misclassified": 0,
+      "coverage": 0.0,
+      "precision": null,
+      "case_ids": [],
+      "false_omission_ids": [],
+      "false_omission_original_labels": []
+    }
+  },
+  {
+    "model": "TABPFN_V2",
+    "scheme": "old_to_generated",
+    "auc_delta": -0.023529411764705854,
+    "balanced_accuracy_delta": -0.07058823529411767,
+    "brier_delta": -0.0032964146988458953,
+    "fixed95_original": {
+      "proposed_omissions": 0,
+      "correct_redundancy": 0,
+      "changed_path_misclassified": 0,
+      "coverage": 0.0,
+      "precision": null,
+      "case_ids": [],
+      "false_omission_ids": [],
+      "false_omission_original_labels": []
+    },
+    "fixed95_enriched": {
+      "proposed_omissions": 0,
+      "correct_redundancy": 0,
+      "changed_path_misclassified": 0,
+      "coverage": 0.0,
+      "precision": null,
+      "case_ids": [],
+      "false_omission_ids": [],
+      "false_omission_original_labels": []
+    }
+  }
+]

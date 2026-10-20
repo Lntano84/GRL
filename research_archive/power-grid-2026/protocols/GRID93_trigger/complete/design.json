@@ -1,0 +1,316 @@
+{
+  "stage": "GRID93_COMPLETION_TRIGGER_STATION_SUPPORT",
+  "authorization": "User 2026-10-20: 我们解决什么时候触发这个机制吧",
+  "hypothesis": "The incumbent station is a useful search target when its already observed candidates, excluding the winner itself, have nonnegative rank superiority over observed candidates outside that station.",
+  "single_rule": {
+    "name": "STATION_SUPPORT_VETO",
+    "base": "Frozen GRID91 FRAME_GUARD; unchanged prefix128, batch64, patience2, rho_safe0.9, controller, candidate order, aliases and model",
+    "eligibility": "Only consider calls where original FRAME would perform local completion",
+    "local_observed": "Already queried strict-admissible representatives in incumbent station's alias-aware representative set, excluding incumbent",
+    "other_observed": "Already queried strict-admissible representatives outside incumbent station's alias-aware set",
+    "score": "P(local observed reward > other observed reward) + 0.5 P(equal), computed over all cross-group pairs using float32 reward",
+    "gate": "Veto original completion only when both comparison groups are nonempty and score < 0.5. At equality or insufficient evidence retain original rule.",
+    "threshold_basis": "0.5 is equal pairwise win probability; no search, calibration, fit or threshold sweep",
+    "forbidden": "No completion or suffix feedback is used to decide the trigger. No special dates/stations, tiny-gain cutoff, added budget or new learned model. Search objective and action acceptance stay unchanged."
+  },
+  "scope": "All25 exposed GRID91 scenario entries, old13/G1/G2 kept separate. Existing FULL states for same-state screening, existing FRAME trajectory states for exact trajectory reuse checks. No independent-test or cross-grid claim.",
+  "execution": [
+    "Freeze this one rule before feature extraction",
+    "Independently recompute score and query/choice plan using saved complete feedback",
+    "Evaluate trigger precision/recall, retained reward gain, query reduction and every lost improvement on all185 FULL states",
+    "Replay the gate on each original FRAME call using only saved pre-completion feedback. If delivered search choices stay identical at every call, certify deterministic trajectory equivalence from the common saved trajectory, without calling this a fresh timing experiment.",
+    "Only scenario entries with any changed search choice need one fresh gated closed-loop replay. Do not add another candidate trigger after seeing results. All changed entries retained, total at most25."
+  ],
+  "quality": "Same pre-existing FULL survival and complete-week cost <= FULL*1.005. A trigger cannot be accepted as an improvement if it loses quality on a scenario passed by FRAME. Query savings and cost improvements must be reported by cohort and per scenario, retaining adverse outcomes.",
+  "timing": "Single fresh serial replay; full-controller timers retained for description. Historical FRAME is reused for deterministic quality/query comparison only; no new cross-batch timing advantage claimed.",
+  "boundaries": [
+    "A query trigger estimates value of additional search; it cannot guarantee the selected action's long-term operational cost.",
+    "Both model and complete action-acceptance objective remain frozen; no cost-based replacement introduced in this stage.",
+    "Any negative or mixed result ends this single-rule stage; report it instead of searching extra thresholds to rescue it."
+  ],
+  "caps": {
+    "new_replays": 25,
+    "episode_seconds": 1200,
+    "total_replay_seconds": 10800,
+    "new_training": 0,
+    "episode_s": 1200,
+    "wall_s": 10800,
+    "physical_steps": 50425,
+    "public_forecasts": 250000
+  },
+  "execution_order": [
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "cohort": "old13",
+      "week": "2035-02-19_8",
+      "environment": "work/grid03/formal_env_initialized",
+      "method": "SUPPORT_GATE",
+      "policy": "SUPPORT_GATE",
+      "purpose": "single_frozen_trigger_test"
+    },
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "cohort": "old13",
+      "week": "2035-04-02_9",
+      "environment": "work/grid03/formal_env_initialized",
+      "method": "SUPPORT_GATE",
+      "policy": "SUPPORT_GATE",
+      "purpose": "single_frozen_trigger_test"
+    },
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "cohort": "old13",
+      "week": "2035-07-09_2",
+      "environment": "work/grid03/formal_env_initialized",
+      "method": "SUPPORT_GATE",
+      "policy": "SUPPORT_GATE",
+      "purpose": "single_frozen_trigger_test"
+    },
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "cohort": "old13",
+      "week": "2035-12-10_6",
+      "environment": "work/grid03/formal_env_initialized",
+      "method": "SUPPORT_GATE",
+      "policy": "SUPPORT_GATE",
+      "purpose": "single_frozen_trigger_test"
+    },
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "cohort": "G2",
+      "week": "2036-03-03_10",
+      "environment": "work/grid89_review/fresh_env",
+      "method": "SUPPORT_GATE",
+      "policy": "SUPPORT_GATE",
+      "purpose": "single_frozen_trigger_test"
+    },
+    {
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "order_mode": "STATIC_ID",
+      "repeat": 0,
+      "stage_phase": "all",
+      "cohort": "G2",
+      "week": "2036-11-03_10",
+      "environment": "work/grid89_review/fresh_env",
+      "method": "SUPPORT_GATE",
+      "policy": "SUPPORT_GATE",
+      "purpose": "single_frozen_trigger_test"
+    }
+  ],
+  "references": [
+    {
+      "cohort": "old13",
+      "week": "2035-03-05_0",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-03-05_0__FRAME_GUARD",
+      "full": "outputs/grid65/runs/r0__2035-03-05_0__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-06-25_8",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-06-25_8__FRAME_GUARD",
+      "full": "outputs/grid65/runs/r0__2035-06-25_8__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-09-03_4",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-09-03_4__FRAME_GUARD",
+      "full": "outputs/grid65/runs/r0__2035-09-03_4__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-10-01_5",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-10-01_5__FRAME_GUARD",
+      "full": "outputs/grid65/runs/r0__2035-10-01_5__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-04-09_3",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-04-09_3__FRAME_GUARD",
+      "full": "outputs/grid65/runs/r0__2035-04-09_3__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-05-14_14",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-05-14_14__FRAME_GUARD",
+      "full": "outputs/grid65/runs/r0__2035-05-14_14__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-11-19_0",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-11-19_0__FRAME_GUARD",
+      "full": "outputs/grid65/runs/r0__2035-11-19_0__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-01-01_8",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-01-01_8__FRAME_GUARD",
+      "full": "outputs/grid68/runs/r0__2035-01-01_8__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-02-19_8",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-02-19_8__FRAME_GUARD",
+      "full": "outputs/grid68/runs/r0__2035-02-19_8__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-04-02_9",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-04-02_9__FRAME_GUARD",
+      "full": "outputs/grid68/runs/r0__2035-04-02_9__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-07-09_2",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-07-09_2__FRAME_GUARD",
+      "full": "outputs/grid68/runs/r0__2035-07-09_2__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-12-10_6",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-12-10_6__FRAME_GUARD",
+      "full": "outputs/grid68/runs/r0__2035-12-10_6__FULL"
+    },
+    {
+      "cohort": "old13",
+      "week": "2035-12-17_1",
+      "environment": "work/grid03/formal_env_initialized",
+      "frame": "outputs/grid88/runs/r0__2035-12-17_1__FRAME_GUARD",
+      "full": "outputs/grid68/runs/r0__2035-12-17_1__FULL"
+    },
+    {
+      "cohort": "G1",
+      "week": "2036-01-07_9",
+      "environment": "work/grid80/fresh_env",
+      "frame": "outputs/grid86/runs/r0__2036-01-07_9__FRAME_GUARD",
+      "full": "outputs/grid81/runs/r0__2036-01-07_9__FULL"
+    },
+    {
+      "cohort": "G1",
+      "week": "2036-03-03_9",
+      "environment": "work/grid80/fresh_env",
+      "frame": "outputs/grid86/runs/r0__2036-03-03_9__FRAME_GUARD",
+      "full": "outputs/grid81/runs/r0__2036-03-03_9__FULL"
+    },
+    {
+      "cohort": "G1",
+      "week": "2036-05-05_9",
+      "environment": "work/grid80/fresh_env",
+      "frame": "outputs/grid86/runs/r0__2036-05-05_9__FRAME_GUARD",
+      "full": "outputs/grid81/runs/r0__2036-05-05_9__FULL"
+    },
+    {
+      "cohort": "G1",
+      "week": "2036-07-07_9",
+      "environment": "work/grid80/fresh_env",
+      "frame": "outputs/grid86/runs/r0__2036-07-07_9__FRAME_GUARD",
+      "full": "outputs/grid81/runs/r0__2036-07-07_9__FULL"
+    },
+    {
+      "cohort": "G1",
+      "week": "2036-09-01_9",
+      "environment": "work/grid80/fresh_env",
+      "frame": "outputs/grid86/runs/r0__2036-09-01_9__FRAME_GUARD",
+      "full": "outputs/grid81/runs/r0__2036-09-01_9__FULL"
+    },
+    {
+      "cohort": "G1",
+      "week": "2036-11-03_9",
+      "environment": "work/grid80/fresh_env",
+      "frame": "outputs/grid86/runs/r0__2036-11-03_9__FRAME_GUARD",
+      "full": "outputs/grid81/runs/r0__2036-11-03_9__FULL"
+    },
+    {
+      "cohort": "G2",
+      "week": "2036-01-07_10",
+      "environment": "work/grid89_review/fresh_env",
+      "frame": "outputs/grid89_review/sealed/runs/r0__2036-01-07_10__FRAME_GUARD",
+      "full": "outputs/grid89_review/sealed/runs/r0__2036-01-07_10__FULL"
+    },
+    {
+      "cohort": "G2",
+      "week": "2036-03-03_10",
+      "environment": "work/grid89_review/fresh_env",
+      "frame": "outputs/grid89_review/sealed/runs/r0__2036-03-03_10__FRAME_GUARD",
+      "full": "outputs/grid89_review/sealed/runs/r0__2036-03-03_10__FULL"
+    },
+    {
+      "cohort": "G2",
+      "week": "2036-05-05_10",
+      "environment": "work/grid89_review/fresh_env",
+      "frame": "outputs/grid89_review/sealed/runs/r0__2036-05-05_10__FRAME_GUARD",
+      "full": "outputs/grid89_review/sealed/runs/r0__2036-05-05_10__FULL"
+    },
+    {
+      "cohort": "G2",
+      "week": "2036-07-07_10",
+      "environment": "work/grid89_review/fresh_env",
+      "frame": "outputs/grid89_review/sealed/runs/r0__2036-07-07_10__FRAME_GUARD",
+      "full": "outputs/grid89_review/sealed/runs/r0__2036-07-07_10__FULL"
+    },
+    {
+      "cohort": "G2",
+      "week": "2036-09-01_10",
+      "environment": "work/grid89_review/fresh_env",
+      "frame": "outputs/grid89_review/sealed/runs/r0__2036-09-01_10__FRAME_GUARD",
+      "full": "outputs/grid89_review/sealed/runs/r0__2036-09-01_10__FULL"
+    },
+    {
+      "cohort": "G2",
+      "week": "2036-11-03_10",
+      "environment": "work/grid89_review/fresh_env",
+      "frame": "outputs/grid89_review/sealed/runs/r0__2036-11-03_10__FRAME_GUARD",
+      "full": "outputs/grid89_review/sealed/runs/r0__2036-11-03_10__FULL"
+    }
+  ]
+}

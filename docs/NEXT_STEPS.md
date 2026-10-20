@@ -1,10 +1,16 @@
 # Next steps — ACM e-Energy 2027 provisional
 
-1. GRID91机制去留和GRID92同站补查三问均已完成，先与用户讨论条件性收益、收益集中、补查触发尚不可靠及目标不一致；不根据反例自动改规则、加阈值或学习模型。
+1. GRID93首条触发假设已完成并否决：站内候选成对平均支持不足不能可靠否决补查。原13质量13→12，2035-07-09_2于1906步提前结束；G1/G2质量保持。先向用户汇报尾部关键候选风险、闭环查询反增及触发/动作采用的区别；尚未找到可替代原规则的新触发，不自动追加规则或扫描阈值。
 2. 整理稿件时以前缀初始化、反馈控制深度、结构引导补查位置解释现有方法。默认q_min256冗余已验证；旧冻结源码与所有不利结果保留。不要把搜索一步奖励改善写成整周成本必然改善。
 3. 第二电网与比例预算是后续待确认阶段：先资格检查动作库、别名、预测与控制底座；参数只由源网确定，不在目标测试集重调。本轮未自动进入。
 4. CCMA仍是领域学习基线候选，作者实现/权重尚未定位；不贸然训练或按会议名称替换META/ExpertOp，旧比较保留。
 5. 机制定型及必要验证后编写e-Energy稿件；不追加普通对照堆数量，也不自动启动学习/智能体探索。
 
-当前材料：research_archive/power-grid-2026/paper/GRID92_completion_analysis_20261020/GRID92_report.md。
+当前材料：research_archive/power-grid-2026/protocols/GRID93_trigger/complete/GRID93_report.md；前一轮三问见research_archive/power-grid-2026/paper/GRID92_completion_analysis_20261020/GRID92_report.md。
 此前计划保存在docs/history/NEXT_STEPS_before_grid92_20261020.md。
+
+## GRID93_TRIGGER_complete
+
+单条站内支持否决规则完成：去掉最佳后以成对奖励胜率0.5作负证据门控，无拟合或扫描。185个FULL和179个实际FRAME调用筛查，19场景选择不变复用、6条新闭环。判读REJECT_STATION_SUPPORT_TRIGGER，原达标而新规则不达标的场景1个。一步搜索价值与长期动作采用分开，不加第二条规则救结果。所有混合结果保留，无新模型训练或同批提速主张。
+
+先向用户汇报本条触发条件是否成立；当前不自动搜索新阈值或改动作采用目标。

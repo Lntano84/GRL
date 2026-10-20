@@ -642,3 +642,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [补查标签清理与预训练候选](paper/FRAME_label_cleanup_20261020/README_中文.md)：56例全保留，30/9/5/1/11分组；无新训练、仿真或模型运行。
 
 - GRID97补查轨迹影响：相同56例/15特征/日期隔离的LR、浅树、TabPFNv2离线比较，53非试点主成绩，全部误判保留；无新物理回放或部署。见power-grid-2026/protocols/GRID97_effect_learning/complete/GRID97_report.md。
+
+- GRID98：56例补查前特征由15维保留扩为35维，候选结构/同站反馈/当前状态；隐藏反馈隔离与1120独立复算通过，无新拟合或回放。见GRID98_feature_enrichment/complete/GRID98_report.md。

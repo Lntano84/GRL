@@ -57,3 +57,5 @@ python scripts/archive/restore_artifacts.py /path/to/grl-20261006-lot.tar.gz --o
 这里的 `in_git=0` 表示文件在 Release 资产内，**不是未归档**。资产所有对象均有大小与内容哈希；详细整合核验见 [INTEGRATION_AUDIT.json](INTEGRATION_AUDIT.json)。
 
 - GRID97补查轨迹影响：相同56例/15特征/日期隔离的LR、浅树、TabPFNv2离线比较，53非试点主成绩，全部误判保留；无新物理回放或部署。见power-grid-2026/protocols/GRID97_effect_learning/complete/GRID97_report.md。
+
+- GRID98：56例补查前特征由15维保留扩为35维，候选结构/同站反馈/当前状态；隐藏反馈隔离与1120独立复算通过，无新拟合或回放。见GRID98_feature_enrichment/complete/GRID98_report.md。

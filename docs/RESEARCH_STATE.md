@@ -425,3 +425,8 @@ GRID97已获用户授权开始：56例轨迹影响二分类，逻辑回归/浅�
 ## 2026-10-20 — GRID97 offline completed
 
 LOGISTIC: nonpilot53 AUC=0.5000, BA=0.4614; P>=.95 omission 5, changed-path errors 3. FOREST64: nonpilot53 AUC=0.4982, BA=0.4342; P>=.95 omission 0, changed-path errors 0. TABPFN_V2: nonpilot53 AUC=0.3807, BA=0.4605; P>=.95 omission 0, changed-path errors 0. 全部离线、未增加回放或部署；路径影响不等于经济价值。完整报告 protocols/GRID97_effect_learning/complete/GRID97_report.md。
+
+
+## 2026-10-20 — GRID98 feature enrichment completed
+
+GRID98按用户要求补齐56例补查前输入：原15维逐值不变，新增20项（9候选结构、5同站反馈、6当前状态/余量，其中2为确定组合），共35维。56隐藏反馈删除/扰动及母线交换、1120独立数值核验通过，原标签和18折不变；无新预测、拟合、回放或部署。尚不声称预测改善。

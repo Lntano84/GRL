@@ -1,0 +1,27 @@
+{
+  "question": "Does the existing evidence distinguish overload relief from reserve improvement as purposes of same-station completion?",
+  "scope": "Descriptive analysis of saved feedback and previously audited closed-loop comparisons only. No new trigger policy, simulations, training, parameter search or timing claim.",
+  "primary_states": "179 actual FRAME calls from old13/G1/G2; 185 FULL calls are a separate diagnostic population, not additional independent samples.",
+  "classification_before_revealing_completion": {
+    "no_incumbent": "No strictly admissible candidate observed",
+    "overload_remaining": "Best observed candidate forecast max-rho >= 1",
+    "below_limit_without_buffer": "0.9 <= forecast max-rho < 1",
+    "buffer_reached": "forecast max-rho < 0.9"
+  },
+  "threshold_origins": "1 is the rated loading ratio; 0.9 is the unchanged historical controller/search setting. Neither is tuned here. These are candidate+base one-step forecasts, not final controlled-state or future-safety certificates.",
+  "outcomes": [
+    "completion calls, queries and measured forecast seconds",
+    "strict reward improvement using inherited diagnostic tolerance 1e-6",
+    "exact chosen-ID changes including float32 ties",
+    "crossing existing 1 and 0.9 boundaries",
+    "equal-query local versus next-global expansion on FULL states",
+    "stratification of the rejected station-support veto",
+    "first actual closed-loop action divergence and complete-week cost direction"
+  ],
+  "inference_limits": "Post-hoc exposed-state characterization. No causal or out-of-sample trigger validation; gains in max-rho proxy do not establish economic gains. Do not pool correlated calls as independent scenarios. No cost threshold or new acceptance rule is selected. No independent AC re-solve.",
+  "source_stages": [
+    "GRID91",
+    "GRID92",
+    "GRID93"
+  ]
+}

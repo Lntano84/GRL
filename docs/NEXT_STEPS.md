@@ -7,3 +7,7 @@
 5. 方法、跨网和必要竞争力证据完成后编写e-Energy稿件；当前不添加学习/智能体模块，之后只围绕已识别缺口探索。主题适配不保证录用。
 
 入口：research_archive/power-grid-2026/paper/eenergy_mechanism_20261020/FRAME_eEnergy路线与机制核查.md。此前清单保存在docs/history/NEXT_STEPS_before_eenergy_20261020.md。
+
+## GRID91_MECHANISM_complete
+
+第1项已完成，先向用户汇报机制取舍及边界；第二电网、比例预算与CCMA不自动启动。

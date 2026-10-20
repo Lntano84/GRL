@@ -1,0 +1,61 @@
+{
+  "category": "RETAIN_CONDITIONAL_COMPLETION_QUALITY_EVIDENCE",
+  "completion_prevents_quality_failure_cases": [
+    "2035-03-05_0",
+    "2035-02-19_8",
+    "2035-07-09_2",
+    "2035-12-10_6"
+  ],
+  "removing_completion_improves_quality_cases": [],
+  "groups": [
+    {
+      "cohort": "old13",
+      "n": 13,
+      "frame_quality": 13,
+      "no_local_quality": 9,
+      "frame_complete": 11,
+      "no_local_complete": 11,
+      "frame_queries": 35614,
+      "no_local_queries": 31305,
+      "same_horizon": 13,
+      "no_local_query_reduction_on_matched_active": 0.10713445070594722,
+      "mean_no_local_cost_delta_frame": 0.00913377847432163,
+      "max_no_local_cost_delta_frame": 0.04425622400044893
+    },
+    {
+      "cohort": "G1",
+      "n": 6,
+      "frame_quality": 6,
+      "no_local_quality": 6,
+      "frame_complete": 4,
+      "no_local_complete": 4,
+      "frame_queries": 11526,
+      "no_local_queries": 11097,
+      "same_horizon": 6,
+      "no_local_query_reduction_on_matched_active": 0.10540796833782413,
+      "mean_no_local_cost_delta_frame": 0.0008012508288217368,
+      "max_no_local_cost_delta_frame": 0.0032728851485805954
+    },
+    {
+      "cohort": "G2",
+      "n": 6,
+      "frame_quality": 6,
+      "no_local_quality": 6,
+      "frame_complete": 5,
+      "no_local_complete": 5,
+      "frame_queries": 18858,
+      "no_local_queries": 16974,
+      "same_horizon": 6,
+      "no_local_query_reduction_on_matched_active": 0.08825732879417915,
+      "mean_no_local_cost_delta_frame": -0.011629656890046558,
+      "max_no_local_cost_delta_frame": 0.003092455178015374
+    }
+  ],
+  "prefix": "Retain as initialization; no separate novelty or optimal128 claim",
+  "feedback": "Retain as core adaptive depth control; keep existing fixed-budget and ordering limitations",
+  "qmin": "Remove independent default qmin parameter only under128/64/2; preserve historical freezes and results",
+  "no_new_gate_or_threshold_selected": true,
+  "all_cases_retained": true,
+  "no_second_grid_started": true,
+  "no_new_learning": true
+}

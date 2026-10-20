@@ -715,3 +715,8 @@ ExpertOp4Grid外部结构启发式：同六个已暴露G2场景、同合法动�
 ## 2026-10-20 — GRID91_MECHANISM_complete
 
 第1项28条回放及保存向量/反馈/成本/独立策略审计完成，3个FRAME环境资格轨迹重现。最终补查删除判读：RETAIN_CONDITIONAL_COMPLETION_QUALITY_EVIDENCE；移除后失去预设质量条件的场景4个。前缀作为初始化，反馈核查为核心，冗余默认qmin作为派生量。所有不利结果保留，无新学习或第二网。
+
+
+## 2026-10-20 — 同站补查近邻文献核对
+
+按用户关于补查研究数量与价值的问题作有限定向核对。ExpertOp4Grid、CCMA2025与Energy and AI2026 Evolving power system operator rules已有结构化候选、按站分解、停止/排序修订等近邻；本轮未定位到与FRAME完整已观测最佳动作引导同站剩余代表补查明确相同的规则，但不据此声称首次或文献稀少。值得继续解释同站候选收益富集、查询位置和长期反例，非以增加模型或扫描阈值替代机制研究。材料paper/frame_completion_literature_20261020；无新实验、训练或参数选择。

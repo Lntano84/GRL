@@ -947,3 +947,8 @@ GRID96解读：56个状态为44 SKIP、11 MIXED、1 KEEP，其中39例取消后�
 ## 2026-10-20 — FRAME_LABEL_CLEANUP_complete
 
 用户要求先清理，学习慢慢研究并可考虑预训练网络。56例全部保留，按轨迹/完整性/指标偏好分开，输入特征与未来答案隔离；无原标签或预测更改。11个MIXED中7个成本与查询冲突、3个保留省成本和查询但部分过载指标变差、1个取消省成本和查询但累计过载更高。核查TabPFNv2、TabICL与本地LJN用途；仅形成资料候选，无安装/权重下载/拟合/预测/回放。清理包见paper/FRAME_label_cleanup_20261020。
+
+
+## 2026-10-20 — GRID97 frozen
+
+GRID97开始前冻结design/data/source/checkpoint。隔离D盘环境tabpfn2.2.1、sklearn1.6.1，复用旧Torch只读；旧环境不变。独立高斯模拟数据预检通过；尚无正式预测结果。

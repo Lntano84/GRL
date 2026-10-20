@@ -693,3 +693,7 @@ ExpertOp4Grid外部结构启发式：同六个已暴露G2场景、同合法动�
 ## 2026-10-19 — GRID90_EXPERT_complete
 
 ExpertOp4Grid外部结构启发式：同六个已暴露G2场景、同合法动作库/基础控制器/一步公共预测，FRAME与ExpertOp适配两次交错反向计时共24条。原作者影响图/专家评分保留，官方25候选/每站5/最多3线路默认固定，所有图构建查询计入。严格公共接口不改保护参数，原方法外围恢复重连不带入。三次真实校准状态及未来向量接口检查通过，不按评价结果调参、选日期或增预算。 保存数据/原生结构排名重执行审计通过，冻结判读：REPORT_QUALITY_COMPUTE_TRADEOFF_OR_COMPETITIVENESS。
+
+## 2026-10-20 — 2027投稿主题与录用案例核查
+
+按用户要求先重定投稿目标，暂停按原ICAPS定位继续修改/加实验。核实ECML PKDD2025 ADS的SoftGNN、e-Energy2025主会CCMA、ICLR2026 MARL2GRID-TR；ICCPS2025 SEQUIN是非学习网络结构/物理优化的邻近任务。纠正e-Energy2025多目标拓扑论文属于ADELE Workshop，以及SoftGNN2026卷册不能算2026会议案例。ICAPS2027明确接收启发式优化，不以“无学习”直接排除。e-Energy主题优先与ECML ADS/CCF B路线并列待讨论，未擅自定最终目标、未核实e-Energy/ICCPS为CCF B。详细来源与访问限制：research_archive/power-grid-2026/paper/venue_fit_20261020。无新训练/回放/稿件修改。

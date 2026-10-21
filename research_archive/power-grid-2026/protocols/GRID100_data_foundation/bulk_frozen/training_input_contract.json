@@ -1,0 +1,12 @@
+{
+  "scope": "Raw data is not a ready-to-feed neural tensor. This contract applies to the future learner projection.",
+  "visible_feedback_numeric_fields": ["rho", "reward", "done", "illegal", "ambiguous", "strict_admissible"],
+  "visible_feedback_derived_fields": ["exception_present", "relative_query_position", "queried_fraction"],
+  "known_cost_fields": ["known_completion_queries", "candidate_count", "visible_count"],
+  "public_structure": "Use candidate IDs and substation IDs only to gather known masked action commands and construct connectivity. Do not concatenate numeric IDs as learned scalar features.",
+  "observation_file": "Contains original current observation and base-action vectors for audit/reconstruction. The raw observation also includes calendar fields. Do not feed the complete vector directly to a model while claiming calendar identifiers are excluded; an explicit physical-field projection is required.",
+  "association_only_fields": ["sample_id", "calendar_group", "scenario", "source_call", "source_sha256", "input_file", "target_file", "observation_file", "public_action_library"],
+  "forbidden_input_fields": ["local_reward_gain", "local_rho_reduction", "choice_changes", "after_id", "recorded_teacher_forecast_seconds_sum", "future_candidate_feedback", "whole_week_cost", "final_survival", "test_labels"],
+  "split_rule": "Filter metadata by predeclared date partition before any fitted transformation. All prefixes and random replicas of that calendar group stay together.",
+  "status": "Data/label separation contract only. No model projection or training is executed in GRID100."
+}

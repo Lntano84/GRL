@@ -1,0 +1,693 @@
+{
+  "stage": "GRID100_LEARNING_DATA_FOUNDATION",
+  "utc": "2026-10-21T03:09:50.133577+00:00",
+  "authorization": "User starts part1: new data coverage and train/validation/final evaluation organization.",
+  "environment": "work/grid100_data_foundation/trainval_env",
+  "static_source_sha256": {
+    "alerts_info.json": "19405846330e013b9a90380b464de12a804153844f1bd75ec8993b08b1f4ccbd",
+    "chronix2grid_adddata_kwargs.json": "c8acfca2ac10f3e3f6c2008da7755e7a22504fbf65f180bea4bcee9522dea7e0",
+    "config.py": "87738f51c66bbaa638c747f954ca0e1cc6f983311fe02a7e4ca98c1014134ce3",
+    "difficulty_levels.json": "4d75e87444ed05a5a3ab0f6ccbf1dc8c38f0ddf5ac2018adef8f29a8c035246f",
+    "grid.json": "cb8099101396c6c0dd1ce0953a73e1df2b2ee2dfff947bdcf19850190a1d12fe",
+    "grid_layout.json": "9bc9b4f6dba5e5d7a2c8fb395afc02d0a30759c3b71fa17b1aff7ea8daa58dff",
+    "loads_charac.csv": "3e137af7e44a7f3d30573a88bdd9f563b920cd733dd679d9213de20a38bd6578",
+    "maintenance_meta.json": "11d6c48e4a7525fa02603b3f773078ef2c701108e7de10505b09fcc37cc04bbf",
+    "params.json": "21e09b13fa3e2e6aa7dfd0d2b3aaeac8a196053a89409879dae085ee7632492c",
+    "params_forecasts.json": "199dad20c9ecc8f0d09502ca45e53956e8b509b37e90310405c98bed95b73d60",
+    "params_load.json": "44f4c69b0cf24e8d8773b4b97d223292ba2bf6be8ee538c4cf2754520cc102dc",
+    "params_loss.json": "e70221219e30d6b1ec05e1ee324fff39eae9fd94080dc1ad73617e2982bfa4b8",
+    "params_opf.json": "205b3df6a5c8a1695d74e18d8a70a2edbd2f7d428dad7ef283b0ac4a2a2fa8c9",
+    "params_res.json": "003116d451cb60765e6db70e8b5e38a1aaf7100a43d5335e18cebef2009ef604",
+    "prods_charac.csv": "30bc3e7c38393c9292a0f401c8d9c8f098a8ff0a9fbbd277f4331babb475a850",
+    "scenario_params.json": "6c08eaf61286ffb5a3bbb8fb05ce536c7d96de65c28ae4ca79bd0363a8864271",
+    "storage_units_charac.csv": "6eab480cbebb343864325619a05f187dbc2e1eb39d9c0636b10f3b793e80a872",
+    "wind_extra_params.json": "9637da67ad685ff7abf2847e1ee5633b28764aabbe61c5a81b932f5292699c37"
+  },
+  "calendar_selection": "2037 first/third Mondays monthly, 24 disjoint seven-day calendar groups, two independent generator seed streams per date.",
+  "partition_selection": "Within each quarter, seed20261021 permutes months; validation and test take one date each in different months; remaining4 dates train. Date replicates and all decision checkpoints inherit same role.",
+  "calendar_counts": {
+    "train": 16,
+    "validation": 4,
+    "test": 4
+  },
+  "scenario_counts": {
+    "train": 32,
+    "validation": 8,
+    "test": 8
+  },
+  "scenario_plan": [
+    {
+      "date": "2037-01-05",
+      "calendar_group": "2037-01-05",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-01-05_100",
+      "seeds": [
+        3290668510,
+        923912547,
+        3350833496
+      ]
+    },
+    {
+      "date": "2037-01-05",
+      "calendar_group": "2037-01-05",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-01-05_101",
+      "seeds": [
+        586469765,
+        612920658,
+        1828918697
+      ]
+    },
+    {
+      "date": "2037-01-19",
+      "calendar_group": "2037-01-19",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-01-19_100",
+      "seeds": [
+        111220035,
+        1651223521,
+        700302577
+      ]
+    },
+    {
+      "date": "2037-01-19",
+      "calendar_group": "2037-01-19",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-01-19_101",
+      "seeds": [
+        9378043,
+        2975636892,
+        705649635
+      ]
+    },
+    {
+      "date": "2037-02-02",
+      "calendar_group": "2037-02-02",
+      "partition": "test",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-02-02_100",
+      "seeds": [
+        3524672259,
+        553629988,
+        2820646919
+      ]
+    },
+    {
+      "date": "2037-02-02",
+      "calendar_group": "2037-02-02",
+      "partition": "test",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-02-02_101",
+      "seeds": [
+        3472634336,
+        1116482144,
+        3553180364
+      ]
+    },
+    {
+      "date": "2037-02-16",
+      "calendar_group": "2037-02-16",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-02-16_100",
+      "seeds": [
+        223711773,
+        237350377,
+        1224888940
+      ]
+    },
+    {
+      "date": "2037-02-16",
+      "calendar_group": "2037-02-16",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-02-16_101",
+      "seeds": [
+        612111973,
+        1333278881,
+        1186991058
+      ]
+    },
+    {
+      "date": "2037-03-02",
+      "calendar_group": "2037-03-02",
+      "partition": "validation",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-03-02_100",
+      "seeds": [
+        2361551725,
+        3503137760,
+        3120196920
+      ]
+    },
+    {
+      "date": "2037-03-02",
+      "calendar_group": "2037-03-02",
+      "partition": "validation",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-03-02_101",
+      "seeds": [
+        26711619,
+        3203682408,
+        2877557150
+      ]
+    },
+    {
+      "date": "2037-03-16",
+      "calendar_group": "2037-03-16",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-03-16_100",
+      "seeds": [
+        3901299375,
+        3720296249,
+        944669168
+      ]
+    },
+    {
+      "date": "2037-03-16",
+      "calendar_group": "2037-03-16",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-03-16_101",
+      "seeds": [
+        1969716338,
+        343860312,
+        673050182
+      ]
+    },
+    {
+      "date": "2037-04-06",
+      "calendar_group": "2037-04-06",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-04-06_100",
+      "seeds": [
+        2683833034,
+        3017094446,
+        2876683453
+      ]
+    },
+    {
+      "date": "2037-04-06",
+      "calendar_group": "2037-04-06",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-04-06_101",
+      "seeds": [
+        1934038672,
+        1501994988,
+        2580053955
+      ]
+    },
+    {
+      "date": "2037-04-20",
+      "calendar_group": "2037-04-20",
+      "partition": "test",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-04-20_100",
+      "seeds": [
+        1202685267,
+        551155933,
+        2979613272
+      ]
+    },
+    {
+      "date": "2037-04-20",
+      "calendar_group": "2037-04-20",
+      "partition": "test",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-04-20_101",
+      "seeds": [
+        3364820541,
+        3141321605,
+        280271560
+      ]
+    },
+    {
+      "date": "2037-05-04",
+      "calendar_group": "2037-05-04",
+      "partition": "validation",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-05-04_100",
+      "seeds": [
+        934275470,
+        863610900,
+        3905794909
+      ]
+    },
+    {
+      "date": "2037-05-04",
+      "calendar_group": "2037-05-04",
+      "partition": "validation",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-05-04_101",
+      "seeds": [
+        1364231120,
+        1177954143,
+        4221949707
+      ]
+    },
+    {
+      "date": "2037-05-18",
+      "calendar_group": "2037-05-18",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-05-18_100",
+      "seeds": [
+        3228238064,
+        142628925,
+        2457507090
+      ]
+    },
+    {
+      "date": "2037-05-18",
+      "calendar_group": "2037-05-18",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-05-18_101",
+      "seeds": [
+        3187467128,
+        2860688438,
+        4253812520
+      ]
+    },
+    {
+      "date": "2037-06-01",
+      "calendar_group": "2037-06-01",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-06-01_100",
+      "seeds": [
+        2032639080,
+        2457390489,
+        2179589882
+      ]
+    },
+    {
+      "date": "2037-06-01",
+      "calendar_group": "2037-06-01",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-06-01_101",
+      "seeds": [
+        3002205869,
+        2692330705,
+        4018673900
+      ]
+    },
+    {
+      "date": "2037-06-15",
+      "calendar_group": "2037-06-15",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-06-15_100",
+      "seeds": [
+        3751055233,
+        673483574,
+        926731577
+      ]
+    },
+    {
+      "date": "2037-06-15",
+      "calendar_group": "2037-06-15",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-06-15_101",
+      "seeds": [
+        1676530266,
+        1259254282,
+        3990894195
+      ]
+    },
+    {
+      "date": "2037-07-06",
+      "calendar_group": "2037-07-06",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-07-06_100",
+      "seeds": [
+        166781380,
+        1828095784,
+        3286881223
+      ]
+    },
+    {
+      "date": "2037-07-06",
+      "calendar_group": "2037-07-06",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-07-06_101",
+      "seeds": [
+        541117614,
+        388514623,
+        3246232616
+      ]
+    },
+    {
+      "date": "2037-07-20",
+      "calendar_group": "2037-07-20",
+      "partition": "test",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-07-20_100",
+      "seeds": [
+        1614394199,
+        52134126,
+        34437316
+      ]
+    },
+    {
+      "date": "2037-07-20",
+      "calendar_group": "2037-07-20",
+      "partition": "test",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-07-20_101",
+      "seeds": [
+        584412905,
+        4208857451,
+        40422584
+      ]
+    },
+    {
+      "date": "2037-08-03",
+      "calendar_group": "2037-08-03",
+      "partition": "validation",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-08-03_100",
+      "seeds": [
+        1305084671,
+        2167423352,
+        165529114
+      ]
+    },
+    {
+      "date": "2037-08-03",
+      "calendar_group": "2037-08-03",
+      "partition": "validation",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-08-03_101",
+      "seeds": [
+        1880140542,
+        3726506292,
+        539910770
+      ]
+    },
+    {
+      "date": "2037-08-17",
+      "calendar_group": "2037-08-17",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-08-17_100",
+      "seeds": [
+        2438650829,
+        2501826897,
+        3832068548
+      ]
+    },
+    {
+      "date": "2037-08-17",
+      "calendar_group": "2037-08-17",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-08-17_101",
+      "seeds": [
+        3306436816,
+        3210502770,
+        2582627325
+      ]
+    },
+    {
+      "date": "2037-09-07",
+      "calendar_group": "2037-09-07",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-09-07_100",
+      "seeds": [
+        744330145,
+        2438354635,
+        1922852977
+      ]
+    },
+    {
+      "date": "2037-09-07",
+      "calendar_group": "2037-09-07",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-09-07_101",
+      "seeds": [
+        3475321225,
+        1323923260,
+        1664180684
+      ]
+    },
+    {
+      "date": "2037-09-21",
+      "calendar_group": "2037-09-21",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-09-21_100",
+      "seeds": [
+        831225894,
+        376195486,
+        2974057542
+      ]
+    },
+    {
+      "date": "2037-09-21",
+      "calendar_group": "2037-09-21",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-09-21_101",
+      "seeds": [
+        2922371758,
+        1067464377,
+        864413974
+      ]
+    },
+    {
+      "date": "2037-10-05",
+      "calendar_group": "2037-10-05",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-10-05_100",
+      "seeds": [
+        2500734935,
+        1494520888,
+        1437093865
+      ]
+    },
+    {
+      "date": "2037-10-05",
+      "calendar_group": "2037-10-05",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-10-05_101",
+      "seeds": [
+        1651439179,
+        1897144369,
+        1474030739
+      ]
+    },
+    {
+      "date": "2037-10-19",
+      "calendar_group": "2037-10-19",
+      "partition": "validation",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-10-19_100",
+      "seeds": [
+        32485480,
+        1961503762,
+        2891281005
+      ]
+    },
+    {
+      "date": "2037-10-19",
+      "calendar_group": "2037-10-19",
+      "partition": "validation",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-10-19_101",
+      "seeds": [
+        3040245333,
+        2203263892,
+        2884287116
+      ]
+    },
+    {
+      "date": "2037-11-02",
+      "calendar_group": "2037-11-02",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-11-02_100",
+      "seeds": [
+        972227198,
+        1239435698,
+        3429524708
+      ]
+    },
+    {
+      "date": "2037-11-02",
+      "calendar_group": "2037-11-02",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-11-02_101",
+      "seeds": [
+        1619419486,
+        108291424,
+        3412145335
+      ]
+    },
+    {
+      "date": "2037-11-16",
+      "calendar_group": "2037-11-16",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-11-16_100",
+      "seeds": [
+        3703831625,
+        2584125974,
+        1545140597
+      ]
+    },
+    {
+      "date": "2037-11-16",
+      "calendar_group": "2037-11-16",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-11-16_101",
+      "seeds": [
+        363039213,
+        1691727816,
+        1571678387
+      ]
+    },
+    {
+      "date": "2037-12-07",
+      "calendar_group": "2037-12-07",
+      "partition": "train",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-12-07_100",
+      "seeds": [
+        1568532548,
+        2047766337,
+        458236539
+      ]
+    },
+    {
+      "date": "2037-12-07",
+      "calendar_group": "2037-12-07",
+      "partition": "train",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-12-07_101",
+      "seeds": [
+        4005715142,
+        302058953,
+        1407177171
+      ]
+    },
+    {
+      "date": "2037-12-21",
+      "calendar_group": "2037-12-21",
+      "partition": "test",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-12-21_100",
+      "seeds": [
+        2225051961,
+        945278565,
+        1423991130
+      ]
+    },
+    {
+      "date": "2037-12-21",
+      "calendar_group": "2037-12-21",
+      "partition": "test",
+      "replicate": 1,
+      "scenario_id": 101,
+      "scenario": "2037-12-21_101",
+      "seeds": [
+        3157299643,
+        2428953964,
+        1663928144
+      ]
+    }
+  ],
+  "pilot": {
+    "date": "2037-01-05",
+    "calendar_group": "2037-01-05",
+    "partition": "train",
+    "replicate": 0,
+    "scenario_id": 100,
+    "scenario": "2037-01-05_100",
+    "seeds": [
+      3290668510,
+      923912547,
+      3350833496
+    ]
+  },
+  "generation": "Same official Chronix2Grid wrapper and existing package/runtime. Master seeds20261021/20261022, per-item frozen triples, scen_id100/101; no auto-ID increment, date replacement or output-based selection.",
+  "final_test_gate": "Eight test scenarios remain planned only: no series generation, teacher outcomes, inputs or labels until a separate model/method freeze. Current generation commands only accept pilot/trainval.",
+  "collection": "Initial local-gain teacher path uses common FULL controller to pay for all candidate feedback once at each physical state. Offline prefixes at128,192,... create pre-query inputs and local completion targets. Multiple prefixes are correlated records, not independent scenarios. FULL trajectories differ from FRAME trajectories: later application requires explicit FRAME distribution/closed-loop validation.",
+  "checkpoints": "Every64 after initial128 before pool exhaustion; retain both original FRAME-triggered and nontriggered checkpoints when admissible incumbent and remaining local candidates exist. Exclusions counted, never silently converted to negatives.",
+  "target": "Primary continuous nonnegative float32 best-admissible reward gain from completing incumbent station. Auxiliary choice change and rho reduction. Known query count is input/cost, not a learned unknown. Teacher query timing is diagnostic, not deploy latency or new speed claim. No conversion of old11 MIXED into good/bad.",
+  "input_boundary": "Only prefix paid feedback, current observation/base vector and public action structures. Per-sample input and target in different directories. Future feedback never copied into learner input; identifiers/date/group used for association and split only.",
+  "old_data": "All existing2035/2036 datasets and56 physical omission labels are development/debug only, not new validation or final test. Author LJN pretraining provenance is not independently verified; new generated date is not a guarantee of unrelated physical source.",
+  "sample_scope": "Same public grid, existing generator/forecast/maintenance configuration. No new grid, production-data claim or extra artificially injected fault model. Two seed repeats are not independent date groups.",
+  "qualification": "Before large collection: pure saved-data label check, no-label suffix perturbation, fixed tie rules and no-incumbent boundaries; one new training scenario generation smoke. Failed scenarios preserved, no replacement. Collection runtime integration is separate from generation and must be qualified before starting teacher replays.",
+  "generation_caps": {
+    "per_scenario_seconds": 1800,
+    "pilot_scenarios": 1,
+    "trainval_scenarios": 40,
+    "total_seconds": 86400
+  },
+  "scope_now": "Build/freeze dataset protocol and generator/label entrypoints, validate historical engineering fixtures and start one train-only generation pilot. No models, no final-test materialization and no undefined mass physical replay."
+}

@@ -646,3 +646,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - GRID98：56例补查前特征由15维保留扩为35维，候选结构/同站反馈/当前状态；隐藏反馈隔离与1120独立复算通过，无新拟合或回放。见GRID98_feature_enrichment/complete/GRID98_report.md。
 
 - GRID99：原15维/补充35维、固定LR/浅树/TabPFNv2日期隔离比较，108上下文、原15维重现及误判完整保留，无新物理回放或部署。见GRID99_feature_learning/complete/GRID99_report.md。
+
+- [学习探索路线与训练/留出诊断](paper/FRAME_learning_route_20261021/学习探索路线_中文.md)：面向用户1月目标继续学习研究，本次无新拟合或回放。

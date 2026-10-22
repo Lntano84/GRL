@@ -1,0 +1,4900 @@
+{
+  "case_id": "MARCH_108",
+  "step": 108,
+  "skip": false,
+  "state_hash": "351f9b8b6eca40dfea13d2406c393e0810da46a60557793d55effe552ba80f3f",
+  "base_action_hash": "3dd224155d0c5da980a928daa7cd994e7805b0109984f8e20ec9b3b9b304c817",
+  "before_search": {
+    "sha256": "784ad5defbe0da98451a4652d1074e6fda097a43f5909df740348260e0fc31ca",
+    "inventory": {
+      "controller": {
+        "values": {},
+        "unserialized": [
+          {
+            "attribute": "base",
+            "type": "ljn_nn.LJNAgent.LJNAgentTopoNN"
+          },
+          {
+            "attribute": "env",
+            "type": "abc.Environment_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "safe",
+            "type": "ljn_nn.modules.convex_optim.OptimModule"
+          }
+        ]
+      },
+      "agent": {
+        "values": {
+          "rho_danger": 0.99,
+          "rho_safe": 0.9,
+          "seed_used": 0,
+          "space_prng": {
+            "rng_sha256": "8d880a0cee918de58a27298a223a2eac943649a3de9067710718d65d05563079"
+          },
+          "training_mode": false
+        },
+        "unserialized": [
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "env",
+            "type": "abc.Environment_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "optim",
+            "type": "ljn_nn.modules.convex_optim.OptimModule"
+          },
+          {
+            "attribute": "reconnect",
+            "type": "ljn_nn.modules.topology_heuristic.RecoPowerlinePerAreaModule"
+          },
+          {
+            "attribute": "recover_topo",
+            "type": "ljn_nn.modules.topology_heuristic.RecoverInitTopoModule"
+          },
+          {
+            "attribute": "topo_12_unsafe",
+            "type": "ljn_nn.modules.topology_nn_policy.TopoNNTopKModule"
+          },
+          {
+            "attribute": "topo_n1_unsafe",
+            "type": "ljn_nn.modules.topology_heuristic.TopoSearchModule"
+          }
+        ]
+      },
+      "base_optimizer": {
+        "values": {
+          "_alpha_por_error": {
+            "cvxtype": "Parameter",
+            "value": 0.5
+          },
+          "_margin_th_limit": {
+            "cvxtype": "Parameter",
+            "value": 0.93
+          },
+          "_past_dispatch": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "_past_state_of_charge": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "_penalty_curtailment_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_curtailment_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 15
+          },
+          "_penalty_redispatching_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_redispatching_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 0.005
+          },
+          "_penalty_storage_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_storage_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 0.0075
+          },
+          "_powerlines_b": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "af2d84da997ecec85568149dce288c30801b07b8dae9b79dfc0cd04141478049"
+            }
+          },
+          "_powerlines_g": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "891104d2e2dc04708e7ebcc0e482bbc2c5c520ec5af59c2b34d21575e46836c0"
+            }
+          },
+          "_powerlines_ratio": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "6705a0b9a0b36181a90c437593b430d9d591a4bef61febd267dafcf6714a1f91"
+            }
+          },
+          "_powerlines_x": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "fcf7688343c5173607fe7d1d5b8162dbb4f98d18be9af7724e8e6137ec0ca6b3"
+            }
+          },
+          "_prev_por_error": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "7c452f01ecfa16b964b72375f8a07ee500d2c3247253744cb68fac82b9ba1429"
+            }
+          },
+          "_storage_power_obs": {
+            "cvxtype": "Parameter",
+            "value": 1.1353782415390015
+          },
+          "_storage_setpoint": {
+            "shape": [
+              7
+            ],
+            "dtype": "<f4",
+            "sha256": "c3e363a564a2a106d891d10a2cf843ba2cf2b1d59fccb6d0950d175a69bdd97b"
+          },
+          "_storage_target_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "8297eb3f027ce8a0aa13ca6c386fd9c551bb108ebb5345e56ddb56ea54295551"
+            }
+          },
+          "_th_lim_mw": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "eda34b7b630df875775b6d04b20c819f5817a0a4f871a960aa984f5e8ef5c9ab"
+            }
+          },
+          "_weight_curtail_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "_weight_redisp_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "_weight_storage_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "area": true,
+          "bus_ex": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "61f638b95fcb94c0d1f6dad9a18a303afd05a7d8b52dd1805f95f6840ecb7a16"
+            }
+          },
+          "bus_gen": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                62
+              ],
+              "dtype": "<f8",
+              "sha256": "4aa983e45a28032bd9d0f4b066e4a9824b91851c4b36d6d90711bcc2f71d134d"
+            }
+          },
+          "bus_load": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                99
+              ],
+              "dtype": "<f8",
+              "sha256": "8fb969ef66077fb93c4a0ebe941dbb7180e8b16bd63831d628f184bba3c979b9"
+            }
+          },
+          "bus_or": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "1e121de79fd8d96afcd355bacf503abfa040a3edf6fabd224e239d26ed749406"
+            }
+          },
+          "bus_storage": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                7
+              ],
+              "dtype": "<f8",
+              "sha256": "5fbeca1541458f8adc4b2aedb437db157a7268f1796e00cc527f4ba7664caf81"
+            }
+          },
+          "curtail_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "curtail_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7dbf94dd33184044c1fd6602621bcbbef6a2764476ef48feeedd7458d4c76e7c"
+            }
+          },
+          "flow_computed": {
+            "shape": [
+              186
+            ],
+            "dtype": "<f8",
+            "sha256": "e4dca912a9b8822928045e88d65248f6a3d8bf234770cc2a2ca88147a7d519b5"
+          },
+          "gen_per_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "6dd3c73a72fa9a4e142ada1792e4f0d7077de0da987a22777370ba851b652698"
+            }
+          },
+          "gen_to_subid": {
+            "shape": [
+              62
+            ],
+            "dtype": "<i4",
+            "sha256": "57345ed3c58571ddcb057afa634ceac41556a0c5b390bddd2148d8872d386602"
+          },
+          "line_ex_to_subid": {
+            "shape": [
+              186
+            ],
+            "dtype": "<i4",
+            "sha256": "c1f3d0d189074a4e4d3eb810ef60345f947582d945cfc94dc354a1f7425de244"
+          },
+          "line_or_to_subid": {
+            "shape": [
+              186
+            ],
+            "dtype": "<i4",
+            "sha256": "e715804adcf0dc10a02c3f3981ce4cc41477b03c4b91d22394f69f3117c91977"
+          },
+          "load_per_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "63e51554fbf10fc2c34e65dc03463786e4ad6e2df3999f7a3fe024651d9dd9e7"
+            }
+          },
+          "load_to_subid": {
+            "shape": [
+              99
+            ],
+            "dtype": "<i4",
+            "sha256": "f79808344943e9dfe4785bda7bad30dba5db229297db3ef8d1d8c246b021f9c7"
+          },
+          "margin_rounding": 0.01,
+          "margin_sparse": 0.005,
+          "max_iter": 100000,
+          "n_gen": 62,
+          "n_line": 186,
+          "n_load": 99,
+          "n_storage": 7,
+          "n_sub": 118,
+          "nb_max_bus": 236,
+          "redisp_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "d8aeee6fdaec763a077b97aabdcb915071cf6df9cf064e9593cbbcd80c0633a4"
+            }
+          },
+          "redisp_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "abafcbcead6270bf74888af4441378a2b3bc83f76a6c36981672f34627152340"
+            }
+          },
+          "rho_danger": 0.99,
+          "rho_safe": 0.9,
+          "seed_used": null,
+          "space_prng": {
+            "rng_sha256": "f0a9504fe50e40d731604ac5dc45a609d7a5ee8668c22fde545d95c98493b058"
+          },
+          "storage_Emax": {
+            "shape": [
+              7
+            ],
+            "dtype": "<f4",
+            "sha256": "b6dab9582a26a5160e64ee05b96eb99719bf2b0e6df25a0543ef9d256b5f6b86"
+          },
+          "storage_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "a678617e949bc7a68ad5ac11f7ac7e9df05bdad631d7ebf407ce2b88047fa0a8"
+            }
+          },
+          "storage_to_subid": {
+            "shape": [
+              7
+            ],
+            "dtype": "<i4",
+            "sha256": "3ffe802114755b597c42d805703e39739a301d76b863117c8b1ebcfc37f45320"
+          },
+          "storage_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "a678617e949bc7a68ad5ac11f7ac7e9df05bdad631d7ebf407ce2b88047fa0a8"
+            }
+          },
+          "time_step": 1,
+          "vm_ex": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "de254a47f0a47c734d522afb97a633c342731765edb3af3806c0dbad436bf22f"
+            }
+          },
+          "vm_or": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "2e7b591ceb8cdd9ccb047c9784906929b8004481c6f506e84c5188b4bac7f25f"
+            }
+          }
+        },
+        "unserialized": [
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "config",
+            "type": "builtins.dict"
+          },
+          {
+            "attribute": "do_nothing",
+            "type": "grid2op.Space.GridObjects.ActionIDF2023_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "env",
+            "type": "abc.Environment_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "lines_in_area",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "restore_optimizer": {
+        "values": {
+          "_alpha_por_error": {
+            "cvxtype": "Parameter",
+            "value": 0.5
+          },
+          "_grid29_dc_programs": [
+            {
+              "key_sha256": "9547edd1fcc5ab3cc52d131bae6eb66b15b843cf985b6fa74732e6b79936106d",
+              "parameter_values": [
+                {
+                  "shape": [
+                    236
+                  ],
+                  "dtype": "<f8",
+                  "sha256": "02fc20c8023aceec0d5d570a44872127b0264cb257d86c1a77642a5f45544d2b"
+                },
+                {
+                  "shape": [
+                    236
+                  ],
+                  "dtype": "<f8",
+                  "sha256": "7e0dcacd83a83052cf8608d624019a8138e92e91b2e8fb9ed73c819f98cd4bdd"
+                }
+              ],
+              "variable_values": [
+                {
+                  "shape": [
+                    236
+                  ],
+                  "dtype": "<f8",
+                  "sha256": "f9040221552a64b26439905b1e63e5317731218d3eff9423220ff97218327466"
+                }
+              ]
+            }
+          ],
+          "_margin_th_limit": {
+            "cvxtype": "Parameter",
+            "value": 0.93
+          },
+          "_past_dispatch": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "_past_state_of_charge": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "_penalty_curtailment_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_curtailment_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 15
+          },
+          "_penalty_redispatching_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_redispatching_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 0.005
+          },
+          "_penalty_storage_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_storage_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 0.0075
+          },
+          "_powerlines_b": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "af2d84da997ecec85568149dce288c30801b07b8dae9b79dfc0cd04141478049"
+            }
+          },
+          "_powerlines_g": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "891104d2e2dc04708e7ebcc0e482bbc2c5c520ec5af59c2b34d21575e46836c0"
+            }
+          },
+          "_powerlines_ratio": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "6705a0b9a0b36181a90c437593b430d9d591a4bef61febd267dafcf6714a1f91"
+            }
+          },
+          "_powerlines_x": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "fcf7688343c5173607fe7d1d5b8162dbb4f98d18be9af7724e8e6137ec0ca6b3"
+            }
+          },
+          "_prev_por_error": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "0380adbf5840a59d12646fbb45c5af71c759d7d9c272787675afc671b5731dcd"
+            }
+          },
+          "_storage_power_obs": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_storage_setpoint": {
+            "shape": [
+              7
+            ],
+            "dtype": "<f4",
+            "sha256": "c3e363a564a2a106d891d10a2cf843ba2cf2b1d59fccb6d0950d175a69bdd97b"
+          },
+          "_storage_target_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "8297eb3f027ce8a0aa13ca6c386fd9c551bb108ebb5345e56ddb56ea54295551"
+            }
+          },
+          "_th_lim_mw": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "0906e6a16cf81db8ec7df1638ecb1e69b85f155d67ec5d1263137791077d53dd"
+            }
+          },
+          "_weight_curtail_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "_weight_redisp_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "_weight_storage_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "area": true,
+          "bus_ex": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "47ad3aa7f95e960f508b45c280e70c9d85c7667d774194ba6bb4f5c847dcdc4c"
+            }
+          },
+          "bus_gen": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                62
+              ],
+              "dtype": "<f8",
+              "sha256": "4aa983e45a28032bd9d0f4b066e4a9824b91851c4b36d6d90711bcc2f71d134d"
+            }
+          },
+          "bus_load": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                99
+              ],
+              "dtype": "<f8",
+              "sha256": "8fb969ef66077fb93c4a0ebe941dbb7180e8b16bd63831d628f184bba3c979b9"
+            }
+          },
+          "bus_or": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "57d27130e90ff68cd50c1ed84d7054c98409dab105fccc658ef91d49b61776c5"
+            }
+          },
+          "bus_storage": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                7
+              ],
+              "dtype": "<f8",
+              "sha256": "5fbeca1541458f8adc4b2aedb437db157a7268f1796e00cc527f4ba7664caf81"
+            }
+          },
+          "curtail_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "curtail_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "flow_computed": {
+            "shape": [
+              186
+            ],
+            "dtype": "<f8",
+            "sha256": "5c0eb55922c97a0a92a949508fb525b58a81ca24b401686ef16d2f7320739564"
+          },
+          "gen_per_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7e0dcacd83a83052cf8608d624019a8138e92e91b2e8fb9ed73c819f98cd4bdd"
+            }
+          },
+          "gen_to_subid": {
+            "shape": [
+              62
+            ],
+            "dtype": "<i4",
+            "sha256": "57345ed3c58571ddcb057afa634ceac41556a0c5b390bddd2148d8872d386602"
+          },
+          "line_ex_to_subid": {
+            "shape": [
+              186
+            ],
+            "dtype": "<i4",
+            "sha256": "c1f3d0d189074a4e4d3eb810ef60345f947582d945cfc94dc354a1f7425de244"
+          },
+          "line_or_to_subid": {
+            "shape": [
+              186
+            ],
+            "dtype": "<i4",
+            "sha256": "e715804adcf0dc10a02c3f3981ce4cc41477b03c4b91d22394f69f3117c91977"
+          },
+          "load_per_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "02fc20c8023aceec0d5d570a44872127b0264cb257d86c1a77642a5f45544d2b"
+            }
+          },
+          "load_to_subid": {
+            "shape": [
+              99
+            ],
+            "dtype": "<i4",
+            "sha256": "f79808344943e9dfe4785bda7bad30dba5db229297db3ef8d1d8c246b021f9c7"
+          },
+          "margin_rounding": 0.01,
+          "margin_sparse": 0.005,
+          "max_iter": 100000,
+          "n_gen": 62,
+          "n_line": 186,
+          "n_load": 99,
+          "n_storage": 7,
+          "n_sub": 118,
+          "nb_max_bus": 236,
+          "redisp_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "redisp_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "rho_danger": 0.99,
+          "rho_safe": 0.9,
+          "seed_used": null,
+          "space_prng": {
+            "rng_sha256": "4e895ea0587449c2a0d33bfd4b6a2187925d74b2539e2b9f1ef4de1ae1fe0406"
+          },
+          "storage_Emax": {
+            "shape": [
+              7
+            ],
+            "dtype": "<f4",
+            "sha256": "b6dab9582a26a5160e64ee05b96eb99719bf2b0e6df25a0543ef9d256b5f6b86"
+          },
+          "storage_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "storage_to_subid": {
+            "shape": [
+              7
+            ],
+            "dtype": "<i4",
+            "sha256": "3ffe802114755b597c42d805703e39739a301d76b863117c8b1ebcfc37f45320"
+          },
+          "storage_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "time_step": 1,
+          "vm_ex": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "4c55a3a942475996414c6b1ca9471984b9092fd4cbf55a8f6dafebd8b22385ef"
+            }
+          },
+          "vm_or": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "9c43463ac05721f62260a7c94e84dd83d45c6de14efb9902ff717d66fd1471a3"
+            }
+          }
+        },
+        "unserialized": [
+          {
+            "attribute": "_solve_problem",
+            "type": "builtins.function"
+          },
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "config",
+            "type": "builtins.dict"
+          },
+          {
+            "attribute": "do_nothing",
+            "type": "grid2op.Space.GridObjects.ActionIDF2023_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "env",
+            "type": "abc.Environment_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "lines_in_area",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "reconnect": {
+        "values": {
+          "action_type": null,
+          "lines_to_area_id": {
+            "shape": [
+              186
+            ],
+            "dtype": "<i8",
+            "sha256": "918a333969f1b5269ac89035c6fbfa43fc4182c33cd42274349a3ff43f3e17c4"
+          },
+          "module_type": null,
+          "nb_area": 3,
+          "seed_used": null,
+          "space_prng": {
+            "rng_sha256": "b8e109f0e184907c4278743ed2a721d330f35141fd0c14e86678addc7a8db8fc"
+          }
+        },
+        "unserialized": [
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "lines_in_area",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "recover_topology": {
+        "values": {
+          "null_action_reward": -100.0,
+          "resulting_rewards": {
+            "shape": [
+              1
+            ],
+            "dtype": "<f4",
+            "sha256": "a48bed9ee2950cc60ca91386a6c64a241a9ffd24bdc321bb15424ac7a7d3baed"
+          },
+          "seed_used": null,
+          "simulated_time_step": 1,
+          "space_prng": {
+            "rng_sha256": "e8124d18b33efe5238ec451ec9b37cb706f02c75dfc76a0fa690d74a84326e33"
+          }
+        },
+        "unserialized": [
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "tested_action",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "topology_search": {
+        "values": {
+          "action_type": null,
+          "module_type": null,
+          "null_action_reward": -100.0,
+          "resulting_rewards": null,
+          "seed_used": null,
+          "simulated_time_step": 1,
+          "space_prng": {
+            "rng_sha256": "f824a8e2e28180d72ab7f7134c6e8263b28baf307d237b5b6734e48fb2bb986f"
+          },
+          "tested_action": null
+        },
+        "unserialized": [
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "get_act",
+            "type": "builtins.function"
+          },
+          {
+            "attribute": "topo_act_list",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "opponent_space": {
+        "values": {
+          "attack_cooldown": 0,
+          "attack_max_duration": 96,
+          "budget": 1030.5701358318329,
+          "budget_per_timestep": 0.5099999904632568,
+          "current_attack_cooldown": 0,
+          "current_attack_duration": 1,
+          "init_budget": 1000.0,
+          "previous_fails": false
+        },
+        "unserialized": [
+          {
+            "attribute": "_do_nothing",
+            "type": "grid2op.Space.GridObjects.PowerlineSetAction_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "compute_budget",
+            "type": "grid2op.Opponent.baseActionBudget.BaseActionBudget"
+          },
+          {
+            "attribute": "last_attack",
+            "type": "grid2op.Space.GridObjects.PowerlineSetAction_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "opponent",
+            "type": "grid2op.Opponent.geometricOpponentMultiArea.GeometricOpponentMultiArea"
+          }
+        ]
+      },
+      "opponent": {
+        "values": {
+          "_new_attack_time_counters": {
+            "shape": [
+              3
+            ],
+            "dtype": "<i8",
+            "sha256": "7ca2464a0087bce683ed02730bfe7965e9738c235a111966db25df66fe919d1e"
+          },
+          "seed_used": 1537364731,
+          "space_prng": {
+            "rng_sha256": "062300dfd4a136972113009eb1d196ecab484d1d5af891b82d95e9f7e9fb3c52"
+          }
+        },
+        "unserialized": [
+          {
+            "attribute": "_do_nothing",
+            "type": "grid2op.Space.GridObjects.PowerlineSetAction_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "_previous_attacks",
+            "type": "builtins.list"
+          },
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "list_opponents",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "environment_rng": {
+        "rng_sha256": "6d745245f9a11ad78f14c0993e8a54e9f39c107167e3f3c15ba4e42499b21054"
+      }
+    },
+    "global_rngs_record_only": {
+      "python": "5ba00e4d1bb02cc082d5b5fb1d7c2256b5895633d9be18eb180896c6c991c7ef",
+      "numpy": "ab1c2b855a4897ef07a3f01bf156db41c3ca651c85f735794a4b61488fbbabff",
+      "torch": "758d8de141acbdc760f4c065ef52c5cd35bd046d95ab039e1f19be2c39f59537"
+    },
+    "scope": "Reviewed numeric controller/optimizer parameters, program values and explicitly seeded object RNG witnesses. Unused global RNGs recorded separately, not claimed identical. No opaque engine or solver clone. Full-prefix replay is the reconstruction method; solver uses warm_start=False."
+  },
+  "after_global": {
+    "sha256": "784ad5defbe0da98451a4652d1074e6fda097a43f5909df740348260e0fc31ca",
+    "inventory": {
+      "controller": {
+        "values": {},
+        "unserialized": [
+          {
+            "attribute": "base",
+            "type": "ljn_nn.LJNAgent.LJNAgentTopoNN"
+          },
+          {
+            "attribute": "env",
+            "type": "abc.Environment_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "safe",
+            "type": "ljn_nn.modules.convex_optim.OptimModule"
+          }
+        ]
+      },
+      "agent": {
+        "values": {
+          "rho_danger": 0.99,
+          "rho_safe": 0.9,
+          "seed_used": 0,
+          "space_prng": {
+            "rng_sha256": "8d880a0cee918de58a27298a223a2eac943649a3de9067710718d65d05563079"
+          },
+          "training_mode": false
+        },
+        "unserialized": [
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "env",
+            "type": "abc.Environment_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "optim",
+            "type": "ljn_nn.modules.convex_optim.OptimModule"
+          },
+          {
+            "attribute": "reconnect",
+            "type": "ljn_nn.modules.topology_heuristic.RecoPowerlinePerAreaModule"
+          },
+          {
+            "attribute": "recover_topo",
+            "type": "ljn_nn.modules.topology_heuristic.RecoverInitTopoModule"
+          },
+          {
+            "attribute": "topo_12_unsafe",
+            "type": "ljn_nn.modules.topology_nn_policy.TopoNNTopKModule"
+          },
+          {
+            "attribute": "topo_n1_unsafe",
+            "type": "ljn_nn.modules.topology_heuristic.TopoSearchModule"
+          }
+        ]
+      },
+      "base_optimizer": {
+        "values": {
+          "_alpha_por_error": {
+            "cvxtype": "Parameter",
+            "value": 0.5
+          },
+          "_margin_th_limit": {
+            "cvxtype": "Parameter",
+            "value": 0.93
+          },
+          "_past_dispatch": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "_past_state_of_charge": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "_penalty_curtailment_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_curtailment_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 15
+          },
+          "_penalty_redispatching_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_redispatching_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 0.005
+          },
+          "_penalty_storage_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_storage_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 0.0075
+          },
+          "_powerlines_b": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "af2d84da997ecec85568149dce288c30801b07b8dae9b79dfc0cd04141478049"
+            }
+          },
+          "_powerlines_g": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "891104d2e2dc04708e7ebcc0e482bbc2c5c520ec5af59c2b34d21575e46836c0"
+            }
+          },
+          "_powerlines_ratio": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "6705a0b9a0b36181a90c437593b430d9d591a4bef61febd267dafcf6714a1f91"
+            }
+          },
+          "_powerlines_x": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "fcf7688343c5173607fe7d1d5b8162dbb4f98d18be9af7724e8e6137ec0ca6b3"
+            }
+          },
+          "_prev_por_error": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "7c452f01ecfa16b964b72375f8a07ee500d2c3247253744cb68fac82b9ba1429"
+            }
+          },
+          "_storage_power_obs": {
+            "cvxtype": "Parameter",
+            "value": 1.1353782415390015
+          },
+          "_storage_setpoint": {
+            "shape": [
+              7
+            ],
+            "dtype": "<f4",
+            "sha256": "c3e363a564a2a106d891d10a2cf843ba2cf2b1d59fccb6d0950d175a69bdd97b"
+          },
+          "_storage_target_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "8297eb3f027ce8a0aa13ca6c386fd9c551bb108ebb5345e56ddb56ea54295551"
+            }
+          },
+          "_th_lim_mw": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "eda34b7b630df875775b6d04b20c819f5817a0a4f871a960aa984f5e8ef5c9ab"
+            }
+          },
+          "_weight_curtail_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "_weight_redisp_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "_weight_storage_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "area": true,
+          "bus_ex": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "61f638b95fcb94c0d1f6dad9a18a303afd05a7d8b52dd1805f95f6840ecb7a16"
+            }
+          },
+          "bus_gen": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                62
+              ],
+              "dtype": "<f8",
+              "sha256": "4aa983e45a28032bd9d0f4b066e4a9824b91851c4b36d6d90711bcc2f71d134d"
+            }
+          },
+          "bus_load": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                99
+              ],
+              "dtype": "<f8",
+              "sha256": "8fb969ef66077fb93c4a0ebe941dbb7180e8b16bd63831d628f184bba3c979b9"
+            }
+          },
+          "bus_or": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "1e121de79fd8d96afcd355bacf503abfa040a3edf6fabd224e239d26ed749406"
+            }
+          },
+          "bus_storage": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                7
+              ],
+              "dtype": "<f8",
+              "sha256": "5fbeca1541458f8adc4b2aedb437db157a7268f1796e00cc527f4ba7664caf81"
+            }
+          },
+          "curtail_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "curtail_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7dbf94dd33184044c1fd6602621bcbbef6a2764476ef48feeedd7458d4c76e7c"
+            }
+          },
+          "flow_computed": {
+            "shape": [
+              186
+            ],
+            "dtype": "<f8",
+            "sha256": "e4dca912a9b8822928045e88d65248f6a3d8bf234770cc2a2ca88147a7d519b5"
+          },
+          "gen_per_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "6dd3c73a72fa9a4e142ada1792e4f0d7077de0da987a22777370ba851b652698"
+            }
+          },
+          "gen_to_subid": {
+            "shape": [
+              62
+            ],
+            "dtype": "<i4",
+            "sha256": "57345ed3c58571ddcb057afa634ceac41556a0c5b390bddd2148d8872d386602"
+          },
+          "line_ex_to_subid": {
+            "shape": [
+              186
+            ],
+            "dtype": "<i4",
+            "sha256": "c1f3d0d189074a4e4d3eb810ef60345f947582d945cfc94dc354a1f7425de244"
+          },
+          "line_or_to_subid": {
+            "shape": [
+              186
+            ],
+            "dtype": "<i4",
+            "sha256": "e715804adcf0dc10a02c3f3981ce4cc41477b03c4b91d22394f69f3117c91977"
+          },
+          "load_per_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "63e51554fbf10fc2c34e65dc03463786e4ad6e2df3999f7a3fe024651d9dd9e7"
+            }
+          },
+          "load_to_subid": {
+            "shape": [
+              99
+            ],
+            "dtype": "<i4",
+            "sha256": "f79808344943e9dfe4785bda7bad30dba5db229297db3ef8d1d8c246b021f9c7"
+          },
+          "margin_rounding": 0.01,
+          "margin_sparse": 0.005,
+          "max_iter": 100000,
+          "n_gen": 62,
+          "n_line": 186,
+          "n_load": 99,
+          "n_storage": 7,
+          "n_sub": 118,
+          "nb_max_bus": 236,
+          "redisp_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "d8aeee6fdaec763a077b97aabdcb915071cf6df9cf064e9593cbbcd80c0633a4"
+            }
+          },
+          "redisp_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "abafcbcead6270bf74888af4441378a2b3bc83f76a6c36981672f34627152340"
+            }
+          },
+          "rho_danger": 0.99,
+          "rho_safe": 0.9,
+          "seed_used": null,
+          "space_prng": {
+            "rng_sha256": "f0a9504fe50e40d731604ac5dc45a609d7a5ee8668c22fde545d95c98493b058"
+          },
+          "storage_Emax": {
+            "shape": [
+              7
+            ],
+            "dtype": "<f4",
+            "sha256": "b6dab9582a26a5160e64ee05b96eb99719bf2b0e6df25a0543ef9d256b5f6b86"
+          },
+          "storage_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "a678617e949bc7a68ad5ac11f7ac7e9df05bdad631d7ebf407ce2b88047fa0a8"
+            }
+          },
+          "storage_to_subid": {
+            "shape": [
+              7
+            ],
+            "dtype": "<i4",
+            "sha256": "3ffe802114755b597c42d805703e39739a301d76b863117c8b1ebcfc37f45320"
+          },
+          "storage_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "a678617e949bc7a68ad5ac11f7ac7e9df05bdad631d7ebf407ce2b88047fa0a8"
+            }
+          },
+          "time_step": 1,
+          "vm_ex": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "de254a47f0a47c734d522afb97a633c342731765edb3af3806c0dbad436bf22f"
+            }
+          },
+          "vm_or": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "2e7b591ceb8cdd9ccb047c9784906929b8004481c6f506e84c5188b4bac7f25f"
+            }
+          }
+        },
+        "unserialized": [
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "config",
+            "type": "builtins.dict"
+          },
+          {
+            "attribute": "do_nothing",
+            "type": "grid2op.Space.GridObjects.ActionIDF2023_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "env",
+            "type": "abc.Environment_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "lines_in_area",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "restore_optimizer": {
+        "values": {
+          "_alpha_por_error": {
+            "cvxtype": "Parameter",
+            "value": 0.5
+          },
+          "_grid29_dc_programs": [
+            {
+              "key_sha256": "9547edd1fcc5ab3cc52d131bae6eb66b15b843cf985b6fa74732e6b79936106d",
+              "parameter_values": [
+                {
+                  "shape": [
+                    236
+                  ],
+                  "dtype": "<f8",
+                  "sha256": "02fc20c8023aceec0d5d570a44872127b0264cb257d86c1a77642a5f45544d2b"
+                },
+                {
+                  "shape": [
+                    236
+                  ],
+                  "dtype": "<f8",
+                  "sha256": "7e0dcacd83a83052cf8608d624019a8138e92e91b2e8fb9ed73c819f98cd4bdd"
+                }
+              ],
+              "variable_values": [
+                {
+                  "shape": [
+                    236
+                  ],
+                  "dtype": "<f8",
+                  "sha256": "f9040221552a64b26439905b1e63e5317731218d3eff9423220ff97218327466"
+                }
+              ]
+            }
+          ],
+          "_margin_th_limit": {
+            "cvxtype": "Parameter",
+            "value": 0.93
+          },
+          "_past_dispatch": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "_past_state_of_charge": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "_penalty_curtailment_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_curtailment_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 15
+          },
+          "_penalty_redispatching_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_redispatching_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 0.005
+          },
+          "_penalty_storage_safe": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_penalty_storage_unsafe": {
+            "cvxtype": "Parameter",
+            "value": 0.0075
+          },
+          "_powerlines_b": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "af2d84da997ecec85568149dce288c30801b07b8dae9b79dfc0cd04141478049"
+            }
+          },
+          "_powerlines_g": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "891104d2e2dc04708e7ebcc0e482bbc2c5c520ec5af59c2b34d21575e46836c0"
+            }
+          },
+          "_powerlines_ratio": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "6705a0b9a0b36181a90c437593b430d9d591a4bef61febd267dafcf6714a1f91"
+            }
+          },
+          "_powerlines_x": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "fcf7688343c5173607fe7d1d5b8162dbb4f98d18be9af7724e8e6137ec0ca6b3"
+            }
+          },
+          "_prev_por_error": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "0380adbf5840a59d12646fbb45c5af71c759d7d9c272787675afc671b5731dcd"
+            }
+          },
+          "_storage_power_obs": {
+            "cvxtype": "Parameter",
+            "value": 0.0
+          },
+          "_storage_setpoint": {
+            "shape": [
+              7
+            ],
+            "dtype": "<f4",
+            "sha256": "c3e363a564a2a106d891d10a2cf843ba2cf2b1d59fccb6d0950d175a69bdd97b"
+          },
+          "_storage_target_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "8297eb3f027ce8a0aa13ca6c386fd9c551bb108ebb5345e56ddb56ea54295551"
+            }
+          },
+          "_th_lim_mw": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "0906e6a16cf81db8ec7df1638ecb1e69b85f155d67ec5d1263137791077d53dd"
+            }
+          },
+          "_weight_curtail_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "_weight_redisp_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "_weight_storage_target": {
+            "cvxtype": "Parameter",
+            "value": 1.0
+          },
+          "area": true,
+          "bus_ex": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "47ad3aa7f95e960f508b45c280e70c9d85c7667d774194ba6bb4f5c847dcdc4c"
+            }
+          },
+          "bus_gen": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                62
+              ],
+              "dtype": "<f8",
+              "sha256": "4aa983e45a28032bd9d0f4b066e4a9824b91851c4b36d6d90711bcc2f71d134d"
+            }
+          },
+          "bus_load": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                99
+              ],
+              "dtype": "<f8",
+              "sha256": "8fb969ef66077fb93c4a0ebe941dbb7180e8b16bd63831d628f184bba3c979b9"
+            }
+          },
+          "bus_or": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "57d27130e90ff68cd50c1ed84d7054c98409dab105fccc658ef91d49b61776c5"
+            }
+          },
+          "bus_storage": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                7
+              ],
+              "dtype": "<f8",
+              "sha256": "5fbeca1541458f8adc4b2aedb437db157a7268f1796e00cc527f4ba7664caf81"
+            }
+          },
+          "curtail_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "curtail_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "flow_computed": {
+            "shape": [
+              186
+            ],
+            "dtype": "<f8",
+            "sha256": "5c0eb55922c97a0a92a949508fb525b58a81ca24b401686ef16d2f7320739564"
+          },
+          "gen_per_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7e0dcacd83a83052cf8608d624019a8138e92e91b2e8fb9ed73c819f98cd4bdd"
+            }
+          },
+          "gen_to_subid": {
+            "shape": [
+              62
+            ],
+            "dtype": "<i4",
+            "sha256": "57345ed3c58571ddcb057afa634ceac41556a0c5b390bddd2148d8872d386602"
+          },
+          "line_ex_to_subid": {
+            "shape": [
+              186
+            ],
+            "dtype": "<i4",
+            "sha256": "c1f3d0d189074a4e4d3eb810ef60345f947582d945cfc94dc354a1f7425de244"
+          },
+          "line_or_to_subid": {
+            "shape": [
+              186
+            ],
+            "dtype": "<i4",
+            "sha256": "e715804adcf0dc10a02c3f3981ce4cc41477b03c4b91d22394f69f3117c91977"
+          },
+          "load_per_bus": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "02fc20c8023aceec0d5d570a44872127b0264cb257d86c1a77642a5f45544d2b"
+            }
+          },
+          "load_to_subid": {
+            "shape": [
+              99
+            ],
+            "dtype": "<i4",
+            "sha256": "f79808344943e9dfe4785bda7bad30dba5db229297db3ef8d1d8c246b021f9c7"
+          },
+          "margin_rounding": 0.01,
+          "margin_sparse": 0.005,
+          "max_iter": 100000,
+          "n_gen": 62,
+          "n_line": 186,
+          "n_load": 99,
+          "n_storage": 7,
+          "n_sub": 118,
+          "nb_max_bus": 236,
+          "redisp_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "redisp_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "rho_danger": 0.99,
+          "rho_safe": 0.9,
+          "seed_used": null,
+          "space_prng": {
+            "rng_sha256": "4e895ea0587449c2a0d33bfd4b6a2187925d74b2539e2b9f1ef4de1ae1fe0406"
+          },
+          "storage_Emax": {
+            "shape": [
+              7
+            ],
+            "dtype": "<f4",
+            "sha256": "b6dab9582a26a5160e64ee05b96eb99719bf2b0e6df25a0543ef9d256b5f6b86"
+          },
+          "storage_down": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "storage_to_subid": {
+            "shape": [
+              7
+            ],
+            "dtype": "<i4",
+            "sha256": "3ffe802114755b597c42d805703e39739a301d76b863117c8b1ebcfc37f45320"
+          },
+          "storage_up": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                236
+              ],
+              "dtype": "<f8",
+              "sha256": "7db7237b6d90804bfb6ed0835cec260800baf202d40becbeac137fb18fa0dafe"
+            }
+          },
+          "time_step": 1,
+          "vm_ex": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "4c55a3a942475996414c6b1ca9471984b9092fd4cbf55a8f6dafebd8b22385ef"
+            }
+          },
+          "vm_or": {
+            "cvxtype": "Parameter",
+            "value": {
+              "shape": [
+                186
+              ],
+              "dtype": "<f8",
+              "sha256": "9c43463ac05721f62260a7c94e84dd83d45c6de14efb9902ff717d66fd1471a3"
+            }
+          }
+        },
+        "unserialized": [
+          {
+            "attribute": "_solve_problem",
+            "type": "builtins.function"
+          },
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "config",
+            "type": "builtins.dict"
+          },
+          {
+            "attribute": "do_nothing",
+            "type": "grid2op.Space.GridObjects.ActionIDF2023_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "env",
+            "type": "abc.Environment_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "lines_in_area",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "reconnect": {
+        "values": {
+          "action_type": null,
+          "lines_to_area_id": {
+            "shape": [
+              186
+            ],
+            "dtype": "<i8",
+            "sha256": "918a333969f1b5269ac89035c6fbfa43fc4182c33cd42274349a3ff43f3e17c4"
+          },
+          "module_type": null,
+          "nb_area": 3,
+          "seed_used": null,
+          "space_prng": {
+            "rng_sha256": "b8e109f0e184907c4278743ed2a721d330f35141fd0c14e86678addc7a8db8fc"
+          }
+        },
+        "unserialized": [
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "lines_in_area",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "recover_topology": {
+        "values": {
+          "null_action_reward": -100.0,
+          "resulting_rewards": {
+            "shape": [
+              1
+            ],
+            "dtype": "<f4",
+            "sha256": "a48bed9ee2950cc60ca91386a6c64a241a9ffd24bdc321bb15424ac7a7d3baed"
+          },
+          "seed_used": null,
+          "simulated_time_step": 1,
+          "space_prng": {
+            "rng_sha256": "e8124d18b33efe5238ec451ec9b37cb706f02c75dfc76a0fa690d74a84326e33"
+          }
+        },
+        "unserialized": [
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "tested_action",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "topology_search": {
+        "values": {
+          "action_type": null,
+          "module_type": null,
+          "null_action_reward": -100.0,
+          "resulting_rewards": null,
+          "seed_used": null,
+          "simulated_time_step": 1,
+          "space_prng": {
+            "rng_sha256": "f824a8e2e28180d72ab7f7134c6e8263b28baf307d237b5b6734e48fb2bb986f"
+          },
+          "tested_action": null
+        },
+        "unserialized": [
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "get_act",
+            "type": "builtins.function"
+          },
+          {
+            "attribute": "topo_act_list",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "opponent_space": {
+        "values": {
+          "attack_cooldown": 0,
+          "attack_max_duration": 96,
+          "budget": 1030.5701358318329,
+          "budget_per_timestep": 0.5099999904632568,
+          "current_attack_cooldown": 0,
+          "current_attack_duration": 1,
+          "init_budget": 1000.0,
+          "previous_fails": false
+        },
+        "unserialized": [
+          {
+            "attribute": "_do_nothing",
+            "type": "grid2op.Space.GridObjects.PowerlineSetAction_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "compute_budget",
+            "type": "grid2op.Opponent.baseActionBudget.BaseActionBudget"
+          },
+          {
+            "attribute": "last_attack",
+            "type": "grid2op.Space.GridObjects.PowerlineSetAction_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "opponent",
+            "type": "grid2op.Opponent.geometricOpponentMultiArea.GeometricOpponentMultiArea"
+          }
+        ]
+      },
+      "opponent": {
+        "values": {
+          "_new_attack_time_counters": {
+            "shape": [
+              3
+            ],
+            "dtype": "<i8",
+            "sha256": "7ca2464a0087bce683ed02730bfe7965e9738c235a111966db25df66fe919d1e"
+          },
+          "seed_used": 1537364731,
+          "space_prng": {
+            "rng_sha256": "062300dfd4a136972113009eb1d196ecab484d1d5af891b82d95e9f7e9fb3c52"
+          }
+        },
+        "unserialized": [
+          {
+            "attribute": "_do_nothing",
+            "type": "grid2op.Space.GridObjects.PowerlineSetAction_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "_previous_attacks",
+            "type": "builtins.list"
+          },
+          {
+            "attribute": "action_space",
+            "type": "grid2op.Space.GridObjects.ActionSpace_trainval_envLightSimBackend"
+          },
+          {
+            "attribute": "list_opponents",
+            "type": "builtins.list"
+          }
+        ]
+      },
+      "environment_rng": {
+        "rng_sha256": "6d745245f9a11ad78f14c0993e8a54e9f39c107167e3f3c15ba4e42499b21054"
+      }
+    },
+    "global_rngs_record_only": {
+      "python": "5ba00e4d1bb02cc082d5b5fb1d7c2256b5895633d9be18eb180896c6c991c7ef",
+      "numpy": "ab1c2b855a4897ef07a3f01bf156db41c3ca651c85f735794a4b61488fbbabff",
+      "torch": "758d8de141acbdc760f4c065ef52c5cd35bd046d95ab039e1f19be2c39f59537"
+    },
+    "scope": "Reviewed numeric controller/optimizer parameters, program values and explicitly seeded object RNG witnesses. Unused global RNGs recorded separately, not claimed identical. No opaque engine or solver clone. Full-prefix replay is the reconstruction method; solver uses warm_start=False."
+  },
+  "global_feedback": [
+    {
+      "pool_id": 0,
+      "rho": 0.9928576946258545,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 1,
+      "rho": 0.9585201144218445,
+      "reward": 1.0414798259735107,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 2,
+      "rho": 0.9951472878456116,
+      "reward": 1.0048527717590332,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 3,
+      "rho": 1.1963344812393188,
+      "reward": 0.8036655187606812,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 4,
+      "rho": 0.9922397136688232,
+      "reward": 1.0077602863311768,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 5,
+      "rho": 1.331725001335144,
+      "reward": 0.668274998664856,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 6,
+      "rho": 0.9926475882530212,
+      "reward": 1.007352352142334,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 7,
+      "rho": 1.1590465307235718,
+      "reward": 0.8409534692764282,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 8,
+      "rho": 0.9875794649124146,
+      "reward": 1.0124205350875854,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 9,
+      "rho": 1.4846413135528564,
+      "reward": 0.5153586864471436,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 10,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 11,
+      "rho": 1.411461353302002,
+      "reward": 0.588538646697998,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 12,
+      "rho": 1.0354613065719604,
+      "reward": 0.9645386934280396,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 13,
+      "rho": 0.9929249882698059,
+      "reward": 1.0070750713348389,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 14,
+      "rho": 1.2314167022705078,
+      "reward": 0.7685832977294922,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 15,
+      "rho": 1.6978458166122437,
+      "reward": 0.30215418338775635,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 16,
+      "rho": 1.0034664869308472,
+      "reward": 0.9965335130691528,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 17,
+      "rho": 1.7029167413711548,
+      "reward": 0.2970832586288452,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 18,
+      "rho": 0.9969735741615295,
+      "reward": 1.0030264854431152,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 19,
+      "rho": 0.9928563237190247,
+      "reward": 1.0071437358856201,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 20,
+      "rho": 1.0648157596588135,
+      "reward": 0.9351842403411865,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 21,
+      "rho": 1.5581049919128418,
+      "reward": 0.4418950080871582,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 22,
+      "rho": 1.2517197132110596,
+      "reward": 0.7482802867889404,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 23,
+      "rho": 1.2905851602554321,
+      "reward": 0.7094148397445679,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 24,
+      "rho": 1.291100025177002,
+      "reward": 0.708899974822998,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 25,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 26,
+      "rho": 1.2030401229858398,
+      "reward": 0.7969598770141602,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 27,
+      "rho": 0.9548007845878601,
+      "reward": 1.0451991558074951,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 28,
+      "rho": 1.1164445877075195,
+      "reward": 0.8835554122924805,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 29,
+      "rho": 1.8838425874710083,
+      "reward": 0.1161574125289917,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 30,
+      "rho": 1.170954704284668,
+      "reward": 0.829045295715332,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 31,
+      "rho": 1.149274230003357,
+      "reward": 0.8507257699966431,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 32,
+      "rho": 1.0579887628555298,
+      "reward": 0.9420112371444702,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 33,
+      "rho": 1.1035887002944946,
+      "reward": 0.8964112997055054,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 34,
+      "rho": 1.1657315492630005,
+      "reward": 0.8342684507369995,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 35,
+      "rho": 1.885478138923645,
+      "reward": 0.11452186107635498,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 36,
+      "rho": 1.0406795740127563,
+      "reward": 0.9593204259872437,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 37,
+      "rho": 1.1054754257202148,
+      "reward": 0.8945245742797852,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 38,
+      "rho": 1.5543782711029053,
+      "reward": 0.4456217288970947,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 39,
+      "rho": 1.091502070426941,
+      "reward": 0.9084979295730591,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 40,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 41,
+      "rho": 0.954667329788208,
+      "reward": 1.045332670211792,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 42,
+      "rho": 1.0077109336853027,
+      "reward": 0.9922890663146973,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 43,
+      "rho": 1.2992948293685913,
+      "reward": 0.7007051706314087,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 44,
+      "rho": 1.0152300596237183,
+      "reward": 0.9847699403762817,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 45,
+      "rho": 1.0858817100524902,
+      "reward": 0.9141182899475098,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 46,
+      "rho": 0.992569088935852,
+      "reward": 1.007430911064148,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 47,
+      "rho": 1.147902011871338,
+      "reward": 0.8520979881286621,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 48,
+      "rho": 1.1477508544921875,
+      "reward": 0.8522491455078125,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 49,
+      "rho": 0.9951081871986389,
+      "reward": 1.0048918724060059,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 50,
+      "rho": 1.0071874856948853,
+      "reward": 0.9928125143051147,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 51,
+      "rho": 0.9751027226448059,
+      "reward": 1.0248973369598389,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 52,
+      "rho": 1.5929900407791138,
+      "reward": 0.40700995922088623,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 53,
+      "rho": 0.9673417210578918,
+      "reward": 1.032658338546753,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 54,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 55,
+      "rho": 0.9739676713943481,
+      "reward": 1.0260323286056519,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 56,
+      "rho": 1.6551674604415894,
+      "reward": 0.34483253955841064,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 57,
+      "rho": 0.992980420589447,
+      "reward": 1.0070195198059082,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 58,
+      "rho": 0.9516134858131409,
+      "reward": 1.048386573791504,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 59,
+      "rho": 1.4485920667648315,
+      "reward": 0.5514079332351685,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 60,
+      "rho": 0.9931104779243469,
+      "reward": 1.0068895816802979,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 61,
+      "rho": 1.1457488536834717,
+      "reward": 0.8542511463165283,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 62,
+      "rho": 0.9467793107032776,
+      "reward": 1.0532207489013672,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 63,
+      "rho": 1.0261907577514648,
+      "reward": 0.9738092422485352,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 64,
+      "rho": 1.2432539463043213,
+      "reward": 0.7567460536956787,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 65,
+      "rho": 0.992794394493103,
+      "reward": 1.007205605506897,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 66,
+      "rho": 0.9570841193199158,
+      "reward": 1.0429158210754395,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 67,
+      "rho": 1.1643965244293213,
+      "reward": 0.8356034755706787,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 68,
+      "rho": 0.9835792183876038,
+      "reward": 1.016420841217041,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 69,
+      "rho": 0.9549030661582947,
+      "reward": 1.0450968742370605,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 70,
+      "rho": 0.0,
+      "reward": -1.0,
+      "done": true,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 72,
+      "rho": 1.0627423524856567,
+      "reward": 0.9372576475143433,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 73,
+      "rho": 1.2723315954208374,
+      "reward": 0.7276684045791626,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 74,
+      "rho": 0.9960944652557373,
+      "reward": 1.0039055347442627,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 75,
+      "rho": 1.1419165134429932,
+      "reward": 0.8580834865570068,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 76,
+      "rho": 0.9928385615348816,
+      "reward": 1.0071613788604736,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 77,
+      "rho": 1.7846983671188354,
+      "reward": 0.21530163288116455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 78,
+      "rho": 0.9481834769248962,
+      "reward": 1.051816463470459,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 79,
+      "rho": 0.9928616285324097,
+      "reward": 1.0071383714675903,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 80,
+      "rho": 0.9669815897941589,
+      "reward": 1.0330183506011963,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 81,
+      "rho": 1.527019739151001,
+      "reward": 0.472980260848999,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 82,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 83,
+      "rho": 1.5418726205825806,
+      "reward": 0.45812737941741943,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 84,
+      "rho": 1.476845383644104,
+      "reward": 0.523154616355896,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 85,
+      "rho": 1.0383212566375732,
+      "reward": 0.9616787433624268,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 86,
+      "rho": 1.0173635482788086,
+      "reward": 0.9826364517211914,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 87,
+      "rho": 0.9497824311256409,
+      "reward": 1.050217628479004,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 88,
+      "rho": 0.9910937547683716,
+      "reward": 1.0089062452316284,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 89,
+      "rho": 0.0,
+      "reward": -1.0,
+      "done": true,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [
+        "Grid2OpException BackendError \"Divergence of AC powerflow. Detailed error: ErrorType.TooManyIterations\""
+      ],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 90,
+      "rho": 0.9927921295166016,
+      "reward": 1.0072078704833984,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 91,
+      "rho": 0.9925124049186707,
+      "reward": 1.0074875354766846,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 92,
+      "rho": 1.0144671201705933,
+      "reward": 0.9855328798294067,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 93,
+      "rho": 1.909219741821289,
+      "reward": 0.09078025817871094,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 94,
+      "rho": 0.9930012822151184,
+      "reward": 1.0069987773895264,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 95,
+      "rho": 1.024212121963501,
+      "reward": 0.975787878036499,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 96,
+      "rho": 0.9927388429641724,
+      "reward": 1.0072611570358276,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 97,
+      "rho": 1.6388980150222778,
+      "reward": 0.36110198497772217,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 98,
+      "rho": 1.7427036762237549,
+      "reward": 0.2572963237762451,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 99,
+      "rho": 0.9845783710479736,
+      "reward": 1.0154216289520264,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 100,
+      "rho": 0.9817624092102051,
+      "reward": 1.018237590789795,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 101,
+      "rho": 1.7715398073196411,
+      "reward": 0.2284601926803589,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 102,
+      "rho": 0.9927195310592651,
+      "reward": 1.0072804689407349,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 103,
+      "rho": 1.0804007053375244,
+      "reward": 0.9195992946624756,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 104,
+      "rho": 0.9914979338645935,
+      "reward": 1.0085020065307617,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 105,
+      "rho": 1.75039541721344,
+      "reward": 0.24960458278656006,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 106,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 107,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 108,
+      "rho": 0.9929972290992737,
+      "reward": 1.007002830505371,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 109,
+      "rho": 1.1532201766967773,
+      "reward": 0.8467798233032227,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 110,
+      "rho": 0.9537330269813538,
+      "reward": 1.046267032623291,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 111,
+      "rho": 0.9927677512168884,
+      "reward": 1.0072321891784668,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 112,
+      "rho": 1.1094346046447754,
+      "reward": 0.8905653953552246,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 113,
+      "rho": 1.2147560119628906,
+      "reward": 0.7852439880371094,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 114,
+      "rho": 1.9600551128387451,
+      "reward": 0.03994488716125488,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 115,
+      "rho": 1.1910145282745361,
+      "reward": 0.8089854717254639,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 116,
+      "rho": 1.038232684135437,
+      "reward": 0.961767315864563,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 117,
+      "rho": 0.9821337461471558,
+      "reward": 1.0178662538528442,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 118,
+      "rho": 0.9928354620933533,
+      "reward": 1.007164478302002,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 119,
+      "rho": 0.9874754548072815,
+      "reward": 1.0125246047973633,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 120,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 121,
+      "rho": 0.9820426106452942,
+      "reward": 1.0179574489593506,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 122,
+      "rho": 1.1472495794296265,
+      "reward": 0.8527504205703735,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 123,
+      "rho": 0.997834324836731,
+      "reward": 1.002165675163269,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 124,
+      "rho": 1.8721305131912231,
+      "reward": 0.12786948680877686,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 125,
+      "rho": 0.9928563237190247,
+      "reward": 1.0071437358856201,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 126,
+      "rho": 0.9878844022750854,
+      "reward": 1.0121155977249146,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 127,
+      "rho": 1.0496046543121338,
+      "reward": 0.9503953456878662,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 128,
+      "rho": 1.0500073432922363,
+      "reward": 0.9499926567077637,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "shortlist"
+    },
+    {
+      "pool_id": 129,
+      "rho": 0.9925765991210938,
+      "reward": 1.0074234008789062,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 130,
+      "rho": 1.0019489526748657,
+      "reward": 0.9980510473251343,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 131,
+      "rho": 0.9907650947570801,
+      "reward": 1.00923490524292,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 132,
+      "rho": 0.9840987920761108,
+      "reward": 1.0159012079238892,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 133,
+      "rho": 1.0759183168411255,
+      "reward": 0.9240816831588745,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 134,
+      "rho": 1.3692729473114014,
+      "reward": 0.6307270526885986,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 135,
+      "rho": 1.3778393268585205,
+      "reward": 0.6221606731414795,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 136,
+      "rho": 0.0,
+      "reward": -1.0,
+      "done": true,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverSolve\""
+      ],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 137,
+      "rho": 1.086211085319519,
+      "reward": 0.913788914680481,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 138,
+      "rho": 1.0274821519851685,
+      "reward": 0.9725178480148315,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 139,
+      "rho": 1.2827842235565186,
+      "reward": 0.7172157764434814,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 141,
+      "rho": 1.034451961517334,
+      "reward": 0.965548038482666,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 142,
+      "rho": 0.9970157742500305,
+      "reward": 1.0029842853546143,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 143,
+      "rho": 1.0190109014511108,
+      "reward": 0.9809890985488892,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 144,
+      "rho": 0.0,
+      "reward": -1.0,
+      "done": true,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 145,
+      "rho": 0.9940773248672485,
+      "reward": 1.0059226751327515,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 146,
+      "rho": 1.1016831398010254,
+      "reward": 0.8983168601989746,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 147,
+      "rho": 0.9566364288330078,
+      "reward": 1.0433635711669922,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 148,
+      "rho": 1.7974709272384644,
+      "reward": 0.20252907276153564,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 149,
+      "rho": 0.9964643120765686,
+      "reward": 1.0035357475280762,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 150,
+      "rho": 1.1404789686203003,
+      "reward": 0.8595210313796997,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 151,
+      "rho": 1.1652761697769165,
+      "reward": 0.8347238302230835,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 152,
+      "rho": 0.993866503238678,
+      "reward": 1.0061335563659668,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 153,
+      "rho": 1.37628972530365,
+      "reward": 0.6237102746963501,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 154,
+      "rho": 1.3505562543869019,
+      "reward": 0.6494437456130981,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 155,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 156,
+      "rho": 0.9901244044303894,
+      "reward": 1.0098755359649658,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 157,
+      "rho": 1.0071462392807007,
+      "reward": 0.9928537607192993,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 158,
+      "rho": 1.083870530128479,
+      "reward": 0.916129469871521,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 159,
+      "rho": 1.1101521253585815,
+      "reward": 0.8898478746414185,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 160,
+      "rho": 1.0129350423812866,
+      "reward": 0.9870649576187134,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 161,
+      "rho": 0.9929085373878479,
+      "reward": 1.0070915222167969,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 162,
+      "rho": 1.0607483386993408,
+      "reward": 0.9392516613006592,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 163,
+      "rho": 1.4986939430236816,
+      "reward": 0.5013060569763184,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 164,
+      "rho": 1.1249220371246338,
+      "reward": 0.8750779628753662,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 165,
+      "rho": 1.9972525835037231,
+      "reward": 0.0027474164962768555,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 166,
+      "rho": 1.0388994216918945,
+      "reward": 0.9611005783081055,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 167,
+      "rho": 1.3135242462158203,
+      "reward": 0.6864757537841797,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 168,
+      "rho": 1.3100508451461792,
+      "reward": 0.6899491548538208,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 169,
+      "rho": 0.9874392747879028,
+      "reward": 1.0125607252120972,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 170,
+      "rho": 1.3770065307617188,
+      "reward": 0.6229934692382812,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 171,
+      "rho": 1.1380982398986816,
+      "reward": 0.8619017601013184,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 172,
+      "rho": 0.9613215923309326,
+      "reward": 1.0386784076690674,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 173,
+      "rho": 0.9889901876449585,
+      "reward": 1.0110098123550415,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 174,
+      "rho": 0.9927424192428589,
+      "reward": 1.0072575807571411,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 175,
+      "rho": 0.9742430448532104,
+      "reward": 1.0257569551467896,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 176,
+      "rho": 0.9845640063285828,
+      "reward": 1.0154359340667725,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 177,
+      "rho": 1.0713691711425781,
+      "reward": 0.9286308288574219,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 178,
+      "rho": 1.4592869281768799,
+      "reward": 0.5407130718231201,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 179,
+      "rho": 1.1723291873931885,
+      "reward": 0.8276708126068115,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 180,
+      "rho": 0.992510974407196,
+      "reward": 1.0074889659881592,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 181,
+      "rho": 1.0284104347229004,
+      "reward": 0.9715895652770996,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 182,
+      "rho": 1.0190964937210083,
+      "reward": 0.9809035062789917,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 183,
+      "rho": 0.9928442239761353,
+      "reward": 1.0071557760238647,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 184,
+      "rho": 0.9928115010261536,
+      "reward": 1.0071885585784912,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 185,
+      "rho": 1.0251299142837524,
+      "reward": 0.9748700857162476,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 186,
+      "rho": 1.0261205434799194,
+      "reward": 0.9738794565200806,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 187,
+      "rho": 1.0488941669464111,
+      "reward": 0.9511058330535889,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 188,
+      "rho": 1.0297077894210815,
+      "reward": 0.9702922105789185,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 189,
+      "rho": 1.0688318014144897,
+      "reward": 0.9311681985855103,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 190,
+      "rho": 1.0710477828979492,
+      "reward": 0.9289522171020508,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 191,
+      "rho": 1.0503519773483276,
+      "reward": 0.9496480226516724,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 192,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 193,
+      "rho": 0.9923596382141113,
+      "reward": 1.0076403617858887,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 194,
+      "rho": 0.9960649609565735,
+      "reward": 1.0039350986480713,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 195,
+      "rho": 1.9990217685699463,
+      "reward": 0.000978231430053711,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 196,
+      "rho": 1.0658327341079712,
+      "reward": 0.9341672658920288,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 197,
+      "rho": 0.9939005374908447,
+      "reward": 1.0060994625091553,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 198,
+      "rho": 0.9537187814712524,
+      "reward": 1.0462812185287476,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 199,
+      "rho": 0.9916566014289856,
+      "reward": 1.0083434581756592,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 200,
+      "rho": 1.3611048460006714,
+      "reward": 0.6388951539993286,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 201,
+      "rho": 1.160519003868103,
+      "reward": 0.839480996131897,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 202,
+      "rho": 0.9910523295402527,
+      "reward": 1.0089476108551025,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 203,
+      "rho": 1.962403416633606,
+      "reward": 0.03759658336639404,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 204,
+      "rho": 0.9783812761306763,
+      "reward": 1.0216187238693237,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 205,
+      "rho": 0.9987447261810303,
+      "reward": 1.0012552738189697,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 206,
+      "rho": 0.991864800453186,
+      "reward": 1.008135199546814,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 207,
+      "rho": 0.9925154447555542,
+      "reward": 1.0074845552444458,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 208,
+      "rho": 1.0200997591018677,
+      "reward": 0.9799002408981323,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 209,
+      "rho": 1.5261472463607788,
+      "reward": 0.4738527536392212,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 210,
+      "rho": 1.0345120429992676,
+      "reward": 0.9654879570007324,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 211,
+      "rho": 0.9928646087646484,
+      "reward": 1.0071353912353516,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 213,
+      "rho": 0.0,
+      "reward": -1.0,
+      "done": true,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 214,
+      "rho": 0.99263995885849,
+      "reward": 1.0073599815368652,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 215,
+      "rho": 1.2980953454971313,
+      "reward": 0.7019046545028687,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 216,
+      "rho": 0.9996496438980103,
+      "reward": 1.0003503561019897,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 217,
+      "rho": 0.9886176586151123,
+      "reward": 1.0113823413848877,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 218,
+      "rho": 0.9923115968704224,
+      "reward": 1.0076884031295776,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 219,
+      "rho": 0.9527437686920166,
+      "reward": 1.0472562313079834,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 220,
+      "rho": 0.9673874974250793,
+      "reward": 1.0326125621795654,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 221,
+      "rho": 1.565375804901123,
+      "reward": 0.43462419509887695,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 222,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 223,
+      "rho": 1.3940457105636597,
+      "reward": 0.6059542894363403,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 224,
+      "rho": 1.0827893018722534,
+      "reward": 0.9172106981277466,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 225,
+      "rho": 1.0047008991241455,
+      "reward": 0.9952991008758545,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 227,
+      "rho": 1.7089253664016724,
+      "reward": 0.29107463359832764,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 228,
+      "rho": 1.1452114582061768,
+      "reward": 0.8547885417938232,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 229,
+      "rho": 1.0316942930221558,
+      "reward": 0.9683057069778442,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 230,
+      "rho": 0.9935304522514343,
+      "reward": 1.006469488143921,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 231,
+      "rho": 1.9282727241516113,
+      "reward": 0.07172727584838867,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 232,
+      "rho": 1.073189616203308,
+      "reward": 0.9268103837966919,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 233,
+      "rho": 0.9934819340705872,
+      "reward": 1.0065181255340576,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 234,
+      "rho": 0.9939411282539368,
+      "reward": 1.006058931350708,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 235,
+      "rho": 1.1424938440322876,
+      "reward": 0.8575061559677124,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 236,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 237,
+      "rho": 1.0949387550354004,
+      "reward": 0.9050612449645996,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 238,
+      "rho": 0.997051477432251,
+      "reward": 1.002948522567749,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 239,
+      "rho": 1.0488601922988892,
+      "reward": 0.9511398077011108,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 240,
+      "rho": 1.3548781871795654,
+      "reward": 0.6451218128204346,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 241,
+      "rho": 1.0097858905792236,
+      "reward": 0.9902141094207764,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 242,
+      "rho": 1.4553636312484741,
+      "reward": 0.5446363687515259,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 243,
+      "rho": 0.9928233027458191,
+      "reward": 1.0071766376495361,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 244,
+      "rho": 1.289454698562622,
+      "reward": 0.7105453014373779,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 245,
+      "rho": 0.9972594380378723,
+      "reward": 1.0027406215667725,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 246,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 247,
+      "rho": 1.0179836750030518,
+      "reward": 0.9820163249969482,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 248,
+      "rho": 0.0,
+      "reward": -1.0,
+      "done": true,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [
+        "Grid2OpException BackendError \"Divergence of DC powerflow (non connected grid) at the initialization of AC powerflow. Detailed error: ErrorType.SolverFactor\""
+      ],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 249,
+      "rho": 1.8473482131958008,
+      "reward": 0.15265178680419922,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 250,
+      "rho": 1.1286413669586182,
+      "reward": 0.8713586330413818,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 251,
+      "rho": 1.445263147354126,
+      "reward": 0.554736852645874,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 252,
+      "rho": 0.9913682341575623,
+      "reward": 1.008631706237793,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 253,
+      "rho": 1.3960702419281006,
+      "reward": 0.6039297580718994,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 254,
+      "rho": 1.149785041809082,
+      "reward": 0.850214958190918,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 255,
+      "rho": 1.0009561777114868,
+      "reward": 0.9990438222885132,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 256,
+      "rho": 0.9928577542304993,
+      "reward": 1.0071423053741455,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 257,
+      "rho": 0.997572124004364,
+      "reward": 1.0024278163909912,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 258,
+      "rho": 0.9918820261955261,
+      "reward": 1.008117914199829,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": true,
+      "phase": "fallback"
+    },
+    {
+      "pool_id": 259,
+      "rho": 1.2903850078582764,
+      "reward": 0.7096149921417236,
+      "done": false,
+      "illegal": false,
+      "ambiguous": false,
+      "exceptions": [],
+      "strict_admissible": false,
+      "phase": "fallback"
+    }
+  ],
+  "chosen_pool_id": 538,
+  "public_queries": 454,
+  "local_queries": 198
+}

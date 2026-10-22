@@ -1,0 +1,74 @@
+{
+  "diagnostic_completed": true,
+  "primary_horizon": "remaining_week",
+  "new_fits": 0,
+  "training_must_notify_user_first": true,
+  "ready_to_scale": false,
+  "independent_training_or_test_data": false,
+  "results": [
+    {
+      "case_id": "MARCH_108",
+      "intervention_step": 108,
+      "horizon": "remaining_week",
+      "end_step": 2017,
+      "horizon_steps": 1910,
+      "frame": {
+        "reaches_horizon": true,
+        "steps": 1910,
+        "cost": 2826122.8435668945,
+        "all_queries": 8512,
+        "candidate_queries": 4109,
+        "local_queries": 781,
+        "overload_steps": 39,
+        "max_rho": 1.8729076385498047
+      },
+      "skip": {
+        "reaches_horizon": true,
+        "steps": 1910,
+        "cost": 2813040.6416015625,
+        "all_queries": 7681,
+        "candidate_queries": 3381,
+        "local_queries": 245,
+        "overload_steps": 41,
+        "max_rho": 1.8729404211044312
+      },
+      "delta_cost_skip_minus_frame": -13082.201965332031,
+      "delta_all_queries_frame_minus_skip": 831,
+      "delta_candidate_queries_frame_minus_skip": 728,
+      "external_opponent_difference_steps": [],
+      "label": "SKIP_COST_AND_QUERY_ADVANTAGE"
+    },
+    {
+      "case_id": "MARCH_552",
+      "intervention_step": 552,
+      "horizon": "remaining_week",
+      "end_step": 2017,
+      "horizon_steps": 1466,
+      "frame": {
+        "reaches_horizon": true,
+        "steps": 1466,
+        "cost": 2132298.2272338867,
+        "all_queries": 4740,
+        "candidate_queries": 1390,
+        "local_queries": 46,
+        "overload_steps": 25,
+        "max_rho": 1.8729076385498047
+      },
+      "skip": {
+        "reaches_horizon": true,
+        "steps": 1466,
+        "cost": 2183290.369934082,
+        "all_queries": 4785,
+        "candidate_queries": 1586,
+        "local_queries": 50,
+        "overload_steps": 27,
+        "max_rho": 1.3367365598678589
+      },
+      "delta_cost_skip_minus_frame": 50992.14270019531,
+      "delta_all_queries_frame_minus_skip": -45,
+      "delta_candidate_queries_frame_minus_skip": -196,
+      "external_opponent_difference_steps": [],
+      "label": "COMPLETION_COST_AND_QUERY_ADVANTAGE"
+    }
+  ]
+}

@@ -29,3 +29,7 @@
 ## 日志属性工程恢复02
 
 40生成通过、16标签通过后，第17教师在1157步后因OptimModule缺少logger停止，错误保存在interrupted_attempts/logger_failure_01。恢复入口resume_bulk_02.py，教师诊断包装teacher_logger_recovery.py；只补原模块logger，无数值/决策变更，601冻结不变。只重跑不完整第17项，接纳前须通过recovery_02_prefix_check.json的1157步精确核对。保留全部失败，原16完整项不重跑。新日志bulk_pipeline_resume02_stdout.log/stderr.log；bulk_logs仍为当前逐项日志。不再启动旧resume01。最终测试封存，模型拟合0。
+
+恢复02已于2026-10-22T03:30:06Z启动，实际流水线PID2352/启动器23648，第17教师已越过原1158步异常点到1536步；最终接纳仍以recovery_02_prefix_check.json为准。自动跟进grid100已更新到resume02，正常运行不通知。
+
+恢复核验已通过：2026-10-22T03:31:49Z，原1157步动作/观测向量、状态链、成本和查询完全重现。第17项已完成并接纳，当前第18项正常回放。所有已完成项保留，未重新拟合。

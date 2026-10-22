@@ -1,0 +1,59 @@
+{
+  "methods": [
+    "STOP",
+    "FULL_LOCAL",
+    "BATCH1",
+    "COST_LOGISTIC",
+    "MYOPIC_RF64",
+    "DQN_G1_0",
+    "DQN_G1_1",
+    "DQN_G1_2",
+    "DQN_G0_0",
+    "DQN_G0_1",
+    "DQN_G0_2",
+    "ORACLE_OPTIMAL",
+    "ORACLE_MYOPIC"
+  ],
+  "trajectories": 7670,
+  "validation_states": 856,
+  "old_trajectory_reproductions": 3540,
+  "inference": {
+    "MYOPIC_RF64": {
+      "states": 856,
+      "wall_s": 0.002211299997725291,
+      "scope": "Batched cached-observation inference only, not end-to-end latency."
+    },
+    "DQN_G1_0": {
+      "states": 856,
+      "wall_s": 0.0006323999987216666,
+      "scope": "Batched cached-observation forward only, not end-to-end latency."
+    },
+    "DQN_G1_1": {
+      "states": 856,
+      "wall_s": 0.00018540000019129366,
+      "scope": "Batched cached-observation forward only, not end-to-end latency."
+    },
+    "DQN_G1_2": {
+      "states": 856,
+      "wall_s": 0.0001940000001923181,
+      "scope": "Batched cached-observation forward only, not end-to-end latency."
+    },
+    "DQN_G0_0": {
+      "states": 856,
+      "wall_s": 0.00021940000078757294,
+      "scope": "Batched cached-observation forward only, not end-to-end latency."
+    },
+    "DQN_G0_1": {
+      "states": 856,
+      "wall_s": 0.00017949999892152846,
+      "scope": "Batched cached-observation forward only, not end-to-end latency."
+    },
+    "DQN_G0_2": {
+      "states": 856,
+      "wall_s": 0.00019969999993918464,
+      "scope": "Batched cached-observation forward only, not end-to-end latency."
+    }
+  },
+  "new_physical_calls": 0,
+  "final_test_materialized": false
+}

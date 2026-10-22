@@ -648,3 +648,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - GRID99：原15维/补充35维、固定LR/浅树/TabPFNv2日期隔离比较，108上下文、原15维重现及误判完整保留，无新物理回放或部署。见GRID99_feature_learning/complete/GRID99_report.md。
 
 - [学习探索路线与训练/留出诊断](paper/FRAME_learning_route_20261021/学习探索路线_中文.md)：面向用户1月目标继续学习研究，本次无新拟合或回放。
+
+- [GRID103学习补查机制](protocols/GRID103_learning_mechanism/complete/学习机制结论_中文.md)：收益预测与匹配gamma0对照；未建立后续规划优势，固定一批仍具竞争力，所有种子与反例保留。

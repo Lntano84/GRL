@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "visited_prediction_action_checks": 5485,
+  "matched_visited_sequences": 7670,
+  "profiles": {
+    "train": {
+      "cases": 2378,
+      "states": 3582,
+      "multi_cases": 638,
+      "delayed_states": 40,
+      "delayed_physical_groups": 5,
+      "delayed_dates": [
+        "2037-06-01",
+        "2037-08-17",
+        "2037-12-07"
+      ],
+      "oracle_better_than_next_batch_greedy_cases": 23,
+      "max_oracle_difference": 3.123411768226831,
+      "cases_with_later_gross_gain": 92,
+      "cases_with_later_positive_net": 39,
+      "physical_groups_with_later_gain": 26
+    },
+    "validation": {
+      "cases": 590,
+      "states": 856,
+      "multi_cases": 142,
+      "delayed_states": 0,
+      "delayed_physical_groups": 0,
+      "delayed_dates": [],
+      "oracle_better_than_next_batch_greedy_cases": 0,
+      "max_oracle_difference": 0.0,
+      "cases_with_later_gross_gain": 17,
+      "cases_with_later_positive_net": 4,
+      "physical_groups_with_later_gain": 4
+    }
+  },
+  "scope": "Post-evaluation diagnostic only. No fitting, configuration change, new simulation, or final-test access."
+}

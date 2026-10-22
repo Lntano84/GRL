@@ -1,0 +1,12 @@
+{
+  "weighted_target_mean": 0.030487207307528654,
+  "weighted_huber_location": -0.008536702793920842,
+  "weighted_positive_mass": 0.05660699508656504,
+  "weighted_target_above_one_mass": 0.014630756582129437,
+  "score_residual": -1.2206375806705422e-19,
+  "scope": "All training next-net labels under prespecified sampling masses, one-dimensional descriptive locations. Not an estimate conditioned on552 features, not another trained predictor.",
+  "derivation": "For beta1 Huber, derivative is sum(weight*clip(prediction-target,-1,1)); squared loss minimum is weighted mean.",
+  "official_formula": "https://docs.pytorch.org/docs/2.8/generated/torch.nn.SmoothL1Loss.html",
+  "installed_function_source": "C:\\Users\\windows\\Documents\\Codex\\2026-10-06\\lg01-gnn-rins-rl-lp-20\\work\\lg01\\.venv\\Lib\\site-packages\\torch\\nn\\functional.py",
+  "installed_source_sha256": "fc13e05f04b956964dcdf7ddb89d4cd5560c9e791492f8b52fc4e80a9052cf7f"
+}

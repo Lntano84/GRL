@@ -1,0 +1,30 @@
+{
+  "training_mechanism_evidence_at_fixed_config": true,
+  "train_date_macro_regret_direct": 6.556989179805357e-05,
+  "train_date_macro_regret_dqn": 8.054536252906731e-05,
+  "paired_validation_utility_deltas": [
+    0.005329413494002344,
+    0.0016367340068700331,
+    -0.007787947217268998
+  ],
+  "all_seed_means": {
+    "DIRECT": {
+      "mean_net_utility": 0.16292380598404063,
+      "query_fraction": 0.31775073828054823,
+      "gain_capture": 0.7760421499753439,
+      "physical_call_balanced_utility": 0.13653686568642556
+    },
+    "DQN0": {
+      "mean_net_utility": 0.1631977392228395,
+      "query_fraction": 0.3112607551122102,
+      "gain_capture": 0.6780248728191864,
+      "physical_call_balanced_utility": 0.13672708390172358
+    }
+  },
+  "batch1_utility": 0.16286891362547384,
+  "direct_mean_above_batch1": true,
+  "closed_loop_or_quality_advantage_established": false,
+  "ready_to_scale": false,
+  "automatic_followup": false,
+  "limits": "Full paired supervision and sampling coverage changed together. Four exposed dates, no selected seed/checkpoint; no independent confirmation or whole-week claim."
+}

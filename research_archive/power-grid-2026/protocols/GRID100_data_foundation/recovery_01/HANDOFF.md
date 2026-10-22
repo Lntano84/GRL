@@ -23,3 +23,5 @@
 ## 2026-10-22关机续跑资格
 
 16个生成收据及全部数据哈希、601项冻结、试点数据均核对通过；第17项尚未创建输出目录，不存在需要覆盖的部分数据。旧生成日志原样移至interrupted_attempts/user_shutdown_01。恢复入口resume_bulk_01.py，仅在内存中扣除关机前已用时间，原pipeline/生成器/模型/日期/种子/规则均不变。恢复后日志bulk_pipeline_resume01_stdout.log/stderr.log，当前生成日志仍在bulk_logs/generation_trainval.log。不启动第二运行器，不训练、不解封最终测试。
+
+恢复已启动：2026-10-22T00:39:46.737392+00:00，实际流水线PID32804、生成启动器PID35964。仅一个采集流水线，旧PIDs已失效。当前继续第17项；实时进度以bulk_state.json和generation_progress.json为准。

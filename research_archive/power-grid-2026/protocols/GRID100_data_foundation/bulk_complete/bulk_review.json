@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "scenarios": 40,
+  "partitions": {
+    "train": {
+      "scenarios": 32,
+      "date_groups": 16,
+      "samples": 2378,
+      "excluded_prefixes": 621,
+      "completed_weeks": 28,
+      "physical_steps": 63021,
+      "counts": {
+        "feedback_legality_checks": 212630,
+        "positive_gain": 392,
+        "zero_gain": 1986,
+        "full_teacher_calls": 243,
+        "paid_candidate_queries": 212630,
+        "independent_gain_checks": 2282
+      }
+    },
+    "validation": {
+      "scenarios": 8,
+      "date_groups": 4,
+      "samples": 590,
+      "excluded_prefixes": 199,
+      "completed_weeks": 7,
+      "physical_steps": 15509,
+      "counts": {
+        "feedback_legality_checks": 55726,
+        "positive_gain": 92,
+        "zero_gain": 498,
+        "independent_gain_checks": 590,
+        "full_teacher_calls": 62,
+        "paid_candidate_queries": 55726
+      }
+    }
+  },
+  "checks": [
+    "all saved source and dataset hashes",
+    "action/observation chain",
+    "paid feedback admissibility",
+    "float32 best reward selection and station aliases",
+    "input/target separation",
+    "local reward gain recomputation",
+    "scenario and date split coverage",
+    "test remains unmaterialized"
+  ],
+  "reused_pilot": 1,
+  "new_teacher_episodes": 39,
+  "model_fits": 0,
+  "final_test_materialized": false,
+  "utc": "2026-10-22T04:02:19.735164+00:00",
+  "scope": "Saved-data engineering audit, not independent AC re-solving or a model evaluation.",
+  "preserved_partial_teacher_failures": 1,
+  "diagnostic_logger_recovery": true,
+  "original_prefix_steps_reproduced": 1157
+}

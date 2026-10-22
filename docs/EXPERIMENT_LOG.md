@@ -1042,3 +1042,8 @@ GRID100日志恢复验证通过：原1157步动作/观测/成本/查询精确重
 ## 2026-10-22 — GRID102 small DQN search control frozen
 
 用户授权成本感知简单基线与小型DQN原型。只在保存FULL反馈上逐批揭示同站候选，初始站锁定，原全局前缀/顺序不改，动作停止/再查最多64；41项输入，无未来反馈。2968完整补查标签重现、4438状态观测、2968全查/停止及Gym接口核对通过。训练2378起始前缀/16日期，验证590/4日期。查询价格仅由训练数据按0.5倍平均收益/查询确定，奖励增益减代价、gamma1。成本LR用训练轨迹事后最优停止标签，DQN两层64、种子0/1/2各30000步，全部固定最终检查点。无验证选型/选种子/选价格，无新电网回放或最终测试。SB3现有2.3.0/Gym0.29.1，不安装或改运行时；代码/数据另封存。
+
+
+## 2026-10-22 — GRID102 first search-control DQN completed
+
+Completed one cost-logistic fit and three SB3 DQN fits (seeds 0/1/2, MLP64x64, fixed final 30000-step models); no installation or new physical rollout. Four validation-date macro net utility: FULL_LOCAL 0.13705, logistic 0.00039, DQN all-seed mean 0.15773 (+15.09% versus FULL_LOCAL at the fixed train-calibrated proxy query price). DQN query fraction 34.41%, immediate-gain capture 65.94%; these are local-search tradeoffs, not same-quality control-time gains. All seeds lose to STOP on 2037-10-19; seed query fractions range 22.24%-53.74%. Logistic almost always stops (99.71%), so it is a weak baseline; its rare continuation labels and classification objective do not establish a strong supervised comparison. 448/590 validation cases have only one continuation batch, maximum four: no long-horizon RL claim. Saved trajectories 4130 and seven macro summaries checked, frozen inputs reverified; eight final-test scenarios remain ungenerated. Complete models/traces/results and Chinese interpretation preserved in GRID102_search_rl/complete. No automatic further experiments.

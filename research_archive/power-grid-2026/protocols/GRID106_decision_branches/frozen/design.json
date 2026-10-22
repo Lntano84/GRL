@@ -1,0 +1,120 @@
+{
+  "id": "GRID106_TWO_SINGLE_DECISION_BRANCHES",
+  "frozen_utc": "2026-10-22T10:20:13.076447+00:00",
+  "authorization": "User: inspect these two decisions carefully; notify before any training. No training authorized this stage.",
+  "environment": "work/grid100_data_foundation/trainval_env",
+  "reference": "outputs/grid104_learning_closedloop/runs/r0__2037-03-02_100__FRAME_GUARD",
+  "cases": [
+    {
+      "id": "MARCH_108",
+      "step": 108,
+      "week": "2037-03-02_100",
+      "source": "outputs/grid104_learning_closedloop/runs/r0__2037-03-02_100__FRAME_GUARD/call002.json",
+      "state_hash": "351f9b8b6eca40dfea13d2406c393e0810da46a60557793d55effe552ba80f3f",
+      "base_action_hash": "3dd224155d0c5da980a928daa7cd994e7805b0109984f8e20ec9b3b9b304c817",
+      "before_choice": 62,
+      "after_choice": 538,
+      "completion_budget": 198
+    },
+    {
+      "id": "MARCH_552",
+      "step": 552,
+      "week": "2037-03-02_100",
+      "source": "outputs/grid104_learning_closedloop/runs/r0__2037-03-02_100__FRAME_GUARD/call009.json",
+      "state_hash": "158447fb7093f0690618a6acb108abccb1e0df4f3bf086cb743bf548897577a5",
+      "base_action_hash": "65e7390203902c7ad2e2a0aa9d1760d550230066d7dda8e8ca7ea0678ec135ca",
+      "before_choice": 141,
+      "after_choice": 355,
+      "completion_budget": 13
+    }
+  ],
+  "execution_order": [
+    {
+      "week": "2037-03-02_100",
+      "date": "2037-03-02",
+      "repeat": 0,
+      "policy": "FRAME_GUARD",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "order_mode": "STATIC_ID",
+      "model_seed": null,
+      "stage_phase": "all",
+      "partition": "exposed_validation_diagnostic",
+      "method": "FRAME_QUAL",
+      "omit_case": null,
+      "watch_cases": [
+        "MARCH_108",
+        "MARCH_552"
+      ]
+    },
+    {
+      "week": "2037-03-02_100",
+      "date": "2037-03-02",
+      "repeat": 0,
+      "policy": "FRAME_GUARD",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "order_mode": "STATIC_ID",
+      "model_seed": null,
+      "stage_phase": "all",
+      "partition": "exposed_validation_diagnostic",
+      "method": "SKIP_108",
+      "omit_case": "MARCH_108",
+      "watch_cases": [
+        "MARCH_108"
+      ]
+    },
+    {
+      "week": "2037-03-02_100",
+      "date": "2037-03-02",
+      "repeat": 0,
+      "policy": "FRAME_GUARD",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "checkpoint": null,
+      "cache_dc": true,
+      "cache_safe": true,
+      "order_mode": "STATIC_ID",
+      "model_seed": null,
+      "stage_phase": "all",
+      "partition": "exposed_validation_diagnostic",
+      "method": "SKIP_552",
+      "omit_case": "MARCH_552",
+      "watch_cases": [
+        "MARCH_552"
+      ]
+    }
+  ],
+  "parameters": {
+    "p": 128,
+    "h": 64,
+    "patience": 2,
+    "safe": 0.9
+  },
+  "caps": {
+    "wall_s": 1800,
+    "episode_s": 500,
+    "physical_steps": 6100,
+    "public_forecasts": 100000
+  },
+  "timing": "Diagnostic wall clocks include memory witnesses; no speed claim or mixing historical control time.",
+  "primary": "Single omission causal effect under otherwise original FRAME from the same full reconstructed prefix, until original week end.",
+  "horizons": {
+    "one_step": 1,
+    "one_hour": 12,
+    "one_day": 288,
+    "remaining_week": "Original2017-step endpoint; report all windows, do not select."
+  },
+  "label": "First survival to endpoint, then raw operational cost and all/candidate queries separately. No fitted conversion weight. Opponent realization differences mark unresolved.",
+  "qualification": "New full FRAME must reproduce all historical2017 physical steps and paid feedback before either intervention; branch prefix and numeric/used object RNG witnesses must match.",
+  "no_training": true,
+  "no_new_scenarios": true,
+  "final_test_untouched": true,
+  "limitations": "Two intentionally selected failures on one exposed validation date. Not training data, independent test, scaling, or proof that first divergence explains all policy-week gaps."
+}

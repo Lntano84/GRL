@@ -1105,3 +1105,8 @@ Exactly3 supervised fits, same41/64/64/2 network6978 parameters, paired original
 ## 2026-10-22 — GRID107 calibrated interpretation
 
 Training positive misses improve30/27/38 versus DQN45/54/59, but validation misses13/14/13 versus15/7/17. Family macro utility direct0.16292381 vs DQN0.16319774 (-0.168%), BATCH1 0.16286891; critical552 action pattern remains0/0/1, no rescue. Prespecified weak2-of3 condition=True is not acceptance: third seed decline outweighs gains, no overall advantage or scaling. All training states were sampled. Loss still decreases over final2250 updates; convergence not established. Training-label descriptive weighted mean+0.030487 vs Huber location-0.008537 motivates checking robust loss under skew gains, not proof of conditional552 cause. No extra fits/physical rollouts/price tuning/final-test materialization. Further loss or convergence studies must be separate controlled designs, not automatic continuation.
+
+
+## 2026-10-22 — GRID108 loss x budget diagnostic frozen
+
+User requested continue checking training sufficiency and loss; notified fixed2x2 offline comparison. Huber/MSE at7250/29000 updates,3seeds, old Huber short reused. Exactly3 original-Adam/RNG Huber continuations plus3 fresh MSE paths; fixed same41/64/64/2 network, targets, price, data, optimizer, grad clip and per-seed minibatch stream. Three optimizer7250 and old sample-count/initialization checks pass, loss formulas qualified.4x cap chosen from prior training curves before evaluation, no validation selection. No extra data/features/network/physical calls/final-test access; no automatic additional experiments.

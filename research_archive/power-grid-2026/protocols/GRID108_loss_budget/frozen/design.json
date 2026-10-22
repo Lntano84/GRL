@@ -1,0 +1,258 @@
+{
+  "id": "GRID108_LOSS_X_BUDGET",
+  "frozen_utc": "2026-10-22T11:14:42.489240+00:00",
+  "authorization": "User: continue investigating training sufficiency and loss. Notified fixed2x2 with no data/network/physical expansion.",
+  "source": "Original GRID100 train prefixes, GRID102 states/normalization/price, GRID103 gamma0 DQN checkpoints. GRID106 cases diagnostic only.",
+  "split": {
+    "train_prefixes": 2378,
+    "train_states": 3582,
+    "train_dates": 16,
+    "validation_prefixes": 590,
+    "validation_states": 856,
+    "validation_dates": 4
+  },
+  "features": {
+    "features": [
+      "log_pool_size",
+      "queried_fraction",
+      "log_visible_count",
+      "log_completion_queries",
+      "completion_fraction_remaining",
+      "station_pool_fraction",
+      "station_seen_fraction",
+      "station_admissible_fraction",
+      "station_observed_fraction",
+      "admissible_fraction",
+      "terminal_fraction",
+      "illegal_fraction",
+      "ambiguous_fraction",
+      "exception_fraction",
+      "incumbent_reward",
+      "incumbent_rho",
+      "reward_gap",
+      "missing_second_admissible",
+      "admissible_reward_mean",
+      "admissible_reward_std",
+      "admissible_rho_mean",
+      "admissible_rho_std",
+      "admissible_rho_min",
+      "rho_limit",
+      "admissible_reward_range",
+      "initial_prefix_has_admissible",
+      "gain_since_initial_prefix",
+      "incumbent_changed",
+      "initial_incumbent_rho",
+      "last_batch_has_admissible",
+      "last_batch_admissible_fraction",
+      "last_batch_reward_gain",
+      "previous_prefix_has_admissible",
+      "improvement_fraction",
+      "station_reward_std",
+      "station_rho_mean",
+      "incumbent_relative_position",
+      "local_batches_done",
+      "local_budget_used_fraction",
+      "log_next_batch_queries",
+      "locked_remaining_fraction"
+    ],
+    "normalization": "Training reachable states only, each date equal total weight; clipped standardized features in[-20,20].",
+    "station": "Group locked to initial incumbent station, aliases respected. Learned policy does not change global search or station choice."
+  },
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "architecture": "Exactly original SB3 QNetwork:41 ->64 ReLU ->64 ReLU ->2;6978 parameters, paired initial seed.",
+  "dqn_initialization": {
+    "learning_rate": 0.0003,
+    "buffer_size": 20000,
+    "learning_starts": 1000,
+    "batch_size": 64,
+    "tau": 1.0,
+    "gamma": 0.0,
+    "train_freq": 4,
+    "gradient_steps": 1,
+    "target_update_interval": 500,
+    "exploration_fraction": 0.3,
+    "exploration_initial_eps": 1.0,
+    "exploration_final_eps": 0.05,
+    "max_grad_norm": 10.0,
+    "policy_kwargs": {
+      "net_arch": [
+        64,
+        64
+      ]
+    },
+    "device": "cpu",
+    "verbose": 0
+  },
+  "training": {
+    "updates": [
+      7250,
+      29000
+    ],
+    "states_per_batch": 32,
+    "scalar_targets_per_update": 64,
+    "optimizer": "Original SB3 Adam parameter groups, learning_rate0.0003, max_grad_norm10.",
+    "loss": "Two prespecified loss functions in loss_definition.",
+    "targets": "STOP=0, CONTINUE=(next best-admissible float32 reward gain - unchanged per-query fee*next_queries)/old gain_scale.",
+    "sampling": "Equal date, equal starting prefix within date, uniform reachable position within prefix. Same initial task masses as DQN; replaces policy-dependent visitation/replay with complete paid-feedback coverage.",
+    "fitting": "3 exact Huber continuations and3 fresh MSE paths; both endpoints retained, original3 Huber short anchors reused.",
+    "sampler_seed_offset": 20261022,
+    "trace_every_updates": 500,
+    "intentionally_changed": "Loss only in matched-budget pairs; number of updates only in same-loss pairs. All other inputs and sample streams fixed."
+  },
+  "evaluation": {
+    "methods": [
+      "HUBER_7250_0",
+      "HUBER_7250_1",
+      "HUBER_7250_2",
+      "HUBER_29000_0",
+      "HUBER_29000_1",
+      "HUBER_29000_2",
+      "MSE_7250_0",
+      "MSE_7250_1",
+      "MSE_7250_2",
+      "MSE_29000_0",
+      "MSE_29000_1",
+      "MSE_29000_2",
+      "DQN0_0",
+      "DQN0_1",
+      "DQN0_2",
+      "RF",
+      "STOP",
+      "FULL_LOCAL",
+      "BATCH1"
+    ],
+    "primary": "Four-date macro search net utility versus paired/all3 old gamma0 DQN and BATCH1; report all dates and seeds.",
+    "secondary": "Train/validation positive misses, negative continues, value RMSE, gain capture/query fraction, single/multi horizons and physical-call-balanced utility.",
+    "critical": "Postfit fixed3 contexts: original March108, original March552, RF-path March552. No added labels, fit weights, feature changes or rules from those cases.",
+    "interpretation": "Report paired loss/budget effects, all3 seed family means and per-date reversals versus fixedBATCH1. No selecting best configuration or convergence claim at cap."
+  },
+  "limits": "No larger network, new observations/scenarios, positive oversampling, fee/threshold tuning, final8 test access, DQN refits, physical closed-loop or automatic additional experiments.",
+  "losses": [
+    "HUBER",
+    "MSE"
+  ],
+  "budgets": [
+    7250,
+    29000
+  ],
+  "source_train": "outputs/grid107_direct_value/train.npz",
+  "source_training_rows": "outputs/grid107_direct_value/training_rows.json",
+  "experiment": "2losses x2 fixed update budgets. Huber7250 existing checkpoints reused.3 Huber continuations plus3 fresh MSE paths, all seeds retained.",
+  "caps": {
+    "fitting_wall_s": 600,
+    "one_path_s": 150,
+    "new_training_paths": 6,
+    "new_saved_checkpoints": 9
+  },
+  "loss_definition": {
+    "HUBER": "torch smooth_l1_loss beta1, mean over32x2 targets",
+    "MSE": "torch mse_loss, mean over32x2 targets; unchanged optimizer and clip10"
+  },
+  "matching": "Identical initial net, Adam, LR, targets, feature normalization, minibatch indices and scalar-label budget at each matched update. Huber resumes Adam and exact next minibatch from old7250.",
+  "budget_definition": "7250 and fixed4x29000 chosen before new evaluation based on still-decreasing prior TRAIN loss; no validation-selected duration.",
+  "interpretation": "Paired loss effects at each budget, paired budget effects at each loss, all3 seed means/dates versus DQN and BATCH1. No claiming convergence at cap or selecting winning configuration.",
+  "models": [
+    {
+      "method": "HUBER_7250_0",
+      "loss": "HUBER",
+      "updates": 7250,
+      "seed": 0,
+      "path": "outputs/grid107_direct_value/models/direct_seed0_final.zip",
+      "reused": true
+    },
+    {
+      "method": "HUBER_7250_1",
+      "loss": "HUBER",
+      "updates": 7250,
+      "seed": 1,
+      "path": "outputs/grid107_direct_value/models/direct_seed1_final.zip",
+      "reused": true
+    },
+    {
+      "method": "HUBER_7250_2",
+      "loss": "HUBER",
+      "updates": 7250,
+      "seed": 2,
+      "path": "outputs/grid107_direct_value/models/direct_seed2_final.zip",
+      "reused": true
+    },
+    {
+      "method": "HUBER_29000_0",
+      "loss": "HUBER",
+      "updates": 29000,
+      "seed": 0,
+      "path": "outputs/grid108_loss_budget/models/HUBER_29000_0.zip",
+      "reused": false
+    },
+    {
+      "method": "HUBER_29000_1",
+      "loss": "HUBER",
+      "updates": 29000,
+      "seed": 1,
+      "path": "outputs/grid108_loss_budget/models/HUBER_29000_1.zip",
+      "reused": false
+    },
+    {
+      "method": "HUBER_29000_2",
+      "loss": "HUBER",
+      "updates": 29000,
+      "seed": 2,
+      "path": "outputs/grid108_loss_budget/models/HUBER_29000_2.zip",
+      "reused": false
+    },
+    {
+      "method": "MSE_7250_0",
+      "loss": "MSE",
+      "updates": 7250,
+      "seed": 0,
+      "path": "outputs/grid108_loss_budget/models/MSE_7250_0.zip",
+      "reused": false
+    },
+    {
+      "method": "MSE_7250_1",
+      "loss": "MSE",
+      "updates": 7250,
+      "seed": 1,
+      "path": "outputs/grid108_loss_budget/models/MSE_7250_1.zip",
+      "reused": false
+    },
+    {
+      "method": "MSE_7250_2",
+      "loss": "MSE",
+      "updates": 7250,
+      "seed": 2,
+      "path": "outputs/grid108_loss_budget/models/MSE_7250_2.zip",
+      "reused": false
+    },
+    {
+      "method": "MSE_29000_0",
+      "loss": "MSE",
+      "updates": 29000,
+      "seed": 0,
+      "path": "outputs/grid108_loss_budget/models/MSE_29000_0.zip",
+      "reused": false
+    },
+    {
+      "method": "MSE_29000_1",
+      "loss": "MSE",
+      "updates": 29000,
+      "seed": 1,
+      "path": "outputs/grid108_loss_budget/models/MSE_29000_1.zip",
+      "reused": false
+    },
+    {
+      "method": "MSE_29000_2",
+      "loss": "MSE",
+      "updates": 29000,
+      "seed": 2,
+      "path": "outputs/grid108_loss_budget/models/MSE_29000_2.zip",
+      "reused": false
+    }
+  ]
+}

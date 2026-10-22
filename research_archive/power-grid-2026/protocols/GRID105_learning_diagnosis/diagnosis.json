@@ -1,0 +1,1747 @@
+{
+  "posthoc": true,
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "offline": {
+    "DQN0_0": {
+      "train": {
+        "pooled": {
+          "states": 3582,
+          "physical_groups": 222,
+          "positive": 211,
+          "false_stop": 45,
+          "unprofitable_continue": 851,
+          "positive_recall": 0.7867298578199052,
+          "missed_positive_net": 0.042294978790291954,
+          "wasted_negative_net": 0.21513534414082508,
+          "hindsight_sign_regret_mean": 7.186776184564966e-05,
+          "qcontinue_rmse": 0.489876568208349
+        },
+        "per_date": {
+          "2037-01-05": {
+            "states": 199,
+            "physical_groups": 14,
+            "positive": 21,
+            "false_stop": 3,
+            "unprofitable_continue": 52,
+            "positive_recall": 0.8571428571428571,
+            "missed_positive_net": 0.007812274160928443,
+            "wasted_negative_net": 0.008823264071619893,
+            "hindsight_sign_regret_mean": 8.359566951029313e-05,
+            "qcontinue_rmse": 0.18224894656051688
+          },
+          "2037-01-19": {
+            "states": 294,
+            "physical_groups": 21,
+            "positive": 17,
+            "false_stop": 3,
+            "unprofitable_continue": 58,
+            "positive_recall": 0.8235294117647058,
+            "missed_positive_net": 0.009907042076440966,
+            "wasted_negative_net": 0.012594204801347547,
+            "hindsight_sign_regret_mean": 7.653485332581127e-05,
+            "qcontinue_rmse": 0.17571030914045344
+          },
+          "2037-02-16": {
+            "states": 187,
+            "physical_groups": 10,
+            "positive": 6,
+            "false_stop": 4,
+            "unprofitable_continue": 23,
+            "positive_recall": 0.3333333333333333,
+            "missed_positive_net": 0.0006727028592071908,
+            "wasted_negative_net": 0.00744480051523419,
+            "hindsight_sign_regret_mean": 4.340910895423199e-05,
+            "qcontinue_rmse": 0.190024776239738
+          },
+          "2037-03-16": {
+            "states": 298,
+            "physical_groups": 19,
+            "positive": 17,
+            "false_stop": 12,
+            "unprofitable_continue": 85,
+            "positive_recall": 0.29411764705882354,
+            "missed_positive_net": 0.003439944797994519,
+            "wasted_negative_net": 0.020454922657206706,
+            "hindsight_sign_regret_mean": 8.018411897718531e-05,
+            "qcontinue_rmse": 0.1646143497041848
+          },
+          "2037-04-06": {
+            "states": 284,
+            "physical_groups": 18,
+            "positive": 16,
+            "false_stop": 3,
+            "unprofitable_continue": 69,
+            "positive_recall": 0.8125,
+            "missed_positive_net": 7.711387204857154e-05,
+            "wasted_negative_net": 0.021795984540909457,
+            "hindsight_sign_regret_mean": 7.701795215830292e-05,
+            "qcontinue_rmse": 0.19136974225300643
+          },
+          "2037-05-18": {
+            "states": 202,
+            "physical_groups": 12,
+            "positive": 11,
+            "false_stop": 2,
+            "unprofitable_continue": 76,
+            "positive_recall": 0.8181818181818182,
+            "missed_positive_net": 7.835054747085758e-05,
+            "wasted_negative_net": 0.026607044777824936,
+            "hindsight_sign_regret_mean": 0.00013210591745195938,
+            "qcontinue_rmse": 0.1897875458781088
+          },
+          "2037-06-01": {
+            "states": 367,
+            "physical_groups": 19,
+            "positive": 22,
+            "false_stop": 4,
+            "unprofitable_continue": 79,
+            "positive_recall": 0.8181818181818182,
+            "missed_positive_net": 0.008040083089785597,
+            "wasted_negative_net": 0.02270570652658279,
+            "hindsight_sign_regret_mean": 8.3775993505091e-05,
+            "qcontinue_rmse": 0.308971843343533
+          },
+          "2037-06-15": {
+            "states": 133,
+            "physical_groups": 11,
+            "positive": 9,
+            "false_stop": 3,
+            "unprofitable_continue": 18,
+            "positive_recall": 0.6666666666666666,
+            "missed_positive_net": 0.0014883686684761892,
+            "wasted_negative_net": 0.0024138156361715405,
+            "hindsight_sign_regret_mean": 2.9339731613892703e-05,
+            "qcontinue_rmse": 0.13742717838836932
+          },
+          "2037-07-06": {
+            "states": 429,
+            "physical_groups": 22,
+            "positive": 30,
+            "false_stop": 1,
+            "unprofitable_continue": 112,
+            "positive_recall": 0.9666666666666667,
+            "missed_positive_net": 0.0002517777607666616,
+            "wasted_negative_net": 0.03164945821926487,
+            "hindsight_sign_regret_mean": 7.436185543130892e-05,
+            "qcontinue_rmse": 1.1088487416608446
+          },
+          "2037-08-17": {
+            "states": 246,
+            "physical_groups": 17,
+            "positive": 12,
+            "false_stop": 0,
+            "unprofitable_continue": 88,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.019827940914987158,
+            "hindsight_sign_regret_mean": 8.060138583328113e-05,
+            "qcontinue_rmse": 0.9478209262010303
+          },
+          "2037-09-07": {
+            "states": 97,
+            "physical_groups": 6,
+            "positive": 2,
+            "false_stop": 0,
+            "unprofitable_continue": 26,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.004802746575062963,
+            "hindsight_sign_regret_mean": 4.9512851289308885e-05,
+            "qcontinue_rmse": 0.12167713810930784
+          },
+          "2037-09-21": {
+            "states": 142,
+            "physical_groups": 10,
+            "positive": 0,
+            "false_stop": 0,
+            "unprofitable_continue": 29,
+            "positive_recall": null,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.00794204766791436,
+            "hindsight_sign_regret_mean": 5.592991315432649e-05,
+            "qcontinue_rmse": 0.114325189789206
+          },
+          "2037-10-05": {
+            "states": 192,
+            "physical_groups": 13,
+            "positive": 14,
+            "false_stop": 5,
+            "unprofitable_continue": 34,
+            "positive_recall": 0.6428571428571429,
+            "missed_positive_net": 0.006537939458612522,
+            "wasted_negative_net": 0.007349029905543709,
+            "hindsight_sign_regret_mean": 7.23279654383137e-05,
+            "qcontinue_rmse": 0.11096191420999332
+          },
+          "2037-11-02": {
+            "states": 161,
+            "physical_groups": 9,
+            "positive": 1,
+            "false_stop": 0,
+            "unprofitable_continue": 38,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.004338281009354829,
+            "hindsight_sign_regret_mean": 2.6945844778601426e-05,
+            "qcontinue_rmse": 0.13959980463745164
+          },
+          "2037-11-16": {
+            "states": 160,
+            "physical_groups": 10,
+            "positive": 7,
+            "false_stop": 3,
+            "unprofitable_continue": 34,
+            "positive_recall": 0.5714285714285714,
+            "missed_positive_net": 0.00023104601205790377,
+            "wasted_negative_net": 0.007291216303074859,
+            "hindsight_sign_regret_mean": 4.7014139469579766e-05,
+            "qcontinue_rmse": 0.14879968550297956
+          },
+          "2037-12-07": {
+            "states": 191,
+            "physical_groups": 11,
+            "positive": 26,
+            "false_stop": 2,
+            "unprofitable_continue": 30,
+            "positive_recall": 0.9230769230769231,
+            "missed_positive_net": 0.003758335486502529,
+            "wasted_negative_net": 0.009094880018725283,
+            "hindsight_sign_regret_mean": 6.729432201689952e-05,
+            "qcontinue_rmse": 0.2614694126128104
+          }
+        },
+        "date_macro_regret": 6.749697643177423e-05,
+        "physical_group_macro_regret": 6.326083845186096e-05
+      },
+      "validation": {
+        "pooled": {
+          "states": 856,
+          "physical_groups": 56,
+          "positive": 41,
+          "false_stop": 15,
+          "unprofitable_continue": 395,
+          "positive_recall": 0.6341463414634146,
+          "missed_positive_net": 0.08126782389232622,
+          "wasted_negative_net": 0.13750548508795749,
+          "hindsight_sign_regret_mean": 0.00025557629553771456,
+          "qcontinue_rmse": 1.3886223914312377
+        },
+        "per_date": {
+          "2037-03-02": {
+            "states": 371,
+            "physical_groups": 25,
+            "positive": 14,
+            "false_stop": 3,
+            "unprofitable_continue": 196,
+            "positive_recall": 0.7857142857142857,
+            "missed_positive_net": 0.04435593905822914,
+            "wasted_negative_net": 0.06431741261689641,
+            "hindsight_sign_regret_mean": 0.0002929200853776969,
+            "qcontinue_rmse": 0.8096665815120753
+          },
+          "2037-05-04": {
+            "states": 67,
+            "physical_groups": 5,
+            "positive": 2,
+            "false_stop": 0,
+            "unprofitable_continue": 32,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.007429264554466758,
+            "hindsight_sign_regret_mean": 0.00011088454558905607,
+            "qcontinue_rmse": 0.2560070288580119
+          },
+          "2037-08-03": {
+            "states": 292,
+            "physical_groups": 17,
+            "positive": 22,
+            "false_stop": 9,
+            "unprofitable_continue": 139,
+            "positive_recall": 0.5909090909090909,
+            "missed_positive_net": 0.019696074673987686,
+            "wasted_negative_net": 0.06063256027688978,
+            "hindsight_sign_regret_mean": 0.0002750980649002653,
+            "qcontinue_rmse": 2.1880047495707897
+          },
+          "2037-10-19": {
+            "states": 126,
+            "physical_groups": 9,
+            "positive": 3,
+            "false_stop": 3,
+            "unprofitable_continue": 28,
+            "positive_recall": 0.0,
+            "missed_positive_net": 0.017215810160109382,
+            "wasted_negative_net": 0.005126247639704508,
+            "hindsight_sign_regret_mean": 0.000177317919046142,
+            "qcontinue_rmse": 0.20092122770214507
+          }
+        },
+        "date_macro_regret": 0.00021405515372829008,
+        "physical_group_macro_regret": 0.00019627519856357114
+      }
+    },
+    "DQN0_1": {
+      "train": {
+        "pooled": {
+          "states": 3582,
+          "physical_groups": 222,
+          "positive": 211,
+          "false_stop": 54,
+          "unprofitable_continue": 826,
+          "positive_recall": 0.7440758293838863,
+          "missed_positive_net": 0.11128305183068334,
+          "wasted_negative_net": 0.2953674577751768,
+          "hindsight_sign_regret_mean": 0.00011352610541760472,
+          "qcontinue_rmse": 0.4646714107636506
+        },
+        "per_date": {
+          "2037-01-05": {
+            "states": 199,
+            "physical_groups": 14,
+            "positive": 21,
+            "false_stop": 3,
+            "unprofitable_continue": 39,
+            "positive_recall": 0.8571428571428571,
+            "missed_positive_net": 0.005717883249847487,
+            "wasted_negative_net": 0.006331456483500572,
+            "hindsight_sign_regret_mean": 6.0549445896221414e-05,
+            "qcontinue_rmse": 0.15131870128119232
+          },
+          "2037-01-19": {
+            "states": 294,
+            "physical_groups": 21,
+            "positive": 17,
+            "false_stop": 8,
+            "unprofitable_continue": 60,
+            "positive_recall": 0.5294117647058824,
+            "missed_positive_net": 0.007214068351851878,
+            "wasted_negative_net": 0.01424464096505286,
+            "hindsight_sign_regret_mean": 7.298880720035625e-05,
+            "qcontinue_rmse": 0.12039100433491387
+          },
+          "2037-02-16": {
+            "states": 187,
+            "physical_groups": 10,
+            "positive": 6,
+            "false_stop": 0,
+            "unprofitable_continue": 39,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.01879895828365527,
+            "hindsight_sign_regret_mean": 0.00010052918868264852,
+            "qcontinue_rmse": 0.21283828874004096
+          },
+          "2037-03-16": {
+            "states": 298,
+            "physical_groups": 19,
+            "positive": 17,
+            "false_stop": 13,
+            "unprofitable_continue": 68,
+            "positive_recall": 0.23529411764705882,
+            "missed_positive_net": 0.0026451628939231035,
+            "wasted_negative_net": 0.025637091089038035,
+            "hindsight_sign_regret_mean": 9.490689256027226e-05,
+            "qcontinue_rmse": 0.17291652746460978
+          },
+          "2037-04-06": {
+            "states": 284,
+            "physical_groups": 18,
+            "positive": 16,
+            "false_stop": 4,
+            "unprofitable_continue": 63,
+            "positive_recall": 0.75,
+            "missed_positive_net": 0.0002548403844780025,
+            "wasted_negative_net": 0.022290086701880096,
+            "hindsight_sign_regret_mean": 7.938354607872573e-05,
+            "qcontinue_rmse": 0.15882361653880178
+          },
+          "2037-05-18": {
+            "states": 202,
+            "physical_groups": 12,
+            "positive": 11,
+            "false_stop": 3,
+            "unprofitable_continue": 38,
+            "positive_recall": 0.7272727272727273,
+            "missed_positive_net": 0.01343813949804462,
+            "wasted_negative_net": 0.013549816534096992,
+            "hindsight_sign_regret_mean": 0.0001336037427333743,
+            "qcontinue_rmse": 0.23045473725370383
+          },
+          "2037-06-01": {
+            "states": 367,
+            "physical_groups": 19,
+            "positive": 22,
+            "false_stop": 4,
+            "unprofitable_continue": 64,
+            "positive_recall": 0.8181818181818182,
+            "missed_positive_net": 0.010136822336495016,
+            "wasted_negative_net": 0.02735254188920412,
+            "hindsight_sign_regret_mean": 0.00010215085620081508,
+            "qcontinue_rmse": 0.2441164392621053
+          },
+          "2037-06-15": {
+            "states": 133,
+            "physical_groups": 11,
+            "positive": 9,
+            "false_stop": 0,
+            "unprofitable_continue": 45,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.009711036986250718,
+            "hindsight_sign_regret_mean": 7.301531568609562e-05,
+            "qcontinue_rmse": 0.16605053433314879
+          },
+          "2037-07-06": {
+            "states": 429,
+            "physical_groups": 22,
+            "positive": 30,
+            "false_stop": 3,
+            "unprofitable_continue": 94,
+            "positive_recall": 0.9,
+            "missed_positive_net": 0.01936104235822772,
+            "wasted_negative_net": 0.042290767683352916,
+            "hindsight_sign_regret_mean": 0.00014371051291743733,
+            "qcontinue_rmse": 1.0203399494603258
+          },
+          "2037-08-17": {
+            "states": 246,
+            "physical_groups": 17,
+            "positive": 12,
+            "false_stop": 1,
+            "unprofitable_continue": 69,
+            "positive_recall": 0.9166666666666666,
+            "missed_positive_net": 0.02774453937270514,
+            "wasted_negative_net": 0.02378527652042775,
+            "hindsight_sign_regret_mean": 0.0002094707963135483,
+            "qcontinue_rmse": 0.9760259908177994
+          },
+          "2037-09-07": {
+            "states": 97,
+            "physical_groups": 6,
+            "positive": 2,
+            "false_stop": 0,
+            "unprofitable_continue": 56,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.021703328878692505,
+            "hindsight_sign_regret_mean": 0.0002237456585432217,
+            "qcontinue_rmse": 0.1505921111294939
+          },
+          "2037-09-21": {
+            "states": 142,
+            "physical_groups": 10,
+            "positive": 0,
+            "false_stop": 0,
+            "unprofitable_continue": 32,
+            "positive_recall": null,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.010416925601608616,
+            "hindsight_sign_regret_mean": 7.335863099724378e-05,
+            "qcontinue_rmse": 0.11824534575707608
+          },
+          "2037-10-05": {
+            "states": 192,
+            "physical_groups": 13,
+            "positive": 14,
+            "false_stop": 2,
+            "unprofitable_continue": 47,
+            "positive_recall": 0.8571428571428571,
+            "missed_positive_net": 0.004325083590299658,
+            "wasted_negative_net": 0.011802958464053577,
+            "hindsight_sign_regret_mean": 8.400021903308978e-05,
+            "qcontinue_rmse": 0.1267972894868155
+          },
+          "2037-11-02": {
+            "states": 161,
+            "physical_groups": 9,
+            "positive": 1,
+            "false_stop": 0,
+            "unprofitable_continue": 50,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.022172741146089782,
+            "hindsight_sign_regret_mean": 0.00013771888910614773,
+            "qcontinue_rmse": 0.12271465641492262
+          },
+          "2037-11-16": {
+            "states": 160,
+            "physical_groups": 10,
+            "positive": 7,
+            "false_stop": 1,
+            "unprofitable_continue": 30,
+            "positive_recall": 0.8571428571428571,
+            "missed_positive_net": 8.531023644600758e-05,
+            "wasted_negative_net": 0.01184511590533663,
+            "hindsight_sign_regret_mean": 7.456516338614149e-05,
+            "qcontinue_rmse": 0.12323277057476768
+          },
+          "2037-12-07": {
+            "states": 191,
+            "physical_groups": 11,
+            "positive": 26,
+            "false_stop": 12,
+            "unprofitable_continue": 32,
+            "positive_recall": 0.5384615384615384,
+            "missed_positive_net": 0.020360159558364704,
+            "wasted_negative_net": 0.013434714642936364,
+            "hindsight_sign_regret_mean": 0.00017693651414293758,
+            "qcontinue_rmse": 0.23661110988537257
+          }
+        },
+        "date_macro_regret": 0.0001150396362173923,
+        "physical_group_macro_regret": 9.897710276121745e-05
+      },
+      "validation": {
+        "pooled": {
+          "states": 856,
+          "physical_groups": 56,
+          "positive": 41,
+          "false_stop": 7,
+          "unprofitable_continue": 368,
+          "positive_recall": 0.8292682926829268,
+          "missed_positive_net": 0.03730215865378104,
+          "wasted_negative_net": 0.1503191474647358,
+          "hindsight_sign_regret_mean": 0.000219183768830043,
+          "qcontinue_rmse": 1.3071383172571358
+        },
+        "per_date": {
+          "2037-03-02": {
+            "states": 371,
+            "physical_groups": 25,
+            "positive": 14,
+            "false_stop": 2,
+            "unprofitable_continue": 154,
+            "positive_recall": 0.8571428571428571,
+            "missed_positive_net": 0.008811021224112392,
+            "wasted_negative_net": 0.059277866004332255,
+            "hindsight_sign_regret_mean": 0.000183527997920336,
+            "qcontinue_rmse": 0.7604203951572497
+          },
+          "2037-05-04": {
+            "states": 67,
+            "physical_groups": 5,
+            "positive": 2,
+            "false_stop": 0,
+            "unprofitable_continue": 18,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.004737526537645528,
+            "hindsight_sign_regret_mean": 7.070935130814222e-05,
+            "qcontinue_rmse": 0.28414727987517774
+          },
+          "2037-08-03": {
+            "states": 292,
+            "physical_groups": 17,
+            "positive": 22,
+            "false_stop": 3,
+            "unprofitable_continue": 154,
+            "positive_recall": 0.8636363636363636,
+            "missed_positive_net": 0.01701393065626239,
+            "wasted_negative_net": 0.07876369164688196,
+            "hindsight_sign_regret_mean": 0.00032800555583268606,
+            "qcontinue_rmse": 2.0562654589009606
+          },
+          "2037-10-19": {
+            "states": 126,
+            "physical_groups": 9,
+            "positive": 3,
+            "false_stop": 2,
+            "unprofitable_continue": 42,
+            "positive_recall": 0.3333333333333333,
+            "missed_positive_net": 0.011477206773406256,
+            "wasted_negative_net": 0.007540063275876049,
+            "hindsight_sign_regret_mean": 0.00015093071467684366,
+            "qcontinue_rmse": 0.2518486188084803
+          }
+        },
+        "date_macro_regret": 0.00018329340493450195,
+        "physical_group_macro_regret": 0.00014897248642075243
+      }
+    },
+    "DQN0_2": {
+      "train": {
+        "pooled": {
+          "states": 3582,
+          "physical_groups": 222,
+          "positive": 211,
+          "false_stop": 59,
+          "unprofitable_continue": 463,
+          "positive_recall": 0.7203791469194313,
+          "missed_positive_net": 0.06414911275670501,
+          "wasted_negative_net": 0.15338156718081924,
+          "hindsight_sign_regret_mean": 6.0728833036718096e-05,
+          "qcontinue_rmse": 0.3857058028346497
+        },
+        "per_date": {
+          "2037-01-05": {
+            "states": 199,
+            "physical_groups": 14,
+            "positive": 21,
+            "false_stop": 4,
+            "unprofitable_continue": 27,
+            "positive_recall": 0.8095238095238095,
+            "missed_positive_net": 0.008249177174786482,
+            "wasted_negative_net": 0.005350179870989584,
+            "hindsight_sign_regret_mean": 6.833847761696515e-05,
+            "qcontinue_rmse": 0.16461313157372823
+          },
+          "2037-01-19": {
+            "states": 294,
+            "physical_groups": 21,
+            "positive": 17,
+            "false_stop": 6,
+            "unprofitable_continue": 53,
+            "positive_recall": 0.6470588235294118,
+            "missed_positive_net": 0.01269366776130695,
+            "wasted_negative_net": 0.01417192426608131,
+            "hindsight_sign_regret_mean": 9.137956471900769e-05,
+            "qcontinue_rmse": 0.15082719610386683
+          },
+          "2037-02-16": {
+            "states": 187,
+            "physical_groups": 10,
+            "positive": 6,
+            "false_stop": 3,
+            "unprofitable_continue": 25,
+            "positive_recall": 0.5,
+            "missed_positive_net": 0.0005984790866894059,
+            "wasted_negative_net": 0.008669589726752578,
+            "hindsight_sign_regret_mean": 4.9561865312523975e-05,
+            "qcontinue_rmse": 0.1337408064611763
+          },
+          "2037-03-16": {
+            "states": 298,
+            "physical_groups": 19,
+            "positive": 17,
+            "false_stop": 14,
+            "unprofitable_continue": 55,
+            "positive_recall": 0.17647058823529413,
+            "missed_positive_net": 0.0038721918525047054,
+            "wasted_negative_net": 0.018401261555423078,
+            "hindsight_sign_regret_mean": 7.474313224136842e-05,
+            "qcontinue_rmse": 0.18251671694876553
+          },
+          "2037-04-06": {
+            "states": 284,
+            "physical_groups": 18,
+            "positive": 16,
+            "false_stop": 4,
+            "unprofitable_continue": 51,
+            "positive_recall": 0.75,
+            "missed_positive_net": 9.049535671425334e-05,
+            "wasted_negative_net": 0.019895716718196125,
+            "hindsight_sign_regret_mean": 7.03739861792619e-05,
+            "qcontinue_rmse": 0.23261531915455771
+          },
+          "2037-05-18": {
+            "states": 202,
+            "physical_groups": 12,
+            "positive": 11,
+            "false_stop": 4,
+            "unprofitable_continue": 38,
+            "positive_recall": 0.6363636363636364,
+            "missed_positive_net": 0.00024047614891434653,
+            "wasted_negative_net": 0.016847038923712747,
+            "hindsight_sign_regret_mean": 8.459165877538169e-05,
+            "qcontinue_rmse": 0.11671813576296541
+          },
+          "2037-06-01": {
+            "states": 367,
+            "physical_groups": 19,
+            "positive": 22,
+            "false_stop": 8,
+            "unprofitable_continue": 30,
+            "positive_recall": 0.6363636363636364,
+            "missed_positive_net": 0.01285201543635302,
+            "wasted_negative_net": 0.009147122787604477,
+            "hindsight_sign_regret_mean": 5.9943155923589915e-05,
+            "qcontinue_rmse": 0.1989827289381963
+          },
+          "2037-06-15": {
+            "states": 133,
+            "physical_groups": 11,
+            "positive": 9,
+            "false_stop": 0,
+            "unprofitable_continue": 17,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.0023391615443311836,
+            "hindsight_sign_regret_mean": 1.758768078444499e-05,
+            "qcontinue_rmse": 0.1193513938970853
+          },
+          "2037-07-06": {
+            "states": 429,
+            "physical_groups": 22,
+            "positive": 30,
+            "false_stop": 0,
+            "unprofitable_continue": 49,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.02100190916021112,
+            "hindsight_sign_regret_mean": 4.895549920795133e-05,
+            "qcontinue_rmse": 0.8336320566552844
+          },
+          "2037-08-17": {
+            "states": 246,
+            "physical_groups": 17,
+            "positive": 12,
+            "false_stop": 0,
+            "unprofitable_continue": 22,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.005982336089278686,
+            "hindsight_sign_regret_mean": 2.431843938731174e-05,
+            "qcontinue_rmse": 0.7859006674040732
+          },
+          "2037-09-07": {
+            "states": 97,
+            "physical_groups": 6,
+            "positive": 2,
+            "false_stop": 0,
+            "unprofitable_continue": 18,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.008969636605588615,
+            "hindsight_sign_regret_mean": 9.247048046998572e-05,
+            "qcontinue_rmse": 0.08836987396167716
+          },
+          "2037-09-21": {
+            "states": 142,
+            "physical_groups": 10,
+            "positive": 0,
+            "false_stop": 0,
+            "unprofitable_continue": 10,
+            "positive_recall": null,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.0012069078180857703,
+            "hindsight_sign_regret_mean": 8.499350831589931e-06,
+            "qcontinue_rmse": 0.13879814092084244
+          },
+          "2037-10-05": {
+            "states": 192,
+            "physical_groups": 13,
+            "positive": 14,
+            "false_stop": 3,
+            "unprofitable_continue": 14,
+            "positive_recall": 0.7857142857142857,
+            "missed_positive_net": 0.005132024841905254,
+            "wasted_negative_net": 0.0030066502301629478,
+            "hindsight_sign_regret_mean": 4.238893266702188e-05,
+            "qcontinue_rmse": 0.1684638984163312
+          },
+          "2037-11-02": {
+            "states": 161,
+            "physical_groups": 9,
+            "positive": 1,
+            "false_stop": 0,
+            "unprofitable_continue": 18,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.006126521176471997,
+            "hindsight_sign_regret_mean": 3.805292656193787e-05,
+            "qcontinue_rmse": 0.08042240311324897
+          },
+          "2037-11-16": {
+            "states": 160,
+            "physical_groups": 10,
+            "positive": 7,
+            "false_stop": 1,
+            "unprofitable_continue": 18,
+            "positive_recall": 0.8571428571428571,
+            "missed_positive_net": 6.0425539165888604e-05,
+            "wasted_negative_net": 0.00314791420593505,
+            "hindsight_sign_regret_mean": 2.0052123406880865e-05,
+            "qcontinue_rmse": 0.09262240790342004
+          },
+          "2037-12-07": {
+            "states": 191,
+            "physical_groups": 11,
+            "positive": 26,
+            "false_stop": 12,
+            "unprofitable_continue": 18,
+            "positive_recall": 0.5384615384615384,
+            "missed_positive_net": 0.020360159558364704,
+            "wasted_negative_net": 0.009117696501993927,
+            "hindsight_sign_regret_mean": 0.00015433432492334363,
+            "qcontinue_rmse": 0.24609625384583317
+          }
+        },
+        "date_macro_regret": 5.9099474938035424e-05,
+        "physical_group_macro_regret": 4.806317742122309e-05
+      },
+      "validation": {
+        "pooled": {
+          "states": 856,
+          "physical_groups": 56,
+          "positive": 41,
+          "false_stop": 17,
+          "unprofitable_continue": 194,
+          "positive_recall": 0.5853658536585366,
+          "missed_positive_net": 0.08560501641823233,
+          "wasted_negative_net": 0.07523701764239678,
+          "hindsight_sign_regret_mean": 0.0001878995725007349,
+          "qcontinue_rmse": 1.19733042291394
+        },
+        "per_date": {
+          "2037-03-02": {
+            "states": 371,
+            "physical_groups": 25,
+            "positive": 14,
+            "false_stop": 5,
+            "unprofitable_continue": 100,
+            "positive_recall": 0.6428571428571429,
+            "missed_positive_net": 0.048693131584135255,
+            "wasted_negative_net": 0.04137076086895087,
+            "hindsight_sign_regret_mean": 0.00024275981793284664,
+            "qcontinue_rmse": 0.6207859452700818
+          },
+          "2037-05-04": {
+            "states": 67,
+            "physical_groups": 5,
+            "positive": 2,
+            "false_stop": 0,
+            "unprofitable_continue": 6,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.0008211950102439261,
+            "hindsight_sign_regret_mean": 1.2256641943939198e-05,
+            "qcontinue_rmse": 0.3086546610529054
+          },
+          "2037-08-03": {
+            "states": 292,
+            "physical_groups": 17,
+            "positive": 22,
+            "false_stop": 9,
+            "unprofitable_continue": 71,
+            "positive_recall": 0.5909090909090909,
+            "missed_positive_net": 0.019696074673987686,
+            "wasted_negative_net": 0.0303464919521106,
+            "hindsight_sign_regret_mean": 0.00017137865282910376,
+            "qcontinue_rmse": 1.917560129691403
+          },
+          "2037-10-19": {
+            "states": 126,
+            "physical_groups": 9,
+            "positive": 3,
+            "false_stop": 3,
+            "unprofitable_continue": 17,
+            "positive_recall": 0.0,
+            "missed_positive_net": 0.017215810160109382,
+            "wasted_negative_net": 0.0026985698110913773,
+            "hindsight_sign_regret_mean": 0.00015805063469206954,
+            "qcontinue_rmse": 0.18060369300183046
+          }
+        },
+        "date_macro_regret": 0.00014611143684948978,
+        "physical_group_macro_regret": 0.00015781919137212208
+      }
+    },
+    "RF": {
+      "train": {
+        "pooled": {
+          "states": 3582,
+          "physical_groups": 222,
+          "positive": 211,
+          "false_stop": 66,
+          "unprofitable_continue": 1417,
+          "positive_recall": 0.6872037914691943,
+          "missed_positive_net": 0.13096946274055882,
+          "wasted_negative_net": 0.28657383516056595,
+          "hindsight_sign_regret_mean": 0.00011656708484118503,
+          "qcontinue_rmse": null
+        },
+        "per_date": {
+          "2037-01-05": {
+            "states": 199,
+            "physical_groups": 14,
+            "positive": 21,
+            "false_stop": 3,
+            "unprofitable_continue": 87,
+            "positive_recall": 0.8571428571428571,
+            "missed_positive_net": 0.007812274160928443,
+            "wasted_negative_net": 0.013995943245777218,
+            "hindsight_sign_regret_mean": 0.0001095890321945008,
+            "qcontinue_rmse": null
+          },
+          "2037-01-19": {
+            "states": 294,
+            "physical_groups": 21,
+            "positive": 17,
+            "false_stop": 7,
+            "unprofitable_continue": 172,
+            "positive_recall": 0.5882352941176471,
+            "missed_positive_net": 0.012383482286932536,
+            "wasted_negative_net": 0.03335343582757812,
+            "hindsight_sign_regret_mean": 0.00015556774868881178,
+            "qcontinue_rmse": null
+          },
+          "2037-02-16": {
+            "states": 187,
+            "physical_groups": 10,
+            "positive": 6,
+            "false_stop": 0,
+            "unprofitable_continue": 79,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.02026007362195431,
+            "hindsight_sign_regret_mean": 0.00010834263968959528,
+            "qcontinue_rmse": null
+          },
+          "2037-03-16": {
+            "states": 298,
+            "physical_groups": 19,
+            "positive": 17,
+            "false_stop": 13,
+            "unprofitable_continue": 114,
+            "positive_recall": 0.23529411764705882,
+            "missed_positive_net": 0.006846629353921879,
+            "wasted_negative_net": 0.01615633447065458,
+            "hindsight_sign_regret_mean": 7.719115377374652e-05,
+            "qcontinue_rmse": null
+          },
+          "2037-04-06": {
+            "states": 284,
+            "physical_groups": 18,
+            "positive": 16,
+            "false_stop": 0,
+            "unprofitable_continue": 147,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.042664081757427044,
+            "hindsight_sign_regret_mean": 0.0001502256399909403,
+            "qcontinue_rmse": null
+          },
+          "2037-05-18": {
+            "states": 202,
+            "physical_groups": 12,
+            "positive": 11,
+            "false_stop": 0,
+            "unprofitable_continue": 79,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.01833308646825635,
+            "hindsight_sign_regret_mean": 9.075785380324929e-05,
+            "qcontinue_rmse": null
+          },
+          "2037-06-01": {
+            "states": 367,
+            "physical_groups": 19,
+            "positive": 22,
+            "false_stop": 17,
+            "unprofitable_continue": 98,
+            "positive_recall": 0.22727272727272727,
+            "missed_positive_net": 0.04486139888458568,
+            "wasted_negative_net": 0.01736900797298553,
+            "hindsight_sign_regret_mean": 0.00016956514130128395,
+            "qcontinue_rmse": null
+          },
+          "2037-06-15": {
+            "states": 133,
+            "physical_groups": 11,
+            "positive": 9,
+            "false_stop": 2,
+            "unprofitable_continue": 78,
+            "positive_recall": 0.7777777777777778,
+            "missed_positive_net": 0.0010046881276241856,
+            "wasted_negative_net": 0.010787516270931573,
+            "hindsight_sign_regret_mean": 8.866319096658467e-05,
+            "qcontinue_rmse": null
+          },
+          "2037-07-06": {
+            "states": 429,
+            "physical_groups": 22,
+            "positive": 30,
+            "false_stop": 1,
+            "unprofitable_continue": 152,
+            "positive_recall": 0.9666666666666667,
+            "missed_positive_net": 0.004063494794152892,
+            "wasted_negative_net": 0.048305295119082436,
+            "hindsight_sign_regret_mean": 0.00012207177135952288,
+            "qcontinue_rmse": null
+          },
+          "2037-08-17": {
+            "states": 246,
+            "physical_groups": 17,
+            "positive": 12,
+            "false_stop": 1,
+            "unprofitable_continue": 104,
+            "positive_recall": 0.9166666666666666,
+            "missed_positive_net": 0.0004741156887607997,
+            "wasted_negative_net": 0.02117621254157167,
+            "hindsight_sign_regret_mean": 8.800946435094496e-05,
+            "qcontinue_rmse": null
+          },
+          "2037-09-07": {
+            "states": 97,
+            "physical_groups": 6,
+            "positive": 2,
+            "false_stop": 0,
+            "unprofitable_continue": 27,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.004553899602261772,
+            "hindsight_sign_regret_mean": 4.6947418580018265e-05,
+            "qcontinue_rmse": null
+          },
+          "2037-09-21": {
+            "states": 142,
+            "physical_groups": 10,
+            "positive": 0,
+            "false_stop": 0,
+            "unprofitable_continue": 36,
+            "positive_recall": null,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.006420251898270694,
+            "hindsight_sign_regret_mean": 4.5213041537117566e-05,
+            "qcontinue_rmse": null
+          },
+          "2037-10-05": {
+            "states": 192,
+            "physical_groups": 13,
+            "positive": 14,
+            "false_stop": 6,
+            "unprofitable_continue": 69,
+            "positive_recall": 0.5714285714285714,
+            "missed_positive_net": 0.01058518980984166,
+            "wasted_negative_net": 0.009638422055314655,
+            "hindsight_sign_regret_mean": 0.00010533131179768915,
+            "qcontinue_rmse": null
+          },
+          "2037-11-02": {
+            "states": 161,
+            "physical_groups": 9,
+            "positive": 1,
+            "false_stop": 1,
+            "unprofitable_continue": 60,
+            "positive_recall": 0.0,
+            "missed_positive_net": 0.0007544959377842372,
+            "wasted_negative_net": 0.007531865943824185,
+            "hindsight_sign_regret_mean": 5.1468086221170336e-05,
+            "qcontinue_rmse": null
+          },
+          "2037-11-16": {
+            "states": 160,
+            "physical_groups": 10,
+            "positive": 7,
+            "false_stop": 3,
+            "unprofitable_continue": 46,
+            "positive_recall": 0.5714285714285714,
+            "missed_positive_net": 0.02182353413766181,
+            "wasted_negative_net": 0.005897673255388197,
+            "hindsight_sign_regret_mean": 0.00017325754620656258,
+            "qcontinue_rmse": null
+          },
+          "2037-12-07": {
+            "states": 191,
+            "physical_groups": 11,
+            "positive": 26,
+            "false_stop": 12,
+            "unprofitable_continue": 69,
+            "positive_recall": 0.5384615384615384,
+            "missed_positive_net": 0.020360159558364704,
+            "wasted_negative_net": 0.010130735109287612,
+            "hindsight_sign_regret_mean": 0.00015963819197723725,
+            "qcontinue_rmse": null
+          }
+        },
+        "date_macro_regret": 0.00010886495202743598,
+        "physical_group_macro_regret": 0.00011010718691588341
+      },
+      "validation": {
+        "pooled": {
+          "states": 856,
+          "physical_groups": 56,
+          "positive": 41,
+          "false_stop": 11,
+          "unprofitable_continue": 465,
+          "positive_recall": 0.7317073170731707,
+          "missed_positive_net": 0.03946774654035659,
+          "wasted_negative_net": 0.09695231097101917,
+          "hindsight_sign_regret_mean": 0.0001593692260646913,
+          "qcontinue_rmse": null
+        },
+        "per_date": {
+          "2037-03-02": {
+            "states": 371,
+            "physical_groups": 25,
+            "positive": 14,
+            "false_stop": 3,
+            "unprofitable_continue": 218,
+            "positive_recall": 0.7857142857142857,
+            "missed_positive_net": 0.015087869091428082,
+            "wasted_negative_net": 0.038844184786294235,
+            "hindsight_sign_regret_mean": 0.00014536941746016798,
+            "qcontinue_rmse": null
+          },
+          "2037-05-04": {
+            "states": 67,
+            "physical_groups": 5,
+            "positive": 2,
+            "false_stop": 1,
+            "unprofitable_continue": 38,
+            "positive_recall": 0.5,
+            "missed_positive_net": 0.02063307528969958,
+            "wasted_negative_net": 0.003995672543531457,
+            "hindsight_sign_regret_mean": 0.00036759325124225437,
+            "qcontinue_rmse": null
+          },
+          "2037-08-03": {
+            "states": 292,
+            "physical_groups": 17,
+            "positive": 22,
+            "false_stop": 7,
+            "unprofitable_continue": 134,
+            "positive_recall": 0.6818181818181818,
+            "missed_positive_net": 0.003746802159228935,
+            "wasted_negative_net": 0.04811666144048632,
+            "hindsight_sign_regret_mean": 0.00017761460136888786,
+            "qcontinue_rmse": null
+          },
+          "2037-10-19": {
+            "states": 126,
+            "physical_groups": 9,
+            "positive": 3,
+            "false_stop": 0,
+            "unprofitable_continue": 75,
+            "positive_recall": 1.0,
+            "missed_positive_net": 0.0,
+            "wasted_negative_net": 0.005995792200707141,
+            "hindsight_sign_regret_mean": 4.758565238656462e-05,
+            "qcontinue_rmse": null
+          }
+        },
+        "date_macro_regret": 0.0001845407306144687,
+        "physical_group_macro_regret": 0.00014221220958054743
+      }
+    }
+  },
+  "closedloop": {
+    "LOCAL_RF": {
+      "matched": {
+        "decisions": 16,
+        "calls": 12,
+        "positive_next_batch": 0,
+        "missed_positive": 0,
+        "unprofitable_continue": 7,
+        "stopped_myopic_nonpositive_but_later_profitable": 0,
+        "stopped_no_profitable_stopping_point": 9,
+        "stopped_with_positive_full_gain": 4
+      },
+      "unknown_decisions": 11
+    },
+    "LOCAL_DQN0_0": {
+      "matched": {
+        "decisions": 29,
+        "calls": 17,
+        "positive_next_batch": 2,
+        "missed_positive": 1,
+        "unprofitable_continue": 14,
+        "stopped_myopic_nonpositive_but_later_profitable": 0,
+        "stopped_no_profitable_stopping_point": 13,
+        "stopped_with_positive_full_gain": 3
+      },
+      "unknown_decisions": 4
+    },
+    "LOCAL_DQN0_1": {
+      "matched": {
+        "decisions": 33,
+        "calls": 17,
+        "positive_next_batch": 2,
+        "missed_positive": 1,
+        "unprofitable_continue": 20,
+        "stopped_myopic_nonpositive_but_later_profitable": 0,
+        "stopped_no_profitable_stopping_point": 11,
+        "stopped_with_positive_full_gain": 4
+      },
+      "unknown_decisions": 4
+    },
+    "LOCAL_DQN0_2": {
+      "matched": {
+        "decisions": 26,
+        "calls": 19,
+        "positive_next_batch": 2,
+        "missed_positive": 0,
+        "unprofitable_continue": 8,
+        "stopped_myopic_nonpositive_but_later_profitable": 0,
+        "stopped_no_profitable_stopping_point": 16,
+        "stopped_with_positive_full_gain": 2
+      },
+      "unknown_decisions": 1
+    }
+  },
+  "critical_cases": [
+    {
+      "week": "2037-03-02_100",
+      "date": "2037-03-02",
+      "method": "LOCAL_RF",
+      "step": 108,
+      "batch": 0,
+      "action": 0,
+      "remaining": 198,
+      "next_queries": 64,
+      "clipped_features": 0,
+      "matched": true,
+      "predicted_normalized_gain": 0.028881409872885396,
+      "actual_next_gain": 0.0,
+      "target_net": -0.0007963103129638072,
+      "target_normalized": -0.09229567542852926,
+      "best_future_net": 0.0,
+      "full_gain": 0.0007188320159912109,
+      "hindsight_myopic_continue": 0,
+      "hindsight_continue": 0,
+      "realized_one_batch_sign_error": false,
+      "nearest_five_train_groups": [
+        {
+          "group": "2037-01-05_100|call007",
+          "date": "2037-01-05",
+          "sample_id": "f659ac9f4a51c3661a968e31",
+          "batch": 0,
+          "standardized_rms_distance": 0.3265717625617981,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-04-06_100|call007",
+          "date": "2037-04-06",
+          "sample_id": "fe504af82b572d6eee14cf43",
+          "batch": 0,
+          "standardized_rms_distance": 0.3275197446346283,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-12-07_100|call002",
+          "date": "2037-12-07",
+          "sample_id": "26d3cbc169ac8ddfae6f2a2c",
+          "batch": 0,
+          "standardized_rms_distance": 0.327581524848938,
+          "target_normalized": 1.0327000640816515,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-06-01_100|call001",
+          "date": "2037-06-01",
+          "sample_id": "29174a5c46c64d258bf9e360",
+          "batch": 0,
+          "standardized_rms_distance": 0.3468010723590851,
+          "target_normalized": -0.07597797298494492,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-05-18_100|call001",
+          "date": "2037-05-18",
+          "sample_id": "e60eaa47a3708c79166cce72",
+          "batch": 0,
+          "standardized_rms_distance": 0.35502058267593384,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        }
+      ]
+    },
+    {
+      "week": "2037-03-02_100",
+      "date": "2037-03-02",
+      "method": "LOCAL_DQN0_0",
+      "step": 108,
+      "batch": 0,
+      "action": 1,
+      "remaining": 198,
+      "next_queries": 64,
+      "clipped_features": 0,
+      "matched": true,
+      "q0": 0.0001706448383629322,
+      "q1": 0.9028350114822388,
+      "actual_next_gain": 0.0,
+      "target_net": -0.0007963103129638072,
+      "target_normalized": -0.09229567542852926,
+      "best_future_net": 0.0,
+      "full_gain": 0.0007188320159912109,
+      "hindsight_myopic_continue": 0,
+      "hindsight_continue": 0,
+      "realized_one_batch_sign_error": true,
+      "nearest_five_train_groups": [
+        {
+          "group": "2037-01-05_100|call007",
+          "date": "2037-01-05",
+          "sample_id": "f659ac9f4a51c3661a968e31",
+          "batch": 0,
+          "standardized_rms_distance": 0.3265717625617981,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-04-06_100|call007",
+          "date": "2037-04-06",
+          "sample_id": "fe504af82b572d6eee14cf43",
+          "batch": 0,
+          "standardized_rms_distance": 0.3275197446346283,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-12-07_100|call002",
+          "date": "2037-12-07",
+          "sample_id": "26d3cbc169ac8ddfae6f2a2c",
+          "batch": 0,
+          "standardized_rms_distance": 0.327581524848938,
+          "target_normalized": 1.0327000640816515,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-06-01_100|call001",
+          "date": "2037-06-01",
+          "sample_id": "29174a5c46c64d258bf9e360",
+          "batch": 0,
+          "standardized_rms_distance": 0.3468010723590851,
+          "target_normalized": -0.07597797298494492,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-05-18_100|call001",
+          "date": "2037-05-18",
+          "sample_id": "e60eaa47a3708c79166cce72",
+          "batch": 0,
+          "standardized_rms_distance": 0.35502058267593384,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        }
+      ]
+    },
+    {
+      "week": "2037-03-02_100",
+      "date": "2037-03-02",
+      "method": "LOCAL_DQN0_0",
+      "step": 552,
+      "batch": 0,
+      "action": 0,
+      "remaining": 13,
+      "next_queries": 13,
+      "clipped_features": 0,
+      "matched": true,
+      "q0": -4.6005137846805155e-05,
+      "q1": -0.10889171063899994,
+      "actual_next_gain": 0.0070950984954833984,
+      "target_net": 0.0069333479631626255,
+      "target_normalized": 0.8036038499355675,
+      "best_future_net": 0.0069333479631626255,
+      "full_gain": 0.0070950984954833984,
+      "hindsight_myopic_continue": 1,
+      "hindsight_continue": 1,
+      "realized_one_batch_sign_error": true,
+      "nearest_five_train_groups": [
+        {
+          "group": "2037-01-19_100|call004",
+          "date": "2037-01-19",
+          "sample_id": "768fa251d1058e3ad4716f93",
+          "batch": 0,
+          "standardized_rms_distance": 0.33259090781211853,
+          "target_normalized": -0.012979079357136927,
+          "next_queries": 9
+        },
+        {
+          "group": "2037-06-01_101|call001",
+          "date": "2037-06-01",
+          "sample_id": "bc1ddc0c43978dfda6701fb5",
+          "batch": 0,
+          "standardized_rms_distance": 0.3626849353313446,
+          "target_normalized": -0.021631798928561544,
+          "next_queries": 15
+        },
+        {
+          "group": "2037-06-01_100|call009",
+          "date": "2037-06-01",
+          "sample_id": "973b91bc90162225ecbcb03d",
+          "batch": 0,
+          "standardized_rms_distance": 0.3919934332370758,
+          "target_normalized": -0.027400278642844625,
+          "next_queries": 19
+        },
+        {
+          "group": "2037-03-16_100|call004",
+          "date": "2037-03-16",
+          "sample_id": "9a9239abe45141c73b156f7c",
+          "batch": 0,
+          "standardized_rms_distance": 0.3935471773147583,
+          "target_normalized": -0.03605299821426924,
+          "next_queries": 25
+        },
+        {
+          "group": "2037-04-06_100|call009",
+          "date": "2037-04-06",
+          "sample_id": "e65e8749a602df0afb9ad91e",
+          "batch": 0,
+          "standardized_rms_distance": 0.41330164670944214,
+          "target_normalized": -0.04470571778569386,
+          "next_queries": 31
+        }
+      ]
+    },
+    {
+      "week": "2037-03-02_100",
+      "date": "2037-03-02",
+      "method": "LOCAL_DQN0_1",
+      "step": 108,
+      "batch": 0,
+      "action": 1,
+      "remaining": 198,
+      "next_queries": 64,
+      "clipped_features": 0,
+      "matched": true,
+      "q0": -4.932134470436722e-05,
+      "q1": 1.1369686126708984,
+      "actual_next_gain": 0.0,
+      "target_net": -0.0007963103129638072,
+      "target_normalized": -0.09229567542852926,
+      "best_future_net": 0.0,
+      "full_gain": 0.0007188320159912109,
+      "hindsight_myopic_continue": 0,
+      "hindsight_continue": 0,
+      "realized_one_batch_sign_error": true,
+      "nearest_five_train_groups": [
+        {
+          "group": "2037-01-05_100|call007",
+          "date": "2037-01-05",
+          "sample_id": "f659ac9f4a51c3661a968e31",
+          "batch": 0,
+          "standardized_rms_distance": 0.3265717625617981,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-04-06_100|call007",
+          "date": "2037-04-06",
+          "sample_id": "fe504af82b572d6eee14cf43",
+          "batch": 0,
+          "standardized_rms_distance": 0.3275197446346283,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-12-07_100|call002",
+          "date": "2037-12-07",
+          "sample_id": "26d3cbc169ac8ddfae6f2a2c",
+          "batch": 0,
+          "standardized_rms_distance": 0.327581524848938,
+          "target_normalized": 1.0327000640816515,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-06-01_100|call001",
+          "date": "2037-06-01",
+          "sample_id": "29174a5c46c64d258bf9e360",
+          "batch": 0,
+          "standardized_rms_distance": 0.3468010723590851,
+          "target_normalized": -0.07597797298494492,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-05-18_100|call001",
+          "date": "2037-05-18",
+          "sample_id": "e60eaa47a3708c79166cce72",
+          "batch": 0,
+          "standardized_rms_distance": 0.35502058267593384,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        }
+      ]
+    },
+    {
+      "week": "2037-03-02_100",
+      "date": "2037-03-02",
+      "method": "LOCAL_DQN0_1",
+      "step": 552,
+      "batch": 0,
+      "action": 0,
+      "remaining": 13,
+      "next_queries": 13,
+      "clipped_features": 0,
+      "matched": true,
+      "q0": 0.0007391924154944718,
+      "q1": -0.06504224240779877,
+      "actual_next_gain": 0.0070950984954833984,
+      "target_net": 0.0069333479631626255,
+      "target_normalized": 0.8036038499355675,
+      "best_future_net": 0.0069333479631626255,
+      "full_gain": 0.0070950984954833984,
+      "hindsight_myopic_continue": 1,
+      "hindsight_continue": 1,
+      "realized_one_batch_sign_error": true,
+      "nearest_five_train_groups": [
+        {
+          "group": "2037-01-19_100|call004",
+          "date": "2037-01-19",
+          "sample_id": "768fa251d1058e3ad4716f93",
+          "batch": 0,
+          "standardized_rms_distance": 0.33259090781211853,
+          "target_normalized": -0.012979079357136927,
+          "next_queries": 9
+        },
+        {
+          "group": "2037-06-01_101|call001",
+          "date": "2037-06-01",
+          "sample_id": "bc1ddc0c43978dfda6701fb5",
+          "batch": 0,
+          "standardized_rms_distance": 0.3626849353313446,
+          "target_normalized": -0.021631798928561544,
+          "next_queries": 15
+        },
+        {
+          "group": "2037-06-01_100|call009",
+          "date": "2037-06-01",
+          "sample_id": "973b91bc90162225ecbcb03d",
+          "batch": 0,
+          "standardized_rms_distance": 0.3919934332370758,
+          "target_normalized": -0.027400278642844625,
+          "next_queries": 19
+        },
+        {
+          "group": "2037-03-16_100|call004",
+          "date": "2037-03-16",
+          "sample_id": "9a9239abe45141c73b156f7c",
+          "batch": 0,
+          "standardized_rms_distance": 0.3935471773147583,
+          "target_normalized": -0.03605299821426924,
+          "next_queries": 25
+        },
+        {
+          "group": "2037-04-06_100|call009",
+          "date": "2037-04-06",
+          "sample_id": "e65e8749a602df0afb9ad91e",
+          "batch": 0,
+          "standardized_rms_distance": 0.41330164670944214,
+          "target_normalized": -0.04470571778569386,
+          "next_queries": 31
+        }
+      ]
+    },
+    {
+      "week": "2037-03-02_100",
+      "date": "2037-03-02",
+      "method": "LOCAL_DQN0_2",
+      "step": 108,
+      "batch": 0,
+      "action": 1,
+      "remaining": 198,
+      "next_queries": 64,
+      "clipped_features": 0,
+      "matched": true,
+      "q0": 0.0009647415718063712,
+      "q1": 0.5717227458953857,
+      "actual_next_gain": 0.0,
+      "target_net": -0.0007963103129638072,
+      "target_normalized": -0.09229567542852926,
+      "best_future_net": 0.0,
+      "full_gain": 0.0007188320159912109,
+      "hindsight_myopic_continue": 0,
+      "hindsight_continue": 0,
+      "realized_one_batch_sign_error": true,
+      "nearest_five_train_groups": [
+        {
+          "group": "2037-01-05_100|call007",
+          "date": "2037-01-05",
+          "sample_id": "f659ac9f4a51c3661a968e31",
+          "batch": 0,
+          "standardized_rms_distance": 0.3265717625617981,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-04-06_100|call007",
+          "date": "2037-04-06",
+          "sample_id": "fe504af82b572d6eee14cf43",
+          "batch": 0,
+          "standardized_rms_distance": 0.3275197446346283,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-12-07_100|call002",
+          "date": "2037-12-07",
+          "sample_id": "26d3cbc169ac8ddfae6f2a2c",
+          "batch": 0,
+          "standardized_rms_distance": 0.327581524848938,
+          "target_normalized": 1.0327000640816515,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-06-01_100|call001",
+          "date": "2037-06-01",
+          "sample_id": "29174a5c46c64d258bf9e360",
+          "batch": 0,
+          "standardized_rms_distance": 0.3468010723590851,
+          "target_normalized": -0.07597797298494492,
+          "next_queries": 64
+        },
+        {
+          "group": "2037-05-18_100|call001",
+          "date": "2037-05-18",
+          "sample_id": "e60eaa47a3708c79166cce72",
+          "batch": 0,
+          "standardized_rms_distance": 0.35502058267593384,
+          "target_normalized": -0.09229567542852926,
+          "next_queries": 64
+        }
+      ]
+    },
+    {
+      "week": "2037-03-02_100",
+      "date": "2037-03-02",
+      "method": "LOCAL_DQN0_2",
+      "step": 552,
+      "batch": 0,
+      "action": 1,
+      "remaining": 13,
+      "next_queries": 13,
+      "clipped_features": 0,
+      "matched": true,
+      "q0": 3.6340014048619196e-05,
+      "q1": 0.02292020432651043,
+      "actual_next_gain": 0.0070950984954833984,
+      "target_net": 0.0069333479631626255,
+      "target_normalized": 0.8036038499355675,
+      "best_future_net": 0.0069333479631626255,
+      "full_gain": 0.0070950984954833984,
+      "hindsight_myopic_continue": 1,
+      "hindsight_continue": 1,
+      "realized_one_batch_sign_error": false,
+      "nearest_five_train_groups": [
+        {
+          "group": "2037-01-19_100|call004",
+          "date": "2037-01-19",
+          "sample_id": "768fa251d1058e3ad4716f93",
+          "batch": 0,
+          "standardized_rms_distance": 0.33259090781211853,
+          "target_normalized": -0.012979079357136927,
+          "next_queries": 9
+        },
+        {
+          "group": "2037-06-01_101|call001",
+          "date": "2037-06-01",
+          "sample_id": "bc1ddc0c43978dfda6701fb5",
+          "batch": 0,
+          "standardized_rms_distance": 0.3626849353313446,
+          "target_normalized": -0.021631798928561544,
+          "next_queries": 15
+        },
+        {
+          "group": "2037-06-01_100|call009",
+          "date": "2037-06-01",
+          "sample_id": "973b91bc90162225ecbcb03d",
+          "batch": 0,
+          "standardized_rms_distance": 0.3919934332370758,
+          "target_normalized": -0.027400278642844625,
+          "next_queries": 19
+        },
+        {
+          "group": "2037-03-16_100|call004",
+          "date": "2037-03-16",
+          "sample_id": "9a9239abe45141c73b156f7c",
+          "batch": 0,
+          "standardized_rms_distance": 0.3935471773147583,
+          "target_normalized": -0.03605299821426924,
+          "next_queries": 25
+        },
+        {
+          "group": "2037-04-06_100|call009",
+          "date": "2037-04-06",
+          "sample_id": "e65e8749a602df0afb9ad91e",
+          "batch": 0,
+          "standardized_rms_distance": 0.41330164670944214,
+          "target_normalized": -0.04470571778569386,
+          "next_queries": 31
+        }
+      ]
+    }
+  ],
+  "train_reachable_state_concentration": {
+    "2037-01-05": {
+      "states": 199,
+      "groups": 14,
+      "largest_group_state_share": 0.16080402010050251
+    },
+    "2037-01-19": {
+      "states": 294,
+      "groups": 21,
+      "largest_group_state_share": 0.10884353741496598
+    },
+    "2037-02-16": {
+      "states": 187,
+      "groups": 10,
+      "largest_group_state_share": 0.1711229946524064
+    },
+    "2037-03-16": {
+      "states": 298,
+      "groups": 19,
+      "largest_group_state_share": 0.10738255033557047
+    },
+    "2037-04-06": {
+      "states": 284,
+      "groups": 18,
+      "largest_group_state_share": 0.11267605633802817
+    },
+    "2037-05-18": {
+      "states": 202,
+      "groups": 12,
+      "largest_group_state_share": 0.15841584158415842
+    },
+    "2037-06-01": {
+      "states": 367,
+      "groups": 19,
+      "largest_group_state_share": 0.08719346049046321
+    },
+    "2037-06-15": {
+      "states": 133,
+      "groups": 11,
+      "largest_group_state_share": 0.23308270676691728
+    },
+    "2037-07-06": {
+      "states": 429,
+      "groups": 22,
+      "largest_group_state_share": 0.07459207459207459
+    },
+    "2037-08-17": {
+      "states": 246,
+      "groups": 17,
+      "largest_group_state_share": 0.13008130081300814
+    },
+    "2037-09-07": {
+      "states": 97,
+      "groups": 6,
+      "largest_group_state_share": 0.29896907216494845
+    },
+    "2037-09-21": {
+      "states": 142,
+      "groups": 10,
+      "largest_group_state_share": 0.22535211267605634
+    },
+    "2037-10-05": {
+      "states": 192,
+      "groups": 13,
+      "largest_group_state_share": 0.16666666666666666
+    },
+    "2037-11-02": {
+      "states": 161,
+      "groups": 9,
+      "largest_group_state_share": 0.19875776397515527
+    },
+    "2037-11-16": {
+      "states": 160,
+      "groups": 10,
+      "largest_group_state_share": 0.2
+    },
+    "2037-12-07": {
+      "states": 191,
+      "groups": 11,
+      "largest_group_state_share": 0.16753926701570682
+    }
+  },
+  "repeat_call_decision_checks": 123,
+  "matched_call_comparisons": 75,
+  "known_decisions": 104,
+  "unknown_decisions": 20,
+  "new_fits": 0,
+  "new_forecasts": 0,
+  "new_physical_steps": 0,
+  "labels_do_not_establish_causal_week_value": true
+}

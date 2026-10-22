@@ -1,0 +1,24 @@
+{
+  "id": "GRID105_TWO_ISSUE_DIAGNOSIS",
+  "posthoc": true,
+  "authorized": "User prioritizes objective alignment and DQN decision error after GRID104.",
+  "fixed_scope": [
+    "All4438 saved GRID102 reachable states, train/validation separated; all3 frozen gamma0 models and existing RF.",
+    "All repeat0 GRID104 local decisions; repeat1 used only for decision equality, never duplicate as new samples.",
+    "Only exact matched physical observation/base action/global feedback can borrow paid FRAME local suffix labels.",
+    "Nearest five distinct TRAIN physical-call groups for prespecified March108/552 cases; descriptive only."
+  ],
+  "no_new_fits": true,
+  "no_new_forecasts": true,
+  "no_new_physical_steps": true,
+  "no_new_scenarios": true,
+  "no_price_or_threshold_changes": true,
+  "final_test_untouched": true,
+  "analysis": [
+    "Realized one-batch sign error, positive recall, missed gain, date and physical-group summaries.",
+    "Replay Q values and RF scores; compare training errors and validation errors without selecting seeds.",
+    "One-batch versus all-stopping-point hindsight net signs on matched saved calls.",
+    "Source audit of physical max-rho reward versus passive operational cost; label identifiability."
+  ],
+  "limits": "Partial visible features need not uniquely determine realized gain; sign errors do not prove nonconvergence. No causal whole-week label from different policy trajectories."
+}

@@ -909,3 +909,13 @@ Training positive misses improve30/27/38 versus DQN45/54/59, but validation miss
 ## 2026-10-22 — GRID108 loss x budget diagnostic frozen
 
 User requested continue checking training sufficiency and loss; notified fixed2x2 offline comparison. Huber/MSE at7250/29000 updates,3seeds, old Huber short reused. Exactly3 original-Adam/RNG Huber continuations plus3 fresh MSE paths; fixed same41/64/64/2 network, targets, price, data, optimizer, grad clip and per-seed minibatch stream. Three optimizer7250 and old sample-count/initialization checks pass, loss formulas qualified.4x cap chosen from prior training curves before evaluation, no validation selection. No extra data/features/network/physical calls/final-test access; no automatic additional experiments.
+
+
+## 2026-10-22 — GRID108 matched loss x budget completed
+
+2losses(Huber/MSE) x2fixed budgets7250/29000 x3seeds. Old Huber short reused,3 exact Adam/RNG continuations and3 MSE paths; all endpoints kept, identical sample-stream hashes. No data/feature/price/network or physical changes. Family mean utilities {'HUBER_7250': 0.16292380598404063, 'HUBER_29000': 0.15999804241513943, 'MSE_7250': 0.15375891520489135, 'MSE_29000': 0.1595336713065116}. All factor/seed/date reversals retained; no best configuration selected or automatic follow-up. Offline only, final8 test ungenerated, scale readinessFalse.
+
+
+## 2026-10-22 — GRID108 calibrated loss/budget conclusion
+
+Huber continuation corrects both March552 contexts to CONTINUE in all3seeds, but validation positive misses13/14/13 ->18/19/17 and family utility0.16292381 ->0.15999804 (-1.80%); March improves, other3 dates worsen. Training errors drop, so critical-case rescue is not general benefit. MSE7250 utility0.15375892, MSE29000 0.15953367; loss replacement inferior in all3 short-budget pairs and2/3 long pairs. Longer MSE helps3/3 relative to MSEshort but neither new family beats BATCH1/oldDQN mean. Hypothesis that robust loss alone causes failure unsupported; convergence and feature insufficiency unproven. Next recommendation read-only error-group/input distinguishability, not further budget/loss tuning or new features automatically. No new physical rollout/final-test access; no best endpoint chosen.

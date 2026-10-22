@@ -1,0 +1,265 @@
+{
+  "families": {
+    "HUBER_7250": {
+      "mean_net_utility": 0.16292380598404063,
+      "query_fraction": 0.31775073828054823,
+      "gain_capture": 0.7760421499753439,
+      "physical_call_balanced_utility": 0.13653686568642556,
+      "train_false_stops": [
+        30,
+        27,
+        38
+      ],
+      "validation_false_stops": [
+        13,
+        14,
+        13
+      ],
+      "critical_actions": {
+        "MARCH108": [
+          1,
+          1,
+          1
+        ],
+        "MARCH552": [
+          0,
+          0,
+          1
+        ],
+        "RF_PATH552": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "HUBER_29000": {
+      "mean_net_utility": 0.15999804241513943,
+      "query_fraction": 0.26973928808012526,
+      "gain_capture": 0.6497712916991071,
+      "physical_call_balanced_utility": 0.1336115799752261,
+      "train_false_stops": [
+        17,
+        20,
+        30
+      ],
+      "validation_false_stops": [
+        18,
+        19,
+        17
+      ],
+      "critical_actions": {
+        "MARCH108": [
+          1,
+          1,
+          1
+        ],
+        "MARCH552": [
+          1,
+          1,
+          1
+        ],
+        "RF_PATH552": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "MSE_7250": {
+      "mean_net_utility": 0.15375891520489135,
+      "query_fraction": 0.38614951293662414,
+      "gain_capture": 0.7272470755129751,
+      "physical_call_balanced_utility": 0.12861490537367093,
+      "train_false_stops": [
+        31,
+        32,
+        47
+      ],
+      "validation_false_stops": [
+        8,
+        12,
+        17
+      ],
+      "critical_actions": {
+        "MARCH108": [
+          1,
+          1,
+          1
+        ],
+        "MARCH552": [
+          0,
+          1,
+          1
+        ],
+        "RF_PATH552": [
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    "MSE_29000": {
+      "mean_net_utility": 0.1595336713065116,
+      "query_fraction": 0.3530277883227187,
+      "gain_capture": 0.73024065998314,
+      "physical_call_balanced_utility": 0.13371532563005203,
+      "train_false_stops": [
+        41,
+        23,
+        18
+      ],
+      "validation_false_stops": [
+        19,
+        14,
+        15
+      ],
+      "critical_actions": {
+        "MARCH108": [
+          1,
+          1,
+          1
+        ],
+        "MARCH552": [
+          0,
+          1,
+          1
+        ],
+        "RF_PATH552": [
+          0,
+          1,
+          1
+        ]
+      }
+    }
+  },
+  "contrasts": {
+    "loss_at7250": {
+      "left": "MSE_7250",
+      "right": "HUBER_7250",
+      "paired_utility_deltas": [
+        -0.011766308764243616,
+        -0.0056898902950542896,
+        -0.01003847327814994
+      ],
+      "mean_utility_delta": -0.009164890779149282,
+      "positive_seeds": 0,
+      "per_date_mean_delta": {
+        "2037-03-02": 0.005500461845432854,
+        "2037-05-04": -0.00951285845561998,
+        "2037-08-03": -0.025912939160236403,
+        "2037-10-19": -0.006734227346173588
+      }
+    },
+    "loss_at29000": {
+      "left": "MSE_29000",
+      "right": "HUBER_29000",
+      "paired_utility_deltas": [
+        -0.0010060393344057672,
+        0.0023203023462755323,
+        -0.002707376337753281
+      ],
+      "mean_utility_delta": -0.00046437110862783865,
+      "positive_seeds": 1,
+      "per_date_mean_delta": {
+        "2037-03-02": -0.01659507902769705,
+        "2037-05-04": -0.005164608690040018,
+        "2037-08-03": 0.014227359009797177,
+        "2037-10-19": 0.005674844273428525
+      }
+    },
+    "budget_underHuber": {
+      "left": "HUBER_29000",
+      "right": "HUBER_7250",
+      "paired_utility_deltas": [
+        -0.002182221551691982,
+        -0.007077928937365696,
+        0.00048285978235415583
+      ],
+      "mean_utility_delta": -0.002925763568901174,
+      "positive_seeds": 1,
+      "per_date_mean_delta": {
+        "2037-03-02": 0.019508199557784673,
+        "2037-05-04": -0.0015806324736758123,
+        "2037-08-03": -0.015968248927357636,
+        "2037-10-19": -0.013662372432355928
+      }
+    },
+    "budget_underMSE": {
+      "left": "MSE_29000",
+      "right": "MSE_7250",
+      "paired_utility_deltas": [
+        0.008578047878145867,
+        0.0009322637039641257,
+        0.007813956722750814
+      ],
+      "mean_utility_delta": 0.005774756101620269,
+      "positive_seeds": 3,
+      "per_date_mean_delta": {
+        "2037-03-02": -0.002587341315345231,
+        "2037-05-04": 0.00276761729190415,
+        "2037-08-03": 0.024172049242675946,
+        "2037-10-19": -0.0012533008127538147
+      }
+    }
+  },
+  "training_objective_curves": {
+    "HUBER_0": {
+      "objective": "train_weighted_huber",
+      "value7250": 0.0077042484328191845,
+      "value22000": 0.002941003702690091,
+      "value29000": 0.002923467164621443,
+      "last7000_relative_drop": 0.005962773203110109,
+      "convergence_not_claimed": true
+    },
+    "HUBER_1": {
+      "objective": "train_weighted_huber",
+      "value7250": 0.0060945437978564155,
+      "value22000": 0.0025059115474438476,
+      "value29000": 0.002037723137747447,
+      "last7000_relative_drop": 0.18683357366463138,
+      "convergence_not_claimed": true
+    },
+    "HUBER_2": {
+      "objective": "train_weighted_huber",
+      "value7250": 0.006380903047453447,
+      "value22000": 0.0028886283842346314,
+      "value29000": 0.0019326357876228279,
+      "last7000_relative_drop": 0.33095035755701835,
+      "convergence_not_claimed": true
+    },
+    "MSE_0": {
+      "objective": "train_weighted_mse",
+      "value7250": 0.04159975826755707,
+      "value22000": 0.010271335595194296,
+      "value29000": 0.009718072699017007,
+      "last7000_relative_drop": 0.05386474729110664,
+      "convergence_not_claimed": true
+    },
+    "MSE_1": {
+      "objective": "train_weighted_mse",
+      "value7250": 0.03675083069097909,
+      "value22000": 0.012498927781958193,
+      "value29000": 0.008381506358143545,
+      "last7000_relative_drop": 0.32942197087961544,
+      "convergence_not_claimed": true
+    },
+    "MSE_2": {
+      "objective": "train_weighted_mse",
+      "value7250": 0.03403828017675933,
+      "value22000": 0.010962395070870488,
+      "value29000": 0.008211328644347109,
+      "last7000_relative_drop": 0.25095486969207775,
+      "convergence_not_claimed": true
+    }
+  },
+  "batch1_utility": 0.16286891362547384,
+  "old_dqn_family_utility": 0.1631977392228395,
+  "new_training_paths": 6,
+  "new_checkpoints": 9,
+  "ready_to_scale": false,
+  "closed_loop_or_week_quality_evaluated": false,
+  "best_model_selected": false,
+  "no_automatic_followup": true,
+  "limits": "Exposed development dates; all seeds/endpoints retained. No convergence proof from a finite budget or causal whole-week claim."
+}

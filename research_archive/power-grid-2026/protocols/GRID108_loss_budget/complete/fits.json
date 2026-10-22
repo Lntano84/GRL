@@ -1,0 +1,164 @@
+{
+  "passed": true,
+  "new_training_paths": 6,
+  "new_checkpoints": 9,
+  "records": [
+    {
+      "loss": "HUBER",
+      "seed": 0,
+      "start_updates": 7250,
+      "end_updates": 29000,
+      "gradient_updates_executed": 21750,
+      "wall_s": 15.43425080000452,
+      "final_q_hash": "686478a9b78518fa937f8fbf82e527a58caf454c39e5e73bcf1567b54e0aec97",
+      "environment_steps": 0
+    },
+    {
+      "loss": "HUBER",
+      "seed": 1,
+      "start_updates": 7250,
+      "end_updates": 29000,
+      "gradient_updates_executed": 21750,
+      "wall_s": 14.525882299996738,
+      "final_q_hash": "13636ca9f3ea549f676c36df294f9260491dc58c6801596038f6af9af107849b",
+      "environment_steps": 0
+    },
+    {
+      "loss": "HUBER",
+      "seed": 2,
+      "start_updates": 7250,
+      "end_updates": 29000,
+      "gradient_updates_executed": 21750,
+      "wall_s": 14.421051099998294,
+      "final_q_hash": "c8d7f9d21f515cc664f5aff9d3d791f2729a2ea0b532652b981bddc7fefbcf2d",
+      "environment_steps": 0
+    },
+    {
+      "loss": "MSE",
+      "seed": 0,
+      "start_updates": 0,
+      "end_updates": 29000,
+      "gradient_updates_executed": 29000,
+      "wall_s": 19.000572400000237,
+      "final_q_hash": "296c840c5d4b4e8599cac037594d1213d0a1fb59d7e88a7376e0a8d1710b9006",
+      "environment_steps": 0
+    },
+    {
+      "loss": "MSE",
+      "seed": 1,
+      "start_updates": 0,
+      "end_updates": 29000,
+      "gradient_updates_executed": 29000,
+      "wall_s": 19.005110899997817,
+      "final_q_hash": "c0acc3b50f92685d2519234e4f36fff2ddd2d246a77efbadf47209ed862e48b4",
+      "environment_steps": 0
+    },
+    {
+      "loss": "MSE",
+      "seed": 2,
+      "start_updates": 0,
+      "end_updates": 29000,
+      "gradient_updates_executed": 29000,
+      "wall_s": 19.10309110000526,
+      "final_q_hash": "79b094c0f03ca1babbb38944364dacb5034e2b1c27fc95e2764a9696f2960e7e",
+      "environment_steps": 0
+    }
+  ],
+  "checkpoints": [
+    {
+      "method": "HUBER_29000_0",
+      "updates": 29000,
+      "loss": "HUBER",
+      "seed": 0,
+      "q_hash": "686478a9b78518fa937f8fbf82e527a58caf454c39e5e73bcf1567b54e0aec97",
+      "stream_sha256": "456b7b5cf14a932abec55e37e9a7f630a24f801103da982a9df6cf4f19ad9635",
+      "paired_state_draws": 928000,
+      "scalar_targets": 1856000
+    },
+    {
+      "method": "HUBER_29000_1",
+      "updates": 29000,
+      "loss": "HUBER",
+      "seed": 1,
+      "q_hash": "13636ca9f3ea549f676c36df294f9260491dc58c6801596038f6af9af107849b",
+      "stream_sha256": "07c4bf39aeeed32c556a9b2ca6694fbecc40660edc9687b9dd5de8a0b21d7d5a",
+      "paired_state_draws": 928000,
+      "scalar_targets": 1856000
+    },
+    {
+      "method": "HUBER_29000_2",
+      "updates": 29000,
+      "loss": "HUBER",
+      "seed": 2,
+      "q_hash": "c8d7f9d21f515cc664f5aff9d3d791f2729a2ea0b532652b981bddc7fefbcf2d",
+      "stream_sha256": "7857375438ad0356fa961096fbcfaa0fdfe0714e9e712c7c0e4fcea9b795f389",
+      "paired_state_draws": 928000,
+      "scalar_targets": 1856000
+    },
+    {
+      "method": "MSE_7250_0",
+      "updates": 7250,
+      "loss": "MSE",
+      "seed": 0,
+      "q_hash": "010081e327829884e5cd51d351eb13f561fc17e72de977ffd4aba7482a76d891",
+      "stream_sha256": "70a8380d7d60bfe1a22097c93f4e2580b86968908301dcabe8f5d72121816a9d",
+      "paired_state_draws": 232000,
+      "scalar_targets": 464000
+    },
+    {
+      "method": "MSE_29000_0",
+      "updates": 29000,
+      "loss": "MSE",
+      "seed": 0,
+      "q_hash": "296c840c5d4b4e8599cac037594d1213d0a1fb59d7e88a7376e0a8d1710b9006",
+      "stream_sha256": "456b7b5cf14a932abec55e37e9a7f630a24f801103da982a9df6cf4f19ad9635",
+      "paired_state_draws": 928000,
+      "scalar_targets": 1856000
+    },
+    {
+      "method": "MSE_7250_1",
+      "updates": 7250,
+      "loss": "MSE",
+      "seed": 1,
+      "q_hash": "43b2bdf3b18a103280acf0c1e607e52cbd08204e0c3b12f668f962e00497cc11",
+      "stream_sha256": "46deef45b57768bdf03ef3c69836da5ba370fbfd8ee8de8c795cbd7b28b0a90f",
+      "paired_state_draws": 232000,
+      "scalar_targets": 464000
+    },
+    {
+      "method": "MSE_29000_1",
+      "updates": 29000,
+      "loss": "MSE",
+      "seed": 1,
+      "q_hash": "c0acc3b50f92685d2519234e4f36fff2ddd2d246a77efbadf47209ed862e48b4",
+      "stream_sha256": "07c4bf39aeeed32c556a9b2ca6694fbecc40660edc9687b9dd5de8a0b21d7d5a",
+      "paired_state_draws": 928000,
+      "scalar_targets": 1856000
+    },
+    {
+      "method": "MSE_7250_2",
+      "updates": 7250,
+      "loss": "MSE",
+      "seed": 2,
+      "q_hash": "69dc6e874ffb2c9d161a085f6bc66a84277f8e59a42f20ee482f9883f2a95875",
+      "stream_sha256": "cc35a11dff156b12886f374b6dfa23f17a6eedb5f26ed88316c36d2d60438a84",
+      "paired_state_draws": 232000,
+      "scalar_targets": 464000
+    },
+    {
+      "method": "MSE_29000_2",
+      "updates": 29000,
+      "loss": "MSE",
+      "seed": 2,
+      "q_hash": "79b094c0f03ca1babbb38944364dacb5034e2b1c27fc95e2764a9696f2960e7e",
+      "stream_sha256": "7857375438ad0356fa961096fbcfaa0fdfe0714e9e712c7c0e4fcea9b795f389",
+      "paired_state_draws": 928000,
+      "scalar_targets": 1856000
+    }
+  ],
+  "old_short_huber_reused": 3,
+  "matched_draw_sequences": true,
+  "validation_used_for_training": false,
+  "new_physical_steps": 0,
+  "final_test_materialized": false
+}

@@ -1,0 +1,4355 @@
+[
+  {
+    "context": "MARCH108",
+    "source": "outputs/grid104_learning_closedloop/runs/r0__2037-03-02_100__LOCAL_RF/call002.json",
+    "normalized_target": -0.09229567542852926,
+    "raw_features": {
+      "log_pool_size": 6.796823501586914,
+      "queried_fraction": 0.2863534688949585,
+      "log_visible_count": 5.549076080322266,
+      "log_completion_queries": 5.293304920196533,
+      "completion_fraction_remaining": 0.3103448152542114,
+      "station_pool_fraction": 0.2997762858867645,
+      "station_seen_fraction": 0.26119402050971985,
+      "station_admissible_fraction": 0.18571428954601288,
+      "station_observed_fraction": 0.2734375,
+      "admissible_fraction": 0.453125,
+      "terminal_fraction": 0.0234375,
+      "illegal_fraction": 0.0,
+      "ambiguous_fraction": 0.0,
+      "exception_fraction": 0.0234375,
+      "incumbent_reward": 1.0532207489013672,
+      "incumbent_rho": 0.9467793107032776,
+      "reward_gap": 0.0014042854309082031,
+      "missing_second_admissible": 0.0,
+      "admissible_reward_mean": 1.0127203464508057,
+      "admissible_reward_std": 0.0142154386267066,
+      "admissible_rho_mean": 0.9872797131538391,
+      "admissible_rho_std": 0.014215442351996899,
+      "admissible_rho_min": 0.9467793107032776,
+      "rho_limit": 1.012057900428772,
+      "admissible_reward_range": 0.06300663948059082,
+      "initial_prefix_has_admissible": 1.0,
+      "gain_since_initial_prefix": 0.0,
+      "incumbent_changed": 0.0,
+      "initial_incumbent_rho": 0.9467793107032776,
+      "last_batch_has_admissible": 1.0,
+      "last_batch_admissible_fraction": 0.5,
+      "last_batch_reward_gain": 0.0,
+      "previous_prefix_has_admissible": 1.0,
+      "improvement_fraction": 0.0234375,
+      "station_reward_std": 0.019761642441153526,
+      "station_rho_mean": 0.973755419254303,
+      "incumbent_relative_position": 0.2421875,
+      "local_batches_done": 0.0,
+      "local_budget_used_fraction": 0.0,
+      "log_next_batch_queries": 4.174387454986572,
+      "locked_remaining_fraction": 1.0
+    },
+    "scores": {
+      "HUBER_7250_0": {
+        "q0": 0.00024591092369519174,
+        "q1": 0.7829496264457703,
+        "action": 1
+      },
+      "HUBER_7250_1": {
+        "q0": -0.00032415578607469797,
+        "q1": 0.4274144768714905,
+        "action": 1
+      },
+      "HUBER_7250_2": {
+        "q0": 0.0010515116155147552,
+        "q1": 0.809577465057373,
+        "action": 1
+      },
+      "HUBER_29000_0": {
+        "q0": 5.5481552408309653e-05,
+        "q1": 0.1957700550556183,
+        "action": 1
+      },
+      "HUBER_29000_1": {
+        "q0": 3.823197039309889e-05,
+        "q1": 0.37539005279541016,
+        "action": 1
+      },
+      "HUBER_29000_2": {
+        "q0": -0.00031508933170698583,
+        "q1": 0.4688563942909241,
+        "action": 1
+      },
+      "MSE_7250_0": {
+        "q0": 0.0008705789223313332,
+        "q1": 0.5323565602302551,
+        "action": 1
+      },
+      "MSE_7250_1": {
+        "q0": -0.0015017472906038165,
+        "q1": 0.152622789144516,
+        "action": 1
+      },
+      "MSE_7250_2": {
+        "q0": -0.0030146995559334755,
+        "q1": 0.03678141534328461,
+        "action": 1
+      },
+      "MSE_29000_0": {
+        "q0": -9.817000682232901e-05,
+        "q1": 0.03398071974515915,
+        "action": 1
+      },
+      "MSE_29000_1": {
+        "q0": -1.5155954315559939e-05,
+        "q1": 0.25071030855178833,
+        "action": 1
+      },
+      "MSE_29000_2": {
+        "q0": -0.00038834521546959877,
+        "q1": 0.4984973967075348,
+        "action": 1
+      },
+      "DQN0_0": {
+        "q0": 0.0001706448383629322,
+        "q1": 0.9028350114822388,
+        "action": 1
+      },
+      "DQN0_1": {
+        "q0": -4.932134470436722e-05,
+        "q1": 1.1369686126708984,
+        "action": 1
+      },
+      "DQN0_2": {
+        "q0": 0.0009647415718063712,
+        "q1": 0.5717227458953857,
+        "action": 1
+      }
+    },
+    "neighbours": {
+      "standardized41": {
+        "k": {
+          "1": {
+            "positive_calls": 0,
+            "dates": 1,
+            "distance": {
+              "n": 1,
+              "min": 0.32657173797341243,
+              "median": 0.32657173797341243,
+              "mean": 0.32657173797341243,
+              "max": 0.32657173797341243
+            },
+            "normalized_targets": {
+              "n": 1,
+              "min": -0.09229567542852926,
+              "median": -0.09229567542852926,
+              "mean": -0.09229567542852926,
+              "max": -0.09229567542852926
+            }
+          },
+          "5": {
+            "positive_calls": 1,
+            "dates": 5,
+            "distance": {
+              "n": 5,
+              "min": 0.32657173797341243,
+              "median": 0.3275814958573731,
+              "mean": 0.33669892865915796,
+              "max": 0.355020602818689
+            },
+            "normalized_targets": {
+              "n": 5,
+              "min": -0.09229567542852926,
+              "median": -0.09229567542852926,
+              "mean": 0.13596701296222377,
+              "max": 1.0327000640816515
+            }
+          },
+          "20": {
+            "positive_calls": 4,
+            "dates": 10,
+            "distance": {
+              "n": 20,
+              "min": 0.32657173797341243,
+              "median": 0.41031017602959385,
+              "mean": 0.41389983788114276,
+              "max": 0.5132425955614447
+            },
+            "normalized_targets": {
+              "n": 20,
+              "min": -0.09229567542852926,
+              "median": -0.09229567542852926,
+              "mean": 0.03750743337026429,
+              "max": 1.0327000640816515
+            }
+          }
+        },
+        "nearest_positive_distance": 0.3275814958573731,
+        "nearest_nonpositive_distance": 0.32657173797341243,
+        "nearest20": [
+          {
+            "sample_id": "f659ac9f4a51c3661a968e31",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_100",
+            "physical_state_group": "2037-01-05_100|call007",
+            "next_queries": 64,
+            "distance": 0.32657173797341243,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              91,
+              89,
+              105
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "fe504af82b572d6eee14cf43",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call007",
+            "next_queries": 64,
+            "distance": 0.32751974140904394,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              107,
+              114,
+              116
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "26d3cbc169ac8ddfae6f2a2c",
+            "position": 0,
+            "date": "2037-12-07",
+            "partition": "train",
+            "scenario": "2037-12-07_100",
+            "physical_state_group": "2037-12-07_100|call002",
+            "next_queries": 64,
+            "distance": 0.3275814958573731,
+            "normalized_target": 1.0327000640816515,
+            "training_draws": [
+              125,
+              123,
+              126
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "29174a5c46c64d258bf9e360",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_100",
+            "physical_state_group": "2037-06-01_100|call001",
+            "next_queries": 64,
+            "distance": 0.34680106523727133,
+            "normalized_target": -0.07597797298494492,
+            "training_draws": [
+              95,
+              82,
+              81
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "e60eaa47a3708c79166cce72",
+            "position": 0,
+            "date": "2037-05-18",
+            "partition": "train",
+            "scenario": "2037-05-18_100",
+            "physical_state_group": "2037-05-18_100|call001",
+            "next_queries": 64,
+            "distance": 0.355020602818689,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              154,
+              172,
+              150
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "115a551c215b4cf8228533a9",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call005",
+            "next_queries": 64,
+            "distance": 0.36390808060812974,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              64,
+              72,
+              81
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "7658df0d9dcf42509019216b",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_101",
+            "physical_state_group": "2037-04-06_101|call001",
+            "next_queries": 64,
+            "distance": 0.3813860807485492,
+            "normalized_target": 0.9626762571518586,
+            "training_draws": [
+              81,
+              84,
+              73
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "6862603d8c449956db6e30b7",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_100",
+            "physical_state_group": "2037-06-01_100|call003",
+            "next_queries": 64,
+            "distance": 0.3883782731122471,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              95,
+              111,
+              87
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d672ef9f426901cff300c2fe",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call010",
+            "next_queries": 64,
+            "distance": 0.3996888241740343,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              78,
+              78,
+              79
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d791d69f711b39a11c1c6978",
+            "position": 0,
+            "date": "2037-09-21",
+            "partition": "train",
+            "scenario": "2037-09-21_101",
+            "physical_state_group": "2037-09-21_101|call002",
+            "next_queries": 64,
+            "distance": 0.40997335925429235,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              162,
+              145,
+              152
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "ec211843a02aeb7b6a42ff31",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call011",
+            "next_queries": 64,
+            "distance": 0.4106469928048953,
+            "normalized_target": 0.03191782581433538,
+            "training_draws": [
+              70,
+              76,
+              69
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "2b7df6d3eea3cccb01938e45",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call003",
+            "next_queries": 64,
+            "distance": 0.42580498756223895,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              77,
+              91,
+              85
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "0c015b9d061c9cd60ef4c65b",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_101",
+            "physical_state_group": "2037-02-16_101|call000",
+            "next_queries": 64,
+            "distance": 0.4432160120071216,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              115,
+              120,
+              112
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "197a02ad564d0273ba505c0b",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_101",
+            "physical_state_group": "2037-02-16_101|call002",
+            "next_queries": 64,
+            "distance": 0.45129461348004624,
+            "normalized_target": -0.0708519208201949,
+            "training_draws": [
+              106,
+              125,
+              122
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "a788838d6c25b4caf9fef607",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call000",
+            "next_queries": 64,
+            "distance": 0.4562706254319612,
+            "normalized_target": 0.16182387016198982,
+            "training_draws": [
+              55,
+              73,
+              81
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "29c00b121394560f96aa6674",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call010",
+            "next_queries": 64,
+            "distance": 0.4687138385882684,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              89,
+              83,
+              82
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "ad3bafb3109e643710e97366",
+            "position": 0,
+            "date": "2037-12-07",
+            "partition": "train",
+            "scenario": "2037-12-07_100",
+            "physical_state_group": "2037-12-07_100|call001",
+            "next_queries": 64,
+            "distance": 0.4708067419230344,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              123,
+              129,
+              114
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "b59d1125a44cb53f8534c98f",
+            "position": 0,
+            "date": "2037-10-05",
+            "partition": "train",
+            "scenario": "2037-10-05_101",
+            "physical_state_group": "2037-10-05_101|call002",
+            "next_queries": 64,
+            "distance": 0.5027316502912261,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              98,
+              100,
+              103
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "43fdcd3352cb96ede9c0cded",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_100",
+            "physical_state_group": "2037-03-16_100|call001",
+            "next_queries": 64,
+            "distance": 0.5084394387795766,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              62,
+              73,
+              62
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "4f1f59d9d775fcce78b0c337",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_100",
+            "physical_state_group": "2037-02-16_100|call002",
+            "next_queries": 64,
+            "distance": 0.5132425955614447,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              125,
+              108,
+              117
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          }
+        ]
+      },
+      "semantic_balanced": {
+        "k": {
+          "1": {
+            "positive_calls": 0,
+            "dates": 1,
+            "distance": {
+              "n": 1,
+              "min": 0.2889995376125675,
+              "median": 0.2889995376125675,
+              "mean": 0.2889995376125675,
+              "max": 0.2889995376125675
+            },
+            "normalized_targets": {
+              "n": 1,
+              "min": -0.09229567542852926,
+              "median": -0.09229567542852926,
+              "mean": -0.09229567542852926,
+              "max": -0.09229567542852926
+            }
+          },
+          "5": {
+            "positive_calls": 1,
+            "dates": 5,
+            "distance": {
+              "n": 5,
+              "min": 0.2889995376125675,
+              "median": 0.3341424438738554,
+              "mean": 0.3261745307689877,
+              "max": 0.34490162637126137
+            },
+            "normalized_targets": {
+              "n": 5,
+              "min": -0.09229567542852926,
+              "median": -0.09229567542852926,
+              "mean": 0.1327034724735069,
+              "max": 1.0327000640816515
+            }
+          },
+          "20": {
+            "positive_calls": 4,
+            "dates": 11,
+            "distance": {
+              "n": 20,
+              "min": 0.2889995376125675,
+              "median": 0.4144846421348074,
+              "mean": 0.4110017196046128,
+              "max": 0.5401837414088133
+            },
+            "normalized_targets": {
+              "n": 20,
+              "min": -0.09229567542852926,
+              "median": -0.09229567542852926,
+              "mean": 0.03750743337026429,
+              "max": 1.0327000640816515
+            }
+          }
+        },
+        "nearest_positive_distance": 0.3448213171051876,
+        "nearest_nonpositive_distance": 0.2889995376125675,
+        "nearest20": [
+          {
+            "sample_id": "fe504af82b572d6eee14cf43",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call007",
+            "next_queries": 64,
+            "distance": 0.2889995376125675,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              107,
+              114,
+              116
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "e60eaa47a3708c79166cce72",
+            "position": 0,
+            "date": "2037-05-18",
+            "partition": "train",
+            "scenario": "2037-05-18_100",
+            "physical_state_group": "2037-05-18_100|call001",
+            "next_queries": 64,
+            "distance": 0.31800772888206674,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              154,
+              172,
+              150
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "115a551c215b4cf8228533a9",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call005",
+            "next_queries": 64,
+            "distance": 0.3341424438738554,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              64,
+              72,
+              81
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "26d3cbc169ac8ddfae6f2a2c",
+            "position": 0,
+            "date": "2037-12-07",
+            "partition": "train",
+            "scenario": "2037-12-07_100",
+            "physical_state_group": "2037-12-07_100|call002",
+            "next_queries": 64,
+            "distance": 0.3448213171051876,
+            "normalized_target": 1.0327000640816515,
+            "training_draws": [
+              125,
+              123,
+              126
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "f659ac9f4a51c3661a968e31",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_100",
+            "physical_state_group": "2037-01-05_100|call007",
+            "next_queries": 64,
+            "distance": 0.34490162637126137,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              91,
+              89,
+              105
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d672ef9f426901cff300c2fe",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call010",
+            "next_queries": 64,
+            "distance": 0.34526563669880206,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              78,
+              78,
+              79
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "29174a5c46c64d258bf9e360",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_100",
+            "physical_state_group": "2037-06-01_100|call001",
+            "next_queries": 64,
+            "distance": 0.35075084877311513,
+            "normalized_target": -0.07597797298494492,
+            "training_draws": [
+              95,
+              82,
+              81
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d791d69f711b39a11c1c6978",
+            "position": 0,
+            "date": "2037-09-21",
+            "partition": "train",
+            "scenario": "2037-09-21_101",
+            "physical_state_group": "2037-09-21_101|call002",
+            "next_queries": 64,
+            "distance": 0.392235945879768,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              162,
+              145,
+              152
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "7658df0d9dcf42509019216b",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_101",
+            "physical_state_group": "2037-04-06_101|call001",
+            "next_queries": 64,
+            "distance": 0.40727617100581864,
+            "normalized_target": 0.9626762571518586,
+            "training_draws": [
+              81,
+              84,
+              73
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "2b7df6d3eea3cccb01938e45",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call003",
+            "next_queries": 64,
+            "distance": 0.4080767240206709,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              77,
+              91,
+              85
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "197a02ad564d0273ba505c0b",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_101",
+            "physical_state_group": "2037-02-16_101|call002",
+            "next_queries": 64,
+            "distance": 0.42089256024894384,
+            "normalized_target": -0.0708519208201949,
+            "training_draws": [
+              106,
+              125,
+              122
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "ad3bafb3109e643710e97366",
+            "position": 0,
+            "date": "2037-12-07",
+            "partition": "train",
+            "scenario": "2037-12-07_100",
+            "physical_state_group": "2037-12-07_100|call001",
+            "next_queries": 64,
+            "distance": 0.43686787308256403,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              123,
+              129,
+              114
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "6862603d8c449956db6e30b7",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_100",
+            "physical_state_group": "2037-06-01_100|call003",
+            "next_queries": 64,
+            "distance": 0.45169828963761166,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              95,
+              111,
+              87
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "ec211843a02aeb7b6a42ff31",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call011",
+            "next_queries": 64,
+            "distance": 0.4522380255354622,
+            "normalized_target": 0.03191782581433538,
+            "training_draws": [
+              70,
+              76,
+              69
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "b59d1125a44cb53f8534c98f",
+            "position": 0,
+            "date": "2037-10-05",
+            "partition": "train",
+            "scenario": "2037-10-05_101",
+            "physical_state_group": "2037-10-05_101|call002",
+            "next_queries": 64,
+            "distance": 0.45519564547797475,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              98,
+              100,
+              103
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "a788838d6c25b4caf9fef607",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call000",
+            "next_queries": 64,
+            "distance": 0.4574897016499616,
+            "normalized_target": 0.16182387016198982,
+            "training_draws": [
+              55,
+              73,
+              81
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "fec3218ef47f2a80abf39f5e",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_101",
+            "physical_state_group": "2037-02-16_101|call000",
+            "next_queries": 64,
+            "distance": 0.46879711169132415,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              139,
+              134,
+              115
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 1
+              },
+              "2": {
+                "7250": 0,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "4f1f59d9d775fcce78b0c337",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_100",
+            "physical_state_group": "2037-02-16_100|call002",
+            "next_queries": 64,
+            "distance": 0.491988251243924,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              125,
+              108,
+              117
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "29c00b121394560f96aa6674",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call010",
+            "next_queries": 64,
+            "distance": 0.5102052118925623,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              89,
+              83,
+              82
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "9b8734a1c6c1aa652d7af969",
+            "position": 0,
+            "date": "2037-07-06",
+            "partition": "train",
+            "scenario": "2037-07-06_101",
+            "physical_state_group": "2037-07-06_101|call006",
+            "next_queries": 64,
+            "distance": 0.5401837414088133,
+            "normalized_target": -0.09229567542852926,
+            "training_draws": [
+              66,
+              77,
+              62
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "context": "MARCH552",
+    "source": "outputs/grid104_learning_closedloop/runs/r0__2037-03-02_100__LOCAL_DQN0_0/call009.json",
+    "normalized_target": 0.8036038499355675,
+    "raw_features": {
+      "log_pool_size": 6.8134446144104,
+      "queried_fraction": 0.35203519463539124,
+      "log_visible_count": 5.7714409828186035,
+      "log_completion_queries": 2.6390573978424072,
+      "completion_fraction_remaining": 0.02207130752503872,
+      "station_pool_fraction": 0.028602860867977142,
+      "station_seen_fraction": 0.5,
+      "station_admissible_fraction": 0.1538461595773697,
+      "station_observed_fraction": 0.04062499850988388,
+      "admissible_fraction": 0.11249999701976776,
+      "terminal_fraction": 0.03125,
+      "illegal_fraction": 0.0,
+      "ambiguous_fraction": 0.0,
+      "exception_fraction": 0.03125,
+      "incumbent_reward": 1.0521769523620605,
+      "incumbent_rho": 0.9478229880332947,
+      "reward_gap": 0.008154869079589844,
+      "missing_second_admissible": 0.0,
+      "admissible_reward_mean": 1.0068795680999756,
+      "admissible_reward_std": 0.011913222260773182,
+      "admissible_rho_mean": 0.9931204319000244,
+      "admissible_rho_std": 0.011913229711353779,
+      "admissible_rho_min": 0.9478229880332947,
+      "rho_limit": 1.0083200931549072,
+      "admissible_reward_range": 0.05938220024108887,
+      "initial_prefix_has_admissible": 1.0,
+      "gain_since_initial_prefix": 0.040584683418273926,
+      "incumbent_changed": 1.0,
+      "initial_incumbent_rho": 0.9884077310562134,
+      "last_batch_has_admissible": 1.0,
+      "last_batch_admissible_fraction": 0.125,
+      "last_batch_reward_gain": 0.0,
+      "previous_prefix_has_admissible": 1.0,
+      "improvement_fraction": 0.00937500037252903,
+      "station_reward_std": 0.018718063831329346,
+      "station_rho_mean": 0.966541051864624,
+      "incumbent_relative_position": 0.44062501192092896,
+      "local_batches_done": 0.0,
+      "local_budget_used_fraction": 0.0,
+      "log_next_batch_queries": 2.6390573978424072,
+      "locked_remaining_fraction": 1.0
+    },
+    "scores": {
+      "HUBER_7250_0": {
+        "q0": -7.426540832966566e-05,
+        "q1": -0.21777726709842682,
+        "action": 0
+      },
+      "HUBER_7250_1": {
+        "q0": -0.0002673921699170023,
+        "q1": -0.098680779337883,
+        "action": 0
+      },
+      "HUBER_7250_2": {
+        "q0": -0.00026135408552363515,
+        "q1": 0.08163998275995255,
+        "action": 1
+      },
+      "HUBER_29000_0": {
+        "q0": 9.303095794166438e-06,
+        "q1": 0.011891111731529236,
+        "action": 1
+      },
+      "HUBER_29000_1": {
+        "q0": -6.985363870626315e-05,
+        "q1": 0.1463613510131836,
+        "action": 1
+      },
+      "HUBER_29000_2": {
+        "q0": -1.2211887224111706e-05,
+        "q1": 0.011856574565172195,
+        "action": 1
+      },
+      "MSE_7250_0": {
+        "q0": -0.0006618014303967357,
+        "q1": -0.016157889738678932,
+        "action": 0
+      },
+      "MSE_7250_1": {
+        "q0": 7.218084647320211e-05,
+        "q1": 0.04431953653693199,
+        "action": 1
+      },
+      "MSE_7250_2": {
+        "q0": -0.0007741794106550515,
+        "q1": 0.0481361448764801,
+        "action": 1
+      },
+      "MSE_29000_0": {
+        "q0": 1.4324019502964802e-05,
+        "q1": -0.029964333400130272,
+        "action": 0
+      },
+      "MSE_29000_1": {
+        "q0": -4.281727524357848e-05,
+        "q1": 0.009533524513244629,
+        "action": 1
+      },
+      "MSE_29000_2": {
+        "q0": -0.00015965785132721066,
+        "q1": 0.017830651253461838,
+        "action": 1
+      },
+      "DQN0_0": {
+        "q0": -4.6005137846805155e-05,
+        "q1": -0.10889171063899994,
+        "action": 0
+      },
+      "DQN0_1": {
+        "q0": 0.0007391924154944718,
+        "q1": -0.06504224240779877,
+        "action": 0
+      },
+      "DQN0_2": {
+        "q0": 3.6340014048619196e-05,
+        "q1": 0.02292020432651043,
+        "action": 1
+      }
+    },
+    "neighbours": {
+      "standardized41": {
+        "k": {
+          "1": {
+            "positive_calls": 0,
+            "dates": 1,
+            "distance": {
+              "n": 1,
+              "min": 0.3325908994273292,
+              "median": 0.3325908994273292,
+              "mean": 0.3325908994273292,
+              "max": 0.3325908994273292
+            },
+            "normalized_targets": {
+              "n": 1,
+              "min": -0.012979079357136927,
+              "median": -0.012979079357136927,
+              "mean": -0.012979079357136927,
+              "max": -0.012979079357136927
+            }
+          },
+          "5": {
+            "positive_calls": 0,
+            "dates": 4,
+            "distance": {
+              "n": 5,
+              "min": 0.3325908994273292,
+              "median": 0.39199342505717144,
+              "mean": 0.37882360856244174,
+              "max": 0.41330163194434993
+            },
+            "normalized_targets": {
+              "n": 5,
+              "min": -0.04470571778569386,
+              "median": -0.027400278642844625,
+              "mean": -0.028553974585701237,
+              "max": -0.012979079357136927
+            }
+          },
+          "20": {
+            "positive_calls": 2,
+            "dates": 9,
+            "distance": {
+              "n": 20,
+              "min": 0.3325908994273292,
+              "median": 0.4778724170689016,
+              "mean": 0.4604350982783452,
+              "max": 0.5225362281059306
+            },
+            "normalized_targets": {
+              "n": 20,
+              "min": -0.04470571778569386,
+              "median": -0.020189678999990773,
+              "mean": 0.004055144635743718,
+              "max": 0.4694450767765951
+            }
+          }
+        },
+        "nearest_positive_distance": 0.4451323613485759,
+        "nearest_nonpositive_distance": 0.3325908994273292,
+        "nearest20": [
+          {
+            "sample_id": "768fa251d1058e3ad4716f93",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call004",
+            "next_queries": 9,
+            "distance": 0.3325908994273292,
+            "normalized_target": -0.012979079357136927,
+            "training_draws": [
+              265,
+              287,
+              301
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "bc1ddc0c43978dfda6701fb5",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_101",
+            "physical_state_group": "2037-06-01_101|call001",
+            "next_queries": 15,
+            "distance": 0.36268492878766145,
+            "normalized_target": -0.021631798928561544,
+            "training_draws": [
+              293,
+              279,
+              309
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "973b91bc90162225ecbcb03d",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_100",
+            "physical_state_group": "2037-06-01_100|call009",
+            "next_queries": 19,
+            "distance": 0.39199342505717144,
+            "normalized_target": -0.027400278642844625,
+            "training_draws": [
+              288,
+              300,
+              271
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "9a9239abe45141c73b156f7c",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_100",
+            "physical_state_group": "2037-03-16_100|call004",
+            "next_queries": 25,
+            "distance": 0.3935471575956966,
+            "normalized_target": -0.03605299821426924,
+            "training_draws": [
+              297,
+              297,
+              291
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "e65e8749a602df0afb9ad91e",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call009",
+            "next_queries": 31,
+            "distance": 0.41330163194434993,
+            "normalized_target": -0.04470571778569386,
+            "training_draws": [
+              316,
+              328,
+              309
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "59d50416f5da55ef93e9f751",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call011",
+            "next_queries": 29,
+            "distance": 0.4355984932381454,
+            "normalized_target": -0.040384525300158784,
+            "training_draws": [
+              256,
+              274,
+              285
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "66d01ee553a57cf746a8792b",
+            "position": 0,
+            "date": "2037-10-05",
+            "partition": "train",
+            "scenario": "2037-10-05_100",
+            "physical_state_group": "2037-10-05_100|call001",
+            "next_queries": 21,
+            "distance": 0.45273074567733357,
+            "normalized_target": 0.05510362807186072,
+            "training_draws": [
+              353,
+              350,
+              379
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "e81c67c03e2263f90b042cf8",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call008",
+            "next_queries": 13,
+            "distance": 0.4590773610927573,
+            "normalized_target": -0.018015265905027143,
+            "training_draws": [
+              303,
+              277,
+              291
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "cd1a6eb69aba49f334df987c",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_100",
+            "physical_state_group": "2037-02-16_100|call000",
+            "next_queries": 6,
+            "distance": 0.4621650275089015,
+            "normalized_target": -0.008652719571424617,
+            "training_draws": [
+              479,
+              478,
+              498
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "4f6630f6975295692a9617f4",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call000",
+            "next_queries": 24,
+            "distance": 0.4726014854525506,
+            "normalized_target": -0.03461087828569847,
+            "training_draws": [
+              397,
+              346,
+              402
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d96e9872954a1a9fad2b9ad1",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_100",
+            "physical_state_group": "2037-01-05_100|call003",
+            "next_queries": 22,
+            "distance": 0.48314334868525266,
+            "normalized_target": -0.031726638428556934,
+            "training_draws": [
+              408,
+              387,
+              367
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "865c290363bf48d6adeffaba",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_100",
+            "physical_state_group": "2037-02-16_100|call004",
+            "next_queries": 25,
+            "distance": 0.48943064839678335,
+            "normalized_target": -0.03605299821426924,
+            "training_draws": [
+              474,
+              450,
+              446
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "ccc7c18f793fb5daac94a8a3",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call004",
+            "next_queries": 6,
+            "distance": 0.4954854323002981,
+            "normalized_target": -0.008652719571424617,
+            "training_draws": [
+              385,
+              378,
+              398
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 1
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "cbd87c5432ca075a951cfcf9",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call004",
+            "next_queries": 12,
+            "distance": 0.5013629076202505,
+            "normalized_target": -0.017305439142849235,
+            "training_draws": [
+              268,
+              264,
+              289
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "c5b5ac9aa83f3b9349d06396",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call001",
+            "next_queries": 18,
+            "distance": 0.5028289410397372,
+            "normalized_target": -0.025958158714273854,
+            "training_draws": [
+              308,
+              300,
+              303
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d314ce776496bc1948edebf0",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_100",
+            "physical_state_group": "2037-01-05_100|call000",
+            "next_queries": 18,
+            "distance": 0.5030974163136834,
+            "normalized_target": 0.4694450767765951,
+            "training_draws": [
+              369,
+              355,
+              384
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "339d71736da0867eb1fa39fd",
+            "position": 0,
+            "date": "2037-11-16",
+            "partition": "train",
+            "scenario": "2037-11-16_101",
+            "physical_state_group": "2037-11-16_101|call002",
+            "next_queries": 9,
+            "distance": 0.5032584490854212,
+            "normalized_target": -0.012979079357136927,
+            "training_draws": [
+              477,
+              432,
+              479
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "0f5fe922baaafb9ffbb3f270",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call008",
+            "next_queries": 10,
+            "distance": 0.510494407291102,
+            "normalized_target": -0.014421199285707696,
+            "training_draws": [
+              393,
+              373,
+              354
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "639d5a2b8053f7f8860b65ea",
+            "position": 0,
+            "date": "2037-11-16",
+            "partition": "train",
+            "scenario": "2037-11-16_100",
+            "physical_state_group": "2037-11-16_100|call004",
+            "next_queries": 13,
+            "distance": 0.5207730309465469,
+            "normalized_target": -0.018747559071420002,
+            "training_draws": [
+              482,
+              452,
+              460
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "a393e7f5175ba55a85a33d64",
+            "position": 0,
+            "date": "2037-09-21",
+            "partition": "train",
+            "scenario": "2037-09-21_100",
+            "physical_state_group": "2037-09-21_100|call001",
+            "next_queries": 23,
+            "distance": 0.5225362281059306,
+            "normalized_target": -0.0331687583571277,
+            "training_draws": [
+              611,
+              594,
+              570
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          }
+        ]
+      },
+      "semantic_balanced": {
+        "k": {
+          "1": {
+            "positive_calls": 0,
+            "dates": 1,
+            "distance": {
+              "n": 1,
+              "min": 0.34600925228448565,
+              "median": 0.34600925228448565,
+              "mean": 0.34600925228448565,
+              "max": 0.34600925228448565
+            },
+            "normalized_targets": {
+              "n": 1,
+              "min": -0.012979079357136927,
+              "median": -0.012979079357136927,
+              "mean": -0.012979079357136927,
+              "max": -0.012979079357136927
+            }
+          },
+          "5": {
+            "positive_calls": 1,
+            "dates": 4,
+            "distance": {
+              "n": 5,
+              "min": 0.34600925228448565,
+              "median": 0.3964104288638188,
+              "mean": 0.39252039496022445,
+              "max": 0.4373757685445706
+            },
+            "normalized_targets": {
+              "n": 5,
+              "min": -0.03605299821426924,
+              "median": -0.021631798928561544,
+              "mean": -0.008592105414190322,
+              "max": 0.05510362807186072
+            }
+          },
+          "20": {
+            "positive_calls": 2,
+            "dates": 9,
+            "distance": {
+              "n": 20,
+              "min": 0.34600925228448565,
+              "median": 0.47723311771539156,
+              "mean": 0.46975023365353846,
+              "max": 0.5605846043223337
+            },
+            "normalized_targets": {
+              "n": 20,
+              "min": -0.04470571778569386,
+              "median": -0.01802649910713462,
+              "mean": 0.006650960507171103,
+              "max": 0.4694450767765951
+            }
+          }
+        },
+        "nearest_positive_distance": 0.4373757685445706,
+        "nearest_nonpositive_distance": 0.34600925228448565,
+        "nearest20": [
+          {
+            "sample_id": "768fa251d1058e3ad4716f93",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call004",
+            "next_queries": 9,
+            "distance": 0.34600925228448565,
+            "normalized_target": -0.012979079357136927,
+            "training_draws": [
+              265,
+              287,
+              301
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "bc1ddc0c43978dfda6701fb5",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_101",
+            "physical_state_group": "2037-06-01_101|call001",
+            "next_queries": 15,
+            "distance": 0.38046257016942564,
+            "normalized_target": -0.021631798928561544,
+            "training_draws": [
+              293,
+              279,
+              309
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "9a9239abe45141c73b156f7c",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_100",
+            "physical_state_group": "2037-03-16_100|call004",
+            "next_queries": 25,
+            "distance": 0.3964104288638188,
+            "normalized_target": -0.03605299821426924,
+            "training_draws": [
+              297,
+              297,
+              291
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "973b91bc90162225ecbcb03d",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_100",
+            "physical_state_group": "2037-06-01_100|call009",
+            "next_queries": 19,
+            "distance": 0.4023439549388217,
+            "normalized_target": -0.027400278642844625,
+            "training_draws": [
+              288,
+              300,
+              271
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "66d01ee553a57cf746a8792b",
+            "position": 0,
+            "date": "2037-10-05",
+            "partition": "train",
+            "scenario": "2037-10-05_100",
+            "physical_state_group": "2037-10-05_100|call001",
+            "next_queries": 21,
+            "distance": 0.4373757685445706,
+            "normalized_target": 0.05510362807186072,
+            "training_draws": [
+              353,
+              350,
+              379
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "e65e8749a602df0afb9ad91e",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call009",
+            "next_queries": 31,
+            "distance": 0.43866302258916345,
+            "normalized_target": -0.04470571778569386,
+            "training_draws": [
+              316,
+              328,
+              309
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "1a6326fd72d2f12c7fe01dba",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call008",
+            "next_queries": 14,
+            "distance": 0.45538301554462207,
+            "normalized_target": -0.019457385833597914,
+            "training_draws": [
+              254,
+              291,
+              304
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "59d50416f5da55ef93e9f751",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call011",
+            "next_queries": 29,
+            "distance": 0.4573071595364781,
+            "normalized_target": -0.040384525300158784,
+            "training_draws": [
+              256,
+              274,
+              285
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d96e9872954a1a9fad2b9ad1",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_100",
+            "physical_state_group": "2037-01-05_100|call003",
+            "next_queries": 22,
+            "distance": 0.4703860038737048,
+            "normalized_target": -0.031726638428556934,
+            "training_draws": [
+              408,
+              387,
+              367
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "cd1a6eb69aba49f334df987c",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_100",
+            "physical_state_group": "2037-02-16_100|call000",
+            "next_queries": 6,
+            "distance": 0.474395244626468,
+            "normalized_target": -0.008652719571424617,
+            "training_draws": [
+              479,
+              478,
+              498
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "4f6630f6975295692a9617f4",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call000",
+            "next_queries": 24,
+            "distance": 0.4800709908043151,
+            "normalized_target": -0.03461087828569847,
+            "training_draws": [
+              397,
+              346,
+              402
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "ccc7c18f793fb5daac94a8a3",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call004",
+            "next_queries": 6,
+            "distance": 0.48540778419501285,
+            "normalized_target": -0.008652719571424617,
+            "training_draws": [
+              385,
+              378,
+              398
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 1
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "e66a7b8711cb2caaff45147b",
+            "position": 0,
+            "date": "2037-11-16",
+            "partition": "train",
+            "scenario": "2037-11-16_101",
+            "physical_state_group": "2037-11-16_101|call002",
+            "next_queries": 8,
+            "distance": 0.49419181321096295,
+            "normalized_target": -0.011536959428566158,
+            "training_draws": [
+              487,
+              473,
+              467
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d314ce776496bc1948edebf0",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_100",
+            "physical_state_group": "2037-01-05_100|call000",
+            "next_queries": 18,
+            "distance": 0.4983520017789949,
+            "normalized_target": 0.4694450767765951,
+            "training_draws": [
+              369,
+              355,
+              384
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "cbd87c5432ca075a951cfcf9",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call004",
+            "next_queries": 12,
+            "distance": 0.5157564281948007,
+            "normalized_target": -0.017305439142849235,
+            "training_draws": [
+              268,
+              264,
+              289
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "0f5fe922baaafb9ffbb3f270",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call008",
+            "next_queries": 10,
+            "distance": 0.5171312270151265,
+            "normalized_target": -0.014421199285707696,
+            "training_draws": [
+              393,
+              373,
+              354
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "9c51243747b81b7b74ee074c",
+            "position": 0,
+            "date": "2037-11-02",
+            "partition": "train",
+            "scenario": "2037-11-02_100",
+            "physical_state_group": "2037-11-02_100|call001",
+            "next_queries": 7,
+            "distance": 0.5208269211787387,
+            "normalized_target": -0.010094839499995387,
+            "training_draws": [
+              549,
+              599,
+              544
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "639d5a2b8053f7f8860b65ea",
+            "position": 0,
+            "date": "2037-11-16",
+            "partition": "train",
+            "scenario": "2037-11-16_100",
+            "physical_state_group": "2037-11-16_100|call004",
+            "next_queries": 13,
+            "distance": 0.5213404343937489,
+            "normalized_target": -0.018747559071420002,
+            "training_draws": [
+              482,
+              452,
+              460
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "9ba05d5f0f6070a547d0bdb2",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_101",
+            "physical_state_group": "2037-04-06_101|call002",
+            "next_queries": 5,
+            "distance": 0.5426060470051757,
+            "normalized_target": -0.007210599642853848,
+            "training_draws": [
+              309,
+              307,
+              318
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "c5b5ac9aa83f3b9349d06396",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call001",
+            "next_queries": 18,
+            "distance": 0.5605846043223337,
+            "normalized_target": -0.025958158714273854,
+            "training_draws": [
+              308,
+              300,
+              303
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "context": "RF_PATH552",
+    "source": "outputs/grid104_learning_closedloop/runs/r0__2037-03-02_100__LOCAL_RF/call009.json",
+    "normalized_target": 0.8035071319701949,
+    "raw_features": {
+      "log_pool_size": 6.8134446144104,
+      "queried_fraction": 0.35203519463539124,
+      "log_visible_count": 5.7714409828186035,
+      "log_completion_queries": 2.6390573978424072,
+      "completion_fraction_remaining": 0.02207130752503872,
+      "station_pool_fraction": 0.028602860867977142,
+      "station_seen_fraction": 0.5,
+      "station_admissible_fraction": 0.1538461595773697,
+      "station_observed_fraction": 0.04062499850988388,
+      "admissible_fraction": 0.11249999701976776,
+      "terminal_fraction": 0.03125,
+      "illegal_fraction": 0.0,
+      "ambiguous_fraction": 0.0,
+      "exception_fraction": 0.03125,
+      "incumbent_reward": 1.0520329475402832,
+      "incumbent_rho": 0.9479670524597168,
+      "reward_gap": 0.008291482925415039,
+      "missing_second_admissible": 0.0,
+      "admissible_reward_mean": 1.0066310167312622,
+      "admissible_reward_std": 0.011906184256076813,
+      "admissible_rho_mean": 0.9933690428733826,
+      "admissible_rho_std": 0.01190618984401226,
+      "admissible_rho_min": 0.9479670524597168,
+      "rho_limit": 1.0083649158477783,
+      "admissible_reward_range": 0.05925261974334717,
+      "initial_prefix_has_admissible": 1.0,
+      "gain_since_initial_prefix": 0.0407252311706543,
+      "incumbent_changed": 1.0,
+      "initial_incumbent_rho": 0.9886923432350159,
+      "last_batch_has_admissible": 1.0,
+      "last_batch_admissible_fraction": 0.125,
+      "last_batch_reward_gain": 0.0,
+      "previous_prefix_has_admissible": 1.0,
+      "improvement_fraction": 0.00937500037252903,
+      "station_reward_std": 0.01878833770751953,
+      "station_rho_mean": 0.9667553901672363,
+      "incumbent_relative_position": 0.44062501192092896,
+      "local_batches_done": 0.0,
+      "local_budget_used_fraction": 0.0,
+      "log_next_batch_queries": 2.6390573978424072,
+      "locked_remaining_fraction": 1.0
+    },
+    "scores": {
+      "HUBER_7250_0": {
+        "q0": -7.496162288589403e-05,
+        "q1": -0.21742503345012665,
+        "action": 0
+      },
+      "HUBER_7250_1": {
+        "q0": -0.0002670853864401579,
+        "q1": -0.09946854412555695,
+        "action": 0
+      },
+      "HUBER_7250_2": {
+        "q0": -0.00026241166051477194,
+        "q1": 0.08106191456317902,
+        "action": 1
+      },
+      "HUBER_29000_0": {
+        "q0": 9.245262845070101e-06,
+        "q1": 0.012745454907417297,
+        "action": 1
+      },
+      "HUBER_29000_1": {
+        "q0": -7.066840771585703e-05,
+        "q1": 0.14767059683799744,
+        "action": 1
+      },
+      "HUBER_29000_2": {
+        "q0": -1.252997390110977e-05,
+        "q1": 0.012534968554973602,
+        "action": 1
+      },
+      "MSE_7250_0": {
+        "q0": -0.0006614906014874578,
+        "q1": -0.01534956879913807,
+        "action": 0
+      },
+      "MSE_7250_1": {
+        "q0": 7.275980897247791e-05,
+        "q1": 0.044990118592977524,
+        "action": 1
+      },
+      "MSE_7250_2": {
+        "q0": -0.0007732341182418168,
+        "q1": 0.048161543905735016,
+        "action": 1
+      },
+      "MSE_29000_0": {
+        "q0": 1.4414830729947425e-05,
+        "q1": -0.030071033164858818,
+        "action": 0
+      },
+      "MSE_29000_1": {
+        "q0": -4.238286055624485e-05,
+        "q1": 0.009845659136772156,
+        "action": 1
+      },
+      "MSE_29000_2": {
+        "q0": -0.00015974725829437375,
+        "q1": 0.018750499933958054,
+        "action": 1
+      },
+      "DQN0_0": {
+        "q0": -4.645470471587032e-05,
+        "q1": -0.1097228080034256,
+        "action": 0
+      },
+      "DQN0_1": {
+        "q0": 0.0007446110830642283,
+        "q1": -0.061643969267606735,
+        "action": 0
+      },
+      "DQN0_2": {
+        "q0": 3.6554596590576693e-05,
+        "q1": 0.02230747602880001,
+        "action": 1
+      }
+    },
+    "neighbours": {
+      "standardized41": {
+        "k": {
+          "1": {
+            "positive_calls": 0,
+            "dates": 1,
+            "distance": {
+              "n": 1,
+              "min": 0.3329183683129101,
+              "median": 0.3329183683129101,
+              "mean": 0.3329183683129101,
+              "max": 0.3329183683129101
+            },
+            "normalized_targets": {
+              "n": 1,
+              "min": -0.012979079357136927,
+              "median": -0.012979079357136927,
+              "mean": -0.012979079357136927,
+              "max": -0.012979079357136927
+            }
+          },
+          "5": {
+            "positive_calls": 0,
+            "dates": 4,
+            "distance": {
+              "n": 5,
+              "min": 0.3329183683129101,
+              "median": 0.3924704591029388,
+              "mean": 0.37935589021138605,
+              "max": 0.4138665610110086
+            },
+            "normalized_targets": {
+              "n": 5,
+              "min": -0.04470571778569386,
+              "median": -0.027400278642844625,
+              "mean": -0.028553974585701237,
+              "max": -0.012979079357136927
+            }
+          },
+          "20": {
+            "positive_calls": 2,
+            "dates": 9,
+            "distance": {
+              "n": 20,
+              "min": 0.3329183683129101,
+              "median": 0.4786829777135741,
+              "mean": 0.46099652234784505,
+              "max": 0.5232886250986017
+            },
+            "normalized_targets": {
+              "n": 20,
+              "min": -0.04470571778569386,
+              "median": -0.020189678999990773,
+              "mean": 0.004055144635743721,
+              "max": 0.4694450767765951
+            }
+          }
+        },
+        "nearest_positive_distance": 0.44550082710874134,
+        "nearest_nonpositive_distance": 0.3329183683129101,
+        "nearest20": [
+          {
+            "sample_id": "768fa251d1058e3ad4716f93",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call004",
+            "next_queries": 9,
+            "distance": 0.3329183683129101,
+            "normalized_target": -0.012979079357136927,
+            "training_draws": [
+              265,
+              287,
+              301
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "bc1ddc0c43978dfda6701fb5",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_101",
+            "physical_state_group": "2037-06-01_101|call001",
+            "next_queries": 15,
+            "distance": 0.36290560845820374,
+            "normalized_target": -0.021631798928561544,
+            "training_draws": [
+              293,
+              279,
+              309
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "973b91bc90162225ecbcb03d",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_100",
+            "physical_state_group": "2037-06-01_100|call009",
+            "next_queries": 19,
+            "distance": 0.3924704591029388,
+            "normalized_target": -0.027400278642844625,
+            "training_draws": [
+              288,
+              300,
+              271
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "9a9239abe45141c73b156f7c",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_100",
+            "physical_state_group": "2037-03-16_100|call004",
+            "next_queries": 25,
+            "distance": 0.39461845417186886,
+            "normalized_target": -0.03605299821426924,
+            "training_draws": [
+              297,
+              297,
+              291
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "e65e8749a602df0afb9ad91e",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call009",
+            "next_queries": 31,
+            "distance": 0.4138665610110086,
+            "normalized_target": -0.04470571778569386,
+            "training_draws": [
+              316,
+              328,
+              309
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "59d50416f5da55ef93e9f751",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call011",
+            "next_queries": 29,
+            "distance": 0.4365904028178912,
+            "normalized_target": -0.040384525300158784,
+            "training_draws": [
+              256,
+              274,
+              285
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "66d01ee553a57cf746a8792b",
+            "position": 0,
+            "date": "2037-10-05",
+            "partition": "train",
+            "scenario": "2037-10-05_100",
+            "physical_state_group": "2037-10-05_100|call001",
+            "next_queries": 21,
+            "distance": 0.4532288196117621,
+            "normalized_target": 0.05510362807186072,
+            "training_draws": [
+              353,
+              350,
+              379
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "e81c67c03e2263f90b042cf8",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call008",
+            "next_queries": 13,
+            "distance": 0.459901144023971,
+            "normalized_target": -0.018015265905027143,
+            "training_draws": [
+              303,
+              277,
+              291
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "cd1a6eb69aba49f334df987c",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_100",
+            "physical_state_group": "2037-02-16_100|call000",
+            "next_queries": 6,
+            "distance": 0.4621939536307751,
+            "normalized_target": -0.008652719571424617,
+            "training_draws": [
+              479,
+              478,
+              498
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "4f6630f6975295692a9617f4",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call000",
+            "next_queries": 24,
+            "distance": 0.47360667538473616,
+            "normalized_target": -0.03461087828569847,
+            "training_draws": [
+              397,
+              346,
+              402
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d96e9872954a1a9fad2b9ad1",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_100",
+            "physical_state_group": "2037-01-05_100|call003",
+            "next_queries": 22,
+            "distance": 0.48375928004241203,
+            "normalized_target": -0.031726638428556934,
+            "training_draws": [
+              408,
+              387,
+              367
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "865c290363bf48d6adeffaba",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_100",
+            "physical_state_group": "2037-02-16_100|call004",
+            "next_queries": 25,
+            "distance": 0.4899441546937537,
+            "normalized_target": -0.03605299821426924,
+            "training_draws": [
+              474,
+              450,
+              446
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "ccc7c18f793fb5daac94a8a3",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call004",
+            "next_queries": 6,
+            "distance": 0.4959786382070022,
+            "normalized_target": -0.008652719571424617,
+            "training_draws": [
+              385,
+              378,
+              398
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 1
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "cbd87c5432ca075a951cfcf9",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call004",
+            "next_queries": 12,
+            "distance": 0.5020370678549287,
+            "normalized_target": -0.017305439142849235,
+            "training_draws": [
+              268,
+              264,
+              289
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d314ce776496bc1948edebf0",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_100",
+            "physical_state_group": "2037-01-05_100|call000",
+            "next_queries": 18,
+            "distance": 0.502900541868376,
+            "normalized_target": 0.4694450767765951,
+            "training_draws": [
+              369,
+              355,
+              384
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "c5b5ac9aa83f3b9349d06396",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call001",
+            "next_queries": 18,
+            "distance": 0.5030730661388726,
+            "normalized_target": -0.025958158714273854,
+            "training_draws": [
+              308,
+              300,
+              303
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "339d71736da0867eb1fa39fd",
+            "position": 0,
+            "date": "2037-11-16",
+            "partition": "train",
+            "scenario": "2037-11-16_101",
+            "physical_state_group": "2037-11-16_101|call002",
+            "next_queries": 9,
+            "distance": 0.5041765961178252,
+            "normalized_target": -0.012979079357136927,
+            "training_draws": [
+              477,
+              432,
+              479
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "0f5fe922baaafb9ffbb3f270",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call008",
+            "next_queries": 10,
+            "distance": 0.5111320273917029,
+            "normalized_target": -0.014421199285707696,
+            "training_draws": [
+              393,
+              373,
+              354
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "639d5a2b8053f7f8860b65ea",
+            "position": 0,
+            "date": "2037-11-16",
+            "partition": "train",
+            "scenario": "2037-11-16_100",
+            "physical_state_group": "2037-11-16_100|call004",
+            "next_queries": 13,
+            "distance": 0.5213400030173605,
+            "normalized_target": -0.018747559071420002,
+            "training_draws": [
+              482,
+              452,
+              460
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "a393e7f5175ba55a85a33d64",
+            "position": 0,
+            "date": "2037-09-21",
+            "partition": "train",
+            "scenario": "2037-09-21_100",
+            "physical_state_group": "2037-09-21_100|call001",
+            "next_queries": 23,
+            "distance": 0.5232886250986017,
+            "normalized_target": -0.0331687583571277,
+            "training_draws": [
+              611,
+              594,
+              570
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          }
+        ]
+      },
+      "semantic_balanced": {
+        "k": {
+          "1": {
+            "positive_calls": 0,
+            "dates": 1,
+            "distance": {
+              "n": 1,
+              "min": 0.3465507824891225,
+              "median": 0.3465507824891225,
+              "mean": 0.3465507824891225,
+              "max": 0.3465507824891225
+            },
+            "normalized_targets": {
+              "n": 1,
+              "min": -0.012979079357136927,
+              "median": -0.012979079357136927,
+              "mean": -0.012979079357136927,
+              "max": -0.012979079357136927
+            }
+          },
+          "5": {
+            "positive_calls": 1,
+            "dates": 4,
+            "distance": {
+              "n": 5,
+              "min": 0.3465507824891225,
+              "median": 0.39752757819527357,
+              "mean": 0.3931768879941819,
+              "max": 0.43799388329799266
+            },
+            "normalized_targets": {
+              "n": 5,
+              "min": -0.03605299821426924,
+              "median": -0.021631798928561544,
+              "mean": -0.008592105414190322,
+              "max": 0.05510362807186072
+            }
+          },
+          "20": {
+            "positive_calls": 2,
+            "dates": 9,
+            "distance": {
+              "n": 20,
+              "min": 0.3465507824891225,
+              "median": 0.4778513850453866,
+              "mean": 0.47042667335437366,
+              "max": 0.5610080607986613
+            },
+            "normalized_targets": {
+              "n": 20,
+              "min": -0.04470571778569386,
+              "median": -0.01802649910713462,
+              "mean": 0.006650960507171103,
+              "max": 0.4694450767765951
+            }
+          }
+        },
+        "nearest_positive_distance": 0.43799388329799266,
+        "nearest_nonpositive_distance": 0.3465507824891225,
+        "nearest20": [
+          {
+            "sample_id": "768fa251d1058e3ad4716f93",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call004",
+            "next_queries": 9,
+            "distance": 0.3465507824891225,
+            "normalized_target": -0.012979079357136927,
+            "training_draws": [
+              265,
+              287,
+              301
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "bc1ddc0c43978dfda6701fb5",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_101",
+            "physical_state_group": "2037-06-01_101|call001",
+            "next_queries": 15,
+            "distance": 0.380900935006767,
+            "normalized_target": -0.021631798928561544,
+            "training_draws": [
+              293,
+              279,
+              309
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "9a9239abe45141c73b156f7c",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_100",
+            "physical_state_group": "2037-03-16_100|call004",
+            "next_queries": 25,
+            "distance": 0.39752757819527357,
+            "normalized_target": -0.03605299821426924,
+            "training_draws": [
+              297,
+              297,
+              291
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "973b91bc90162225ecbcb03d",
+            "position": 0,
+            "date": "2037-06-01",
+            "partition": "train",
+            "scenario": "2037-06-01_100",
+            "physical_state_group": "2037-06-01_100|call009",
+            "next_queries": 19,
+            "distance": 0.4029112609817539,
+            "normalized_target": -0.027400278642844625,
+            "training_draws": [
+              288,
+              300,
+              271
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "66d01ee553a57cf746a8792b",
+            "position": 0,
+            "date": "2037-10-05",
+            "partition": "train",
+            "scenario": "2037-10-05_100",
+            "physical_state_group": "2037-10-05_100|call001",
+            "next_queries": 21,
+            "distance": 0.43799388329799266,
+            "normalized_target": 0.05510362807186072,
+            "training_draws": [
+              353,
+              350,
+              379
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "e65e8749a602df0afb9ad91e",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call009",
+            "next_queries": 31,
+            "distance": 0.4393443383167334,
+            "normalized_target": -0.04470571778569386,
+            "training_draws": [
+              316,
+              328,
+              309
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "1a6326fd72d2f12c7fe01dba",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call008",
+            "next_queries": 14,
+            "distance": 0.45632656962229784,
+            "normalized_target": -0.019457385833597914,
+            "training_draws": [
+              254,
+              291,
+              304
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "59d50416f5da55ef93e9f751",
+            "position": 0,
+            "date": "2037-01-19",
+            "partition": "train",
+            "scenario": "2037-01-19_100",
+            "physical_state_group": "2037-01-19_100|call011",
+            "next_queries": 29,
+            "distance": 0.4583292639154067,
+            "normalized_target": -0.040384525300158784,
+            "training_draws": [
+              256,
+              274,
+              285
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d96e9872954a1a9fad2b9ad1",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_100",
+            "physical_state_group": "2037-01-05_100|call003",
+            "next_queries": 22,
+            "distance": 0.4711382264703531,
+            "normalized_target": -0.031726638428556934,
+            "training_draws": [
+              408,
+              387,
+              367
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "cd1a6eb69aba49f334df987c",
+            "position": 0,
+            "date": "2037-02-16",
+            "partition": "train",
+            "scenario": "2037-02-16_100",
+            "physical_state_group": "2037-02-16_100|call000",
+            "next_queries": 6,
+            "distance": 0.474581042534686,
+            "normalized_target": -0.008652719571424617,
+            "training_draws": [
+              479,
+              478,
+              498
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "4f6630f6975295692a9617f4",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call000",
+            "next_queries": 24,
+            "distance": 0.4811217275560871,
+            "normalized_target": -0.03461087828569847,
+            "training_draws": [
+              397,
+              346,
+              402
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "ccc7c18f793fb5daac94a8a3",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call004",
+            "next_queries": 6,
+            "distance": 0.4860313415027747,
+            "normalized_target": -0.008652719571424617,
+            "training_draws": [
+              385,
+              378,
+              398
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 1
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "e66a7b8711cb2caaff45147b",
+            "position": 0,
+            "date": "2037-11-16",
+            "partition": "train",
+            "scenario": "2037-11-16_101",
+            "physical_state_group": "2037-11-16_101|call002",
+            "next_queries": 8,
+            "distance": 0.495186367206207,
+            "normalized_target": -0.011536959428566158,
+            "training_draws": [
+              487,
+              473,
+              467
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "d314ce776496bc1948edebf0",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_100",
+            "physical_state_group": "2037-01-05_100|call000",
+            "next_queries": 18,
+            "distance": 0.4980969175646379,
+            "normalized_target": 0.4694450767765951,
+            "training_draws": [
+              369,
+              355,
+              384
+            ],
+            "actions": {
+              "0": {
+                "7250": 1,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 1,
+                "29000": 1
+              }
+            }
+          },
+          {
+            "sample_id": "cbd87c5432ca075a951cfcf9",
+            "position": 0,
+            "date": "2037-03-16",
+            "partition": "train",
+            "scenario": "2037-03-16_101",
+            "physical_state_group": "2037-03-16_101|call004",
+            "next_queries": 12,
+            "distance": 0.5165161869227689,
+            "normalized_target": -0.017305439142849235,
+            "training_draws": [
+              268,
+              264,
+              289
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "0f5fe922baaafb9ffbb3f270",
+            "position": 0,
+            "date": "2037-01-05",
+            "partition": "train",
+            "scenario": "2037-01-05_101",
+            "physical_state_group": "2037-01-05_101|call008",
+            "next_queries": 10,
+            "distance": 0.5178587407554465,
+            "normalized_target": -0.014421199285707696,
+            "training_draws": [
+              393,
+              373,
+              354
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "9c51243747b81b7b74ee074c",
+            "position": 0,
+            "date": "2037-11-02",
+            "partition": "train",
+            "scenario": "2037-11-02_100",
+            "physical_state_group": "2037-11-02_100|call001",
+            "next_queries": 7,
+            "distance": 0.5215574088132088,
+            "normalized_target": -0.010094839499995387,
+            "training_draws": [
+              549,
+              599,
+              544
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 1
+              },
+              "1": {
+                "7250": 1,
+                "29000": 1
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "639d5a2b8053f7f8860b65ea",
+            "position": 0,
+            "date": "2037-11-16",
+            "partition": "train",
+            "scenario": "2037-11-16_100",
+            "physical_state_group": "2037-11-16_100|call004",
+            "next_queries": 13,
+            "distance": 0.5220279421794725,
+            "normalized_target": -0.018747559071420002,
+            "training_draws": [
+              482,
+              452,
+              460
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 0,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "9ba05d5f0f6070a547d0bdb2",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_101",
+            "physical_state_group": "2037-04-06_101|call002",
+            "next_queries": 5,
+            "distance": 0.5435248929578216,
+            "normalized_target": -0.007210599642853848,
+            "training_draws": [
+              309,
+              307,
+              318
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 1,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          },
+          {
+            "sample_id": "c5b5ac9aa83f3b9349d06396",
+            "position": 0,
+            "date": "2037-04-06",
+            "partition": "train",
+            "scenario": "2037-04-06_100",
+            "physical_state_group": "2037-04-06_100|call001",
+            "next_queries": 18,
+            "distance": 0.5610080607986613,
+            "normalized_target": -0.025958158714273854,
+            "training_draws": [
+              308,
+              300,
+              303
+            ],
+            "actions": {
+              "0": {
+                "7250": 0,
+                "29000": 0
+              },
+              "1": {
+                "7250": 0,
+                "29000": 0
+              },
+              "2": {
+                "7250": 1,
+                "29000": 0
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+]

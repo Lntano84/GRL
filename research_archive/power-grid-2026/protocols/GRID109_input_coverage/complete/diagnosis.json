@@ -1,0 +1,254 @@
+{
+  "counts": {
+    "train": {
+      "states": 3582,
+      "positive": 211,
+      "physical_calls": 222,
+      "positive_physical_calls": 54,
+      "positive_dates": 15
+    },
+    "validation": {
+      "states": 856,
+      "positive": 41,
+      "physical_calls": 56,
+      "positive_physical_calls": 16,
+      "positive_dates": 4
+    }
+  },
+  "newly_missed_unique_states": 13,
+  "newly_missed_physical_calls": 8,
+  "recovered_unique_states": 2,
+  "recovered_physical_calls": 2,
+  "new_misses_calls": [
+    "2037-03-02_100|call003",
+    "2037-03-02_100|call008",
+    "2037-03-02_100|call012",
+    "2037-08-03_100|call000",
+    "2037-08-03_100|call005",
+    "2037-08-03_101|call005",
+    "2037-08-03_101|call008",
+    "2037-10-19_101|call004"
+  ],
+  "positive_training_sampling_mass": 0.05660699508656504,
+  "training_state_draws": {
+    "0": {
+      "all": {
+        "n": 3582,
+        "min": 38.0,
+        "median": 245.0,
+        "mean": 259.07314349525404,
+        "max": 975.0
+      },
+      "positive": {
+        "n": 211,
+        "min": 48.0,
+        "median": 262.0,
+        "mean": 248.45497630331752,
+        "max": 590.0
+      },
+      "never_drawn": 0
+    },
+    "1": {
+      "all": {
+        "n": 3582,
+        "min": 41.0,
+        "median": 246.0,
+        "mean": 259.07314349525404,
+        "max": 998.0
+      },
+      "positive": {
+        "n": 211,
+        "min": 45.0,
+        "median": 259.0,
+        "mean": 246.07109004739337,
+        "max": 592.0
+      },
+      "never_drawn": 0
+    },
+    "2": {
+      "all": {
+        "n": 3582,
+        "min": 43.0,
+        "median": 243.5,
+        "mean": 259.07314349525404,
+        "max": 1000.0
+      },
+      "positive": {
+        "n": 211,
+        "min": 43.0,
+        "median": 258.0,
+        "mean": 248.11848341232226,
+        "max": 590.0
+      },
+      "never_drawn": 0
+    }
+  },
+  "cohorts": {
+    "all_validation": {
+      "standardized41": {
+        "nearest_distance": {
+          "n": 856,
+          "min": 0.05476587504490184,
+          "median": 0.2727466470682896,
+          "mean": 0.3039704548815013,
+          "max": 0.8431113170861981
+        },
+        "nearest5_positive_calls": {
+          "n": 856,
+          "min": 0.0,
+          "median": 0.0,
+          "mean": 0.24182242990654207,
+          "max": 5.0
+        },
+        "zero_positive_among_nearest5": 700,
+        "positive_closer_than_nonpositive": 39
+      },
+      "semantic_balanced": {
+        "nearest_distance": {
+          "n": 856,
+          "min": 0.048778597401605096,
+          "median": 0.25597813473245423,
+          "mean": 0.28729877498959183,
+          "max": 0.887664713234454
+        },
+        "nearest5_positive_calls": {
+          "n": 856,
+          "min": 0.0,
+          "median": 0.0,
+          "mean": 0.24299065420560748,
+          "max": 4.0
+        },
+        "zero_positive_among_nearest5": 705,
+        "positive_closer_than_nonpositive": 33
+      }
+    },
+    "positive_validation": {
+      "standardized41": {
+        "nearest_distance": {
+          "n": 41,
+          "min": 0.10353611618944027,
+          "median": 0.3144621928317052,
+          "mean": 0.360375110622481,
+          "max": 0.7697753398070487
+        },
+        "nearest5_positive_calls": {
+          "n": 41,
+          "min": 0.0,
+          "median": 1.0,
+          "mean": 1.2195121951219512,
+          "max": 5.0
+        },
+        "zero_positive_among_nearest5": 18,
+        "positive_closer_than_nonpositive": 11
+      },
+      "semantic_balanced": {
+        "nearest_distance": {
+          "n": 41,
+          "min": 0.09227701539307098,
+          "median": 0.30599734175278337,
+          "mean": 0.34278509814996866,
+          "max": 0.887664713234454
+        },
+        "nearest5_positive_calls": {
+          "n": 41,
+          "min": 0.0,
+          "median": 1.0,
+          "mean": 1.2926829268292683,
+          "max": 4.0
+        },
+        "zero_positive_among_nearest5": 16,
+        "positive_closer_than_nonpositive": 13
+      }
+    },
+    "newly_missed": {
+      "standardized41": {
+        "nearest_distance": {
+          "n": 13,
+          "min": 0.21656579304924478,
+          "median": 0.34730925154797515,
+          "mean": 0.43065499677489083,
+          "max": 0.7697753398070487
+        },
+        "nearest5_positive_calls": {
+          "n": 13,
+          "min": 0.0,
+          "median": 0.0,
+          "mean": 0.38461538461538464,
+          "max": 1.0
+        },
+        "zero_positive_among_nearest5": 8,
+        "positive_closer_than_nonpositive": 1
+      },
+      "semantic_balanced": {
+        "nearest_distance": {
+          "n": 13,
+          "min": 0.20096123582701197,
+          "median": 0.3414028616574332,
+          "mean": 0.4149290011760878,
+          "max": 0.887664713234454
+        },
+        "nearest5_positive_calls": {
+          "n": 13,
+          "min": 0.0,
+          "median": 0.0,
+          "mean": 0.6153846153846154,
+          "max": 2.0
+        },
+        "zero_positive_among_nearest5": 7,
+        "positive_closer_than_nonpositive": 2
+      }
+    },
+    "recovered": {
+      "standardized41": {
+        "nearest_distance": {
+          "n": 2,
+          "min": 0.29402160355833856,
+          "median": 0.31330625149283386,
+          "mean": 0.31330625149283386,
+          "max": 0.3325908994273292
+        },
+        "nearest5_positive_calls": {
+          "n": 2,
+          "min": 0.0,
+          "median": 1.5,
+          "mean": 1.5,
+          "max": 3.0
+        },
+        "zero_positive_among_nearest5": 1,
+        "positive_closer_than_nonpositive": 0
+      },
+      "semantic_balanced": {
+        "nearest_distance": {
+          "n": 2,
+          "min": 0.2979930686030424,
+          "median": 0.32200116044376403,
+          "mean": 0.32200116044376403,
+          "max": 0.34600925228448565
+        },
+        "nearest5_positive_calls": {
+          "n": 2,
+          "min": 1.0,
+          "median": 2.0,
+          "mean": 2.0,
+          "max": 3.0
+        },
+        "zero_positive_among_nearest5": 0,
+        "positive_closer_than_nonpositive": 0
+      }
+    }
+  },
+  "exact_inputs": {
+    "all_unique": 4438,
+    "sign_conflicting_vectors": 0,
+    "cross_partition_matches": 0
+  },
+  "raw_constant_channels": [
+    "illegal_fraction",
+    "ambiguous_fraction"
+  ],
+  "new_fits": 0,
+  "new_inference": 0,
+  "new_physical_calls": 0,
+  "new_features": 0,
+  "final_test_materialized": false
+}

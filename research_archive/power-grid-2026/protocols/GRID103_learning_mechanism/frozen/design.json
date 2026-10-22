@@ -1,0 +1,83 @@
+{
+  "id": "GRID103_LEARNING_MECHANISM",
+  "scope": "Saved-feedback development mechanism probe; no physical rollout or final test.",
+  "source": "GRID102 frozen transitions and all3 final DQN models; original artifacts unchanged.",
+  "split": {
+    "train_cases": 2378,
+    "train_dates": 16,
+    "validation_cases": 590,
+    "validation_dates": 4
+  },
+  "inputs": "Same41 purchased-feedback/public-structure features and frozen training normalization as GRID102.",
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "regression": {
+    "target": "Next batch nonnegative reward gain divided by GRID102 gain_scale; no future-optimal or whole-week label.",
+    "model": "RandomForestRegressor",
+    "n_estimators": 64,
+    "max_depth": 4,
+    "min_samples_leaf": 20,
+    "max_features": 1.0,
+    "random_state": 20261022,
+    "n_jobs": 1,
+    "weights": "Equal total weight per training date across all reachable states; mean weight1.",
+    "decision": "Continue iff predicted normalized next-batch gain > fixed query price * known next-batch count / gain_scale. Strict tie stops."
+  },
+  "temporal_ablation": {
+    "model": "SB3 vanilla DQN, identical architecture/seed/training budget to GRID102; gamma0 replaces gamma1 only.",
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "timesteps": 30000,
+    "dqn": {
+      "learning_rate": 0.0003,
+      "buffer_size": 20000,
+      "learning_starts": 1000,
+      "batch_size": 64,
+      "tau": 1.0,
+      "gamma": 0.0,
+      "train_freq": 4,
+      "gradient_steps": 1,
+      "target_update_interval": 500,
+      "exploration_fraction": 0.3,
+      "exploration_initial_eps": 1.0,
+      "exploration_final_eps": 0.05,
+      "max_grad_norm": 10.0,
+      "policy_kwargs": {
+        "net_arch": [
+          64,
+          64
+        ]
+      },
+      "device": "cpu",
+      "verbose": 0
+    },
+    "purpose": "Test value of future-reward training under matched implementation; trajectories differ after policies diverge, not identical replay buffers."
+  },
+  "fitting": "Exactly1 forest and3 gamma0 DQN fits; retain all final30000 checkpoints and seeds. Reuse gamma1 models without fitting.",
+  "inference": "Frozen41-dim observation and known next-batch count only; no case ID/date/remaining outcomes or labels.",
+  "baselines": [
+    "STOP",
+    "FULL_LOCAL",
+    "BATCH1",
+    "COST_LOGISTIC_existing",
+    "MYOPIC_RF64",
+    "DQN_G1_seed0/1/2_existing",
+    "DQN_G0_seed0/1/2",
+    "ORACLE_OPTIMAL_hindsight_only",
+    "ORACLE_MYOPIC_next_actual_gain_hindsight_only"
+  ],
+  "analyses": [
+    "all/single-batch/multi-batch/horizon2/3/4 date macros",
+    "paired gamma1-gamma0 all3 seeds and each date",
+    "prefix-weighted and physical-call-balanced within-date utility",
+    "next-batch regression MAE/RMSE versus zero/training-mean",
+    "negative-next-batch positive-later hindsight opportunities",
+    "October negative-utility decomposition and missed gain",
+    "all training curves, visited decisions, prediction scores, and adverse cases"
+  ],
+  "interpretation": "Gamma1 superiority requires positive mean and at least2/3 seed differences on multi-batch states; report dates and opposite cases. This is exploratory,4 exposed validation dates, not statistical confirmation. If absent, do not claim sequential RL benefit.",
+  "limits": "Fixed train-calibrated proxy price; no cost sweep, threshold tuning, extra features/data, larger net, checkpoint/seed selection, installation, new physical rollout or final-test generation. Prefixes correlated; hindsight diagnostics cannot be deployed."
+}

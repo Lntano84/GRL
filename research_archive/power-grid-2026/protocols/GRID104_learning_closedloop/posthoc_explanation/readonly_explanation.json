@@ -1,0 +1,356 @@
+{
+  "passed_saved_record_checks": true,
+  "new_fits": 0,
+  "new_forecasts": 0,
+  "new_physical_steps": 0,
+  "posthoc": true,
+  "timing_means": {
+    "FRAME_GUARD": {
+      "controller_s": 59.925576512513544,
+      "optimizer_s": 40.456127387509696,
+      "forecast_s": 14.83531137499267,
+      "search_overhead_s": 0.8099435124804586,
+      "other_s": 3.824194237530719,
+      "local_feature_s": 0.0,
+      "local_inference_s": 0.0,
+      "optimizer_fraction": 0.6751061857379332,
+      "learning_overhead_fraction": 0.0
+    },
+    "LOCAL_BATCH1": {
+      "controller_s": 59.04755796248537,
+      "optimizer_s": 40.360733387514756,
+      "forecast_s": 13.946637124962763,
+      "search_overhead_s": 0.9329428500095673,
+      "other_s": 3.8072445999982847,
+      "local_feature_s": 0.0,
+      "local_inference_s": 0.0,
+      "optimizer_fraction": 0.6835292564200047,
+      "learning_overhead_fraction": 0.0
+    },
+    "LOCAL_RF": {
+      "controller_s": 58.31686102500316,
+      "optimizer_s": 39.770068537507996,
+      "forecast_s": 14.010542587539021,
+      "search_overhead_s": 0.7775616499552598,
+      "other_s": 3.758688250000887,
+      "local_feature_s": 0.002766612498817267,
+      "local_inference_s": 0.009164399998098816,
+      "optimizer_fraction": 0.6819651784834013,
+      "learning_overhead_fraction": 0.00020458941526020578
+    },
+    "LOCAL_DQN0_0": {
+      "controller_s": 58.80878617499184,
+      "optimizer_s": 39.820262612476654,
+      "forecast_s": 14.361701049950625,
+      "search_overhead_s": 0.8404439750238453,
+      "other_s": 3.7863785375407133,
+      "local_feature_s": 0.003696225001476705,
+      "local_inference_s": 0.002414449998013879,
+      "optimizer_fraction": 0.6771141729398598,
+      "learning_overhead_fraction": 0.00010390751785468954
+    },
+    "LOCAL_DQN0_1": {
+      "controller_s": 58.71604516250636,
+      "optimizer_s": 39.55838441251399,
+      "forecast_s": 14.424335312528456,
+      "search_overhead_s": 0.9635372875109169,
+      "other_s": 3.7697881499530013,
+      "local_feature_s": 0.004109687496566039,
+      "local_inference_s": 0.0026805500010596006,
+      "optimizer_fraction": 0.6737235844653641,
+      "learning_overhead_fraction": 0.0001156453483682788
+    },
+    "LOCAL_DQN0_2": {
+      "controller_s": 58.903922662498644,
+      "optimizer_s": 39.84654132499736,
+      "forecast_s": 14.11320535001596,
+      "search_overhead_s": 1.0256570125206963,
+      "other_s": 3.918518974964627,
+      "local_feature_s": 0.0028619625004466798,
+      "local_inference_s": 0.0020354874986878713,
+      "optimizer_fraction": 0.6764666854753594,
+      "learning_overhead_fraction": 8.314301964565981e-05
+    }
+  },
+  "first_divergences": [
+    {
+      "week": "2037-03-02_100",
+      "method": "LOCAL_RF",
+      "first_delivered_action_divergence": 108,
+      "same_before_state": true,
+      "calls_at_step": [
+        1,
+        1
+      ],
+      "same_observation_and_base": true,
+      "same_global_feedback": true,
+      "frame_choice": 538,
+      "learner_choice": 62,
+      "frame_forecast_reward": 1.0539395809173584,
+      "learner_forecast_reward": 1.0532207489013672,
+      "reward_gap": 0.0007188320159912109,
+      "frame_local_queries": 198,
+      "learner_local_queries": 0,
+      "frame_choice_not_queried_by_learner": true,
+      "learner_stopped": true
+    },
+    {
+      "week": "2037-03-02_100",
+      "method": "LOCAL_DQN0_0",
+      "first_delivered_action_divergence": 552,
+      "same_before_state": true,
+      "calls_at_step": [
+        1,
+        1
+      ],
+      "same_observation_and_base": true,
+      "same_global_feedback": true,
+      "frame_choice": 355,
+      "learner_choice": 141,
+      "frame_forecast_reward": 1.059272050857544,
+      "learner_forecast_reward": 1.0521769523620605,
+      "reward_gap": 0.0070950984954833984,
+      "frame_local_queries": 13,
+      "learner_local_queries": 0,
+      "frame_choice_not_queried_by_learner": true,
+      "learner_stopped": true
+    },
+    {
+      "week": "2037-03-02_100",
+      "method": "LOCAL_DQN0_1",
+      "first_delivered_action_divergence": 552,
+      "same_before_state": true,
+      "calls_at_step": [
+        1,
+        1
+      ],
+      "same_observation_and_base": true,
+      "same_global_feedback": true,
+      "frame_choice": 355,
+      "learner_choice": 141,
+      "frame_forecast_reward": 1.059272050857544,
+      "learner_forecast_reward": 1.0521769523620605,
+      "reward_gap": 0.0070950984954833984,
+      "frame_local_queries": 13,
+      "learner_local_queries": 0,
+      "frame_choice_not_queried_by_learner": true,
+      "learner_stopped": true
+    },
+    {
+      "week": "2037-03-02_100",
+      "method": "LOCAL_DQN0_2",
+      "first_delivered_action_divergence": null
+    },
+    {
+      "week": "2037-05-04_100",
+      "method": "LOCAL_RF",
+      "first_delivered_action_divergence": null
+    },
+    {
+      "week": "2037-05-04_100",
+      "method": "LOCAL_DQN0_0",
+      "first_delivered_action_divergence": null
+    },
+    {
+      "week": "2037-05-04_100",
+      "method": "LOCAL_DQN0_1",
+      "first_delivered_action_divergence": null
+    },
+    {
+      "week": "2037-05-04_100",
+      "method": "LOCAL_DQN0_2",
+      "first_delivered_action_divergence": null
+    },
+    {
+      "week": "2037-08-03_100",
+      "method": "LOCAL_RF",
+      "first_delivered_action_divergence": 110,
+      "same_before_state": true,
+      "calls_at_step": [
+        1,
+        1
+      ],
+      "same_observation_and_base": true,
+      "same_global_feedback": true,
+      "frame_choice": 472,
+      "learner_choice": 147,
+      "frame_forecast_reward": 1.312088966369629,
+      "learner_forecast_reward": 1.3120405673980713,
+      "reward_gap": 4.839897155761719e-05,
+      "frame_local_queries": 29,
+      "learner_local_queries": 0,
+      "frame_choice_not_queried_by_learner": true,
+      "learner_stopped": true
+    },
+    {
+      "week": "2037-08-03_100",
+      "method": "LOCAL_DQN0_0",
+      "first_delivered_action_divergence": 1899,
+      "same_before_state": true,
+      "calls_at_step": [
+        1,
+        1
+      ],
+      "same_observation_and_base": true,
+      "same_global_feedback": true,
+      "frame_choice": 734,
+      "learner_choice": 251,
+      "frame_forecast_reward": 1.2995295524597168,
+      "learner_forecast_reward": 1.2994614839553833,
+      "reward_gap": 6.80685043334961e-05,
+      "frame_local_queries": 14,
+      "learner_local_queries": 0,
+      "frame_choice_not_queried_by_learner": true,
+      "learner_stopped": true
+    },
+    {
+      "week": "2037-08-03_100",
+      "method": "LOCAL_DQN0_1",
+      "first_delivered_action_divergence": 110,
+      "same_before_state": true,
+      "calls_at_step": [
+        1,
+        1
+      ],
+      "same_observation_and_base": true,
+      "same_global_feedback": true,
+      "frame_choice": 472,
+      "learner_choice": 147,
+      "frame_forecast_reward": 1.312088966369629,
+      "learner_forecast_reward": 1.3120405673980713,
+      "reward_gap": 4.839897155761719e-05,
+      "frame_local_queries": 29,
+      "learner_local_queries": 0,
+      "frame_choice_not_queried_by_learner": true,
+      "learner_stopped": true
+    },
+    {
+      "week": "2037-08-03_100",
+      "method": "LOCAL_DQN0_2",
+      "first_delivered_action_divergence": 1899,
+      "same_before_state": true,
+      "calls_at_step": [
+        1,
+        1
+      ],
+      "same_observation_and_base": true,
+      "same_global_feedback": true,
+      "frame_choice": 734,
+      "learner_choice": 251,
+      "frame_forecast_reward": 1.2995295524597168,
+      "learner_forecast_reward": 1.2994614839553833,
+      "reward_gap": 6.80685043334961e-05,
+      "frame_local_queries": 14,
+      "learner_local_queries": 0,
+      "frame_choice_not_queried_by_learner": true,
+      "learner_stopped": true
+    },
+    {
+      "week": "2037-10-19_100",
+      "method": "LOCAL_RF",
+      "first_delivered_action_divergence": 1197,
+      "same_before_state": true,
+      "calls_at_step": [
+        1,
+        1
+      ],
+      "same_observation_and_base": true,
+      "same_global_feedback": true,
+      "frame_choice": 444,
+      "learner_choice": 195,
+      "frame_forecast_reward": 1.1196459531784058,
+      "learner_forecast_reward": 1.1194875240325928,
+      "reward_gap": 0.00015842914581298828,
+      "frame_local_queries": 24,
+      "learner_local_queries": 0,
+      "frame_choice_not_queried_by_learner": true,
+      "learner_stopped": true
+    },
+    {
+      "week": "2037-10-19_100",
+      "method": "LOCAL_DQN0_0",
+      "first_delivered_action_divergence": 1197,
+      "same_before_state": true,
+      "calls_at_step": [
+        1,
+        1
+      ],
+      "same_observation_and_base": true,
+      "same_global_feedback": true,
+      "frame_choice": 444,
+      "learner_choice": 195,
+      "frame_forecast_reward": 1.1196459531784058,
+      "learner_forecast_reward": 1.1194875240325928,
+      "reward_gap": 0.00015842914581298828,
+      "frame_local_queries": 24,
+      "learner_local_queries": 0,
+      "frame_choice_not_queried_by_learner": true,
+      "learner_stopped": true
+    },
+    {
+      "week": "2037-10-19_100",
+      "method": "LOCAL_DQN0_1",
+      "first_delivered_action_divergence": 1197,
+      "same_before_state": true,
+      "calls_at_step": [
+        1,
+        1
+      ],
+      "same_observation_and_base": true,
+      "same_global_feedback": true,
+      "frame_choice": 444,
+      "learner_choice": 195,
+      "frame_forecast_reward": 1.1196459531784058,
+      "learner_forecast_reward": 1.1194875240325928,
+      "reward_gap": 0.00015842914581298828,
+      "frame_local_queries": 24,
+      "learner_local_queries": 0,
+      "frame_choice_not_queried_by_learner": true,
+      "learner_stopped": true
+    },
+    {
+      "week": "2037-10-19_100",
+      "method": "LOCAL_DQN0_2",
+      "first_delivered_action_divergence": 1197,
+      "same_before_state": true,
+      "calls_at_step": [
+        1,
+        1
+      ],
+      "same_observation_and_base": true,
+      "same_global_feedback": true,
+      "frame_choice": 444,
+      "learner_choice": 195,
+      "frame_forecast_reward": 1.1196459531784058,
+      "learner_forecast_reward": 1.1194875240325928,
+      "reward_gap": 0.00015842914581298828,
+      "frame_local_queries": 24,
+      "learner_local_queries": 0,
+      "frame_choice_not_queried_by_learner": true,
+      "learner_stopped": true
+    }
+  ],
+  "full_teacher_overlap": {
+    "LOCAL_RF": {
+      "completion_calls": 20,
+      "matching_full_teacher_states": 12,
+      "fraction_matching": 0.6
+    },
+    "LOCAL_DQN0_0": {
+      "completion_calls": 21,
+      "matching_full_teacher_states": 17,
+      "fraction_matching": 0.8095238095238095
+    },
+    "LOCAL_DQN0_1": {
+      "completion_calls": 21,
+      "matching_full_teacher_states": 17,
+      "fraction_matching": 0.8095238095238095
+    },
+    "LOCAL_DQN0_2": {
+      "completion_calls": 20,
+      "matching_full_teacher_states": 18,
+      "fraction_matching": 0.9
+    }
+  },
+  "limitations": "Exact state-hash mismatch is descriptive distribution difference, not a causal explanation. One-step reward gap does not explain all downstream week costs. No counterfactual AC re-solve."
+}

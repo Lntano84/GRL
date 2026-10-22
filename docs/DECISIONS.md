@@ -864,3 +864,8 @@ User authorized autonomous progress before notifying about scaling. Four pre-exi
 ## 2026-10-22 — GRID104 fixed learning closed-loop development completed
 
 48 serial runs on four already exposed validation dates (replicate100), FRAME/BATCH1/RF/all3 gamma0 DQN seeds, two reverse timings; no fitting/new scenarios or final-test access. Saved vectors/feedback/policy/context/cost/repeat/timing audit passed. Learning projection and inference counted in actual controller time. Ready-to-scale exploratory gate=False. All adverse outcomes retained, no best-seed selection or early-termination speed claim. Report: research_archive/power-grid-2026/protocols/GRID104_learning_closedloop/complete/GRID104_report.md. Large physical vectors retained on D: with published hash manifests. No automatic expansion.
+
+
+## 2026-10-22 — GRID104 post-completion explanation
+
+Read-only first-delivered-action divergence, actual compute decomposition and FULL-teacher exact-state overlap added after full audit; no new fit/forecast/physical step. Learners did not pass scaling gate: March RF whole-week cost+1.112%, DQN seeds0/1+1.758% versus FRAME; all arms3/4 complete. RF macro actual controller reduction1.75% versus FRAME and0.53% versus one-batch; no best-seed rescue. Serializer recovery preserved all frozen sources and1436 original benchmark file hashes. Interpretation: distinguish limited whole-controller compute leverage and immediate-reward/closed-loop objective/path differences; no causal drift or independent AC claim. No scaling started.

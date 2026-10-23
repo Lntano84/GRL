@@ -684,3 +684,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID124辅助学习为何未改善补查](protocols/GRID124_shared_gradient_audit/complete/GRID124_report.md)：零训练，完整训练分布梯度、辅助预测误差及全部首次分歧差值守恒核查。
 
 - [GRID125高收益补查为何被低估](protocols/GRID125_value_underestimate/complete/GRID125_report.md)：零训练，训练覆盖/曝光、原Huber目标的稀有大收益影响、已知查询费下界与全部投影动作不变核验。
+
+- [GRID126已知费用与非负改进量学习](protocols/GRID126_known_cost_gain/complete/GRID126_report.md)：30次固定匹配训练、已知费用外置/非负参数化、完整局部搜索与全种子核验。

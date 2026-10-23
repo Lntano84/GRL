@@ -1262,3 +1262,8 @@ Readonly4438supportstates/3439AUX_GAINdivergences/77profitablemissrecords,allGRI
 ## 2026-10-23 — GRID126 known-cost/gain paired learning frozen
 
 Userauthorizesautonomousprogresswithupdates.30newfixedfits,original6978/41/7250x32/init/Adam/sampler/fee/full+fourfolds,15originalcachedcontrols. DIRECTrawgainregressionminusknownfee;POSgain=r+hypot(r,fee),stablebranch,nonnegative,netzeroatlatentzero/localderivative1/actionboundaryr>0matchedold. Puretranslationnullgradientidentity/oldweightlinkactionschecked. MainhalfHuber+stophalfHuber0,noauxlossorweightsearch. All30endpointsbeforeheld/validationevaluation;1800s,no physical/newdata/test.
+
+
+## 2026-10-23 — GRID126 known-cost/gain learning complete
+
+30fixedfits6978/7250x32/originalinitandstreams,15baselinesreused,wall217.14s. Families={'validation': {'NET_ZERO': 0.16292472687799245, 'GAIN_DIRECT': 0.1590323563107055, 'COST_POSITIVE': 0.13261113171729758}, 'oof': {'NET_ZERO': 0.0860550575338817, 'GAIN_DIRECT': 0.08567469645255343, 'COST_POSITIVE': 0.062077989325268736}};incremental={'GAIN_DIRECT': False, 'COST_POSITIVE': False};positivelinkspecific=False;candidate={'GAIN_DIRECT': False, 'COST_POSITIVE': False}. IndependentNumPy/optimizer/exposure/publiccharge/trajectoryauditpassed. Initial/finalJacobianandfirst-commonprefixdifferencesretained,no seed/linkrescue. Exposedteacherlocal-searchdevelopmentonly,not newRL/wholeweekspeed/independenttest;no physical/dataexpansion/finaltest.

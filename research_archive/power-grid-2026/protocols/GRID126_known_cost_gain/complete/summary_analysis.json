@@ -1,0 +1,334 @@
+{
+  "family_metrics": {
+    "validation": {
+      "NET_ZERO": {
+        "mean_net_utility": 0.16292472687799245,
+        "mean_gain": 0.0015860329142023735,
+        "mean_queries": 14.494689652188441,
+        "query_fraction": 0.3177351590445539,
+        "gain_capture": 0.7760421499753439,
+        "physical_call_balanced_utility": 0.13653760523510688
+      },
+      "GAIN_DIRECT": {
+        "mean_net_utility": 0.1590323563107055,
+        "mean_gain": 0.001557757468902728,
+        "mean_queries": 14.921234565414593,
+        "query_fraction": 0.34317449310061815,
+        "gain_capture": 0.7308638916259275,
+        "physical_call_balanced_utility": 0.13303320180341505
+      },
+      "COST_POSITIVE": {
+        "mean_net_utility": 0.13261113171729758,
+        "mean_gain": 0.0011786355626309055,
+        "mean_queries": 2.7720506066411237,
+        "query_fraction": 0.05160956340454479,
+        "gain_capture": 0.29878165677895024,
+        "physical_call_balanced_utility": 0.10929148115513125
+      }
+    },
+    "oof": {
+      "NET_ZERO": {
+        "mean_net_utility": 0.0860550575338817,
+        "mean_gain": 0.0009459736182899156,
+        "mean_queries": 16.35593312670459,
+        "query_fraction": 0.31751766151432625,
+        "gain_capture": 0.6776542504866391,
+        "physical_call_balanced_utility": 0.07673844474431868
+      },
+      "GAIN_DIRECT": {
+        "mean_net_utility": 0.08567469645255343,
+        "mean_gain": 0.0009248848482583715,
+        "mean_queries": 14.924765726789076,
+        "query_fraction": 0.28875339314234355,
+        "gain_capture": 0.6541741252943111,
+        "physical_call_balanced_utility": 0.07633714149426023
+      },
+      "COST_POSITIVE": {
+        "mean_net_utility": 0.062077989325268736,
+        "mean_gain": 0.0005765996265253513,
+        "mean_queries": 3.2953599369933877,
+        "query_fraction": 0.059863137224129746,
+        "gain_capture": 0.2832643307103762,
+        "physical_call_balanced_utility": 0.0549847087101988
+      }
+    }
+  },
+  "gain_and_query_accounting": {
+    "validation": {
+      "GAIN_DIRECT": {
+        "gain_contribution": -0.003277241647493062,
+        "query_charge_contribution": -0.0006151289197939238,
+        "net_difference": -0.0038923705672869457
+      },
+      "COST_POSITIVE": {
+        "gain_contribution": -0.04721904654372048,
+        "query_charge_contribution": 0.016905451383025613,
+        "net_difference": -0.030313595160694873
+      }
+    },
+    "oof": {
+      "GAIN_DIRECT": {
+        "gain_contribution": -0.0024442761098671787,
+        "query_charge_contribution": 0.0020639150285389728,
+        "net_difference": -0.0003803610813282593
+      },
+      "COST_POSITIVE": {
+        "gain_contribution": -0.042811981084052535,
+        "query_charge_contribution": 0.018834912875439626,
+        "net_difference": -0.023977068208612957
+      }
+    }
+  },
+  "fit_profiles": {
+    "full": {
+      "GAIN_DIRECT": {
+        "initial": {
+          "main_huber": 0.0542411324942761,
+          "continue_mass": 0.14879670691971508,
+          "sign_regret": 0.05483160699592963,
+          "gain_negative_mass": 0.7694930726262944,
+          "jacobian_mean": 0.999999999999999,
+          "positive_target_jacobian_mean": 1.0,
+          "minimum_jacobian": 1.0
+        },
+        "final": {
+          "main_huber": 0.013683336553985742,
+          "continue_mass": 0.32819613729314706,
+          "sign_regret": 0.007093720364236856,
+          "gain_negative_mass": 0.3945402406204502,
+          "jacobian_mean": 0.999999999999999,
+          "positive_target_jacobian_mean": 1.0,
+          "minimum_jacobian": 1.0
+        }
+      },
+      "COST_POSITIVE": {
+        "initial": {
+          "main_huber": 0.05360884190276685,
+          "continue_mass": 0.23050692737370518,
+          "sign_regret": 0.050417809503816254,
+          "gain_negative_mass": 0.0,
+          "jacobian_mean": 0.5758465867145945,
+          "positive_target_jacobian_mean": 0.6761365443601116,
+          "minimum_jacobian": 4.4564936297009083e-05
+        },
+        "final": {
+          "main_huber": 0.017961599035005077,
+          "continue_mass": 0.017646542896115537,
+          "sign_regret": 0.016863264452211386,
+          "gain_negative_mass": 0.0,
+          "jacobian_mean": 0.03628930228309705,
+          "positive_target_jacobian_mean": 0.5471867409329735,
+          "minimum_jacobian": 1.1020276062071824e-08
+        }
+      }
+    },
+    "folds": {
+      "GAIN_DIRECT": {
+        "initial": {
+          "main_huber": 0.054233613444347885,
+          "continue_mass": 0.15008714890922195,
+          "sign_regret": 0.05452811451932563,
+          "gain_negative_mass": 0.7684233579969959,
+          "jacobian_mean": 0.9999999999999996,
+          "positive_target_jacobian_mean": 1.0,
+          "minimum_jacobian": 1.0
+        },
+        "final": {
+          "main_huber": 0.011447618143423351,
+          "continue_mass": 0.324705807556937,
+          "sign_regret": 0.004850934608519903,
+          "gain_negative_mass": 0.4055616769645469,
+          "jacobian_mean": 0.9999999999999996,
+          "positive_target_jacobian_mean": 1.0,
+          "minimum_jacobian": 1.0
+        }
+      },
+      "COST_POSITIVE": {
+        "initial": {
+          "main_huber": 0.0535603637805023,
+          "continue_mass": 0.2315766420030039,
+          "sign_regret": 0.05049695645651103,
+          "gain_negative_mass": 0.0,
+          "jacobian_mean": 0.577124838977703,
+          "positive_target_jacobian_mean": 0.6763772420968195,
+          "minimum_jacobian": 6.153424193065342e-05
+        },
+        "final": {
+          "main_huber": 0.01230572749090284,
+          "continue_mass": 0.021007634330451868,
+          "sign_regret": 0.010545195060478503,
+          "gain_negative_mass": 0.0,
+          "jacobian_mean": 0.04304902211438205,
+          "positive_target_jacobian_mean": 0.6713601004921651,
+          "minimum_jacobian": 1.4090099420549507e-08
+        }
+      }
+    }
+  },
+  "criteria": {
+    "family_utility": {
+      "validation": {
+        "NET_ZERO": 0.16292472687799245,
+        "GAIN_DIRECT": 0.1590323563107055,
+        "COST_POSITIVE": 0.13261113171729758
+      },
+      "oof": {
+        "NET_ZERO": 0.0860550575338817,
+        "GAIN_DIRECT": 0.08567469645255343,
+        "COST_POSITIVE": 0.062077989325268736
+      }
+    },
+    "comparisons": {
+      "validation": {
+        "GAIN_DIRECT_minus_NET_ZERO": {
+          "paired_seed_differences": [
+            -0.004892085499740517,
+            -0.004522651567110986,
+            -0.002262374635009362
+          ],
+          "date_differences": {
+            "2037-03-02": -0.0020208565310545798,
+            "2037-05-04": -0.0045031947649333826,
+            "2037-08-03": -0.004098053374862798,
+            "2037-10-19": -0.004947377598297101
+          },
+          "positive_dates": 0,
+          "signal": false
+        },
+        "COST_POSITIVE_minus_NET_ZERO": {
+          "paired_seed_differences": [
+            -0.02841728198471119,
+            -0.014817439849610065,
+            -0.04770606364776331
+          ],
+          "date_differences": {
+            "2037-03-02": 0.012684332936558393,
+            "2037-05-04": -0.045821682110592156,
+            "2037-08-03": -0.08263095633945138,
+            "2037-10-19": -0.005486075129294284
+          },
+          "positive_dates": 1,
+          "signal": false
+        },
+        "COST_POSITIVE_minus_GAIN_DIRECT": {
+          "paired_seed_differences": [
+            -0.023525196484970673,
+            -0.010294788282499079,
+            -0.045443689012753946
+          ],
+          "date_differences": {
+            "2037-03-02": 0.014705189467612975,
+            "2037-05-04": -0.04131848734565877,
+            "2037-08-03": -0.07853290296458858,
+            "2037-10-19": -0.0005386975309971828
+          },
+          "positive_dates": 1,
+          "signal": false
+        }
+      },
+      "oof": {
+        "GAIN_DIRECT_minus_NET_ZERO": {
+          "paired_seed_differences": [
+            -0.00014905302868961634,
+            0.0028905777932767135,
+            -0.0038826080085718195
+          ],
+          "date_differences": {
+            "2037-01-05": 0.0357068556486692,
+            "2037-01-19": 0.0003144950744353031,
+            "2037-02-16": 0.0006831887456450215,
+            "2037-03-16": -0.0011555895990043828,
+            "2037-04-06": 0.008232173257233466,
+            "2037-05-18": 0.0013563014201365365,
+            "2037-06-01": -0.0003735219901870035,
+            "2037-06-15": -0.02256907825868461,
+            "2037-07-06": -0.015598796218159924,
+            "2037-08-17": -0.02335961017150943,
+            "2037-09-07": 0.008197407716992178,
+            "2037-09-21": 0.003246334520574238,
+            "2037-10-05": 0.0005250398841023197,
+            "2037-11-02": 0.0027458124651672904,
+            "2037-11-16": -0.005220881188912604,
+            "2037-12-07": 0.0011840913922507626
+          },
+          "positive_dates": 10,
+          "signal": false
+        },
+        "COST_POSITIVE_minus_NET_ZERO": {
+          "paired_seed_differences": [
+            -0.021120215380002208,
+            -0.01158373383362285,
+            -0.03922725541221377
+          ],
+          "date_differences": {
+            "2037-01-05": -0.1035582989255854,
+            "2037-01-19": 0.0018639510159166866,
+            "2037-02-16": 0.024474416319990866,
+            "2037-03-16": -0.003949511832385602,
+            "2037-04-06": -0.022962685150917022,
+            "2037-05-18": 0.006012283706200349,
+            "2037-06-01": -0.03335725679068839,
+            "2037-06-15": -0.06388053706753376,
+            "2037-07-06": -0.2054054112975275,
+            "2037-08-17": -0.04033542257603547,
+            "2037-09-07": 0.01815831376321698,
+            "2037-09-21": 0.011718780667689228,
+            "2037-10-05": 0.003521068697939877,
+            "2037-11-02": 0.01978732187831207,
+            "2037-11-16": 0.003120866813764426,
+            "2037-12-07": 0.0011590294398357416
+          },
+          "positive_dates": 9,
+          "signal": false
+        },
+        "COST_POSITIVE_minus_GAIN_DIRECT": {
+          "paired_seed_differences": [
+            -0.02097116235131259,
+            -0.014474311626899564,
+            -0.03534464740364195
+          ],
+          "date_differences": {
+            "2037-01-05": -0.1392651545742546,
+            "2037-01-19": 0.0015494559414813824,
+            "2037-02-16": 0.023791227574345847,
+            "2037-03-16": -0.002793922233381219,
+            "2037-04-06": -0.031194858408150488,
+            "2037-05-18": 0.004655982286063812,
+            "2037-06-01": -0.03298373480050139,
+            "2037-06-15": -0.041311458808849136,
+            "2037-07-06": -0.18980661507936758,
+            "2037-08-17": -0.01697581240452604,
+            "2037-09-07": 0.009960906046224802,
+            "2037-09-21": 0.00847244614711499,
+            "2037-10-05": 0.002996028813837557,
+            "2037-11-02": 0.01704150941314478,
+            "2037-11-16": 0.008341748002677028,
+            "2037-12-07": -2.506195241502096e-05
+          },
+          "positive_dates": 8,
+          "signal": false
+        }
+      }
+    },
+    "incremental_support": {
+      "GAIN_DIRECT": false,
+      "COST_POSITIVE": false
+    },
+    "positive_link_specific_support": false,
+    "legacy_validation": {
+      "HUBER": 0.16292380598404063,
+      "DQN": 0.1631977392228395,
+      "BATCH1": 0.16286891362547384
+    },
+    "legacy_anchors_exceeded": {
+      "GAIN_DIRECT": false,
+      "COST_POSITIVE": false
+    },
+    "useful_candidate": {
+      "GAIN_DIRECT": false,
+      "COST_POSITIVE": false
+    },
+    "ready_to_scale": false,
+    "scope": "Exposed-date FULL-teacher local-search development;conditional OOF fixedhistoricaltask;not physical whole-week quality/latency or new independent test."
+  }
+}

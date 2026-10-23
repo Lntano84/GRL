@@ -1,0 +1,104 @@
+{
+  "validation": {
+    "GAIN_DIRECT": {
+      "baseSTOP_newCONT__nextNonpositive": {
+        "records": 289,
+        "utility_contribution": -0.0036178717904010813,
+        "distinct_physical_calls": 50
+      },
+      "same_actions": {
+        "records": 1329,
+        "utility_contribution": 0.0,
+        "distinct_physical_calls": 56
+      },
+      "baseCONT_newSTOP__nextNonpositive": {
+        "records": 145,
+        "utility_contribution": 0.0033188372421032097,
+        "distinct_physical_calls": 40
+      },
+      "baseSTOP_newCONT__nextPositive": {
+        "records": 1,
+        "utility_contribution": 0.0002538158142925105,
+        "distinct_physical_calls": 1
+      },
+      "baseCONT_newSTOP__nextPositive": {
+        "records": 6,
+        "utility_contribution": -0.0038471518332815957,
+        "distinct_physical_calls": 4
+      }
+    },
+    "COST_POSITIVE": {
+      "same_actions": {
+        "records": 1131,
+        "utility_contribution": 0.0,
+        "distinct_physical_calls": 56
+      },
+      "baseCONT_newSTOP__nextNonpositive": {
+        "records": 595,
+        "utility_contribution": 0.014055316397472477,
+        "distinct_physical_calls": 50
+      },
+      "baseCONT_newSTOP__nextPositive": {
+        "records": 44,
+        "utility_contribution": -0.04436891155816731,
+        "distinct_physical_calls": 11
+      }
+    }
+  },
+  "oof": {
+    "GAIN_DIRECT": {
+      "same_actions": {
+        "records": 5531,
+        "utility_contribution": 0.0,
+        "distinct_physical_calls": 222
+      },
+      "baseSTOP_newCONT__nextPositive": {
+        "records": 33,
+        "utility_contribution": 0.002466394652627095,
+        "distinct_physical_calls": 16
+      },
+      "baseSTOP_newCONT__nextNonpositive": {
+        "records": 749,
+        "utility_contribution": -0.002969139026541099,
+        "distinct_physical_calls": 177
+      },
+      "baseCONT_newSTOP__nextNonpositive": {
+        "records": 780,
+        "utility_contribution": 0.004473236140054776,
+        "distinct_physical_calls": 177
+      },
+      "baseCONT_newSTOP__nextPositive": {
+        "records": 41,
+        "utility_contribution": -0.004350852847469001,
+        "distinct_physical_calls": 18
+      }
+    },
+    "COST_POSITIVE": {
+      "baseCONT_newSTOP__nextNonpositive": {
+        "records": 2783,
+        "utility_contribution": 0.01613545513654572,
+        "distinct_physical_calls": 215
+      },
+      "baseCONT_newSTOP__nextPositive": {
+        "records": 254,
+        "utility_contribution": -0.04008909922737943,
+        "distinct_physical_calls": 47
+      },
+      "same_actions": {
+        "records": 4087,
+        "utility_contribution": 0.0,
+        "distinct_physical_calls": 217
+      },
+      "baseSTOP_newCONT__nextPositive": {
+        "records": 1,
+        "utility_contribution": 7.013466170772864e-05,
+        "distinct_physical_calls": 1
+      },
+      "baseSTOP_newCONT__nextNonpositive": {
+        "records": 9,
+        "utility_contribution": -9.355877948689536e-05,
+        "distinct_physical_calls": 6
+      }
+    }
+  }
+}

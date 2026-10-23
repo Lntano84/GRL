@@ -1,0 +1,124 @@
+{
+  "id": "GRID115_PRESERVED_BACKBONE_MODULE_PLAN",
+  "utc": "2026-10-23T02:47:47.289032+00:00",
+  "status": "matched_proposal_no_training",
+  "authorization": "User: 好的，匹配一下吧. Match and show concrete plan; no training authorization inferred.",
+  "question": "With the original41->64->64->2 backbone retained, does paired action-feedback correction improve complete-search value beyond equal-capacity factorized correction and the original backbone?",
+  "groups": [
+    {
+      "name": "BASE",
+      "model": "Original41->64->64->2,6978parameters",
+      "source": "Reuse GRID107 DIRECT seeds0/1/2; no repeated fits."
+    },
+    {
+      "name": "BASE_JOINT",
+      "model": "Original6978 plus GRID113 JOINT correction5938 =12916trainable parameters."
+    },
+    {
+      "name": "BASE_FACTOR",
+      "model": "Original6978 plus GRID113 FACTOR correction5938 =12916trainable parameters."
+    }
+  ],
+  "formula": "q_total(global41,public_sets)=q_base(global41)+delta(public_sets). Return CONTINUE iff q_total[1]>q_total[0]; tieSTOP.",
+  "initialization": {
+    "base": "Same random initialization as GRID107, byte-exact hashes checked all3seeds; NO pretrained or continued checkpoint.",
+    "branch_seed_offset": 20261023,
+    "branch": "JOINT/FACTOR identical named tensors per seed. Final16->2 correction weights and biases zero; other layers default original random initialization.",
+    "preservation": "Retain original architecture and exact initial output, not a guarantee of preserving decisions after training. All base and correction weights train jointly from scratch.",
+    "zero_head_gradient": "At first optimizer step upstream correction gradients are initially zero; final correction layer can learn. Verify upstream flow after the first planned update without extra research updates."
+  },
+  "unchanged": {
+    "train_scenarios": 32,
+    "validation_scenarios": 8,
+    "train_dates": 16,
+    "validation_dates": 4,
+    "train_states": 3582,
+    "validation_states": 856,
+    "train_prefixes": 2378,
+    "validation_prefixes": 590,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "normalization": "Original frozen41; full public geometry/paid feedback schema fromGRID112/113 without truncation.",
+    "updates": 7250,
+    "states_per_batch": 32,
+    "scalar_targets_per_update": 64,
+    "optimizer": "Adam lr0.0003 betas0.9/0.999 eps1e-8 weight_decay0; clip_grad_norm10.",
+    "loss": "Original smooth_l1 beta1 mean over32x2. No auxiliary/classification/contrastive loss, class weighting or fee/threshold change.",
+    "cost_per_query": 1.2442348640059487e-05,
+    "gain_scale": 0.008627818251142696,
+    "target": "Original immediate normalized net continuation, STOP0.",
+    "sampling": "Original state index stream per seed: equal date/equal startingprefix/uniform reachableposition. Same per-state counts and both scalar targets.",
+    "train_mode": "From scratch, joint optimization of base+correction, single CPU thread. No frozen pretrained baseline, continuation epochs or validation checkpoint selection."
+  },
+  "future_fits": {
+    "count": 6,
+    "order": [
+      {
+        "seed": 0,
+        "arm": "BASE_JOINT"
+      },
+      {
+        "seed": 0,
+        "arm": "BASE_FACTOR"
+      },
+      {
+        "seed": 1,
+        "arm": "BASE_JOINT"
+      },
+      {
+        "seed": 1,
+        "arm": "BASE_FACTOR"
+      },
+      {
+        "seed": 2,
+        "arm": "BASE_JOINT"
+      },
+      {
+        "seed": 2,
+        "arm": "BASE_FACTOR"
+      }
+    ],
+    "endpoint": "Final7250 only; all3seeds retained; validation predictions only after all6fits finish.",
+    "maximum_total_training_wall_s": 1800,
+    "timeout": "Preserve complete and partial fits; do not extend automatically or repeat completed fits."
+  },
+  "matching_boundaries": {
+    "primary": "BASE_JOINT versus BASE_FACTOR is parameter/init/optimizer/stream/input-information/budget matched; only feedback association before/after pooling differs.",
+    "base_reference": "BASE is smaller6978 vs12916. VersusBASE tests added-module practical value, not a parameter-matched causal proof. No dummy unused parameters.",
+    "resource": "Equal optimization steps and scalar-target exposure do not imply equal FLOPs/training wall time/inference latency. Keep all actual time receipts; no speed claim.",
+    "history": "GRID107 BASE reused only for offline decisions/targets. Never mix historical online timing into new efficiency claims."
+  },
+  "evaluation": {
+    "primary": "Complete saved local-search validation trajectory four-date macro normalized net utility, all seeds.",
+    "mechanism_signal": "JOINT family mean>FACTOR, all3paired seed differences>0,>=3/4 date differences>0 after seed averaging; report actual magnitudes and all adverse results.",
+    "incremental": "Report JOINT/FACTOR against paired old BASE and family mean. If JOINT exceedsFACTOR but notBASE, do not claim useful addition to old model.",
+    "progression": "Requires mechanism signal AND JOINT family mean aboveBASE, BATCH1 and historical gamma0DQN family; no automatic scaling/replay even if passed.",
+    "secondary": [
+      "physical-call-balanced utility",
+      "gain capture",
+      "query fraction",
+      "positive misses and unprofitable continues",
+      "train/validation weighted loss and sign-regret",
+      "per-date/per-seed and single/multi-batch results"
+    ],
+    "diagnostics": "Three preexposed108/552/RF-path552 always shown. Same fixed label-independent cyclic-pair sensitivity used after fits only; not an acceptance criterion or deployed policy.",
+    "interpretation": "Four exposed dates, correlated prefixes, same grid, FULL teacher-path immediate value. No whole-week quality, statistical significance, latency or cross-grid claim."
+  },
+  "before_future_training": [
+    "User reviews this concrete matched plan.",
+    "Freeze actual trainer,original-data hashes and approved model code; push before fitting.",
+    "Recheck exact base/full init hashes, stream hashes, all target formulas and public-target boundary.",
+    "Synthetic backward only without optimizer before fit; first actual step must count within7250. Check upstream residual gradient flow after it, no extra warmup training.",
+    "Audit both-arm code paths/masks/permutation/bus invariance inherited fromGRID112/113; keep initial zero residual expectation distinct from trained association sensitivity."
+  ],
+  "no_execution": [
+    "No optimizer instantiated",
+    "No backward or optimizer step",
+    "No trained/validation prediction",
+    "No new fit,physical observation,forecast,scenario,final-test access,loss/network variant search"
+  ],
+  "loss_choice": "Hold Huber fixed to isolate architecture; GRID108 adverse MSE/long-training evidence preserved. This phase does not claim to fix loss-decision mismatch."
+}

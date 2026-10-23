@@ -1,7 +1,7 @@
-# Next steps — GRID114只读诊断完成
+# Next steps — GRID115匹配方案完成，未训练
 
-1. 汇报修正后的原因：正收益漏停增加并不等于整体训练损失更差；训练单步权衡改善而验证更差，配对通道决策作用弱。
-2. 下一轮先定义保留原41维主干的模块对照；损失与结构分开控制，训练前向用户说明具体方案。
-3. 当前不训练、不扩大、不做电网回放或最终测试；不重做已有不稳定的MSE/长训练/gamma1对照。
+1. 将三组及匹配边界交用户检查：原BASE复用，原64宽主干+JOINT/FACTOR同参数零修正初始化，拟6次新训练。
+2. 训练阶段获准后再写入并封存执行器，复核原目标/抽样/掩码/输入隔离与首步后梯度流；不额外预训练或热身。
+3. 仅按固定7250/Huber/费用/数据/种子执行，不同时改损失，不自动扩大/闭环/最终测试。
 
-报告：research_archive/power-grid-2026/protocols/GRID114_fit_diagnosis/complete/GRID114_report.md
+方案：research_archive/power-grid-2026/protocols/GRID115_matched_module_plan/complete/匹配方案_中文.md

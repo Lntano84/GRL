@@ -1,0 +1,38 @@
+{
+  "id": "GRID136_OBJECTIVE_SUPPORT",
+  "utc": "2026-10-23T12:39:00.583744+00:00",
+  "status": "frozen_read_only_posthoc_plan",
+  "authorization": "User asks continue investigating; announced read-only label scale and observed public support.",
+  "scope": "All2378 original train prefixes,12fit/4cal masks,cheap/expensive cohorts. Validation only7previously reported expensive misses;no new model evaluation or test.",
+  "questions": [
+    "How many positive full gains are within1/2/4/8/16/32/64float32 reward ULPs? Counts,call counts,gain/query shares and positive quantiles,not a noise verdict.",
+    "Which saved train/cal cases have no gain,positive gain but no profitable recorded prefix,only partial profitable search,or profitable full completion under inherited price?",
+    "For all7known expensive misses,distinguish full completion cost from any positive-prefix opportunity;full net<0 alone does not mean STOP was optimal.",
+    "Check original reward source,RL query price and whole-week quality definitions separately.",
+    "Station/date/call support and ALL37predeclared summary feature ranges/percentiles for known misses and calibration anchors. Posthoc descriptions,not feature/trigger selection."
+  ],
+  "semantics": "R=2-maxrho from frozen author reward;gains are float32-rounded prediction reward differences,not operational currency. Price inherited GRID102heuristic,not seconds/currency.",
+  "categories": "G=0;G>0&max_prefix_net<=0;G>0&max_prefix_net>0&full_net<=0;G>0&full_net>0. Include STOP with utility0 in hindsight maximum. No new deployable rule.",
+  "ulp_boundaries": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "normalization": "ULP at current incumbent float32 reward;describe precision only,do not remove tiny gains or select tolerance.",
+  "comparisons": "Keep GRID127 own-objective failure vsBATCH1 as counterevidence;different objectives do not excuse all old performance loss.",
+  "prohibited": [
+    "fit",
+    "new model forward",
+    "alternative cutoff application",
+    "relabel saved training targets",
+    "new price/quality tolerance",
+    "new simulation/scenario",
+    "final8test",
+    "paper/figure",
+    "automatic scale"
+  ]
+}

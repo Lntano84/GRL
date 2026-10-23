@@ -1036,3 +1036,8 @@ User approves net-regression plus raw-gain-event auxiliary. Compare AUX_GAIN vs 
 ## 2026-10-23 — GRID123 same-capacity event auxiliary comparison complete
 
 All30fits7250x32,original6978/init/sampler/Adam/splits/price,netHuberhalf+auxBCEhalf,zero-readoutforall. Full6fits+fold24;old15regressionweightsreused. Wall191.63s. Families={'validation': {'NET_ZERO': 0.16292472687799245, 'AUX_NETSIGN': 0.1589010752537298, 'AUX_GAIN': 0.14956484072266105}, 'oof': {'NET_ZERO': 0.0860550575338817, 'AUX_NETSIGN': 0.08272405338781214, 'AUX_GAIN': 0.08669626422619946}};readoutchange={'validation': {'original_q1_vs_q0': 0.16292380598404063, 'exact_zero_readout': 0.16292472687799245, 'difference': 9.208939518168258e-07}, 'oof': {'original_q1_vs_q0': 0.08610465570870666, 'exact_zero_readout': 0.0860550575338817, 'difference': -4.9598174824971863e-05}};incremental=False,eventspecific=False,legacyanchors=False,candidate=False. Independent112596NumPyforwards/targets/optimizer/exposure/sequencesauditpassed;alladverseweights/dates/seedsretained. Auxlabelneverdirectlycontrolsaction;equalhalfweightsnotoptimalorgradientscalematch. Exposedteacherpath/conditionalOOFonly,no physical/test/autoscaling.
+
+
+## 2026-10-23 — GRID124 frozen-endpoint gradient diagnosis frozen
+
+User continues diagnosis,not retraining. All30auxiliary endpoints plus exact initial tensors,15cachedbasecontrols. Exact fit-only expectation gradients raw and fixedsaved-Adam-vmetric; independent NumPybackprop; mainfit/heldlosses,auxBCE/Brier/AUC,ten725-update savedcurveblocks. No optimizer/weightsearch/thresholdchange/physical/test. Endpointgradients not persistent or Adamcounterfactual causality.

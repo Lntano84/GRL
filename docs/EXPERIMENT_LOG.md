@@ -1207,3 +1207,13 @@ Exactly6fits SIGN_BCE/UTILITY_BCE seeds0/1/2,original6978network/init/7250x32str
 ## 2026-10-23 — GRID121 grouped-date transfer diagnostic frozen
 
 After GRID120 training improvement/validation decline,user broad learning authorization covers announced24fit diagnostic:4fixedroundrobin folds of16originaltraindates,eachfit12dates,HUBER/UTILITY_BCE seeds0/1/2,original6978network/init/7250x32/Adam/price. Eachdate prefixes/scenarioreplicas stay together; per-fold normalization andweightnormalizer fit12datesonly. Originalhistoricalprice/gainscale usedall16dates,so diagnosticconditionalonfixedtask,not fullynested/pristineindependenttest. Nooriginal4val predictions orfinal8test/physical. All24finalendpointsbeforeheldinference,1800s cap,no tuning.
+
+
+## 2026-10-23 — GRID121 grouped-date transfer diagnostic complete
+
+All24fits,4fold12fit/4helddates,original6978/7250x32/3seeds,pairedHuber/utilityBCE,train-onlyfoldnormalization/weights,zeroholdoutdraws. Wall124.56s. OOFfamily{'HUBER': 0.08610465570870666, 'UTILITY_BCE': 0.07435760830732967};paired[-0.011713202060015124, -0.004647264023901018, -0.018880676120214795];positivedates10/16;support=False. Independent85968NumPyforwards/14268OOFtrajectories/normalization/optimizer/samplingauditpassed. Historicallyfixedprice/scalehadall16datedependency,anddatespreviouslyexposed;conditionalOOFdiagnosticnotpristinenestedindependenttest. No original4validationevaluation/physical/finaltest/autoscaling.
+
+
+## 2026-10-23 — Learning result synthesis and conserved OOF error concentration
+
+GRID120/121 total30fits complete. Readonly OOFerroraggregation preserves family difference -0.01174705;top3physicalcallsgenerate43.948%ofallnegativecontributions. Firstcommonprefix utilitySTOP/HuberCONTwithpositivenextnet162prefix-seedpairs/40calls;nonpositive2623pairs/214calls,overlapallowed. Correlatedprefixes,notwholeweekcausality. KeepHuberbaseline,prioritizehighcostfalse-stopinformationbeforemorearchitecture;futureRLrequiresdefinedsequential/physicalcreditgoal. No furtherfits/physical/dataexpansion/test.

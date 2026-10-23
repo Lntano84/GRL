@@ -674,3 +674,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID119固定基础模型校正训练](protocols/GRID119_fixed_base_learning/complete/GRID119_report.md)：九次固定训练、原模型额外训练对照、完整搜索效用及独立保存结果核验。
 
 - [GRID120学习目标对照](protocols/GRID120_decision_objective/complete/GRID120_report.md)：普通分类与收益代价加权分类，六个固定训练终点及完整保存结果核验。
+
+- [GRID121按日期留出的学习迁移诊断](protocols/GRID121_date_transfer/complete/GRID121_report.md)：24个固定训练，日期分组、折内标准化和完整折外搜索核验；开发诊断，非独立最终测试。

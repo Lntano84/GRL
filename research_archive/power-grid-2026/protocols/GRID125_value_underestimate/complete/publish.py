@@ -1,0 +1,71 @@
+"""Publish the audited existing-data diagnosis; no new learning or rule."""
+from common125 import *
+
+def main():
+    assert not (O/'complete.json').exists();verify();review=read(O/'review.json');assert review['passed'];groups=read(O/'group_summaries.json');stats=read(O/'target_functionals.json');bounds=read(O/'prediction_bounds.json');exposure=read(O/'training_exposure.json');details=read(O/'profitable_miss_calls.json');fnames=read(O/'feature_names.json');rows=[]
+    with gzip.open(O/'cohort_records.jsonl.gz','rt',encoding='utf8') as f:rows=[__import__('json').loads(ln) for ln in f]
+    bad={dom:[r for r in rows if r['domain']==dom and r['group']==GROUPS[0]] for dom in ['validation','oof']};summary=dict(profitable_misses={dom:dict(records=len(rr),unique_states=len({r['index'] for r in rr}),calls=len({r['physical_state_group'] for r in rr}),input_clipped_records=sum(r['clipped_dimensions']>0 for r in rr),lower_bound_violations=sum(r['predicted_net_below_lower_bound'] for r in rr),nearest_profitable_training_records=sum(r['nearest_positive_fraction']>0 for r in rr)) for dom,rr in bad.items()},fit_pools=stats['fit_pools'],original_minibatch32_probability_without_large_net=(1-stats['fit_pools']['full']['large_net_probability'])**32,projection_never_changes_action=True)
+    # These are descriptive scalar statistics,not fitted constant policies.
+    assert stats['fit_pools']['full']['mean_net']>0 and stats['fit_pools']['full']['mean_clipped_net']<0
+    assert all(v['mean_net']>0 and v['mean_clipped_net']<0 for v in stats['fit_pools'].values())
+    save(O/'summary.json',summary)
+    case_lines=['# GRID125：原验证七次高收益误停调用','',
+      '以下全部为GRID124中已定位的七次调用，不挑个别好看的例子。数值范围覆盖各调用的全部误停前缀与种子；不把重复前缀当成独立样本。','',
+      '“真实下一批净收益”是查询后的教师标签，仅供诊断，模型决策时看不到。原模型实际输入是41维；额外8项公开结构/反馈字段只用于本轮描述，没有加进模型。','']
+    selected=['queried_fraction','station_seen_fraction','station_admissible_fraction','incumbent_reward','incumbent_rho','last_batch_reward_gain','improvement_fraction','local_batches_done','log_next_batch_queries']
+    for v in details:
+        if v['domain']!='validation':continue
+        rr=[r for r in bad['validation'] if r['physical_state_group']==v['call']];case_lines+=['',f"## {v['call']}",'',f"误停记录{v['records']}条、不同输入状态{v['distinct_states']}个。真实归一化下一批净收益{v['net_range'][0]:.6f}—{v['net_range'][1]:.6f}；预测净收益{v['predicted_range'][0]:.6f}—{v['predicted_range'][1]:.6f}；已知归一化查询费{v['fee_range'][0]:.6f}—{v['fee_range'][1]:.6f}。",f"辅助头识别到改进{v['event_recognized_records']}/{v['records']}；预测低于已知下界{v['lower_bound_violation_records']}/{v['records']}；最近训练状态中包含正净收益{v['nearest_positive_records']}/{v['records']}。",'','决策时已有的摘要字段范围：']
+        for key in selected:
+            if key in fnames:
+                j=fnames.index(key);vals=[r['public49'][j] for r in rr];case_lines.append(f'- {key}：{min(vals):.6g}—{max(vals):.6g}。')
+        case_lines+=['','最近训练状态的见证（全部并列保存在cohort_records.jsonl.gz）：']
+        for r in rr:case_lines.append(f"- 种子{r['seed']}、前缀位置{r['first_divergence_position']}：训练调用{','.join(r['nearest_training_calls'])}；近邻净收益均值{r['nearest_mean_net']:.6f}；最近状态实际抽样均次{r['nearest_state_exposure_mean']:.1f}。")
+    (O/'逐调用核对.md').write_text('\n'.join(case_lines)+'\n',encoding='utf8')
+    lines=['# GRID125：高收益补查为什么被低估','',
+      '**本轮没有重新训练。已排除这批误停中的输入截断和高收益训练样本完全没被抽到这两种工程解释；现有证据同时指向局部有利样本支持不足，以及原回归目标对稀有大收益的响应较弱，尚不能将所有误停归为单一原因。**','',
+      '## 一、完整查了哪些状态','',
+      '沿用GRID124全部改进辅助模型首次实际分歧，覆盖原四验证日期及16原训练日期的条件折外结果。所有正、负方向均保留，共3439条分歧记录。高收益误停组包含原验证13条记录/9个输入状态/7次调用，以及折外64条记录/51个状态/24次调用；标签是事后分组依据，不进入模型输入。','',
+      '原41维输入、归一化、查询费、标签、种子、权重和候选顺序均不变。核对4438个留出/验证状态的训练近邻，逐项重现GRID122原3582行覆盖结果，再补原完整训练侧对验证日期的核对。邻域只作描述，不生成触发策略。','',
+      '## 二、不是输入被截坏，也不是大收益训练样本没出现','',
+      '77条高收益误停记录的输入标准化后均没有超出原[-20,20]截断范围，也没有与训练侧完全相同的原始或归一化输入。因此，不能把本批误停解释为截断把不同输入压成同一个向量；同时，没有精确输入碰撞也不能证明41维摘要已包含全部有用信息。',
+      '原完整训练侧有66个归一化净收益大于1的状态。三个种子实际分别抽到3444、3440、3343次，每个状态至少抽到9次；没有一个此类训练状态从未进入训练。折训练侧同样没有此类状态完全未抽到。这里的1来自原Huber的beta=1，不是新选择的补查阈值。',
+      '所以“需要更多样本”不能泛指模型完全没见过大收益。更具体的问题是：已经见过的收益机会，在当前摘要空间里是否与误停状态具有可用对应。','',
+      '## 三、误停状态的局部训练支持偏弱，但不能据此证明信息不够','',
+      '近邻按原41维、原训练侧标准化与截断计算平方欧氏距离，只使用对应训练日期，精确并列全部保留。','',
+      '- 原验证误停组：按实际调用均衡，最近训练状态为正净收益的比例为21.43%，超出训练侧排除同次调用覆盖95%参照的比例为7.14%。',
+      '- 折外误停组：对应比例为2.08%和8.33%。',
+      '按记录数看，13条原验证误停中有3条最近训练状态包含正例；64条折外误停中仅1条。大多数误停不在明显的距离外推区域，但按这些摘要最接近的已见标签多为无利状态。两组的近邻净收益调用均值分别为−0.05256和−0.03422。',
+      '仍有反例：原验证05月04日的一次误停有正收益训练近邻，08月03日call005的部分前缀也有正例近邻，模型仍然停止。各组及全部49项公开描述保留在数据文件中；近邻距离不是信息充分性证明，单个近邻标签也不是可信的条件收益估计。这次没有再次添加结构摘要训练，之前结构汇总与关系模块的混合结果仍保留。','',
+      '七次原验证调用的全部输入、查询费用、预测范围及近邻见证，见[逐调用核对](逐调用核对.md)。','',
+      '## 四、稀有大收益承载了多数正收益，原Huber目标确实会弱化其幅度影响','',
+      '按原训练抽样概率，正净收益状态占5.66%；其中归一化净收益大于1的状态仅占1.46%，却承载84.34%的正净收益总量。原32状态独立有放回抽样下，一个小批次不含这类大收益状态的理论概率为62.40%。这是抽样分布计算，不是新增随机采集或重抽样实验。',
+      '进一步在原固定零预测处检查损失的导数。设y为原归一化下一批净收益，E按原训练抽样概率计算：','',
+      '- 原完整训练侧E[y]=+0.03048721。',
+      '- E[clip(y,−1,1)]=−0.00841180。',
+      '- 原主任务0.5×SmoothL1(beta=1)对常量预测q在0处的导数，为−0.5×E[clip(y,−1,1)]=+0.00420590。','',
+      '因此，对暂时不能区分这些状态的常量预测，平均净收益为正，但这一Huber目标在零附近的梯度下降方向却是把预测往负值移动。四个12日期训练池也全部出现相同符号差异。这是既定损失与实际训练标签的算术事实，不是训练了一个新的常量策略，更不证明神经网络每个条件状态都会如此。',
+      '这个结果比笼统地说“正例少”更具体：当压缩摘要没能区分稀有大收益时，稳健回归损失可能更偏向多数小损失的取值，而不是决定补查是否值得的平均净收益。',
+      '**但不能据此直接宣布改平方损失就能解决。** GRID108已经在同网络/数据/抽样的7250及29000更新下比较Huber与MSE，MSE没有稳定超过原Huber；GRID120收益代价加权分类同样未超过原回归。损失形式与有限样本学习、局部支持和泛化需要分别处理，本轮没有再重复这些训练。','',
+      '## 五、预测还经常违反已知收益下界，但简单截回去不改变动作','',
+      '每批查询后保留最佳已观察动作，所以原始奖励增益G≥0；查询费用c在查询前已知。因此净收益y=G−c至少为−c。主输出目前是无约束净收益回归，没有自动满足这个下界。','',
+      '原验证13条高收益误停中，9条预测低于该已知下界；折外64条中为47条。低于下界表明某些数值低估甚至不能解释成“预计没有改善，只损失查询费”。但原回归对照也有大量类似预测，原验证侧加权比例为53.09%，改进辅助为49.66%，所以它不是辅助任务新增退步的充分解释。',
+      '本轮对全部168894个保存评分逐项核对：把q截为max(q,−c)，所有q>0的继续/停止动作都完全不变，因为−c始终为负。因此，简单补一个预测下界不会修复本批误停，也不值得当成一个新的有效性实验。','',
+      '## 六、能回答到什么程度，下一步应如何选','',
+      '可以确认：没有本批输入截断、没有高收益训练状态完全漏抽；错误不是普遍缺少计算。稀有大收益在原训练目标中的影响受限，当前摘要附近的有利样本支持也较薄弱；同时，原回归在同样输入上能继续的这些状态，辅助模型却停止，说明增量退步也与学习配置有关，不能只怪输入。',
+      '还不能确认：77条是否都能从现有公开反馈可靠预测，或究竟需要补充哪一种信息。原模型正确继续也可能包含偶然的过度继续，近邻存在/缺失都不是可学习性证明。现有模型也没有单独的“发生改进后收益幅度”输出，不能把每条误停严格分解为概率错和幅度错。',
+      '我的判断是，后续若设计一次新的学习对照，应优先研究**把可学习的非负奖励改进与精确已知的查询费用分开处理**，让模型只估计不确定的部分；并同时检查稀有大收益是否仍被低估。这是下一方案的研究方向，不是本轮已经验证有效的方法。不能只加辅助分类，也不应把再换一次MSE、调辅助权重或截断负预测当作现成答案。',
+      '本轮到诊断和方案依据为止，没有拟合、模型前向、梯度计算、优化器、电网预测/回放、新数据、最终8测试场景或论文图表修改。','',
+      '## 核验与文件','',
+      '独立逐行直接距离核对4438个状态；完整训练侧3582个排除同次调用近邻逐项复核；原GRID122的3582条折外结果精确重现。另核对3439条分歧、实际抽样次数、全部价值下界与动作投影恒等式。Huber零点导数另用中心有限差分核验，最大误差低于7e−12。所有源文件和原冻结哈希保持不变。',
+      '完整文件包括plan.json、input/code/data冻结、coverage.json、support_rows.json、group_summaries.json、cohort_records.jsonl.gz、training_exposure.json、target_functionals.json、prediction_bounds.json、profitable_miss_calls.json及review.json。',
+      '全部结论仍限于已暴露同电网、FULL教师路径上的局部补查任务。前缀与日期相关，历史费用/尺度依赖不变；没有整周安全、成本、实际时延或跨电网泛化结论。']
+    (O/'GRID125_report.md').write_text('\n'.join(lines)+'\n',encoding='utf8')
+    c=R/'论文协作资料/FRAME_高收益误停诊断_GRID125';c.mkdir(exist_ok=False);save(O/'complete.json',dict(passed=True,review_passed=True,new_fits=0,new_model_forwards=0,new_physical_calls=0,final_test_materialized=False,report=str(O/'GRID125_report.md'),case_details=str(O/'逐调用核对.md'),archive=str(A/'complete'),collaboration=str(c),ready_to_scale=False));archive('complete')
+    for fn in ['GRID125_report.md','逐调用核对.md','summary.json','review.json','complete.json']:shutil.copy2(O/fn,c/fn)
+    docs('## 2026-10-23 — GRID125 high-value underestimate audit complete\n\nReadonly4438supportstates/3439AUX_GAINdivergences/77profitablemissrecords,allGRID122rowsreproduced. No77inputclipping,all66fullfitlarge-netstatesactuallysampled>=9times. Large-net>Huberbeta1has1.4631%probabilitybut84.3444%positiveutility;all5fitpoolsmeanNetpositive/meanClippedNetnegative,zero-predHuberderivativediagnosticopposesmeanreturn,notper-statecausalproof. Missnearestpositivecallbalance21.43%validation/2.08%OOF,coveragebeyond95=7.14%/8.33%,notlearnabilityproof. Belowknown-chargefloor9/13and47/64missrecords,butbasealsoviolates;all168894projectedactionsunchanged. Independentdistances/exposure/finite-difference/rangeauditpassed. ExistingMSE/weightedclassificationnegativecontrolsretained;nextcandidatelearnnonnegativegainanddeductknownfeeonlyproposed,nofit/forward/physical/test.',
+      '# Next steps — GRID125高收益误停诊断完成\n\n1. 汇报已排除输入截断/漏抽，并解释稀有大收益、局部支持与Huber目标之间的关系。\n2. 若设计下一学习对照，先明确非负改进量与已知费用分离的结构和匹配条件；本轮不自动训练。\n3. 保留原回归、MSE/加权分类及辅助学习的全部反例，不用下界截断包装改进，不扩大数据或开启最终测试。\n\n报告：research_archive/power-grid-2026/protocols/GRID125_value_underestimate/complete/GRID125_report.md\n')
+    with (REPO/'research_archive/power-grid-2026/README.md').open('a',encoding='utf8') as f:f.write('\n- [GRID125高收益补查为何被低估](protocols/GRID125_value_underestimate/complete/GRID125_report.md)：零训练，训练覆盖/曝光、原Huber目标的稀有大收益影响、已知查询费下界与全部投影动作不变核验。\n')
+    print('GRID125_COMPLETE_ARCHIVED',flush=True)
+
+if __name__=='__main__':main()

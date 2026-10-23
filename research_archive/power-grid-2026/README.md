@@ -682,3 +682,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID123净收益回归与改进事件辅助监督](protocols/GRID123_event_auxiliary/complete/GRID123_report.md)：同容量两种辅助标签、30次固定训练、15份原回归复用及独立保存结果核验。
 
 - [GRID124辅助学习为何未改善补查](protocols/GRID124_shared_gradient_audit/complete/GRID124_report.md)：零训练，完整训练分布梯度、辅助预测误差及全部首次分歧差值守恒核查。
+
+- [GRID125高收益补查为何被低估](protocols/GRID125_value_underestimate/complete/GRID125_report.md)：零训练，训练覆盖/曝光、原Huber目标的稀有大收益影响、已知查询费下界与全部投影动作不变核验。

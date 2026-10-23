@@ -703,3 +703,8 @@ Readonly30auxendpoints/15cachedbasecontrols;60manualNumPygradientpairsaudit,30pa
 ## 2026-10-23 — GRID125 high-value false-stop support/range diagnosis frozen
 
 Userapprovesvisible-input/support/underestimateinvestigation,noretraining. AllGRID124AUX_GAINfirstdivergences,77profitablemissprefix-seedrecords/allcontrols. Original41nearesttiesandfitcall-out95,all8fixedpublicdescriptors,exactsavedexposure,Huberzero-gradientlabelstatistics,knownchargelowerbound/projection-signidentity. ReproduceGRID122foldsupport. No model/backward/fit/physical/test/newrule;oldMSEandweightedclassificationfailuresretained.
+
+
+## 2026-10-23 — GRID125 high-value underestimate audit complete
+
+Readonly4438supportstates/3439AUX_GAINdivergences/77profitablemissrecords,allGRID122rowsreproduced. No77inputclipping,all66fullfitlarge-netstatesactuallysampled>=9times. Large-net>Huberbeta1has1.4631%probabilitybut84.3444%positiveutility;all5fitpoolsmeanNetpositive/meanClippedNetnegative,zero-predHuberderivativediagnosticopposesmeanreturn,notper-statecausalproof. Missnearestpositivecallbalance21.43%validation/2.08%OOF,coveragebeyond95=7.14%/8.33%,notlearnabilityproof. Belowknown-chargefloor9/13and47/64missrecords,butbasealsoviolates;all168894projectedactionsunchanged. Independentdistances/exposure/finite-difference/rangeauditpassed. ExistingMSE/weightedclassificationnegativecontrolsretained;nextcandidatelearnnonnegativegainanddeductknownfeeonlyproposed,nofit/forward/physical/test.

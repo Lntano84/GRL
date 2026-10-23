@@ -1,0 +1,84 @@
+{
+  "profitable_misses": {
+    "validation": {
+      "records": 13,
+      "unique_states": 9,
+      "calls": 7,
+      "input_clipped_records": 0,
+      "lower_bound_violations": 9,
+      "nearest_profitable_training_records": 3
+    },
+    "oof": {
+      "records": 64,
+      "unique_states": 51,
+      "calls": 24,
+      "input_clipped_records": 0,
+      "lower_bound_violations": 47,
+      "nearest_profitable_training_records": 1
+    }
+  },
+  "fit_pools": {
+    "full": {
+      "states": 3582,
+      "net_positive_states": 211,
+      "large_net_states": 66,
+      "positive_probability": 0.05660699508656505,
+      "large_net_probability": 0.014630756582129438,
+      "mean_net": 0.030487207307528654,
+      "mean_clipped_net": -0.008411804373329002,
+      "positive_net_mass": 0.06346571490415442,
+      "large_net_positive_mass_fraction": 0.8434438711330591,
+      "huber_half_derivative_at_zero": 0.004205902186664501
+    },
+    "f0": {
+      "states": 2478,
+      "net_positive_states": 130,
+      "large_net_states": 39,
+      "positive_probability": 0.049243281298486985,
+      "large_net_probability": 0.012936786563675782,
+      "mean_net": 0.010941590370811063,
+      "mean_clipped_net": -0.012109732145625253,
+      "positive_net_mass": 0.04437257258448578,
+      "large_net_positive_mass_fraction": 0.8110440072319544,
+      "huber_half_derivative_at_zero": 0.0060548660728126265
+    },
+    "f1": {
+      "states": 2679,
+      "net_positive_states": 170,
+      "large_net_states": 53,
+      "positive_probability": 0.05948578061933726,
+      "large_net_probability": 0.016489686463391506,
+      "mean_net": 0.03530165733006563,
+      "mean_clipped_net": -0.006043510421708735,
+      "positive_net_mass": 0.06874560004087,
+      "large_net_positive_mass_fraction": 0.8412880850670068,
+      "huber_half_derivative_at_zero": 0.0030217552108543675
+    },
+    "f2": {
+      "states": 2771,
+      "net_positive_states": 174,
+      "large_net_states": 60,
+      "positive_probability": 0.06104789074186894,
+      "large_net_probability": 0.018414520852275337,
+      "mean_net": 0.04274730110189502,
+      "mean_clipped_net": -0.003959050621660853,
+      "positive_net_mass": 0.07417239076590043,
+      "large_net_positive_mass_fraction": 0.8779664765203912,
+      "huber_half_derivative_at_zero": 0.0019795253108304267
+    },
+    "f3": {
+      "states": 2818,
+      "net_positive_states": 159,
+      "large_net_states": 46,
+      "positive_probability": 0.05665102768656699,
+      "large_net_probability": 0.010682032449175125,
+      "mean_net": 0.03295828042734291,
+      "mean_clipped_net": -0.011534924304321164,
+      "positive_net_mass": 0.06657229622536145,
+      "large_net_positive_mass_fraction": 0.8288017735494538,
+      "huber_half_derivative_at_zero": 0.005767462152160582
+    }
+  },
+  "original_minibatch32_probability_without_large_net": 0.6239762747893555,
+  "projection_never_changes_action": true
+}

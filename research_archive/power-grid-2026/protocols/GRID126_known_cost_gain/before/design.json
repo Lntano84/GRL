@@ -1,0 +1,296 @@
+{
+  "id": "GRID126_KNOWN_COST_GAIN",
+  "utc": "2026-10-23T08:08:31.563084+00:00",
+  "authorization": "User: 继续，你有想法可以不用停下来，即时给我汇报就行. Announced matched known-cost/nonnegative-gain learning before fitting.",
+  "purpose": "Does predicting uncertain reward improvement and subtracting exact public query charge improve valuable stopping decisions;does a parameter-free positive gain link help beyond direct gain regression?",
+  "arms": {
+    "NET_ZERO": "Reuse old15original6978parameterHubermodels,mainq1net>0;no refits.",
+    "GAIN_DIRECT": "Same random tensors/network,head1regresses raw normalized gain,knowncharge deducted exactly. Continue iffrawhead1>charge.",
+    "COST_POSITIVE": "Same network,r=head1,gain=r+sqrt(r^2+charge^2),stable equivalentnegativebranch;net=gain-charge,continueiffr>0. Link0->charge,net0andlocalderivative1;gain>=0. No fitted/prior scale or new parameter."
+  },
+  "matching": "Original41inputs/6978params/randomtensors/stopheadHubertarget0/main0.5Huberbeta1/sampler/Adam7250x32/gainunits/price/dates. POS vsNET has identical latent action boundary andlocalzero slope;GAIN_DIRECT initial action functions differ and are disclosed. Changing link changes gradients/optimization geometry,not claimed to isolate all capacity/statistical effects.",
+  "objective": "0.5SmoothL1(predicted normalized gain,original gain,beta1)+0.5SmoothL1(head0,0,beta1). No auxiliary classification,positive oversampling,lossweightsweep,costchange or threshold tuning. Allzero-gain states retained.",
+  "null_control": "Addingknowncharge to a netprediction andtarget is an exactHuberloss/gradientidentity;applyingpositive link tooldweights leavesallNET_ZEROactions unchanged. New scores require actual training toclaimbenefit.",
+  "training": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip": 10.0,
+    "wall_cap_s": 1800,
+    "new_fits": 30,
+    "fit_order": [
+      [
+        "full",
+        0,
+        "GAIN_DIRECT"
+      ],
+      [
+        "full",
+        0,
+        "COST_POSITIVE"
+      ],
+      [
+        "full",
+        1,
+        "GAIN_DIRECT"
+      ],
+      [
+        "full",
+        1,
+        "COST_POSITIVE"
+      ],
+      [
+        "full",
+        2,
+        "GAIN_DIRECT"
+      ],
+      [
+        "full",
+        2,
+        "COST_POSITIVE"
+      ],
+      [
+        "f0",
+        0,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f0",
+        0,
+        "COST_POSITIVE"
+      ],
+      [
+        "f0",
+        1,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f0",
+        1,
+        "COST_POSITIVE"
+      ],
+      [
+        "f0",
+        2,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f0",
+        2,
+        "COST_POSITIVE"
+      ],
+      [
+        "f1",
+        0,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f1",
+        0,
+        "COST_POSITIVE"
+      ],
+      [
+        "f1",
+        1,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f1",
+        1,
+        "COST_POSITIVE"
+      ],
+      [
+        "f1",
+        2,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f1",
+        2,
+        "COST_POSITIVE"
+      ],
+      [
+        "f2",
+        0,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f2",
+        0,
+        "COST_POSITIVE"
+      ],
+      [
+        "f2",
+        1,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f2",
+        1,
+        "COST_POSITIVE"
+      ],
+      [
+        "f2",
+        2,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f2",
+        2,
+        "COST_POSITIVE"
+      ],
+      [
+        "f3",
+        0,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f3",
+        0,
+        "COST_POSITIVE"
+      ],
+      [
+        "f3",
+        1,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f3",
+        1,
+        "COST_POSITIVE"
+      ],
+      [
+        "f3",
+        2,
+        "GAIN_DIRECT"
+      ],
+      [
+        "f3",
+        2,
+        "COST_POSITIVE"
+      ]
+    ]
+  },
+  "data": "Original3582train/856validationstates,32/8scenario replicas and16/4dates;fourfixed12fit/4helddatefolds,foldfit-onlynormalization. Knownchargefrompublicnextqueries,gainlabelprivateuntilqueried. No futuregaininthemodelinput.",
+  "folds": [
+    {
+      "fold": 0,
+      "held_dates": [
+        "2037-01-05",
+        "2037-04-06",
+        "2037-07-06",
+        "2037-10-05"
+      ],
+      "fit_dates": [
+        "2037-01-19",
+        "2037-02-16",
+        "2037-03-16",
+        "2037-05-18",
+        "2037-06-01",
+        "2037-06-15",
+        "2037-08-17",
+        "2037-09-07",
+        "2037-09-21",
+        "2037-11-02",
+        "2037-11-16",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 1,
+      "held_dates": [
+        "2037-01-19",
+        "2037-05-18",
+        "2037-08-17",
+        "2037-11-02"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-02-16",
+        "2037-03-16",
+        "2037-04-06",
+        "2037-06-01",
+        "2037-06-15",
+        "2037-07-06",
+        "2037-09-07",
+        "2037-09-21",
+        "2037-10-05",
+        "2037-11-16",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 2,
+      "held_dates": [
+        "2037-02-16",
+        "2037-06-01",
+        "2037-09-07",
+        "2037-11-16"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-01-19",
+        "2037-03-16",
+        "2037-04-06",
+        "2037-05-18",
+        "2037-06-15",
+        "2037-07-06",
+        "2037-08-17",
+        "2037-09-21",
+        "2037-10-05",
+        "2037-11-02",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 3,
+      "held_dates": [
+        "2037-03-16",
+        "2037-06-15",
+        "2037-09-21",
+        "2037-12-07"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-01-19",
+        "2037-02-16",
+        "2037-04-06",
+        "2037-05-18",
+        "2037-06-01",
+        "2037-07-06",
+        "2037-08-17",
+        "2037-09-07",
+        "2037-10-05",
+        "2037-11-02",
+        "2037-11-16"
+      ]
+    }
+  ],
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "diagnostics": "Initial/final fitting-side mainHuber,signregret,continueprobability,known-bound violations,linkJacobian includingpositive-targetstates;full7250loss/normcurves. Saturation/gradient changes retained,not rescued by newstepbudget.",
+  "evaluation": "All30fixedendpointsbeforeanynewmodelvalidation/heldforward;wholelocal-searchnetutility,queryfraction,gaincapture,perdate/perseed,pairing,profitablefalseSTOP;notwholeweekphysicalqualityorspeed.",
+  "criteria": "EacharmmustbeatNET_ZEROmeaninbothdomains,all3pairedseedspositive,>=3/4validationdatesand>=12/16OOFdatespositive. POS-specificattributionrequiresanalogousPOS>DIRECTsupport. Also preservelegacyHuber/DQN/BATCH1validationanchors. No new data or physical scaling even if passes.",
+  "limits": "Alreadyexposedteacherpathdevelopmentdates/correlatedprefixes;historicalfee/gainscaleusedall16originaltrainingdates,soOOFconditionalonfixedtask,notnewindependenttest. ExistingMSE/weightedclassification/auxiliarynegativeevidencekept. Noautomaticstepsize/link/seed/budgetrescue.",
+  "prohibited": [
+    "new scenario/data",
+    "physical environment/forecast/replay",
+    "final8test",
+    "installation",
+    "paper/figures",
+    "seedselection",
+    "fitcontinuation",
+    "additionalmodelsoutside30"
+  ]
+}

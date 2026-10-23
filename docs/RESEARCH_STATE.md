@@ -708,3 +708,8 @@ Userapprovesvisible-input/support/underestimateinvestigation,noretraining. AllGR
 ## 2026-10-23 — GRID125 high-value underestimate audit complete
 
 Readonly4438supportstates/3439AUX_GAINdivergences/77profitablemissrecords,allGRID122rowsreproduced. No77inputclipping,all66fullfitlarge-netstatesactuallysampled>=9times. Large-net>Huberbeta1has1.4631%probabilitybut84.3444%positiveutility;all5fitpoolsmeanNetpositive/meanClippedNetnegative,zero-predHuberderivativediagnosticopposesmeanreturn,notper-statecausalproof. Missnearestpositivecallbalance21.43%validation/2.08%OOF,coveragebeyond95=7.14%/8.33%,notlearnabilityproof. Belowknown-chargefloor9/13and47/64missrecords,butbasealsoviolates;all168894projectedactionsunchanged. Independentdistances/exposure/finite-difference/rangeauditpassed. ExistingMSE/weightedclassificationnegativecontrolsretained;nextcandidatelearnnonnegativegainanddeductknownfeeonlyproposed,nofit/forward/physical/test.
+
+
+## 2026-10-23 — GRID126 known-cost/gain paired learning frozen
+
+Userauthorizesautonomousprogresswithupdates.30newfixedfits,original6978/41/7250x32/init/Adam/sampler/fee/full+fourfolds,15originalcachedcontrols. DIRECTrawgainregressionminusknownfee;POSgain=r+hypot(r,fee),stablebranch,nonnegative,netzeroatlatentzero/localderivative1/actionboundaryr>0matchedold. Puretranslationnullgradientidentity/oldweightlinkactionschecked. MainhalfHuber+stophalfHuber0,noauxlossorweightsearch. All30endpointsbeforeheld/validationevaluation;1800s,no physical/newdata/test.

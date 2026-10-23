@@ -1,7 +1,7 @@
-# Next steps — GRID111动作—反馈对应关系诊断完成
+# Next steps — GRID112方案与输入合同完成，未训练
 
-1. 汇报：对应关系有局部奖励信号，但奖励插值不能预测超过当前最佳；单关系均值不能直接相加解释组合收益。
-2. 下一步先固定保留动作连接组合与已查反馈对应的输入，以及预测新增收益/值得继续程度的目标和一次受控比较方案；尚未开始新训练或选模型家族。
-3. 不扩大网络/数据/物理回放；最终8测试场景封存。
+1. 将具体JOINT/FACTOR方案交用户检查；当前无训练器/模型实例/优化器更新。
+2. 后续训练阶段获准后，先实现并核验参数/配对初始化/集合与填充不变性/标签隔离/原采样流，再按固定6fits协议执行；不得把合同核验当训练完成。
+3. 不自动追加训练变体、闭环、扩大规模或读取最终8测试场景。
 
-报告：research_archive/power-grid-2026/protocols/GRID111_action_feedback/complete/GRID111_report.md
+方案：research_archive/power-grid-2026/protocols/GRID112_relational_plan/complete/学习模块方案_中文.md

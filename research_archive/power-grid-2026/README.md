@@ -656,3 +656,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID110结构核查](protocols/GRID110_structure_audit/complete/GRID110_report.md)：全部4438状态结构可还原，11项摘要区分变化混合，本地未过载不是取消补查条件；无新训练/回放。
 
 - [GRID111动作—反馈对应关系](protocols/GRID111_action_feedback/complete/GRID111_report.md)：局部奖励关联有信号，但插值有上界、单关系对比不能直接推出组合增益；无新训练或物理回放。
+
+- [GRID112配对学习方案](protocols/GRID112_relational_plan/complete/学习模块方案_中文.md)：完整分区—反馈条件化、同参数JOINT/FACTOR比较；输入合同已核验，神经模型与训练尚未执行。

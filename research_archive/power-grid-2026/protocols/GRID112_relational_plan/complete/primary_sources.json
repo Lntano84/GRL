@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Deep Sets",
+    "authors": "Manzil Zaheer et al.",
+    "venue": "NeurIPS 2017",
+    "url": "https://arxiv.org/abs/1703.06114",
+    "read": "Abstract: functions on sets and invariance to element permutations.",
+    "use": "Shared per-element encoding and order-invariant aggregation; not a guarantee of generalization in grid control."
+  },
+  {
+    "title": "Conditional Neural Processes",
+    "authors": "Marta Garnelo et al.",
+    "venue": "ICML 2018",
+    "url": "https://proceedings.mlr.press/v80/garnelo18a.html",
+    "pdf": "https://proceedings.mlr.press/v80/garnelo18a/garnelo18a.pdf",
+    "read": "Section2.2 equations1-3 and Section2.3.",
+    "use": "Jointly encode observed input-output pairs before aggregation. Our targets/sampling/loss are original search-gain protocol, not CNP likelihood training."
+  },
+  {
+    "title": "Attentive Neural Processes",
+    "authors": "Hyunjik Kim et al.",
+    "venue": "ICLR 2019",
+    "url": "https://arxiv.org/html/1901.05761v2",
+    "read": "Sections2.1,2.2,3, including scaled dot-product attention and query-specific context.",
+    "use": "Query-dependent access to paired context. Proposed single-head deterministic gain model has no latent-variable path, ELBO, or predictive uncertainty; not a reproduction of full ANP."
+  }
+]

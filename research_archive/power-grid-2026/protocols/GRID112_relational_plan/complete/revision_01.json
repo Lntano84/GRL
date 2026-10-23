@@ -1,0 +1,7 @@
+{
+  "reason": "Input-only audit found287740 paid-feedback tokens saturated by the proposed clip[-20,20]. No training or outcome-based feature selection.",
+  "change": "Replace clipped reward gap with asinh((float32 reward-incumbent)/original gain_scale), preserving finite order and large-gap distinctions. Same8 feedback channels and5938 architecture, target/control/training proposal unchanged.",
+  "implementation": "ID-relabel check reuses one packed transformed input instead of recomputing it for each output key; neural forward checks remain unexecuted.",
+  "previous_draft": "D:\\Codex\\GRL研究\\outputs\\grid112_relational_plan\\draft_history\\clip_encoding_v0",
+  "model_fits": 0
+}

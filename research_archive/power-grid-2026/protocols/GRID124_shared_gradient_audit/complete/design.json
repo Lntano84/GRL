@@ -1,0 +1,27 @@
+{
+  "id": "GRID124_SHARED_GRADIENT_AUDIT",
+  "utc": "2026-10-23T07:11:39.845579+00:00",
+  "authorization": "User: 继续查. Diagnose existing auxiliary-learning results; no retraining.",
+  "purpose": [
+    "Does auxiliary output learn its own label?",
+    "Is main regression already worse on fitting dates?",
+    "Are shared gradients large, opposed, or both?"
+  ],
+  "scope": "All30 GRID123 auxiliary endpoints and their original initializations;15 cached regression controls, all original full/fold splits and3seeds.",
+  "gradients": "Exact expectation under original fitting-side state sampling probabilities, at initial and final tensors in float64 diagnostic copies. No held/validation gradient; no optimization. Save shared6848 main/aux gradients. Independent NumPy manual backprop checks all60 pairs.",
+  "adaptive_metric": "Final diagonal 1/(sqrt(saved Adam v/(1-beta2**7250))+eps), on shared parameters only. Report gmain dot D*gaux and gmain dot D*(gmain+gaux). D fixed, first moments omitted: NOT an actual Adam update or retraining counterfactual.",
+  "metrics": "Use saved float32 predictions; fitting-side original sampling weights, held conditional original weights, validation date/case/state-balanced weights. Main Huber/sign-regret and auxiliary BCE/Brier/AUC; fit-prevalence constant BCE reference. No threshold/class-weight search. Event-vs-net label mismatch is descriptive, not inherent logical contradiction.",
+  "curves": "Ten consecutive nonoverlapping725-update blocks of all saved scheduled minibatch main/aux losses. No endpoint or window selection.",
+  "interpretation": "Gradient size alone is not causal evidence; opposed gradients at endpoints do not prove persistent conflict. Fit/held state metrics differ from complete-search utility; correlate prefixes/date groups are not independent samples. No pvalues or causal claims.",
+  "prohibited": [
+    "optimizer instances/steps",
+    "fit",
+    "loss-weight search",
+    "model/threshold change",
+    "environment prediction",
+    "new data",
+    "final8tests",
+    "physical replay",
+    "paper/figures"
+  ]
+}

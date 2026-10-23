@@ -1,0 +1,1207 @@
+{
+  "plan": {
+    "posthoc": true,
+    "purpose": "After the frozen gradient diagnosis, account for all main Huber and sign-regret changes by the exhaustive baseline/candidate STOP-CONT action cells, without selecting cases.",
+    "cells": [
+      "STOP_STOP",
+      "STOP_CONT",
+      "CONT_STOP",
+      "CONT_CONT"
+    ],
+    "rule": "Saved main q1>0, unchanged from GRID123. No new threshold, predictions, model updates or case selection.",
+    "new_fits": 0
+  },
+  "rows": [
+    {
+      "name": "full__AUX_NETSIGN_seed0",
+      "domain": "validation",
+      "cells": {
+        "STOP_STOP": {
+          "states": 359,
+          "mass": 0.43255360329310943,
+          "huber_difference": -0.0007435819539919161,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.005028735632183908
+        },
+        "STOP_CONT": {
+          "states": 186,
+          "mass": 0.23955069616022723,
+          "huber_difference": -0.0007934245613406332,
+          "sign_regret_difference": -0.004125906161376632,
+          "profitable_mass": 0.0038314176245210726
+        },
+        "CONT_STOP": {
+          "states": 141,
+          "mass": 0.15820552616344993,
+          "huber_difference": -0.0008619230237068885,
+          "sign_regret_difference": 0.0018906167143301928,
+          "profitable_mass": 0.002474457215836526
+        },
+        "CONT_CONT": {
+          "states": 170,
+          "mass": 0.16969017438321338,
+          "huber_difference": -0.010712263692766278,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.02760321552619329
+        }
+      },
+      "huber_difference": -0.013111193231805717,
+      "sign_regret_difference": -0.0022352894470464347
+    },
+    {
+      "name": "full__AUX_NETSIGN_seed1",
+      "domain": "validation",
+      "cells": {
+        "STOP_STOP": {
+          "states": 353,
+          "mass": 0.4109266737834354,
+          "huber_difference": -0.0008040930586126376,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.004909003831417624
+        },
+        "STOP_CONT": {
+          "states": 152,
+          "mass": 0.19733516549098246,
+          "huber_difference": -0.0008245672876959169,
+          "sign_regret_difference": -0.0013707211812600379,
+          "profitable_mass": 0.007067533211587353
+        },
+        "CONT_STOP": {
+          "states": 144,
+          "mass": 0.16495405432019195,
+          "huber_difference": -0.0020685619605020655,
+          "sign_regret_difference": 0.010507641624677022,
+          "profitable_mass": 0.004390166028097062
+        },
+        "CONT_CONT": {
+          "states": 207,
+          "mass": 0.22678410640539026,
+          "huber_difference": -0.01823630868171688,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.022571122927632754
+        }
+      },
+      "huber_difference": -0.021933530988527506,
+      "sign_regret_difference": 0.009136920443416987
+    },
+    {
+      "name": "full__AUX_NETSIGN_seed2",
+      "domain": "validation",
+      "cells": {
+        "STOP_STOP": {
+          "states": 403,
+          "mass": 0.46653911126926156,
+          "huber_difference": -5.4582167414974835e-05,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.004909003831417624
+        },
+        "STOP_CONT": {
+          "states": 128,
+          "mass": 0.17598201523913537,
+          "huber_difference": -0.0013627189000607334,
+          "sign_regret_difference": -0.003243908776972603,
+          "profitable_mass": 0.005210011816521646
+        },
+        "CONT_STOP": {
+          "states": 136,
+          "mass": 0.18247648631551305,
+          "huber_difference": -0.0003111536429433402,
+          "sign_regret_difference": -0.0029841583436473924,
+          "profitable_mass": 0.0014367816091954023
+        },
+        "CONT_CONT": {
+          "states": 189,
+          "mass": 0.17500238717609004,
+          "huber_difference": -0.007201558191642338,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.027382028741600124
+        }
+      },
+      "huber_difference": -0.008930012902061394,
+      "sign_regret_difference": -0.006228067120619994
+    },
+    {
+      "name": "full__AUX_GAIN_seed0",
+      "domain": "validation",
+      "cells": {
+        "STOP_STOP": {
+          "states": 404,
+          "mass": 0.4675691404524892,
+          "huber_difference": 0.0004740672307199324,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.006704980842911877
+        },
+        "STOP_CONT": {
+          "states": 141,
+          "mass": 0.20453515900084746,
+          "huber_difference": 0.00017800795386135957,
+          "sign_regret_difference": 0.0008328660123541302,
+          "profitable_mass": 0.0021551724137931034
+        },
+        "CONT_STOP": {
+          "states": 146,
+          "mass": 0.17728078823062507,
+          "huber_difference": 0.0013404800995383058,
+          "sign_regret_difference": 0.01660679086052198,
+          "profitable_mass": 0.010380113032787863
+        },
+        "CONT_CONT": {
+          "states": 165,
+          "mass": 0.15061491231603824,
+          "huber_difference": -0.012058284250815678,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.019697559709241953
+        }
+      },
+      "huber_difference": -0.010065728966696084,
+      "sign_regret_difference": 0.01743965687287611
+    },
+    {
+      "name": "full__AUX_GAIN_seed1",
+      "domain": "validation",
+      "cells": {
+        "STOP_STOP": {
+          "states": 376,
+          "mass": 0.42071586748487133,
+          "huber_difference": -0.00015540584743226307,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.003951149425287357
+        },
+        "STOP_CONT": {
+          "states": 129,
+          "mass": 0.18754597178954655,
+          "huber_difference": -0.0005878213084736767,
+          "sign_regret_difference": -0.0059306779526982325,
+          "profitable_mass": 0.00802538761771762
+        },
+        "CONT_STOP": {
+          "states": 142,
+          "mass": 0.16534812487318126,
+          "huber_difference": 0.0022009605665754667,
+          "sign_regret_difference": 0.018692468268556084,
+          "profitable_mass": 0.009877873563218391
+        },
+        "CONT_CONT": {
+          "states": 209,
+          "mass": 0.22639003585240092,
+          "huber_difference": -0.019546728742221634,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.017083415392511427
+        }
+      },
+      "huber_difference": -0.01808899533155211,
+      "sign_regret_difference": 0.012761790315857847
+    },
+    {
+      "name": "full__AUX_GAIN_seed2",
+      "domain": "validation",
+      "cells": {
+        "STOP_STOP": {
+          "states": 380,
+          "mass": 0.45282944708525796,
+          "huber_difference": -0.00019078595640892331,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.0084427704372113
+        },
+        "STOP_CONT": {
+          "states": 151,
+          "mass": 0.18969167942313891,
+          "huber_difference": -0.0006430047239281284,
+          "sign_regret_difference": -0.00036349060363023695,
+          "profitable_mass": 0.0016762452107279694
+        },
+        "CONT_STOP": {
+          "states": 128,
+          "mass": 0.17170883016435706,
+          "huber_difference": -0.0003754871351085334,
+          "sign_regret_difference": -0.004065371057879696,
+          "profitable_mass": 0.0
+        },
+        "CONT_CONT": {
+          "states": 197,
+          "mass": 0.18577004332724603,
+          "huber_difference": -0.00979723547219937,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.028818810350795525
+        }
+      },
+      "huber_difference": -0.011006513287644954,
+      "sign_regret_difference": -0.004428861661509932
+    },
+    {
+      "name": "f0__AUX_NETSIGN_seed0",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 505,
+          "mass": 0.41458913602518555,
+          "huber_difference": -0.0025230270791967405,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.029462559547305492
+        },
+        "STOP_CONT": {
+          "states": 85,
+          "mass": 0.08974767899430523,
+          "huber_difference": -0.00016762336136962521,
+          "sign_regret_difference": -0.0013741528164605387,
+          "profitable_mass": 0.009997432393222655
+        },
+        "CONT_STOP": {
+          "states": 226,
+          "mass": 0.22741274518134427,
+          "huber_difference": -0.0042304066941478554,
+          "sign_regret_difference": 0.007243236559324825,
+          "profitable_mass": 0.016888429433630753
+        },
+        "CONT_CONT": {
+          "states": 288,
+          "mass": 0.26825043979916496,
+          "huber_difference": -0.022365873923896724,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.02234971507664029
+        }
+      },
+      "huber_difference": -0.029286931058610945,
+      "sign_regret_difference": 0.005869083742864286
+    },
+    {
+      "name": "f0__AUX_NETSIGN_seed1",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 474,
+          "mass": 0.394635480948604,
+          "huber_difference": -0.0007079501931451936,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.02606832820332983
+        },
+        "STOP_CONT": {
+          "states": 101,
+          "mass": 0.11559434330318799,
+          "huber_difference": -0.0009288828095116773,
+          "sign_regret_difference": -0.015949615182314806,
+          "profitable_mass": 0.008643586410980206
+        },
+        "CONT_STOP": {
+          "states": 250,
+          "mass": 0.2386740673278503,
+          "huber_difference": -0.012099462152361382,
+          "sign_regret_difference": -0.004123240955723684,
+          "profitable_mass": 0.007111094959959827
+        },
+        "CONT_CONT": {
+          "states": 279,
+          "mass": 0.25109610842035773,
+          "huber_difference": -0.007632628074432428,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.03687512687652933
+        }
+      },
+      "huber_difference": -0.02136892322945068,
+      "sign_regret_difference": -0.020072856138038487
+    },
+    {
+      "name": "f0__AUX_NETSIGN_seed2",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 432,
+          "mass": 0.31747403951092606,
+          "huber_difference": 3.629257863644301e-05,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.01957370338699589
+        },
+        "STOP_CONT": {
+          "states": 141,
+          "mass": 0.15689964572141796,
+          "huber_difference": 3.969380354180968e-05,
+          "sign_regret_difference": 0.001623702949673528,
+          "profitable_mass": 0.013593547207731184
+        },
+        "CONT_STOP": {
+          "states": 140,
+          "mass": 0.14108258881735966,
+          "huber_difference": 0.0008609123206690026,
+          "sign_regret_difference": 0.02018726107291193,
+          "profitable_mass": 0.008691279079295332
+        },
+        "CONT_CONT": {
+          "states": 391,
+          "mass": 0.3845437259502963,
+          "huber_difference": -0.025535563354925163,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.03683960677677679
+        }
+      },
+      "huber_difference": -0.024598664652077912,
+      "sign_regret_difference": 0.021810964022585463
+    },
+    {
+      "name": "f0__AUX_GAIN_seed0",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 341,
+          "mass": 0.24983155853020925,
+          "huber_difference": -0.0006085217738597962,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.016205033844950652
+        },
+        "STOP_CONT": {
+          "states": 249,
+          "mass": 0.2545052564892816,
+          "huber_difference": -0.0047129937603661055,
+          "sign_regret_difference": -0.029065320183366695,
+          "profitable_mass": 0.023254958095577496
+        },
+        "CONT_STOP": {
+          "states": 136,
+          "mass": 0.134603375088559,
+          "huber_difference": -0.0004502754570474917,
+          "sign_regret_difference": 0.0003614428977870097,
+          "profitable_mass": 0.007364300371438588
+        },
+        "CONT_CONT": {
+          "states": 378,
+          "mass": 0.3610598098919502,
+          "huber_difference": -0.025123122509311886,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.03187384413883246
+        }
+      },
+      "huber_difference": -0.030894913500585278,
+      "sign_regret_difference": -0.028703877285579688
+    },
+    {
+      "name": "f0__AUX_GAIN_seed1",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 329,
+          "mass": 0.23274037827133043,
+          "huber_difference": -0.0001792329637021567,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.011146496815286625
+        },
+        "STOP_CONT": {
+          "states": 246,
+          "mass": 0.27748944598046155,
+          "huber_difference": -0.0017389106721596296,
+          "sign_regret_difference": -0.03553226215124988,
+          "profitable_mass": 0.02356541779902341
+        },
+        "CONT_STOP": {
+          "states": 104,
+          "mass": 0.0958341201691125,
+          "huber_difference": -3.568427898189295e-05,
+          "sign_regret_difference": 9.93216249404027e-05,
+          "profitable_mass": 0.009328000327380521
+        },
+        "CONT_CONT": {
+          "states": 425,
+          "mass": 0.3939360555790955,
+          "huber_difference": 0.005661071859883152,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.03465822150910863
+        }
+      },
+      "huber_difference": 0.0037072439450394736,
+      "sign_regret_difference": -0.03543294052630948
+    },
+    {
+      "name": "f0__AUX_GAIN_seed2",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 376,
+          "mass": 0.2836878943237276,
+          "huber_difference": 0.0010377981537198042,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.01761473983905496
+        },
+        "STOP_CONT": {
+          "states": 197,
+          "mass": 0.19068579090861643,
+          "huber_difference": 0.0019057388444122295,
+          "sign_regret_difference": 3.467403604479516e-05,
+          "profitable_mass": 0.01555251075567211
+        },
+        "CONT_STOP": {
+          "states": 172,
+          "mass": 0.18388651440914777,
+          "huber_difference": 0.0027215840334053687,
+          "sign_regret_difference": 0.03632241363705374,
+          "profitable_mass": 0.012301890262541937
+        },
+        "CONT_CONT": {
+          "states": 359,
+          "mass": 0.3417398003585082,
+          "huber_difference": -0.007870299132068664,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.03322899559353018
+        }
+      },
+      "huber_difference": -0.0022051781005312586,
+      "sign_regret_difference": 0.03635708767309855
+    },
+    {
+      "name": "f1__AUX_NETSIGN_seed0",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 263,
+          "mass": 0.2583872468189857,
+          "huber_difference": -0.00042958379643266394,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.01916184292114227
+        },
+        "STOP_CONT": {
+          "states": 117,
+          "mass": 0.16418267711921575,
+          "huber_difference": 0.0004520805800817532,
+          "sign_regret_difference": 0.0007984303854122795,
+          "profitable_mass": 0.0010343922102992109
+        },
+        "CONT_STOP": {
+          "states": 241,
+          "mass": 0.24193167912812394,
+          "huber_difference": -0.002052791178366787,
+          "sign_regret_difference": -0.00815376796410079,
+          "profitable_mass": 0.0024271844660194177
+        },
+        "CONT_CONT": {
+          "states": 282,
+          "mass": 0.3354983969336748,
+          "huber_difference": 0.011978169154595908,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.02534721889078751
+        }
+      },
+      "huber_difference": 0.009947874759878208,
+      "sign_regret_difference": -0.007355337578688511
+    },
+    {
+      "name": "f1__AUX_NETSIGN_seed1",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 412,
+          "mass": 0.41227882092664636,
+          "huber_difference": -0.002048828630997727,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.01790034573156639
+        },
+        "STOP_CONT": {
+          "states": 165,
+          "mass": 0.2144691048669336,
+          "huber_difference": 0.0005133146814377595,
+          "sign_regret_difference": 0.0032160133366925534,
+          "profitable_mass": 0.004395688403027292
+        },
+        "CONT_STOP": {
+          "states": 132,
+          "mass": 0.15438185866823956,
+          "huber_difference": -0.00022688602211415494,
+          "sign_regret_difference": 0.0003522588266483886,
+          "profitable_mass": 0.005523264066314655
+        },
+        "CONT_CONT": {
+          "states": 194,
+          "mass": 0.21887021553818065,
+          "huber_difference": -0.02209161856692082,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.020151340287340076
+        }
+      },
+      "huber_difference": -0.023854018538594937,
+      "sign_regret_difference": 0.0035682721633409423
+    },
+    {
+      "name": "f1__AUX_NETSIGN_seed2",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 515,
+          "mass": 0.5563561372891097,
+          "huber_difference": -0.003779135362161732,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.020688295919874266
+        },
+        "STOP_CONT": {
+          "states": 107,
+          "mass": 0.11344135360307749,
+          "huber_difference": 0.00118218011767806,
+          "sign_regret_difference": -9.618560504688545e-05,
+          "profitable_mass": 0.001156224568973675
+        },
+        "CONT_STOP": {
+          "states": 129,
+          "mass": 0.1544974930359116,
+          "huber_difference": -0.001294307718136587,
+          "sign_regret_difference": 0.001210596453978127,
+          "profitable_mass": 0.011880289523084016
+        },
+        "CONT_CONT": {
+          "states": 152,
+          "mass": 0.17570501607190142,
+          "huber_difference": -0.004652734590340685,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.014245828476316448
+        }
+      },
+      "huber_difference": -0.008543997552960944,
+      "sign_regret_difference": 0.0011144108489312416
+    },
+    {
+      "name": "f1__AUX_GAIN_seed0",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 291,
+          "mass": 0.31170960448631035,
+          "huber_difference": 5.639144374488844e-05,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.010074234940101063
+        },
+        "STOP_CONT": {
+          "states": 89,
+          "mass": 0.1108603194518911,
+          "huber_difference": 0.00032338771741077555,
+          "sign_regret_difference": -0.0006158515381824683,
+          "profitable_mass": 0.010122000191340418
+        },
+        "CONT_STOP": {
+          "states": 265,
+          "mass": 0.2985613329389546,
+          "huber_difference": -0.0024433233147119035,
+          "sign_regret_difference": -0.009061035164304608,
+          "profitable_mass": 0.003182096170017583
+        },
+        "CONT_CONT": {
+          "states": 258,
+          "mass": 0.27886874312284415,
+          "huber_difference": -0.00032261364469786207,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.024592307186789345
+        }
+      },
+      "huber_difference": -0.0023861577982541003,
+      "sign_regret_difference": -0.009676886702487078
+    },
+    {
+      "name": "f1__AUX_GAIN_seed1",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 374,
+          "mass": 0.4082199654696577,
+          "huber_difference": -0.0004720751010772544,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.018445042830300278
+        },
+        "STOP_CONT": {
+          "states": 203,
+          "mass": 0.2185279603239222,
+          "huber_difference": 0.001710937424482467,
+          "sign_regret_difference": 0.003985924369800034,
+          "profitable_mass": 0.0038509913042934023
+        },
+        "CONT_STOP": {
+          "states": 72,
+          "mass": 0.10288169656420842,
+          "huber_difference": 0.00019333183769559405,
+          "sign_regret_difference": -0.0009344675725076036,
+          "profitable_mass": 0.005609280636037001
+        },
+        "CONT_CONT": {
+          "states": 254,
+          "mass": 0.27037037764221183,
+          "huber_difference": -0.023219553619176592,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.02006532371761773
+        }
+      },
+      "huber_difference": -0.02178735945807579,
+      "sign_regret_difference": 0.0030514567972924306
+    },
+    {
+      "name": "f1__AUX_GAIN_seed2",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 362,
+          "mass": 0.3819288792112788,
+          "huber_difference": -0.0018242824083857232,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.013045976799527553
+        },
+        "STOP_CONT": {
+          "states": 260,
+          "mass": 0.28786861168090827,
+          "huber_difference": 5.77537641843083e-05,
+          "sign_regret_difference": 0.0063448931629720975,
+          "profitable_mass": 0.008798543689320388
+        },
+        "CONT_STOP": {
+          "states": 84,
+          "mass": 0.09598799515422263,
+          "huber_difference": -0.0015749783937042319,
+          "sign_regret_difference": -0.001728168081007507,
+          "profitable_mass": 0.0012135922330097088
+        },
+        "CONT_CONT": {
+          "states": 197,
+          "mass": 0.2342145139535904,
+          "huber_difference": 0.012116712631284618,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.024912525766390758
+        }
+      },
+      "huber_difference": 0.00877520559337897,
+      "sign_regret_difference": 0.004616725081964591
+    },
+    {
+      "name": "f2__AUX_NETSIGN_seed0",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 357,
+          "mass": 0.41923857215071036,
+          "huber_difference": -0.002856940639859797,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.005360377437971272
+        },
+        "STOP_CONT": {
+          "states": 93,
+          "mass": 0.18717732235381204,
+          "huber_difference": 0.00017303593089002165,
+          "sign_regret_difference": -0.0007232205226297196,
+          "profitable_mass": 0.015535089936391595
+        },
+        "CONT_STOP": {
+          "states": 165,
+          "mass": 0.1936922915676233,
+          "huber_difference": -0.001934689090033333,
+          "sign_regret_difference": -0.007194318058288487,
+          "profitable_mass": 0.0
+        },
+        "CONT_CONT": {
+          "states": 196,
+          "mass": 0.1998918139278543,
+          "huber_difference": -0.0028740745147016367,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.022388840746290516
+        }
+      },
+      "huber_difference": -0.007492668313704745,
+      "sign_regret_difference": -0.007917538580918206
+    },
+    {
+      "name": "f2__AUX_NETSIGN_seed1",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 401,
+          "mass": 0.43348169360980554,
+          "huber_difference": -0.001643985811006603,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.009749252285268968
+        },
+        "STOP_CONT": {
+          "states": 119,
+          "mass": 0.19205050150211603,
+          "huber_difference": -0.00031015706930667865,
+          "sign_regret_difference": 0.005267885374739861,
+          "profitable_mass": 0.0029145077720207253
+        },
+        "CONT_STOP": {
+          "states": 130,
+          "mass": 0.18104759108980803,
+          "huber_difference": -0.0027297130450096726,
+          "sign_regret_difference": -0.003054635475151429,
+          "profitable_mass": 0.006223935296347783
+        },
+        "CONT_CONT": {
+          "states": 161,
+          "mass": 0.19342021379827046,
+          "huber_difference": -0.009963819337776167,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.024396612767015904
+        }
+      },
+      "huber_difference": -0.014647675263099121,
+      "sign_regret_difference": 0.0022132498995884316
+    },
+    {
+      "name": "f2__AUX_NETSIGN_seed2",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 367,
+          "mass": 0.3532293288136127,
+          "huber_difference": -0.00012044273047103416,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.0006476683937823834
+        },
+        "STOP_CONT": {
+          "states": 104,
+          "mass": 0.15582343651896918,
+          "huber_difference": 0.00017193169775682034,
+          "sign_regret_difference": 0.0010142312134012428,
+          "profitable_mass": 0.007392897763174524
+        },
+        "CONT_STOP": {
+          "states": 110,
+          "mass": 0.15965771657315642,
+          "huber_difference": -0.0005864374504427756,
+          "sign_regret_difference": -0.0027443635525050084,
+          "profitable_mass": 0.0006476683937823834
+        },
+        "CONT_CONT": {
+          "states": 230,
+          "mass": 0.33128951809426194,
+          "huber_difference": 0.0015464885564160464,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.034596073569914086
+        }
+      },
+      "huber_difference": 0.001011540073259057,
+      "sign_regret_difference": -0.0017301323391037645
+    },
+    {
+      "name": "f2__AUX_GAIN_seed0",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 317,
+          "mass": 0.38188168668094896,
+          "huber_difference": -0.0011041552583187083,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.005360377437971272
+        },
+        "STOP_CONT": {
+          "states": 133,
+          "mass": 0.22453420782357347,
+          "huber_difference": 0.0006000133738168477,
+          "sign_regret_difference": 0.001454095329817465,
+          "profitable_mass": 0.015535089936391591
+        },
+        "CONT_STOP": {
+          "states": 147,
+          "mass": 0.17491603462790117,
+          "huber_difference": -0.002086476372429211,
+          "sign_regret_difference": -0.006154731080263072,
+          "profitable_mass": 0.0
+        },
+        "CONT_CONT": {
+          "states": 214,
+          "mass": 0.2186680708675764,
+          "huber_difference": -0.003546996781780757,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.022388840746290516
+        }
+      },
+      "huber_difference": -0.006137615038711827,
+      "sign_regret_difference": -0.004700635750445607
+    },
+    {
+      "name": "f2__AUX_GAIN_seed1",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 353,
+          "mass": 0.3876915172741661,
+          "huber_difference": -0.0003173282225125272,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.009425418088377775
+        },
+        "STOP_CONT": {
+          "states": 167,
+          "mass": 0.23784067783775548,
+          "huber_difference": 0.001010013116850945,
+          "sign_regret_difference": 0.005778625577191118,
+          "profitable_mass": 0.003238341968911917
+        },
+        "CONT_STOP": {
+          "states": 86,
+          "mass": 0.12755605854541152,
+          "huber_difference": -0.0018101994952585381,
+          "sign_regret_difference": -0.0016461358417812265,
+          "profitable_mass": 0.0043888748472976965
+        },
+        "CONT_CONT": {
+          "states": 205,
+          "mass": 0.246911746342667,
+          "huber_difference": -0.007380146526476584,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.02623167321606599
+        }
+      },
+      "huber_difference": -0.008497661127396704,
+      "sign_regret_difference": 0.004132489735409891
+    },
+    {
+      "name": "f2__AUX_GAIN_seed2",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 368,
+          "mass": 0.38158322555576285,
+          "huber_difference": 5.870975417386755e-05,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.0030040229158768274
+        },
+        "STOP_CONT": {
+          "states": 103,
+          "mass": 0.12746953977681894,
+          "huber_difference": 0.0006629366188420139,
+          "sign_regret_difference": 0.0016434905148155776,
+          "profitable_mass": 0.005036543241080079
+        },
+        "CONT_STOP": {
+          "states": 134,
+          "mass": 0.20675190434901508,
+          "huber_difference": -0.0001043134301663758,
+          "sign_regret_difference": 0.002156491762372113,
+          "profitable_mass": 0.004947028097223977
+        },
+        "CONT_CONT": {
+          "states": 206,
+          "mass": 0.28419533031840316,
+          "huber_difference": 0.007425564231856453,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.03029671386647249
+        }
+      },
+      "huber_difference": 0.00804289717470596,
+      "sign_regret_difference": 0.0037999822771876907
+    },
+    {
+      "name": "f3__AUX_NETSIGN_seed0",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 381,
+          "mass": 0.4011258842936982,
+          "huber_difference": 0.00038982806255047776,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.030434782608695657
+        },
+        "STOP_CONT": {
+          "states": 31,
+          "mass": 0.05268851397533089,
+          "huber_difference": 0.0011764706533198212,
+          "sign_regret_difference": 0.001232464096554558,
+          "profitable_mass": 0.0
+        },
+        "CONT_STOP": {
+          "states": 195,
+          "mass": 0.2756853820963838,
+          "huber_difference": -0.014244342296004906,
+          "sign_regret_difference": -0.004914706417352833,
+          "profitable_mass": 0.008217075262991556
+        },
+        "CONT_CONT": {
+          "states": 157,
+          "mass": 0.27050021963458704,
+          "huber_difference": 0.003004196627766683,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.017823039414872004
+        }
+      },
+      "huber_difference": -0.009673846952367924,
+      "sign_regret_difference": -0.003682242320798276
+    },
+    {
+      "name": "f3__AUX_NETSIGN_seed1",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 437,
+          "mass": 0.4970653768275378,
+          "huber_difference": -0.001165934261832705,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.030617446987824884
+        },
+        "STOP_CONT": {
+          "states": 100,
+          "mass": 0.16138780375396333,
+          "huber_difference": -0.0001902013282289095,
+          "sign_regret_difference": -0.0008731516964531826,
+          "profitable_mass": 0.00408765632759944
+        },
+        "CONT_STOP": {
+          "states": 123,
+          "mass": 0.1805996035401996,
+          "huber_difference": -0.0012128535268866349,
+          "sign_regret_difference": 0.007996538080116898,
+          "profitable_mass": 0.015528353424533839
+        },
+        "CONT_CONT": {
+          "states": 104,
+          "mass": 0.1609472158782992,
+          "huber_difference": -0.031602215373648664,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.00624144054660105
+        }
+      },
+      "huber_difference": -0.03417120449059692,
+      "sign_regret_difference": 0.007123386383663719
+    },
+    {
+      "name": "f3__AUX_NETSIGN_seed2",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 494,
+          "mass": 0.5869829497848877,
+          "huber_difference": 0.0008164858936144851,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.03714370099477779
+        },
+        "STOP_CONT": {
+          "states": 46,
+          "mass": 0.06357658385369894,
+          "huber_difference": 0.0010288421822787382,
+          "sign_regret_difference": 0.0009831721233104246,
+          "profitable_mass": 0.00030193236714975844
+        },
+        "CONT_STOP": {
+          "states": 119,
+          "mass": 0.19324142914765532,
+          "huber_difference": -0.001491958792503699,
+          "sign_regret_difference": 0.019093420736367498,
+          "profitable_mass": 0.015224916098544705
+        },
+        "CONT_CONT": {
+          "states": 105,
+          "mass": 0.15619903721375794,
+          "huber_difference": -0.023594002680826,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.0038043478260869567
+        }
+      },
+      "huber_difference": -0.023240633397436473,
+      "sign_regret_difference": 0.020076592859677927
+    },
+    {
+      "name": "f3__AUX_GAIN_seed0",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 335,
+          "mass": 0.3493437522676824,
+          "huber_difference": 0.00024499673847635346,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.022181964573268927
+        },
+        "STOP_CONT": {
+          "states": 77,
+          "mass": 0.1044706460013467,
+          "huber_difference": 4.9020441820609485e-06,
+          "sign_regret_difference": -0.012091804822826393,
+          "profitable_mass": 0.008252818035426731
+        },
+        "CONT_STOP": {
+          "states": 157,
+          "mass": 0.24389504878972246,
+          "huber_difference": -0.0018522224619019275,
+          "sign_regret_difference": 0.014615607239475149,
+          "profitable_mass": 0.019899318253645763
+        },
+        "CONT_CONT": {
+          "states": 195,
+          "mass": 0.3022905529412483,
+          "huber_difference": -0.012377528639560216,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.0061407964242177985
+        }
+      },
+      "huber_difference": -0.01397985231880373,
+      "sign_regret_difference": 0.0025238024166487553
+    },
+    {
+      "name": "f3__AUX_GAIN_seed1",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 413,
+          "mass": 0.4616731461849964,
+          "huber_difference": 0.0004356011204829836,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.027113526570048313
+        },
+        "STOP_CONT": {
+          "states": 124,
+          "mass": 0.19678003439650477,
+          "huber_difference": 0.00013314504217423347,
+          "sign_regret_difference": -0.003240902561589308,
+          "profitable_mass": 0.007591576745376014
+        },
+        "CONT_STOP": {
+          "states": 113,
+          "mass": 0.15648393635245958,
+          "huber_difference": 0.00022382834508585922,
+          "sign_regret_difference": -0.000741520229320455,
+          "profitable_mass": 0.011258032717805167
+        },
+        "CONT_CONT": {
+          "states": 114,
+          "mass": 0.18506288306603919,
+          "huber_difference": -0.005600401594023393,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.01051176125332972
+        }
+      },
+      "huber_difference": -0.0048078270862803195,
+      "sign_regret_difference": -0.003982422790909765
+    },
+    {
+      "name": "f3__AUX_GAIN_seed2",
+      "domain": "fold_held",
+      "cells": {
+        "STOP_STOP": {
+          "states": 422,
+          "mass": 0.48995655474392086,
+          "huber_difference": 0.0010667635328526473,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.03714370099477779
+        },
+        "STOP_CONT": {
+          "states": 118,
+          "mass": 0.16060297889466582,
+          "huber_difference": 0.0015007577466808323,
+          "sign_regret_difference": 0.005427817315216402,
+          "profitable_mass": 0.00030193236714975844
+        },
+        "CONT_STOP": {
+          "states": 121,
+          "mass": 0.1853026334395596,
+          "huber_difference": -0.0013142668024110494,
+          "sign_regret_difference": 0.007205245377152272,
+          "profitable_mass": 0.009302526825891312
+        },
+        "CONT_CONT": {
+          "states": 103,
+          "mass": 0.16413783292185366,
+          "huber_difference": -0.030975545849963093,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.009726737098740348
+        }
+      },
+      "huber_difference": -0.02972229137284066,
+      "sign_regret_difference": 0.012633062692368673
+    }
+  ],
+  "summary": {
+    "validation": {
+      "AUX_NETSIGN": {
+        "STOP_STOP": {
+          "mass": 0.43667312944860215,
+          "huber_difference": -0.0005340857266731762,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.004948914431673053
+        },
+        "STOP_CONT": {
+          "mass": 0.2042892922967817,
+          "huber_difference": -0.0009935702496990946,
+          "sign_regret_difference": -0.0029135120398697573,
+          "profitable_mass": 0.005369654217543357
+        },
+        "CONT_STOP": {
+          "mass": 0.1685453555997183,
+          "huber_difference": -0.0010805462090507647,
+          "sign_regret_difference": 0.0031380333317866074,
+          "profitable_mass": 0.0027671349510429966
+        },
+        "CONT_CONT": {
+          "mass": 0.19049222265489787,
+          "huber_difference": -0.012050043522041832,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.025852122398475386
+        }
+      },
+      "AUX_GAIN": {
+        "STOP_STOP": {
+          "mass": 0.44703815167420613,
+          "huber_difference": 4.262514229291534e-05,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.006366300235136845
+        },
+        "STOP_CONT": {
+          "mass": 0.19392427007117763,
+          "huber_difference": -0.00035093935951348185,
+          "sign_regret_difference": -0.0018204341813247797,
+          "profitable_mass": 0.003952268414079564
+        },
+        "CONT_STOP": {
+          "mass": 0.17144591442272114,
+          "huber_difference": 0.001055317843668413,
+          "sign_regret_difference": 0.01041129602373279,
+          "profitable_mass": 0.006752662198668751
+        },
+        "CONT_CONT": {
+          "mass": 0.18759166383189507,
+          "huber_difference": -0.013800749488412228,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.021866595150849637
+        }
+      }
+    },
+    "fold_held": {
+      "AUX_NETSIGN": {
+        "STOP_STOP": {
+          "mass": 0.42040372224997585,
+          "huber_difference": -0.0011694351641918994,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.02056735870154459
+        },
+        "STOP_CONT": {
+          "mass": 0.13891991379716903,
+          "huber_difference": 0.00026172375654732446,
+          "sign_regret_difference": -0.000406702195260057,
+          "profitable_mass": 0.005754412946714189
+        },
+        "CONT_STOP": {
+          "mass": 0.19515870384780465,
+          "huber_difference": -0.003436911303778232,
+          "sign_regret_difference": 0.002158189942185453,
+          "profitable_mass": 0.008196957500375355
+        },
+        "CONT_CONT": {
+          "mass": 0.24551766010505058,
+          "huber_difference": -0.011148639673224138,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.02208826593793091
+        }
+      },
+      "AUX_GAIN": {
+        "STOP_STOP": {
+          "mass": 0.3600206802499993,
+          "huber_difference": -0.0001337779153671351,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.015896711304128504
+        },
+        "STOP_CONT": {
+          "mass": 0.19930295579714552,
+          "huber_difference": 0.00012147343837591485,
+          "sign_regret_difference": -0.00465638507927977,
+          "profitable_mass": 0.010425060344130275
+        },
+        "CONT_STOP": {
+          "mass": 0.16722172086902287,
+          "huber_difference": -0.0007110829825354835,
+          "sign_regret_difference": 0.003374538714133018,
+          "profitable_mass": 0.00739957839519077
+        },
+        "CONT_CONT": {
+          "mass": 0.2734546430838323,
+          "huber_difference": -0.007601071631169569,
+          "sign_regret_difference": 0.0,
+          "profitable_mass": 0.022885645043115493
+        }
+      }
+    }
+  },
+  "conserved_all30_pair_differences": true
+}

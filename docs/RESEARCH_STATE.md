@@ -693,3 +693,8 @@ All30fits7250x32,original6978/init/sampler/Adam/splits/price,netHuberhalf+auxBCE
 ## 2026-10-23 — GRID124 frozen-endpoint gradient diagnosis frozen
 
 User continues diagnosis,not retraining. All30auxiliary endpoints plus exact initial tensors,15cachedbasecontrols. Exact fit-only expectation gradients raw and fixedsaved-Adam-vmetric; independent NumPybackprop; mainfit/heldlosses,auxBCE/Brier/AUC,ten725-update savedcurveblocks. No optimizer/weightsearch/thresholdchange/physical/test. Endpointgradients not persistent or Adamcounterfactual causality.
+
+
+## 2026-10-23 — GRID124 shared-gradient and false-stop diagnosis complete
+
+Readonly30auxendpoints/15cachedbasecontrols;60manualNumPygradientpairsaudit,30pairwiseAUCchecks,17808trajectorypairs/6665headrecordsconserved. AUX_GAINfitAUC0.9943,validation0.8092/OOFheld0.7710,butheldBCE/Brierworsethanfitprevalenceconstant. MainfitHuberall15pairsworse,validationHuberimprovesmostlyCONT_CONTstateswhiledecisionutilitydeclines. Finalsharedgradient29/30positivecosine,allcombinedraw/fixedAdamvmetricmaindotspositive,notpersistentconflictcausality. Validation13profitablefirstdivergencefalseSTOPrecords/7callscontribute-0.02278094,ofwhich6eventheadpositive;allgroupssum-0.01335989. PreserveOOF+0.00064121/inconsistentseeds. Noextraoptimizer/weighttuning/physical/test. Retainbase;prioritizehighvaluestopdecisionsratherthanblindgradientprojection.

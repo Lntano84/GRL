@@ -1,0 +1,24 @@
+{
+  "id": "GRID117_FIXED_MODULE_DIAGNOSIS",
+  "utc": "2026-10-23T03:29:59.356819+00:00",
+  "authorization": "User: 再查一下原因吧. Read-only analysis, no new training.",
+  "questions": [
+    "Where does extra paid continuation occur, grouped by physical calls rather than repeated prefixes?",
+    "At each first actual common-prefix divergence, which additive component accounts for the sign?",
+    "Does paired V encoding behave affinely and does attention approximate uniform averaging?",
+    "At identical frozen weights, do factorizing feedback, making attention uniform, or both change original decisions?"
+  ],
+  "fixed_diagnostics": [
+    "actual",
+    "factorized_same_weights",
+    "uniform_attention",
+    "both"
+  ],
+  "scope": "All six checkpoints, full3582train/856validation. Fixed forward diagnostics only, no variant selection or counterfactual-policy utility ranking.",
+  "attribution_limit": "Base and correction coadapted jointly. Components and inference interventions are arithmetic explanations, not independently trained ablations or causal training attribution.",
+  "zero_fits": true,
+  "zero_backward": true,
+  "zero_optimizer_instances": true,
+  "new_physical_calls": 0,
+  "final_test_materialized": false
+}

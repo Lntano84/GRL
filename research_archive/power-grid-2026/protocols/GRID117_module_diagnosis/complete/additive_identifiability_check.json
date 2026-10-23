@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "seed": 0,
+      "constant_continue_offset": 0.25,
+      "max_total_score_error": 0.0,
+      "total_decisions_unchanged": true,
+      "bad_extra_prefixes": 56,
+      "stored_joint_delta_required_count": 9,
+      "algebraically_equivalent_delta_required_count": 0
+    },
+    {
+      "seed": 0,
+      "constant_continue_offset": -0.25,
+      "max_total_score_error": 0.0,
+      "total_decisions_unchanged": true,
+      "bad_extra_prefixes": 56,
+      "stored_joint_delta_required_count": 9,
+      "algebraically_equivalent_delta_required_count": 56
+    },
+    {
+      "seed": 1,
+      "constant_continue_offset": 0.25,
+      "max_total_score_error": 0.0,
+      "total_decisions_unchanged": true,
+      "bad_extra_prefixes": 99,
+      "stored_joint_delta_required_count": 69,
+      "algebraically_equivalent_delta_required_count": 59
+    },
+    {
+      "seed": 1,
+      "constant_continue_offset": -0.25,
+      "max_total_score_error": 0.0,
+      "total_decisions_unchanged": true,
+      "bad_extra_prefixes": 99,
+      "stored_joint_delta_required_count": 69,
+      "algebraically_equivalent_delta_required_count": 81
+    },
+    {
+      "seed": 2,
+      "constant_continue_offset": 0.25,
+      "max_total_score_error": 0.0,
+      "total_decisions_unchanged": true,
+      "bad_extra_prefixes": 50,
+      "stored_joint_delta_required_count": 0,
+      "algebraically_equivalent_delta_required_count": 0
+    },
+    {
+      "seed": 2,
+      "constant_continue_offset": -0.25,
+      "max_total_score_error": 0.0,
+      "total_decisions_unchanged": true,
+      "bad_extra_prefixes": 50,
+      "stored_joint_delta_required_count": 0,
+      "algebraically_equivalent_delta_required_count": 38
+    }
+  ],
+  "proof": "For any constant2-vector c, q_total=(q_base+c)+(delta-c). Both networks have final biases; original loss sees only total. No separate loss fixes component meaning.",
+  "no_model_mutation_or_deployment": true,
+  "new_fits": 0,
+  "source_sha256": "6582286e7086f2ceadefe2b8ff0bb1b7978ea504fc7e756a036db9dea60035a5"
+}

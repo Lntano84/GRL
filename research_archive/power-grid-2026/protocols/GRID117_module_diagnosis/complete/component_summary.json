@@ -1,0 +1,1274 @@
+{
+  "BASE_JOINT_seed0": {
+    "train": {
+      "attention_entropy_eligible": {
+        "n": 3543,
+        "mean": 0.9995427137204492,
+        "median": 0.999580979347229,
+        "min": 0.9970352649688721,
+        "max": 0.9999999403953552
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 3543,
+        "mean": 0.02250183956597564,
+        "median": 0.0261843279004097,
+        "min": 0.0001268535852432251,
+        "max": 0.06263347715139389
+      },
+      "affine_compatible_states": 39,
+      "total_states": 3582,
+      "affine_uniform_value_gap": {
+        "n": 39,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "paired_uniform_value_gap": {
+        "n": 3582,
+        "mean": 0.02213789921189807,
+        "median": 0.02035167347639799,
+        "min": 0.0,
+        "max": 0.08168569952249527
+      },
+      "base_advantage": {
+        "n": 3582,
+        "mean": 0.0023169613332554725,
+        "median": -0.013221731409430504,
+        "min": -0.1579151302576065,
+        "max": 1.8996378183364868
+      },
+      "correction_advantage": {
+        "n": 3582,
+        "mean": 0.051340718272634554,
+        "median": -0.013768604956567287,
+        "min": -0.14168313145637512,
+        "max": 11.963600158691406
+      },
+      "base_correction_correlation": 0.48633562724504603,
+      "delta_flips_base_stop_to_continue": 88,
+      "delta_flips_base_continue_to_stop": 464,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.0005525432018503872,
+            "median": 7.35744833946228e-05,
+            "min": 0.0,
+            "max": 0.07771706581115723
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.005449574277405208,
+            "median": 0.00012369826436042786,
+            "min": 0.0,
+            "max": 0.07707607746124268
+          },
+          "decision_sign_changes": 1,
+          "positive_sign_changes": 0
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.00022476786120453071,
+            "median": 1.3679265975952148e-05,
+            "min": 0.0,
+            "max": 0.020740509033203125
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.0024121223917998973,
+            "median": 3.413483500480652e-05,
+            "min": 0.0,
+            "max": 0.020740509033203125
+          },
+          "decision_sign_changes": 1,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.00041771573776359466,
+            "median": 7.820501923561096e-05,
+            "min": 0.0,
+            "max": 0.07206225395202637
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.00378787810185933,
+            "median": 0.0001004878431558609,
+            "min": 0.0,
+            "max": 0.07206225395202637
+          },
+          "decision_sign_changes": 1,
+          "positive_sign_changes": 0
+        }
+      }
+    },
+    "validation": {
+      "attention_entropy_eligible": {
+        "n": 848,
+        "mean": 0.9994490946520049,
+        "median": 0.9995178580284119,
+        "min": 0.9970585703849792,
+        "max": 0.9999986290931702
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 848,
+        "mean": 0.023721713776124163,
+        "median": 0.027350169606506824,
+        "min": 0.0008785891113802791,
+        "max": 0.06263347715139389
+      },
+      "affine_compatible_states": 8,
+      "total_states": 856,
+      "affine_uniform_value_gap": {
+        "n": 8,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "paired_uniform_value_gap": {
+        "n": 856,
+        "mean": 0.021642087875412688,
+        "median": 0.01888031978160143,
+        "min": 0.0,
+        "max": 0.06827383488416672
+      },
+      "base_advantage": {
+        "n": 856,
+        "mean": 0.002344126071102012,
+        "median": -0.005644186399877071,
+        "min": -0.20966827869415283,
+        "max": 1.175764799118042
+      },
+      "correction_advantage": {
+        "n": 856,
+        "mean": 0.09254886701520289,
+        "median": -0.009975064545869827,
+        "min": -0.17846620082855225,
+        "max": 11.634364128112793
+      },
+      "base_correction_correlation": 0.5339043009273187,
+      "delta_flips_base_stop_to_continue": 27,
+      "delta_flips_base_continue_to_stop": 125,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.00136603539914032,
+            "median": 7.440894842147827e-05,
+            "min": 0.0,
+            "max": 0.0780566930770874
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.006786782067359947,
+            "median": 0.00020354986190795898,
+            "min": 0.0,
+            "max": 0.04914283752441406
+          },
+          "decision_sign_changes": 2,
+          "positive_sign_changes": 1
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.0005286142848014274,
+            "median": 1.5030615031719208e-05,
+            "min": 0.0,
+            "max": 0.026194095611572266
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.003704258308904927,
+            "median": 5.78463077545166e-05,
+            "min": 0.0,
+            "max": 0.026194095611572266
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.0009831171711280106,
+            "median": 7.791910320520401e-05,
+            "min": 0.0,
+            "max": 0.07091903686523438
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0042328270742806,
+            "median": 0.00014609098434448242,
+            "min": 0.0,
+            "max": 0.031474411487579346
+          },
+          "decision_sign_changes": 2,
+          "positive_sign_changes": 1
+        }
+      }
+    }
+  },
+  "BASE_FACTOR_seed0": {
+    "train": {
+      "attention_entropy_eligible": {
+        "n": 3543,
+        "mean": 0.9997057511817928,
+        "median": 0.9996656775474548,
+        "min": 0.9987374544143677,
+        "max": 1.0
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 3543,
+        "mean": 0.019325050593222804,
+        "median": 0.0238608680665493,
+        "min": 9.133914863923565e-05,
+        "max": 0.04092282056808472
+      },
+      "affine_compatible_states": 42,
+      "total_states": 3582,
+      "affine_uniform_value_gap": {
+        "n": 42,
+        "mean": 9.954982446845949e-10,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 2.356080486265455e-08
+      },
+      "paired_uniform_value_gap": {
+        "n": 3582,
+        "mean": 0.022111819717378092,
+        "median": 0.018499962985515594,
+        "min": 0.0,
+        "max": 0.09701232612133026
+      },
+      "base_advantage": {
+        "n": 3582,
+        "mean": -0.0027530195460863317,
+        "median": -0.018659179098904133,
+        "min": -0.13854092359542847,
+        "max": 1.9713822603225708
+      },
+      "correction_advantage": {
+        "n": 3582,
+        "mean": 0.0541722894880748,
+        "median": -0.011087805964052677,
+        "min": -0.1524067372083664,
+        "max": 11.636579513549805
+      },
+      "base_correction_correlation": 0.5024938943650508,
+      "delta_flips_base_stop_to_continue": 82,
+      "delta_flips_base_continue_to_stop": 363,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 7.582442561452578e-05,
+            "median": 1.2695789337158203e-05,
+            "min": 0.0,
+            "max": 0.0066471099853515625
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.0007169008237349479,
+            "median": 1.8965452909469604e-05,
+            "min": 0.0,
+            "max": 0.0066471099853515625
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 7.582442561452578e-05,
+            "median": 1.2695789337158203e-05,
+            "min": 0.0,
+            "max": 0.0066471099853515625
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.0007169008237349479,
+            "median": 1.8965452909469604e-05,
+            "min": 0.0,
+            "max": 0.0066471099853515625
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        }
+      }
+    },
+    "validation": {
+      "attention_entropy_eligible": {
+        "n": 848,
+        "mean": 0.9997124622734088,
+        "median": 0.9996829628944397,
+        "min": 0.9989030957221985,
+        "max": 0.999999463558197
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 848,
+        "mean": 0.01813331914212849,
+        "median": 0.02235628105700016,
+        "min": 0.0004139840602874756,
+        "max": 0.0378800705075264
+      },
+      "affine_compatible_states": 8,
+      "total_states": 856,
+      "affine_uniform_value_gap": {
+        "n": 8,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "paired_uniform_value_gap": {
+        "n": 856,
+        "mean": 0.02112475797018994,
+        "median": 0.01544429175555706,
+        "min": 0.0,
+        "max": 0.0919809639453888
+      },
+      "base_advantage": {
+        "n": 856,
+        "mean": -0.0019833351698677953,
+        "median": -0.01305132731795311,
+        "min": -0.175643652677536,
+        "max": 1.119844913482666
+      },
+      "correction_advantage": {
+        "n": 856,
+        "mean": 0.09320406134188106,
+        "median": -0.008778066374361515,
+        "min": -0.18708670139312744,
+        "max": 11.807364463806152
+      },
+      "base_correction_correlation": 0.5304720763778231,
+      "delta_flips_base_stop_to_continue": 29,
+      "delta_flips_base_continue_to_stop": 96,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.00011851521705007442,
+            "median": 8.860602974891663e-06,
+            "min": 0.0,
+            "max": 0.0053475648164749146
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0007808546013221508,
+            "median": 2.47955322265625e-05,
+            "min": 0.0,
+            "max": 0.0046138763427734375
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.00011851521705007442,
+            "median": 8.860602974891663e-06,
+            "min": 0.0,
+            "max": 0.0053475648164749146
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0007808546013221508,
+            "median": 2.47955322265625e-05,
+            "min": 0.0,
+            "max": 0.0046138763427734375
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        }
+      }
+    }
+  },
+  "BASE_JOINT_seed1": {
+    "train": {
+      "attention_entropy_eligible": {
+        "n": 3543,
+        "mean": 0.999701011544259,
+        "median": 0.9996652603149414,
+        "min": 0.9988307356834412,
+        "max": 0.9999998211860657
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 3543,
+        "mean": 0.018936912417618152,
+        "median": 0.022574376314878464,
+        "min": 0.0002151280641555786,
+        "max": 0.03241937234997749
+      },
+      "affine_compatible_states": 40,
+      "total_states": 3582,
+      "affine_uniform_value_gap": {
+        "n": 40,
+        "mean": 1.7890123160668737e-09,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 7.156049264267494e-08
+      },
+      "paired_uniform_value_gap": {
+        "n": 3582,
+        "mean": 0.015156550516342026,
+        "median": 0.011297563090920448,
+        "min": 0.0,
+        "max": 0.10853597521781921
+      },
+      "base_advantage": {
+        "n": 3582,
+        "mean": 0.00794796703172986,
+        "median": -0.20202600955963135,
+        "min": -0.8030275106430054,
+        "max": 8.147265434265137
+      },
+      "correction_advantage": {
+        "n": 3582,
+        "mean": 0.06300110559955256,
+        "median": 0.20965812355279922,
+        "min": -3.0507853031158447,
+        "max": 2.1146762371063232
+      },
+      "base_correction_correlation": -0.5720587680698455,
+      "delta_flips_base_stop_to_continue": 1308,
+      "delta_flips_base_continue_to_stop": 350,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.0004484262852695532,
+            "median": 0.0002106018364429474,
+            "min": 0.0,
+            "max": 0.018591299653053284
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.0007258791341865656,
+            "median": 0.00024353712797164917,
+            "min": 0.0,
+            "max": 0.009178400039672852
+          },
+          "decision_sign_changes": 10,
+          "positive_sign_changes": 1
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.00021846876746836044,
+            "median": 9.697675704956055e-05,
+            "min": 0.0,
+            "max": 0.00205024192109704
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.00029531418085451374,
+            "median": 0.000144273042678833,
+            "min": 0.0,
+            "max": 0.0019488334655761719
+          },
+          "decision_sign_changes": 1,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.000502739821947822,
+            "median": 0.0002906003501266241,
+            "min": 0.0,
+            "max": 0.01793067157268524
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.0008363418879155157,
+            "median": 0.0003957897424697876,
+            "min": 0.0,
+            "max": 0.008885204792022705
+          },
+          "decision_sign_changes": 11,
+          "positive_sign_changes": 1
+        }
+      }
+    },
+    "validation": {
+      "attention_entropy_eligible": {
+        "n": 848,
+        "mean": 0.9997130883330444,
+        "median": 0.999668151140213,
+        "min": 0.9988714456558228,
+        "max": 0.9999996423721313
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 848,
+        "mean": 0.01773620543634642,
+        "median": 0.021749144420027733,
+        "min": 0.0003266632556915283,
+        "max": 0.03275077044963837
+      },
+      "affine_compatible_states": 8,
+      "total_states": 856,
+      "affine_uniform_value_gap": {
+        "n": 8,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "paired_uniform_value_gap": {
+        "n": 856,
+        "mean": 0.016122413812250228,
+        "median": 0.011043591424822807,
+        "min": 0.0,
+        "max": 0.08963698148727417
+      },
+      "base_advantage": {
+        "n": 856,
+        "mean": 0.07677789142101821,
+        "median": -0.18478033691644669,
+        "min": -0.5218283534049988,
+        "max": 7.094736099243164
+      },
+      "correction_advantage": {
+        "n": 856,
+        "mean": 0.0867324915358788,
+        "median": 0.22400852292776108,
+        "min": -1.4926520586013794,
+        "max": 1.7240209579467773
+      },
+      "base_correction_correlation": -0.49509517334689235,
+      "delta_flips_base_stop_to_continue": 289,
+      "delta_flips_base_continue_to_stop": 42,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.00048374302198927603,
+            "median": 0.00020350702106952667,
+            "min": 0.0,
+            "max": 0.008386313915252686
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0006853805900346943,
+            "median": 0.0003018379211425781,
+            "min": 0.0,
+            "max": 0.008386313915252686
+          },
+          "decision_sign_changes": 1,
+          "positive_sign_changes": 0
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.0002927241170187002,
+            "median": 0.00010086596012115479,
+            "min": 0.0,
+            "max": 0.0017421767115592957
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.00043836122424137304,
+            "median": 0.0002873539924621582,
+            "min": 0.0,
+            "max": 0.0014020800590515137
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.0006616002394247661,
+            "median": 0.000491604208946228,
+            "min": 0.0,
+            "max": 0.007190704345703125
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0008736766829359822,
+            "median": 0.000462949275970459,
+            "min": 0.0,
+            "max": 0.007190704345703125
+          },
+          "decision_sign_changes": 1,
+          "positive_sign_changes": 0
+        }
+      }
+    }
+  },
+  "BASE_FACTOR_seed1": {
+    "train": {
+      "attention_entropy_eligible": {
+        "n": 3543,
+        "mean": 0.9988698523797593,
+        "median": 0.999664843082428,
+        "min": 0.9835554361343384,
+        "max": 0.9999979138374329
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 3543,
+        "mean": 0.029991355810917424,
+        "median": 0.02273581735789776,
+        "min": 0.0007540881633758545,
+        "max": 0.09912427514791489
+      },
+      "affine_compatible_states": 57,
+      "total_states": 3582,
+      "affine_uniform_value_gap": {
+        "n": 57,
+        "mean": 2.446682996555027e-08,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 1.6928565571561194e-07
+      },
+      "paired_uniform_value_gap": {
+        "n": 3582,
+        "mean": 0.08544268194477861,
+        "median": 0.07344192266464233,
+        "min": 0.0,
+        "max": 0.3273021876811981
+      },
+      "base_advantage": {
+        "n": 3582,
+        "mean": -0.027850105135224755,
+        "median": -0.17547918111085892,
+        "min": -0.8416096568107605,
+        "max": 7.5608811378479
+      },
+      "correction_advantage": {
+        "n": 3582,
+        "mean": 0.06427976013226762,
+        "median": 0.1641608104109764,
+        "min": -2.208268642425537,
+        "max": 4.860815048217773
+      },
+      "base_correction_correlation": -0.2645259926536837,
+      "delta_flips_base_stop_to_continue": 804,
+      "delta_flips_base_continue_to_stop": 570,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.00017228543288831037,
+            "median": 7.595960050821304e-05,
+            "min": 0.0,
+            "max": 0.013805389404296875
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.0005354667976233772,
+            "median": 0.0001124069094657898,
+            "min": 0.0,
+            "max": 0.013805389404296875
+          },
+          "decision_sign_changes": 7,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.00017228543288831037,
+            "median": 7.595960050821304e-05,
+            "min": 0.0,
+            "max": 0.013805389404296875
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.0005354667976233772,
+            "median": 0.0001124069094657898,
+            "min": 0.0,
+            "max": 0.013805389404296875
+          },
+          "decision_sign_changes": 7,
+          "positive_sign_changes": 0
+        }
+      }
+    },
+    "validation": {
+      "attention_entropy_eligible": {
+        "n": 848,
+        "mean": 0.9989923413772628,
+        "median": 0.9996854364871979,
+        "min": 0.9815348386764526,
+        "max": 0.9999846816062927
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 848,
+        "mean": 0.026328084855845618,
+        "median": 0.021500750444829464,
+        "min": 0.0023065805435180664,
+        "max": 0.09390664100646973
+      },
+      "affine_compatible_states": 15,
+      "total_states": 856,
+      "affine_uniform_value_gap": {
+        "n": 15,
+        "mean": 3.8389728729271155e-08,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 9.064022776783531e-08
+      },
+      "paired_uniform_value_gap": {
+        "n": 856,
+        "mean": 0.09005795577405898,
+        "median": 0.07848254591226578,
+        "min": 0.0,
+        "max": 0.3034851551055908
+      },
+      "base_advantage": {
+        "n": 856,
+        "mean": 0.02027009294975427,
+        "median": -0.16626816987991333,
+        "min": -0.6117150783538818,
+        "max": 6.117354869842529
+      },
+      "correction_advantage": {
+        "n": 856,
+        "mean": 0.09357182784375917,
+        "median": 0.17314957082271576,
+        "min": -1.5431849956512451,
+        "max": 5.230066776275635
+      },
+      "base_correction_correlation": -0.027234025548817986,
+      "delta_flips_base_stop_to_continue": 249,
+      "delta_flips_base_continue_to_stop": 85,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.00019162397550976027,
+            "median": 7.871724665164948e-05,
+            "min": 0.0,
+            "max": 0.0027472972869873047
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0004084654515836297,
+            "median": 0.0002524852752685547,
+            "min": 0.0,
+            "max": 0.002429962158203125
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.00019162397550976027,
+            "median": 7.871724665164948e-05,
+            "min": 0.0,
+            "max": 0.0027472972869873047
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0004084654515836297,
+            "median": 0.0002524852752685547,
+            "min": 0.0,
+            "max": 0.002429962158203125
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        }
+      }
+    }
+  },
+  "BASE_JOINT_seed2": {
+    "train": {
+      "attention_entropy_eligible": {
+        "n": 3543,
+        "mean": 0.9995475351019765,
+        "median": 0.9998770952224731,
+        "min": 0.9898236989974976,
+        "max": 0.9999999403953552
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 3543,
+        "mean": 0.016154206242885678,
+        "median": 0.012238768860697746,
+        "min": 0.00019166369747836143,
+        "max": 0.0760638564825058
+      },
+      "affine_compatible_states": 40,
+      "total_states": 3582,
+      "affine_uniform_value_gap": {
+        "n": 40,
+        "mean": 1.1482115702676765e-09,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 4.592846281070706e-08
+      },
+      "paired_uniform_value_gap": {
+        "n": 3582,
+        "mean": 0.03314040724274243,
+        "median": 0.029746792279183865,
+        "min": 0.0,
+        "max": 0.1349838674068451
+      },
+      "base_advantage": {
+        "n": 3582,
+        "mean": 0.22588773674031565,
+        "median": 0.1784844622015953,
+        "min": -0.15293367207050323,
+        "max": 4.05302619934082
+      },
+      "correction_advantage": {
+        "n": 3582,
+        "mean": -0.1990675524283785,
+        "median": -0.22326072305440903,
+        "min": -0.8696519136428833,
+        "max": 8.078788757324219
+      },
+      "base_correction_correlation": 0.6296653501130177,
+      "delta_flips_base_stop_to_continue": 1,
+      "delta_flips_base_continue_to_stop": 3002,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.0015229057642308311,
+            "median": 0.0011118864640593529,
+            "min": 0.0,
+            "max": 0.1054239273071289
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.005168668343133836,
+            "median": 0.0012981537729501724,
+            "min": 0.0,
+            "max": 0.1054239273071289
+          },
+          "decision_sign_changes": 21,
+          "positive_sign_changes": 0
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.00025995774688599566,
+            "median": 0.0001445915549993515,
+            "min": 0.0,
+            "max": 0.007622480392456055
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.000978123767398545,
+            "median": 0.0002319440245628357,
+            "min": 0.0,
+            "max": 0.007622480392456055
+          },
+          "decision_sign_changes": 1,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.0016276031427838362,
+            "median": 0.0011861370876431465,
+            "min": 0.0,
+            "max": 0.10593175888061523
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.005817747776400987,
+            "median": 0.0016005411744117737,
+            "min": 0.0,
+            "max": 0.10593175888061523
+          },
+          "decision_sign_changes": 23,
+          "positive_sign_changes": 0
+        }
+      }
+    },
+    "validation": {
+      "attention_entropy_eligible": {
+        "n": 848,
+        "mean": 0.9995425285876922,
+        "median": 0.9998036921024323,
+        "min": 0.9898238778114319,
+        "max": 0.9999988079071045
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 848,
+        "mean": 0.017159434856917215,
+        "median": 0.015157061628997326,
+        "min": 0.0006427913904190063,
+        "max": 0.0760638564825058
+      },
+      "affine_compatible_states": 11,
+      "total_states": 856,
+      "affine_uniform_value_gap": {
+        "n": 11,
+        "mean": 1.2525944402920108e-08,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 4.592846281070706e-08
+      },
+      "paired_uniform_value_gap": {
+        "n": 856,
+        "mean": 0.0318369259678376,
+        "median": 0.028503088280558586,
+        "min": 0.0,
+        "max": 0.12145362049341202
+      },
+      "base_advantage": {
+        "n": 856,
+        "mean": 0.24263338468725157,
+        "median": 0.19493254274129868,
+        "min": -0.5166116952896118,
+        "max": 2.816499710083008
+      },
+      "correction_advantage": {
+        "n": 856,
+        "mean": -0.15339650567098756,
+        "median": -0.21161800622940063,
+        "min": -0.5081912279129028,
+        "max": 8.166851043701172
+      },
+      "base_correction_correlation": 0.7630036702381537,
+      "delta_flips_base_stop_to_continue": 0,
+      "delta_flips_base_continue_to_stop": 573,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.0015655745530205073,
+            "median": 0.0011563338339328766,
+            "min": 0.0,
+            "max": 0.028307080268859863
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.004310892894864082,
+            "median": 0.0015286654233932495,
+            "min": 0.0,
+            "max": 0.025003910064697266
+          },
+          "decision_sign_changes": 6,
+          "positive_sign_changes": 0
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.0002981945045431641,
+            "median": 0.00012316927313804626,
+            "min": 0.0,
+            "max": 0.005541801452636719
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0008240078644054692,
+            "median": 0.0001185983419418335,
+            "min": 0.0,
+            "max": 0.005541801452636719
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.00174057449292496,
+            "median": 0.0013641733676195145,
+            "min": 0.0,
+            "max": 0.03055119514465332
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.005007754011851985,
+            "median": 0.0015283375978469849,
+            "min": 0.0,
+            "max": 0.029000282287597656
+          },
+          "decision_sign_changes": 7,
+          "positive_sign_changes": 0
+        }
+      }
+    }
+  },
+  "BASE_FACTOR_seed2": {
+    "train": {
+      "attention_entropy_eligible": {
+        "n": 3543,
+        "mean": 0.9994494962281775,
+        "median": 0.9998505711555481,
+        "min": 0.985110878944397,
+        "max": 0.9999997615814209
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 3543,
+        "mean": 0.017629077293893788,
+        "median": 0.01437106728553772,
+        "min": 0.0003084540367126465,
+        "max": 0.07608910650014877
+      },
+      "affine_compatible_states": 45,
+      "total_states": 3582,
+      "affine_uniform_value_gap": {
+        "n": 45,
+        "mean": 5.401032628545485e-09,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 6.664001972467304e-08
+      },
+      "paired_uniform_value_gap": {
+        "n": 3582,
+        "mean": 0.04034941058344628,
+        "median": 0.03687584400177002,
+        "min": 0.0,
+        "max": 0.13410648703575134
+      },
+      "base_advantage": {
+        "n": 3582,
+        "mean": 0.19010245560349648,
+        "median": 0.1450849026441574,
+        "min": -0.10665817558765411,
+        "max": 3.949108362197876
+      },
+      "correction_advantage": {
+        "n": 3582,
+        "mean": -0.16233809603017296,
+        "median": -0.18535111844539642,
+        "min": -0.8564743399620056,
+        "max": 8.629554748535156
+      },
+      "base_correction_correlation": 0.6187194817352082,
+      "delta_flips_base_stop_to_continue": 0,
+      "delta_flips_base_continue_to_stop": 3110,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 6.219807238484946e-05,
+            "median": 2.1091662347316742e-05,
+            "min": 0.0,
+            "max": 0.004985809326171875
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.00030957438687295144,
+            "median": 5.3262338042259216e-05,
+            "min": 0.0,
+            "max": 0.004985809326171875
+          },
+          "decision_sign_changes": 3,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 3582,
+            "mean": 6.219807238484946e-05,
+            "median": 2.1091662347316742e-05,
+            "min": 0.0,
+            "max": 0.004985809326171875
+          },
+          "positive_abs_advantage_change": {
+            "n": 211,
+            "mean": 0.00030957438687295144,
+            "median": 5.3262338042259216e-05,
+            "min": 0.0,
+            "max": 0.004985809326171875
+          },
+          "decision_sign_changes": 3,
+          "positive_sign_changes": 0
+        }
+      }
+    },
+    "validation": {
+      "attention_entropy_eligible": {
+        "n": 848,
+        "mean": 0.9993830553062681,
+        "median": 0.9998026788234711,
+        "min": 0.985110878944397,
+        "max": 0.9999964833259583
+      },
+      "attention_tv_uniform_eligible": {
+        "n": 848,
+        "mean": 0.018355111848510238,
+        "median": 0.015508731827139854,
+        "min": 0.0011094361543655396,
+        "max": 0.07608909904956818
+      },
+      "affine_compatible_states": 13,
+      "total_states": 856,
+      "affine_uniform_value_gap": {
+        "n": 13,
+        "mean": 2.4112891922483797e-08,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 6.537857899502342e-08
+      },
+      "paired_uniform_value_gap": {
+        "n": 856,
+        "mean": 0.03759148224663605,
+        "median": 0.03324405662715435,
+        "min": 0.0,
+        "max": 0.12990827858448029
+      },
+      "base_advantage": {
+        "n": 856,
+        "mean": 0.20460014889739175,
+        "median": 0.16426393389701843,
+        "min": -0.46290135383605957,
+        "max": 2.382302761077881
+      },
+      "correction_advantage": {
+        "n": 856,
+        "mean": -0.11302947560891022,
+        "median": -0.18240807950496674,
+        "min": -0.5574660897254944,
+        "max": 8.823437690734863
+      },
+      "base_correction_correlation": 0.7179995592596814,
+      "delta_flips_base_stop_to_continue": 0,
+      "delta_flips_base_continue_to_stop": 591,
+      "variants": {
+        "factorized_same_weights": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0,
+            "median": 0.0,
+            "min": 0.0,
+            "max": 0.0
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "uniform_attention": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 6.461502966758247e-05,
+            "median": 2.658367156982422e-05,
+            "min": 0.0,
+            "max": 0.0016019344329833984
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0002657682067010461,
+            "median": 6.553530693054199e-05,
+            "min": 0.0,
+            "max": 0.0016019344329833984
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        },
+        "both": {
+          "abs_advantage_change": {
+            "n": 856,
+            "mean": 6.461502966758247e-05,
+            "median": 2.658367156982422e-05,
+            "min": 0.0,
+            "max": 0.0016019344329833984
+          },
+          "positive_abs_advantage_change": {
+            "n": 41,
+            "mean": 0.0002657682067010461,
+            "median": 6.553530693054199e-05,
+            "min": 0.0,
+            "max": 0.0016019344329833984
+          },
+          "decision_sign_changes": 0,
+          "positive_sign_changes": 0
+        }
+      }
+    }
+  }
+}

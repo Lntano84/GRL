@@ -1,6 +1,7 @@
-# Next steps — GRID113已完成，等待下一路线决定
+# Next steps — GRID114只读诊断完成
 
-1. 向用户汇报全部配对种子/日期、BATCH1与历史家族参照，说明机制判据及失败边界。
-2. 不自动追加训练、扩大规模、电网闭环或最终测试；本轮只回答配对编码是否改善已有教师路径停止决策。
+1. 汇报修正后的原因：正收益漏停增加并不等于整体训练损失更差；训练单步权衡改善而验证更差，配对通道决策作用弱。
+2. 下一轮先定义保留原41维主干的模块对照；损失与结构分开控制，训练前向用户说明具体方案。
+3. 当前不训练、不扩大、不做电网回放或最终测试；不重做已有不稳定的MSE/长训练/gamma1对照。
 
-报告：research_archive/power-grid-2026/protocols/GRID113_relational_learning/complete/GRID113_report.md
+报告：research_archive/power-grid-2026/protocols/GRID114_fit_diagnosis/complete/GRID114_report.md

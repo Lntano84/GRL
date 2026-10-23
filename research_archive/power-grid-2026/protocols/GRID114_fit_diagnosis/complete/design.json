@@ -1,0 +1,18 @@
+{
+  "id": "GRID114_FROZEN_ENDPOINT_FIT_DIAGNOSIS",
+  "utc": "2026-10-23T02:27:06.791240+00:00",
+  "authorization": "User: 继续查. Analyze why positive training decisions still fail; no new fits.",
+  "scope": [
+    "all3582train+856validation saved outputs",
+    "original sampling/loss and exposure accounting",
+    "all6fixed checkpoint endpoint gradients and latent activation/attention diagnostics",
+    "complete train-positive list and common failures versus old DIRECT",
+    "whole-search payoff attribution already completed GRID113"
+  ],
+  "controls": "All arms/seeds and full train/validation partitions; no selection of checkpoint/threshold/features, no changed decisions deployed.",
+  "limits": "Endpoint gradients and representations are descriptive, not training-trajectory/causal or generalization proof. Labels are used only after fixed forward for audit/loss.",
+  "zero_new_fits": true,
+  "optimizer_instances": 0,
+  "physical_calls": 0,
+  "final_test_materialized": false
+}

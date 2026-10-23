@@ -1,0 +1,520 @@
+{
+  "results": {
+    "DIRECT0": {
+      "positive_loss_fraction": 0.7973195644196988,
+      "weighted_huber": 0.007704248515354926,
+      "weighted_one_step_sign_regret": 0.007820917993551564,
+      "missed_positive_expected_net": 0.0006705454288960157,
+      "wasted_negative_expected_net": 0.007150372564655547,
+      "missed_big_positive_rows": [],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 17,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 7.246962452720632e-05
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 13,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.0005980758043688094
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 0,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.0
+        }
+      }
+    },
+    "DIRECT1": {
+      "positive_loss_fraction": 0.8482249992853931,
+      "weighted_huber": 0.0060945438089726285,
+      "weighted_one_step_sign_regret": 0.004954605438462794,
+      "missed_positive_expected_net": 0.00044379260518922505,
+      "wasted_negative_expected_net": 0.004510812833273569,
+      "missed_big_positive_rows": [],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 12,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 3.77109729054839e-05
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 15,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.0004060816322837411
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 0,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.0
+        }
+      }
+    },
+    "DIRECT2": {
+      "positive_loss_fraction": 0.8223695566181564,
+      "weighted_huber": 0.006380903040283483,
+      "weighted_one_step_sign_regret": 0.00543182779429223,
+      "missed_positive_expected_net": 0.0003420839800679596,
+      "wasted_negative_expected_net": 0.00508974381422427,
+      "missed_big_positive_rows": [],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 26,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 8.573628136151963e-05
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 12,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.0002563476987064399
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 0,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.0
+        }
+      }
+    },
+    "DQN0_0": {
+      "positive_loss_fraction": 0.4397757283946818,
+      "weighted_huber": 0.007677061694520192,
+      "weighted_one_step_sign_regret": 0.007286927816780337,
+      "missed_positive_expected_net": 0.0014255572056446166,
+      "wasted_negative_expected_net": 0.005861370611135721,
+      "missed_big_positive_rows": [],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 30,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 0.00026584983962261847
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 15,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.0011597073660219984
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 0,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.0
+        }
+      }
+    },
+    "DQN0_1": {
+      "positive_loss_fraction": 0.4512965558898264,
+      "weighted_huber": 0.007764318403984874,
+      "weighted_one_step_sign_regret": 0.01103270774341972,
+      "missed_positive_expected_net": 0.002896752807539703,
+      "wasted_negative_expected_net": 0.008135954935880017,
+      "missed_big_positive_rows": [
+        {
+          "sample_id": "6e083c615b24946adebd4092",
+          "position": 0,
+          "date": "2037-05-18",
+          "partition": "train",
+          "physical_state_group": "2037-05-18_101|call005",
+          "next_queries": 32,
+          "target": 1.5484551191329956,
+          "q_continue": -0.3974076211452484,
+          "q_stop": 0.0014534794026985765
+        },
+        {
+          "sample_id": "ee3f62db8d88d0a78ec25309",
+          "position": 1,
+          "date": "2037-08-17",
+          "partition": "train",
+          "physical_state_group": "2037-08-17_100|call009",
+          "next_queries": 64,
+          "target": 3.215707540512085,
+          "q_continue": -0.51027911901474,
+          "q_stop": 0.00019347123452462256
+        }
+      ],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 26,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 0.00021226893391229214
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 26,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.0016286159482032012
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 2,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.0010558679254242095
+        }
+      }
+    },
+    "DQN0_2": {
+      "positive_loss_fraction": 0.3702552823539937,
+      "weighted_huber": 0.006316891474710516,
+      "weighted_one_step_sign_regret": 0.005689401576646721,
+      "missed_positive_expected_net": 0.0019115528765405155,
+      "wasted_negative_expected_net": 0.003777848700106206,
+      "missed_big_positive_rows": [],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 30,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 0.00020679571885787485
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 29,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.0017047571576826407
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 0,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.0
+        }
+      }
+    },
+    "JOINT_seed0": {
+      "positive_loss_fraction": 0.8974364820145541,
+      "weighted_huber": 0.0056391303663104715,
+      "weighted_one_step_sign_regret": 0.0050029474358116496,
+      "missed_positive_expected_net": 0.003341785189800136,
+      "wasted_negative_expected_net": 0.0016611622460115136,
+      "missed_big_positive_rows": [
+        {
+          "sample_id": "96f14d562e13417ce7f65bd8",
+          "position": 0,
+          "date": "2037-06-01",
+          "partition": "train",
+          "physical_state_group": "2037-06-01_101|call002",
+          "next_queries": 64,
+          "target": 5.30854606628418,
+          "q_continue": -0.07793667912483215,
+          "q_stop": -0.0006349543109536171
+        },
+        {
+          "sample_id": "606197282bffaed786743c18",
+          "position": 0,
+          "date": "2037-07-06",
+          "partition": "train",
+          "physical_state_group": "2037-07-06_100|call002",
+          "next_queries": 64,
+          "target": 1.9514378309249878,
+          "q_continue": -0.039175599813461304,
+          "q_stop": -0.00424988754093647
+        }
+      ],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 39,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 0.0005002782711326838
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 41,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.0022852151617449887
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 2,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.0005562917569224632
+        }
+      }
+    },
+    "JOINT_seed1": {
+      "positive_loss_fraction": 0.9068439321929503,
+      "weighted_huber": 0.005118552093628569,
+      "weighted_one_step_sign_regret": 0.004497860014236666,
+      "missed_positive_expected_net": 0.0024496003522580904,
+      "wasted_negative_expected_net": 0.0020482596619785754,
+      "missed_big_positive_rows": [
+        {
+          "sample_id": "96f14d562e13417ce7f65bd8",
+          "position": 0,
+          "date": "2037-06-01",
+          "partition": "train",
+          "physical_state_group": "2037-06-01_101|call002",
+          "next_queries": 64,
+          "target": 5.30854606628418,
+          "q_continue": -0.04652608931064606,
+          "q_stop": -0.00400795042514801
+        }
+      ],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 34,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 0.00034239143151737706
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 37,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.0016774367327319554
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 1,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.00042977218800875806
+        }
+      }
+    },
+    "JOINT_seed2": {
+      "positive_loss_fraction": 0.9248694825729283,
+      "weighted_huber": 0.005232336636054009,
+      "weighted_one_step_sign_regret": 0.004200822143079266,
+      "missed_positive_expected_net": 0.002668591455713623,
+      "wasted_negative_expected_net": 0.0015322306873656437,
+      "missed_big_positive_rows": [
+        {
+          "sample_id": "96f14d562e13417ce7f65bd8",
+          "position": 0,
+          "date": "2037-06-01",
+          "partition": "train",
+          "physical_state_group": "2037-06-01_101|call002",
+          "next_queries": 64,
+          "target": 5.30854606628418,
+          "q_continue": -0.06244643032550812,
+          "q_stop": -0.0025141537189483643
+        }
+      ],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 39,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 0.00042936067775764037
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 41,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.0018094585899472247
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 1,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.00042977218800875806
+        }
+      }
+    },
+    "FACTOR_seed0": {
+      "positive_loss_fraction": 0.8355467266794996,
+      "weighted_huber": 0.006070599295605818,
+      "weighted_one_step_sign_regret": 0.005473882789369445,
+      "missed_positive_expected_net": 0.0041086521776451685,
+      "wasted_negative_expected_net": 0.0013652306117242752,
+      "missed_big_positive_rows": [
+        {
+          "sample_id": "96f14d562e13417ce7f65bd8",
+          "position": 0,
+          "date": "2037-06-01",
+          "partition": "train",
+          "physical_state_group": "2037-06-01_101|call002",
+          "next_queries": 64,
+          "target": 5.30854606628418,
+          "q_continue": -0.04833456873893738,
+          "q_stop": 0.0002810172736644745
+        },
+        {
+          "sample_id": "606197282bffaed786743c18",
+          "position": 0,
+          "date": "2037-07-06",
+          "partition": "train",
+          "physical_state_group": "2037-07-06_100|call002",
+          "next_queries": 64,
+          "target": 1.9514378309249878,
+          "q_continue": -0.029587507247924805,
+          "q_stop": -0.003966497257351875
+        },
+        {
+          "sample_id": "8522634218a5f51e1122e0fd",
+          "position": 0,
+          "date": "2037-08-17",
+          "partition": "train",
+          "physical_state_group": "2037-08-17_100|call003",
+          "next_queries": 64,
+          "target": 7.3826212882995605,
+          "q_continue": -0.10151398181915283,
+          "q_stop": -0.0012317933142185211
+        }
+      ],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 40,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 0.0005028672176406171
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 42,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.002374911579516705
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 3,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.001230873380487847
+        }
+      }
+    },
+    "FACTOR_seed1": {
+      "positive_loss_fraction": 0.9334180528196295,
+      "weighted_huber": 0.006398391533887143,
+      "weighted_one_step_sign_regret": 0.0056534081453446395,
+      "missed_positive_expected_net": 0.002950478027729477,
+      "wasted_negative_expected_net": 0.0027029301176151616,
+      "missed_big_positive_rows": [
+        {
+          "sample_id": "96f14d562e13417ce7f65bd8",
+          "position": 0,
+          "date": "2037-06-01",
+          "partition": "train",
+          "physical_state_group": "2037-06-01_101|call002",
+          "next_queries": 64,
+          "target": 5.30854606628418,
+          "q_continue": -0.09526856243610382,
+          "q_stop": 0.005678553134202957
+        }
+      ],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 36,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 0.00044935061703460803
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 45,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.002071355222686111
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 1,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.00042977218800875806
+        }
+      }
+    },
+    "FACTOR_seed2": {
+      "positive_loss_fraction": 0.9142789911684023,
+      "weighted_huber": 0.005018855022803326,
+      "weighted_one_step_sign_regret": 0.004672110857456161,
+      "missed_positive_expected_net": 0.0035483426313419946,
+      "wasted_negative_expected_net": 0.001123768226114167,
+      "missed_big_positive_rows": [
+        {
+          "sample_id": "96f14d562e13417ce7f65bd8",
+          "position": 0,
+          "date": "2037-06-01",
+          "partition": "train",
+          "physical_state_group": "2037-06-01_101|call002",
+          "next_queries": 64,
+          "target": 5.30854606628418,
+          "q_continue": -0.06608825922012329,
+          "q_stop": -0.00515022873878479
+        },
+        {
+          "sample_id": "fdc389aadd94075caaad6f14",
+          "position": 0,
+          "date": "2037-06-01",
+          "partition": "train",
+          "physical_state_group": "2037-06-01_101|call002",
+          "next_queries": 64,
+          "target": 3.1634936332702637,
+          "q_continue": -0.011065065860748291,
+          "q_stop": -0.010954998433589935
+        },
+        {
+          "sample_id": "ce856cab157bce8642daa3a1",
+          "position": 0,
+          "date": "2037-06-01",
+          "partition": "train",
+          "physical_state_group": "2037-06-01_101|call002",
+          "next_queries": 64,
+          "target": 3.1634936332702637,
+          "q_continue": -0.08422082662582397,
+          "q_stop": -0.0005912184715270996
+        },
+        {
+          "sample_id": "26d3cbc169ac8ddfae6f2a2c",
+          "position": 0,
+          "date": "2037-12-07",
+          "partition": "train",
+          "physical_state_group": "2037-12-07_100|call002",
+          "next_queries": 64,
+          "target": 1.0327000617980957,
+          "q_continue": -0.018396928906440735,
+          "q_stop": -0.004412740468978882
+        }
+      ],
+      "bins": {
+        "small_0_to_0.1": {
+          "states": 59,
+          "misses": 41,
+          "sampling_mass": 0.020913311220986868,
+          "missed_expected_normalized_gain": 0.00040729615567793064
+        },
+        "middle_0.1_to_1": {
+          "states": 86,
+          "misses": 40,
+          "sampling_mass": 0.021062927283448732,
+          "missed_expected_normalized_gain": 0.002058738069208588
+        },
+        "large_over_1": {
+          "states": 66,
+          "misses": 4,
+          "sampling_mass": 0.014630756582129437,
+          "missed_expected_normalized_gain": 0.0010823084064554755
+        }
+      }
+    }
+  },
+  "consensus_target_summary": {
+    "train": {
+      "n": 21,
+      "min": 0.03191782534122467,
+      "median": 0.10184086859226227,
+      "max": 5.30854606628418,
+      "mean": 0.3972739664216836
+    },
+    "validation": {
+      "n": 5,
+      "min": 0.14586541056632996,
+      "median": 1.340445876121521,
+      "max": 2.5400941371917725,
+      "mean": 1.3386616915464402
+    }
+  },
+  "scope": "All train states; descriptive fixed bins, not thresholds or new deployment policies. Weighted one-step regret differs from complete search trajectory utility.",
+  "source_sha256": "26bb2ce3cc1f602814e85f85cfb73457d5debcba5ce9b014ffc0839126fb1473",
+  "new_fits": 0
+}

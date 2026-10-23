@@ -660,3 +660,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID112配对学习方案](protocols/GRID112_relational_plan/complete/学习模块方案_中文.md)：完整分区—反馈条件化、同参数JOINT/FACTOR比较；输入合同已核验，神经模型与训练尚未执行。
 
 - [GRID113配对学习结果](protocols/GRID113_relational_learning/complete/GRID113_report.md)：固定六次JOINT/FACTOR监督回归、全部种子和日期、离线完整补查评价与审计。
+
+- [GRID114学习失败核对](protocols/GRID114_fit_diagnosis/complete/GRID114_report.md)：零训练，核对目标与正收益决策、配对敏感性及训练/验证完整序列，修正笼统训练不足解释。

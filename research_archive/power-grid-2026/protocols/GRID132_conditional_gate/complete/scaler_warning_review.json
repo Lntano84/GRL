@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "observed_warning": "RuntimeWarning: invalid value encountered in sqrt during weighted StandardScaler.fit;all final scales finite.",
+  "models": {
+    "EXP_PUBLIC37": {
+      "all_final_scaler_and_coefficients_finite": true,
+      "negative_roundoff_variance_columns": [
+        25
+      ],
+      "library_negative_variances": [
+        -8.061402401509068e-46
+      ],
+      "independent_centered_variances": [
+        0.0
+      ],
+      "constant_feature_range": [
+        0.0
+      ],
+      "all_negative_roundoff_columns_scale_one": true,
+      "fit_repeated": false
+    },
+    "EXP_COUNT1": {
+      "all_final_scaler_and_coefficients_finite": true,
+      "negative_roundoff_variance_columns": [],
+      "library_negative_variances": [],
+      "independent_centered_variances": [],
+      "constant_feature_range": [],
+      "all_negative_roundoff_columns_scale_one": true,
+      "fit_repeated": false
+    }
+  },
+  "no_model_or_data_changes": true
+}

@@ -698,3 +698,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID130一次LR与经验校准门控](protocols/GRID130_calibrated_gate/complete/GRID130_report.md)：同权重固定/校准门槛、完整同站/固定一批对照；局部收益保护增强但查询仅少4.81%，动作一致筛查未过，全部反例保留。
 
 - [GRID131大补查识别核查](protocols/GRID131_expensive_coverage/complete/GRID131_report.md)：只读训练/校准，大补查可省查询、统一门槛约束、组内重叠与Q-only排序参照；零训练/新验证评分。
+
+- [GRID132分组校准与大补查专门模型](protocols/GRID132_conditional_gate/complete/GRID132_report.md)：两份匹配LR、原权重统一/分组控制；分组校准小幅增加覆盖，专门学习无进一步优势，全部失败与数值警告核查保留。

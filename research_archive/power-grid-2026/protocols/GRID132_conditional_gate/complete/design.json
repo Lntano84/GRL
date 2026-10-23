@@ -1,0 +1,63 @@
+{
+  "id": "GRID132_CONDITIONAL_GATE",
+  "status": "frozen_before_two_fits",
+  "utc": "2026-10-23T11:22:30.289045+00:00",
+  "authorization": "User asks continue and previously authorizes autonomous ideas with updates. Announced exactly two small expensive-branch LR fits before fitting.",
+  "question": "Separate global-cutoff coupling from expensive-task prediction,with count-only matched control.",
+  "baseline": "Original FRAME full locked-station completion;one gate,otherwise unchanged original completion.",
+  "groups": "Known remaining count Q<=64 versus Q>64,original batch size boundary,no scan.",
+  "arms": {
+    "GLOBAL": "Reuse original37LR and original global threshold.",
+    "GROUP": "Reuse identical original scores;calibrate each fixed group separately.",
+    "EXP_PUBLIC37": "Cheap branch reuses original scores/cheap threshold;expensive new37LR/expensive threshold.",
+    "EXP_COUNT1": "Same but expensive LR only takes log_completion_queries,feature3."
+  },
+  "new_fits": 2,
+  "model_parameters": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 2000,
+    "random_state": 20261022,
+    "class_weight": null
+  },
+  "fit_dates": [
+    "2037-01-19",
+    "2037-02-16",
+    "2037-03-16",
+    "2037-05-18",
+    "2037-06-01",
+    "2037-06-15",
+    "2037-08-17",
+    "2037-09-07",
+    "2037-09-21",
+    "2037-11-02",
+    "2037-11-16",
+    "2037-12-07"
+  ],
+  "calibration_dates": [
+    "2037-01-05",
+    "2037-04-06",
+    "2037-07-06",
+    "2037-10-05"
+  ],
+  "fit_data": "Same445 expensive cases from12fitdates for both new models,all193expensive cases from4calibration dates kept.",
+  "weights": "Restrict original global-fit per-case date weights to expensive subset,normalize mean1;identical IDs/weights/scaler roles for both new arms. Do not introduce conditional date reweighting.",
+  "normalization": "New scalers fit only on445expensive fitcases;count model uses same scalar column as public model.",
+  "targets": "Full completion gain>0;empirical calibration protects all positive gains or action differences. No class/loss weight changes.",
+  "calibration": "For each fixed branch and model,lambda=max no-improvement score over positive/different-action calibration witnesses;strict greater SKIP,ties fallback,no witnesses fallback. No validation-selected lambda.",
+  "order": "Fit both final models and calibrate all group thresholds before opening saved original validation cases for new scoring. Freeze all model/threshold hashes first.",
+  "evaluation": "All4known validation dates,allarms andFULL_LOCAL/BATCH1;original GLOBAL exact replay. No physical/new scenarios/final8test.",
+  "primary_screen": "Zero disagreements versus full baseline in all590validation cases and date-macro query saving strictly greater than originalGLOBAL.",
+  "incremental_screen": "For each new expensive arm vsGROUP:gain loss no greater on any4date AND query fraction no greater on any4date,with strictly smaller query on at least1date. Joint quality/computation only,not cherry-picked aggregate.",
+  "interpretation": "Both experiments are exposed development diagnostics,not statistical guarantee,independent test or learning optimality. GROUP changes calibration degrees of freedom. Specialized model changesfitpopulation and compositecapacity,not isolated architecture cause.",
+  "prohibited": [
+    "morethan2fits",
+    "refit/extraepoch",
+    "groupboundary/feature/modelselection",
+    "riskalpha/thresholdscan",
+    "validationcalibration",
+    "newdata/physics/test",
+    "paper/figure",
+    "autoscales"
+  ]
+}

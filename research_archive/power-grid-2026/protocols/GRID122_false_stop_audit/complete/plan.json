@@ -1,0 +1,43 @@
+{
+  "id": "GRID122_FALSE_STOP_VISIBLE_EVIDENCE",
+  "utc": "2026-10-23T06:17:33.981993+00:00",
+  "authorization": "User: 继续. Continue announced high-cost false-stop investigation; read-only, no new fits or data.",
+  "scope": "All3582 OOF states and first actual common-prefix divergences of GRID121,3seeds; three previously identified worst calls for illustration, not selected test cases.",
+  "questions": [
+    "Are lost profitable continuations unsupported by similar training-date summaries?",
+    "Do existing41 summaries and8 fixed public geometry/feedback descriptors differ from saved unprofitable continuations?",
+    "Do zero/nonzero improvement probability and positive magnitude provide distinct potential supervision compared to net-sign classification?"
+  ],
+  "support": {
+    "representation": "Original41, same fold-training-only standardization/clipping as models.",
+    "distance": "Euclidean squared overall41. No chosen k, bandwidth, learned metric or threshold. Average all exact nearest ties.",
+    "references": "Only12fitdates for each held4date fold. Training support baseline excludes entire same physical search call, not merely same prefix.",
+    "warning": "Nearest positive/negative distances and nearest labels are descriptive training-label support, not proof of learnability or irreducibility; no deployed NN policy.",
+    "coverage": "95th percentile of fit-only leave-call-out nearest distance under original restricted sampling probabilities, fixed before errors. This diagnostic threshold is not a new stop rule."
+  },
+  "groups": [
+    "utility0_huber1_nextpositive",
+    "utility0_huber1_nextnonpositive",
+    "utility1_huber0_nextpositive",
+    "utility1_huber0_nextnonpositive"
+  ],
+  "association": "Describe ALL41 public summaries plus8 fixed descriptors. Call-balanced means/medians/ranges, all fields retained; no significance, feature selection for fitting or trigger optimization.",
+  "target_factorization": "Describe original raw next gain/scale and known query charge separately, training partitions only; positive amount vs nonzero-event counts. No new labels from wholeweek results.",
+  "public_extra": [
+    "known_same_station",
+    "known_strict",
+    "known_legal",
+    "legal_reward_gap_asinh_mean",
+    "legal_reward_gap_asinh_std",
+    "next_anchor_pair_distance_mean",
+    "next_seen_pair_distance_mean",
+    "next_exact_seen_fraction"
+  ],
+  "guards": [
+    "No weight loading, forward prediction or training",
+    "No optimizer/backward/simulation/install",
+    "No final8test materialization",
+    "No change to models,data,fees,thresholds or folds",
+    "Do not infer wholeweek effects or generalization guarantees from nearest states or selected cases"
+  ]
+}

@@ -1222,3 +1222,8 @@ GRID120/121 total30fits complete. Readonly OOFerroraggregation preserves family 
 ## 2026-10-23 — GRID122 visible-evidence/support audit frozen
 
 User continues announced highcostfalseSTOPdiagnosis. Readonlyall3582OOFstates/3seeds/firstcommonprefixdifferences;NNinoriginal41fold-normalizedspaceusesonly12fitdates,allnearestties,no learnedmetric/k/threshold tuning. Fitcoveragebaselineexcludesentirephysicalcall;fit-only95percentile diagnosticnotstoprule. Describeall41+8fixedpaidfeedback/geometryfieldsandrawgain/knownchargefactorization. Threepriorworstcallsillustrativeonly;no fit/forward/physical/test.
+
+
+## 2026-10-23 — GRID122 visible-evidence/support audit complete
+
+Readonly3582OOFstatesandallfirstdivergences. ProfitablefalseSTOP162records/40calls;avoidedunprofitable2623/214. Callbalanced nearestpositivefractionsbad/saved=0.120109/0.051536,beyondfit-onlydistance95=0.081250/0.058721;descriptiveonlynotlearnability/irreducibility. 49/49callmeanfeaturerangesoverlap. Rawgainpositives438/93calls,netpositive211/54calls;probability-timesamountidentitychecked,notpredictivemodelresult. Independentdistances/publicdescriptors/divergences/conservationauditpasses;zero model/optimizer/fit/physical/test. Keepnetregression,nextcandidateimprovement-eventauxiliarysupervisionneedsmatchedprotocolbeforefit;nochosenNNtrigger.

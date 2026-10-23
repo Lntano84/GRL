@@ -1,0 +1,50 @@
+{
+  "id": "GRID133_NONLINEAR_GATE",
+  "status": "frozen_before_one_fit",
+  "utc": "2026-10-23T11:35:48.571145+00:00",
+  "authorization": "User asks continue autonomous research; one fixed forest announced before training.",
+  "question": "Can a shallow nonlinear classifier improve expensive full-completion skip decisions with exactly the same37 public inputs?",
+  "model": "RandomForestClassifier, binary full completion gain>0; no feature selection or tuning.",
+  "forest_parameters": {
+    "n_estimators": 64,
+    "max_depth": 4,
+    "min_samples_leaf": 20,
+    "max_features": 1.0,
+    "random_state": 20261022,
+    "n_jobs": 1
+  },
+  "classifier_defaults": {
+    "criterion": "gini",
+    "bootstrap": true,
+    "class_weight": null
+  },
+  "new_fits": 1,
+  "provenance": "Forest structural parameters from GRID101 full-gain regressor; classifier changes target/output and model family relative to LR. Not an untried algorithm, nor a parameter-count/compute-matched architecture ablation.",
+  "fit": "Same445 Q>64 original12-date cases and weights as GRID132;193 original4-date calibration cases.",
+  "features": "Exactly original first37 float32 summaries; no geometry addition, scaler not needed by tree thresholds.",
+  "cheap_branch": "Original GRID130 scores and GRID132 cheap threshold unchanged.",
+  "calibration": "Same max no-improvement probability over gain-positive or action-different calibration witnesses; strict greater SKIP, ties fallback, no witnesses fallback.",
+  "reference": [
+    "FULL_LOCAL",
+    "BATCH1",
+    "GLOBAL",
+    "GROUP",
+    "EXP_PUBLIC37",
+    "EXP_COUNT1"
+  ],
+  "screens": "Zero disagreements versus full baseline in all590validation cases and date-macro query saving strictly greater than originalGLOBAL.",
+  "incremental_screen": "For each new expensive arm vsGROUP:gain loss no greater on any4date AND query fraction no greater on any4date,with strictly smaller query on at least1date. Joint quality/computation only,not cherry-picked aggregate.",
+  "order": "Only train/calibration inputs in preparation/fit; freeze weights and thresholds before new validation scoring.",
+  "public_information_audit": "Count exact37-vector label collisions and next-batch coverage on train/cal only; no claim absence of collisions proves sufficiency, nor scope mismatch proves new representation will work.",
+  "budget": "One64-tree fit; wall cap120s detected and preserved, no retries, seeds/splits/threshold scan or extra fits.",
+  "scope": "All4validation dates exposed development, zero physical calls/new data/final8tests; local reward increments not whole-week economic cost or actual speed.",
+  "prohibited": [
+    "refit",
+    "parameter/seed search",
+    "new geometry model in this unit",
+    "new validation calibration",
+    "physical rollout",
+    "scaleup",
+    "paper/figures"
+  ]
+}

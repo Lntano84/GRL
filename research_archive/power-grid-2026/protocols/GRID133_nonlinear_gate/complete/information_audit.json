@@ -1,0 +1,30 @@
+{
+  "cohorts": {
+    "fit": {
+      "expensive_prefixes": 445,
+      "all_pending_queries": 67202,
+      "old_next_batch_candidates": 28480,
+      "beyond_old_next_batch": 38722,
+      "exact_summary_groups": 445,
+      "conflicting_exact_summary_groups": 0,
+      "conflicting_sample_ids": []
+    },
+    "calibration": {
+      "expensive_prefixes": 193,
+      "all_pending_queries": 29055,
+      "old_next_batch_candidates": 12352,
+      "beyond_old_next_batch": 16703,
+      "exact_summary_groups": 193,
+      "conflicting_exact_summary_groups": 0,
+      "conflicting_sample_ids": []
+    }
+  },
+  "models_fitted": 0,
+  "findings": [
+    "37 summaries retain reward/rho statistics and station coverage but no action partition or association of each paid feedback with a partition.",
+    "GRID112/113/116/119 relational inputs include all paid local feedback but ONLY the next<=64 unseen plans; current gate is all remaining completion.",
+    "Next-batch input is scope-limited for this new target, but omitted candidate information is public at decision time; no evidence yet that it predicts the full tail.",
+    "Prior relational failures and weak pairing-permutation response remain counterevidence; do not claim relations have not been tried.",
+    "No exact collisions does not establish predictive sufficiency; artificial collisions or absence of train overlap do not prove impossibility."
+  ]
+}

@@ -700,3 +700,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID131大补查识别核查](protocols/GRID131_expensive_coverage/complete/GRID131_report.md)：只读训练/校准，大补查可省查询、统一门槛约束、组内重叠与Q-only排序参照；零训练/新验证评分。
 
 - [GRID132分组校准与大补查专门模型](protocols/GRID132_conditional_gate/complete/GRID132_report.md)：两份匹配LR、原权重统一/分组控制；分组校准小幅增加覆盖，专门学习无进一步优势，全部失败与数值警告核查保留。
+
+- [GRID133同信息浅森林与输入范围核查](protocols/GRID133_nonlinear_gate/complete/GRID133_report.md)：一份固定非线性分类未改善大组跳过；完整尾部输入与旧下一批关系任务区分，不把范围缺口当预测价值证明。

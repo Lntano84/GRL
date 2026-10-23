@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "all590_decisions_queries_match_original_GLOBAL": true,
+  "calibration_date_diagnostics": {
+    "2037-01-05": {
+      "prefixes": 24,
+      "physical_calls": 3,
+      "RF_auc": 0.6086956521739131,
+      "specialized_LR_auc": 0.34782608695652173,
+      "original_LR_auc": 0.8695652173913043
+    },
+    "2037-04-06": {
+      "prefixes": 52,
+      "physical_calls": 6,
+      "RF_auc": 0.8153409090909092,
+      "specialized_LR_auc": 0.6505681818181819,
+      "original_LR_auc": 0.8409090909090909
+    },
+    "2037-07-06": {
+      "prefixes": 98,
+      "physical_calls": 13,
+      "RF_auc": 0.7176238738738739,
+      "specialized_LR_auc": 0.5304054054054055,
+      "original_LR_auc": 0.8277027027027026
+    },
+    "2037-10-05": {
+      "prefixes": 19,
+      "physical_calls": 2,
+      "RF_auc": 0.5897435897435898,
+      "specialized_LR_auc": 0.7307692307692308,
+      "original_LR_auc": 0.5256410256410257
+    }
+  },
+  "expensive_validation_max_no_gain_score": 0.9210742360735311,
+  "expensive_frozen_threshold": 0.924797099284494,
+  "expensive_validation_queries_all_fallback": true,
+  "forest_fit_once": true,
+  "no_additional_models_or_thresholds": true
+}

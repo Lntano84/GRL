@@ -1066,3 +1066,8 @@ Userauthorizesautonomousprogresswithupdates.30newfixedfits,original6978/41/7250x
 ## 2026-10-23 — GRID126 known-cost/gain learning complete
 
 30fixedfits6978/7250x32/originalinitandstreams,15baselinesreused,wall217.14s. Families={'validation': {'NET_ZERO': 0.16292472687799245, 'GAIN_DIRECT': 0.1590323563107055, 'COST_POSITIVE': 0.13261113171729758}, 'oof': {'NET_ZERO': 0.0860550575338817, 'GAIN_DIRECT': 0.08567469645255343, 'COST_POSITIVE': 0.062077989325268736}};incremental={'GAIN_DIRECT': False, 'COST_POSITIVE': False};positivelinkspecific=False;candidate={'GAIN_DIRECT': False, 'COST_POSITIVE': False}. IndependentNumPy/optimizer/exposure/publiccharge/trajectoryauditpassed. Initial/finalJacobianandfirst-commonprefixdifferencesretained,no seed/linkrescue. Exposedteacherlocal-searchdevelopmentonly,not newRL/wholeweekspeed/independenttest;no physical/dataexpansion/finaltest.
+
+
+## 2026-10-23 — GRID127 fixed-positive-link mean-objective learning frozen
+
+AfterauditedGRID126positiveHubercontinuecollapse,autonomoususerauthorizationcoversannounced30fixedPOS_MSE/POS_KLfits,same6978/init/link/7250x32/Adam/clip/sampler/task;15POS_HUBER+15NETcachedcontrolsreused. GeneralizedKLcontinuousnonnegativegains,noPoissondataassumption;gradient.5(g-G)/hypot(r,c),properconditionalmeanpopulationtargetnotfinitefitguarantee. No lossnormalizerselection/extraepochs/linkrescue. Allendpointsbeforeheld/validation,1800scap,no physical/dataexpansion/test.

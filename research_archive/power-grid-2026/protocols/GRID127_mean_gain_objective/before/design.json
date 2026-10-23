@@ -1,0 +1,294 @@
+{
+  "id": "GRID127_MEAN_GAIN_OBJECTIVE",
+  "utc": "2026-10-23T08:20:48.927380+00:00",
+  "authorization": "User authorizes autonomous learning exploration with immediate updates. Announced fixed-link square-loss/generalized-KL comparison after auditedGRID126 stopcollapse.",
+  "question": "Under the identical positive gain/known-cost parameterization,does a conditional-mean-consistent loss recover rare valuable CONTINUE decisions,versus the frozenHuber models and originalnetregression?",
+  "inherited": "Original41/6978network/init/7250x32/sampler/Adam/clip10/fee/data/datefolds;positive gain g=r+hypot(r,c),netg-c,continueiffr>0;no auxiliary classifier.",
+  "arms": {
+    "NET_ZERO": "Reuse15originalcachednetmodels.",
+    "POS_HUBER": "Reuse15GRID126COST_POSITIVE models;no repeatfits.",
+    "POS_MSE": "0.5mean((g-G)^2)+0.5Huber(stophead,0).",
+    "POS_KL": "0.5mean(g-G+G(logG-logg))+0.5Huber(stophead,0);0log0=0,logg=logc+asinh(r/c). G may be any nonnegative continuous label,no Poisson count assumption."
+  },
+  "derivation": "For fixedpubliccontextandg>0,expectedKLderivativewithrespecttog=1-E[G|context]/g,minimumatconditionalmean;MSEhasthesamemeanminimum. Withchosenlink,dg/dr=g/hypot(r,c),soKLmainrgradient=.5(g-G)/hypot(r,c),avoidsmultiplyingrarelargeunderestimatessolelybyvanishingsmallgain. Populationtargetnotfinitefit/generalizationguarantee.",
+  "matching": "Bothnewarmsidenticallink,initialfunctions,randomweights,main0.5nominalcoefficient,stopHuber,samplesandupdates. Lossandgradientscalesaredifferent,not gradient/compute-time matching;recordclippingandgradientprofiles,noperformance-selectednormalizer.",
+  "training": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip": 10.0,
+    "wall_cap_s": 1800,
+    "new_fits": 30,
+    "fit_order": [
+      [
+        "full",
+        0,
+        "POS_MSE"
+      ],
+      [
+        "full",
+        0,
+        "POS_KL"
+      ],
+      [
+        "full",
+        1,
+        "POS_MSE"
+      ],
+      [
+        "full",
+        1,
+        "POS_KL"
+      ],
+      [
+        "full",
+        2,
+        "POS_MSE"
+      ],
+      [
+        "full",
+        2,
+        "POS_KL"
+      ],
+      [
+        "f0",
+        0,
+        "POS_MSE"
+      ],
+      [
+        "f0",
+        0,
+        "POS_KL"
+      ],
+      [
+        "f0",
+        1,
+        "POS_MSE"
+      ],
+      [
+        "f0",
+        1,
+        "POS_KL"
+      ],
+      [
+        "f0",
+        2,
+        "POS_MSE"
+      ],
+      [
+        "f0",
+        2,
+        "POS_KL"
+      ],
+      [
+        "f1",
+        0,
+        "POS_MSE"
+      ],
+      [
+        "f1",
+        0,
+        "POS_KL"
+      ],
+      [
+        "f1",
+        1,
+        "POS_MSE"
+      ],
+      [
+        "f1",
+        1,
+        "POS_KL"
+      ],
+      [
+        "f1",
+        2,
+        "POS_MSE"
+      ],
+      [
+        "f1",
+        2,
+        "POS_KL"
+      ],
+      [
+        "f2",
+        0,
+        "POS_MSE"
+      ],
+      [
+        "f2",
+        0,
+        "POS_KL"
+      ],
+      [
+        "f2",
+        1,
+        "POS_MSE"
+      ],
+      [
+        "f2",
+        1,
+        "POS_KL"
+      ],
+      [
+        "f2",
+        2,
+        "POS_MSE"
+      ],
+      [
+        "f2",
+        2,
+        "POS_KL"
+      ],
+      [
+        "f3",
+        0,
+        "POS_MSE"
+      ],
+      [
+        "f3",
+        0,
+        "POS_KL"
+      ],
+      [
+        "f3",
+        1,
+        "POS_MSE"
+      ],
+      [
+        "f3",
+        1,
+        "POS_KL"
+      ],
+      [
+        "f3",
+        2,
+        "POS_MSE"
+      ],
+      [
+        "f3",
+        2,
+        "POS_KL"
+      ]
+    ]
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "held_dates": [
+        "2037-01-05",
+        "2037-04-06",
+        "2037-07-06",
+        "2037-10-05"
+      ],
+      "fit_dates": [
+        "2037-01-19",
+        "2037-02-16",
+        "2037-03-16",
+        "2037-05-18",
+        "2037-06-01",
+        "2037-06-15",
+        "2037-08-17",
+        "2037-09-07",
+        "2037-09-21",
+        "2037-11-02",
+        "2037-11-16",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 1,
+      "held_dates": [
+        "2037-01-19",
+        "2037-05-18",
+        "2037-08-17",
+        "2037-11-02"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-02-16",
+        "2037-03-16",
+        "2037-04-06",
+        "2037-06-01",
+        "2037-06-15",
+        "2037-07-06",
+        "2037-09-07",
+        "2037-09-21",
+        "2037-10-05",
+        "2037-11-16",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 2,
+      "held_dates": [
+        "2037-02-16",
+        "2037-06-01",
+        "2037-09-07",
+        "2037-11-16"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-01-19",
+        "2037-03-16",
+        "2037-04-06",
+        "2037-05-18",
+        "2037-06-15",
+        "2037-07-06",
+        "2037-08-17",
+        "2037-09-21",
+        "2037-10-05",
+        "2037-11-02",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 3,
+      "held_dates": [
+        "2037-03-16",
+        "2037-06-15",
+        "2037-09-21",
+        "2037-12-07"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-01-19",
+        "2037-02-16",
+        "2037-04-06",
+        "2037-05-18",
+        "2037-06-01",
+        "2037-07-06",
+        "2037-08-17",
+        "2037-09-07",
+        "2037-10-05",
+        "2037-11-02",
+        "2037-11-16"
+      ]
+    }
+  ],
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "evaluation": "All30newendpointsbeforevalidation/heldinference;original4validationdatesandconditional16dateOOF,complete-searchutility/query/gain,allseedsanddates. No newtest/physical/dataexpansion.",
+  "criteria": "NewarmvsNET_ZEROandvsPOS_HUBERmusthavepositivefamilymean/all3pairedseeds,>=3/4valdatesand>=12/16OOFdatesinbothdomains. KL-specificclaimrequiresanalogousKL>MSEsupport. CompareoldHuber/DQN/BATCH1anchors;no seedselection.",
+  "limitations": "Repeatedexposedteacherpathdevelopments;historicaltaskfee/scaleusedall16dates,notpristinenestedtest. No claimPoissondistribution,RL,wholeweekquality,latencyorstatisticalsignificance. PreserveGRID108MSEandGRID126negativeboundresults.",
+  "prohibited": [
+    "morethan30newfits",
+    "link/lr/lossweighttuning",
+    "newcost/date/seed/data",
+    "fitcontinuation",
+    "physicalreplay",
+    "final8test",
+    "paper/figures"
+  ]
+}

@@ -1,0 +1,560 @@
+{
+  "full__NET_ZERO_seed0": {
+    "train": {
+      "states": 3582,
+      "positive_misses": 30,
+      "unprofitable_continues": 839,
+      "weighted_sign_regret": 0.007835273627450106,
+      "weighted_main_huber": 0.015408484746006269,
+      "weighted_net_prediction": 0.024872706758763803
+    },
+    "validation": {
+      "states": 856,
+      "positive_misses": 13,
+      "unprofitable_continues": 283,
+      "weighted_sign_regret": 0.015766393263683728,
+      "weighted_main_huber": 0.08095022465848685,
+      "weighted_net_prediction": 0.03173279060306783
+    }
+  },
+  "full__NET_ZERO_seed1": {
+    "train": {
+      "states": 3582,
+      "positive_misses": 27,
+      "unprofitable_continues": 737,
+      "weighted_sign_regret": 0.004910223680276569,
+      "weighted_main_huber": 0.012189034908276032,
+      "weighted_net_prediction": 0.021099590356930032
+    },
+    "validation": {
+      "states": 856,
+      "positive_misses": 14,
+      "unprofitable_continues": 324,
+      "weighted_sign_regret": 0.01827087773345539,
+      "weighted_main_huber": 0.08871805197597557,
+      "weighted_net_prediction": 0.03951821346563
+    }
+  },
+  "full__NET_ZERO_seed2": {
+    "train": {
+      "states": 3582,
+      "positive_misses": 38,
+      "unprofitable_continues": 644,
+      "weighted_sign_regret": 0.005380076577593984,
+      "weighted_main_huber": 0.012761660970451824,
+      "weighted_net_prediction": 0.019129618665802744
+    },
+    "validation": {
+      "states": 856,
+      "positive_misses": 13,
+      "unprofitable_continues": 297,
+      "weighted_sign_regret": 0.019438696690087628,
+      "weighted_main_huber": 0.07724198545434106,
+      "weighted_net_prediction": 0.02778341833337613
+    }
+  },
+  "full__AUX_NETSIGN_seed0": {
+    "train": {
+      "states": 3582,
+      "positive_misses": 8,
+      "unprofitable_continues": 1166,
+      "weighted_sign_regret": 0.00797288921862405,
+      "weighted_main_huber": 0.02395040777879102,
+      "weighted_net_prediction": 0.03347482197978268,
+      "aux_bce_own_target": 0.026355926967119737
+    },
+    "validation": {
+      "states": 856,
+      "positive_misses": 13,
+      "unprofitable_continues": 328,
+      "weighted_sign_regret": 0.013531103816637293,
+      "weighted_main_huber": 0.06783903078172336,
+      "weighted_net_prediction": 0.02298518830438068,
+      "aux_bce_own_target": 0.24100442322986715
+    }
+  },
+  "full__AUX_NETSIGN_seed1": {
+    "train": {
+      "states": 3582,
+      "positive_misses": 24,
+      "unprofitable_continues": 1070,
+      "weighted_sign_regret": 0.0073996103960941246,
+      "weighted_main_huber": 0.024759832813059452,
+      "weighted_net_prediction": 0.021926884171296238,
+      "aux_bce_own_target": 0.028455392550100357
+    },
+    "validation": {
+      "states": 856,
+      "positive_misses": 17,
+      "unprofitable_continues": 335,
+      "weighted_sign_regret": 0.02740779817687238,
+      "weighted_main_huber": 0.06678452018328221,
+      "weighted_net_prediction": 0.012174766129371434,
+      "aux_bce_own_target": 0.25970183702284927
+    }
+  },
+  "full__AUX_NETSIGN_seed2": {
+    "train": {
+      "states": 3582,
+      "positive_misses": 13,
+      "unprofitable_continues": 834,
+      "weighted_sign_regret": 0.006571679060317653,
+      "weighted_main_huber": 0.02211535509597036,
+      "weighted_net_prediction": 0.017461499902224592,
+      "aux_bce_own_target": 0.026324027775918312
+    },
+    "validation": {
+      "states": 856,
+      "positive_misses": 11,
+      "unprofitable_continues": 287,
+      "weighted_sign_regret": 0.013210629569467634,
+      "weighted_main_huber": 0.06831197459296448,
+      "weighted_net_prediction": 0.020809623298933478,
+      "aux_bce_own_target": 0.20615281352470652
+    }
+  },
+  "full__AUX_GAIN_seed0": {
+    "train": {
+      "states": 3582,
+      "positive_misses": 28,
+      "unprofitable_continues": 1173,
+      "weighted_sign_regret": 0.00952725202372252,
+      "weighted_main_huber": 0.028863464365112706,
+      "weighted_net_prediction": 0.015762971294935327,
+      "aux_bce_own_target": 0.0717401055277552
+    },
+    "validation": {
+      "states": 856,
+      "positive_misses": 19,
+      "unprofitable_continues": 284,
+      "weighted_sign_regret": 0.03320605013655985,
+      "weighted_main_huber": 0.07088449450709328,
+      "weighted_net_prediction": -0.002948478536243259,
+      "aux_bce_own_target": 0.4250429851189213
+    }
+  },
+  "full__AUX_GAIN_seed1": {
+    "train": {
+      "states": 3582,
+      "positive_misses": 18,
+      "unprofitable_continues": 1014,
+      "weighted_sign_regret": 0.007644641006381317,
+      "weighted_main_huber": 0.030805282372299923,
+      "weighted_net_prediction": 0.007177482976300407,
+      "aux_bce_own_target": 0.06889188805663697
+    },
+    "validation": {
+      "states": 856,
+      "positive_misses": 14,
+      "unprofitable_continues": 311,
+      "weighted_sign_regret": 0.031032668049313233,
+      "weighted_main_huber": 0.07062905662600066,
+      "weighted_net_prediction": 0.00429599930663275,
+      "aux_bce_own_target": 0.4695168860676906
+    }
+  },
+  "full__AUX_GAIN_seed2": {
+    "train": {
+      "states": 3582,
+      "positive_misses": 32,
+      "unprofitable_continues": 850,
+      "weighted_sign_regret": 0.007370043242956188,
+      "weighted_main_huber": 0.027862879350671534,
+      "weighted_net_prediction": 0.005922956796056683,
+      "aux_bce_own_target": 0.06831406354694869
+    },
+    "validation": {
+      "states": 856,
+      "positive_misses": 11,
+      "unprofitable_continues": 318,
+      "weighted_sign_regret": 0.015009835028577695,
+      "weighted_main_huber": 0.06623547258559367,
+      "weighted_net_prediction": 0.013968583908189837,
+      "aux_bce_own_target": 0.5136585969892319
+    }
+  },
+  "f0__NET_ZERO_seed0": {
+    "fit": {
+      "states": 2478,
+      "positive_misses": 23,
+      "unprofitable_continues": 478,
+      "weighted_sign_regret": 0.003754655987270495,
+      "weighted_main_huber": 0.010530749150485502,
+      "weighted_net_prediction": 0.0013712419079108906
+    }
+  },
+  "f0__NET_ZERO_seed1": {
+    "fit": {
+      "states": 2478,
+      "positive_misses": 10,
+      "unprofitable_continues": 770,
+      "weighted_sign_regret": 0.005862121913804805,
+      "weighted_main_huber": 0.008151866097423046,
+      "weighted_net_prediction": 0.023737156685242743
+    }
+  },
+  "f0__NET_ZERO_seed2": {
+    "fit": {
+      "states": 2478,
+      "positive_misses": 26,
+      "unprofitable_continues": 501,
+      "weighted_sign_regret": 0.0036260290762854756,
+      "weighted_main_huber": 0.008874565001941106,
+      "weighted_net_prediction": 0.0032539810312688412
+    }
+  },
+  "f0__AUX_NETSIGN_seed0": {
+    "fit": {
+      "states": 2478,
+      "positive_misses": 17,
+      "unprofitable_continues": 305,
+      "weighted_sign_regret": 0.0024270416065289655,
+      "weighted_main_huber": 0.014016201034386045,
+      "weighted_net_prediction": -0.017439379289695932,
+      "aux_bce_own_target": 0.011492712406035397
+    }
+  },
+  "f0__AUX_NETSIGN_seed1": {
+    "fit": {
+      "states": 2478,
+      "positive_misses": 1,
+      "unprofitable_continues": 516,
+      "weighted_sign_regret": 0.00383997467341901,
+      "weighted_main_huber": 0.014339837895093238,
+      "weighted_net_prediction": 0.009607931513757488,
+      "aux_bce_own_target": 0.008354121029863123
+    }
+  },
+  "f0__AUX_NETSIGN_seed2": {
+    "fit": {
+      "states": 2478,
+      "positive_misses": 5,
+      "unprofitable_continues": 497,
+      "weighted_sign_regret": 0.004192091889388074,
+      "weighted_main_huber": 0.012898736571225975,
+      "weighted_net_prediction": 0.005981677660507021,
+      "aux_bce_own_target": 0.010920022235013083
+    }
+  },
+  "f0__AUX_GAIN_seed0": {
+    "fit": {
+      "states": 2478,
+      "positive_misses": 22,
+      "unprofitable_continues": 812,
+      "weighted_sign_regret": 0.010569920705989465,
+      "weighted_main_huber": 0.017792808906321015,
+      "weighted_net_prediction": 0.004458800384334554,
+      "aux_bce_own_target": 0.03600665989120835
+    }
+  },
+  "f0__AUX_GAIN_seed1": {
+    "fit": {
+      "states": 2478,
+      "positive_misses": 13,
+      "unprofitable_continues": 1140,
+      "weighted_sign_regret": 0.011098765612865488,
+      "weighted_main_huber": 0.01898427483775627,
+      "weighted_net_prediction": 0.032520598674063095,
+      "aux_bce_own_target": 0.035297984276078935
+    }
+  },
+  "f0__AUX_GAIN_seed2": {
+    "fit": {
+      "states": 2478,
+      "positive_misses": 17,
+      "unprofitable_continues": 750,
+      "weighted_sign_regret": 0.007620824937335376,
+      "weighted_main_huber": 0.01660525522393844,
+      "weighted_net_prediction": 0.005952173397709431,
+      "aux_bce_own_target": 0.03236450522258811
+    }
+  },
+  "f1__NET_ZERO_seed0": {
+    "fit": {
+      "states": 2679,
+      "positive_misses": 13,
+      "unprofitable_continues": 925,
+      "weighted_sign_regret": 0.008429367340801859,
+      "weighted_main_huber": 0.009661827680554897,
+      "weighted_net_prediction": 0.04328324423606099
+    }
+  },
+  "f1__NET_ZERO_seed1": {
+    "fit": {
+      "states": 2679,
+      "positive_misses": 14,
+      "unprofitable_continues": 469,
+      "weighted_sign_regret": 0.004327909303624708,
+      "weighted_main_huber": 0.00755684862087993,
+      "weighted_net_prediction": 0.03567977559065329
+    }
+  },
+  "f1__NET_ZERO_seed2": {
+    "fit": {
+      "states": 2679,
+      "positive_misses": 28,
+      "unprofitable_continues": 372,
+      "weighted_sign_regret": 0.00298027461755558,
+      "weighted_main_huber": 0.007718531205743983,
+      "weighted_net_prediction": 0.024496398616993455
+    }
+  },
+  "f1__AUX_NETSIGN_seed0": {
+    "fit": {
+      "states": 2679,
+      "positive_misses": 4,
+      "unprofitable_continues": 822,
+      "weighted_sign_regret": 0.007421203040070035,
+      "weighted_main_huber": 0.019352179422867065,
+      "weighted_net_prediction": 0.039257692310835875,
+      "aux_bce_own_target": 0.012726486315983214
+    }
+  },
+  "f1__AUX_NETSIGN_seed1": {
+    "fit": {
+      "states": 2679,
+      "positive_misses": 9,
+      "unprofitable_continues": 698,
+      "weighted_sign_regret": 0.0055308626899303985,
+      "weighted_main_huber": 0.018000897438449272,
+      "weighted_net_prediction": 0.033822940555564895,
+      "aux_bce_own_target": 0.013753149838603833
+    }
+  },
+  "f1__AUX_NETSIGN_seed2": {
+    "fit": {
+      "states": 2679,
+      "positive_misses": 12,
+      "unprofitable_continues": 519,
+      "weighted_sign_regret": 0.004756365001724842,
+      "weighted_main_huber": 0.014813283680655534,
+      "weighted_net_prediction": 0.025070348397384357,
+      "aux_bce_own_target": 0.015348019656522839
+    }
+  },
+  "f1__AUX_GAIN_seed0": {
+    "fit": {
+      "states": 2679,
+      "positive_misses": 22,
+      "unprofitable_continues": 660,
+      "weighted_sign_regret": 0.007159518912239566,
+      "weighted_main_huber": 0.023125906900574703,
+      "weighted_net_prediction": 0.015434413991294058,
+      "aux_bce_own_target": 0.04110255788042107
+    }
+  },
+  "f1__AUX_GAIN_seed1": {
+    "fit": {
+      "states": 2679,
+      "positive_misses": 14,
+      "unprofitable_continues": 871,
+      "weighted_sign_regret": 0.008930663215470086,
+      "weighted_main_huber": 0.023806251755350095,
+      "weighted_net_prediction": 0.02914088422336913,
+      "aux_bce_own_target": 0.041720952457082586
+    }
+  },
+  "f1__AUX_GAIN_seed2": {
+    "fit": {
+      "states": 2679,
+      "positive_misses": 19,
+      "unprofitable_continues": 899,
+      "weighted_sign_regret": 0.009092400105071494,
+      "weighted_main_huber": 0.018556328006738905,
+      "weighted_net_prediction": 0.03752869045568875,
+      "aux_bce_own_target": 0.043505755294771346
+    }
+  },
+  "f2__NET_ZERO_seed0": {
+    "fit": {
+      "states": 2771,
+      "positive_misses": 16,
+      "unprofitable_continues": 900,
+      "weighted_sign_regret": 0.007937562143420026,
+      "weighted_main_huber": 0.01838486016678653,
+      "weighted_net_prediction": 0.04052624366815515
+    }
+  },
+  "f2__NET_ZERO_seed1": {
+    "fit": {
+      "states": 2771,
+      "positive_misses": 27,
+      "unprofitable_continues": 483,
+      "weighted_sign_regret": 0.005103065095711905,
+      "weighted_main_huber": 0.012941798195265532,
+      "weighted_net_prediction": 0.03160181541818474
+    }
+  },
+  "f2__NET_ZERO_seed2": {
+    "fit": {
+      "states": 2771,
+      "positive_misses": 10,
+      "unprofitable_continues": 778,
+      "weighted_sign_regret": 0.005625876476824043,
+      "weighted_main_huber": 0.015322741684844215,
+      "weighted_net_prediction": 0.03827485115505773
+    }
+  },
+  "f2__AUX_NETSIGN_seed0": {
+    "fit": {
+      "states": 2771,
+      "positive_misses": 10,
+      "unprofitable_continues": 806,
+      "weighted_sign_regret": 0.00647241989769151,
+      "weighted_main_huber": 0.022085028112411816,
+      "weighted_net_prediction": 0.03927369055780992,
+      "aux_bce_own_target": 0.015403099345541188
+    }
+  },
+  "f2__AUX_NETSIGN_seed1": {
+    "fit": {
+      "states": 2771,
+      "positive_misses": 6,
+      "unprofitable_continues": 523,
+      "weighted_sign_regret": 0.004435070843719717,
+      "weighted_main_huber": 0.024470952200988445,
+      "weighted_net_prediction": 0.01852791279266725,
+      "aux_bce_own_target": 0.017016423353923373
+    }
+  },
+  "f2__AUX_NETSIGN_seed2": {
+    "fit": {
+      "states": 2771,
+      "positive_misses": 8,
+      "unprofitable_continues": 864,
+      "weighted_sign_regret": 0.006819961893606593,
+      "weighted_main_huber": 0.02235689524535696,
+      "weighted_net_prediction": 0.03566703120596969,
+      "aux_bce_own_target": 0.017404258548690415
+    }
+  },
+  "f2__AUX_GAIN_seed0": {
+    "fit": {
+      "states": 2771,
+      "positive_misses": 15,
+      "unprofitable_continues": 1001,
+      "weighted_sign_regret": 0.01003291203785747,
+      "weighted_main_huber": 0.027779862329658924,
+      "weighted_net_prediction": 0.036585219664488106,
+      "aux_bce_own_target": 0.047778741056012805
+    }
+  },
+  "f2__AUX_GAIN_seed1": {
+    "fit": {
+      "states": 2771,
+      "positive_misses": 5,
+      "unprofitable_continues": 974,
+      "weighted_sign_regret": 0.008803993782942532,
+      "weighted_main_huber": 0.031474319508981635,
+      "weighted_net_prediction": 0.030801403684464664,
+      "aux_bce_own_target": 0.05132689556184556
+    }
+  },
+  "f2__AUX_GAIN_seed2": {
+    "fit": {
+      "states": 2771,
+      "positive_misses": 14,
+      "unprofitable_continues": 773,
+      "weighted_sign_regret": 0.007999042193821887,
+      "weighted_main_huber": 0.029774491983421046,
+      "weighted_net_prediction": 0.0165469836992165,
+      "aux_bce_own_target": 0.05256255961099011
+    }
+  },
+  "f3__NET_ZERO_seed0": {
+    "fit": {
+      "states": 2818,
+      "positive_misses": 13,
+      "unprofitable_continues": 977,
+      "weighted_sign_regret": 0.007004061135823107,
+      "weighted_main_huber": 0.01520825262291684,
+      "weighted_net_prediction": 0.036037531805006254
+    }
+  },
+  "f3__NET_ZERO_seed1": {
+    "fit": {
+      "states": 2818,
+      "positive_misses": 24,
+      "unprofitable_continues": 417,
+      "weighted_sign_regret": 0.004291783312340659,
+      "weighted_main_huber": 0.012360383055919992,
+      "weighted_net_prediction": 0.024440236929899155
+    }
+  },
+  "f3__NET_ZERO_seed2": {
+    "fit": {
+      "states": 2818,
+      "positive_misses": 22,
+      "unprofitable_continues": 536,
+      "weighted_sign_regret": 0.003105165455572341,
+      "weighted_main_huber": 0.011800434372016083,
+      "weighted_net_prediction": 0.021728339050779512
+    }
+  },
+  "f3__AUX_NETSIGN_seed0": {
+    "fit": {
+      "states": 2818,
+      "positive_misses": 18,
+      "unprofitable_continues": 455,
+      "weighted_sign_regret": 0.0037390725702015123,
+      "weighted_main_huber": 0.022043236836281264,
+      "weighted_net_prediction": 0.017601504802006795,
+      "aux_bce_own_target": 0.015462774935868052
+    }
+  },
+  "f3__AUX_NETSIGN_seed1": {
+    "fit": {
+      "states": 2818,
+      "positive_misses": 14,
+      "unprofitable_continues": 564,
+      "weighted_sign_regret": 0.003982602057581991,
+      "weighted_main_huber": 0.02518213724328983,
+      "weighted_net_prediction": 0.014969610894339284,
+      "aux_bce_own_target": 0.016119070901661838
+    }
+  },
+  "f3__AUX_NETSIGN_seed2": {
+    "fit": {
+      "states": 2818,
+      "positive_misses": 16,
+      "unprofitable_continues": 408,
+      "weighted_sign_regret": 0.0028729369735541483,
+      "weighted_main_huber": 0.01974078904134879,
+      "weighted_net_prediction": 0.013927940206250721,
+      "aux_bce_own_target": 0.01196678224855546
+    }
+  },
+  "f3__AUX_GAIN_seed0": {
+    "fit": {
+      "states": 2818,
+      "positive_misses": 22,
+      "unprofitable_continues": 862,
+      "weighted_sign_regret": 0.008513672572652427,
+      "weighted_main_huber": 0.029853785494019673,
+      "weighted_net_prediction": 0.029509601498985027,
+      "aux_bce_own_target": 0.05255126185682423
+    }
+  },
+  "f3__AUX_GAIN_seed1": {
+    "fit": {
+      "states": 2818,
+      "positive_misses": 27,
+      "unprofitable_continues": 660,
+      "weighted_sign_regret": 0.005752775286768213,
+      "weighted_main_huber": 0.029831986281165342,
+      "weighted_net_prediction": 0.008292724756949702,
+      "aux_bce_own_target": 0.04397614396389343
+    }
+  },
+  "f3__AUX_GAIN_seed2": {
+    "fit": {
+      "states": 2818,
+      "positive_misses": 30,
+      "unprofitable_continues": 736,
+      "weighted_sign_regret": 0.007548689275451556,
+      "weighted_main_huber": 0.026283695117645965,
+      "weighted_net_prediction": 0.016001706766139222,
+      "aux_bce_own_target": 0.04191897925873726
+    }
+  }
+}

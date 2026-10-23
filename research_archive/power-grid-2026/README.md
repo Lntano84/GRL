@@ -678,3 +678,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID121按日期留出的学习迁移诊断](protocols/GRID121_date_transfer/complete/GRID121_report.md)：24个固定训练，日期分组、折内标准化和完整折外搜索核验；开发诊断，非独立最终测试。
 
 - [GRID122高代价误停的可见证据核查](protocols/GRID122_false_stop_audit/complete/GRID122_report.md)：折内训练覆盖、首次实际分歧和公开反馈描述；无新增训练或触发规则。
+
+- [GRID123净收益回归与改进事件辅助监督](protocols/GRID123_event_auxiliary/complete/GRID123_report.md)：同容量两种辅助标签、30次固定训练、15份原回归复用及独立保存结果核验。

@@ -1,9 +1,8 @@
-# Next steps — 聚焦重要机会的误停保护与可迁移信息
+# Next steps — 查清学习模型误停的有利补查
 
-1. 汇报GRID126/127共60次训练：已知费用、非负链接、MSE/KL均未稳定超过原回归。
-2. 训练总风险改善主要来自省无利查询，不等于高收益保护成功；下一设计必须同时明确重要误停的代价与跨日期信息依据。
-3. 用既有公开结构/逐调用记录推进证据，不重复换损失、择种子或盲目扩大网络。
-4. 保留原模型；若需扩大独立日期覆盖，先给出固定规模方案，不动最终8测试，不自动物理回放。
+1. 已对齐原FRAME完整同站补查、固定补一批、原监督回归与新KL；新KL未稳定胜过固定一批，不采用。
+2. 下一步用已有公开输入核查固定一批保住、新KL却跳过的正收益机会；区分误停损失、无利查询节省及多批扩展损失，保留全部调用和反例。
+3. 不将局部预测奖励增量误称整周质量；新KL尚无物理整周结果，旧RF/DQN闭环不能代替本轮验证。
+4. 暂不重复换损失、增加训练次数或加大网络；扩大独立日期前给出固定方案，最终8测试保持封存，不自动启动物理回放。
 
-汇总：research_archive/power-grid-2026/protocols/GRID127_mean_gain_objective/complete/GRID126_127_阶段汇总.md
-解释修正：research_archive/power-grid-2026/protocols/GRID127_mean_gain_objective/posthoc_transfer/风险解释修正.md
+比较报告：research_archive/power-grid-2026/protocols/GRID127_mean_gain_objective/nonlearning_comparison/与不学习方法比较_中文.md

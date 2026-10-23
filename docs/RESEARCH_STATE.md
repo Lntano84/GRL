@@ -738,3 +738,8 @@ Readonlyallstatesrisk=missedpositivenet+wastednonpositiveCONT,training/validatio
 ## 2026-10-23 — GRID127 interpretation narrowed after risk decomposition
 
 TrainKLtotalregret-72.75%mostlyavoidsunprofitableCONT;positiveforegonevalueincreasesinfulltrain/foldfitandheld. Fulltrainmiss.00048547->.00090642,waste.00555638->.00073994;validationmiss.00857824->.02294631,waste.00924708->.00236179. Thusnotproofhighvalueprotectionlearned,norsolelyperfectfitthenfailedtransfer. Models/metrics/criteriaunchanged;retainNETbaseline,no candidateadoption.
+
+
+## 2026-10-23 — GRID127 matched nonlearning comparison
+
+Read-only same590validation/2378OOFstartingprefixes,0fit/forward/physical/test. FULL_LOCAL is original FRAME locked-station completion behavior on saved FULL-teacher cases, not physical whole-week trajectory. Fixed BATCH1 validation gain capture98.17%,queryfraction56.13%,utility.16286891;NET77.60%/31.77%/.16292473;KL60.89%/10.19%/.15735212. OOF BATCH1 90.01%/56.86%/.08654312;NET67.77%/31.75%/.08605506;KL44.13%/10.13%/.07726904. KL utility vsFULL +14.81%/+6.02% reflects proxyqueryprice,not samequality. VsBATCH1 -3.39%/-10.72%. Exact contribution: validation skipunprofitable+.024477,skipprofitable-.028304,extrabatches-.001690;OOF +.032280/-.039409/-.002145. Positive skippedfirstbatch51records11calls/360records47calls;correlatedprefixesnotindependentscenes. 17864arithmeticchecks,legacybaselinesmatch,allsourcehashesunchanged. Keepfixedonebatchcontrol and originalFRAME;latestKLnotadopted. EvenNETdoesnotstablybeatBATCH1. Prioritizepublicevidenceofmissedprofitablefirstbatch,noblindloss/trainingexpansion. Report: research_archive/power-grid-2026/protocols/GRID127_mean_gain_objective/nonlearning_comparison/与不学习方法比较_中文.md

@@ -1202,3 +1202,8 @@ User authorizes more learning exploration. Bounded6fits SIGN_BCE/UTILITY_BCE see
 
 Exactly6fits SIGN_BCE/UTILITY_BCE seeds0/1/2,original6978network/init/7250x32streams/Adam/fee/data,no modelselection. Trainingwall41.19s. Validationfamily{'UTILITY': 0.14016626170406687, 'SIGN': 0.05723696851486548, 'HUBER': 0.16292380598404063, 'DQN': 0.1631977392228395};BATCH1=0.16286891362547384. Pairedutility-sign=[0.06353047220492884, 0.09927342571817765, 0.08598398164449766];pairedutility-Huber=[-0.02239299574207712, -0.022632414198922673, -0.02324722289892142];dateutility-sign={'2037-03-02': 0.0025293688010749027, '2037-05-04': 0.0165316514638711, '2037-08-03': 0.30937360395737, '2037-10-19': 0.0032825485344895352}. Objectivegate=True,usefulcandidate=False. AllstateNumPy/optimizer/sampling/target/regretidentity/trajectoriesauditpassed. OriginalregressionandRLnegativeevidencekept. ClassificationlogitsnotnumericalQ,weightedprobabilitynotunweightedclassprobability;populationconsistencydoesnotguaranteefinitefit/generalization. Exposedteacherpathofflineonly,no physical/finaltest/autoscaling.
 
+
+
+## 2026-10-23 — GRID121 grouped-date transfer diagnostic frozen
+
+After GRID120 training improvement/validation decline,user broad learning authorization covers announced24fit diagnostic:4fixedroundrobin folds of16originaltraindates,eachfit12dates,HUBER/UTILITY_BCE seeds0/1/2,original6978network/init/7250x32/Adam/price. Eachdate prefixes/scenarioreplicas stay together; per-fold normalization andweightnormalizer fit12datesonly. Originalhistoricalprice/gainscale usedall16dates,so diagnosticconditionalonfixedtask,not fullynested/pristineindependenttest. Nooriginal4val predictions orfinal8test/physical. All24finalendpointsbeforeheldinference,1800s cap,no tuning.

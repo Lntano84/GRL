@@ -1,0 +1,260 @@
+{
+  "id": "GRID121_DATE_TRANSFER",
+  "utc": "2026-10-23T05:57:28.470585+00:00",
+  "authorization": "User authorizes more learning experiments; announced grouped date-held-out diagnosis after GRID120 train/validation reversal.",
+  "purpose": "Compare Huber versus utility-weighted classification on dates excluded from each corresponding fit; diagnose whether GRID120 reversal is specific to original validation dates.",
+  "folds": [
+    {
+      "fold": 0,
+      "held_dates": [
+        "2037-01-05",
+        "2037-04-06",
+        "2037-07-06",
+        "2037-10-05"
+      ],
+      "fit_dates": [
+        "2037-01-19",
+        "2037-02-16",
+        "2037-03-16",
+        "2037-05-18",
+        "2037-06-01",
+        "2037-06-15",
+        "2037-08-17",
+        "2037-09-07",
+        "2037-09-21",
+        "2037-11-02",
+        "2037-11-16",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 1,
+      "held_dates": [
+        "2037-01-19",
+        "2037-05-18",
+        "2037-08-17",
+        "2037-11-02"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-02-16",
+        "2037-03-16",
+        "2037-04-06",
+        "2037-06-01",
+        "2037-06-15",
+        "2037-07-06",
+        "2037-09-07",
+        "2037-09-21",
+        "2037-10-05",
+        "2037-11-16",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 2,
+      "held_dates": [
+        "2037-02-16",
+        "2037-06-01",
+        "2037-09-07",
+        "2037-11-16"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-01-19",
+        "2037-03-16",
+        "2037-04-06",
+        "2037-05-18",
+        "2037-06-15",
+        "2037-07-06",
+        "2037-08-17",
+        "2037-09-21",
+        "2037-10-05",
+        "2037-11-02",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 3,
+      "held_dates": [
+        "2037-03-16",
+        "2037-06-15",
+        "2037-09-21",
+        "2037-12-07"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-01-19",
+        "2037-02-16",
+        "2037-04-06",
+        "2037-05-18",
+        "2037-06-01",
+        "2037-07-06",
+        "2037-08-17",
+        "2037-09-07",
+        "2037-10-05",
+        "2037-11-02",
+        "2037-11-16"
+      ]
+    }
+  ],
+  "fold_rule": "Sort16 original training calendar dates; held fold k uses indices k,k+4,k+8,k+12. All prefixes/replica scenarios/physical calls of a date stay together.",
+  "arms": [
+    "HUBER",
+    "UTILITY_BCE"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "fit_order": [
+    [
+      0,
+      0,
+      "HUBER"
+    ],
+    [
+      0,
+      0,
+      "UTILITY_BCE"
+    ],
+    [
+      0,
+      1,
+      "HUBER"
+    ],
+    [
+      0,
+      1,
+      "UTILITY_BCE"
+    ],
+    [
+      0,
+      2,
+      "HUBER"
+    ],
+    [
+      0,
+      2,
+      "UTILITY_BCE"
+    ],
+    [
+      1,
+      0,
+      "HUBER"
+    ],
+    [
+      1,
+      0,
+      "UTILITY_BCE"
+    ],
+    [
+      1,
+      1,
+      "HUBER"
+    ],
+    [
+      1,
+      1,
+      "UTILITY_BCE"
+    ],
+    [
+      1,
+      2,
+      "HUBER"
+    ],
+    [
+      1,
+      2,
+      "UTILITY_BCE"
+    ],
+    [
+      2,
+      0,
+      "HUBER"
+    ],
+    [
+      2,
+      0,
+      "UTILITY_BCE"
+    ],
+    [
+      2,
+      1,
+      "HUBER"
+    ],
+    [
+      2,
+      1,
+      "UTILITY_BCE"
+    ],
+    [
+      2,
+      2,
+      "HUBER"
+    ],
+    [
+      2,
+      2,
+      "UTILITY_BCE"
+    ],
+    [
+      3,
+      0,
+      "HUBER"
+    ],
+    [
+      3,
+      0,
+      "UTILITY_BCE"
+    ],
+    [
+      3,
+      1,
+      "HUBER"
+    ],
+    [
+      3,
+      1,
+      "UTILITY_BCE"
+    ],
+    [
+      3,
+      2,
+      "HUBER"
+    ],
+    [
+      3,
+      2,
+      "UTILITY_BCE"
+    ]
+  ],
+  "training": {
+    "new_fits": 24,
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip_grad_norm": 10.0,
+    "wall_cap_s": 1800,
+    "endpoint": "All24 final-only fits before held-date predictions; no checkpoint/seed selection."
+  },
+  "architecture": "Exact original6978parameter41-64-64-2 MLP, original random tensors per seed reused acrossfolds; no crossfold warmstart.",
+  "inputs": "Same41 raw public summaries; recompute mean/scale on12 fit dates only with original equal-date/state-weight normalization rule; apply identical clipped transform to both arms and held dates.",
+  "sampling": "Original date/prefix/position weights restricted and renormalized to12fitdates; exact same global index stream per fold/seed/arm; no held labels or optimization.",
+  "objectives": {
+    "HUBER": "Original mean SmoothL1(q,[0,y]),beta1.",
+    "UTILITY_BCE": "Mean abs(y)/Z * BCEWithLogits(q1-q0,1[y>0]); Z uses12fitdates only."
+  },
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "historical_task_dependency": "Price and gain_scale were historically defined using all16 training dates. They remain fixed task constants for this diagnostic, NOT a fully nested no-leakage estimation of the original task-design process. No fold-specific price/scale tuning.",
+  "evaluation": "Each original training date predicted only by its held-out fold, combine OOF trajectories for16-date macro/3seeds. Also per-fold/date and physical-call-balanced,train-side paired utility.",
+  "criterion": "Descriptive support for objective transfer only if utility family mean>Huber,all3paired OOFseed differences>0,>=12/16dates positive. Not statistical significance or qualification to scale.",
+  "limits": "All16dates previously exposed in development; this is an OOF diagnostic,not new independent test. Each fit has12 rather than16dates; compare arms withinfold,not absolute old validation performance. No original4valdate evaluation,physical,final8tests,network/fee/threshold search."
+}

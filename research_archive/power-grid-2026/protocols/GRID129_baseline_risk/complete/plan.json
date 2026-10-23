@@ -1,0 +1,23 @@
+{
+  "id": "GRID129_BASELINE_RISK",
+  "scope": "Train-only preparation and mathematical qualification; no model or threshold selection.",
+  "baseline": "Original FRAME full remaining locked-station completion,shared global policy unchanged.",
+  "intervention": "First version: one decision before the local stage. SKIP returns the current observed best; otherwise run the unchanged full local baseline. No per-batch learned decisions.",
+  "labels": "Entire remaining completion gain and action disagreement,kept separately from public inputs. GRID101 already predicted full-completion gain; this label is not claimed new.",
+  "loss": "For each date, skipped full-baseline gains / sum full-baseline gains (zero if denominator zero); separate skipped action disagreements / all prefixes. Both in[0,1] and monotone as a frozen gate becomes more conservative.",
+  "efficiency": "Saved known local queries relative to baseline; no actual-time or whole-week claim.",
+  "gate_concept": "Frozen pre-query no-improvement score s(x);SKIP iff s(x)>lambda. Larger lambda reverts more often to baseline. Score alone is not calibrated reliability.",
+  "calibration": "Fit and calibration calendar dates must be disjoint;all same-date replicas/calls/prefixes stay together. Existing four-date folds may define development splits,not independent final tests.",
+  "no_guarantee": "Date exchangeability/distribution assumptions unverified;CRC controls expected chosen local loss under assumptions,not each-date loss,physical safety or whole-week cost. Risk alpha not selected here.",
+  "previous_work": "GRID101 full-gain LR/RF ranking;GRID120 weighted classification failed. New question is baseline-relative risk and calibrated intervention,not sign reversal or fresh loss replacement.",
+  "prohibited": [
+    "fitting",
+    "model_forward",
+    "new_validation_evaluation",
+    "threshold_or_alpha_selection",
+    "new_scenarios",
+    "physical_calls",
+    "final_test",
+    "paper_or_figures"
+  ]
+}

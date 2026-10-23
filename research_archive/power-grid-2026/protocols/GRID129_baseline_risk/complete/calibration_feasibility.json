@@ -1,0 +1,27 @@
+{
+  "rule": "(sum_i L_i(lambda)+B)/(n+1)<=alpha,B=1;else original-baseline fallback.",
+  "correction_for_calibration_date_counts": {
+    "4": 0.2,
+    "8": 0.1111111111111111,
+    "12": 0.07692307692307693,
+    "16": 0.058823529411764705
+  },
+  "illustrations_only_not_selected_risk": [
+    {
+      "alpha": 0.05,
+      "necessary_zero_empirical_loss_n": 19
+    },
+    {
+      "alpha": 0.01,
+      "necessary_zero_empirical_loss_n": 99
+    }
+  ],
+  "statement": "These are arithmetic necessary sizes for non-fallback acceptance by this standard CRC correction with B=1 and nonnegative empirical loss;not sufficient guarantees or universal sample-complexity bounds. Independent fit data would still be required.",
+  "limitations": [
+    "No exchangeability established for seasonal dates.",
+    "Original4validation dates repeatedly exposed,not a new independent calibration/test certificate.",
+    "16 available training dates cannot all be calibration dates for a model fitted on those same16dates.",
+    "Current three neural seeds are not a calibration distribution.",
+    "Loss here is local gain/mismatch,not the existing0.5% whole-week-cost tolerance."
+  ]
+}

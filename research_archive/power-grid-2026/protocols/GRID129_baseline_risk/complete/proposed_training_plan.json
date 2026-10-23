@@ -1,0 +1,52 @@
+{
+  "status": "proposed_not_started",
+  "new_fits": 1,
+  "model": "StandardScaler + GRID101 LogisticRegression",
+  "model_parameters": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 2000,
+    "random_state": 20261022,
+    "class_weight": null
+  },
+  "input": "Original37 public prefix summaries,only first local decision;no calendar/IDs/future outcomes.",
+  "target": "Full baseline completion has positive gain;not a new target versus GRID101.",
+  "fit_dates": [
+    "2037-01-19",
+    "2037-02-16",
+    "2037-03-16",
+    "2037-05-18",
+    "2037-06-01",
+    "2037-06-15",
+    "2037-08-17",
+    "2037-09-07",
+    "2037-09-21",
+    "2037-11-02",
+    "2037-11-16",
+    "2037-12-07"
+  ],
+  "calibration_dates": [
+    "2037-01-05",
+    "2037-04-06",
+    "2037-07-06",
+    "2037-10-05"
+  ],
+  "fit_prefixes": 1637,
+  "calibration_prefixes": 741,
+  "normalization_weights": "Fit12dates only;each fit date equal total weight,normalized mean1;no class weighting or loss search.",
+  "score": "s=1-P(full_completion_gain>0). Both readouts use identical fitted weights.",
+  "fixed_readout": "SKIP iff s>0.5;otherwise original full local completion.",
+  "empirical_calibrated_readout": "lambda=max s among calibration cases with positive full gain or different baseline action;SKIP iff s>lambda. All ties preserved. With no useful calibration witness or nonfinite scores,original-baseline fallback.",
+  "interpretation": "Empirical zero calibration loss,not CRC statistical guarantee;calibration adds4date labels beyond fit12date fixed-readout control. Original16date GRID101 control is historical and uses a different fit size.",
+  "evaluation": "All original4known validation dates,zero threshold selection from those scores. FULL_LOCAL/BATCH1/same-model fixed/readout-calibrated. Report gain loss,action mismatch,queries,proxy utility;all dates retained.",
+  "local_development_screen": "Zero action disagreements versus original full baseline across all validation cases and positive date-macro query saving. This is only a development screen,not independent safety or readiness to scale.",
+  "prohibited": [
+    "refit",
+    "hyperparameter/threshold scan",
+    "validation-selected risk level",
+    "new network/data/date",
+    "physical replay",
+    "final8test",
+    "automatic scale"
+  ]
+}

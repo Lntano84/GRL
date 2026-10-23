@@ -1,0 +1,108 @@
+{
+  "id": "GRID135_MATCHED_FULL_TAIL",
+  "utc": "2026-10-23T11:53:32.988571+00:00",
+  "status": "qualified_before_training",
+  "authorization": "User explicitly asks continue; prior autonomous research authorization and training announcement before start.",
+  "arms": [
+    "FIRST_JOINT",
+    "FIRST_FACTOR",
+    "FULL_JOINT",
+    "FULL_FACTOR"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "new_fits": 12,
+  "fit_order": [
+    [
+      "FIRST_JOINT",
+      0
+    ],
+    [
+      "FIRST_FACTOR",
+      0
+    ],
+    [
+      "FULL_JOINT",
+      0
+    ],
+    [
+      "FULL_FACTOR",
+      0
+    ],
+    [
+      "FIRST_JOINT",
+      1
+    ],
+    [
+      "FIRST_FACTOR",
+      1
+    ],
+    [
+      "FULL_JOINT",
+      1
+    ],
+    [
+      "FULL_FACTOR",
+      1
+    ],
+    [
+      "FIRST_JOINT",
+      2
+    ],
+    [
+      "FIRST_FACTOR",
+      2
+    ],
+    [
+      "FULL_JOINT",
+      2
+    ],
+    [
+      "FULL_FACTOR",
+      2
+    ]
+  ],
+  "target": "Binary complete locked-station completion gain>0. One gate, then original full completion or skip. Supervised classification,not RL.",
+  "scope": "Same445 expensive fit/193 calibration cases from old12/4dates; original4exposed validation only after all weights/thresholds frozen.",
+  "features": "Same37 summary information for all; normalized on445 fit cases only; last4 historical global slots zero. Original68 action and8 feedback descriptor. No date/id/unbought outcome as predictor.",
+  "extent": "FIRST only next64 public plans; FULL all pending public plans (max237 in source train/cal). Same already-paid context,incumbent,known FULL remaining count/cost for all four arms.",
+  "association": "JOINT keeps each action with its paid feedback;FACTOR averages feedback embeddings before joining action. Same5938 named parameters;scope changes inputs,not tensor count.",
+  "loss": "Two-logit cross entropy,unweighted per minibatch;sampling probabilities equal original GRID132 fit weights normalized. No class reweighting.",
+  "normalization": "Weighted centered variance from445fit cases,zero/nearzero std<1e-12=>1;clip[-20,20] inherited convention;no calibration fit.",
+  "budget": {
+    "updates": 901,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "max_grad_norm": 10.0,
+    "sampler_seed_offset": 20261022,
+    "wall_cap_s": 1800,
+    "checkpoint": "final901 only,no checkpoint/seed selection",
+    "rationale": "ceil(7250*445/3582)=901,approximately old expected draws per state;new task and sampling population differ,not a compute-matched comparison to old trials."
+  },
+  "fee": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "calibration": "For each model max s=P(zero gain) among positive-gain or different-action calibration witnesses;strict greater SKIP,ties fallback. Cheap branch reuses GRID132 cheap cutoff and GRID130 original scores.",
+  "model_comparisons": "Primary range contrast FULL_JOINT-FIRST_JOINT;primary association contrast FULL_JOINT-FULL_FACTOR;FIRST pairing contrast and factorial interaction also reported.",
+  "mechanism_screen": "For a contrast:both families no expensive action disagreements;all3paired macro query-saving deltas>0,and>=3/4date mean deltas>0. Report every seed/date and ties. Not significance.",
+  "practical_screen": "For every seed,learned expensive branch has zero disagreements and eachdate gain loss/queryfraction no worse thanGROUP,with strict lower queries on at least1date. No automatic adoption/scale.",
+  "legacy_screen": "Old zero total action mismatch remains reported separately,but fixed cheap branch already has7 known differences;not used as a purported achievable primary screen for this expensive-only intervention.",
+  "interpretation": "All datasets exposed development;quality means local prediction-reward increments,not whole-week cost or AC safety. Same updates/labels/params not same training wall time.",
+  "prohibition": [
+    "morethan12fits",
+    "refit/loss/fee/threshold/seedsearch",
+    "new scenarios or labels",
+    "physical replay",
+    "final8test",
+    "paper/figure",
+    "automatic scale"
+  ]
+}

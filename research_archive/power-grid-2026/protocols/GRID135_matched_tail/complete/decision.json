@@ -1,0 +1,154 @@
+{
+  "contrasts": {
+    "range_primary": {
+      "a": "FULL_JOINT",
+      "b": "FIRST_JOINT",
+      "query_saving_deltas_by_seed": [
+        -0.04561782219667032,
+        0.006269592476489033,
+        0.0
+      ],
+      "perdate_seed_mean_deltas": {
+        "2037-03-02": -0.031594690596373175,
+        "2037-05-04": 0.0,
+        "2037-08-03": -0.020869615697201877,
+        "2037-10-19": 0.0
+      },
+      "both_families_expensive_zero_disagreement": false,
+      "mechanism_signal": false
+    },
+    "association_primary": {
+      "a": "FULL_JOINT",
+      "b": "FULL_FACTOR",
+      "query_saving_deltas_by_seed": [
+        -0.01891079944825086,
+        -0.0014803204458376795,
+        0.0
+      ],
+      "perdate_seed_mean_deltas": {
+        "2037-03-02": -0.010469246588147333,
+        "2037-05-04": 0.0,
+        "2037-08-03": -0.016718913270637386,
+        "2037-10-19": 0.0
+      },
+      "both_families_expensive_zero_disagreement": false,
+      "mechanism_signal": false
+    },
+    "range_factor": {
+      "a": "FULL_FACTOR",
+      "b": "FIRST_FACTOR",
+      "query_saving_deltas_by_seed": [
+        -0.030586252510991896,
+        0.008250609543712983,
+        0.0
+      ],
+      "perdate_seed_mean_deltas": {
+        "2037-03-02": -0.02629775035832242,
+        "2037-05-04": 0.0,
+        "2037-08-03": -0.003483106931382799,
+        "2037-10-19": 0.0
+      },
+      "both_families_expensive_zero_disagreement": false,
+      "mechanism_signal": false
+    },
+    "association_first": {
+      "a": "FIRST_JOINT",
+      "b": "FIRST_FACTOR",
+      "query_saving_deltas_by_seed": [
+        -0.0038792297625724337,
+        0.0005006966213862707,
+        0.0
+      ],
+      "perdate_seed_mean_deltas": {
+        "2037-03-02": -0.005172306350096578,
+        "2037-05-04": 0.0,
+        "2037-08-03": 0.0006675954951816943,
+        "2037-10-19": 0.0
+      },
+      "both_families_expensive_zero_disagreement": false,
+      "mechanism_signal": false
+    }
+  },
+  "factorial_interaction_by_seed": [
+    -0.015031569685678425,
+    -0.00198101706722395,
+    0.0
+  ],
+  "practical_by_model": {
+    "FIRST_JOINT_seed0": {
+      "expensive_zero_disagreement": false,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    },
+    "FIRST_FACTOR_seed0": {
+      "expensive_zero_disagreement": false,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    },
+    "FULL_JOINT_seed0": {
+      "expensive_zero_disagreement": false,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    },
+    "FULL_FACTOR_seed0": {
+      "expensive_zero_disagreement": false,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    },
+    "FIRST_JOINT_seed1": {
+      "expensive_zero_disagreement": true,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    },
+    "FIRST_FACTOR_seed1": {
+      "expensive_zero_disagreement": true,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    },
+    "FULL_JOINT_seed1": {
+      "expensive_zero_disagreement": true,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    },
+    "FULL_FACTOR_seed1": {
+      "expensive_zero_disagreement": true,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    },
+    "FIRST_JOINT_seed2": {
+      "expensive_zero_disagreement": true,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    },
+    "FIRST_FACTOR_seed2": {
+      "expensive_zero_disagreement": true,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    },
+    "FULL_JOINT_seed2": {
+      "expensive_zero_disagreement": true,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    },
+    "FULL_FACTOR_seed2": {
+      "expensive_zero_disagreement": true,
+      "perdate_joint_improvement_vs_group": false,
+      "conditional_screen": false,
+      "legacy_zero_total_disagreements": false
+    }
+  },
+  "adopted": false,
+  "ready_to_scale": false,
+  "reason": "Exposed local development;new models not automatically deployed even if conditional screen passes. Existing7cheap discrepancies kept separate."
+}

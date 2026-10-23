@@ -1,0 +1,203 @@
+{
+  "passed": true,
+  "all_cases": 56,
+  "calendar_dates": 17,
+  "scenario_environment_groups": 21,
+  "qualified_cases": 45,
+  "qualified_identical": 30,
+  "qualified_action_changed": 15,
+  "qualified_query_outcomes": {
+    "saving": 41,
+    "increase": 3,
+    "equal": 1
+  },
+  "qualified_changed_query_outcomes": {
+    "saving": 11,
+    "increase": 3,
+    "equal": 1
+  },
+  "qualified_changed_cost_outcomes": {
+    "higher": 8,
+    "lower": 7
+  },
+  "failures": [
+    {
+      "case_id": "S025",
+      "week": "2035-07-09_2",
+      "step": 1901,
+      "pilot_known": true,
+      "quality_evidence_label": "FAIL_SURVIVAL",
+      "skip_steps": 1906,
+      "completion_steps": 2017,
+      "skip_quality": {
+        "reference_screen_pass": false,
+        "survival_relative_pass": false,
+        "cost_gap_full": null
+      },
+      "skip_cost_minus_completion": null,
+      "queries_saved": -1975,
+      "matched_frame_skip_horizon": false
+    },
+    {
+      "case_id": "S028",
+      "week": "2035-12-10_6",
+      "step": 1170,
+      "pilot_known": false,
+      "quality_evidence_label": "FAIL_COST",
+      "skip_steps": 2017,
+      "completion_steps": 2017,
+      "skip_quality": {
+        "reference_screen_pass": false,
+        "survival_relative_pass": true,
+        "cost_gap_full": 0.011084379001464972
+      },
+      "skip_cost_minus_completion": 26727.484741210938,
+      "queries_saved": -359,
+      "matched_frame_skip_horizon": true
+    }
+  ],
+  "by_cohort": [
+    {
+      "cohort": "G1",
+      "cases": 11,
+      "statuses": {
+        "PASS_COMPLETE": 8,
+        "REFERENCE_LIMITED": 3
+      },
+      "physical_path_identical": 9
+    },
+    {
+      "cohort": "G2",
+      "cases": 12,
+      "statuses": {
+        "PASS_COMPLETE": 9,
+        "REFERENCE_LIMITED": 3
+      },
+      "physical_path_identical": 8
+    },
+    {
+      "cohort": "old13",
+      "cases": 33,
+      "statuses": {
+        "PASS_COMPLETE": 28,
+        "REFERENCE_LIMITED": 3,
+        "FAIL_SURVIVAL": 1,
+        "FAIL_COST": 1
+      },
+      "physical_path_identical": 22
+    }
+  ],
+  "nonpilot_known": 44,
+  "nonpilot_failure_dates": [
+    "2035-12-10"
+  ],
+  "nonpilot_date_folds": [
+    {
+      "held_out_date": "2035-01-01",
+      "train_pass": 41,
+      "train_fail": 1,
+      "test_pass": 2,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2035-02-19",
+      "train_pass": 40,
+      "train_fail": 1,
+      "test_pass": 3,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2035-03-05",
+      "train_pass": 40,
+      "train_fail": 1,
+      "test_pass": 3,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2035-04-02",
+      "train_pass": 40,
+      "train_fail": 1,
+      "test_pass": 3,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2035-04-09",
+      "train_pass": 40,
+      "train_fail": 1,
+      "test_pass": 3,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2035-07-09",
+      "train_pass": 40,
+      "train_fail": 1,
+      "test_pass": 3,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2035-09-03",
+      "train_pass": 39,
+      "train_fail": 1,
+      "test_pass": 4,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2035-11-19",
+      "train_pass": 42,
+      "train_fail": 1,
+      "test_pass": 1,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2035-12-10",
+      "train_pass": 41,
+      "train_fail": 0,
+      "test_pass": 2,
+      "test_fail": 1
+    },
+    {
+      "held_out_date": "2035-12-17",
+      "train_pass": 40,
+      "train_fail": 1,
+      "test_pass": 3,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2036-01-07",
+      "train_pass": 37,
+      "train_fail": 1,
+      "test_pass": 6,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2036-05-05",
+      "train_pass": 42,
+      "train_fail": 1,
+      "test_pass": 1,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2036-07-07",
+      "train_pass": 39,
+      "train_fail": 1,
+      "test_pass": 4,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2036-09-01",
+      "train_pass": 39,
+      "train_fail": 1,
+      "test_pass": 4,
+      "test_fail": 0
+    },
+    {
+      "held_out_date": "2036-11-03",
+      "train_pass": 42,
+      "train_fail": 1,
+      "test_pass": 1,
+      "test_fail": 0
+    }
+  ],
+  "caution": "Query differences are complete episode counts only for matched horizons; they are not actual timing. All events are single omissions followed by original FRAME, not a many-skip policy.",
+  "no_new_training_or_predictions": true
+}

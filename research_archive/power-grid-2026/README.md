@@ -686,3 +686,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID125高收益补查为何被低估](protocols/GRID125_value_underestimate/complete/GRID125_report.md)：零训练，训练覆盖/曝光、原Huber目标的稀有大收益影响、已知查询费下界与全部投影动作不变核验。
 
 - [GRID126已知费用与非负改进量学习](protocols/GRID126_known_cost_gain/complete/GRID126_report.md)：30次固定匹配训练、已知费用外置/非负参数化、完整局部搜索与全种子核验。
+
+- [GRID127同一非负链接的均值收益损失](protocols/GRID127_mean_gain_objective/complete/GRID127_report.md)：30次固定MSE/KL训练、30份既有模型复用、全种子与条件折外局部补查核验。

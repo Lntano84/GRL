@@ -1,0 +1,158 @@
+{
+  "metrics": {
+    "原净收益回归": {
+      "full_train": {
+        "mean_net_utility": 0.12358045267854538,
+        "query_fraction": 0.17221491081304766,
+        "gain_capture": 0.8651300540540752,
+        "physical_call_balanced_utility": 0.10947132624760925,
+        "mean_queries": 8.603785142409519,
+        "mean_gain": 0.0011732809794704532
+      },
+      "validation": {
+        "mean_net_utility": 0.16292472687799245,
+        "query_fraction": 0.3177351590445539,
+        "gain_capture": 0.7760421499753439,
+        "physical_call_balanced_utility": 0.13653760523510688,
+        "mean_queries": 14.494689652188441,
+        "mean_gain": 0.0015860329142023735
+      },
+      "oof": {
+        "mean_net_utility": 0.0860550575338817,
+        "query_fraction": 0.31751766151432625,
+        "gain_capture": 0.6776542504866391,
+        "physical_call_balanced_utility": 0.07673844474431868,
+        "mean_queries": 16.35593312670459,
+        "mean_gain": 0.0009459736182899156
+      }
+    },
+    "直接预测改进量": {
+      "full_train": {
+        "mean_net_utility": 0.12320018492339564,
+        "query_fraction": 0.1891594656706647,
+        "gain_capture": 0.8686523064934272,
+        "physical_call_balanced_utility": 0.1089008842122492,
+        "mean_queries": 9.465111228996165,
+        "mean_gain": 0.0011807170178543404
+      },
+      "validation": {
+        "mean_net_utility": 0.1590323563107055,
+        "query_fraction": 0.34317449310061815,
+        "gain_capture": 0.7308638916259275,
+        "physical_call_balanced_utility": 0.13303320180341505,
+        "mean_queries": 14.921234565414593,
+        "mean_gain": 0.001557757468902728
+      },
+      "oof": {
+        "mean_net_utility": 0.08567469645255343,
+        "query_fraction": 0.28875339314234355,
+        "gain_capture": 0.6541741252943111,
+        "physical_call_balanced_utility": 0.07633714149426023,
+        "mean_queries": 14.924765726789076,
+        "mean_gain": 0.0009248848482583715
+      }
+    },
+    "非负链接＋Huber": {
+      "full_train": {
+        "mean_net_utility": 0.10957007885401236,
+        "query_fraction": 0.027964815175013938,
+        "gain_capture": 0.4988579901701588,
+        "physical_call_balanced_utility": 0.09809413171611793,
+        "mean_queries": 1.5713810161929214,
+        "mean_gain": 0.0009649023965656355
+      },
+      "validation": {
+        "mean_net_utility": 0.13261113171729758,
+        "query_fraction": 0.05160956340454479,
+        "gain_capture": 0.29878165677895024,
+        "physical_call_balanced_utility": 0.10929148115513125,
+        "mean_queries": 2.7720506066411237,
+        "mean_gain": 0.0011786355626309055
+      },
+      "oof": {
+        "mean_net_utility": 0.062077989325268736,
+        "query_fraction": 0.059863137224129746,
+        "gain_capture": 0.2832643307103762,
+        "physical_call_balanced_utility": 0.0549847087101988,
+        "mean_queries": 3.2953599369933877,
+        "mean_gain": 0.0005765996265253513
+      }
+    },
+    "非负链接＋MSE": {
+      "full_train": {
+        "mean_net_utility": 0.10430558065083995,
+        "query_fraction": 0.025958469905227335,
+        "gain_capture": 0.39231628524295287,
+        "physical_call_balanced_utility": 0.09257125096457842,
+        "mean_queries": 1.3833330915588504,
+        "mean_gain": 0.00091714150504586
+      },
+      "validation": {
+        "mean_net_utility": 0.13641023058533816,
+        "query_fraction": 0.026084535436629804,
+        "gain_capture": 0.26217985427487606,
+        "physical_call_balanced_utility": 0.11275331306923984,
+        "mean_queries": 1.4835568326947637,
+        "mean_gain": 0.0011953816084264947
+      },
+      "oof": {
+        "mean_net_utility": 0.06989312462082985,
+        "query_fraction": 0.047198343530307475,
+        "gain_capture": 0.2641667441135102,
+        "physical_call_balanced_utility": 0.06220585341263294,
+        "mean_queries": 2.685820384984851,
+        "mean_gain": 0.000636443089847547
+      }
+    },
+    "非负链接＋广义KL": {
+      "full_train": {
+        "mean_net_utility": 0.12729568995226004,
+        "query_fraction": 0.06341633047337498,
+        "gain_capture": 0.8020546483977412,
+        "physical_call_balanced_utility": 0.11313063110905935,
+        "mean_queries": 3.332311129537961,
+        "mean_gain": 0.001139745853912773
+      },
+      "validation": {
+        "mean_net_utility": 0.15735212030568693,
+        "query_fraction": 0.10191012254747452,
+        "gain_capture": 0.6088532888148167,
+        "physical_call_balanced_utility": 0.13094494641986065,
+        "mean_queries": 5.037312494778052,
+        "mean_gain": 0.0014202814936983635
+      },
+      "oof": {
+        "mean_net_utility": 0.07726903605912112,
+        "query_fraction": 0.10131570746267542,
+        "gain_capture": 0.4413033917984843,
+        "physical_call_balanced_utility": 0.06844171540174088,
+        "mean_queries": 5.633749279067938,
+        "mean_gain": 0.0007367602722399355
+      }
+    }
+  },
+  "KL_training_sign_regret_reduction": 0.7275076706745102,
+  "KL_fold_training_regret_improves": 12,
+  "fold_pairs": 12,
+  "KL_changes": {
+    "full_train": {
+      "net_relative": 0.030063308502183972,
+      "query_fraction_relative": -0.631760512640986,
+      "gain_capture_difference": -0.06307540565633396
+    },
+    "validation": {
+      "net_relative": -0.0342035655304711,
+      "query_fraction_relative": -0.6792607942604667,
+      "gain_capture_difference": -0.16718886116052722
+    },
+    "oof": {
+      "net_relative": -0.10209767707495088,
+      "query_fraction_relative": -0.6809131593515969,
+      "gain_capture_difference": -0.23635085868815475
+    }
+  },
+  "new_fits_this_user_turn": 60,
+  "untrained_original_model": false,
+  "new_RL_fits": 0,
+  "new_physical_calls": 0
+}

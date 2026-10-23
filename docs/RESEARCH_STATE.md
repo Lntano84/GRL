@@ -723,3 +723,18 @@ Userauthorizesautonomousprogresswithupdates.30newfixedfits,original6978/41/7250x
 ## 2026-10-23 — GRID127 fixed-positive-link mean-objective learning frozen
 
 AfterauditedGRID126positiveHubercontinuecollapse,autonomoususerauthorizationcoversannounced30fixedPOS_MSE/POS_KLfits,same6978/init/link/7250x32/Adam/clip/sampler/task;15POS_HUBER+15NETcachedcontrolsreused. GeneralizedKLcontinuousnonnegativegains,noPoissondataassumption;gradient.5(g-G)/hypot(r,c),properconditionalmeanpopulationtargetnotfinitefitguarantee. No lossnormalizerselection/extraepochs/linkrescue. Allendpointsbeforeheld/validation,1800scap,no physical/dataexpansion/test.
+
+
+## 2026-10-23 — GRID127 fixed-link mean objectives complete
+
+30fixedPOS_MSE/POS_KLfits,30cachedNET/POS_HUBERcontrols,original6978/init/link/7250x32/Adam/clip/streams/task,wall230.00s. Families={'validation': {'NET_ZERO': 0.16292472687799245, 'POS_HUBER': 0.13261113171729758, 'POS_MSE': 0.13641023058533816, 'POS_KL': 0.15735212030568693}, 'oof': {'NET_ZERO': 0.0860550575338817, 'POS_HUBER': 0.062077989325268736, 'POS_MSE': 0.06989312462082985, 'POS_KL': 0.07726903605912112}};vsNET={'POS_MSE': False, 'POS_KL': False};vsPOSHuber={'POS_MSE': False, 'POS_KL': False};KLspecific=False;candidate={'POS_MSE': False, 'POS_KL': False}. IndependentNumPy/updates/exposure/targets/trajectoryauditpassed;alladverseweights/seeds/datespreserved. GeneralizedKLproperconditionalmeanpopulationtargetnotPoissondataassumptionorfinitefitguarantee. No physical/newdata/test/RL/autoscaling.
+
+
+## 2026-10-23 — GRID127 posthoc training/held transfer decomposition
+
+Readonlyallstatesrisk=missedpositivenet+wastednonpositiveCONT,training/validation/fourfoldfit-heldkeptseparate. AllactualKLvsNETfirstdivergencesjoinsourceGRID125fit-onlysupport,allper-calltailcontributionsconserved,alloutcomeskept. Notnewfit/trigger/metricselection/independenttest. Researchfocusmovesfromrepeatlossreplacementtohighvalueopportunitytransfer; no physical/dataexpansion/test.
+
+
+## 2026-10-23 — GRID127 interpretation narrowed after risk decomposition
+
+TrainKLtotalregret-72.75%mostlyavoidsunprofitableCONT;positiveforegonevalueincreasesinfulltrain/foldfitandheld. Fulltrainmiss.00048547->.00090642,waste.00555638->.00073994;validationmiss.00857824->.02294631,waste.00924708->.00236179. Thusnotproofhighvalueprotectionlearned,norsolelyperfectfitthenfailedtransfer. Models/metrics/criteriaunchanged;retainNETbaseline,no candidateadoption.

@@ -1,0 +1,103 @@
+{
+  "id": "GRID120_DECISION_OBJECTIVE",
+  "utc": "2026-10-23T05:49:25.937743+00:00",
+  "authorization": "User authorizes further learning experiments and more time; execute one bounded objective comparison before adding architectures or data.",
+  "question": "Does learning cost-weighted stop/continue decisions improve complete-search net utility beyond sign classification and original Huber value regression?",
+  "arms": [
+    "SIGN_BCE",
+    "UTILITY_BCE"
+  ],
+  "reuse": "Original GRID107 Huber seeds0/1/2 and historical gamma0DQN; no repeated fits.",
+  "architecture": "Original41->64ReLU->64ReLU->2,6978parameters, exact original random initial tensors per seed.",
+  "labels": "t=1[y>0], where y is original immediate normalized net continuation. Zero ties STOP.",
+  "objectives": {
+    "SIGN_BCE": "BCEWithLogits(q1-q0,t),mean over32states.",
+    "UTILITY_BCE": "abs(y)/Z * BCEWithLogits(q1-q0,t),mean over32states. Z=original-training-probability weighted E|y|,fixed once; not per-batch normalization.",
+    "normalizer": 0.09644422250078016,
+    "weight_clipping": "None. Existing norm10 gradient clipping retained, clipping counted.",
+    "output": "Two logits, not calibrated action values. Continue iff q1>q0; no threshold tuning."
+  },
+  "proof": "For any binary action a, max(y,0)-a*y=|y|*1[a !=1[y>0]]. For fixed x, weighted-logistic p*=E[y+|x]/E[|y||x] when denominator>0; p*>.5 iff E[y|x]>0. Population/unrestricted-function statement, not finite-data or closed-loop guarantee.",
+  "loss_scope": "Changes decision target/objective deliberately; no price/physical reward/dates or inputs changed. Compare new two-output classification to old two-output regression by identical updates/states/initialization, not identical scalar supervision or gradient scale.",
+  "train": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip_grad_norm": 10.0,
+    "cpu_threads": 1,
+    "fit_order": [
+      [
+        "SIGN_BCE",
+        0
+      ],
+      [
+        "UTILITY_BCE",
+        0
+      ],
+      [
+        "SIGN_BCE",
+        1
+      ],
+      [
+        "UTILITY_BCE",
+        1
+      ],
+      [
+        "SIGN_BCE",
+        2
+      ],
+      [
+        "UTILITY_BCE",
+        2
+      ]
+    ],
+    "new_fits": 6,
+    "total_update_cap": 43500,
+    "total_wall_cap_s": 1800,
+    "endpoint": "Final only; all six fits before any validation prediction; all seeds retained.",
+    "sampling": "Exact original7250x32 stream each seed, same original probability; no oversampling or validation-selected weights."
+  },
+  "split": {
+    "train_scenarios": 32,
+    "validation_scenarios": 8,
+    "train_dates": 16,
+    "validation_dates": 4,
+    "train_prefixes": 2378,
+    "validation_prefixes": 590,
+    "train_states": 3582,
+    "validation_states": 856
+  },
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "gates": {
+    "primary": "Four-date macro complete-sequence net utility.",
+    "objective_signal": "UTILITY family mean>SIGN; all3paired seed differences>0 and at least3/4date differences>0.",
+    "useful_candidate": "Objective signal AND UTILITY family mean above original Huber,DQN0 andBATCH1. No automatic physical replay/scaling.",
+    "diagnostics": [
+      "gain capture and query fraction",
+      "positive misses/unprofitable continues",
+      "physical-call-balanced utility",
+      "training vs validation utility and cost-sensitive regret",
+      "gradient clipping and all seed/date results"
+    ]
+  },
+  "literature": {
+    "paper": "Zadrozny, Langford and Abe, Cost-Sensitive Learning by Cost-Proportionate Example Weighting, ICDM2003.",
+    "url": "https://hunch.net/~jl/projects/reductions/costing/finalICDM2003.pdf",
+    "used": "Example-dependent misclassification costs and transparent weighting; not claiming our exact BCE implementation or wholeweek guarantee is in that paper."
+  },
+  "prior_evidence": "GRID108 MSE/longer training failures retained; GRID114 Huber-vs-mean mismatch; GRID119 fixed corrections not above original. This tests decision objective without more network/input.",
+  "limits": "Exposed4dates/samegrid/FULLteacherpath; correlatedprefixes, immediate gain not wholeweek value. No environment, forecast, finaltest, installation, fee/seed/threshold search.",
+  "roadmap": "After this bounded screen, assess whether objectives, teacher-path transfer or sequential credit needs work; do not run unplanned algorithms based on best validation outcome."
+}

@@ -702,3 +702,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID132分组校准与大补查专门模型](protocols/GRID132_conditional_gate/complete/GRID132_report.md)：两份匹配LR、原权重统一/分组控制；分组校准小幅增加覆盖，专门学习无进一步优势，全部失败与数值警告核查保留。
 
 - [GRID133同信息浅森林与输入范围核查](protocols/GRID133_nonlinear_gate/complete/GRID133_report.md)：一份固定非线性分类未改善大组跳过；完整尾部输入与旧下一批关系任务区分，不把范围缺口当预测价值证明。
+
+- [GRID134完整尾部公开输入资格](protocols/GRID134_full_tail_inputs/complete/GRID134_report.md)：2378原训练/校准门控前缀全候选结构还原，零拟合/新物理，历史64接口错误与恢复收据保留；尚无预测改进结论。

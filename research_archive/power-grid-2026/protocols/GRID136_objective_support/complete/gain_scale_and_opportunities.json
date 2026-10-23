@@ -1,0 +1,728 @@
+{
+  "fit_all": {
+    "prefixes": 1637,
+    "calls": 155,
+    "positive_prefixes": 280,
+    "positive_calls": 65,
+    "positive_gain_quantiles": {
+      "0": 1.1920928955078125e-07,
+      "0.25": 1.65402889251709e-05,
+      "0.5": 0.00021004676818847656,
+      "0.75": 0.0023581981658935547,
+      "1": 0.18611359596252441
+    },
+    "positive_ULP_quantiles": {
+      "0": 1.0,
+      "0.25": 138.75,
+      "0.5": 1762.0,
+      "0.75": 19782.0,
+      "1": 1561234.0
+    },
+    "positive_at_most4ULP": 11,
+    "positive_at_most64ULP": 44,
+    "total_gain": 1.594228982925415,
+    "total_queries": 84987,
+    "ulp_bins": {
+      "zero": {
+        "prefixes": 1357,
+        "calls": 154,
+        "gain_share": 0.0,
+        "queries": 54605,
+        "query_share": 0.6425100309459094
+      },
+      "(0,1]ulp": {
+        "prefixes": 5,
+        "calls": 1,
+        "gain_share": 3.7387756347282005e-07,
+        "queries": 141,
+        "query_share": 0.0016590772706413922
+      },
+      "(1,2]ulp": {
+        "prefixes": 5,
+        "calls": 2,
+        "gain_share": 7.477551269456401e-07,
+        "queries": 924,
+        "query_share": 0.010872251050160613
+      },
+      "(2,4]ulp": {
+        "prefixes": 1,
+        "calls": 1,
+        "gain_share": 2.2432653808369206e-07,
+        "queries": 37,
+        "query_share": 0.00043536070222504616
+      },
+      "(4,8]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(8,16]ulp": {
+        "prefixes": 6,
+        "calls": 3,
+        "gain_share": 5.009959350535789e-06,
+        "queries": 1071,
+        "query_share": 0.012601927353595256
+      },
+      "(16,32]ulp": {
+        "prefixes": 7,
+        "calls": 4,
+        "gain_share": 1.263706164538132e-05,
+        "queries": 1300,
+        "query_share": 0.015296457105204326
+      },
+      "(32,64]ulp": {
+        "prefixes": 20,
+        "calls": 4,
+        "gain_share": 6.565290014582721e-05,
+        "queries": 2244,
+        "query_share": 0.026404038264675776
+      },
+      ">64ulp": {
+        "prefixes": 236,
+        "calls": 54,
+        "gain_share": 0.9999153541196297,
+        "queries": 24665,
+        "query_share": 0.29022085730758823
+      }
+    },
+    "categories": {
+      "zero_gain": {
+        "prefixes": 1357,
+        "calls": 154,
+        "dates": 12,
+        "gain_share": 0.0,
+        "queries": 54605
+      },
+      "no_profitable_prefix": {
+        "prefixes": 161,
+        "calls": 40,
+        "dates": 11,
+        "gain_share": 0.018754670665461683,
+        "queries": 19548
+      },
+      "partial_only_profitable": {
+        "prefixes": 15,
+        "calls": 6,
+        "dates": 4,
+        "gain_share": 0.015775464688684866,
+        "queries": 2926
+      },
+      "full_profitable": {
+        "prefixes": 104,
+        "calls": 29,
+        "dates": 11,
+        "gain_share": 0.9654698646458535,
+        "queries": 7908
+      }
+    },
+    "positive_full_proxy_unprofitable": 176,
+    "sequential_vs_one_shot_hindsight_sum": 0.033351875087025085
+  },
+  "fit_expensive": {
+    "prefixes": 445,
+    "calls": 51,
+    "positive_prefixes": 155,
+    "positive_calls": 31,
+    "positive_gain_quantiles": {
+      "0": 2.384185791015625e-07,
+      "0.25": 1.6689300537109375e-05,
+      "0.5": 0.0005207061767578125,
+      "0.75": 0.0023581981658935547,
+      "1": 0.18611359596252441
+    },
+    "positive_ULP_quantiles": {
+      "0": 2.0,
+      "0.25": 140.0,
+      "0.5": 4368.0,
+      "0.75": 19782.0,
+      "1": 1561234.0
+    },
+    "positive_at_most4ULP": 5,
+    "positive_at_most64ULP": 31,
+    "total_gain": 1.2966117858886719,
+    "total_queries": 67202,
+    "ulp_bins": {
+      "zero": {
+        "prefixes": 290,
+        "calls": 42,
+        "gain_share": 0.0,
+        "queries": 40011,
+        "query_share": 0.5953840659504182
+      },
+      "(0,1]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(1,2]ulp": {
+        "prefixes": 5,
+        "calls": 2,
+        "gain_share": 9.193907601964113e-07,
+        "queries": 924,
+        "query_share": 0.013749590785988513
+      },
+      "(2,4]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(4,8]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(8,16]ulp": {
+        "prefixes": 5,
+        "calls": 2,
+        "gain_share": 4.8727710290409795e-06,
+        "queries": 1068,
+        "query_share": 0.015892384155233474
+      },
+      "(16,32]ulp": {
+        "prefixes": 6,
+        "calls": 3,
+        "gain_share": 1.388280047896581e-05,
+        "queries": 1263,
+        "query_share": 0.018794083509419364
+      },
+      "(32,64]ulp": {
+        "prefixes": 15,
+        "calls": 3,
+        "gain_share": 5.534732376382396e-05,
+        "queries": 2142,
+        "query_share": 0.03187405136751882
+      },
+      ">64ulp": {
+        "prefixes": 124,
+        "calls": 25,
+        "gain_share": 0.9999249777139679,
+        "queries": 21794,
+        "query_share": 0.3243058242314217
+      }
+    },
+    "categories": {
+      "zero_gain": {
+        "prefixes": 290,
+        "calls": 42,
+        "dates": 12,
+        "gain_share": 0.0,
+        "queries": 40011
+      },
+      "no_profitable_prefix": {
+        "prefixes": 99,
+        "calls": 24,
+        "dates": 10,
+        "gain_share": 0.021475313254819814,
+        "queries": 17667
+      },
+      "partial_only_profitable": {
+        "prefixes": 15,
+        "calls": 6,
+        "dates": 4,
+        "gain_share": 0.019396478806939708,
+        "queries": 2926
+      },
+      "full_profitable": {
+        "prefixes": 41,
+        "calls": 10,
+        "dates": 4,
+        "gain_share": 0.9591282079382405,
+        "queries": 6598
+      }
+    },
+    "positive_full_proxy_unprofitable": 114,
+    "sequential_vs_one_shot_hindsight_sum": 0.033351875087025085
+  },
+  "fit_cheap": {
+    "prefixes": 1192,
+    "calls": 155,
+    "positive_prefixes": 125,
+    "positive_calls": 38,
+    "positive_gain_quantiles": {
+      "0": 1.1920928955078125e-07,
+      "0.25": 1.609325408935547e-05,
+      "0.5": 9.119510650634766e-05,
+      "0.75": 0.0018734931945800781,
+      "1": 0.02594590187072754
+    },
+    "positive_ULP_quantiles": {
+      "0": 1.0,
+      "0.25": 135.0,
+      "0.5": 765.0,
+      "0.75": 15716.0,
+      "1": 435300.0
+    },
+    "positive_at_most4ULP": 6,
+    "positive_at_most64ULP": 13,
+    "total_gain": 0.29761719703674316,
+    "total_queries": 17785,
+    "ulp_bins": {
+      "zero": {
+        "prefixes": 1067,
+        "calls": 154,
+        "gain_share": 0.0,
+        "queries": 14594,
+        "query_share": 0.8205791397244869
+      },
+      "(0,1]ulp": {
+        "prefixes": 5,
+        "calls": 1,
+        "gain_share": 2.002728517332013e-06,
+        "queries": 141,
+        "query_share": 0.007928029238122013
+      },
+      "(1,2]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(2,4]ulp": {
+        "prefixes": 1,
+        "calls": 1,
+        "gain_share": 1.201637110399208e-06,
+        "queries": 37,
+        "query_share": 0.0020804048355355636
+      },
+      "(4,8]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(8,16]ulp": {
+        "prefixes": 1,
+        "calls": 1,
+        "gain_share": 5.607639848529637e-06,
+        "queries": 3,
+        "query_share": 0.0001686814731515322
+      },
+      "(16,32]ulp": {
+        "prefixes": 1,
+        "calls": 1,
+        "gain_share": 7.209822662395247e-06,
+        "queries": 37,
+        "query_share": 0.0020804048355355636
+      },
+      "(32,64]ulp": {
+        "prefixes": 5,
+        "calls": 2,
+        "gain_share": 0.00011055061415672712,
+        "queries": 102,
+        "query_share": 0.005735170087152094
+      },
+      ">64ulp": {
+        "prefixes": 112,
+        "calls": 32,
+        "gain_share": 0.9998734275577046,
+        "queries": 2871,
+        "query_share": 0.16142816980601632
+      }
+    },
+    "categories": {
+      "zero_gain": {
+        "prefixes": 1067,
+        "calls": 154,
+        "dates": 12,
+        "gain_share": 0.0,
+        "queries": 14594
+      },
+      "no_profitable_prefix": {
+        "prefixes": 62,
+        "calls": 18,
+        "dates": 10,
+        "gain_share": 0.006901803016429584,
+        "queries": 1881
+      },
+      "partial_only_profitable": {
+        "prefixes": 0,
+        "calls": 0,
+        "dates": 0,
+        "gain_share": 0.0,
+        "queries": 0
+      },
+      "full_profitable": {
+        "prefixes": 63,
+        "calls": 21,
+        "dates": 10,
+        "gain_share": 0.9930981969835704,
+        "queries": 1310
+      }
+    },
+    "positive_full_proxy_unprofitable": 62,
+    "sequential_vs_one_shot_hindsight_sum": 0.0
+  },
+  "calibration_all": {
+    "prefixes": 741,
+    "calls": 67,
+    "positive_prefixes": 112,
+    "positive_calls": 28,
+    "positive_gain_quantiles": {
+      "0": 3.5762786865234375e-07,
+      "0.25": 2.2798776626586914e-05,
+      "0.5": 0.0007367134094238281,
+      "0.75": 0.008055239915847778,
+      "1": 0.20026159286499023
+    },
+    "positive_ULP_quantiles": {
+      "0": 3.0,
+      "0.25": 191.25,
+      "0.5": 6180.0,
+      "0.75": 67572.25,
+      "1": 1679916.0
+    },
+    "positive_at_most4ULP": 2,
+    "positive_at_most64ULP": 12,
+    "total_gain": 1.787875771522522,
+    "total_queries": 37459,
+    "ulp_bins": {
+      "zero": {
+        "prefixes": 629,
+        "calls": 67,
+        "gain_share": 0.0,
+        "queries": 27578,
+        "query_share": 0.7362182653033984
+      },
+      "(0,1]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(1,2]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(2,4]ulp": {
+        "prefixes": 2,
+        "calls": 2,
+        "gain_share": 4.667354634739827e-07,
+        "queries": 251,
+        "query_share": 0.006700659387597106
+      },
+      "(4,8]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(8,16]ulp": {
+        "prefixes": 2,
+        "calls": 1,
+        "gain_share": 1.8669418538959308e-06,
+        "queries": 31,
+        "query_share": 0.0008275714781494434
+      },
+      "(16,32]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(32,64]ulp": {
+        "prefixes": 8,
+        "calls": 3,
+        "gain_share": 2.593715647019704e-05,
+        "queries": 527,
+        "query_share": 0.014068715128540538
+      },
+      ">64ulp": {
+        "prefixes": 100,
+        "calls": 24,
+        "gain_share": 0.9999717291662125,
+        "queries": 9072,
+        "query_share": 0.24218478870231452
+      }
+    },
+    "categories": {
+      "zero_gain": {
+        "prefixes": 629,
+        "calls": 67,
+        "dates": 4,
+        "gain_share": 0.0,
+        "queries": 27578
+      },
+      "no_profitable_prefix": {
+        "prefixes": 41,
+        "calls": 12,
+        "dates": 4,
+        "gain_share": 0.0005302114865064443,
+        "queries": 3725
+      },
+      "partial_only_profitable": {
+        "prefixes": 3,
+        "calls": 2,
+        "dates": 2,
+        "gain_share": 0.0031473972596894116,
+        "queries": 639
+      },
+      "full_profitable": {
+        "prefixes": 68,
+        "calls": 19,
+        "dates": 4,
+        "gain_share": 0.9963223912538042,
+        "queries": 5517
+      }
+    },
+    "positive_full_proxy_unprofitable": 44,
+    "sequential_vs_one_shot_hindsight_sum": 0.03526482976457679
+  },
+  "calibration_expensive": {
+    "prefixes": 193,
+    "calls": 24,
+    "positive_prefixes": 46,
+    "positive_calls": 14,
+    "positive_gain_quantiles": {
+      "0": 3.5762786865234375e-07,
+      "0.25": 1.0251998901367188e-05,
+      "0.5": 0.006472110748291016,
+      "0.75": 0.048514336347579956,
+      "1": 0.20026159286499023
+    },
+    "positive_ULP_quantiles": {
+      "0": 3.0,
+      "0.25": 86.0,
+      "0.5": 54292.0,
+      "0.75": 406967.75,
+      "1": 1679916.0
+    },
+    "positive_at_most4ULP": 1,
+    "positive_at_most64ULP": 3,
+    "total_gain": 1.3777068853378296,
+    "total_queries": 29055,
+    "ulp_bins": {
+      "zero": {
+        "prefixes": 147,
+        "calls": 21,
+        "gain_share": 0.0,
+        "queries": 20437,
+        "query_share": 0.7033901221820685
+      },
+      "(0,1]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(1,2]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(2,4]ulp": {
+        "prefixes": 1,
+        "calls": 1,
+        "gain_share": 2.5958197092456955e-07,
+        "queries": 214,
+        "query_share": 0.007365341593529513
+      },
+      "(4,8]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(8,16]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(16,32]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(32,64]ulp": {
+        "prefixes": 2,
+        "calls": 1,
+        "gain_share": 1.0037169542416689e-05,
+        "queries": 380,
+        "query_share": 0.013078643951127173
+      },
+      ">64ulp": {
+        "prefixes": 43,
+        "calls": 13,
+        "gain_share": 0.9999897032484867,
+        "queries": 8024,
+        "query_share": 0.2761658922732748
+      }
+    },
+    "categories": {
+      "zero_gain": {
+        "prefixes": 147,
+        "calls": 21,
+        "dates": 4,
+        "gain_share": 0.0,
+        "queries": 20437
+      },
+      "no_profitable_prefix": {
+        "prefixes": 18,
+        "calls": 4,
+        "dates": 3,
+        "gain_share": 0.00029947106712331173,
+        "queries": 3165
+      },
+      "partial_only_profitable": {
+        "prefixes": 3,
+        "calls": 2,
+        "dates": 2,
+        "gain_share": 0.00408443578517446,
+        "queries": 639
+      },
+      "full_profitable": {
+        "prefixes": 25,
+        "calls": 9,
+        "dates": 2,
+        "gain_share": 0.9956160931477023,
+        "queries": 4814
+      }
+    },
+    "positive_full_proxy_unprofitable": 21,
+    "sequential_vs_one_shot_hindsight_sum": 0.03526482976457679
+  },
+  "calibration_cheap": {
+    "prefixes": 548,
+    "calls": 67,
+    "positive_prefixes": 66,
+    "positive_calls": 16,
+    "positive_gain_quantiles": {
+      "0": 4.76837158203125e-07,
+      "0.25": 3.039836883544922e-05,
+      "0.5": 0.0004152655601501465,
+      "0.75": 0.004273861646652222,
+      "1": 0.04357314109802246
+    },
+    "positive_ULP_quantiles": {
+      "0": 4.0,
+      "0.25": 255.0,
+      "0.5": 3483.5,
+      "0.75": 35851.75,
+      "1": 365518.0
+    },
+    "positive_at_most4ULP": 1,
+    "positive_at_most64ULP": 9,
+    "total_gain": 0.4101688861846924,
+    "total_queries": 8404,
+    "ulp_bins": {
+      "zero": {
+        "prefixes": 482,
+        "calls": 67,
+        "gain_share": 0.0,
+        "queries": 7141,
+        "query_share": 0.8497144217039505
+      },
+      "(0,1]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(1,2]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(2,4]ulp": {
+        "prefixes": 1,
+        "calls": 1,
+        "gain_share": 1.1625385890152892e-06,
+        "queries": 37,
+        "query_share": 0.004402665397429796
+      },
+      "(4,8]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(8,16]ulp": {
+        "prefixes": 2,
+        "calls": 1,
+        "gain_share": 8.137770123107025e-06,
+        "queries": 31,
+        "query_share": 0.0036887196573060447
+      },
+      "(16,32]ulp": {
+        "prefixes": 0,
+        "calls": 0,
+        "gain_share": 0.0,
+        "queries": 0,
+        "query_share": 0.0
+      },
+      "(32,64]ulp": {
+        "prefixes": 6,
+        "calls": 2,
+        "gain_share": 7.934325870029349e-05,
+        "queries": 147,
+        "query_share": 0.017491670633031888
+      },
+      ">64ulp": {
+        "prefixes": 57,
+        "calls": 13,
+        "gain_share": 0.9999113564325876,
+        "queries": 1048,
+        "query_share": 0.12470252260828177
+      }
+    },
+    "categories": {
+      "zero_gain": {
+        "prefixes": 482,
+        "calls": 67,
+        "dates": 4,
+        "gain_share": 0.0,
+        "queries": 7141
+      },
+      "no_profitable_prefix": {
+        "prefixes": 23,
+        "calls": 9,
+        "dates": 4,
+        "gain_share": 0.0013052402008169159,
+        "queries": 560
+      },
+      "partial_only_profitable": {
+        "prefixes": 0,
+        "calls": 0,
+        "dates": 0,
+        "gain_share": 0.0,
+        "queries": 0
+      },
+      "full_profitable": {
+        "prefixes": 43,
+        "calls": 10,
+        "dates": 3,
+        "gain_share": 0.9986947597991831,
+        "queries": 703
+      }
+    },
+    "positive_full_proxy_unprofitable": 23,
+    "sequential_vs_one_shot_hindsight_sum": 0.0
+  }
+}

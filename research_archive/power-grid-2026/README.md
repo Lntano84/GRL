@@ -706,3 +706,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID134完整尾部公开输入资格](protocols/GRID134_full_tail_inputs/complete/GRID134_report.md)：2378原训练/校准门控前缀全候选结构还原，零拟合/新物理，历史64接口错误与恢复收据保留；尚无预测改进结论。
 
 - [GRID135完整尾部/配对匹配分类](protocols/GRID135_matched_tail/complete/GRID135_report.md)：四组各三种子同容量预算，范围与配对未形成稳定优势；[结果解释](protocols/GRID135_matched_tail/interpretation/结果解释与后续取舍.md)保留单调用新误停、种子波动及归档清单修复。
+
+- [GRID136学习目标与标签核查](protocols/GRID136_objective_support/publication/阶段结论.md)：只读奖励精度、旧代理费下分批机会、同站支持及56真实物理标签；区分局部增益与整周业务目标，保存后续标签使用规范建议，无新拟合/仿真。

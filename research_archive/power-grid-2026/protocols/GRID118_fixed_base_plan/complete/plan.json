@@ -1,0 +1,163 @@
+{
+  "id": "GRID118_FIXED_BASE_CORRECTION_PLAN",
+  "utc": "2026-10-23T03:51:16.070734+00:00",
+  "status": "qualified_proposal_no_training",
+  "authorization": "User: 好的，再改改. Revise architecture/target/budget and report before training.",
+  "rationale": "Fix the previously jointly moving base so the learned correction has a fixed numerical reference; match extra optimization exposure separately.",
+  "groups": [
+    {
+      "name": "BASE_FIXED",
+      "new_fits": 0,
+      "total_parameters": 6978,
+      "trainable_parameters": 0,
+      "source": "Reuse GRID107 final seeds0/1/2"
+    },
+    {
+      "name": "BASE_EXTRA",
+      "new_fits": 3,
+      "total_parameters": 6978,
+      "trainable_parameters": 6978,
+      "source": "Same GRID107 final checkpoints; fresh Adam,7250 additional updates"
+    },
+    {
+      "name": "FIXED_JOINT",
+      "new_fits": 3,
+      "total_parameters": 12916,
+      "trainable_parameters": 5938,
+      "source": "Same fixed pretrained base plus zero-output JOINT correction"
+    },
+    {
+      "name": "FIXED_FACTOR",
+      "new_fits": 3,
+      "total_parameters": 12916,
+      "trainable_parameters": 5938,
+      "source": "Same fixed pretrained base plus zero-output FACTOR correction"
+    }
+  ],
+  "mathematics": {
+    "base": "b(x)=frozen GRID107 two-action Q prediction for this seed.",
+    "original_target": "y=[0, immediate normalized net continuation] from original GRID107/113.",
+    "correction_reference": "r(x)=y-b(x), detached; no new outcome label or changed reward.",
+    "output": "q(x,z)=b(x)+delta(x,z); CONTINUE iff q[1]>q[0], tie STOP.",
+    "optimization": "Keep original smooth_l1(q,y,beta=1,mean) in prospective trainer. In exact arithmetic this equals smooth_l1(delta,y-b,beta=1,mean).",
+    "identifiability": "Base cannot absorb an arbitrary opposite shift while frozen. This fixes the output reference, not the internal neural representation or causal meaning of features."
+  },
+  "initialization": {
+    "base": "Exact original trained GRID107 final weights, not random and not selected from GRID116.",
+    "correction": "Original GRID1135938 architecture; seed=20261023+s, JOINT/FACTOR identical tensors; last16->2 layer zero.",
+    "optimizer": "All prospective extra-stage optimizers start fresh; never import SB3 Adam moments. BASE_EXTRA is reset-optimizer additional training, not uninterrupted continuation.",
+    "gradient": "Frozen base excluded by parameter identity; first correction head update inside7250, upstream gradients initially zero. Check flow after first actual step, no warmup fitting."
+  },
+  "unchanged": {
+    "train_scenarios": 32,
+    "validation_scenarios": 8,
+    "train_dates": 16,
+    "validation_dates": 4,
+    "train_states": 3582,
+    "validation_states": 856,
+    "train_prefixes": 2378,
+    "validation_prefixes": 590,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "normalization": "Original frozen41; full public geometry/paid feedback schema fromGRID112/113 without truncation.",
+    "updates": 7250,
+    "states_per_batch": 32,
+    "scalar_targets_per_update": 64,
+    "optimizer": "Adam lr0.0003 betas0.9/0.999 eps1e-8 weight_decay0; clip_grad_norm10.",
+    "loss": "Original smooth_l1 beta1 mean over32x2. No auxiliary/classification/contrastive loss, class weighting or fee/threshold change.",
+    "cost_per_query": 1.2442348640059487e-05,
+    "gain_scale": 0.008627818251142696,
+    "target": "Original immediate normalized net continuation, STOP0.",
+    "sampling": "Per seed, reproduce original 7250x32 stream then use its next7250x32 draws for all three new arms; same probabilities, no class reweighting.",
+    "train_mode": "Stage2 from each original GRID107 final base checkpoint. Fixed base for JOINT/FACTOR; BASE_EXTRA updates only original backbone. Fresh Adam for all new arms."
+  },
+  "future_fits": {
+    "count": 9,
+    "order": [
+      {
+        "seed": 0,
+        "arm": "BASE_EXTRA"
+      },
+      {
+        "seed": 0,
+        "arm": "FIXED_JOINT"
+      },
+      {
+        "seed": 0,
+        "arm": "FIXED_FACTOR"
+      },
+      {
+        "seed": 1,
+        "arm": "BASE_EXTRA"
+      },
+      {
+        "seed": 1,
+        "arm": "FIXED_JOINT"
+      },
+      {
+        "seed": 1,
+        "arm": "FIXED_FACTOR"
+      },
+      {
+        "seed": 2,
+        "arm": "BASE_EXTRA"
+      },
+      {
+        "seed": 2,
+        "arm": "FIXED_JOINT"
+      },
+      {
+        "seed": 2,
+        "arm": "FIXED_FACTOR"
+      }
+    ],
+    "updates_per_fit": 7250,
+    "states_per_batch": 32,
+    "scalar_targets_per_update": 64,
+    "new_updates_total": 65250,
+    "new_state_draws_total": 2088000,
+    "new_scalar_targets_total": 4176000,
+    "original_pretraining_updates_per_seed": 7250,
+    "extra_updates_per_new_fit": 7250,
+    "new_base_pretraining_fits": 0,
+    "maximum_total_training_wall_s": 1800,
+    "endpoint": "Fixed final only; evaluate validation only after all9 fits. Keep every seed and partial failure; no automatic extension or refit."
+  },
+  "comparisons": {
+    "primary": "FIXED_JOINT vs FIXED_FACTOR: same base, architecture, trainable count, initialization, optimizer, inputs and sampling; feedback association differs.",
+    "practical": "Each corrected family vs BASE_FIXED: incremental addition, includes extra7250 training.",
+    "additional_training": "Each corrected family vs BASE_EXTRA: equal original pretraining and extra update/target exposure; not equal architecture, trainable count, FLOPs or wall time.",
+    "historical": "GRID116 and other historical offline outcomes stay visible; no claim that changing freezing alone is identified, because the new proposal also introduces staged pretraining."
+  },
+  "evaluation": {
+    "primary": "Complete saved local-search validation trajectory four-date macro normalized net utility, all seeds.",
+    "mechanism_signal": "JOINT family mean>FACTOR, all3paired seed differences>0,>=3/4 date differences>0 after seed averaging; report actual magnitudes and all adverse results.",
+    "incremental": "Report all paired seeds against BASE_FIXED and BASE_EXTRA, not only mean; preserve BATCH1 and original gamma0 DQN references.",
+    "progression": "Mechanism signal as before AND JOINT family mean above BASE_FIXED, BASE_EXTRA, BATCH1 and original gamma0DQN; no automatic scaling or physical replay.",
+    "secondary": [
+      "physical-call-balanced utility",
+      "gain capture",
+      "query fraction",
+      "positive misses and unprofitable continues",
+      "train/validation weighted loss and sign-regret",
+      "per-date/per-seed and single/multi-batch results"
+    ],
+    "diagnostics": "Three preexposed108/552/RF-path552 always shown. Same fixed label-independent cyclic-pair sensitivity used after fits only; not an acceptance criterion or deployed policy.",
+    "interpretation": "Four exposed dates, correlated prefixes, same grid, FULL teacher-path immediate value. No whole-week quality, statistical significance, latency or cross-grid claim."
+  },
+  "limitations": [
+    "Correction can still worsen decisions or ignore action-feedback pairing; freezing does not guarantee improvement.",
+    "Correction retains global41 input; ordinary summary fitting remains possible and is tested by FACTOR control, not removed by assertion.",
+    "Four already exposed validation dates, correlated prefixes, same grid and fixed FULL teacher path; no whole-week quality, latency or cross-grid claim.",
+    "Additional train exposure may overfit; no threshold, fee, loss, seed or dataset selection to rescue outcomes."
+  ],
+  "before_training": [
+    "User reviews revised concrete plan; this stage does not run training.",
+    "Write/freeze exact trainer and all code/data/checkpoint hashes, verify original independent schema and masks and public/target separation, push before first optimizer.",
+    "Synthetic backward without optimizer; count actual first head update and subsequent upstream gradient check inside7250.",
+    "Recheck no generator/benchmark, sealed final8 test absent; no environment or forecast in fit/evaluation."
+  ]
+}

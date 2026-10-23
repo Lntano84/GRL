@@ -668,3 +668,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID116保留原主干的模块训练](protocols/GRID116_matched_module/complete/GRID116_report.md)：固定六次JOINT/FACTOR训练、全部种子与原BASE参照、完整序列评价及审计。
 
 - [GRID117模块原因核查](protocols/GRID117_module_diagnosis/complete/GRID117_report.md)：零训练，成本位置、首次分歧、固定权重函数诊断与加法分工不可辨识核验。
+
+- [GRID118固定基础模型校正方案](protocols/GRID118_fixed_base_plan/complete/固定主干校正方案_中文.md)：固定旧预测参照，补充相同额外训练对照；工程核验完成，未训练。

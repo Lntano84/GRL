@@ -1,7 +1,7 @@
-# Next steps — GRID117模块原因核查完成，未新增训练
+# Next steps — GRID118固定基础模型校正方案已核对，未训练
 
-1. 汇报多查定位、推理配对/注意力弱作用及主干—修正不可唯一归因的限制。
-2. 若继续，先定义相对稳定基础预测的校正目标；固定主干等方案需另行匹配预训练、额外更新与对照预算，训练前给具体方案。
-3. 不自动训练、扩网络、改费用/门槛、上电网闭环或读取最终测试。
+1. 将四组方案交用户检查：原BASE复用；BASE_EXTRA与固定BASE+JOINT/FACTOR各三个种子，拟9次新增训练。
+2. 获准训练后编写、核验并封存实际执行器；保持原目标/Huber/费用/数据/种子，使用已核对的后续抽样序列，首步与梯度检查计入7250次。
+3. JOINT/FACTOR配对判据不变；同时比较原BASE和同额外训练BASE_EXTRA。不自动改目标、扩网络、上电网闭环或读取最终测试。
 
-报告：research_archive/power-grid-2026/protocols/GRID117_module_diagnosis/complete/GRID117_report.md
+方案：research_archive/power-grid-2026/protocols/GRID118_fixed_base_plan/complete/固定主干校正方案_中文.md

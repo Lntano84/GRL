@@ -1,0 +1,2555 @@
+[
+  {
+    "feature": "log_pool_size",
+    "coefficient": -0.04495289556601427,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 6.771617425527099,
+        "raw_quantiles": [
+          6.802394866943359,
+          6.812345027923584,
+          6.8134446144104
+        ],
+        "mean_logit_contribution": 0.0039564908918231344
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 6.800405747314979,
+        "raw_quantiles": [
+          6.793466091156006,
+          6.807934761047363,
+          6.8134446144104
+        ],
+        "mean_logit_contribution": -0.009931879199212961
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 6.802425815213111,
+        "raw_quantiles": [
+          6.79738187789917,
+          6.807934761047363,
+          6.812345027923584
+        ],
+        "mean_logit_contribution": -0.010906421959468187
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 6.783730989669863,
+        "raw_quantiles": [
+          6.805722713470459,
+          6.8134446144104,
+          6.8134446144104
+        ],
+        "mean_logit_contribution": -0.0018874642777706764
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 6.797261432725556,
+        "raw_quantiles": [
+          6.788408517837524,
+          6.805722713470459,
+          6.8134446144104
+        ],
+        "mean_logit_contribution": -0.008414965326208433
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 6.787413400152455,
+        "raw_quantiles": [
+          6.758094310760498,
+          6.7990336418151855,
+          6.807934761047363
+        ],
+        "mean_logit_contribution": -0.00366397212654984
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.006527501048437757,
+    "fit_positive_minus_zero_expensive_logit": -0.0009745427602552252,
+    "calibration_positive_minus_zero_expensive_logit": 0.004750993199658594
+  },
+  {
+    "feature": "queried_fraction",
+    "coefficient": -0.06572050864781073,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.576958222864606,
+        "raw_quantiles": [
+          0.35203519463539124,
+          0.5856209397315979,
+          0.8305389881134033
+        ],
+        "mean_logit_contribution": -0.012654052799880883
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.5115252767143579,
+        "raw_quantiles": [
+          0.3539822995662689,
+          0.5414226949214935,
+          0.6964738517999649
+        ],
+        "mean_logit_contribution": 0.004460817750226452
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.3708764010860074,
+        "raw_quantiles": [
+          0.21238937973976135,
+          0.35203519463539124,
+          0.4980583190917969
+        ],
+        "mean_logit_contribution": 0.041249430231008605
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.5871377122352727,
+        "raw_quantiles": [
+          0.35242289304733276,
+          0.6336633563041687,
+          0.8448845148086548
+        ],
+        "mean_logit_contribution": -0.015316635689624325
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.5001558118126019,
+        "raw_quantiles": [
+          0.35776689648628235,
+          0.5050733089447021,
+          0.648285448551178
+        ],
+        "mean_logit_contribution": 0.00743465480733722
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.30946248251458874,
+        "raw_quantiles": [
+          0.1684679351747036,
+          0.28162816166877747,
+          0.36895740777254105
+        ],
+        "mean_logit_contribution": 0.05731306985241785
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.022751290496961545,
+    "fit_positive_minus_zero_expensive_logit": 0.036788612480782155,
+    "calibration_positive_minus_zero_expensive_logit": 0.04987841504508063
+  },
+  {
+    "feature": "log_visible_count",
+    "coefficient": 0.22413086584521208,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 6.0859709411664,
+        "raw_quantiles": [
+          5.7714409828186035,
+          6.240275859832764,
+          6.558197975158691
+        ],
+        "mean_logit_contribution": 0.03262130013301885
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 6.03958269152148,
+        "raw_quantiles": [
+          5.7714409828186035,
+          6.107022762298584,
+          6.357842445373535
+        ],
+        "mean_logit_contribution": 0.01443250237113594
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 5.6733807040799045,
+        "raw_quantiles": [
+          5.26269006729126,
+          5.7714409828186035,
+          6.107022762298584
+        ],
+        "mean_logit_contribution": -0.12915502120562206
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 6.122012654775406,
+        "raw_quantiles": [
+          5.7714409828186035,
+          6.240275859832764,
+          6.558197975158691
+        ],
+        "mean_logit_contribution": 0.046753228904720556
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 6.0202636848501605,
+        "raw_quantiles": [
+          5.7714409828186035,
+          6.107022762298584,
+          6.357842445373535
+        ],
+        "mean_logit_contribution": 0.00685753439983244
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 5.4848673550978955,
+        "raw_quantiles": [
+          4.960531711578369,
+          5.549076080322266,
+          5.7714409828186035
+        ],
+        "mean_logit_contribution": -0.20307096341717673
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.03989569450488811,
+    "fit_positive_minus_zero_expensive_logit": -0.143587523576758,
+    "calibration_positive_minus_zero_expensive_logit": -0.20992849781700917
+  },
+  {
+    "feature": "log_completion_queries",
+    "coefficient": 0.2218252217517335,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 2.2334391640633653,
+        "raw_quantiles": [
+          1.3862943649291992,
+          2.079441547393799,
+          3.0910425186157227
+        ],
+        "mean_logit_contribution": -0.12440359092187298
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 4.865752124786377,
+        "raw_quantiles": [
+          4.496471881866455,
+          4.875168323516846,
+          5.204006671905518
+        ],
+        "mean_logit_contribution": 0.2777706939231413
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 5.123148819708055,
+        "raw_quantiles": [
+          4.955827236175537,
+          5.20948600769043,
+          5.375278472900391
+        ],
+        "mean_logit_contribution": 0.3170966909630841
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 2.356390716623963,
+        "raw_quantiles": [
+          1.6094379425048828,
+          2.397895336151123,
+          3.178053855895996
+        ],
+        "mean_logit_contribution": -0.10561860849027759
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 4.880208307383012,
+        "raw_quantiles": [
+          4.619755506515503,
+          4.919981002807617,
+          5.192956924438477
+        ],
+        "mean_logit_contribution": 0.27997936173131627
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 5.203929320625637,
+        "raw_quantiles": [
+          5.141612648963928,
+          5.293304920196533,
+          5.375278472900391
+        ],
+        "mean_logit_contribution": 0.32943862775810223
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.38559797022159387,
+    "fit_positive_minus_zero_expensive_logit": 0.03932599703994283,
+    "calibration_positive_minus_zero_expensive_logit": 0.049459266026785964
+  },
+  {
+    "feature": "completion_fraction_remaining",
+    "coefficient": 0.606137677954943,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.07581258503979399,
+        "raw_quantiles": [
+          0.011363636702299118,
+          0.029739776626229286,
+          0.061829669401049614
+        ],
+        "mean_logit_contribution": -0.2597512961829533
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.3193090405957452,
+        "raw_quantiles": [
+          0.3080260157585144,
+          0.31831830739974976,
+          0.3256261274218559
+        ],
+        "mean_logit_contribution": 0.7393694116899567
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.3130253311126463,
+        "raw_quantiles": [
+          0.3043447285890579,
+          0.30993151664733887,
+          0.31912675499916077
+        ],
+        "mean_logit_contribution": 0.7135859387745618
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.07794061373036232,
+        "raw_quantiles": [
+          0.014184396713972092,
+          0.04184100404381752,
+          0.058699678629636765
+        ],
+        "mean_logit_contribution": -0.251019515973504
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.3145145072418005,
+        "raw_quantiles": [
+          0.303457111120224,
+          0.3142857253551483,
+          0.32311780750751495
+        ],
+        "mean_logit_contribution": 0.7196963632770907
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.3085279834011327,
+        "raw_quantiles": [
+          0.29986053705215454,
+          0.3062015473842621,
+          0.317161001265049
+        ],
+        "mean_logit_contribution": 0.6951323098754518
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.9707158792505948,
+    "fit_positive_minus_zero_expensive_logit": -0.025783472915394956,
+    "calibration_positive_minus_zero_expensive_logit": -0.02456405340163892
+  },
+  {
+    "feature": "station_pool_fraction",
+    "coefficient": -0.14516390428982803,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.06356427098180131,
+        "raw_quantiles": [
+          0.014301430433988571,
+          0.041760724037885666,
+          0.053905390202999115
+        ],
+        "mean_logit_contribution": 0.07064568288140974
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.2973291284051435,
+        "raw_quantiles": [
+          0.29482948780059814,
+          0.29482948780059814,
+          0.29711753129959106
+        ],
+        "mean_logit_contribution": -0.19677647003259074
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.2978007331971199,
+        "raw_quantiles": [
+          0.2949918359518051,
+          0.29646018147468567,
+          0.2994413375854492
+        ],
+        "mean_logit_contribution": -0.19731597614221316
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.07029601589233626,
+        "raw_quantiles": [
+          0.024202419444918633,
+          0.050605058670043945,
+          0.053964756429195404
+        ],
+        "mean_logit_contribution": 0.0629447061961804
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.2946148024124353,
+        "raw_quantiles": [
+          0.29482948780059814,
+          0.29482948780059814,
+          0.29711753129959106
+        ],
+        "mean_logit_contribution": -0.19367133734206868
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.29784203288347827,
+        "raw_quantiles": [
+          0.29482948780059814,
+          0.29646018147468567,
+          0.30214205384254456
+        ],
+        "mean_logit_contribution": -0.197363222127612
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.2566160435382491,
+    "fit_positive_minus_zero_expensive_logit": -0.0005395061096224174,
+    "calibration_positive_minus_zero_expensive_logit": -0.003691884785543331
+  },
+  {
+    "feature": "station_seen_fraction",
+    "coefficient": -1.577823630653248,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.6362668325689873,
+        "raw_quantiles": [
+          0.4615384638309479,
+          0.6666666865348816,
+          0.8367347121238708
+        ],
+        "mean_logit_contribution": -0.5174283324321505
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.4824312040004237,
+        "raw_quantiles": [
+          0.3246268630027771,
+          0.5055970251560211,
+          0.6688432842493057
+        ],
+        "mean_logit_contribution": 0.4470023179764664
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.34450265529655644,
+        "raw_quantiles": [
+          0.1977611929178238,
+          0.3208955228328705,
+          0.4738805890083313
+        ],
+        "mean_logit_contribution": 1.3117078557908093
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.6580361080862179,
+        "raw_quantiles": [
+          0.5,
+          0.6861471831798553,
+          0.8461538553237915
+        ],
+        "mean_logit_contribution": -0.6539048869297309
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.472536138734039,
+        "raw_quantiles": [
+          0.330223873257637,
+          0.4776119291782379,
+          0.6156716346740723
+        ],
+        "mean_logit_contribution": 0.5090367395177792
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.2883595479247363,
+        "raw_quantiles": [
+          0.15018657222390175,
+          0.26119402050971985,
+          0.35083844512701035
+        ],
+        "mean_logit_contribution": 1.6636818039742933
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 1.16294162644751,
+    "fit_positive_minus_zero_expensive_logit": 0.8647055378143429,
+    "calibration_positive_minus_zero_expensive_logit": 1.1546450644565143
+  },
+  {
+    "feature": "station_admissible_fraction",
+    "coefficient": -0.025832204984165753,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.5838625342432399,
+        "raw_quantiles": [
+          0.3664122223854065,
+          0.5833333134651184,
+          0.8181818127632141
+        ],
+        "mean_logit_contribution": -0.0018967805038215808
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.4891606074854218,
+        "raw_quantiles": [
+          0.3256777673959732,
+          0.4837833046913147,
+          0.6295389533042908
+        ],
+        "mean_logit_contribution": 0.007117654670241723
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.3585041611365253,
+        "raw_quantiles": [
+          0.20806806534528732,
+          0.3461538553237915,
+          0.48247601091861725
+        ],
+        "mean_logit_contribution": 0.019554508977309714
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.5754715121038165,
+        "raw_quantiles": [
+          0.3636363744735718,
+          0.5263158082962036,
+          0.8052536398172379
+        ],
+        "mean_logit_contribution": -0.001098060480802435
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.33283138357508346,
+        "raw_quantiles": [
+          0.2261107712984085,
+          0.29487180709838867,
+          0.43611693382263184
+        ],
+        "mean_logit_contribution": 0.021998235277172554
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.4544280045463339,
+        "raw_quantiles": [
+          0.17328595742583275,
+          0.48003509640693665,
+          0.7437106966972351
+        ],
+        "mean_logit_contribution": 0.010423762669729083
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.023096295757974988,
+    "fit_positive_minus_zero_expensive_logit": 0.01243685430706799,
+    "calibration_positive_minus_zero_expensive_logit": -0.011574472607443471
+  },
+  {
+    "feature": "station_observed_fraction",
+    "coefficient": 0.259457449920711,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.06564750905792842,
+        "raw_quantiles": [
+          0.015625,
+          0.03750000149011612,
+          0.05438701994717121
+        ],
+        "mean_logit_contribution": -0.12000041271909069
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.27776942602519333,
+        "raw_quantiles": [
+          0.2726004496216774,
+          0.28125,
+          0.2828125059604645
+        ],
+        "mean_logit_contribution": 0.3476097442281402
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.2718168902781702,
+        "raw_quantiles": [
+          0.26875001192092896,
+          0.275390625,
+          0.28196023404598236
+        ],
+        "mean_logit_contribution": 0.33448773300603235
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.07573067167912961,
+        "raw_quantiles": [
+          0.026367187034338713,
+          0.0502232126891613,
+          0.0711805522441864
+        ],
+        "mean_logit_contribution": -0.09777268008667266
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.2759795600459689,
+        "raw_quantiles": [
+          0.26953125,
+          0.2760416567325592,
+          0.2828125059604645
+        ],
+        "mean_logit_contribution": 0.3436640910706271
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.2720858260341313,
+        "raw_quantiles": [
+          0.26875001192092896,
+          0.2747395783662796,
+          0.2833581268787384
+        ],
+        "mean_logit_contribution": 0.33508058589389816
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.4414367711572998,
+    "fit_positive_minus_zero_expensive_logit": -0.013122011222107877,
+    "calibration_positive_minus_zero_expensive_logit": -0.008583505176728956
+  },
+  {
+    "feature": "admissible_fraction",
+    "coefficient": -0.3478676830800115,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.3392090323580134,
+        "raw_quantiles": [
+          0.0520833320915699,
+          0.18629807233810425,
+          0.6288667917251587
+        ],
+        "mean_logit_contribution": 0.05390900717918062
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.47652659982860346,
+        "raw_quantiles": [
+          0.15507812052965164,
+          0.5881076455116272,
+          0.6808593571186066
+        ],
+        "mean_logit_contribution": -0.09962359311250447
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.34797305131120787,
+        "raw_quantiles": [
+          0.09218750149011612,
+          0.2135416716337204,
+          0.6536458432674408
+        ],
+        "mean_logit_contribution": 0.04411009620460522
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.37329961457077215,
+        "raw_quantiles": [
+          0.0625,
+          0.2864583283662796,
+          0.6666666865348816
+        ],
+        "mean_logit_contribution": 0.015792866404233455
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.372685209119401,
+        "raw_quantiles": [
+          0.16206597536802292,
+          0.24573864042758942,
+          0.552734375
+        ],
+        "mean_logit_contribution": 0.016479823421605595
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.5197480063399543,
+        "raw_quantiles": [
+          0.140625,
+          0.6997767984867096,
+          0.8385416716337204
+        ],
+        "mean_logit_contribution": -0.14794876411710228
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.0006869570173721404,
+    "fit_positive_minus_zero_expensive_logit": 0.1437336893171097,
+    "calibration_positive_minus_zero_expensive_logit": -0.16442858753870787
+  },
+  {
+    "feature": "terminal_fraction",
+    "coefficient": 0.05854539808343256,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.02432841042492228,
+        "raw_quantiles": [
+          0.00937500037252903,
+          0.01875000074505806,
+          0.0364583320915699
+        ],
+        "mean_logit_contribution": 0.00368528966563718
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.021102504497233394,
+        "raw_quantiles": [
+          0.00937500037252903,
+          0.015625,
+          0.02734375
+        ],
+        "mean_logit_contribution": -0.005100033930277307
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.02790322219502301,
+        "raw_quantiles": [
+          0.012326389085501432,
+          0.0173611119389534,
+          0.03515625
+        ],
+        "mean_logit_contribution": 0.01342081168605725
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.020753469948774722,
+        "raw_quantiles": [
+          0.0078125,
+          0.015625,
+          0.02777777798473835
+        ],
+        "mean_logit_contribution": -0.006050582868497634
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.023244298524128234,
+        "raw_quantiles": [
+          0.0078125,
+          0.013671875,
+          0.030133928172290325
+        ],
+        "mean_logit_contribution": 0.0007328558141389045
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.0139404527346968,
+        "raw_quantiles": [
+          0.0052083334885537624,
+          0.00816761376336217,
+          0.01513671875
+        ],
+        "mean_logit_contribution": -0.024604924573400206
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.006783438682636539,
+    "fit_positive_minus_zero_expensive_logit": 0.018520845616334557,
+    "calibration_positive_minus_zero_expensive_logit": -0.02533778038753911
+  },
+  {
+    "feature": "illegal_fraction",
+    "coefficient": 0.0,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.0,
+    "fit_positive_minus_zero_expensive_logit": 0.0,
+    "calibration_positive_minus_zero_expensive_logit": 0.0
+  },
+  {
+    "feature": "ambiguous_fraction",
+    "coefficient": 0.0,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.0,
+    "fit_positive_minus_zero_expensive_logit": 0.0,
+    "calibration_positive_minus_zero_expensive_logit": 0.0
+  },
+  {
+    "feature": "exception_fraction",
+    "coefficient": 0.05854539808343256,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.02432841042492228,
+        "raw_quantiles": [
+          0.00937500037252903,
+          0.01875000074505806,
+          0.0364583320915699
+        ],
+        "mean_logit_contribution": 0.00368528966563718
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.021102504497233394,
+        "raw_quantiles": [
+          0.00937500037252903,
+          0.015625,
+          0.02734375
+        ],
+        "mean_logit_contribution": -0.005100033930277307
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.02790322219502301,
+        "raw_quantiles": [
+          0.012326389085501432,
+          0.0173611119389534,
+          0.03515625
+        ],
+        "mean_logit_contribution": 0.01342081168605725
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.020753469948774722,
+        "raw_quantiles": [
+          0.0078125,
+          0.015625,
+          0.02777777798473835
+        ],
+        "mean_logit_contribution": -0.006050582868497634
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.023244298524128234,
+        "raw_quantiles": [
+          0.0078125,
+          0.013671875,
+          0.030133928172290325
+        ],
+        "mean_logit_contribution": 0.0007328558141389045
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.0139404527346968,
+        "raw_quantiles": [
+          0.0052083334885537624,
+          0.00816761376336217,
+          0.01513671875
+        ],
+        "mean_logit_contribution": -0.024604924573400206
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.006783438682636539,
+    "fit_positive_minus_zero_expensive_logit": 0.018520845616334557,
+    "calibration_positive_minus_zero_expensive_logit": -0.02533778038753911
+  },
+  {
+    "feature": "incumbent_reward",
+    "coefficient": 0.13016078619123364,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 1.1343258956714333,
+        "raw_quantiles": [
+          1.0636827945709229,
+          1.1281373500823975,
+          1.2037076950073242
+        ],
+        "mean_logit_contribution": -0.018268323576299105
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 1.160013028259935,
+        "raw_quantiles": [
+          1.09151029586792,
+          1.1589502096176147,
+          1.220775842666626
+        ],
+        "mean_logit_contribution": 0.01590936807313316
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 1.1403879211794945,
+        "raw_quantiles": [
+          1.0814234018325806,
+          1.1345549821853638,
+          1.180260419845581
+        ],
+        "mean_logit_contribution": -0.010202571672240679
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 1.1583065600810705,
+        "raw_quantiles": [
+          1.0832476615905762,
+          1.1326065063476562,
+          1.2161316871643066
+        ],
+        "mean_logit_contribution": 0.013638848270042652
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 1.1747636519321778,
+        "raw_quantiles": [
+          1.0973825454711914,
+          1.170039415359497,
+          1.2745243310928345
+        ],
+        "mean_logit_contribution": 0.035535625140549094
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 1.186236682145492,
+        "raw_quantiles": [
+          1.135450839996338,
+          1.1724246740341187,
+          1.2668180465698242
+        ],
+        "mean_logit_contribution": 0.05080092139595093
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.021896776870506444,
+    "fit_positive_minus_zero_expensive_logit": -0.02611193974537384,
+    "calibration_positive_minus_zero_expensive_logit": 0.015265296255401836
+  },
+  {
+    "feature": "incumbent_rho",
+    "coefficient": -0.13016104961465555,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.8656741082947614,
+        "raw_quantiles": [
+          0.7962923049926758,
+          0.8718627095222473,
+          0.9363172054290771
+        ],
+        "mean_logit_contribution": -0.018268363391510365
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.8399869735898643,
+        "raw_quantiles": [
+          0.7792242169380188,
+          0.8410497903823853,
+          0.9084897041320801
+        ],
+        "mean_logit_contribution": 0.01590940084141792
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.8596120803586899,
+        "raw_quantiles": [
+          0.8197396397590637,
+          0.8654450178146362,
+          0.9185765981674194
+        ],
+        "mean_logit_contribution": -0.01020259179211981
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.8416934491935113,
+        "raw_quantiles": [
+          0.7838683724403381,
+          0.8673935532569885,
+          0.9167523384094238
+        ],
+        "mean_logit_contribution": 0.013638866524502765
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.8252363505006648,
+        "raw_quantiles": [
+          0.7254756689071655,
+          0.8299605846405029,
+          0.9026175141334534
+        ],
+        "mean_logit_contribution": 0.035535697196508766
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.8137633321077927,
+        "raw_quantiles": [
+          0.733181893825531,
+          0.8275753259658813,
+          0.8645492196083069
+        ],
+        "mean_logit_contribution": 0.05080100888566628
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.021896830672006,
+    "fit_positive_minus_zero_expensive_logit": -0.02611199263353773,
+    "calibration_positive_minus_zero_expensive_logit": 0.015265311689157512
+  },
+  {
+    "feature": "reward_gap",
+    "coefficient": -0.09217810431257953,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.00843180309642445,
+        "raw_quantiles": [
+          4.416704177856445e-05,
+          0.0013560056686401367,
+          0.004559040069580078
+        ],
+        "mean_logit_contribution": -0.011683638146895
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.0012385627319072856,
+        "raw_quantiles": [
+          2.384185791015625e-07,
+          8.487701416015625e-05,
+          0.0005207061767578125
+        ],
+        "mean_logit_contribution": 0.02780277337779913
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.004417446351820423,
+        "raw_quantiles": [
+          3.0994415283203125e-06,
+          0.0002484321594238281,
+          0.0014679431915283203
+        ],
+        "mean_logit_contribution": 0.010352681285203665
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.01035569985377838,
+        "raw_quantiles": [
+          3.0428171157836914e-05,
+          0.001340031623840332,
+          0.004864513874053955
+        ],
+        "mean_logit_contribution": -0.022244633642977126
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.010112172892304505,
+        "raw_quantiles": [
+          1.6033649444580078e-05,
+          0.0006928443908691406,
+          0.0037500858306884766
+        ],
+        "mean_logit_contribution": -0.020907822229646687
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.015273350736369257,
+        "raw_quantiles": [
+          0.0002613067626953125,
+          0.005038857460021973,
+          0.018901467323303223
+        ],
+        "mean_logit_contribution": -0.049239475556311786
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.0013368114133304396,
+    "fit_positive_minus_zero_expensive_logit": -0.017450092092595466,
+    "calibration_positive_minus_zero_expensive_logit": -0.0283316533266651
+  },
+  {
+    "feature": "missing_second_admissible",
+    "coefficient": 0.06362576982554563,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.006560449859418931,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": -0.0010461139323218462
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": -0.0057237089180346415
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.025806451612903226,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.01267626840825311
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": -0.0057237089180346415
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": -0.0057237089180346415
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.0,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": -0.0057237089180346415
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.0,
+    "fit_positive_minus_zero_expensive_logit": 0.01839997732628775,
+    "calibration_positive_minus_zero_expensive_logit": 0.0
+  },
+  {
+    "feature": "admissible_reward_mean",
+    "coefficient": -0.56380453441758,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 1.0300600265607502,
+        "raw_quantiles": [
+          1.0126402378082275,
+          1.034251093864441,
+          1.0603060126304626
+        ],
+        "mean_logit_contribution": 0.046106762395612934
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 1.053722549923535,
+        "raw_quantiles": [
+          1.0313163101673126,
+          1.0529430508613586,
+          1.0832591354846954
+        ],
+        "mean_logit_contribution": -0.08933070610745955
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 1.0384755957511163,
+        "raw_quantiles": [
+          1.0387318134307861,
+          1.0535351037979126,
+          1.0709353685379028
+        ],
+        "mean_logit_contribution": -0.0020615318171768515
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 1.0346414967753086,
+        "raw_quantiles": [
+          1.0283468067646027,
+          1.0503575801849365,
+          1.0821001529693604
+        ],
+        "mean_logit_contribution": 0.019883746431985986
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 1.0407636676515852,
+        "raw_quantiles": [
+          1.0310843586921692,
+          1.073885202407837,
+          1.0953068137168884
+        ],
+        "mean_logit_contribution": -0.015157796370258773
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 1.0261512450549914,
+        "raw_quantiles": [
+          0.9600802063941956,
+          1.0739874839782715,
+          1.0824801921844482
+        ],
+        "mean_logit_contribution": 0.06847950193632603
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.03504154280224476,
+    "fit_positive_minus_zero_expensive_logit": 0.0872691742902827,
+    "calibration_positive_minus_zero_expensive_logit": 0.0836372983065848
+  },
+  {
+    "feature": "admissible_reward_std",
+    "coefficient": -0.231215635317889,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.040477135926724514,
+        "raw_quantiles": [
+          0.016135456040501595,
+          0.032485757023096085,
+          0.048917124047875404
+        ],
+        "mean_logit_contribution": 0.01911202772907257
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.055377858295908265,
+        "raw_quantiles": [
+          0.028428861405700445,
+          0.047232503071427345,
+          0.06779072247445583
+        ],
+        "mean_logit_contribution": -0.043491167633131274
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.044500664798843285,
+        "raw_quantiles": [
+          0.026937897317111492,
+          0.04430593177676201,
+          0.05944203585386276
+        ],
+        "mean_logit_contribution": 0.00220776243334133
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.045498176849195035,
+        "raw_quantiles": [
+          0.021498494315892458,
+          0.03311363607645035,
+          0.06400209665298462
+        ],
+        "mean_logit_contribution": -0.001983137861094809
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.056309961308376726,
+        "raw_quantiles": [
+          0.02175535075366497,
+          0.04724416509270668,
+          0.07912036776542664
+        ],
+        "mean_logit_contribution": -0.047407261466806155
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.05389958958181998,
+        "raw_quantiles": [
+          0.03121487097814679,
+          0.06262017600238323,
+          0.07317600585520267
+        ],
+        "mean_logit_contribution": -0.03728043886354532
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.045424123605711346,
+    "fit_positive_minus_zero_expensive_logit": 0.045698930066472604,
+    "calibration_positive_minus_zero_expensive_logit": 0.010126822603260838
+  },
+  {
+    "feature": "admissible_rho_mean",
+    "coefficient": 0.5638068540331979,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.9699399741095924,
+        "raw_quantiles": [
+          0.9396940171718597,
+          0.9657489061355591,
+          0.9873597621917725
+        ],
+        "mean_logit_contribution": 0.04610694828101681
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.9462774515151977,
+        "raw_quantiles": [
+          0.9167408049106598,
+          0.9470569789409637,
+          0.968683734536171
+        ],
+        "mean_logit_contribution": -0.08933107314536791
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.9615244000188766,
+        "raw_quantiles": [
+          0.9290646612644196,
+          0.9464648365974426,
+          0.9612681269645691
+        ],
+        "mean_logit_contribution": -0.0020615721912552918
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.9653585027609624,
+        "raw_quantiles": [
+          0.9178998619318008,
+          0.9496424198150635,
+          0.9716532081365585
+        ],
+        "mean_logit_contribution": 0.01988381791928932
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.9592363299155722,
+        "raw_quantiles": [
+          0.9046931862831116,
+          0.9261147379875183,
+          0.9689156413078308
+        ],
+        "mean_logit_contribution": -0.015157880348603747
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.9738487536492555,
+        "raw_quantiles": [
+          0.9175198078155518,
+          0.9260125160217285,
+          1.0399197936058044
+        ],
+        "mean_logit_contribution": 0.0684797686315108
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.035041698267893065,
+    "fit_positive_minus_zero_expensive_logit": 0.08726950095411262,
+    "calibration_positive_minus_zero_expensive_logit": 0.08363764898011454
+  },
+  {
+    "feature": "admissible_rho_std",
+    "coefficient": -0.23121933188055377,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.04047713565455631,
+        "raw_quantiles": [
+          0.01613546535372734,
+          0.032485757023096085,
+          0.04891712963581085
+        ],
+        "mean_logit_contribution": 0.019112336286197917
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.05537786008950708,
+        "raw_quantiles": [
+          0.028428862802684307,
+          0.047232503071427345,
+          0.06779071874916553
+        ],
+        "mean_logit_contribution": -0.043491869837585524
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.04450066450742945,
+        "raw_quantiles": [
+          0.026937900111079216,
+          0.04430593177676201,
+          0.05944203771650791
+        ],
+        "mean_logit_contribution": 0.002207800486620725
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.04549817618952834,
+        "raw_quantiles": [
+          0.02149849385023117,
+          0.03311362862586975,
+          0.06400209665298462
+        ],
+        "mean_logit_contribution": -0.0019831653439078725
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.05630996073817923,
+        "raw_quantiles": [
+          0.02175535075366497,
+          0.04724416136741638,
+          0.07912036031484604
+        ],
+        "mean_logit_contribution": -0.047408016424439446
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.0538995905333887,
+        "raw_quantiles": [
+          0.03121487982571125,
+          0.06262017972767353,
+          0.07317600026726723
+        ],
+        "mean_logit_contribution": -0.0372810381158287
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.04542485108053158,
+    "fit_positive_minus_zero_expensive_logit": 0.04569967032420625,
+    "calibration_positive_minus_zero_expensive_logit": 0.010126978308610743
+  },
+  {
+    "feature": "admissible_rho_min",
+    "coefficient": -0.13016104961465555,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.8656741082947614,
+        "raw_quantiles": [
+          0.7962923049926758,
+          0.8718627095222473,
+          0.9363172054290771
+        ],
+        "mean_logit_contribution": -0.018268363391510365
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.8399869735898643,
+        "raw_quantiles": [
+          0.7792242169380188,
+          0.8410497903823853,
+          0.9084897041320801
+        ],
+        "mean_logit_contribution": 0.01590940084141792
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.8596120803586899,
+        "raw_quantiles": [
+          0.8197396397590637,
+          0.8654450178146362,
+          0.9185765981674194
+        ],
+        "mean_logit_contribution": -0.01020259179211981
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.8416934464729673,
+        "raw_quantiles": [
+          0.7838683724403381,
+          0.867393434047699,
+          0.9167523384094238
+        ],
+        "mean_logit_contribution": 0.013638870144295745
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.8252363505006648,
+        "raw_quantiles": [
+          0.7254756689071655,
+          0.8299605846405029,
+          0.9026175141334534
+        ],
+        "mean_logit_contribution": 0.035535697196508766
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.8137633321077927,
+        "raw_quantiles": [
+          0.733181893825531,
+          0.8275753259658813,
+          0.8645492196083069
+        ],
+        "mean_logit_contribution": 0.05080100888566628
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.02189682705221302,
+    "fit_positive_minus_zero_expensive_logit": -0.02611199263353773,
+    "calibration_positive_minus_zero_expensive_logit": 0.015265311689157512
+  },
+  {
+    "feature": "rho_limit",
+    "coefficient": 0.22958428470015294,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 1.038917548765953,
+        "raw_quantiles": [
+          0.995778501033783,
+          1.0014679431915283,
+          1.0194440484046936
+        ],
+        "mean_logit_contribution": -0.00670080877071536
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 1.0763682490792768,
+        "raw_quantiles": [
+          0.9960551857948303,
+          1.0035005807876587,
+          1.034531831741333
+        ],
+        "mean_logit_contribution": 0.05059891033563552
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 1.039553133133919,
+        "raw_quantiles": [
+          0.9956128597259521,
+          1.0016590356826782,
+          1.0301876068115234
+        ],
+        "mean_logit_contribution": -0.005728362182316417
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 1.0414362140463596,
+        "raw_quantiles": [
+          0.9964179396629333,
+          1.0039844512939453,
+          1.0188474655151367
+        ],
+        "mean_logit_contribution": -0.002847240963363228
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 1.0455277768933042,
+        "raw_quantiles": [
+          0.9997678399085999,
+          1.010275959968567,
+          1.022895336151123
+        ],
+        "mean_logit_contribution": 0.0034128663209992954
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 1.0768135928589364,
+        "raw_quantiles": [
+          0.9972168207168579,
+          1.0107206106185913,
+          1.139141023159027
+        ],
+        "mean_logit_contribution": 0.0512802880740161
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.006260107284362524,
+    "fit_positive_minus_zero_expensive_logit": -0.05632727251795194,
+    "calibration_positive_minus_zero_expensive_logit": 0.0478674217530168
+  },
+  {
+    "feature": "admissible_reward_range",
+    "coefficient": -0.7925577851039078,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.16517327082078928,
+        "raw_quantiles": [
+          0.06790363788604736,
+          0.14111173152923584,
+          0.21517789363861084
+        ],
+        "mean_logit_contribution": 0.08039703810496011
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.23257973194122314,
+        "raw_quantiles": [
+          0.10494434833526611,
+          0.16092538833618164,
+          0.2851601839065552
+        ],
+        "mean_logit_contribution": -0.21722325596186673
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.17611297176730248,
+        "raw_quantiles": [
+          0.0762137770652771,
+          0.1487746238708496,
+          0.24432551860809326
+        ],
+        "mean_logit_contribution": 0.032094887857268134
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.19174265366866874,
+        "raw_quantiles": [
+          0.09608614444732666,
+          0.1288135051727295,
+          0.25339412689208984
+        ],
+        "mean_logit_contribution": -0.036914973309370845
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.21809011089558505,
+        "raw_quantiles": [
+          0.10788261890411377,
+          0.18951714038848877,
+          0.3281608819961548
+        ],
+        "mean_logit_contribution": -0.15324711473091257
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.25607044023016223,
+        "raw_quantiles": [
+          0.13157939910888672,
+          0.22692859172821045,
+          0.28222236037254333
+        ],
+        "mean_logit_contribution": -0.32094197064562463
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.11633214142154172,
+    "fit_positive_minus_zero_expensive_logit": 0.24931814381913486,
+    "calibration_positive_minus_zero_expensive_logit": -0.16769485591471206
+  },
+  {
+    "feature": "initial_prefix_has_admissible",
+    "coefficient": 0.012216136680934473,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.9850046860356139,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": -0.0007280304471349586
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 1.0,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.0011823614531812085
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 1.0,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.0011823614531812083
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.9979253112033195,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.0009180476360601823
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 1.0,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.0011823614531812083
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 1.0,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.0011823614531812083
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.00026431381712102597,
+    "fit_positive_minus_zero_expensive_logit": -2.168404344971009e-19,
+    "calibration_positive_minus_zero_expensive_logit": 0.0
+  },
+  {
+    "feature": "gain_since_initial_prefix",
+    "coefficient": -0.003767020625529645,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.005913641481837493,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.00011134147644042969
+        ],
+        "mean_logit_contribution": 5.181896849353144e-05
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.006333661490473254,
+        "raw_quantiles": [
+          0.0,
+          1.1920928955078125e-07,
+          0.0005207061767578125
+        ],
+        "mean_logit_contribution": -1.460889142761693e-05
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.008202302840448195,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.00040721893310546875
+        ],
+        "mean_logit_contribution": -0.00031014206434044835
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.010043217433438755,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.001714944839477539
+        ],
+        "mean_logit_contribution": -0.000601290138707597
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.02952419576190767,
+        "raw_quantiles": [
+          0.0,
+          1.4662742614746094e-05,
+          0.041675686836242676
+        ],
+        "mean_logit_contribution": -0.0036822855030324447
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.015207158482593039,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.007862329483032227
+        ],
+        "mean_logit_contribution": -0.0014179882616576452
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.0030809953643248476,
+    "fit_positive_minus_zero_expensive_logit": -0.0002955331729128314,
+    "calibration_positive_minus_zero_expensive_logit": 0.0022642972413747997
+  },
+  {
+    "feature": "incumbent_changed",
+    "coefficient": -0.2203256566369954,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.33270852858481725,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.013961968650727888
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.5,
+        "raw_quantiles": [
+          0.0,
+          0.5,
+          1.0
+        ],
+        "mean_logit_contribution": -0.0626803279142812
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.32903225806451614,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.015646201642921815
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.4211618257261411,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "mean_logit_contribution": -0.026561698062881705
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.5850340136054422,
+        "raw_quantiles": [
+          0.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": -0.10163749670316091
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.45652173913043476,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "mean_logit_contribution": -0.04276135813353228
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.0750757986402792,
+    "fit_positive_minus_zero_expensive_logit": 0.07832652955720301,
+    "calibration_positive_minus_zero_expensive_logit": 0.05887613856962863
+  },
+  {
+    "feature": "initial_incumbent_rho",
+    "coefficient": -0.08916760501014481,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.8569798805832081,
+        "raw_quantiles": [
+          0.810499370098114,
+          0.869299054145813,
+          0.9316828846931458
+        ],
+        "mean_logit_contribution": -0.005607714171105475
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.8463206215151425,
+        "raw_quantiles": [
+          0.7814716696739197,
+          0.8410527110099792,
+          0.912837952375412
+        ],
+        "mean_logit_contribution": 0.002010545028401176
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.8678143820454998,
+        "raw_quantiles": [
+          0.8256552219390869,
+          0.8664907217025757,
+          0.9185765981674194
+        ],
+        "mean_logit_contribution": -0.013351220535863616
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.8496880694543673,
+        "raw_quantiles": [
+          0.7973776906728745,
+          0.8759526610374451,
+          0.9191067814826965
+        ],
+        "mean_logit_contribution": -0.0003961974175833111
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.8547605535611004,
+        "raw_quantiles": [
+          0.8026439547538757,
+          0.8723967671394348,
+          0.9067613482475281
+        ],
+        "mean_logit_contribution": -0.0040215430878320245
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.8289704789286074,
+        "raw_quantiles": [
+          0.7972922921180725,
+          0.8334569334983826,
+          0.8645492196083069
+        ],
+        "mean_logit_contribution": 0.014410833128032693
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.003625345670248713,
+    "fit_positive_minus_zero_expensive_logit": -0.015361765564264792,
+    "calibration_positive_minus_zero_expensive_logit": 0.01843237621586472
+  },
+  {
+    "feature": "last_batch_has_admissible",
+    "coefficient": 0.2906759483616514,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.9250234301780693,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": -0.026538550002841946
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.9827586206896551,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.04752654930145163
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.9806451612903225,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.044815315842271324
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.9585062240663901,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.016414568058248
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 1.0,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.06964450646844889
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 1.0,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.06964450646844889
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.053229938410200885,
+    "fit_positive_minus_zero_expensive_logit": -0.0027112334591803053,
+    "calibration_positive_minus_zero_expensive_logit": 0.0
+  },
+  {
+    "feature": "last_batch_admissible_fraction",
+    "coefficient": 0.3543529200434964,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.3293990159325211,
+        "raw_quantiles": [
+          0.046875,
+          0.1875,
+          0.625
+        ],
+        "mean_logit_contribution": -0.05655501442703123
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.4703125,
+        "raw_quantiles": [
+          0.140625,
+          0.5625,
+          0.6875
+        ],
+        "mean_logit_contribution": 0.10249699911288529
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.34818548387096776,
+        "raw_quantiles": [
+          0.1015625,
+          0.21875,
+          0.6484375
+        ],
+        "mean_logit_contribution": -0.0353503328971774
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.3642375518672199,
+        "raw_quantiles": [
+          0.046875,
+          0.2890625,
+          0.671875
+        ],
+        "mean_logit_contribution": -0.017232026099362648
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.367453231292517,
+        "raw_quantiles": [
+          0.1484375,
+          0.25,
+          0.5625
+        ],
+        "mean_logit_contribution": -0.013602421091175772
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.5129076086956522,
+        "raw_quantiles": [
+          0.12890625,
+          0.6640625,
+          0.83203125
+        ],
+        "mean_logit_contribution": 0.15057499427302795
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.003629605008186876,
+    "fit_positive_minus_zero_expensive_logit": -0.1378473320100627,
+    "calibration_positive_minus_zero_expensive_logit": 0.16417741536420372
+  },
+  {
+    "feature": "last_batch_reward_gain",
+    "coefficient": -0.015992575026954944,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.001333495111474392,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 7.045262101533046e-05
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.00031440792412593447,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": 0.0015676177373413313
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.0025401723000311083,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": -0.0017023054077397856
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.0018703259867751253,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": -0.000718218328678586
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.0026355008689724667,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean_logit_contribution": -0.0018423548655095638
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.010626899159472921,
+        "raw_quantiles": [
+          0.0,
+          0.0,
+          0.005930483341217041
+        ],
+        "mean_logit_contribution": -0.01358270731006788
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.0011241365368309776,
+    "fit_positive_minus_zero_expensive_logit": -0.003269923145081117,
+    "calibration_positive_minus_zero_expensive_logit": -0.011740352444558316
+  },
+  {
+    "feature": "previous_prefix_has_admissible",
+    "coefficient": 0.03646913669684363,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.9990627928772259,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.0008100966278362388
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 1.0,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.0015937148394280542
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.9935483870967742,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": -0.003800611817142701
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 1.0,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.0015937148394280542
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 1.0,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.0015937148394280542
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 1.0,
+        "raw_quantiles": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean_logit_contribution": 0.0015937148394280537
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.0,
+    "fit_positive_minus_zero_expensive_logit": -0.005394326656570755,
+    "calibration_positive_minus_zero_expensive_logit": -4.336808689942018e-19
+  },
+  {
+    "feature": "improvement_fraction",
+    "coefficient": -0.40655722983385406,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.009968937156331788,
+        "raw_quantiles": [
+          0.004464285913854837,
+          0.0078125,
+          0.01215277798473835
+        ],
+        "mean_logit_contribution": 0.06380736443030616
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.0124224115676921,
+        "raw_quantiles": [
+          0.0066964286379516125,
+          0.009765625,
+          0.015625
+        ],
+        "mean_logit_contribution": -0.03581021735147273
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.016314818782191123,
+        "raw_quantiles": [
+          0.0069444444961845875,
+          0.012500000186264515,
+          0.02083333395421505
+        ],
+        "mean_logit_contribution": -0.1938522952402559
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.01001040940462801,
+        "raw_quantiles": [
+          0.004687500186264515,
+          0.0078125,
+          0.01171875
+        ],
+        "mean_logit_contribution": 0.06212348092730585
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.010973034439240994,
+        "raw_quantiles": [
+          0.0066964286379516125,
+          0.00937500037252903,
+          0.013671875
+        ],
+        "mean_logit_contribution": 0.02303834612144546
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.021638637519967946,
+        "raw_quantiles": [
+          0.015625,
+          0.02083333395421505,
+          0.025669642258435488
+        ],
+        "mean_logit_contribution": -0.41001348528413467
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.03908513480586039,
+    "fit_positive_minus_zero_expensive_logit": -0.15804207788878316,
+    "calibration_positive_minus_zero_expensive_logit": -0.4330518314055801
+  },
+  {
+    "feature": "station_reward_std",
+    "coefficient": 0.2408433271895657,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.045413290292327706,
+        "raw_quantiles": [
+          0.008633479941636324,
+          0.03402819484472275,
+          0.06555914878845215
+        ],
+        "mean_logit_contribution": -0.021918740338316332
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.06273940895555605,
+        "raw_quantiles": [
+          0.026469949632883072,
+          0.05528956279158592,
+          0.08315757103264332
+        ],
+        "mean_logit_contribution": 0.053926098788858706
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.050984359798472254,
+        "raw_quantiles": [
+          0.028890610672533512,
+          0.04833083599805832,
+          0.07115831226110458
+        ],
+        "mean_logit_contribution": 0.002468537543867644
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.04817254345797215,
+        "raw_quantiles": [
+          0.017380474135279655,
+          0.034669991582632065,
+          0.06465304270386696
+        ],
+        "mean_logit_contribution": -0.009840148674067774
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.06502675585968255,
+        "raw_quantiles": [
+          0.031771138310432434,
+          0.06490343809127808,
+          0.08616719022393227
+        ],
+        "mean_logit_contribution": 0.06393892747504937
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.0704735122702044,
+        "raw_quantiles": [
+          0.043201327323913574,
+          0.06460195034742355,
+          0.08374514058232307
+        ],
+        "mean_logit_contribution": 0.08778202654129838
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.07377907614911713,
+    "fit_positive_minus_zero_expensive_logit": -0.05145756124499106,
+    "calibration_positive_minus_zero_expensive_logit": 0.023843099066249013
+  },
+  {
+    "feature": "station_rho_mean",
+    "coefficient": -0.8297410205680641,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.9225565407358829,
+        "raw_quantiles": [
+          0.8730565309524536,
+          0.9192535877227783,
+          0.9693045914173126
+        ],
+        "mean_logit_contribution": -0.04908974298494494
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.9285421435175271,
+        "raw_quantiles": [
+          0.8939889967441559,
+          0.9175749719142914,
+          0.9569493383169174
+        ],
+        "mean_logit_contribution": -0.1010309041628993
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.9400763000211408,
+        "raw_quantiles": [
+          0.8999791443347931,
+          0.9230037331581116,
+          0.9505279660224915
+        ],
+        "mean_logit_contribution": -0.2011206534932727
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.9206790877081051,
+        "raw_quantiles": [
+          0.8692749291658401,
+          0.9221416115760803,
+          0.9586734473705292
+        ],
+        "mean_logit_contribution": -0.032797801491785114
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.9348277380677308,
+        "raw_quantiles": [
+          0.8822253942489624,
+          0.9022961854934692,
+          0.9655517935752869
+        ],
+        "mean_logit_contribution": -0.15557529869449233
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.9444097150927004,
+        "raw_quantiles": [
+          0.8841007351875305,
+          0.9029092192649841,
+          1.0044141709804535
+        ],
+        "mean_logit_contribution": -0.2387246541084002
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": -0.12277749720270721,
+    "fit_positive_minus_zero_expensive_logit": -0.10008974933037341,
+    "calibration_positive_minus_zero_expensive_logit": -0.08314935541390789
+  },
+  {
+    "feature": "incumbent_relative_position",
+    "coefficient": 0.7997768972894643,
+    "groups": {
+      "fit_cheap_zero": {
+        "n": 1067,
+        "raw_mean": 0.27212389123703734,
+        "raw_quantiles": [
+          0.02734375,
+          0.1536458283662796,
+          0.47265625
+        ],
+        "mean_logit_contribution": -0.09120405068767874
+      },
+      "fit_expensive_zero": {
+        "n": 290,
+        "raw_mean": 0.33707615888741765,
+        "raw_quantiles": [
+          0.060391865670681,
+          0.2434501275420189,
+          0.5859375
+        ],
+        "mean_logit_contribution": 0.08120191635359497
+      },
+      "fit_expensive_positive": {
+        "n": 155,
+        "raw_mean": 0.4192414086071714,
+        "raw_quantiles": [
+          0.0950520820915699,
+          0.39375001192092896,
+          0.71484375
+        ],
+        "mean_logit_contribution": 0.29929713993181195
+      },
+      "calibration_cheap_zero": {
+        "n": 482,
+        "raw_mean": 0.32343387245432437,
+        "raw_quantiles": [
+          0.0546875,
+          0.25,
+          0.5205077975988388
+        ],
+        "mean_logit_contribution": 0.04499053112819051
+      },
+      "calibration_expensive_zero": {
+        "n": 147,
+        "raw_mean": 0.37703502528863597,
+        "raw_quantiles": [
+          0.10600142180919647,
+          0.34375,
+          0.5951171815395355
+        ],
+        "mean_logit_contribution": 0.18726668134159244
+      },
+      "calibration_expensive_positive": {
+        "n": 46,
+        "raw_mean": 0.5229446913885034,
+        "raw_quantiles": [
+          0.2363281212747097,
+          0.5657552182674408,
+          0.8496093899011612
+        ],
+        "mean_logit_contribution": 0.574561813515006
+      }
+    },
+    "calibration_expensive_zero_minus_cheap_zero_logit": 0.14227615021340193,
+    "fit_positive_minus_zero_expensive_logit": 0.21809522357821698,
+    "calibration_positive_minus_zero_expensive_logit": 0.3872951321734136
+  }
+]

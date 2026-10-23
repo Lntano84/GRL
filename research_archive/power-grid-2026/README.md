@@ -696,3 +696,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID129基础策略风险控制准备](protocols/GRID129_baseline_risk/complete/基础规则上的风险控制_中文.md)：原FRAME回退、训练整段损失、单调日期风险与小样本校准条件；尚未训练或新验证评分。
 
 - [GRID130一次LR与经验校准门控](protocols/GRID130_calibrated_gate/complete/GRID130_report.md)：同权重固定/校准门槛、完整同站/固定一批对照；局部收益保护增强但查询仅少4.81%，动作一致筛查未过，全部反例保留。
+
+- [GRID131大补查识别核查](protocols/GRID131_expensive_coverage/complete/GRID131_report.md)：只读训练/校准，大补查可省查询、统一门槛约束、组内重叠与Q-only排序参照；零训练/新验证评分。

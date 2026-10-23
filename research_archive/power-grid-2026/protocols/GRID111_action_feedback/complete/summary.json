@@ -1,0 +1,2970 @@
+{
+  "train": {
+    "states": 3582,
+    "physical_calls": 222,
+    "positive_states": 211,
+    "positive_calls": 54,
+    "date_call_balanced_macro": {
+      "nearest_mse": 0.07452508814910205,
+      "mean_mse": 0.08044447786932152,
+      "exact_unpaired_mse": 0.11114767783060493,
+      "contrast_coverage": 0.9084370741608356,
+      "mean_unseen_relation_fraction": 0.039133543891621075
+    },
+    "per_date": {
+      "2037-01-05": {
+        "nearest_mse": 0.05600077250603743,
+        "mean_mse": 0.06227759592733956,
+        "exact_unpaired_mse": 0.09229487590964143,
+        "contrast_coverage": 0.8360508211151594,
+        "mean_unseen_relation_fraction": 0.08683733571070941
+      },
+      "2037-01-19": {
+        "nearest_mse": 0.0945793183227739,
+        "mean_mse": 0.10914924387019266,
+        "exact_unpaired_mse": 0.13229669452399997,
+        "contrast_coverage": 0.9177109208944669,
+        "mean_unseen_relation_fraction": 0.03474757316421738
+      },
+      "2037-02-16": {
+        "nearest_mse": 0.03760781195705789,
+        "mean_mse": 0.04028874234892059,
+        "exact_unpaired_mse": 0.06378741401172708,
+        "contrast_coverage": 0.9589569264477353,
+        "mean_unseen_relation_fraction": 0.02055757054005288
+      },
+      "2037-03-16": {
+        "nearest_mse": 0.06932141693883576,
+        "mean_mse": 0.0689606103956777,
+        "exact_unpaired_mse": 0.10099403027066418,
+        "contrast_coverage": 0.9363948046604468,
+        "mean_unseen_relation_fraction": 0.018973515929882518
+      },
+      "2037-04-06": {
+        "nearest_mse": 0.07009739991499216,
+        "mean_mse": 0.0741516654096099,
+        "exact_unpaired_mse": 0.09946725463569964,
+        "contrast_coverage": 0.9137697834962883,
+        "mean_unseen_relation_fraction": 0.03757680175766725
+      },
+      "2037-05-18": {
+        "nearest_mse": 0.07570346710579902,
+        "mean_mse": 0.08543120142529843,
+        "exact_unpaired_mse": 0.11684124971363252,
+        "contrast_coverage": 0.8931906883870634,
+        "mean_unseen_relation_fraction": 0.06331983494491661
+      },
+      "2037-06-01": {
+        "nearest_mse": 0.0949673231719554,
+        "mean_mse": 0.1196124665939105,
+        "exact_unpaired_mse": 0.1530382168268015,
+        "contrast_coverage": 0.9078764992174434,
+        "mean_unseen_relation_fraction": 0.043596182200366186
+      },
+      "2037-06-15": {
+        "nearest_mse": 0.06201204624600926,
+        "mean_mse": 0.0690964223609151,
+        "exact_unpaired_mse": 0.10342348309447537,
+        "contrast_coverage": 0.8925797115651062,
+        "mean_unseen_relation_fraction": 0.048798038427470665
+      },
+      "2037-07-06": {
+        "nearest_mse": 0.08960992788376403,
+        "mean_mse": 0.09726900743328291,
+        "exact_unpaired_mse": 0.1370887113682438,
+        "contrast_coverage": 0.9009370106658093,
+        "mean_unseen_relation_fraction": 0.03478088667286806
+      },
+      "2037-08-17": {
+        "nearest_mse": 0.1060309331572532,
+        "mean_mse": 0.11683987756124703,
+        "exact_unpaired_mse": 0.1450466743972629,
+        "contrast_coverage": 0.9012351232885403,
+        "mean_unseen_relation_fraction": 0.04314112830369238
+      },
+      "2037-09-07": {
+        "nearest_mse": 0.0949609256761501,
+        "mean_mse": 0.09673905818094795,
+        "exact_unpaired_mse": 0.1276604870280914,
+        "contrast_coverage": 0.804414382727432,
+        "mean_unseen_relation_fraction": 0.07391905718459067
+      },
+      "2037-09-21": {
+        "nearest_mse": 0.07612348821709228,
+        "mean_mse": 0.07836165367830071,
+        "exact_unpaired_mse": 0.12377233890701562,
+        "contrast_coverage": 0.892154080534951,
+        "mean_unseen_relation_fraction": 0.05101631826362783
+      },
+      "2037-10-05": {
+        "nearest_mse": 0.040122768246870506,
+        "mean_mse": 0.05120010326719694,
+        "exact_unpaired_mse": 0.07603899348636817,
+        "contrast_coverage": 0.9557673859361427,
+        "mean_unseen_relation_fraction": 0.015596953017729696
+      },
+      "2037-11-02": {
+        "nearest_mse": 0.07959098491037042,
+        "mean_mse": 0.09600217835991996,
+        "exact_unpaired_mse": 0.13047449711475753,
+        "contrast_coverage": 0.9602983964589225,
+        "mean_unseen_relation_fraction": 0.016566096608735845
+      },
+      "2037-11-16": {
+        "nearest_mse": 0.03202518635968095,
+        "mean_mse": 0.042232150631579056,
+        "exact_unpaired_mse": 0.06233808441418089,
+        "contrast_coverage": 0.9142212638260432,
+        "mean_unseen_relation_fraction": 0.01219788368640076
+      },
+      "2037-12-07": {
+        "nearest_mse": 0.11364763977099067,
+        "mean_mse": 0.0794996684648052,
+        "exact_unpaired_mse": 0.11379983958711698,
+        "contrast_coverage": 0.9494353873518204,
+        "mean_unseen_relation_fraction": 0.02451152585300911
+      }
+    },
+    "per_call": [
+      {
+        "physical_state_group": "2037-01-05_100|call000",
+        "date": "2037-01-05",
+        "states": 13,
+        "nearest_mse": 0.07342200785691752,
+        "mean_mse": 0.07101886866910088,
+        "exact_unpaired_mse": 0.13873595433741379,
+        "contrast_coverage": 0.9758852258852259,
+        "mean_unseen_relation_fraction": 0.0112998112998113
+      },
+      {
+        "physical_state_group": "2037-01-05_100|call001",
+        "date": "2037-01-05",
+        "states": 19,
+        "nearest_mse": 0.04424452446460635,
+        "mean_mse": 0.05941444304503532,
+        "exact_unpaired_mse": 0.10244134998432701,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-01-05_100|call002",
+        "date": "2037-01-05",
+        "states": 5,
+        "nearest_mse": 0.012098398109713509,
+        "mean_mse": 0.012098398109713509,
+        "exact_unpaired_mse": 0.012098398109713509,
+        "contrast_coverage": 0.0,
+        "mean_unseen_relation_fraction": 0.6315151515151515
+      },
+      {
+        "physical_state_group": "2037-01-05_100|call003",
+        "date": "2037-01-05",
+        "states": 13,
+        "nearest_mse": 0.001970608227783145,
+        "mean_mse": 0.0019586887164222922,
+        "exact_unpaired_mse": 0.003952794130994062,
+        "contrast_coverage": 0.9807692307692307,
+        "mean_unseen_relation_fraction": 0.0071300044984255505
+      },
+      {
+        "physical_state_group": "2037-01-05_100|call004",
+        "date": "2037-01-05",
+        "states": 11,
+        "nearest_mse": 0.03306335505913127,
+        "mean_mse": 0.035075508662876446,
+        "exact_unpaired_mse": 0.04934761104109467,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.08892102846648299
+      },
+      {
+        "physical_state_group": "2037-01-05_100|call005",
+        "date": "2037-01-05",
+        "states": 4,
+        "nearest_mse": 0.26466071767892174,
+        "mean_mse": 0.2646689356197953,
+        "exact_unpaired_mse": 0.26466893568358785,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-01-05_100|call006",
+        "date": "2037-01-05",
+        "states": 28,
+        "nearest_mse": 0.0666754270186751,
+        "mean_mse": 0.09225935461782245,
+        "exact_unpaired_mse": 0.1464225725544366,
+        "contrast_coverage": 0.8818277310924371,
+        "mean_unseen_relation_fraction": 3.282563025210084e-05
+      },
+      {
+        "physical_state_group": "2037-01-05_100|call007",
+        "date": "2037-01-05",
+        "states": 32,
+        "nearest_mse": 0.045950078570591114,
+        "mean_mse": 0.06294321934963919,
+        "exact_unpaired_mse": 0.10494262558587436,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-01-05_100|call008",
+        "date": "2037-01-05",
+        "states": 13,
+        "nearest_mse": 0.029632686193490264,
+        "mean_mse": 0.023988507759623405,
+        "exact_unpaired_mse": 0.06375744647362658,
+        "contrast_coverage": 0.9935897435897435,
+        "mean_unseen_relation_fraction": 0.002998052998052998
+      },
+      {
+        "physical_state_group": "2037-01-05_101|call000",
+        "date": "2037-01-05",
+        "states": 13,
+        "nearest_mse": 0.04732903467313172,
+        "mean_mse": 0.04336599920404786,
+        "exact_unpaired_mse": 0.1010763792684834,
+        "contrast_coverage": 0.9935897435897435,
+        "mean_unseen_relation_fraction": 0.002998052998052998
+      },
+      {
+        "physical_state_group": "2037-01-05_101|call001",
+        "date": "2037-01-05",
+        "states": 13,
+        "nearest_mse": 0.11760429729482637,
+        "mean_mse": 0.15677126186977033,
+        "exact_unpaired_mse": 0.23225873000955918,
+        "contrast_coverage": 0.882051282051282,
+        "mean_unseen_relation_fraction": 0.061577311577311576
+      },
+      {
+        "physical_state_group": "2037-01-05_101|call004",
+        "date": "2037-01-05",
+        "states": 11,
+        "nearest_mse": 0.010665835000019193,
+        "mean_mse": 0.00546479235820786,
+        "exact_unpaired_mse": 0.009149079995405571,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.08892102846648299
+      },
+      {
+        "physical_state_group": "2037-01-05_101|call008",
+        "date": "2037-01-05",
+        "states": 13,
+        "nearest_mse": 0.010302993188572068,
+        "mean_mse": 0.0075264378334459,
+        "exact_unpaired_mse": 0.013102436288313226,
+        "contrast_coverage": 0.9957264957264957,
+        "mean_unseen_relation_fraction": 0.0019008019008019009
+      },
+      {
+        "physical_state_group": "2037-01-05_101|call012",
+        "date": "2037-01-05",
+        "states": 11,
+        "nearest_mse": 0.02639085174814467,
+        "mean_mse": 0.0353319271672532,
+        "exact_unpaired_mse": 0.05017394927215016,
+        "contrast_coverage": 0.9653679653679653,
+        "mean_unseen_relation_fraction": 0.018399908172635444
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call000",
+        "date": "2037-01-19",
+        "states": 32,
+        "nearest_mse": 0.03770625247312079,
+        "mean_mse": 0.0720104316296896,
+        "exact_unpaired_mse": 0.11449227243451382,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call002",
+        "date": "2037-01-19",
+        "states": 5,
+        "nearest_mse": 0.03150822174764044,
+        "mean_mse": 0.03885857691617015,
+        "exact_unpaired_mse": 0.07909349786761014,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call004",
+        "date": "2037-01-19",
+        "states": 11,
+        "nearest_mse": 0.009765715544713817,
+        "mean_mse": 0.00998459699744529,
+        "exact_unpaired_mse": 0.02081296048263084,
+        "contrast_coverage": 0.9454545454545454,
+        "mean_unseen_relation_fraction": 0.027590591226954873
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call006",
+        "date": "2037-01-19",
+        "states": 31,
+        "nearest_mse": 0.05550380461878232,
+        "mean_mse": 0.06574095197825115,
+        "exact_unpaired_mse": 0.11158968788397101,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call007",
+        "date": "2037-01-19",
+        "states": 11,
+        "nearest_mse": 0.011613439958027499,
+        "mean_mse": 0.014410559852122194,
+        "exact_unpaired_mse": 0.023522872695462084,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.08892102846648299
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call008",
+        "date": "2037-01-19",
+        "states": 3,
+        "nearest_mse": 0.16448271094393382,
+        "mean_mse": 0.3632763911738177,
+        "exact_unpaired_mse": 0.3743617414799824,
+        "contrast_coverage": 0.6666666666666666,
+        "mean_unseen_relation_fraction": 0.15873015873015872
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call009",
+        "date": "2037-01-19",
+        "states": 9,
+        "nearest_mse": 0.12148929107873824,
+        "mean_mse": 0.15166960088039072,
+        "exact_unpaired_mse": 0.15396932032616914,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call010",
+        "date": "2037-01-19",
+        "states": 22,
+        "nearest_mse": 0.042297648953160225,
+        "mean_mse": 0.04894585177582062,
+        "exact_unpaired_mse": 0.08286962466148362,
+        "contrast_coverage": 0.999331550802139,
+        "mean_unseen_relation_fraction": 4.177807486631016e-05
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call011",
+        "date": "2037-01-19",
+        "states": 12,
+        "nearest_mse": 0.09350209486509985,
+        "mean_mse": 0.0965606258727096,
+        "exact_unpaired_mse": 0.14789996691099114,
+        "contrast_coverage": 0.9161375661375661,
+        "mean_unseen_relation_fraction": 0.03497719606713259
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call012",
+        "date": "2037-01-19",
+        "states": 3,
+        "nearest_mse": 0.4899280373291317,
+        "mean_mse": 0.25737837616566467,
+        "exact_unpaired_mse": 0.2823873385169348,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call013",
+        "date": "2037-01-19",
+        "states": 29,
+        "nearest_mse": 0.06950491512566565,
+        "mean_mse": 0.08894944059548275,
+        "exact_unpaired_mse": 0.13400583577224162,
+        "contrast_coverage": 0.88184584178499,
+        "mean_unseen_relation_fraction": 3.169371196754564e-05
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call014",
+        "date": "2037-01-19",
+        "states": 32,
+        "nearest_mse": 0.06237955296797773,
+        "mean_mse": 0.09643671590351463,
+        "exact_unpaired_mse": 0.16138460457228793,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call015",
+        "date": "2037-01-19",
+        "states": 11,
+        "nearest_mse": 0.09162107208451518,
+        "mean_mse": 0.1033871829652039,
+        "exact_unpaired_mse": 0.11651749921363126,
+        "contrast_coverage": 0.8262626262626263,
+        "mean_unseen_relation_fraction": 0.06997983497983497
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call016",
+        "date": "2037-01-19",
+        "states": 13,
+        "nearest_mse": 0.022973945372666525,
+        "mean_mse": 0.008898772272134512,
+        "exact_unpaired_mse": 0.025270295562903642,
+        "contrast_coverage": 0.9957264957264957,
+        "mean_unseen_relation_fraction": 0.0019008019008019009
+      },
+      {
+        "physical_state_group": "2037-01-19_100|call017",
+        "date": "2037-01-19",
+        "states": 12,
+        "nearest_mse": 0.12146155271062864,
+        "mean_mse": 0.13090536640440031,
+        "exact_unpaired_mse": 0.1454794147275528,
+        "contrast_coverage": 0.915079365079365,
+        "mean_unseen_relation_fraction": 0.011183261183261184
+      },
+      {
+        "physical_state_group": "2037-01-19_101|call000",
+        "date": "2037-01-19",
+        "states": 11,
+        "nearest_mse": 0.013424768669957548,
+        "mean_mse": 0.01751348373677544,
+        "exact_unpaired_mse": 0.027658906330172414,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.08892102846648299
+      },
+      {
+        "physical_state_group": "2037-01-19_101|call001",
+        "date": "2037-01-19",
+        "states": 12,
+        "nearest_mse": 0.10239914966520641,
+        "mean_mse": 0.10339458015791923,
+        "exact_unpaired_mse": 0.10677585276647937,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-01-19_101|call002",
+        "date": "2037-01-19",
+        "states": 3,
+        "nearest_mse": 0.24965591209018992,
+        "mean_mse": 0.4056155541644249,
+        "exact_unpaired_mse": 0.412999693395565,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-01-19_101|call003",
+        "date": "2037-01-19",
+        "states": 11,
+        "nearest_mse": 0.08010125611673935,
+        "mean_mse": 0.09123024181465733,
+        "exact_unpaired_mse": 0.10180739314504988,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.08892102846648299
+      },
+      {
+        "physical_state_group": "2037-01-19_101|call004",
+        "date": "2037-01-19",
+        "states": 10,
+        "nearest_mse": 0.010241210286712533,
+        "mean_mse": 0.0023601394179148796,
+        "exact_unpaired_mse": 0.005257002002695474,
+        "contrast_coverage": 0.9172222222222223,
+        "mean_unseen_relation_fraction": 0.06326984126984128
+      },
+      {
+        "physical_state_group": "2037-01-19_101|call005",
+        "date": "2037-01-19",
+        "states": 11,
+        "nearest_mse": 0.10460513217564381,
+        "mean_mse": 0.12460668059953592,
+        "exact_unpaired_mse": 0.15007480425567074,
+        "contrast_coverage": 0.8344155844155844,
+        "mean_unseen_relation_fraction": 0.07700311052583779
+      },
+      {
+        "physical_state_group": "2037-02-16_100|call000",
+        "date": "2037-02-16",
+        "states": 11,
+        "nearest_mse": 0.06375027900515567,
+        "mean_mse": 0.057448500538822674,
+        "exact_unpaired_mse": 0.08137949973646125,
+        "contrast_coverage": 0.9575757575757575,
+        "mean_unseen_relation_fraction": 0.022020202020202023
+      },
+      {
+        "physical_state_group": "2037-02-16_100|call001",
+        "date": "2037-02-16",
+        "states": 13,
+        "nearest_mse": 0.03351480027400548,
+        "mean_mse": 0.017743201725746085,
+        "exact_unpaired_mse": 0.029210497416909113,
+        "contrast_coverage": 0.9547008547008548,
+        "mean_unseen_relation_fraction": 0.02470967470967471
+      },
+      {
+        "physical_state_group": "2037-02-16_100|call002",
+        "date": "2037-02-16",
+        "states": 32,
+        "nearest_mse": 0.05290018659746425,
+        "mean_mse": 0.08571322907236767,
+        "exact_unpaired_mse": 0.14315015995361152,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-02-16_100|call003",
+        "date": "2037-02-16",
+        "states": 8,
+        "nearest_mse": 0.019702062173803606,
+        "mean_mse": 0.022265771158479393,
+        "exact_unpaired_mse": 0.026178356566181074,
+        "contrast_coverage": 0.775,
+        "mean_unseen_relation_fraction": 0.10925925925925925
+      },
+      {
+        "physical_state_group": "2037-02-16_100|call004",
+        "date": "2037-02-16",
+        "states": 12,
+        "nearest_mse": 0.015678110473272933,
+        "mean_mse": 0.015140953605006773,
+        "exact_unpaired_mse": 0.020284125095572737,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-02-16_100|call005",
+        "date": "2037-02-16",
+        "states": 12,
+        "nearest_mse": 0.0027856004873528743,
+        "mean_mse": 0.002044118505492067,
+        "exact_unpaired_mse": 0.003947988782138086,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-02-16_100|call006",
+        "date": "2037-02-16",
+        "states": 13,
+        "nearest_mse": 0.014607000618071549,
+        "mean_mse": 0.019999816975515068,
+        "exact_unpaired_mse": 0.021553065645417206,
+        "contrast_coverage": 0.958974358974359,
+        "mean_unseen_relation_fraction": 0.02268842268842269
+      },
+      {
+        "physical_state_group": "2037-02-16_101|call000",
+        "date": "2037-02-16",
+        "states": 32,
+        "nearest_mse": 0.042031745414813,
+        "mean_mse": 0.04210673698635367,
+        "exact_unpaired_mse": 0.07837405067799123,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-02-16_101|call001",
+        "date": "2037-02-16",
+        "states": 22,
+        "nearest_mse": 0.07612776915313405,
+        "mean_mse": 0.06886992682701182,
+        "exact_unpaired_mse": 0.10360458797491709,
+        "contrast_coverage": 0.9863636363636363,
+        "mean_unseen_relation_fraction": 0.011363636363636364
+      },
+      {
+        "physical_state_group": "2037-02-16_101|call002",
+        "date": "2037-02-16",
+        "states": 32,
+        "nearest_mse": 0.05498056537350551,
+        "mean_mse": 0.07155516809441068,
+        "exact_unpaired_mse": 0.13019180826807142,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-03-16_100|call000",
+        "date": "2037-03-16",
+        "states": 12,
+        "nearest_mse": 0.10144826760658153,
+        "mean_mse": 0.1078171907929491,
+        "exact_unpaired_mse": 0.11919630772874691,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-03-16_100|call001",
+        "date": "2037-03-16",
+        "states": 32,
+        "nearest_mse": 0.05590158499501195,
+        "mean_mse": 0.06880169152659721,
+        "exact_unpaired_mse": 0.12037367046826467,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-03-16_100|call002",
+        "date": "2037-03-16",
+        "states": 6,
+        "nearest_mse": 0.04058962124402087,
+        "mean_mse": 0.023744220519382825,
+        "exact_unpaired_mse": 0.034612783150939554,
+        "contrast_coverage": 0.7018518518518518,
+        "mean_unseen_relation_fraction": 0.1313888888888889
+      },
+      {
+        "physical_state_group": "2037-03-16_100|call003",
+        "date": "2037-03-16",
+        "states": 8,
+        "nearest_mse": 0.11000610289798231,
+        "mean_mse": 0.14345531504959402,
+        "exact_unpaired_mse": 0.20689560628627998,
+        "contrast_coverage": 0.6333333333333333,
+        "mean_unseen_relation_fraction": 0.04069444444444444
+      },
+      {
+        "physical_state_group": "2037-03-16_100|call004",
+        "date": "2037-03-16",
+        "states": 12,
+        "nearest_mse": 0.03163704858798624,
+        "mean_mse": 0.03299369946969296,
+        "exact_unpaired_mse": 0.05189933113371225,
+        "contrast_coverage": 0.9120370370370371,
+        "mean_unseen_relation_fraction": 0.0422979797979798
+      },
+      {
+        "physical_state_group": "2037-03-16_100|call005",
+        "date": "2037-03-16",
+        "states": 12,
+        "nearest_mse": 0.08957922878335262,
+        "mean_mse": 0.05236734816215849,
+        "exact_unpaired_mse": 0.10716528086309622,
+        "contrast_coverage": 0.996031746031746,
+        "mean_unseen_relation_fraction": 0.0020885547201336674
+      },
+      {
+        "physical_state_group": "2037-03-16_100|call006",
+        "date": "2037-03-16",
+        "states": 12,
+        "nearest_mse": 0.009281557599118815,
+        "mean_mse": 0.011027901301191167,
+        "exact_unpaired_mse": 0.01918996378485306,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call000",
+        "date": "2037-03-16",
+        "states": 3,
+        "nearest_mse": 0.342058140137814,
+        "mean_mse": 0.24514510437485368,
+        "exact_unpaired_mse": 0.3051085702613558,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call001",
+        "date": "2037-03-16",
+        "states": 29,
+        "nearest_mse": 0.057521336015188836,
+        "mean_mse": 0.10219007065944806,
+        "exact_unpaired_mse": 0.156944273286054,
+        "contrast_coverage": 0.9962981744421906,
+        "mean_unseen_relation_fraction": 0.0017399847870182557
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call002",
+        "date": "2037-03-16",
+        "states": 8,
+        "nearest_mse": 0.005790622080385347,
+        "mean_mse": 0.007681443375116998,
+        "exact_unpaired_mse": 0.012923926926442094,
+        "contrast_coverage": 0.9895833333333333,
+        "mean_unseen_relation_fraction": 0.0031906906906906908
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call003",
+        "date": "2037-03-16",
+        "states": 12,
+        "nearest_mse": 0.09990834803589327,
+        "mean_mse": 0.11255916683133466,
+        "exact_unpaired_mse": 0.12091217367348957,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call004",
+        "date": "2037-03-16",
+        "states": 13,
+        "nearest_mse": 0.05985117637431817,
+        "mean_mse": 0.059326778443476745,
+        "exact_unpaired_mse": 0.08095423938332305,
+        "contrast_coverage": 0.9542124542124543,
+        "mean_unseen_relation_fraction": 0.019262405817027668
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call005",
+        "date": "2037-03-16",
+        "states": 30,
+        "nearest_mse": 0.04287331369259359,
+        "mean_mse": 0.05562807900153304,
+        "exact_unpaired_mse": 0.09906761812451229,
+        "contrast_coverage": 0.9995098039215686,
+        "mean_unseen_relation_fraction": 3.0637254901960784e-05
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call006",
+        "date": "2037-03-16",
+        "states": 9,
+        "nearest_mse": 0.03422145025444825,
+        "mean_mse": 0.026729758926681012,
+        "exact_unpaired_mse": 0.05598486126974268,
+        "contrast_coverage": 0.9969135802469135,
+        "mean_unseen_relation_fraction": 0.0014109347442680777
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call007",
+        "date": "2037-03-16",
+        "states": 12,
+        "nearest_mse": 0.09192481051401101,
+        "mean_mse": 0.08313170712171876,
+        "exact_unpaired_mse": 0.1424276146716037,
+        "contrast_coverage": 0.9351851851851851,
+        "mean_unseen_relation_fraction": 0.021015039396642593
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call008",
+        "date": "2037-03-16",
+        "states": 11,
+        "nearest_mse": 0.049432993536063924,
+        "mean_mse": 0.03510658037073618,
+        "exact_unpaired_mse": 0.04391740946981342,
+        "contrast_coverage": 0.8617604617604617,
+        "mean_unseen_relation_fraction": 0.0513849222672752
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call009",
+        "date": "2037-03-16",
+        "states": 13,
+        "nearest_mse": 0.004913451975998819,
+        "mean_mse": 0.004325046880759196,
+        "exact_unpaired_mse": 0.008794022644610287,
+        "contrast_coverage": 0.9957264957264957,
+        "mean_unseen_relation_fraction": 0.0019008019008019009
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call010",
+        "date": "2037-03-16",
+        "states": 32,
+        "nearest_mse": 0.04621487060674509,
+        "mean_mse": 0.06928144940592337,
+        "exact_unpaired_mse": 0.12229941245002823,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-03-16_101|call011",
+        "date": "2037-03-16",
+        "states": 32,
+        "nearest_mse": 0.04395299690036439,
+        "mean_mse": 0.06893904530472894,
+        "exact_unpaired_mse": 0.11021950956575137,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call000",
+        "date": "2037-04-06",
+        "states": 12,
+        "nearest_mse": 0.13294596760769287,
+        "mean_mse": 0.1444883813556743,
+        "exact_unpaired_mse": 0.15319185185056014,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call001",
+        "date": "2037-04-06",
+        "states": 11,
+        "nearest_mse": 0.04890868069118571,
+        "mean_mse": 0.07481734393345414,
+        "exact_unpaired_mse": 0.08483886774582564,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call002",
+        "date": "2037-04-06",
+        "states": 2,
+        "nearest_mse": 0.2450717044603259,
+        "mean_mse": 0.255249586961839,
+        "exact_unpaired_mse": 0.28626584312608216,
+        "contrast_coverage": 0.9,
+        "mean_unseen_relation_fraction": 0.07500000000000001
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call003",
+        "date": "2037-04-06",
+        "states": 32,
+        "nearest_mse": 0.0591735493963475,
+        "mean_mse": 0.07833102778598824,
+        "exact_unpaired_mse": 0.13195882007243823,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call004",
+        "date": "2037-04-06",
+        "states": 11,
+        "nearest_mse": 0.013658963273667847,
+        "mean_mse": 0.024284730713693935,
+        "exact_unpaired_mse": 0.043822035689541336,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call005",
+        "date": "2037-04-06",
+        "states": 21,
+        "nearest_mse": 0.0636824596761848,
+        "mean_mse": 0.09077681799214199,
+        "exact_unpaired_mse": 0.1347715866067894,
+        "contrast_coverage": 0.9684329287270463,
+        "mean_unseen_relation_fraction": 0.01628416644435552
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call006",
+        "date": "2037-04-06",
+        "states": 28,
+        "nearest_mse": 0.03513378740066634,
+        "mean_mse": 0.05866393464755274,
+        "exact_unpaired_mse": 0.10335903492071855,
+        "contrast_coverage": 0.9997373949579832,
+        "mean_unseen_relation_fraction": 1.641281512605042e-05
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call007",
+        "date": "2037-04-06",
+        "states": 32,
+        "nearest_mse": 0.03844203671025351,
+        "mean_mse": 0.05699209268888203,
+        "exact_unpaired_mse": 0.09227498755654628,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call008",
+        "date": "2037-04-06",
+        "states": 8,
+        "nearest_mse": 0.09052831474151396,
+        "mean_mse": 0.07379365060568613,
+        "exact_unpaired_mse": 0.09068398031130609,
+        "contrast_coverage": 0.8924603174603174,
+        "mean_unseen_relation_fraction": 0.03630202722114487
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call009",
+        "date": "2037-04-06",
+        "states": 12,
+        "nearest_mse": 0.057779336120509124,
+        "mean_mse": 0.07365126789503358,
+        "exact_unpaired_mse": 0.09061325220086004,
+        "contrast_coverage": 0.9523809523809524,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call010",
+        "date": "2037-04-06",
+        "states": 11,
+        "nearest_mse": 0.0005963740959634968,
+        "mean_mse": 0.0007025872699562477,
+        "exact_unpaired_mse": 0.0011413911612750372,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call011",
+        "date": "2037-04-06",
+        "states": 11,
+        "nearest_mse": 0.0031575145988142483,
+        "mean_mse": 0.0034457151398190693,
+        "exact_unpaired_mse": 0.004255166985717213,
+        "contrast_coverage": 0.7954545454545454,
+        "mean_unseen_relation_fraction": 0.0424963924963925
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call012",
+        "date": "2037-04-06",
+        "states": 3,
+        "nearest_mse": 0.12945701291835476,
+        "mean_mse": 0.007836230407993496,
+        "exact_unpaired_mse": 0.05162948075891971,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call013",
+        "date": "2037-04-06",
+        "states": 25,
+        "nearest_mse": 0.03520435069507086,
+        "mean_mse": 0.07039800079363802,
+        "exact_unpaired_mse": 0.11517067776815987,
+        "contrast_coverage": 0.881764705882353,
+        "mean_unseen_relation_fraction": 4.136029411764705e-05
+      },
+      {
+        "physical_state_group": "2037-04-06_100|call014",
+        "date": "2037-04-06",
+        "states": 12,
+        "nearest_mse": 0.18309699562629767,
+        "mean_mse": 0.183466401685024,
+        "exact_unpaired_mse": 0.19334395401340068,
+        "contrast_coverage": 0.8474747474747475,
+        "mean_unseen_relation_fraction": 0.07575075075075076
+      },
+      {
+        "physical_state_group": "2037-04-06_101|call000",
+        "date": "2037-04-06",
+        "states": 11,
+        "nearest_mse": 0.03174623436589759,
+        "mean_mse": 0.049960569779310474,
+        "exact_unpaired_mse": 0.0705014446509664,
+        "contrast_coverage": 0.6606060606060605,
+        "mean_unseen_relation_fraction": 0.1676767676767677
+      },
+      {
+        "physical_state_group": "2037-04-06_101|call001",
+        "date": "2037-04-06",
+        "states": 31,
+        "nearest_mse": 0.056926930904385824,
+        "mean_mse": 0.05883549356338687,
+        "exact_unpaired_mse": 0.10516589723966277,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-04-06_101|call002",
+        "date": "2037-04-06",
+        "states": 11,
+        "nearest_mse": 0.03624298518672687,
+        "mean_mse": 0.0290361441539038,
+        "exact_unpaired_mse": 0.03742231078382405,
+        "contrast_coverage": 0.6303030303030304,
+        "mean_unseen_relation_fraction": 0.22644628099173553
+      },
+      {
+        "physical_state_group": "2037-05-18_100|call000",
+        "date": "2037-05-18",
+        "states": 12,
+        "nearest_mse": 0.009229517153808922,
+        "mean_mse": 0.006781992420944097,
+        "exact_unpaired_mse": 0.01340892238132013,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-05-18_100|call001",
+        "date": "2037-05-18",
+        "states": 30,
+        "nearest_mse": 0.049519476872192165,
+        "mean_mse": 0.06718178587193843,
+        "exact_unpaired_mse": 0.10531059531926891,
+        "contrast_coverage": 0.9995098039215686,
+        "mean_unseen_relation_fraction": 3.0637254901960784e-05
+      },
+      {
+        "physical_state_group": "2037-05-18_101|call000",
+        "date": "2037-05-18",
+        "states": 11,
+        "nearest_mse": 0.06349529708781586,
+        "mean_mse": 0.07996975437517356,
+        "exact_unpaired_mse": 0.10759508715268074,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-05-18_101|call001",
+        "date": "2037-05-18",
+        "states": 12,
+        "nearest_mse": 0.17903122552327053,
+        "mean_mse": 0.18953519551572892,
+        "exact_unpaired_mse": 0.25127289767915767,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-05-18_101|call002",
+        "date": "2037-05-18",
+        "states": 10,
+        "nearest_mse": 0.014366775059806247,
+        "mean_mse": 0.0032456365027010597,
+        "exact_unpaired_mse": 0.008070533901716515,
+        "contrast_coverage": 0.9,
+        "mean_unseen_relation_fraction": 0.07200000000000001
+      },
+      {
+        "physical_state_group": "2037-05-18_101|call003",
+        "date": "2037-05-18",
+        "states": 12,
+        "nearest_mse": 0.06295959145522788,
+        "mean_mse": 0.04606502969807303,
+        "exact_unpaired_mse": 0.06284894413768473,
+        "contrast_coverage": 0.9682539682539683,
+        "mean_unseen_relation_fraction": 0.015751974633553583
+      },
+      {
+        "physical_state_group": "2037-05-18_101|call004",
+        "date": "2037-05-18",
+        "states": 32,
+        "nearest_mse": 0.050773139161970446,
+        "mean_mse": 0.08695620093885881,
+        "exact_unpaired_mse": 0.14209214947917764,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-05-18_101|call005",
+        "date": "2037-05-18",
+        "states": 6,
+        "nearest_mse": 0.05128198570112713,
+        "mean_mse": 0.015325606077314579,
+        "exact_unpaired_mse": 0.06355003403516776,
+        "contrast_coverage": 0.2814814814814815,
+        "mean_unseen_relation_fraction": 0.46129629629629626
+      },
+      {
+        "physical_state_group": "2037-05-18_101|call006",
+        "date": "2037-05-18",
+        "states": 32,
+        "nearest_mse": 0.041265216992417676,
+        "mean_mse": 0.0612069365531027,
+        "exact_unpaired_mse": 0.11071106057938296,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-05-18_101|call007",
+        "date": "2037-05-18",
+        "states": 31,
+        "nearest_mse": 0.036036880725440416,
+        "mean_mse": 0.04948058010443908,
+        "exact_unpaired_mse": 0.08034159127961131,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-05-18_101|call008",
+        "date": "2037-05-18",
+        "states": 12,
+        "nearest_mse": 0.13475881256432873,
+        "mean_mse": 0.12917138955855526,
+        "exact_unpaired_mse": 0.13404443194653562,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-05-18_101|call009",
+        "date": "2037-05-18",
+        "states": 2,
+        "nearest_mse": 0.21572368697218222,
+        "mean_mse": 0.2902543094867517,
+        "exact_unpaired_mse": 0.3228487486718862,
+        "contrast_coverage": 0.75,
+        "mean_unseen_relation_fraction": 0.16666666666666666
+      },
+      {
+        "physical_state_group": "2037-06-01_100|call000",
+        "date": "2037-06-01",
+        "states": 12,
+        "nearest_mse": 0.2023760799475394,
+        "mean_mse": 0.2020394789820572,
+        "exact_unpaired_mse": 0.2134634614243667,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-06-01_100|call001",
+        "date": "2037-06-01",
+        "states": 32,
+        "nearest_mse": 0.045292458794617366,
+        "mean_mse": 0.07048223147836824,
+        "exact_unpaired_mse": 0.12358052466541503,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-06-01_100|call002",
+        "date": "2037-06-01",
+        "states": 3,
+        "nearest_mse": 0.18116358035892374,
+        "mean_mse": 0.3776425596877129,
+        "exact_unpaired_mse": 0.38694236113835173,
+        "contrast_coverage": 0.9,
+        "mean_unseen_relation_fraction": 0.08333333333333333
+      },
+      {
+        "physical_state_group": "2037-06-01_100|call003",
+        "date": "2037-06-01",
+        "states": 27,
+        "nearest_mse": 0.05806644388265853,
+        "mean_mse": 0.07743073447034507,
+        "exact_unpaired_mse": 0.13091245682132757,
+        "contrast_coverage": 0.9849128540305011,
+        "mean_unseen_relation_fraction": 0.005342607722101185
+      },
+      {
+        "physical_state_group": "2037-06-01_100|call004",
+        "date": "2037-06-01",
+        "states": 32,
+        "nearest_mse": 0.03799333102556766,
+        "mean_mse": 0.06501310528594303,
+        "exact_unpaired_mse": 0.10852393809456477,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-06-01_100|call005",
+        "date": "2037-06-01",
+        "states": 7,
+        "nearest_mse": 0.07042486612367903,
+        "mean_mse": 0.06168368926982003,
+        "exact_unpaired_mse": 0.08877125794501424,
+        "contrast_coverage": 0.7968253968253968,
+        "mean_unseen_relation_fraction": 0.08652570746166806
+      },
+      {
+        "physical_state_group": "2037-06-01_100|call006",
+        "date": "2037-06-01",
+        "states": 3,
+        "nearest_mse": 0.043911739857428245,
+        "mean_mse": 0.14268587994733864,
+        "exact_unpaired_mse": 0.1974502975572824,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-06-01_100|call007",
+        "date": "2037-06-01",
+        "states": 16,
+        "nearest_mse": 0.06576321567349526,
+        "mean_mse": 0.07231013788127132,
+        "exact_unpaired_mse": 0.1235275936001423,
+        "contrast_coverage": 0.976858660130719,
+        "mean_unseen_relation_fraction": 0.0016308829888793124
+      },
+      {
+        "physical_state_group": "2037-06-01_100|call008",
+        "date": "2037-06-01",
+        "states": 12,
+        "nearest_mse": 0.15292374573878026,
+        "mean_mse": 0.15996654183096834,
+        "exact_unpaired_mse": 0.16738752715286134,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-06-01_100|call009",
+        "date": "2037-06-01",
+        "states": 12,
+        "nearest_mse": 0.18515495321206663,
+        "mean_mse": 0.15691298725570993,
+        "exact_unpaired_mse": 0.17060452570222973,
+        "contrast_coverage": 0.9534632034632035,
+        "mean_unseen_relation_fraction": 0.014983971750889044
+      },
+      {
+        "physical_state_group": "2037-06-01_100|call010",
+        "date": "2037-06-01",
+        "states": 4,
+        "nearest_mse": 0.24838910564086802,
+        "mean_mse": 0.24842546729964,
+        "exact_unpaired_mse": 0.24842546863028758,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-06-01_101|call000",
+        "date": "2037-06-01",
+        "states": 32,
+        "nearest_mse": 0.035695135769136764,
+        "mean_mse": 0.06617000624737791,
+        "exact_unpaired_mse": 0.11214830497879176,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-06-01_101|call001",
+        "date": "2037-06-01",
+        "states": 11,
+        "nearest_mse": 0.012359146419897675,
+        "mean_mse": 0.016916696627387776,
+        "exact_unpaired_mse": 0.03314276316083287,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-06-01_101|call002",
+        "date": "2037-06-01",
+        "states": 32,
+        "nearest_mse": 0.07719824220633975,
+        "mean_mse": 0.1041576350040293,
+        "exact_unpaired_mse": 0.16759746666437125,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-06-01_101|call003",
+        "date": "2037-06-01",
+        "states": 32,
+        "nearest_mse": 0.05189946519560971,
+        "mean_mse": 0.07604515271298135,
+        "exact_unpaired_mse": 0.12127748950943532,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-06-01_101|call004",
+        "date": "2037-06-01",
+        "states": 32,
+        "nearest_mse": 0.07865339831462471,
+        "mean_mse": 0.09053031294487698,
+        "exact_unpaired_mse": 0.1519534292731108,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-06-01_101|call005",
+        "date": "2037-06-01",
+        "states": 32,
+        "nearest_mse": 0.039661254284227884,
+        "mean_mse": 0.047913436899032755,
+        "exact_unpaired_mse": 0.08072115724189077,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-06-01_101|call006",
+        "date": "2037-06-01",
+        "states": 4,
+        "nearest_mse": 0.17953227586764342,
+        "mean_mse": 0.17721039039601294,
+        "exact_unpaired_mse": 0.17721794655588496,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-06-01_101|call007",
+        "date": "2037-06-01",
+        "states": 32,
+        "nearest_mse": 0.03792070195404823,
+        "mean_mse": 0.05910042106342598,
+        "exact_unpaired_mse": 0.10407814959306697,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-06-15_100|call000",
+        "date": "2037-06-15",
+        "states": 12,
+        "nearest_mse": 0.015610917248641476,
+        "mean_mse": 0.017508306252010195,
+        "exact_unpaired_mse": 0.027389561122547427,
+        "contrast_coverage": 0.7474747474747474,
+        "mean_unseen_relation_fraction": 0.1174174174174174
+      },
+      {
+        "physical_state_group": "2037-06-15_101|call000",
+        "date": "2037-06-15",
+        "states": 12,
+        "nearest_mse": 0.08776758717413202,
+        "mean_mse": 0.10448514662374046,
+        "exact_unpaired_mse": 0.14368090388271895,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-06-15_101|call001",
+        "date": "2037-06-15",
+        "states": 31,
+        "nearest_mse": 0.04608028790261555,
+        "mean_mse": 0.0716892127707744,
+        "exact_unpaired_mse": 0.12954938503118074,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-06-15_101|call002",
+        "date": "2037-06-15",
+        "states": 12,
+        "nearest_mse": 0.08896557392015798,
+        "mean_mse": 0.07903996305482404,
+        "exact_unpaired_mse": 0.10798201679011997,
+        "contrast_coverage": 0.952020202020202,
+        "mean_unseen_relation_fraction": 0.01771580550650318
+      },
+      {
+        "physical_state_group": "2037-06-15_101|call003",
+        "date": "2037-06-15",
+        "states": 11,
+        "nearest_mse": 0.05817578001642725,
+        "mean_mse": 0.10603623625990197,
+        "exact_unpaired_mse": 0.14840866580443912,
+        "contrast_coverage": 0.9177489177489178,
+        "mean_unseen_relation_fraction": 0.01978973407544836
+      },
+      {
+        "physical_state_group": "2037-06-15_101|call004",
+        "date": "2037-06-15",
+        "states": 4,
+        "nearest_mse": 0.08998946251637285,
+        "mean_mse": 0.06938858229329714,
+        "exact_unpaired_mse": 0.15121672934267313,
+        "contrast_coverage": 0.8333333333333334,
+        "mean_unseen_relation_fraction": 0.125
+      },
+      {
+        "physical_state_group": "2037-06-15_101|call005",
+        "date": "2037-06-15",
+        "states": 8,
+        "nearest_mse": 0.002682718063642072,
+        "mean_mse": 0.00299829813216428,
+        "exact_unpaired_mse": 0.007615789705417781,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-06-15_101|call006",
+        "date": "2037-06-15",
+        "states": 8,
+        "nearest_mse": 0.004779049402135376,
+        "mean_mse": 0.0013963582052407292,
+        "exact_unpaired_mse": 0.0031856968094572872,
+        "contrast_coverage": 0.9583333333333333,
+        "mean_unseen_relation_fraction": 0.013605442176870748
+      },
+      {
+        "physical_state_group": "2037-06-15_101|call007",
+        "date": "2037-06-15",
+        "states": 7,
+        "nearest_mse": 0.06398482406096964,
+        "mean_mse": 0.03776051717266312,
+        "exact_unpaired_mse": 0.05177621643575475,
+        "contrast_coverage": 0.7012987012987013,
+        "mean_unseen_relation_fraction": 0.14421768707482993
+      },
+      {
+        "physical_state_group": "2037-06-15_101|call008",
+        "date": "2037-06-15",
+        "states": 10,
+        "nearest_mse": 0.17854588356272788,
+        "mean_mse": 0.22870119614254558,
+        "exact_unpaired_mse": 0.2966910200869529,
+        "contrast_coverage": 0.9238095238095237,
+        "mean_unseen_relation_fraction": 0.016326530612244896
+      },
+      {
+        "physical_state_group": "2037-06-15_101|call009",
+        "date": "2037-06-15",
+        "states": 18,
+        "nearest_mse": 0.04555042483827992,
+        "mean_mse": 0.04105682906290414,
+        "exact_unpaired_mse": 0.0701623290279671,
+        "contrast_coverage": 0.8641975308641975,
+        "mean_unseen_relation_fraction": 0.0645355673133451
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call000",
+        "date": "2037-07-06",
+        "states": 12,
+        "nearest_mse": 0.0036785340980046467,
+        "mean_mse": 0.0038837644213543646,
+        "exact_unpaired_mse": 0.007313994055662032,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call001",
+        "date": "2037-07-06",
+        "states": 12,
+        "nearest_mse": 0.1820129986235989,
+        "mean_mse": 0.19248242053726317,
+        "exact_unpaired_mse": 0.22569307766927674,
+        "contrast_coverage": 0.8474747474747475,
+        "mean_unseen_relation_fraction": 0.07575075075075076
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call002",
+        "date": "2037-07-06",
+        "states": 32,
+        "nearest_mse": 0.06573650469742619,
+        "mean_mse": 0.08199586854085764,
+        "exact_unpaired_mse": 0.14003225060602786,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call003",
+        "date": "2037-07-06",
+        "states": 12,
+        "nearest_mse": 0.176510177399374,
+        "mean_mse": 0.18484644995902821,
+        "exact_unpaired_mse": 0.19614128546708942,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call004",
+        "date": "2037-07-06",
+        "states": 4,
+        "nearest_mse": 0.002015790562154507,
+        "mean_mse": 0.0023070831077554033,
+        "exact_unpaired_mse": 0.0023169085030829706,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call005",
+        "date": "2037-07-06",
+        "states": 29,
+        "nearest_mse": 0.07633100507615392,
+        "mean_mse": 0.10034734904085123,
+        "exact_unpaired_mse": 0.15109219800179285,
+        "contrast_coverage": 0.88184584178499,
+        "mean_unseen_relation_fraction": 3.169371196754564e-05
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call006",
+        "date": "2037-07-06",
+        "states": 29,
+        "nearest_mse": 0.03433089385143525,
+        "mean_mse": 0.08152688245714088,
+        "exact_unpaired_mse": 0.1347230372814669,
+        "contrast_coverage": 0.88184584178499,
+        "mean_unseen_relation_fraction": 3.169371196754564e-05
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call007",
+        "date": "2037-07-06",
+        "states": 29,
+        "nearest_mse": 0.017579341099980442,
+        "mean_mse": 0.03184219632143094,
+        "exact_unpaired_mse": 0.056887708911276785,
+        "contrast_coverage": 0.9997464503042596,
+        "mean_unseen_relation_fraction": 1.584685598377282e-05
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call008",
+        "date": "2037-07-06",
+        "states": 7,
+        "nearest_mse": 0.004074892010514321,
+        "mean_mse": 0.0043329175164278765,
+        "exact_unpaired_mse": 0.006455386599769725,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call009",
+        "date": "2037-07-06",
+        "states": 8,
+        "nearest_mse": 0.16657831716354182,
+        "mean_mse": 0.10399358058082997,
+        "exact_unpaired_mse": 0.20366470566515713,
+        "contrast_coverage": 0.9583333333333334,
+        "mean_unseen_relation_fraction": 0.012354409072985267
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call010",
+        "date": "2037-07-06",
+        "states": 8,
+        "nearest_mse": 0.0062715127331612296,
+        "mean_mse": 0.0035371576408149826,
+        "exact_unpaired_mse": 0.012727628292080599,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call011",
+        "date": "2037-07-06",
+        "states": 29,
+        "nearest_mse": 0.03654805833766386,
+        "mean_mse": 0.05445770721149007,
+        "exact_unpaired_mse": 0.09362396783200208,
+        "contrast_coverage": 0.9994929006085193,
+        "mean_unseen_relation_fraction": 3.169371196754564e-05
+      },
+      {
+        "physical_state_group": "2037-07-06_100|call012",
+        "date": "2037-07-06",
+        "states": 4,
+        "nearest_mse": 0.37874058271940214,
+        "mean_mse": 0.4602568602985144,
+        "exact_unpaired_mse": 0.46422627631359603,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-07-06_101|call000",
+        "date": "2037-07-06",
+        "states": 16,
+        "nearest_mse": 0.10657713822151246,
+        "mean_mse": 0.07781869238323187,
+        "exact_unpaired_mse": 0.1728772579611095,
+        "contrast_coverage": 0.9717626633986928,
+        "mean_unseen_relation_fraction": 0.008095160917414568
+      },
+      {
+        "physical_state_group": "2037-07-06_101|call001",
+        "date": "2037-07-06",
+        "states": 32,
+        "nearest_mse": 0.041632870003886074,
+        "mean_mse": 0.06693750251428507,
+        "exact_unpaired_mse": 0.10849318008496245,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-07-06_101|call002",
+        "date": "2037-07-06",
+        "states": 32,
+        "nearest_mse": 0.038073199611952484,
+        "mean_mse": 0.061603035710590295,
+        "exact_unpaired_mse": 0.1099741421065222,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-07-06_101|call003",
+        "date": "2037-07-06",
+        "states": 17,
+        "nearest_mse": 0.09144705289250854,
+        "mean_mse": 0.09935223988405817,
+        "exact_unpaired_mse": 0.1469035748704865,
+        "contrast_coverage": 0.9769127258746636,
+        "mean_unseen_relation_fraction": 0.00141979152143512
+      },
+      {
+        "physical_state_group": "2037-07-06_101|call004",
+        "date": "2037-07-06",
+        "states": 12,
+        "nearest_mse": 0.17835779899055149,
+        "mean_mse": 0.1713685323187756,
+        "exact_unpaired_mse": 0.17977264108898725,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-07-06_101|call005",
+        "date": "2037-07-06",
+        "states": 29,
+        "nearest_mse": 0.10772213834179786,
+        "mean_mse": 0.10534675016807638,
+        "exact_unpaired_mse": 0.16306728399573878,
+        "contrast_coverage": 0.88184584178499,
+        "mean_unseen_relation_fraction": 3.169371196754564e-05
+      },
+      {
+        "physical_state_group": "2037-07-06_101|call006",
+        "date": "2037-07-06",
+        "states": 32,
+        "nearest_mse": 0.06893748652662704,
+        "mean_mse": 0.08146704798422155,
+        "exact_unpaired_mse": 0.13839318726279498,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-07-06_101|call007",
+        "date": "2037-07-06",
+        "states": 15,
+        "nearest_mse": 0.09095672643357063,
+        "mean_mse": 0.0640786962570944,
+        "exact_unpaired_mse": 0.1406951515462807,
+        "contrast_coverage": 0.8202505446623096,
+        "mean_unseen_relation_fraction": 0.011786432722945227
+      },
+      {
+        "physical_state_group": "2037-07-06_101|call008",
+        "date": "2037-07-06",
+        "states": 29,
+        "nearest_mse": 0.09730539404799071,
+        "mean_mse": 0.10613542867813157,
+        "exact_unpaired_mse": 0.16087680598620066,
+        "contrast_coverage": 0.9825050709939148,
+        "mean_unseen_relation_fraction": 0.011510099729546992
+      },
+      {
+        "physical_state_group": "2037-08-17_100|call000",
+        "date": "2037-08-17",
+        "states": 32,
+        "nearest_mse": 0.05048759442666486,
+        "mean_mse": 0.06025026940173945,
+        "exact_unpaired_mse": 0.10218041012561682,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-08-17_100|call001",
+        "date": "2037-08-17",
+        "states": 8,
+        "nearest_mse": 0.018324484972967726,
+        "mean_mse": 0.016955349593552375,
+        "exact_unpaired_mse": 0.03163012534153833,
+        "contrast_coverage": 0.9472222222222222,
+        "mean_unseen_relation_fraction": 0.016186184505150025
+      },
+      {
+        "physical_state_group": "2037-08-17_100|call002",
+        "date": "2037-08-17",
+        "states": 3,
+        "nearest_mse": 0.0040931179387939665,
+        "mean_mse": 0.007727903167544229,
+        "exact_unpaired_mse": 0.02976205942991302,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-08-17_100|call003",
+        "date": "2037-08-17",
+        "states": 32,
+        "nearest_mse": 0.05339621034718049,
+        "mean_mse": 0.09395285871145517,
+        "exact_unpaired_mse": 0.15930619571668347,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-08-17_100|call004",
+        "date": "2037-08-17",
+        "states": 12,
+        "nearest_mse": 0.12944926762268796,
+        "mean_mse": 0.16118200177254632,
+        "exact_unpaired_mse": 0.2063911062080892,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-08-17_100|call005",
+        "date": "2037-08-17",
+        "states": 13,
+        "nearest_mse": 0.18271927579709263,
+        "mean_mse": 0.10403261002457764,
+        "exact_unpaired_mse": 0.1290591148705813,
+        "contrast_coverage": 0.9398601398601399,
+        "mean_unseen_relation_fraction": 0.018994080645525893
+      },
+      {
+        "physical_state_group": "2037-08-17_100|call006",
+        "date": "2037-08-17",
+        "states": 4,
+        "nearest_mse": 0.42036344242548296,
+        "mean_mse": 0.48520134914730306,
+        "exact_unpaired_mse": 0.4875255096653319,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-08-17_100|call007",
+        "date": "2037-08-17",
+        "states": 12,
+        "nearest_mse": 0.06203691790303287,
+        "mean_mse": 0.06565371366993387,
+        "exact_unpaired_mse": 0.08583759089758969,
+        "contrast_coverage": 0.952020202020202,
+        "mean_unseen_relation_fraction": 0.01771580550650318
+      },
+      {
+        "physical_state_group": "2037-08-17_100|call008",
+        "date": "2037-08-17",
+        "states": 8,
+        "nearest_mse": 0.002418566481023832,
+        "mean_mse": 0.002641704624039928,
+        "exact_unpaired_mse": 0.007272247995498123,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-08-17_100|call009",
+        "date": "2037-08-17",
+        "states": 27,
+        "nearest_mse": 0.02913366676197117,
+        "mean_mse": 0.04699521397084715,
+        "exact_unpaired_mse": 0.08571707479202992,
+        "contrast_coverage": 0.9994553376906318,
+        "mean_unseen_relation_fraction": 3.404139433551198e-05
+      },
+      {
+        "physical_state_group": "2037-08-17_100|call010",
+        "date": "2037-08-17",
+        "states": 8,
+        "nearest_mse": 0.0035955896867580334,
+        "mean_mse": 0.0019223973674927417,
+        "exact_unpaired_mse": 0.006430676296667795,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-08-17_101|call000",
+        "date": "2037-08-17",
+        "states": 12,
+        "nearest_mse": 0.0765112320499254,
+        "mean_mse": 0.08075915571699183,
+        "exact_unpaired_mse": 0.10518901979002111,
+        "contrast_coverage": 0.952020202020202,
+        "mean_unseen_relation_fraction": 0.01771580550650318
+      },
+      {
+        "physical_state_group": "2037-08-17_101|call001",
+        "date": "2037-08-17",
+        "states": 32,
+        "nearest_mse": 0.03934628155270068,
+        "mean_mse": 0.07495463586545106,
+        "exact_unpaired_mse": 0.12851963761913715,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-08-17_101|call002",
+        "date": "2037-08-17",
+        "states": 12,
+        "nearest_mse": 0.17579496955172058,
+        "mean_mse": 0.17252995643078392,
+        "exact_unpaired_mse": 0.18181928915058088,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-08-17_101|call003",
+        "date": "2037-08-17",
+        "states": 15,
+        "nearest_mse": 0.09469218664180254,
+        "mean_mse": 0.0754429054453918,
+        "exact_unpaired_mse": 0.14981980230111805,
+        "contrast_coverage": 0.9385076252723311,
+        "mean_unseen_relation_fraction": 0.008670111680515574
+      },
+      {
+        "physical_state_group": "2037-08-17_101|call004",
+        "date": "2037-08-17",
+        "states": 4,
+        "nearest_mse": 0.3713660767062379,
+        "mean_mse": 0.44139620932284984,
+        "exact_unpaired_mse": 0.4444188371179294,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-08-17_101|call005",
+        "date": "2037-08-17",
+        "states": 12,
+        "nearest_mse": 0.08879698280726091,
+        "mean_mse": 0.09467968430869901,
+        "exact_unpaired_mse": 0.124914767435143,
+        "contrast_coverage": 0.952020202020202,
+        "mean_unseen_relation_fraction": 0.01771580550650318
+      },
+      {
+        "physical_state_group": "2037-09-07_100|call000",
+        "date": "2037-09-07",
+        "states": 4,
+        "nearest_mse": 0.29434623875546606,
+        "mean_mse": 0.2943944239249028,
+        "exact_unpaired_mse": 0.2943944258967477,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-09-07_100|call001",
+        "date": "2037-09-07",
+        "states": 29,
+        "nearest_mse": 0.06128683380025336,
+        "mean_mse": 0.09739281276168618,
+        "exact_unpaired_mse": 0.1538186921671565,
+        "contrast_coverage": 0.88184584178499,
+        "mean_unseen_relation_fraction": 3.169371196754564e-05
+      },
+      {
+        "physical_state_group": "2037-09-07_100|call002",
+        "date": "2037-09-07",
+        "states": 29,
+        "nearest_mse": 0.05342231552386586,
+        "mean_mse": 0.060251149287284894,
+        "exact_unpaired_mse": 0.11333584474287031,
+        "contrast_coverage": 0.88184584178499,
+        "mean_unseen_relation_fraction": 3.169371196754564e-05
+      },
+      {
+        "physical_state_group": "2037-09-07_101|call000",
+        "date": "2037-09-07",
+        "states": 12,
+        "nearest_mse": 0.09505899556460956,
+        "mean_mse": 0.05349805271187192,
+        "exact_unpaired_mse": 0.10124066805888043,
+        "contrast_coverage": 0.8925925925925925,
+        "mean_unseen_relation_fraction": 0.0374201823166833
+      },
+      {
+        "physical_state_group": "2037-09-07_101|call001",
+        "date": "2037-09-07",
+        "states": 11,
+        "nearest_mse": 0.004615635877919727,
+        "mean_mse": 0.005517844542393154,
+        "exact_unpaired_mse": 0.012354876196986204,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.0883149678604224
+      },
+      {
+        "physical_state_group": "2037-09-07_101|call002",
+        "date": "2037-09-07",
+        "states": 12,
+        "nearest_mse": 0.061035534534786086,
+        "mean_mse": 0.06938006585754876,
+        "exact_unpaired_mse": 0.09081841510590734,
+        "contrast_coverage": 0.952020202020202,
+        "mean_unseen_relation_fraction": 0.01771580550650318
+      },
+      {
+        "physical_state_group": "2037-09-21_100|call000",
+        "date": "2037-09-21",
+        "states": 16,
+        "nearest_mse": 0.046430206758234394,
+        "mean_mse": 0.058181015236680005,
+        "exact_unpaired_mse": 0.10999578158867102,
+        "contrast_coverage": 0.9486111111111111,
+        "mean_unseen_relation_fraction": 0.016722678764831314
+      },
+      {
+        "physical_state_group": "2037-09-21_100|call001",
+        "date": "2037-09-21",
+        "states": 3,
+        "nearest_mse": 0.017182859472574898,
+        "mean_mse": 0.013055438408656977,
+        "exact_unpaired_mse": 0.037454686817906015,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-09-21_100|call002",
+        "date": "2037-09-21",
+        "states": 32,
+        "nearest_mse": 0.03898082808382736,
+        "mean_mse": 0.06498376735876712,
+        "exact_unpaired_mse": 0.11568779183452237,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-09-21_100|call003",
+        "date": "2037-09-21",
+        "states": 12,
+        "nearest_mse": 0.006409693380884229,
+        "mean_mse": 0.005946743429804179,
+        "exact_unpaired_mse": 0.00957571534617579,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-09-21_101|call000",
+        "date": "2037-09-21",
+        "states": 12,
+        "nearest_mse": 0.10585900250902364,
+        "mean_mse": 0.10942718919923526,
+        "exact_unpaired_mse": 0.13461487493771493,
+        "contrast_coverage": 0.8474747474747475,
+        "mean_unseen_relation_fraction": 0.07575075075075076
+      },
+      {
+        "physical_state_group": "2037-09-21_101|call001",
+        "date": "2037-09-21",
+        "states": 4,
+        "nearest_mse": 9.360612693853909e-07,
+        "mean_mse": 1.3064072845736519e-07,
+        "exact_unpaired_mse": 4.979494860890554e-07,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-09-21_101|call002",
+        "date": "2037-09-21",
+        "states": 31,
+        "nearest_mse": 0.06269795452909054,
+        "mean_mse": 0.09347638449735449,
+        "exact_unpaired_mse": 0.15730451169872592,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-09-21_101|call003",
+        "date": "2037-09-21",
+        "states": 8,
+        "nearest_mse": 0.34984033946728854,
+        "mean_mse": 0.29661759346478345,
+        "exact_unpaired_mse": 0.4900759475761048,
+        "contrast_coverage": 0.9477272727272728,
+        "mean_unseen_relation_fraction": 0.01644065394065394
+      },
+      {
+        "physical_state_group": "2037-09-21_101|call004",
+        "date": "2037-09-21",
+        "states": 12,
+        "nearest_mse": 0.07779822240712074,
+        "mean_mse": 0.08259187665132285,
+        "exact_unpaired_mse": 0.1041345081413207,
+        "contrast_coverage": 0.8474747474747475,
+        "mean_unseen_relation_fraction": 0.07575075075075076
+      },
+      {
+        "physical_state_group": "2037-09-21_101|call005",
+        "date": "2037-09-21",
+        "states": 12,
+        "nearest_mse": 0.05603483950160911,
+        "mean_mse": 0.05933639789567424,
+        "exact_unpaired_mse": 0.07887907317952857,
+        "contrast_coverage": 0.952020202020202,
+        "mean_unseen_relation_fraction": 0.01771580550650318
+      },
+      {
+        "physical_state_group": "2037-10-05_100|call000",
+        "date": "2037-10-05",
+        "states": 12,
+        "nearest_mse": 0.03518209605593053,
+        "mean_mse": 0.03303568117159042,
+        "exact_unpaired_mse": 0.055497474215487834,
+        "contrast_coverage": 0.8833333333333333,
+        "mean_unseen_relation_fraction": 0.06833333333333333
+      },
+      {
+        "physical_state_group": "2037-10-05_100|call001",
+        "date": "2037-10-05",
+        "states": 12,
+        "nearest_mse": 0.06056781502061326,
+        "mean_mse": 0.06660872084585438,
+        "exact_unpaired_mse": 0.10480069365655265,
+        "contrast_coverage": 0.9937169312169312,
+        "mean_unseen_relation_fraction": 0.0030895557211346684
+      },
+      {
+        "physical_state_group": "2037-10-05_100|call002",
+        "date": "2037-10-05",
+        "states": 11,
+        "nearest_mse": 0.017779331458161757,
+        "mean_mse": 0.033159414773341674,
+        "exact_unpaired_mse": 0.05515829058267134,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-10-05_100|call003",
+        "date": "2037-10-05",
+        "states": 13,
+        "nearest_mse": 0.044075054083840125,
+        "mean_mse": 0.08596652525903539,
+        "exact_unpaired_mse": 0.14075976496389242,
+        "contrast_coverage": 0.9957264957264957,
+        "mean_unseen_relation_fraction": 0.0019008019008019009
+      },
+      {
+        "physical_state_group": "2037-10-05_100|call004",
+        "date": "2037-10-05",
+        "states": 13,
+        "nearest_mse": 0.00535478005239615,
+        "mean_mse": 0.004441441777887533,
+        "exact_unpaired_mse": 0.005776386836361071,
+        "contrast_coverage": 0.9957264957264957,
+        "mean_unseen_relation_fraction": 0.0019008019008019009
+      },
+      {
+        "physical_state_group": "2037-10-05_101|call000",
+        "date": "2037-10-05",
+        "states": 12,
+        "nearest_mse": 0.04096461646447223,
+        "mean_mse": 0.028343608775311602,
+        "exact_unpaired_mse": 0.05610034086758656,
+        "contrast_coverage": 0.7891414141414143,
+        "mean_unseen_relation_fraction": 0.0169119034144501
+      },
+      {
+        "physical_state_group": "2037-10-05_101|call001",
+        "date": "2037-10-05",
+        "states": 12,
+        "nearest_mse": 0.0030796472992963473,
+        "mean_mse": 0.007926030909972667,
+        "exact_unpaired_mse": 0.011982483084473916,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-10-05_101|call002",
+        "date": "2037-10-05",
+        "states": 32,
+        "nearest_mse": 0.045896442861801834,
+        "mean_mse": 0.08508382990889199,
+        "exact_unpaired_mse": 0.14437146742403548,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-10-05_101|call003",
+        "date": "2037-10-05",
+        "states": 11,
+        "nearest_mse": 0.02032488541845654,
+        "mean_mse": 0.03308713105027793,
+        "exact_unpaired_mse": 0.05056047921037596,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-10-05_101|call004",
+        "date": "2037-10-05",
+        "states": 29,
+        "nearest_mse": 0.03641743310035483,
+        "mean_mse": 0.07354996810170397,
+        "exact_unpaired_mse": 0.12712380446340454,
+        "contrast_coverage": 0.9997464503042596,
+        "mean_unseen_relation_fraction": 1.584685598377282e-05
+      },
+      {
+        "physical_state_group": "2037-10-05_101|call005",
+        "date": "2037-10-05",
+        "states": 11,
+        "nearest_mse": 0.004798120687914308,
+        "mean_mse": 0.0029480904462255418,
+        "exact_unpaired_mse": 0.004649468082091849,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.0883149678604224
+      },
+      {
+        "physical_state_group": "2037-10-05_101|call006",
+        "date": "2037-10-05",
+        "states": 13,
+        "nearest_mse": 0.20162152603159503,
+        "mean_mse": 0.2059017971756073,
+        "exact_unpaired_mse": 0.21762504946625144,
+        "contrast_coverage": 0.9706959706959707,
+        "mean_unseen_relation_fraction": 0.014540284277126383
+      },
+      {
+        "physical_state_group": "2037-10-05_101|call007",
+        "date": "2037-10-05",
+        "states": 11,
+        "nearest_mse": 0.005534238674483533,
+        "mean_mse": 0.005549102277859958,
+        "exact_unpaired_mse": 0.014101212469601075,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-11-02_100|call000",
+        "date": "2037-11-02",
+        "states": 32,
+        "nearest_mse": 0.0744265707070321,
+        "mean_mse": 0.09340314221468199,
+        "exact_unpaired_mse": 0.16241799195607948,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-11-02_100|call001",
+        "date": "2037-11-02",
+        "states": 9,
+        "nearest_mse": 0.07985286547410447,
+        "mean_mse": 0.07818967252002976,
+        "exact_unpaired_mse": 0.08983308075609839,
+        "contrast_coverage": 0.9470899470899471,
+        "mean_unseen_relation_fraction": 0.02920751353291036
+      },
+      {
+        "physical_state_group": "2037-11-02_100|call002",
+        "date": "2037-11-02",
+        "states": 32,
+        "nearest_mse": 0.04219257359008251,
+        "mean_mse": 0.09157068558989118,
+        "exact_unpaired_mse": 0.15761045112838648,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-11-02_100|call003",
+        "date": "2037-11-02",
+        "states": 12,
+        "nearest_mse": 0.26177278911743873,
+        "mean_mse": 0.2736198962495306,
+        "exact_unpaired_mse": 0.3576883777273046,
+        "contrast_coverage": 0.9250000000000002,
+        "mean_unseen_relation_fraction": 0.013888888888888888
+      },
+      {
+        "physical_state_group": "2037-11-02_100|call004",
+        "date": "2037-11-02",
+        "states": 13,
+        "nearest_mse": 0.006625064796305146,
+        "mean_mse": 0.005576572699276611,
+        "exact_unpaired_mse": 0.007625248645152308,
+        "contrast_coverage": 0.9957264957264957,
+        "mean_unseen_relation_fraction": 0.0019008019008019009
+      },
+      {
+        "physical_state_group": "2037-11-02_101|call000",
+        "date": "2037-11-02",
+        "states": 11,
+        "nearest_mse": 0.01049772012968584,
+        "mean_mse": 0.013988222278389145,
+        "exact_unpaired_mse": 0.016034621968440008,
+        "contrast_coverage": 0.8242424242424242,
+        "mean_unseen_relation_fraction": 0.08629476584022037
+      },
+      {
+        "physical_state_group": "2037-11-02_101|call001",
+        "date": "2037-11-02",
+        "states": 31,
+        "nearest_mse": 0.06259185699993323,
+        "mean_mse": 0.09222566838919288,
+        "exact_unpaired_mse": 0.160093218650634,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-11-02_101|call002",
+        "date": "2037-11-02",
+        "states": 9,
+        "nearest_mse": 0.15814551931622137,
+        "mean_mse": 0.18730620017585664,
+        "exact_unpaired_mse": 0.18951541613652348,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-11-02_101|call003",
+        "date": "2037-11-02",
+        "states": 12,
+        "nearest_mse": 0.02021390406253043,
+        "mean_mse": 0.028139545122430915,
+        "exact_unpaired_mse": 0.03345206706419905,
+        "contrast_coverage": 0.952020202020202,
+        "mean_unseen_relation_fraction": 0.01771580550650318
+      },
+      {
+        "physical_state_group": "2037-11-16_100|call000",
+        "date": "2037-11-16",
+        "states": 12,
+        "nearest_mse": 0.007657583725464149,
+        "mean_mse": 0.008047109651300592,
+        "exact_unpaired_mse": 0.009461526142751824,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-11-16_100|call001",
+        "date": "2037-11-16",
+        "states": 13,
+        "nearest_mse": 0.03576149201532371,
+        "mean_mse": 0.04022154814278413,
+        "exact_unpaired_mse": 0.0943921693822474,
+        "contrast_coverage": 0.9957264957264957,
+        "mean_unseen_relation_fraction": 0.0019008019008019009
+      },
+      {
+        "physical_state_group": "2037-11-16_100|call002",
+        "date": "2037-11-16",
+        "states": 30,
+        "nearest_mse": 0.03690604514204479,
+        "mean_mse": 0.053227089548158725,
+        "exact_unpaired_mse": 0.09053806382110044,
+        "contrast_coverage": 0.9995098039215686,
+        "mean_unseen_relation_fraction": 3.0637254901960784e-05
+      },
+      {
+        "physical_state_group": "2037-11-16_100|call003",
+        "date": "2037-11-16",
+        "states": 32,
+        "nearest_mse": 0.05676348619484267,
+        "mean_mse": 0.09004220863658643,
+        "exact_unpaired_mse": 0.14270883189041472,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-11-16_100|call004",
+        "date": "2037-11-16",
+        "states": 11,
+        "nearest_mse": 0.011932476286569781,
+        "mean_mse": 0.019684254502972443,
+        "exact_unpaired_mse": 0.032607290118972926,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-11-16_101|call000",
+        "date": "2037-11-16",
+        "states": 12,
+        "nearest_mse": 0.0014351425131437223,
+        "mean_mse": 0.002310914892887855,
+        "exact_unpaired_mse": 0.0038310672790005337,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-11-16_101|call001",
+        "date": "2037-11-16",
+        "states": 13,
+        "nearest_mse": 0.12139750756680064,
+        "mean_mse": 0.15618715684802412,
+        "exact_unpaired_mse": 0.18734050766513438,
+        "contrast_coverage": 0.6153846153846154,
+        "mean_unseen_relation_fraction": 0.04456099456099456
+      },
+      {
+        "physical_state_group": "2037-11-16_101|call002",
+        "date": "2037-11-16",
+        "states": 13,
+        "nearest_mse": 0.03954895582345594,
+        "mean_mse": 0.04702698404388265,
+        "exact_unpaired_mse": 0.054758469417071756,
+        "contrast_coverage": 0.6153846153846154,
+        "mean_unseen_relation_fraction": 0.04456099456099456
+      },
+      {
+        "physical_state_group": "2037-11-16_101|call003",
+        "date": "2037-11-16",
+        "states": 12,
+        "nearest_mse": 0.0014603659368246386,
+        "mean_mse": 0.0013487752239863318,
+        "exact_unpaired_mse": 0.0019051320695878512,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-11-16_101|call004",
+        "date": "2037-11-16",
+        "states": 12,
+        "nearest_mse": 0.007388808392339343,
+        "mean_mse": 0.0042254648252072645,
+        "exact_unpaired_mse": 0.005837786355527122,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-12-07_100|call000",
+        "date": "2037-12-07",
+        "states": 3,
+        "nearest_mse": 0.36596657807528515,
+        "mean_mse": 0.1877390611984621,
+        "exact_unpaired_mse": 0.24474193166918212,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-12-07_100|call001",
+        "date": "2037-12-07",
+        "states": 31,
+        "nearest_mse": 0.04132767147707671,
+        "mean_mse": 0.06699480620747078,
+        "exact_unpaired_mse": 0.10992235533306836,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-12-07_100|call002",
+        "date": "2037-12-07",
+        "states": 32,
+        "nearest_mse": 0.06327088720582763,
+        "mean_mse": 0.07937062007968687,
+        "exact_unpaired_mse": 0.13275877247069362,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-12-07_101|call000",
+        "date": "2037-12-07",
+        "states": 3,
+        "nearest_mse": 0.5992135250107783,
+        "mean_mse": 0.3244756969759679,
+        "exact_unpaired_mse": 0.3885004785028164,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-12-07_101|call001",
+        "date": "2037-12-07",
+        "states": 32,
+        "nearest_mse": 0.042277274216364305,
+        "mean_mse": 0.07059335874153137,
+        "exact_unpaired_mse": 0.11837815755670701,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-12-07_101|call002",
+        "date": "2037-12-07",
+        "states": 11,
+        "nearest_mse": 0.029521029343784765,
+        "mean_mse": 0.03130782719681847,
+        "exact_unpaired_mse": 0.03369968137173528,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.08892102846648299
+      },
+      {
+        "physical_state_group": "2037-12-07_101|call003",
+        "date": "2037-12-07",
+        "states": 12,
+        "nearest_mse": 0.007631653670191499,
+        "mean_mse": 0.009822760716177667,
+        "exact_unpaired_mse": 0.01639309355687091,
+        "contrast_coverage": 0.9953703703703703,
+        "mean_unseen_relation_fraction": 0.002059202059202059
+      },
+      {
+        "physical_state_group": "2037-12-07_101|call004",
+        "date": "2037-12-07",
+        "states": 32,
+        "nearest_mse": 0.05022908362661638,
+        "mean_mse": 0.07577294685100654,
+        "exact_unpaired_mse": 0.13485393928812933,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-12-07_101|call005",
+        "date": "2037-12-07",
+        "states": 11,
+        "nearest_mse": 0.0068531153259785375,
+        "mean_mse": 0.004802215843224474,
+        "exact_unpaired_mse": 0.008304423858799157,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.0883149678604224
+      },
+      {
+        "physical_state_group": "2037-12-07_101|call006",
+        "date": "2037-12-07",
+        "states": 11,
+        "nearest_mse": 0.0050598993120580865,
+        "mean_mse": 0.0032132905729363587,
+        "exact_unpaired_mse": 0.00720135403056549,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.0883149678604224
+      },
+      {
+        "physical_state_group": "2037-12-07_101|call007",
+        "date": "2037-12-07",
+        "states": 13,
+        "nearest_mse": 0.03877332021693594,
+        "mean_mse": 0.020403768729574716,
+        "exact_unpaired_mse": 0.057044047819718904,
+        "contrast_coverage": 0.9957264957264957,
+        "mean_unseen_relation_fraction": 0.0019008019008019009
+      }
+    ],
+    "calls_nearest_better_than_mean": 153,
+    "calls_nearest_better_than_exact_unpaired": 200,
+    "legal_error_calls": 222,
+    "reward_assignment_sensitive_states": 3534,
+    "positive_states_best_next_direction_positive": 23,
+    "positive_states_best_next_changes_fully_supported": 145,
+    "positive_interpolation_gain_states": 0
+  },
+  "validation": {
+    "states": 856,
+    "physical_calls": 56,
+    "positive_states": 41,
+    "positive_calls": 16,
+    "date_call_balanced_macro": {
+      "nearest_mse": 0.09339364510294139,
+      "mean_mse": 0.10189388341377424,
+      "exact_unpaired_mse": 0.12578865359085703,
+      "contrast_coverage": 0.9097124529057428,
+      "mean_unseen_relation_fraction": 0.03302440333428174
+    },
+    "per_date": {
+      "2037-03-02": {
+        "nearest_mse": 0.08460865911668844,
+        "mean_mse": 0.08973550726703666,
+        "exact_unpaired_mse": 0.11462074447324704,
+        "contrast_coverage": 0.9337493654438072,
+        "mean_unseen_relation_fraction": 0.028244831797484524
+      },
+      "2037-05-04": {
+        "nearest_mse": 0.07412655043302922,
+        "mean_mse": 0.08326983373920108,
+        "exact_unpaired_mse": 0.1112672064196281,
+        "contrast_coverage": 0.9409239612511671,
+        "mean_unseen_relation_fraction": 0.007137362602626521
+      },
+      "2037-08-03": {
+        "nearest_mse": 0.12587740791412935,
+        "mean_mse": 0.13070847188528956,
+        "exact_unpaired_mse": 0.1623836435878446,
+        "contrast_coverage": 0.8423999918586116,
+        "mean_unseen_relation_fraction": 0.06183845209298102
+      },
+      "2037-10-19": {
+        "nearest_mse": 0.08896196294791853,
+        "mean_mse": 0.10386172076356964,
+        "exact_unpaired_mse": 0.11488301988270834,
+        "contrast_coverage": 0.9217764930693851,
+        "mean_unseen_relation_fraction": 0.03487696684403491
+      }
+    },
+    "per_call": [
+      {
+        "physical_state_group": "2037-03-02_100|call000",
+        "date": "2037-03-02",
+        "states": 3,
+        "nearest_mse": 0.02175553919482914,
+        "mean_mse": 0.021091080527567977,
+        "exact_unpaired_mse": 0.06082826362128287,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call001",
+        "date": "2037-03-02",
+        "states": 12,
+        "nearest_mse": 0.030921025281852643,
+        "mean_mse": 0.01649572391517613,
+        "exact_unpaired_mse": 0.039188790317438514,
+        "contrast_coverage": 0.8666666666666667,
+        "mean_unseen_relation_fraction": 0.06537074037074037
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call002",
+        "date": "2037-03-02",
+        "states": 31,
+        "nearest_mse": 0.061571490314989305,
+        "mean_mse": 0.06932486301991753,
+        "exact_unpaired_mse": 0.12491203532027913,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call003",
+        "date": "2037-03-02",
+        "states": 32,
+        "nearest_mse": 0.06353004843331157,
+        "mean_mse": 0.07109736448843132,
+        "exact_unpaired_mse": 0.12041975715168401,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call004",
+        "date": "2037-03-02",
+        "states": 12,
+        "nearest_mse": 0.16657389543994316,
+        "mean_mse": 0.16536625249919668,
+        "exact_unpaired_mse": 0.17421392905589542,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call005",
+        "date": "2037-03-02",
+        "states": 31,
+        "nearest_mse": 0.05679680879782355,
+        "mean_mse": 0.09126641469506275,
+        "exact_unpaired_mse": 0.1478705952784307,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call006",
+        "date": "2037-03-02",
+        "states": 3,
+        "nearest_mse": 0.2891743602010788,
+        "mean_mse": 0.38360824645291136,
+        "exact_unpaired_mse": 0.3957777085833259,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call007",
+        "date": "2037-03-02",
+        "states": 3,
+        "nearest_mse": 0.39073649519170345,
+        "mean_mse": 0.41575404057298343,
+        "exact_unpaired_mse": 0.42953362276800916,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call008",
+        "date": "2037-03-02",
+        "states": 31,
+        "nearest_mse": 0.06978956130890325,
+        "mean_mse": 0.07671186360830569,
+        "exact_unpaired_mse": 0.12196930671588035,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call009",
+        "date": "2037-03-02",
+        "states": 13,
+        "nearest_mse": 0.36005452611346517,
+        "mean_mse": 0.22216625231345125,
+        "exact_unpaired_mse": 0.31066308532283105,
+        "contrast_coverage": 0.9157509157509158,
+        "mean_unseen_relation_fraction": 0.04197951171635382
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call010",
+        "date": "2037-03-02",
+        "states": 9,
+        "nearest_mse": 0.008820070948575679,
+        "mean_mse": 0.008536640524441391,
+        "exact_unpaired_mse": 0.009622630263125488,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call011",
+        "date": "2037-03-02",
+        "states": 12,
+        "nearest_mse": 0.04211010296112677,
+        "mean_mse": 0.06141703443693627,
+        "exact_unpaired_mse": 0.07671265889016299,
+        "contrast_coverage": 0.9523809523809524,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call012",
+        "date": "2037-03-02",
+        "states": 20,
+        "nearest_mse": 0.03035016432109459,
+        "mean_mse": 0.030628317529248578,
+        "exact_unpaired_mse": 0.05444482648468209,
+        "contrast_coverage": 0.9759313725490196,
+        "mean_unseen_relation_fraction": 0.01182373366013072
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call013",
+        "date": "2037-03-02",
+        "states": 9,
+        "nearest_mse": 0.006316249590369242,
+        "mean_mse": 0.00628811786213209,
+        "exact_unpaired_mse": 0.006624048487232966,
+        "contrast_coverage": 0.46049382716049386,
+        "mean_unseen_relation_fraction": 0.2694122694122694
+      },
+      {
+        "physical_state_group": "2037-03-02_100|call014",
+        "date": "2037-03-02",
+        "states": 11,
+        "nearest_mse": 0.0039636682565303135,
+        "mean_mse": 0.004122456265892768,
+        "exact_unpaired_mse": 0.005285258075775984,
+        "contrast_coverage": 0.7792207792207791,
+        "mean_unseen_relation_fraction": 0.049801587301587305
+      },
+      {
+        "physical_state_group": "2037-03-02_101|call000",
+        "date": "2037-03-02",
+        "states": 12,
+        "nearest_mse": 0.129338534230273,
+        "mean_mse": 0.14347880687190198,
+        "exact_unpaired_mse": 0.15411552897569605,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-03-02_101|call001",
+        "date": "2037-03-02",
+        "states": 19,
+        "nearest_mse": 0.04066272215854785,
+        "mean_mse": 0.03807952246286181,
+        "exact_unpaired_mse": 0.0693698720931849,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-03-02_101|call002",
+        "date": "2037-03-02",
+        "states": 13,
+        "nearest_mse": 0.14682343363261735,
+        "mean_mse": 0.16274889803484668,
+        "exact_unpaired_mse": 0.21177395282450343,
+        "contrast_coverage": 0.9398656898656899,
+        "mean_unseen_relation_fraction": 0.025396834959804885
+      },
+      {
+        "physical_state_group": "2037-03-02_101|call003",
+        "date": "2037-03-02",
+        "states": 31,
+        "nearest_mse": 0.043271471265862345,
+        "mean_mse": 0.05975883715675911,
+        "exact_unpaired_mse": 0.09753298193238173,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-03-02_101|call004",
+        "date": "2037-03-02",
+        "states": 8,
+        "nearest_mse": 0.026818991818314247,
+        "mean_mse": 0.02437532265583712,
+        "exact_unpaired_mse": 0.046553465407719624,
+        "contrast_coverage": 0.9965277777777778,
+        "mean_unseen_relation_fraction": 0.0015873015873015873
+      },
+      {
+        "physical_state_group": "2037-03-02_101|call005",
+        "date": "2037-03-02",
+        "states": 11,
+        "nearest_mse": 0.010749169180356254,
+        "mean_mse": 0.04074842624583181,
+        "exact_unpaired_mse": 0.05929513533844908,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-03-02_101|call006",
+        "date": "2037-03-02",
+        "states": 12,
+        "nearest_mse": 0.09601649344098005,
+        "mean_mse": 0.10958576009511663,
+        "exact_unpaired_mse": 0.12033923038470928,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-03-02_101|call010",
+        "date": "2037-03-02",
+        "states": 12,
+        "nearest_mse": 0.004539162709331833,
+        "mean_mse": 0.006117772388157138,
+        "exact_unpaired_mse": 0.010493698460446533,
+        "contrast_coverage": 0.9791666666666666,
+        "mean_unseen_relation_fraction": 0.007724171539961013
+      },
+      {
+        "physical_state_group": "2037-03-02_101|call011",
+        "date": "2037-03-02",
+        "states": 11,
+        "nearest_mse": 0.012231127823877601,
+        "mean_mse": 0.014115617830007894,
+        "exact_unpaired_mse": 0.01626007941802649,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.0883149678604224
+      },
+      {
+        "physical_state_group": "2037-03-02_101|call012",
+        "date": "2037-03-02",
+        "states": 10,
+        "nearest_mse": 0.002301365301454226,
+        "mean_mse": 0.0005040492229412601,
+        "exact_unpaired_mse": 0.0017181506600222538,
+        "contrast_coverage": 0.9,
+        "mean_unseen_relation_fraction": 0.07200000000000001
+      },
+      {
+        "physical_state_group": "2037-05-04_100|call000",
+        "date": "2037-05-04",
+        "states": 3,
+        "nearest_mse": 0.050103295256843365,
+        "mean_mse": 0.004141995975094599,
+        "exact_unpaired_mse": 0.019237346577893825,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-05-04_101|call000",
+        "date": "2037-05-04",
+        "states": 32,
+        "nearest_mse": 0.048917661776555224,
+        "mean_mse": 0.06616213520262323,
+        "exact_unpaired_mse": 0.11984882853121112,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-05-04_101|call001",
+        "date": "2037-05-04",
+        "states": 12,
+        "nearest_mse": 0.14974508496159936,
+        "mean_mse": 0.163399622956813,
+        "exact_unpaired_mse": 0.1773414065547084,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-05-04_101|call002",
+        "date": "2037-05-04",
+        "states": 10,
+        "nearest_mse": 0.023696887417014145,
+        "mean_mse": 0.09851896456314391,
+        "exact_unpaired_mse": 0.13231114617428863,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-05-04_101|call003",
+        "date": "2037-05-04",
+        "states": 10,
+        "nearest_mse": 0.09816982275313399,
+        "mean_mse": 0.08412644999833066,
+        "exact_unpaired_mse": 0.10759730426003851,
+        "contrast_coverage": 0.7844444444444444,
+        "mean_unseen_relation_fraction": 0.01751750101750102
+      },
+      {
+        "physical_state_group": "2037-08-03_100|call000",
+        "date": "2037-08-03",
+        "states": 13,
+        "nearest_mse": 0.0711820081953584,
+        "mean_mse": 0.08252018482837914,
+        "exact_unpaired_mse": 0.14275420887788054,
+        "contrast_coverage": 0.935042735042735,
+        "mean_unseen_relation_fraction": 0.020988758886792788
+      },
+      {
+        "physical_state_group": "2037-08-03_100|call001",
+        "date": "2037-08-03",
+        "states": 29,
+        "nearest_mse": 0.04458606970242965,
+        "mean_mse": 0.0809957621027249,
+        "exact_unpaired_mse": 0.14531734858549894,
+        "contrast_coverage": 0.9966813162046427,
+        "mean_unseen_relation_fraction": 0.0008810056744240149
+      },
+      {
+        "physical_state_group": "2037-08-03_100|call002",
+        "date": "2037-08-03",
+        "states": 32,
+        "nearest_mse": 0.054142292378142866,
+        "mean_mse": 0.0853972219280223,
+        "exact_unpaired_mse": 0.1427520905334526,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-08-03_100|call003",
+        "date": "2037-08-03",
+        "states": 29,
+        "nearest_mse": 0.057227507711803495,
+        "mean_mse": 0.08714236511492005,
+        "exact_unpaired_mse": 0.13815823044279335,
+        "contrast_coverage": 0.88184584178499,
+        "mean_unseen_relation_fraction": 3.169371196754564e-05
+      },
+      {
+        "physical_state_group": "2037-08-03_100|call004",
+        "date": "2037-08-03",
+        "states": 29,
+        "nearest_mse": 0.02965849334251252,
+        "mean_mse": 0.06682137105640723,
+        "exact_unpaired_mse": 0.12118671735935078,
+        "contrast_coverage": 0.88184584178499,
+        "mean_unseen_relation_fraction": 3.169371196754564e-05
+      },
+      {
+        "physical_state_group": "2037-08-03_100|call005",
+        "date": "2037-08-03",
+        "states": 11,
+        "nearest_mse": 0.1185010751241503,
+        "mean_mse": 0.1434884799128554,
+        "exact_unpaired_mse": 0.17647221732375282,
+        "contrast_coverage": 0.8666666666666667,
+        "mean_unseen_relation_fraction": 0.048114484082226
+      },
+      {
+        "physical_state_group": "2037-08-03_100|call006",
+        "date": "2037-08-03",
+        "states": 25,
+        "nearest_mse": 0.02226219549933859,
+        "mean_mse": 0.038221557916571225,
+        "exact_unpaired_mse": 0.06938954586598693,
+        "contrast_coverage": 0.9997058823529411,
+        "mean_unseen_relation_fraction": 1.838235294117647e-05
+      },
+      {
+        "physical_state_group": "2037-08-03_101|call000",
+        "date": "2037-08-03",
+        "states": 12,
+        "nearest_mse": 0.09438268144115114,
+        "mean_mse": 0.08966076379602594,
+        "exact_unpaired_mse": 0.09648951324584171,
+        "contrast_coverage": 0.896969696969697,
+        "mean_unseen_relation_fraction": 0.025822342281715552
+      },
+      {
+        "physical_state_group": "2037-08-03_101|call001",
+        "date": "2037-08-03",
+        "states": 3,
+        "nearest_mse": 0.24786176499023016,
+        "mean_mse": 0.10075068396277566,
+        "exact_unpaired_mse": 0.11807450711928302,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-08-03_101|call002",
+        "date": "2037-08-03",
+        "states": 31,
+        "nearest_mse": 0.05917791598754758,
+        "mean_mse": 0.07751283779070312,
+        "exact_unpaired_mse": 0.1285319185090444,
+        "contrast_coverage": 0.9995256166982922,
+        "mean_unseen_relation_fraction": 2.9648956356736243e-05
+      },
+      {
+        "physical_state_group": "2037-08-03_101|call003",
+        "date": "2037-08-03",
+        "states": 4,
+        "nearest_mse": 0.1358716803457014,
+        "mean_mse": 0.13601703363747575,
+        "exact_unpaired_mse": 0.13601707249083717,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-08-03_101|call004",
+        "date": "2037-08-03",
+        "states": 12,
+        "nearest_mse": 0.13500273500200263,
+        "mean_mse": 0.13027084222335525,
+        "exact_unpaired_mse": 0.13471823285564719,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-08-03_101|call005",
+        "date": "2037-08-03",
+        "states": 13,
+        "nearest_mse": 0.13451342923833448,
+        "mean_mse": 0.07214327170605442,
+        "exact_unpaired_mse": 0.11609221986637994,
+        "contrast_coverage": 0.9398601398601399,
+        "mean_unseen_relation_fraction": 0.018994080645525893
+      },
+      {
+        "physical_state_group": "2037-08-03_101|call006",
+        "date": "2037-08-03",
+        "states": 12,
+        "nearest_mse": 0.062445251205852675,
+        "mean_mse": 0.07301573161256199,
+        "exact_unpaired_mse": 0.08028295120464525,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-08-03_101|call007",
+        "date": "2037-08-03",
+        "states": 4,
+        "nearest_mse": 0.35775249458028213,
+        "mean_mse": 0.394694021870464,
+        "exact_unpaired_mse": 0.3956013951754045,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-08-03_101|call008",
+        "date": "2037-08-03",
+        "states": 29,
+        "nearest_mse": 0.077816744769089,
+        "mean_mse": 0.09227753984529076,
+        "exact_unpaired_mse": 0.1469486120744009,
+        "contrast_coverage": 0.88184584178499,
+        "mean_unseen_relation_fraction": 3.169371196754564e-05
+      },
+      {
+        "physical_state_group": "2037-08-03_101|call009",
+        "date": "2037-08-03",
+        "states": 4,
+        "nearest_mse": 0.4375315950262717,
+        "mean_mse": 0.4711143527453352,
+        "exact_unpaired_mse": 0.471735159463158,
+        "contrast_coverage": 0.4,
+        "mean_unseen_relation_fraction": 0.3
+      },
+      {
+        "physical_state_group": "2037-10-19_100|call000",
+        "date": "2037-10-19",
+        "states": 12,
+        "nearest_mse": 0.11362112700752193,
+        "mean_mse": 0.11409351442288317,
+        "exact_unpaired_mse": 0.11803668222372776,
+        "contrast_coverage": 0.9206349206349206,
+        "mean_unseen_relation_fraction": 0.018140589569160998
+      },
+      {
+        "physical_state_group": "2037-10-19_100|call002",
+        "date": "2037-10-19",
+        "states": 9,
+        "nearest_mse": 0.37448280324120975,
+        "mean_mse": 0.47845344275713664,
+        "exact_unpaired_mse": 0.48469526420094083,
+        "contrast_coverage": 1.0,
+        "mean_unseen_relation_fraction": 0.0
+      },
+      {
+        "physical_state_group": "2037-10-19_100|call003",
+        "date": "2037-10-19",
+        "states": 32,
+        "nearest_mse": 0.0472770235905884,
+        "mean_mse": 0.06944897014187659,
+        "exact_unpaired_mse": 0.12455238797684809,
+        "contrast_coverage": 0.9995404411764706,
+        "mean_unseen_relation_fraction": 2.8722426470588235e-05
+      },
+      {
+        "physical_state_group": "2037-10-19_100|call004",
+        "date": "2037-10-19",
+        "states": 13,
+        "nearest_mse": 0.04866313751337103,
+        "mean_mse": 0.05379454026127138,
+        "exact_unpaired_mse": 0.05985956969983049,
+        "contrast_coverage": 0.7719780219780219,
+        "mean_unseen_relation_fraction": 0.10685007865437729
+      },
+      {
+        "physical_state_group": "2037-10-19_100|call005",
+        "date": "2037-10-19",
+        "states": 13,
+        "nearest_mse": 0.008206414631647178,
+        "mean_mse": 0.014437603536371253,
+        "exact_unpaired_mse": 0.023342178145151295,
+        "contrast_coverage": 0.9538461538461539,
+        "mean_unseen_relation_fraction": 0.024615384615384612
+      },
+      {
+        "physical_state_group": "2037-10-19_100|call006",
+        "date": "2037-10-19",
+        "states": 12,
+        "nearest_mse": 0.08264549059425613,
+        "mean_mse": 0.08621853922509105,
+        "exact_unpaired_mse": 0.09522489336194757,
+        "contrast_coverage": 0.952020202020202,
+        "mean_unseen_relation_fraction": 0.01771580550650318
+      },
+      {
+        "physical_state_group": "2037-10-19_101|call002",
+        "date": "2037-10-19",
+        "states": 11,
+        "nearest_mse": 0.037735191940201605,
+        "mean_mse": 0.03715366925200801,
+        "exact_unpaired_mse": 0.03789471034185413,
+        "contrast_coverage": 0.9090909090909091,
+        "mean_unseen_relation_fraction": 0.04368686868686869
+      },
+      {
+        "physical_state_group": "2037-10-19_101|call003",
+        "date": "2037-10-19",
+        "states": 11,
+        "nearest_mse": 0.005546372833738216,
+        "mean_mse": 0.00654110252482945,
+        "exact_unpaired_mse": 0.013282067692532777,
+        "contrast_coverage": 0.8181818181818182,
+        "mean_unseen_relation_fraction": 0.0883149678604224
+      },
+      {
+        "physical_state_group": "2037-10-19_101|call004",
+        "date": "2037-10-19",
+        "states": 13,
+        "nearest_mse": 0.08248010517873255,
+        "mean_mse": 0.0746141047506592,
+        "exact_unpaired_mse": 0.07705942530154218,
+        "contrast_coverage": 0.9706959706959707,
+        "mean_unseen_relation_fraction": 0.014540284277126383
+      }
+    ],
+    "calls_nearest_better_than_mean": 39,
+    "calls_nearest_better_than_exact_unpaired": 49,
+    "legal_error_calls": 56,
+    "reward_assignment_sensitive_states": 842,
+    "positive_states_best_next_direction_positive": 8,
+    "positive_states_best_next_changes_fully_supported": 33,
+    "positive_interpolation_gain_states": 0
+  }
+}

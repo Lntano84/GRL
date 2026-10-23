@@ -1,0 +1,15 @@
+{
+  "id": "GRID111_ACTION_FEEDBACK_ASSOCIATION",
+  "utc": "2026-10-23T00:55:08.459820+00:00",
+  "scope": "Read-only saved-data diagnostics. No learned model fit/inference, control change, new simulation, test access or scaling.",
+  "geometry": "Same bus-label-invariant device-pair connection signature as GRID110. Keep association of each paid same-station candidate with its reward; next<=64 fixed candidates only.",
+  "question1": "Does nearest known partition have more similar next-candidate reward than all-known mean or exact expected random assignment of the same known rewards?",
+  "comparison": "One fixed nearest structural distance, average all exact nearest ties. Exact null over all reward permutations; preserve histogram and tie size. No chosen k/bandwidth/seeds/sweep.",
+  "question2": "Can a convex combination of already observed legal rewards predict improvement beyond the current admissible incumbent? Check boundedness independently.",
+  "question3": "Are changed device-pair relations supported by both0/1 outcomes in already bought feedback? Record marginal reward contrasts and their agreement with hindsight best next candidate; descriptive, not causal or a deployed scoring policy.",
+  "samples": "All3582 training/856 validation reachable states; ALL15 prior positive-flip states and3 live probes retained for detail. No filtering by outcome.",
+  "grouping": "Primary error means: average candidates within state, prefixes within physical call, calls within date, then dates. Train/validation separate; raw pooled summaries and per-call/date reversals retained.",
+  "future": "Future teacher outcomes used only by separate evaluator, never describe(). Probe next-outcome vectors not borrowed from another path.",
+  "limitation": "Recorded forecast reward/old query fee, not physical week economics. Observational marginal contrasts are confounded by other connections, not identified causal effects.",
+  "outputs": "Raw public contexts separate from future evaluation targets; IDs for association only, not numeric learned features. All adverse results preserved."
+}

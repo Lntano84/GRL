@@ -654,3 +654,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID104学习补查闭环](protocols/GRID104_learning_closedloop/complete/GRID104_report.md)：四个已暴露验证日期，六臂两次计时，原模型固定，无扩大或最终测试。
 
 - [GRID110结构核查](protocols/GRID110_structure_audit/complete/GRID110_report.md)：全部4438状态结构可还原，11项摘要区分变化混合，本地未过载不是取消补查条件；无新训练/回放。
+
+- [GRID111动作—反馈对应关系](protocols/GRID111_action_feedback/complete/GRID111_report.md)：局部奖励关联有信号，但插值有上界、单关系对比不能直接推出组合增益；无新训练或物理回放。

@@ -1,0 +1,383 @@
+{
+  "family_diagnostics": {
+    "FIRST_JOINT": {
+      "AUC_mean": {
+        "fit": 0.9763885799035966,
+        "calibration": 0.6788918465937099,
+        "validation": 0.7248575498575499
+      },
+      "query_saving_percent_by_seed": [
+        16.757392779148862,
+        7.81778053510008,
+        4.8114238649503065
+      ],
+      "expensive_disagreements_by_seed": [
+        7,
+        0,
+        0
+      ],
+      "query_saving_minus_GROUP_pp_perdate": {
+        "FIRST_JOINT_seed0": {
+          "2037-03-02": 8.870816975135543,
+          "2037-05-04": 0.0,
+          "2037-08-03": 34.39568094740508,
+          "2037-10-19": -2.7472527472527486
+        },
+        "FIRST_JOINT_seed1": {
+          "2037-03-02": -0.6075902037764092,
+          "2037-05-04": 0.0,
+          "2037-08-03": 8.115639150121911,
+          "2037-10-19": -2.7472527472527486
+        },
+        "FIRST_JOINT_seed2": {
+          "2037-03-02": -0.6075902037764092,
+          "2037-05-04": 0.0,
+          "2037-08-03": -3.9097875304771823,
+          "2037-10-19": -2.7472527472527486
+        }
+      }
+    },
+    "FIRST_FACTOR": {
+      "AUC_mean": {
+        "fit": 0.980697070819429,
+        "calibration": 0.6731243221926452,
+        "validation": 0.7256410256410256
+      },
+      "query_saving_percent_by_seed": [
+        17.145315755406106,
+        7.7677108729614535,
+        4.8114238649503065
+      ],
+      "expensive_disagreements_by_seed": [
+        7,
+        0,
+        0
+      ],
+      "query_saving_minus_GROUP_pp_perdate": {
+        "FIRST_FACTOR_seed0": {
+          "2037-03-02": 10.422508880164516,
+          "2037-05-04": 0.0,
+          "2037-08-03": 34.39568094740508,
+          "2037-10-19": -2.7472527472527486
+        },
+        "FIRST_FACTOR_seed1": {
+          "2037-03-02": -0.6075902037764092,
+          "2037-05-04": 0.0,
+          "2037-08-03": 7.915360501567403,
+          "2037-10-19": -2.7472527472527486
+        },
+        "FIRST_FACTOR_seed2": {
+          "2037-03-02": -0.6075902037764092,
+          "2037-05-04": 0.0,
+          "2037-08-03": -3.9097875304771823,
+          "2037-10-19": -2.7472527472527486
+        }
+      }
+    },
+    "FULL_JOINT": {
+      "AUC_mean": {
+        "fit": 0.9813793103448276,
+        "calibration": 0.691609977324263,
+        "validation": 0.7274928774928774
+      },
+      "query_saving_percent_by_seed": [
+        12.195610559481828,
+        8.444739782748984,
+        4.8114238649503065
+      ],
+      "expensive_disagreements_by_seed": [
+        7,
+        0,
+        0
+      ],
+      "query_saving_minus_GROUP_pp_perdate": {
+        "FULL_JOINT_seed0": {
+          "2037-03-02": -0.6075902037764092,
+          "2037-05-04": 0.0,
+          "2037-08-03": 25.626959247648905,
+          "2037-10-19": -2.7472527472527486
+        },
+        "FULL_JOINT_seed1": {
+          "2037-03-02": -0.6075902037764092,
+          "2037-05-04": 0.0,
+          "2037-08-03": 10.623476140717525,
+          "2037-10-19": -2.7472527472527486
+        },
+        "FULL_JOINT_seed2": {
+          "2037-03-02": -0.6075902037764092,
+          "2037-05-04": 0.0,
+          "2037-08-03": -3.9097875304771823,
+          "2037-10-19": -2.7472527472527486
+        }
+      }
+    },
+    "FULL_FACTOR": {
+      "AUC_mean": {
+        "fit": 0.9804226918798665,
+        "calibration": 0.6985112885734003,
+        "validation": 0.7297720797720798
+      },
+      "query_saving_percent_by_seed": [
+        14.086690504306915,
+        8.59277182733275,
+        4.8114238649503065
+      ],
+      "expensive_disagreements_by_seed": [
+        7,
+        0,
+        0
+      ],
+      "query_saving_minus_GROUP_pp_perdate": {
+        "FULL_FACTOR_seed0": {
+          "2037-03-02": 2.533183772667791,
+          "2037-05-04": 0.0,
+          "2037-08-03": 30.05050505050505,
+          "2037-10-19": -2.7472527472527486
+        },
+        "FULL_FACTOR_seed1": {
+          "2037-03-02": -0.6075902037764092,
+          "2037-05-04": 0.0,
+          "2037-08-03": 11.215604319052597,
+          "2037-10-19": -2.7472527472527486
+        },
+        "FULL_FACTOR_seed2": {
+          "2037-03-02": -0.6075902037764092,
+          "2037-05-04": 0.0,
+          "2037-08-03": -3.9097875304771823,
+          "2037-10-19": -2.7472527472527486
+        }
+      }
+    }
+  },
+  "new_expensive_miss_calls": {
+    "2037-08-03_101|call008": {
+      "unique_prefixes": 7,
+      "methods": [
+        "FIRST_FACTOR_seed0",
+        "FIRST_JOINT_seed0",
+        "FULL_FACTOR_seed0",
+        "FULL_JOINT_seed0"
+      ],
+      "date": "2037-08-03",
+      "examples": [
+        {
+          "sample_id": "b214e5122690278f3d765362",
+          "gain_lost": 0.0013315677642822266,
+          "skip_id": 35,
+          "full_id": 576
+        },
+        {
+          "sample_id": "9ff3e7f95861088a6052e9f2",
+          "gain_lost": 0.0013315677642822266,
+          "skip_id": 35,
+          "full_id": 576
+        },
+        {
+          "sample_id": "ee9c3cbe2d4d40459dd93124",
+          "gain_lost": 0.0013315677642822266,
+          "skip_id": 35,
+          "full_id": 576
+        },
+        {
+          "sample_id": "27e443939525cdb259053e9a",
+          "gain_lost": 0.0013315677642822266,
+          "skip_id": 35,
+          "full_id": 576
+        },
+        {
+          "sample_id": "275ace687d4de820b151a8f3",
+          "gain_lost": 0.0013315677642822266,
+          "skip_id": 35,
+          "full_id": 576
+        },
+        {
+          "sample_id": "f1136e634f1bdb427b5b8e92",
+          "gain_lost": 0.0013315677642822266,
+          "skip_id": 35,
+          "full_id": 576
+        },
+        {
+          "sample_id": "30963712fe13c78c29782e28",
+          "gain_lost": 0.0013315677642822266,
+          "skip_id": 35,
+          "full_id": 576
+        }
+      ],
+      "score_minus_cutoff_range": [
+        0.001017148448158034,
+        0.004881644662285578
+      ]
+    }
+  },
+  "calibration_anchors": {
+    "FIRST_JOINT_seed0": {
+      "cutoff": 0.9934609132731526,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-01-05_100|call006"
+      ],
+      "sample_ids": [
+        "ed5682cd6546b29c54b679ca"
+      ],
+      "full_gains": [
+        3.5762786865234375e-07
+      ]
+    },
+    "FIRST_FACTOR_seed0": {
+      "cutoff": 0.9924302143104473,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-01-05_100|call006"
+      ],
+      "sample_ids": [
+        "ed5682cd6546b29c54b679ca"
+      ],
+      "full_gains": [
+        3.5762786865234375e-07
+      ]
+    },
+    "FULL_JOINT_seed0": {
+      "cutoff": 0.995604197029293,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-01-05_100|call006"
+      ],
+      "sample_ids": [
+        "ed5682cd6546b29c54b679ca"
+      ],
+      "full_gains": [
+        3.5762786865234375e-07
+      ]
+    },
+    "FULL_FACTOR_seed0": {
+      "cutoff": 0.9939813474431332,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-01-05_100|call006"
+      ],
+      "sample_ids": [
+        "ed5682cd6546b29c54b679ca"
+      ],
+      "full_gains": [
+        3.5762786865234375e-07
+      ]
+    },
+    "FIRST_JOINT_seed1": {
+      "cutoff": 0.9999311378437713,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-01-05_100|call006"
+      ],
+      "sample_ids": [
+        "ed5682cd6546b29c54b679ca"
+      ],
+      "full_gains": [
+        3.5762786865234375e-07
+      ]
+    },
+    "FIRST_FACTOR_seed1": {
+      "cutoff": 0.9999312484375257,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-01-05_100|call006"
+      ],
+      "sample_ids": [
+        "ed5682cd6546b29c54b679ca"
+      ],
+      "full_gains": [
+        3.5762786865234375e-07
+      ]
+    },
+    "FULL_JOINT_seed1": {
+      "cutoff": 0.9999699887574036,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-01-05_100|call006"
+      ],
+      "sample_ids": [
+        "ed5682cd6546b29c54b679ca"
+      ],
+      "full_gains": [
+        3.5762786865234375e-07
+      ]
+    },
+    "FULL_FACTOR_seed1": {
+      "cutoff": 0.9999854511393189,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-01-05_100|call006"
+      ],
+      "sample_ids": [
+        "ed5682cd6546b29c54b679ca"
+      ],
+      "full_gains": [
+        3.5762786865234375e-07
+      ]
+    },
+    "FIRST_JOINT_seed2": {
+      "cutoff": 0.9912599651650829,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-07-06_101|call001"
+      ],
+      "sample_ids": [
+        "fe32fb4aeae09eb034c0667b"
+      ],
+      "full_gains": [
+        1.4662742614746094e-05
+      ]
+    },
+    "FIRST_FACTOR_seed2": {
+      "cutoff": 0.9906065623519279,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-07-06_101|call001"
+      ],
+      "sample_ids": [
+        "fe32fb4aeae09eb034c0667b"
+      ],
+      "full_gains": [
+        1.4662742614746094e-05
+      ]
+    },
+    "FULL_JOINT_seed2": {
+      "cutoff": 0.9900472974547593,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-07-06_101|call001"
+      ],
+      "sample_ids": [
+        "7ea106788af4604517fecaea"
+      ],
+      "full_gains": [
+        1.4662742614746094e-05
+      ]
+    },
+    "FULL_FACTOR_seed2": {
+      "cutoff": 0.9903431475019115,
+      "witness_prefixes": 1,
+      "witness_calls": [
+        "2037-07-06_101|call001"
+      ],
+      "sample_ids": [
+        "7ea106788af4604517fecaea"
+      ],
+      "full_gains": [
+        1.4662742614746094e-05
+      ]
+    }
+  },
+  "training_calls": 51,
+  "max_training_call_sampling_mass": 0.04444063992010233,
+  "sampling_mass_concentration_equivalent_calls": 41.91649665475173,
+  "concentration_caveat": "Inverse squared sampling mass is a descriptive concentration statistic,not a count of independent observations or inference degrees of freedom.",
+  "total_binding_gate_changes": 0,
+  "joint_binding_probability_change_range": [
+    0.0004694938562295192,
+    0.013626910807393533
+  ],
+  "not_a_new_readout": true,
+  "new_fits": 0,
+  "new_model_forwards": 0,
+  "thresholds_changed": false
+}

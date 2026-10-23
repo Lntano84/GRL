@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "source_hashes": {
+    "interpretation.json": "4a8beb140f18d26ee6d70f42a3d865b3ff2516535c1da54b3dc72b07731d78cd",
+    "calibration_metadata.json": "e628cfc991129cab7943d4307b1e4ef685c863218343558c7c35eaaec04f63a1",
+    "thresholds.json": "e999bb845eb62d20a423423a6642ee82224c37b64252a716d1bfdb185bd98cd5",
+    "train_calibration_logits.npz": "e94263f7ec1523c75373037d44a4f195b0c883c4ae67e1ad1fcb9b98930be79a",
+    "validation_trajectories.json": "00123660aa0db2cc944a996333b1445ef8bd9241d80f01c643c635da176c9766",
+    "decision.json": "7ca7e8a88835c72c521359cb2878b18f805def2c2604387589b7ab24052f2b56",
+    "families.json": "82038709662a641b292da8b4c264215a124b2e97a8b07a22dafff3b63ebb8153"
+  },
+  "calibration_anchor_calls": {
+    "2037-01-05_100|call006": {
+      "models": [
+        "FIRST_FACTOR_seed0",
+        "FIRST_FACTOR_seed1",
+        "FIRST_JOINT_seed0",
+        "FIRST_JOINT_seed1",
+        "FULL_FACTOR_seed0",
+        "FULL_FACTOR_seed1",
+        "FULL_JOINT_seed0",
+        "FULL_JOINT_seed1"
+      ],
+      "sample_ids": [
+        "ed5682cd6546b29c54b679ca"
+      ],
+      "gain_range": [
+        3.5762786865234375e-07,
+        3.5762786865234375e-07
+      ],
+      "pending_query_range": [
+        214,
+        214
+      ]
+    },
+    "2037-07-06_101|call001": {
+      "models": [
+        "FIRST_FACTOR_seed2",
+        "FIRST_JOINT_seed2",
+        "FULL_FACTOR_seed2",
+        "FULL_JOINT_seed2"
+      ],
+      "sample_ids": [
+        "7ea106788af4604517fecaea",
+        "fe32fb4aeae09eb034c0667b"
+      ],
+      "gain_range": [
+        1.4662742614746094e-05,
+        1.4662742614746094e-05
+      ],
+      "pending_query_range": [
+        215,
+        237
+      ]
+    }
+  },
+  "reason": "All gains>0 receive the same calibration protection despite different magnitudes;state this target explicitly instead of equating it with original whole-week quality budget.",
+  "not_established": [
+    "tiny increments are numerical noise",
+    "discarding these cases is safe",
+    "relaxing cutoff solves larger misses",
+    "source structural information is unlearnable",
+    "new objective or bigger dataset will certainly work"
+  ],
+  "unchanged": {
+    "models": true,
+    "labels": true,
+    "cutoffs": true,
+    "decisions": true,
+    "original_quality_criterion": true
+  },
+  "new_fits": 0,
+  "new_scores": 0,
+  "alternative_thresholds_evaluated": 0,
+  "new_physical_calls": 0
+}

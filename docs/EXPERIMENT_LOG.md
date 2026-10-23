@@ -1227,3 +1227,8 @@ User continues announced highcostfalseSTOPdiagnosis. Readonlyall3582OOFstates/3s
 ## 2026-10-23 — GRID122 visible-evidence/support audit complete
 
 Readonly3582OOFstatesandallfirstdivergences. ProfitablefalseSTOP162records/40calls;avoidedunprofitable2623/214. Callbalanced nearestpositivefractionsbad/saved=0.120109/0.051536,beyondfit-onlydistance95=0.081250/0.058721;descriptiveonlynotlearnability/irreducibility. 49/49callmeanfeaturerangesoverlap. Rawgainpositives438/93calls,netpositive211/54calls;probability-timesamountidentitychecked,notpredictivemodelresult. Independentdistances/publicdescriptors/divergences/conservationauditpasses;zero model/optimizer/fit/physical/test. Keepnetregression,nextcandidateimprovement-eventauxiliarysupervisionneedsmatchedprotocolbeforefit;nochosenNNtrigger.
+
+
+## 2026-10-23 — GRID123 same-capacity auxiliary-event learning authorized and frozen
+
+User approves net-regression plus raw-gain-event auxiliary. Compare AUX_GAIN vs AUX_NETSIGN with same6978architecture/init/7250x32/sampler/Adam/data/fee;mainHuberhalf coefficient retained,otherheadBCEhalf,zero-decisionreadoutforall. NET_ZERO uses old15trainedmodels withq1>0;originalq1>q0legacyseparatelyretained. New30fits full6+fourfold24,original16/4datesand12/4groupfolds,allfixedendpointsbeforeevaluation,1800s cap. No tuning/physical/test/newdata/networkexpansion. Train438rawgainevents/211netpositive;labelsnotonlineinputs. Initial/finalscheduled-minibatch sharedgradientdiagnosticsinsidebudget,not extra updates. Equal taskweightsfixednotclaimedoptimal.

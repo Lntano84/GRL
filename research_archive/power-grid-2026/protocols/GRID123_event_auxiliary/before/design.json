@@ -1,0 +1,298 @@
+{
+  "id": "GRID123_EVENT_AUXILIARY",
+  "utc": "2026-10-23T06:38:20.682455+00:00",
+  "authorization": "User: 可以, approving proposed net-regression main task with improvement-event auxiliary supervision and same-capacity controls.",
+  "question": "Does raw improvement-event auxiliary supervision reduce costly false stops while retaining net-value regression, beyond a net-sign auxiliary task?",
+  "architecture": "Original41->64ReLU->64ReLU->2,6978parameters, exact original random tensors each seed. No new module/parameters/input.",
+  "heads": {
+    "main": "q[:,1] predicts original normalized immediate net; continue iff q[:,1]>0,tieSTOP.",
+    "aux": "q[:,0] is auxiliary logit; never used in action rule."
+  },
+  "groups": {
+    "NET_ZERO": "Reuse original trained Huber models but read main net against exact STOP0; no refits.",
+    "AUX_NETSIGN": "0.5*Huber(main,net)+0.5*BCE(aux,1[net>0]).",
+    "AUX_GAIN": "0.5*Huber(main,net)+0.5*BCE(aux,1[raw gain>0]).",
+    "historical": "Also show original deployed readout q1>q0,HUBER/DQN/BATCH1 separately; changing readout alone is measured, not hidden."
+  },
+  "matching": "Both new arms share architecture/init/main-loss coefficient0.5/sample stream/optimizer/update budget; only auxiliary label differs. Compared with original Huber,replace zero-target stop-head loss withBCE. Equal half-task weights fixed before fit,not optimality or equal gradient-scale claim.",
+  "no_tuning": "No class weights,aux coefficient sweep,scheduling,threshold/price/date/seed search; preserve all adverse seeds. Record component gradients at scheduled steps1/7250,not extra updates.",
+  "training": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip_grad_norm": 10.0,
+    "wall_cap_s": 1800,
+    "fit_order": [
+      [
+        "full",
+        0,
+        "AUX_NETSIGN"
+      ],
+      [
+        "full",
+        0,
+        "AUX_GAIN"
+      ],
+      [
+        "full",
+        1,
+        "AUX_NETSIGN"
+      ],
+      [
+        "full",
+        1,
+        "AUX_GAIN"
+      ],
+      [
+        "full",
+        2,
+        "AUX_NETSIGN"
+      ],
+      [
+        "full",
+        2,
+        "AUX_GAIN"
+      ],
+      [
+        "f0",
+        0,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f0",
+        0,
+        "AUX_GAIN"
+      ],
+      [
+        "f0",
+        1,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f0",
+        1,
+        "AUX_GAIN"
+      ],
+      [
+        "f0",
+        2,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f0",
+        2,
+        "AUX_GAIN"
+      ],
+      [
+        "f1",
+        0,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f1",
+        0,
+        "AUX_GAIN"
+      ],
+      [
+        "f1",
+        1,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f1",
+        1,
+        "AUX_GAIN"
+      ],
+      [
+        "f1",
+        2,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f1",
+        2,
+        "AUX_GAIN"
+      ],
+      [
+        "f2",
+        0,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f2",
+        0,
+        "AUX_GAIN"
+      ],
+      [
+        "f2",
+        1,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f2",
+        1,
+        "AUX_GAIN"
+      ],
+      [
+        "f2",
+        2,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f2",
+        2,
+        "AUX_GAIN"
+      ],
+      [
+        "f3",
+        0,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f3",
+        0,
+        "AUX_GAIN"
+      ],
+      [
+        "f3",
+        1,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f3",
+        1,
+        "AUX_GAIN"
+      ],
+      [
+        "f3",
+        2,
+        "AUX_NETSIGN"
+      ],
+      [
+        "f3",
+        2,
+        "AUX_GAIN"
+      ]
+    ],
+    "new_fits": 30,
+    "reused_backbones": 15,
+    "endpoint": "All30 fixed fits before any original validation or held-date evaluation."
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "held_dates": [
+        "2037-01-05",
+        "2037-04-06",
+        "2037-07-06",
+        "2037-10-05"
+      ],
+      "fit_dates": [
+        "2037-01-19",
+        "2037-02-16",
+        "2037-03-16",
+        "2037-05-18",
+        "2037-06-01",
+        "2037-06-15",
+        "2037-08-17",
+        "2037-09-07",
+        "2037-09-21",
+        "2037-11-02",
+        "2037-11-16",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 1,
+      "held_dates": [
+        "2037-01-19",
+        "2037-05-18",
+        "2037-08-17",
+        "2037-11-02"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-02-16",
+        "2037-03-16",
+        "2037-04-06",
+        "2037-06-01",
+        "2037-06-15",
+        "2037-07-06",
+        "2037-09-07",
+        "2037-09-21",
+        "2037-10-05",
+        "2037-11-16",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 2,
+      "held_dates": [
+        "2037-02-16",
+        "2037-06-01",
+        "2037-09-07",
+        "2037-11-16"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-01-19",
+        "2037-03-16",
+        "2037-04-06",
+        "2037-05-18",
+        "2037-06-15",
+        "2037-07-06",
+        "2037-08-17",
+        "2037-09-21",
+        "2037-10-05",
+        "2037-11-02",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 3,
+      "held_dates": [
+        "2037-03-16",
+        "2037-06-15",
+        "2037-09-21",
+        "2037-12-07"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-01-19",
+        "2037-02-16",
+        "2037-04-06",
+        "2037-05-18",
+        "2037-06-01",
+        "2037-07-06",
+        "2037-08-17",
+        "2037-09-07",
+        "2037-10-05",
+        "2037-11-02",
+        "2037-11-16"
+      ]
+    }
+  ],
+  "split": "Original32train/8validation scenarios,16/4dates. Four fixed original-training date folds inheritedGRID121; each fold12fit/4held,groupskepttogether.",
+  "sampling": "Full exact GRID107 stream; fold exact GRID121 stream and fold-local normalization. No warmstart across fits or pretrained checkpoints.",
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "historical_task_dependency": "AsGRID121: price/scale historically defined on16dates,heldfold results conditionalonfixedtask,not fully nested independent confirmation.",
+  "criteria": {
+    "primary": "Complete-search four-validation-date macro net utility AND16date OOF utility.",
+    "incremental": "AUX_GAIN>NET_ZERO family mean,all3pairedseed differences>0,>=3/4validationdates and>=12/16OOFdates positive.",
+    "event_specific": "Same paired direction conditions for AUX_GAIN>AUX_NETSIGN; no attributing generic auxiliary benefit to raw-gain label.",
+    "practical": "Also compare original deployed Huber,DQN andBATCH1. No physical/scaling/test even if all exploratory conditions pass."
+  },
+  "limits": "Already exposed same-grid teacher-path dates/correlatedprefixes; instant gains not wholeweek control cost. No simulation/newdata/testmaterialization/install,paper or figure edit."
+}

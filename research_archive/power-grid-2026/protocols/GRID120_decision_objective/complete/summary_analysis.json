@@ -1,0 +1,90 @@
+{
+  "family_metrics": {
+    "train": {
+      "UTILITY": {
+        "mean_net_utility": 0.12857962489560246,
+        "mean_gain": 0.0011465243926048147,
+        "mean_queries": 2.9867960849292103,
+        "query_fraction": 0.057427846034174786,
+        "gain_capture": 0.7929235598577579,
+        "physical_call_balanced_utility": 0.11422710914743621
+      },
+      "SIGN": {
+        "mean_net_utility": 0.10515807703860337,
+        "mean_gain": 0.0009343952061626441,
+        "mean_queries": 2.1788836350901817,
+        "query_fraction": 0.04304576823753332,
+        "gain_capture": 0.7548765929203461,
+        "physical_call_balanced_utility": 0.09426990537339335
+      },
+      "HUBER": {
+        "mean_net_utility": 0.12355272699930943,
+        "mean_gain": 0.0011732809794704532,
+        "mean_queries": 8.623010782861915,
+        "query_fraction": 0.17260811444585875,
+        "gain_capture": 0.8651300540540752,
+        "physical_call_balanced_utility": 0.10944157626618782
+      },
+      "DQN": {
+        "mean_net_utility": 0.12104010659944398,
+        "mean_gain": 0.0011375039045187884,
+        "mean_queries": 7.489893297139024,
+        "query_fraction": 0.14664900630375202,
+        "gain_capture": 0.7848007780180009,
+        "physical_call_balanced_utility": 0.10706286856864722
+      }
+    },
+    "validation": {
+      "UTILITY": {
+        "mean_net_utility": 0.14016626170406687,
+        "mean_gain": 0.001263003752052274,
+        "mean_queries": 4.313873745240568,
+        "query_fraction": 0.08535057595195276,
+        "gain_capture": 0.6101995757415634,
+        "physical_call_balanced_utility": 0.11689206890727999
+      },
+      "SIGN": {
+        "mean_net_utility": 0.05723696851486548,
+        "mean_gain": 0.0005234091515059778,
+        "mean_queries": 2.377283483128633,
+        "query_fraction": 0.04536081408027907,
+        "gain_capture": 0.3413536193504352,
+        "physical_call_balanced_utility": 0.047994706530107574
+      },
+      "HUBER": {
+        "mean_net_utility": 0.16292380598404063,
+        "mean_gain": 0.0015860329142023735,
+        "mean_queries": 14.495328221792528,
+        "query_fraction": 0.31775073828054823,
+        "gain_capture": 0.7760421499753439,
+        "physical_call_balanced_utility": 0.13653686568642556
+      },
+      "DQN": {
+        "mean_net_utility": 0.1631977392228395,
+        "mean_gain": 0.0015907670618557747,
+        "mean_queries": 14.685863105895132,
+        "query_fraction": 0.3112607551122102,
+        "gain_capture": 0.6780248728191864,
+        "physical_call_balanced_utility": 0.13672708390172358
+      }
+    }
+  },
+  "utility_minus_reference": {
+    "SIGN": {
+      "gain_contribution": 0.0857220885996691,
+      "query_charge_contribution": -0.0027927954104677117,
+      "net_difference": 0.08292929318920139
+    },
+    "HUBER": {
+      "gain_contribution": -0.03744042268244543,
+      "query_charge_contribution": 0.014682878402471655,
+      "net_difference": -0.022757544279973757
+    },
+    "DQN": {
+      "gain_contribution": -0.03798913007469655,
+      "query_charge_contribution": 0.014957652555923942,
+      "net_difference": -0.02303147751877263
+    }
+  },
+  "no_additional_fits": true
+}

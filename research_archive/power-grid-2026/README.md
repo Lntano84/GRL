@@ -672,3 +672,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID118固定基础模型校正方案](protocols/GRID118_fixed_base_plan/complete/固定主干校正方案_中文.md)：固定旧预测参照，补充相同额外训练对照；工程核验完成，未训练。
 
 - [GRID119固定基础模型校正训练](protocols/GRID119_fixed_base_learning/complete/GRID119_report.md)：九次固定训练、原模型额外训练对照、完整搜索效用及独立保存结果核验。
+
+- [GRID120学习目标对照](protocols/GRID120_decision_objective/complete/GRID120_report.md)：普通分类与收益代价加权分类，六个固定训练终点及完整保存结果核验。

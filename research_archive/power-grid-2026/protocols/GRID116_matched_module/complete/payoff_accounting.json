@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "scope": "Postfit arithmetic only; same saved trajectories/fees. No new criteria, labels, decisions, fit or causal attribution.",
+  "joint_minus": {
+    "FACTOR": {
+      "records": [
+        {
+          "seed": 0,
+          "gain_contribution": 0.0006636855882355503,
+          "query_charge_contribution": -0.00033326140854793404,
+          "net_delta": 0.0003304241796876495
+        },
+        {
+          "seed": 1,
+          "gain_contribution": 0.00011121970463881085,
+          "query_charge_contribution": -0.006601159609996023,
+          "net_delta": -0.006489939905357206
+        },
+        {
+          "seed": 2,
+          "gain_contribution": 0.00010542382964181435,
+          "query_charge_contribution": -0.0014704809879226399,
+          "net_delta": -0.0013650571582808635
+        }
+      ],
+      "family_mean": {
+        "gain_contribution": 0.00029344304083872514,
+        "query_charge_contribution": -0.002801634002155532,
+        "net_delta": -0.0025081909613168065
+      }
+    },
+    "BASE": {
+      "records": [
+        {
+          "seed": 0,
+          "gain_contribution": -0.0017406930169870229,
+          "query_charge_contribution": 0.004515620436832415,
+          "net_delta": 0.0027749274198453633
+        },
+        {
+          "seed": 1,
+          "gain_contribution": 0.002677090407589202,
+          "query_charge_contribution": -0.010212527003722405,
+          "net_delta": -0.007535436596133205
+        },
+        {
+          "seed": 2,
+          "gain_contribution": 0.003920330045860132,
+          "query_charge_contribution": 0.00667295948449232,
+          "net_delta": 0.010593289530352434
+        }
+      ],
+      "family_mean": {
+        "gain_contribution": 0.0016189091454874372,
+        "query_charge_contribution": 0.00032535097253411023,
+        "net_delta": 0.0019442601180215309
+      }
+    }
+  },
+  "family_metric_means": {
+    "JOINT": {
+      "mean_net_utility": 0.16486806610206214,
+      "mean_gain": 0.0016000005680747518,
+      "mean_queries": 14.269722177462674,
+      "query_fraction": 0.33184781926927376,
+      "gain_capture": 0.806653204947612,
+      "physical_call_balanced_utility": 0.1381557897474496
+    },
+    "FACTOR": {
+      "mean_net_utility": 0.16737625706337897,
+      "mean_gain": 0.0015974687948513324,
+      "mean_queries": 12.32700302723768,
+      "query_fraction": 0.26695995165975756,
+      "gain_capture": 0.7833054635541332,
+      "physical_call_balanced_utility": 0.14044856907799816
+    },
+    "BASE": {
+      "mean_net_utility": 0.16292380598404063,
+      "mean_gain": 0.0015860329142023735,
+      "mean_queries": 14.495328221792528,
+      "query_fraction": 0.31775073828054823,
+      "gain_capture": 0.7760421499753439,
+      "physical_call_balanced_utility": 0.13653686568642556
+    }
+  },
+  "relative_mean_gain_over_base_percent": {
+    "JOINT": 1.1933554499776289,
+    "FACTOR": 2.732842540993974
+  },
+  "source_sha256": "98158a97b72be408c9103113699cd220acd220911ff17b709610187ca0c34544"
+}

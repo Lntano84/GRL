@@ -1,5 +1,6 @@
-# Next steps — GRID116六次训练已获准封存
+# Next steps — GRID116固定训练与审计完成
 
-1. 推送封存后仅执行既定6次7250更新，前两步计入预算并核验梯度流。
-2. 全部六次完成后统一离线完整序列评价、配对敏感性与审计，保留全部种子/日期。
-3. 不变损失/费用/种子/输入/预算，不自动扩大、闭环或最终测试。
+1. 汇报全部种子/日期及BASE、FACTOR、BATCH1、DQN参照，按预设机制判据与实际增量分开判读。
+2. 不自动改损失/阈值/数据或追加训练，不扩大、闭环或读取最终测试。
+
+报告：research_archive/power-grid-2026/protocols/GRID116_matched_module/complete/GRID116_report.md

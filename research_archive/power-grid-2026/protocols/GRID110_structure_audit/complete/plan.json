@@ -1,0 +1,32 @@
+{
+  "id": "GRID110_STRUCTURE_FEASIBILITY",
+  "utc": "2026-10-22T11:34:53.692346+00:00",
+  "scope": "Saved-data reconstruction and descriptive distinguishability only; no learner change, fit, inference or physical simulation.",
+  "historical": "GRID98 already computed related full-completion descriptors on56 exposed branch cases; GRID99 did not improve trajectory-equivalence classification. Reuse arithmetic ideas, no new novelty or assumed improvement.",
+  "descriptors": [
+    "next_best_partition_distance_min",
+    "next_best_partition_distance_mean",
+    "next_best_partition_distance_max",
+    "next_seen_nearest_distance_mean",
+    "next_seen_nearest_distance_max",
+    "next_novel_partition_fraction",
+    "next_current_partition_distance_mean",
+    "current_max_rho",
+    "current_overload_excess_mean",
+    "station_incident_max_rho",
+    "station_incident_overload_share"
+  ],
+  "next_batch": "Original next at most64, not whole remaining set; station stays locked as GRID102.",
+  "samples": "ALL4438 train/validation reachable states, no state/date or descriptor selection by labels. Three March live probes separately.",
+  "reconstruction": "Serialized observation/action spaces only, no environment construction. Verify vector roundtrip, grid mapping, public library, original masking/aliases and recorded combined-command hashes.",
+  "unknown": "Any ambiguous reconnection without known terminal buses is explicitly unsupported, never guessed.",
+  "isolation": "Only previously bought feedback chooses current incumbent. Structures use public commands/current observation. Delete/poison unbought feedback, bus-label swap and forbidden-key rejection checks.",
+  "comparison": "Original41 RMS, structural11 RMS, all52 RMS; train-only date-balanced standardization of11, same clipped[-20,20] rule. Descriptive nearest1/5/20 distinct train physical calls, no fitted predictor, threshold or feature selection.",
+  "prohibitions": [
+    "no model training/inference",
+    "no new physical observations/forecasts/rollouts",
+    "no final-test contents",
+    "no feature selection by validation outcomes",
+    "no claim descriptive separation proves learned benefit"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "partitions": {
+    "train": {
+      "positive_states": 211,
+      "positive_calls": 54,
+      "positive_states_no_incident_overload": 178,
+      "calls_with_such_positive_states": 46
+    },
+    "validation": {
+      "positive_states": 41,
+      "positive_calls": 16,
+      "positive_states_no_incident_overload": 37,
+      "calls_with_such_positive_states": 15
+    }
+  },
+  "threshold": "rho=1 is the physical overload definition, not a fitted trigger.",
+  "interpretation": "Observed immediate forecast net gain can be positive while all current live incident lines are below rating. This refutes unconditional skip-if-local-not-overloaded; it does not prove pressure features have no predictive use or establish whole-week gain."
+}

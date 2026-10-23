@@ -652,3 +652,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID103学习补查机制](protocols/GRID103_learning_mechanism/complete/学习机制结论_中文.md)：收益预测与匹配gamma0对照；未建立后续规划优势，固定一批仍具竞争力，所有种子与反例保留。
 
 - [GRID104学习补查闭环](protocols/GRID104_learning_closedloop/complete/GRID104_report.md)：四个已暴露验证日期，六臂两次计时，原模型固定，无扩大或最终测试。
+
+- [GRID110结构核查](protocols/GRID110_structure_audit/complete/GRID110_report.md)：全部4438状态结构可还原，11项摘要区分变化混合，本地未过载不是取消补查条件；无新训练/回放。

@@ -596,3 +596,8 @@ User agreed to define paired action-feedback input/target/control. Read primary 
 ## 2026-10-23 — GRID113 authorized paired relational experiment frozen
 
 User approved GRID112. Implemented exactly5938params/arm, paired seed initial tensors, old7250x32 index streams/counts, fixed train-only labels/fees, synthetic forward/backward with zero optimizer updates. Context/next/padding invariance and FACTOR feedback permutation pass; JOINT pairing witness responds.4438 public inputs cached separately from targets; train/validation dates disjoint. Authorized exactly6serial fits,3seeds,1800s total wall cap, final endpoint only; no physical calls/test/scaling. Frozen code/data/preflight archived before research updates.
+
+
+## 2026-10-23 — GRID113 fixed paired relational learning complete
+
+Exactly6fits,5938parameters each,7250updatesx32,paired init/index stream,old Huber/fee/labels. Total training438.9s<1800. JOINT/FACTOR family utility0.148427457180/0.150029196875; paired seed deltas[0.011179879655226654, -0.015682140469379463, -0.0003029582697098021],date deltas{'2037-03-02': 0.002689094807166416, '2037-05-04': -0.015735646459046616, '2037-08-03': 0.003959844773740821, '2037-10-19': 0.0026797480996558665}. Mechanism gateFalse;competitive progressionFalse.All adverse outcomes retained. Independent NumPy/sampling/targets/optimizer/whole-search audit passed. Offline exposed development teacher-path utility only, not physical wholeweek/time or cross-grid evidence; final8test ungenerated, noautomaticrollout/scaling.

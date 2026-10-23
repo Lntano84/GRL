@@ -1,0 +1,618 @@
+{
+  "passed": true,
+  "scope": "Read-only decomposition of frozen outputs; no causal attribution, extra fit or criterion change.",
+  "family_means": {
+    "JOINT": {
+      "mean_net_utility": 0.14842745717988173,
+      "mean_gain": 0.0013501525168542333,
+      "mean_queries": 5.589571136355499,
+      "query_fraction": 0.12511316009529735,
+      "gain_capture": 0.6297162333925895,
+      "physical_call_balanced_utility": 0.12354205959357302
+    },
+    "FACTOR": {
+      "mean_net_utility": 0.1500291968745026,
+      "mean_gain": 0.0013771676036171225,
+      "mean_queries": 6.650107870519569,
+      "query_fraction": 0.14755861905192838,
+      "gain_capture": 0.6657720936588641,
+      "physical_call_balanced_utility": 0.12516476005675461
+    }
+  },
+  "batch1": {
+    "mean_net_utility": 0.16286891362547384,
+    "mean_gain": 0.0016951416273798677,
+    "mean_queries": 23.3025331668278,
+    "query_fraction": 0.5613279820634309,
+    "gain_capture": 0.9817107422368361,
+    "physical_call_balanced_utility": 0.13618134742207433
+  },
+  "net_decomposition": {
+    "JOINT": {
+      "BATCH1": {
+        "per_date": {
+          "2037-03-02": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": -0.011203773110837768,
+                "query_fee_contribution": 0.02280317603529336,
+                "net_delta": 0.011599402924455594
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -0.017134855434001468,
+                "query_fee_contribution": 0.02752736200819761,
+                "net_delta": 0.010392506574196138
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.03437638120200724,
+                "query_fee_contribution": 0.025637687619035905,
+                "net_delta": -0.008738693582971335
+              }
+            ],
+            "gain_contribution": -0.020905003248948825,
+            "query_fee_contribution": 0.025322741887508955,
+            "net_delta": 0.004417738638560132
+          },
+          "2037-05-04": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": -0.05842455951117387,
+                "query_fee_contribution": 0.02878231024105828,
+                "net_delta": -0.029642249270115592
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -0.05238112593082083,
+                "query_fee_contribution": 0.018266852428563084,
+                "net_delta": -0.03411427350225775
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.00293233902753305,
+                "query_fee_contribution": 0.022382903058025486,
+                "net_delta": 0.019450564030492435
+              }
+            ],
+            "gain_contribution": -0.03791267482317592,
+            "query_fee_contribution": 0.023144021909215617,
+            "net_delta": -0.014768652913960303
+          },
+          "2037-08-03": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": -0.08141675445182886,
+                "query_fee_contribution": 0.038008976967962925,
+                "net_delta": -0.043407777483865935
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -0.08954813078362191,
+                "query_fee_contribution": 0.032058160251216876,
+                "net_delta": -0.05748997053240503
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.1165013949087461,
+                "query_fee_contribution": 0.03580435684727428,
+                "net_delta": -0.08069703806147183
+              }
+            ],
+            "gain_contribution": -0.09582209338139897,
+            "query_fee_contribution": 0.03529049802215136,
+            "net_delta": -0.0605315953592476
+          },
+          "2037-10-19": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": -0.0009880986262102234,
+                "query_fee_contribution": 0.018855381122154267,
+                "net_delta": 0.017867282495944044
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -0.0074603254091308744,
+                "query_fee_contribution": 0.016725895620152573,
+                "net_delta": 0.009265570211021697
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.0074603254091308744,
+                "query_fee_contribution": 0.019677524259003026,
+                "net_delta": 0.012217198849872152
+              }
+            ],
+            "gain_contribution": -0.005302916481490658,
+            "query_fee_contribution": 0.018419600333769954,
+            "net_delta": 0.013116683852279298
+          }
+        },
+        "macro": {
+          "gain_contribution": -0.03998567198375359,
+          "query_fee_contribution": 0.025544215538161472,
+          "net_delta": -0.014441456445592115
+        }
+      },
+      "FACTOR": {
+        "per_date": {
+          "2037-03-02": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": 0.017285782045538083,
+                "query_fee_contribution": -0.00014365945648597709,
+                "net_delta": 0.017142122589052105
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -0.006301543364038218,
+                "query_fee_contribution": 0.001746014932675721,
+                "net_delta": -0.004555528431362498
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.004657443828965341,
+                "query_fee_contribution": 0.00013813409277497796,
+                "net_delta": -0.004519309736190364
+              }
+            ],
+            "gain_contribution": 0.002108931617511508,
+            "query_fee_contribution": 0.0005801631896549074,
+            "net_delta": 0.0026890948071664144
+          },
+          "2037-05-04": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": -0.003124335702841242,
+                "query_fee_contribution": 0.006910157991068272,
+                "net_delta": 0.003785822288227029
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -0.04907889825595491,
+                "query_fee_contribution": -0.002012959066963366,
+                "net_delta": -0.051091857322918266
+              },
+              {
+                "seed": 2,
+                "gain_contribution": 0.0003995373093369858,
+                "query_fee_contribution": -0.00030044165178557737,
+                "net_delta": 9.909565755140865e-05
+              }
+            ],
+            "gain_contribution": -0.017267898883153058,
+            "query_fee_contribution": 0.001532252424106443,
+            "net_delta": -0.01573564645904661
+          },
+          "2037-08-03": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": 0.019975277322918705,
+                "query_fee_contribution": 0.0014172557918712737,
+                "net_delta": 0.021392533114789978
+              },
+              {
+                "seed": 1,
+                "gain_contribution": 4.534150921820906e-05,
+                "query_fee_contribution": -0.0013012231539402924,
+                "net_delta": -0.0012558816447220946
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.018418261013372916,
+                "query_fee_contribution": 0.010161143864527376,
+                "net_delta": -0.008257117148845547
+              }
+            ],
+            "gain_contribution": 0.0005341192729213332,
+            "query_fee_contribution": 0.0034257255008194524,
+            "net_delta": 0.003959844773740779
+          },
+          "2037-10-19": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": 0.0,
+                "query_fee_contribution": 0.0023990406288373553,
+                "net_delta": 0.0023990406288373553
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -0.00647222678292065,
+                "query_fee_contribution": 0.000646932304405579,
+                "net_delta": -0.005825294478515073
+              },
+              {
+                "seed": 2,
+                "gain_contribution": 0.012772840513798256,
+                "query_fee_contribution": -0.0013073423651529408,
+                "net_delta": 0.011465498148645314
+              }
+            ],
+            "gain_contribution": 0.002100204576959202,
+            "query_fee_contribution": 0.0005795435226966646,
+            "net_delta": 0.0026797480996558656
+          }
+        },
+        "macro": {
+          "gain_contribution": -0.0031311608539402536,
+          "query_fee_contribution": 0.001529421159319367,
+          "net_delta": -0.0016017396946208873
+        }
+      }
+    },
+    "FACTOR": {
+      "BATCH1": {
+        "per_date": {
+          "2037-03-02": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": -0.028489555156375853,
+                "query_fee_contribution": 0.022946835491779338,
+                "net_delta": -0.005542719664596511
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -0.010833312069963245,
+                "query_fee_contribution": 0.025781347075521887,
+                "net_delta": 0.014948035005558637
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.0297189373730419,
+                "query_fee_contribution": 0.02549955352626093,
+                "net_delta": -0.004219383846780973
+              }
+            ],
+            "gain_contribution": -0.023013934866460334,
+            "query_fee_contribution": 0.024742578697854054,
+            "net_delta": 0.0017286438313937177
+          },
+          "2037-05-04": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": -0.055300223808332626,
+                "query_fee_contribution": 0.021872152249990007,
+                "net_delta": -0.03342807155834262
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -0.003302227674865923,
+                "query_fee_contribution": 0.020279811495526448,
+                "net_delta": 0.016977583820660527
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.0033318763368700363,
+                "query_fee_contribution": 0.022683344709811062,
+                "net_delta": 0.019351468372941025
+              }
+            ],
+            "gain_contribution": -0.020644775940022862,
+            "query_fee_contribution": 0.021611769485109174,
+            "net_delta": 0.000966993545086311
+          },
+          "2037-08-03": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": -0.10139203177474755,
+                "query_fee_contribution": 0.03659172117609165,
+                "net_delta": -0.06480031059865592
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -0.0895934722928401,
+                "query_fee_contribution": 0.03335938340515717,
+                "net_delta": -0.05623408888768295
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.09808313389537318,
+                "query_fee_contribution": 0.0256432129827469,
+                "net_delta": -0.07243992091262628
+              }
+            ],
+            "gain_contribution": -0.09635621265432028,
+            "query_fee_contribution": 0.0318647725213319,
+            "net_delta": -0.0644914401329884
+          },
+          "2037-10-19": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": -0.0009880986262102234,
+                "query_fee_contribution": 0.016456340493316915,
+                "net_delta": 0.01546824186710669
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -0.0009880986262102234,
+                "query_fee_contribution": 0.016078963315746993,
+                "net_delta": 0.01509086468953677
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.02023316592292913,
+                "query_fee_contribution": 0.020984866624155964,
+                "net_delta": 0.0007517007012268367
+              }
+            ],
+            "gain_contribution": -0.007403121058449859,
+            "query_fee_contribution": 0.01784005681107329,
+            "net_delta": 0.010436935752623432
+          }
+        },
+        "macro": {
+          "gain_contribution": -0.03685451112981333,
+          "query_fee_contribution": 0.024014794378842103,
+          "net_delta": -0.012839716750971234
+        }
+      },
+      "JOINT": {
+        "per_date": {
+          "2037-03-02": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": -0.017285782045538083,
+                "query_fee_contribution": 0.00014365945648597709,
+                "net_delta": -0.017142122589052105
+              },
+              {
+                "seed": 1,
+                "gain_contribution": 0.006301543364038218,
+                "query_fee_contribution": -0.001746014932675721,
+                "net_delta": 0.004555528431362498
+              },
+              {
+                "seed": 2,
+                "gain_contribution": 0.004657443828965341,
+                "query_fee_contribution": -0.00013813409277497796,
+                "net_delta": 0.004519309736190364
+              }
+            ],
+            "gain_contribution": -0.002108931617511508,
+            "query_fee_contribution": -0.0005801631896549074,
+            "net_delta": -0.0026890948071664144
+          },
+          "2037-05-04": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": 0.003124335702841242,
+                "query_fee_contribution": -0.006910157991068272,
+                "net_delta": -0.003785822288227029
+              },
+              {
+                "seed": 1,
+                "gain_contribution": 0.04907889825595491,
+                "query_fee_contribution": 0.002012959066963366,
+                "net_delta": 0.051091857322918266
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.0003995373093369858,
+                "query_fee_contribution": 0.00030044165178557737,
+                "net_delta": -9.909565755140865e-05
+              }
+            ],
+            "gain_contribution": 0.017267898883153058,
+            "query_fee_contribution": -0.001532252424106443,
+            "net_delta": 0.01573564645904661
+          },
+          "2037-08-03": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": -0.019975277322918705,
+                "query_fee_contribution": -0.0014172557918712737,
+                "net_delta": -0.021392533114789978
+              },
+              {
+                "seed": 1,
+                "gain_contribution": -4.534150921820906e-05,
+                "query_fee_contribution": 0.0013012231539402924,
+                "net_delta": 0.0012558816447220946
+              },
+              {
+                "seed": 2,
+                "gain_contribution": 0.018418261013372916,
+                "query_fee_contribution": -0.010161143864527376,
+                "net_delta": 0.008257117148845547
+              }
+            ],
+            "gain_contribution": -0.0005341192729213332,
+            "query_fee_contribution": -0.0034257255008194524,
+            "net_delta": -0.003959844773740779
+          },
+          "2037-10-19": {
+            "per_seed": [
+              {
+                "seed": 0,
+                "gain_contribution": 0.0,
+                "query_fee_contribution": -0.0023990406288373553,
+                "net_delta": -0.0023990406288373553
+              },
+              {
+                "seed": 1,
+                "gain_contribution": 0.00647222678292065,
+                "query_fee_contribution": -0.000646932304405579,
+                "net_delta": 0.005825294478515073
+              },
+              {
+                "seed": 2,
+                "gain_contribution": -0.012772840513798256,
+                "query_fee_contribution": 0.0013073423651529408,
+                "net_delta": -0.011465498148645314
+              }
+            ],
+            "gain_contribution": -0.002100204576959202,
+            "query_fee_contribution": -0.0005795435226966646,
+            "net_delta": -0.0026797480996558656
+          }
+        },
+        "macro": {
+          "gain_contribution": 0.0031311608539402536,
+          "query_fee_contribution": -0.001529421159319367,
+          "net_delta": 0.0016017396946208873
+        }
+      }
+    }
+  },
+  "state_metrics_comparison": {
+    "JOINT": {
+      "train": {
+        "false_stop": [
+          82,
+          72,
+          81
+        ],
+        "unprofitable_continue": [
+          344,
+          357,
+          314
+        ],
+        "continue_value_rmse": [
+          0.5293437838554382,
+          0.5567042827606201,
+          0.5224537253379822
+        ]
+      },
+      "validation": {
+        "false_stop": [
+          20,
+          23,
+          26
+        ],
+        "unprofitable_continue": [
+          137,
+          131,
+          120
+        ],
+        "continue_value_rmse": [
+          1.2096995115280151,
+          1.1405954360961914,
+          1.164260983467102
+        ]
+      }
+    },
+    "FACTOR": {
+      "train": {
+        "false_stop": [
+          85,
+          82,
+          85
+        ],
+        "unprofitable_continue": [
+          312,
+          420,
+          258
+        ],
+        "continue_value_rmse": [
+          0.5325902700424194,
+          0.611700177192688,
+          0.5061095356941223
+        ]
+      },
+      "validation": {
+        "false_stop": [
+          22,
+          19,
+          21
+        ],
+        "unprofitable_continue": [
+          137,
+          165,
+          142
+        ],
+        "continue_value_rmse": [
+          1.2458436489105225,
+          1.204108715057373,
+          1.131919264793396
+        ]
+      }
+    },
+    "DIRECT": {
+      "train": {
+        "false_stop": [
+          30,
+          27,
+          38
+        ],
+        "unprofitable_continue": [
+          835,
+          740,
+          648
+        ],
+        "continue_value_rmse": [
+          0.6995470165904175,
+          0.631554992931106,
+          0.6713468367251657
+        ]
+      },
+      "validation": {
+        "false_stop": [
+          13,
+          14,
+          13
+        ],
+        "unprofitable_continue": [
+          283,
+          325,
+          297
+        ],
+        "continue_value_rmse": [
+          1.3263258040519932,
+          1.3722273497406678,
+          1.3568525928080062
+        ]
+      }
+    },
+    "DQN": {
+      "train": {
+        "false_stop": [
+          45,
+          54,
+          59
+        ],
+        "unprofitable_continue": [
+          851,
+          826,
+          463
+        ],
+        "continue_value_rmse": [
+          0.489876568208349,
+          0.4646714107636506,
+          0.3857058028346497
+        ]
+      },
+      "validation": {
+        "false_stop": [
+          15,
+          7,
+          17
+        ],
+        "unprofitable_continue": [
+          395,
+          368,
+          194
+        ],
+        "continue_value_rmse": [
+          1.3886223914312377,
+          1.3071383172571358,
+          1.19733042291394
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "states": 4438,
+  "train": 3582,
+  "validation": 856,
+  "actual_parameters": 5938,
+  "initial_hashes": {
+    "0": "f19a1eed2270d2a1a92f7bb86231412211690cb31fa2c11972ad48c46b5d6726",
+    "1": "b2faf0b3ffbd356666bef4563974afce68a3ffe34aa0b5e7fcf52b229ef5d3aa",
+    "2": "195d3133b318ca2fbd5440e649a4266e88456ed0fee86a50cc6300b8fa4feda0"
+  },
+  "sampling_streams": {
+    "0": {
+      "index_sha256": "70a8380d7d60bfe1a22097c93f4e2580b86968908301dcabe8f5d72121816a9d",
+      "count_sha256": "0724f7a75f1e4897c5371d80067b90cdf3db442079510797f877409bb24995d1",
+      "draws": 232000
+    },
+    "1": {
+      "index_sha256": "46deef45b57768bdf03ef3c69836da5ba370fbfd8ee8de8c795cbd7b28b0a90f",
+      "count_sha256": "98d2713fb2f735c9cff28876db903b008ff5e7cb653d202f555563d64ea0c456",
+      "draws": 232000
+    },
+    "2": {
+      "index_sha256": "cc35a11dff156b12886f374b6dfa23f17a6eedb5f26ed88316c36d2d60438a84",
+      "count_sha256": "978a279c397d3c3853fa8162ea288d0d015257a050e49d0cc82fde0b058af2cb",
+      "draws": 232000
+    }
+  },
+  "invariance_max_abs": {
+    "JOINT_joint_context_permutation": 7.450580596923828e-09,
+    "JOINT_next_permutation": 7.450580596923828e-09,
+    "JOINT_poisoned_padding": 0.0,
+    "JOINT_all_parameter_tensors_have_finite_gradient": true,
+    "FACTOR_joint_context_permutation": 3.725290298461914e-09,
+    "FACTOR_next_permutation": 0.0,
+    "FACTOR_poisoned_padding": 0.0,
+    "FACTOR_all_parameter_tensors_have_finite_gradient": true
+  },
+  "pairing_counterexample_abs": {
+    "JOINT": 1.181289553642273e-05,
+    "FACTOR": 0.0
+  },
+  "optimizer_steps": 0,
+  "synthetic_backward_only": true,
+  "train_validation_dates_disjoint": true,
+  "labels_separate": true,
+  "schema_all_state_bus_and_ID_checks": {
+    "passed": true,
+    "checks": {
+      "lossless_partition_roundtrips": 615421,
+      "bus_label_checks": 615421,
+      "id_relabel_invariance": 4438,
+      "future_input_rejections": 4438,
+      "states": 4438
+    },
+    "maximum_context_rows": 267,
+    "maximum_next_rows": 64,
+    "formerly_clipped_reward_gap_tokens": 287740,
+    "reward_gap_encoding": "asinh, no hard clipping",
+    "geometry_encoding_lossless_for_existing_two_bus_partitions": true,
+    "model_instantiations": 0,
+    "forward_passes": 0,
+    "optimizer_steps": 0,
+    "new_fits": 0,
+    "new_physical_calls": 0,
+    "final_test_ungenerated": true,
+    "unexecuted": "Actual neural forward/padding/permutation/gradient checks remain pretraining engineering requirements."
+  },
+  "no_environment_constructed": true,
+  "final_test_materialized": false
+}

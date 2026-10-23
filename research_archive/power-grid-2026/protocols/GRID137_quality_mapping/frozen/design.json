@@ -1,0 +1,41 @@
+{
+  "id": "GRID137_INHERITED_QUALITY_MAPPING",
+  "utc": "2026-10-23T13:42:51.028620+00:00",
+  "authorization": "User asks continue;announced read-only inherited whole-week quality mapping,no new training/replay.",
+  "threshold": 0.005,
+  "nominal_steps": 2017,
+  "cases": 56,
+  "mapping": "Exact pre-existing GRID91 cohort/week/environment FULL and FRAME reference mapping;not a new reference choice.",
+  "historical_quality": "If FULL completes,branch must complete;otherwise no earlier termination thanFULL. Compare totalcost/FULLtotalcost-1<=0.005 only when both complete.",
+  "evidence_labels": [
+    "PASS_COMPLETE",
+    "FAIL_COST",
+    "FAIL_SURVIVAL",
+    "REFERENCE_LIMITED",
+    "UNRESOLVED_EXTERNAL",
+    "BASELINE_NOT_QUALIFIED"
+  ],
+  "incomplete": "A historical survival-relative pass with incompleteFULL is REFERENCE_LIMITED for complete-week cost supervision;do not call it a complete-week pass.",
+  "cost_basis": "Full episode raw costs,not suffix percentage. Sharedprefix+suffix identity independently checked. Branches only cancelone completion then originalFRAME suffix.",
+  "checks": [
+    "whole-run cost and query sums",
+    "historicalFRAME factual physical trajectory equality",
+    "shared preintervention prefix and starting state hash",
+    "old suffix costs and query differences",
+    "external-event differences equal old audited list",
+    "division-vs-multiplication quality threshold check",
+    "legacyFRAME quality matchesGRID91"
+  ],
+  "old_labels": "Keep all oldSKIP/MIXED/KEEP labels unchanged;derive new evaluation-only fields and retain risk vectors. No training data files rewritten.",
+  "optional_saved_readout_audit": "Recount ALL original GRID96saved model/baseline decisions at original0.5/0.95 readouts,calendarLOO and old-to-generated,excludingpilot headline. No refit/forward/newcutoff or claim probabilities calibrated to new target.",
+  "prohibited": [
+    "fit",
+    "new model forward",
+    "risk/cost threshold search",
+    "new physical/scenario/test",
+    "paper edit",
+    "deploy or scale",
+    "pool with2378teacher prefixes",
+    "copy single-omission label to eachbatch or many-cancel policy"
+  ]
+}

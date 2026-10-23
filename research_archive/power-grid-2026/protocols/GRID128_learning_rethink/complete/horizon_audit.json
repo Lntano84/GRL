@@ -1,0 +1,478 @@
+{
+  "train": {
+    "cases": 2378,
+    "reachable_states": 3582,
+    "dates": 16,
+    "physical_calls": 222,
+    "horizons": {
+      "1": 1740,
+      "3": 206,
+      "2": 252,
+      "4": 180
+    },
+    "positive_net_states": 211,
+    "positive_net_calls": 54,
+    "barrier_states": 40,
+    "barrier_calls": 5,
+    "barrier_dates": [
+      "2037-06-01",
+      "2037-08-17",
+      "2037-12-07"
+    ],
+    "oracle": {
+      "MYOPIC_ORACLE": {
+        "per_date": {
+          "2037-01-05": {
+            "cases": 157,
+            "mean_net_utility": 0.28145817415990443,
+            "mean_gain": 0.0024633194990218822,
+            "mean_queries": 2.8089171974522293,
+            "query_fraction": 0.08345950037850114,
+            "gain_capture": 0.9998887375596418,
+            "physical_call_balanced_utility": 0.24612971764889255
+          },
+          "2037-01-19": {
+            "cases": 206,
+            "mean_net_utility": 0.026973601478891045,
+            "mean_gain": 0.00025851402467894324,
+            "mean_queries": 2.0728155339805827,
+            "query_fraction": 0.04964539007092199,
+            "gain_capture": 0.9411970436292232,
+            "physical_call_balanced_utility": 0.02292494112540118
+          },
+          "2037-02-16": {
+            "cases": 120,
+            "mean_net_utility": 0.0009986485536228186,
+            "mean_gain": 1.4629960060119628e-05,
+            "mean_queries": 0.48333333333333334,
+            "query_fraction": 0.008745476477683957,
+            "gain_capture": 0.8166241543750693,
+            "physical_call_balanced_utility": 0.0009218294341133712
+          },
+          "2037-03-16": {
+            "cases": 207,
+            "mean_net_utility": 0.01730883861859987,
+            "mean_gain": 0.0001884076906287152,
+            "mean_queries": 3.140096618357488,
+            "query_fraction": 0.06742738589211618,
+            "gain_capture": 0.86117589458223,
+            "physical_call_balanced_utility": 0.015628558324336194
+          },
+          "2037-04-06": {
+            "cases": 186,
+            "mean_net_utility": 0.17302957538914246,
+            "mean_gain": 0.0015280541553292224,
+            "mean_queries": 2.827956989247312,
+            "query_fraction": 0.055038191901224234,
+            "gain_capture": 0.9991940881356615,
+            "physical_call_balanced_utility": 0.16199482937311485
+          },
+          "2037-05-18": {
+            "cases": 127,
+            "mean_net_utility": 0.026845481295261275,
+            "mean_gain": 0.00024709739084318865,
+            "mean_queries": 1.2440944881889764,
+            "query_fraction": 0.022288051911412046,
+            "gain_capture": 0.8799917097337087,
+            "physical_call_balanced_utility": 0.04520347706353322
+          },
+          "2037-06-01": {
+            "cases": 193,
+            "mean_net_utility": 0.11045004397809204,
+            "mean_gain": 0.0009986508077908056,
+            "mean_queries": 3.673575129533679,
+            "query_fraction": 0.04577737603305785,
+            "gain_capture": 0.8977463848708448,
+            "physical_call_balanced_utility": 0.09497640046048622
+          },
+          "2037-06-15": {
+            "cases": 107,
+            "mean_net_utility": 0.08598149114776867,
+            "mean_gain": 0.0007657871068081009,
+            "mean_queries": 1.925233644859813,
+            "query_fraction": 0.06425452276980662,
+            "gain_capture": 0.9987939307105927,
+            "physical_call_balanced_utility": 0.08516074459639246
+          },
+          "2037-07-06": {
+            "cases": 241,
+            "mean_net_utility": 0.5145205961370601,
+            "mean_gain": 0.004538315955039377,
+            "mean_queries": 7.966804979253112,
+            "query_fraction": 0.10902276985974675,
+            "gain_capture": 0.9997291169725433,
+            "physical_call_balanced_utility": 0.45826408379069866
+          },
+          "2037-08-17": {
+            "cases": 171,
+            "mean_net_utility": 0.4584956562770071,
+            "mean_gain": 0.004001002562673469,
+            "mean_queries": 3.6315789473684212,
+            "query_fraction": 0.07430896254636832,
+            "gain_capture": 0.9199501366401603,
+            "physical_call_balanced_utility": 0.38154344741369906
+          },
+          "2037-09-07": {
+            "cases": 63,
+            "mean_net_utility": 0.21132505446613398,
+            "mean_gain": 0.0018485538543216765,
+            "mean_queries": 2.0317460317460316,
+            "query_fraction": 0.035585209897136504,
+            "gain_capture": 0.9977999799812477,
+            "physical_call_balanced_utility": 0.18490942265786725
+          },
+          "2037-09-21": {
+            "cases": 101,
+            "mean_net_utility": 0.0,
+            "mean_gain": 0.0,
+            "mean_queries": 0.0,
+            "query_fraction": 0.0,
+            "gain_capture": 0.0,
+            "physical_call_balanced_utility": 0.0
+          },
+          "2037-10-05": {
+            "cases": 157,
+            "mean_net_utility": 0.014136422050450279,
+            "mean_gain": 0.00014162063598632812,
+            "mean_queries": 1.5796178343949046,
+            "query_fraction": 0.04953065708008788,
+            "gain_capture": 0.9832259696992061,
+            "physical_call_balanced_utility": 0.013707224863691948
+          },
+          "2037-11-02": {
+            "cases": 104,
+            "mean_net_utility": 0.0008408578416194497,
+            "mean_gain": 1.2638477178720328e-05,
+            "mean_queries": 0.4326923076923077,
+            "query_fraction": 0.008135960947387453,
+            "gain_capture": 0.8077063951358875,
+            "physical_call_balanced_utility": 0.000809714958596507
+          },
+          "2037-11-16": {
+            "cases": 123,
+            "mean_net_utility": 0.027543306226885726,
+            "mean_gain": 0.00025109256186136387,
+            "mean_queries": 1.08130081300813,
+            "query_fraction": 0.027994106503893917,
+            "gain_capture": 1.0,
+            "physical_call_balanced_utility": 0.030760970818419713
+          },
+          "2037-12-07": {
+            "cases": 115,
+            "mean_net_utility": 0.07685231888042837,
+            "mean_gain": 0.0007148929264234459,
+            "mean_queries": 4.165217391304348,
+            "query_fraction": 0.06762671184526331,
+            "gain_capture": 0.31282091756568947,
+            "physical_call_balanced_utility": 0.061804312386358466
+          }
+        },
+        "macro": {
+          "mean_net_utility": 0.1266725041563042,
+          "mean_gain": 0.001123286100540335,
+          "mean_queries": 2.4415613274825416,
+          "query_fraction": 0.048052517132163006,
+          "gain_capture": 0.8384902787244817,
+          "physical_call_balanced_utility": 0.11279622968222511
+        }
+      },
+      "SEQUENCE_ORACLE": {
+        "per_date": {
+          "2037-01-05": {
+            "cases": 157,
+            "mean_net_utility": 0.28145817415990443,
+            "mean_gain": 0.0024633194990218822,
+            "mean_queries": 2.8089171974522293,
+            "query_fraction": 0.08345950037850114,
+            "gain_capture": 0.9998887375596418,
+            "physical_call_balanced_utility": 0.24612971764889255
+          },
+          "2037-01-19": {
+            "cases": 206,
+            "mean_net_utility": 0.026973601478891045,
+            "mean_gain": 0.00025851402467894324,
+            "mean_queries": 2.0728155339805827,
+            "query_fraction": 0.04964539007092199,
+            "gain_capture": 0.9411970436292232,
+            "physical_call_balanced_utility": 0.02292494112540118
+          },
+          "2037-02-16": {
+            "cases": 120,
+            "mean_net_utility": 0.0009986485536228186,
+            "mean_gain": 1.4629960060119628e-05,
+            "mean_queries": 0.48333333333333334,
+            "query_fraction": 0.008745476477683957,
+            "gain_capture": 0.8166241543750693,
+            "physical_call_balanced_utility": 0.0009218294341133712
+          },
+          "2037-03-16": {
+            "cases": 207,
+            "mean_net_utility": 0.01730883861859987,
+            "mean_gain": 0.0001884076906287152,
+            "mean_queries": 3.140096618357488,
+            "query_fraction": 0.06742738589211618,
+            "gain_capture": 0.86117589458223,
+            "physical_call_balanced_utility": 0.015628558324336194
+          },
+          "2037-04-06": {
+            "cases": 186,
+            "mean_net_utility": 0.17302957538914246,
+            "mean_gain": 0.0015280541553292224,
+            "mean_queries": 2.827956989247312,
+            "query_fraction": 0.055038191901224234,
+            "gain_capture": 0.9991940881356615,
+            "physical_call_balanced_utility": 0.16199482937311485
+          },
+          "2037-05-18": {
+            "cases": 127,
+            "mean_net_utility": 0.026845481295261275,
+            "mean_gain": 0.00024709739084318865,
+            "mean_queries": 1.2440944881889764,
+            "query_fraction": 0.022288051911412046,
+            "gain_capture": 0.8799917097337087,
+            "physical_call_balanced_utility": 0.04520347706353322
+          },
+          "2037-06-01": {
+            "cases": 193,
+            "mean_net_utility": 0.11239464808406832,
+            "mean_gain": 0.0010855698214911427,
+            "mean_queries": 9.310880829015543,
+            "query_fraction": 0.11602530991735537,
+            "gain_capture": 0.9758830365585714,
+            "physical_call_balanced_utility": 0.09656625266385208
+          },
+          "2037-06-15": {
+            "cases": 107,
+            "mean_net_utility": 0.08598149114776867,
+            "mean_gain": 0.0007657871068081009,
+            "mean_queries": 1.925233644859813,
+            "query_fraction": 0.06425452276980662,
+            "gain_capture": 0.9987939307105927,
+            "physical_call_balanced_utility": 0.08516074459639246
+          },
+          "2037-07-06": {
+            "cases": 241,
+            "mean_net_utility": 0.5145205961370601,
+            "mean_gain": 0.004538315955039377,
+            "mean_queries": 7.966804979253112,
+            "query_fraction": 0.10902276985974675,
+            "gain_capture": 0.9997291169725433,
+            "physical_call_balanced_utility": 0.45826408379069866
+          },
+          "2037-08-17": {
+            "cases": 171,
+            "mean_net_utility": 0.49502678806913375,
+            "mean_gain": 0.004334813670108193,
+            "mean_queries": 5.128654970760234,
+            "query_fraction": 0.10494196481991146,
+            "gain_capture": 0.9967032926519829,
+            "physical_call_balanced_utility": 0.41216513141592287
+          },
+          "2037-09-07": {
+            "cases": 63,
+            "mean_net_utility": 0.21132505446613398,
+            "mean_gain": 0.0018485538543216765,
+            "mean_queries": 2.0317460317460316,
+            "query_fraction": 0.035585209897136504,
+            "gain_capture": 0.9977999799812477,
+            "physical_call_balanced_utility": 0.18490942265786725
+          },
+          "2037-09-21": {
+            "cases": 101,
+            "mean_net_utility": 0.0,
+            "mean_gain": 0.0,
+            "mean_queries": 0.0,
+            "query_fraction": 0.0,
+            "gain_capture": 0.0,
+            "physical_call_balanced_utility": 0.0
+          },
+          "2037-10-05": {
+            "cases": 157,
+            "mean_net_utility": 0.014136422050450279,
+            "mean_gain": 0.00014162063598632812,
+            "mean_queries": 1.5796178343949046,
+            "query_fraction": 0.04953065708008788,
+            "gain_capture": 0.9832259696992061,
+            "physical_call_balanced_utility": 0.013707224863691948
+          },
+          "2037-11-02": {
+            "cases": 104,
+            "mean_net_utility": 0.0008408578416194497,
+            "mean_gain": 1.2638477178720328e-05,
+            "mean_queries": 0.4326923076923077,
+            "query_fraction": 0.008135960947387453,
+            "gain_capture": 0.8077063951358875,
+            "physical_call_balanced_utility": 0.000809714958596507
+          },
+          "2037-11-16": {
+            "cases": 123,
+            "mean_net_utility": 0.027543306226885726,
+            "mean_gain": 0.00025109256186136387,
+            "mean_queries": 1.08130081300813,
+            "query_fraction": 0.027994106503893917,
+            "gain_capture": 1.0,
+            "physical_call_balanced_utility": 0.030760970818419713
+          },
+          "2037-12-07": {
+            "cases": 115,
+            "mean_net_utility": 0.22486499352844166,
+            "mean_gain": 0.0022237798442011295,
+            "mean_queries": 22.8,
+            "query_fraction": 0.37018212621770435,
+            "gain_capture": 0.9730755832308211,
+            "physical_call_balanced_utility": 0.18083548430608945
+          }
+        },
+        "macro": {
+          "mean_net_utility": 0.1383280298154365,
+          "mean_gain": 0.0012438871654723814,
+          "mean_queries": 4.052134098205625,
+          "query_fraction": 0.07326728904030562,
+          "gain_capture": 0.8894368083097741,
+          "physical_call_balanced_utility": 0.12224889894005764
+        }
+      }
+    },
+    "date_macro_sequence_advantage": 0.011655525659132266,
+    "date_gaps": {
+      "2037-01-05": 0.0,
+      "2037-01-19": 0.0,
+      "2037-02-16": 0.0,
+      "2037-03-16": 0.0,
+      "2037-04-06": 0.0,
+      "2037-05-18": 0.0,
+      "2037-06-01": 0.0019446041059762841,
+      "2037-06-15": 0.0,
+      "2037-07-06": 0.0,
+      "2037-08-17": 0.03653113179212667,
+      "2037-09-07": 0.0,
+      "2037-09-21": 0.0,
+      "2037-10-05": 0.0,
+      "2037-11-02": 0.0,
+      "2037-11-16": 0.0,
+      "2037-12-07": 0.1480126746480133
+    }
+  },
+  "validation": {
+    "cases": 590,
+    "reachable_states": 856,
+    "dates": 4,
+    "physical_calls": 56,
+    "horizons": {
+      "1": 448,
+      "4": 39,
+      "3": 46,
+      "2": 57
+    },
+    "positive_net_states": 41,
+    "positive_net_calls": 16,
+    "barrier_states": 0,
+    "barrier_calls": 0,
+    "barrier_dates": [],
+    "oracle": {
+      "MYOPIC_ORACLE": {
+        "per_date": {
+          "2037-03-02": {
+            "cases": 261,
+            "mean_net_utility": 0.04790652472550807,
+            "mean_gain": 0.0004464607129151794,
+            "mean_queries": 2.6628352490421454,
+            "query_fraction": 0.06496541409609273,
+            "gain_capture": 0.9276661934190746,
+            "physical_call_balanced_utility": 0.040070235699940414
+          },
+          "2037-05-04": {
+            "cases": 48,
+            "mean_net_utility": 0.05185584915741794,
+            "mean_gain": 0.00046114126841227215,
+            "mean_queries": 1.1041666666666667,
+            "query_fraction": 0.0281615302869288,
+            "gain_capture": 0.8845274390243902,
+            "physical_call_balanced_utility": 0.04978161519112122
+          },
+          "2037-08-03": {
+            "cases": 174,
+            "mean_net_utility": 0.6443938923555294,
+            "mean_gain": 0.005626716147894147,
+            "mean_queries": 5.385057471264368,
+            "query_fraction": 0.08159177986764193,
+            "gain_capture": 0.9929880242054928,
+            "physical_call_balanced_utility": 0.5337556338593368
+          },
+          "2037-10-19": {
+            "cases": 107,
+            "mean_net_utility": 0.018648448237280325,
+            "mean_gain": 0.0001675235890896521,
+            "mean_queries": 0.5327102803738317,
+            "query_fraction": 0.022370486656200943,
+            "gain_capture": 0.9515751370097077,
+            "physical_call_balanced_utility": 0.01705456377255551
+          }
+        },
+        "macro": {
+          "mean_net_utility": 0.1907011786189339,
+          "mean_gain": 0.0016754604295778127,
+          "mean_queries": 2.421192416836753,
+          "query_fraction": 0.04927230272671611,
+          "gain_capture": 0.9391891984146663,
+          "physical_call_balanced_utility": 0.16016551213073849
+        }
+      },
+      "SEQUENCE_ORACLE": {
+        "per_date": {
+          "2037-03-02": {
+            "cases": 261,
+            "mean_net_utility": 0.04790652472550807,
+            "mean_gain": 0.0004464607129151794,
+            "mean_queries": 2.6628352490421454,
+            "query_fraction": 0.06496541409609273,
+            "gain_capture": 0.9276661934190746,
+            "physical_call_balanced_utility": 0.040070235699940414
+          },
+          "2037-05-04": {
+            "cases": 48,
+            "mean_net_utility": 0.05185584915741794,
+            "mean_gain": 0.00046114126841227215,
+            "mean_queries": 1.1041666666666667,
+            "query_fraction": 0.0281615302869288,
+            "gain_capture": 0.8845274390243902,
+            "physical_call_balanced_utility": 0.04978161519112122
+          },
+          "2037-08-03": {
+            "cases": 174,
+            "mean_net_utility": 0.6443938923555294,
+            "mean_gain": 0.005626716147894147,
+            "mean_queries": 5.385057471264368,
+            "query_fraction": 0.08159177986764193,
+            "gain_capture": 0.9929880242054928,
+            "physical_call_balanced_utility": 0.5337556338593368
+          },
+          "2037-10-19": {
+            "cases": 107,
+            "mean_net_utility": 0.018648448237280325,
+            "mean_gain": 0.0001675235890896521,
+            "mean_queries": 0.5327102803738317,
+            "query_fraction": 0.022370486656200943,
+            "gain_capture": 0.9515751370097077,
+            "physical_call_balanced_utility": 0.01705456377255551
+          }
+        },
+        "macro": {
+          "mean_net_utility": 0.1907011786189339,
+          "mean_gain": 0.0016754604295778127,
+          "mean_queries": 2.421192416836753,
+          "query_fraction": 0.04927230272671611,
+          "gain_capture": 0.9391891984146663,
+          "physical_call_balanced_utility": 0.16016551213073849
+        }
+      }
+    },
+    "date_macro_sequence_advantage": 0.0,
+    "date_gaps": {
+      "2037-03-02": 0.0,
+      "2037-05-04": 0.0,
+      "2037-08-03": 0.0,
+      "2037-10-19": 0.0
+    }
+  }
+}

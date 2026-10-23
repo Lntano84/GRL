@@ -690,3 +690,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID127同一非负链接的均值收益损失](protocols/GRID127_mean_gain_objective/complete/GRID127_report.md)：30次固定MSE/KL训练、30份既有模型复用、全种子与条件折外局部补查核验。
 
 - [GRID127与不学习补查对齐比较](protocols/GRID127_mean_gain_objective/nonlearning_comparison/与不学习方法比较_中文.md)：完整同站、固定一批、旧回归及新KL的相同保存前缀比较；零训练，局部收益与整周质量分开。
+
+- [GRID128学习补查的文献反思](protocols/GRID128_learning_rethink/complete/文献反思与主要问题_中文.md)：五篇论文的任务/方法对照、全案例即时与后续计算价值核验；不训练，区分有利误停、跨批机会与质量目标。

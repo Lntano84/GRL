@@ -1,0 +1,107 @@
+{
+  "family_metrics": {
+    "train": {
+      "JOINT": {
+        "mean_net_utility": 0.12621826057946303,
+        "mean_gain": 0.0011620947059874161,
+        "mean_queries": 5.875618490311907,
+        "query_fraction": 0.11556414574155245,
+        "gain_capture": 0.8428720836787752,
+        "physical_call_balanced_utility": 0.11192029028326962
+      },
+      "FACTOR": {
+        "mean_net_utility": 0.125785859754416,
+        "mean_gain": 0.001157413392793041,
+        "mean_queries": 5.799215112483011,
+        "query_fraction": 0.11522392381406188,
+        "gain_capture": 0.8446441217080473,
+        "physical_call_balanced_utility": 0.1115092016377252
+      },
+      "EXTRA": {
+        "mean_net_utility": 0.12613435828646527,
+        "mean_gain": 0.0011554509184002863,
+        "mean_queries": 5.399832605866293,
+        "query_fraction": 0.10586976546811849,
+        "gain_capture": 0.848026975557905,
+        "physical_call_balanced_utility": 0.11192200843028603
+      },
+      "BASE": {
+        "mean_net_utility": 0.12355272699930943,
+        "mean_gain": 0.0011732809794704532,
+        "mean_queries": 8.623010782861915,
+        "query_fraction": 0.17260811444585875,
+        "gain_capture": 0.8651300540540752,
+        "physical_call_balanced_utility": 0.10944157626618782
+      },
+      "DQN": {
+        "mean_net_utility": 0.12104010659944398,
+        "mean_gain": 0.0011375039045187884,
+        "mean_queries": 7.489893297139024,
+        "query_fraction": 0.14664900630375202,
+        "gain_capture": 0.7848007780180009,
+        "physical_call_balanced_utility": 0.10706286856864722
+      }
+    },
+    "validation": {
+      "JOINT": {
+        "mean_net_utility": 0.16250975046199095,
+        "mean_gain": 0.0015880939768029747,
+        "mean_queries": 14.948093093899573,
+        "query_fraction": 0.3382152328796879,
+        "gain_capture": 0.7855019841069728,
+        "physical_call_balanced_utility": 0.13621871673856534
+      },
+      "FACTOR": {
+        "mean_net_utility": 0.16199455944946975,
+        "mean_gain": 0.0015874527130384948,
+        "mean_queries": 15.253799899440208,
+        "query_fraction": 0.3441533851636424,
+        "gain_capture": 0.7844042426389853,
+        "physical_call_balanced_utility": 0.1358014202013512
+      },
+      "EXTRA": {
+        "mean_net_utility": 0.16241889006119517,
+        "mean_gain": 0.0015538130356601036,
+        "mean_queries": 12.255915347751875,
+        "query_fraction": 0.25818399771177686,
+        "gain_capture": 0.6747926000573994,
+        "physical_call_balanced_utility": 0.13594130681932198
+      },
+      "BASE": {
+        "mean_net_utility": 0.16292380598404063,
+        "mean_gain": 0.0015860329142023735,
+        "mean_queries": 14.495328221792528,
+        "query_fraction": 0.31775073828054823,
+        "gain_capture": 0.7760421499753439,
+        "physical_call_balanced_utility": 0.13653686568642556
+      },
+      "DQN": {
+        "mean_net_utility": 0.1631977392228395,
+        "mean_gain": 0.0015907670618557747,
+        "mean_queries": 14.685863105895132,
+        "query_fraction": 0.3112607551122102,
+        "gain_capture": 0.6780248728191864,
+        "physical_call_balanced_utility": 0.13672708390172358
+      }
+    }
+  },
+  "joint_minus_reference_decomposition": {
+    "FACTOR": {
+      "gain_contribution": 7.432513595136919e-05,
+      "query_charge_contribution": 0.00044086587656985986,
+      "net_difference": 0.0005151910125212045
+    },
+    "EXTRA": {
+      "gain_contribution": 0.003973303579770106,
+      "query_charge_contribution": -0.003882443178974333,
+      "net_difference": 9.086040079578361e-05
+    },
+    "BASE": {
+      "gain_contribution": 0.00023888572297268718,
+      "query_charge_contribution": -0.0006529412450223647,
+      "net_difference": -0.00041405552204967777
+    }
+  },
+  "no_new_fits": true,
+  "scope": "Read-only accounting of fixed outputs; no threshold or model selection."
+}

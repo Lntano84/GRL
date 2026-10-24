@@ -1,0 +1,291 @@
+{
+  "fits": 0,
+  "new_policy_or_cutoff": false,
+  "ranking": [
+    {
+      "model": "RF140",
+      "partition": "fit",
+      "score_range": {
+        "min": 0.7201880795108545,
+        "median": 0.8506685345663026,
+        "max": 0.9624977915240793
+      },
+      "prefixes": 153,
+      "calls": 153,
+      "dates": 12,
+      "continue_count": 35,
+      "stop_count": 118,
+      "continue_prevalence": 0.22875816993464052,
+      "continue_ap": 0.5578601225948587,
+      "auc": 0.762953995157385,
+      "continue_recall": 1.0,
+      "valid_stop_recall": 0.01694915254237288,
+      "wrong_stop_proposals": 0,
+      "valid_stop_proposals": 2,
+      "threshold": 0.9519182319625542
+    },
+    {
+      "model": "RF146",
+      "partition": "fit",
+      "score_range": {
+        "min": 0.6183257991308242,
+        "median": 0.801971040385058,
+        "max": 0.9312783652389705
+      },
+      "prefixes": 153,
+      "calls": 153,
+      "dates": 12,
+      "continue_count": 35,
+      "stop_count": 118,
+      "continue_prevalence": 0.22875816993464052,
+      "continue_ap": 0.5310882876981036,
+      "auc": 0.7686440677966102,
+      "continue_recall": 0.9714285714285714,
+      "valid_stop_recall": 0.06779661016949153,
+      "wrong_stop_proposals": 1,
+      "valid_stop_proposals": 8,
+      "threshold": 0.8977747832066947
+    },
+    {
+      "model": "RF140",
+      "partition": "calibration",
+      "score_range": {
+        "min": 0.7299347106340976,
+        "median": 0.8359299815505925,
+        "max": 0.9519182319625542
+      },
+      "prefixes": 66,
+      "calls": 66,
+      "dates": 4,
+      "continue_count": 25,
+      "stop_count": 41,
+      "continue_prevalence": 0.3787878787878788,
+      "continue_ap": 0.4181555561364646,
+      "auc": 0.47609756097560973,
+      "continue_recall": 1.0,
+      "valid_stop_recall": 0.0,
+      "wrong_stop_proposals": 0,
+      "valid_stop_proposals": 0,
+      "threshold": 0.9519182319625542
+    },
+    {
+      "model": "RF146",
+      "partition": "calibration",
+      "score_range": {
+        "min": 0.6523252809255299,
+        "median": 0.788177101600086,
+        "max": 0.9312783652389705
+      },
+      "prefixes": 66,
+      "calls": 66,
+      "dates": 4,
+      "continue_count": 25,
+      "stop_count": 41,
+      "continue_prevalence": 0.3787878787878788,
+      "continue_ap": 0.44952773980441907,
+      "auc": 0.5190243902439025,
+      "continue_recall": 1.0,
+      "valid_stop_recall": 0.024390243902439025,
+      "wrong_stop_proposals": 0,
+      "valid_stop_proposals": 1,
+      "threshold": 0.8977747832066947
+    },
+    {
+      "model": "RF140",
+      "partition": "validation",
+      "score_range": {
+        "min": 0.7391598822930103,
+        "median": 0.8629279527459868,
+        "max": 0.9624614185515775
+      },
+      "prefixes": 56,
+      "calls": 56,
+      "dates": 4,
+      "continue_count": 16,
+      "stop_count": 40,
+      "continue_prevalence": 0.2857142857142857,
+      "continue_ap": 0.3110618277340401,
+      "auc": 0.47421874999999997,
+      "continue_recall": 1.0,
+      "valid_stop_recall": 0.025,
+      "wrong_stop_proposals": 0,
+      "valid_stop_proposals": 1,
+      "threshold": 0.9519182319625542
+    },
+    {
+      "model": "RF146",
+      "partition": "validation",
+      "score_range": {
+        "min": 0.6726153175365052,
+        "median": 0.7946669183533952,
+        "max": 0.9060264690877646
+      },
+      "prefixes": 56,
+      "calls": 56,
+      "dates": 4,
+      "continue_count": 16,
+      "stop_count": 40,
+      "continue_prevalence": 0.2857142857142857,
+      "continue_ap": 0.31865235629827754,
+      "auc": 0.46875,
+      "continue_recall": 0.9375,
+      "valid_stop_recall": 0.025,
+      "wrong_stop_proposals": 1,
+      "valid_stop_proposals": 1,
+      "threshold": 0.8977747832066947
+    }
+  ],
+  "forest_granularity": [
+    {
+      "model": "RF140",
+      "leaves": {
+        "min": 5.0,
+        "median": 7.0,
+        "max": 9.0
+      },
+      "realized_depth": {
+        "min": 3.0,
+        "median": 4.0,
+        "max": 4.0
+      },
+      "distinct_bootstrap_rows": {
+        "min": 222.0,
+        "median": 244.0,
+        "max": 258.0
+      },
+      "minimum_leaf_size": 20,
+      "fit_rows": 386
+    },
+    {
+      "model": "RF146",
+      "leaves": {
+        "min": 3.0,
+        "median": 4.0,
+        "max": 4.0
+      },
+      "realized_depth": {
+        "min": 2.0,
+        "median": 2.0,
+        "max": 3.0
+      },
+      "distinct_bootstrap_rows": {
+        "min": 89.0,
+        "median": 96.5,
+        "max": 106.0
+      },
+      "minimum_leaf_size": 20,
+      "fit_rows": 153
+    }
+  ],
+  "fit_constant_features": [
+    "visible_count",
+    "incumbent_available",
+    "prefix_available",
+    "incumbent_changed_since_prefix",
+    "last_batch_reward_gain",
+    "last_batch_repaired",
+    "improving_batch_fraction",
+    "stale_batches",
+    "reward_gain_since_prefix"
+  ],
+  "fit_effective_continue_mass_fraction": 0.213956906526566,
+  "all_primary_validation_stops": [
+    {
+      "call_id": "2037-03-02_100|call009",
+      "action_match": false,
+      "score": 0.9060264690877646,
+      "queries": 139,
+      "original_queries": 333,
+      "selected": 2,
+      "original": 355,
+      "public_features": {
+        "candidate_count": 909,
+        "visible_count": 128,
+        "queried_fraction": 0.1408140814081408,
+        "remaining_candidates": 781,
+        "incumbent_available": true,
+        "incumbent_reward": 1.0115922689437866,
+        "incumbent_rho": 0.9884077310562134,
+        "rho_limit": 1.0083200931549072,
+        "prefix_available": true,
+        "prefix_safe": false,
+        "incumbent_changed_since_prefix": false,
+        "observed_admissible_fraction": 0.109375,
+        "best_two_reward_gap": 0.0032875537872314453,
+        "last_batch_reward_gain": 0.0,
+        "last_batch_repaired": false,
+        "improving_batch_fraction": 0.0,
+        "stale_batches": 0,
+        "reward_gain_since_prefix": 0.0
+      },
+      "early_rho": 0.9884077310562134,
+      "original_rho": 0.940727949142456,
+      "reward_gap": 0.047679781913757324,
+      "scope": "Saved one-step values only;not weekly failure or cost."
+    },
+    {
+      "call_id": "2037-03-02_101|call000",
+      "action_match": true,
+      "score": 0.8993972210290575,
+      "queries": 135,
+      "original_queries": 263,
+      "selected": 19,
+      "original": 19,
+      "public_features": {
+        "candidate_count": 904,
+        "visible_count": 128,
+        "queried_fraction": 0.1415929203539823,
+        "remaining_candidates": 776,
+        "incumbent_available": true,
+        "incumbent_reward": 1.022048830986023,
+        "incumbent_rho": 0.977951169013977,
+        "rho_limit": 1.0017285346984863,
+        "prefix_available": true,
+        "prefix_safe": false,
+        "incumbent_changed_since_prefix": false,
+        "observed_admissible_fraction": 0.0390625,
+        "best_two_reward_gap": 8.869171142578125e-05,
+        "last_batch_reward_gain": 0.0,
+        "last_batch_repaired": false,
+        "improving_batch_fraction": 0.0,
+        "stale_batches": 0,
+        "reward_gain_since_prefix": 0.0
+      },
+      "early_rho": 0.977951169013977,
+      "original_rho": 0.977951169013977,
+      "reward_gap": 0.0,
+      "scope": "Saved one-step values only;not weekly failure or cost."
+    }
+  ],
+  "original_multiexit_validation_stops": [
+    {
+      "call_id": "2037-03-02_100|call004",
+      "n": 192,
+      "action_match": true,
+      "queries": 192,
+      "original_queries": 256
+    },
+    {
+      "call_id": "2037-05-04_100|call000",
+      "n": 192,
+      "action_match": true,
+      "queries": 192,
+      "original_queries": 256
+    },
+    {
+      "call_id": "2037-05-04_101|call000",
+      "n": 192,
+      "action_match": true,
+      "queries": 192,
+      "original_queries": 256
+    },
+    {
+      "call_id": "2037-08-03_101|call007",
+      "n": 192,
+      "action_match": true,
+      "queries": 192,
+      "original_queries": 256
+    }
+  ],
+  "conclusion": "Single entry removes nonmonotonic exit structure but did not fix held-out ranking. Reduced fit support makes unchanged leaf20 relatively coarser;this observation does not prove a smaller leaf or larger network would generalize. No automatic second fit."
+}

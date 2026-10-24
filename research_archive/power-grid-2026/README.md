@@ -1,3 +1,7 @@
+# 最新：GRID146单入口学习完成
+
+[报告](protocols/GRID146_single_entry/complete/GRID146_report.md)；仅128处一次学习停止，原FRAME接管后续。全部结果和旧分数结构控制保留。
+
 # 最新：GRID145只读风险控制可行性
 
 [报告](protocols/GRID145_risk_feasibility/complete/GRID145_report.md)；三篇原文适用性、阈值非单调反例、日期聚类支持。无训练或策略更换。

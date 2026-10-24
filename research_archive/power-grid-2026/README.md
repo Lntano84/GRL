@@ -714,3 +714,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID138计算空间与查前信息](protocols/GRID138_opportunity/publication/GRID138_report.md)：完整旧25与四开发日期站内预测占比约0.87%/1.86%；建议先评估全局分批学习资格，保留17分支与历史计时差异，零训练/回放。
 
 - [GRID139全局分批学习资格](protocols/GRID139_global_feasibility/publication/GRID139_report.md)：305既有FULL状态、3788前缀；延迟收益与同原动作压缩任务草案，强简单对照齐备，零训练/仿真。
+
+- [GRID140全局压缩一次训练](protocols/GRID140_global_compression/complete/GRID140_report.md)：一次森林+逐调用校准，验证动作差异0/62、查询减少4.141%，离线增量筛查False；零新物理。

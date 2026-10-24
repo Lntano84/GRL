@@ -1,0 +1,164 @@
+{
+  "scope": "Descriptive analysis of already frozen outputs;no fit,threshold search or new scoring.",
+  "score_distributions": {
+    "fit": {
+      "False": {
+        "n": 55,
+        "minimum": 0.7137129224066322,
+        "q25": 0.7423147341261934,
+        "median": 0.7953487824127171,
+        "q75": 0.85420385228877,
+        "maximum": 0.9740146073112588,
+        "above_calibrated": 0
+      },
+      "True": {
+        "n": 331,
+        "minimum": 0.7397503870106148,
+        "q25": 0.8746923617278779,
+        "median": 0.9494709678491755,
+        "q75": 0.9835363352338264,
+        "maximum": 0.9979013994882477,
+        "above_calibrated": 12
+      }
+    },
+    "calibration": {
+      "False": {
+        "n": 45,
+        "minimum": 0.732074640417657,
+        "q25": 0.8031150146573874,
+        "median": 0.9073553551907225,
+        "q75": 0.9656612057928295,
+        "maximum": 0.9963073405340526,
+        "above_calibrated": 0
+      },
+      "True": {
+        "n": 153,
+        "minimum": 0.7299347106340976,
+        "q25": 0.8496584171494972,
+        "median": 0.9380183683331383,
+        "q75": 0.9794081859953814,
+        "maximum": 0.9979013994882477,
+        "above_calibrated": 4
+      }
+    },
+    "validation": {
+      "False": {
+        "n": 22,
+        "minimum": 0.7402992791005789,
+        "q25": 0.8446019598386758,
+        "median": 0.8878779923741494,
+        "q75": 0.918231337150593,
+        "maximum": 0.9909205303004899,
+        "above_calibrated": 0
+      },
+      "True": {
+        "n": 120,
+        "minimum": 0.7391598822930103,
+        "q25": 0.8904048737243565,
+        "median": 0.960591594167944,
+        "q75": 0.9843116800202285,
+        "maximum": 0.9979013994882477,
+        "above_calibrated": 4
+      }
+    }
+  },
+  "fixed05_equals_cap128": {
+    "fit": true,
+    "calibration": true,
+    "validation": true
+  },
+  "validation_calibrated_stops": [
+    {
+      "call_id": "2037-03-02_100|call004",
+      "date": "2037-03-02",
+      "visible_count": 192,
+      "score": 0.9979013994882477,
+      "queries_saved": 64
+    },
+    {
+      "call_id": "2037-05-04_100|call000",
+      "date": "2037-05-04",
+      "visible_count": 192,
+      "score": 0.9972216874804744,
+      "queries_saved": 64
+    },
+    {
+      "call_id": "2037-05-04_101|call000",
+      "date": "2037-05-04",
+      "visible_count": 192,
+      "score": 0.9970204058524603,
+      "queries_saved": 64
+    },
+    {
+      "call_id": "2037-08-03_101|call007",
+      "date": "2037-08-03",
+      "visible_count": 192,
+      "score": 0.9967940789379222,
+      "queries_saved": 64
+    }
+  ],
+  "calibration_threshold_raising_examples": [
+    {
+      "iteration": 0,
+      "call_id": "2037-10-05_100|call003",
+      "score": 0.9519182319625542,
+      "selected": 122,
+      "original": 195,
+      "global_queries": 128,
+      "queries": 128,
+      "original_queries": 408,
+      "date": "2037-10-05",
+      "features": {
+        "candidate_count": 908,
+        "visible_count": 128,
+        "queried_fraction": 0.14096916299559473,
+        "remaining_candidates": 780,
+        "incumbent_available": true,
+        "incumbent_reward": 1.2405116558074951,
+        "incumbent_rho": 0.7594883441925049,
+        "rho_limit": 1.0165412425994873,
+        "prefix_available": true,
+        "prefix_safe": true,
+        "incumbent_changed_since_prefix": false,
+        "observed_admissible_fraction": 0.0625,
+        "best_two_reward_gap": 0.003102540969848633,
+        "last_batch_reward_gain": 0.0,
+        "last_batch_repaired": false,
+        "improving_batch_fraction": 0.0,
+        "stale_batches": 0,
+        "reward_gain_since_prefix": 0.0
+      }
+    },
+    {
+      "iteration": 1,
+      "call_id": "2037-10-05_100|call000",
+      "score": 0.9963073405340526,
+      "selected": 59,
+      "original": 355,
+      "global_queries": 192,
+      "queries": 192,
+      "original_queries": 519,
+      "date": "2037-10-05",
+      "features": {
+        "candidate_count": 906,
+        "visible_count": 192,
+        "queried_fraction": 0.2119205298013245,
+        "remaining_candidates": 714,
+        "incumbent_available": true,
+        "incumbent_reward": 1.1324602365493774,
+        "incumbent_rho": 0.8675397634506226,
+        "rho_limit": 0.9912212491035461,
+        "prefix_available": true,
+        "prefix_safe": true,
+        "incumbent_changed_since_prefix": false,
+        "observed_admissible_fraction": 0.5052083333333334,
+        "best_two_reward_gap": 0.0001608133316040039,
+        "last_batch_reward_gain": 0.0,
+        "last_batch_repaired": false,
+        "improving_batch_fraction": 0.0,
+        "stale_batches": 1,
+        "reward_gain_since_prefix": 0.0
+      }
+    }
+  ]
+}

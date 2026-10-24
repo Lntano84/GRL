@@ -1,0 +1,38 @@
+{
+  "id": "GRID148_PUBLIC_STATE_GLOBAL_LABEL_DIAGNOSIS",
+  "population": "All726 already exposed global-compression prefixes:386fit/198cal/142dev,305 saved physical calls. No new data.",
+  "history": "GRID98/99 already tried local structure/pressure for trajectory equivalence;GRID110-123 recovered/learned local action-feedback context for net gain with adverse results. Reuse reconstruction;do not relabel those outcomes as current action-preserving compression results.",
+  "schema": "Reuse GRID03 serialized observation/action spaces and GRID110 schema;native deserialization and source AST field order,4460/1605 full roundtrips. Forbid environment construction/reset/step/simulate/forecast.",
+  "descriptors": [
+    "current_overload_count",
+    "current_overload_excess_sum",
+    "incumbent_incident_max_rho",
+    "incumbent_overload_endpoint_share",
+    "incumbent_hops_to_maxrho_line",
+    "incumbent_min_hops_to_overload",
+    "visible_admissible_overload_endpoint_fraction",
+    "visible_best_overload_endpoint_reward_gap",
+    "next_batch_overload_endpoint_fraction",
+    "next_batch_hops_to_maxrho_mean",
+    "incumbent_station_changed_since_prefix",
+    "incumbent_station_changed_since_previous_batch"
+  ],
+  "semantics": "Current bus graph:two nodes/substation,live lines connect actual topo_vect endpoint buses,no internal edge between distinct busbars. Distances to maxrho line endpoints and all currently overloaded endpoints. Station distance=min over its currently present buses;None if unreachable. Current hop distance is not electrical sensitivity or future solved impact.",
+  "cutoff": "rho>1 defines current overloaded live lines;maxrho ties use first line index. No tuned threshold/hop radius.",
+  "alias": "Candidate memberships include every public original-action station aliased to its representative. Next/visible endpoint coverage uses any member. Incumbent station follows original canonical public_subids lookup.",
+  "feedback": "Only firstn paid outcomes and public next64 IDs. Incumbent station changes compare128 andn-64 prefixes. Future outcomes/labels cannot enter descriptor API.",
+  "comparison": "Three fixed views:original18+missing,state12+missing,all30+missing. Fit386-only median/IQR with range fallback. For all726queries nearest5 distinct fit calls at same depth/initial-safe branch,exclude same date,save every neighbor and label. Geometric diagnosis only,no classifier/threshold or model selection.",
+  "measures": "For all continue and stop rows,report support/k<5,zero-continue neighborhoods and date counts for each view;do not show only a favorable case. Current target and all negatives remain unchanged.",
+  "cases": "Reuse all four GRID147 prespecified cases and their original two fit-neighbors;inspect saved original128/192 trace for actual error. No new favorable case selection.",
+  "checks": "All305 vector/hash/schema checks,909 public commands,726 suffix-redaction/rejected-future-key/bus-label swap checks;independent scalar BFS/geometry checks.",
+  "prohibited": [
+    "fit",
+    "predict",
+    "new policy or threshold replay",
+    "environment initialization/solve",
+    "new labels or dates",
+    "final8tests",
+    "paper or figure",
+    "automatic training/scale"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "GRID139_GLOBAL_SAVED_FEEDBACK_FEASIBILITY",
+  "utc": "2026-10-24T08:13:19.625174+00:00",
+  "authorization": "User continues afterGRID138: inspect existing complete feedback before training or collecting.",
+  "population": "All40 original train32/validation8 teacher scenarios,20 calendar dates,305 full calls. Include prefixes with no incumbent,not only previous local-eligible prefixes.",
+  "fixed": "Original order,aliases,admissibility,float32/low-id selection;p128,batch64,patience2,safe0.9. Official GRID86/70 plus independent manual reconstruction.",
+  "baselines": [
+    "FULL",
+    "PREFIX128",
+    "PREFIX_PLUS_ONE192",
+    "FIXED_256",
+    "FIXED_512",
+    "FRAME_GLOBAL_ONLY",
+    "FRAME_GUARD"
+  ],
+  "baseline_scope": "Query and reward references at saved states.192 is128+one original batch,not a new benchmarked method or chosen budget.",
+  "inputs": "Only revealed prefix feedback and public M/rho_limit;metadata date/scenario/id for groups only. Hidden suffix poisoning checked.",
+  "targets": "Separate next-batch and all-remaining gain;missing-incumbent recovery separate,gain null when incumbent absent. No wholeweek economic labels from search reward.",
+  "summaries": "Train/validation separate;scenario ratios then same-date replicate mean then date macro. Report all comparisons,strata and stop failures;no new learned policy or cutoff.",
+  "hindsight": "Earliest prefix matching original global incumbent is future-informed global-stage opportunity;extra local work may offset savings. Not deployable strategy or full-control saving.",
+  "public_strata": "Original entry-safe flag,current incumbent availability,current safe0.9,and stale>=2. All strata retained,not feature/rule selection.",
+  "limits": "FULL physical paths differ from FRAME;reward2-maxrho not weekly cost;original query fee not used as real time or money.",
+  "prohibited": [
+    "fit",
+    "model forward",
+    "new forecast/physical/scenario",
+    "final tests",
+    "threshold search",
+    "online rule change",
+    "automatic scale",
+    "paper edit"
+  ]
+}

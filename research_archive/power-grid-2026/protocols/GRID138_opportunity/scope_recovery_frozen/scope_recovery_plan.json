@@ -1,0 +1,9 @@
+{
+  "reason": "Strict equality of outer candidate-row timer and inner obs.simulate timer failed in historical GRID89 adapter;44G2calls,not policy or trajectory error.",
+  "source_evidence": "GRID89adapter accumulates forecast_s immediately after simulate;row forecast_s sampled after flag/rho/reward processing. Inner sum and outer sum differ legitimately.",
+  "method": "For each run D=sum(outer candidate timers)-sum(inner call forecast timers). Each nonnegative postprocessing share unknown by phase. Local pure prediction seconds lie in[max(0,outerLocal-D),outerLocal]. Report intervals;do not modify history or allocate overhead proportionally.",
+  "first_check_original_preserved": true,
+  "new_fits": 0,
+  "new_replays": 0,
+  "original_primary4_unchanged": true
+}

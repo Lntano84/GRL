@@ -722,3 +722,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID142六项批次信息训练](protocols/GRID142_batch_representation/complete/GRID142_report.md)：一次表示干预，开发验证动作差异1/62、少查2.788%，原筛查False。
 
 - [GRID143继续少数类与校准日期诊断](protocols/GRID143_continue_risk/complete/GRID143_report.md)：两固定模型排序、8个校准日敏感性重放、122后续路径；零拟合，原阈值不变。
+
+- [GRID144类别损失一次训练](protocols/GRID144_class_mass/complete/GRID144_report.md)：原18特征、两类质量平衡，开发动作差异0/62、少查0.155%，原筛查False。

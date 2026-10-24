@@ -716,3 +716,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID139全局分批学习资格](protocols/GRID139_global_feasibility/publication/GRID139_report.md)：305既有FULL状态、3788前缀；延迟收益与同原动作压缩任务草案，强简单对照齐备，零训练/仿真。
 
 - [GRID140全局压缩一次训练](protocols/GRID140_global_compression/complete/GRID140_report.md)：一次森林+逐调用校准，验证动作差异0/62、查询减少4.141%，离线增量筛查False；零新物理。
+
+- [GRID141全局反馈与高分错误诊断](protocols/GRID141_feedback_diagnosis/complete/GRID141_report.md)：加权先验、455叶支持及726公开前缀核验；28候选统计未训练，保留全部负例和标签边界。

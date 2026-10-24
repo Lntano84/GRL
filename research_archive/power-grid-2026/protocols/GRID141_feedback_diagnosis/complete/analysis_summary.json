@@ -1,0 +1,75 @@
+{
+  "prefixes": 726,
+  "fit_prefixes": 386,
+  "calibration_prefixes": 198,
+  "development_validation_prefixes": 142,
+  "bootstrap_leaves": 455,
+  "max_leaf_reconstruction_error": 5.551115123125783e-16,
+  "max_score_reconstruction_error": 7.771561172376096e-16,
+  "weighted_fit_stop_prior": 0.9142365048092601,
+  "supplemental_feature_count": 28,
+  "public_suffix_checks": 726,
+  "known_stop_query_checks": 726,
+  "collisions": {
+    "original_features": {
+      "groups": 726,
+      "mixed_groups": 0,
+      "rows_in_mixed_groups": 0
+    },
+    "forest_leaf_signature": {
+      "groups": 697,
+      "mixed_groups": 4,
+      "rows_in_mixed_groups": 9
+    }
+  },
+  "matching": {
+    "negative_rows": 122,
+    "matched": 121,
+    "unmatched": 1
+  },
+  "negative_label_summary": [
+    {
+      "partition": "fit",
+      "n": 55,
+      "reasons": {
+        "original_reward_higher": 53,
+        "stop_reward_higher": 2
+      },
+      "positive_reward_gap": {
+        "minimum": 2.384185791015625e-07,
+        "median": 0.0018734931945800781,
+        "maximum": 0.20401883125305176
+      }
+    },
+    {
+      "partition": "calibration",
+      "n": 45,
+      "reasons": {
+        "original_reward_higher": 40,
+        "stop_reward_higher": 5
+      },
+      "positive_reward_gap": {
+        "minimum": 3.5762786865234375e-07,
+        "median": 0.004995584487915039,
+        "maximum": 0.20026159286499023
+      }
+    },
+    {
+      "partition": "validation",
+      "n": 22,
+      "reasons": {
+        "original_reward_higher": 21,
+        "stop_reward_higher": 1
+      },
+      "positive_reward_gap": {
+        "minimum": 1.1563301086425781e-05,
+        "median": 0.015132546424865723,
+        "maximum": 0.21605610847473145
+      }
+    }
+  ],
+  "new_fits": 0,
+  "new_predict_calls": 0,
+  "new_physical": 0,
+  "final_tests_absent": true
+}

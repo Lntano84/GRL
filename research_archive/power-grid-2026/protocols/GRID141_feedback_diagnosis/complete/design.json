@@ -1,0 +1,62 @@
+{
+  "id": "GRID141_FEEDBACK_DIAGNOSIS",
+  "utc": "2026-10-24T10:33:03.804946+00:00",
+  "authorization": "User continues GRID140 diagnosis;no new fit or physical replay.",
+  "population": "All726 existing prefixes:386fit/198calibration/142development validation;all labels/scores remain fixed.",
+  "analyses": [
+    "Reconstruct all64 bootstrap leaf supports and saved scores without fit/predict calls.",
+    "Exact original-feature and full64-leaf-signature label collisions.",
+    "All negative-prefix opposite-label nearest-fit matches within same checkpoint and original entry-safe branch;exclude same date;fit-only median/IQR normalization;diagnostic not classifier.",
+    "All fixed supplemental public summaries with hidden-suffix poisoning.",
+    "Exact action mismatch versus signed immediate reward difference;do not relabel."
+  ],
+  "supplemental_features": [
+    "has_followup_batch",
+    "followup_batches",
+    "tail64_admissible_fraction",
+    "tail64_bad_feedback_fraction",
+    "visible_rho_q25",
+    "visible_rho_q50",
+    "visible_rho_q75",
+    "visible_rho_q90",
+    "tail64_rho_q25",
+    "tail64_rho_q50",
+    "tail64_rho_q75",
+    "tail64_rho_q90",
+    "tail64_vs_prior64_median_rho",
+    "tail64_best_reward",
+    "tail64_vs_prior64_best_reward",
+    "stations_total",
+    "seen_station_fraction",
+    "unseen_station_count",
+    "incumbent_station_candidates",
+    "incumbent_station_remaining",
+    "incumbent_station_seen_fraction",
+    "completion_would_trigger",
+    "prospective_completion_queries",
+    "stop_total_queries_known_now",
+    "next_batch_new_station_candidate_fraction",
+    "next_batch_incumbent_station_fraction",
+    "best_other_station_reward_gap",
+    "top_two_same_station"
+  ],
+  "public_fields": [
+    "order",
+    "aliases",
+    "rho_limit",
+    "outcomes[:n]"
+  ],
+  "support": "Bootstrap multiplicities and original date/call weights reconstructed exactly;number of unique fit dates/calls reported per leaf. Training purity is not held-out confidence.",
+  "matching": "Original18 features only. IQR fit normalization,range fallback if zero IQR,unit fallback if constant;append missing flags. Same n and prefix_safe,opposite stop label,exclude same calendar date. Save all pairs;do not deploy or tune by pair outcomes.",
+  "cases": "Prespecified two threshold-raising calibration errors plus all four calibrated validation stops;all other negative rows retained in matching and summaries.",
+  "boundaries": "Already exposed development data. Supplemental features not fed into any model;no feature selection,threshold sweep,new predictions,refit,RL,NN,scenarios,final8tests or paper edit.",
+  "prohibited": [
+    "fit",
+    "predict",
+    "new model or threshold",
+    "new physical simulation",
+    "final test materialization",
+    "label changes",
+    "automatic scale"
+  ]
+}

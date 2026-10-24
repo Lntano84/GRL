@@ -718,3 +718,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID140全局压缩一次训练](protocols/GRID140_global_compression/complete/GRID140_report.md)：一次森林+逐调用校准，验证动作差异0/62、查询减少4.141%，离线增量筛查False；零新物理。
 
 - [GRID141全局反馈与高分错误诊断](protocols/GRID141_feedback_diagnosis/complete/GRID141_report.md)：加权先验、455叶支持及726公开前缀核验；28候选统计未训练，保留全部负例和标签边界。
+
+- [GRID142六项批次信息训练](protocols/GRID142_batch_representation/complete/GRID142_report.md)：一次表示干预，开发验证动作差异1/62、少查2.788%，原筛查False。

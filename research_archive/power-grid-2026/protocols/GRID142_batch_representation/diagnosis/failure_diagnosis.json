@@ -1,0 +1,124 @@
+{
+  "scope": "Description of fixed development results;no new threshold/model/fit.",
+  "error": {
+    "sample_id": "3b4d7191d0975be7a639f2ba",
+    "call_id": "2037-10-19_100|call005",
+    "physical_step": 1197,
+    "public_at_stop": {
+      "candidate_count": 909,
+      "visible_count": 192,
+      "queried_fraction": 0.21122112211221122,
+      "remaining_candidates": 717,
+      "incumbent_available": true,
+      "incumbent_reward": 1.119128704071045,
+      "incumbent_rho": 0.8808713555335999,
+      "rho_limit": 0.9941505789756775,
+      "prefix_available": true,
+      "prefix_safe": true,
+      "incumbent_changed_since_prefix": false,
+      "observed_admissible_fraction": 0.6197916666666666,
+      "best_two_reward_gap": 0.0008761882781982422,
+      "last_batch_reward_gain": 0.0,
+      "last_batch_repaired": false,
+      "improving_batch_fraction": 0.0,
+      "stale_batches": 1,
+      "reward_gain_since_prefix": 0.0,
+      "tail64_best_reward": 1.1182525157928467,
+      "tail64_admissible_fraction": 0.53125,
+      "tail64_rho_median": 0.9929642677307129,
+      "tail64_rho_iqr": 0.09674666821956635,
+      "tail64_vs_prior64_best_reward": 0.0003788471221923828,
+      "tail64_vs_prior64_median_rho": 0.0003444254398345947
+    },
+    "new_score": 0.9905696265967037,
+    "new_cutoff": 0.9905386470073488,
+    "new_margin": 3.097958935482925e-05,
+    "old_score": 0.9909205303004899,
+    "old_cutoff": 0.9963073405340526,
+    "changed_action_from": 444,
+    "changed_action_to": 59,
+    "signed_immediate_reward_gap": 0.0005172491073608398,
+    "new_queries": 192,
+    "original_queries": 408,
+    "cap256_queries": 288,
+    "cap256_action": 444,
+    "hindsight_trace": {
+      "not_online_features": true,
+      "original_global_checkpoints": [
+        {
+          "queries": 128,
+          "pool_id": 59,
+          "reward": 1.119128704071045,
+          "rho": 0.8808713555335999,
+          "station": 4
+        },
+        {
+          "queries": 192,
+          "pool_id": 59,
+          "reward": 1.119128704071045,
+          "rho": 0.8808713555335999,
+          "station": 4
+        },
+        {
+          "queries": 256,
+          "pool_id": 195,
+          "reward": 1.1194875240325928,
+          "rho": 0.8805124163627625,
+          "station": 11
+        },
+        {
+          "queries": 320,
+          "pool_id": 195,
+          "reward": 1.1194875240325928,
+          "rho": 0.8805124163627625,
+          "station": 11
+        },
+        {
+          "queries": 384,
+          "pool_id": 195,
+          "reward": 1.1194875240325928,
+          "rho": 0.8805124163627625,
+          "station": 11
+        }
+      ],
+      "global_choice": 195,
+      "local_completion_queries": 24,
+      "final_choice": 444
+    }
+  },
+  "validation_query_metrics": [
+    {
+      "method": "RF140_CALIBRATED",
+      "queries": 23732,
+      "queries_saved": 256,
+      "pooled_query_reduction": 0.010672002668000613,
+      "date_macro_query_reduction": 0.04140887165776426,
+      "action_differences": 0
+    },
+    {
+      "method": "RF142_CALIBRATED",
+      "queries": 23263,
+      "queries_saved": 725,
+      "pooled_query_reduction": 0.030223445055861275,
+      "date_macro_query_reduction": 0.027881568252230815,
+      "action_differences": 1
+    },
+    {
+      "method": "CAP256",
+      "queries": 22272,
+      "queries_saved": 1716,
+      "pooled_query_reduction": 0.071535767883942,
+      "date_macro_query_reduction": 0.08075582010341323,
+      "action_differences": 0
+    }
+  ],
+  "fixed05_equals_cap128": {
+    "fit": true,
+    "calibration": true,
+    "validation": true
+  },
+  "new_physical": 0,
+  "new_fits": 0,
+  "new_predictions": 0,
+  "old_model_retained": true
+}

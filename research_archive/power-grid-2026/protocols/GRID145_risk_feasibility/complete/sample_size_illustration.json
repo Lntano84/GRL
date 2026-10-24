@@ -1,0 +1,52 @@
+{
+  "not_current_confidence_certificate": true,
+  "adopted_risk_tolerance": null,
+  "loss_unit": "Any action mismatch in a date for a pre-fixed policy. iid dates assumed ONLY for illustration.",
+  "rows": [
+    {
+      "independent_date_units": 4,
+      "zero_failure_one_sided_95_upper": 0.5271291954984121,
+      "crc_unit_bound_correction": 0.2
+    },
+    {
+      "independent_date_units": 20,
+      "zero_failure_one_sided_95_upper": 0.13910834066826516,
+      "crc_unit_bound_correction": 0.047619047619047616
+    },
+    {
+      "independent_date_units": 32,
+      "zero_failure_one_sided_95_upper": 0.0893681989862648,
+      "crc_unit_bound_correction": 0.030303030303030304
+    },
+    {
+      "independent_date_units": 59,
+      "zero_failure_one_sided_95_upper": 0.049507609888227,
+      "crc_unit_bound_correction": 0.016666666666666666
+    },
+    {
+      "independent_date_units": 100,
+      "zero_failure_one_sided_95_upper": 0.029513049607039932,
+      "crc_unit_bound_correction": 0.009900990099009901
+    },
+    {
+      "independent_date_units": 299,
+      "zero_failure_one_sided_95_upper": 0.009969146792899286,
+      "crc_unit_bound_correction": 0.0033333333333333335
+    }
+  ],
+  "minimum_zero_failure_dates_95pct": [
+    {
+      "illustrative_upper": 0.1,
+      "n": 29
+    },
+    {
+      "illustrative_upper": 0.05,
+      "n": 59
+    },
+    {
+      "illustrative_upper": 0.01,
+      "n": 299
+    }
+  ],
+  "zero_future_risk": "No finite sample of zero errors excludes every positive Bernoulli failure rate. Identity fallback needs no empirical certification."
+}

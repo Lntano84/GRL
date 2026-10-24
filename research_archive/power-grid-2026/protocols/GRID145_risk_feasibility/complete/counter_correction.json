@@ -1,0 +1,52 @@
+{
+  "cause": "defaultdict access during iteration inserted empty groups;len(grouped) counted all calls.",
+  "fixes": [
+    {
+      "model": "RF140",
+      "partition": "fit",
+      "field": "calls_with_eligible_prefixes",
+      "before": 161,
+      "after": 155
+    },
+    {
+      "model": "RF140",
+      "partition": "calibration",
+      "field": "calls_with_eligible_prefixes",
+      "before": 82,
+      "after": 67
+    },
+    {
+      "model": "RF142",
+      "partition": "fit",
+      "field": "calls_with_eligible_prefixes",
+      "before": 161,
+      "after": 155
+    },
+    {
+      "model": "RF142",
+      "partition": "calibration",
+      "field": "calls_with_eligible_prefixes",
+      "before": 82,
+      "after": 67
+    },
+    {
+      "model": "RF144",
+      "partition": "fit",
+      "field": "calls_with_eligible_prefixes",
+      "before": 161,
+      "after": 155
+    },
+    {
+      "model": "RF144",
+      "partition": "calibration",
+      "field": "calls_with_eligible_prefixes",
+      "before": 82,
+      "after": 67
+    }
+  ],
+  "scope": "Only descriptive eligible-call counts. Score intervals,losses,queries,source data and audit replay results unchanged.",
+  "preserved": {
+    "pre_audit_snapshots/counter_01/family_summary.json": "b1f27a2e7db285670f02dc094c3af069f3e3d72439bab50726098d302328dc52",
+    "pre_audit_snapshots/counter_01/run.py": "2356d02930b1ca1e24cee5540bd74dac07f95d5626dc6e462f91efb3812f8a84"
+  }
+}

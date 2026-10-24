@@ -1,3 +1,7 @@
+# 最新：GRID145只读风险控制可行性
+
+[报告](protocols/GRID145_risk_feasibility/complete/GRID145_report.md)；三篇原文适用性、阈值非单调反例、日期聚类支持。无训练或策略更换。
+
 # 最新：GRID39 complete
 
 [方案/报告](protocols/GRID39_completed/outputs/grid39/GRID39_report.md)

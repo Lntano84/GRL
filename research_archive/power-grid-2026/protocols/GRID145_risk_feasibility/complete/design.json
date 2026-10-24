@@ -1,0 +1,36 @@
+{
+  "id": "GRID145_RISK_CONTROL_ELIGIBILITY",
+  "utc": "2026-10-24T14:15:15.247488+00:00",
+  "task": "Read primary early-exit/risk-control papers and diagnose existing fixed score families before any further training.",
+  "models": [
+    "RF140",
+    "RF142",
+    "RF144"
+  ],
+  "partitions": [
+    "original_fit",
+    "original_calibration"
+  ],
+  "rows": "386fit +198calibration prefixes,161fit +82calibration complete searches;three existing score arrays. No development-validation score loading/replay.",
+  "diagnostic": "Analytic exhaustive piecewise policy behavior for threshold domain[0.5,1]. Only record-high chronological scores can be first exits. Enumerate these mathematical intervals, not candidate policies for selection. Keep every interval and every loss/query nonmonotonicity.",
+  "loss": "Action mismatch to originalFRAME after unchanged completion;also joint mismatch or non-saving learned stop. Original fallback loss zero. Labels stay unchanged.",
+  "audit": "At each interval lower boundary and immediately below upper boundary,check against existing whole-search replay. Check monotone future-sup loss envelope and all-prefix unsafe envelope domination. Inspect only existing calibration-history thresholds;no new cutoff adopted.",
+  "statistics": "Report date clusters,not iid prefixes. Illustrative finite-sample calculations assume independent Bernoulli date-any-error units for a pre-fixed policy;not a certificate for these clustered,previously exposed records.",
+  "literature": [
+    "CALM NeurIPS2022 sections4.1-4.3",
+    "Conformal Risk Control ICLR2024 theorem1 and section2.3",
+    "Learn then Test arXiv2110.01052v5 sections1.1,2.1-2.3"
+  ],
+  "prohibited": [
+    "fit",
+    "predict",
+    "new physical simulation",
+    "new scenarios",
+    "validation threshold search",
+    "policy adoption",
+    "risk tolerance change",
+    "test8 generation",
+    "paper edits",
+    "scale-up"
+  ]
+}

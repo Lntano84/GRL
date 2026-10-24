@@ -1,0 +1,27 @@
+{
+  "id": "GRID138_SAVED_OPPORTUNITY_AND_PUBLIC_OVERLAP",
+  "utc": "2026-10-24T04:35:36.735020+00:00",
+  "scope": "User continues agreed steps1/2: saved timing opportunity and17 trajectory-changing predecision cases. No new training, physical collection or rules.",
+  "status": "Exploratory already-exposed development records;source freeze is reproducibility,not prospective confirmation.",
+  "timing": "All48 GRID104 summaries/calls;mutually exclusive optimizer,all forecasts,search overhead,other. Primary opportunity on8 originalFRAME repetitions and4 dates.",
+  "timing_components": [
+    "all recorded local forecast seconds",
+    "local after first64 on same original path",
+    "local seconds in calls returning same pool_id as before completion"
+  ],
+  "timing_limits": "Recorded forecast components only;excluding unmeasured removable bookkeeping. Not an attainable speedup guarantee,whole-closed-loop upper bound,or a policy rollout. Simple baseline comparison uses original same-batch GRID104 only.",
+  "public_features": "All15 original GRID96 features,unchanged. Metadata step/budget/station displayed separately. No outcome-based feature selection.",
+  "neighborhood": "For each of17 changed trajectories,all nonpilot known-quality cases from other calendar dates;each feature scaled by reference max-min (constant span=1),unweighted mean squared distance;report first3 and all distance rows. Labels do not affect distance;not a classifier,policy,calibrated risk or generalization test.",
+  "descriptive_statistics": "All15 feature Spearman correlations with continuous wholeweek cost delta over16 completed changed trajectories;all coefficients retained,no p values,best feature selection or trigger thresholds. Exact public-feature collisions over56 also recorded.",
+  "inherited_strata": "Only original rho safe0.9 and physical overload1.0 used for descriptive grouping;no new cutoff.",
+  "prohibited": [
+    "fit",
+    "model forward",
+    "threshold search",
+    "new control rule",
+    "new physical/scenario/final tests",
+    "cost-headroom or future outcome as input",
+    "automatic scale",
+    "manuscript changes"
+  ]
+}

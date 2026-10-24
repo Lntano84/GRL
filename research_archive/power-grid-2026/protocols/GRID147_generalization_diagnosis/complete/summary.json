@@ -1,0 +1,138 @@
+{
+  "entry_rows": 275,
+  "continue_rows": 76,
+  "raw_feature_mixed_groups": 0,
+  "raw_feature_distinct_groups": 275,
+  "signature_mixed_groups": {
+    "RF146": 4,
+    "RF140": 3
+  },
+  "oob_support": [
+    {
+      "model": "RF140",
+      "row_oob_tree_counts": {
+        "min": 10.0,
+        "median": 24.0,
+        "max": 32.0
+      },
+      "rows_with_zero_whole_date_oob_trees": 153,
+      "rows": 153
+    },
+    {
+      "model": "RF146",
+      "row_oob_tree_counts": {
+        "min": 13.0,
+        "median": 23.0,
+        "max": 35.0
+      },
+      "rows_with_zero_whole_date_oob_trees": 153,
+      "rows": 153
+    }
+  ],
+  "ranking": [
+    {
+      "model": "RF146",
+      "partition": "fit128",
+      "reading": "fitted_all_trees",
+      "rows": 153,
+      "continue_count": 35,
+      "continue_prevalence": 0.22875816993464052,
+      "continue_ap": 0.5310882876981036,
+      "auc": 0.7686440677966102
+    },
+    {
+      "model": "RF146",
+      "partition": "fit128",
+      "reading": "row_oob_diagnostic",
+      "rows": 153,
+      "continue_count": 35,
+      "continue_prevalence": 0.22875816993464052,
+      "continue_ap": 0.24659718826411203,
+      "auc": 0.49007263922518157
+    },
+    {
+      "model": "RF146",
+      "partition": "calibration",
+      "reading": "frozen_all_trees",
+      "rows": 66,
+      "continue_count": 25,
+      "continue_prevalence": 0.3787878787878788,
+      "continue_ap": 0.44952773980441907,
+      "auc": 0.5190243902439025
+    },
+    {
+      "model": "RF146",
+      "partition": "validation",
+      "reading": "frozen_all_trees",
+      "rows": 56,
+      "continue_count": 16,
+      "continue_prevalence": 0.2857142857142857,
+      "continue_ap": 0.31865235629827754,
+      "auc": 0.46875
+    },
+    {
+      "model": "RF140",
+      "partition": "fit128",
+      "reading": "fitted_all_trees",
+      "rows": 153,
+      "continue_count": 35,
+      "continue_prevalence": 0.22875816993464052,
+      "continue_ap": 0.5578601225948587,
+      "auc": 0.762953995157385
+    },
+    {
+      "model": "RF140",
+      "partition": "fit128",
+      "reading": "row_oob_diagnostic",
+      "rows": 153,
+      "continue_count": 35,
+      "continue_prevalence": 0.22875816993464052,
+      "continue_ap": 0.30589851875040547,
+      "auc": 0.5404358353510896
+    },
+    {
+      "model": "RF140",
+      "partition": "calibration",
+      "reading": "frozen_all_trees",
+      "rows": 66,
+      "continue_count": 25,
+      "continue_prevalence": 0.3787878787878788,
+      "continue_ap": 0.4181555561364646,
+      "auc": 0.47609756097560973
+    },
+    {
+      "model": "RF140",
+      "partition": "validation",
+      "reading": "frozen_all_trees",
+      "rows": 56,
+      "continue_count": 16,
+      "continue_prevalence": 0.2857142857142857,
+      "continue_ap": 0.3110618277340401,
+      "auc": 0.47421874999999997
+    }
+  ],
+  "neighbors": [
+    {
+      "partition": "fit",
+      "continue_rows": 35,
+      "matched_both_labels": 35,
+      "closer_to_fit_stop": 24
+    },
+    {
+      "partition": "calibration",
+      "continue_rows": 25,
+      "matched_both_labels": 25,
+      "closer_to_fit_stop": 17
+    },
+    {
+      "partition": "validation",
+      "continue_rows": 16,
+      "matched_both_labels": 16,
+      "closer_to_fit_stop": 10
+    }
+  ],
+  "no_new_fit": true,
+  "no_new_policy": true,
+  "no_physical": true,
+  "final8_absent": true
+}

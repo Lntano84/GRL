@@ -1,0 +1,33 @@
+{
+  "id": "GRID147_FIXED_FOREST_GENERALIZATION_DIAGNOSIS",
+  "utc": "2026-10-24T14:54:27.901154+00:00",
+  "authorization": "User says continue investigation after GRID146 failed;read-only analysis,no further training.",
+  "models": [
+    "frozenRF146_single_entry",
+    "frozenRF140_original"
+  ],
+  "population": "All275 entry128 rows:153fit,66cal,56exposeddev. ForRF140 bootstrap support use original386fit rows,then compare the same153entry rows.",
+  "questions": [
+    "How much fitted ranking survives row-out-of-bag aggregation of existing trees?",
+    "Are high-score errors unsupported extrapolation or mixed with real training STOP states?",
+    "How do date/branch support and visible-feature distributions differ?"
+  ],
+  "out_of_bag": "Manual votes only from existing trees whose bootstrap did not draw the row. No model.predict or refit. Also count trees omitting the whole calendar date. OOB is row exclusion,not date-held-out evidence;preprocessing/weights were fit globally.",
+  "leaves": "Manually traverse export,float32 inputs;verify native apply routing;reconstruct each leaf class mass from fixed bootstrap multiplicities and fit weights. Save actual/OOB date/label supports.",
+  "matching": "For ALL275entry rows,nearest fitSTOP and fitCONT within same initial-safe branch,exclude same calendar date. Fit153median/IQR,range fallback,active nonconstant transformed channels;deterministic sample-id ties. Not a learned classifier or selection rule.",
+  "distributions": "All18public features;fit-derived quartile bins for varying raw numeric features,original safe branch/date counts,fit-range breaches. No posthoc feature selection or p-value claims.",
+  "cases": "All primary calibrated validation stops,all max-score calibrationCONT ties,and all fitCONT above frozen cutoff. Same fixed states inspected under both forests.",
+  "collisions": "Exact original-feature equality and full64leaf-signature collisions across275. Mixed signatures show representation pooling,not raw-input indistinguishability.",
+  "limits": "Existing development exposure,correlated date replicas. Counts/pairs/tree votes not independent experiments;no new risk guarantee or proof task impossible.",
+  "prohibited": [
+    "fit",
+    "model.predict",
+    "threshold/policy replay",
+    "new adopted score or threshold",
+    "parameter/feature/label change",
+    "new physics or scenarios",
+    "final8tests",
+    "paper edit",
+    "automatic scale"
+  ]
+}

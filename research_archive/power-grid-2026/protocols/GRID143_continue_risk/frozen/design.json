@@ -1,0 +1,28 @@
+{
+  "id": "GRID143_CONTINUE_RANK_AND_CALIBRATION_DATE_DIAGNOSIS",
+  "utc": "2026-10-24T13:38:05.301438+00:00",
+  "authorization": "User continues after GRID142 failed representation-only intervention;diagnose before fitting.",
+  "models": [
+    "FixedRF140",
+    "FixedRF142"
+  ],
+  "population": "All726 already exposed fit/calibration/development validation prefixes,including all122continue labels. No new scores.",
+  "ranking": "Continue-positive AP of1-stop_score,ROC,prevalence and both class recall at each original frozen cutoff. Per-partition and per-date,all cases. Original-query-depth/prefix-safe matched pairwise ranking;no learned matcher.",
+  "separation": "Count true-stop scores strictly above every continue score in each partition as hindsight rank-separation statistic only. Do not replay or adopt a validation-derived threshold.",
+  "calibration_robustness": "For each fixed model,omit each of the original4calibration dates in turn. Use exact original monotone whole-call calibration on other3dates starting0.5. Evaluate only omitted calibration date. Save all8folds;no new validation replay,model selection or adopted cutoff. Donor score maps exclude omitted date.",
+  "continuation_path": "For all122negative prefixes,using saved complete feedback only,compute whether one further original64batch plus unchanged completion restores originalFRAME action. Trace first restoring original checkpoint. Separate next-batch incumbent improvement from exact final-action restoration;future values are labels only.",
+  "weighting": "Reconstruct existing fit sample weights and continue-class effective mass. Calculate one possible equal-class-mass loss normalization from fit only as a mathematical planning quantity,not a new model.",
+  "limits": "Already exposed development records. Date sensitivity is not independent cross-validation or a safety certificate. Prefixes/replicas not independent physical scenarios.",
+  "prohibited": [
+    "fit",
+    "predict",
+    "new physics/scenarios",
+    "final8tests",
+    "validation-selected threshold or model",
+    "threshold grid",
+    "new labels or cost margin",
+    "RL/NN",
+    "paper edit",
+    "automatic scale"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "Training-task draft only,no model fit or adoption.",
+  "action": "At originalFRAME global checkpoints after128 then64 batches,an earlier STOP dispatches usual conditional same-station completion;CONTINUE retains next original batch. Original forced stops remain and model cannot extend past them.",
+  "mask": "No admissible incumbent => retain original search,not a learned stop. Only original visited pre-forced-stop checkpoints with incumbent eligible.",
+  "supervision": "Compare stopping now plus same original station-completion rule to originalFRAME final pool id,using complete saved feedback. Preserve action equality and candidate query difference separately;positive stop target requires equality and strictly fewer total candidate queries.",
+  "information": "Same previously derived revealed-prefix inputs;date/source/identity/teacher answer excluded from features. Original forced stop availability computed from revealed feedback.",
+  "scope": "Fixed FULL-teacher physical states;no new wholeweek-cost label,same candidate pool,controller/order/admissibility. Final tests untouched. Subsequent closed-loop validation required.",
+  "models": "No model,hyperparameters,calibration cutoff or fee selected in this diagnostic. First training requires a separate fixed configuration and notification."
+}

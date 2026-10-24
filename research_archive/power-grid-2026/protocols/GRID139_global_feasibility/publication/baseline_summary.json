@@ -1,0 +1,926 @@
+[
+  {
+    "partition": "train",
+    "method": "FULL",
+    "calls": 243,
+    "scenarios": 32,
+    "dates": 16,
+    "queries": 212630,
+    "exact_full_actions": 243,
+    "lost_admissible": 0,
+    "regret_defined": 243,
+    "mean_comparable_regret": 0.0,
+    "date_macro_query_reduction": 0.0,
+    "date_macro_full_action_match": 1.0,
+    "by_date": [
+      {
+        "date": "2037-01-05",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-01-19",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-02-16",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-03-16",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-04-06",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-05-18",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-06-01",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-06-15",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-07-06",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-08-17",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-09-07",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-09-21",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-10-05",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-11-02",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-11-16",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-12-07",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      }
+    ]
+  },
+  {
+    "partition": "train",
+    "method": "PREFIX128",
+    "calls": 243,
+    "scenarios": 32,
+    "dates": 16,
+    "queries": 31104,
+    "exact_full_actions": 127,
+    "lost_admissible": 3,
+    "regret_defined": 240,
+    "mean_comparable_regret": 0.009768639008204143,
+    "date_macro_query_reduction": 0.8547676016671009,
+    "date_macro_full_action_match": 0.5242919202937585,
+    "by_date": [
+      {
+        "date": "2037-01-05",
+        "query_reduction": 0.8567960027716937,
+        "full_action_match": 0.5751633986928104
+      },
+      {
+        "date": "2037-01-19",
+        "query_reduction": 0.8557050079588733,
+        "full_action_match": 0.5277777777777778
+      },
+      {
+        "date": "2037-02-16",
+        "query_reduction": 0.8544673020288713,
+        "full_action_match": 0.6190476190476191
+      },
+      {
+        "date": "2037-03-16",
+        "query_reduction": 0.84789879472547,
+        "full_action_match": 0.43452380952380953
+      },
+      {
+        "date": "2037-04-06",
+        "query_reduction": 0.8557276722324737,
+        "full_action_match": 0.5166666666666666
+      },
+      {
+        "date": "2037-05-18",
+        "query_reduction": 0.8523495110710997,
+        "full_action_match": 0.7
+      },
+      {
+        "date": "2037-06-01",
+        "query_reduction": 0.8562341399431367,
+        "full_action_match": 0.3522727272727273
+      },
+      {
+        "date": "2037-06-15",
+        "query_reduction": 0.8476152469864637,
+        "full_action_match": 0.3
+      },
+      {
+        "date": "2037-07-06",
+        "query_reduction": 0.8525888205552756,
+        "full_action_match": 0.452991452991453
+      },
+      {
+        "date": "2037-08-17",
+        "query_reduction": 0.8518133522418405,
+        "full_action_match": 0.606060606060606
+      },
+      {
+        "date": "2037-09-07",
+        "query_reduction": 0.8581651231464729,
+        "full_action_match": 0.5
+      },
+      {
+        "date": "2037-09-21",
+        "query_reduction": 0.8548894396775559,
+        "full_action_match": 0.3333333333333333
+      },
+      {
+        "date": "2037-10-05",
+        "query_reduction": 0.8578887954111465,
+        "full_action_match": 0.575
+      },
+      {
+        "date": "2037-11-02",
+        "query_reduction": 0.8576444777892308,
+        "full_action_match": 0.55
+      },
+      {
+        "date": "2037-11-16",
+        "query_reduction": 0.8581986420717419,
+        "full_action_match": 0.7
+      },
+      {
+        "date": "2037-12-07",
+        "query_reduction": 0.8582992980622683,
+        "full_action_match": 0.6458333333333333
+      }
+    ]
+  },
+  {
+    "partition": "train",
+    "method": "PREFIX_PLUS_ONE192",
+    "calls": 243,
+    "scenarios": 32,
+    "dates": 16,
+    "queries": 46656,
+    "exact_full_actions": 145,
+    "lost_admissible": 2,
+    "regret_defined": 241,
+    "mean_comparable_regret": 0.006106583409289602,
+    "date_macro_query_reduction": 0.7821514025006513,
+    "date_macro_full_action_match": 0.5934627668083551,
+    "by_date": [
+      {
+        "date": "2037-01-05",
+        "query_reduction": 0.7851940041575405,
+        "full_action_match": 0.6862745098039216
+      },
+      {
+        "date": "2037-01-19",
+        "query_reduction": 0.7835575119383098,
+        "full_action_match": 0.5833333333333333
+      },
+      {
+        "date": "2037-02-16",
+        "query_reduction": 0.781700953043307,
+        "full_action_match": 0.7023809523809523
+      },
+      {
+        "date": "2037-03-16",
+        "query_reduction": 0.771848192088205,
+        "full_action_match": 0.5476190476190476
+      },
+      {
+        "date": "2037-04-06",
+        "query_reduction": 0.7835915083487105,
+        "full_action_match": 0.55
+      },
+      {
+        "date": "2037-05-18",
+        "query_reduction": 0.7785242666066496,
+        "full_action_match": 0.8
+      },
+      {
+        "date": "2037-06-01",
+        "query_reduction": 0.784351209914705,
+        "full_action_match": 0.4147727272727273
+      },
+      {
+        "date": "2037-06-15",
+        "query_reduction": 0.7714228704796956,
+        "full_action_match": 0.3
+      },
+      {
+        "date": "2037-07-06",
+        "query_reduction": 0.7788832308329134,
+        "full_action_match": 0.5470085470085471
+      },
+      {
+        "date": "2037-08-17",
+        "query_reduction": 0.777720028362761,
+        "full_action_match": 0.7348484848484849
+      },
+      {
+        "date": "2037-09-07",
+        "query_reduction": 0.7872476847197094,
+        "full_action_match": 0.5
+      },
+      {
+        "date": "2037-09-21",
+        "query_reduction": 0.7823341595163338,
+        "full_action_match": 0.3333333333333333
+      },
+      {
+        "date": "2037-10-05",
+        "query_reduction": 0.7868331931167196,
+        "full_action_match": 0.575
+      },
+      {
+        "date": "2037-11-02",
+        "query_reduction": 0.7864667166838462,
+        "full_action_match": 0.775
+      },
+      {
+        "date": "2037-11-16",
+        "query_reduction": 0.7872979631076128,
+        "full_action_match": 0.8
+      },
+      {
+        "date": "2037-12-07",
+        "query_reduction": 0.7874489470934024,
+        "full_action_match": 0.6458333333333333
+      }
+    ]
+  },
+  {
+    "partition": "train",
+    "method": "FIXED_256",
+    "calls": 243,
+    "scenarios": 32,
+    "dates": 16,
+    "queries": 62208,
+    "exact_full_actions": 158,
+    "lost_admissible": 0,
+    "regret_defined": 243,
+    "mean_comparable_regret": 0.003327475163181132,
+    "date_macro_query_reduction": 0.7095352033342018,
+    "date_macro_full_action_match": 0.6475399396355279,
+    "by_date": [
+      {
+        "date": "2037-01-05",
+        "query_reduction": 0.7135920055433873,
+        "full_action_match": 0.7418300653594772
+      },
+      {
+        "date": "2037-01-19",
+        "query_reduction": 0.7114100159177464,
+        "full_action_match": 0.7222222222222223
+      },
+      {
+        "date": "2037-02-16",
+        "query_reduction": 0.7089346040577427,
+        "full_action_match": 0.7023809523809523
+      },
+      {
+        "date": "2037-03-16",
+        "query_reduction": 0.6957975894509401,
+        "full_action_match": 0.6904761904761905
+      },
+      {
+        "date": "2037-04-06",
+        "query_reduction": 0.7114553444649474,
+        "full_action_match": 0.6333333333333333
+      },
+      {
+        "date": "2037-05-18",
+        "query_reduction": 0.7046990221421994,
+        "full_action_match": 0.8
+      },
+      {
+        "date": "2037-06-01",
+        "query_reduction": 0.7124682798862734,
+        "full_action_match": 0.4602272727272727
+      },
+      {
+        "date": "2037-06-15",
+        "query_reduction": 0.6952304939729275,
+        "full_action_match": 0.3
+      },
+      {
+        "date": "2037-07-06",
+        "query_reduction": 0.7051776411105513,
+        "full_action_match": 0.6794871794871795
+      },
+      {
+        "date": "2037-08-17",
+        "query_reduction": 0.7036267044836813,
+        "full_action_match": 0.7348484848484849
+      },
+      {
+        "date": "2037-09-07",
+        "query_reduction": 0.716330246292946,
+        "full_action_match": 0.6666666666666666
+      },
+      {
+        "date": "2037-09-21",
+        "query_reduction": 0.7097788793551116,
+        "full_action_match": 0.3333333333333333
+      },
+      {
+        "date": "2037-10-05",
+        "query_reduction": 0.7157775908222929,
+        "full_action_match": 0.675
+      },
+      {
+        "date": "2037-11-02",
+        "query_reduction": 0.7152889555784616,
+        "full_action_match": 0.775
+      },
+      {
+        "date": "2037-11-16",
+        "query_reduction": 0.7163972841434838,
+        "full_action_match": 0.8
+      },
+      {
+        "date": "2037-12-07",
+        "query_reduction": 0.7165985961245366,
+        "full_action_match": 0.6458333333333333
+      }
+    ]
+  },
+  {
+    "partition": "train",
+    "method": "FIXED_512",
+    "calls": 243,
+    "scenarios": 32,
+    "dates": 16,
+    "queries": 124416,
+    "exact_full_actions": 207,
+    "lost_admissible": 0,
+    "regret_defined": 243,
+    "mean_comparable_regret": 0.0006635880764619804,
+    "date_macro_query_reduction": 0.4190704066684036,
+    "date_macro_full_action_match": 0.8162282468348645,
+    "by_date": [
+      {
+        "date": "2037-01-05",
+        "query_reduction": 0.42718401108677456,
+        "full_action_match": 0.9150326797385621
+      },
+      {
+        "date": "2037-01-19",
+        "query_reduction": 0.4228200318354929,
+        "full_action_match": 0.8333333333333334
+      },
+      {
+        "date": "2037-02-16",
+        "query_reduction": 0.41786920811548534,
+        "full_action_match": 0.9166666666666667
+      },
+      {
+        "date": "2037-03-16",
+        "query_reduction": 0.3915951789018801,
+        "full_action_match": 0.9166666666666667
+      },
+      {
+        "date": "2037-04-06",
+        "query_reduction": 0.4229106889298947,
+        "full_action_match": 0.8
+      },
+      {
+        "date": "2037-05-18",
+        "query_reduction": 0.4093980442843989,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-06-01",
+        "query_reduction": 0.42493655977254674,
+        "full_action_match": 0.8295454545454546
+      },
+      {
+        "date": "2037-06-15",
+        "query_reduction": 0.39046098794585493,
+        "full_action_match": 0.4
+      },
+      {
+        "date": "2037-07-06",
+        "query_reduction": 0.4103552822211025,
+        "full_action_match": 0.905982905982906
+      },
+      {
+        "date": "2037-08-17",
+        "query_reduction": 0.4072534089673624,
+        "full_action_match": 0.8257575757575758
+      },
+      {
+        "date": "2037-09-07",
+        "query_reduction": 0.4326604925858918,
+        "full_action_match": 0.6666666666666666
+      },
+      {
+        "date": "2037-09-21",
+        "query_reduction": 0.41955775871022344,
+        "full_action_match": 0.625
+      },
+      {
+        "date": "2037-10-05",
+        "query_reduction": 0.43155518164458573,
+        "full_action_match": 0.7375
+      },
+      {
+        "date": "2037-11-02",
+        "query_reduction": 0.43057791115692307,
+        "full_action_match": 0.875
+      },
+      {
+        "date": "2037-11-16",
+        "query_reduction": 0.4327945682869675,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-12-07",
+        "query_reduction": 0.4331971922490731,
+        "full_action_match": 0.8125
+      }
+    ]
+  },
+  {
+    "partition": "train",
+    "method": "FRAME_GLOBAL_ONLY",
+    "calls": 243,
+    "scenarios": 32,
+    "dates": 16,
+    "queries": 84472,
+    "exact_full_actions": 171,
+    "lost_admissible": 0,
+    "regret_defined": 243,
+    "mean_comparable_regret": 0.0025019930223378626,
+    "date_macro_query_reduction": 0.6294895012795186,
+    "date_macro_full_action_match": 0.6855143171779201,
+    "by_date": [
+      {
+        "date": "2037-01-05",
+        "query_reduction": 0.41101444563378414,
+        "full_action_match": 0.8562091503267973
+      },
+      {
+        "date": "2037-01-19",
+        "query_reduction": 0.6060721982869529,
+        "full_action_match": 0.75
+      },
+      {
+        "date": "2037-02-16",
+        "query_reduction": 0.5174633107561262,
+        "full_action_match": 0.7023809523809523
+      },
+      {
+        "date": "2037-03-16",
+        "query_reduction": 0.6408582017281359,
+        "full_action_match": 0.6904761904761905
+      },
+      {
+        "date": "2037-04-06",
+        "query_reduction": 0.4825398937205953,
+        "full_action_match": 0.6333333333333333
+      },
+      {
+        "date": "2037-05-18",
+        "query_reduction": 0.68966496059651,
+        "full_action_match": 0.8
+      },
+      {
+        "date": "2037-06-01",
+        "query_reduction": 0.6427986563541841,
+        "full_action_match": 0.6306818181818181
+      },
+      {
+        "date": "2037-06-15",
+        "query_reduction": 0.6665382946646145,
+        "full_action_match": 0.4
+      },
+      {
+        "date": "2037-07-06",
+        "query_reduction": 0.6196878495837332,
+        "full_action_match": 0.811965811965812
+      },
+      {
+        "date": "2037-08-17",
+        "query_reduction": 0.6847749600374521,
+        "full_action_match": 0.7348484848484849
+      },
+      {
+        "date": "2037-09-07",
+        "query_reduction": 0.6925295768991192,
+        "full_action_match": 0.6666666666666666
+      },
+      {
+        "date": "2037-09-21",
+        "query_reduction": 0.6823142384482821,
+        "full_action_match": 0.3333333333333333
+      },
+      {
+        "date": "2037-10-05",
+        "query_reduction": 0.6410428393520676,
+        "full_action_match": 0.7375
+      },
+      {
+        "date": "2037-11-02",
+        "query_reduction": 0.6992616900315167,
+        "full_action_match": 0.775
+      },
+      {
+        "date": "2037-11-16",
+        "query_reduction": 0.7022972621121993,
+        "full_action_match": 0.8
+      },
+      {
+        "date": "2037-12-07",
+        "query_reduction": 0.6929736422670245,
+        "full_action_match": 0.6458333333333333
+      }
+    ]
+  },
+  {
+    "partition": "train",
+    "method": "FRAME_GUARD",
+    "calls": 243,
+    "scenarios": 32,
+    "dates": 16,
+    "queries": 92799,
+    "exact_full_actions": 197,
+    "lost_admissible": 0,
+    "regret_defined": 243,
+    "mean_comparable_regret": 0.0018038975358499912,
+    "date_macro_query_reduction": 0.5922341556089622,
+    "date_macro_full_action_match": 0.7871774977473507,
+    "by_date": [
+      {
+        "date": "2037-01-05",
+        "query_reduction": 0.3774275388496529,
+        "full_action_match": 0.9117647058823529
+      },
+      {
+        "date": "2037-01-19",
+        "query_reduction": 0.5806610819774234,
+        "full_action_match": 0.8888888888888888
+      },
+      {
+        "date": "2037-02-16",
+        "query_reduction": 0.4727185275680932,
+        "full_action_match": 0.8452380952380952
+      },
+      {
+        "date": "2037-03-16",
+        "query_reduction": 0.5957575565379396,
+        "full_action_match": 0.8869047619047619
+      },
+      {
+        "date": "2037-04-06",
+        "query_reduction": 0.4269270888539034,
+        "full_action_match": 0.7
+      },
+      {
+        "date": "2037-05-18",
+        "query_reduction": 0.5985943876064763,
+        "full_action_match": 0.9
+      },
+      {
+        "date": "2037-06-01",
+        "query_reduction": 0.582459024334734,
+        "full_action_match": 0.7840909090909092
+      },
+      {
+        "date": "2037-06-15",
+        "query_reduction": 0.6578281627317337,
+        "full_action_match": 0.4
+      },
+      {
+        "date": "2037-07-06",
+        "query_reduction": 0.5654267383868536,
+        "full_action_match": 0.905982905982906
+      },
+      {
+        "date": "2037-08-17",
+        "query_reduction": 0.6586673759586861,
+        "full_action_match": 0.8636363636363636
+      },
+      {
+        "date": "2037-09-07",
+        "query_reduction": 0.6631708160225609,
+        "full_action_match": 0.6666666666666666
+      },
+      {
+        "date": "2037-09-21",
+        "query_reduction": 0.6720450696640766,
+        "full_action_match": 0.41666666666666663
+      },
+      {
+        "date": "2037-10-05",
+        "query_reduction": 0.623323837267046,
+        "full_action_match": 0.8375
+      },
+      {
+        "date": "2037-11-02",
+        "query_reduction": 0.692204895548941,
+        "full_action_match": 0.875
+      },
+      {
+        "date": "2037-11-16",
+        "query_reduction": 0.6866174968455206,
+        "full_action_match": 0.9
+      },
+      {
+        "date": "2037-12-07",
+        "query_reduction": 0.6219168915897532,
+        "full_action_match": 0.8125
+      }
+    ]
+  },
+  {
+    "partition": "validation",
+    "method": "FULL",
+    "calls": 62,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 55726,
+    "exact_full_actions": 62,
+    "lost_admissible": 0,
+    "regret_defined": 62,
+    "mean_comparable_regret": 0.0,
+    "date_macro_query_reduction": 0.0,
+    "date_macro_full_action_match": 1.0,
+    "by_date": [
+      {
+        "date": "2037-03-02",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-05-04",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-08-03",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-10-19",
+        "query_reduction": 0.0,
+        "full_action_match": 1.0
+      }
+    ]
+  },
+  {
+    "partition": "validation",
+    "method": "PREFIX128",
+    "calls": 62,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 7936,
+    "exact_full_actions": 33,
+    "lost_admissible": 0,
+    "regret_defined": 62,
+    "mean_comparable_regret": 0.014932174836435625,
+    "date_macro_query_reduction": 0.857931922957042,
+    "date_macro_full_action_match": 0.5541895604395605,
+    "by_date": [
+      {
+        "date": "2037-03-02",
+        "query_reduction": 0.8566101029291024,
+        "full_action_match": 0.5846153846153846
+      },
+      {
+        "date": "2037-05-04",
+        "query_reduction": 0.8581245059179285,
+        "full_action_match": 0.625
+      },
+      {
+        "date": "2037-08-03",
+        "query_reduction": 0.8578293014874397,
+        "full_action_match": 0.35
+      },
+      {
+        "date": "2037-10-19",
+        "query_reduction": 0.8591637814936972,
+        "full_action_match": 0.6571428571428571
+      }
+    ]
+  },
+  {
+    "partition": "validation",
+    "method": "PREFIX_PLUS_ONE192",
+    "calls": 62,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 11904,
+    "exact_full_actions": 37,
+    "lost_admissible": 0,
+    "regret_defined": 62,
+    "mean_comparable_regret": 0.006147465398234706,
+    "date_macro_query_reduction": 0.786897884435563,
+    "date_macro_full_action_match": 0.6149954212454212,
+    "by_date": [
+      {
+        "date": "2037-03-02",
+        "query_reduction": 0.7849151543936537,
+        "full_action_match": 0.6564102564102564
+      },
+      {
+        "date": "2037-05-04",
+        "query_reduction": 0.7871867588768927,
+        "full_action_match": 0.625
+      },
+      {
+        "date": "2037-08-03",
+        "query_reduction": 0.7867439522311597,
+        "full_action_match": 0.35
+      },
+      {
+        "date": "2037-10-19",
+        "query_reduction": 0.7887456722405459,
+        "full_action_match": 0.8285714285714285
+      }
+    ]
+  },
+  {
+    "partition": "validation",
+    "method": "FIXED_256",
+    "calls": 62,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 15872,
+    "exact_full_actions": 42,
+    "lost_admissible": 0,
+    "regret_defined": 62,
+    "mean_comparable_regret": 0.0013496818081025154,
+    "date_macro_query_reduction": 0.715863845914084,
+    "date_macro_full_action_match": 0.7123168498168498,
+    "by_date": [
+      {
+        "date": "2037-03-02",
+        "query_reduction": 0.7132202058582049,
+        "full_action_match": 0.6564102564102564
+      },
+      {
+        "date": "2037-05-04",
+        "query_reduction": 0.716249011835857,
+        "full_action_match": 0.75
+      },
+      {
+        "date": "2037-08-03",
+        "query_reduction": 0.7156586029748795,
+        "full_action_match": 0.6142857142857143
+      },
+      {
+        "date": "2037-10-19",
+        "query_reduction": 0.7183275629873945,
+        "full_action_match": 0.8285714285714285
+      }
+    ]
+  },
+  {
+    "partition": "validation",
+    "method": "FIXED_512",
+    "calls": 62,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 31744,
+    "exact_full_actions": 54,
+    "lost_admissible": 0,
+    "regret_defined": 62,
+    "mean_comparable_regret": 6.174656652635144e-05,
+    "date_macro_query_reduction": 0.4317276918281679,
+    "date_macro_full_action_match": 0.9033882783882784,
+    "by_date": [
+      {
+        "date": "2037-03-02",
+        "query_reduction": 0.4264404117164098,
+        "full_action_match": 0.8564102564102565
+      },
+      {
+        "date": "2037-05-04",
+        "query_reduction": 0.4324980236717139,
+        "full_action_match": 1.0
+      },
+      {
+        "date": "2037-08-03",
+        "query_reduction": 0.431317205949759,
+        "full_action_match": 0.7571428571428571
+      },
+      {
+        "date": "2037-10-19",
+        "query_reduction": 0.43665512597478895,
+        "full_action_match": 1.0
+      }
+    ]
+  },
+  {
+    "partition": "validation",
+    "method": "FRAME_GLOBAL_ONLY",
+    "calls": 62,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 21707,
+    "exact_full_actions": 45,
+    "lost_admissible": 0,
+    "regret_defined": 62,
+    "mean_comparable_regret": 0.0010283435544660015,
+    "date_macro_query_reduction": 0.6079140703880337,
+    "date_macro_full_action_match": 0.769757326007326,
+    "by_date": [
+      {
+        "date": "2037-03-02",
+        "query_reduction": 0.6133622232745843,
+        "full_action_match": 0.6897435897435897
+      },
+      {
+        "date": "2037-05-04",
+        "query_reduction": 0.6715812284746063,
+        "full_action_match": 0.875
+      },
+      {
+        "date": "2037-08-03",
+        "query_reduction": 0.6455207124777076,
+        "full_action_match": 0.6857142857142857
+      },
+      {
+        "date": "2037-10-19",
+        "query_reduction": 0.5011921173252367,
+        "full_action_match": 0.8285714285714285
+      }
+    ]
+  },
+  {
+    "partition": "validation",
+    "method": "FRAME_GUARD",
+    "calls": 62,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 23988,
+    "exact_full_actions": 52,
+    "lost_admissible": 0,
+    "regret_defined": 62,
+    "mean_comparable_regret": 0.0006658761732039913,
+    "date_macro_query_reduction": 0.5756838544084516,
+    "date_macro_full_action_match": 0.851304945054945,
+    "by_date": [
+      {
+        "date": "2037-03-02",
+        "query_reduction": 0.5644931988156061,
+        "full_action_match": 0.823076923076923
+      },
+      {
+        "date": "2037-05-04",
+        "query_reduction": 0.6679519710765047,
+        "full_action_match": 0.875
+      },
+      {
+        "date": "2037-08-03",
+        "query_reduction": 0.5873809349585071,
+        "full_action_match": 0.8071428571428572
+      },
+      {
+        "date": "2037-10-19",
+        "query_reduction": 0.48290931278318844,
+        "full_action_match": 0.9
+      }
+    ]
+  }
+]

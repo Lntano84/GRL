@@ -710,3 +710,5 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID136学习目标与标签核查](protocols/GRID136_objective_support/publication/阶段结论.md)：只读奖励精度、旧代理费下分批机会、同站支持及56真实物理标签；区分局部增益与整周业务目标，保存后续标签使用规范建议，无新拟合/仿真。
 
 - [GRID137整周质量标签映射](protocols/GRID137_quality_mapping/publication/阶段结论与训练建议.md)：56既有单次取消45通过/2失败/9参照不足；失败日期覆盖不足，分开质量与计算收益，零训练/回放。
+
+- [GRID138计算空间与查前信息](protocols/GRID138_opportunity/publication/GRID138_report.md)：完整旧25与四开发日期站内预测占比约0.87%/1.86%；建议先评估全局分批学习资格，保留17分支与历史计时差异，零训练/回放。

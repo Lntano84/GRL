@@ -1,0 +1,11 @@
+{
+  "reason": "Recovery checker hardcoded44 mismatch calls from manual count;all six G2 references actually contain48. Replace hardcoded count with independent sum of their recorded call counts.",
+  "scientific_estimator_unchanged": true,
+  "original_code_logs_preserved": true,
+  "no_completed_outputs_repeated": true,
+  "fits": 0,
+  "physical": 0,
+  "script_sha256": "a2e8f2c622c2b93abd51f9b43dc23bc0838a2252250d032c2053107e7b3004df",
+  "old_script_sha256": "dc4900ce5dac0559ce163aaf81acb514d0f4307fa8bf57d394758daaf9d7c7f1",
+  "replacement": "assert len(rows)==25 and len(different)==sum(r['calls'] for r in rows if r['cohort']=='G2')"
+}

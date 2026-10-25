@@ -1,3 +1,7 @@
+# 最新：GRID179便宜共识委托
+
+[报告](protocols/GRID179_cheap_consensus/complete/GRID179_report.md)；固定规则对F效用+1.84%，查询与收益分列。
+
 # 最新：GRID178电气输入分块消融
 
 [报告](protocols/GRID178_power_block_ablation/complete/GRID178_report.md)；完整8项对STATE4增量-4.31%，全部配对结果保留。

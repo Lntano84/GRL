@@ -1,3 +1,7 @@
+# 最新：GRID170四折单向停止迁移
+
+[报告](protocols/GRID170_remaining_date_folds/complete/GRID170_report.md)；16留出日期效用-3.65%、均查询减少6.00%，全部日期折保留。
+
 # 最新：GRID169留出停止机制
 
 [报告](protocols/GRID169_held_stop_mechanism/complete/GRID169_report.md)；正反变化、立即和延迟漏收益分列，固定规则继续核查其余日期折。

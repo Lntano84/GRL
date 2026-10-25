@@ -1,3 +1,7 @@
+# 最新：GRID153实际路径覆盖
+
+[报告](protocols/GRID153_path_coverage/complete/GRID153_report.md)；实际搜索27/30精确重合，近期误停不能主要归因于路径来源。
+
 # 最新：GRID152付费反馈资格筛查
 
 [报告](protocols/GRID152_paid_feedback_screen/complete/GRID152_report.md)；校准门槛未过，不启动26项训练。

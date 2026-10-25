@@ -1,0 +1,8 @@
+{
+  "id": "GRID153_PATH_COVERAGE",
+  "purpose": "Coverage of existing FRAME deployment paths by FULL teacher records; no new trajectories, labels, fit or model inference.",
+  "population": "All four previously exposed GRID104 validation scenario_id100 dates; both repeats checked but r0 only counted as four distinct trajectories. All305 original teacher calls used for exact context lookup.",
+  "comparison": "At same scenario/step compare before-state, action, after-state, raw cost. At search calls compare exact float32 observation/base pair and public context against same-step and all existing teacher calls.",
+  "compatibility": "Library hashes and vector layouts checked; shared context comparisons only on exact observation/base pairs. Compare observed shared feedback without requesting missing outcomes.",
+  "limits": "Exact-byte nonoverlap is empirical coverage, not statistical OOD or causal explanation of held-out FULL-teacher errors. Repeats are not new scenarios. No final8, fit, generation, forecast, physics, threshold selection, paper edits or scale."
+}

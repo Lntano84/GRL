@@ -1,0 +1,72 @@
+"""Publish source-grounded representation review; no new experiment or fit."""
+from pathlib import Path
+import hashlib,json,shutil
+R=Path('D:/Codex/GRL研究');W=Path(__file__).parent;O=R/'outputs/grid161_representation_review';REPO=R/'work/GRL-results-integration';A=REPO/'research_archive/power-grid-2026/protocols/GRID161_representation_review/complete'
+def read(p):return json.loads(p.read_text(encoding='utf8'))
+def sha(p):
+ with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+def save(n,x):(O/n).write_text(json.dumps(x,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf8',newline='\n')
+def main():
+ assert not O.exists();O.mkdir(parents=True)
+ for name,key in [('grid160_station_information_screen','passed_audit'),('grid158_single_192','passed_audit')]:assert read(R/'outputs'/name/'complete.json')[key]
+ old=read(R/'outputs/grid113_relational_learning/design.json');assert old['network']['parameters_each_arm']==5938
+ paths=[R/'outputs/grid113_relational_learning'/n for n in ['design.json','GRID113_report.md']]+[R/'work/grid113_relational_learning/model.py',R/'outputs/grid116_matched_module/GRID116_report.md',R/'outputs/grid140_global_compression/design.json',R/'outputs/grid159_station_bridge/summary.json',R/'outputs/grid160_station_information_screen/complete.json'];hashes={p.relative_to(R).as_posix():sha(p) for p in paths};save('source_hashes.json',hashes)
+ text='''# GRID161：结构化表示读后判断与旧实验核对
+
+## 先排除一个重复尝试
+
+不能把“改用注意力或集合模型”直接当新思路。GRID113已经用动作68维、已查询反馈8维和交叉注意力，比较先配对再编码JOINT与先汇总FACTOR；两组各5938参数。JOINT平均净效用0.14843，FACTOR0.15003，机制判据未过。GRID116保留原主干后，JOINT0.16487、FACTOR0.16738，配对优势仍未建立。说我们以前没有试过关系表示是不准确的。
+
+区别在任务对象：旧实验是在已确定同一个站内，预测下一批补查的一步净收益；当前是决定是否结束跨站全局搜索，随后执行原同站补查。旧阴性结果要保留，但不能直接替当前任务作结论。任何新比较都应说明是任务和表示范围的扩展，不是发明了一种注意力结构。
+
+## 读到的表示方法及其适用边界
+
+Deep Sets把逐元素编码后求和，再作非线性输出，适合输入集合大小变化和展示顺序不应改变输出的任务。论文的结构定理有输入域条件，不能引用成任意有限维网络都能无损保存任意反馈。这里真正可借鉴的是先编码每份观测，再聚合，而非先压成几个手工全局数。阅读：方法2.2及3.1。[NeurIPS 2017原文](https://papers.nips.cc/paper_files/paper/2017/file/f22e4747da1aa27e363d86d40ff442fe-Paper.pdf)。
+
+Set Transformer用注意力建模元素间关系，诱导点模块降低大集合的计算量。原文的最大值回归实验里，直接max池化已很好，提醒我们更复杂的注意力不是默认更优；需要任务匹配的简单聚合作对照。阅读：方法3及实验5.1—5.2。[ICML 2019原文](https://proceedings.mlr.press/v97/lee19d/lee19d.pdf)。
+
+这是表示方法的参考，二者都没有验证本文的电网停止标签或闭环计算优势。不能用论文里的通用性质替代我们的实验。
+
+## 对当前任务最重要的两项修正
+
+第一，不能误用置换不变性。我们可以要求同一份已查询记录的存储行重排不影响输出，但不能要求改变搜索候选顺序后算法不变。每个动作原有的公开排序位置、属于哪些站、处在哪个已揭示批次，都要保留。这样只是对行的展示顺序不敏感，没有抹掉搜索顺序。
+
+第二，不能直接拿旧GRID113/116权重作当前12/4/4拆分的预训练编码器。旧模型使用16个训练日期，其中包含现在被划作校准的4个日期。即使旧监督目标不同，这也不是“当前校准日期未见过”的编码器。未来若做当前严格拆分比较，应从当前12日期重新拟合或使用与本项目日期无关的预训练来源，不能悄悄复用旧权重。
+
+## 下一项真正值得验证的问题
+
+问题不是加多少层，而是保留“哪个站、哪些已查动作、对应反馈、剩余公共候选”之间的关系，是否比提前压成全局摘要更有用。当前11/55个继续前缀涉及发现新站再局部补查，但其它44个也要一起评估，不能只为这11个设计网络。
+
+如果继续，先做数据资格，不立即训练：按固定原候选顺序，把已查询动作及其反馈按公开站关系组织；未查询动作只允许静态描述，反馈保持缺失。继承原别名和代表查询去重语义，不把同一个代表在多个站的关系误计为多次查询。每份打包输入都要能还原原18项与实际已查询集合，且隐藏后缀扰动不影响输入。检查覆盖所有原拟合调用，不只选择有局部补查的调用。
+
+之后的科学比较应固定相同标签、日期、原控制流程、模型容量、初始化、更新序列和最终检查点，只改变反馈在聚合前是否保留站与动作的对应关系；另保留原18项与固定预算对照。训练前给出确切方案和通知。最终还是看完整搜索中的原动作一致性及实际查询，不能用拟合误差或一个奖励代理宣布成功。
+
+这四个校准日期已被反复用于开发；后续读数应明示开发性质。不得因重复查看得到好结果就当独立确认，也不据此动最终8测试。扩大数据或物理验证前仍要先给具体范围。
+
+## 当前状态
+
+本轮只阅读原论文的方法与相关实验章节，核对旧源码、任务和拆分。没有实现新网络、拟合、生成数据或运行电网。原FRAME、学习目标、旧结果和论文均未改。当前没有可采用或可扩大的学习方案。
+'''
+ (O/'GRID161_report.md').write_text(text,encoding='utf8',newline='\n')
+ save('references.json',[dict(title='Deep Sets',year=2017,url='https://papers.nips.cc/paper_files/paper/2017/file/f22e4747da1aa27e363d86d40ff442fe-Paper.pdf',sections_read=['2.2','3.1']),dict(title='Set Transformer: A Framework for Attention-based Permutation-Invariant Neural Networks',year=2019,url='https://proceedings.mlr.press/v97/lee19d/lee19d.pdf',sections_read=['3','5.1','5.2'])])
+ save('decision.json',dict(new_architecture_claim=False,old_attention_attempts_preserved=True,old_weights_not_clean_pretraining_for_current_split=True,next_step='Fixed representation packing qualification before any training',new_fits=0,new_models=0,new_physics=0,ready_to_scale=False))
+ for p,h in hashes.items():assert sha(R/p)==h
+ save('review.json',dict(passed_source_checks=True,old_parameters_verified=5938,report_claims_tied_to_sources=True,new_experiments=0));save('complete.json',dict(passed_source_review=True,not_an_experiment_success=True,new_fits=0,new_data=0))
+ c=R/'论文协作资料/FRAME_结构表示路线复盘_GRID161';c.mkdir(exist_ok=False)
+ for n in ['GRID161_report.md','references.json','decision.json','review.json','complete.json']:shutil.copy2(O/n,c/n)
+ msg='GRID161读DeepSets/SetTransformer方法与相关实验并核旧GRID113/116：旧实验已含配对/交叉注意力且配对未建立优势，不能换名重做。当前可研究跨站全局输入而非旧单站局部收益；保持原排序位置，不把存储置换不变误作搜索顺序无关。旧16训练日期包含现4校准日期，旧权重不是当前12/4/4干净预训练。下一步先固定结构打包资格、不立即训练，不新数据/物理/最终8。'
+ for n in ['RESEARCH_STATE.md','DECISIONS.md','EXPERIMENT_LOG.md']:
+  p=REPO/'docs'/n;before=p.read_text(encoding='utf8');entry='\n\n## 2026-10-25 — GRID161结构表示路线复盘\n\n'+msg+'\n'
+  if n=='RESEARCH_STATE.md':a,b=before.split('\n',1);before=a+'\n'+entry+'\n'+b
+  else:before+=entry
+  p.write_text(before,encoding='utf8',newline='\n')
+ (REPO/'docs/NEXT_STEPS.md').write_text('# Next steps — GRID161后\n\n1. 先冻结跨站结构化输入打包契约，保留原公开rank/批次/别名站归属/已买反馈；每包还原原18项和实际已查集合，隐藏后缀不影响。全部原拟合调用，不能只选补查调用。零拟合资格先行。\n2. 不将旧113/116 attention包装成新结构，不直接复用含当前校准日期的旧权重。匹配比较须明确当前全局任务与旧局部任务差异。\n3. 新拟合前通知；不再扫描检查点/阈值/标量组合，不用重复暴露cal/development声称独立确认。新数据/物理扩大先给方案等用户决定；最终8不碰，论文不动。\n',encoding='utf8',newline='\n')
+ p=REPO/'research_archive/power-grid-2026/README.md';p.write_bytes('# 最新：GRID161结构表示路线复盘\r\n\r\n[报告](protocols/GRID161_representation_review/complete/GRID161_report.md)；核对旧注意力阴性结果与拆分，先做跨站输入资格。\r\n\r\n'.encode('utf8')+p.read_bytes())
+ A.mkdir(parents=True,exist_ok=False)
+ for p in [*W.glob('*.py'),*O.iterdir()]:
+  if p.is_file():shutil.copy2(p,A/p.name)
+ (A/'archive_manifest.json').write_text(json.dumps({p.name:sha(p) for p in A.iterdir()},indent=2)+'\n',encoding='utf8',newline='\n')
+ for n,h in read(A/'archive_manifest.json').items():assert sha(A/n)==h
+ for p in c.iterdir():assert sha(p)==sha(O/p.name)
+ save('publication_verification.json',dict(passed=True,archive_files_checked=len(read(A/'archive_manifest.json')),collaboration_files_checked=5));q=A.parent/'verification';q.mkdir();shutil.copy2(O/'publication_verification.json',q/'publication_verification.json');(q/'archive_manifest.json').write_text(json.dumps({'publication_verification.json':sha(q/'publication_verification.json')},indent=2)+'\n',encoding='utf8',newline='\n');print('GRID161_REVIEW_COMPLETE')
+if __name__=='__main__':main()

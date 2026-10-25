@@ -1,3 +1,7 @@
+# 最新：GRID161结构表示路线复盘
+
+[报告](protocols/GRID161_representation_review/complete/GRID161_report.md)；核对旧注意力阴性结果与拆分，先做跨站输入资格。
+
 # 最新：GRID160站级信息资格
 
 [报告](protocols/GRID160_station_information_screen/complete/GRID160_report.md)；固定8摘要未过预定筛查，未启动26项训练。

@@ -1,3 +1,7 @@
+# 最新：GRID177固定半混合采样
+
+[报告](protocols/GRID177_support_mixture/complete/GRID177_report.md)；组合相对POWER8+0.23%，全日期种子保留。
+
 # 最新：GRID176组合决策区域覆盖
 
 [报告](protocols/GRID176_gate_support/complete/GRID176_report.md)；原拟合区域质量3.32%—9.95%，固定混合采样方案待训练。

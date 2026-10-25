@@ -1,0 +1,17 @@
+{
+  "id": "GRID176_GATE_DECISION_SUPPORT",
+  "authorization": "User continuouslearningexploration; nofits in thisstage.",
+  "question": "The helper affects F AND(R OR C) only at FCONT/RSTOP. How much existing training probability covers that decision-influence region?",
+  "active": "Strict Fq1>q0 and NOT Rq1>q0,using frozenfold/seedFACTORandROUTED predictions. Supportdefinedwithoutlabels; samefitdatesashelper. Not model-call region:cheap-firstexecution maycall C elsewhere.",
+  "proposed_single_intervention": "Keep POWER8 model/features/NETloss/normalization/updates/seeds/folds andouterrule. Change sampler only:0.5originalP+0.5PconditionalonactiveFITrows. No positive-label reweighting or mixture sweep.",
+  "reason": "Retain global profitableexamples even if active fit subset has none; pure active-only training is not proposed.",
+  "limitation": "F/Rfitpredictions can underrepresent helddisagreement,not nested crossfit. Historical exposed dates,conditionaltask. No statistical risk guarantee.",
+  "fixed": "All4folds3seeds,12newfits onlyif latertrainingnotice; originalPOWER8endpoints reused ascontrols. Allfuturelabels prohibited in sampler.",
+  "prohibited": [
+    "fitting/modelprediction",
+    "perseedmixturetuning",
+    "activeheldrows in training",
+    "newdata/physics/test8",
+    "paper"
+  ]
+}

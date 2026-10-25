@@ -1,0 +1,82 @@
+{
+  "id": "GRID150_MATCHED_GLOBAL_LOGISTIC",
+  "utc": "2026-10-25T02:10:28.427804+00:00",
+  "authorization": "User requests autonomous justified progress with progress and pre-fit notice.",
+  "question": "Does inherited L2 regularized linear classifier generalize the same18-summary global compression target better than the existing forests?",
+  "features": [
+    "candidate_count",
+    "visible_count",
+    "queried_fraction",
+    "remaining_candidates",
+    "incumbent_available",
+    "incumbent_reward",
+    "incumbent_rho",
+    "rho_limit",
+    "prefix_available",
+    "prefix_safe",
+    "incumbent_changed_since_prefix",
+    "observed_admissible_fraction",
+    "best_two_reward_gap",
+    "last_batch_reward_gain",
+    "last_batch_repaired",
+    "improving_batch_fraction",
+    "stale_batches",
+    "reward_gain_since_prefix"
+  ],
+  "model_parameters": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 2000,
+    "random_state": 20261022,
+    "class_weight": null
+  },
+  "penalty": "Installed1.7.2 defaultL2,intercept enabled,tol1e-4;record full estimator params at fit.",
+  "fit_dates": [
+    "2037-01-19",
+    "2037-02-16",
+    "2037-03-16",
+    "2037-05-18",
+    "2037-06-01",
+    "2037-06-15",
+    "2037-08-17",
+    "2037-09-07",
+    "2037-09-21",
+    "2037-11-02",
+    "2037-11-16",
+    "2037-12-07"
+  ],
+  "calibration_dates": [
+    "2037-01-05",
+    "2037-04-06",
+    "2037-07-06",
+    "2037-10-05"
+  ],
+  "validation_dates": [
+    "2037-03-02",
+    "2037-05-04",
+    "2037-08-03",
+    "2037-10-19"
+  ],
+  "raw_rows": "Exact original386fit/198cal/142dev,all18values+18missing unchanged;old models never refit.",
+  "preprocessing": "Copy original fit-only medians;StandardScaler mean/variance from386fit transformed rows only,unweighted;sample weights affect classifier loss only.",
+  "weights": "Exact RF140 hierarchical date/call/prefix386 weights,no class balancing.",
+  "target": "Earlier STOP on originalFRAME global path then unchanged conditional completion. Original forced stops stay;no admissible incumbent => continue. Action equality and candidate query saving target fromGRID139.",
+  "search": "Original multi-exit128/64 global checkpoints and unchanged conditional completion. Original force stops/no-incumbent behavior unchanged.",
+  "calibration": "Same empirical zero-joint-failure from0.5,strict> and raise to highest wrong learned-stop score,replay full searches;not formal future guarantee.",
+  "primary": "LR150_CALIBRATED",
+  "secondary": "LR150_FIXED_0.5 retained",
+  "contrasts": "Classifier family plus required fit-only standardization;not same-parameter-count or isolated architecture ablation. Logistic on old local target is not this control.",
+  "cap_s": 120,
+  "fit_limit": 1,
+  "validation_order": "Freeze/push classifier,scaler,training scores and both readings/cutoff before new dev scoring.",
+  "screen": "All62dev calls preserve original action,no non-saving learned exits;date macro query reduction>CAP256,each date queries<=CAP256 and at least1date strictly fewer. No adoption/scale/physics automatic.",
+  "prohibited": [
+    "second fit",
+    "C/solver/classweight/seed/threshold/feature grid",
+    "validation-selected cutoff",
+    "new label/quality margin",
+    "new state/scenario",
+    "physics/test8",
+    "network/RL/paper/scale"
+  ]
+}

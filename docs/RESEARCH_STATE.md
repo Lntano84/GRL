@@ -1,5 +1,9 @@
 # Research state — budget-matched framework comparison
 
+## 2026-10-25 — GRID184回放结束、审计中、关机准备
+
+64/64物理回放已完成，manifest/finished与320个必需结果文件核对通过。审计仍在运行，无分段检查点、尚未通过。用户即将关机，恢复时只处理审计/归档/上传，不重跑物理或直接重启全pipeline；保存全部原始记录。见shutdown_readiness收据。
+
 
 ## 2026-10-25 — GRID184启动核实
 

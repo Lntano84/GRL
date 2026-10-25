@@ -1,3 +1,7 @@
+# 最新：GRID165费用路由正向子群
+
+[报告](protocols/GRID165_factor_cost_routing/complete/GRID165_report.md)；167条无损节省保留，追小模型分歧与机会保护。
+
 # 最新：GRID164显式费用小改善
 
 [报告](protocols/GRID164_explicit_cost/complete/GRID164_report.md)；配对平均+0.81%、2/3种子正向，保留推进。

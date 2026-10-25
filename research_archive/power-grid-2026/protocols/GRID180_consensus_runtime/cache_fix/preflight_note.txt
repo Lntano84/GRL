@@ -1,0 +1,1 @@
+Before any timing/model forward: cache NPZ mean/scale arrays in RAM outside timers. Original values/policy unchanged; prevents archive decompression from entering model-feature timing. No completed timing was repeated.

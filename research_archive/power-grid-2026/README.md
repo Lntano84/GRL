@@ -1,3 +1,7 @@
+# 最新：GRID154现有反馈标签
+
+[报告](protocols/GRID154_observed_label_coverage/complete/GRID154_report.md)；75/78标签可由已查询反馈识别，3未知保留。
+
 # 最新：GRID153实际路径覆盖
 
 [报告](protocols/GRID153_path_coverage/complete/GRID153_report.md)；实际搜索27/30精确重合，近期误停不能主要归因于路径来源。

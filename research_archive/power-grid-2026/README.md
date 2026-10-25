@@ -1,3 +1,7 @@
+# 最新：GRID150同任务低容量对照
+
+[报告](protocols/GRID150_linear_control/complete/GRID150_report.md)；原18项逻辑回归一次拟合，模型阈值评分前发布。
+
 # 最新：GRID149输入与目标对齐
 
 [报告](protocols/GRID149_input_inventory/complete/GRID149_report.md)；不同学习目标分开，下一步补同任务低容量基线。

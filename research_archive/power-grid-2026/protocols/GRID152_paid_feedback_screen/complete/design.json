@@ -1,0 +1,29 @@
+{
+  "id": "GRID152_PAID_FEEDBACK_INFORMATION_SCREEN",
+  "scope": "Read-only. No new fit,predict,policy/threshold replay or new validation-feature extraction.",
+  "tail": "On original386fit/198cal only,count STOP rows componentwise dominated by CONT rows in bothRF140/LR150scores. Also match depth/entry-safe branch. This bounds two-score monotone separability of individual prefixes only,not whole first-hit policy impossibility.",
+  "fixed_fields": [
+    "terminal_fraction",
+    "illegal_fraction",
+    "ambiguous_fraction",
+    "exception_fraction",
+    "admissible_reward_mean",
+    "admissible_reward_std",
+    "station_admissible_fraction",
+    "incumbent_relative_position"
+  ],
+  "provenance": "Exact existingGRID10137 projection,not invented/tuned fields;current global target unchanged. Original18 and prior sixGRID142batch fields retained,not replaced or declared useless.",
+  "data": "Fit386/cal198 only,new8development features remain unextracted. Never touch final8.",
+  "extraction": "Redacted paid prefix,known order/aliases/substation membership only;None/zero future fields rejected. All8independent scalar recomputations and suffix checks.",
+  "geometry": "Compare only original18 versus18+fixed8,append missing flags,fit386medians/IQR with range fallback. Nearest5 distinct fitcalls,same original querydepth/initialsafe branch,exclude same date. No feature/weight/distance search.",
+  "gate": "All45calCONT have5neighbors;strictly fewer calCONT empty neighborhoods than original18;calSTOP contaminated-neighborhood count no greater;each of4caldates CONT empty count no greater. If fail,no fit of this8-field variant. This is only a descriptive screening rule,not predicted gain or independent validation.",
+  "prohibited": [
+    "fit",
+    "validation_feature_selection/extraction",
+    "additionalfeaturevariants",
+    "model/C/threshold/weightgrid",
+    "new label or target",
+    "physics/newdates/test8",
+    "paper/scale"
+  ]
+}

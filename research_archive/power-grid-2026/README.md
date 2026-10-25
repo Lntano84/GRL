@@ -1,3 +1,7 @@
+# 最新：GRID152付费反馈资格筛查
+
+[报告](protocols/GRID152_paid_feedback_screen/complete/GRID152_report.md)；校准门槛未过，不启动26项训练。
+
 # 最新：GRID151固定分数组合
 
 [报告](protocols/GRID151_fixed_score_mean/complete/GRID151_report.md)；仅固定各半均值，零重训，原门槛完整保留。

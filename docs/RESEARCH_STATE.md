@@ -1,6 +1,12 @@
 # Research state — budget-matched framework comparison
 
 
+## 2026-10-25 — GRID152付费反馈筛查完成
+
+GRID152零拟合筛查：同深度/入口校准153可停中91被某继续前缀两评分同时支配，非完整策略不可学证明。预定8项旧付费反馈增量只提取fit/cal，校准继续邻域空白11→15，停止侧混杂55→58，预定门槛未过，禁止训练该26项/换子集救结果。开发新8项未提取，584标量/后缀核验通过。下一步只读检查既有实际FRAME路径覆盖，不重跑/扩大/最终8。报告research_archive/power-grid-2026/protocols/GRID152_paid_feedback_screen/complete/GRID152_report.md
+
+
+
 ## 2026-10-25 — GRID151 complete
 
 两冻结模型仅固定0.5/0.5分数平均，零重训/权重扫描。组合开发动作差异0/62、查询节省宏平均0.802%，原筛查=False；公式数组阈值在组合开发评分前发布，但所有成分开发已暴露，不作独立确认。5795搜索/5185旧记录复核通过；无物理/最终8/自动采用或扩大。报告research_archive/power-grid-2026/protocols/GRID151_fixed_score_mean/complete/GRID151_report.md

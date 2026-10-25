@@ -1,3 +1,7 @@
+# 最新：GRID184小闭环准备
+
+[报告](protocols/GRID184_search_adapter/readiness/GRID184_preparation_report_v2.md)；64条范围等待决定，当前零新物理。
+
 # 最新：GRID183在线输入资格
 
 [报告](protocols/GRID183_online_contract/complete/GRID183_report.md)；核心接口保存状态核验，尚未新物理。

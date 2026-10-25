@@ -1,3 +1,7 @@
+# 最新：GRID163_FACTOR改善来源
+
+[报告](protocols/GRID163_factor_first_decision/complete/GRID163_report.md)；260正确停止逐条核对，转向费用表达的小对照。
+
 # 最新：GRID162正向变化优先
 
 [报告](protocols/GRID162_positive_change_audit/complete/GRID162_report.md)；优先解释并放大已有改善，正反变化同时保留。

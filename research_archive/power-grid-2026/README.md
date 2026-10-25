@@ -1,3 +1,7 @@
+# 最新：GRID155冻结模型实际状态回放
+
+[报告](protocols/GRID155_frozen_path_replay/complete/GRID155_report.md)；原模型未充分识别机会，三学习方案未过筛。
+
 # 最新：GRID154现有反馈标签
 
 [报告](protocols/GRID154_observed_label_coverage/complete/GRID154_report.md)；75/78标签可由已查询反馈识别，3未知保留。

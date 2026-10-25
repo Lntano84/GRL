@@ -1,0 +1,25 @@
+{
+  "id": "GRID169_HELD_STOP_MECHANISM",
+  "authorization": "User sustained exploration of recurring small positive changes.",
+  "scope": "Read-only all held-date paired records of prespecifiedGRID168fold0; no newfit/forward/threshold/policy.",
+  "questions": [
+    "How much net change is query-fee saving versus lost local gain?",
+    "Are wrong stops missing an immediately profitable next batch or a later gain after an unprofitable batch?",
+    "Do correct savings recur across seeds and physical groups, and what public evidence was visible?"
+  ],
+  "summaries": "Allfourdates/threeseeds; outcomes for audit only. Fixed six public fields, descriptive distributions only, no fitted boundary or significance claim.",
+  "fields": {
+    "39": "log_next_batch_queries",
+    "37": "local_batches_done",
+    "38": "local_budget_used_fraction",
+    "40": "locked_remaining_fraction",
+    "16": "reward_gap",
+    "31": "last_batch_reward_gain"
+  },
+  "prohibited": [
+    "newprediction/fits",
+    "rule/price/cutoff search",
+    "newdata/physics/final8",
+    "paper"
+  ]
+}

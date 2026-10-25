@@ -1,3 +1,7 @@
+# 最新：GRID169留出停止机制
+
+[报告](protocols/GRID169_held_stop_mechanism/complete/GRID169_report.md)；正反变化、立即和延迟漏收益分列，固定规则继续核查其余日期折。
+
 # 最新：GRID168单向停止日期迁移
 
 [报告](protocols/GRID168_one_sided_transfer/complete/GRID168_report.md)；固定第0折留出效用-6.71%、均查询减少5.25%，全部种子日期保留。

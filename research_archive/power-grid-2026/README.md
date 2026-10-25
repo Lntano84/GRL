@@ -1,3 +1,7 @@
+# 最新：GRID180当前共识流水线开销
+
+[报告](protocols/GRID180_consensus_runtime/complete/GRID180_report.md)；新增电气描述计入、查询代价分列，不当作整周提速。
+
 # 最新：GRID179便宜共识委托
 
 [报告](protocols/GRID179_cheap_consensus/complete/GRID179_report.md)；固定规则对F效用+1.84%，查询与收益分列。

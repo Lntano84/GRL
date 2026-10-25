@@ -1,3 +1,7 @@
+# 最新：GRID151固定分数组合
+
+[报告](protocols/GRID151_fixed_score_mean/complete/GRID151_report.md)；仅固定各半均值，零重训，原门槛完整保留。
+
 # 最新：GRID150同任务低容量对照
 
 [报告](protocols/GRID150_linear_control/complete/GRID150_report.md)；原18项逻辑回归一次拟合，模型阈值评分前发布。

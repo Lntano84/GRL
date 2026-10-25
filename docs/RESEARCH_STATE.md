@@ -1,6 +1,12 @@
 # Research state — budget-matched framework comparison
 
 
+## 2026-10-25 — GRID151 complete
+
+两冻结模型仅固定0.5/0.5分数平均，零重训/权重扫描。组合开发动作差异0/62、查询节省宏平均0.802%，原筛查=False；公式数组阈值在组合开发评分前发布，但所有成分开发已暴露，不作独立确认。5795搜索/5185旧记录复核通过；无物理/最终8/自动采用或扩大。报告research_archive/power-grid-2026/protocols/GRID151_fixed_score_mean/complete/GRID151_report.md
+
+
+
 ## 2026-10-25 — GRID151 calibrated
 
 固定等权分数校准完成，阈值0.99017611008840456，零拟合；发布公式/数组/阈值后再合并开发分数。

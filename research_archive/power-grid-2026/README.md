@@ -1,3 +1,7 @@
+# 最新：GRID173查询前电气状态输入
+
+[报告](protocols/GRID173_public_state/complete/GRID173_report.md)；固定8项公开描述通过打包资格，尚未训练。
+
 # 最新：GRID172同收益动作停止空间
 
 [报告](protocols/GRID172_stop_opportunity/complete/GRID172_report.md)；先量化已有小改善的可扩空间与机会保护问题。

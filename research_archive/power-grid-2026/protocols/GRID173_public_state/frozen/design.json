@@ -1,0 +1,30 @@
+{
+  "id": "GRID173_PUBLIC_ELECTRICAL_STATE",
+  "authorization": "User continue building recurring small savings; read-only current input qualification before training.",
+  "question": "Current41 summaries and68actiontokens omit full public terminal power and incident-line stress. Is a fixed eight-scalar block available and reproducible BEFORE another query?",
+  "population": "All3582states/2378starts of16originaltrainingdates only. No original4dev newfeatures,final8,simulation or fitting.",
+  "fields": [
+    "current_live_max_rho",
+    "current_overload_excess_mean",
+    "station_incident_max_rho",
+    "station_incident_overload_share",
+    "log_station_absolute_active_power",
+    "anchor_frozen_flow_imbalance",
+    "next_min_minus_anchor_imbalance",
+    "next_mean_minus_anchor_imbalance"
+  ],
+  "first4": "Reuse GRID98 physical descriptors,not invented as new mechanisms. currentmaxrho often duplicates rho_limit; report that explicitly.",
+  "power": "Perterminal signed incomingMW:gen+,load-,line_or/ex-,storage-. Currentdisconnectedterminal=>0. Staticpositions identify terminals; dates/IDs not features.",
+  "imbalance": "For any known intended two-bus plan, sum_b |sum_{terminal on b} current incomingMW|/(1+sum |current incomingMW|). Fixed-current-flow descriptive proxy,NOT a solved future powerflow or guaranteed reward predictor. Base continuous changes and redistribution not recomputed.",
+  "feature_block": "All8 fixed jointly before association/fitting; no feature selection on15losses. Threephysicalstress descriptors add possible information;rawmax may duplicateoldlimit;remaining4 capture scale andknownaction/currentpower relation.",
+  "qualification": "Serialized Grid2Op spaces only,environment construction/reset/step/simulate forbidden. Check everyrawvector/hash,manualvectoroffsets,independentarithmetic,bus/terminal/permutation invariance,future-key rejection.",
+  "future_use": "If qualified,one paired cheap-helper POWER8 versus ZERO8 comparison,oldFACTOR/routed models andone-sidedrule unchanged. Training notice before fits;no current claim improves predictions.",
+  "official_docs": "https://grid2op.readthedocs.io/en/latest/user/observation.html",
+  "prohibited": [
+    "newforecasts/replays",
+    "newfits/modelpredictions",
+    "featuretargetranking",
+    "newdata/final8",
+    "paper"
+  ]
+}

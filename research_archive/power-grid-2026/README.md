@@ -1,3 +1,7 @@
+# 最新：GRID167单向停止小改善
+
+[报告](protocols/GRID167_one_sided_stop/complete/GRID167_report.md)；净效用+0.77%、均查询-8.51%，固定规则继续查日期迁移。
+
 # 最新：GRID166多数票方向分解
 
 [报告](protocols/GRID166_fixed_vote/complete/GRID166_report.md)；早停改善被额外继续抵消，检查单向压缩。

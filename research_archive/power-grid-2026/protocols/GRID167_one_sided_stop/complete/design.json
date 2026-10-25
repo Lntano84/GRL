@@ -1,0 +1,18 @@
+{
+  "id": "GRID167_ONE_SIDED_STOP",
+  "authorization": "User continue amplifying local improvements;single direction-constrained development check,no fit.",
+  "rule": "go_new=go_originalFACTOR AND(go_routedFACTOR OR go_smallCOST42). All old decisions strictq1>q0. Only allow earlier stop;never turn originalSTOP intoCONTINUE. No thresholds/weights/alternate gate.",
+  "proof": "Same original candidate order and positive per-batch query counts:shared-prefix induction implies new stopping position<=originalFACTOR,so queries per identical saved-state search cannot increase. Not a physical wholeweek guarantee;reward/action can change.",
+  "provenance": "Chosen fromGRID166 exposed direction decomposition. Saved-state mean effect is already inferable;must not present as blind prediction/independent confirmation.",
+  "known_expected_validation_net_delta": 0.0012875003076824017,
+  "known_expected_validation_utility": 0.16866375737106137,
+  "evaluation": "All3seeds/all2378train590validationstarts,original16/4localNETtask. Verify monotone query bound andactual equality to prior earlier-stop cases. Report alllostgain/newstopcases andphysical-groupbalancedreadout.",
+  "forbidden": [
+    "newfits/forwards",
+    "gateorweightthresholdscan",
+    "futurelabels in decisions",
+    "newphysics/data/test8",
+    "paper",
+    "automaticadoptionorscale"
+  ]
+}

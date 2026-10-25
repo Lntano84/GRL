@@ -1,3 +1,7 @@
+# 最新：GRID160站级信息资格
+
+[报告](protocols/GRID160_station_information_screen/complete/GRID160_report.md)；固定8摘要未过预定筛查，未启动26项训练。
+
 # 最新：GRID159站发现与补查
 
 [报告](protocols/GRID159_station_bridge/complete/GRID159_report.md)；20%原拟合继续前缀涉及站发现→局部补查，公开站级信息待资格核查。

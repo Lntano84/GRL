@@ -1,3 +1,7 @@
+# 最新：GRID174电气输入帮助模型
+
+[报告](protocols/GRID174_power_helper/complete/GRID174_report.md)；POWER8对同容量ZERO8效用-1.10%，全部四折结果保留。
+
 # 最新：GRID173查询前电气状态输入
 
 [报告](protocols/GRID173_public_state/complete/GRID173_report.md)；固定8项公开描述通过打包资格，尚未训练。

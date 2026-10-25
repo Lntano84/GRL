@@ -1,0 +1,172 @@
+{
+  "id": "GRID174_CHEAP_HELPER_POWER8",
+  "authorization": "User continuation; explicit pretraining notice24pairedfits, no newphysics.",
+  "hypothesis": "Query-before-known electrical state andaction relations may help the cheap helper recognize profitable next batches missed by current summaries; keep positivequerysavings and allcounterexamples.",
+  "arms": [
+    "ZERO8",
+    "POWER8"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "folds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "fit_order": [
+    {
+      "fold": 0,
+      "seed": 0,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 0,
+      "seed": 0,
+      "arm": "POWER8"
+    },
+    {
+      "fold": 0,
+      "seed": 1,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 0,
+      "seed": 1,
+      "arm": "POWER8"
+    },
+    {
+      "fold": 0,
+      "seed": 2,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 0,
+      "seed": 2,
+      "arm": "POWER8"
+    },
+    {
+      "fold": 1,
+      "seed": 0,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 1,
+      "seed": 0,
+      "arm": "POWER8"
+    },
+    {
+      "fold": 1,
+      "seed": 1,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 1,
+      "seed": 1,
+      "arm": "POWER8"
+    },
+    {
+      "fold": 1,
+      "seed": 2,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 1,
+      "seed": 2,
+      "arm": "POWER8"
+    },
+    {
+      "fold": 2,
+      "seed": 0,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 2,
+      "seed": 0,
+      "arm": "POWER8"
+    },
+    {
+      "fold": 2,
+      "seed": 1,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 2,
+      "seed": 1,
+      "arm": "POWER8"
+    },
+    {
+      "fold": 2,
+      "seed": 2,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 2,
+      "seed": 2,
+      "arm": "POWER8"
+    },
+    {
+      "fold": 3,
+      "seed": 0,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 3,
+      "seed": 0,
+      "arm": "POWER8"
+    },
+    {
+      "fold": 3,
+      "seed": 1,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 3,
+      "seed": 1,
+      "arm": "POWER8"
+    },
+    {
+      "fold": 3,
+      "seed": 2,
+      "arm": "ZERO8"
+    },
+    {
+      "fold": 3,
+      "seed": 2,
+      "arm": "POWER8"
+    }
+  ],
+  "fits_permitted": 24,
+  "network": "50->64->64->2 ReLU,7554parameters both. First42columns/laterlayers transplant existing RANDOM42constructor;8extracolumns0. No fittedweight initialization.",
+  "intervention": "Onlycheaphelper8inputcolumns differ:allzeros versus jointlyfixed GRID173physical8. Old cross-fittedFACTOR andROUTED weights frozen. Same F AND(R OR C) rule;do not add a new safetygate/threshold.",
+  "normalization": "Original41foldnormalization andknowncost unchanged;physical8 date-balancedmean/scale on12fitdatesonly,zero-variance scale1,clip[-20,20]. Duplicatedmaxrho retained explicitly,not all8newinformation.",
+  "task": "Same immediate NET[0,y]Huberbeta1,price/gainscale/updates/sampler. Original4dev notscored/final8sealed. Historicallyfixedtaskunits andexposed16dates,not independenttest.",
+  "training": {
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip": 10.0,
+    "wall_cap_s": 600,
+    "sampler_seed_offset": 20261022
+  },
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "evaluation": "All24finalweights published before any heldscores. PairedPOWER8vsZERO8 helper andcompleteone-sidedsearch,plus oldFACTOR/oldONE_SIDED. Allseeds,16dates,physicalgroups,query/gain/net andfirstdifferences retained.",
+  "interpretation": "Small recurringpositivechanges worthresearch;no all-win gate. Capacitymatchedcomparison,not proof eachfieldnecessary or futureflowaccurate. No newfullcontroltimeclaim.",
+  "forbidden": [
+    "extraiterations/features/fields/losses/thresholds/fees/seed/foldselection",
+    "newdata/physics/final8",
+    "original4devscores",
+    "paper",
+    "automatic scale"
+  ]
+}

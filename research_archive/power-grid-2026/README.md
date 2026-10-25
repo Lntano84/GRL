@@ -1,3 +1,7 @@
+# 最新：GRID158单192对照
+
+[报告](protocols/GRID158_single_192/complete/GRID158_report.md)；61/62保动作，未过筛；停止仅换检查点的尝试。
+
 # 最新：GRID157检查点信息诊断
 
 [报告](protocols/GRID157_checkpoint_information/complete/GRID157_report.md)；入口摘要缺少批次趋势，先看一批仍有机会但有代价。

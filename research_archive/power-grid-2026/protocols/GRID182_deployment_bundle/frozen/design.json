@@ -1,0 +1,59 @@
+{
+  "id": "GRID182_FROZEN_FULL_TRAIN_BUNDLE",
+  "authorization": "User continuousprogress; pretrainingnotice6fulltrainhelperfits,oldFweightsreused,no physical.",
+  "purpose": "Prepare deployable frozenconsensus weights. Not newvalidation orstatisticalconfirmation.",
+  "population": "Alloriginal16trainingdates/32scenarios/2378starts/3582states;original4devnotfeature-extracted/scored;final8sealed.",
+  "new_fits": 6,
+  "fit_order": [
+    {
+      "seed": 0,
+      "arm": "STATE4"
+    },
+    {
+      "seed": 0,
+      "arm": "POWER8"
+    },
+    {
+      "seed": 1,
+      "arm": "STATE4"
+    },
+    {
+      "seed": 1,
+      "arm": "POWER8"
+    },
+    {
+      "seed": 2,
+      "arm": "STATE4"
+    },
+    {
+      "seed": 2,
+      "arm": "POWER8"
+    }
+  ],
+  "model": "Same7554randominitialized50-64-64-2;STATE4last4zeros,POWER8all8;noarchitecture/feature/targetselection.",
+  "training": {
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip": 10.0,
+    "loss": "oldmeanHuberNET[0,y],beta1",
+    "wall_cap_s": 300
+  },
+  "normalization": "Equaldate/state-weight full16normalization,original41reproduced;currentphysical8fit16only. Historicfee/gainscale unchanged.",
+  "sampling": "Exactoriginal16date/prefix/position probability and232000indexdraws perseed;all6finalweights before anyengineeringforward. No current scientific performance comparison.",
+  "factor": "Copy3GRID165ZERO_MAINfull16endpoints withoutfitting;verifycheckpointhashes/normalization andfrozenoriginaltrain predictions.",
+  "deployment_rule": "STATE4/POWER8agreement selects;disagreement delegatesFACTOR. Strictq1>q0;no newthreshold. Candidatecontrols FRAME_GUARD,BATCH1,FACTORall3seeds.",
+  "permission_boundary": "Bundle/interfacepreparationonly. No newenvironmentconstruction/reset/step/simulate orphysicalruns authorized by this file;concretephysicalscope must be presented later.",
+  "prohibited": [
+    "extraepoch/checkpoint/seed/feature/fee/ruleselection",
+    "devscores",
+    "newdata/physics/final8",
+    "paper"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "GRID164_EXPLICIT_COST_INPUT",
+  "authorization": "User continuation after notice:two tiny models per3existingseeds,no new data.",
+  "hypothesis": "A direct scalar expression of already-known next-batch cost helps recognize unprofitable continuation,one possible contributor toFACTOR positive savings.",
+  "task": "Old local next-batch NET target [0,(gain-fee*queries)/gain_scale] unchanged;not global action-identity andnot newRL.",
+  "arms": [
+    "ZERO42",
+    "COST42"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "fit_order": [
+    {
+      "seed": 0,
+      "arm": "ZERO42"
+    },
+    {
+      "seed": 0,
+      "arm": "COST42"
+    },
+    {
+      "seed": 1,
+      "arm": "ZERO42"
+    },
+    {
+      "seed": 1,
+      "arm": "COST42"
+    },
+    {
+      "seed": 2,
+      "arm": "ZERO42"
+    },
+    {
+      "seed": 2,
+      "arm": "COST42"
+    }
+  ],
+  "new_fits": 6,
+  "inputs": "Original normalized41 plus42nd scalar. ZERO42:0;COST42:unchanged fee*nextqueries/gain_scale,unscaled exactly asFACTOR. It is recoverable from original log-next-query count;no new information.",
+  "network": "42->64->64->2 ReLU,7042 parameters both;copy original RANDOM seed41 initialization into first41 columns and later layers,extra column0. No fitted weights loaded.",
+  "original_random_hashes": {
+    "0": "6c12d18ddac191f08de264bc6badb752feb809e260a45af99f22e08e79140476",
+    "1": "75d672412384d6387a990fcdc8cdbd1469357ce36d98a2e67fd99ec67925dc67",
+    "2": "06433e0d214df6377566e05b3099676c241bd1ffd1af0f68ca8b2e2041b891f7"
+  },
+  "training": {
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip": 10.0,
+    "loss": "smooth_l1 beta1,mean32x2",
+    "sampler_seed_offset": 20261022,
+    "trace_every": 500,
+    "wall_cap_s": 600
+  },
+  "population": {
+    "train_states": 3582,
+    "train_starts": 2378,
+    "train_dates": 16,
+    "validation_states": 856,
+    "validation_starts": 590,
+    "validation_dates": 4
+  },
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "readout": "Strict q_continue>q_stop,all seeds anddates,no calibration/threshold. Final7250only. Publish all6 models before validation scoring.",
+  "comparisons": "COST42 versus pairedZERO42 isolates explicit input under matched capacity/init/exposure. OldBASE,FACTOR,BATCH1 references retained;ZERO42 not assumed identical trained result to old41 due floating-point/kernel difference.",
+  "interpretation": "Report any small recurring improvements and first-difference mechanisms;do not require all seeds/dates win for research value. No automatic adoption/scale. Exposed dates,not independent confirmation.",
+  "not_grid126": "No gross-gain regression,no analytic cost deduction or new link/loss;NET labels andloss unchanged.",
+  "prohibited": [
+    "extra fits/checkpoint/feature/price/seed/threshold searches",
+    "reweight positives",
+    "new data/scenarios/physics",
+    "final8",
+    "paper",
+    "automatic scale"
+  ]
+}

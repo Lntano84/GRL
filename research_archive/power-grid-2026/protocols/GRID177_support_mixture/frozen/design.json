@@ -1,0 +1,80 @@
+{
+  "id": "GRID177_SUPPORT_MIXTURE",
+  "authorization": "User continue; pretraining notice12fixedfits, sampleronly.",
+  "intervention": "Onlysampler0.5original+0.5conditionalFCONT/RSTOPFITsupport, GRID176probability/streams alreadyfrozen. All12foldseedconfigurations;no mixweightorlabelselection.",
+  "fixed": "SamePOWER8normalized50inputs/7554MLP/randominit/7250x32/NETHuber/Adam/fee/outerFAND(RORC). Reuseall12oldPOWER8models ascontrols;do not refitcontrols.",
+  "fit_order": [
+    {
+      "fold": 0,
+      "seed": 0
+    },
+    {
+      "fold": 0,
+      "seed": 1
+    },
+    {
+      "fold": 0,
+      "seed": 2
+    },
+    {
+      "fold": 1,
+      "seed": 0
+    },
+    {
+      "fold": 1,
+      "seed": 1
+    },
+    {
+      "fold": 1,
+      "seed": 2
+    },
+    {
+      "fold": 2,
+      "seed": 0
+    },
+    {
+      "fold": 2,
+      "seed": 1
+    },
+    {
+      "fold": 2,
+      "seed": 2
+    },
+    {
+      "fold": 3,
+      "seed": 0
+    },
+    {
+      "fold": 3,
+      "seed": 1
+    },
+    {
+      "fold": 3,
+      "seed": 2
+    }
+  ],
+  "new_fits": 12,
+  "training": {
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip": 10.0,
+    "wall_cap_s": 300
+  },
+  "evaluation": "Publishall12weightsbeforeheldpredictions. All16OOFdates3seeds,completehelper andgate searches,utility/gain/query,actualoldlossrecovery. Smallpositivesretained,allnegativesreported.",
+  "limitations": "Samplingexposure intentionallydiffersfromoriginal;not an exactsame-indexcomparison. FitF/Rsupport mayunderrepresentheldsupport;notnested/pristinetest. No newphysics or controltime claim.",
+  "prohibited": [
+    "extraiterations/seeds/folds/mixtures/losses/thresholds",
+    "heldlabels in sampler",
+    "newdata/physics/final8",
+    "original4devscores",
+    "paper",
+    "automatic scale"
+  ]
+}

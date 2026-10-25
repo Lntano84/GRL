@@ -1,3 +1,7 @@
+# 最新：GRID175小模型的正向改善
+
+[报告](protocols/GRID175_helper_gate_audit/complete/GRID175_report.md)；电气输入小模型效用+4.36%、3种子均正，区分组合限制。
+
 # 最新：GRID174电气输入帮助模型
 
 [报告](protocols/GRID174_power_helper/complete/GRID174_report.md)；POWER8对同容量ZERO8效用-1.10%，全部四折结果保留。

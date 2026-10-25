@@ -1,3 +1,7 @@
+# 最新：GRID164显式费用小改善
+
+[报告](protocols/GRID164_explicit_cost/complete/GRID164_report.md)；配对平均+0.81%、2/3种子正向，保留推进。
+
 # 最新：GRID163_FACTOR改善来源
 
 [报告](protocols/GRID163_factor_first_decision/complete/GRID163_report.md)；260正确停止逐条核对，转向费用表达的小对照。

@@ -1,3 +1,7 @@
+# 最新：GRID168单向停止日期迁移
+
+[报告](protocols/GRID168_one_sided_transfer/complete/GRID168_report.md)；固定第0折留出效用-6.71%、均查询减少5.25%，全部种子日期保留。
+
 # 最新：GRID167单向停止小改善
 
 [报告](protocols/GRID167_one_sided_stop/complete/GRID167_report.md)；净效用+0.77%、均查询-8.51%，固定规则继续查日期迁移。

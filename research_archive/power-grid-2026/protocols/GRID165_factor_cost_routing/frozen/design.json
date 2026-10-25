@@ -1,0 +1,71 @@
+{
+  "id": "GRID165_FACTOR_COST_ROUTING",
+  "authorization": "User continue;pretraining notice delivered for a paired main-cost routing trial.",
+  "rationale": "COST42 has modest repeatable utility gains whileFACTOR has different positive cases. Test whether direct main access to known cost helps within FACTOR,not assume additive gains.",
+  "arms": [
+    "ZERO_MAIN",
+    "COST_MAIN"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "fit_order": [
+    {
+      "seed": 0,
+      "arm": "ZERO_MAIN"
+    },
+    {
+      "seed": 0,
+      "arm": "COST_MAIN"
+    },
+    {
+      "seed": 1,
+      "arm": "ZERO_MAIN"
+    },
+    {
+      "seed": 1,
+      "arm": "COST_MAIN"
+    },
+    {
+      "seed": 2,
+      "arm": "ZERO_MAIN"
+    },
+    {
+      "seed": 2,
+      "arm": "COST_MAIN"
+    }
+  ],
+  "fits_permitted": 6,
+  "model": "Both12980parameters:42->64->64->2 main7042 plus original FACTOR correction5938. Correction sees same original41/actions/paidfeedback/knowncost in both. Main42extra0 versus knowncost.",
+  "initialization": "Same original random41seed transplanted into main42with extra column0. Original random FACTOR correction/offset seed/headzero unchanged. Both arms tensor-identical initially,not fitted model reuse.",
+  "fixed": "Old16train/4validation dates,3582/856states,2378/590starts,NET[0,net]Huber beta1,oldpricescale/sampler,7250updates,batch32,Adam. Only cost access to main differs.",
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "training": {
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip": 10.0,
+    "weight_decay": 0.0,
+    "sampler_seed_offset": 20261022,
+    "wall_cap_s": 1800,
+    "trace_every": 500
+  },
+  "evaluation": "All6final weights published before validation;strictq1>q0,no thresholds. Allseed/date gain/query/utility and paired changes,oldFACTOR,COST42,BASE,BATCH1 reference. No all-seedwin gate for exploratory merit.",
+  "limitations": "Exposed samegrid oldlocal task,not independent confirmation,weekly cost/quality or measuredcontroltime. Current global12/4/4 target not silently changed;this is separate local exploratory line.",
+  "prohibited": [
+    "additionalfits/seed/price/threshold/checkpoint search",
+    "interimvalidation",
+    "newdata/physics/test8",
+    "grossgainlabel orcostoutside change",
+    "paper",
+    "automatic scale"
+  ]
+}

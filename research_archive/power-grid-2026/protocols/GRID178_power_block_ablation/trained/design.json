@@ -1,0 +1,24 @@
+{
+  "id": "GRID178_STATE4_INPUT_ABLATION",
+  "authorization": "User sustainedmechanismresearch; pretrainingnotice12fits,one origin-definedablation.",
+  "question": "Is POWER8 improvement mainly restored publicloadstate4 or incrementally the fournewfrozenpower/plan descriptors?",
+  "intervention": "Same50input7554MLP,keep normalizedcolumns42:46state4;setcolumns46:50power-plan4tozero. Original42unchanged. ReuseallZERO8andPOWER8originalsampler endpoints,trainonly12STATE4controls.",
+  "fixed": "Original fullsampler,notGRID177mixture; sameall4folds3seeds/randominit/7250x32/NETHuber/Adam/normalization/price,F/R,andgate. No fieldwise search.",
+  "interpretation": "Jointblockablation,not eachfieldcausalproof. STATE4 includes duplicatedmaxrho. All8totalparameterssame,activecolumnsnot same. Exposeddate development,not a newtest.",
+  "training": {
+    "new_fits": 12,
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "clip": 10.0,
+    "wall_cap_s": 300
+  },
+  "evaluation": "Publishall12weightsbeforeheldpredictions. Helper andgate bothreported,allseeds/all16dates,POWER8vsSTATE4 incremental difference andSTATE4vsZERO8. Do not choose a winner then callit independentconfirmation.",
+  "prohibited": [
+    "newfields/budget/fees/thresholds/seeds/folds",
+    "mixtureorsinglefieldsearch",
+    "newdata/physics/final8",
+    "original4devscoring",
+    "paper"
+  ]
+}

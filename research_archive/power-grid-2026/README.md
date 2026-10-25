@@ -1,3 +1,7 @@
+# 最新：GRID172同收益动作停止空间
+
+[报告](protocols/GRID172_stop_opportunity/complete/GRID172_report.md)；先量化已有小改善的可扩空间与机会保护问题。
+
 # 最新：GRID171等价停止执行开销
 
 [报告](protocols/GRID171_stop_execution_cost/complete/GRID171_report.md)；固定策略短路执行，单独核对模型头开销。

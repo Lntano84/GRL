@@ -1,0 +1,35 @@
+{
+  "id": "GRID171_STOP_EXECUTION_COST",
+  "authorization": "User continue explaining and developing small gains; equivalent execution only,no fit or new physical data.",
+  "purpose": "Measure exact one-sided model-head overhead and savings from short-circuiting logically unnecessary helper calls.",
+  "modes": [
+    "FACTOR",
+    "EAGER_ONE_SIDED",
+    "SHORT_ONE_SIDED"
+  ],
+  "rule": "F AND(R OR C),unchanged. SHORT:ifFSTOP stop;else evaluatecheapC;ifCCONT continue;else evaluateR. Order fixed by already-known simpleMLP versus structured complexity before timing;no order search. EAGER evaluatesall3 each reachedstate.",
+  "population": "All4fixedOOFfolds,16dates,2378savedstarts x3seeds. Same held-foldweights asGRID170. Original4dev/final8excluded.",
+  "timing": "CPU1thread,no_grad,batch1. All3models loadedandwarmed outside timer for allmodes. Timer includes each reached-state public tensor packing,forward,conditional selection andsearch loop. Two reverse mode orders per foldseed,allcases sameorder. No other fits/benchmarks concurrently.",
+  "repeats": [
+    [
+      "FACTOR",
+      "EAGER_ONE_SIDED",
+      "SHORT_ONE_SIDED"
+    ],
+    [
+      "SHORT_ONE_SIDED",
+      "EAGER_ONE_SIDED",
+      "FACTOR"
+    ]
+  ],
+  "excluded": "Environment simulation,construction of raw public action/feedback features,fold normalization,weight load/warmup,labels/query accounting/disk writes. Therefore NOT fullcontroltime;this is local modelhead execution cost on existing inputs.",
+  "checks": "All decisions must match saved batch32strictq1>q0 decisions;short/eager trajectories/queries/choice exactlyidentical. Allmodes/seed/date/timing repeats retained.",
+  "analysis": "Date macro thenseed/repeat mean. Short versus eager is equivalent-policy execution optimization. Extraheadms divided bysavedqueries is a conditional break-even perquery cost,not observed simulation/controlspeedup.",
+  "limits": "2timingrepeats,no hardwaregenerality. No rule/threshold tuning,models/labels unchanged;source teacherlocal task not fullweekquality.",
+  "prohibited": [
+    "fitting/policychange",
+    "newphysics/data/final8",
+    "comparehistoricalFULLtimesascurrent",
+    "paper"
+  ]
+}

@@ -1,3 +1,7 @@
+# 最新：GRID156整日留一诊断
+
+[报告](protocols/GRID156_date_holdout/complete/GRID156_report.md)；入口128区分弱，保动作阈值只剩少量192退出。
+
 # 最新：GRID155冻结模型实际状态回放
 
 [报告](protocols/GRID155_frozen_path_replay/complete/GRID155_report.md)；原模型未充分识别机会，三学习方案未过筛。

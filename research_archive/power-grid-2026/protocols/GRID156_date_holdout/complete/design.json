@@ -1,0 +1,49 @@
+{
+  "id": "GRID156_DATE_HOLDOUT_DIAGNOSTIC",
+  "authorization": "User autonomous continuation; stage update notified before fitting. No new data or scaling.",
+  "objective": "Determine whether original18 RF140 learns stable cross-date discrimination, rather than selecting another model using exposed development results.",
+  "population": "Original12 fit dates/386 eligible prefixes only; all replicates and calls of held date withheld together. Original161 fit complete search calls replayed once as held-out calls, plus old in-sample reference and fixedCAP256.",
+  "parameters": {
+    "n_estimators": 64,
+    "max_depth": 4,
+    "min_samples_leaf": 20,
+    "max_features": 1.0,
+    "random_state": 20261022,
+    "n_jobs": 1,
+    "criterion": "gini",
+    "bootstrap": true,
+    "class_weight": null
+  },
+  "dates": [
+    "2037-01-19",
+    "2037-02-16",
+    "2037-03-16",
+    "2037-05-18",
+    "2037-06-01",
+    "2037-06-15",
+    "2037-08-17",
+    "2037-09-07",
+    "2037-09-21",
+    "2037-11-02",
+    "2037-11-16",
+    "2037-12-07"
+  ],
+  "fits_permitted": 12,
+  "total_fit_wall_cap_s": 120,
+  "preprocessing": "Per-fold18 medians fit using11 training dates only;missing median0,append18 flags. No full12 median leakage into held date.",
+  "weights": "Original equal-date/equal-call/equal-prefix rule recomputed using11 training dates only,mean1. Same seed/parameters all folds. No class reweighting.",
+  "threshold": 0.9963073405340526,
+  "threshold_note": "Old fixed calibrated cutoff reused as a separate operational readout;no recalibration,threshold grid,or new calibration/development scoring. Fold scores may have different calibration;within-date ranking metrics also reported.",
+  "metrics": "Continue-positive AP/AUC and class prevalence,per-date and128-only;pooled cross-fold score metrics descriptive. Complete-search original-action preservation and query counts;in-sample contrast is not an independent baseline.",
+  "status": "Diagnostic12 fits,not12 candidate choices;all folds retained. No bestfold/seed/modelselection or deployment.",
+  "prohibited": [
+    "new data",
+    "physics",
+    "new dev/cal scoring",
+    "test8",
+    "different features/labels/parameters/seed",
+    "refit after failure",
+    "paper",
+    "automatic scale"
+  ]
+}

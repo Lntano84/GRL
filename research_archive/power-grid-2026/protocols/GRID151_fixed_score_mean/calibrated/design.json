@@ -1,0 +1,26 @@
+{
+  "id": "GRID151_FIXED_EQUAL_SCORE_MEAN",
+  "authorization": "User authorizes continuous justified investigation. Progress-only notice,no refitting.",
+  "task": "Same originalFRAME action-preserving global search compression,unchanged18features/labels/date split/control/aliases/force stops/completion.",
+  "motivation": "RF140 and LR150 are different inductive biases on identical inputs/weights;inspect complementarity rather than retune either model. Existing constituent development outputs are exposed;this is further development,not a fresh test.",
+  "constituent_models": [
+    "FrozenRF140",
+    "FrozenLR150"
+  ],
+  "score": "Exactly0.5*pSTOP_RF140 +0.5*pSTOP_LR150 at same public checkpoint,no weights learned or alternative combination.",
+  "parameters": "No new fitted parameters. Different inference cost than one model;offline candidate query counts do not establish real-time improvement.",
+  "calibration": "Same empirical procedure from0.5,highest bad actually reached stop score,strictgreater and reexecute completecalcalls. No formal risk guarantee.",
+  "primary": "MEAN151_CALIBRATED",
+  "secondary": "MEAN151_FIXED_0.5 retained",
+  "evidence_order": "Prepare all scripts,seal score formula/source/models;compute/calibrate on386fit/198cal only,push cutoff and derivedscore arrays before loading constituent validation arrays for combination.",
+  "complementarity": "All original122continue prefixes;within same depth/entry-safe stratum,report positive-negative pairs bothcorrect/RFonly/LRonly/bothwrong/tied;counts not independent tests. No thresholds selected from these tables.",
+  "screen": "Original0action/0jointfailure,macroquery reduction>CAP256,eachdatequeries<=CAP256 andone strict. No automatic adoption/physics/scale.",
+  "prohibited": [
+    "fit",
+    "newmodel/parameter/combinationweight/grid",
+    "validationderivedthreshold",
+    "risk/labelchange",
+    "newphysics/data/test8",
+    "paper/scale"
+  ]
+}

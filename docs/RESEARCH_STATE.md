@@ -1,6 +1,18 @@
 # Research state — budget-matched framework comparison
 
 
+## 2026-10-25 — GRID151 calibrated
+
+固定等权分数校准完成，阈值0.99017611008840456，零拟合；发布公式/数组/阈值后再合并开发分数。
+
+
+
+## 2026-10-25 — GRID151 frozen
+
+两冻结模型同18项、同标签，固定各半算术均值一次检查，不扫描组合，零拟合；所有开发已暴露，不声称新独立验证。
+
+
+
 ## 2026-10-25 — GRID150 complete
 
 原18项、386权重与12/4/4日期的逻辑回归一次拟合完成；固定C1/lbfgs/2000继承旧任务配置，无扫描。主开发动作差异1/62、查询节省宏平均4.371%，原筛查=False。模型/标准化/阈值评分前发布，726独立sigmoid/公开输入、5185搜索与4575旧参照复核通过，全部旧参照/坏结果保留。无新物理/最终8/采纳/扩大。报告research_archive/power-grid-2026/protocols/GRID150_linear_control/complete/GRID150_report.md

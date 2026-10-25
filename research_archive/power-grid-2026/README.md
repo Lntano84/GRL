@@ -1,3 +1,7 @@
+# 最新：GRID182冻结部署权重
+
+[报告](protocols/GRID182_deployment_bundle/report/GRID182_report.md)；6新拟合、3旧F复用，无物理接口待核验。
+
 # 最新：GRID181当前学习与固定补查
 
 [报告](protocols/GRID181_matched_local_baselines/complete/GRID181_report.md)；收益与查询取舍明确，准备部署资格，未启动新物理。

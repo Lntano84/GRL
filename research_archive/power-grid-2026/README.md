@@ -1,3 +1,7 @@
+# 最新：GRID166多数票方向分解
+
+[报告](protocols/GRID166_fixed_vote/complete/GRID166_report.md)；早停改善被额外继续抵消，检查单向压缩。
+
 # 最新：GRID165费用路由正向子群
 
 [报告](protocols/GRID165_factor_cost_routing/complete/GRID165_report.md)；167条无损节省保留，追小模型分歧与机会保护。

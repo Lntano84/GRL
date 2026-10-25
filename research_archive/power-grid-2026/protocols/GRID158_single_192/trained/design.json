@@ -1,0 +1,83 @@
+{
+  "id": "GRID158_SINGLE192_FIXED_MODEL",
+  "authorization": "Autonomous user continuation;explicit pretraining notice before this one fit.",
+  "model_parameters": {
+    "n_estimators": 64,
+    "max_depth": 4,
+    "min_samples_leaf": 20,
+    "max_features": 1.0,
+    "random_state": 20261022,
+    "n_jobs": 1,
+    "criterion": "gini",
+    "bootstrap": true,
+    "class_weight": null
+  },
+  "features": [
+    "candidate_count",
+    "visible_count",
+    "queried_fraction",
+    "remaining_candidates",
+    "incumbent_available",
+    "incumbent_reward",
+    "incumbent_rho",
+    "rho_limit",
+    "prefix_available",
+    "prefix_safe",
+    "incumbent_changed_since_prefix",
+    "observed_admissible_fraction",
+    "best_two_reward_gap",
+    "last_batch_reward_gain",
+    "last_batch_repaired",
+    "improving_batch_fraction",
+    "stale_batches",
+    "reward_gain_since_prefix"
+  ],
+  "fit_dates": [
+    "2037-01-19",
+    "2037-02-16",
+    "2037-03-16",
+    "2037-05-18",
+    "2037-06-01",
+    "2037-06-15",
+    "2037-08-17",
+    "2037-09-07",
+    "2037-09-21",
+    "2037-11-02",
+    "2037-11-16",
+    "2037-12-07"
+  ],
+  "calibration_dates": [
+    "2037-01-05",
+    "2037-04-06",
+    "2037-07-06",
+    "2037-10-05"
+  ],
+  "validation_dates": [
+    "2037-03-02",
+    "2037-05-04",
+    "2037-08-03",
+    "2037-10-19"
+  ],
+  "fit_rows": 153,
+  "fit_continue": 10,
+  "calibration_rows": 66,
+  "fit_limit": 1,
+  "fit_wall_cap_s": 120,
+  "task": "Exactly one learned stop at192 if originally eligible;otherwise original global loop/forced stops and same completion unchanged. No128 learned exit,no later learned exit.",
+  "hypothesis": "Remove mixture of entry-static and later-dynamic fitting populations;fixed192 original-model controls distinguish refitting from placement. Both learning population and exit structure change,not a single-factor intervention.",
+  "preprocessing": "Re-estimate18 medians on fit192 only,append18missing flags. Equal date mass N/(12*n_date),one192 row per physical call. No class weighting.",
+  "labels": "Original exact original-FRAME chosen pool_id plus strictly fewer total queries;no operational-label replacement.",
+  "calibration": "Same4 calibration dates. Empirical zero joint-failure increasing threshold from.5,strict>. OldRF192-only separately calibrated before new dev scoring;old original cutoff also retained.",
+  "primary": "RF158_192_CALIBRATED",
+  "controls": [
+    "FRAME",
+    "CAP192",
+    "CAP256",
+    "RF140_GLOBAL",
+    "RF140_192_ORIGINAL_CUTOFF",
+    "RF140_192_CALIBRATED",
+    "RF158_192_FIXED_0.5"
+  ],
+  "screen": "Original62 dev calls all action identity,no non-saving learned stops;date macro queries reduction greater thanCAP256,each date queries no greater with at leastone strictly fewer.",
+  "limits": "Chosen after exposed development diagnosis,not independent confirmation. All prior failures retained. No bestthreshold/checkpoint/model choice,physics,final8,data,paper or automatic scale. No other checkpoint scan after this."
+}

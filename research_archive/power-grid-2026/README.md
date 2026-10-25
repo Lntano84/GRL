@@ -1,3 +1,7 @@
+# 最新：GRID183在线输入资格
+
+[报告](protocols/GRID183_online_contract/complete/GRID183_report.md)；核心接口保存状态核验，尚未新物理。
+
 # 最新：GRID182冻结部署权重
 
 [报告](protocols/GRID182_deployment_bundle/report/GRID182_report.md)；6新拟合、3旧F复用，无物理接口待核验。

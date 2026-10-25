@@ -1,0 +1,83 @@
+[
+  {
+    "stages": "GRID101",
+    "target": "Whole same-station immediate reward-gain vsquery fee",
+    "input": "37 paid-prefix numeric summaries",
+    "raw_state": "rho_limit/current baseline only indirectly",
+    "base_command": "No explicit1605 command vector",
+    "pairing": "Station subsets only,not full action-feedback tensors",
+    "source": "work/grid101_gain_learning/features.py"
+  },
+  {
+    "stages": "GRID102/103/107/120/123",
+    "target": "Local next-batch net gain or sequential query utility",
+    "input": "37 summaries +4 locked-station/batch/budget channels=41",
+    "raw_state": "No full generator/load/topology vectors",
+    "base_command": "No explicit continuous command vector;effects already in paid candidate feedback",
+    "pairing": "No per-candidate connection tensor in base network",
+    "source": "work/grid102_search_rl/observations.py"
+  },
+  {
+    "stages": "GRID110/111",
+    "target": "Diagnostic structure/paid reward association for local net gain",
+    "input": "Public combined command partitions +observed feedback +current local pressure",
+    "raw_state": "rho/line_status/topo recovered",
+    "base_command": "Used for combined action reconstruction,not a complete continuous feature vector",
+    "pairing": "Explicit correspondence inspected,no fit at110/111",
+    "source": "work/grid110_structure_audit/extract.py"
+  },
+  {
+    "stages": "GRID113/116/119",
+    "target": "Local next-batch net gain",
+    "input": "41 summary +68 per-action partition +8 feedback fields;paired vsfactorized controls",
+    "raw_state": "Topology via intended local partitions;not full physical state",
+    "base_command": "Topology effects included during combined-command construction;continuous base commands not explicitly encoded",
+    "pairing": "Yes;already trained with adverse/mixed results under old target",
+    "source": "work/grid112_relational_plan/schema.py"
+  },
+  {
+    "stages": "GRID133",
+    "target": "Local no-improvement/action-preservation gate",
+    "input": "Original first37 numeric fields",
+    "raw_state": "Not full state",
+    "base_command": "Not explicit",
+    "pairing": "No",
+    "source": "outputs/grid133_nonlinear_gate/design.json"
+  },
+  {
+    "stages": "GRID140/144",
+    "target": "Earlier global STOP +original completion preserves originalFRAME action and reduces queries",
+    "input": "18 summaries +18missing;class weights changed in144",
+    "raw_state": "No explicit per-line physical context",
+    "base_command": "Not explicit",
+    "pairing": "No action-feedback tensors",
+    "source": "outputs/grid140_global_compression/design.json"
+  },
+  {
+    "stages": "GRID142",
+    "target": "Same global action-preserving compression",
+    "input": "Original18 +6batch reward/rho summaries +24missing",
+    "raw_state": "Not full physical state",
+    "base_command": "Not explicit",
+    "pairing": "Numeric batch aggregation only;failed original screen",
+    "source": "outputs/grid142_batch_representation/design.json"
+  },
+  {
+    "stages": "GRID146",
+    "target": "Same global target but only one learning exit at128",
+    "input": "Original18 +18missing,153fit rows",
+    "raw_state": "Not full state",
+    "base_command": "Not explicit",
+    "pairing": "No;failed original screen",
+    "source": "outputs/grid146_single_entry/design.json"
+  },
+  {
+    "stages": "GRID148",
+    "target": "Current global label,descriptive-only geometry",
+    "input": "12 physical/graph/visible-feedback summaries compared with18/combined30",
+    "raw_state": "Onlyrho/line_status/topo",
+    "base_command": "Not encoded",
+    "pairing": "Summary geometry only,no trained model;no stable held-out improvement",
+    "source": "outputs/grid148_state_context/design.json"
+  }
+]

@@ -1,3 +1,7 @@
+# 最新：GRID149输入与目标对齐
+
+[报告](protocols/GRID149_input_inventory/complete/GRID149_report.md)；不同学习目标分开，下一步补同任务低容量基线。
+
 # 最新：GRID148电网状态与当前标签核查
 
 [报告](protocols/GRID148_state_context/complete/GRID148_report.md)；空间可恢复，12项汇总没有稳定几何改善，不启动新训练。

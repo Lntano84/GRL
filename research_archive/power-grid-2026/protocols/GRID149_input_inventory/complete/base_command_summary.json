@@ -1,0 +1,39 @@
+{
+  "calls": 305,
+  "distinct_vectors": 16,
+  "fields": {
+    "_set_line_status": {
+      "calls_with_explicit_command": 76,
+      "max_active_count": 2
+    },
+    "_switch_line_status": {
+      "calls_with_explicit_command": 0,
+      "max_active_count": 0
+    },
+    "_set_topo_vect": {
+      "calls_with_explicit_command": 0,
+      "max_active_count": 0
+    },
+    "_change_bus_vect": {
+      "calls_with_explicit_command": 0,
+      "max_active_count": 0
+    },
+    "_redispatch": {
+      "calls_with_explicit_command": 0,
+      "max_active_count": 0
+    },
+    "_storage_power": {
+      "calls_with_explicit_command": 0,
+      "max_active_count": 0
+    },
+    "_curtail": {
+      "calls_with_explicit_command": 0,
+      "max_active_count": 0
+    },
+    "_raise_alert": {
+      "calls_with_explicit_command": 0,
+      "max_active_count": 0
+    }
+  },
+  "neutral_contract": "SerializedActionIDF2023:zero line/topology/redispatch/storage/alert commands;curtail=-1 is unset. Raw active commands,not realized power/flow. Verify defaults against serializer before physical interpretation."
+}

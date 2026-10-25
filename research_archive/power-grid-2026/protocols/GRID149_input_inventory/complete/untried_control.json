@@ -1,0 +1,15 @@
+{
+  "candidate": "One inherited logistic classifier on original18 +18missing global task",
+  "rationale": "Past logistic experiments used local net-gain/trajectory targets. Current global action-preserving comparison hasRF140/142/144/146,but no matched regularized linear baseline.",
+  "inherited_parameters": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 2000,
+    "random_state": 20261022,
+    "class_weight": null
+  },
+  "unchanged": "GRID140386fit/198cal/142dev,12/4/4dates,original hierarchical date/call/prefix weights,original labels,search and strict empirical cutoff procedure",
+  "intervention": "Classifier family and necessary fit-only standardization;not an equal-capacity architecture ablation or a new feature experiment.",
+  "no_fit_in_this_stage": true,
+  "no_claim_it_will_help": true
+}

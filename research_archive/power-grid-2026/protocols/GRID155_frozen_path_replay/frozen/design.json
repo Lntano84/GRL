@@ -1,0 +1,22 @@
+{
+  "id": "GRID155_FROZEN_SAVED_FRAME_REPLAY",
+  "population": "All30 existing original FRAME saved calls, all78 eligible checkpoints, four exposed development dates. No new physics or fitting.",
+  "policies": [
+    "FRAME",
+    "CAP256",
+    "RF140",
+    "LR150",
+    "MEAN151"
+  ],
+  "cutoffs": {
+    "RF140": 0.9963073405340526,
+    "LR150": 0.9858197157670558,
+    "MEAN151": 0.9901761100884046
+  },
+  "strict_greater": true,
+  "decision": "Native/exported old scores only from original18 prefix features plus frozen preprocessing. First eligible prefix over old cutoff stops; otherwise original search unchanged. Original same-station completion, unknown feedback not fetched.",
+  "scoring": "Extract inputs without labels. Freeze whole plan/cutoffs before scoring. Scores compared with native frozen models and previously scored exact teacher contexts. Hidden suffix poisoned.",
+  "outcomes": "Known exact action agreement, differences, unresolved cases, non-saving exits separately. Count all30. Query count can be known even if selection unknown; do not silently fallback UNKNOWN to original and claim success.",
+  "screen": "All30 known action agreement;zero unknown;zero non-saving early exits;date macro reduction greater than CAP256 and each date queries no greater. Development screen only, never independent confirmation.",
+  "limits": "Saved state comparison; after a changed action later saved states no longer represent that policy trajectory. No fullweek quality/cost/control time inference. No final8, fit, cutoff change, collection, paper or scale."
+}

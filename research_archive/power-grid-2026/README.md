@@ -1,3 +1,7 @@
+# 最新：GRID162正向变化优先
+
+[报告](protocols/GRID162_positive_change_audit/complete/GRID162_report.md)；优先解释并放大已有改善，正反变化同时保留。
+
 # 最新：GRID161结构表示路线复盘
 
 [报告](protocols/GRID161_representation_review/complete/GRID161_report.md)；核对旧注意力阴性结果与拆分，先做跨站输入资格。

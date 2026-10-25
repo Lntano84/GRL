@@ -1,0 +1,978 @@
+[
+  {
+    "partition": "calibration",
+    "model": "OLD140",
+    "cutoff_name": "OLD_CUTOFF",
+    "threshold": 0.9963073405340526,
+    "calls": 82,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 37424,
+    "original_queries": 37680,
+    "action_differences": 0,
+    "action_matches": 82,
+    "model_decisions": 66,
+    "model_stops": 4,
+    "query_increase_calls": 0,
+    "date_macro_query_reduction": 0.009639790796750522,
+    "by_date": [
+      {
+        "date": "2037-01-05",
+        "query_reduction": 0.009400705052878988,
+        "action_differences": 0,
+        "queries": 15792,
+        "original_queries": 15856
+      },
+      {
+        "date": "2037-04-06",
+        "query_reduction": 0.006371963361210653,
+        "action_differences": 0,
+        "queries": 9093,
+        "original_queries": 9157
+      },
+      {
+        "date": "2037-07-06",
+        "query_reduction": 0.009831029185867923,
+        "action_differences": 0,
+        "queries": 8285,
+        "original_queries": 8349
+      },
+      {
+        "date": "2037-10-05",
+        "query_reduction": 0.012955465587044523,
+        "action_differences": 0,
+        "queries": 4254,
+        "original_queries": 4318
+      }
+    ],
+    "by_scenario": [
+      {
+        "scenario": "2037-01-05_100",
+        "date": "2037-01-05",
+        "calls": 9,
+        "queries": 3340,
+        "original_queries": 3404,
+        "query_reduction": 0.018801410105757976,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-01-05_101",
+        "date": "2037-01-05",
+        "calls": 17,
+        "queries": 12452,
+        "original_queries": 12452,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-04-06_100",
+        "date": "2037-04-06",
+        "calls": 15,
+        "queries": 4958,
+        "original_queries": 5022,
+        "query_reduction": 0.012743926722421306,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-04-06_101",
+        "date": "2037-04-06",
+        "calls": 6,
+        "queries": 4135,
+        "original_queries": 4135,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-07-06_100",
+        "date": "2037-07-06",
+        "calls": 13,
+        "queries": 5094,
+        "original_queries": 5094,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-07-06_101",
+        "date": "2037-07-06",
+        "calls": 9,
+        "queries": 3191,
+        "original_queries": 3255,
+        "query_reduction": 0.019662058371735847,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-05_100",
+        "date": "2037-10-05",
+        "calls": 5,
+        "queries": 1848,
+        "original_queries": 1848,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-05_101",
+        "date": "2037-10-05",
+        "calls": 8,
+        "queries": 2406,
+        "original_queries": 2470,
+        "query_reduction": 0.025910931174089047,
+        "action_differences": 0
+      }
+    ],
+    "joint_failures": 0
+  },
+  {
+    "partition": "calibration",
+    "model": "OLD140",
+    "cutoff_name": "NEW_CUTOFF",
+    "threshold": 0.9898483369941344,
+    "calls": 82,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 35798,
+    "original_queries": 37680,
+    "action_differences": 4,
+    "action_matches": 78,
+    "model_decisions": 66,
+    "model_stops": 18,
+    "query_increase_calls": 0,
+    "date_macro_query_reduction": 0.07989580800224451,
+    "by_date": [
+      {
+        "date": "2037-01-05",
+        "query_reduction": 0.02900057489856228,
+        "action_differences": 1,
+        "queries": 15474,
+        "original_queries": 15856
+      },
+      {
+        "date": "2037-04-06",
+        "query_reduction": 0.011051373954599764,
+        "action_differences": 0,
+        "queries": 9046,
+        "original_queries": 9157
+      },
+      {
+        "date": "2037-07-06",
+        "query_reduction": 0.07643328466308064,
+        "action_differences": 1,
+        "queries": 7759,
+        "original_queries": 8349
+      },
+      {
+        "date": "2037-10-05",
+        "query_reduction": 0.20309799849273535,
+        "action_differences": 2,
+        "queries": 3519,
+        "original_queries": 4318
+      }
+    ],
+    "by_scenario": [
+      {
+        "scenario": "2037-01-05_100",
+        "date": "2037-01-05",
+        "calls": 9,
+        "queries": 3276,
+        "original_queries": 3404,
+        "query_reduction": 0.03760282021151584,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-01-05_101",
+        "date": "2037-01-05",
+        "calls": 17,
+        "queries": 12198,
+        "original_queries": 12452,
+        "query_reduction": 0.02039832958560872,
+        "action_differences": 1
+      },
+      {
+        "scenario": "2037-04-06_100",
+        "date": "2037-04-06",
+        "calls": 15,
+        "queries": 4911,
+        "original_queries": 5022,
+        "query_reduction": 0.022102747909199527,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-04-06_101",
+        "date": "2037-04-06",
+        "calls": 6,
+        "queries": 4135,
+        "original_queries": 4135,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-07-06_100",
+        "date": "2037-07-06",
+        "calls": 13,
+        "queries": 4838,
+        "original_queries": 5094,
+        "query_reduction": 0.05025520219866508,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-07-06_101",
+        "date": "2037-07-06",
+        "calls": 9,
+        "queries": 2921,
+        "original_queries": 3255,
+        "query_reduction": 0.10261136712749619,
+        "action_differences": 1
+      },
+      {
+        "scenario": "2037-10-05_100",
+        "date": "2037-10-05",
+        "calls": 5,
+        "queries": 1241,
+        "original_queries": 1848,
+        "query_reduction": 0.32846320346320346,
+        "action_differences": 2
+      },
+      {
+        "scenario": "2037-10-05_101",
+        "date": "2037-10-05",
+        "calls": 8,
+        "queries": 2278,
+        "original_queries": 2470,
+        "query_reduction": 0.07773279352226725,
+        "action_differences": 0
+      }
+    ],
+    "joint_failures": 4
+  },
+  {
+    "partition": "calibration",
+    "model": "NEW158",
+    "cutoff_name": "OLD_CUTOFF",
+    "threshold": 0.9963073405340526,
+    "calls": 82,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 37552,
+    "original_queries": 37680,
+    "action_differences": 0,
+    "action_matches": 82,
+    "model_decisions": 66,
+    "model_stops": 2,
+    "query_increase_calls": 0,
+    "date_macro_query_reduction": 0.004831857237063794,
+    "by_date": [
+      {
+        "date": "2037-01-05",
+        "query_reduction": 0.0,
+        "action_differences": 0,
+        "queries": 15856,
+        "original_queries": 15856
+      },
+      {
+        "date": "2037-04-06",
+        "query_reduction": 0.006371963361210653,
+        "action_differences": 0,
+        "queries": 9093,
+        "original_queries": 9157
+      },
+      {
+        "date": "2037-07-06",
+        "query_reduction": 0.0,
+        "action_differences": 0,
+        "queries": 8349,
+        "original_queries": 8349
+      },
+      {
+        "date": "2037-10-05",
+        "query_reduction": 0.012955465587044523,
+        "action_differences": 0,
+        "queries": 4254,
+        "original_queries": 4318
+      }
+    ],
+    "by_scenario": [
+      {
+        "scenario": "2037-01-05_100",
+        "date": "2037-01-05",
+        "calls": 9,
+        "queries": 3404,
+        "original_queries": 3404,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-01-05_101",
+        "date": "2037-01-05",
+        "calls": 17,
+        "queries": 12452,
+        "original_queries": 12452,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-04-06_100",
+        "date": "2037-04-06",
+        "calls": 15,
+        "queries": 4958,
+        "original_queries": 5022,
+        "query_reduction": 0.012743926722421306,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-04-06_101",
+        "date": "2037-04-06",
+        "calls": 6,
+        "queries": 4135,
+        "original_queries": 4135,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-07-06_100",
+        "date": "2037-07-06",
+        "calls": 13,
+        "queries": 5094,
+        "original_queries": 5094,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-07-06_101",
+        "date": "2037-07-06",
+        "calls": 9,
+        "queries": 3255,
+        "original_queries": 3255,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-05_100",
+        "date": "2037-10-05",
+        "calls": 5,
+        "queries": 1848,
+        "original_queries": 1848,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-05_101",
+        "date": "2037-10-05",
+        "calls": 8,
+        "queries": 2406,
+        "original_queries": 2470,
+        "query_reduction": 0.025910931174089047,
+        "action_differences": 0
+      }
+    ],
+    "joint_failures": 0
+  },
+  {
+    "partition": "calibration",
+    "model": "NEW158",
+    "cutoff_name": "NEW_CUTOFF",
+    "threshold": 0.9898483369941344,
+    "calls": 82,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 37296,
+    "original_queries": 37680,
+    "action_differences": 0,
+    "action_matches": 82,
+    "model_decisions": 66,
+    "model_stops": 6,
+    "query_increase_calls": 0,
+    "date_macro_query_reduction": 0.014450540168002637,
+    "by_date": [
+      {
+        "date": "2037-01-05",
+        "query_reduction": 0.0,
+        "action_differences": 0,
+        "queries": 15856,
+        "original_queries": 15856
+      },
+      {
+        "date": "2037-04-06",
+        "query_reduction": 0.006371963361210653,
+        "action_differences": 0,
+        "queries": 9093,
+        "original_queries": 9157
+      },
+      {
+        "date": "2037-07-06",
+        "query_reduction": 0.01256380054966627,
+        "action_differences": 0,
+        "queries": 8221,
+        "original_queries": 8349
+      },
+      {
+        "date": "2037-10-05",
+        "query_reduction": 0.038866396761133626,
+        "action_differences": 0,
+        "queries": 4126,
+        "original_queries": 4318
+      }
+    ],
+    "by_scenario": [
+      {
+        "scenario": "2037-01-05_100",
+        "date": "2037-01-05",
+        "calls": 9,
+        "queries": 3404,
+        "original_queries": 3404,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-01-05_101",
+        "date": "2037-01-05",
+        "calls": 17,
+        "queries": 12452,
+        "original_queries": 12452,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-04-06_100",
+        "date": "2037-04-06",
+        "calls": 15,
+        "queries": 4958,
+        "original_queries": 5022,
+        "query_reduction": 0.012743926722421306,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-04-06_101",
+        "date": "2037-04-06",
+        "calls": 6,
+        "queries": 4135,
+        "original_queries": 4135,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-07-06_100",
+        "date": "2037-07-06",
+        "calls": 13,
+        "queries": 4966,
+        "original_queries": 5094,
+        "query_reduction": 0.02512760109933254,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-07-06_101",
+        "date": "2037-07-06",
+        "calls": 9,
+        "queries": 3255,
+        "original_queries": 3255,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-05_100",
+        "date": "2037-10-05",
+        "calls": 5,
+        "queries": 1848,
+        "original_queries": 1848,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-05_101",
+        "date": "2037-10-05",
+        "calls": 8,
+        "queries": 2278,
+        "original_queries": 2470,
+        "query_reduction": 0.07773279352226725,
+        "action_differences": 0
+      }
+    ],
+    "joint_failures": 0
+  },
+  {
+    "partition": "validation",
+    "model": "OLD140",
+    "cutoff_name": "OLD_CUTOFF",
+    "threshold": 0.9963073405340526,
+    "calls": 62,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 23732,
+    "original_queries": 23988,
+    "action_differences": 0,
+    "action_matches": 62,
+    "model_decisions": 55,
+    "model_stops": 4,
+    "query_increase_calls": 0,
+    "date_macro_query_reduction": 0.04140887165776426,
+    "by_date": [
+      {
+        "date": "2037-03-02",
+        "query_reduction": 0.006205158037618785,
+        "action_differences": 0,
+        "queries": 10718,
+        "original_queries": 10782
+      },
+      {
+        "date": "2037-05-04",
+        "query_reduction": 0.14835766423357666,
+        "action_differences": 0,
+        "queries": 1498,
+        "original_queries": 1626
+      },
+      {
+        "date": "2037-08-03",
+        "query_reduction": 0.011072664359861595,
+        "action_differences": 0,
+        "queries": 6002,
+        "original_queries": 6066
+      },
+      {
+        "date": "2037-10-19",
+        "query_reduction": 0.0,
+        "action_differences": 0,
+        "queries": 5514,
+        "original_queries": 5514
+      }
+    ],
+    "by_scenario": [
+      {
+        "scenario": "2037-03-02_100",
+        "date": "2037-03-02",
+        "calls": 15,
+        "queries": 5093,
+        "original_queries": 5157,
+        "query_reduction": 0.01241031607523757,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-03-02_101",
+        "date": "2037-03-02",
+        "calls": 13,
+        "queries": 5625,
+        "original_queries": 5625,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-05-04_100",
+        "date": "2037-05-04",
+        "calls": 1,
+        "queries": 192,
+        "original_queries": 256,
+        "query_reduction": 0.25,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-05-04_101",
+        "date": "2037-05-04",
+        "calls": 4,
+        "queries": 1306,
+        "original_queries": 1370,
+        "query_reduction": 0.046715328467153316,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-08-03_100",
+        "date": "2037-08-03",
+        "calls": 7,
+        "queries": 3176,
+        "original_queries": 3176,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-08-03_101",
+        "date": "2037-08-03",
+        "calls": 10,
+        "queries": 2826,
+        "original_queries": 2890,
+        "query_reduction": 0.02214532871972319,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-19_100",
+        "date": "2037-10-19",
+        "calls": 7,
+        "queries": 2850,
+        "original_queries": 2850,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-19_101",
+        "date": "2037-10-19",
+        "calls": 5,
+        "queries": 2664,
+        "original_queries": 2664,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      }
+    ],
+    "joint_failures": 0
+  },
+  {
+    "partition": "validation",
+    "model": "OLD140",
+    "cutoff_name": "NEW_CUTOFF",
+    "threshold": 0.9898483369941344,
+    "calls": 62,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 22627,
+    "original_queries": 23988,
+    "action_differences": 1,
+    "action_matches": 61,
+    "model_decisions": 55,
+    "model_stops": 19,
+    "query_increase_calls": 0,
+    "date_macro_query_reduction": 0.08346680594863055,
+    "by_date": [
+      {
+        "date": "2037-03-02",
+        "query_reduction": 0.04643769633507855,
+        "action_differences": 0,
+        "queries": 10277,
+        "original_queries": 10782
+      },
+      {
+        "date": "2037-05-04",
+        "query_reduction": 0.17171532846715326,
+        "action_differences": 0,
+        "queries": 1434,
+        "original_queries": 1626
+      },
+      {
+        "date": "2037-08-03",
+        "query_reduction": 0.055363321799307974,
+        "action_differences": 0,
+        "queries": 5746,
+        "original_queries": 6066
+      },
+      {
+        "date": "2037-10-19",
+        "query_reduction": 0.06035087719298243,
+        "action_differences": 1,
+        "queries": 5170,
+        "original_queries": 5514
+      }
+    ],
+    "by_scenario": [
+      {
+        "scenario": "2037-03-02_100",
+        "date": "2037-03-02",
+        "calls": 15,
+        "queries": 4965,
+        "original_queries": 5157,
+        "query_reduction": 0.0372309482257126,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-03-02_101",
+        "date": "2037-03-02",
+        "calls": 13,
+        "queries": 5312,
+        "original_queries": 5625,
+        "query_reduction": 0.055644444444444496,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-05-04_100",
+        "date": "2037-05-04",
+        "calls": 1,
+        "queries": 192,
+        "original_queries": 256,
+        "query_reduction": 0.25,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-05-04_101",
+        "date": "2037-05-04",
+        "calls": 4,
+        "queries": 1242,
+        "original_queries": 1370,
+        "query_reduction": 0.09343065693430652,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-08-03_100",
+        "date": "2037-08-03",
+        "calls": 7,
+        "queries": 3176,
+        "original_queries": 3176,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-08-03_101",
+        "date": "2037-08-03",
+        "calls": 10,
+        "queries": 2570,
+        "original_queries": 2890,
+        "query_reduction": 0.11072664359861595,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-19_100",
+        "date": "2037-10-19",
+        "calls": 7,
+        "queries": 2506,
+        "original_queries": 2850,
+        "query_reduction": 0.12070175438596487,
+        "action_differences": 1
+      },
+      {
+        "scenario": "2037-10-19_101",
+        "date": "2037-10-19",
+        "calls": 5,
+        "queries": 2664,
+        "original_queries": 2664,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      }
+    ],
+    "joint_failures": 1
+  },
+  {
+    "partition": "validation",
+    "model": "NEW158",
+    "cutoff_name": "OLD_CUTOFF",
+    "threshold": 0.9963073405340526,
+    "calls": 62,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 23924,
+    "original_queries": 23988,
+    "action_differences": 0,
+    "action_matches": 62,
+    "model_decisions": 55,
+    "model_stops": 1,
+    "query_increase_calls": 0,
+    "date_macro_query_reduction": 0.03125,
+    "by_date": [
+      {
+        "date": "2037-03-02",
+        "query_reduction": 0.0,
+        "action_differences": 0,
+        "queries": 10782,
+        "original_queries": 10782
+      },
+      {
+        "date": "2037-05-04",
+        "query_reduction": 0.125,
+        "action_differences": 0,
+        "queries": 1562,
+        "original_queries": 1626
+      },
+      {
+        "date": "2037-08-03",
+        "query_reduction": 0.0,
+        "action_differences": 0,
+        "queries": 6066,
+        "original_queries": 6066
+      },
+      {
+        "date": "2037-10-19",
+        "query_reduction": 0.0,
+        "action_differences": 0,
+        "queries": 5514,
+        "original_queries": 5514
+      }
+    ],
+    "by_scenario": [
+      {
+        "scenario": "2037-03-02_100",
+        "date": "2037-03-02",
+        "calls": 15,
+        "queries": 5157,
+        "original_queries": 5157,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-03-02_101",
+        "date": "2037-03-02",
+        "calls": 13,
+        "queries": 5625,
+        "original_queries": 5625,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-05-04_100",
+        "date": "2037-05-04",
+        "calls": 1,
+        "queries": 192,
+        "original_queries": 256,
+        "query_reduction": 0.25,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-05-04_101",
+        "date": "2037-05-04",
+        "calls": 4,
+        "queries": 1370,
+        "original_queries": 1370,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-08-03_100",
+        "date": "2037-08-03",
+        "calls": 7,
+        "queries": 3176,
+        "original_queries": 3176,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-08-03_101",
+        "date": "2037-08-03",
+        "calls": 10,
+        "queries": 2890,
+        "original_queries": 2890,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-19_100",
+        "date": "2037-10-19",
+        "calls": 7,
+        "queries": 2850,
+        "original_queries": 2850,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-19_101",
+        "date": "2037-10-19",
+        "calls": 5,
+        "queries": 2664,
+        "original_queries": 2664,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      }
+    ],
+    "joint_failures": 0
+  },
+  {
+    "partition": "validation",
+    "model": "NEW158",
+    "cutoff_name": "NEW_CUTOFF",
+    "threshold": 0.9898483369941344,
+    "calls": 62,
+    "scenarios": 8,
+    "dates": 4,
+    "queries": 23388,
+    "original_queries": 23988,
+    "action_differences": 1,
+    "action_matches": 61,
+    "model_decisions": 55,
+    "model_stops": 7,
+    "query_increase_calls": 0,
+    "date_macro_query_reduction": 0.0519114783787612,
+    "by_date": [
+      {
+        "date": "2037-03-02",
+        "query_reduction": 0.011377777777777764,
+        "action_differences": 0,
+        "queries": 10654,
+        "original_queries": 10782
+      },
+      {
+        "date": "2037-05-04",
+        "query_reduction": 0.125,
+        "action_differences": 0,
+        "queries": 1562,
+        "original_queries": 1626
+      },
+      {
+        "date": "2037-08-03",
+        "query_reduction": 0.02214532871972319,
+        "action_differences": 0,
+        "queries": 5938,
+        "original_queries": 6066
+      },
+      {
+        "date": "2037-10-19",
+        "query_reduction": 0.049122807017543846,
+        "action_differences": 1,
+        "queries": 5234,
+        "original_queries": 5514
+      }
+    ],
+    "by_scenario": [
+      {
+        "scenario": "2037-03-02_100",
+        "date": "2037-03-02",
+        "calls": 15,
+        "queries": 5157,
+        "original_queries": 5157,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-03-02_101",
+        "date": "2037-03-02",
+        "calls": 13,
+        "queries": 5497,
+        "original_queries": 5625,
+        "query_reduction": 0.02275555555555553,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-05-04_100",
+        "date": "2037-05-04",
+        "calls": 1,
+        "queries": 192,
+        "original_queries": 256,
+        "query_reduction": 0.25,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-05-04_101",
+        "date": "2037-05-04",
+        "calls": 4,
+        "queries": 1370,
+        "original_queries": 1370,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-08-03_100",
+        "date": "2037-08-03",
+        "calls": 7,
+        "queries": 3176,
+        "original_queries": 3176,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-08-03_101",
+        "date": "2037-08-03",
+        "calls": 10,
+        "queries": 2762,
+        "original_queries": 2890,
+        "query_reduction": 0.04429065743944638,
+        "action_differences": 0
+      },
+      {
+        "scenario": "2037-10-19_100",
+        "date": "2037-10-19",
+        "calls": 7,
+        "queries": 2570,
+        "original_queries": 2850,
+        "query_reduction": 0.09824561403508769,
+        "action_differences": 1
+      },
+      {
+        "scenario": "2037-10-19_101",
+        "date": "2037-10-19",
+        "calls": 5,
+        "queries": 2664,
+        "original_queries": 2664,
+        "query_reduction": 0.0,
+        "action_differences": 0
+      }
+    ],
+    "joint_failures": 1
+  }
+]

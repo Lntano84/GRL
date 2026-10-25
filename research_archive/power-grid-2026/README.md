@@ -1,3 +1,7 @@
+# 最新：GRID178电气输入分块消融
+
+[报告](protocols/GRID178_power_block_ablation/complete/GRID178_report.md)；完整8项对STATE4增量-4.31%，全部配对结果保留。
+
 # 最新：GRID177固定半混合采样
 
 [报告](protocols/GRID177_support_mixture/complete/GRID177_report.md)；组合相对POWER8+0.23%，全日期种子保留。

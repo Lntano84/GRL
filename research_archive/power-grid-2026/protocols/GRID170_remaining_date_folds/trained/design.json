@@ -1,0 +1,261 @@
+{
+  "id": "GRID170_REMAINING_DATE_FOLDS",
+  "authorization": "User sustained work; pretraining notice will precede27fixedfits.",
+  "question": "Does the fixed GRID167one-sided small improvement recur beyond the first date fold? Complete ALLremaining3 existingfolds, never choose one by performance.",
+  "folds": [
+    {
+      "fold": 1,
+      "held_dates": [
+        "2037-01-19",
+        "2037-05-18",
+        "2037-08-17",
+        "2037-11-02"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-02-16",
+        "2037-03-16",
+        "2037-04-06",
+        "2037-06-01",
+        "2037-06-15",
+        "2037-07-06",
+        "2037-09-07",
+        "2037-09-21",
+        "2037-10-05",
+        "2037-11-16",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 2,
+      "held_dates": [
+        "2037-02-16",
+        "2037-06-01",
+        "2037-09-07",
+        "2037-11-16"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-01-19",
+        "2037-03-16",
+        "2037-04-06",
+        "2037-05-18",
+        "2037-06-15",
+        "2037-07-06",
+        "2037-08-17",
+        "2037-09-21",
+        "2037-10-05",
+        "2037-11-02",
+        "2037-12-07"
+      ]
+    },
+    {
+      "fold": 3,
+      "held_dates": [
+        "2037-03-16",
+        "2037-06-15",
+        "2037-09-21",
+        "2037-12-07"
+      ],
+      "fit_dates": [
+        "2037-01-05",
+        "2037-01-19",
+        "2037-02-16",
+        "2037-04-06",
+        "2037-05-18",
+        "2037-06-01",
+        "2037-07-06",
+        "2037-08-17",
+        "2037-09-07",
+        "2037-10-05",
+        "2037-11-02",
+        "2037-11-16"
+      ]
+    }
+  ],
+  "existing_fold0": "GRID168,kept unchanged and included in final16dateOOFsummary.",
+  "arms": [
+    "FACTOR",
+    "ROUTED",
+    "COST42"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "new_fits": 27,
+  "rule": "go_ONE_SIDED = go_FACTOR AND (go_ROUTED OR go_COST42); strict q1>q0. Never reopen original STOP. No weights/threshold or rule search.",
+  "model": {
+    "FACTOR": "12980 parameters: ZERO_MAIN from GRID165,42-column main with zero dummy plus original FACTOR correction.",
+    "ROUTED": "Same12980 with known cost in main, correction unchanged.",
+    "COST42": "7042parameter small42-64-64-2 MLP with known cost."
+  },
+  "training": {
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip": 10.0,
+    "loss": "mean SmoothL1(q,[0,net]),beta1",
+    "sampler_seed_offset": 20261022,
+    "wall_cap_s": 5400
+  },
+  "normalization": "Date-balanced raw41 mean/scale computed only on12fitdates, clipped[-20,20]. Independently reproduce oldGRID121fold0 normalization; known cost unchanged.",
+  "sampling": "Original date/prefix/position probabilities restricted and renormalized tofitIDs; same global-index stream perseed acrossall3families; reproduce oldGRID121fold0 exposure.",
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "historical_dependency": "Fee/gain_scale and public feedback transforms remain historical task units originally defined using all16trainingdates. Not a fully nested reconstruction of task design.",
+  "training_order": [
+    {
+      "fold": 1,
+      "seed": 0,
+      "arm": "FACTOR"
+    },
+    {
+      "fold": 1,
+      "seed": 0,
+      "arm": "ROUTED"
+    },
+    {
+      "fold": 1,
+      "seed": 0,
+      "arm": "COST42"
+    },
+    {
+      "fold": 1,
+      "seed": 1,
+      "arm": "FACTOR"
+    },
+    {
+      "fold": 1,
+      "seed": 1,
+      "arm": "ROUTED"
+    },
+    {
+      "fold": 1,
+      "seed": 1,
+      "arm": "COST42"
+    },
+    {
+      "fold": 1,
+      "seed": 2,
+      "arm": "FACTOR"
+    },
+    {
+      "fold": 1,
+      "seed": 2,
+      "arm": "ROUTED"
+    },
+    {
+      "fold": 1,
+      "seed": 2,
+      "arm": "COST42"
+    },
+    {
+      "fold": 2,
+      "seed": 0,
+      "arm": "FACTOR"
+    },
+    {
+      "fold": 2,
+      "seed": 0,
+      "arm": "ROUTED"
+    },
+    {
+      "fold": 2,
+      "seed": 0,
+      "arm": "COST42"
+    },
+    {
+      "fold": 2,
+      "seed": 1,
+      "arm": "FACTOR"
+    },
+    {
+      "fold": 2,
+      "seed": 1,
+      "arm": "ROUTED"
+    },
+    {
+      "fold": 2,
+      "seed": 1,
+      "arm": "COST42"
+    },
+    {
+      "fold": 2,
+      "seed": 2,
+      "arm": "FACTOR"
+    },
+    {
+      "fold": 2,
+      "seed": 2,
+      "arm": "ROUTED"
+    },
+    {
+      "fold": 2,
+      "seed": 2,
+      "arm": "COST42"
+    },
+    {
+      "fold": 3,
+      "seed": 0,
+      "arm": "FACTOR"
+    },
+    {
+      "fold": 3,
+      "seed": 0,
+      "arm": "ROUTED"
+    },
+    {
+      "fold": 3,
+      "seed": 0,
+      "arm": "COST42"
+    },
+    {
+      "fold": 3,
+      "seed": 1,
+      "arm": "FACTOR"
+    },
+    {
+      "fold": 3,
+      "seed": 1,
+      "arm": "ROUTED"
+    },
+    {
+      "fold": 3,
+      "seed": 1,
+      "arm": "COST42"
+    },
+    {
+      "fold": 3,
+      "seed": 2,
+      "arm": "FACTOR"
+    },
+    {
+      "fold": 3,
+      "seed": 2,
+      "arm": "ROUTED"
+    },
+    {
+      "fold": 3,
+      "seed": 2,
+      "arm": "COST42"
+    }
+  ],
+  "evaluation": "All27 finalweights published before any remaining-fold held prediction. Complete allfolds/allseeds/allhelddates even if unfavorable. Combine oldfold0 plusnewfold1/2/3, each16originaltraindate predictedonlybyitsheldfold.",
+  "inference_scope": "SameoldlocalNETtask; unchanged candidates/contexts/prefixes. No newphysical runs,not wholeweekquality or actualtime. Original4dev notscored;final8sealed.",
+  "research_interpretation": "No all-seed/date gate to retain small recurring positive mechanisms; report positive/negative groups and feesaving/gainloss separately.",
+  "forbidden": [
+    "morefits/rule/weight/threshold/seed/fold/fee selection",
+    "newdata/physics/final8",
+    "original4dev predictions",
+    "paper",
+    "automatic scale"
+  ]
+}

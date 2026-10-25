@@ -1,0 +1,27 @@
+{
+  "id": "GRID160_STATION_INFORMATION_SCREEN",
+  "fields": [
+    "incumbent_station_seen_fraction",
+    "queried_station_fraction",
+    "unseen_station_mass_fraction",
+    "remaining_mass_outside_incumbent_fraction",
+    "admissible_station_fraction",
+    "station_best_reward_mean",
+    "station_best_reward_std",
+    "top_two_station_reward_gap"
+  ],
+  "scope": "Original386 fit/198 calibration prefixes only,new development station features not extracted. No fitting/new model scores/physical or test8.",
+  "definitions": "Public station membership through original aliases. Incumbent station seen/total;seen stations/all;remaining membership mass of entirely unseen stations/all membership mass;remaining membership mass outside incumbent station/all remaining;admissible observed stations/all;mean/std/top-two gap of per-station best observed float32 rewards. No future station labels or unqueried feedback.",
+  "geometry": "Exactly inheritedGRID152: fit-only median/IQR(range fallback),append missingflags;Euclidean RMS;5 distinct fitcalls,exclude same date,match querydepth and original prefix-safe branch. Compare18 vs18+fixed8 only.",
+  "gate": "All45 calCONT full5;strictly fewer CONTzero-CONT-neighbor rows;STOP contaminated count notgreater;each4caldate CONTempty no greater. If fail,no fit this26 variant,no subset/distance/weight search.",
+  "limits": "Descriptive qualification only,not proof of predictiveness or incapacity. Same calibration dates repeatedly used,not independent test. Raw station profile remains separate from future mechanism audit.",
+  "prohibited": [
+    "new fits/scores",
+    "new dev features",
+    "field/metric/weight scans",
+    "new labels/thresholds",
+    "new physics/data/test8",
+    "paper",
+    "scale"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "GRID181_MATCHED_LOCAL_NONLEARNING",
+  "authorization": "User continue; compare thecurrentfixedconsensus to existing nonlearning references, no newrule/model.",
+  "references": [
+    "BATCH1:one min64knownbatchthenstop",
+    "FULL_LOCAL:allremaininglockedstationbatches"
+  ],
+  "population": "Sameall2378originaltrainingstarts/16dates/4OOFfolds;3frozenlearnedseeds. Baselines deterministic2378,not3independent repetitions.",
+  "task": "Oldfee/gain_scale andobservedbestactionunchanged. This is saved FULL-teacherlocal-search replay,not original FRAMEphysicaltrajectory or wholeweek quality.",
+  "metrics": "Netutility,queries,fraction,gaincapture,physicalgroupmean;allperseed/date andfirstdifferencecost/gaincontributions. ReproduceGRID127original BATCH1/FULLvalues.",
+  "prohibitions": [
+    "newfits/forwards",
+    "baselinebudgetorfeechange",
+    "newdata/physical/final8",
+    "paper",
+    "adoption from proxyonly"
+  ]
+}

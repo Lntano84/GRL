@@ -1,3 +1,7 @@
+# 最新：GRID181当前学习与固定补查
+
+[报告](protocols/GRID181_matched_local_baselines/complete/GRID181_report.md)；收益与查询取舍明确，准备部署资格，未启动新物理。
+
 # 最新：GRID180当前共识流水线开销
 
 [报告](protocols/GRID180_consensus_runtime/complete/GRID180_report.md)；新增电气描述计入、查询代价分列，不当作整周提速。

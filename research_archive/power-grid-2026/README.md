@@ -1,3 +1,7 @@
+# 最新：GRID157检查点信息诊断
+
+[报告](protocols/GRID157_checkpoint_information/complete/GRID157_report.md)；入口摘要缺少批次趋势，先看一批仍有机会但有代价。
+
 # 最新：GRID156整日留一诊断
 
 [报告](protocols/GRID156_date_holdout/complete/GRID156_report.md)；入口128区分弱，保动作阈值只剩少量192退出。

@@ -1,3 +1,7 @@
+# 最新：GRID171等价停止执行开销
+
+[报告](protocols/GRID171_stop_execution_cost/complete/GRID171_report.md)；固定策略短路执行，单独核对模型头开销。
+
 # 最新：GRID170四折单向停止迁移
 
 [报告](protocols/GRID170_remaining_date_folds/complete/GRID170_report.md)；16留出日期效用-3.65%、均查询减少6.00%，全部日期折保留。

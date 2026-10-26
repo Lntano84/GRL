@@ -1,3 +1,7 @@
+# GRID188补充：历史对齐后的下一步
+
+[机制报告](protocols/GRID188_repeated_cases/complete/GRID188_report.md)；[历史对齐说明](protocols/GRID188_repeated_cases/history_reconciliation/历史对照后的下一步.md)。普通辅助头已有旧试验，先定义保留价值基线的改进，不重复盲训。
+
 # 最新：GRID188重复改善机制
 
 [报告](protocols/GRID188_repeated_cases/complete/GRID188_report.md)；同批已见高收益被误停，保留NET收益监督，尚未新训练或物理。

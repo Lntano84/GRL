@@ -1,3 +1,7 @@
+# 最新：GRID199条件收益均值基线
+
+[报告](protocols/GRID199_constant_amount/audited/GRID199_report_v2.md)；冻结同事件模型，正例均值对学习幅度，零新优化、12训练统计均值。
+
 # 最新：GRID198发生概率乘条件收益
 
 [报告](protocols/GRID198_conditional_gain/complete/GRID198_report.md)；12条件头与冻结事件头，查询与奖励共同下降，全部预期预算和随机对照保留。

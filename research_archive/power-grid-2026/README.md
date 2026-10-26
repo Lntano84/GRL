@@ -1,3 +1,7 @@
+# 最新：GRID200条件收益作用核查
+
+[报告](protocols/GRID200_amount_role/complete/GRID200_report.md)；零拟合，固定读出与决定差异。
+
 # 最新：GRID199条件收益均值基线
 
 [报告](protocols/GRID199_constant_amount/audited/GRID199_report_v2.md)；冻结同事件模型，正例均值对学习幅度，零新优化、12训练统计均值。

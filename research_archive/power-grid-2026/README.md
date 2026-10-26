@@ -1,3 +1,7 @@
+# 最新：GRID202两头瓶颈诊断
+
+[报告](protocols/GRID202_factor_bottleneck/complete/GRID202_report.md)；零拟合，事后因子诊断不作为部署策略。
+
 # 最新：GRID201浅树条件收益内部试验
 
 [报告](protocols/GRID201_tree_amount/audited/GRID201_report_v2.md)；固定12头/768树，保留低查询与高奖励多版本，不启动新FRAME闭环。

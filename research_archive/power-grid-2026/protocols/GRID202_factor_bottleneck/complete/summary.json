@@ -1,0 +1,110 @@
+{
+  "categories": {
+    "APPEND_PROFITABLE": {
+      "pairs": 15,
+      "calls": 10,
+      "dates": 8,
+      "macro_reward": 8.254525249897564e-06,
+      "macro_queries": 0.03297885038092664
+    },
+    "APPEND_UNPROFITABLE": {
+      "pairs": 240,
+      "calls": 85,
+      "dates": 16,
+      "macro_reward": 1.7398037287467166e-07,
+      "macro_queries": 0.5683387292119355
+    },
+    "MISS_AMOUNT_ONLY": {
+      "pairs": 8,
+      "calls": 4,
+      "dates": 4,
+      "macro_reward": 3.583814857247719e-06,
+      "macro_queries": 0.05011360166610126
+    },
+    "MISS_EITHER": {
+      "pairs": 45,
+      "calls": 17,
+      "dates": 10,
+      "macro_reward": 7.607909608547913e-05,
+      "macro_queries": 0.2575405769742969
+    },
+    "MISS_EVENT_ONLY": {
+      "pairs": 150,
+      "calls": 32,
+      "dates": 12,
+      "macro_reward": 0.00013069608015142794,
+      "macro_queries": 0.6207716602666301
+    },
+    "MISS_JOINT": {
+      "pairs": 23,
+      "calls": 7,
+      "dates": 5,
+      "macro_reward": 4.852565022242692e-06,
+      "macro_queries": 0.17054663620269944
+    },
+    "STOP_POSITIVE_BUT_UNPROFITABLE": {
+      "pairs": 337,
+      "calls": 37,
+      "dates": 15,
+      "macro_reward": 4.478689813270159e-06,
+      "macro_queries": 2.7082244352832463
+    },
+    "STOP_ZERO": {
+      "pairs": 3863,
+      "calls": 211,
+      "dates": 16,
+      "macro_reward": 0.0,
+      "macro_queries": 17.099416206945786
+    }
+  },
+  "mean_profiles": {
+    "fit_STOP": {
+      "positive_mass": 0.0888291765544622,
+      "predicted_event_mean": 0.09178029406026265,
+      "event_Brier": 0.05494517846962327,
+      "event_BCE": 0.1926278500745167,
+      "event_AUC": 0.8948581585720662,
+      "actual_gain_mean": 0.0014603412149505179,
+      "predicted_gain_mean": 0.009473014305489792,
+      "actual_positive_gain_mean": 0.01643747044454588,
+      "predicted_mu_on_positive": 0.10597993962067614,
+      "conditional_positive_MSE": 0.013304313932869976,
+      "gain_weighted_event_probability": 0.37951848323634124,
+      "predicted_gain_from_realized_zeros": 0.005998649365380082
+    },
+    "fit_CONT": {
+      "positive_mass": 0.23219567482271541,
+      "predicted_event_mean": 0.229248714394654,
+      "event_Brier": 0.037507266455220935,
+      "event_BCE": 0.13260358081050408,
+      "event_AUC": 0.9831798418304661,
+      "actual_gain_mean": 0.44732021460722277,
+      "predicted_gain_mean": 0.4404667082017581,
+      "actual_positive_gain_mean": 1.9013549762529476,
+      "predicted_mu_on_positive": 1.8663263765899305,
+      "conditional_positive_MSE": 3.515956668857134,
+      "gain_weighted_event_probability": 0.9865127768475509,
+      "predicted_gain_from_realized_zeros": 0.009807713878443345
+    },
+    "held_STOP": {
+      "positive_mass": 0.12607953634238273,
+      "predicted_event_mean": 0.08805958073834265,
+      "event_Brier": 0.12337800351742573,
+      "event_BCE": 0.5475540181075447,
+      "event_AUC": 0.634897536799137,
+      "actual_gain_mean": 0.036459577411992544,
+      "predicted_gain_mean": 0.008878574858999472,
+      "actual_positive_gain_mean": 0.2959302966157324,
+      "predicted_mu_on_positive": 0.1247241230419265,
+      "conditional_positive_MSE": 0.5665300131163662,
+      "gain_weighted_event_probability": 0.08875804445164981,
+      "predicted_gain_from_realized_zeros": 0.006844504584196376
+    }
+  },
+  "missed_profitable_reward_shares": {
+    "MISS_AMOUNT_ONLY": 0.016652520533374182,
+    "MISS_EITHER": 0.3535084149678823,
+    "MISS_EVENT_ONLY": 0.6072911813375894,
+    "MISS_JOINT": 0.022547883161154112
+  }
+}

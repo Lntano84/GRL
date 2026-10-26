@@ -1,0 +1,44 @@
+{
+  "internal_learning_only": true,
+  "no_new_FRAME_closedloop_comparison": true,
+  "new_forest_heads": 12,
+  "new_trees": 768,
+  "all_fixed_seeds_dates_kept": true,
+  "tree_vs_base_learning_NET": 0.00010972677292500621,
+  "tree_vs_base_learning_per_seed": [
+    {
+      "seed": 0,
+      "gain_delta": 5.8530081017905055e-06,
+      "query_delta": 0.9557012539003029,
+      "NET_delta": -0.0006998478548362191
+    },
+    {
+      "seed": 1,
+      "gain_delta": 1.581615251291862e-05,
+      "query_delta": 0.2662808938398875,
+      "NET_delta": 0.0014491488382848416
+    },
+    {
+      "seed": 2,
+      "gain_delta": 3.6163562536075744e-06,
+      "query_delta": 0.5819705910383988,
+      "NET_delta": -0.00042012066467367326
+    }
+  ],
+  "matched": {
+    "GRID198": {
+      "tree_minus_old_NET": 0.0005698643347734622,
+      "tree_minus_old_gain": 4.916685908233848e-06,
+      "tree_minus_old_match_pp": 0.3343640719383423,
+      "tree_minus_random_NET": 0.00030971024144890724
+    },
+    "GRID199": {
+      "tree_minus_old_NET": 0.00041213018958985437,
+      "tree_minus_old_gain": 3.555784371590278e-06,
+      "tree_minus_old_match_pp": 0.34466991454554785,
+      "tree_minus_random_NET": 0.00030971024144890724
+    }
+  },
+  "retain_low_query_tree_and_higher_reward_linear_candidates": true,
+  "no_automatic_replacement_ensemble_scaling_or_parametersearch": true
+}

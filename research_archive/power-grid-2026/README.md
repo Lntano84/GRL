@@ -1,3 +1,7 @@
+# 最新：GRID201浅树条件收益内部试验
+
+[报告](protocols/GRID201_tree_amount/audited/GRID201_report_v2.md)；固定12头/768树，保留低查询与高奖励多版本，不启动新FRAME闭环。
+
 # 最新：GRID200条件收益作用核查
 
 [报告](protocols/GRID200_amount_role/complete/GRID200_report.md)；零拟合，固定读出与决定差异。

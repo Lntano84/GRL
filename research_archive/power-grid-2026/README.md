@@ -1,3 +1,7 @@
+# 最新：GRID189单批追加设计
+
+[方案与样本资格](protocols/GRID189_baseline_extension/complete/GRID189_report.md)；保留原NET，只在其停止后可选多查一批，尚未新训练或仿真。
+
 # GRID188补充：历史对齐后的下一步
 
 [机制报告](protocols/GRID188_repeated_cases/complete/GRID188_report.md)；[历史对齐说明](protocols/GRID188_repeated_cases/history_reconciliation/历史对照后的下一步.md)。普通辅助头已有旧试验，先定义保留价值基线的改进，不重复盲训。

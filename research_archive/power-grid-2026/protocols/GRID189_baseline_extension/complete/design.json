@@ -1,0 +1,20 @@
+{
+  "id": "GRID189_BASELINE_EXTENSION_DESIGN",
+  "authorization": "User:好的继续吧; concretize minimal change and qualify existing label support,not a newfit/physical authorization.",
+  "behavior": "Freeze original NET parameters and execute unchanged to its first STOP. If candidates remain, invoke a separate gate once:STOP returns original best;EXTEND buys at most the next64locked-station representatives and returns best observed,without a second gate or resuming NET. Exhausted baselines bypass gate.",
+  "purpose": "Recover some skipped local action improvements without cancelling any original NET continuation. This is optional extension,not faster-than-NET search.",
+  "boundaries": "For same fixed input/controller/initial station/candidate order/aliases and admissibility+float32reward+ID ranking: Q_NET<=Q_EXT<=Q_FULL_LOCAL; extra<=64; rank(best_EXT)>=rank(best_NET). If NET already chose full-local optimum,extension cannot change it; hence full-local action-match indicator cannot decrease on that fixed candidate problem. Does not guarantee physical full-week survival,cost or real latency.",
+  "cost": "Gate inference once only on eligible NETSTOP; original NET calls unchanged. Extra candidatequery/forecast/feature/inference cost must be counted. No guaranteed speedup vs NET; assess quality/compute tradeoff and FRAME reference separately.",
+  "difference": "Unlike GRID123 shared auxiliary,original value weights and representation are frozen and new gate controls only an optional batch. Unlike GRID184 bilateral consensus,never turns a NETCONTINUE into STOP. Unlike GRID167 one-sided earlystop,the direction is only optional laterstop. Unlike GRID126/127,target choice cannot replace baseline value supervision.",
+  "label": "At first NETSTOP with remaining candidates: chosen_after_next_batch != current_chosen. Preserve continuous next_batch_gain and oldNET as separate private evaluation fields. No final-full-suffix label copied onto next batch. Zero-gain tie-ID changes separate.",
+  "inputs": "Candidate gate may reuse original current global41,paid local feedback,next<=64plans and frozenNET representation/currentmargin. No new future feedback/date/ID input. Architecture and loss to be fixed after fit-only eligibility counts; no gate fitted here.",
+  "qualification": "All4existing folds x3seeds,only each fold12fitdates. One firstSTOP per original startingprefix; no classfiltering. Report date/physicalgroup/label support,positive gain andprofit separately. Fit-side endpoint-selection is in-sample with respect to frozen baseline; acknowledge gate deployment-distribution shift.",
+  "future_evaluation": "When trained:all16OOF dates/all3seeds,paired BASE_F,ALWAYS_ADD1_AT_FSTOP and selective extension. Old auxiliary and fixedBATCH1 separately. Report rawgain/full-localactionmatch/query/NET and inference overhead; fixedADD1 essential to distinguish learning from extraquery. No allwin or5percent gate.",
+  "prohibited": [
+    "optimizer/modelforward/newfeature extraction here",
+    "held extension strategy scoring or oracle selection",
+    "new physical/data/final8/paper",
+    "threshold/rule search",
+    "automatic scale"
+  ]
+}

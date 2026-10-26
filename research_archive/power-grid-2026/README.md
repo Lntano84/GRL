@@ -1,3 +1,7 @@
+# 最新：GRID188重复改善机制
+
+[报告](protocols/GRID188_repeated_cases/complete/GRID188_report.md)；同批已见高收益被误停，保留NET收益监督，尚未新训练或物理。
+
 # 最新：GRID187动作不变目标对照
 
 [报告](protocols/GRID187_action_invariance_target/complete/GRID187_report.md)；12份配对训练、16日期OOF，动作与查询分列，未新物理。

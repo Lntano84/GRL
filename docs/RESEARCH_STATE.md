@@ -1,5 +1,11 @@
 # Research state — budget-matched framework comparison
 
+
+## 2026-10-26 — GRID184仅恢复审计
+
+GRID184关机仅中断原审计(exit1073807364)，64回放/320必需文件及全部冻结验证通过。恢复仅每run两NPZ成员解压一次并加入run进度，原assert/模型/质量标准不变；不重跑物理或全pipeline，不扩原benchmark窗口。旧错误与日志已保留，审计前冻结恢复代码。
+
+
 ## 2026-10-25 — GRID184回放结束、审计中、关机准备
 
 64/64物理回放已完成，manifest/finished与320个必需结果文件核对通过。审计仍在运行，无分段检查点、尚未通过。用户即将关机，恢复时只处理审计/归档/上传，不重跑物理或直接重启全pipeline；保存全部原始记录。见shutdown_readiness收据。

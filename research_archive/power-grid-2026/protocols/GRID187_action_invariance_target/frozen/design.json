@@ -1,0 +1,89 @@
+{
+  "id": "GRID187_SIGNED_ACTION_CHANGE_TARGET",
+  "authorization": "User:ok继续吧;pretrainingnotice12fixedfits(original4datefoldsx3seeds). No physicalrun authorization implied.",
+  "hypothesis": "Predictwhetherremainingobservedlocalsuffixchangescurrentbestaction, ratherthanlearnprice-weightednext-batchNET. Retain realaction-invariantquerysavings;keepallerrors/tradeoffs.",
+  "target": "STOPhead target0;CONTINUEhead target+1 if finalobservedchosen differsfromcurrentchosen,else-1. Same meanHuberbeta1. Strictq1>q0 unchanged. Scoresare signedclassregression,NOT calibratedprobabilities orcurrency.",
+  "changed": "Only CONTINUE supervision target. Architecture/input/normalization/seeds/initialparameters/sampling/updates/optimizer/loss/comparisonrule unchanged. No classreweight/threshold tuning.",
+  "new_fits": 12,
+  "fit_order": [
+    {
+      "fold": 0,
+      "seed": 0
+    },
+    {
+      "fold": 0,
+      "seed": 1
+    },
+    {
+      "fold": 0,
+      "seed": 2
+    },
+    {
+      "fold": 1,
+      "seed": 0
+    },
+    {
+      "fold": 1,
+      "seed": 1
+    },
+    {
+      "fold": 1,
+      "seed": 2
+    },
+    {
+      "fold": 2,
+      "seed": 0
+    },
+    {
+      "fold": 2,
+      "seed": 1
+    },
+    {
+      "fold": 2,
+      "seed": 2
+    },
+    {
+      "fold": 3,
+      "seed": 0
+    },
+    {
+      "fold": 3,
+      "seed": 1
+    },
+    {
+      "fold": 3,
+      "seed": 2
+    }
+  ],
+  "model": "Original12980parameterFACTOR=42columnmain(extra0)+5938FACTORcorrection. Knownquerycostretainedasoriginalinput;no addedcheapmodules or newfeatures.",
+  "training": {
+    "updates": 7250,
+    "batch": 32,
+    "lr": 0.0003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "clip": 10.0,
+    "loss": "meanSmoothL1beta1(q,[0,signedchange])",
+    "sampler_seed_offset": 20261022,
+    "wall_cap_s": 2400
+  },
+  "baseline": "Reuse all12frozenFACTOR NET checkpoints fromGRID168fold0/GRID170fold1-3,verifyinitialhash/exposure/normalization andsavedoutputs. No baseline retraining.",
+  "population": "All16originaltrainingdates held out in their pre-existing12fit/4helddate fold;2378starts/3582states/222physicalgroups. Original4dev not scored;final8sealed.",
+  "freeze": "All12finalweights published before any helddateforward. Final7250only;no interimheldlabel/model/seed/foldselection.",
+  "evaluation": "Primary:wrongSTOPonaction-change states,STOPprecision,full-recorded-localactionmatch andactualboughtlocalqueries in savedsearch. Also oldNET/rawgain/capture/physical-group metrics, allseed/date pairs. STOP_ALL/BATCH1/FULL_LOCAL deterministic reference once,not3independentseeds.",
+  "cost_per_query": 1.2442348640059487e-05,
+  "gain_scale": 0.008627818251142696,
+  "limits": "Historicallyexposed samegrid teacherpaths,not blind/FRAME-path/newclosedloopquality or realcontroltime. Labels/fee taskdesign arehistorical;normalization andoptimizer draws excludecorrespondinghelddates. Actionmatchingdoesnotrepair referencecontrollerweeklycost.",
+  "prohibited": [
+    "extraweights/epochs/seed/fold/threshold/classweight/targetsearch",
+    "original4devforward/final8",
+    "newphysics/data",
+    "newcheapensemble",
+    "paper/figures",
+    "automatic scale"
+  ]
+}

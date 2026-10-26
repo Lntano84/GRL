@@ -1,3 +1,7 @@
+# 最新：GRID195门控标签幅度审查
+
+[报告](protocols/GRID195_gate_label_audit/complete/GRID195_report.md)；分层采样、收益集中及拟合侧阈值覆盖已核查，零拟合，保留GRID190。
+
 # 最新：GRID194门控互补与损失核查
 
 [报告](protocols/GRID194_gate_case_attribution/complete/GRID194_report.md)；只读重建全部门控差异与logit贡献，保留GRID190及互补好例，不自动训练或组合。

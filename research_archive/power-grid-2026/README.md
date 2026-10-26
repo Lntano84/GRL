@@ -1,3 +1,7 @@
+# 最新：GRID191门控覆盖诊断
+
+[报告](protocols/GRID191_gate_diagnosis/complete/GRID191_report.md)；拟合与held落差明显，优先检验覆盖，保留已有小改善。
+
 # 最新：GRID190冻结NET后的学习追加
 
 [报告](protocols/GRID190_extension_gate/complete/GRID190_report.md)；12门控完成，动作小幅改善与额外查询分列，尚未新物理。

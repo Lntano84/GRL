@@ -1,0 +1,13 @@
+{
+  "id": "GRID191_GATE_DIAGNOSIS",
+  "authorization": "User:好样的继续. Existing gate diagnosis before another minimal intervention.",
+  "posthoc": true,
+  "questions": [
+    "Fit-side vs held weighted AUC/recall/BCE/Brier and constant fit-prior baseline",
+    "Calibration with fixedbins0/.1/.2/.5/.8/1 without thresholdselection",
+    "Hit/waste/missed onebatch reward/query decomposition and missed-gain callconcentration",
+    "Does conditioning gatefit on in-sample NETSTOP remove most known profitable fitstates?"
+  ],
+  "method": "Reconstitute existing LR logits on saved fitfeatures;held logits already cached. No NETforward/newfeature extraction/optimizer. Each pool date/call/prefix weights; all12pools/16dates/3NETseeds retained. Fit and held STOPsets differ due baseline fit/held errors;do not call allgap pure gateoverfit.",
+  "limits": "Descriptive development evidence,not a validated trigger or proof supportaugmentation works. No newthreshold/label/parameter/gate/physics/test8."
+}

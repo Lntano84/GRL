@@ -1,3 +1,7 @@
+# 最新：GRID187动作不变目标对照
+
+[报告](protocols/GRID187_action_invariance_target/complete/GRID187_report.md)；12份配对训练、16日期OOF，动作与查询分列，未新物理。
+
 # 最新：GRID186动作不变标签
 
 [报告](protocols/GRID186_invariance_labels/complete/GRID186_report.md)；旧教师标签覆盖已核对，尚未训练或新物理。

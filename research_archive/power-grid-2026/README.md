@@ -1,3 +1,7 @@
+# 最新：GRID198发生概率乘条件收益
+
+[报告](protocols/GRID198_conditional_gain/complete/GRID198_report.md)；12条件头与冻结事件头，查询与奖励共同下降，全部预期预算和随机对照保留。
+
 # 最新：GRID197收益改善与无效查询核查
 
 [报告](protocols/GRID197_gain_opportunity_audit/audited/GRID197_report_v2.md)；全量调用贡献和种子重复谱保留，固定回归输出校准核查，零拟合。

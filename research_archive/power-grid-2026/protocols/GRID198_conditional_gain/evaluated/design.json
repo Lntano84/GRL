@@ -1,0 +1,21 @@
+{
+  "id": "GRID198_FIXED_EVENT_CONDITIONAL_GAIN",
+  "authorization": "User继续 following197 sparsegainfinding;pretrainingnotice fixed12conditionalheads,existingevent/NETfrozen,allseedsretained.",
+  "hypothesis": "Large reward opportunities retained by196 but zero-gainqueries remainhigh evenfitSTOP. Separate event incidence from strictlypositive rewardamount insteadof spreading a single linearmean overzeros.",
+  "population": "Exactly GRID192 halfSTOP/halfactualpreSTOPCONT originalfitarrays andweights,83features/originalSTOPstandardizer/gain_scale. Eventmodel=all12existingGRID193 logits trained on thatsamepopulation. Conditionalhead uses only observedgain>0 fitrows,not heldoutcomes.",
+  "labels": "Conditionaltarget=onebatchgain/gain_scale onlypositive. Conditionalweights=originalsampleweight restrictedpositive,then renormalizedtooriginalNSTOPtotal. Thisis originalweightedpopulation conditionalonpositiveevent,not calluniformconditionalreweighting. Zeros not assignedfictitious magnitude targets.",
+  "objective": "Samealpha1unpenalizedintercept weightedridge onconditionalrows,closedformSVD fromzero. 84newparameters;frozenexistingeventhead84 =>168readoutparameters active,not samecapacity as196. Originalneuralnetwork neverchanges. Conditionaldistribution differs;not claimed statisticalregularizationequivalent.",
+  "inference": "p=sigmoid(frozen193logit);mu=max(0,newconditionalridge);expectedgain=p*mu;buyone<=64batch iffexpectedgain>knownfee*nextqueries/gain_scale. No event .5cutoff,noprobabilitycalibration,no multiplyingunconditional196prediction again.",
+  "fits": "Exactly12fixedconditionalheads,fouroldfoldsxthreeNETseeds,alpha1,600s,no search/retry/additionalfit. Existing19311originalgradientcertified/1limitedendpointallretained,nobestseedselection. Publishall12pairedweightsbeforeheldscoring.",
+  "comparisons": "NET,ADD1 plus saved190STOPeventgate,193samepopulationeventgate,196directgain. All16exposedteacherdateOOF/all3seeds. Predefinedsameexpectedquerycomparison separatelyvs190and196 usingcostonlyindependentthinningperdate/seed;randomADD1reference. No onlinehardbudget/timeclaim.",
+  "metrics": "Actionmatch/gaincapture/query/proxyNET;weightedMSE/MAE ofexpectedgain,conditionalMAE/MSE onlypositives,eventBrier/BCE allrows. Falsezeroqueries andallcounterexamples retained. No allwinor5percentgate.",
+  "qualification": "Positiveeventequalsrankchange,weightedmean identity Eg=Ppositive*E[g|positive] onactualfitlabels. Conditionalweights/rowIDs/dateisolation/eventnormalizerschecked. Syntheticclosedform/rankdeficiencyandp0p1product checks beforeactualfit.",
+  "limitations": "Event probability is estimated onmixture andnot calibrated deploymentSTOP probability. Algebraicidentitydoesnotguarantee learnedaccuracy/quality. Localrewardonly,not fullweek/crossgrid/time/test.",
+  "prohibited": [
+    "eventorNETretraining",
+    "changingdata/fees/ranking/stations/global12864/.9",
+    "alphathresholdcalibrationsearch/extra seeds",
+    "newphysics/data/final8/paper",
+    "posthocensembleorautomaticrollouts"
+  ]
+}

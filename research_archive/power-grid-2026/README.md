@@ -1,3 +1,7 @@
+# 最新：GRID192同容量覆盖干预
+
+[报告](protocols/GRID192_gate_support/complete/GRID192_report.md)；12固定门控完整保留，含2个迭代上限；当前继续保留GRID190，未新物理。
+
 # 最新：GRID191门控覆盖诊断
 
 [报告](protocols/GRID191_gate_diagnosis/complete/GRID191_report.md)；拟合与held落差明显，优先检验覆盖，保留已有小改善。

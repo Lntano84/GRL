@@ -1,3 +1,7 @@
+# 最新：GRID186动作不变标签
+
+[报告](protocols/GRID186_invariance_labels/complete/GRID186_report.md)；旧教师标签覆盖已核对，尚未训练或新物理。
+
 # 最新：GRID185学习停止机制
 
 [报告](protocols/GRID185_stopping_mechanism/complete/GRID185_report.md)；动作不变节省与价格取舍分开，1多查/2先停，未新训练或物理。

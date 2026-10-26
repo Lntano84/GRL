@@ -1,0 +1,30 @@
+{
+  "details": {
+    "train": {
+      "next_NET_nonpositive_but_action_changes": 317,
+      "delayed_physical_groups": 5,
+      "delayed_dates": [
+        "2037-06-01",
+        "2037-08-17",
+        "2037-12-07"
+      ],
+      "all_dates_have_both_classes": true
+    },
+    "validation": {
+      "next_NET_nonpositive_but_action_changes": 74,
+      "delayed_physical_groups": 0,
+      "delayed_dates": [],
+      "all_dates_have_both_classes": true
+    }
+  },
+  "label_files_unchanged_after_serialization_fix": {
+    "label_rows.json": true,
+    "train_labels.npz": true,
+    "validation_labels.npz": true
+  },
+  "all4existing_whole_date_folds_have_both_classes": true,
+  "leakage_boundary": "Futurechosen/gainsarelabels only,nevernewfeatures;normalizationandanyfuturefitmustexcludehelddates.",
+  "new_fits": 0,
+  "new_model_forwards": 0,
+  "new_physics": 0
+}

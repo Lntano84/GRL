@@ -1,3 +1,7 @@
+# 最新：GRID193相同目标数值优化对照
+
+[报告](protocols/GRID193_gate_precondition/complete/GRID193_report.md)；12终点全保留，11达原梯度标准/1达上限，当前保留GRID190。
+
 # 最新：GRID192同容量覆盖干预
 
 [报告](protocols/GRID192_gate_support/complete/GRID192_report.md)；12固定门控完整保留，含2个迭代上限；当前继续保留GRID190，未新物理。

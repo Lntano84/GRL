@@ -1,3 +1,7 @@
+# 最新：GRID197收益改善与无效查询核查
+
+[报告](protocols/GRID197_gain_opportunity_audit/audited/GRID197_report_v2.md)；全量调用贡献和种子重复谱保留，固定回归输出校准核查，零拟合。
+
 # 最新：GRID196收益幅度门控
 
 [报告](protocols/GRID196_gain_readout/complete/GRID196_report.md)；12固定线性读出，奖励与查询共同增加，同预期预算和随机对照全量保留。

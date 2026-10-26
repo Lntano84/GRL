@@ -1,3 +1,7 @@
+# 最新：GRID196收益幅度门控
+
+[报告](protocols/GRID196_gain_readout/complete/GRID196_report.md)；12固定线性读出，奖励与查询共同增加，同预期预算和随机对照全量保留。
+
 # 最新：GRID195门控标签幅度审查
 
 [报告](protocols/GRID195_gate_label_audit/complete/GRID195_report.md)；分层采样、收益集中及拟合侧阈值覆盖已核查，零拟合，保留GRID190。

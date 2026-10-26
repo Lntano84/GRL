@@ -1,0 +1,19 @@
+{
+  "id": "GRID192_GATE_SUPPORT",
+  "authorization": "User sustained:好样的继续;autonomouslearningexploration authorized;pretrainingnotice exactly12gates delivered. No physics expansion.",
+  "hypothesis": "In-sample frozenNETSTOPselection removes most profitable fitpatterns;test exposure augmentation without changing capacity,valuebaseline or threshold.",
+  "change": "Only gate fitting distribution:0.5 originalSTOPdomain mass +0.5 all actualNETCONTINUEstates before firstSTOP (including both labels,not selected by gain). No postSTOPteacherstates in added domain.",
+  "fixed": "Original83features,84parameters,original STOPfit mean/scale unchanged;originalC1/L2/lbfgs2000/.5/no classweights. Total sampleweight equals originalNSTOP,not new rowcount,to hold effective L2 scale. FrozenNET untouched.",
+  "weights": "STOPdomain original date/call/prefix weights;CONTdomain date/call/prefix then uniform actualpreSTOPpositions. Eachdomain normalized1;sumweights=NSTOP.",
+  "fits": 12,
+  "wall_cap_s": 600,
+  "all12published_before_held_gate_scoring": true,
+  "evaluation": "All16oldtrain datesOOF/all3seeds. BASE_NET,oldSTOPgate,newMIXgate,unconditionalADD1. Prespecified cost-only uniform thinning of each arms selected extras to minimum candidatequery total per date/seed;analytic expectation not actual hardbudget/walltime. Also fixed old3seed4dev not newlyscored;final8sealed.",
+  "limitations": "OriginalSTOPconditioning in-sample;CONTnotdeploymentgate domain. Mixtureoutputnot calibrated STOPconditionalprobability. More training rows/no new physicaldata;not same sampleexposure count,original normalization and totalobjectiveweight held. Pure support modification,not causal proof learnability.",
+  "prohibited": [
+    "extra fit/seed/mixture/threshold/label/feature search",
+    "NETtraining/newfeatures/physics/old4dev/final8",
+    "automaticextension/scale",
+    "paper"
+  ]
+}

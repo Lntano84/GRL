@@ -1,0 +1,60 @@
+{
+  "cases": [
+    {
+      "seed": 0,
+      "week": "2037-03-02_100",
+      "step": 108,
+      "direction": "F_STOP_to_C_CONTINUE",
+      "whole_week_candidate_query_delta": 720,
+      "next_batch_normalized_NET": -0.008980056686096133,
+      "whole_week_raw_cost_delta": 18745.42156982422,
+      "cost_component_units": "native score cost units, price-weighted, NOT MWh",
+      "cost_component_deltas": {
+        "losses_mwh": 12135.365523616783,
+        "redispatch_mwh": 4981.48597899091,
+        "curtailment_delta_mwh": -2.5757167395040054e-14,
+        "storage_throughput_mwh": 1629.0942780411187
+      },
+      "rounding_residual_delta": -0.5242108241654932
+    },
+    {
+      "seed": 0,
+      "week": "2037-10-19_100",
+      "step": 1197,
+      "direction": "F_CONTINUE_to_C_STOP",
+      "whole_week_candidate_query_delta": -17,
+      "next_batch_normalized_NET": -0.016248281717092562,
+      "whole_week_raw_cost_delta": 1135.48828125,
+      "cost_component_units": "native score cost units, price-weighted, NOT MWh",
+      "cost_component_deltas": {
+        "losses_mwh": 1135.4891848564148,
+        "redispatch_mwh": 0.0,
+        "curtailment_delta_mwh": 0.0,
+        "storage_throughput_mwh": 0.0
+      },
+      "rounding_residual_delta": -0.0009036064147949219
+    },
+    {
+      "seed": 1,
+      "week": "2037-03-02_100",
+      "step": 436,
+      "direction": "F_CONTINUE_to_C_STOP",
+      "whole_week_candidate_query_delta": 271,
+      "next_batch_normalized_NET": -0.09229567542852926,
+      "whole_week_raw_cost_delta": 4454.01611328125,
+      "cost_component_units": "native score cost units, price-weighted, NOT MWh",
+      "cost_component_deltas": {
+        "losses_mwh": -534.6348918778822,
+        "redispatch_mwh": 5033.538300696062,
+        "curtailment_delta_mwh": -2.930988785010413e-14,
+        "storage_throughput_mwh": -44.98336583736818
+      },
+      "rounding_residual_delta": 0.09607030032202601
+    }
+  ],
+  "correction_to_previous_summary": "Threeactualdifferences are1Ccontinue/Fstop and2Cstop/Fcontinue,not3overridesofFstop.",
+  "all10different_action_skips_positive_raw_gain_but_negative_priced_NET": true,
+  "new_model_forwards": 0,
+  "new_fits": 0,
+  "new_physics": 0
+}

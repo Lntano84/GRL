@@ -1,3 +1,7 @@
+# 最新：GRID185学习停止机制
+
+[报告](protocols/GRID185_stopping_mechanism/complete/GRID185_report.md)；动作不变节省与价格取舍分开，1多查/2先停，未新训练或物理。
+
 # 最新：GRID184真实闭环审计
 
 [报告](protocols/GRID184_search_adapter/final_delivery/GRID184_report.md)；64条核验通过，计算小改善与成本反例分列，全部原记录可恢复。

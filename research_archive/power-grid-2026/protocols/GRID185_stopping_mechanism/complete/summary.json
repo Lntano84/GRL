@@ -1,0 +1,311 @@
+{
+  "savings": {
+    "paired_calls": 23,
+    "unique_physical_state_base": 13,
+    "unique_stop_prefixes": 15,
+    "dates": [
+      "2037-03-02",
+      "2037-08-03",
+      "2037-10-19"
+    ],
+    "skipped_queries_seed_paired": 1945,
+    "skipped_batches_seed_paired": 46,
+    "zero_gain_all23": true,
+    "same_applied_action": 23,
+    "same_next_observation": 23,
+    "stop_batch_counts": {
+      "0": 15,
+      "3": 1,
+      "2": 1,
+      "1": 6
+    },
+    "per_date": {
+      "2037-03-02": {
+        "paired_calls": 8,
+        "skipped_queries": 263
+      },
+      "2037-08-03": {
+        "paired_calls": 10,
+        "skipped_queries": 1186
+      },
+      "2037-10-19": {
+        "paired_calls": 5,
+        "skipped_queries": 496
+      }
+    },
+    "other10_next_batch_positive_NET": 0,
+    "other10_all_extra_positive_NET": 0
+  },
+  "direction_counts": {
+    "F_STOP_to_C_CONTINUE": 1,
+    "F_CONTINUE_to_C_STOP": 2
+  },
+  "override_counts": {
+    "consensus_disagrees_with_realized_next_NET_and_higher_week_cost": 1,
+    "consensus_agrees_with_realized_next_NET_but_higher_week_cost": 2
+  },
+  "override_cases": [
+    {
+      "seed": 0,
+      "week": "2037-03-02_100",
+      "step": 108,
+      "direction": "F_STOP_to_C_CONTINUE",
+      "continuing_method": "CONSENSUS",
+      "factor_margin": -0.04954439215362072,
+      "cheap_margins": {
+        "STATE4": 0.29336665297159925,
+        "POWER8": 0.3693247711926233
+      },
+      "next_batch": {
+        "ids": [
+          486,
+          487,
+          492,
+          495,
+          499,
+          507,
+          510,
+          513,
+          514,
+          515,
+          523,
+          524,
+          525,
+          531,
+          533,
+          535,
+          536,
+          538,
+          542,
+          547,
+          553,
+          555,
+          556,
+          561,
+          564,
+          569,
+          573,
+          575,
+          576,
+          583,
+          585,
+          588,
+          591,
+          600,
+          606,
+          608,
+          612,
+          615,
+          618,
+          623,
+          626,
+          629,
+          630,
+          631,
+          632,
+          638,
+          639,
+          645,
+          647,
+          648,
+          651,
+          655,
+          661,
+          664,
+          665,
+          666,
+          667,
+          668,
+          677,
+          682,
+          687,
+          689,
+          690,
+          701
+        ],
+        "queries": 64,
+        "best_reward_gain": 0.0007188320159912109,
+        "normalized_net": -0.008980056686096133,
+        "chosen": 538
+      },
+      "all_actual_extra": {
+        "gain": 0.0007188320159912109,
+        "queries": 134,
+        "normalized_net": -0.10992845168605,
+        "chosen": 538
+      },
+      "selected_reward_delta": 0.0007188320159912109,
+      "whole_week_cost_relative_delta": 0.00639071773968114,
+      "cost_component_deltas": {
+        "losses_mwh": 12135.365523616783,
+        "redispatch_mwh": 4981.48597899091,
+        "curtailment_delta_mwh": -2.5757167395040054e-14,
+        "storage_throughput_mwh": 1629.0942780411187
+      }
+    },
+    {
+      "seed": 0,
+      "week": "2037-10-19_100",
+      "step": 1197,
+      "direction": "F_CONTINUE_to_C_STOP",
+      "continuing_method": "FACTOR",
+      "factor_margin": 0.017303824424743652,
+      "cheap_margins": {
+        "STATE4": -0.022758671702831634,
+        "POWER8": -0.029852158560970565
+      },
+      "next_batch": {
+        "ids": [
+          433,
+          444,
+          456,
+          473,
+          477,
+          479,
+          534,
+          539,
+          599,
+          602,
+          637,
+          673,
+          674,
+          691,
+          698,
+          709,
+          737,
+          790,
+          791,
+          827,
+          838,
+          841,
+          882,
+          908
+        ],
+        "queries": 24,
+        "best_reward_gain": 0.00015842914581298828,
+        "normalized_net": -0.016248281717092562,
+        "chosen": 444
+      },
+      "all_actual_extra": {
+        "gain": 0.00015842914581298828,
+        "queries": 24,
+        "normalized_net": -0.016248281717092562,
+        "chosen": 444
+      },
+      "selected_reward_delta": -0.00015842914581298828,
+      "whole_week_cost_relative_delta": 0.0006218244959144137,
+      "cost_component_deltas": {
+        "losses_mwh": 1135.4891848564148,
+        "redispatch_mwh": 0.0,
+        "curtailment_delta_mwh": 0.0,
+        "storage_throughput_mwh": 0.0
+      }
+    },
+    {
+      "seed": 1,
+      "week": "2037-03-02_100",
+      "step": 436,
+      "direction": "F_CONTINUE_to_C_STOP",
+      "continuing_method": "FACTOR",
+      "factor_margin": 0.49425394111312926,
+      "cheap_margins": {
+        "STATE4": -0.02118671700009145,
+        "POWER8": -0.027102509047836065
+      },
+      "next_batch": {
+        "ids": [
+          487,
+          492,
+          495,
+          499,
+          507,
+          510,
+          513,
+          514,
+          515,
+          523,
+          524,
+          525,
+          531,
+          533,
+          535,
+          536,
+          538,
+          542,
+          547,
+          553,
+          555,
+          556,
+          561,
+          564,
+          569,
+          573,
+          575,
+          576,
+          583,
+          585,
+          588,
+          591,
+          600,
+          606,
+          608,
+          612,
+          615,
+          618,
+          623,
+          626,
+          629,
+          630,
+          631,
+          632,
+          638,
+          639,
+          645,
+          647,
+          648,
+          651,
+          655,
+          661,
+          664,
+          665,
+          666,
+          667,
+          668,
+          677,
+          682,
+          687,
+          689,
+          690,
+          701,
+          706
+        ],
+        "queries": 64,
+        "best_reward_gain": 0.0,
+        "normalized_net": -0.09229567542852926,
+        "chosen": 62
+      },
+      "all_actual_extra": {
+        "gain": 0.00027430057525634766,
+        "queries": 128,
+        "normalized_net": -0.15279877395385144,
+        "chosen": 845
+      },
+      "selected_reward_delta": -0.00027430057525634766,
+      "whole_week_cost_relative_delta": 0.0015353489879383897,
+      "cost_component_deltas": {
+        "losses_mwh": -534.6348918778822,
+        "redispatch_mwh": 5033.538300696062,
+        "curtailment_delta_mwh": -2.930988785010413e-14,
+        "storage_throughput_mwh": -44.98336583736818
+      }
+    }
+  ],
+  "checks": {
+    "shared_prefixes": 65,
+    "unchanged_action_zero_gain_savings": 23,
+    "physical_divergence_common_prefix_and_ledger": 3
+  },
+  "new_fits": 0,
+  "new_model_forwards": 0,
+  "new_physics": 0
+}

@@ -1,0 +1,19 @@
+{
+  "id": "GRID196_FIXED_GAIN_READOUT",
+  "authorization": "User持续继续, autonomous bounded learning authorized. Pretrainingnotice:12fixedlinear gainreadouts;no capacity/physics expansion.",
+  "hypothesis": "Existing binarychange head doesnot model rewardamount. Test whether same frozen representation and covered fitpopulation support conditionalmean nextbatch gain.",
+  "data": "Exactly GRID192 halfSTOP/halfactualpreSTOPCONT arrays, all12foldseedpairs,83features,originalSTOPnormalizer and totalweights unchanged. No addedrows or outcome-dependent rowweights. OriginalNET never updated.",
+  "objective": "Normalized onebatchgain target g/gain_scale. Minimize (sum w*(Z beta+b-y)^2 + alpha*||beta||^2)/(2*sumw),alpha=1,interceptunpenalized. Weightedcentered SVD closedform,84parameters. Different readoutobjective fromBCE,not regularization-equivalent nor isolatedlabel-only ablation.",
+  "fits": "12closedform ridge fits,one per old4foldx3NETseed,alpha1 fixed,no sweep/retry/endpointselection,600sec cap. SVD stable originalobjective withnoiterationcap. All12publishedbefore scoringheld.",
+  "decision": "OriginalNET unchanged untilfirstSTOP. Predict normalizedgain=max(0,Zbeta+b),subtractpublic knownnextcharge=fee*nextqueries/gain_scale. Strictpositive buysone<=64batch thenreturnsbest. BaselineNET protected,not guaranteeGRID190 gate orfullweek quality. No .5 probabilitythreshold;not probability.",
+  "comparisons": "UnchangedNET,unconditionalADD1,existingGRID190 STOPgate andGRID193 same-mixturebinary gate. All16 historicaldates/all3seeds. Sameprespecified cost-only uniformthinning to minimumextraquerybudget perdate/seed vs190 and separatelyvs193;ADD1randomreference. Analyticexpectation only.",
+  "prior": "GRID120 utilityweightedBCE didnot beatoldHuber;GRID123auxiliary/GRID125gainheads notblanket evidencefornewgainfit. Here frozenrelationrepresentation/boundedpostSTOPaction/convexmeanloss;no claimnovel regression algorithm.",
+  "qualification": "Syntheticclosedformvsaugmentedleast-squares check before realfits. Everytarget reconstructedfromsavedonebatchlabels,weightsmatch;all12fit/helddatesdisjoint. No hiddenfutureinputs.",
+  "limits": "Exposedteacherpath OOFdevelopment;notnewclosedloopweek/crossgrid/timing/test. Localrewardproxy distinct fromfullweekquality;preservealloutcomes,notrequireallwin/5percent.",
+  "prohibited": [
+    "extraalpha/threshold/seedsearch",
+    "newNETforwards/training",
+    "newdata/physics/final8/paper",
+    "automaticensembleor rollout"
+  ]
+}

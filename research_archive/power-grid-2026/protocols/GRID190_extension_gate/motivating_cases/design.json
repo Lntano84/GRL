@@ -1,0 +1,33 @@
+{
+  "id": "GRID190_FROZEN_NET_EXTENSION_GATE",
+  "authorization": "User explicitly:开始训练把. Pretraining notice delivered; exactly12fixed84parameter logistic gates underGRID189 specification.",
+  "spec": {
+    "status": "Proposed next fit,not executed in GRID189",
+    "scope": "12fixed gate probes=4existing folds x3existing NETseeds. No originalNETretraining. Everynewgate fits corresponding12datesonly;all12gates published before helddate feature extraction/scoring.",
+    "architecture": "Reuse frozenNET mainlastReLU64 and correctionheadlastReLU16,plus currentq0,q1 and knownnextquerycost1=83public features; one logistic readout84trainableparameters. Extract with read-only hooks on originalforward;qualification must reproduce originalscores and unchangedparameters. No new grid/queryfeatures.",
+    "training": "Weighted LogisticRegression(C=1,penalty=L2,solver=lbfgs,max_iter=2000),fixed0.5 threshold. Features standardized with fit-only date/call/prefix weights;constantfeature scale1. Sampleweight=Neligible*mass (mean1),no classbalance/positiveupweight/thresholdsearch. Gate seeds are attached to frozenNETseeds,not extra independent repeats.",
+    "label": "Next single batch changes selected rank/ID. Continuous nextgain,NET and full-localchoice are private outcomes only for evaluation. Unlike GRID187,not predicting full suffix with a one-batch action.",
+    "population": "Only first STOP states of frozenNET with actual remaining candidates. FitSTOPselection based on in-sample frozenNET;deployment conditionaldistribution may shift. Stop selection must not be made using helddate outcomes.",
+    "budget": "Exactly12 convex gate fits at fixed configuration;not authorized/executed by this design receipt. No continuationfits/newbaselineweights. Proposed totalfitcap600s,no automaticextension/restarts. Convergence failures kept.",
+    "inference": "NET unchanged until first STOP;gate once only if candidates remain. p>0.5 buys next<=64 then returns best;else keeps NET. No furtherNET/gate,ranking/station/global search unchanged.",
+    "comparisons": [
+      "FrozenNET",
+      "UnconditionalADD1_at_same_NETSTOP",
+      "SelectiveADD1",
+      "oldBATCH1/FULL_LOCAL and existingauxiliary asseparate references"
+    ],
+    "metrics": "All16oldtrain datesOOF/3seeds: addedreward,full-localactionmatch,addedqueries,NET utility,eligiblegate rate;date andphysicalgroup macros. Newonlinefeatures/inference/queries must count in laterreal timing. No newphysical claims here.",
+    "prior_evidence": "Choice of conditional frozen gate follows GRID188. This is not proof it improves. Ordinarysharedauxiliary existed GRID123;not silently repeat it. Full-week cost mayworsen evenif savedlocalreward nondecreasing."
+  },
+  "new_fits": 12,
+  "wall_cap_s": 600,
+  "all_final_weights_before_held": true,
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "torch": "2.8.0",
+    "sklearn": "1.7.2"
+  },
+  "controls": "No NET changes/retraining/physics/data/final8/new thresholds/extra seeds/restarts. Existing old4dev not scored. Histories exposed;OOFconditional notblindtest.",
+  "evaluation": "NET unchanged to first STOP;boundedgate/alwaysADD1 return best after zero/one batch. Retain all16dates/3seeds. Quality increment and addedcost separately;no allwin gate. Fixed candidate monotonicity not fullweek guarantee."
+}

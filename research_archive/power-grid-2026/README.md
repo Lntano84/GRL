@@ -1,3 +1,7 @@
+# 最新：GRID190冻结NET后的学习追加
+
+[报告](protocols/GRID190_extension_gate/complete/GRID190_report.md)；12门控完成，动作小幅改善与额外查询分列，尚未新物理。
+
 # 最新：GRID189单批追加设计
 
 [方案与样本资格](protocols/GRID189_baseline_extension/complete/GRID189_report.md)；保留原NET，只在其停止后可选多查一批，尚未新训练或仿真。

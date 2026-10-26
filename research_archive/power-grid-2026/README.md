@@ -1,3 +1,7 @@
+# 最新：GRID194门控互补与损失核查
+
+[报告](protocols/GRID194_gate_case_attribution/complete/GRID194_report.md)；只读重建全部门控差异与logit贡献，保留GRID190及互补好例，不自动训练或组合。
+
 # 最新：GRID193相同目标数值优化对照
 
 [报告](protocols/GRID193_gate_precondition/complete/GRID193_report.md)；12终点全保留，11达原梯度标准/1达上限，当前保留GRID190。

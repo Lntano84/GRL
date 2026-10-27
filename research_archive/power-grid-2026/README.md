@@ -1,3 +1,7 @@
+# 最新：GRID208条件收益摘要直连
+
+[报告](protocols/GRID208_public_amount/complete/GRID208_report.md)；概率冻结，保留全部同预算种子及反例。
+
 # 最新：GRID207条件收益与支出核查
 
 [报告](protocols/GRID207_amount_cost/audited/GRID207_report.md)；[判读](protocols/GRID207_amount_cost/audited/判读与固定下一步.md)；零拟合/物理。

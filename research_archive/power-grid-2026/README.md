@@ -1,3 +1,7 @@
+# 最新：GRID205公开反馈区分诊断
+
+[报告](protocols/GRID205_public_separation/audited/GRID205_report.md)；[判读与方案](protocols/GRID205_public_separation/audited/判读与固定训练方案.md)；零拟合，下一次只检验原41摘要直接输入。
+
 # 最新：GRID204固定概率分歧核查
 
 [报告](protocols/GRID204_event_paths/audited/GRID204_report.md)；[原因与后续](protocols/GRID204_event_paths/audited/原因与后续思路.md)；零拟合/仿真，保留GRID203恢复案例和反例。

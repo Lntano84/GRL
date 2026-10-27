@@ -1,0 +1,10 @@
+{
+  "id": "GRID205_PUBLIC_SEPARATION",
+  "scope": "All4681 fixed eligible held STOPs, no model fits/NNforwards/physics. Compare821selected including53profitable,6positiveunprofitable,762zero cases;keepall unselected.",
+  "public": "Only originaltrain_public.pkl train3582 and caseprefix raw41. Original41 names fixed;additional25 deterministic summaries of already-paid feedback and known next plans. Never next feedback/reward/IDs/dates as feature.",
+  "representations": "RAW41, PUBLIC66 (raw41 plus fixed25 context and known-plan summaries), HIDDEN83 frozen. Nearest fit distances use perpool fit-only originalmixture sampleweight mean/std; existing83standardizer unchanged. Euclidean mean squared standardized distance;zero scales<1e-8 become1.",
+  "descriptive_neighbors": "Allheld3 nearest distinct physical fitcalls perrepresentation, distance and trainonly IDs choose neighbors before attaching teacher gain/event. This is not a fitted/evaluated nearestneighbor gate. No vote threshold or policyperformance.",
+  "collisions": "Exact raw fullpaired-public permutation-invariant signature and FACTOR unpaired signature; hidden83 exactbytes within foldseed. Count conflicting realized next labels, if any;none doesnot prove learnability. Raw global41 float32,paid feedback and known canonical actions only.",
+  "focused_comparison": "Previous mainrestoredcall;pair each restored profitable heldstart to closest currentlyselected zero-gain heldstart fromothercall in samefoldseed, lexicographic querycount difference then PUBLIC66distance. Hindsight-conditioned diagnosis only, never deployed or used for fitting.",
+  "limits": "No feature selection by scores, AUC scanning, fitweights/labels/fees/threshold changes, NNforward/final8/validation/newFRAME. All16exposed train dates/all3seeds;teacher-path sharedstarts not independent. Descriptors compare public information versus compressedreadout,not proof compressed information lost."
+}

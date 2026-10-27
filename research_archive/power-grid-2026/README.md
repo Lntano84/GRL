@@ -1,3 +1,7 @@
+# 最新：GRID203浅树事件概率内部试验
+
+[报告](protocols/GRID203_tree_event/complete/GRID203_report.md)；冻结条件幅度、保留全部反例，不新FRAME闭环。
+
 # 最新：GRID202两头瓶颈诊断
 
 [报告](protocols/GRID202_factor_bottleneck/complete/GRID202_report.md)；零拟合，事后因子诊断不作为部署策略。

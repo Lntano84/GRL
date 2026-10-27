@@ -1,3 +1,7 @@
+# 最新：GRID212取消训练支持
+
+[报告](protocols/GRID212_cancellation_support/audited/GRID212_report.md)；[判读](protocols/GRID212_cancellation_support/audited/判读与样本生成边界.md)；零拟合，先厘清样本来源。
+
 # 最新：GRID211查询与预算来源核查
 
 [报告](protocols/GRID211_budget_sources/audited/GRID211_report.md)；[判读](protocols/GRID211_budget_sources/audited/判读与后续边界.md)；零拟合/预测，配比与真实新增机会分开。

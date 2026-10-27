@@ -1,6 +1,6 @@
 # 最新：GRID206原41摘要直连概率模块
 
-[报告](protocols/GRID206_public_event/complete/GRID206_report.md)；保留全部同预算种子和反例，查询次数与候选数量分开判读。
+[报告](protocols/GRID206_public_event/audited/GRID206_report.md)；[判读](protocols/GRID206_public_event/audited/结果判读与下一步.md)；保留全部同预算种子和反例，查询次数与候选数量分开判读。
 
 # 最新：GRID205公开反馈区分诊断
 

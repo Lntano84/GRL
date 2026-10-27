@@ -1,3 +1,7 @@
+# 最新：GRID204固定概率分歧核查
+
+[报告](protocols/GRID204_event_paths/audited/GRID204_report.md)；[原因与后续](protocols/GRID204_event_paths/audited/原因与后续思路.md)；零拟合/仿真，保留GRID203恢复案例和反例。
+
 # 最新：GRID203浅树事件概率内部试验
 
 [报告](protocols/GRID203_tree_event/audited/GRID203_report.md)；[判读](protocols/GRID203_tree_event/audited/结果判读.md)；冻结条件幅度、保留全部反例，不新FRAME闭环。

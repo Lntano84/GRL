@@ -1,0 +1,587 @@
+{
+  "weighting": "perpool date/call/start balanced;positive metrics renormalized on realized positives;12pool descriptive means not independent",
+  "BCE_clip": "1e-15 metric only;native p used for decisions",
+  "mean_profiles": {
+    "fit_STOP": {
+      "event_AUC": 0.8234832766459402,
+      "event_Brier": 0.07067582555054286,
+      "event_BCE": 0.2556838220206807,
+      "actual_event_mean": 0.0888291765544622,
+      "predicted_event_mean": 0.11843620811750281,
+      "expected_gain_MSE": 0.0006147272861550781,
+      "expected_gain_MAE": 0.014726315951768302,
+      "positive_conditional_MSE": 0.013304313932869976,
+      "mean_expected_gain": 0.014631915954372958,
+      "mean_actual_gain": 0.0014603412149505179,
+      "gain_weighted_event_probability": 0.22098494485013717
+    },
+    "fit_CONT": {
+      "event_AUC": 0.9596822617005154,
+      "event_Brier": 0.07416707523334302,
+      "event_BCE": 0.2510989536706842,
+      "actual_event_mean": 0.23219567482271541,
+      "predicted_event_mean": 0.20258864325967477,
+      "expected_gain_MSE": 0.8775593204371704,
+      "expected_gain_MAE": 0.17512188034673062,
+      "positive_conditional_MSE": 3.515956668857134,
+      "mean_expected_gain": 0.41379262208094825,
+      "mean_actual_gain": 0.44732021460722277,
+      "gain_weighted_event_probability": 0.9059570274898355
+    },
+    "held_STOP": {
+      "event_AUC": 0.6964529390553916,
+      "event_Brier": 0.10558294378677029,
+      "event_BCE": 0.35540877922416403,
+      "actual_event_mean": 0.12607953634238273,
+      "predicted_event_mean": 0.11669874491549743,
+      "expected_gain_MSE": 0.07686754875160423,
+      "expected_gain_MAE": 0.047108395645540556,
+      "positive_conditional_MSE": 0.5665300131163662,
+      "mean_expected_gain": 0.013796540297660679,
+      "mean_actual_gain": 0.036459577411992544,
+      "gain_weighted_event_probability": 0.15003769375847156
+    }
+  },
+  "pools": [
+    {
+      "fold": 0,
+      "seed": 0,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.845126769131698,
+          "event_Brier": 0.07817981336797933,
+          "event_BCE": 0.27238532762250806,
+          "actual_event_mean": 0.09895205102236718,
+          "predicted_event_mean": 0.12687659620039515,
+          "expected_gain_MSE": 0.0017130355328447793,
+          "expected_gain_MAE": 0.023678768913487296,
+          "positive_conditional_MSE": 0.034416313077077515,
+          "mean_expected_gain": 0.024179845962804678,
+          "mean_actual_gain": 0.0014459806471893268,
+          "gain_weighted_event_probability": 0.24141479188404516
+        },
+        "fit_CONT": {
+          "event_AUC": 0.9941568149551598,
+          "event_Brier": 0.04193241182221196,
+          "event_BCE": 0.14339662321094285,
+          "actual_event_mean": 0.20124631734006732,
+          "predicted_event_mean": 0.1733217721620394,
+          "expected_gain_MSE": 1.6143545235595231,
+          "expected_gain_MAE": 0.284921366314879,
+          "positive_conditional_MSE": 7.95208027211069,
+          "mean_expected_gain": 0.4332816922344697,
+          "mean_actual_gain": 0.4728436575502439,
+          "gain_weighted_event_probability": 0.9293150396709532
+        },
+        "held_STOP": {
+          "event_AUC": 0.705069698660734,
+          "event_Brier": 0.1066793196043241,
+          "event_BCE": 0.34969533210823783,
+          "actual_event_mean": 0.1287791876333543,
+          "predicted_event_mean": 0.12525413455609433,
+          "expected_gain_MSE": 0.2414169388557507,
+          "expected_gain_MAE": 0.09802609443821295,
+          "positive_conditional_MSE": 1.4195467503123558,
+          "mean_expected_gain": 0.02523374437486251,
+          "mean_actual_gain": 0.08003848390752445,
+          "gain_weighted_event_probability": 0.20233030572964417
+        }
+      }
+    },
+    {
+      "fold": 0,
+      "seed": 1,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.8196372715884104,
+          "event_Brier": 0.09036216949331778,
+          "event_BCE": 0.3062351766114994,
+          "actual_event_mean": 0.118478653548098,
+          "predicted_event_mean": 0.13338672759800513,
+          "expected_gain_MSE": 0.000627446901630673,
+          "expected_gain_MAE": 0.012412471848150851,
+          "positive_conditional_MSE": 0.004351135968203685,
+          "mean_expected_gain": 0.011955030047358439,
+          "mean_actual_gain": 0.0018212063624555583,
+          "gain_weighted_event_probability": 0.23762488414855149
+        },
+        "fit_CONT": {
+          "event_AUC": 0.9644394359116086,
+          "event_Brier": 0.0533151139856556,
+          "event_BCE": 0.1848789719702079,
+          "actual_event_mean": 0.1368605792033617,
+          "predicted_event_mean": 0.12195250515345434,
+          "expected_gain_MSE": 0.4615181819817814,
+          "expected_gain_MAE": 0.10616463654608253,
+          "positive_conditional_MSE": 3.3440554500462314,
+          "mean_expected_gain": 0.1829121026947593,
+          "mean_actual_gain": 0.19615869343644432,
+          "gain_weighted_event_probability": 0.9183925862464942
+        },
+        "held_STOP": {
+          "event_AUC": 0.6639535484877181,
+          "event_Brier": 0.12239034049432403,
+          "event_BCE": 0.4002587699242919,
+          "actual_event_mean": 0.14772166855723004,
+          "predicted_event_mean": 0.11593971121928183,
+          "expected_gain_MSE": 0.017783471650938968,
+          "expected_gain_MAE": 0.042983920435534693,
+          "positive_conditional_MSE": 0.09591782342283853,
+          "mean_expected_gain": 0.011621991075171176,
+          "mean_actual_gain": 0.03891146111590352,
+          "gain_weighted_event_probability": 0.15930344450517944
+        }
+      }
+    },
+    {
+      "fold": 0,
+      "seed": 2,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.8529467755316307,
+          "event_Brier": 0.07384030234054015,
+          "event_BCE": 0.2632049734647397,
+          "actual_event_mean": 0.09486359843923485,
+          "predicted_event_mean": 0.12611665623764234,
+          "expected_gain_MSE": 0.0008052553112553233,
+          "expected_gain_MAE": 0.01517029529742657,
+          "positive_conditional_MSE": 0.013048182983292463,
+          "mean_expected_gain": 0.015205626671158805,
+          "mean_actual_gain": 0.001532179727204461,
+          "gain_weighted_event_probability": 0.23711372375354284
+        },
+        "fit_CONT": {
+          "event_AUC": 0.9829314974646184,
+          "event_Brier": 0.07928803636301293,
+          "event_BCE": 0.2621937027548997,
+          "actual_event_mean": 0.2763142611356897,
+          "predicted_event_mean": 0.24506120333728226,
+          "expected_gain_MSE": 1.309097173587672,
+          "expected_gain_MAE": 0.20841460713233517,
+          "positive_conditional_MSE": 3.6559499836418015,
+          "mean_expected_gain": 0.32612788020945777,
+          "mean_actual_gain": 0.37167232576910975,
+          "gain_weighted_event_probability": 0.8267698889555569
+        },
+        "held_STOP": {
+          "event_AUC": 0.623011129400918,
+          "event_Brier": 0.08897024988438029,
+          "event_BCE": 0.3162349024623853,
+          "actual_event_mean": 0.09614672379886197,
+          "predicted_event_mean": 0.1309074272473559,
+          "expected_gain_MSE": 0.26324601293416855,
+          "expected_gain_MAE": 0.07717540736583266,
+          "positive_conditional_MSE": 2.5056168726702532,
+          "mean_expected_gain": 0.015288461455310107,
+          "mean_actual_gain": 0.06487428831088476,
+          "gain_weighted_event_probability": 0.11745689679534578
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "seed": 0,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.8109050122210452,
+          "event_Brier": 0.07248735849943937,
+          "event_BCE": 0.25825835883435216,
+          "actual_event_mean": 0.08725123591857735,
+          "predicted_event_mean": 0.10759016387037368,
+          "expected_gain_MSE": 0.0005324720280841592,
+          "expected_gain_MAE": 0.015222415628022895,
+          "positive_conditional_MSE": 0.013101034111120033,
+          "mean_expected_gain": 0.015270449814880531,
+          "mean_actual_gain": 0.001552260623336331,
+          "gain_weighted_event_probability": 0.21338490939081511
+        },
+        "fit_CONT": {
+          "event_AUC": 0.9829072608310564,
+          "event_Brier": 0.05460001763886713,
+          "event_BCE": 0.19300510559913608,
+          "actual_event_mean": 0.20683695644633143,
+          "predicted_event_mean": 0.18649802849453512,
+          "expected_gain_MSE": 0.7774670873175021,
+          "expected_gain_MAE": 0.15833303895117018,
+          "positive_conditional_MSE": 3.441798436801878,
+          "mean_expected_gain": 0.40943636944282347,
+          "mean_actual_gain": 0.44064198528244747,
+          "gain_weighted_event_probability": 0.9044900236226898
+        },
+        "held_STOP": {
+          "event_AUC": 0.7116034104501696,
+          "event_Brier": 0.08940810887554365,
+          "event_BCE": 0.30829169047484933,
+          "actual_event_mean": 0.10371288654836448,
+          "predicted_event_mean": 0.08851078291806146,
+          "expected_gain_MSE": 0.029424056814354865,
+          "expected_gain_MAE": 0.021692203141387117,
+          "positive_conditional_MSE": 0.2576427140472296,
+          "mean_expected_gain": 0.0112030512341471,
+          "mean_actual_gain": 0.012047299008583336,
+          "gain_weighted_event_probability": 0.12110981173854361
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "seed": 1,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.8439797811219004,
+          "event_Brier": 0.061550738374056425,
+          "event_BCE": 0.22882397927695333,
+          "actual_event_mean": 0.073180568842889,
+          "predicted_event_mean": 0.10166716792199501,
+          "expected_gain_MSE": 0.000291398675286925,
+          "expected_gain_MAE": 0.013003642274511706,
+          "positive_conditional_MSE": 0.0123278759343839,
+          "mean_expected_gain": 0.013097712079336086,
+          "mean_actual_gain": 0.0008812709047186611,
+          "gain_weighted_event_probability": 0.18062149806296338
+        },
+        "fit_CONT": {
+          "event_AUC": 0.9606302007820439,
+          "event_Brier": 0.07842396404499237,
+          "event_BCE": 0.2625793263978152,
+          "actual_event_mean": 0.22795324922122845,
+          "predicted_event_mean": 0.19946665014212195,
+          "expected_gain_MSE": 0.6141793761551992,
+          "expected_gain_MAE": 0.139085908297943,
+          "positive_conditional_MSE": 2.4597488731513204,
+          "mean_expected_gain": 0.4127450589907612,
+          "mean_actual_gain": 0.4415404949542977,
+          "gain_weighted_event_probability": 0.9207308680522329
+        },
+        "held_STOP": {
+          "event_AUC": 0.6608430854078704,
+          "event_Brier": 0.13468823622453774,
+          "event_BCE": 0.442843820521652,
+          "actual_event_mean": 0.16000927120718786,
+          "predicted_event_mean": 0.09556902257532181,
+          "expected_gain_MSE": 0.08558011916454195,
+          "expected_gain_MAE": 0.04407584941122565,
+          "positive_conditional_MSE": 0.4929432086091663,
+          "mean_expected_gain": 0.011244476115276934,
+          "mean_actual_gain": 0.03508700035605196,
+          "gain_weighted_event_probability": 0.12983371649173706
+        }
+      }
+    },
+    {
+      "fold": 1,
+      "seed": 2,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.8290062636540916,
+          "event_Brier": 0.06555113280534673,
+          "event_BCE": 0.24208316285115955,
+          "actual_event_mean": 0.07779941130452826,
+          "predicted_event_mean": 0.11825663210763934,
+          "expected_gain_MSE": 0.000482294862045339,
+          "expected_gain_MAE": 0.014791918350760687,
+          "positive_conditional_MSE": 0.010103460926620641,
+          "mean_expected_gain": 0.014509544861554091,
+          "mean_actual_gain": 0.001266170129595367,
+          "gain_weighted_event_probability": 0.17152069138066395
+        },
+        "fit_CONT": {
+          "event_AUC": 0.9698352698341909,
+          "event_Brier": 0.078047019433796,
+          "event_BCE": 0.2623373664935448,
+          "actual_event_mean": 0.2813421994671995,
+          "predicted_event_mean": 0.24088497866408842,
+          "expected_gain_MSE": 0.8246549675965109,
+          "expected_gain_MAE": 0.1750532190294166,
+          "positive_conditional_MSE": 2.837453936520603,
+          "mean_expected_gain": 0.5578749437771067,
+          "mean_actual_gain": 0.5872321015988856,
+          "gain_weighted_event_probability": 0.9362423976902885
+        },
+        "held_STOP": {
+          "event_AUC": 0.7576586452101064,
+          "event_Brier": 0.09749444131545608,
+          "event_BCE": 0.32925149318764513,
+          "actual_event_mean": 0.11912011599511599,
+          "predicted_event_mean": 0.10455833302857566,
+          "expected_gain_MSE": 0.08299489718152989,
+          "expected_gain_MAE": 0.04141279063348895,
+          "positive_conditional_MSE": 0.6505237872933134,
+          "mean_expected_gain": 0.011864138897195094,
+          "mean_actual_gain": 0.03224873285197327,
+          "gain_weighted_event_probability": 0.20925221450687204
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "seed": 0,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.8585108095616858,
+          "event_Brier": 0.07512056279306739,
+          "event_BCE": 0.2652228157413168,
+          "actual_event_mean": 0.10552612136864589,
+          "predicted_event_mean": 0.132375722389983,
+          "expected_gain_MSE": 0.00021980235644908645,
+          "expected_gain_MAE": 0.010279135818977329,
+          "positive_conditional_MSE": 0.004807899891502461,
+          "mean_expected_gain": 0.010347821499440931,
+          "mean_actual_gain": 0.0015434436339946177,
+          "gain_weighted_event_probability": 0.2844993920122403
+        },
+        "fit_CONT": {
+          "event_AUC": 0.9568936064458573,
+          "event_Brier": 0.06873309248017538,
+          "event_BCE": 0.23317908664755793,
+          "actual_event_mean": 0.16606531300291383,
+          "predicted_event_mean": 0.13921571198157676,
+          "expected_gain_MSE": 0.3745200991007603,
+          "expected_gain_MAE": 0.08768558811627014,
+          "positive_conditional_MSE": 1.8813228208162986,
+          "mean_expected_gain": 0.2256549955023064,
+          "mean_actual_gain": 0.24831945473654535,
+          "gain_weighted_event_probability": 0.8803788658070801
+        },
+        "held_STOP": {
+          "event_AUC": 0.7950474667066432,
+          "event_Brier": 0.09653629571757999,
+          "event_BCE": 0.32182978560547226,
+          "actual_event_mean": 0.1271475438142105,
+          "predicted_event_mean": 0.12945221143016808,
+          "expected_gain_MSE": 0.02809538581391411,
+          "expected_gain_MAE": 0.04559354945259643,
+          "positive_conditional_MSE": 0.19326708102743884,
+          "mean_expected_gain": 0.009169701267560221,
+          "mean_actual_gain": 0.038521881254232865,
+          "gain_weighted_event_probability": 0.17984753996624062
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "seed": 1,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.8120354834433543,
+          "event_Brier": 0.06852348376153154,
+          "event_BCE": 0.2526182134027322,
+          "actual_event_mean": 0.0812732666310775,
+          "predicted_event_mean": 0.12254564842253797,
+          "expected_gain_MSE": 0.0004895723963123713,
+          "expected_gain_MAE": 0.01607115066143941,
+          "positive_conditional_MSE": 0.013351762723537457,
+          "mean_expected_gain": 0.016430481308419054,
+          "mean_actual_gain": 0.0008426241311983934,
+          "gain_weighted_event_probability": 0.3042854892003632
+        },
+        "fit_CONT": {
+          "event_AUC": 0.9318881682806284,
+          "event_Brier": 0.09666829241665537,
+          "event_BCE": 0.3198868507998171,
+          "actual_event_mean": 0.25958076464203916,
+          "predicted_event_mean": 0.21830838285057885,
+          "expected_gain_MSE": 0.8549245875338102,
+          "expected_gain_MAE": 0.16421313154783695,
+          "positive_conditional_MSE": 3.116590070141046,
+          "mean_expected_gain": 0.340064693630984,
+          "mean_actual_gain": 0.3829356961073723,
+          "gain_weighted_event_probability": 0.880918869298731
+        },
+        "held_STOP": {
+          "event_AUC": 0.8074894772956751,
+          "event_Brier": 0.07316666696534854,
+          "event_BCE": 0.2622790784521885,
+          "actual_event_mean": 0.08615750262809087,
+          "predicted_event_mean": 0.12357206766010306,
+          "expected_gain_MSE": 0.016095912196666298,
+          "expected_gain_MAE": 0.03421502168014209,
+          "positive_conditional_MSE": 0.1555840283787613,
+          "mean_expected_gain": 0.015466514775990916,
+          "mean_actual_gain": 0.020482526483647255,
+          "gain_weighted_event_probability": 0.154644391826763
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "seed": 2,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.8224651979522991,
+          "event_Brier": 0.07294971800991112,
+          "event_BCE": 0.2636627264956539,
+          "actual_event_mean": 0.08976037558952321,
+          "predicted_event_mean": 0.1303029962979286,
+          "expected_gain_MSE": 0.0005258385553402675,
+          "expected_gain_MAE": 0.017590277570844068,
+          "positive_conditional_MSE": 0.015531069406970499,
+          "mean_expected_gain": 0.017963634794447327,
+          "mean_actual_gain": 0.0015144814571281414,
+          "gain_weighted_event_probability": 0.3135547908235029
+        },
+        "fit_CONT": {
+          "event_AUC": 0.96127091141209,
+          "event_Brier": 0.0803143888024123,
+          "event_BCE": 0.27748335312498235,
+          "actual_event_mean": 0.27436113088073866,
+          "predicted_event_mean": 0.2338185101723333,
+          "expected_gain_MSE": 0.8519239510311574,
+          "expected_gain_MAE": 0.15538733232036278,
+          "positive_conditional_MSE": 3.175465000137855,
+          "mean_expected_gain": 0.41916163852500604,
+          "mean_actual_gain": 0.46064727187543725,
+          "gain_weighted_event_probability": 0.9188423119441947
+        },
+        "held_STOP": {
+          "event_AUC": 0.8040359601225878,
+          "event_Brier": 0.10302602251280338,
+          "event_BCE": 0.33690455554564686,
+          "actual_event_mean": 0.13250777000777,
+          "predicted_event_mean": 0.1442450240416183,
+          "expected_gain_MSE": 0.015722252474075948,
+          "expected_gain_MAE": 0.03917487451410959,
+          "positive_conditional_MSE": 0.09504644532896231,
+          "mean_expected_gain": 0.019733156934750272,
+          "mean_actual_gain": 0.023645286425227924,
+          "gain_weighted_event_probability": 0.2235181142364909
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "seed": 0,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.8693347539232907,
+          "event_Brier": 0.06426204394818316,
+          "event_BCE": 0.23311100562569648,
+          "actual_event_mean": 0.09317256572145097,
+          "predicted_event_mean": 0.10483292064267404,
+          "expected_gain_MSE": 0.0006642530383892652,
+          "expected_gain_MAE": 0.01165407884329987,
+          "positive_conditional_MSE": 0.01567471369146494,
+          "mean_expected_gain": 0.010501354857718168,
+          "mean_actual_gain": 0.0023952885682451356,
+          "gain_weighted_event_probability": 0.16044183005252471
+        },
+        "fit_CONT": {
+          "event_AUC": 0.954426770801371,
+          "event_Brier": 0.06156238858112455,
+          "event_BCE": 0.21447151792303643,
+          "actual_event_mean": 0.1603460348826464,
+          "predicted_event_mean": 0.14868567996142387,
+          "expected_gain_MSE": 0.4500993376685323,
+          "expected_gain_MAE": 0.0962950736839949,
+          "positive_conditional_MSE": 2.6305156240109735,
+          "mean_expected_gain": 0.3111537529358952,
+          "mean_actual_gain": 0.3380726383162001,
+          "gain_weighted_event_probability": 0.9036124775648756
+        },
+        "held_STOP": {
+          "event_AUC": 0.6193022613021153,
+          "event_Brier": 0.11616204441547247,
+          "event_BCE": 0.397147115400548,
+          "actual_event_mean": 0.13759551484735308,
+          "predicted_event_mean": 0.10991414910367055,
+          "expected_gain_MSE": 0.03690344491388612,
+          "expected_gain_MAE": 0.03311012806164587,
+          "positive_conditional_MSE": 0.24670450510808545,
+          "mean_expected_gain": 0.010023523398491918,
+          "mean_actual_gain": 0.024543760221499324,
+          "gain_weighted_event_probability": 0.07856317418533847
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "seed": 1,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.8050683060843322,
+          "event_Brier": 0.06246631669247796,
+          "event_BCE": 0.23939538670732358,
+          "actual_event_mean": 0.07425205924066132,
+          "predicted_event_mean": 0.11658811667486882,
+          "expected_gain_MSE": 0.0007289554947306017,
+          "expected_gain_MAE": 0.01653096702695091,
+          "positive_conditional_MSE": 0.012912355946912864,
+          "mean_expected_gain": 0.01615722462152457,
+          "mean_actual_gain": 0.0014548327997750284,
+          "gain_weighted_event_probability": 0.17323250330520357
+        },
+        "fit_CONT": {
+          "event_AUC": 0.9233953559205489,
+          "event_Brier": 0.10566864324044793,
+          "event_BCE": 0.347622652924641,
+          "actual_event_mean": 0.31798312674428747,
+          "predicted_event_mean": 0.2756470693100795,
+          "expected_gain_MSE": 1.2631334026231797,
+          "expected_gain_MAE": 0.2935696455836453,
+          "positive_conditional_MSE": 3.7072446593894477,
+          "mean_expected_gain": 0.7614908247426426,
+          "mean_actual_gain": 0.805811979365596,
+          "gain_weighted_event_probability": 0.9279657881659097
+        },
+        "held_STOP": {
+          "event_AUC": 0.6666407649162867,
+          "event_Brier": 0.12187533608256189,
+          "event_BCE": 0.4029589890315357,
+          "actual_event_mean": 0.1389943420371052,
+          "predicted_event_mean": 0.1177388035207047,
+          "expected_gain_MSE": 0.07284940420864829,
+          "expected_gain_MAE": 0.05517035193206439,
+          "positive_conditional_MSE": 0.4685829206515761,
+          "mean_expected_gain": 0.014089724057846385,
+          "mean_actual_gain": 0.043494926909485226,
+          "gain_weighted_event_probability": 0.11352119848477134
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "seed": 2,
+      "domains": {
+        "fit_STOP": {
+          "event_AUC": 0.7127828955375445,
+          "event_Brier": 0.06281626652066342,
+          "event_BCE": 0.243204737614233,
+          "actual_event_mean": 0.0714402110264927,
+          "predicted_event_mean": 0.10069514904599065,
+          "expected_gain_MSE": 0.00029640228149214646,
+          "expected_gain_MAE": 0.010310669187348034,
+          "positive_conditional_MSE": 0.010025962533353278,
+          "mean_expected_gain": 0.00996426493383281,
+          "mean_actual_gain": 0.0012743555945651944,
+          "gain_weighted_event_probability": 0.1341248341872293
+        },
+        "fit_CONT": {
+          "event_AUC": 0.9334118477670125,
+          "event_Brier": 0.0914515339907649,
+          "event_BCE": 0.3121528862016288,
+          "actual_event_mean": 0.27745816490608166,
+          "predicted_event_mean": 0.2482032268865837,
+          "expected_gain_MSE": 1.1348391570904193,
+          "expected_gain_MAE": 0.23233901663683104,
+          "positive_conditional_MSE": 3.9892548995174697,
+          "mean_expected_gain": 0.5856075122851667,
+          "mean_actual_gain": 0.621966276294094,
+          "gain_weighted_event_probability": 0.923825212859019
+        },
+        "held_STOP": {
+          "event_AUC": 0.5427798207038761,
+          "event_Brier": 0.11659826334891106,
+          "event_BCE": 0.39720981797551513,
+          "actual_event_mean": 0.1350619090339485,
+          "predicted_event_mean": 0.1147232716850134,
+          "expected_gain_MSE": 0.03229868881077509,
+          "expected_gain_MAE": 0.032670556680246265,
+          "positive_conditional_MSE": 0.21698402054641325,
+          "mean_expected_gain": 0.0106199999853255,
+          "mean_actual_gain": 0.023619282098896657,
+          "gain_weighted_event_probability": 0.1110715166347328
+        }
+      }
+    }
+  ]
+}

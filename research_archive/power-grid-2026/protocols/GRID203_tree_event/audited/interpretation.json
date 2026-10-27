@@ -1,0 +1,6899 @@
+{
+  "groups": {
+    "NEW_ONLY": {
+      "pairs": 680,
+      "calls": 158,
+      "dates": 16,
+      "unique_prefixes": 494,
+      "positive_gain": 45,
+      "profitable": 41,
+      "raw_queries": 4414,
+      "mean_batch_queries": 6.491176470588235,
+      "macro_delta_gain": 6.173116972912706e-05,
+      "macro_delta_queries": 0.5556284973910794,
+      "macro_delta_utility": 0.006353616250895713
+    },
+    "OLD_ONLY": {
+      "pairs": 114,
+      "calls": 50,
+      "dates": 16,
+      "unique_prefixes": 100,
+      "positive_gain": 35,
+      "profitable": 3,
+      "raw_queries": 3944,
+      "mean_batch_queries": 34.59649122807018,
+      "macro_delta_gain": -1.4583893112107737e-06,
+      "macro_delta_queries": -0.4955839910406476,
+      "macro_delta_utility": 0.0005456581662606951
+    },
+    "BOTH": {
+      "pairs": 141,
+      "calls": 52,
+      "dates": 16,
+      "unique_prefixes": 120,
+      "positive_gain": 14,
+      "profitable": 12,
+      "raw_queries": 815,
+      "mean_batch_queries": 5.780141843971631,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0
+    },
+    "NEITHER": {
+      "pairs": 3746,
+      "calls": 183,
+      "dates": 16,
+      "unique_prefixes": 1673,
+      "positive_gain": 518,
+      "profitable": 185,
+      "raw_queries": 146076,
+      "mean_batch_queries": 38.995194874532835,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0
+    }
+  },
+  "query_bins": [
+    {
+      "group": "NEW_ONLY",
+      "query_range": [
+        1,
+        4
+      ],
+      "pairs": 498,
+      "calls": 134,
+      "dates": 16,
+      "unique_prefixes": 333,
+      "positive_gain": 16,
+      "profitable": 16,
+      "raw_queries": 967,
+      "mean_batch_queries": 1.9417670682730923,
+      "macro_delta_gain": 2.5559818635986784e-06,
+      "macro_delta_queries": 0.1397155239336731,
+      "macro_delta_utility": 9.476238147217083e-05
+    },
+    {
+      "group": "NEW_ONLY",
+      "query_range": [
+        5,
+        16
+      ],
+      "pairs": 128,
+      "calls": 56,
+      "dates": 15,
+      "unique_prefixes": 111,
+      "positive_gain": 19,
+      "profitable": 19,
+      "raw_queries": 1042,
+      "mean_batch_queries": 8.140625,
+      "macro_delta_gain": 5.686747799084096e-05,
+      "macro_delta_queries": 0.1428207673701304,
+      "macro_delta_utility": 0.006385212414840172
+    },
+    {
+      "group": "NEW_ONLY",
+      "query_range": [
+        17,
+        32
+      ],
+      "pairs": 22,
+      "calls": 17,
+      "dates": 7,
+      "unique_prefixes": 22,
+      "positive_gain": 3,
+      "profitable": 3,
+      "raw_queries": 576,
+      "mean_batch_queries": 26.181818181818183,
+      "macro_delta_gain": 2.93277631140059e-07,
+      "macro_delta_queries": 0.07511884143237524,
+      "macro_delta_utility": -7.433828167555028e-05
+    },
+    {
+      "group": "NEW_ONLY",
+      "query_range": [
+        33,
+        64
+      ],
+      "pairs": 32,
+      "calls": 15,
+      "dates": 8,
+      "unique_prefixes": 28,
+      "positive_gain": 7,
+      "profitable": 3,
+      "raw_queries": 1829,
+      "mean_batch_queries": 57.15625,
+      "macro_delta_gain": 2.014432243547363e-06,
+      "macro_delta_queries": 0.1979733646549007,
+      "macro_delta_utility": -5.2020263741079384e-05
+    },
+    {
+      "group": "OLD_ONLY",
+      "query_range": [
+        1,
+        4
+      ],
+      "pairs": 0,
+      "calls": 0,
+      "dates": 0,
+      "unique_prefixes": 0,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 0,
+      "mean_batch_queries": 0.0,
+      "macro_delta_gain": 0,
+      "macro_delta_queries": 0,
+      "macro_delta_utility": 0
+    },
+    {
+      "group": "OLD_ONLY",
+      "query_range": [
+        5,
+        16
+      ],
+      "pairs": 30,
+      "calls": 19,
+      "dates": 12,
+      "unique_prefixes": 29,
+      "positive_gain": 5,
+      "profitable": 0,
+      "raw_queries": 301,
+      "mean_batch_queries": 10.033333333333333,
+      "macro_delta_gain": -3.1360477158004147e-09,
+      "macro_delta_queries": -0.03909749760583613,
+      "macro_delta_utility": 5.601979948822986e-05
+    },
+    {
+      "group": "OLD_ONLY",
+      "query_range": [
+        17,
+        32
+      ],
+      "pairs": 32,
+      "calls": 15,
+      "dates": 7,
+      "unique_prefixes": 26,
+      "positive_gain": 6,
+      "profitable": 0,
+      "raw_queries": 870,
+      "mean_batch_queries": 27.1875,
+      "macro_delta_gain": -2.2689283419545507e-08,
+      "macro_delta_queries": -0.10740037089009509,
+      "macro_delta_utility": 0.00015225443293184033
+    },
+    {
+      "group": "OLD_ONLY",
+      "query_range": [
+        33,
+        64
+      ],
+      "pairs": 52,
+      "calls": 24,
+      "dates": 13,
+      "unique_prefixes": 45,
+      "positive_gain": 24,
+      "profitable": 3,
+      "raw_queries": 2773,
+      "mean_batch_queries": 53.32692307692308,
+      "macro_delta_gain": -1.432563980075428e-06,
+      "macro_delta_queries": -0.3490861225447164,
+      "macro_delta_utility": 0.0003373839338406249
+    }
+  ],
+  "per_seed": [
+    {
+      "seed": 0,
+      "pairs": 1562,
+      "calls": 200,
+      "dates": 16,
+      "unique_prefixes": 1562,
+      "positive_gain": 208,
+      "profitable": 83,
+      "raw_queries": 53648,
+      "mean_batch_queries": 34.34571062740077,
+      "macro_delta_gain": 9.119659582282413e-05,
+      "macro_delta_queries": -0.24083946506395185,
+      "macro_delta_utility": 0.010917383940135732
+    },
+    {
+      "seed": 1,
+      "pairs": 1394,
+      "calls": 186,
+      "dates": 16,
+      "unique_prefixes": 1394,
+      "positive_gain": 190,
+      "profitable": 69,
+      "raw_queries": 46515,
+      "mean_batch_queries": 33.36800573888092,
+      "macro_delta_gain": 3.347277535816924e-06,
+      "macro_delta_queries": 0.28601584164558735,
+      "macro_delta_utility": -2.450576453549151e-05
+    },
+    {
+      "seed": 2,
+      "pairs": 1725,
+      "calls": 201,
+      "dates": 16,
+      "unique_prefixes": 1725,
+      "positive_gain": 214,
+      "profitable": 89,
+      "raw_queries": 55086,
+      "mean_batch_queries": 31.93391304347826,
+      "macro_delta_gain": 8.627446789510781e-05,
+      "macro_delta_queries": 0.13495714246965995,
+      "macro_delta_utility": 0.009804945075868984
+    }
+  ],
+  "per_date_contributions": [
+    {
+      "date": "2037-01-05",
+      "pairs": 309,
+      "calls": 14,
+      "dates": 1,
+      "unique_prefixes": 142,
+      "positive_gain": 44,
+      "profitable": 31,
+      "raw_queries": 8292,
+      "mean_batch_queries": 26.83495145631068,
+      "macro_delta_gain": 5.529898430384901e-05,
+      "macro_delta_queries": 0.05573248407643312,
+      "macro_delta_utility": 0.00632900922538109
+    },
+    {
+      "date": "2037-01-19",
+      "pairs": 341,
+      "calls": 20,
+      "dates": 1,
+      "unique_prefixes": 162,
+      "positive_gain": 51,
+      "profitable": 23,
+      "raw_queries": 9530,
+      "mean_batch_queries": 27.947214076246333,
+      "macro_delta_gain": 1.0781158907127998e-06,
+      "macro_delta_queries": -0.022855987055016184,
+      "macro_delta_utility": 0.0001579191877371251
+    },
+    {
+      "date": "2037-02-16",
+      "pairs": 224,
+      "calls": 10,
+      "dates": 1,
+      "unique_prefixes": 103,
+      "positive_gain": 29,
+      "profitable": 2,
+      "raw_queries": 8077,
+      "mean_batch_queries": 36.058035714285715,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.004861111111111111,
+      "macro_delta_utility": -7.010305208330129e-06
+    },
+    {
+      "date": "2037-03-16",
+      "pairs": 415,
+      "calls": 19,
+      "dates": 1,
+      "unique_prefixes": 179,
+      "positive_gain": 52,
+      "profitable": 27,
+      "raw_queries": 12515,
+      "mean_batch_queries": 30.156626506024097,
+      "macro_delta_gain": -1.097670883756137e-07,
+      "macro_delta_queries": 0.01831723027375201,
+      "macro_delta_utility": -3.913810464391338e-05
+    },
+    {
+      "date": "2037-04-06",
+      "pairs": 342,
+      "calls": 18,
+      "dates": 1,
+      "unique_prefixes": 155,
+      "positive_gain": 23,
+      "profitable": 14,
+      "raw_queries": 11043,
+      "mean_batch_queries": 32.28947368421053,
+      "macro_delta_gain": 1.0480750418905715e-06,
+      "macro_delta_queries": -0.025313620071684587,
+      "macro_delta_utility": 0.00015798153003326816
+    },
+    {
+      "date": "2037-05-18",
+      "pairs": 226,
+      "calls": 11,
+      "dates": 1,
+      "unique_prefixes": 96,
+      "positive_gain": 19,
+      "profitable": 6,
+      "raw_queries": 7310,
+      "mean_batch_queries": 32.34513274336283,
+      "macro_delta_gain": 5.080474643256721e-08,
+      "macro_delta_queries": 0.011318897637795275,
+      "macro_delta_utility": -1.0434726552811153e-05
+    },
+    {
+      "date": "2037-06-01",
+      "pairs": 416,
+      "calls": 19,
+      "dates": 1,
+      "unique_prefixes": 180,
+      "positive_gain": 64,
+      "profitable": 29,
+      "raw_queries": 18472,
+      "mean_batch_queries": 44.40384615384615,
+      "macro_delta_gain": 1.481108508991248e-08,
+      "macro_delta_queries": -0.008095854922279792,
+      "macro_delta_utility": 1.3391860051868449e-05
+    },
+    {
+      "date": "2037-06-15",
+      "pairs": 206,
+      "calls": 10,
+      "dates": 1,
+      "unique_prefixes": 97,
+      "positive_gain": 40,
+      "profitable": 13,
+      "raw_queries": 4834,
+      "mean_batch_queries": 23.466019417475728,
+      "macro_delta_gain": 2.1800723774039485e-06,
+      "macro_delta_queries": 0.02570093457943925,
+      "macro_delta_utility": 0.00021561562087203464
+    },
+    {
+      "date": "2037-07-06",
+      "pairs": 479,
+      "calls": 21,
+      "dates": 1,
+      "unique_prefixes": 213,
+      "positive_gain": 30,
+      "profitable": 18,
+      "raw_queries": 19894,
+      "mean_batch_queries": 41.53235908141962,
+      "macro_delta_gain": 1.8495576840053786e-07,
+      "macro_delta_queries": 0.021006224066390043,
+      "macro_delta_utility": -8.856351956020292e-06
+    },
+    {
+      "date": "2037-08-17",
+      "pairs": 353,
+      "calls": 16,
+      "dates": 1,
+      "unique_prefixes": 152,
+      "positive_gain": 68,
+      "profitable": 12,
+      "raw_queries": 11906,
+      "mean_batch_queries": 33.728045325779036,
+      "macro_delta_gain": -8.804175356442933e-08,
+      "macro_delta_queries": -0.0445906432748538,
+      "macro_delta_utility": 5.410065007848362e-05
+    },
+    {
+      "date": "2037-09-07",
+      "pairs": 105,
+      "calls": 6,
+      "dates": 1,
+      "unique_prefixes": 50,
+      "positive_gain": 21,
+      "profitable": 0,
+      "raw_queries": 3307,
+      "mean_batch_queries": 31.495238095238093,
+      "macro_delta_gain": -3.193105970110212e-09,
+      "macro_delta_queries": 0.013227513227513227,
+      "macro_delta_utility": -1.9445754686082742e-05
+    },
+    {
+      "date": "2037-09-21",
+      "pairs": 230,
+      "calls": 8,
+      "dates": 1,
+      "unique_prefixes": 88,
+      "positive_gain": 54,
+      "profitable": 0,
+      "raw_queries": 8205,
+      "mean_batch_queries": 35.67391304347826,
+      "macro_delta_gain": -7.086657848295206e-08,
+      "macro_delta_queries": -0.07714521452145215,
+      "macro_delta_utility": 0.00010303892022614097
+    },
+    {
+      "date": "2037-10-05",
+      "pairs": 306,
+      "calls": 13,
+      "dates": 1,
+      "unique_prefixes": 139,
+      "positive_gain": 45,
+      "profitable": 26,
+      "raw_queries": 7982,
+      "mean_batch_queries": 26.084967320261438,
+      "macro_delta_gain": 5.885800485145261e-07,
+      "macro_delta_queries": 0.0696656050955414,
+      "macro_delta_utility": -3.2247283172435375e-05
+    },
+    {
+      "date": "2037-11-02",
+      "pairs": 239,
+      "calls": 9,
+      "dates": 1,
+      "unique_prefixes": 99,
+      "positive_gain": 15,
+      "profitable": 0,
+      "raw_queries": 7625,
+      "mean_batch_queries": 31.90376569037657,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.017027243589743588,
+      "macro_delta_utility": -2.4555327309398116e-05
+    },
+    {
+      "date": "2037-11-16",
+      "pairs": 231,
+      "calls": 10,
+      "dates": 1,
+      "unique_prefixes": 112,
+      "positive_gain": 15,
+      "profitable": 15,
+      "raw_queries": 6556,
+      "mean_batch_queries": 28.38095238095238,
+      "macro_delta_gain": 1.0024968201551979e-07,
+      "macro_delta_queries": 0.01676829268292683,
+      "macro_delta_utility": -1.256253417596727e-05
+    },
+    {
+      "date": "2037-12-07",
+      "pairs": 259,
+      "calls": 10,
+      "dates": 1,
+      "unique_prefixes": 105,
+      "positive_gain": 42,
+      "profitable": 25,
+      "raw_queries": 9701,
+      "mean_batch_queries": 37.455598455598455,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.015579710144927535,
+      "macro_delta_utility": 2.2467810481356192e-05
+    }
+  ],
+  "per_call_contributions": [
+    {
+      "call": "2037-01-05_100|call000",
+      "pairs": 19,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 8,
+      "profitable": 7,
+      "raw_queries": 249,
+      "mean_batch_queries": 13.105263157894736,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0007961783439490446,
+      "macro_delta_utility": -1.1481846565053897e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -5.740923282526949e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.8704616412634746e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-01-05_100|call001",
+      "pairs": 16,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 792,
+      "mean_batch_queries": 49.5,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -8.037292595537728e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 8.037292595537728e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-01-05_100|call002",
+      "pairs": 5,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 3,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 25,
+      "mean_batch_queries": 5.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0002653927813163482,
+      "macro_delta_utility": -3.827282188351299e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -5.740923282526949e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.740923282526949e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-01-05_100|call003",
+      "pairs": 25,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 581,
+      "mean_batch_queries": 23.24,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-01-05_100|call004",
+      "pairs": 22,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 130,
+      "mean_batch_queries": 5.909090909090909,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0001326963906581741,
+      "macro_delta_utility": -1.9136410941756495e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.740923282526949e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-01-05_100|call005",
+      "pairs": 3,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 3,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 3,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0003980891719745223,
+      "macro_delta_utility": -5.740923282526949e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.7222769847580847e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-01-05_100|call006",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 3,
+      "profitable": 0,
+      "raw_queries": 2067,
+      "mean_batch_queries": 57.416666666666664,
+      "macro_delta_gain": 1.4236778210682476e-10,
+      "macro_delta_queries": 0.03397027600849257,
+      "macro_delta_utility": -4.8972710993146524e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -3.672540799042237e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": -3.672540799042237e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -7.346731699859485e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-01-05_100|call007",
+      "pairs": 37,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2175,
+      "mean_batch_queries": 58.78378378378378,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-01-05_100|call008",
+      "pairs": 35,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 704,
+      "mean_batch_queries": 20.114285714285714,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0001326963906581741,
+      "macro_delta_utility": -1.9136410941756495e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.740923282526949e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-01-05_101|call000",
+      "pairs": 29,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 9,
+      "profitable": 0,
+      "raw_queries": 688,
+      "mean_batch_queries": 23.724137931034484,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-01-05_101|call001",
+      "pairs": 21,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 10,
+      "profitable": 10,
+      "raw_queries": 140,
+      "mean_batch_queries": 6.666666666666667,
+      "macro_delta_gain": 5.5199627410580905e-05,
+      "macro_delta_queries": 0.018577494692144373,
+      "macro_delta_utility": 0.006371075299074849,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.009551446117658
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.009561779779566546
+        }
+      ],
+      "positive_seeds": 2,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-01-05_101|call004",
+      "pairs": 15,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 7,
+      "profitable": 7,
+      "raw_queries": 103,
+      "mean_batch_queries": 6.866666666666666,
+      "macro_delta_gain": 4.879418452074573e-07,
+      "macro_delta_queries": 0.004909766454352441,
+      "macro_delta_utility": 4.9474016120425545e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.00010105303744444431
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 4.7369010916832325e-05
+        }
+      ],
+      "positive_seeds": 2,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-01-05_101|call008",
+      "pairs": 26,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 7,
+      "profitable": 7,
+      "raw_queries": 429,
+      "mean_batch_queries": 16.5,
+      "macro_delta_gain": -3.887273197214568e-07,
+      "macro_delta_queries": -0.003980891719745223,
+      "macro_delta_utility": -3.9314188960938825e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -0.00011507210524155299
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.8704616412634746e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-01-05_101|call012",
+      "pairs": 20,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 206,
+      "mean_batch_queries": 10.3,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0005307855626326964,
+      "macro_delta_utility": -7.654564376702598e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.2963693130107795e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-01-19_100|call000",
+      "pairs": 38,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 3,
+      "profitable": 3,
+      "raw_queries": 2164,
+      "mean_batch_queries": 56.94736842105263,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.01901294498381877,
+      "macro_delta_utility": 2.74189468619847e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 8.40069861303361e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": -8.750727721910011e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -8.750727721910011e-07
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-01-19_100|call002",
+      "pairs": 11,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 376,
+      "mean_batch_queries": 34.18181818181818,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0008090614886731392,
+      "macro_delta_utility": -1.166763696254668e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.625218316573003e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -8.750727721910011e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-01-19_100|call004",
+      "pairs": 9,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 68,
+      "mean_batch_queries": 7.555555555555555,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0012135922330097088,
+      "macro_delta_utility": -1.7501455443820021e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.812900247050506e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -4.3753638609550053e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-01-19_100|call006",
+      "pairs": 18,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 4,
+      "profitable": 0,
+      "raw_queries": 1095,
+      "mean_batch_queries": 60.833333333333336,
+      "macro_delta_gain": -2.8934293580286714e-10,
+      "macro_delta_queries": -0.012944983818770227,
+      "macro_delta_utility": 1.863468309105505e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 5.590404927316515e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-01-19_100|call007",
+      "pairs": 23,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 136,
+      "mean_batch_queries": 5.913043478260869,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0059668284789644015,
+      "macro_delta_utility": -8.604882259878177e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.812900247050506e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.1439282918679528e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": 4.37536386095501e-07
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-01-19_100|call008",
+      "pairs": 2,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 2,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0002022653721682848,
+      "macro_delta_utility": -2.91690924063667e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -8.750727721910011e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-01-19_100|call009",
+      "pairs": 17,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 18,
+      "mean_batch_queries": 1.0588235294117647,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0017192556634304209,
+      "macro_delta_utility": -2.4793728545411697e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.375363860955005e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -3.0627547026685037e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-01-19_100|call010",
+      "pairs": 31,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 4,
+      "profitable": 0,
+      "raw_queries": 916,
+      "mean_batch_queries": 29.548387096774192,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.0126415857605178,
+      "macro_delta_utility": 1.8230682753979187e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 5.600465742022407e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.7501455443820021e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 4.375363860954994e-07
+        }
+      ],
+      "positive_seeds": 2,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-01-19_100|call011",
+      "pairs": 23,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 5,
+      "profitable": 0,
+      "raw_queries": 883,
+      "mean_batch_queries": 38.391304347826086,
+      "macro_delta_gain": -1.2538193884790908e-09,
+      "macro_delta_queries": -0.004146440129449838,
+      "macro_delta_utility": 5.834341064220067e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 1.75030231926602e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-01-19_100|call012",
+      "pairs": 2,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 1,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 4,
+      "mean_batch_queries": 2.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0004045307443365696,
+      "macro_delta_utility": -5.83381848127334e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -8.750727721910011e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -8.750727721910011e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-01-19_100|call013",
+      "pairs": 14,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 724,
+      "mean_batch_queries": 51.714285714285715,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0018203883495145632,
+      "macro_delta_utility": -2.6252183165730028e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -7.875654949719008e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-01-19_100|call014",
+      "pairs": 38,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 15,
+      "profitable": 0,
+      "raw_queries": 2181,
+      "mean_batch_queries": 57.39473684210526,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-01-19_100|call016",
+      "pairs": 26,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 13,
+      "profitable": 13,
+      "raw_queries": 425,
+      "mean_batch_queries": 16.346153846153847,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.000505663430420712,
+      "macro_delta_utility": -7.292273101591676e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -4.3753638609550053e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.7501455443820021e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-01-19_100|call017",
+      "pairs": 3,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 3,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 24,
+      "mean_batch_queries": 8.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.0020226537216828477,
+      "macro_delta_utility": 2.9169092406366702e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 9.625800494101012e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -8.750727721910011e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-01-19_101|call000",
+      "pairs": 20,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 136,
+      "mean_batch_queries": 6.8,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0059668284789644015,
+      "macro_delta_utility": -8.604882259878177e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.812900247050506e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.9689137374297526e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.3126091582865014e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-01-19_101|call001",
+      "pairs": 28,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 142,
+      "mean_batch_queries": 5.071428571428571,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.003539644012944984,
+      "macro_delta_utility": -5.104591171114173e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -3.5002910887640043e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.0500873266292013e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.3126091582865016e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-01-19_101|call002",
+      "pairs": 3,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 1,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 6,
+      "mean_batch_queries": 2.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0006067961165048544,
+      "macro_delta_utility": -8.750727721910011e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -8.750727721910011e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -8.750727721910011e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -8.750727721910011e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-01-19_101|call003",
+      "pairs": 14,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 6,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 104,
+      "mean_batch_queries": 7.428571428571429,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0006067961165048544,
+      "macro_delta_utility": -8.75072772191001e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -7.438118563623509e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 4.812900247050506e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-01-19_101|call004",
+      "pairs": 11,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 1,
+      "profitable": 1,
+      "raw_queries": 30,
+      "mean_batch_queries": 2.727272727272727,
+      "macro_delta_gain": 1.8947139912824416e-07,
+      "macro_delta_queries": 0.0021237864077669906,
+      "macro_delta_utility": 1.88977680636925e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 5.93185225076505e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.6252183165730028e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-01-19_101|call005",
+      "pairs": 10,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 6,
+      "positive_gain": 6,
+      "profitable": 6,
+      "raw_queries": 96,
+      "mean_batch_queries": 9.6,
+      "macro_delta_gain": 8.901876539088376e-07,
+      "macro_delta_queries": 0.0024271844660194173,
+      "macro_delta_utility": 9.967615839091045e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.00014995177397246118
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.00014907670120027018
+        }
+      ],
+      "positive_seeds": 2,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-02-16_100|call000",
+      "pairs": 4,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 46,
+      "mean_batch_queries": 11.5,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.006944444444444445,
+      "macro_delta_utility": -1.00147217261859e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.403533214284616e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -6.00883303571154e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-02-16_100|call001",
+      "pairs": 17,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 124,
+      "mean_batch_queries": 7.294117647058823,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.011631944444444445,
+      "macro_delta_utility": -1.6774658891361382e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.6524290848206735e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -3.379968582587741e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-02-16_100|call002",
+      "pairs": 28,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1561,
+      "mean_batch_queries": 55.75,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-02-16_100|call003",
+      "pairs": 15,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 55,
+      "mean_batch_queries": 3.6666666666666665,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0034722222222222225,
+      "macro_delta_utility": -5.00736086309295e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -7.511041294639425e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -6.00883303571154e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -8.262145424103367e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-02-16_100|call004",
+      "pairs": 22,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 575,
+      "mean_batch_queries": 26.136363636363637,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0012152777777777778,
+      "macro_delta_utility": -1.7525763020825323e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.257728906247597e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-02-16_100|call005",
+      "pairs": 26,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 566,
+      "mean_batch_queries": 21.76923076923077,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-02-16_100|call006",
+      "pairs": 13,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 2,
+      "profitable": 2,
+      "raw_queries": 43,
+      "mean_batch_queries": 3.3076923076923075,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.003125,
+      "macro_delta_utility": -4.506624776783655e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -7.511041294639425e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.1266561941959138e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.502208258927885e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-02-16_101|call000",
+      "pairs": 32,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1431,
+      "mean_batch_queries": 44.71875,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.022222222222222223,
+      "macro_delta_utility": 3.204710952379488e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 9.614132857138465e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-02-16_101|call001",
+      "pairs": 31,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 24,
+      "profitable": 0,
+      "raw_queries": 1578,
+      "mean_batch_queries": 50.903225806451616,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00034722222222222224,
+      "macro_delta_utility": -5.00736086309295e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -1.502208258927885e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-02-16_101|call002",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 3,
+      "profitable": 0,
+      "raw_queries": 2098,
+      "mean_batch_queries": 58.27777777777778,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00034722222222222224,
+      "macro_delta_utility": -5.00736086309295e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.502208258927885e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-03-16_100|call000",
+      "pairs": 30,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 141,
+      "mean_batch_queries": 4.7,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0035225442834138487,
+      "macro_delta_utility": -5.079931310384152e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.3542268374721303e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.0014721726185901e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -4.789649521219344e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-03-16_100|call001",
+      "pairs": 37,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 13,
+      "profitable": 13,
+      "raw_queries": 2162,
+      "mean_batch_queries": 58.432432432432435,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00020128824476650564,
+      "macro_delta_utility": -2.902817891648087e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -8.708453674944261e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-03-16_100|call002",
+      "pairs": 16,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 6,
+      "positive_gain": 1,
+      "profitable": 0,
+      "raw_queries": 74,
+      "mean_batch_queries": 4.625,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0008051529790660225,
+      "macro_delta_utility": -1.1611271566592348e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.7416907349888521e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.7416907349888521e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-03-16_100|call003",
+      "pairs": 22,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 8,
+      "positive_gain": 2,
+      "profitable": 2,
+      "raw_queries": 113,
+      "mean_batch_queries": 5.136363636363637,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00392512077294686,
+      "macro_delta_utility": -5.66049488871377e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -8.708453674944261e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.5239793931152457e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -8.708453674944258e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-03-16_100|call004",
+      "pairs": 13,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 8,
+      "positive_gain": 1,
+      "profitable": 1,
+      "raw_queries": 191,
+      "mean_batch_queries": 14.692307692307692,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.0025161030595813203,
+      "macro_delta_utility": 3.628522364560109e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 1.0885567093680327e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-03-16_100|call005",
+      "pairs": 25,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 106,
+      "mean_batch_queries": 4.24,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.006642512077294686,
+      "macro_delta_utility": -9.579299042438687e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.7852330033635733e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.0885567093680325e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-03-16_100|call006",
+      "pairs": 13,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 269,
+      "mean_batch_queries": 20.692307692307693,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.009762479871175523,
+      "macro_delta_utility": -1.4078666774493222e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -2.9173319811063276e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.3062680512416391e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-03-16_101|call000",
+      "pairs": 6,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 3,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 8,
+      "mean_batch_queries": 1.3333333333333333,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00040257648953301127,
+      "macro_delta_utility": -5.805635783296174e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.7416907349888521e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-03-16_101|call001",
+      "pairs": 35,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 6,
+      "profitable": 0,
+      "raw_queries": 1899,
+      "mean_batch_queries": 54.25714285714286,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00030193236714975844,
+      "macro_delta_utility": -4.3542268374721303e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -8.708453674944261e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -4.3542268374721303e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-03-16_101|call002",
+      "pairs": 6,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 5,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 90,
+      "mean_batch_queries": 15.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.001006441223832528,
+      "macro_delta_utility": -1.4514089458240436e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -4.354226837472131e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-03-16_101|call003",
+      "pairs": 20,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 95,
+      "mean_batch_queries": 4.75,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0014090177133655394,
+      "macro_delta_utility": -2.0319725241536607e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -4.354226837472131e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.7416907349888521e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-03-16_101|call004",
+      "pairs": 15,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 6,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 61,
+      "mean_batch_queries": 4.066666666666666,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0015096618357487923,
+      "macro_delta_utility": -2.1771134187360653e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.3542268374721303e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -3.047958786230491e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -3.047958786230491e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-03-16_101|call005",
+      "pairs": 33,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1922,
+      "mean_batch_queries": 58.24242424242424,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-03-16_101|call006",
+      "pairs": 12,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 6,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 177,
+      "mean_batch_queries": 14.75,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.0008051529790660227,
+      "macro_delta_utility": 1.1611271566592348e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 7.837608307449835e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.1771134187360653e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.1771134187360653e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-03-16_101|call007",
+      "pairs": 17,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 242,
+      "mean_batch_queries": 14.235294117647058,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0008051529790660225,
+      "macro_delta_utility": -1.1611271566592348e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.7416907349888521e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.7416907349888521e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-03-16_101|call008",
+      "pairs": 20,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 3,
+      "profitable": 0,
+      "raw_queries": 183,
+      "mean_batch_queries": 9.15,
+      "macro_delta_gain": -1.9076365779563427e-09,
+      "macro_delta_queries": -0.0035225442834138487,
+      "macro_delta_utility": 4.858828301207564e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.3062680512416392e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 1.588275295486433e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-03-16_101|call009",
+      "pairs": 20,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 443,
+      "mean_batch_queries": 22.15,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00020128824476650564,
+      "macro_delta_utility": -2.902817891648087e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -4.3542268374721303e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -4.3542268374721303e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-03-16_101|call010",
+      "pairs": 38,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 2,
+      "profitable": 0,
+      "raw_queries": 2181,
+      "mean_batch_queries": 57.39473684210526,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0006038647342995169,
+      "macro_delta_utility": -8.708453674944261e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.6125361024832783e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-03-16_101|call011",
+      "pairs": 37,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 24,
+      "profitable": 11,
+      "raw_queries": 2158,
+      "mean_batch_queries": 58.32432432432432,
+      "macro_delta_gain": -1.0785945179765735e-07,
+      "macro_delta_queries": -0.005938003220611917,
+      "macro_delta_utility": -3.938046040377338e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -9.637024702395948e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.1771134187360653e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-04-06_100|call000",
+      "pairs": 26,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 139,
+      "mean_batch_queries": 5.346153846153846,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0003360215053763441,
+      "macro_delta_utility": -4.845833093315758e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.4537499279947274e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-04-06_100|call001",
+      "pairs": 12,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 102,
+      "mean_batch_queries": 8.5,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00022401433691756272,
+      "macro_delta_utility": -3.2305553955438386e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.845833093315758e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -4.845833093315758e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-04-06_100|call002",
+      "pairs": 1,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 1,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00011200716845878136,
+      "macro_delta_utility": -1.6152776977719193e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.845833093315758e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-04-06_100|call003",
+      "pairs": 38,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2181,
+      "mean_batch_queries": 57.39473684210526,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.007168458781362007,
+      "macro_delta_utility": 1.0337777265740283e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 3.101333179722085e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-04-06_100|call004",
+      "pairs": 22,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 316,
+      "mean_batch_queries": 14.363636363636363,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.006720430107526882,
+      "macro_delta_utility": 9.691666186631517e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.845833093315758e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 2.9559581869226127e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-04-06_100|call005",
+      "pairs": 26,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 3,
+      "profitable": 3,
+      "raw_queries": 1034,
+      "mean_batch_queries": 39.76923076923077,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-04-06_100|call006",
+      "pairs": 32,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1836,
+      "mean_batch_queries": 57.375,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.010752688172043012,
+      "macro_delta_utility": 1.5506665898610426e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 4.651999769583128e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-04-06_100|call007",
+      "pairs": 37,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2162,
+      "mean_batch_queries": 58.432432432432435,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.014560931899641577,
+      "macro_delta_utility": -2.099861007103495e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -6.20266635944417e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -9.691666186631516e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-04-06_100|call008",
+      "pairs": 13,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 6,
+      "profitable": 0,
+      "raw_queries": 133,
+      "mean_batch_queries": 10.23076923076923,
+      "macro_delta_gain": -1.228411137844072e-09,
+      "macro_delta_queries": -0.0032482078853046594,
+      "macro_delta_utility": 4.541927366320775e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 1.3625782098962324e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-04-06_100|call009",
+      "pairs": 24,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 395,
+      "mean_batch_queries": 16.458333333333332,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-04-06_100|call010",
+      "pairs": 24,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 339,
+      "mean_batch_queries": 14.125,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00022401433691756272,
+      "macro_delta_utility": -3.2305553955438386e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.845833093315758e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -4.845833093315758e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-04-06_100|call011",
+      "pairs": 5,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 35,
+      "mean_batch_queries": 7.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00011200716845878136,
+      "macro_delta_utility": -1.6152776977719193e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -4.845833093315758e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-04-06_100|call012",
+      "pairs": 6,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 3,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 7,
+      "mean_batch_queries": 1.1666666666666667,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0007840501792114696,
+      "macro_delta_utility": -1.1306943884403434e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -1.9383332373263033e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -4.845833093315758e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -9.691666186631516e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-04-06_100|call013",
+      "pairs": 1,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 1,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2,
+      "mean_batch_queries": 2.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00022401433691756272,
+      "macro_delta_utility": -3.2305553955438386e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -9.691666186631516e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-04-06_100|call014",
+      "pairs": 18,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 260,
+      "mean_batch_queries": 14.444444444444445,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.009296594982078852,
+      "macro_delta_utility": 1.3406804891506932e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 4.1674164602515525e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.4537499279947274e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-04-06_101|call000",
+      "pairs": 6,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 6,
+      "profitable": 6,
+      "raw_queries": 12,
+      "mean_batch_queries": 2.0,
+      "macro_delta_gain": 2.123014901273994e-08,
+      "macro_delta_queries": 0.0010080645161290322,
+      "macro_delta_utility": 1.0069125934866622e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 1.0144617884513644e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 2.0062759920086227e-06
+        }
+      ],
+      "positive_seeds": 2,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-04-06_101|call001",
+      "pairs": 33,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 3,
+      "profitable": 3,
+      "raw_queries": 1996,
+      "mean_batch_queries": 60.484848484848484,
+      "macro_delta_gain": 1.0195011306407203e-06,
+      "macro_delta_queries": -0.007168458781362007,
+      "macro_delta_utility": 0.00012850219623755793,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.00038550658871267375
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-04-06_101|call002",
+      "pairs": 18,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 5,
+      "profitable": 2,
+      "raw_queries": 93,
+      "mean_batch_queries": 5.166666666666667,
+      "macro_delta_gain": 8.572173374955373e-09,
+      "macro_delta_queries": 0.0014560931899641578,
+      "macro_delta_utility": -1.1063104795619527e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -3.3189314386858583e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-05-18_100|call000",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 801,
+      "mean_batch_queries": 22.25,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-05-18_100|call001",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2076,
+      "mean_batch_queries": 57.666666666666664,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-05-18_101|call000",
+      "pairs": 2,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 2,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 28,
+      "mean_batch_queries": 14.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-05-18_101|call001",
+      "pairs": 26,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 150,
+      "mean_batch_queries": 5.769230769230769,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.004921259842519685,
+      "macro_delta_utility": -7.097046892572685e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -9.93586564960176e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.1355275028116296e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-05-18_101|call002",
+      "pairs": 16,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 43,
+      "mean_batch_queries": 2.6875,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00557742782152231,
+      "macro_delta_utility": -8.043319811582375e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.96793282480088e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.916202660994625e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-05-18_101|call003",
+      "pairs": 14,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 123,
+      "mean_batch_queries": 8.785714285714286,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.003937007874015748,
+      "macro_delta_utility": -5.677637514058148e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -2.1291140677718054e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.4903798474402638e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-05-18_101|call004",
+      "pairs": 30,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 12,
+      "profitable": 0,
+      "raw_queries": 1905,
+      "mean_batch_queries": 63.5,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.008038057742782153,
+      "macro_delta_utility": 1.1591843257868717e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 3.477552977360615e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-05-18_101|call005",
+      "pairs": 6,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 6,
+      "profitable": 6,
+      "raw_queries": 6,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 5.080474643256721e-08,
+      "macro_delta_queries": 0.000984251968503937,
+      "macro_delta_utility": 4.469071921591484e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 2.234535960795742e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 8.938143843182968e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 2.234535960795742e-06
+        }
+      ],
+      "positive_seeds": 3,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-05-18_101|call006",
+      "pairs": 38,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2102,
+      "mean_batch_queries": 55.31578947368421,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-05-18_101|call008",
+      "pairs": 19,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 8,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 71,
+      "mean_batch_queries": 3.736842105263158,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.003772965879265092,
+      "macro_delta_utility": -5.441069284305725e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -2.1291140677718054e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 8.516456271087222e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.2710550056232592e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-05-18_101|call009",
+      "pairs": 3,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 2,
+      "positive_gain": 1,
+      "profitable": 0,
+      "raw_queries": 5,
+      "mean_batch_queries": 1.6666666666666667,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00016404199475065617,
+      "macro_delta_utility": -2.3656822975242282e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -7.097046892572685e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-06-01_100|call000",
+      "pairs": 8,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 35,
+      "mean_batch_queries": 4.375,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0007556131260794473,
+      "macro_delta_utility": -1.0896847474088285e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -9.340154977789959e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.3350387444474896e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-01_100|call001",
+      "pairs": 37,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 13,
+      "profitable": 0,
+      "raw_queries": 2175,
+      "mean_batch_queries": 58.78378378378378,
+      "macro_delta_gain": 1.5197125535348947e-08,
+      "macro_delta_queries": 0.0069084628670120895,
+      "macro_delta_utility": -8.201421954333433e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.46042658630003e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-06-01_100|call002",
+      "pairs": 3,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 3,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 4,
+      "mean_batch_queries": 1.3333333333333333,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0004317789291882556,
+      "macro_delta_utility": -6.226769985193306e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -9.340154977789959e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -9.340154977789959e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-01_100|call003",
+      "pairs": 33,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 3,
+      "profitable": 0,
+      "raw_queries": 1971,
+      "mean_batch_queries": 59.72727272727273,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.0069084628670120895,
+      "macro_delta_utility": 9.96283197630929e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 2.988849592892787e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-06-01_100|call004",
+      "pairs": 31,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 7,
+      "profitable": 0,
+      "raw_queries": 1751,
+      "mean_batch_queries": 56.483870967741936,
+      "macro_delta_gain": -3.8604044543646775e-10,
+      "macro_delta_queries": -0.01716321243523316,
+      "macro_delta_utility": 2.4706666998798533e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 7.692204748973258e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.8020464933369874e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-06-01_100|call005",
+      "pairs": 16,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 343,
+      "mean_batch_queries": 21.4375,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0001079447322970639,
+      "macro_delta_utility": -1.5566924962983265e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -4.6700774888949797e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-06-01_100|call006",
+      "pairs": 4,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 3,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 6,
+      "mean_batch_queries": 1.5,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0006476683937823833,
+      "macro_delta_utility": -9.340154977789959e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -9.340154977789959e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.8680309955579919e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-01_100|call007",
+      "pairs": 11,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 5,
+      "positive_gain": 4,
+      "profitable": 4,
+      "raw_queries": 441,
+      "mean_batch_queries": 40.09090909090909,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0004317789291882556,
+      "macro_delta_utility": -6.226769985193306e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.8680309955579919e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-06-01_100|call008",
+      "pairs": 15,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 64,
+      "mean_batch_queries": 4.266666666666667,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.003130397236614853,
+      "macro_delta_utility": -4.514408239265147e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.401023246668494e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.2142201471126945e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-01_100|call009",
+      "pairs": 31,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 7,
+      "profitable": 7,
+      "raw_queries": 603,
+      "mean_batch_queries": 19.451612903225808,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.001187392055267703,
+      "macro_delta_utility": -1.7123617459281592e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.137085237784477e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-06-01_100|call010",
+      "pairs": 8,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 8,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0008635578583765112,
+      "macro_delta_utility": -1.2453539970386612e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.8680309955579919e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.8680309955579919e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-01_101|call000",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 14,
+      "profitable": 14,
+      "raw_queries": 1740,
+      "mean_batch_queries": 48.333333333333336,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0007556131260794473,
+      "macro_delta_utility": -1.0896847474088285e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -9.340154977789959e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.3350387444474896e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-01_101|call001",
+      "pairs": 15,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 4,
+      "profitable": 4,
+      "raw_queries": 209,
+      "mean_batch_queries": 13.933333333333334,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.0006476683937823834,
+      "macro_delta_utility": 9.340154977789959e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -4.6700774888949797e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": 3.269054242226486e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-06-01_101|call002",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2144,
+      "mean_batch_queries": 59.55555555555556,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-06-01_101|call003",
+      "pairs": 39,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 12,
+      "profitable": 0,
+      "raw_queries": 2187,
+      "mean_batch_queries": 56.07692307692308,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0006476683937823833,
+      "macro_delta_utility": -9.340154977789957e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.8020464933369874e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-06-01_101|call004",
+      "pairs": 27,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1489,
+      "mean_batch_queries": 55.148148148148145,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-06-01_101|call005",
+      "pairs": 28,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1460,
+      "mean_batch_queries": 52.142857142857146,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-06-01_101|call006",
+      "pairs": 7,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 7,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0007556131260794473,
+      "macro_delta_utility": -1.0896847474088285e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -1.401023246668494e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.8680309955579919e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-01_101|call007",
+      "pairs": 31,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1835,
+      "mean_batch_queries": 59.193548387096776,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-06-15_100|call000",
+      "pairs": 27,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 12,
+      "profitable": 12,
+      "raw_queries": 477,
+      "mean_batch_queries": 17.666666666666668,
+      "macro_delta_gain": 2.1800723774039485e-06,
+      "macro_delta_queries": 0.002141744548286604,
+      "macro_delta_utility": 0.0002495907983169457,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0007555112731217285
+        },
+        {
+          "seed": 1,
+          "delta_utility": -3.3694390854457232e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -3.3694390854457232e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-15_101|call000",
+      "pairs": 22,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 110,
+      "mean_batch_queries": 5.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.007593457943925234,
+      "macro_delta_utility": -1.0950677027698601e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -8.423597713614308e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.4428433369481492e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-15_101|call001",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 27,
+      "profitable": 0,
+      "raw_queries": 2132,
+      "mean_batch_queries": 59.22222222222222,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-06-15_101|call002",
+      "pairs": 28,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 730,
+      "mean_batch_queries": 26.071428571428573,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.008177570093457943,
+      "macro_delta_utility": 1.179303679906003e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 3.5379110397180094e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-06-15_101|call003",
+      "pairs": 11,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 8,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 48,
+      "mean_batch_queries": 4.363636363636363,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.008177570093457943,
+      "macro_delta_utility": -1.179303679906003e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -7.581237942252878e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.7797872454927217e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-15_101|call005",
+      "pairs": 15,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 8,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 175,
+      "mean_batch_queries": 11.666666666666666,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.010514018691588784,
+      "macro_delta_utility": -1.5162475884505755e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -2.021663451267434e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.5270793140842924e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-15_101|call006",
+      "pairs": 6,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 6,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 54,
+      "mean_batch_queries": 9.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00661993769470405,
+      "macro_delta_utility": -9.54674407542955e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.8640232226288648e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-06-15_101|call007",
+      "pairs": 15,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 1,
+      "profitable": 1,
+      "raw_queries": 168,
+      "mean_batch_queries": 11.2,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0005841121495327102,
+      "macro_delta_utility": -8.423597713614308e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.5270793140842925e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-06-15_101|call008",
+      "pairs": 20,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 102,
+      "mean_batch_queries": 5.1,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0017523364485981308,
+      "macro_delta_utility": -2.5270793140842925e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.5270793140842925e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.054158628168585e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-06-15_101|call009",
+      "pairs": 26,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 838,
+      "mean_batch_queries": 32.23076923076923,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.0035046728971962616,
+      "macro_delta_utility": 5.054158628168585e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 5.391102536713157e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": -5.138394605304728e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": 1.2635396570421464e-05
+        }
+      ],
+      "positive_seeds": 2,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-07-06_100|call000",
+      "pairs": 21,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 554,
+      "mean_batch_queries": 26.38095238095238,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-07-06_100|call001",
+      "pairs": 21,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 2,
+      "profitable": 0,
+      "raw_queries": 362,
+      "mean_batch_queries": 17.238095238095237,
+      "macro_delta_gain": -8.244072583041581e-11,
+      "macro_delta_queries": -0.028267634854771784,
+      "macro_delta_utility": 4.075576433480921e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 6.169463713832796e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 6.057265586609967e-05
+        }
+      ],
+      "positive_seeds": 2,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-07-06_100|call002",
+      "pairs": 39,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2187,
+      "mean_batch_queries": 56.07692307692308,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0005186721991701245,
+      "macro_delta_utility": -7.479875148188639e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.243962544456592e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-07-06_100|call003",
+      "pairs": 25,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 141,
+      "mean_batch_queries": 5.64,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 8.644536652835408e-05,
+      "macro_delta_utility": -1.24664585803144e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -3.73993757409432e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-07-06_100|call004",
+      "pairs": 8,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 8,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0006915629322268327,
+      "macro_delta_utility": -9.97316686425152e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.495975029637728e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.495975029637728e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-07-06_100|call005",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1812,
+      "mean_batch_queries": 50.333333333333336,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-07-06_100|call006",
+      "pairs": 35,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 2,
+      "profitable": 2,
+      "raw_queries": 2092,
+      "mean_batch_queries": 59.77142857142857,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.016597510373443983,
+      "macro_delta_utility": -2.393560047420365e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -7.180680142261094e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-07-06_100|call007",
+      "pairs": 10,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 238,
+      "mean_batch_queries": 23.8,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.015300829875518673,
+      "macro_delta_utility": -2.2065631687156484e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -6.619689506146945e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-07-06_100|call008",
+      "pairs": 17,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 310,
+      "mean_batch_queries": 18.235294117647058,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0012966804979253114,
+      "macro_delta_utility": -1.8699687870471597e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -5.609906361141479e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-07-06_100|call010",
+      "pairs": 12,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 8,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 116,
+      "mean_batch_queries": 9.666666666666666,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.010027662517289074,
+      "macro_delta_utility": -1.4461091953164703e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -3.7025381983533765e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -6.3578938759603436e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-07-06_100|call011",
+      "pairs": 19,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 14,
+      "profitable": 14,
+      "raw_queries": 1135,
+      "mean_batch_queries": 59.73684210526316,
+      "macro_delta_gain": -2.3442020389878735e-07,
+      "macro_delta_queries": 0.008212309820193638,
+      "macro_delta_utility": -3.901341173676675e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -0.00025211478676306475
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.00013507455155276445
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-07-06_100|call012",
+      "pairs": 6,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 6,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00025933609958506224,
+      "macro_delta_utility": -3.73993757409432e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -3.73993757409432e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -7.47987514818864e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-07-06_101|call000",
+      "pairs": 21,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 2,
+      "profitable": 2,
+      "raw_queries": 634,
+      "mean_batch_queries": 30.19047619047619,
+      "macro_delta_gain": 4.2010763374107014e-07,
+      "macro_delta_queries": 0.0012966804979253112,
+      "macro_delta_utility": 4.682225229508212e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 1.8699687870471597e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0001221410627721842
+        },
+        {
+          "seed": 2,
+          "delta_utility": -3.739937574094306e-07
+        }
+      ],
+      "positive_seeds": 2,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-07-06_101|call001",
+      "pairs": 37,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 10,
+      "profitable": 0,
+      "raw_queries": 2175,
+      "mean_batch_queries": 58.78378378378378,
+      "macro_delta_gain": -6.492207159145245e-10,
+      "macro_delta_queries": -0.005532503457814661,
+      "macro_delta_utility": 7.903286111702583e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 2.370985833510775e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-07-06_101|call002",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2160,
+      "mean_batch_queries": 60.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-07-06_101|call003",
+      "pairs": 23,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 222,
+      "mean_batch_queries": 9.652173913043478,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.002074688796680498,
+      "macro_delta_utility": -2.991950059275456e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -8.975850177826368e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-07-06_101|call004",
+      "pairs": 11,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 64,
+      "mean_batch_queries": 5.818181818181818,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-07-06_101|call005",
+      "pairs": 34,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2043,
+      "mean_batch_queries": 60.088235294117645,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.02982365145228216,
+      "macro_delta_utility": -4.300928210208468e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -8.115664535784675e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": -4.78712009484073e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-07-06_101|call006",
+      "pairs": 37,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2175,
+      "mean_batch_queries": 58.78378378378378,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-07-06_101|call007",
+      "pairs": 6,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 6,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 117,
+      "mean_batch_queries": 19.5,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-07-06_101|call008",
+      "pairs": 25,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1343,
+      "mean_batch_queries": 53.72,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.03137966804979253,
+      "macro_delta_utility": 4.5253244646541275e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0001368817152118521
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.121981272228296e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-08-17_100|call000",
+      "pairs": 38,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2162,
+      "mean_batch_queries": 56.89473684210526,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-08-17_100|call001",
+      "pairs": 20,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 8,
+      "positive_gain": 14,
+      "profitable": 0,
+      "raw_queries": 451,
+      "mean_batch_queries": 22.55,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0003654970760233918,
+      "macro_delta_utility": -5.270906171676789e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.5812718515030368e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-08-17_100|call003",
+      "pairs": 39,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 4,
+      "profitable": 0,
+      "raw_queries": 2187,
+      "mean_batch_queries": 56.07692307692308,
+      "macro_delta_gain": -5.745515953495256e-08,
+      "macro_delta_queries": -0.007797270955165692,
+      "macro_delta_utility": 4.585308009355553e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 1.3755924028066657e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-08-17_100|call004",
+      "pairs": 8,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 8,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 40,
+      "mean_batch_queries": 5.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.0004873294346978557,
+      "macro_delta_utility": 7.027874895569051e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -1.5812718515030368e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 3.689634320173752e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-08-17_100|call005",
+      "pairs": 19,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 319,
+      "mean_batch_queries": 16.789473684210527,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0003654970760233918,
+      "macro_delta_utility": -5.270906171676789e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -5.270906171676789e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -5.270906171676789e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.270906171676789e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-08-17_100|call006",
+      "pairs": 6,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 6,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0004873294346978557,
+      "macro_delta_utility": -7.027874895569052e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -2.1083624686707156e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-08-17_100|call007",
+      "pairs": 33,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 26,
+      "profitable": 0,
+      "raw_queries": 907,
+      "mean_batch_queries": 27.484848484848484,
+      "macro_delta_gain": -3.0586594029476764e-08,
+      "macro_delta_queries": -0.04995126705653021,
+      "macro_delta_utility": 6.849060428716451e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 9.931897314075903e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 4.131252339644752e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": 6.484031632428698e-05
+        }
+      ],
+      "positive_seeds": 3,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-08-17_100|call008",
+      "pairs": 18,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 208,
+      "mean_batch_queries": 11.555555555555555,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.008284600389863547,
+      "macro_delta_utility": -1.1947387322467389e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -5.270906171676789e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.5285627897862692e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.00294434523718e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-08-17_100|call009",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 12,
+      "profitable": 12,
+      "raw_queries": 1766,
+      "mean_batch_queries": 49.05555555555556,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.001949317738791423,
+      "macro_delta_utility": -2.811149958227621e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -5.270906171676789e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -7.379268640347506e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.270906171676789e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-08-17_100|call010",
+      "pairs": 15,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 166,
+      "mean_batch_queries": 11.066666666666666,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.006944444444444444,
+      "macro_delta_utility": 1.00147217261859e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 3.162543703006074e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.5812718515030368e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-08-17_101|call000",
+      "pairs": 8,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 154,
+      "mean_batch_queries": 19.25,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-08-17_101|call001",
+      "pairs": 38,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2181,
+      "mean_batch_queries": 57.39473684210526,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-08-17_101|call002",
+      "pairs": 20,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 95,
+      "mean_batch_queries": 4.75,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0007309941520467836,
+      "macro_delta_utility": -1.0541812343353578e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -1.5812718515030368e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.5812718515030368e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-08-17_101|call003",
+      "pairs": 23,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 661,
+      "mean_batch_queries": 28.73913043478261,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.004751461988304093,
+      "macro_delta_utility": -6.852178023179827e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.055653406953948e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-08-17_101|call004",
+      "pairs": 6,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 6,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0007309941520467836,
+      "macro_delta_utility": -1.0541812343353578e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -1.5812718515030368e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.5812718515030368e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-08-17_101|call005",
+      "pairs": 26,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 12,
+      "profitable": 0,
+      "raw_queries": 597,
+      "mean_batch_queries": 22.96153846153846,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0029239766081871343,
+      "macro_delta_utility": -4.216724937341431e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -1.0541812343353578e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.1083624686707156e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-09-07_100|call000",
+      "pairs": 6,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 6,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0016534391534391533,
+      "macro_delta_utility": -2.3844575538537854e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -4.2920235969368136e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.861349064624542e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-09-07_100|call001",
+      "pairs": 5,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 260,
+      "mean_batch_queries": 52.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-09-07_100|call002",
+      "pairs": 29,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1792,
+      "mean_batch_queries": 61.793103448275865,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.008597883597883597,
+      "macro_delta_utility": -1.2399179280039684e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -3.7197537840119056e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-09-07_101|call000",
+      "pairs": 12,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 8,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 181,
+      "mean_batch_queries": 15.083333333333334,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0013227513227513227,
+      "macro_delta_utility": -1.907566043083028e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.861349064624542e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.861349064624542e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-09-07_101|call001",
+      "pairs": 18,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 109,
+      "mean_batch_queries": 6.055555555555555,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.012566137566137565,
+      "macro_delta_utility": -1.812187740928877e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.430674532312271e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.293495769555405e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-09-07_101|call002",
+      "pairs": 35,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 21,
+      "profitable": 0,
+      "raw_queries": 959,
+      "mean_batch_queries": 27.4,
+      "macro_delta_gain": -3.193105970110212e-09,
+      "macro_delta_queries": -0.010912698412698412,
+      "macro_delta_utility": 1.5367325600182528e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 5.182467492979667e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.722698129249084e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-09-21_100|call000",
+      "pairs": 37,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 21,
+      "profitable": 0,
+      "raw_queries": 1443,
+      "mean_batch_queries": 39.0,
+      "macro_delta_gain": -5.655556228688054e-09,
+      "macro_delta_queries": -0.012582508250825082,
+      "macro_delta_utility": 1.748998342362126e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 5.2469950270863776e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-09-21_100|call002",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2160,
+      "mean_batch_queries": 60.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-09-21_100|call003",
+      "pairs": 28,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 629,
+      "mean_batch_queries": 22.464285714285715,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-09-21_101|call000",
+      "pairs": 28,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 2,
+      "profitable": 0,
+      "raw_queries": 520,
+      "mean_batch_queries": 18.571428571428573,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.011963696369636964,
+      "macro_delta_utility": 1.7253084954023236e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 5.443645769976297e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.67720283769326e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-09-21_101|call001",
+      "pairs": 7,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 4,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 7,
+      "mean_batch_queries": 1.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00020627062706270627,
+      "macro_delta_utility": -2.974669819659178e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -8.924009458977534e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-09-21_101|call002",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 12,
+      "profitable": 0,
+      "raw_queries": 2148,
+      "mean_batch_queries": 59.666666666666664,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-09-21_101|call004",
+      "pairs": 29,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 3,
+      "profitable": 0,
+      "raw_queries": 535,
+      "mean_batch_queries": 18.448275862068964,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0012376237623762376,
+      "macro_delta_utility": -1.784801891795507e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -8.924009458977534e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -4.462004729488767e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-09-21_101|call005",
+      "pairs": 29,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 16,
+      "profitable": 0,
+      "raw_queries": 763,
+      "mean_batch_queries": 26.310344827586206,
+      "macro_delta_gain": -6.5211022254264e-08,
+      "macro_delta_queries": -0.054042904290429045,
+      "macro_delta_utility": 7.037812072225791e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 8.935757078020432e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 3.437182555740852e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": 8.740496582916092e-05
+        }
+      ],
+      "positive_seeds": 3,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-10-05_100|call000",
+      "pairs": 15,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 2,
+      "profitable": 2,
+      "raw_queries": 165,
+      "mean_batch_queries": 11.0,
+      "macro_delta_gain": 2.9530241737446716e-07,
+      "macro_delta_queries": 0.0005307855626326964,
+      "macro_delta_utility": 3.34613212688903e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0001003839638066709
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-10-05_100|call001",
+      "pairs": 31,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 21,
+      "profitable": 21,
+      "raw_queries": 690,
+      "mean_batch_queries": 22.258064516129032,
+      "macro_delta_gain": 2.93277631140059e-07,
+      "macro_delta_queries": 0.008492569002123142,
+      "macro_delta_utility": 2.174479356250151e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 6.523438068750453e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-10-05_100|call002",
+      "pairs": 7,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 69,
+      "mean_batch_queries": 9.857142857142858,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0001326963906581741,
+      "macro_delta_utility": -1.9136410941756495e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.740923282526949e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-10-05_100|call003",
+      "pairs": 8,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 3,
+      "profitable": 3,
+      "raw_queries": 184,
+      "mean_batch_queries": 23.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-10-05_100|call004",
+      "pairs": 28,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 519,
+      "mean_batch_queries": 18.535714285714285,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0002653927813163482,
+      "macro_delta_utility": -3.827282188351299e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -5.740923282526949e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.740923282526949e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-10-05_101|call000",
+      "pairs": 19,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 470,
+      "mean_batch_queries": 24.736842105263158,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.025743099787685773,
+      "macro_delta_utility": -3.71246372270076e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -6.65947100773126e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -4.4779201603710206e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-10-05_101|call001",
+      "pairs": 31,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 677,
+      "mean_batch_queries": 21.838709677419356,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-10-05_101|call002",
+      "pairs": 38,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 12,
+      "profitable": 0,
+      "raw_queries": 2164,
+      "mean_batch_queries": 56.94736842105263,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.026008492569002124,
+      "macro_delta_utility": -3.750736544584273e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -0.00011137391168102281
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.1481846565053897e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-10-05_101|call003",
+      "pairs": 19,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 274,
+      "mean_batch_queries": 14.421052631578947,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0005307855626326964,
+      "macro_delta_utility": -7.654564376702598e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.2963693130107795e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-10-05_101|call004",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 7,
+      "profitable": 0,
+      "raw_queries": 1995,
+      "mean_batch_queries": 55.416666666666664,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0007961783439490446,
+      "macro_delta_utility": -1.1481846565053897e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -3.4445539695161694e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-10-05_101|call005",
+      "pairs": 12,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 8,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 71,
+      "mean_batch_queries": 5.916666666666667,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.0009288747346072187,
+      "macro_delta_utility": 1.3395487659229546e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -5.740923282526949e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 4.592738626021559e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-10-05_101|call006",
+      "pairs": 33,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 320,
+      "mean_batch_queries": 9.696969696969697,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.003450106157112526,
+      "macro_delta_utility": -4.975466844856689e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -1.3778215878064678e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.1481846565053897e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-10-05_101|call007",
+      "pairs": 29,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 384,
+      "mean_batch_queries": 13.241379310344827,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.004644373673036093,
+      "macro_delta_utility": -6.697743829614773e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -1.894504683233893e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": -5.740923282526949e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.740923282526949e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-11-02_100|call000",
+      "pairs": 38,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2156,
+      "mean_batch_queries": 56.73684210526316,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00040064102564102563,
+      "macro_delta_utility": -5.777724072799557e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -8.666586109199336e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": -8.666586109199336e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-11-02_100|call001",
+      "pairs": 12,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 6,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 71,
+      "mean_batch_queries": 5.916666666666667,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0016025641025641025,
+      "macro_delta_utility": -2.3110896291198227e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.7333172218398671e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -5.199951665519601e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-11-02_100|call002",
+      "pairs": 38,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2164,
+      "mean_batch_queries": 56.94736842105263,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0008012820512820513,
+      "macro_delta_utility": -1.1555448145599114e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.7333172218398671e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.7333172218398671e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-11-02_100|call003",
+      "pairs": 23,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 68,
+      "mean_batch_queries": 2.9565217391304346,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.006610576923076923,
+      "macro_delta_utility": -9.533244720119269e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -3.4666344436797343e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -2.3399782494838203e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.7333172218398671e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-11-02_100|call004",
+      "pairs": 34,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 678,
+      "mean_batch_queries": 19.941176470588236,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00040064102564102563,
+      "macro_delta_utility": -5.777724072799557e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -8.666586109199336e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -8.666586109199336e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-11-02_101|call000",
+      "pairs": 25,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 141,
+      "mean_batch_queries": 5.64,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.002604166666666667,
+      "macro_delta_utility": -3.7555206473197117e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 6.93326888735947e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.0399903331039202e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -7.799927498279402e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-11-02_101|call001",
+      "pairs": 33,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 15,
+      "profitable": 0,
+      "raw_queries": 1946,
+      "mean_batch_queries": 58.96969696969697,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-11-02_101|call002",
+      "pairs": 21,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 9,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 23,
+      "mean_batch_queries": 1.0952380952380953,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.004607371794871795,
+      "macro_delta_utility": -6.64438268371949e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -8.666586109199334e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -4.333293054599667e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -6.933268887359469e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-11-02_101|call003",
+      "pairs": 15,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 378,
+      "mean_batch_queries": 25.2,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-11-16_100|call000",
+      "pairs": 26,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 510,
+      "mean_batch_queries": 19.615384615384617,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-11-16_100|call001",
+      "pairs": 16,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 269,
+      "mean_batch_queries": 16.8125,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0006775067750677507,
+      "macro_delta_utility": -9.77046022066917e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -2.9311380662007515e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-11-16_100|call002",
+      "pairs": 31,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1819,
+      "mean_batch_queries": 58.67741935483871,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-11-16_100|call003",
+      "pairs": 33,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 1939,
+      "mean_batch_queries": 58.75757575757576,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.001016260162601626,
+      "macro_delta_utility": -1.4655690331003755e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -4.396707099301126e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-11-16_100|call004",
+      "pairs": 15,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 12,
+      "profitable": 12,
+      "raw_queries": 341,
+      "mean_batch_queries": 22.733333333333334,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-11-16_101|call000",
+      "pairs": 22,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 453,
+      "mean_batch_queries": 20.59090909090909,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-11-16_101|call001",
+      "pairs": 16,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 3,
+      "profitable": 3,
+      "raw_queries": 114,
+      "mean_batch_queries": 7.125,
+      "macro_delta_gain": 1.0024968201551979e-07,
+      "macro_delta_queries": 0.011178861788617886,
+      "macro_delta_utility": -4.501904493915204e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.256253417596727e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -9.431793057783421e-07
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-11-16_101|call002",
+      "pairs": 22,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 76,
+      "mean_batch_queries": 3.4545454545454546,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0038956639566395663,
+      "macro_delta_utility": -5.618014626884773e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -1.4655690331003757e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": -4.396707099301127e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.0991767748252815e-05
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-11-16_101|call003",
+      "pairs": 28,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 10,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 572,
+      "mean_batch_queries": 20.428571428571427,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-11-16_101|call004",
+      "pairs": 22,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 463,
+      "mean_batch_queries": 21.045454545454547,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-12-07_100|call001",
+      "pairs": 34,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 2064,
+      "mean_batch_queries": 60.705882352941174,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-12-07_100|call002",
+      "pairs": 37,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 11,
+      "profitable": 1,
+      "raw_queries": 2175,
+      "mean_batch_queries": 58.78378378378378,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0,
+      "macro_delta_utility": 0.0,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-12-07_101|call000",
+      "pairs": 5,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 3,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 6,
+      "mean_batch_queries": 1.2,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00036231884057971015,
+      "macro_delta_utility": -5.225072204966557e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.567521661489967e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-12-07_101|call001",
+      "pairs": 37,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 13,
+      "positive_gain": 12,
+      "profitable": 12,
+      "raw_queries": 2162,
+      "mean_batch_queries": 58.432432432432435,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00036231884057971015,
+      "macro_delta_utility": -5.225072204966557e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.567521661489967e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-12-07_101|call002",
+      "pairs": 17,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 104,
+      "mean_batch_queries": 6.117647058823529,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00036231884057971037,
+      "macro_delta_utility": -5.225072204966549e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 8.621369138194818e-06
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.0188890799684784e-05
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 1
+    },
+    {
+      "call": "2037-12-07_101|call003",
+      "pairs": 24,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 480,
+      "mean_batch_queries": 20.0,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.012318840579710146,
+      "macro_delta_utility": 1.7765245496886292e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 5.6430779813638807e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.567521661489967e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": -1.567521661489967e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-12-07_101|call004",
+      "pairs": 36,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 12,
+      "positive_gain": 19,
+      "profitable": 12,
+      "raw_queries": 2156,
+      "mean_batch_queries": 59.888888888888886,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": -0.011594202898550725,
+      "macro_delta_utility": 1.672023105589298e-05,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 5.0160693167678944e-05
+        },
+        {
+          "seed": 1,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 0
+    },
+    {
+      "call": "2037-12-07_101|call005",
+      "pairs": 28,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 161,
+      "mean_batch_queries": 5.75,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.0016304347826086958,
+      "macro_delta_utility": -2.3512824922349503e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -7.837608307449835e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -8.621369138194818e-06
+        },
+        {
+          "seed": 2,
+          "delta_utility": 2.351282492234951e-06
+        }
+      ],
+      "positive_seeds": 1,
+      "negative_seeds": 2
+    },
+    {
+      "call": "2037-12-07_101|call006",
+      "pairs": 31,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 11,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 170,
+      "mean_batch_queries": 5.483870967741935,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.005434782608695652,
+      "macro_delta_utility": -7.837608307449835e-06,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": -7.837608307449835e-07
+        },
+        {
+          "seed": 1,
+          "delta_utility": -1.567521661489967e-05
+        },
+        {
+          "seed": 2,
+          "delta_utility": -7.053847476704851e-06
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 3
+    },
+    {
+      "call": "2037-12-07_101|call007",
+      "pairs": 10,
+      "calls": 1,
+      "dates": 1,
+      "unique_prefixes": 7,
+      "positive_gain": 0,
+      "profitable": 0,
+      "raw_queries": 223,
+      "mean_batch_queries": 22.3,
+      "macro_delta_gain": 0.0,
+      "macro_delta_queries": 0.00018115942028985507,
+      "macro_delta_utility": -2.6125361024832783e-07,
+      "seeds": [
+        {
+          "seed": 0,
+          "delta_utility": 0.0
+        },
+        {
+          "seed": 1,
+          "delta_utility": -7.837608307449835e-07
+        },
+        {
+          "seed": 2,
+          "delta_utility": 0.0
+        }
+      ],
+      "positive_seeds": 0,
+      "negative_seeds": 1
+    }
+  ],
+  "all4681_decomposed": true,
+  "contribution_conservation": true,
+  "new_fits": 0,
+  "new_forwards": 0,
+  "new_physics": 0
+}

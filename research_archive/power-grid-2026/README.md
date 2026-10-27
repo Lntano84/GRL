@@ -1,3 +1,7 @@
+# 最新：GRID213内层分歧样本生成方案
+
+[方案](protocols/GRID213_inner_head_plan/audited/GRID213_plan.md)；36组资格通过，未来108小森林，本轮零拟合。
+
 # 最新：GRID212取消训练支持
 
 [报告](protocols/GRID212_cancellation_support/audited/GRID212_report.md)；[判读](protocols/GRID212_cancellation_support/audited/判读与样本生成边界.md)；零拟合，先厘清样本来源。

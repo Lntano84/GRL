@@ -1,3 +1,7 @@
+# 最新：GRID206原41摘要直连概率模块
+
+[报告](protocols/GRID206_public_event/complete/GRID206_report.md)；保留全部同预算种子和反例，查询次数与候选数量分开判读。
+
 # 最新：GRID205公开反馈区分诊断
 
 [报告](protocols/GRID205_public_separation/audited/GRID205_report.md)；[判读与方案](protocols/GRID205_public_separation/audited/判读与固定训练方案.md)；零拟合，下一次只检验原41摘要直接输入。

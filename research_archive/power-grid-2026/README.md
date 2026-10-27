@@ -1,6 +1,6 @@
 # 最新：GRID210收益树单层容量对照
 
-[报告](protocols/GRID210_amount_depth/complete/GRID210_report.md)；保留低查询权衡与不利结果，不继续扫描深度。
+[报告](protocols/GRID210_amount_depth/audited/GRID210_report.md)；[判读](protocols/GRID210_amount_depth/audited/结果判读与下一步.md)；保留低查询权衡与不利结果，不继续扫描深度。
 
 # 最新：GRID209回本损失与叶子容量核查
 

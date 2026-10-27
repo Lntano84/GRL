@@ -1,0 +1,9 @@
+{
+  "id": "GRID211_BUDGET_SOURCES",
+  "scope": "Fixed210vs208 all7134seed-starttraces/all4681eligible states/all48date-seed budgetrows;no fitting or policyvariant.",
+  "decomposition": "ActualNETdifference=(newextraG-oldextraG-fee*(newextraQ-oldextraQ))/scale. Matched=(tnew*newextraG-told*oldextraG-fee*(tnew*newextraQ-told*oldextraQ))/scale,where t=minbudget/owncost. Group common/added/removed/neither. Report reward,cost,NET separately;matchedcostsumzero perdate. Perrow/call/date/seed identities conserve.",
+  "interpretation": "Commonselected extra batches have identical actualgain/query;only thinningprobabilitieschange. Distinguish retainedcommonbenefit at equalexpectedbudget from discoveryofnewprofitableaction. Analyticcomparison remains prespecified,notnewrandompolicy/realhardbudget/time.",
+  "recurrence": "Removedunprofitable vsremovedprofitable states keyed(sample_id,baseline_stop_position),notinitialprefix alone. Count1/2/3seed recurrence anduniquephysicalcalls;sharedteacherdata notindependent successes. Allnew12unprofitable and6newlostprofit pairs retained.",
+  "focus": "Explain seed1matchedpositive/actualnegative andseed2matchednegative. Showallseeds,dates,calls,toppositiveandnegative withfullledgers;no selection for futuretraining ortrigger.",
+  "limits": "No new predictions/fits/NNforward/physics/data/final8/paper/newFRAME/fees/rules. No depthscanorposthocpolicycombinations. Allteacherpath dataexposed exploratory."
+}

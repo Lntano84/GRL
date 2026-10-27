@@ -1,0 +1,3088 @@
+{
+  "GRID201": {
+    "prespecified": true,
+    "analytic_expected_queries_not_hardbudget_or_time": true,
+    "macro": {
+      "OLD": {
+        "mean_queries": 13.215063312628146,
+        "mean_gain": 0.0009356738229822814,
+        "action_match_rate": 0.8934014372788207,
+        "mean_net_utility": 0.08939077939477412
+      },
+      "NEW": {
+        "mean_queries": 13.215063312628146,
+        "mean_gain": 0.0009442790295739294,
+        "action_match_rate": 0.8931515667897979,
+        "mean_net_utility": 0.09038815860944503
+      },
+      "ADD1_RANDOM": {
+        "mean_queries": 13.215063312628146,
+        "mean_gain": 0.000931498168091402,
+        "action_match_rate": 0.8910721249471463,
+        "mean_net_utility": 0.08890680363527938
+      }
+    },
+    "per_seed": [
+      {
+        "seed": 0,
+        "NET_delta": 0.002486549060820014,
+        "gain_delta": 2.145349336930466e-05,
+        "match_delta_pp": 0.07468720668630732,
+        "positive_NET_dates": 3,
+        "negative_NET_dates": 6,
+        "random_NET_delta": 0.002550454082284088
+      },
+      {
+        "seed": 1,
+        "NET_delta": -0.0010326018526590126,
+        "gain_delta": -8.909101110535166e-06,
+        "match_delta_pp": -0.20843631150480463,
+        "positive_NET_dates": 2,
+        "negative_NET_dates": 5,
+        "random_NET_delta": 0.0005281559551408891
+      },
+      {
+        "seed": 2,
+        "NET_delta": 0.0015381904358517029,
+        "gain_delta": 1.32712275161744e-05,
+        "match_delta_pp": 0.058787958111616856,
+        "positive_NET_dates": 7,
+        "negative_NET_dates": 3,
+        "random_NET_delta": 0.0013654548850719264
+      }
+    ],
+    "per_date_seed": [
+      {
+        "seed": 0,
+        "date": "2037-01-05",
+        "matched_extra_query_total": 35,
+        "original_extra_query_totals": {
+          "OLD": 35,
+          "NEW": 179,
+          "ADD1_RANDOM": 3015
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 3.3248407643312103,
+          "mean_gain": 0.0007158176154847358,
+          "action_match_rate": 0.8853503184713376,
+          "mean_net_utility": 0.07817141806770429
+        },
+        "NEW": {
+          "keep_probability": 0.19553072625698323,
+          "mean_queries": 3.3248407643312103,
+          "mean_gain": 0.0009592495511631242,
+          "action_match_rate": 0.8889442408283813,
+          "mean_net_utility": 0.10638619132699814
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.011608623548922056,
+          "mean_queries": 3.3248407643312103,
+          "mean_gain": 0.0007176645819196014,
+          "action_match_rate": 0.880385756989997,
+          "mean_net_utility": 0.07838548915509895
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-01-19",
+        "matched_extra_query_total": 80,
+        "original_extra_query_totals": {
+          "OLD": 349,
+          "NEW": 80,
+          "ADD1_RANDOM": 3242
+        },
+        "OLD": {
+          "keep_probability": 0.22922636103151864,
+          "mean_queries": 11.893203883495145,
+          "mean_gain": 0.00019367632356662195,
+          "action_match_rate": 0.8980582524271845,
+          "mean_net_utility": 0.005296464653136806
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 11.893203883495145,
+          "mean_gain": 0.00019367632356662195,
+          "action_match_rate": 0.8980582524271845,
+          "mean_net_utility": 0.005296464653136806
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.024676125848241828,
+          "mean_queries": 11.893203883495145,
+          "mean_gain": 0.00019560959846886042,
+          "action_match_rate": 0.8998550577073963,
+          "mean_net_utility": 0.0055205392506727955
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-02-16",
+        "matched_extra_query_total": 2,
+        "original_extra_query_totals": {
+          "OLD": 2,
+          "NEW": 6,
+          "ADD1_RANDOM": 2813
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 15.833333333333334,
+          "mean_gain": 1.4629960060119628e-05,
+          "action_match_rate": 0.9166666666666666,
+          "mean_net_utility": -0.021137892349938497
+        },
+        "NEW": {
+          "keep_probability": 0.3333333333333333,
+          "mean_queries": 15.833333333333334,
+          "mean_gain": 1.4629960060119628e-05,
+          "action_match_rate": 0.9166666666666666,
+          "mean_net_utility": -0.021137892349938497
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0007109847138286527,
+          "mean_queries": 15.833333333333334,
+          "mean_gain": 1.463164317267443e-05,
+          "action_match_rate": 0.9166962910297428,
+          "mean_net_utility": -0.02113769727019692
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-03-16",
+        "matched_extra_query_total": 150,
+        "original_extra_query_totals": {
+          "OLD": 159,
+          "NEW": 150,
+          "ADD1_RANDOM": 4365
+        },
+        "OLD": {
+          "keep_probability": 0.9433962264150944,
+          "mean_queries": 9.753623188405797,
+          "mean_gain": 0.00016608831278552613,
+          "action_match_rate": 0.9031081943305077,
+          "mean_net_utility": 0.0051844314830911484
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 9.753623188405797,
+          "mean_gain": 0.00016126598137012425,
+          "action_match_rate": 0.9033816425120773,
+          "mean_net_utility": 0.004625503226255975
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.03436426116838488,
+          "mean_queries": 9.753623188405797,
+          "mean_gain": 0.00016179412223904196,
+          "action_match_rate": 0.9012068994139815,
+          "mean_net_utility": 0.004686716948374862
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-04-06",
+        "matched_extra_query_total": 289,
+        "original_extra_query_totals": {
+          "OLD": 393,
+          "NEW": 289,
+          "ADD1_RANDOM": 3901
+        },
+        "OLD": {
+          "keep_probability": 0.7353689567430025,
+          "mean_queries": 12.543010752688172,
+          "mean_gain": 0.0014305686982647562,
+          "action_match_rate": 0.964896440395086,
+          "mean_net_utility": 0.1477203330419015
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 12.543010752688172,
+          "mean_gain": 0.0014802916075593682,
+          "action_match_rate": 0.9838709677419355,
+          "mean_net_utility": 0.15348342492066547
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.07408356831581646,
+          "mean_queries": 12.543010752688172,
+          "mean_gain": 0.0014369063077734746,
+          "action_match_rate": 0.9601756373469169,
+          "mean_net_utility": 0.1484548883285615
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-05-18",
+        "matched_extra_query_total": 0,
+        "original_extra_query_totals": {
+          "OLD": 0,
+          "NEW": 15,
+          "ADD1_RANDOM": 2425
+        },
+        "OLD": {
+          "keep_probability": 0.0,
+          "mean_queries": 21.023622047244096,
+          "mean_gain": 0.0002598884537464052,
+          "action_match_rate": 0.952755905511811,
+          "mean_net_utility": -0.00019643221413739837
+        },
+        "NEW": {
+          "keep_probability": 0.0,
+          "mean_queries": 21.023622047244096,
+          "mean_gain": 0.0002598884537464052,
+          "action_match_rate": 0.952755905511811,
+          "mean_net_utility": -0.00019643221413739837
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0,
+          "mean_queries": 21.023622047244096,
+          "mean_gain": 0.0002598884537464052,
+          "action_match_rate": 0.952755905511811,
+          "mean_net_utility": -0.00019643221413739837
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-06-01",
+        "matched_extra_query_total": 8,
+        "original_extra_query_totals": {
+          "OLD": 230,
+          "NEW": 8,
+          "ADD1_RANDOM": 6190
+        },
+        "OLD": {
+          "keep_probability": 0.034782608695652174,
+          "mean_queries": 17.70984455958549,
+          "mean_gain": 0.0008867682839170397,
+          "action_match_rate": 0.8758278891642262,
+          "mean_net_utility": 0.0772404105124901
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 17.70984455958549,
+          "mean_gain": 0.0008867676393973395,
+          "action_match_rate": 0.8756476683937824,
+          "mean_net_utility": 0.07724033580997766
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0012924071082390954,
+          "mean_queries": 17.70984455958549,
+          "mean_gain": 0.0008870427470608069,
+          "action_match_rate": 0.8757882930014146,
+          "mean_net_utility": 0.07727222193175948
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-06-15",
+        "matched_extra_query_total": 39,
+        "original_extra_query_totals": {
+          "OLD": 76,
+          "NEW": 39,
+          "ADD1_RANDOM": 1454
+        },
+        "OLD": {
+          "keep_probability": 0.5131578947368421,
+          "mean_queries": 13.58878504672897,
+          "mean_gain": 0.0006450136131215318,
+          "action_match_rate": 0.8691588785046729,
+          "mean_net_utility": 0.0551631012756056
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 13.58878504672897,
+          "mean_gain": 0.0007496570872369213,
+          "action_match_rate": 0.8785046728971962,
+          "mean_net_utility": 0.06729171491457861
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.026822558459422285,
+          "mean_queries": 13.58878504672897,
+          "mean_gain": 0.0006482721326724751,
+          "action_match_rate": 0.8719163377855481,
+          "mean_net_utility": 0.05554077723679216
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-07-06",
+        "matched_extra_query_total": 698,
+        "original_extra_query_totals": {
+          "OLD": 897,
+          "NEW": 698,
+          "ADD1_RANDOM": 7577
+        },
+        "OLD": {
+          "keep_probability": 0.778149386845039,
+          "mean_queries": 19.634854771784234,
+          "mean_gain": 0.004254593772399208,
+          "action_match_rate": 0.9474458429897723,
+          "mean_net_utility": 0.46480928864033466
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 19.634854771784234,
+          "mean_gain": 0.004224914732810373,
+          "action_match_rate": 0.9377593360995851,
+          "mean_net_utility": 0.46136936458016975
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.09212089217368352,
+          "mean_queries": 19.634854771784234,
+          "mean_gain": 0.0042520387645929416,
+          "action_match_rate": 0.9427285128558418,
+          "mean_net_utility": 0.46451315261476084
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-08-17",
+        "matched_extra_query_total": 96,
+        "original_extra_query_totals": {
+          "OLD": 318,
+          "NEW": 96,
+          "ADD1_RANDOM": 3956
+        },
+        "OLD": {
+          "keep_probability": 0.3018867924528302,
+          "mean_queries": 14.771929824561404,
+          "mean_gain": 0.00401263040750742,
+          "action_match_rate": 0.8860200816506675,
+          "mean_net_utility": 0.44377764981739515
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 14.771929824561404,
+          "mean_gain": 0.00401242016351711,
+          "action_match_rate": 0.8771929824561403,
+          "mean_net_utility": 0.4437532816649619
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.024266936299292215,
+          "mean_queries": 14.771929824561404,
+          "mean_gain": 0.0040205916026223925,
+          "action_match_rate": 0.8801731325279832,
+          "mean_net_utility": 0.4447003854248494
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-09-07",
+        "matched_extra_query_total": 0,
+        "original_extra_query_totals": {
+          "OLD": 0,
+          "NEW": 3,
+          "ADD1_RANDOM": 1006
+        },
+        "OLD": {
+          "keep_probability": 0.0,
+          "mean_queries": 31.650793650793652,
+          "mean_gain": 0.0018485538543216765,
+          "action_match_rate": 0.8888888888888888,
+          "mean_net_utility": 0.16861083562941886
+        },
+        "NEW": {
+          "keep_probability": 0.0,
+          "mean_queries": 31.650793650793652,
+          "mean_gain": 0.0018485538543216765,
+          "action_match_rate": 0.8888888888888888,
+          "mean_net_utility": 0.16861083562941886
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0,
+          "mean_queries": 31.650793650793652,
+          "mean_gain": 0.0018485538543216765,
+          "action_match_rate": 0.8888888888888888,
+          "mean_net_utility": 0.16861083562941886
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-09-21",
+        "matched_extra_query_total": 1,
+        "original_extra_query_totals": {
+          "OLD": 110,
+          "NEW": 1,
+          "ADD1_RANDOM": 2761
+        },
+        "OLD": {
+          "keep_probability": 0.00909090909090909,
+          "mean_queries": 6.118811881188119,
+          "mean_gain": 5.846727441604023e-07,
+          "action_match_rate": 0.7725472547254726,
+          "mean_net_utility": -0.008756294551581986
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 6.118811881188119,
+          "mean_gain": 5.736209378384127e-07,
+          "action_match_rate": 0.7722772277227723,
+          "mean_net_utility": -0.008757575501875593
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0003621876131836291,
+          "mean_queries": 6.118811881188119,
+          "mean_gain": 5.778329614987448e-07,
+          "action_match_rate": 0.7723417760102703,
+          "mean_net_utility": -0.008757087310824538
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-10-05",
+        "matched_extra_query_total": 68,
+        "original_extra_query_totals": {
+          "OLD": 68,
+          "NEW": 510,
+          "ADD1_RANDOM": 2589
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 5.643312101910828,
+          "mean_gain": 4.503833260505822e-05,
+          "action_match_rate": 0.8598726114649682,
+          "mean_net_utility": -0.002918202878027549
+        },
+        "NEW": {
+          "keep_probability": 0.13333333333333333,
+          "mean_queries": 5.643312101910828,
+          "mean_gain": 2.5219218746112407e-05,
+          "action_match_rate": 0.8585987261146497,
+          "mean_net_utility": -0.005215320559698799
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.02626496716879104,
+          "mean_queries": 5.643312101910828,
+          "mean_gain": 2.112666238829551e-05,
+          "action_match_rate": 0.8561798692656093,
+          "mean_net_utility": -0.005689664853782053
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-11-02",
+        "matched_extra_query_total": 20,
+        "original_extra_query_totals": {
+          "OLD": 20,
+          "NEW": 27,
+          "ADD1_RANDOM": 2447
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 14.019230769230768,
+          "mean_gain": 1.542040934929481e-05,
+          "action_match_rate": 0.9423076923076923,
+          "mean_net_utility": -0.018430122531366923
+        },
+        "NEW": {
+          "keep_probability": 0.7407407407407407,
+          "mean_queries": 14.019230769230768,
+          "mean_gain": 1.542040934929481e-05,
+          "action_match_rate": 0.9423076923076923,
+          "mean_net_utility": -0.018430122531366923
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.008173273395995096,
+          "mean_queries": 14.019230769230768,
+          "mean_gain": 1.5422264323936524e-05,
+          "action_match_rate": 0.9427792273113074,
+          "mean_net_utility": -0.018429907532095065
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-11-16",
+        "matched_extra_query_total": 0,
+        "original_extra_query_totals": {
+          "OLD": 0,
+          "NEW": 2,
+          "ADD1_RANDOM": 2601
+        },
+        "OLD": {
+          "keep_probability": 0.0,
+          "mean_queries": 3.5365853658536586,
+          "mean_gain": 4.811984736744951e-06,
+          "action_match_rate": 0.967479674796748,
+          "mean_net_utility": -0.004542451201420238
+        },
+        "NEW": {
+          "keep_probability": 0.0,
+          "mean_queries": 3.5365853658536586,
+          "mean_gain": 4.811984736744951e-06,
+          "action_match_rate": 0.967479674796748,
+          "mean_net_utility": -0.004542451201420238
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0,
+          "mean_queries": 3.5365853658536586,
+          "mean_gain": 4.811984736744951e-06,
+          "action_match_rate": 0.967479674796748,
+          "mean_net_utility": -0.004542451201420238
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-12-07",
+        "matched_extra_query_total": 2,
+        "original_extra_query_totals": {
+          "OLD": 147,
+          "NEW": 2,
+          "ADD1_RANDOM": 3306
+        },
+        "OLD": {
+          "keep_probability": 0.013605442176870748,
+          "mean_queries": 7.747826086956522,
+          "mean_gain": 0.0001829727836277174,
+          "action_match_rate": 0.7565217391304347,
+          "mean_net_utility": 0.010034011812869455
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 7.747826086956522,
+          "mean_gain": 0.0001829727836277174,
+          "action_match_rate": 0.7565217391304347,
+          "mean_net_utility": 0.010034011812869455
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0006049606775559589,
+          "mean_queries": 7.747826086956522,
+          "mean_gain": 0.00018330315066875165,
+          "action_match_rate": 0.7565796049343749,
+          "mean_net_utility": 0.01007230272621716
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-01-05",
+        "matched_extra_query_total": 0,
+        "original_extra_query_totals": {
+          "OLD": 0,
+          "NEW": 65,
+          "ADD1_RANDOM": 2361
+        },
+        "OLD": {
+          "keep_probability": 0.0,
+          "mean_queries": 8.522292993630574,
+          "mean_gain": 0.0023561078272048073,
+          "action_match_rate": 0.9363057324840764,
+          "mean_net_utility": 0.26079252263656727
+        },
+        "NEW": {
+          "keep_probability": 0.0,
+          "mean_queries": 8.522292993630574,
+          "mean_gain": 0.0023561078272048073,
+          "action_match_rate": 0.9363057324840764,
+          "mean_net_utility": 0.26079252263656727
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0,
+          "mean_queries": 8.522292993630574,
+          "mean_gain": 0.0023561078272048073,
+          "action_match_rate": 0.9363057324840764,
+          "mean_net_utility": 0.26079252263656727
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-01-19",
+        "matched_extra_query_total": 82,
+        "original_extra_query_totals": {
+          "OLD": 82,
+          "NEW": 221,
+          "ADD1_RANDOM": 2523
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 20.820388349514563,
+          "mean_gain": 0.00018094754913478223,
+          "action_match_rate": 0.9223300970873787,
+          "mean_net_utility": -0.00905292383980921
+        },
+        "NEW": {
+          "keep_probability": 0.37104072398190047,
+          "mean_queries": 20.820388349514563,
+          "mean_gain": 0.00016531413821581668,
+          "action_match_rate": 0.9149716645433379,
+          "mean_net_utility": -0.010864901151326522
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.03250099088386841,
+          "mean_queries": 20.820388349514563,
+          "mean_gain": 0.0001425103477381966,
+          "action_match_rate": 0.9106068826985905,
+          "mean_net_utility": -0.013507955260005719
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-02-16",
+        "matched_extra_query_total": 12,
+        "original_extra_query_totals": {
+          "OLD": 12,
+          "NEW": 89,
+          "ADD1_RANDOM": 2249
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 25.708333333333336,
+          "mean_gain": 1.4641880989074707e-05,
+          "action_match_rate": 0.9166666666666666,
+          "mean_net_utility": -0.03537744495935524
+        },
+        "NEW": {
+          "keep_probability": 0.1348314606741573,
+          "mean_queries": 25.708333333333336,
+          "mean_gain": 1.4641880989074707e-05,
+          "action_match_rate": 0.9166666666666666,
+          "mean_net_utility": -0.03537744495935524
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.005335704757670075,
+          "mean_queries": 25.708333333333336,
+          "mean_gain": 1.4654750715843462e-05,
+          "action_match_rate": 0.9168889876982362,
+          "mean_net_utility": -0.035375953304525
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-03-16",
+        "matched_extra_query_total": 15,
+        "original_extra_query_totals": {
+          "OLD": 15,
+          "NEW": 172,
+          "ADD1_RANDOM": 3910
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 15.458937198067632,
+          "mean_gain": 0.00017574616676367422,
+          "action_match_rate": 0.9227053140096618,
+          "mean_net_utility": -0.0019239301265147892
+        },
+        "NEW": {
+          "keep_probability": 0.0872093023255814,
+          "mean_queries": 15.458937198067632,
+          "mean_gain": 0.00017574616676367422,
+          "action_match_rate": 0.9227053140096618,
+          "mean_net_utility": -0.0019239301265147892
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0038363171355498722,
+          "mean_queries": 15.458937198067632,
+          "mean_gain": 0.00017587431708133598,
+          "action_match_rate": 0.9229462421389476,
+          "mean_net_utility": -0.001909076971993971
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-04-06",
+        "matched_extra_query_total": 1,
+        "original_extra_query_totals": {
+          "OLD": 64,
+          "NEW": 1,
+          "ADD1_RANDOM": 3118
+        },
+        "OLD": {
+          "keep_probability": 0.015625,
+          "mean_queries": 16.68279569892473,
+          "mean_gain": 0.001492050386244251,
+          "action_match_rate": 0.9731182795698925,
+          "mean_net_utility": 0.14887624987895687
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 16.68279569892473,
+          "mean_gain": 0.001492050386244251,
+          "action_match_rate": 0.9731182795698925,
+          "mean_net_utility": 0.14887624987895687
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.00032071840923669016,
+          "mean_queries": 16.68279569892473,
+          "mean_gain": 0.0014920623285916918,
+          "action_match_rate": 0.9731269010325064,
+          "mean_net_utility": 0.148877634046668
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-05-18",
+        "matched_extra_query_total": 18,
+        "original_extra_query_totals": {
+          "OLD": 18,
+          "NEW": 51,
+          "ADD1_RANDOM": 2387
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 19.62992125984252,
+          "mean_gain": 0.00025866913983202356,
+          "action_match_rate": 0.9291338582677166,
+          "mean_net_utility": 0.0016721279146366382
+        },
+        "NEW": {
+          "keep_probability": 0.35294117647058826,
+          "mean_queries": 19.62992125984252,
+          "mean_gain": 0.00025923443149780445,
+          "action_match_rate": 0.935155164427976,
+          "mean_net_utility": 0.0017376475685428852
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.00754084625052367,
+          "mean_queries": 19.62992125984252,
+          "mean_gain": 0.00025879202863667196,
+          "action_match_rate": 0.921794233198856,
+          "mean_net_utility": 0.0016863712379277982
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-06-01",
+        "matched_extra_query_total": 15,
+        "original_extra_query_totals": {
+          "OLD": 15,
+          "NEW": 107,
+          "ADD1_RANDOM": 5302
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 27.1139896373057,
+          "mean_gain": 0.0010266013713698314,
+          "action_match_rate": 0.917098445595855,
+          "mean_net_utility": 0.07988574158805775
+        },
+        "NEW": {
+          "keep_probability": 0.14018691588785046,
+          "mean_queries": 27.1139896373057,
+          "mean_gain": 0.0010267036324014712,
+          "action_match_rate": 0.917098445595855,
+          "mean_net_utility": 0.07989759406671029
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.002829121086382497,
+          "mean_queries": 27.1139896373057,
+          "mean_gain": 0.001026809712636437,
+          "action_match_rate": 0.9172743494975989,
+          "mean_net_utility": 0.07990988920690426
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-06-15",
+        "matched_extra_query_total": 78,
+        "original_extra_query_totals": {
+          "OLD": 78,
+          "NEW": 199,
+          "ADD1_RANDOM": 1449
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 8.25233644859813,
+          "mean_gain": 0.000624264512106637,
+          "action_match_rate": 0.8598130841121495,
+          "mean_net_utility": 0.060453993087885016
+        },
+        "NEW": {
+          "keep_probability": 0.39195979899497485,
+          "mean_queries": 8.25233644859813,
+          "mean_gain": 0.0004970096340366658,
+          "action_match_rate": 0.8484478467101865,
+          "mean_net_utility": 0.045704623737978144
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.053830227743271224,
+          "mean_queries": 8.25233644859813,
+          "mean_gain": 0.0004338813924639036,
+          "action_match_rate": 0.846152357733016,
+          "mean_net_utility": 0.03838779812399384
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-07-06",
+        "matched_extra_query_total": 0,
+        "original_extra_query_totals": {
+          "OLD": 0,
+          "NEW": 196,
+          "ADD1_RANDOM": 5680
+        },
+        "OLD": {
+          "keep_probability": 0.0,
+          "mean_queries": 30.21161825726141,
+          "mean_gain": 0.004400559480754172,
+          "action_match_rate": 0.966804979253112,
+          "mean_net_utility": 0.4664743595965179
+        },
+        "NEW": {
+          "keep_probability": 0.0,
+          "mean_queries": 30.21161825726141,
+          "mean_gain": 0.004400559480754172,
+          "action_match_rate": 0.966804979253112,
+          "mean_net_utility": 0.4664743595965179
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0,
+          "mean_queries": 30.21161825726141,
+          "mean_gain": 0.004400559480754172,
+          "action_match_rate": 0.966804979253112,
+          "mean_net_utility": 0.4664743595965179
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-08-17",
+        "matched_extra_query_total": 53,
+        "original_extra_query_totals": {
+          "OLD": 98,
+          "NEW": 53,
+          "ADD1_RANDOM": 3824
+        },
+        "OLD": {
+          "keep_probability": 0.5408163265306123,
+          "mean_queries": 11.625730994152047,
+          "mean_gain": 0.003174164440598006,
+          "action_match_rate": 0.8776703663921709,
+          "mean_net_utility": 0.35113315489370467
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 11.625730994152047,
+          "mean_gain": 0.0031740219272368138,
+          "action_match_rate": 0.8713450292397661,
+          "mean_net_utility": 0.3511166370027334
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.013859832635983263,
+          "mean_queries": 11.625730994152047,
+          "mean_gain": 0.003185682461052552,
+          "action_match_rate": 0.8729660622966062,
+          "mean_net_utility": 0.35246814134326515
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-09-07",
+        "matched_extra_query_total": 32,
+        "original_extra_query_totals": {
+          "OLD": 38,
+          "NEW": 32,
+          "ADD1_RANDOM": 1109
+        },
+        "OLD": {
+          "keep_probability": 0.8421052631578947,
+          "mean_queries": 26.253968253968253,
+          "mean_gain": 0.0018486829230261526,
+          "action_match_rate": 0.9022556390977443,
+          "mean_net_utility": 0.17640866468456784
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 26.253968253968253,
+          "mean_gain": 0.0018485538543216765,
+          "action_match_rate": 0.8888888888888888,
+          "mean_net_utility": 0.1763937050851976
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.028854824165915238,
+          "mean_queries": 26.253968253968253,
+          "mean_gain": 0.0018486714614596696,
+          "action_match_rate": 0.8920949804628794,
+          "mean_net_utility": 0.17640733624136823
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-09-21",
+        "matched_extra_query_total": 11,
+        "original_extra_query_totals": {
+          "OLD": 114,
+          "NEW": 11,
+          "ADD1_RANDOM": 2768
+        },
+        "OLD": {
+          "keep_probability": 0.09649122807017543,
+          "mean_queries": 4.881188118811881,
+          "mean_gain": 5.3299411378098125e-08,
+          "action_match_rate": 0.7534306062185165,
+          "mean_net_utility": -0.0070330810379041955
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 4.881188118811881,
+          "mean_gain": 0.0,
+          "action_match_rate": 0.7524752475247525,
+          "mean_net_utility": -0.007039258661241479
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.003973988439306358,
+          "mean_queries": 4.881188118811881,
+          "mean_gain": 4.8494653505840437e-08,
+          "action_match_rate": 0.7532621759285755,
+          "mean_net_utility": -0.007033637929314329
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-10-05",
+        "matched_extra_query_total": 0,
+        "original_extra_query_totals": {
+          "OLD": 0,
+          "NEW": 2,
+          "ADD1_RANDOM": 2573
+        },
+        "OLD": {
+          "keep_probability": 0.0,
+          "mean_queries": 5.719745222929936,
+          "mean_gain": 5.127366181391819e-05,
+          "action_match_rate": 0.8598726114649682,
+          "mean_net_utility": -0.0023057280303112673
+        },
+        "NEW": {
+          "keep_probability": 0.0,
+          "mean_queries": 5.719745222929936,
+          "mean_gain": 5.127366181391819e-05,
+          "action_match_rate": 0.8598726114649682,
+          "mean_net_utility": -0.0023057280303112673
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0,
+          "mean_queries": 5.719745222929936,
+          "mean_gain": 5.127366181391819e-05,
+          "action_match_rate": 0.8598726114649682,
+          "mean_net_utility": -0.0023057280303112673
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-11-02",
+        "matched_extra_query_total": 6,
+        "original_extra_query_totals": {
+          "OLD": 6,
+          "NEW": 56,
+          "ADD1_RANDOM": 2521
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 9.875,
+          "mean_gain": 1.5269105251018817e-05,
+          "action_match_rate": 0.9038461538461539,
+          "mean_net_utility": -0.012471181524404256
+        },
+        "NEW": {
+          "keep_probability": 0.10714285714285714,
+          "mean_queries": 9.875,
+          "mean_gain": 1.5269105251018817e-05,
+          "action_match_rate": 0.9038461538461539,
+          "mean_net_utility": -0.012471181524404256
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.002380007933359778,
+          "mean_queries": 9.875,
+          "mean_gain": 1.5269555382211624e-05,
+          "action_match_rate": 0.9039605773044884,
+          "mean_net_utility": -0.012471129352327874
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-11-16",
+        "matched_extra_query_total": 0,
+        "original_extra_query_totals": {
+          "OLD": 0,
+          "NEW": 39,
+          "ADD1_RANDOM": 1780
+        },
+        "OLD": {
+          "keep_probability": 0.0,
+          "mean_queries": 11.227642276422765,
+          "mean_gain": 3.2079898244966336e-06,
+          "action_match_rate": 0.959349593495935,
+          "mean_net_utility": -0.015819787321846905
+        },
+        "NEW": {
+          "keep_probability": 0.0,
+          "mean_queries": 11.227642276422765,
+          "mean_gain": 3.2079898244966336e-06,
+          "action_match_rate": 0.959349593495935,
+          "mean_net_utility": -0.015819787321846905
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0,
+          "mean_queries": 11.227642276422765,
+          "mean_gain": 3.2079898244966336e-06,
+          "action_match_rate": 0.959349593495935,
+          "mean_net_utility": -0.015819787321846905
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-12-07",
+        "matched_extra_query_total": 4,
+        "original_extra_query_totals": {
+          "OLD": 4,
+          "NEW": 40,
+          "ADD1_RANDOM": 2961
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 10.756521739130434,
+          "mean_gain": 0.0001723517542300017,
+          "action_match_rate": 0.7652173913043478,
+          "mean_net_utility": 0.004464090396463872
+        },
+        "NEW": {
+          "keep_probability": 0.1,
+          "mean_queries": 10.756521739130434,
+          "mean_gain": 0.0001723517542300017,
+          "action_match_rate": 0.7652173913043478,
+          "mean_net_utility": 0.004464090396463872
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0013508949679162446,
+          "mean_queries": 10.756521739130434,
+          "mean_gain": 0.00017373072334882063,
+          "action_match_rate": 0.7653701011702863,
+          "mean_net_utility": 0.004623918649526145
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-01-05",
+        "matched_extra_query_total": 29,
+        "original_extra_query_totals": {
+          "OLD": 29,
+          "NEW": 240,
+          "ADD1_RANDOM": 2916
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 4.45859872611465,
+          "mean_gain": 0.0010650818514975771,
+          "action_match_rate": 0.910828025477707,
+          "mean_net_utility": 0.11701757991568935
+        },
+        "NEW": {
+          "keep_probability": 0.12083333333333333,
+          "mean_queries": 4.45859872611465,
+          "mean_gain": 0.0012231004402642543,
+          "action_match_rate": 0.910615711252654,
+          "mean_net_utility": 0.13533259121599678
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.009945130315500686,
+          "mean_queries": 4.45859872611465,
+          "mean_gain": 0.0010756073871454666,
+          "action_match_rate": 0.905408770412309,
+          "mean_net_utility": 0.11823753325053102
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-01-19",
+        "matched_extra_query_total": 122,
+        "original_extra_query_totals": {
+          "OLD": 218,
+          "NEW": 122,
+          "ADD1_RANDOM": 3765
+        },
+        "OLD": {
+          "keep_probability": 0.5596330275229358,
+          "mean_queries": 7.606796116504855,
+          "mean_gain": 0.00013266582782922386,
+          "action_match_rate": 0.8964995101095574,
+          "mean_net_utility": 0.0044066086474161045
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 7.606796116504855,
+          "mean_gain": 0.00017283900270184267,
+          "action_match_rate": 0.9029126213592233,
+          "mean_net_utility": 0.009062846609695634
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.03240371845949535,
+          "mean_queries": 7.606796116504855,
+          "mean_gain": 0.00011403671703078683,
+          "action_match_rate": 0.8911809074382084,
+          "mean_net_utility": 0.0022474172671422175
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-02-16",
+        "matched_extra_query_total": 95,
+        "original_extra_query_totals": {
+          "OLD": 148,
+          "NEW": 95,
+          "ADD1_RANDOM": 3015
+        },
+        "OLD": {
+          "keep_probability": 0.6418918918918919,
+          "mean_queries": 17.225,
+          "mean_gain": 1.22485799832387e-05,
+          "action_match_rate": 0.9106981981981982,
+          "mean_net_utility": -0.023420854433856792
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 17.225,
+          "mean_gain": 1.4629960060119628e-05,
+          "action_match_rate": 0.9166666666666667,
+          "mean_net_utility": -0.023144842583866152
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.03150912106135987,
+          "mean_queries": 17.225,
+          "mean_gain": 8.264192235344612e-06,
+          "action_match_rate": 0.9018380320619127,
+          "mean_net_utility": -0.023882661536407473
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-03-16",
+        "matched_extra_query_total": 109,
+        "original_extra_query_totals": {
+          "OLD": 109,
+          "NEW": 143,
+          "ADD1_RANDOM": 4240
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 10.11111111111111,
+          "mean_gain": 0.00015187090721683225,
+          "action_match_rate": 0.9130434782608695,
+          "mean_net_utility": 0.003021034620259466
+        },
+        "NEW": {
+          "keep_probability": 0.7622377622377622,
+          "mean_queries": 10.11111111111111,
+          "mean_gain": 0.00015177934066109035,
+          "action_match_rate": 0.8985507246376812,
+          "mean_net_utility": 0.0030104216758189894
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.025707547169811322,
+          "mean_queries": 10.11111111111111,
+          "mean_gain": 0.00015314069450330782,
+          "action_match_rate": 0.900413590374624,
+          "mean_net_utility": 0.0031682082450987916
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-04-06",
+        "matched_extra_query_total": 36,
+        "original_extra_query_totals": {
+          "OLD": 95,
+          "NEW": 36,
+          "ADD1_RANDOM": 4024
+        },
+        "OLD": {
+          "keep_probability": 0.37894736842105264,
+          "mean_queries": 12.924731182795698,
+          "mean_gain": 0.0014789827813114498,
+          "action_match_rate": 0.9503112620260329,
+          "mean_net_utility": 0.15278123987851447
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 12.924731182795698,
+          "mean_gain": 0.0014799833297729492,
+          "action_match_rate": 0.9731182795698925,
+          "mean_net_utility": 0.1528972076043491
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.008946322067594433,
+          "mean_queries": 12.924731182795698,
+          "mean_gain": 0.0014794106714492933,
+          "action_match_rate": 0.9467175441971826,
+          "mean_net_utility": 0.15283083412417292
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-05-18",
+        "matched_extra_query_total": 50,
+        "original_extra_query_totals": {
+          "OLD": 50,
+          "NEW": 71,
+          "ADD1_RANDOM": 2498
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 19.00787401574803,
+          "mean_gain": 0.0002598884537464052,
+          "action_match_rate": 0.952755905511811,
+          "mean_net_utility": 0.0027105181930603722
+        },
+        "NEW": {
+          "keep_probability": 0.704225352112676,
+          "mean_queries": 19.00787401574803,
+          "mean_gain": 0.000260174677669969,
+          "action_match_rate": 0.9583009870245093,
+          "mean_net_utility": 0.002743692735596181
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.020016012810248198,
+          "mean_queries": 19.00787401574803,
+          "mean_gain": 0.00026022485551812285,
+          "action_match_rate": 0.9535439375122144,
+          "mean_net_utility": 0.002749508556779855
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-06-01",
+        "matched_extra_query_total": 18,
+        "original_extra_query_totals": {
+          "OLD": 18,
+          "NEW": 73,
+          "ADD1_RANDOM": 6980
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 7.83419689119171,
+          "mean_gain": 0.0008372117818328383,
+          "action_match_rate": 0.8497409326424871,
+          "mean_net_utility": 0.08573847423127949
+        },
+        "NEW": {
+          "keep_probability": 0.2465753424657534,
+          "mean_queries": 7.83419689119171,
+          "mean_gain": 0.0008372117818328383,
+          "action_match_rate": 0.8497409326424871,
+          "mean_net_utility": 0.08573847423127949
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0025787965616045844,
+          "mean_queries": 7.83419689119171,
+          "mean_gain": 0.0008378276947846982,
+          "action_match_rate": 0.8500616120076607,
+          "mean_net_utility": 0.08580986110266824
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-06-15",
+        "matched_extra_query_total": 125,
+        "original_extra_query_totals": {
+          "OLD": 125,
+          "NEW": 173,
+          "ADD1_RANDOM": 1931
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 5.392523364485982,
+          "mean_gain": 0.000673582620709856,
+          "action_match_rate": 0.8598130841121495,
+          "mean_net_utility": 0.07029436032439948
+        },
+        "NEW": {
+          "keep_probability": 0.7225433526011561,
+          "mean_queries": 5.392523364485982,
+          "mean_gain": 0.000673582620709856,
+          "action_match_rate": 0.8598130841121495,
+          "mean_net_utility": 0.07029436032439948
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0647332988089073,
+          "mean_queries": 5.392523364485982,
+          "mean_gain": 0.0006795788709948764,
+          "action_match_rate": 0.8646529569202921,
+          "mean_net_utility": 0.07098935065804801
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-07-06",
+        "matched_extra_query_total": 194,
+        "original_extra_query_totals": {
+          "OLD": 194,
+          "NEW": 440,
+          "ADD1_RANDOM": 6637
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 28.630705394190873,
+          "mean_gain": 0.004453775299040608,
+          "action_match_rate": 0.975103734439834,
+          "mean_net_utility": 0.47492216009216026
+        },
+        "NEW": {
+          "keep_probability": 0.4409090909090909,
+          "mean_queries": 28.630705394190873,
+          "mean_gain": 0.0044656140360909554,
+          "action_match_rate": 0.9727838551490003,
+          "mean_net_utility": 0.4762943189283504
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.02923007382853699,
+          "mean_queries": 28.630705394190873,
+          "mean_gain": 0.004456280451722173,
+          "action_match_rate": 0.971803363140248,
+          "mean_net_utility": 0.47521251770154
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-08-17",
+        "matched_extra_query_total": 95,
+        "original_extra_query_totals": {
+          "OLD": 194,
+          "NEW": 95,
+          "ADD1_RANDOM": 4126
+        },
+        "OLD": {
+          "keep_probability": 0.4896907216494845,
+          "mean_queries": 9.5906432748538,
+          "mean_gain": 0.0033405128285417273,
+          "action_match_rate": 0.8477120636643154,
+          "mean_net_utility": 0.37334846510088815
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 9.5906432748538,
+          "mean_gain": 0.003338913471378081,
+          "action_match_rate": 0.8362573099415205,
+          "mean_net_utility": 0.3731630929573066
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.023024721279689773,
+          "mean_queries": 9.5906432748538,
+          "mean_gain": 0.00335833096770966,
+          "action_match_rate": 0.83989279224884,
+          "mean_net_utility": 0.37541366149808536
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-09-07",
+        "matched_extra_query_total": 0,
+        "original_extra_query_totals": {
+          "OLD": 0,
+          "NEW": 43,
+          "ADD1_RANDOM": 1192
+        },
+        "OLD": {
+          "keep_probability": 0.0,
+          "mean_queries": 23.26984126984127,
+          "mean_gain": 0.0018485538543216765,
+          "action_match_rate": 0.8888888888888888,
+          "mean_net_utility": 0.1806971740783929
+        },
+        "NEW": {
+          "keep_probability": 0.0,
+          "mean_queries": 23.26984126984127,
+          "mean_gain": 0.0018485538543216765,
+          "action_match_rate": 0.8888888888888888,
+          "mean_net_utility": 0.1806971740783929
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0,
+          "mean_queries": 23.26984126984127,
+          "mean_gain": 0.0018485538543216765,
+          "action_match_rate": 0.8888888888888888,
+          "mean_net_utility": 0.1806971740783929
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-09-21",
+        "matched_extra_query_total": 20,
+        "original_extra_query_totals": {
+          "OLD": 182,
+          "NEW": 20,
+          "ADD1_RANDOM": 2676
+        },
+        "OLD": {
+          "keep_probability": 0.10989010989010989,
+          "mean_queries": 5.247524752475248,
+          "mean_gain": 1.947582254419129e-06,
+          "action_match_rate": 0.7975193123707975,
+          "mean_net_utility": -0.007341827142085462
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 5.247524752475248,
+          "mean_gain": 1.76807441333733e-06,
+          "action_match_rate": 0.7920792079207921,
+          "mean_net_utility": -0.007362632847057055
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.007473841554559043,
+          "mean_queries": 5.247524752475248,
+          "mean_gain": 1.846063530308016e-06,
+          "action_match_rate": 0.7932631828205242,
+          "mean_net_utility": -0.007353593584209769
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-10-05",
+        "matched_extra_query_total": 8,
+        "original_extra_query_totals": {
+          "OLD": 8,
+          "NEW": 89,
+          "ADD1_RANDOM": 2820
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 4.197452229299363,
+          "mean_gain": 8.309267129108405e-05,
+          "action_match_rate": 0.8662420382165605,
+          "mean_net_utility": 0.003577556498719522
+        },
+        "NEW": {
+          "keep_probability": 0.0898876404494382,
+          "mean_queries": 4.197452229299363,
+          "mean_gain": 8.309267129108405e-05,
+          "action_match_rate": 0.8662420382165605,
+          "mean_net_utility": 0.003577556498719522
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0028368794326241137,
+          "mean_queries": 4.197452229299363,
+          "mean_gain": 8.326426546236641e-05,
+          "action_match_rate": 0.8664950083570493,
+          "mean_net_utility": 0.003597444976465288
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-11-02",
+        "matched_extra_query_total": 0,
+        "original_extra_query_totals": {
+          "OLD": 0,
+          "NEW": 28,
+          "ADD1_RANDOM": 2657
+        },
+        "OLD": {
+          "keep_probability": 0.0,
+          "mean_queries": 6.663461538461538,
+          "mean_gain": 1.5269105251018817e-05,
+          "action_match_rate": 0.9038461538461539,
+          "mean_net_utility": -0.00783975790764813
+        },
+        "NEW": {
+          "keep_probability": 0.0,
+          "mean_queries": 6.663461538461538,
+          "mean_gain": 1.5269105251018817e-05,
+          "action_match_rate": 0.9038461538461539,
+          "mean_net_utility": -0.00783975790764813
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0,
+          "mean_queries": 6.663461538461538,
+          "mean_gain": 1.5269105251018817e-05,
+          "action_match_rate": 0.9038461538461539,
+          "mean_net_utility": -0.00783975790764813
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-11-16",
+        "matched_extra_query_total": 11,
+        "original_extra_query_totals": {
+          "OLD": 11,
+          "NEW": 69,
+          "ADD1_RANDOM": 2175
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 7.0894308943089435,
+          "mean_gain": 1.6039949122483168e-06,
+          "action_match_rate": 0.9512195121951219,
+          "mean_net_utility": -0.010037899896985197
+        },
+        "NEW": {
+          "keep_probability": 0.15942028985507245,
+          "mean_queries": 7.0894308943089435,
+          "mean_gain": 2.1154135799216933e-06,
+          "action_match_rate": 0.9538117120301637,
+          "mean_net_utility": -0.009978624347502494
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.005057471264367816,
+          "mean_queries": 7.0894308943089435,
+          "mean_gain": 2.8657761703817746e-06,
+          "action_match_rate": 0.951466218110457,
+          "mean_net_utility": -0.009891654204110716
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-12-07",
+        "matched_extra_query_total": 30,
+        "original_extra_query_totals": {
+          "OLD": 30,
+          "NEW": 53,
+          "ADD1_RANDOM": 3434
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 3.5391304347826087,
+          "mean_gain": 8.440639661706012e-05,
+          "action_match_rate": 0.7565217391304347,
+          "mean_net_utility": 0.004679201704266626
+        },
+        "NEW": {
+          "keep_probability": 0.5660377358490566,
+          "mean_queries": 3.5391304347826087,
+          "mean_gain": 8.440639661706012e-05,
+          "action_match_rate": 0.7565217391304347,
+          "mean_net_utility": 0.004679201704266626
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.008736167734420501,
+          "mean_queries": 3.5391304347826087,
+          "mean_gain": 9.003826353000624e-05,
+          "action_match_rate": 0.7572814058899495,
+          "mean_net_utility": 0.005331958490398534
+        }
+      }
+    ]
+  },
+  "GRID198": {
+    "prespecified": true,
+    "analytic_expected_queries_not_hardbudget_or_time": true,
+    "macro": {
+      "OLD": {
+        "mean_queries": 13.482083875839015,
+        "mean_gain": 0.0009335114054790534,
+        "action_match_rate": 0.8926863664292007,
+        "mean_net_utility": 0.08875507054172355
+      },
+      "NEW": {
+        "mean_queries": 13.482083875839015,
+        "mean_gain": 0.0009959719406542372,
+        "action_match_rate": 0.8970869787683079,
+        "mean_net_utility": 0.09599450620866189
+      },
+      "ADD1_RANDOM": {
+        "mean_queries": 13.482083875839015,
+        "mean_gain": 0.0009372445040923743,
+        "action_match_rate": 0.8921439848767824,
+        "mean_net_utility": 0.08918775218900171
+      }
+    },
+    "per_seed": [
+      {
+        "seed": 0,
+        "NET_delta": 0.010619841598964286,
+        "gain_delta": 9.162606317178853e-05,
+        "match_delta_pp": 0.4849294585239902,
+        "positive_NET_dates": 5,
+        "negative_NET_dates": 10,
+        "random_NET_delta": 0.009804962163596966
+      },
+      {
+        "seed": 1,
+        "NET_delta": 0.0009863201752188995,
+        "gain_delta": 8.509791209223919e-06,
+        "match_delta_pp": 0.17353431152284937,
+        "positive_NET_dates": 5,
+        "negative_NET_dates": 7,
+        "random_NET_delta": 0.0014801728103230093
+      },
+      {
+        "seed": 2,
+        "NET_delta": 0.01011214522663179,
+        "gain_delta": 8.724575114453922e-05,
+        "match_delta_pp": 0.6617199316853013,
+        "positive_NET_dates": 6,
+        "negative_NET_dates": 7,
+        "random_NET_delta": 0.00913512708506051
+      }
+    ],
+    "per_date_seed": [
+      {
+        "seed": 0,
+        "date": "2037-01-05",
+        "matched_extra_query_total": 179,
+        "original_extra_query_totals": {
+          "OLD": 1088,
+          "NEW": 179,
+          "ADD1_RANDOM": 3015
+        },
+        "OLD": {
+          "keep_probability": 0.1645220588235294,
+          "mean_queries": 4.242038216560509,
+          "mean_gain": 0.0007005916512684681,
+          "action_match_rate": 0.8821246253278382,
+          "mean_net_utility": 0.07508395679843718
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 4.242038216560509,
+          "mean_gain": 0.0020375661789232,
+          "action_match_rate": 0.9299363057324841,
+          "mean_net_utility": 0.23004486217885112
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.059369817578772806,
+          "mean_queries": 4.242038216560509,
+          "mean_gain": 0.0008020316219348974,
+          "action_match_rate": 0.8861657741018897,
+          "mean_net_utility": 0.08684127107113808
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-01-19",
+        "matched_extra_query_total": 80,
+        "original_extra_query_totals": {
+          "OLD": 1224,
+          "NEW": 80,
+          "ADD1_RANDOM": 3242
+        },
+        "OLD": {
+          "keep_probability": 0.06535947712418301,
+          "mean_queries": 11.893203883495145,
+          "mean_gain": 0.00019367904679425303,
+          "action_match_rate": 0.8990100894726823,
+          "mean_net_utility": 0.0052967802865393435
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 11.893203883495145,
+          "mean_gain": 0.00019367632356662195,
+          "action_match_rate": 0.8980582524271845,
+          "mean_net_utility": 0.005296464653136806
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.024676125848241828,
+          "mean_queries": 11.893203883495145,
+          "mean_gain": 0.00019560959846886042,
+          "action_match_rate": 0.8998550577073963,
+          "mean_net_utility": 0.0055205392506727955
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-02-16",
+        "matched_extra_query_total": 6,
+        "original_extra_query_totals": {
+          "OLD": 143,
+          "NEW": 6,
+          "ADD1_RANDOM": 2813
+        },
+        "OLD": {
+          "keep_probability": 0.04195804195804196,
+          "mean_queries": 15.866666666666667,
+          "mean_gain": 1.4629960060119628e-05,
+          "action_match_rate": 0.9166666666666666,
+          "mean_net_utility": -0.02118596301422419
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 15.866666666666667,
+          "mean_gain": 1.4629960060119628e-05,
+          "action_match_rate": 0.9166666666666666,
+          "mean_net_utility": -0.02118596301422419
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.002132954141485958,
+          "mean_queries": 15.866666666666667,
+          "mean_gain": 1.4635009397784035e-05,
+          "action_match_rate": 0.9167555397558952,
+          "mean_net_utility": -0.02118537777499946
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-03-16",
+        "matched_extra_query_total": 150,
+        "original_extra_query_totals": {
+          "OLD": 446,
+          "NEW": 150,
+          "ADD1_RANDOM": 4365
+        },
+        "OLD": {
+          "keep_probability": 0.336322869955157,
+          "mean_queries": 9.753623188405797,
+          "mean_gain": 0.00016470904604498878,
+          "action_match_rate": 0.9018002209657503,
+          "mean_net_utility": 0.005024568734434535
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 9.753623188405797,
+          "mean_gain": 0.00016126598137012425,
+          "action_match_rate": 0.9033816425120773,
+          "mean_net_utility": 0.004625503226255975
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.03436426116838488,
+          "mean_queries": 9.753623188405797,
+          "mean_gain": 0.00016179412223904196,
+          "action_match_rate": 0.9012068994139815,
+          "mean_net_utility": 0.004686716948374862
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-04-06",
+        "matched_extra_query_total": 289,
+        "original_extra_query_totals": {
+          "OLD": 1269,
+          "NEW": 289,
+          "ADD1_RANDOM": 3901
+        },
+        "OLD": {
+          "keep_probability": 0.22773837667454688,
+          "mean_queries": 12.543010752688172,
+          "mean_gain": 0.0014298705634403972,
+          "action_match_rate": 0.960662446935611,
+          "mean_net_utility": 0.1476394163137047
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 12.543010752688172,
+          "mean_gain": 0.0014802916075593682,
+          "action_match_rate": 0.9838709677419355,
+          "mean_net_utility": 0.15348342492066547
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.07408356831581646,
+          "mean_queries": 12.543010752688172,
+          "mean_gain": 0.0014369063077734746,
+          "action_match_rate": 0.9601756373469169,
+          "mean_net_utility": 0.1484548883285615
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-05-18",
+        "matched_extra_query_total": 15,
+        "original_extra_query_totals": {
+          "OLD": 432,
+          "NEW": 15,
+          "ADD1_RANDOM": 2425
+        },
+        "OLD": {
+          "keep_probability": 0.034722222222222224,
+          "mean_queries": 21.14173228346457,
+          "mean_gain": 0.0002599025661759698,
+          "action_match_rate": 0.9530293088363955,
+          "mean_net_utility": -0.0003651256503091134
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 21.14173228346457,
+          "mean_gain": 0.0002602948917178657,
+          "action_match_rate": 0.9606299212598425,
+          "mean_net_utility": -0.00031965348915829464
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.006185567010309278,
+          "mean_queries": 21.14173228346457,
+          "mean_gain": 0.00025999241229804446,
+          "action_match_rate": 0.9529994317720594,
+          "mean_net_utility": -0.00035471211128228485
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-06-01",
+        "matched_extra_query_total": 8,
+        "original_extra_query_totals": {
+          "OLD": 1630,
+          "NEW": 8,
+          "ADD1_RANDOM": 6190
+        },
+        "OLD": {
+          "keep_probability": 0.0049079754601227,
+          "mean_queries": 17.70984455958549,
+          "mean_gain": 0.0008869048018885824,
+          "action_match_rate": 0.8758256778664293,
+          "mean_net_utility": 0.07725623351287894
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 17.70984455958549,
+          "mean_gain": 0.0008867676393973395,
+          "action_match_rate": 0.8756476683937824,
+          "mean_net_utility": 0.07724033580997766
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0012924071082390954,
+          "mean_queries": 17.70984455958549,
+          "mean_gain": 0.0008870427470608069,
+          "action_match_rate": 0.8757882930014146,
+          "mean_net_utility": 0.07727222193175948
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-06-15",
+        "matched_extra_query_total": 39,
+        "original_extra_query_totals": {
+          "OLD": 257,
+          "NEW": 39,
+          "ADD1_RANDOM": 1454
+        },
+        "OLD": {
+          "keep_probability": 0.1517509727626459,
+          "mean_queries": 13.58878504672897,
+          "mean_gain": 0.0006450136131215318,
+          "action_match_rate": 0.8691588785046729,
+          "mean_net_utility": 0.0551631012756056
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 13.58878504672897,
+          "mean_gain": 0.0007496570872369213,
+          "action_match_rate": 0.8785046728971962,
+          "mean_net_utility": 0.06729171491457861
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.026822558459422285,
+          "mean_queries": 13.58878504672897,
+          "mean_gain": 0.0006482721326724751,
+          "action_match_rate": 0.8719163377855481,
+          "mean_net_utility": 0.05554077723679216
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-07-06",
+        "matched_extra_query_total": 698,
+        "original_extra_query_totals": {
+          "OLD": 1547,
+          "NEW": 698,
+          "ADD1_RANDOM": 7577
+        },
+        "OLD": {
+          "keep_probability": 0.45119586296056885,
+          "mean_queries": 19.634854771784234,
+          "mean_gain": 0.004224941514588765,
+          "action_match_rate": 0.9433758821115423,
+          "mean_net_utility": 0.46137246869961374
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 19.634854771784234,
+          "mean_gain": 0.004224914732810373,
+          "action_match_rate": 0.9377593360995851,
+          "mean_net_utility": 0.46136936458016975
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.09212089217368352,
+          "mean_queries": 19.634854771784234,
+          "mean_gain": 0.0042520387645929416,
+          "action_match_rate": 0.9427285128558418,
+          "mean_net_utility": 0.46451315261476084
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-08-17",
+        "matched_extra_query_total": 96,
+        "original_extra_query_totals": {
+          "OLD": 702,
+          "NEW": 96,
+          "ADD1_RANDOM": 3956
+        },
+        "OLD": {
+          "keep_probability": 0.13675213675213677,
+          "mean_queries": 14.771929824561404,
+          "mean_gain": 0.004035316927176684,
+          "action_match_rate": 0.8811915829459689,
+          "mean_net_utility": 0.44640711175190684
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 14.771929824561404,
+          "mean_gain": 0.00401242016351711,
+          "action_match_rate": 0.8771929824561403,
+          "mean_net_utility": 0.4437532816649619
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.024266936299292215,
+          "mean_queries": 14.771929824561404,
+          "mean_gain": 0.0040205916026223925,
+          "action_match_rate": 0.8801731325279832,
+          "mean_net_utility": 0.4447003854248494
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-09-07",
+        "matched_extra_query_total": 3,
+        "original_extra_query_totals": {
+          "OLD": 626,
+          "NEW": 3,
+          "ADD1_RANDOM": 1006
+        },
+        "OLD": {
+          "keep_probability": 0.004792332268370607,
+          "mean_queries": 31.6984126984127,
+          "mean_gain": 0.0018485733870167696,
+          "action_match_rate": 0.8894213702520412,
+          "mean_net_utility": 0.16854442717242396
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 31.6984126984127,
+          "mean_gain": 0.0018485538543216765,
+          "action_match_rate": 0.8888888888888888,
+          "mean_net_utility": 0.16854216325186788
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.002982107355864811,
+          "mean_queries": 31.6984126984127,
+          "mean_gain": 0.0018485660088615654,
+          "action_match_rate": 0.8892202341506515,
+          "mean_net_utility": 0.1685435720135658
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-09-21",
+        "matched_extra_query_total": 1,
+        "original_extra_query_totals": {
+          "OLD": 190,
+          "NEW": 1,
+          "ADD1_RANDOM": 2761
+        },
+        "OLD": {
+          "keep_probability": 0.005263157894736842,
+          "mean_queries": 6.118811881188119,
+          "mean_gain": 5.743539600461768e-07,
+          "action_match_rate": 0.772381448671183,
+          "mean_net_utility": -0.008757490541554638
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 6.118811881188119,
+          "mean_gain": 5.736209378384127e-07,
+          "action_match_rate": 0.7722772277227723,
+          "mean_net_utility": -0.008757575501875593
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0003621876131836291,
+          "mean_queries": 6.118811881188119,
+          "mean_gain": 5.778329614987448e-07,
+          "action_match_rate": 0.7723417760102703,
+          "mean_net_utility": -0.008757087310824538
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-10-05",
+        "matched_extra_query_total": 191,
+        "original_extra_query_totals": {
+          "OLD": 191,
+          "NEW": 510,
+          "ADD1_RANDOM": 2589
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 6.426751592356688,
+          "mean_gain": 3.1998203058910975e-05,
+          "action_match_rate": 0.8662420382165605,
+          "mean_net_utility": -0.005559421800510886
+        },
+        "NEW": {
+          "keep_probability": 0.37450980392156863,
+          "mean_queries": 6.426751592356688,
+          "mean_gain": 3.859643053588638e-05,
+          "action_match_rate": 0.8678156612963657,
+          "mean_net_utility": -0.004794659807975691
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.07377365778292777,
+          "mean_queries": 6.426751592356688,
+          "mean_gain": 2.7101161942606565e-05,
+          "action_match_rate": 0.8610215192645022,
+          "mean_net_utility": -0.00612700922223895
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-11-02",
+        "matched_extra_query_total": 27,
+        "original_extra_query_totals": {
+          "OLD": 1078,
+          "NEW": 27,
+          "ADD1_RANDOM": 2447
+        },
+        "OLD": {
+          "keep_probability": 0.02504638218923933,
+          "mean_queries": 14.086538461538462,
+          "mean_gain": 1.542514637463508e-05,
+          "action_match_rate": 0.9435118452975596,
+          "mean_net_utility": -0.018526639254861834
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 14.086538461538462,
+          "mean_gain": 1.542040934929481e-05,
+          "action_match_rate": 0.9423076923076923,
+          "mean_net_utility": -0.018527188295789955
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.011033919084593379,
+          "mean_queries": 14.086538461538462,
+          "mean_gain": 1.5422913565061127e-05,
+          "action_match_rate": 0.9429442645625726,
+          "mean_net_utility": -0.018526898046772947
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-11-16",
+        "matched_extra_query_total": 2,
+        "original_extra_query_totals": {
+          "OLD": 19,
+          "NEW": 2,
+          "ADD1_RANDOM": 2601
+        },
+        "OLD": {
+          "keep_probability": 0.10526315789473684,
+          "mean_queries": 3.5528455284552845,
+          "mean_gain": 1.129305255581387e-05,
+          "action_match_rate": 0.9683354728284126,
+          "mean_net_utility": -0.003814717604783122
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 3.5528455284552845,
+          "mean_gain": 4.811984736744951e-06,
+          "action_match_rate": 0.967479674796748,
+          "mean_net_utility": -0.004565900305949845
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0007689350249903883,
+          "mean_queries": 3.5528455284552845,
+          "mean_gain": 5.0013584984709165e-06,
+          "action_match_rate": 0.9675046808138209,
+          "mean_net_utility": -0.004543951099764273
+        }
+      },
+      {
+        "seed": 0,
+        "date": "2037-12-07",
+        "matched_extra_query_total": 2,
+        "original_extra_query_totals": {
+          "OLD": 381,
+          "NEW": 2,
+          "ADD1_RANDOM": 3306
+        },
+        "OLD": {
+          "keep_probability": 0.005249343832020997,
+          "mean_queries": 7.747826086956522,
+          "mean_gain": 0.00018297280539364953,
+          "action_match_rate": 0.7566130320666438,
+          "mean_net_utility": 0.010034014335631468
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 7.747826086956522,
+          "mean_gain": 0.0001829727836277174,
+          "action_match_rate": 0.7565217391304347,
+          "mean_net_utility": 0.010034011812869455
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0006049606775559589,
+          "mean_queries": 7.747826086956522,
+          "mean_gain": 0.00018330315066875165,
+          "action_match_rate": 0.7565796049343749,
+          "mean_net_utility": 0.01007230272621716
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-01-05",
+        "matched_extra_query_total": 65,
+        "original_extra_query_totals": {
+          "OLD": 83,
+          "NEW": 65,
+          "ADD1_RANDOM": 2361
+        },
+        "OLD": {
+          "keep_probability": 0.7831325301204819,
+          "mean_queries": 8.936305732484076,
+          "mean_gain": 0.0023561078272048073,
+          "action_match_rate": 0.9363057324840764,
+          "mean_net_utility": 0.26019546661518445
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 8.936305732484076,
+          "mean_gain": 0.002356110105089321,
+          "action_match_rate": 0.9426751592356688,
+          "mean_net_utility": 0.26019573063146845
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.027530707327403644,
+          "mean_queries": 8.936305732484076,
+          "mean_gain": 0.0023590669866802336,
+          "action_match_rate": 0.9380592807214907,
+          "mean_net_utility": 0.2605384454992186
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-01-19",
+        "matched_extra_query_total": 221,
+        "original_extra_query_totals": {
+          "OLD": 535,
+          "NEW": 221,
+          "ADD1_RANDOM": 2523
+        },
+        "OLD": {
+          "keep_probability": 0.4130841121495327,
+          "mean_queries": 21.49514563106796,
+          "mean_gain": 0.0001595959982695916,
+          "action_match_rate": 0.9197985663732874,
+          "mean_net_utility": -0.012500738263317376
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 21.49514563106796,
+          "mean_gain": 0.00021134649665610305,
+          "action_match_rate": 0.9271844660194175,
+          "mean_net_utility": -0.006502640380384172
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.08759413396749902,
+          "mean_queries": 21.49514563106796,
+          "mean_gain": 0.00014988750036885876,
+          "action_match_rate": 0.9154208466573543,
+          "mean_net_utility": -0.013625993526946396
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-02-16",
+        "matched_extra_query_total": 89,
+        "original_extra_query_totals": {
+          "OLD": 243,
+          "NEW": 89,
+          "ADD1_RANDOM": 2249
+        },
+        "OLD": {
+          "keep_probability": 0.3662551440329218,
+          "mean_queries": 26.35,
+          "mean_gain": 1.4641880989074707e-05,
+          "action_match_rate": 0.9166666666666666,
+          "mean_net_utility": -0.036302805246854815
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 26.35,
+          "mean_gain": 1.4641880989074707e-05,
+          "action_match_rate": 0.9166666666666666,
+          "mean_net_utility": -0.036302805246854815
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.039573143619386394,
+          "mean_queries": 26.35,
+          "mean_gain": 1.473733146260964e-05,
+          "action_match_rate": 0.9183155476508077,
+          "mean_net_utility": -0.036291742140197196
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-03-16",
+        "matched_extra_query_total": 172,
+        "original_extra_query_totals": {
+          "OLD": 989,
+          "NEW": 172,
+          "ADD1_RANDOM": 3910
+        },
+        "OLD": {
+          "keep_probability": 0.17391304347826086,
+          "mean_queries": 16.217391304347824,
+          "mean_gain": 0.00017624814278487021,
+          "action_match_rate": 0.9269061121613107,
+          "mean_net_utility": -0.0029595308005836408
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 16.217391304347824,
+          "mean_gain": 0.00017574616676367422,
+          "action_match_rate": 0.9227053140096618,
+          "mean_net_utility": -0.0030177119080877883
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.043989769820971865,
+          "mean_queries": 16.217391304347824,
+          "mean_gain": 0.00017721562373952904,
+          "action_match_rate": 0.925467956558805,
+          "mean_net_utility": -0.0028473957362490747
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-04-06",
+        "matched_extra_query_total": 1,
+        "original_extra_query_totals": {
+          "OLD": 69,
+          "NEW": 1,
+          "ADD1_RANDOM": 3118
+        },
+        "OLD": {
+          "keep_probability": 0.014492753623188406,
+          "mean_queries": 16.68279569892473,
+          "mean_gain": 0.001492050386244251,
+          "action_match_rate": 0.9731182795698925,
+          "mean_net_utility": 0.14887624987895687
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 16.68279569892473,
+          "mean_gain": 0.001492050386244251,
+          "action_match_rate": 0.9731182795698925,
+          "mean_net_utility": 0.14887624987895687
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.00032071840923669016,
+          "mean_queries": 16.68279569892473,
+          "mean_gain": 0.0014920623285916918,
+          "action_match_rate": 0.9731269010325064,
+          "mean_net_utility": 0.148877634046668
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-05-18",
+        "matched_extra_query_total": 51,
+        "original_extra_query_totals": {
+          "OLD": 138,
+          "NEW": 51,
+          "ADD1_RANDOM": 2387
+        },
+        "OLD": {
+          "keep_probability": 0.3695652173913043,
+          "mean_queries": 19.88976377952756,
+          "mean_gain": 0.0002601712340159353,
+          "action_match_rate": 0.9241698048613489,
+          "mean_net_utility": 0.0014715027986298384
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 19.88976377952756,
+          "mean_gain": 0.0002602948917178657,
+          "action_match_rate": 0.9606299212598426,
+          "mean_net_utility": 0.0014858352403121931
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0213657310431504,
+          "mean_queries": 19.88976377952756,
+          "mean_gain": 0.000259041416944657,
+          "action_match_rate": 0.9227739494440028,
+          "mean_net_utility": 0.0013405523035694466
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-06-01",
+        "matched_extra_query_total": 107,
+        "original_extra_query_totals": {
+          "OLD": 971,
+          "NEW": 107,
+          "ADD1_RANDOM": 5302
+        },
+        "OLD": {
+          "keep_probability": 0.1101956745623069,
+          "mean_queries": 27.590673575129532,
+          "mean_gain": 0.0010277961664689433,
+          "action_match_rate": 0.917098445595855,
+          "mean_net_utility": 0.07933678790028374
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 27.590673575129532,
+          "mean_gain": 0.001027330833395528,
+          "action_match_rate": 0.917098445595855,
+          "mean_net_utility": 0.07928285386274725
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.02018106374952848,
+          "mean_queries": 27.590673575129532,
+          "mean_gain": 0.0010280875390716177,
+          "action_match_rate": 0.9183532267616288,
+          "mean_net_utility": 0.07937055919613084
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-06-15",
+        "matched_extra_query_total": 199,
+        "original_extra_query_totals": {
+          "OLD": 598,
+          "NEW": 199,
+          "ADD1_RANDOM": 1449
+        },
+        "OLD": {
+          "keep_probability": 0.33277591973244147,
+          "mean_queries": 9.383177570093459,
+          "mean_gain": 0.0004621744603016435,
+          "action_match_rate": 0.8660019379239209,
+          "mean_net_utility": 0.040036273779550845
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 9.383177570093459,
+          "mean_gain": 0.000624264512106637,
+          "action_match_rate": 0.8598130841121495,
+          "mean_net_utility": 0.05882318457052929
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.137336093857833,
+          "mean_queries": 9.383177570093459,
+          "mean_gain": 0.0004632065624530514,
+          "action_match_rate": 0.8539566442857788,
+          "mean_net_utility": 0.040155898709210346
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-07-06",
+        "matched_extra_query_total": 196,
+        "original_extra_query_totals": {
+          "OLD": 513,
+          "NEW": 196,
+          "ADD1_RANDOM": 5680
+        },
+        "OLD": {
+          "keep_probability": 0.3820662768031189,
+          "mean_queries": 31.024896265560166,
+          "mean_gain": 0.004445936942821182,
+          "action_match_rate": 0.9747316654938406,
+          "mean_net_utility": 0.4705609516549209
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 31.024896265560166,
+          "mean_gain": 0.004420724647173743,
+          "action_match_rate": 0.970954356846473,
+          "mean_net_utility": 0.46763874178522413
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.03450704225352113,
+          "mean_queries": 31.024896265560166,
+          "mean_gain": 0.004405354577413357,
+          "action_match_rate": 0.9678072584886915,
+          "mean_net_utility": 0.46585728680866034
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-08-17",
+        "matched_extra_query_total": 53,
+        "original_extra_query_totals": {
+          "OLD": 323,
+          "NEW": 53,
+          "ADD1_RANDOM": 3824
+        },
+        "OLD": {
+          "keep_probability": 0.16408668730650156,
+          "mean_queries": 11.625730994152047,
+          "mean_gain": 0.0031740978820702986,
+          "action_match_rate": 0.8732641717813626,
+          "mean_net_utility": 0.35112544048366845
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 11.625730994152047,
+          "mean_gain": 0.0031740219272368138,
+          "action_match_rate": 0.8713450292397661,
+          "mean_net_utility": 0.3511166370027334
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.013859832635983263,
+          "mean_queries": 11.625730994152047,
+          "mean_gain": 0.003185682461052552,
+          "action_match_rate": 0.8729660622966062,
+          "mean_net_utility": 0.35246814134326515
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-09-07",
+        "matched_extra_query_total": 32,
+        "original_extra_query_totals": {
+          "OLD": 276,
+          "NEW": 32,
+          "ADD1_RANDOM": 1109
+        },
+        "OLD": {
+          "keep_probability": 0.11594202898550725,
+          "mean_queries": 26.253968253968253,
+          "mean_gain": 0.0018488925875042234,
+          "action_match_rate": 0.8999309868875086,
+          "mean_net_utility": 0.1764329656691236
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 26.253968253968253,
+          "mean_gain": 0.0018485538543216765,
+          "action_match_rate": 0.8888888888888888,
+          "mean_net_utility": 0.1763937050851976
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.028854824165915238,
+          "mean_queries": 26.253968253968253,
+          "mean_gain": 0.0018486714614596696,
+          "action_match_rate": 0.8920949804628794,
+          "mean_net_utility": 0.17640733624136823
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-09-21",
+        "matched_extra_query_total": 11,
+        "original_extra_query_totals": {
+          "OLD": 1127,
+          "NEW": 11,
+          "ADD1_RANDOM": 2768
+        },
+        "OLD": {
+          "keep_probability": 0.009760425909494233,
+          "mean_queries": 4.881188118811881,
+          "mean_gain": 9.953394958055867e-09,
+          "action_match_rate": 0.7529584369262126,
+          "mean_net_utility": -0.007038105021390901
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 4.881188118811881,
+          "mean_gain": 0.0,
+          "action_match_rate": 0.7524752475247525,
+          "mean_net_utility": -0.007039258661241479
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.003973988439306358,
+          "mean_queries": 4.881188118811881,
+          "mean_gain": 4.8494653505840437e-08,
+          "action_match_rate": 0.7532621759285755,
+          "mean_net_utility": -0.007033637929314329
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-10-05",
+        "matched_extra_query_total": 2,
+        "original_extra_query_totals": {
+          "OLD": 140,
+          "NEW": 2,
+          "ADD1_RANDOM": 2573
+        },
+        "OLD": {
+          "keep_probability": 0.014285714285714285,
+          "mean_queries": 5.7324840764331215,
+          "mean_gain": 5.127366181391819e-05,
+          "action_match_rate": 0.8598726114649682,
+          "mean_net_utility": -0.0023240989848153535
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 5.7324840764331215,
+          "mean_gain": 5.127366181391819e-05,
+          "action_match_rate": 0.8598726114649682,
+          "mean_net_utility": -0.0023240989848153535
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.000777302759424796,
+          "mean_queries": 5.7324840764331215,
+          "mean_gain": 5.1345411487337704e-05,
+          "action_match_rate": 0.8599468760598177,
+          "mean_net_utility": -0.002315782899412186
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-11-02",
+        "matched_extra_query_total": 56,
+        "original_extra_query_totals": {
+          "OLD": 305,
+          "NEW": 56,
+          "ADD1_RANDOM": 2521
+        },
+        "OLD": {
+          "keep_probability": 0.18360655737704917,
+          "mean_queries": 10.35576923076923,
+          "mean_gain": 1.5269105251018817e-05,
+          "action_match_rate": 0.9038461538461539,
+          "mean_net_utility": -0.013164508413140203
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 10.35576923076923,
+          "mean_gain": 1.5269105251018817e-05,
+          "action_match_rate": 0.9038461538461539,
+          "mean_net_utility": -0.013164508413140203
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.022213407378024592,
+          "mean_queries": 10.35576923076923,
+          "mean_gain": 1.527330647548503e-05,
+          "action_match_rate": 0.9049141061239435,
+          "mean_net_utility": -0.013164021473760638
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-11-16",
+        "matched_extra_query_total": 39,
+        "original_extra_query_totals": {
+          "OLD": 192,
+          "NEW": 39,
+          "ADD1_RANDOM": 1780
+        },
+        "OLD": {
+          "keep_probability": 0.203125,
+          "mean_queries": 11.544715447154472,
+          "mean_gain": 3.2079898244966336e-06,
+          "action_match_rate": 0.959349593495935,
+          "mean_net_utility": -0.01627704486017422
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 11.544715447154472,
+          "mean_gain": 4.811984736744951e-06,
+          "action_match_rate": 0.967479674796748,
+          "mean_net_utility": -0.0160911351822512
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.021910112359550562,
+          "mean_queries": 11.544715447154472,
+          "mean_gain": 8.6391686500235e-06,
+          "action_match_rate": 0.9602402484699004,
+          "mean_net_utility": -0.015647548657607886
+        }
+      },
+      {
+        "seed": 1,
+        "date": "2037-12-07",
+        "matched_extra_query_total": 40,
+        "original_extra_query_totals": {
+          "OLD": 703,
+          "NEW": 40,
+          "ADD1_RANDOM": 2961
+        },
+        "OLD": {
+          "keep_probability": 0.05689900426742532,
+          "mean_queries": 11.069565217391304,
+          "mean_gain": 0.00022516132941957645,
+          "action_match_rate": 0.768186035005257,
+          "mean_net_utility": 0.010133493444804364
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 11.069565217391304,
+          "mean_gain": 0.0001723517542300017,
+          "action_match_rate": 0.7652173913043478,
+          "mean_net_utility": 0.004012644157954761
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.013508949679162444,
+          "mean_queries": 11.069565217391304,
+          "mean_gain": 0.00018614144541819104,
+          "action_match_rate": 0.7667444899637315,
+          "mean_net_utility": 0.0056109266885774915
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-01-05",
+        "matched_extra_query_total": 240,
+        "original_extra_query_totals": {
+          "OLD": 372,
+          "NEW": 240,
+          "ADD1_RANDOM": 2916
+        },
+        "OLD": {
+          "keep_probability": 0.6451612903225806,
+          "mean_queries": 5.802547770700636,
+          "mean_gain": 0.0010616650247270135,
+          "action_match_rate": 0.9044585987261147,
+          "mean_net_utility": 0.11468341978950562
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 5.802547770700636,
+          "mean_gain": 0.002397682256759352,
+          "action_match_rate": 0.9554140127388535,
+          "mean_net_utility": 0.26953337062793364
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0823045267489712,
+          "mean_queries": 5.802547770700636,
+          "mean_gain": 0.0011770500930176598,
+          "action_match_rate": 0.9123220885428953,
+          "mean_net_utility": 0.12805702884476872
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-01-19",
+        "matched_extra_query_total": 122,
+        "original_extra_query_totals": {
+          "OLD": 1030,
+          "NEW": 122,
+          "ADD1_RANDOM": 3765
+        },
+        "OLD": {
+          "keep_probability": 0.11844660194174757,
+          "mean_queries": 7.606796116504855,
+          "mean_gain": 0.00012324378631804663,
+          "action_match_rate": 0.8952493166179659,
+          "mean_net_utility": 0.003314554870097679
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 7.606796116504855,
+          "mean_gain": 0.00017283900270184267,
+          "action_match_rate": 0.9029126213592233,
+          "mean_net_utility": 0.009062846609695634
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.03240371845949535,
+          "mean_queries": 7.606796116504855,
+          "mean_gain": 0.00011403671703078683,
+          "action_match_rate": 0.8911809074382084,
+          "mean_net_utility": 0.0022474172671422175
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-02-16",
+        "matched_extra_query_total": 95,
+        "original_extra_query_totals": {
+          "OLD": 687,
+          "NEW": 95,
+          "ADD1_RANDOM": 3015
+        },
+        "OLD": {
+          "keep_probability": 0.13828238719068414,
+          "mean_queries": 17.225,
+          "mean_gain": 8.899631400758464e-06,
+          "action_match_rate": 0.9023047064531781,
+          "mean_net_utility": -0.02380901149569994
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 17.225,
+          "mean_gain": 1.4629960060119628e-05,
+          "action_match_rate": 0.9166666666666667,
+          "mean_net_utility": -0.023144842583866152
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.03150912106135987,
+          "mean_queries": 17.225,
+          "mean_gain": 8.264192235344612e-06,
+          "action_match_rate": 0.9018380320619127,
+          "mean_net_utility": -0.023882661536407473
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-03-16",
+        "matched_extra_query_total": 143,
+        "original_extra_query_totals": {
+          "OLD": 592,
+          "NEW": 143,
+          "ADD1_RANDOM": 4240
+        },
+        "OLD": {
+          "keep_probability": 0.24155405405405406,
+          "mean_queries": 10.27536231884058,
+          "mean_gain": 0.00015208037174437527,
+          "action_match_rate": 0.9032184358271315,
+          "mean_net_utility": 0.0028084424897593906
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 10.27536231884058,
+          "mean_gain": 0.00015177934066109035,
+          "action_match_rate": 0.8985507246376812,
+          "mean_net_utility": 0.0027735517358605053
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.03372641509433962,
+          "mean_queries": 10.27536231884058,
+          "mean_gain": 0.00015356533698620132,
+          "action_match_rate": 0.9009946677604593,
+          "mean_net_utility": 0.0029805561340899706
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-04-06",
+        "matched_extra_query_total": 36,
+        "original_extra_query_totals": {
+          "OLD": 1278,
+          "NEW": 36,
+          "ADD1_RANDOM": 4024
+        },
+        "OLD": {
+          "keep_probability": 0.028169014084507043,
+          "mean_queries": 12.924731182795698,
+          "mean_gain": 0.0014803505081056592,
+          "action_match_rate": 0.9466908980766319,
+          "mean_net_utility": 0.15293976509942167
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 12.924731182795698,
+          "mean_gain": 0.0014799833297729492,
+          "action_match_rate": 0.9731182795698925,
+          "mean_net_utility": 0.1528972076043491
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.008946322067594433,
+          "mean_queries": 12.924731182795698,
+          "mean_gain": 0.0014794106714492933,
+          "action_match_rate": 0.9467175441971826,
+          "mean_net_utility": 0.15283083412417292
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-05-18",
+        "matched_extra_query_total": 71,
+        "original_extra_query_totals": {
+          "OLD": 383,
+          "NEW": 71,
+          "ADD1_RANDOM": 2498
+        },
+        "OLD": {
+          "keep_probability": 0.185378590078329,
+          "mean_queries": 19.173228346456693,
+          "mean_gain": 0.00025996379864450886,
+          "action_match_rate": 0.9542155794494356,
+          "mean_net_utility": 0.00248079020435886
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 19.173228346456693,
+          "mean_gain": 0.0002602948917178657,
+          "action_match_rate": 0.9606299212598425,
+          "mean_net_utility": 0.0025191652678707784
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.02842273819055244,
+          "mean_queries": 19.173228346456693,
+          "mean_gain": 0.00026036614426224423,
+          "action_match_rate": 0.953874910952384,
+          "mean_net_utility": 0.002527423733951596
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-06-01",
+        "matched_extra_query_total": 73,
+        "original_extra_query_totals": {
+          "OLD": 750,
+          "NEW": 73,
+          "ADD1_RANDOM": 6980
+        },
+        "OLD": {
+          "keep_probability": 0.09733333333333333,
+          "mean_queries": 8.119170984455959,
+          "mean_gain": 0.0008396884592085923,
+          "action_match_rate": 0.8512538860103627,
+          "mean_net_utility": 0.08561456461532495
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 8.119170984455959,
+          "mean_gain": 0.0008372117818328383,
+          "action_match_rate": 0.8497409326424871,
+          "mean_net_utility": 0.08532750741225673
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.010458452722063038,
+          "mean_queries": 8.119170984455959,
+          "mean_gain": 0.0008397096510264923,
+          "action_match_rate": 0.851041465623469,
+          "mean_net_utility": 0.08561702083511112
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-06-15",
+        "matched_extra_query_total": 126,
+        "original_extra_query_totals": {
+          "OLD": 126,
+          "NEW": 173,
+          "ADD1_RANDOM": 1931
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 5.401869158878505,
+          "mean_gain": 0.000673582620709856,
+          "action_match_rate": 0.8598130841121495,
+          "mean_net_utility": 0.0702808825680577
+        },
+        "NEW": {
+          "keep_probability": 0.7283236994219653,
+          "mean_queries": 5.401869158878505,
+          "mean_gain": 0.000673582620709856,
+          "action_match_rate": 0.8598130841121495,
+          "mean_net_utility": 0.0702808825680577
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.06525116519937856,
+          "mean_queries": 5.401869158878505,
+          "mean_gain": 0.0006796268409971566,
+          "action_match_rate": 0.8646916759027573,
+          "mean_net_utility": 0.07098143282437541
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-07-06",
+        "matched_extra_query_total": 440,
+        "original_extra_query_totals": {
+          "OLD": 617,
+          "NEW": 440,
+          "ADD1_RANDOM": 6637
+        },
+        "OLD": {
+          "keep_probability": 0.713128038897893,
+          "mean_queries": 29.651452282157678,
+          "mean_gain": 0.004453774731442223,
+          "action_match_rate": 0.9739133943522734,
+          "mean_net_utility": 0.47345005487598457
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 29.651452282157678,
+          "mean_gain": 0.004480628551783898,
+          "action_match_rate": 0.975103734439834,
+          "mean_net_utility": 0.47656252428134294
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.06629501280699111,
+          "mean_queries": 29.651452282157678,
+          "mean_gain": 0.004459459597545421,
+          "action_match_rate": 0.9728799381313233,
+          "mean_net_utility": 0.47410895448857715
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-08-17",
+        "matched_extra_query_total": 95,
+        "original_extra_query_totals": {
+          "OLD": 1431,
+          "NEW": 95,
+          "ADD1_RANDOM": 4126
+        },
+        "OLD": {
+          "keep_probability": 0.06638714185883997,
+          "mean_queries": 9.5906432748538,
+          "mean_gain": 0.00333919425511894,
+          "action_match_rate": 0.8401395989391135,
+          "mean_net_utility": 0.37319563696005276
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 9.5906432748538,
+          "mean_gain": 0.003338913471378081,
+          "action_match_rate": 0.8362573099415205,
+          "mean_net_utility": 0.3731630929573066
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.023024721279689773,
+          "mean_queries": 9.5906432748538,
+          "mean_gain": 0.00335833096770966,
+          "action_match_rate": 0.83989279224884,
+          "mean_net_utility": 0.37541366149808536
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-09-07",
+        "matched_extra_query_total": 6,
+        "original_extra_query_totals": {
+          "OLD": 6,
+          "NEW": 43,
+          "ADD1_RANDOM": 1192
+        },
+        "OLD": {
+          "keep_probability": 1.0,
+          "mean_queries": 23.365079365079364,
+          "mean_gain": 0.0018485538543216765,
+          "action_match_rate": 0.8888888888888888,
+          "mean_net_utility": 0.18055982932329093
+        },
+        "NEW": {
+          "keep_probability": 0.13953488372093023,
+          "mean_queries": 23.365079365079364,
+          "mean_gain": 0.0018485538543216765,
+          "action_match_rate": 0.8888888888888888,
+          "mean_net_utility": 0.18055982932329093
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.0050335570469798654,
+          "mean_queries": 23.365079365079364,
+          "mean_gain": 0.0018485743702061198,
+          "action_match_rate": 0.8894481730052199,
+          "mean_net_utility": 0.1805622071995797
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-09-21",
+        "matched_extra_query_total": 20,
+        "original_extra_query_totals": {
+          "OLD": 527,
+          "NEW": 20,
+          "ADD1_RANDOM": 2676
+        },
+        "OLD": {
+          "keep_probability": 0.03795066413662239,
+          "mean_queries": 5.247524752475248,
+          "mean_gain": 1.9001235559137303e-06,
+          "action_match_rate": 0.7954609502696001,
+          "mean_net_utility": -0.007347327802521733
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 5.247524752475248,
+          "mean_gain": 1.76807441333733e-06,
+          "action_match_rate": 0.7920792079207921,
+          "mean_net_utility": -0.007362632847057055
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.007473841554559043,
+          "mean_queries": 5.247524752475248,
+          "mean_gain": 1.846063530308016e-06,
+          "action_match_rate": 0.7932631828205242,
+          "mean_net_utility": -0.007353593584209769
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-10-05",
+        "matched_extra_query_total": 89,
+        "original_extra_query_totals": {
+          "OLD": 773,
+          "NEW": 89,
+          "ADD1_RANDOM": 2820
+        },
+        "OLD": {
+          "keep_probability": 0.11513583441138421,
+          "mean_queries": 4.713375796178344,
+          "mean_gain": 8.678520361623039e-05,
+          "action_match_rate": 0.8691754352716277,
+          "mean_net_utility": 0.003261512687154084
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 4.713375796178344,
+          "mean_gain": 8.309267129108405e-05,
+          "action_match_rate": 0.8662420382165605,
+          "mean_net_utility": 0.002833532841304029
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.03156028368794326,
+          "mean_queries": 4.713375796178344,
+          "mean_gain": 8.500165644660037e-05,
+          "action_match_rate": 0.8690563310294982,
+          "mean_net_utility": 0.0030547921562256767
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-11-02",
+        "matched_extra_query_total": 28,
+        "original_extra_query_totals": {
+          "OLD": 135,
+          "NEW": 28,
+          "ADD1_RANDOM": 2657
+        },
+        "OLD": {
+          "keep_probability": 0.2074074074074074,
+          "mean_queries": 6.9326923076923075,
+          "mean_gain": 1.5269105251018817e-05,
+          "action_match_rate": 0.9038461538461539,
+          "mean_net_utility": -0.00822802096534026
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 6.9326923076923075,
+          "mean_gain": 1.5269105251018817e-05,
+          "action_match_rate": 0.9038461538461539,
+          "mean_net_utility": -0.00822802096534026
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.010538200978547234,
+          "mean_queries": 6.9326923076923075,
+          "mean_gain": 1.5270699724015327e-05,
+          "action_match_rate": 0.9042514692684057,
+          "mean_net_utility": -0.008227836159291952
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-11-16",
+        "matched_extra_query_total": 69,
+        "original_extra_query_totals": {
+          "OLD": 122,
+          "NEW": 69,
+          "ADD1_RANDOM": 2175
+        },
+        "OLD": {
+          "keep_probability": 0.5655737704918032,
+          "mean_queries": 7.560975609756097,
+          "mean_gain": 1.6039949122483168e-06,
+          "action_match_rate": 0.9512195121951219,
+          "mean_net_utility": -0.01071792392834377
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 7.560975609756097,
+          "mean_gain": 4.811984736744951e-06,
+          "action_match_rate": 0.9674796747967479,
+          "mean_net_utility": -0.010346104572497725
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.031724137931034485,
+          "mean_queries": 7.560975609756097,
+          "mean_gain": 9.51880462235819e-06,
+          "action_match_rate": 0.952767031118587,
+          "mean_net_utility": -0.009800564582131117
+        }
+      },
+      {
+        "seed": 2,
+        "date": "2037-12-07",
+        "matched_extra_query_total": 53,
+        "original_extra_query_totals": {
+          "OLD": 904,
+          "NEW": 53,
+          "ADD1_RANDOM": 3434
+        },
+        "OLD": {
+          "keep_probability": 0.0586283185840708,
+          "mean_queries": 3.739130434782609,
+          "mean_gain": 0.00010295980661912532,
+          "action_match_rate": 0.7575413620623316,
+          "mean_net_utility": 0.006541195061848725
+        },
+        "NEW": {
+          "keep_probability": 1.0,
+          "mean_queries": 3.739130434782609,
+          "mean_gain": 8.440639661706012e-05,
+          "action_match_rate": 0.7565217391304347,
+          "mean_net_utility": 0.004390777718552472
+        },
+        "ADD1_RANDOM": {
+          "keep_probability": 0.015433896330809552,
+          "mean_queries": 3.739130434782609,
+          "mean_gain": 9.435602816326494e-05,
+          "action_match_rate": 0.7578638170722443,
+          "mean_net_utility": 0.005543981374052175
+        }
+      }
+    ]
+  }
+}

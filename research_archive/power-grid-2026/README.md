@@ -1,3 +1,7 @@
+# 最新：GRID214内层样本生成完成
+
+[报告](protocols/GRID214_inner_head_generation/audited/GRID214_report.md)；108森林与36组预测全部封存，未训练取消开关。
+
 # 最新：GRID213内层分歧样本生成方案
 
 [方案](protocols/GRID213_inner_head_plan/audited/GRID213_plan.md)；36组资格通过，未来108小森林，本轮零拟合。

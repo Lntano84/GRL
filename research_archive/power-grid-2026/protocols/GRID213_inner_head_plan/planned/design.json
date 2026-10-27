@@ -1,0 +1,14 @@
+{
+  "id": "GRID213_INNER_HEAD_PLAN",
+  "authorization": "User好的 agrees date/model/sample-generation planning;thisstageexplicitlyzero fits.",
+  "purpose": "Generatecandidatecancellationtrainingexamples fromhead-unfitted dates withinoutertrainingpartition,notrouterfittingordeployment.",
+  "date_plan": "Original4outer folds12fit/4held retained. Within each12fitdates,sortedroundrobin3inner folds8fit/4score;datesgroupallprefixes/scenarios. No splitbylabels/results/seeds.",
+  "future_models": "4outer*3inner*3seeds*3heads=108smallforests,6912trees. Event64treesdepth4leaf10,amount64treesdepth4or5leaf10,allotherexistingparams retained. OriginalbaseNETfrozen;noNNfit/forward/physics.",
+  "normalization": "Inner83 mean/std frominnerFITSTOPdomain structuralweightsonly;innerraw41mean/stdfrominnerhalfSTOPhalfCONTweights. Allscalers excludeinnerscore/outerheld. Originalfrozen83latent comesfromouterNET trainedon12dates,so featurebasis/STOPselectionstillin-sample forinnerscore.",
+  "weights": "Withininner8,originalSTOPandactualpreSTOPCONT masses separatelyrenormalizedto.5each;eventtotalweight=innerSTOProwcount. Conditionalamountpositiveonly samegain/gain_scale,weightsrestrictedpositive thenrenormalizedtoinnerSTOPcount. Nozeroamounttargets/newclassweights.",
+  "contract": "Inputs acceptonly124publicfeatures. Fitandscoretargets separate. Futureall108weights published beforeanyinnerscore predictions;allpredictions sealed beforejoininginnerscoretargets. ContinuousactualNETandqueryfees preserved. No routerorcombinedpolicy in generationstage.",
+  "dependency_scope": "Onlyreadoutheads andscalersunfitted oninner4dates. FrozenbaseNET trainedouter12 inclinner4;notfullynestedpipeline. Unionofallancestorlabeldates staysouter12,disjointouter4. DoNOTreuseexistingOOFfromotherouterfolds thattrainedonouter4.",
+  "qualification": "No .fit,optimizer,NNforward,forestscoring. Verifyall36bundles/date/rowidentity,split-onlyweights/scalers,allparams/sourcehashes,poisonoutsideoutertrainingandscorefeaturescannotalterfittingstatistics.",
+  "future_cap": "One serial108fit batch,600seconds includingfit/inside-fitchecks,noautomaticextension/retry/depth/mixturesearch. Thisstageonlycounts/costreference;doesnotstartworker.",
+  "limits": "No trainingthisstage,validation4/heldouteroutcomesnotusedforplan,final8notmaterialized,paper/FRAME/physical unchanged. Exposedteacherpathdevelopment,correlatedstarts. Coverage improvement notguaranteed."
+}

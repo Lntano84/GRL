@@ -1,0 +1,6 @@
+{
+  "error": "RuntimeError('Preflight worker failed: p23_s0')",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\Codex\\GRL研究\\work\\grid254_reference_preflight\\qualify.py\", line 65, in <module>\n    try:main()\n        ^^^^^^\n  File \"D:\\Codex\\GRL研究\\work\\grid254_reference_preflight\\qualify.py\", line 44, in main\n    if p.poll() is not None and p.returncode!=0:raise RuntimeError('Preflight worker failed: '+j['node'])\n                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Preflight worker failed: p23_s0\n",
+  "optimizer_instances": 0,
+  "optimizer_steps": 0
+}

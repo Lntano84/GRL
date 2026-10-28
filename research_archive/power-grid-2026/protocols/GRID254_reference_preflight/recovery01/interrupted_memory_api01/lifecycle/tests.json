@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "atomic_duplicate_rejected": true,
+  "expired_deadline": {
+    "passed": false,
+    "error": "TimeoutError('Fixed global deadline reached; preserve partial output, no extension.')",
+    "completed": [],
+    "launched": [],
+    "pending": [
+      "fake0",
+      "fake1",
+      "fake2",
+      "fake3",
+      "fake4",
+      "fake5",
+      "fake6",
+      "fake7",
+      "fake8"
+    ],
+    "all_workers_exited": true
+  },
+  "live_deadline": {
+    "passed": false,
+    "error": "TimeoutError('Fixed global deadline reached; preserve partial output, no extension.')",
+    "completed": [],
+    "launched": [
+      {
+        "node": "fake0",
+        "pid": 37556
+      },
+      {
+        "node": "fake1",
+        "pid": 3668
+      },
+      {
+        "node": "fake2",
+        "pid": 33636
+      },
+      {
+        "node": "fake3",
+        "pid": 35008
+      },
+      {
+        "node": "fake4",
+        "pid": 21788
+      },
+      {
+        "node": "fake5",
+        "pid": 34628
+      }
+    ],
+    "pending": [
+      "fake6",
+      "fake7",
+      "fake8"
+    ],
+    "all_workers_exited": true
+  },
+  "user_stop": {
+    "passed": false,
+    "error": "InterruptedError('Fixed stop flag observed; no new jobs.')",
+    "completed": [],
+    "launched": [
+      {
+        "node": "fake0",
+        "pid": 19208
+      },
+      {
+        "node": "fake1",
+        "pid": 30616
+      },
+      {
+        "node": "fake2",
+        "pid": 33688
+      },
+      {
+        "node": "fake3",
+        "pid": 2328
+      },
+      {
+        "node": "fake4",
+        "pid": 2900
+      },
+      {
+        "node": "fake5",
+        "pid": 38620
+      }
+    ],
+    "pending": [
+      "fake6",
+      "fake7",
+      "fake8"
+    ],
+    "all_workers_exited": true
+  },
+  "expected_training_denial_exit": 1,
+  "no_real_NNfits": true
+}

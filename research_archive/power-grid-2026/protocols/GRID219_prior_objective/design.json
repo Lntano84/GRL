@@ -1,0 +1,10 @@
+{
+  "stage": "GRID219",
+  "actual_fits": 0,
+  "next_FIXED_fits": 22,
+  "constants": 2,
+  "objective": "sum(w*logisticNLL)/sum(w)+.5*sum(theta^2);all126parametersincludingintercept penalized. Same216target andweights,public125features andb. lambda1 fixed unitprior,notderivedoptimal.",
+  "change_vs218": "Risknormalizedbytotalweight AND interceptregularized;matched DIRECTvsANCHORED within new objective isolatespriorcenter. Cross218difference is notsinglefactor.",
+  "reason": "Original selectedcount67..492 doesnotmeasureindependent samplecount. Meanobjectiveinvariantto globalweightscaleor duplicateddata,fullpriorcoversglobalbias. No claim meanriskorfullnorm guaranteeslearnedquality.",
+  "next_solver": "SameL-BFGS-B maxiter2000/gtol1e-6/ftol1e-12/maxls50/zero126init,600s22serialfits,11ownpools2arms+f0s1KEEP. no search/retry/extension/newNN/physics/test."
+}

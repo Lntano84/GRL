@@ -1,3 +1,7 @@
+# 最新：GRID233公共修正器对照
+
+[报告](protocols/GRID233_public_correction/audited/GRID233_report.md)；回本数量改善但大损失主导，保留局部线索与全部反例。
+
 # 最新：GRID232公共修正器资格
 
 [方案](protocols/GRID232_public_correction_plan/GRID232_plan.md)；真实拟合0，下一步一次固定22拟合。

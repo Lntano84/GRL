@@ -1,0 +1,9 @@
+{
+  "error": "Publication check invoked before prior git helper returned completion; remote temporarily behind local. Score refused because pre_score receipt absent. Second helper shared temp output and failed. Original helper subsequently returned PUSHED OK 6db443ca.",
+  "cause": "Orchestration did not wait for running publication helper to finish.",
+  "models_changed": false,
+  "retraining": false,
+  "held_scores": 0,
+  "protocol_changed": false,
+  "resolution": "Waited for original helper completion and confirmed no git helper running. Now resume publication barrier and initial score exactly once."
+}

@@ -1,0 +1,50 @@
+"""Audit support inputs and qualify an explicit balanced auxiliary-risk revision."""
+from pathlib import Path
+import json,hashlib,shutil,sys
+import numpy as np
+sys.path.insert(0,str(Path(__file__).parent));import run as C
+R,O,A,REPO=C.R,C.O,C.A,C.REPO
+
+def main():
+    C.verify();assert not (O/'complete.json').exists();q=C.read(O/'qualification.json');revision=O/'revision02';revision.mkdir();(revision/'qualified_inputs').mkdir();records=[];active=[];meta=C.read(C.META);bundles=C.read(C.S/'bundles.json');aux_source={}
+    for b in bundles:
+        z=np.load(C.S/'labelled_samples'/f"{b['bundle']}.npz");key=f"f{b['outer_fold']}_s{b['seed']}";mask=~z['original_STOP_mask']&z['continue4']
+        for k in np.flatnonzero(mask):aux_source[key,int(z['meta_ids'][k])]=(float(z['actual_NET'][k]),float(z['original_source_mass'][k]))
+    for r in q['records']:
+        pool=r['pool'];path=O/'qualified_inputs'/f'{pool}.npz';z=np.load(path);s=z['domain_STOP'];old=np.load(C.P/'fit_inputs'/f'{pool}.npz');assert s.sum()==len(old['ids']) and np.array_equal(z['X'][s],old['X']);assert np.array_equal(z['calibration_X'],old['X']) and np.array_equal(z['calibration_y'],old['y']) and np.array_equal(z['calibration_ids'],old['ids']);assert np.array_equal(z['y'],z['actual_NET']>0);assert not set(r['allowed_outer_fit_dates'])&set(r['held_dates']);assert len(r['allowed_outer_fit_dates'])==12
+        for i,net in zip(z['ids'][~s],z['actual_NET'][~s]):assert aux_source[pool,int(i)][0]==net
+        # Recover both domains' structural masses from the sealed source, not labels.
+        sm=old['structural_mass'];cm=np.array([aux_source[pool,int(i)][1] for i in z['ids'][~s]]);cm/=cm.sum();stop_cost=sm*np.abs(z['actual_NET'][s]);cont_cost=cm*np.abs(z['actual_NET'][~s]);raw_stop=stop_cost.sum();raw_cont=cont_cost.sum();assert raw_stop>0 and raw_cont>0
+        structural_first=.5*np.r_[stop_cost,cont_cost];assert np.allclose(z['weight'],len(old['ids'])*structural_first/structural_first.sum(),atol=1e-10,rtol=1e-10)
+        balanced=np.r_[.5*stop_cost/raw_stop,.5*cont_cost/raw_cont]*len(old['ids']);assert abs(balanced[s].sum()/balanced.sum()-.5)<1e-12 and abs(balanced[~s].sum()/balanced.sum()-.5)<1e-12;payload={name:z[name] for name in z.files};payload['weight']=balanced;np.savez_compressed(revision/'qualified_inputs'/path.name,**payload)
+        rec=dict(pool=pool,active_new_fit=r['active_new_fit'],STOP_rows=r['STOP_rows'],STOP_positive=r['STOP_positive'],CONT_rows=r['CONT_rows'],CONT_positive=r['CONT_positive'],CONT_nonpositive=r['CONT_negative_or_tie'],CONT_positive_calls=r['CONT_positive_calls'],v1_auxiliary_loss_share=float(z['weight'][~s].sum()/z['weight'].sum()),v2_auxiliary_loss_share=.5,v2_cost_positive_share=float(balanced@z['y']/balanced.sum()),original_STOP_constraints_identical=True,feature_dimensions=125,parameters=126,fit_dates=r['fit_dates'],allowed_outer_fit_dates=r['allowed_outer_fit_dates'],held_dates=r['held_dates']);records.append(rec)
+        if rec['active_new_fit']:active.append(rec)
+    assert len(active)==11
+    # Engineering date-check fix preserved all six previously produced inputs exactly.
+    prior=R/'outputs/grid224_context_support_plan_attempt01';partial=0
+    for path in (prior/'qualified_inputs').glob('*.npz'):
+        x,y=np.load(path),np.load(O/'qualified_inputs'/path.name);assert set(x.files)==set(y.files)
+        for name in x.files:assert np.array_equal(x[name],y[name])
+        partial+=1
+    assert partial==6
+    design=C.read(O/'design.json');design.update(id='GRID224_REVISION02_BALANCED_AUXILIARY_RISK',supersedes_v1_before_any_fit=True,weights='WithinSTOP andCONT separately normalize originalstructural_mass*absNET tosum1,thenexact0.5each;sumweights=NSTOP. AllpositiveANDnegative labels retained. Meanobjective and unitfullprior unchanged.',why_revision='V1 equalstructuraldomainmix beforeabsNET yielded95.6-99.0% active loss mass in auxiliarydomain. Qualification only,zerofits. V2 explicitly equalizes taskRISKlayers,notclasses;fixed0.5 no search,discloses changed trainingdomainprior and pooledutilityobjective.',objective_interpretation='0.5costnormalizedSTOPlogisticrisk+0.5costnormalizedCONTauxrisk+0.5fullthetaL2. Not raw pooledmarginalutilityrisk; deploy actualSTOP originalfee utility still evaluated. More training exposure and changed task-mixture both intentional.',future='GRID225 consumes ONLYrevision02 arrays;11newANCHORED126parammodels+11originalSTOPpositive scalars,one600s window. Existing222ANCHORED and208controls reused. f0_s1KEEP unchanged;no refitcontrols or new NN.'))
+    (revision/'design.json').write_text(json.dumps(design,ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n');(revision/'qualification.json').write_text(json.dumps(dict(passed=True,records=records,active_pools=11,future_linear_fits=11,future_scalar_fits=11,future_total_fits=22,actual_fits=0,all_primary_constraints_unchanged=True,all_auxiliary_rows_negative_and_positive_retained=True),ensure_ascii=False,indent=2)+'\n',encoding='utf8',newline='\n');freeze={p.relative_to(revision).as_posix():C.sha(p) for p in [*list((revision/'qualified_inputs').iterdir()),revision/'design.json',revision/'qualification.json']};(revision/'qualified_freeze.json').write_text(json.dumps(freeze,indent=2)+'\n',encoding='utf8',newline='\n')
+    C.save('revision_receipt.json',dict(passed=True,v1_fits=0,v2_fits=0,v1_qualification_preserved=True,change='Balance domain risk afterwithin-domaincostnormalization,not afterstructuralmix. Fixedhalfhalf beforeany fit;no heldlabelchoice.',all_v2_X_y_ids_b_calibration_arrays_identical_to_v1=True,only_weight_arrays_changed=True,old_failed_checker_partial_files_unchanged=partial))
+    C.save('recovery01.json',C.read(Path(__file__).parent/'recovery01.json'));C.save('independent_audit.json',dict(passed=True,all12_STOPinputs_andconstraints_identical_to220=True,all_selectedCONTlabels_reconstructed_from214=True,all36_ownouter_ancestor_graphs_exclude_held=True,all_v1_and_v2_weights_recomputed=True,all6_partial_inputs_match_corrected_source=True,actual_fits=0));C.save('decision.json',dict(training_not_started=True,next_stage='GRID225_fixed_mixed_context_probe',consume='revision02_only',v1_not_to_fit=True,max_fits=22,max_total_wall_s=600,retain_existing222_and208_controls=True,no_contaminated_outer_label_calibration=True))
+    lines=['# GRID224：停止前辅助经验的固定方案与资格','','GRID223核查后，准备一个有限的拟合支持对照。没有训练、校准新模型或产生新外层预测。未来GRID225只消费revision02目录。','', '## 保持与改变','','保留原125维公共输入、126参数线性残差、完整先验、原收益标签/查询费用、全部种子和日期及部署入口。STOP约束输入与原220逐项相同；仍只在原208准备追加的NET停止点应用，校准只保护原STOP正例。','', '拟合额外使用原NET停止前仍继续、且内层公共判断b>0的原有行。不是新仿真，也没有按收益筛选辅助行；正负都加入。11个活跃池共原STOP3338行/90正例，辅助2927行/1145正例/1782非正例，均为相关模型记录，不是新增独立场景。','', '## 资格阶段发现并保留的权重修订','','V1先均分结构域权重再乘|NET|，使辅助域占实际风险权重95.6%—99.0%，会吞没主任务。V1没有进行任何拟合，全部资格文件保留。修订V2改为分别归一化每个域的结构权重×|NET|，再固定各一半；这是显式辅助任务混合，不是类别重采样或查询价格变化。', '', 'V2改变了训练域先验及相对任务风险尺度，不等于原始合并数据的无条件单位查询效用目标。部署仍按原费评估真实STOP策略。0.5为本轮固定辅助系数，没有按外层结果搜索；不能将潜在改善只归于样本数。','', '|模型池|原STOP行/正例|辅助行/正例/非正例|辅助正例调用|V1辅助风险占比|V2正代价占比|','|---|---:|---:|---:|---:|---:|']
+    for r in records:lines.append(f"|{r['pool']}|{r['STOP_rows']}/{r['STOP_positive']}|{r['CONT_rows']}/{r['CONT_positive']}/{r['CONT_nonpositive']}|{r['CONT_positive_calls']}|{r['v1_auxiliary_loss_share']:.2%}|{r['v2_cost_positive_share']:.2%}|")
+    lines+=['', 'f0_s1即使有辅助正例也保留原KEEP常量，以维持部署和原控制一致，不为它新造无STOP正例的保护规则。其余11个模型各拟合一次，再各计算一个原STOP正例保护步长，共22个拟合/校准，600秒一次总窗口，不重训旧控制，不延长或重启完整项。','', '与旧222的主比较是完整拟合支持/任务混合流程；训练数据暴露更多，混合输出不当成STOP校准概率。模型和步长先封存发布，再评分；预测先发布，再连接旧外层标签。所有旧外层结果已暴露，仍是开发比较。','', '## 工程核验','','首次资格检查把“当前选中STOP行出现的日期”误当整个外层训练日期，f2_s0因此错误拒绝辅助2037-10-05。该日期本来就在冻结的外层12个训练日期中，不属于评估4日期。修复只改资格集合为原214的12日期祖先集合，原错误、源码和6个部分输入保留；6份输入修复前后逐项一致，修复期间拟合0。','', '12池主约束、辅助来源、原标签、输入和权重均独立重算；36组祖先日期排除本外层评估日期。没有新物理、NN、最终8、论文或原FRAME比较。']
+    (O/'GRID224_plan.md').write_text('\n'.join(lines)+'\n',encoding='utf8',newline='\n');C.verify();C.save('complete.json',dict(passed=True,qualification_only=True,revision='revision02',actual_fits=0,future_linear_fits=11,future_scalar_fits=11,future_total_fits=22));A.mkdir(parents=True,exist_ok=False)
+    for p in [*Path(__file__).parent.glob('*.py'),Path(__file__).parent/'recovery01.json',*O.iterdir()]:
+        if p.is_file():shutil.copy2(p,A/p.name)
+        else:shutil.copytree(p,A/p.name)
+    (A/'archive_manifest.json').write_text(json.dumps({p.relative_to(A).as_posix():C.sha(p) for p in A.rglob('*') if p.is_file()},indent=2)+'\n',encoding='utf8',newline='\n');dest=R/'论文协作资料/FRAME_辅助经验方案_GRID224';dest.mkdir(exist_ok=False)
+    for name in ['GRID224_plan.md','revision_receipt.json','decision.json','independent_audit.json','complete.json']:shutil.copy2(O/name,dest/name)
+    msg='GRID224只做资格，未拟合：现有214停止前且b>0辅助经验，11活跃池新增2927相关行含1145正/1782非正，原STOP3338/90及校准约束完全不变。V1风险95.6-99%被辅助支配，零拟合保留；V2各域先归一化结构×absNET风险再固定半半，明确改变任务混合，不冒充原合并效用。未来225消费revision02，11线性+11步长=22，一次600s，旧222/208复用。首次资格日期集合过窄错误修复，未改原日期，6部分输入相同、拟合0。'
+    for name in ['RESEARCH_STATE.md','DECISIONS.md','EXPERIMENT_LOG.md']:
+        p=REPO/'docs'/name;t=p.read_text(encoding='utf8');entry='\n\n## 2026-10-28 — GRID224辅助经验方案资格\n\n'+msg+'\n'
+        if name=='RESEARCH_STATE.md':a,b=t.split('\n',1);t=a+'\n'+entry+'\n'+b
+        else:t+=entry
+        p.write_text(t,encoding='utf8',newline='\n')
+    (REPO/'docs/NEXT_STEPS.md').write_text('# Next steps — GRID224资格后\n\n1. GRID223已完成勿重跑：16损失11状态7调用，一调用59%损失；不按这些外层标签造规则。\n2. 下一步GRID225只消费outputs/grid224_context_support_plan/revision02/design.json、qualification.json和qualified_freeze.json。11新ANCHORED线性模型+11原STOP正例保护步长，总22、一次600s；原222 ANCHORED与208控制复用，不重训。\n3. 固定域均衡风险半STOP半preSTOPCONT，原125输入/126参数/平均逻辑损失+完整单位L2/原费用标签/求解器不变；部署入口与原STOP校准输入不变。V1零拟合不再训练，所有修订保留。\n4. 源码方案与输入先封存推送，全部模型+步长发布后评分，全部预测发布后连接结果；保留全种子反例，旧外层开发比较。\n5. 用户允许自主训练；本聊天grl每30分钟接续。不扩物理/最终8/论文/新FRAME，不扫惩罚/阈值，不借跨外层OOF。\n',encoding='utf8',newline='\n');p=REPO/'research_archive/power-grid-2026/README.md';p.write_bytes(('# 最新：GRID224辅助经验方案资格\n\n[方案](protocols/'+A.name+'/GRID224_plan.md)；仅revision02可用于未来固定22拟合，当前零拟合。\n\n').encode('utf8')+p.read_bytes());print('GRID224_REVISION02_QUALIFIED_ZERO_FITS',len(active))
+if __name__=='__main__':main()

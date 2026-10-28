@@ -1,3 +1,7 @@
+# 最新：GRID224辅助经验方案资格
+
+[方案](protocols/GRID224_context_support_plan/GRID224_plan.md)；仅revision02可用于未来固定22拟合，当前零拟合。
+
 # 最新：GRID223剩余误停与支持核查
 
 [报告](protocols/GRID223_remaining_support/GRID223_report.md)；一个调用占约59%误删损失，零新拟合。

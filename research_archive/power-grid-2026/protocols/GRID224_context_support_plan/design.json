@@ -1,0 +1,13 @@
+{
+  "id": "GRID224_CONTEXT_SUPPORT_PLAN",
+  "stage": "qualification_only_no_optimizer_or_model_prediction",
+  "hypothesis": "Correction STOP-only conditioning may lack usefulgain patterns;test selectedpreSTOPCONT auxiliarypositiveANDnegative support fromexisting214. This is supportexposureprobe,not OODrescue heuristic.",
+  "future": "GRID225:reuse222ANCHOREDcontrol(no refit);MIXEDsingleANCHOREDlineararm with11newmodels plus11STOP-positive scalarsteps,22fits total,600s originalwindow;f0s1KEEPunchanged. No originaldirectarmrefit,maincompareMIXEDvsstoredSTOP_ONLY.",
+  "fitdomains": "Primary exactcurrent220originalSTOP+innerheadCONT. Auxiliary actualpreSTOPNETCONT and sameinnerheadCONT (publicb>0);no postSTOPor gain-basedselection. Bothdomains only ownouter12,head8date scores onownunfitted4.",
+  "weights": "Each selected domain original structuralmass separately sum1;mix0.5STOP+0.5CONT,then multiplyabs(originalNET). Normalizeweights tosum primarySTOProws forbookkeeping;weightedmeanrisk cancelsglobalscale. No classbalance/label/fee/thresholdchange. Ifauxempty explicitparent passthrough nofit;f0s1KEEPevenifauxpositive.",
+  "learner": "Exactlysame220public125input/scalers/b,126theta,ANCHOREDlogit=b+Xw+c;weightedMEANlogisticrisk+.5||all126theta||^2 inclintercept;unitpenaltyfixed. scipyL-BFGS-B maxiter2000/gtol1e-6/ftol1e-12/maxls50/zero126init;no retry/capextension/search.",
+  "calibration": "Same222maximumstep rule,only ORIGINALprimarySTOPpositives,notauxpositives. a=min(1,minpositive b/(b-s) when s<b),ULPdownforfeasibility. This controls empiricalSTOPpositive protection,notfullyunseen guarantee.",
+  "deployment": "Unchanged208originalNETSTOP and208CONT only;no rescue,atmostsameonebatch. Preserveglobal128/64/stagnation2/.9/order/aliases/station/controllers/reward/knownqueryfee.",
+  "limits": "Added training exposure and differentdomainprior areintentional;not equalnumberdataorcalibratedSTOPprobability. Primary supportablation within samelearner+step,calibrationvalue changeswithfittedendpoint. BaseNETfitsouter12inclinner4;head-onlycrossgeneration. No newphysics/final8/paper/newFRAME/NNfit.",
+  "barriers": "Freeze allsource225code/protocol/inputs thenfit once. Publish allnewweights+steps before anynewheldscores;publish predictions beforeoutcomejoin. Existingouteroutcomesexposed,developmentonly. Keep everyseed/date/adversecase,nostabilityallwinthreshold."
+}

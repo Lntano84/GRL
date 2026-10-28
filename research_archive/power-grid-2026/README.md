@@ -1,3 +1,7 @@
+# 最新：GRID252连续动作偏好学习
+
+[报告](protocols/GRID252_qgap_residual/audited/GRID252_report.md)；恢复小额机会但大额损失保留，下一步核对停止样本选择来源。
+
 # 最新：GRID251原NET连续动作偏好资格
 
 [方案](protocols/GRID251_qgap_plan/audited/GRID251_plan.md)；仅资格，固定一个连续公开输入后再训练。

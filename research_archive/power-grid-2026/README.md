@@ -1,3 +1,7 @@
+# 最新：GRID241父先验一致资格
+
+[方案](protocols/GRID241_parent_prior_plan/GRID241_plan.md)；尚未预测或拟合，下一步重建同源输入。
+
 # 最新：GRID240共同误停与先验语义
 
 [报告](protocols/GRID240_common_bottleneck/GRID240_report.md)；只读定位入口与修正先验来源不一致，尚未修改模型。

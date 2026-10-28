@@ -1,3 +1,7 @@
+# 最新：GRID243父先验一致候选
+
+[报告](protocols/GRID243_parent_coherent/audited/GRID243_report.md)；候选整体退步，保留种子1折中并核查读出分布。
+
 # 最新：GRID242父先验一致输入
 
 [报告](protocols/GRID242_parent_prior_inputs/audited/GRID242_report.md)；候选尚未训练。

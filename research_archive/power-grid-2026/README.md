@@ -1,3 +1,7 @@
+# 最新：GRID222训练内保护步长
+
+[报告](protocols/GRID222_protected_step/audited/GRID222_report.md)；回本保留39/55，查询约少1.98%，保留成本质量折中及反例。
+
 # 最新：GRID220平均风险与完整先验对照
 
 [报告](protocols/GRID220_anchored_logit/audited/GRID220_report.md)；回本保留11→21，三种子质量改善但额外查询抵消部分收益。

@@ -1,3 +1,7 @@
+# 最新：GRID247去重复公共表示训练
+
+[报告](protocols/GRID247_canonical_residual/audited/GRID247_report.md)；整体近持平略低，保留小折中，不认定重复列是主要原因。
+
 # 最新：GRID246公共表示资格
 
 [方案](protocols/GRID246_canonical_plan/audited/GRID246_plan.md)；零拟合，固定一个去重复表示对照，未预设改善。

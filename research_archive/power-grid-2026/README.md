@@ -1,3 +1,7 @@
+# 最新：GRID220平均风险与完整先验对照
+
+[报告](protocols/GRID220_anchored_logit/audited/GRID220_report.md)；回本保留11→21，三种子质量改善但额外查询抵消部分收益。
+
 # 最新：GRID218同容量原判断偏置对照
 
 [报告](protocols/GRID218_anchored_logit/audited/GRID218_report.md)；一个零收益取消小线索，主损失仍在。

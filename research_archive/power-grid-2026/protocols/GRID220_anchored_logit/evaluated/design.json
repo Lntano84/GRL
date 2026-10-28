@@ -1,0 +1,26 @@
+{
+  "id": "GRID220_ANCHORED_LOGIT",
+  "authorization": "User explicitcontinuousautonomyincludingtraining2026-10-28;pretrainingnotice exactly22linear fits and2KEEPconstants delivered.",
+  "question": "Does fixed208prior-strength offset help cancellation versus matched direct readout? This is only a regularization-center comparison within same linear function class.",
+  "data": "Exactly215/216 baseCONT-at-originalNETSTOP crosshead rows,3466rows90positive;outer4x3seeds unchanged. f0_s1 botharmsKEEP(no fit). No additionalrows/seeds/labels/fees.",
+  "input": "Same216public124 features with unchanged208scalers + boundedprior b=(expectedgain-charge)/(expectedgain+charge) unscaled:125inputs126parameters inclintercept. Fitprior from214inner8date heads;heldprior from published20812date model. No labels/IDs/dates/innerfold as input.",
+  "arms": "DIRECT logit=Xw+c;ANCHORED logit=b+Xw+c. Samezero126init,all126parametersincludinginterceptL2penalized. Both initiallyKEEP on already-positive baseCONT domain;anchoring supplies margin and changes L2center, not uniqueinitialbehavior/newfunctionclass.",
+  "objective": "WeightedMEAN216costweightedlogisticNLL(keep=originalNET>0)+.5||all126theta||^2 inclintercept. UnitL2fixed,notoptimal. No classbalance/clipping/temperature/newfee. Nativecostweighted output not calibrated payoff probability.",
+  "change_vs218": "Normalize weighted loss AND penalizeintercept:cross218notonefactor. NewmatchedDIRECTvsANCHOREDisolatespriorcenter;weights/inputs/solver identical. Wholeweightscaleor duplicatedsampleinvariance per219.",
+  "solver": {
+    "method": "L-BFGS-B",
+    "maxiter": 2000,
+    "gtol": 1e-06,
+    "ftol": 1e-12,
+    "maxls": 50,
+    "init": "allzero",
+    "serial_fits": 22,
+    "constant_KEEP": 2,
+    "total_cap_s": 600,
+    "success": "all22solver_success and finalmaxabsgrad<1e-3 before scoring. Preserve every endpoint;no retry/extraiterations/extension."
+  },
+  "readout": "retain original208CONT iff linearlogit>=0;tiesKEEP,no rescue. FrozenNETprefix and atmost originalonebatch;unchanged128/64/stagnation2/.9/order/station/aliases.",
+  "barriers": "Configs and fitinputs published beforetraining. All22models+2constants published before anynewheldlogits. All24predfiles published before outcomejoin. Heldpublicinputs exported fromalreadyseen208results;exportparseslabel-containing source but emits publiccolumns only. Do not claim unseenheldlabels orblindtest.",
+  "evaluation": "PrimaryANCHOREDvsDIRECT(all16exposed dates/all3seeds);secondary208 forquality/querytradeoff.216forest is historicalcontext,notcapacity-matched ablation. Reportallcost/gain/queries/actionmatch/perdate/seed/reversecases. Noallwinor5percentnewgate/no thresholdsearch.",
+  "limits": "BaseNETandSTOPselector fittedouter12inclinner4:head-onlycrossgeneration. 8date to12date entrance andprior shift remain. NoNNfits/newphysics/final8/paper/newFRAME/scale. Initialequality not learnedquality guarantee."
+}

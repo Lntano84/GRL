@@ -1,0 +1,21 @@
+from pathlib import Path
+import sys,json,shutil
+import numpy as np
+sys.path.insert(0,str(Path(__file__).parent));import run as C
+R,O,A,REPO=C.R,C.O,C.A,C.REPO;C.verify();assert C.read(O/'complete.json')['passed'];rec=C.read(O/'training_audit.json');active=[r for r in rec if not r['predeclaredKEEP']];stoprisk=float(np.mean([r['domains'][0]['positive_risk_share'] for r in active]));contrisk=float(np.mean([r['domains'][1]['positive_risk_share'] for r in active]));assert all(r['zero_correction_bias_gradient']>0 for r in active)
+for r in rec:
+ for folder in ['fit_inputs','calibration_inputs']:
+  old=np.load(C.Q/folder/f"{r['pool']}.npz");new=np.load(O/folder/f"{r['pool']}.npz");assert np.array_equal(old['X'][:,C.KEEP],new['X'])
+  for k in old.files:
+   if k!='X':assert np.array_equal(old[k],new[k])
+C.save('independent_audit.json',dict(passed=True,all24transformedinputs_exact_columns=True,labels_weights_eligibility_ids_parentoffset_and85constraints_unchanged=True,originalMaxRhoReward_definition_checked=True,all40parameter_finite_difference_qualified=True,optimizercalls=0,outer_feature_score_target_access=0,newfits_planned=22))
+lines=['# GRID246：表示与训练目标资格核查','','本轮仅使用公开特征定义和各池自身训练8天的输入/标签核查，没有优化器调用、外层预测或外层结果读取。','','## 已核实的问题','','三个特征对属于同一反馈量的重复表达：最优候选奖励与最优候选负载、可行候选奖励均值与负载均值、奖励标准差与负载标准差。当前固定MaxRhoReward定义为2−最大负载；严格合法候选上的关系由这个定义得到，float32使数值近似而非逐位精确。各池fit8三对关系最大误差1.2e−7。其余公共特征全部保留，不根据相关系数、外层损失或数值秩删列。','',f"训练目标也解释了部分停止倾向：11个实际拟合池中，STOP域回本正例占该域风险权重的平均{100*stoprisk:.2f}%，CONT域为{100*contrisk:.2f}%。两域各占一半总风险。零修正时，11池的截距梯度全部为正，优化初步压低截距有目标函数依据，不能简单说求解器没有训练好。两域标签和权重本轮保持不变。",'', '父先验b=(预期增益−已知查询代价)/(预期增益+已知查询代价)是无量纲价值裕度，不是概率。原逻辑损失把b用作偏置，sigmoid(b)也不因此成为经校准的回本概率。只要用作固定正则化中心，这并不构成公式错误；本轮不把偏置换成另一种量，也不引入新的温度或阈值。','','## 固定一个有限对照','','下一轮247只移除上述三列奖励重复表达，保留物理负载列：41公共特征变38，再加原b12共39输入、40参数。原内8天标准化、fit8筛选、行顺序、标签和风险权重完全不变；原自身12天85条STOP正例仍用于同一最大保护步长。','', '这并非只把输入压缩：对完全相等或相反的标准化重复列，原来同一功能系数v可分摊到两个参数，最小L2项为v²/4；剩一列后为v²/2。因此它明确改变这三个方向的正则化含义，不能称严格同容量或保证改善。微小浮点差别也保留披露。','','只做这一个候选，不同时换偏置、裁剪输入、加域外门或扫惩罚。11个新40参数线性修正器，加11个原规则保护步长，共22拟合/校准，单次600秒，不延长；f0_s1按原方案KEEP。主要匹配对照为243，230保留历史参考。所有种子、日期和反例保留。','','全部源码输入发布后训练；全部权重步长发布后才评分，全部预测发布后连接旧开发标签。当前资格已核对24份变换输入、原标签/权重/父偏置/85保护记录逐位不变，以及40维梯度有限差分。资格不代表效果。','','没有新增物理仿真、最终8、电网、论文或FRAME比较。所有开发数据已暴露；局部代理收益和查询不等完整周质量或实际控制时延，内部12天保护不称独立校准。']
+(O/'GRID246_plan.md').write_text('\n'.join(lines)+'\n',encoding='utf8');C.save('training_target_summary.json',dict(active_pools=11,STOP_positive_risk_share_poolmean=stoprisk,CONT_positive_risk_share_poolmean=contrisk,all11zero_intercept_grad_positive=True,next_single_candidate='canonical38public+b12,40parameters,22fits/600s',future_effect_unknown=True));C.archive('audited');dest=R/'论文协作资料/FRAME_公共表示资格_GRID246';dest.mkdir(exist_ok=False)
+for n in ['GRID246_plan.md','qualification.json','training_target_summary.json','independent_audit.json','complete.json']:shutil.copy2(O/n,dest/n)
+msg=f'GRID246仅资格0拟合/外层读取完成。三对奖励/负载表达由MaxRhoReward=2-rho确定，fit误差<=1.2e-7；原STOP风险正例池平均{stoprisk:.6f}、CONT{contrisk:.6f}，11池初始截距梯度正，取消倾向有目标依据。固定唯一247对照移除奖励列14/18/19，保留物理负载，其余不变；38公共+b12=39输入40参，11线性+11原规则步长/600秒。24输入逐项检查，标签权重/偏置/85保护不变。重复功能方向L2由v²/4至v²/2，明确正则化/容量变化，不预设有效、不换偏置/裁剪/域外门。'
+for n in ['RESEARCH_STATE.md','DECISIONS.md','EXPERIMENT_LOG.md']:
+ p=REPO/'docs'/n;t=p.read_text(encoding='utf8');entry='\n\n## 2026-10-28 — GRID246公共表示资格\n\n'+msg+'\n'
+ if n=='RESEARCH_STATE.md':a,b=t.split('\n',1);t=a+'\n'+entry+'\n'+b
+ else:t+=entry
+ p.write_text(t,encoding='utf8',newline='\n')
+(REPO/'docs/NEXT_STEPS.md').write_text('# Next steps — GRID246后\n\n1. 246资格完成、拟合0；下一247只消费246qualified_freeze/fit_inputs/calibration_inputs，固定38公共+b12/40参数，11线性+11步长/600秒、1KEEP。主要匹配243，230历史参考；不重做旧模型。\n2. 保持原219均值NLL+单位完整L2、原L-BFGS-B设置及221正例最大步长。所有11success且原始40维gradinf<.001后评分，失败保留停止，不加迭代救结果。仅原242公共outer输入取相同KEEP列，父b/入口不变，无额外收益头forward。\n3. 源码输入先发，全部12权重/步长先发，全部12预测先发后接原开发结果。全种子反例保留，记录单方向正则化变化，不称同容量/独立校准或预设改进。\n4. 原费用标签/控制器/排序别名/锁站/128/64/停滞2/.9不变；最终8/物理/电网/论文/FRAME不动，不安装依赖，不扫惩罚/裁剪/偏置。Git严格串行等helper退出。\n',encoding='utf8');p=REPO/'research_archive/power-grid-2026/README.md';p.write_bytes(('# 最新：GRID246公共表示资格\n\n[方案](protocols/'+A.name+'/audited/GRID246_plan.md)；零拟合，固定一个去重复表示对照，未预设改善。\n\n').encode()+p.read_bytes());print('GRID246_AUDITED',stoprisk,contrisk)

@@ -1,3 +1,7 @@
+# 最新：GRID246公共表示资格
+
+[方案](protocols/GRID246_canonical_plan/audited/GRID246_plan.md)；零拟合，固定一个去重复表示对照，未预设改善。
+
 # 最新：GRID245修正方向与支持核查
 
 [报告](protocols/GRID245_direction_support/audited/GRID245_report.md)；保留有效取消，先查表示与训练目标，再固定有限学习方案。

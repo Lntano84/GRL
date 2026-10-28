@@ -1,3 +1,7 @@
+# 最新：GRID238成对校准资格
+
+[方案](protocols/GRID238_calibration_support/GRID238_plan.md)；239独立预注册，当前0新拟合/外层分数。
+
 # 最新：GRID237修正层留组诊断
 
 [报告](protocols/GRID237_residual_holdgroup/audited/GRID237_report.md)；得到9条条件STOP回本误停记录，尚未校准或新做外层策略比较。

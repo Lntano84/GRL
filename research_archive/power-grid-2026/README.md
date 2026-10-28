@@ -1,3 +1,7 @@
+# 最新：GRID217原判断继承诊断
+
+[报告](protocols/GRID217_prior_diagnosis/GRID217_report.md)；保留两处排序改善线索，零修正结构证明，未新训练。
+
 # 最新：GRID216取消分类器固定实验
 
 [报告](protocols/GRID216_cancellation_gate/audited/GRID216_report.md)；11森林+1KEEP，保护不足，保留208与全部反例。

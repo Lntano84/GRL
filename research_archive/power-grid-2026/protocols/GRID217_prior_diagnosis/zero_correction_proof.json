@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "formula": "b=(predicted_gain-known_charge)/(predicted_gain+known_charge); output=original_CONT and (b+delta>=0)",
+  "held208_points": 4681,
+  "inner_head_STOP_points": 16565,
+  "all_zero_delta_actions_exactly_unchanged": true,
+  "no_rescue_even_with_toy_nonzero_delta": true,
+  "trained_correction": false,
+  "new_policy_metrics": false,
+  "limit": "Initial equality only; does not guarantee useful or safe learned corrections."
+}

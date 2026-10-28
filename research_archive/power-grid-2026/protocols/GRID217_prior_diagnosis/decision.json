@@ -1,0 +1,27 @@
+{
+  "retain_GRID208": true,
+  "do_not_adopt216": true,
+  "no_claim_capacity_alone_caused_failure": true,
+  "fit_ranking_high_but_half_threshold_underprotects": true,
+  "held_ranking_and_target_composition_shift_observed": true,
+  "do_not_only_lower_threshold": true,
+  "preserve_two_pools_positive_rank_signals": [
+    {
+      "pool": "f0_s0",
+      "positive_rows": 15,
+      "positive_calls": 6,
+      "prior_AUC": 0.5676116782448193,
+      "router_AUC": 0.6143699282549218
+    },
+    {
+      "pool": "f1_s1",
+      "positive_rows": 8,
+      "positive_calls": 3,
+      "prior_AUC": 0.7030325922752558,
+      "router_AUC": 0.9620281871805678
+    }
+  ],
+  "next_direction": "Qualify a baseline-anchored correction with zero-correction exact208 behavior, then freeze matched direct-vs-anchored input/capacity/objective/budget before a preannounced training.",
+  "new_training": false,
+  "no_new_policy_selected_from_quartiles": true
+}

@@ -1,0 +1,47 @@
+{
+  "paired_defined_learned_pools": [
+    "f0_s0",
+    "f0_s2",
+    "f1_s0",
+    "f1_s1",
+    "f1_s2",
+    "f2_s1",
+    "f2_s2",
+    "f3_s0",
+    "f3_s1",
+    "f3_s2"
+  ],
+  "averages": {
+    "fit": {
+      "prior_ratio_AUC_structural": 0.7373068448018236,
+      "router_AUC_structural": 0.9878126911566341,
+      "prior_ratio_AUC_cost": 0.6918929308671162,
+      "router_AUC_cost": 0.9977695660148145
+    },
+    "held": {
+      "prior_ratio_AUC_structural": 0.7233074135030294,
+      "router_AUC_structural": 0.49524067635248903,
+      "prior_ratio_AUC_cost": 0.7251113685075518,
+      "router_AUC_cost": 0.560910548940199
+    }
+  },
+  "pools_with_improved_held_ranking": [
+    {
+      "pool": "f0_s0",
+      "positive_rows": 15,
+      "positive_calls": 6,
+      "prior_AUC": 0.5676116782448193,
+      "router_AUC": 0.6143699282549218
+    },
+    {
+      "pool": "f1_s1",
+      "positive_rows": 8,
+      "positive_calls": 3,
+      "prior_AUC": 0.7030325922752558,
+      "router_AUC": 0.9620281871805678
+    }
+  ],
+  "all_other_pools_retained": true,
+  "unpaired_fit_pool": "f2_s0:held_no_positive",
+  "constant_pool": "f0_s1:not_fitted"
+}

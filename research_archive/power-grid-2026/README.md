@@ -1,3 +1,7 @@
+# 最新：GRID236同源先验输入
+
+[报告](protocols/GRID236_shared_prior_inputs/audited/GRID236_report.md)；4天标签未解析，下一步固定11修正器诊断。
+
 # GRID235计数口径更正
 
 [更正报告](protocols/GRID235_calibration_ancestry/count_correction/GRID235_report_corrected.md)；保留原源，区分候选输入与常量KEEP。

@@ -1,7 +1,6 @@
-# Next steps — GRID235后
+# Next steps — GRID236后
 
-1. 235资格完成，0拟合/0预测；不重做旧模型。36原outer4祖先隔离保持，内部cal4不能直接当独立样本。
-2. 236仅公共输入再生成：用235固定inner0两既有头及213inner8scalers，读取192缓存83/214raw41和公共charge，生成全部12天先验b及42输入/角色/STOP资格，0拟合/NNforward。核对旧214 cal4预测重现。源先发，全部24头公共预测先发后连标签；训练标签由214旧连续NET复用，不重新仿真。
-3. 236发布后统计新headCONT的fit8与cal4 STOP/CONT支持，并只在fit8分别归一化原结构质量×absNET风险半半。不能继承旧跨头b、outer12风险权重或父222预算。若fit8 STOP正例0，预定KEEP不选另fold；f0_s1 KEEP保留。
-4. 后续237最多11个43参公共修正器、600秒，标量拟合0，原L-BFGS-B与单位L2；权重先发、4天分数先发后连4天标签，仅收集错误，不做新outer4策略/alpha选择。上游NET/STOP仍outer12，条件层诊断不称独立OOF。
-5. 全限定诊断总操作上限已公开：0新森林/NN/物理、<=11残差模型、0标量；不悄悄拆大搜索。最终8/论文/FRAME不动，原费用标签/控制器/排序别名/锁站/128/64/停滞2/.9保留；Git严格等helper退出。自主推进至喊停。
+1. 236同源先验/fit8输入资格已完成，不重复头预测或标签连接。cal4目标未解析。
+2. 实施237：仅消费236fit_inputs及qualified_fit_freeze，11个43参线性修正器+1KEEP、0标量，原219均值NLL+全43单位L2，原L-BFGS-B设置，零初始化、600秒总窗口，全部success与rawgradinf<.001。
+3. 权重先发布再读取236cal_public评分；全部4天公共分数发布后才按236future_cal_target_sources读取inner0标签，统计真实STOP/CONT条件错误。训练worker不解析cal4标签，未校准分数b+Xtheta，无alpha/预算/二级选择器，不做新outer4策略对比。
+4. 上游baseNET/STOP仍outer12，明确局部条件诊断，不称独立OOF/全链嵌套或竞争力提升。原费用标签/控制器/排序别名/锁站/128/64/停滞2/.9保留，最终8/物理/电网/论文/FRAME不动。Git严格等待helper完成，自主推进至喊停。

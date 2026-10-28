@@ -1,3 +1,7 @@
+# 最新：GRID230训练查询强度对照
+
+[报告](protocols/GRID230_training_budget/audited/GRID230_report.md)；大收益恢复、重复节省保留，整体近旧222，额外查询和全部反例保留。
+
 # 最新：GRID228修正方向与步长诊断
 
 [报告](protocols/GRID228_context_diagnosis/completed/GRID228_report.md)；大损失和重复节省都涉及步长强度，下一步仅训练内资格。

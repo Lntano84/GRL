@@ -1,3 +1,7 @@
+# 最新：GRID249原决策上下文资格
+
+[方案](protocols/GRID249_context_bit_plan/audited/GRID249_plan.md)；公开可得性通过，下一轮仅增加一个上下文参数。
+
 # 最新：GRID248辅助训练域支持
 
 [报告](protocols/GRID248_auxiliary_support/audited/GRID248_report.md)；保留辅助正例线索，核对已知决策上下文后再训练。

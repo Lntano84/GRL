@@ -1,3 +1,7 @@
+# 最新：GRID251原NET连续动作偏好资格
+
+[方案](protocols/GRID251_qgap_plan/audited/GRID251_plan.md)；仅资格，固定一个连续公开输入后再训练。
+
 # 最新：GRID250决策上下文学习
 
 [报告](protocols/GRID250_context_residual/audited/GRID250_report.md)；保留两种子小改善与低查询端点，完整保留一条大额反例。

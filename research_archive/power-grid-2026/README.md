@@ -1,3 +1,7 @@
+# 最新：GRID253停止样本来源与有限方案
+
+[报告](protocols/GRID253_stop_source_plan/audited/GRID253_report.md)；只读确认上游暴露，18参考模型尚未启动，先执行资格。
+
 # 最新：GRID252连续动作偏好学习
 
 [报告](protocols/GRID252_qgap_residual/audited/GRID252_report.md)；恢复小额机会但大额损失保留，下一步核对停止样本选择来源。

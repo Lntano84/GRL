@@ -1,3 +1,7 @@
+# 最新：GRID248辅助训练域支持
+
+[报告](protocols/GRID248_auxiliary_support/audited/GRID248_report.md)；保留辅助正例线索，核对已知决策上下文后再训练。
+
 # 最新：GRID247去重复公共表示训练
 
 [报告](protocols/GRID247_canonical_residual/audited/GRID247_report.md)；整体近持平略低，保留小折中，不认定重复列是主要原因。

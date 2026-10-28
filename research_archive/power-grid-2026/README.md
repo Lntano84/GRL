@@ -1,3 +1,7 @@
+# 最新：GRID234双修正器分歧
+
+[报告](protocols/GRID234_view_disagreement/GRID234_report.md)；发现拟合分歧的正例答案缺口，下一步先做交叉拟合资格。
+
 # 最新：GRID233公共修正器对照
 
 [报告](protocols/GRID233_public_correction/audited/GRID233_report.md)；回本数量改善但大损失主导，保留局部线索与全部反例。

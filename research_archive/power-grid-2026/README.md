@@ -1,3 +1,7 @@
+# GRID235计数口径更正
+
+[更正报告](protocols/GRID235_calibration_ancestry/count_correction/GRID235_report_corrected.md)；保留原源，区分候选输入与常量KEEP。
+
 # 最新：GRID235校准来源核查
 
 [报告](protocols/GRID235_calibration_ancestry/GRID235_report.md)；原外层日期隔离保持，下一步限定修正层留组诊断。

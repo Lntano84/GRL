@@ -1,3 +1,7 @@
+# 最新：GRID250决策上下文学习
+
+[报告](protocols/GRID250_context_residual/audited/GRID250_report.md)；保留两种子小改善与低查询端点，完整保留一条大额反例。
+
 # 最新：GRID249原决策上下文资格
 
 [方案](protocols/GRID249_context_bit_plan/audited/GRID249_plan.md)；公开可得性通过，下一轮仅增加一个上下文参数。

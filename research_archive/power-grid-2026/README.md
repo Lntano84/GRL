@@ -1,3 +1,7 @@
+# 最新：GRID232公共修正器资格
+
+[方案](protocols/GRID232_public_correction_plan/GRID232_plan.md)；真实拟合0，下一步一次固定22拟合。
+
 # 最新：GRID231残余误停分析
 
 [报告](protocols/GRID231_residual_support/GRID231_report.md)；下一步只做固定输入限制的训练内资格。

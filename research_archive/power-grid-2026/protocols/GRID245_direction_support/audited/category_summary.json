@@ -1,0 +1,126 @@
+[
+  {
+    "kind": "profitable_keep",
+    "rows": 33,
+    "direction": {
+      "n": 33,
+      "min": -2.89278217604743,
+      "median": -0.21981281675826925,
+      "max": 0.3274110630137492,
+      "mean": -0.6355324970836408
+    },
+    "any_fit_range_departure": 13,
+    "any_positive_range_departure": 33,
+    "largest_negative_features": {
+      "rho_limit": 5,
+      "station_seen_fraction": 1,
+      "admissible_fraction": 2,
+      "queried_fraction": 1,
+      "completion_fraction_remaining": 2,
+      "intercept": 9,
+      "log_pool_size": 4,
+      "initial_prefix_has_admissible": 2,
+      "station_admissible_fraction": 2,
+      "station_pool_fraction": 2,
+      "last_batch_has_admissible": 1,
+      "last_batch_reward_gain": 1,
+      "terminal_fraction": 1
+    }
+  },
+  {
+    "kind": "profitable_cancel",
+    "rows": 22,
+    "direction": {
+      "n": 22,
+      "min": -2.2610047315852673,
+      "median": -1.0944928094254278,
+      "max": -0.40069848913918366,
+      "mean": -1.2654770998523377
+    },
+    "any_fit_range_departure": 14,
+    "any_positive_range_departure": 22,
+    "largest_negative_features": {
+      "log_visible_count": 2,
+      "last_batch_has_admissible": 2,
+      "rho_limit": 5,
+      "missing_second_admissible": 2,
+      "initial_prefix_has_admissible": 1,
+      "log_completion_queries": 1,
+      "log_next_batch_queries": 4,
+      "improvement_fraction": 1,
+      "intercept": 4
+    }
+  },
+  {
+    "kind": "nonprofitable_cancel",
+    "rows": 243,
+    "direction": {
+      "n": 243,
+      "min": -2.690185175284851,
+      "median": -0.6506155615702882,
+      "max": -0.056296616730960036,
+      "mean": -0.7101859199826809
+    },
+    "any_fit_range_departure": 37,
+    "any_positive_range_departure": 243,
+    "largest_negative_features": {
+      "log_visible_count": 6,
+      "rho_limit": 8,
+      "admissible_reward_std": 1,
+      "last_batch_has_admissible": 7,
+      "gain_since_initial_prefix": 10,
+      "station_admissible_fraction": 9,
+      "last_batch_reward_gain": 3,
+      "log_completion_queries": 67,
+      "admissible_reward_mean": 1,
+      "station_pool_fraction": 24,
+      "log_next_batch_queries": 27,
+      "intercept": 58,
+      "improvement_fraction": 2,
+      "terminal_fraction": 3,
+      "log_pool_size": 11,
+      "incumbent_changed": 4,
+      "local_budget_used_fraction": 1,
+      "reward_gap": 1
+    }
+  },
+  {
+    "kind": "nonprofitable_keep",
+    "rows": 312,
+    "direction": {
+      "n": 312,
+      "min": -2.236146732089273,
+      "median": -0.3205468037668529,
+      "max": 0.9343340628498391,
+      "mean": -0.3999286099175723
+    },
+    "any_fit_range_departure": 91,
+    "any_positive_range_departure": 310,
+    "largest_negative_features": {
+      "intercept": 58,
+      "rho_limit": 23,
+      "log_visible_count": 14,
+      "queried_fraction": 1,
+      "station_seen_fraction": 2,
+      "admissible_reward_range": 9,
+      "admissible_reward_std": 4,
+      "last_batch_has_admissible": 9,
+      "log_pool_size": 35,
+      "gain_since_initial_prefix": 2,
+      "station_admissible_fraction": 29,
+      "initial_incumbent_rho": 3,
+      "completion_fraction_remaining": 10,
+      "last_batch_reward_gain": 7,
+      "log_completion_queries": 29,
+      "station_observed_fraction": 4,
+      "log_next_batch_queries": 25,
+      "station_pool_fraction": 13,
+      "incumbent_relative_position": 9,
+      "terminal_fraction": 10,
+      "incumbent_changed": 5,
+      "initial_prefix_has_admissible": 8,
+      "local_budget_used_fraction": 1,
+      "reward_gap": 2
+    }
+  }
+]

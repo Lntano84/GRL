@@ -1,3 +1,7 @@
+# 最新：GRID245修正方向与支持核查
+
+[报告](protocols/GRID245_direction_support/audited/GRID245_report.md)；保留有效取消，先查表示与训练目标，再固定有限学习方案。
+
 # 最新：GRID244先验分布与保护覆盖核查
 
 [报告](protocols/GRID244_prior_distribution/audited/GRID244_report.md)；22漏查中11条先验位于保护范围内，下一步只读特征方向。

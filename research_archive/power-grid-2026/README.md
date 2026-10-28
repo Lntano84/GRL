@@ -1,3 +1,7 @@
+# 最新：GRID216取消分类器固定实验
+
+[报告](protocols/GRID216_cancellation_gate/audited/GRID216_report.md)；11森林+1KEEP，保护不足，保留208与全部反例。
+
 # 最新：GRID215取消学习训练域
 
 [核对报告](protocols/GRID215_cancellation_domain/GRID215_report_核对版.md)；12份目标核验，零新训练或策略评分。

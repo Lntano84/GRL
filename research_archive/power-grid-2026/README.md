@@ -1,3 +1,7 @@
+# 最新：GRID235校准来源核查
+
+[报告](protocols/GRID235_calibration_ancestry/GRID235_report.md)；原外层日期隔离保持，下一步限定修正层留组诊断。
+
 # 最新：GRID234双修正器分歧
 
 [报告](protocols/GRID234_view_disagreement/GRID234_report.md)；发现拟合分歧的正例答案缺口，下一步先做交叉拟合资格。

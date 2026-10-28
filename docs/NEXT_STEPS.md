@@ -1,6 +1,5 @@
-# Next steps — GRID254后
+# Next steps — 用户关机暂停
 
-1. GRID254资格及收据审计完成不重做；读取outputs/grid254_reference_preflight/CONTINUOUS_HANDOFF.md与qualification/qualified_freeze/active source_freeze_recovery01。
-2. GRID255先发布固定设计/源码输入及哈希授权，再唯一manager训练18参考NN，6单线程worker，7250updates/batch32/原FACTOR设置，一个600s含启动。不重复完整项、不续窗/减更新/换种子。失败保留部分与完整收据。
-3. 全部18权重核验/发布后才参考公开评分32238行；原父NN隐藏/24头复用、旧缓存22653/缺失<=9585，禁止新隐藏接旧头。公共选择输入先发布后接原teacher NET。读出同250不接252gap，后续<=11linear+11alpha/600s；全探针<=40依赖拟合。
-4. 保留原祖先局限/开发属性/全部种子反例，不称全链OOF/完整周或实时时延胜出。最终8/新物理/电网/论文/FRAME不动，不安装。Git helper严格串行，收尾更新docs/归档/协作并核对远端。
+1. 用户关机主动停止GRID255；12/18完整，余6检查点5×6000/1×5000步保留。管理器558.156s全部worker退出，自动跟进PAUSED，0新参考评分。原600s算术剩余41.844s，不自动续窗，完整项不重训。部分权重加载/续训资格尚未核验。
+2. 用户明确恢复前不启动训练/评分/新实验，不恢复grl。恢复先读255 shutdown_handoff/receipt、错误/进程/冻结/完整和部分收据。不能删启动标志重起原manager；若需续训先资格核对原剩余窗口和数值/采样一致，不能自动延长。
+3. 18全权重屏障未通过，不得新参考公开评分/标签连接。最终8/物理/电网/论文/FRAME不动。

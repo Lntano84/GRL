@@ -1,3 +1,7 @@
+# 最新：GRID215取消学习训练域
+
+[核对报告](protocols/GRID215_cancellation_domain/GRID215_report_核对版.md)；12份目标核验，零新训练或策略评分。
+
 # 最新：GRID214内层样本生成完成
 
 [报告](protocols/GRID214_inner_head_generation/audited/GRID214_report.md)；108森林与36组预测全部封存，未训练取消开关。

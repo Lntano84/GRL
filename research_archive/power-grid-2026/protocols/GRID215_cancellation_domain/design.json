@@ -1,0 +1,12 @@
+{
+  "stage": "GRID215",
+  "scope": "Saved GRID214 actual_STOP rows only; summarize allSTOP/base4CONT/cancelDisagreement. Freeze subsequent cancellation-only target without fitting/scoring a new policy.",
+  "primary_domain": "actualSTOP and fixed inner depth4 CONT. Two-head disagreement not required. preSTOPCONT kept outside router training. No rescue or new CONT actions.",
+  "label": "keep=actual_NET>0; actual_NET=original normalized next-batch gain minus original true fee. Current-label zero tie cancels in loss identity; default keep at predicted tie.",
+  "loss": "structural_mass*abs(actual_NET)*1[predicted_keep != (actual_NET>0)], no class balance/clipping/oversampling/changed fee. This equals immediate signed regret against a one-batch keep/cancel label oracle, not full policy regret or week cost.",
+  "diagnostics": "Per outer/seed and per date: rows/calls/profitable calls, positive and negative cost mass, top-call/date positive concentration, leave-one-date-out coverage only. No policy simulation or posthoc threshold selection.",
+  "future_inputs": "Same public raw83+raw41=124; IDs/dates/innerfold/labels/realized gain excluded. Inner scores choose domain only; no inner p/mu predictors proposed to avoid their 8-date to12-date scale dependency. Base hidden features stay outer12-fit.",
+  "future_scope": "At most12 same small classifiers, one per original outerfold/seed; a pool with no profitable support preserves baseline by an explicit KEEP constant and gets no learned cancellation. Hyperparameters/scale and exact files still require a training protocol before fitting.",
+  "dependency": "Head-level crossgeneration only. Source baseNET and STOP selector fit outer12 including inner score dates. All ancestor dates must exclude own outer4; no pooling other outerfold data; no inner-held generalization claim because other inner heads depend on those dates.",
+  "fixed": "Existing fees/controller/global128/64/stagnation2/.9/order/station/aliases/models unchanged. No fit, new model forward, new teacher/physical call, outer evaluation, final8, paper, FRAME comparison."
+}

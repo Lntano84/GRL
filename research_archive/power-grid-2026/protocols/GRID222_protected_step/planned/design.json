@@ -1,0 +1,10 @@
+{
+  "id": "GRID222_PROTECTED_STEP",
+  "authorization": "User autonomouscontinueandtraininguntilstop2026-10-28;precalibrationnoticefitpositiveconstraintdelivered.",
+  "source": "Bothfrozen220arms/11ownpools+2fallbackKEEP,allparametersunchanged. No new main model fit,teacher orNNforward.",
+  "rule": "Fromoriginalpublicb>0 tosourceendpoints,score=b+a*(s-b). Fit-onlyNET>0 constraints choose maximal a in[0,1] withall fittedpositive scores>=0. a=min(1,min b/(b-s) overpositive s<b),onlyULProunddown for feasibility. f0s1KEEPa0.",
+  "change": "Explicitempiricalpositive-protectionconstraintadded toone-dimensionalcalibration. Not equivalent unconstrainedlogisticobjective,notcostlabelorqueryfeechange. Allpositives usedregardlessgain;noheldlabelconstraint/temperaturegrid/penaltygrid.",
+  "fits": "Exactly22 closedform scalar calibrations,2KEEPconstants,original90fitpositive perarm. No optimizer/no new main fits. All24alphafilespublishedbeforescore,all24predictionfilespublishedbeforeoutcomejoin.",
+  "evaluation": "Ownsource220a1 andoriginal208a0 both fixedreferences;threepreservedseeds/16exposed dates. SameNETprefixandonlycanceloriginal208CONT,returnbestobserved. Entirehistoricaldataexposed,developmentnotblindtest. Empiricalfitconstraint doesnotguaranteeheldorfullweekquality.",
+  "scope": "No newfeatures/dates/fees/NN/physics/final8/paper/FRAME. No extrapolation fromcorrelatedprefixcount,alladverseresults retained."
+}

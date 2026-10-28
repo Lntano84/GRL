@@ -1,0 +1,8 @@
+{
+  "id": "GRID221",
+  "scope": "Saved220decomposition+syntheticqualificationonly. No actualdataalpha fit,newpolicy scoresorNNfits.",
+  "next_rule": "For eachownouter/seed/arm let b=originalmargin, s=frozen220logit, d=s-b. Use only fitlabelsNET>0: a*=min(1,min_positive_d<0 b/(-d));rounddownonlyforfloating feasibility. New score b+a*d; originalCONT mask retained.",
+  "changed_objective": "Adds an explicit empirical no-cancel-positive constraint to a line step toward already-fitted endpoint. Not same unconstrained logisticoptimization,notnewpriceorlabel. Includes every positive regardlessvalue,not selectivegaincutoff.",
+  "scope_limits": "Samecorrelatedfitrows/outerdateancestors;preservesfittedpositives only,not held/fullweekquality. f0_s1no-positive KEEPconstant usesalpha0. No heldlabelcalibration,thresholdgrid/penaltygrid/newfits of main model.",
+  "future": "22closedform scalar calibrations+2KEEP over bothfrozen220arms,allpublishedbeforeheldscore;all24scorefilespublishedbeforeoutcomejoin. Primary own220alpha1 and208alpha0 references;all3seeds/16dates retained."
+}

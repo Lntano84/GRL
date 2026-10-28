@@ -1,3 +1,7 @@
+# 最新：GRID240共同误停与先验语义
+
+[报告](protocols/GRID240_common_bottleneck/GRID240_report.md)；只读定位入口与修正先验来源不一致，尚未修改模型。
+
 # 最新：GRID239成对校准来源比较
 
 [报告](protocols/GRID239_paired_calibration/audited/GRID239_report.md)；整体未改善，保留两种子省查询线索与共享失误。

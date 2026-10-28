@@ -1,0 +1,76 @@
+{
+  "groups": {
+    "shared_miss": {
+      "rows": 7,
+      "calls": 4,
+      "b8_smaller_than_parent": 5,
+      "b8_below_fitpositive_range": 0,
+      "b8_below_calpositive_range": 6,
+      "outside_fit_public41_ranges": 3,
+      "nearest_fitpositive_distance_median": 7.19189876915884
+    },
+    "productive_cancellation": {
+      "rows": 111,
+      "calls": 50,
+      "b8_smaller_than_parent": 66,
+      "b8_below_fitpositive_range": 27,
+      "b8_below_calpositive_range": 69,
+      "outside_fit_public41_ranges": 39,
+      "nearest_fitpositive_distance_median": 7.23972773868364
+    },
+    "kept_profitable": {
+      "rows": 45,
+      "calls": 14,
+      "b8_smaller_than_parent": 10,
+      "b8_below_fitpositive_range": 5,
+      "b8_below_calpositive_range": 7,
+      "outside_fit_public41_ranges": 17,
+      "nearest_fitpositive_distance_median": 11.853294734467573
+    },
+    "passthrough": {
+      "rows": 131,
+      "calls": 65,
+      "b8_smaller_than_parent": 131,
+      "b8_below_fitpositive_range": 131,
+      "b8_below_calpositive_range": 129,
+      "outside_fit_public41_ranges": 5,
+      "nearest_fitpositive_distance_median": 6.648982173498246
+    }
+  },
+  "entry_prior_alignment": {
+    "all_NETSTOP_rows": 4681,
+    "parentCONT_innerCONT": 479,
+    "parentCONT_innerSTOP": 131,
+    "parentSTOP_innerCONT": 680,
+    "parentSTOP_innerSTOP": 3391
+  },
+  "loss_by_call": {
+    "2037-01-05_101|call001": 0.001913810323144883,
+    "2037-06-01_101|call001": 7.53991358529688e-05,
+    "2037-02-16_100|call006": 1.1550668383049338e-05,
+    "2037-11-16_101|call001": 1.186241729378954e-06
+  },
+  "largest_loss_call_share": 0.9559748216409177,
+  "per_seed": [
+    {
+      "seed": 0,
+      "saved_unprofitable": 0.000288258567115206,
+      "lost_profitable": 0,
+      "total": 0.00028825856711521547
+    },
+    {
+      "seed": 1,
+      "saved_unprofitable": 0.00011217203610437572,
+      "lost_profitable": 0,
+      "total": 0.00011217203610439097
+    },
+    {
+      "seed": 2,
+      "saved_unprofitable": 0.0002255206338225535,
+      "lost_profitable": 0.00600583910733084,
+      "total": -0.005780318473508295
+    }
+  ],
+  "no_new_models_or_scalars": true,
+  "no_new_policy_scores": true
+}

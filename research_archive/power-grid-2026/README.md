@@ -1,3 +1,7 @@
+# 最新：GRID244先验分布与保护覆盖核查
+
+[报告](protocols/GRID244_prior_distribution/audited/GRID244_report.md)；22漏查中11条先验位于保护范围内，下一步只读特征方向。
+
 # 最新：GRID243父先验一致候选
 
 [报告](protocols/GRID243_parent_coherent/audited/GRID243_report.md)；候选整体退步，保留种子1折中并核查读出分布。

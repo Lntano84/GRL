@@ -1,3 +1,7 @@
+# 最新：GRID237修正层留组诊断
+
+[报告](protocols/GRID237_residual_holdgroup/audited/GRID237_report.md)；得到9条条件STOP回本误停记录，尚未校准或新做外层策略比较。
+
 # 最新：GRID236同源先验输入
 
 [报告](protocols/GRID236_shared_prior_inputs/audited/GRID236_report.md)；4天标签未解析，下一步固定11修正器诊断。

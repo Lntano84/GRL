@@ -1,3 +1,7 @@
+# 最新：GRID231残余误停分析
+
+[报告](protocols/GRID231_residual_support/GRID231_report.md)；下一步只做固定输入限制的训练内资格。
+
 # 最新：GRID230训练查询强度对照
 
 [报告](protocols/GRID230_training_budget/audited/GRID230_report.md)；大收益恢复、重复节省保留，整体近旧222，额外查询和全部反例保留。

@@ -1,3 +1,7 @@
+# 最新：GRID239成对校准来源比较
+
+[报告](protocols/GRID239_paired_calibration/audited/GRID239_report.md)；整体未改善，保留两种子省查询线索与共享失误。
+
 # 最新：GRID238成对校准资格
 
 [方案](protocols/GRID238_calibration_support/GRID238_plan.md)；239独立预注册，当前0新拟合/外层分数。

@@ -1,3 +1,7 @@
+# 最新：GRID227辅助经验对照与数值修订
+
+[报告](protocols/GRID227_context_newton/audited/GRID227_report.md)；两种子小改善、一种子大损失，保留重复省查询线索与全部反例。
+
 # 最新：GRID224辅助经验方案资格
 
 [方案](protocols/GRID224_context_support_plan/GRID224_plan.md)；仅revision02可用于未来固定22拟合，当前零拟合。

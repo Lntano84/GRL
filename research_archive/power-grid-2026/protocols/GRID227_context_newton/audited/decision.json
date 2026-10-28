@@ -1,0 +1,43 @@
+{
+  "retain208_main_and222_tradeoff": true,
+  "do_not_replace222_by_mixed": true,
+  "keep_two_seed_small_positive_signals": true,
+  "NET_vs222_signs": [
+    -1,
+    1,
+    1
+  ],
+  "two_zero_gain_states_saved_in_two_seeds": [
+    {
+      "sample_id": "077c228d0254d5b751b98a62",
+      "position": 0,
+      "call": "2037-03-16_100|call005",
+      "seeds": [
+        1,
+        2
+      ],
+      "query_deltas": [
+        -4,
+        -4
+      ],
+      "independent_cases": false
+    },
+    {
+      "sample_id": "539b1f1919b80a68cb2264cb",
+      "position": 0,
+      "call": "2037-06-15_101|call007",
+      "seeds": [
+        1,
+        2
+      ],
+      "query_deltas": [
+        -3,
+        -3
+      ],
+      "independent_cases": false
+    }
+  ],
+  "major_negative_case": "2037-01-05_101|call001 in f0_s0 (not numerically repaired f2_s0)",
+  "next": "Read-only decompose47 changes and check source/held public-feature scales and numerical margin robustness. Preserve positive pockets and dominant loss;qualify any reduced-public-input correction only before future fitting,not by heldthreshold selection.",
+  "no_new_physics_or_test": true
+}

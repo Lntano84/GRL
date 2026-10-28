@@ -1,0 +1,39 @@
+"""Delivery hash receipts and current continuous handoff; no scientific recomputation."""
+from pathlib import Path
+import json,shutil,subprocess,sys
+sys.path.insert(0,str(Path(__file__).parent));import run as C
+O,A,R,REPO=C.O,C.A,C.R,C.REPO
+def main():
+    assert C.read(O/'complete.json')['passed'];C.verify();manifests=[]
+    for p in A.glob('*/archive_manifest.json'):
+        for rel,h in C.read(p).items():assert C.sha(p.parent/rel)==h
+        manifests.append(str(p))
+    assert len(manifests)==3
+    collab=R/'论文协作资料/FRAME_补查机制诊断_GRID228';copies=[]
+    for p in collab.iterdir():assert C.sha(p)==C.sha(O/p.name)==C.sha(A/'completed'/p.name);copies.append(p.name)
+    assert len(copies)==7
+    handoff='''# GRL持续交接：GRID228完成，下一步GRID229训练内资格
+
+先读work/GRL-results-integration/docs/RESEARCH_STATE.md、NEXT_STEPS.md，以最新状态为准。用户允许自主推进及训练直至喊停，保留全部种子日期反例，不逐轮确认。
+
+GRID225历史完成11线性+11标量，但f2_s0原始梯度未合格，零外层评分封存。226单次Newton仍不合格，零评分封存。227另立稳定数值协议，只修原未合格f2_s0，其余10模型+KEEP字节复用；所有模型/预测先发布后连接结果，审计完成。它们都不重做，历史错误不当当前故障。
+
+227相对222：2种子小正、1大负；回本39变38/55，候选查询13.174668变13.148416。两个状态在种子1/2重复少查4及3个无效候选；Nov16两条回本恢复伴随两条无利追加。保留208主参考与222折中。
+
+228完成只读610原208CONT记录/47变化。610旧、新决定全部通过固定强凸目标的梯度误差诊断（11常量KEEP；浮点非区间证明）；不支持主要归因为求解误差。47变化的对称代数分解中38步长贡献更大、9终点贡献更大。Jan5_101call001种子0的大损失：方向-3.780616改善至-3.504139，但alpha .138295升至.275001，分数.396647变-.044154；方向贡献+.057133、步长-.497934。旧、新均由同一Nov16训练正例限制，训练终点更温和使保护步长放宽。重复省查询在种子2也主要来自alpha增加，不能假设只去掉不利放大且保留全部节省。全输入块分解前83维最大33处，但其同时影响利弊，不凭外层挑特征。
+
+下一步GRID229只用每个池自身外层训练数据和固定父模型做资格：分解STOP正例约束、混合终点改善和alpha放宽的耦合。原41公共摘要+b（42输入43参数）只作为尚未训练的候选限制；不先认定有效。依据训练内可观察机制固定一个有限匹配学习或修正强度方案，再新阶段执行。禁止按已看外层标签选步长、阈值、惩罚、种子或对Jan5设例外；不能把本轮分数分解当策略因果效果。不得事后计算多个候选策略再择优。
+
+每学习阶段最多22模型/标量拟合、单次600秒，不延长或盲扫。沿用224revision02的显式半半辅助风险、原完整单位L2/费用/标签；任何经验约束或输入改动先说明资格，不冒充同目标或等暴露。全部权重和标量发布后评分，全部预测发布后连接结果。基础控制器、全日期种子、排序、别名、初始锁站、128/64/停滞2/.9保留，旧控制复用。最终8不生成不读标签，不新物理/电网/论文/FRAME，不安装依赖。
+
+当前无持续训练运行器。228收尾曾有S路径变量NameError，修复为C.S；原脚本、部分记录和错误保存在interrupted_attempts/finalize_name_error，无拟合或模型变更。225/226/227的10归档清单及8协作副本已于228收尾核验。228代码/报告/完整分解/协作副本与错误保留。以源码实际A常量归档，更新docs与首页并git_push.cmd发布核对SHA。用户喊停则停止新增并暂停grl，不恢复旧自动化、不归档聊天。
+'''
+    (O/'CONTINUOUS_HANDOFF.md').write_text(handoff,encoding='utf8',newline='\n')
+    d=A/'delivery';d.mkdir(exist_ok=False)
+    for n in ['CONTINUOUS_HANDOFF.md']:shutil.copy2(O/n,d/n)
+    shutil.copytree(O/'interrupted_attempts',d/'interrupted_attempts');shutil.copy2(Path(__file__),d/'delivery.py')
+    C.save('delivery_receipt.json',dict(passed=True,three_prior228_manifests_verified=manifests,collaboration_copies=copies,no_new_scientific_computation=True,source_freeze_verified=True,all_prior_failure_evidence_preserved=True))
+    shutil.copy2(O/'delivery_receipt.json',d/'delivery_receipt.json')
+    (d/'archive_manifest.json').write_text(json.dumps({p.relative_to(d).as_posix():C.sha(p) for p in d.rglob('*') if p.is_file()},indent=2)+'\n',encoding='utf8')
+    print('GRID228_DELIVERY_CHECKED',len(copies))
+if __name__=='__main__':main()

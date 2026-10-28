@@ -1,3 +1,7 @@
+# 最新：GRID228修正方向与步长诊断
+
+[报告](protocols/GRID228_context_diagnosis/completed/GRID228_report.md)；大损失和重复节省都涉及步长强度，下一步仅训练内资格。
+
 # 最新：GRID227辅助经验对照与数值修订
 
 [报告](protocols/GRID227_context_newton/audited/GRID227_report.md)；两种子小改善、一种子大损失，保留重复省查询线索与全部反例。

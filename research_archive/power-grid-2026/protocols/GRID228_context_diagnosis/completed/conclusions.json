@@ -1,0 +1,33 @@
+{
+  "numerical_boundary_not_supported_as_main_explanation": true,
+  "floating_bounds_not_formal_certificates": true,
+  "all610_sealed_decisions_checked": true,
+  "score_change_dominant_component": {
+    "step": 38,
+    "endpoint": 9
+  },
+  "major_case": {
+    "seed": 0,
+    "sample_id": "45af5f0052c51bb93095eb88",
+    "position": 0,
+    "call": "2037-01-05_101|call001",
+    "actual_NET": 4.805568705168518,
+    "old_alpha": 0.1382950378438754,
+    "new_alpha": 0.275000838954154,
+    "old_direction": -3.780615579208646,
+    "new_direction": -3.5041392977298726,
+    "score_delta": -0.44080087208813046,
+    "symmetric_endpoint_contribution": 0.0571332535838142,
+    "symmetric_step_contribution": -0.4979341256719446,
+    "larger_component": "step",
+    "descriptive_not_counterfactual_policy": true
+  },
+  "latent_largest_block_changes": {
+    "latent83": 33,
+    "public41": 12,
+    "intercept": 2
+  },
+  "no_policy_counterfactual_evaluated": true,
+  "no_new_fits": true,
+  "next": "Qualify training-only control of correction strength before another fit. Compare ownSTOP constraints/endpoint changes and bounded public input eligibility;do not pick held-informed step/threshold or evaluate capped policy from these outcomes."
+}

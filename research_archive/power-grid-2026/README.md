@@ -1,3 +1,7 @@
+# 最新：GRID254参考网络执行预检
+
+[报告](protocols/GRID254_reference_preflight/audited/GRID254_report.md)；六并发资源/接口资格完成，训练尚未开始。
+
 # 最新：GRID253停止样本来源与有限方案
 
 [报告](protocols/GRID253_stop_source_plan/audited/GRID253_report.md)；只读确认上游暴露，18参考模型尚未启动，先执行资格。

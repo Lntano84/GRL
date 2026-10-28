@@ -1,3 +1,7 @@
+# 最新：GRID218同容量原判断偏置对照
+
+[报告](protocols/GRID218_anchored_logit/audited/GRID218_report.md)；一个零收益取消小线索，主损失仍在。
+
 # 最新：GRID217原判断继承诊断
 
 [报告](protocols/GRID217_prior_diagnosis/GRID217_report.md)；保留两处排序改善线索，零修正结构证明，未新训练。

@@ -1,3 +1,7 @@
+# 最新：GRID255参考模型恢复完成
+
+[报告](protocols/GRID255_reference_stop_nn/recovery_run01/completed/GRID255_report.md)；GRID255恢复18/18完整；旧12复用，6旧轨迹补8285更新(6000×5/5215×1至7250)。用户批准120s恢复，实际46.547s，累计604.703/678.156s；源/授权先发，权重/Adam/RNG/采样/排除/截止核验，0新参考forward/标签连接/策略评估。
+
 # 最新：GRID255恢复资格
 
 [报告](protocols/GRID255_reference_stop_nn/recovery_qualification01/GRID255_recovery_report.md)；检查点可恢复，计算窗口修订待用户决定，未续训。

@@ -1,0 +1,25 @@
+{
+  "proposed": true,
+  "execution_authorized": false,
+  "operation": "Resume six existing model trajectories only from qualified checkpoints; no new model or repeated completed fit.",
+  "max_concurrent_workers": 6,
+  "proposed_resume_window_s": 120,
+  "total_component_window_if_approved_s": 678.1559999999954,
+  "extra_over_original_600_s": 78.1559999999954,
+  "updates_final": 7250,
+  "remaining_updates_total": 8285,
+  "same_original_model_data_sampler_optimizer": true,
+  "restore": [
+    "state_dict",
+    "Adam state",
+    "numpy rng_state",
+    "torch_rng"
+  ],
+  "reconstruct_sampler_prefix_only": true,
+  "prefix_loss_history_unavailable_disclosed": true,
+  "complete_models_reuse": 12,
+  "source_and_authorization_publish_before_training": true,
+  "one_manager_one_resume_no_extension": true,
+  "new_policy_score_or_target_join": false,
+  "reason": "Original 41.844s arithmetic remainder is below historical fit-only critical-tail estimate, before cold start. Need explicit compute-window decision, not method/label change."
+}

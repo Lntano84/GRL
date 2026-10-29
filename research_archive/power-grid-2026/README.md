@@ -1,3 +1,7 @@
+# 最新：GRID255恢复资格
+
+[报告](protocols/GRID255_reference_stop_nn/recovery_qualification01/GRID255_recovery_report.md)；检查点可恢复，计算窗口修订待用户决定，未续训。
+
 # 最新：GRID255用户关机暂停
 
 [关机交接](protocols/GRID255_reference_stop_nn/user_shutdown01/shutdown_handoff.md)；用户关机主动停止GRID255；12/18完整，余6检查点5×6000/1×5000步保留。管理器558.156s全部worker退出，自动跟进PAUSED，0新参考评分。原600s算术剩余41.844s，不自动续窗，完整项不重训。部分权重加载/续训资格尚未核验。

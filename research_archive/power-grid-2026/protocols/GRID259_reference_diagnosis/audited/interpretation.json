@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "category_larger_terms": {
+    "lost_profitable": {
+      "step": 2
+    },
+    "cancelled_nonprofitable": {
+      "step": 48,
+      "direction": 9
+    },
+    "restored_profitable": {
+      "direction": 19,
+      "step": 2
+    },
+    "extra_nonprofitable": {
+      "direction": 119,
+      "step": 12
+    },
+    "unchanged_residual": {
+      "direction": 5
+    }
+  },
+  "outside_range_by_category": {
+    "lost_profitable": {
+      "True": 2
+    },
+    "cancelled_nonprofitable": {
+      "True": 15,
+      "False": 42
+    },
+    "restored_profitable": {
+      "True": 9,
+      "False": 12
+    },
+    "extra_nonprofitable": {
+      "False": 109,
+      "True": 22
+    },
+    "unchanged_residual": {
+      "True": 4,
+      "False": 1
+    }
+  },
+  "all7_remaining_direction_terms_positive": true,
+  "all7_remaining_step_terms_negative": true,
+  "largest_restoration_call": "2037-01-05_101|call001",
+  "largest_restoration_call_NET": 0.0012751718803620574,
+  "largest_restoration_call_share": 0.79701035088888,
+  "lost_two_share_of_restoration_benefit": 0.7977279914438983,
+  "restoration_calls_repeated_across_seeds": {
+    "2037-05-18_101|call005": [
+      0,
+      1
+    ],
+    "2037-11-16_101|call001": [
+      1,
+      2
+    ]
+  },
+  "fit_public38_absmax_range": [
+    14.709129497221735,
+    31.52431773560933
+  ],
+  "STOP_positive_risk_fraction_range": [
+    0.879441088103042,
+    0.981055255101431
+  ],
+  "CONT_positive_risk_fraction_range": [
+    0.9544220757760571,
+    0.9948549564781154
+  ],
+  "STOP_callKish_descriptive_range": [
+    2.42742670510467,
+    5.960757670221617
+  ],
+  "callKish_is_not_independent_sample_size": true,
+  "no_ood_gate_chosen": true
+}

@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "all12_rows": 2859,
+  "active11_rows": 2725,
+  "KEEP_rows": 134,
+  "active_positive": 518,
+  "falseCONT_negative": 1816,
+  "falseSTOP_positive": 1,
+  "domain": {
+    "STOP": {
+      "rows": 1184,
+      "positive": 222,
+      "negative": 962,
+      "falseCONT_negative": 804,
+      "falseSTOP_positive": 0,
+      "negative_raw_queries": 7142,
+      "falseCONT_raw_queries": 6844,
+      "falseCONT_query_fraction_of_negative": 0.9582749929991599,
+      "falseCONT_negative_risk_fraction_of_negative": 0.9535977294379349,
+      "falseCONT_meanpool_risk": 0.027335425457310138,
+      "falseCONT_meanpool_weightedNLL": 0.029941884417762455,
+      "all_meanpool_weightedNLL": 0.123099316324693,
+      "wrongneg_calls": 106,
+      "wrongneg_dates": 12
+    },
+    "CONT": {
+      "rows": 1541,
+      "positive": 296,
+      "negative": 1245,
+      "falseCONT_negative": 1012,
+      "falseSTOP_positive": 1,
+      "negative_raw_queries": 15646,
+      "falseCONT_raw_queries": 15094,
+      "falseCONT_query_fraction_of_negative": 0.964719417103413,
+      "falseCONT_negative_risk_fraction_of_negative": 0.9649380269701402,
+      "falseCONT_meanpool_risk": 0.0088188758954579,
+      "falseCONT_meanpool_weightedNLL": 0.010136373842938064,
+      "all_meanpool_weightedNLL": 0.09191859070007764,
+      "wrongneg_calls": 124,
+      "wrongneg_dates": 12
+    }
+  },
+  "wrongneg_raw_queries": 21938,
+  "wrongneg_calls": 127,
+  "wrongneg_dates": 12,
+  "topcall_rawqueryshare": 0.04667699881484183,
+  "top5calls_rawqueryshare": 0.20079314431579906,
+  "active_mean_NLL": 0.2150179070247706,
+  "active_mean_L2": 0.04977918835461779,
+  "active_gradientinf": {
+    "min": 1.8138731627814764e-08,
+    "mean": 3.591243018282655e-07,
+    "max": 7.285177125448961e-07
+  },
+  "new_models": 0,
+  "new_scalars": 0,
+  "new_outerpolicy_scores": 0,
+  "NNheadforward": 0,
+  "onlyownfit8_diagnostic": true,
+  "not_independent_records_or_savings_forecast": true
+}

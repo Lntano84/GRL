@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "categories": {
+    "profitable": {
+      "records": 6,
+      "calls": 2,
+      "dates": 1,
+      "raw_queries_saved": 59,
+      "macro_NET_delta": -0.0013436887566481925,
+      "macro_query_delta": -0.007829087048832272,
+      "maxcall_query_share": 0.711864406779661,
+      "top5call_query_share": 1.0,
+      "oldscore": {
+        "min": 0.07573885083939116,
+        "median": 0.27165568514783667,
+        "max": 0.4235333149912909
+      },
+      "score_to_delta": {
+        "min": 0.27702246692564253,
+        "median": 0.7762745735052843,
+        "max": 0.9964200625510418
+      },
+      "parent_b": {
+        "min": 0.003075772590243582,
+        "median": 0.17404413997480278,
+        "max": 0.396864219683695
+      },
+      "bounded_correction": {
+        "min": -0.04714456080371199,
+        "median": 0.08833919961756857,
+        "max": 0.16819628896510047
+      },
+      "nearest": {
+        "STOP": {
+          "positive": 2,
+          "negative": 4,
+          "missing": 0
+        },
+        "CONT": {
+          "positive": 0,
+          "negative": 6,
+          "missing": 0
+        }
+      }
+    },
+    "nonprofitable": {
+      "records": 185,
+      "calls": 79,
+      "dates": 15,
+      "raw_queries_saved": 664,
+      "macro_NET_delta": 0.0001226365813057451,
+      "macro_query_delta": -0.08515983202632241,
+      "maxcall_query_share": 0.05609534389661199,
+      "top5call_query_share": 0.24044217804001358,
+      "oldscore": {
+        "min": 0.004544831672688349,
+        "median": 0.17319335848710407,
+        "max": 0.5112943530449235
+      },
+      "score_to_delta": {
+        "min": 0.013594593954760046,
+        "median": 0.45611611377756783,
+        "max": 0.9988328487795868
+      },
+      "parent_b": {
+        "min": 0.00040079935760701146,
+        "median": 0.25006126304931003,
+        "max": 0.5824361065979133
+      },
+      "bounded_correction": {
+        "min": -0.3592576083349297,
+        "median": -0.07083748106638499,
+        "max": 0.37755855513425385
+      },
+      "nearest": {
+        "STOP": {
+          "positive": 8,
+          "negative": 177,
+          "missing": 0
+        },
+        "CONT": {
+          "positive": 4,
+          "negative": 181,
+          "missing": 0
+        }
+      }
+    }
+  },
+  "guardlimiting_records": 11,
+  "guardlimiter_fit8": 6,
+  "guardlimiter_cal4": 5,
+  "all500guardretained_is_empirical_not_independent": true,
+  "newfits": 0,
+  "newscalars": 0,
+  "newouterstrategy": 0,
+  "newNNforward": 0,
+  "branch73": true
+}

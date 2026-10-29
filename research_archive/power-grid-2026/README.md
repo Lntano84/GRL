@@ -1,3 +1,7 @@
+# 最新：GRID256参考停止点公开输入
+
+[报告](protocols/GRID256_reference_public/audited/GRID256_report.md)；GRID256固定公开生成/首次保存结果核验完成：18参考32238行，22653原父83缓存字节复用、9585原owner补齐，24头0拟合；fit8候选2859=1251STOP+1608CONT，own12保护候选2054(标签未连，非正例数)。0新训练/标签连接/新outer策略。固定40维/原角色与父b重现，下一257先发布屏障后仅标签来源/新结构质量与风险资格，不能旧85/mass照搬。
+
 # 最新：GRID255参考模型恢复完成
 
 [报告](protocols/GRID255_reference_stop_nn/recovery_run01/completed/GRID255_report.md)；GRID255恢复18/18完整；旧12复用，6旧轨迹补8285更新(6000×5/5215×1至7250)。用户批准120s恢复，实际46.547s，累计604.703/678.156s；源/授权先发，权重/Adam/RNG/采样/排除/截止核验，0新参考forward/标签连接/策略评估。

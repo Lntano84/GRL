@@ -1,0 +1,131 @@
+{
+  "old_family": {
+    "mean_net_utility": 0.09361551054568053,
+    "mean_gain": 0.0009724602326057173,
+    "mean_queries": 13.242083701077334,
+    "query_fraction": 0.25654922822581633,
+    "gain_capture": 0.6811017561284037,
+    "physical_group_mean_utility": 0.08306366327384702,
+    "action_match_rate": 0.896350535860256,
+    "eligible_gate_fraction": 0.6576462395226009,
+    "append_fraction": 0.04162379613460347,
+    "added_queries": 0.3576452224835262,
+    "added_gain": 4.446679165054641e-05
+  },
+  "new_family": {
+    "mean_net_utility": 0.09357355106281472,
+    "mean_gain": 0.0009722124535193194,
+    "mean_queries": 13.251265223713048,
+    "query_fraction": 0.2566476518699562,
+    "gain_capture": 0.6821017226618314,
+    "physical_group_mean_utility": 0.08301769498313642,
+    "action_match_rate": 0.8964443679364263,
+    "eligible_gate_fraction": 0.6576462395226009,
+    "append_fraction": 0.04694678207082637,
+    "added_queries": 0.3668267451192406,
+    "added_gain": 4.421901256414838e-05
+  },
+  "family_delta": {
+    "mean_net_utility": -4.195948286581097e-05,
+    "mean_gain": -2.477790863979201e-07,
+    "mean_queries": 0.009181522635714146,
+    "query_fraction": 9.84236441398667e-05,
+    "gain_capture": 0.0009999665334277097,
+    "physical_group_mean_utility": -4.596829071060182e-05,
+    "action_match_rate": 9.38320761703082e-05,
+    "eligible_gate_fraction": 0.0,
+    "append_fraction": 0.0053229859362229,
+    "added_queries": 0.009181522635714423,
+    "added_gain": -2.4777908639802854e-07
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "macro_delta": {
+        "mean_net_utility": -4.279719808517046e-05,
+        "mean_gain": 0.0,
+        "mean_queries": 0.02967658738866419,
+        "query_fraction": 0.0005924094278736969,
+        "gain_capture": 0.0,
+        "physical_group_mean_utility": -4.68806558538426e-05,
+        "action_match_rate": 0.0,
+        "eligible_gate_fraction": 0.0,
+        "append_fraction": 0.003205723918259365,
+        "added_queries": 0.02967658738866369,
+        "added_gain": 0.0
+      }
+    },
+    {
+      "seed": 1,
+      "macro_delta": {
+        "mean_net_utility": 2.8708823983231158e-06,
+        "mean_gain": 0.0,
+        "mean_queries": -0.001990737622753258,
+        "query_fraction": -7.148111606580798e-05,
+        "gain_capture": 0.0,
+        "physical_group_mean_utility": 3.657303545429036e-06,
+        "action_match_rate": 0.0,
+        "eligible_gate_fraction": 0.0,
+        "append_fraction": 0.0020890314358072634,
+        "added_queries": -0.001990737622752925,
+        "added_gain": 0.0
+      }
+    },
+    {
+      "seed": 2,
+      "macro_delta": {
+        "mean_net_utility": -8.595213291059944e-05,
+        "mean_gain": -7.433372591939772e-07,
+        "mean_queries": -0.0001412818587667175,
+        "query_fraction": -0.0002256573793880945,
+        "gain_capture": 0.002999899600282907,
+        "physical_group_mean_utility": -9.468151982340578e-05,
+        "action_match_rate": 0.0002814962285109246,
+        "eligible_gate_fraction": 0.0,
+        "append_fraction": 0.010674202454602086,
+        "added_queries": -0.00014128185876743915,
+        "added_gain": -7.433372591940856e-07
+      }
+    }
+  ],
+  "changes": 64,
+  "categories": [
+    {
+      "category": "profitable_restorations",
+      "records": 1,
+      "raw_query_delta": 11,
+      "calls": 1,
+      "dates": 1,
+      "macro_NET_delta": 4.998392465748706e-05,
+      "macro_query_delta": 0.0011124595469255664
+    },
+    {
+      "category": "nonprofitable_restorations",
+      "records": 49,
+      "raw_query_delta": 220,
+      "calls": 26,
+      "dates": 12,
+      "macro_NET_delta": -3.7956340190110586e-05,
+      "macro_query_delta": 0.026370928270063928
+    },
+    {
+      "category": "profitable_cancellations",
+      "records": 1,
+      "raw_query_delta": -32,
+      "calls": 1,
+      "dates": 1,
+      "macro_NET_delta": -7.53991358529688e-05,
+      "macro_query_delta": -0.0034542314335060447
+    },
+    {
+      "category": "nonprofitable_cancellations",
+      "records": 13,
+      "raw_query_delta": -83,
+      "calls": 10,
+      "dates": 8,
+      "macro_NET_delta": 2.1412068519777537e-05,
+      "macro_query_delta": -0.01484763374776897
+    }
+  ],
+  "raw_query_delta": 116
+}

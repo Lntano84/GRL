@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "tests": [
+    {
+      "name": "ties",
+      "passed": true,
+      "synthetic_delta": 0.125,
+      "maximal_nextfloat_rejected": true
+    },
+    {
+      "name": "zero",
+      "passed": true,
+      "synthetic_delta": 0.0,
+      "maximal_nextfloat_rejected": true
+    },
+    {
+      "name": "tiny",
+      "passed": true,
+      "synthetic_delta": 1e-300,
+      "maximal_nextfloat_rejected": true
+    },
+    {
+      "name": "oneULP",
+      "passed": true,
+      "synthetic_delta": 1.0,
+      "maximal_nextfloat_rejected": true
+    },
+    {
+      "name": "negativeprotectedprecondition",
+      "passed": true
+    }
+  ],
+  "empty_andKEEP_zero": true,
+  "no_real_delta_fit": true
+}

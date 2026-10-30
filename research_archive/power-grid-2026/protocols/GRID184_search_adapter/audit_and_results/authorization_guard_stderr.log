@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid184_search_adapter\worker.py", line 8, in <module>
+    registry.verify();authorization=registry.read(OUT/'physical_authorization.json');assert authorization['approved_by_user'] is True and authorization['design_sha256']==registry.sha(OUT/'design.json')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid184_search_adapter\run.py", line 6, in read
+    def read(p):return json.loads(p.read_text(encoding='utf8'))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\windows\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\windows\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Codex\\GRL研究\\outputs\\grid184_search_adapter\\physical_authorization.json'

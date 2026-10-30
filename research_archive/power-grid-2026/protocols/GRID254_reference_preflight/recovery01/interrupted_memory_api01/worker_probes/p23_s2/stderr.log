@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid254_reference_preflight\worker.py", line 43, in <module>
+    elif mode=='preflight':preflight(sys.argv[2],sys.argv[3],sys.argv[4])
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid254_reference_preflight\worker.py", line 19, in preflight
+    info=dict(passed=True,node=name,pid=os.getpid(),parameters=12980,initial_hash=before,post_probe_hash=S.digest(net),weights_unchanged=True,synthetic_public_fit_forward_rows=32,synthetic_backwards=1,optimizer_instances=0,optimizer_steps=0,training_labels_loaded=False,fit_rows=len(rows),memory=C.process_memory(),torch_threads=torch.get_num_threads(),public_probe_ids=z['fit_ids'][ix].astype(int).tolist());C.save(out/'ready.json',info)
+                                                                                                                                                                                                                                                                                                        ^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid254_reference_preflight\runtime254.py", line 40, in process_memory
+    p=PM();p.cb=ctypes.sizeof(p);ctypes.windll.kernel32.GetCurrentProcess.restype=wintypes.HANDLE;handle=ctypes.windll.kernel32.GetCurrentProcess();assert ctypes.windll.psapi.GetProcessMemoryInfo(handle,ctypes.byref(p),p.cb);return dict(working_set=int(p.workingSet),peak_working_set=int(p.peakWS),private_commit=int(p.pagefile))
+                                                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ctypes.ArgumentError: argument 1: OverflowError: int too long to convert

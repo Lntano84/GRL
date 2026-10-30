@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid254_reference_preflight\worker.py", line 44, in <module>
+    elif mode=='train':train(sys.argv[2],sys.argv[3])
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid254_reference_preflight\worker.py", line 25, in train
+    j=C.job(name);ctx=C.validate_training(root,j);C.verify();root=Path(root);out=root/'jobs'/name;C.claim(out/'started.json',dict(mode='train',node=name,pid=os.getpid(),deadline=ctx['deadline']));C.before(ctx['deadline']);S=C.orig();import torch
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid254_reference_preflight\runtime254.py", line 47, in validate_training
+    q=read(O/'qualification.json');assert q['passed'] and q['optimizer_instances']==0 and q['execution_qualified']
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid254_reference_preflight\runtime254.py", line 12, in read
+    def read(p):return json.loads(Path(p).read_text(encoding='utf8'))
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\windows\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\windows\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Codex\\GRL研究\\outputs\\grid254_reference_preflight\\qualification.json'

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid184_search_adapter\pipeline.py", line 37, in <module>
+    try:main()
+        ^^^^^^
+  File "D:\Codex\GRL研究\work\grid184_search_adapter\pipeline.py", line 27, in main
+    with (O/'audit_pipeline.log').open('x',encoding='utf8') as log:subprocess.run([sys.executable,'-X','utf8','-u',str(W/'audit.py')],cwd=R,stdout=log,stderr=subprocess.STDOUT,check=True,creationflags=subprocess.CREATE_NO_WINDOW)
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\windows\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['D:\\Codex\\GRL研究\\work\\grid02\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-u', 'D:\\Codex\\GRL研究\\work\\grid184_search_adapter\\audit.py']' returned non-zero exit status 1073807364.

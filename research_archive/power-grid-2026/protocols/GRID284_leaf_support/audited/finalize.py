@@ -1,0 +1,27 @@
+from pathlib import Path
+import sys,json,shutil,collections
+sys.dont_write_bytecode=True;sys.path.insert(0,str(Path(__file__).parent));import run as C
+R,O,A,P=C.R,C.O,C.A,C.REPO
+assert not (O/'complete.json').exists();C.verify();summary=C.rd(O/'diagnosis_summary.json');leaves=C.rd(O/'all_leaf_class_support.json');focus=C.rd(O/'all_change_margins_and_outcomes.json');pub=C.rd(O/'public_all46_saved_change_margins.json');assert len(leaves)==6715 and len(focus)==len(pub)==46 and sum(x['zero_fallback'] for x in leaves)==1 and max(abs(x['positive_weight_delta']) for x in leaves)<1e-10
+for r in focus:assert abs(r['margin_delta']-(r['score_term']-r['cutoff_term']))<1e-15
+for phase in ['source','public','analyzed']:
+ for rel,s in C.rd(A/phase/'archive_manifest.json').items():assert C.sha(A/phase/rel)==s
+m280=C.rd(C.Q/'matched280_summary.json');m277=C.rd(C.Q/'matched277_summary.json');assert m280['changes']==43 and m277['changes']==3 and sum(r['raw_query_delta'] for r in focus if r['control']=='280')==106 and sum(r['raw_query_delta'] for r in focus if r['control']=='277')==-1
+active=[r for r in C.rd(C.Q/'saved277_score_cutoff_differences.json') if not r['KEEP']];assert all(r['new_tau']>=r['old_tau'] for r in active)
+C.save('independent_audit.json',dict(passed=True,all6715leaf_support_savedchecked=True,all46saved_margin_algebra=True,macro_contributions_match283=True,positive_mass_identity_max_abs=summary['positive_mass_max_abs_delta'],all11cutoffs_nondecreasing=True,newfit_scalar0=True,new_treeapply_predict0=True,new_policy_returns0=True,allseeds_adversecases_retained=True));C.save('decision.json',dict(passed=True,study_status='STOP_AFTER_THIS_ANALYSIS_PER_USER',new_training_authorized_now=False,automation='PAUSED',keep261_qualityanchor=True,retain283_small_query_signal_not_stable_claim=True,next='Prepare_all_experiment_inventory_and_weekly_review_no_new_research'))
+lines=['# GRID284：固定叶频变化及训练支持的只读解释','','本轮只读完成，新增模型、标量拟合、树路由、网络前向和策略评估均为0。按用户2026-10-30要求，到本轮分析结束为止停止科研推进；自动跟进保持暂停，随后仅整理周报和归档。','','## 查清了什么','','固定277全部704树分区后，删除331条不符合入口的训练记录，没有改变任何叶的正例权重：6715个叶最大正例质量差仅%.3g（浮点舍入量级）。删除的权重合计1.903015；1136个叶正类频率上升，无超出1e-12舍入量级的下降。只有1个空支持叶按原规则回退旧频率。'%summary['positive_mass_max_abs_delta'],'','这说明本次固定分区重估主要是移除负例分母，并非新增或学到新的正例收益；经验正例截点在11个活跃池都不下降（其中极小变化可能只是舍入），分数上升与截点上升会抵消部分决策变化。描述来自各池自身训练数据与已发表参数，不是因果或泛化保证。','','## 与前两轮逐条对齐','','相对277：保留所有7134条路径的增益与最终候选，种子0/1决定完全相同；种子2仅三条不回本决定变化，2条恢复多9次查询、1条取消少10次，原始净省1。三处发生在三个日期/调用，不能说跨种子稳定改善。已发表端点最小绝对裕度为%.9g，不能把这些变化笼统归为浮点噪声；但本轮也未新算替代累加方案或反事实分数。'%summary['minimum_abs_margin_vs277'],'','相对280：43处变化中恢复两条回本记录、无新增回本损失，45/55对43/55；两恢复均是种子2、Feb16_100 call006同一调用的相关前缀，不是两个独立场景。其他21条无利恢复多130次查询、20条无利取消少42次，加上回本恢复18次，共多106次；代理NET宏平均微降.000002187。质量恢复没有形成等预算收益。','','|种子|对280变化记录|原始查询变化|代理NET变化|','|---|---:|---:|---:|']
+for r in summary['per_seed']:
+ if r['control']=='280':lines.append(f"|{r['seed']}|{r['records']}|{r['rawquery']:+d}|{r['NET_delta']:+.9f}|")
+lines+=['',f"43处对280变化合并成{summary['unique_states_vs280']}个状态，{summary['cross2seed_states_vs280']}个跨两个种子重复，没有跨三个种子重复。全部反向贡献与回本残余保留。",'','## 现在保留的判断','','固定分区条件叶频几乎回到277原决策，而条件重训分区的280丢失两处回本；这支持继续区分树结构改变与叶频改变，不能直接归结为“删除低权重行一定有益/一定有害”。本周最可靠的质量锚仍是261：共同GATE的55/55回本及全部增益/候选保留，三个种子查询都小幅降低。277/280/283各有局部查询线索和反例，暂不替换质量锚，不择种子拼接。','','## 来源与边界','','源74257adc→公开成员90becf9c先发布，然后才读取own279 y/weight；全部6715叶的成员固定，不按外层失误ID增加保护。公开成员和已发表margin只做解释，不产生替代策略回报。源、公有成员、分析结果和首次保存结果核验均留存，完整旧审计/训练/路由未重做。','', '分支学习计数仍190，新增拟合0。原331排除/16副本/543经验保护暴露、6旧续训8285更新/NN604.703实际与用户678.156上限另列。父own12/内部cal4/历史已暴露16日期及相关前缀限制保留，非独立外层保证/全链OOF/盲测，离线代理不等整周质量或实际时延。最终8、新物理/电网/论文/FRAME不动，不安装，原费用NET标签及控制器/排序/别名/锁站/128/64/停滞2/.9保持。']
+(O/'GRID284_report.md').write_text('\n'.join(lines)+'\n',encoding='utf8');C.save('complete.json',dict(passed=True,newmodel_scalar0=True,newapply_predict0=True,newpolicy0=True,leaf_support6715=True,allchanges46=True,branch190=True,stopped_per_user=True));C.archive('audited')
+D=R/'论文协作资料/FRAME_叶频支持诊断_GRID284';D.mkdir(exist_ok=False)
+for n in ['GRID284_report.md','diagnosis_summary.json','all_change_margins_and_outcomes.json','pool_class_support.json','all_related_state_recurrence.json','independent_audit.json','complete.json','decision.json']:shutil.copy2(O/n,D/n)
+C.save('delivery_check.json',dict(passed=True,actual_archive=str(A),collaboration=str(D),files={p.name:C.sha(p) for p in D.iterdir()}))
+msg='GRID284只读完成0拟合/新路由概率策略。6715叶正例质量最大差1.14e-13，移除331负例权重1.903015使1136叶频升，11正例截点不降；固定分区主要去负例分母而非新增收益支持。对277仅seed2三非回本决定raw净省1、全增益候选同；对280恢复同Feb16调用两相关回本/无新失但raw+106和NET宏微降，43变化38状态5跨两seed/无跨三。26155/55质量锚及全部局部线索反例保留。用户要求本轮后停止，grl保持PAUSED，不开始285/新训练；接下来只整理全实验索引、本周目的结果周报和应上传材料。分支190/原祖先开发旧续训整周时延边界不变。'
+for n in ['RESEARCH_STATE.md','DECISIONS.md','EXPERIMENT_LOG.md']:
+ p=P/'docs'/n;t=p.read_text(encoding='utf8');e='\n\n## 2026-10-30 — GRID284完成并按用户要求停止\n\n'+msg+'\n'
+ if n=='RESEARCH_STATE.md':a,b=t.split('\n',1);t=a+'\n'+e+b
+ else:t+=e
+ p.write_text(t,encoding='utf8')
+(P/'docs/NEXT_STEPS.md').write_text('# Next steps — 研究已暂停，待用户阅读本周总结\n\n'+msg+'\n\n1. 仅完成全实验目的/结果索引、本周2026-10-26至30的重点总结与可核验报告链接。\n2. 核对源/报告/清单/模型收据的Git发布与D协作副本，补应上传材料；不重训/重评分/重路由/重审计已有完整阶段。\n3. 自动跟进保持PAUSED。用户审阅后再决定研究方向，未获明确继续不启动新研究。最终8/物理电网论文FRAME不动，无安装。\n',encoding='utf8')
+p=P/'research_archive/power-grid-2026/README.md';p.write_text('# 当前：GRID284结束，研究暂停等待周报审阅\n\n[报告](protocols/'+A.name+'/audited/GRID284_report.md)；'+msg+'\n\n'+p.read_text(encoding='utf8'),encoding='utf8');print('GRID284_FINALIZED_STOPPED',json.dumps(summary))

@@ -1,9 +1,7 @@
-# 当前 — 跟进唯一运行器，原4小时窗口保持
+# 当前 — GRID291预算到限，不补跑
 
-2026-11-01用户直接批准192条/4小时物理回放；授权84fd1cfd先发布。启动前Windows虚拟环境redirector父PID不直连已凭实际证据修守卫并发布4c74cadf，范围/数值不变；首次manager18768的首worker在common导入前因新增线程重复设置退出，0模型/环境/物理，无完整项。保留全部源/claim/日志，去掉重复设置并发布57597ad8，只允许一次零物理恢复、沿用原monotonic_start与14400截止，未重置窗口/重做实验。当前唯一manager43096（venvlauncher42384）、首workerlauncher27336/实际43128正常推进，已有真实付费步骤，当前日志pipeline_resume01_stdout/stderr、resume01_worker_NNN.log。active源source_launch_recovery02。原192/1200条/387264步/6000000forecast/0训练保持，最终8/旧祖先与190拟合6续训边界不动。
-
-1. 读取当前pipeline_state/active_worker/manifest/finished/当前pipeline_error和resume01日志，核对PID。勿把准备complete.json、旧授权等待文档、首manager PID或interrupted旧错误当当前状态。
-2. 唯一manager继续192条，不第二运行器、不重跑完整或部分物理项、不重置原benchmark_started计时；14400总/1200单条，超时保留部分停止，不解释为方法失败。
-3. 运行中不做重型审计/拟合/安装/旧归档，只有轻量进度/故障跟进。无实质变化安静。
-4. 全192完成且无worker后运行saved_review.py保存结果核对，再报告/实际A归档/D协作/hash/远端发布；不新模型预测或物理重求解。未完成报告实际覆盖/预算或工程原因，所有seed/pool/KEEP/反例保留。
-5. 最终8/原费用标签/控制器/排序alias锁站128/64停滞2/.9、新日期FRAME电网论文界限保持。
+1. 186完整收据及1条192步部分输出已首次保存核对；不调用192入口saved_review，不再manager/worker，不重做审计/完整归档或预测。
+2. 阅读outputs/grid291_control_preparation/GRID291_report.md、saved_partial_review.json与runtime_results_decision.json：93匹配轨迹/成本一致、查询仅少2，不支持稳定控制提速，March质量仍失败；原4小时/全部缺项保留。
+3. 上传与D协作/清单/具体Gitblob/远端SHA收尾核对后，更新runtime_complete与持续交接。
+4. 下一步仅允许先固定一项有限已保存激活/自身训练支持诊断，定位实际父入口中的残差取消范围；先写清输入和终止条件，0拟合/新评分回报/物理。不为自动推进无穷追加接口核查/森林修补。
+5. 新物理/日期/预算不自动启动，最终8/费用标签/控制器/原种子及历史190拟合/6续训边界不动。

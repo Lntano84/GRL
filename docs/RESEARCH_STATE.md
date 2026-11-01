@@ -1,3 +1,9 @@
+# 当前：GRID291原4小时到限，保存结果收尾完成
+
+GRID291在原14400秒上限停止，186/192接受，另192步部分条/5未启动；93匹配轨迹及成本全同、90可用重复全同，0新拟合。261仅同一March f2_s1状态两重复各省1query，完整首重复48对控制-0.328563%、第二重复45对+0.037920%、全93对-0.151232%且搜索P95+0.751516%，不建立稳定实际提速。March两臂42条均FAIL_COST，August/October96条PASS、May48条REFERENCE_LIMITED；完整/部分与全部反例留D lossless归档，必要结果及清单发布。原窗口/协议不变，不补跑，208/261冻结，关闭森林修补，最终8不动。
+
+以下保留历史记录，当前以本段和NEXT_STEPS为准。
+
 # 当前：用户批准后真实回放运行中，原4小时截止保持
 
 2026-11-01用户直接批准192条/4小时物理回放；授权84fd1cfd先发布。启动前Windows虚拟环境redirector父PID不直连已凭实际证据修守卫并发布4c74cadf，范围/数值不变；首次manager18768的首worker在common导入前因新增线程重复设置退出，0模型/环境/物理，无完整项。保留全部源/claim/日志，去掉重复设置并发布57597ad8，只允许一次零物理恢复、沿用原monotonic_start与14400截止，未重置窗口/重做实验。当前唯一manager43096（venvlauncher42384）、首workerlauncher27336/实际43128正常推进，已有真实付费步骤，当前日志pipeline_resume01_stdout/stderr、resume01_worker_NNN.log。active源source_launch_recovery02。原192/1200条/387264步/6000000forecast/0训练保持，最终8/旧祖先与190拟合6续训边界不动。

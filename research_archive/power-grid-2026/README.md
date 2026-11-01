@@ -1,3 +1,9 @@
+# 最新：GRID288原208父接口精确通过
+
+[报告](protocols/GRID288_parent208_interface/results/GRID288_report.md)。2026-11-01 GRID288原208父接口完成，源8404bb0f先发/60旧具体Gitblob核对；12池24批冻结event/amount头预测/4681行（9362头行），原owner-f83+raw41/scaler得到父b/CONT/ids/费用与242/249全精确一致，最大误差0，原权重不变。0拟合NNteacher物理回报，未重做287线性全批；公共父输出封存复用。下一唯一289组合封装、固定每池190第一行12单状态，新24单行头调用+12线性分开计数且先发源，精确对齐失败留证；不重复旧批量，合并后结束缓存对齐串再定真实验证范围。未证明实时整控提升，190旧拟合/6续训/祖先开发边界保持，grl ACTIVE。
+
+以下保留历史状态，以本段及docs/NEXT_STEPS为准。
+
 # 最新：GRID287冻结261接口通过，自动推进ACTIVE
 
 [报告](protocols/GRID287_frozen261_interface/results/GRID287_report.md)。2026-11-01用户开启自动推进。GRID287冻结261纯接口完成，12池4681公开raw41经原inner8scaler/canonical38/b/STOP1重建与249输入精确一致；原tanh/sum/alpha所得logit/ids/continue与261原保存输出精确一致，1KEEP。0拟合/NN头/物理/teacher/新策略回报，4681线性重算仅一次接口对齐。尚非真实观测全链接入，单批计时不当提速；下一唯一GRID288原208保存83+raw41/scaler/24头到b对齐，先封存输入源码，再24批预测/0NN训练物理。旧190拟合/祖先开发/最终8边界保持，grl ACTIVE，历史PAUSED说明不再当前。

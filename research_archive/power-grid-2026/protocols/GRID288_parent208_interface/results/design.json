@@ -1,0 +1,17 @@
+{
+  "id": "GRID288",
+  "scope": "ONE saved owner-f83+raw41 to native24heads and parentb exact parity, fixed287protocol",
+  "pools": 12,
+  "rows": 4681,
+  "head_batch_predict_cap": 24,
+  "new_fits": 0,
+  "NN_forward": 0,
+  "teacher_reads": 0,
+  "physics": 0,
+  "new261_scores": 0,
+  "formulas": "124=[(raw83-mean)/scale,(raw41-raw_mean)/raw_scale];gain=p*mu;charge=raw83[:,82];b=(gain-charge)/(gain+charge);CONT=b>0",
+  "references": "242/249 original saved b and CONT; unchanged strict exact comparison; do not call old evaluate",
+  "timing": "one observed native batch per head; no repetition or performance benchmark",
+  "failure": "save completed receipts and stop on mismatch; no dtype/scaler/threshold/tolerance rescue; no auto rerun",
+  "limits": "NN hidden cached, not live observation-to-NN deployment; no fullcontrol speed/quality conclusion"
+}

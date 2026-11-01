@@ -1,3 +1,9 @@
+# 最新：GRID287冻结261接口通过，自动推进ACTIVE
+
+[报告](protocols/GRID287_frozen261_interface/results/GRID287_report.md)。2026-11-01用户开启自动推进。GRID287冻结261纯接口完成，12池4681公开raw41经原inner8scaler/canonical38/b/STOP1重建与249输入精确一致；原tanh/sum/alpha所得logit/ids/continue与261原保存输出精确一致，1KEEP。0拟合/NN头/物理/teacher/新策略回报，4681线性重算仅一次接口对齐。尚非真实观测全链接入，单批计时不当提速；下一唯一GRID288原208保存83+raw41/scaler/24头到b对齐，先封存输入源码，再24批预测/0NN训练物理。旧190拟合/祖先开发/最终8边界保持，grl ACTIVE，历史PAUSED说明不再当前。
+
+以下保留历史状态，以本段与docs/NEXT_STEPS为准。
+
 # 最新：GRID286关闭重复成本目标训练，推进261冻结接入
 
 [报告](protocols/GRID286_cost_objective_contract/results/GRID286_report.md)。2026-11-01 GRID286成本目标资格完成，7源码静态核对及合成regret恒等式通过，0拟合/新分数/路由/NNforward。已知批次长度/固定费用在reveal前形成；208已p*mu-charge，261absNET加权NLL已含收益损失幅度，两域归一化/L2/父偏置限制仍在，不称最优。无新增目标或信息支持，关闭换名成本分类器训练；下一唯一冻结208+261评分接口及已有保存输出一次性对齐、费用时序表/后续验证协议。不回森林、不物理/最终8，历史190及旧续训/祖先开发时延边界保留。

@@ -1,0 +1,243 @@
+{
+  "index": 182,
+  "pool": "f1_s1",
+  "arm": "BOUNDED261",
+  "week": "2037-03-02_100",
+  "repeat": 1,
+  "folder": "outputs/grid291_control_preparation/runs/r1__2037-03-02_100__BOUNDED261__f1_s1",
+  "trajectory_signature": "f77e108e7f016cded76b291a9b62ef993e002eea6c6eb5a2a20fcad3cbc8a7d4b632997bf8fbd8fab0a2ed9319401f8c19da2b714638df8cd833ae42ef36760f",
+  "recorded_cost": {
+    "steps": 2017,
+    "raw_cost": 2900979.61328125,
+    "ledger_missing_or_schema_steps": [],
+    "cost_parts": {
+      "losses": 2263171.8867158946,
+      "redispatch": 620888.6827826073,
+      "curtailment_delta": 3.101223433870509e-14,
+      "storage_throughput": 16918.685373470264
+    },
+    "physical_energy": {
+      "losses_mwh": 15194.843442441972,
+      "redispatch_mwh": 4167.225113328866,
+      "curtailment_delta_mwh": 4.868790908838633e-16,
+      "storage_throughput_mwh": 113.55795149357678,
+      "curtailed_mwh": 546.866860790799
+    },
+    "reconstruction_residual": 0.3584092780947685,
+    "step_blocks": [
+      {
+        "first_step": 1,
+        "last_step": 288,
+        "raw_cost": 312366.4178466797,
+        "cost_parts": {
+          "losses": 259352.23832261024,
+          "redispatch": 52549.893077505585,
+          "curtailment_delta": 0.0,
+          "storage_throughput": 464.24795391818043
+        }
+      },
+      {
+        "first_step": 289,
+        "last_step": 576,
+        "raw_cost": 502828.6724243164,
+        "cost_parts": {
+          "losses": 333678.1401654252,
+          "redispatch": 165020.9499897802,
+          "curtailment_delta": 1.1916398315152399e-14,
+          "storage_throughput": 4129.585427581798
+        }
+      },
+      {
+        "first_step": 577,
+        "last_step": 864,
+        "raw_cost": 447071.21661376953,
+        "cost_parts": {
+          "losses": 370654.3495527873,
+          "redispatch": 72500.64807958163,
+          "curtailment_delta": -1.1102230246251565e-15,
+          "storage_throughput": 3916.2837713472545
+        }
+      },
+      {
+        "first_step": 865,
+        "last_step": 1152,
+        "raw_cost": 463848.6723022461,
+        "cost_parts": {
+          "losses": 345715.219974753,
+          "redispatch": 114233.44393913337,
+          "curtailment_delta": -8.659739592076221e-15,
+          "storage_throughput": 3900.1009343569167
+        }
+      },
+      {
+        "first_step": 1153,
+        "last_step": 1440,
+        "raw_cost": 443428.06579589844,
+        "cost_parts": {
+          "losses": 393587.7979858589,
+          "redispatch": 48826.0747905946,
+          "curtailment_delta": 4.440892098500626e-16,
+          "storage_throughput": 1013.9488194785469
+        }
+      },
+      {
+        "first_step": 1441,
+        "last_step": 1728,
+        "raw_cost": 361892.03479003906,
+        "cost_parts": {
+          "losses": 295831.5090647275,
+          "redispatch": 65047.66189836944,
+          "curtailment_delta": 3.552713678800501e-14,
+          "storage_throughput": 1012.718933070544
+        }
+      },
+      {
+        "first_step": 1729,
+        "last_step": 2016,
+        "raw_cost": 368534.88623046875,
+        "cost_parts": {
+          "losses": 263597.00350771315,
+          "redispatch": 102455.98884013268,
+          "curtailment_delta": -7.105427357601002e-15,
+          "storage_throughput": 2481.7995337170237
+        }
+      },
+      {
+        "first_step": 2017,
+        "last_step": 2017,
+        "raw_cost": 1009.6472778320312,
+        "cost_parts": {
+          "losses": 755.6281420191128,
+          "redispatch": 254.02216750973213,
+          "curtailment_delta": 0.0,
+          "storage_throughput": 0.0
+        }
+      }
+    ]
+  },
+  "cost_delta_vs_FULL": {
+    "raw_cost": 29484.870727539062,
+    "cost_parts": {
+      "losses": -539.2778667397797,
+      "redispatch": 27733.05577322084,
+      "curtailment_delta": 6.039613253960852e-14,
+      "storage_throughput": 2290.932893393445
+    },
+    "reconstruction_residual": 0.15992766479030252,
+    "step_blocks": [
+      {
+        "first_step": 1,
+        "last_step": 288,
+        "raw_cost_delta": 0.0,
+        "cost_parts_delta": {
+          "losses": 0.0,
+          "redispatch": 0.0,
+          "curtailment_delta": 0.0,
+          "storage_throughput": 0.0
+        }
+      },
+      {
+        "first_step": 289,
+        "last_step": 576,
+        "raw_cost_delta": 0.0,
+        "cost_parts_delta": {
+          "losses": 0.0,
+          "redispatch": 0.0,
+          "curtailment_delta": 0.0,
+          "storage_throughput": 0.0
+        }
+      },
+      {
+        "first_step": 577,
+        "last_step": 864,
+        "raw_cost_delta": 0.0,
+        "cost_parts_delta": {
+          "losses": 0.0,
+          "redispatch": 0.0,
+          "curtailment_delta": 0.0,
+          "storage_throughput": 0.0
+        }
+      },
+      {
+        "first_step": 865,
+        "last_step": 1152,
+        "raw_cost_delta": 3066.765625,
+        "cost_parts_delta": {
+          "losses": -4405.552549768996,
+          "redispatch": 6176.628207548434,
+          "curtailment_delta": 4.04121180963557e-14,
+          "storage_throughput": 1295.704658772952
+        }
+      },
+      {
+        "first_step": 1153,
+        "last_step": 1440,
+        "raw_cost_delta": 22207.105712890625,
+        "cost_parts_delta": {
+          "losses": 4005.61486515688,
+          "redispatch": 17224.516716376842,
+          "curtailment_delta": 4.440892098500626e-16,
+          "storage_throughput": 976.8608080769966
+        }
+      },
+      {
+        "first_step": 1441,
+        "last_step": 1728,
+        "raw_cost_delta": 2284.2398681640625,
+        "cost_parts_delta": {
+          "losses": 0.8158190693357028,
+          "redispatch": 2279.219776169848,
+          "curtailment_delta": 1.4210854715202004e-14,
+          "storage_throughput": 4.166876363102233
+        }
+      },
+      {
+        "first_step": 1729,
+        "last_step": 2016,
+        "raw_cost_delta": 1922.43408203125,
+        "cost_parts_delta": {
+          "losses": -140.14427815563977,
+          "redispatch": 2048.359569415901,
+          "curtailment_delta": 5.329070518200751e-15,
+          "storage_throughput": 14.200550180394202
+        }
+      },
+      {
+        "first_step": 2017,
+        "last_step": 2017,
+        "raw_cost_delta": 4.325439453125,
+        "cost_parts_delta": {
+          "losses": -0.011723041534423828,
+          "redispatch": 4.33150370977819,
+          "curtailment_delta": 0.0,
+          "storage_throughput": 0.0
+        }
+      }
+    ]
+  },
+  "prefix": {
+    "initial_before_equal": true,
+    "metadata_checks": {
+      "library_hashes": true,
+      "dt_hours": true,
+      "cost_per_MW": true
+    },
+    "first_difference": {
+      "step": 1007,
+      "common_before_hash": "a7262015648992d50d82f2fd7f99cd21399022a958324682e6f418cc4d1f861f",
+      "current_delivered_action_hash": "ec5d17c23065f733dbd96a014b1b00d8c28536c07e185aee55b5784ce6193cd6",
+      "FULL_delivered_action_hash": "53c6c29eb5be583e9ec8b3f01afcc036333ec91020e3e6de2a4e52e1a7a424a3",
+      "after_state_equal": false,
+      "current_restore": false,
+      "FULL_restore": false,
+      "current_raw_cost": 2781.08056640625,
+      "FULL_raw_cost": 2798.056640625,
+      "common_prefix_raw_cost_delta": 0.0,
+      "saved_current_calls": [],
+      "FULL_call_lookup": "No published292FULL index; no ordinal guess or unrelated call scan.",
+      "saved_current_call_status": "No exact step member in published292 index; no additional call scan or prediction."
+    },
+    "status": "FIRST_DELIVERED_ACTION_DIFFERENCE_ON_COMMON_BEFORE"
+  },
+  "complete": true
+}

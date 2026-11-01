@@ -1,0 +1,144 @@
+[
+  {
+    "id": "286_existing_contract",
+    "source": "outputs/grid286_cost_objective_contract/GRID286_report.md",
+    "sha256": "1f836cdd4259e824b7a7ae5696ba1e5c0f99184f318b73180d52f00e6b756ce9",
+    "line_refs": [
+      9,
+      17,
+      23,
+      25,
+      41
+    ],
+    "established": "Existing208p*mu-charge and261absNET riskNLL are already query-cost aware. Reuse prior verdict; no renamed classifier or repeated synthetic qualification.",
+    "qualification_limit": "Does not identify monetary/physical operating-cost or delayed full-week loss."
+  },
+  {
+    "id": "query_environment",
+    "source": "work/grid102_search_rl/environment.py",
+    "sha256": "cbf633974a17d318e6a8b99756629a19069bb2407c0703ece6c2929473733680",
+    "line_refs": [
+      1,
+      19,
+      34,
+      35,
+      36,
+      37
+    ],
+    "established": "Continuation advances a saved local query-batch position and pays(gain-queryfee)/gain_scale; it does not advance physical power-system time.",
+    "qualification_limit": "Finitequery-horizon gamma1 is not a whole-week grid-control return."
+  },
+  {
+    "id": "teacher_case_schema",
+    "source": "work/grid102_search_rl/prepare.py",
+    "sha256": "cff45ce2bc9dfc2e3a6c44457a7d33d8f267e1d438cff72a5eb8c1cf2b2974c1",
+    "line_refs": [
+      20,
+      28,
+      37,
+      38,
+      39,
+      45,
+      46,
+      47,
+      49,
+      51,
+      54,
+      55,
+      72,
+      73,
+      82
+    ],
+    "established": "Cases persiststates/gains/queries/chosen and identity/date roles; gain is best-admissible reward increment. Queryfee is a train-date proxy, explicitly not seconds or currency.",
+    "qualification_limit": "This constructor does not persist per-alternative joint operating-cost/redispatch/storage or matched physical-time counterfactual trajectories. Sourcecall may have additional data not certified by this eight-document scope."
+  },
+  {
+    "id": "relational_training_schema",
+    "source": "work/grid113_relational_learning/prepare.py",
+    "sha256": "a8e5f0622c73c36ba7bf65bfaab312ec978b62a0b99dcff57624509939730068",
+    "line_refs": [
+      19,
+      21,
+      26,
+      29,
+      34,
+      35,
+      36,
+      40,
+      41,
+      42,
+      43,
+      84
+    ],
+    "established": "Public six-field inputs and targets remain original queryNET; training targets/sampling_probability, validation target, and role metadata are explicit.",
+    "qualification_limit": "No new operating-cost paired target in this checked learning schema; numerical arrays/pickles were not opened."
+  },
+  {
+    "id": "native_reward",
+    "source": "work/grid02/ljn_nn/modules/rewards.py",
+    "sha256": "4394f0cc2b385e5aa0c1c0428a7dd048f6fecd74ba42226b89c18b2e3871ead0",
+    "line_refs": [
+      15,
+      21,
+      22,
+      23,
+      25,
+      26
+    ],
+    "established": "MaxRhoReward returns2-rho.max() on valid transitions, reward_min=-1 on error/illegal/ambiguous.",
+    "qualification_limit": "This is a security-loading feedback, not the separate operating-cost auxiliary metric."
+  },
+  {
+    "id": "base_agent",
+    "source": "work/grid02/ljn_nn/LJNAgent.py",
+    "sha256": "a0cc82e281b477e13fa30e36dddfbd63ff9a7381f59c566b02829fbb222d168f",
+    "line_refs": [
+      191,
+      194,
+      200,
+      232,
+      234,
+      235,
+      237,
+      238,
+      241,
+      254
+    ],
+    "established": "LJNAgentTopoNN adds topology to act, then may replace/extend act via optim.get_act if forecast remains unsafe/exception; returns the full action.",
+    "qualification_limit": "Static branch existence explains why proposed topology and delivered-vector layers differ, not proof of every actual optimizer invocation or complete cost causality."
+  },
+  {
+    "id": "base_factory",
+    "source": "work/grid02/ljn_nn/make_agent.py",
+    "sha256": "cc67066abaf630bb257946d1c1936be999e82f7fef8993127842ae41d47630b5",
+    "line_refs": [
+      24,
+      35,
+      39,
+      42
+    ],
+    "established": "make_agent_topoNN instantiates LJNAgentTopoNN with original topk20/PPO asset; this is originalbase control, distinct from FACTOR local query-stop network.",
+    "qualification_limit": "Factory path is not a new policy or tensor equality check; no environment/Gym/NN construction was executed."
+  },
+  {
+    "id": "operating_cost_ledger",
+    "source": "work/grid03/score_adapter.py",
+    "sha256": "77292ab049d2bc3966324001555265e139a1b33666f261f9ac4d1b896549c3bb",
+    "line_refs": [
+      1,
+      12,
+      17,
+      20,
+      21,
+      26,
+      27,
+      28,
+      31,
+      32,
+      33,
+      37
+    ],
+    "established": "Original passive operating cost is marginal price times stored losses+absolute redispatch+curtailment change+storage throughput; physical curtailment level separate.",
+    "qualification_limit": "A realised single delivered-action ledger is not an alternative-action/cancel-versus-continue long-horizon label."
+  }
+]

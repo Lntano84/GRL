@@ -1,0 +1,830 @@
+[
+  {
+    "id": "286_existing_contract",
+    "source": "outputs/grid286_cost_objective_contract/GRID286_report.md",
+    "snapshot": "source_documents/01_286_existing_contract.md",
+    "sha256": "1f836cdd4259e824b7a7ae5696ba1e5c0f99184f318b73180d52f00e6b756ce9",
+    "role": "Reuse existing queryNET cost-aware objective verdict, not a repeated qualification or fit.",
+    "line_count": 43,
+    "excerpts": [
+      {
+        "line": 9,
+        "text": "原schema.py以cost_per_query*len(next候选)/gain_scale生成known_query_cost；113prepare把next_queries定义为len(next_action)。原183运行时先取pending[:64]形成ids和公开context，再让模型作决定，决定后才逐个reveal。原208使用83维的第82列已知费用，决策为event_p*positive_mu>charge。"
+      },
+      {
+        "line": 17,
+        "text": "257构造NET=gain/scale-fee*queries/scale，y=1[NET>0]，每域风险权重为source_mass*abs(NET)，随后域内归一化、STOP/CONT各半。261沿用该y/weight，拟合加权NLL+全41参数单位L2，并以父b作偏置、原正例步长保护。因此原训练既包含是否回本，也包含错停高价值记录的损失幅度。"
+      },
+      {
+        "line": 23,
+        "text": "在不受限制、同一域和相同抽样权重的理想条件下，加权逻辑损失的最优分类方向对应正负NET加权差；不是只优化无代价的准确率。合成样本已验证上述代数恒等式。"
+      },
+      {
+        "line": 25,
+        "text": "但不能由此声称261已经最优：原两域单独归一化改变合并分布的效用权重；父偏置/线性表达/单位L2/经验保护和有限相关样本又约束了拟合。域风险分母的已发布数值保存在published_domain_risks.json。重做一个直接NET回归可能改变函数类和损失，但目前没有足够证据支持把它选为唯一更好方案，不以名称变化作为新增学习信息。"
+      },
+      {
+        "line": 31,
+        "text": "3. 下一步转向261冻结接入资格：固定原208+261全部12池含KEEP及原NN/头/scaler/alias/候选顺序，建立同一补查入口的纯函数接口，用已经发布并保存的输入、分数和决定做一次对齐。不新拟合、不重新产生完整策略回报、不动最终8。"
+      },
+      {
+        "line": 41,
+        "text": "旧开发16日期/相关前缀/种子复用、父own12/internalcal4祖先限制不变，经验保护非外层保证。仍保留261对GATE55/55及宏query省0.1401%的内部结果，不把它升级为独立验证、整周质量或真实提速。历史分支190拟合及6旧续训8285updates、NN604.703秒/用户678.156秒授权单列不变。"
+      }
+    ]
+  },
+  {
+    "id": "query_environment",
+    "source": "work/grid102_search_rl/environment.py",
+    "snapshot": "source_documents/02_query_environment.py",
+    "sha256": "cbf633974a17d318e6a8b99756629a19069bb2407c0703ece6c2929473733680",
+    "role": "Original query continuation reward/NET formula and horizon.",
+    "line_count": 38,
+    "excerpts": [
+      {
+        "line": 1,
+        "text": "\"\"\"Finite saved-feedback local search. Actions0=stop,1=purchase next64.\"\"\""
+      },
+      {
+        "line": 9,
+        "text": "    def __init__(self,cases,mean,scale,cost,gain_scale):"
+      },
+      {
+        "line": 10,
+        "text": "        super().__init__();self.cases=cases;self.mean=mean;self.scale=scale"
+      },
+      {
+        "line": 11,
+        "text": "        self.cost=cost;self.gain_scale=gain_scale"
+      },
+      {
+        "line": 19,
+        "text": "        return np.clip((self.case['states'][self.position]-self.mean)/self.scale,-20,20).astype(np.float32)"
+      },
+      {
+        "line": 34,
+        "text": "            value=(self.case['gains'][j]-self.cost*self.case['queries'][j])/self.gain_scale"
+      },
+      {
+        "line": 35,
+        "text": "            self.position+=1;self.done=self.position==len(self.case['queries'])"
+      },
+      {
+        "line": 36,
+        "text": "        info=dict(batches=self.position,paid_queries=int(self.case['queries'][:self.position].sum()),"
+      },
+      {
+        "line": 37,
+        "text": "                  observed_gain=float(self.case['gains'][:self.position].sum()))"
+      }
+    ]
+  },
+  {
+    "id": "teacher_case_schema",
+    "source": "work/grid102_search_rl/prepare.py",
+    "snapshot": "source_documents/03_teacher_case_schema.py",
+    "sha256": "cff45ce2bc9dfc2e3a6c44457a7d33d8f267e1d438cff72a5eb8c1cf2b2974c1",
+    "role": "Existing own-teacher case/feedback field construction, static schema only.",
+    "line_count": 114,
+    "excerpts": [
+      {
+        "line": 1,
+        "text": "\"\"\"Construct saved-search transitions, qualify then freeze before model fitting.\"\"\""
+      },
+      {
+        "line": 2,
+        "text": "import copy,collections,gzip,importlib.metadata,json,pickle,platform,shutil,sys"
+      },
+      {
+        "line": 4,
+        "text": "from common import ROOT,W,OUT,SOURCE,ARCHIVE,read,save,sha,test_sealed"
+      },
+      {
+        "line": 5,
+        "text": "from observations import NAMES,observe,best,reward"
+      },
+      {
+        "line": 13,
+        "text": "    source101=ROOT/'outputs/grid101_gain_learning'"
+      },
+      {
+        "line": 14,
+        "text": "    with np.load(source101/'data.npz') as z:previous=z['X']"
+      },
+      {
+        "line": 26,
+        "text": "        targets={int(rep) for original,rep in call['aliases'].items() if subs[int(original)]==station}"
+      },
+      {
+        "line": 27,
+        "text": "        pending=[j for j in order[n:] if j in targets];assert pending"
+      },
+      {
+        "line": 28,
+        "text": "        original_pending=pending.copy();initial=reward(inc);states=[];gains=[];queries=[];chosen=[inc['pool_id']]"
+      },
+      {
+        "line": 31,
+        "text": "            state=observe(visible,order,call['aliases'],subs,call['rho_limit'],targets,pending,len(original_pending),step)"
+      },
+      {
+        "line": 34,
+        "text": "            poisoned={j:dict(truth[j],reward=1e6,rho=-1.) for j in pending}"
+      },
+      {
+        "line": 36,
+        "text": "            assert np.array_equal(state,observe(copy.deepcopy(visible),order,call['aliases'],subs,call['rho_limit'],targets,pending,len(original_pending),step))"
+      },
+      {
+        "line": 37,
+        "text": "            states.append(state);before=reward(best(visible));visible.extend(dict(truth[j]) for j in chunk)"
+      },
+      {
+        "line": 38,
+        "text": "            current=best(visible);after=reward(current);assert after>=before"
+      },
+      {
+        "line": 39,
+        "text": "            gains.append(after-before);queries.append(len(chunk));chosen.append(current['pool_id']);pending=pending[len(chunk):]"
+      },
+      {
+        "line": 41,
+        "text": "        target_path=ROOT/m['dataset_path']/m['target_file'];target=read(target_path)"
+      },
+      {
+        "line": 42,
+        "text": "        assert sum(gains)==target['local_reward_gain'] and sum(queries)==target['known_completion_queries']"
+      },
+      {
+        "line": 43,
+        "text": "        assert chosen[-1]==target['after_id'] and len(set(order[:n]+original_pending))==n+sum(queries)"
+      },
+      {
+        "line": 44,
+        "text": "        hashes[target_path.relative_to(ROOT).as_posix()]=sha(target_path)"
+      },
+      {
+        "line": 46,
+        "text": "            physical_state_group=m['physical_state_group'],states=np.stack(states),gains=np.asarray(gains,dtype=np.float64),"
+      },
+      {
+        "line": 47,
+        "text": "            queries=np.asarray(queries,dtype=np.int64),chosen=chosen))"
+      },
+      {
+        "line": 51,
+        "text": "    # Cost scale uses only training dates; no performance-based calibration on validation."
+      },
+      {
+        "line": 52,
+        "text": "    date_gain=[np.mean([c['gains'].sum() for c in training if c['date']==d]) for d in sorted(train_dates)]"
+      },
+      {
+        "line": 53,
+        "text": "    date_queries=[np.mean([c['queries'].sum() for c in training if c['date']==d]) for d in sorted(train_dates)]"
+      },
+      {
+        "line": 54,
+        "text": "    cost=.5*np.mean(date_gain)/np.mean(date_queries)"
+      },
+      {
+        "line": 55,
+        "text": "    positive=[c['gains'].sum() for c in training if c['gains'].sum()>0];gain_scale=float(np.mean(positive))"
+      },
+      {
+        "line": 58,
+        "text": "        k=len(c['gains']);utilities=np.r_[0.,np.cumsum(c['gains']-cost*c['queries'])]"
+      },
+      {
+        "line": 63,
+        "text": "    scale=np.sqrt(np.average((X-mean)**2,axis=0,weights=w));scale[scale<1e-8]=1."
+      },
+      {
+        "line": 64,
+        "text": "    np.savez_compressed(OUT/'normalization.npz',mean=mean,scale=scale)"
+      },
+      {
+        "line": 65,
+        "text": "    with (OUT/'cases.pkl').open('xb') as f:pickle.dump(cases,f,protocol=5)"
+      },
+      {
+        "line": 66,
+        "text": "    np.savez_compressed(OUT/'supervised_train.npz',X=np.clip((X-mean)/scale,-20,20).astype(np.float32),y=np.asarray(labels),weight=w)"
+      },
+      {
+        "line": 67,
+        "text": "    design=dict(id='GRID102_SEARCH_RL',scope='Exploratory saved-feedback local-search decision learning; no physical grid rollout or final test.',"
+      },
+      {
+        "line": 72,
+        "text": "        reward='(increment in best-admissible float32 reward - cost_per_query*paid_queries)/gain_scale; gamma1 finite horizon.',"
+      },
+      {
+        "line": 73,
+        "text": "        cost_per_query=float(cost),gain_scale=gain_scale,cost_rule='0.5 * train-date macro full-completion mean gain / train-date macro full-completion mean queries; heuristic proxy price, not actual seconds or currency.',"
+      },
+      {
+        "line": 75,
+        "text": "        dqn=dict(learning_rate=.0003,buffer_size=20000,learning_starts=1000,batch_size=64,tau=1.,gamma=1.,train_freq=4,gradient_steps=1,"
+      },
+      {
+        "line": 76,
+        "text": "            target_update_interval=500,exploration_fraction=.3,exploration_initial_eps=1.,exploration_final_eps=.05,max_grad_norm=10.,policy_kwargs={'net_arch':[64,64]},device='cpu',verbose=0),"
+      },
+      {
+        "line": 78,
+        "text": "        logistic_teacher='Train-state hindsight label: does any later stopping point have strictly larger net utility than stopping now? Not validation labels; same observation/actions/cost as DQN.',"
+      },
+      {
+        "line": 79,
+        "text": "        baselines=['STOP','FULL_LOCAL','COST_LOGISTIC','ORACLE_hindsight_upper_bound'],"
+      },
+      {
+        "line": 80,
+        "text": "        fitting='One cost-logistic fit and three independent DQN fits, fixed final30000-step checkpoints. No validation-selected checkpoint, seed, cost or hyperparameter.',"
+      },
+      {
+        "line": 81,
+        "text": "        evaluation='Macro of four validation dates. Report reward gain, paid-query fraction, gain capture and net utility; all three seeds and per-date results.',"
+      },
+      {
+        "line": 82,
+        "text": "        caveats='Initial prefixes and local trajectories correlated within teacher states/date; FULL teacher state distribution. Saved-feedback environment training is not whole-week grid control, no latency claim. Final8 test scenarios remain ungenerated.')"
+      },
+      {
+        "line": 83,
+        "text": "    save(OUT/'design.json',design)"
+      },
+      {
+        "line": 84,
+        "text": "    save(OUT/'environment.json',dict(python=platform.python_version(),runtime=sys.executable,packages={n:importlib.metadata.version(n) for n in ['stable-baselines3','gymnasium','torch','numpy','scikit-learn']}))"
+      },
+      {
+        "line": 88,
+        "text": "    env=LocalSearchEnv(training,mean,scale,cost,gain_scale);check_env(env,skip_render_check=True)"
+      },
+      {
+        "line": 90,
+        "text": "        current=LocalSearchEnv([c],mean,scale,cost,gain_scale);obs,_=current.reset(seed=0,options={'index':0})"
+      },
+      {
+        "line": 91,
+        "text": "        obs0=obs.copy();_,r,done,_,info=current.step(0);assert r==0 and done and info['paid_queries']==0"
+      },
+      {
+        "line": 94,
+        "text": "        expected=(c['gains'].sum()-cost*c['queries'].sum())/gain_scale"
+      },
+      {
+        "line": 95,
+        "text": "        assert abs(total-expected)<1e-9 and info['paid_queries']==c['queries'].sum()"
+      },
+      {
+        "line": 97,
+        "text": "    save(OUT/'preflight.json',dict(passed=True,checks=dict(checks),train_states=len(X),train_continue_labels=int(np.sum(labels)),gym_env_check=True,"
+      },
+      {
+        "line": 99,
+        "text": "    for p in [SOURCE/'bulk_dataset_manifest.json',ROOT/'work/grid101_gain_learning/features.py',source101/'data.npz']:"
+      },
+      {
+        "line": 101,
+        "text": "    save(OUT/'data_freeze.json',hashes)"
+      },
+      {
+        "line": 107,
+        "text": "    save(OUT/'code_freeze.json',{p.relative_to(ROOT).as_posix():sha(p) for p in files})"
+      },
+      {
+        "line": 111,
+        "text": "    print(json.dumps(dict(passed=True,cases=len(cases),checks=dict(checks),cost_per_query=cost,gain_scale=gain_scale)),flush=True)"
+      }
+    ]
+  },
+  {
+    "id": "relational_training_schema",
+    "source": "work/grid113_relational_learning/prepare.py",
+    "snapshot": "source_documents/04_relational_training_schema.py",
+    "sha256": "a8e5f0622c73c36ba7bf65bfaab312ec978b62a0b99dcff57624509939730068",
+    "role": "Existing public and target dataset construction/roles; no pickle or NPZ load.",
+    "line_count": 101,
+    "excerpts": [
+      {
+        "line": 1,
+        "text": "\"\"\"Prepare isolated public inputs/targets, qualify engineering before six fits.\"\"\""
+      },
+      {
+        "line": 2,
+        "text": "import collections,datetime,gzip,inspect,pickle,copy,time"
+      },
+      {
+        "line": 14,
+        "text": "       'training':dict(updates=7250,batch=32,lr=.0003,betas=[.9,.999],eps=1e-8,weight_decay=0.,max_grad_norm=10.,"
+      },
+      {
+        "line": 18,
+        "text": "    save(O/'design.json',D)"
+      },
+      {
+        "line": 19,
+        "text": "    cases=pickle.loads((R/'outputs/grid102_search_rl/cases.pkl').read_bytes());norm=np.load(R/'outputs/grid102_search_rl/normalization.npz')"
+      },
+      {
+        "line": 21,
+        "text": "    with gzip.open(R/'outputs/grid111_action_feedback/public_inputs.jsonl.gz','rt',encoding='utf8') as f:"
+      },
+      {
+        "line": 25,
+        "text": "            g=np.clip((s-norm['mean'])/norm['scale'],-20,20).astype(np.float32)"
+      },
+      {
+        "line": 26,
+        "text": "            inp=pack(r['public_input'],g,D['target']['cost_per_query'],D['target']['gain_scale'])"
+      },
+      {
+        "line": 29,
+        "text": "            metadata[key]['next_queries']=len(inp['next_action'])"
+      },
+      {
+        "line": 34,
+        "text": "        with (O/f'{part}_public.pkl').open('wb') as f:pickle.dump([raw[k] for k in keys],f,protocol=4)"
+      },
+      {
+        "line": 35,
+        "text": "        save(O/f'{part}_metadata.json',[metadata[k] for k in keys])"
+      },
+      {
+        "line": 36,
+        "text": "    z=np.load(R/'outputs/grid107_direct_value/train.npz');target=z['target'];prob=z['sampling_probability']"
+      },
+      {
+        "line": 37,
+        "text": "    assert len(target)==3582"
+      },
+      {
+        "line": 40,
+        "text": "        assert np.float32((c['gains'][j]-D['target']['cost_per_query']*c['queries'][j])/D['target']['gain_scale'])==target[i]"
+      },
+      {
+        "line": 41,
+        "text": "    np.savez_compressed(O/'train_targets.npz',target=target,sampling_probability=prob)"
+      },
+      {
+        "line": 42,
+        "text": "    va=np.array([(states[k][0]['gains'][k[1]]-D['target']['cost_per_query']*states[k][0]['queries'][k[1]])/D['target']['gain_scale'] for k in vakeys],np.float32)"
+      },
+      {
+        "line": 43,
+        "text": "    np.savez_compressed(O/'validation_targets.npz',target=va)"
+      },
+      {
+        "line": 52,
+        "text": "        assert np.array_equal(counts,np.load(R/f'outputs/grid107_direct_value/training_exposure_seed{seed}.npz')['state_draws'])"
+      },
+      {
+        "line": 58,
+        "text": "        sample.append(dict(context_action=rng.normal(size=(n,68)).astype('f'),context_feedback=rng.normal(size=(n,8)).astype('f'),"
+      },
+      {
+        "line": 59,
+        "text": "            next_action=rng.normal(size=(m,68)).astype('f'),anchor_action=rng.normal(size=68).astype('f'),global41=rng.normal(size=41).astype('f'),known_query_cost=np.ones(1,'f')))"
+      },
+      {
+        "line": 62,
+        "text": "        torch.manual_seed(0);net=RelationalValue(arm);before=digest(net);q=net(**inp)"
+      },
+      {
+        "line": 64,
+        "text": "            delta=float((net(**x)-q).abs().max());checks[arm+'_'+name]=delta;assert delta<1e-6,(arm,name,delta)"
+      },
+      {
+        "line": 66,
+        "text": "        for k in ['context_action','context_feedback','context_mask']:x[k]=x[k][:,perm]"
+      },
+      {
+        "line": 72,
+        "text": "        for k,mask in [('context_action','context_mask'),('context_feedback','context_mask'),('next_action','next_mask')]:x[k][~x[mask]]=float('nan')"
+      },
+      {
+        "line": 74,
+        "text": "        x={k:v.clone() for k,v in inp.items()};x['context_feedback'][0,:7]=x['context_feedback'][0,perm]"
+      },
+      {
+        "line": 75,
+        "text": "        delta=float((net(**x)-q).abs().max());effects[arm]=delta"
+      },
+      {
+        "line": 79,
+        "text": "        assert all(p.grad is not None and torch.isfinite(p.grad).all() for p in net.parameters())"
+      },
+      {
+        "line": 81,
+        "text": "        assert before==digest(net);net.zero_grad(set_to_none=True)"
+      },
+      {
+        "line": 82,
+        "text": "    assert 'target' not in inspect.signature(RelationalValue.forward).parameters"
+      },
+      {
+        "line": 84,
+        "text": "    probe=next(iter(raw.values()));assert set(probe)=={'context_action','context_feedback','next_action','anchor_action','global41','known_query_cost'}"
+      },
+      {
+        "line": 86,
+        "text": "    save(O/'preflight.json',dict(passed=True,states=4438,train=3582,validation=856,actual_parameters=5938,initial_hashes=initial,"
+      },
+      {
+        "line": 93,
+        "text": "    save(O/'code_freeze.json',{p.relative_to(R).as_posix():sha(p) for p in source})"
+      },
+      {
+        "line": 94,
+        "text": "    data=[O/'design.json',O/'preflight.json']+list(O.glob('*_public.pkl'))+list(O.glob('*_targets.npz'))+list(O.glob('*_metadata.json'))"
+      },
+      {
+        "line": 96,
+        "text": "    data += [R/'outputs/grid107_direct_value/validation_trajectories.json',R/'outputs/grid107_direct_value/validation_results.json',R/'outputs/grid111_action_feedback/critical_details.json']"
+      },
+      {
+        "line": 97,
+        "text": "    data += [R/f'outputs/grid107_direct_value/training_exposure_seed{s}.npz' for s in [0,1,2]]"
+      },
+      {
+        "line": 98,
+        "text": "    save(O/'data_freeze.json',{p.relative_to(R).as_posix():sha(p) for p in data})"
+      },
+      {
+        "line": 99,
+        "text": "    save(O/'state.json',dict(stage='qualified_awaiting_frozen_push',fits=0,optimizer_steps=0))"
+      }
+    ]
+  },
+  {
+    "id": "native_reward",
+    "source": "work/grid02/ljn_nn/modules/rewards.py",
+    "snapshot": "source_documents/05_native_reward.py",
+    "sha256": "4394f0cc2b385e5aa0c1c0428a7dd048f6fecd74ba42226b89c18b2e3871ead0",
+    "role": "Actual reward definition used by common.make_env.",
+    "line_count": 54,
+    "excerpts": [
+      {
+        "line": 12,
+        "text": "from grid2op.Reward import BaseReward"
+      },
+      {
+        "line": 15,
+        "text": "class MaxRhoReward(BaseReward):"
+      },
+      {
+        "line": 17,
+        "text": "        BaseReward.__init__(self, logger=logger)"
+      },
+      {
+        "line": 18,
+        "text": "        self.reward_min = dt_float(-1.0)"
+      },
+      {
+        "line": 19,
+        "text": "        self.reward_max = dt_float(1.0)"
+      },
+      {
+        "line": 23,
+        "text": "            return self.reward_min"
+      },
+      {
+        "line": 29,
+        "text": "class PPO_Reward(BaseReward):"
+      },
+      {
+        "line": 32,
+        "text": "        PPO_Reward class, based on the BaseReward from Grid2Op"
+      },
+      {
+        "line": 34,
+        "text": "        BaseReward.__init__(self)"
+      },
+      {
+        "line": 35,
+        "text": "        self.reward_min = -10"
+      },
+      {
+        "line": 36,
+        "text": "        self.reward_std = 2"
+      },
+      {
+        "line": 48,
+        "text": "            return self.reward_min"
+      },
+      {
+        "line": 54,
+        "text": "        return self.reward_std - rho_max * (1 if rho_max < 0.95 else 2) + action_contrib"
+      }
+    ]
+  },
+  {
+    "id": "base_agent",
+    "source": "work/grid02/ljn_nn/LJNAgent.py",
+    "snapshot": "source_documents/06_base_agent.py",
+    "sha256": "a0cc82e281b477e13fa30e36dddfbd63ff9a7381f59c566b02829fbb222d168f",
+    "role": "Original base.act action assembly and continuous response.",
+    "line_count": 255,
+    "excerpts": [
+      {
+        "line": 21,
+        "text": "from .modules.topology_heuristic import (ChallengeTopoSearchModule,"
+      },
+      {
+        "line": 40,
+        "text": "        action_space_unsafe: str = os.path.join(ASSETS, \"action_12_unsafe.npz\"),"
+      },
+      {
+        "line": 41,
+        "text": "        action_space_n1_unsafe: str = os.path.join(ASSETS, \"action_N1_unsafe.npz\"),"
+      },
+      {
+        "line": 81,
+        "text": "    def act("
+      },
+      {
+        "line": 82,
+        "text": "        self, observation: BaseObservation, reward: float, done: bool = False"
+      },
+      {
+        "line": 90,
+        "text": "        reco_act = self.reconnect.get_act(observation, act, reward)"
+      },
+      {
+        "line": 92,
+        "text": "            _obs, _rew, _done, _info = observation.simulate(reco_act, time_step=1)"
+      },
+      {
+        "line": 105,
+        "text": "            # Try to perform a topology recovery at first (= reconnection to bus 1)"
+      },
+      {
+        "line": 107,
+        "text": "                observation, act, reward, rho_threshold=self.rho_danger"
+      },
+      {
+        "line": 116,
+        "text": "                    topo_act = self.topo_12_unsafe.get_act(observation, act, reward)"
+      },
+      {
+        "line": 120,
+        "text": "                    topo_act = self.topo_n1_unsafe.get_act(observation, act, reward)"
+      },
+      {
+        "line": 125,
+        "text": "            _obs, _rew, _done, _info = observation.simulate(act, time_step=1)"
+      },
+      {
+        "line": 127,
+        "text": "                # The problem has not been solved only by topology reconfiguration"
+      },
+      {
+        "line": 129,
+        "text": "                act = self.optim.get_act(observation, act, reward)"
+      },
+      {
+        "line": 134,
+        "text": "                observation, act, reward, rho_threshold=0.8"
+      },
+      {
+        "line": 139,
+        "text": "            # Update the observed storage power."
+      },
+      {
+        "line": 140,
+        "text": "            self.optim._update_storage_power_obs(observation)"
+      },
+      {
+        "line": 145,
+        "text": "from .modules.topology_nn_policy import TopoNNTopKModule"
+      },
+      {
+        "line": 147,
+        "text": "class LJNAgentTopoNN(BaseAgent):"
+      },
+      {
+        "line": 156,
+        "text": "        action_space_unsafe: str = os.path.join(ASSETS, \"action_12_unsafe.npz\"),"
+      },
+      {
+        "line": 157,
+        "text": "        action_space_n1_unsafe: str = os.path.join(ASSETS, \"action_N1_unsafe.npz\"),"
+      },
+      {
+        "line": 177,
+        "text": "        self.topo_12_unsafe = TopoNNTopKModule("
+      },
+      {
+        "line": 191,
+        "text": "    def act("
+      },
+      {
+        "line": 192,
+        "text": "        self, observation: BaseObservation, reward: float, done: bool = False"
+      },
+      {
+        "line": 200,
+        "text": "        reco_act = self.reconnect.get_act(observation, act, reward)"
+      },
+      {
+        "line": 201,
+        "text": "        _obs, _rew, _done, _info = observation.simulate(reco_act, time_step=1)"
+      },
+      {
+        "line": 214,
+        "text": "            # Try to perform a topology recovery at first (= reconnection to bus 1)"
+      },
+      {
+        "line": 216,
+        "text": "                observation, act, reward, rho_threshold=self.rho_danger"
+      },
+      {
+        "line": 226,
+        "text": "                    topo_act = self.topo_12_unsafe.get_act(observation, act, reward)"
+      },
+      {
+        "line": 228,
+        "text": "                        _obs, _, _, _ = observation.simulate(act + topo_act)"
+      },
+      {
+        "line": 232,
+        "text": "                    topo_act = self.topo_n1_unsafe.get_act(observation, act, reward)"
+      },
+      {
+        "line": 237,
+        "text": "            _obs, _rew, _done, _info = observation.simulate(act, time_step=1)"
+      },
+      {
+        "line": 239,
+        "text": "                # The problem has not been solved only by topology reconfiguration"
+      },
+      {
+        "line": 241,
+        "text": "                act = self.optim.get_act(observation, act, reward)"
+      },
+      {
+        "line": 246,
+        "text": "                observation, act, reward, rho_threshold=0.8"
+      },
+      {
+        "line": 251,
+        "text": "            # Update the observed storage power."
+      },
+      {
+        "line": 252,
+        "text": "            self.optim._update_storage_power_obs(observation)"
+      }
+    ]
+  },
+  {
+    "id": "base_factory",
+    "source": "work/grid02/ljn_nn/make_agent.py",
+    "snapshot": "source_documents/07_base_factory.py",
+    "sha256": "cc67066abaf630bb257946d1c1936be999e82f7fef8993127842ae41d47630b5",
+    "role": "Bind make_agent_topoNN to actual agent class statically.",
+    "line_count": 43,
+    "excerpts": [
+      {
+        "line": 15,
+        "text": "from .LJNAgent import LJNAgent, LJNAgentTopoNN"
+      },
+      {
+        "line": 24,
+        "text": "def make_agent_topoNN(env, this_directory_path):"
+      },
+      {
+        "line": 31,
+        "text": "        os.path.join(NN_ACT_SPACE_DIR, \"action_12_unsafe_nn.npz\"), allow_pickle=True"
+      },
+      {
+        "line": 35,
+        "text": "    agent = LJNAgentTopoNN("
+      }
+    ]
+  },
+  {
+    "id": "operating_cost_ledger",
+    "source": "work/grid03/score_adapter.py",
+    "snapshot": "source_documents/08_operating_cost_ledger.py",
+    "sha256": "77292ab049d2bc3966324001555265e139a1b33666f261f9ac4d1b896549c3bb",
+    "role": "Reuse original operating-cost fields and units; not redefining labels.",
+    "line_count": 47,
+    "excerpts": [
+      {
+        "line": 1,
+        "text": "\"\"\"Passive operational metrics; never feed these evaluation fields back into search.\"\"\""
+      },
+      {
+        "line": 3,
+        "text": "from grid2op.Reward import AlertReward, L2RPNSandBoxScore, _AlertTrustScore, _NewRenewableSourcesUsageScore"
+      },
+      {
+        "line": 9,
+        "text": "def operational_other_rewards():"
+      },
+      {
+        "line": 10,
+        "text": "    # Preserve the native alert auxiliary reward, add exactly the score-helper component names."
+      },
+      {
+        "line": 11,
+        "text": "    return {\"alert\":AlertReward,"
+      },
+      {
+        "line": 12,
+        "text": "            f\"{PREFIX}_grid_operational_cost\":L2RPNSandBoxScore,"
+      },
+      {
+        "line": 17,
+        "text": "def public_cost_ledger(obs,env,previous_curtailed_mw):"
+      },
+      {
+        "line": 18,
+        "text": "    \"\"\"Reconcile the installed reward using current/previous public observations."
+      },
+      {
+        "line": 20,
+        "text": "    Grid2Op 1.12.5 L2RPNSandBoxScore uses -env._sum_curtailment_mw,"
+      },
+      {
+        "line": 21,
+        "text": "    which baseEnv computes as the change in total curtailment, not its level."
+      },
+      {
+        "line": 22,
+        "text": "    Retain the physical curtailment level separately; do not confuse this reward"
+      },
+      {
+        "line": 23,
+        "text": "    convention with total curtailed energy or feed the ledger back into actions."
+      },
+      {
+        "line": 26,
+        "text": "    marginal=float(np.max(env.gen_cost_per_MW[np.asarray(obs.gen_p)>0]))"
+      },
+      {
+        "line": 28,
+        "text": "    redisp=float(np.abs(obs.actual_dispatch).sum(dtype=np.float64))*dt"
+      },
+      {
+        "line": 29,
+        "text": "    current_curtailed_mw=float(obs.curtailment_mw.sum(dtype=np.float64))"
+      },
+      {
+        "line": 30,
+        "text": "    curtailed=current_curtailed_mw*dt"
+      },
+      {
+        "line": 31,
+        "text": "    delta_curtailed=(current_curtailed_mw-float(previous_curtailed_mw))*dt"
+      },
+      {
+        "line": 32,
+        "text": "    storage=float(np.abs(obs.storage_power).sum(dtype=np.float64))*dt"
+      },
+      {
+        "line": 33,
+        "text": "    return {\"marginal_cost\":marginal,\"losses_mwh\":losses,\"redispatch_mwh\":redisp,"
+      },
+      {
+        "line": 34,
+        "text": "            \"curtailed_mwh\":curtailed,\"previous_curtailed_mw\":float(previous_curtailed_mw),"
+      },
+      {
+        "line": 35,
+        "text": "            \"current_curtailed_mw\":current_curtailed_mw,\"curtailment_delta_mwh\":delta_curtailed,"
+      },
+      {
+        "line": 36,
+        "text": "            \"storage_throughput_mwh\":storage,"
+      },
+      {
+        "line": 37,
+        "text": "            \"recomputed_raw_cost\":marginal*(losses+redisp+delta_curtailed+storage)}"
+      },
+      {
+        "line": 40,
+        "text": "def cost_rounding_tolerance(obs,env):"
+      },
+      {
+        "line": 41,
+        "text": "    # The official reward sums backend values in float32; the independent ledger uses"
+      },
+      {
+        "line": 43,
+        "text": "    # pairwise-summation scale before any formal smoke result is available."
+      },
+      {
+        "line": 45,
+        "text": "                  [\"gen_p\",\"load_p\",\"actual_dispatch\",\"curtailment_mw\",\"storage_power\"])"
+      },
+      {
+        "line": 46,
+        "text": "    price=float(np.max(env.gen_cost_per_MW[np.asarray(obs.gen_p)>0]))"
+      }
+    ]
+  }
+]

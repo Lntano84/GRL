@@ -1,3 +1,7 @@
+# 最新：用户批准192条/4小时真实控制，授权待发布后启动
+
+2026-11-01用户在明确192条/4小时范围问题后直接回复“批准”。授权已记录原指令/当前聊天消息引用并绑定design/source_freeze及资格SHA；范围原4validation100×12pool×2臂×2逆序=192，14400总/1200条、387264步/6000000forecast，0训练，超时保留部分并停止、不延窗重做完整项。先发布授权核具体Gitblob/远端，再首次唯一manager；此记录时尚未启动。
+
 # 最新：GRID291准备完成，等待物理范围确认
 
 [报告](protocols/GRID291_control_preparation/qualified/GRID291_report.md)。2026-11-01 GRID291真实控制准备完成，仅静态/12桩流程/3拒绝收据/worker+manager缺授权拒绝/12payload载入0前向通过。adapter/原pool模型绑定、192唯一两逆序清单、14400总/1200条/387264步/6000000forecast、单管理器去重截止/部分日志与具体Gitblob授权守卫均就绪待审；0真实预测物理训练。active源060dd26c source_recovery03，准备源路径/生成缩进/夹具分支/子stderr编码错误及原源全留档，未改变数值控制协议或重做真实实验。真实env smoke未做，旧时长外推余937秒不保证窗口完成。现在WAITING_USER_PHYSICAL_SCOPE，请用户决定是否按192条4小时启动，未答不执行/不改范围/不重复请求；最终8/新日期FRAME/旧190拟合6续训/祖先边界保持。

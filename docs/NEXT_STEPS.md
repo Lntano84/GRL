@@ -1,9 +1,9 @@
-# 当前等待 — 是否启动192条/4小时真实控制对照
+# 当前 — 授权先发布，首次启动唯一manager
 
-2026-11-01 GRID291真实控制准备完成，仅静态/12桩流程/3拒绝收据/worker+manager缺授权拒绝/12payload载入0前向通过。adapter/原pool模型绑定、192唯一两逆序清单、14400总/1200条/387264步/6000000forecast、单管理器去重截止/部分日志与具体Gitblob授权守卫均就绪待审；0真实预测物理训练。active源060dd26c source_recovery03，准备源路径/生成缩进/夹具分支/子stderr编码错误及原源全留档，未改变数值控制协议或重做真实实验。真实env smoke未做，旧时长外推余937秒不保证窗口完成。现在WAITING_USER_PHYSICAL_SCOPE，请用户决定是否按192条4小时启动，未答不执行/不改范围/不重复请求；最终8/新日期FRAME/旧190拟合6续训/祖先边界保持。
+2026-11-01用户在明确192条/4小时范围问题后直接回复“批准”。授权已记录原指令/当前聊天消息引用并绑定design/source_freeze及资格SHA；范围原4validation100×12pool×2臂×2逆序=192，14400总/1200条、387264步/6000000forecast，0训练，超时保留部分并停止、不延窗重做完整项。先发布授权核具体Gitblob/远端，再首次唯一manager；此记录时尚未启动。
 
-1. 审阅protocols/GRID291_control_preparation/qualified/GRID291_report.md、design.json、run_manifest.json、preparation_review.json；active source_recovery03，旧故障不当新故障。
-2. 等待用户对固定192条、14400总/1200单条的明确物理指令；未答不执行manager/worker，不重复准备或请求。
-3. 获准后记录真实用户原指令/消息引用，生成匹配design/source_freeze的physical_authorization.json，复制实际A/authorization并推送验证Gitblob/远端，再首次启动唯一manager。不得只写布尔approved或重用旧184授权。
-4. 若用户改预算/范围，先固定修订源码协议并发布，不静默延窗/减seed日期。超时保留全部partial，拒绝/喊停则暂停grl。最终8/新日期FRAME电网论文安装不动。
-5. 结束后仅保存结果核对/ledger/质量/相同时域时间/P95P99，无重训/预测/重求解；旧190拟合/6续训/祖先开发界限保持。
+1. 核对physical_authorization具体Gitblob/远端及guard/source_recovery03，冻结代码模型数据不变。
+2. 用隐藏后台唯一manager.py首次执行；禁止第二运行器/旧manager重启。确认父子PID、日志和真实进度后更新交接。
+3. 固定14400总/1200条，所有完整/部分保留；旧准备错误不当当前故障，当前停止先核错误/收据/冻结/剩余窗口，不自动重跑完整项或续窗。
+4. 全192完成且无worker后仅saved_review只读核对，再报告/归档/D协作/哈希/Git发布，不新增预测求解或训练。
+5. 原费用控制器排序锁站alias128/64停滞2/.9、全部poolseed/KEEP/反例、最终8/祖先/历史190拟合与旧续训边界保持。

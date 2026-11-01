@@ -1,9 +1,9 @@
-# 下一步 — GRID289合并208+261单状态资格
+# 下一步 — GRID290固定12公开上下文的原NN接入资格
 
-2026-11-01 GRID288原208父接口完成，源8404bb0f先发/60旧具体Gitblob核对；12池24批冻结event/amount头预测/4681行（9362头行），原owner-f83+raw41/scaler得到父b/CONT/ids/费用与242/249全精确一致，最大误差0，原权重不变。0拟合NNteacher物理回报，未重做287线性全批；公共父输出封存复用。下一唯一289组合封装、固定每池190第一行12单状态，新24单行头调用+12线性分开计数且先发源，精确对齐失败留证；不重复旧批量，合并后结束缓存对齐串再定真实验证范围。未证明实时整控提升，190旧拟合/6续训/祖先开发边界保持，grl ACTIVE。
+2026-11-01 GRID289合并Frozen208261接口完成，源557d889f及12固定首行/owner模型引用先发，24旧参考blob核对；12单状态/24单行头+12线性父p/mu/charge/b/entry与261logit/CONT均精确一致，1KEEP，0拟合NNteacher物理回报。非全链真实观测资格/提速结论，287—289缓存全批对齐不重做。下一唯一290同12公共上下文到原owner-fNN前向/hook83再合并接口，先schema版本norm/checkpoint资格发布，12NN+24头+12线性；继承190q3e-5容差、STOP/最终决定精确，不读target/cases，不改阈值救结果。随后关闭离线接入串，固定真实控制资源/范围，新增物理日期最终8不自动开；历史190拟合/6续训/祖先开发限制保持，grl ACTIVE。
 
-1. 阅读protocols/GRID288_parent208_interface/results/GRID288_report.md与NEXT_PROTOCOL_PLAN.json。288和287全批已完成不重做。
-2. 合并纯接口，按池/原owner-f/seed绑定原208scaler和24头、261theta/alpha/KEEP、inner8公共41scaler，冻结代码/模型引用先发布。
-3. 只用各池190原顺序第一行，共12，24单行头预测+12线性，与既存288父及261决定row0精确对齐；不得因STOP/KEEP换样本，不读标签/新物理NN。单批/单行差异保留不改精度/阈值救结果。
-4. 单次组件延迟观察不当稳定计时/P95或完整提速。合并资格后停止追加缓存对齐，固定有限真实观测到NN检查及开发验证范围；最终8/新增物理日期FRAME不自动扩。
-5. grl ACTIVE，全部日期seed反例/旧190拟合与6续训/祖先边界保留，不回森林或换名目标重训。
+1. 读protocols/GRID289_combined_single_state/results/GRID289_report.md/NEXT_PROTOCOL_PLAN.json，12固定selection已发布，不重做287—289旧全批。
+2. 只113公共六字段和metadata，按190源码sources()解析原owner-fcheckpoint/norm，schema/版本/哈希/索引先核对及源码输入发布。不得读targets/cases；原公共global41要替换为ownerfold已存normalized，非raw41。
+3. 同12固定记录每池1NN前向hook64+16+q+charge为83，再24单行头+12线性合并资格。原190q容差3e-5继承，原STOP和父/最终CONT精确，数值差异全留不改阈值/模型救结果；部分完成功能不自动重跑。
+4. 关闭离线工程串后，准备一份具体真实控制验证方案和旧时长资源资格，不再追加无新增机制的缓存对齐。新物理/日期/FRAME及最终8不自动开。
+5. grl ACTIVE；旧190拟合/6续训/祖先开发与实际时延界限保持，不回森林/重复目标训练。

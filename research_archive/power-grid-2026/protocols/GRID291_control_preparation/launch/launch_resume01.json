@@ -1,0 +1,9 @@
+{
+  "reason": "Firstworker common import repeated torch.set_num_interop_threads; before any model/env construction",
+  "zero_physical_and_no_complete_items": true,
+  "original_benchmark_started_sha": "0c8c83c20c73689b6d68f3c12c1f29827518790500f1cdce7d6cd14d5ecc0bf8",
+  "failed_import_log_sha": "a92d0f381e7421a021ccabeab373cb0ede15016671bb1a62147283a2538b1c0e",
+  "old_manager_pid": 18768,
+  "repair": "remove added thread initialization; original common.py unchanged sets threads. One narrow preimport resume, newclaim/log paths, original monotonic start and14400deadline reused; no model/control/seed/date changes",
+  "scope": "192/14400/1200 unchanged; no full item repeated; no extra physical smoke"
+}

@@ -1,0 +1,7 @@
+# GRID291真实回放运行中，原4小时窗口不重置
+
+2026-11-01用户直接批准192条/4小时物理回放；授权84fd1cfd先发布。启动前Windows虚拟环境redirector父PID不直连已凭实际证据修守卫并发布4c74cadf，范围/数值不变；首次manager18768的首worker在common导入前因新增线程重复设置退出，0模型/环境/物理，无完整项。保留全部源/claim/日志，去掉重复设置并发布57597ad8，只允许一次零物理恢复、沿用原monotonic_start与14400截止，未重置窗口/重做实验。当前唯一manager43096（venvlauncher42384）、首workerlauncher27336/实际43128正常推进，已有真实付费步骤，当前日志pipeline_resume01_stdout/stderr、resume01_worker_NNN.log。active源source_launch_recovery02。原192/1200条/387264步/6000000forecast/0训练保持，最终8/旧祖先与190拟合6续训边界不动。
+
+先读integration/docs/RESEARCH_STATE/NEXT、pipeline_state.json、active_worker.json、launch_verification.json、manifest.json和当前resume01日志；核对实际父子进程。有活跃manager跟进，不第二运行器。benchmark_started原PID18768是已退出首manager的原计时锚，不据此当当前故障；launch_resume01_started/当前state PID43096才是活动manager。原pipeline_error已移interrupted_attempts/worker_import_threads_05，旧准备错误不当当前错误。complete.json是准备完成，不是192条结束；只有finished.json runs192且无worker才进入saved_review.py，只读账本/P95P99/质量/配对，无新预测。
+
+若当前停止先看新pipeline_error/timeout、当前日志、完整summary/worker_result、partial和冻结哈希；原窗口remaining由原benchmark_started起算，不重置不延长，不重跑完整或部分物理项。保留全部失败；无法安全继续须报告工程阻碍不解释为方法失败。授权已获准，不重复请求。按固定192与全部poolseed/KEEP，原费用/控制器锁站排序alias128/64停滞2/.9及最终8边界保持。

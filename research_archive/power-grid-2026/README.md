@@ -1,3 +1,9 @@
+# 最新：GRID291获批真实回放运行中
+
+2026-11-01用户直接批准192条/4小时物理回放；授权84fd1cfd先发布。启动前Windows虚拟环境redirector父PID不直连已凭实际证据修守卫并发布4c74cadf，范围/数值不变；首次manager18768的首worker在common导入前因新增线程重复设置退出，0模型/环境/物理，无完整项。保留全部源/claim/日志，去掉重复设置并发布57597ad8，只允许一次零物理恢复、沿用原monotonic_start与14400截止，未重置窗口/重做实验。当前唯一manager43096（venvlauncher42384）、首workerlauncher27336/实际43128正常推进，已有真实付费步骤，当前日志pipeline_resume01_stdout/stderr、resume01_worker_NNN.log。active源source_launch_recovery02。原192/1200条/387264步/6000000forecast/0训练保持，最终8/旧祖先与190拟合6续训边界不动。
+
+以下保留历史状态，以本段及docs/NEXT_STEPS为准。
+
 # 最新：用户批准192条/4小时真实控制，授权待发布后启动
 
 2026-11-01用户在明确192条/4小时范围问题后直接回复“批准”。授权已记录原指令/当前聊天消息引用并绑定design/source_freeze及资格SHA；范围原4validation100×12pool×2臂×2逆序=192，14400总/1200条、387264步/6000000forecast，0训练，超时保留部分并停止、不延窗重做完整项。先发布授权核具体Gitblob/远端，再首次唯一manager；此记录时尚未启动。

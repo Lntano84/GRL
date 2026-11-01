@@ -1,0 +1,10 @@
+{
+  "reason": "Windows venv redirector is actual immediate parent; direct PID guard rejects legitimate worker",
+  "evidence": "launch_preflight parent25548 vs child_parent14896, no physics",
+  "repair": "same manager token/claim plus direct parent OR one python.exe/pythonw.exe redirector with exact manager grandparent via Toolhelp32; no arbitrary ancestor",
+  "source_numeric_control_changes": false,
+  "runs_started": 0,
+  "physics": 0,
+  "budget_window_started": false,
+  "scope_unchanged": true
+}

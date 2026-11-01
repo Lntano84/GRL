@@ -1,0 +1,148 @@
+[
+  {
+    "id": "291_quality",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID291_control_preparation/budget_limited_results/GRID291_report.md",
+    "sha256": "1f456dd7686be5c892270c9c0ab63b5ff358f448cbfcff8b81c4b58aee548462",
+    "line_refs": [
+      13,
+      17,
+      22,
+      39,
+      56
+    ],
+    "date_scope": "2037-03-02_100及其余3旧validation日期",
+    "model_scope": "全部12 owner-fold/seed的208/261，含KEEP；本轮42个March完整接受条，另部分单列",
+    "established": "March全FAIL_COST、两臂轨迹成本相同，不能归因于261新增取消；报告是结果而非当前相对FULL分项/分岔解释。",
+    "reusable_without_rerun": "可直接复用本轮质量/覆盖口径；不重复291审计。",
+    "missing_for_current_question": "缺当前42条相对FULL的已记录成本分项与共同前缀分岔。"
+  },
+  {
+    "id": "184_report",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID184_search_adapter/final_delivery/GRID184_report.md",
+    "sha256": "fbb4621ec247c717ac70fd83633a4efafcd3d04cefce97f50d23925eb6835d58",
+    "line_refs": [
+      9,
+      11,
+      29,
+      31,
+      35,
+      51
+    ],
+    "date_scope": "2037-03-02_100，同四validation日期",
+    "model_scope": "FRAME/BATCH1/FACTOR三seed/CONSENSUS三seed，非当前12个208/261 owner池对照",
+    "established": "同一个March在旧方法中共同超成本阈值；只能确认该现象先于本轮261。",
+    "reusable_without_rerun": "复用已有失败事实和局部效用不等整周质量的限制，旧数值不重算。",
+    "missing_for_current_question": "没有给出当前owner-f208/261相对FULL的账本分解；相同成本标量不是相同轨迹证明。"
+  },
+  {
+    "id": "184_divergences",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID184_search_adapter/final_delivery/first_divergences.json",
+    "sha256": "d739c406f2f531e67907c17a504700f3bbd2398bc8497099636fa5f7c8d08dd8",
+    "line_refs": [
+      1,
+      191
+    ],
+    "date_scope": "同2037四validation日期",
+    "model_scope": "CONSENSUS versus FACTOR，seed0/1/2，不是208/261 versus FULL",
+    "established": "12个日期seed条目，March旧seed0/1首次动作差异108/436；文件明确不构成整周成本完整因果解释。",
+    "reusable_without_rerun": "复用已做的旧臂分岔，禁止把108/436移植成新方法或FULL分岔。",
+    "missing_for_current_question": "比较对象不符，不能作为本轮质量失败定位结果。"
+  },
+  {
+    "id": "59_report",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID59_complete/outputs/grid59/GRID59_report.md",
+    "sha256": "3af7519ba4efd07a6a594283e6d8d9d0c02bb7515bb4f5d93ab55ad7be4b5303",
+    "line_refs": [
+      1,
+      3,
+      7,
+      8,
+      9,
+      11,
+      13
+    ],
+    "date_scope": "只称four olddevelopment dates；这份报告未列精确日期",
+    "model_scope": "STATIC_ID / FREQUENCY_GNN0/1，单次配对计时",
+    "established": "旧有限先验修订裁决，保留共同失败/早停口径。",
+    "reusable_without_rerun": "仅复用“不把早停当提速”等原则。交接中的旧2035背景不由此报告重新认证。",
+    "missing_for_current_question": "缺精确日期/场景/版本，无法资格为当前2037因果证据。"
+  },
+  {
+    "id": "61_report",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID61_complete/outputs/grid61/GRID61_report.md",
+    "sha256": "0290194eb27fb640aa17285fbb88a3d45bf0b70547dc7be0c4b503579bb1d1fa",
+    "line_refs": [
+      3,
+      5,
+      7,
+      9,
+      10,
+      11,
+      12,
+      14,
+      16,
+      18
+    ],
+    "date_scope": "只称four olddevelopment families；未列精确日期",
+    "model_scope": "FULL/FIRST_SAFE_BEST/NO_LOCAL/FRAME，统一频次序；无GNN排序输入",
+    "established": "既有机制矩阵支持该矩阵局部补全质量作用，非当前方法的新增结果。",
+    "reusable_without_rerun": "原矩阵结论直接复用，不重做仿真/63616步审计。",
+    "missing_for_current_question": "确切日期、原参数和模型入口不同或未在报告给出，不能把+4.81017%当本轮March损失。"
+  },
+  {
+    "id": "291_model_refs",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID291_control_preparation/source_launch_recovery02/model_references.json",
+    "sha256": "9efcb081c1ac76c9edd21836563d6b38acfb0c0e8f5d1804e21bfc847095e2c4",
+    "line_refs": [
+      1,
+      290
+    ],
+    "date_scope": "部署模型引用，不是新的日期评估",
+    "model_scope": "f0指grid168；f1/2/3指grid170各fold，配各池208两头/261残差",
+    "established": "明确当前12绑定；只读取路径/hash/owner_fold，未读权重数组。",
+    "reusable_without_rerun": "用于限定同版本证据的资格，不执行加载或接口重验。",
+    "missing_for_current_question": "引用本身没有相对FULL分项成本或首次物理分岔。"
+  },
+  {
+    "id": "184_model_source",
+    "source": "work/grid184_search_adapter/models.py",
+    "sha256": "31732ec2e617d8948c8e3e25f4ef8fb6e71e511478b86fb7124c055a36c0004c",
+    "line_refs": [
+      16,
+      17,
+      24,
+      25,
+      26,
+      31,
+      32,
+      34,
+      49,
+      54
+    ],
+    "date_scope": "旧部署定义，非新的场景结果",
+    "model_scope": "FrozenModels(seed)从grid182_deployment_bundle读STATE4/POWER8/FACTOR；mode为FACTOR/CONSENSUS",
+    "established": "共同Factor架构可识别，但旧类无当前owner-fold208/261组合入口。",
+    "reusable_without_rerun": "只复用静态来源与结构；不运行代码、warmup或读取checkpoint。",
+    "missing_for_current_question": "路径/模式差异不等于证明全部NN权重不同，亦不能证明任意两个运行等同。"
+  },
+  {
+    "id": "March_FULL_summary",
+    "source": "outputs/grid100_data_foundation/bulk_runtime/runs/r0__2037-03-02_100__FULL_TEACHER/summary.json",
+    "sha256": "7d3914861d55aa9e3ddab50a677c6d73ca75bcf6623ebde2ad244ac6b91cd5ca",
+    "line_refs": [
+      7,
+      11,
+      12,
+      15,
+      16,
+      17,
+      39,
+      40
+    ],
+    "date_scope": "2037-03-02_100 validation",
+    "model_scope": "FULL_TEACHER / STATIC_ID / budget128 / cache_DC+safe",
+    "established": "原参照2017步且complete，cost=2871494.742553711；first_full_divergence为空。",
+    "reusable_without_rerun": "保留为原质量成本参照，不拿其历史时延作当前加速基线。",
+    "missing_for_current_question": "summary没有逐项账本或当前owner池首分岔；需要另用已保存记录回答。"
+  }
+]

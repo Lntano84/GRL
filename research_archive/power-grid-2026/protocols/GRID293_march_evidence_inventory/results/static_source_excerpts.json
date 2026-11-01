@@ -1,0 +1,926 @@
+[
+  {
+    "id": "291_quality",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID291_control_preparation/budget_limited_results/GRID291_report.md",
+    "snapshot": "evidence_documents/01_291_quality.md",
+    "sha256": "1f456dd7686be5c892270c9c0ab63b5ff358f448cbfcff8b81c4b58aee548462",
+    "scope": "Current2037 owner-f208/261 quality and scope, saved published result only.",
+    "line_count": 68,
+    "excerpts": [
+      {
+        "line": 3,
+        "text": "结论：本轮保住了与208一致的实际动作轨迹和成本，但未建立261稳定的控制提速。原4小时上限严格停止，接受186/192条；另1条仅192步，最后5条未启动。不是192条完成，也不是方法失败。原准备报告另存，不覆盖历史科学记录。"
+      },
+      {
+        "line": 7,
+        "text": "固定4个原已暴露validation日期scenario100、环境seed0、4fold×3seed共12pool（含f0_s1 KEEP）、PARENT208/BOUNDED261、两次严格逆序计划192条。第1重复96条全部有收据；第2重复接受90条。186条组成93个完整的双臂配对（第1重复48对、第2重复45对），两臂各93条；并非根据结果删去条目。第二重复缺三组March配对：f0_s0/f0_s1/f0_s2。"
+      },
+      {
+        "line": 11,
+        "text": "## 完成、成本和质量"
+      },
+      {
+        "line": 13,
+        "text": "93对的观测、动作、逐步成本和结束位置签名逐项一致，完整周成本差为0；可用90个同臂跨重复核对的轨迹也全部一致。两臂各69条完成整周、24条May在1390步结束。质量按FULL完整且本方法完成并成本≤FULL的100.5%，未完FULL只标REFERENCE_LIMITED；没有混用旧FULL时延。"
+      },
+      {
+        "line": 15,
+        "text": "| 日期 | 接受条数（两臂） | 步数 | 质量 | 相对完整FULL成本范围 |"
+      },
+      {
+        "line": 17,
+        "text": "| 2037-03-02_100 | 42 | 2017 | FAIL_COST | +0.571224% 至 +2.966994% |"
+      },
+      {
+        "line": 18,
+        "text": "| 2037-05-04_100 | 48 | 1390 | REFERENCE_LIMITED | 参照未完，不判整周质量 |"
+      },
+      {
+        "line": 19,
+        "text": "| 2037-08-03_100 | 48 | 2017 | PASS_COMPLETE | -0.171289% 至 -0.141333% |"
+      },
+      {
+        "line": 20,
+        "text": "| 2037-10-19_100 | 48 | 2017 | PASS_COMPLETE | +0.000000% 至 +0.062182% |"
+      },
+      {
+        "line": 22,
+        "text": "March两臂所有接受配置均超过100.5%质量门限，不能把“与208成本一致”写成全部质量通过。August/October通过，May参照和两臂都未完周，不能把1390步当整周或提速证据。"
+      },
+      {
+        "line": 39,
+        "text": "两臂原始候选查询总差仅−2、总forecast差也−2：只在f2_s1的March同一状态，两次计时各取消1条最终候选，动作/后续轨迹不变。该配对控制反而分别增加0.186179%和1.825857%；不能将查询微省直接归因于实际提速，也不是跨seed重复。"
+      },
+      {
+        "line": 51,
+        "text": "核对690,132条动作/观测向量、467,876条已付费候选反馈、全部逐步成本账本、查询计数、候选别名和最佳已观察合法动作、实际模型公开输入/原nativeSTOP/父与261决定、可选一次补批及互斥计时。658次原NN STOP（两臂各329次）中，261额外取消仅2次；实际原NN决策1356次。无新增模型预测或独立AC重求解。工程输入回退0，非法/歧义步骤0；48个异常结束步骤对应May两臂原轨迹，不能隐去。"
+      },
+      {
+        "line": 52,
+        "text": "首轮只读核对错误：exceptions字段为列表和returned动作/含base动作哈希语义在执行前修正留源；实际第一次只读脚本因NPZ成员在逐步循环重复解压而在首条核对完成前停止。修复仅将每个NPZ成员读入一次，断言不变，后续首次完成186条保存核对。未重跑物理或完整审计；saved_review.py的192完成入口没有执行，saved_partial_review.json明确budget limited。"
+      },
+      {
+        "line": 56,
+        "text": "保留261作为本轮与208质量/轨迹一致的开发候选，以及唯一状态两次重复省1查询的小线索；本轮不支持稳定实际提速，亦未修复March质量失败。不把它升级为整周质量胜出或独立泛化。208/261继续冻结，不回开265—284森林逐项修补、不换名重训成本分类器、不为完成192而追加时间。"
+      },
+      {
+        "line": 64,
+        "text": "- 原186完整及1部分轨迹、调用原输入/反馈/向量/日志位于outputs/.../runs；D盘lossless内容寻址归档与raw_records_manifest.json保留全部路径和原字节hash。"
+      }
+    ]
+  },
+  {
+    "id": "184_report",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID184_search_adapter/final_delivery/GRID184_report.md",
+    "snapshot": "evidence_documents/02_184_report.md",
+    "sha256": "fbb4621ec247c717ac70fd83633a4efafcd3d04cefce97f50d23925eb6835d58",
+    "scope": "Prior2037 same validation dates, different models/arms; not automatically causal for current208/261.",
+    "line_count": 51,
+    "excerpts": [
+      {
+        "line": 9,
+        "text": "所有方法和种子均在3个日期完成整周，在2037-05-04都运行到1390步。该日期的FULL参照自身未完成，统一标为REFERENCE_LIMITED；不能按整周成本判质量，也不能把其提前终止算提速。三个可判整周质量的日期中，所有方法/种子都是2个通过、1个超成本阈值。因此“2/4”包括一个不可判日期，准确说法为可判日期2/3通过。"
+      },
+      {
+        "line": 11,
+        "text": "2037-03-02是共同的成本失败日期。相对FULL，FRAME成本增加1.0268%，固定一批增加0.5712%；FACTOR三种子分别增加2.1498%、1.0268%、0.5712%，共识分别增加2.8026%、1.1819%、0.5712%。不能把共识称为保持全部整周质量的计算优势。"
+      },
+      {
+        "line": 17,
+        "text": "相对原FRAME：相同已运行时域控制时间减少2.00%，候选查询减少7.64%，总查询减少4.10%；只看三个完整日期，控制时间减少2.96%，完整周成本平均变化0.17%。全步骤P95减少3.24%，搜索步骤P95减少0.96%。"
+      },
+      {
+        "line": 18,
+        "text": "相对固定一批：相同已运行时域控制时间减少0.13%，候选查询增加1.03%，总查询增加0.40%；只看三个完整日期，控制时间减少0.53%，完整周成本平均变化0.32%。全步骤P95减少0.53%，搜索步骤P95减少3.09%。"
+      },
+      {
+        "line": 19,
+        "text": "相对同种子原学习模型FACTOR：相同已运行时域控制时间增加1.62%，候选查询增加2.26%，总查询增加1.14%；只看三个完整日期，控制时间增加1.76%，完整周成本平均变化0.09%。全步骤P95增加0.52%，搜索步骤P95增加1.33%。"
+      },
+      {
+        "line": 24,
+        "text": "- FACTOR：控制62.221秒，候选2490.67次，总查询5942.25次；全步骤P95 33.840毫秒，搜索步骤P95 2178.277毫秒。学习家族再对三种子等权。"
+      },
+      {
+        "line": 25,
+        "text": "- CONSENSUS：控制63.295秒，候选2583.00次，总查询6039.00次；全步骤P95 33.793毫秒，搜索步骤P95 2215.811毫秒。学习家族再对三种子等权。"
+      },
+      {
+        "line": 29,
+        "text": "当前组合相对未学习FRAME存在计算节省，但与同种子FACTOR相比，新增便宜共识并未同时带来稳定的整周成本与计算改善。3月种子0/1的整周成本更高，种子2与对应FACTOR的全部四日期物理轨迹一致。离线局部NET改善不能直接当作整周运行成本改善。小的收益仍保留，不以全赢门槛否定；下一步应先解释已有有利/不利分歧，不立即扩大场景或继续拼门槛。"
+      },
+      {
+        "line": 31,
+        "text": "first_divergences.json只记录共同已观察物理前缀上的首次实际动作差异和当时已付费的模型反馈。不把第一次差异当成整周成本变化的完整因果解释；没有独立AC重求解。"
+      },
+      {
+        "line": 35,
+        "text": "本轮仅为同一公开电网原4已暴露开发日期的第一份已有场景，重复计时不是新场景，3个训练种子不是独立电网。FULL只用于质量/存活/时域参照，没有混用旧FULL时间。原始逐步成本、向量、预测反馈、模型决定与全部失败按原样保留；results_summary.json给出全部配对与宏平均口径，review.json与decision.json保持审计原件不改。"
+      },
+      {
+        "line": 40,
+        "text": "在第一次计时、全部三种子四日期中，仅配对真实观测和基础动作完全相同的搜索调用：有0个调用中共识查询更少且最终动作相同，也有3个调用查询更多但最终动作相同；3个调用选择不同。完整计数、查询增量和双方实际已查询动作的即时奖励差见aligned_call_tradeoffs.json。本轮相对FACTOR未找到同状态、同动作且省查询的共识调用，不能凭空声称该组合增加了省查询机制。"
+      },
+      {
+        "line": 44,
+        "text": "raw_records/records_manifest.json保留1842个原始文件路径和SHA256。相同字节仅按SHA256去重，10个较大唯一对象由Git LFS保存，其余内容位于small_files.zip；每个唯一对象已经读回验证。restore_records.py可在新建D盘目录完整恢复原路径，不覆盖现有数据。"
+      },
+      {
+        "line": 49,
+        "text": "进一步只用已有记录，将原FACTOR与未学习FRAME配对：相同真实观测和基础动作下有23个查询更少且最终动作相同的调用。FACTOR相对FRAME在同等已运行时域的控制时间宏平均减少3.55%，候选查询减少9.61%。共识对FRAME也有20个同动作省查询调用，但相对FACTOR没有新增此类调用。上述调用按全部三种子计数，可能共享日期和物理状态，不当独立样本。"
+      },
+      {
+        "line": 51,
+        "text": "因此应保留原学习模块的有效省查询点，重点检查便宜共识为什么覆盖了原FACTOR的一些停止决定；当前证据不支持把组合直接替代FACTOR，也不需要立即否定学习路线或追加新实验。基准对照上的整周成本失败仍须分开解释。"
+      }
+    ]
+  },
+  {
+    "id": "184_divergences",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID184_search_adapter/final_delivery/first_divergences.json",
+    "snapshot": "evidence_documents/03_184_divergences.json",
+    "sha256": "d739c406f2f531e67907c17a504700f3bbd2398bc8497099636fa5f7c8d08dd8",
+    "scope": "Original first physical differences for CONSENSUS versus FACTOR, scope explicitly limited.",
+    "line_count": 191,
+    "excerpts": [
+      {
+        "line": 5,
+        "text": "      \"week\": \"2037-03-02_100\","
+      },
+      {
+        "line": 13,
+        "text": "          \"consensus_selected\": 538,"
+      },
+      {
+        "line": 14,
+        "text": "          \"factor_selected\": 62,"
+      },
+      {
+        "line": 20,
+        "text": "              \"consensus_action\": 1,"
+      },
+      {
+        "line": 21,
+        "text": "              \"factor_action\": 0,"
+      },
+      {
+        "line": 22,
+        "text": "              \"consensus_scores\": {"
+      },
+      {
+        "line": 32,
+        "text": "              \"factor_scores\": {"
+      },
+      {
+        "line": 33,
+        "text": "                \"FACTOR\": ["
+      },
+      {
+        "line": 38,
+        "text": "              \"consensus_delegated\": false"
+      },
+      {
+        "line": 46,
+        "text": "      \"week\": \"2037-05-04_100\","
+      },
+      {
+        "line": 53,
+        "text": "      \"week\": \"2037-08-03_100\","
+      },
+      {
+        "line": 60,
+        "text": "      \"week\": \"2037-10-19_100\","
+      },
+      {
+        "line": 68,
+        "text": "          \"consensus_selected\": 195,"
+      },
+      {
+        "line": 69,
+        "text": "          \"factor_selected\": 444,"
+      },
+      {
+        "line": 75,
+        "text": "              \"consensus_action\": 0,"
+      },
+      {
+        "line": 76,
+        "text": "              \"factor_action\": 1,"
+      },
+      {
+        "line": 77,
+        "text": "              \"consensus_scores\": {"
+      },
+      {
+        "line": 87,
+        "text": "              \"factor_scores\": {"
+      },
+      {
+        "line": 88,
+        "text": "                \"FACTOR\": ["
+      },
+      {
+        "line": 93,
+        "text": "              \"consensus_delegated\": false"
+      },
+      {
+        "line": 101,
+        "text": "      \"week\": \"2037-03-02_100\","
+      },
+      {
+        "line": 109,
+        "text": "          \"consensus_selected\": 62,"
+      },
+      {
+        "line": 110,
+        "text": "          \"factor_selected\": 845,"
+      },
+      {
+        "line": 116,
+        "text": "              \"consensus_action\": 0,"
+      },
+      {
+        "line": 117,
+        "text": "              \"factor_action\": 1,"
+      },
+      {
+        "line": 118,
+        "text": "              \"consensus_scores\": {"
+      },
+      {
+        "line": 128,
+        "text": "              \"factor_scores\": {"
+      },
+      {
+        "line": 129,
+        "text": "                \"FACTOR\": ["
+      },
+      {
+        "line": 134,
+        "text": "              \"consensus_delegated\": false"
+      },
+      {
+        "line": 142,
+        "text": "      \"week\": \"2037-05-04_100\","
+      },
+      {
+        "line": 149,
+        "text": "      \"week\": \"2037-08-03_100\","
+      },
+      {
+        "line": 156,
+        "text": "      \"week\": \"2037-10-19_100\","
+      },
+      {
+        "line": 163,
+        "text": "      \"week\": \"2037-03-02_100\","
+      },
+      {
+        "line": 170,
+        "text": "      \"week\": \"2037-05-04_100\","
+      },
+      {
+        "line": 177,
+        "text": "      \"week\": \"2037-08-03_100\","
+      },
+      {
+        "line": 184,
+        "text": "      \"week\": \"2037-10-19_100\","
+      }
+    ]
+  },
+  {
+    "id": "59_report",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID59_complete/outputs/grid59/GRID59_report.md",
+    "snapshot": "evidence_documents/04_59_report.md",
+    "sha256": "3af7519ba4efd07a6a594283e6d8d9d0c02bb7515bb4f5d93ab55ad7be4b5303",
+    "scope": "Historical2035 quality/compute evidence; qualify dates/controller before reuse.",
+    "line_count": 13,
+    "excerpts": [
+      {
+        "line": 5,
+        "text": "|方法|完成|质量通过|对FULL控制减少|对STATIC控制减少|对STATIC查询减少|查询正向日期|最大完整周成本变化/FULL|"
+      },
+      {
+        "line": 13,
+        "text": "早失败不作低成本成功；不同存活长度不算提速。实际控制时间包括图构造/先验/前向/仿真/连续优化，不用局部组件替代。频次先验是现成公开作者信息，原PPO先验版与所有失败均保留。"
+      }
+    ]
+  },
+  {
+    "id": "61_report",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID61_complete/outputs/grid61/GRID61_report.md",
+    "snapshot": "evidence_documents/05_61_report.md",
+    "sha256": "0290194eb27fb640aa17285fbb88a3d45bf0b70547dc7be0c4b503579bb1d1fa",
+    "scope": "Historical matched completion mechanism evidence, not current owner-f causal diagnosis.",
+    "line_count": 18,
+    "excerpts": [
+      {
+        "line": 5,
+        "text": "Four olddevelopment families,two timing repeats;same frequency order/sharedcache/basecontrol. Mechanism ablation,not new independent generalization or global optimality. First-safe reference has stronger best-admissible exhausted fallback;not full SoftGNN reproduction."
+      },
+      {
+        "line": 7,
+        "text": "|策略|完成|质量通过|控制减少/FULL|查询减少/FULL|最坏完整周成本变化/FULL|"
+      },
+      {
+        "line": 9,
+        "text": "|FULL|6/8|8/8|0.000%|0.000%|+0.00000%|"
+      },
+      {
+        "line": 16,
+        "text": "局部补全在本矩阵有质量帮助：True；普通首个安全候选强参照具有竞争力：False。完整逐次成本、存活和查询见per_run.csv，不省略不利日期。"
+      }
+    ]
+  },
+  {
+    "id": "291_model_refs",
+    "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID291_control_preparation/source_launch_recovery02/model_references.json",
+    "snapshot": "evidence_documents/06_291_model_refs.json",
+    "sha256": "9efcb081c1ac76c9edd21836563d6b38acfb0c0e8f5d1804e21bfc847095e2c4",
+    "scope": "Exact current owner-f checkpoint/parent/residual bindings; paths/hashes only.",
+    "line_count": 290,
+    "excerpts": [
+      {
+        "line": 5,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s0_event.pkl\","
+      },
+      {
+        "line": 6,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s0_amount.pkl\""
+      },
+      {
+        "line": 8,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f0_s0.npz\","
+      },
+      {
+        "line": 10,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f0_s0.npz\","
+      },
+      {
+        "line": 14,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s0_event.pkl\": \"9954e2398b4510744eaa9aee3fd15a7c677545d174652f16fea7aba92f4f4d9e\","
+      },
+      {
+        "line": 15,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s0_amount.pkl\": \"c0f07cbc7c2a9bfab74ea636b5e9e505c4ba28d773392b75458e6f8aea5f3d90\","
+      },
+      {
+        "line": 16,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s0.npz\": \"84408e60633a49a9f202844a6e1e04e0e407f9a83467834e1069e81963aee812\","
+      },
+      {
+        "line": 18,
+        "text": "      \"outputs/grid261_bounded_basis/models/f0_s0.npz\": \"2e4221e86e39d95ab02746600c9337984d847ac0710364c61292604242fd05bd\","
+      },
+      {
+        "line": 19,
+        "text": "      \"outputs/grid168_one_sided_transfer/models/FACTOR_seed0.pt\": \"aebbd2df0d5f9421295c903be072fe6736e7db3fede759a89096372e1376b81e\","
+      },
+      {
+        "line": 22,
+        "text": "    \"checkpoint\": \"outputs/grid168_one_sided_transfer/models/FACTOR_seed0.pt\","
+      },
+      {
+        "line": 29,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s1_event.pkl\","
+      },
+      {
+        "line": 30,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s1_amount.pkl\""
+      },
+      {
+        "line": 32,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f0_s1.npz\","
+      },
+      {
+        "line": 34,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f0_s1.npz\","
+      },
+      {
+        "line": 38,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s1_event.pkl\": \"9db0a18f90ebc6a5da6684f6499d64b8bb7dbc8a054bd976f44f3c2757704f50\","
+      },
+      {
+        "line": 39,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s1_amount.pkl\": \"4171ef2b061bfee8acc810fc86f3c1bd90448cc6a8b17e2b668638cdb73683be\","
+      },
+      {
+        "line": 40,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s1.npz\": \"bd64ec410eba15da023813deadf9e0c5e661dcf24275ce24f149c5ed40d70605\","
+      },
+      {
+        "line": 42,
+        "text": "      \"outputs/grid261_bounded_basis/models/f0_s1.npz\": \"694df131765406a9ae745e14212c14931d8bb764d86ce4a27bb38e9f197a8068\","
+      },
+      {
+        "line": 43,
+        "text": "      \"outputs/grid168_one_sided_transfer/models/FACTOR_seed1.pt\": \"667bdae667e4ed5a631f2379b3d9bc28a088a46629a72006147d88deab807fbf\","
+      },
+      {
+        "line": 46,
+        "text": "    \"checkpoint\": \"outputs/grid168_one_sided_transfer/models/FACTOR_seed1.pt\","
+      },
+      {
+        "line": 53,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s2_event.pkl\","
+      },
+      {
+        "line": 54,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s2_amount.pkl\""
+      },
+      {
+        "line": 56,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f0_s2.npz\","
+      },
+      {
+        "line": 58,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f0_s2.npz\","
+      },
+      {
+        "line": 62,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s2_event.pkl\": \"1e8f4a5bd66b8adb7127bc5bf7d0775426c0fc34bf149e0344b8e21ee8469aef\","
+      },
+      {
+        "line": 63,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s2_amount.pkl\": \"be1faea9199a31bbe519b4077ec7fba93b16fdcaf88cde5e714397836f4118be\","
+      },
+      {
+        "line": 64,
+        "text": "      \"outputs/grid208_public_amount/models/f0_s2.npz\": \"5ff4406d548432114f094532cdc788d6f89bfd09d2caf655947aa53cbd9ae766\","
+      },
+      {
+        "line": 66,
+        "text": "      \"outputs/grid261_bounded_basis/models/f0_s2.npz\": \"59d9e73e34750adff5374264a50fac41b6fdbae31d3dd0fcdcea7876903faf0c\","
+      },
+      {
+        "line": 67,
+        "text": "      \"outputs/grid168_one_sided_transfer/models/FACTOR_seed2.pt\": \"be288faea20d14773b722194131ca335e6c882ac2ebf500b11089ae1b83aa9e7\","
+      },
+      {
+        "line": 70,
+        "text": "    \"checkpoint\": \"outputs/grid168_one_sided_transfer/models/FACTOR_seed2.pt\","
+      },
+      {
+        "line": 77,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s0_event.pkl\","
+      },
+      {
+        "line": 78,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s0_amount.pkl\""
+      },
+      {
+        "line": 80,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f1_s0.npz\","
+      },
+      {
+        "line": 82,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f1_s0.npz\","
+      },
+      {
+        "line": 86,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s0_event.pkl\": \"762d7bbe5de626a162e3b43cbee51990db81bd4479f80408268e5c1e9d72ffab\","
+      },
+      {
+        "line": 87,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s0_amount.pkl\": \"942d144fbc705a6e428c1cf79a1ab3ae870ac60ad58608118db3ba279ce34a07\","
+      },
+      {
+        "line": 88,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s0.npz\": \"60630748e91fd93a1410fd5311dc042121c05232c14a183688ca470265e710ea\","
+      },
+      {
+        "line": 90,
+        "text": "      \"outputs/grid261_bounded_basis/models/f1_s0.npz\": \"b4a7032bb65351083cc66ef15228f85f22ccdd1b16bd8311376ce3bd03b6a563\","
+      },
+      {
+        "line": 91,
+        "text": "      \"outputs/grid170_remaining_date_folds/fold1/models/FACTOR_seed0.pt\": \"bc075055d518fe6480dd0363330a8dedc10b69f26516dcf20dc72c68bbd97309\","
+      },
+      {
+        "line": 94,
+        "text": "    \"checkpoint\": \"outputs/grid170_remaining_date_folds/fold1/models/FACTOR_seed0.pt\","
+      },
+      {
+        "line": 101,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s1_event.pkl\","
+      },
+      {
+        "line": 102,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s1_amount.pkl\""
+      },
+      {
+        "line": 104,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f1_s1.npz\","
+      },
+      {
+        "line": 106,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f1_s1.npz\","
+      },
+      {
+        "line": 110,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s1_event.pkl\": \"2b0be311f1942a9fa8522e7ee8452b41a929ab4891752fb0b23590a47ef8dddb\","
+      },
+      {
+        "line": 111,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s1_amount.pkl\": \"34a76c6db91585fbbdd4328e4a5527e7920d237c77b5cb61d29685f14c6fe8da\","
+      },
+      {
+        "line": 112,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s1.npz\": \"2a77d69391bd6502a621e02c2d70a90f66e4852a8a0202497093898fa31614da\","
+      },
+      {
+        "line": 114,
+        "text": "      \"outputs/grid261_bounded_basis/models/f1_s1.npz\": \"4f090848d5cc9a0d5c6379b52a1ddc3b260f7269d18a29c1798d81bee43724be\","
+      },
+      {
+        "line": 115,
+        "text": "      \"outputs/grid170_remaining_date_folds/fold1/models/FACTOR_seed1.pt\": \"a389adda6b839b926c2675bab650155a267c42e3a6ee3f2fc3f1ab859ec2371c\","
+      },
+      {
+        "line": 118,
+        "text": "    \"checkpoint\": \"outputs/grid170_remaining_date_folds/fold1/models/FACTOR_seed1.pt\","
+      },
+      {
+        "line": 125,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s2_event.pkl\","
+      },
+      {
+        "line": 126,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s2_amount.pkl\""
+      },
+      {
+        "line": 128,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f1_s2.npz\","
+      },
+      {
+        "line": 130,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f1_s2.npz\","
+      },
+      {
+        "line": 134,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s2_event.pkl\": \"570dba6b4f179823dbd873b9326904405026b7acfa962e2b2393a82b02cf2609\","
+      },
+      {
+        "line": 135,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s2_amount.pkl\": \"58334d01f7b454937368daa43819be63523b3e2112347e6403f994108c5aa6ba\","
+      },
+      {
+        "line": 136,
+        "text": "      \"outputs/grid208_public_amount/models/f1_s2.npz\": \"90f279dd61ef6dca703414fec2b80da5c6fb2853a06a8578e2f5d9e895cd5a65\","
+      },
+      {
+        "line": 138,
+        "text": "      \"outputs/grid261_bounded_basis/models/f1_s2.npz\": \"d23448e52b55aa41bbfc17a7f4a173bb7367f1cc819dbf29f3dac8246cbfca68\","
+      },
+      {
+        "line": 139,
+        "text": "      \"outputs/grid170_remaining_date_folds/fold1/models/FACTOR_seed2.pt\": \"159bf32fc1b4eac728ea63e171e91aaae1656ce6f068b8e7351639d194588ff7\","
+      },
+      {
+        "line": 142,
+        "text": "    \"checkpoint\": \"outputs/grid170_remaining_date_folds/fold1/models/FACTOR_seed2.pt\","
+      },
+      {
+        "line": 149,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s0_event.pkl\","
+      },
+      {
+        "line": 150,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s0_amount.pkl\""
+      },
+      {
+        "line": 152,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f2_s0.npz\","
+      },
+      {
+        "line": 154,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f2_s0.npz\","
+      },
+      {
+        "line": 158,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s0_event.pkl\": \"75d6ac7de8e7c84f86fe435df743d6e8b7138d2595fb399a2d19eac97f5239bb\","
+      },
+      {
+        "line": 159,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s0_amount.pkl\": \"db6b9d9a37d54cb34d57413887a77b13338899b240318213ba69bfe9b0e35ee2\","
+      },
+      {
+        "line": 160,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s0.npz\": \"acb0aacb25b4577e12d03dde7aa1e2741c50cd35bff8e65bddb5ceca956f78ad\","
+      },
+      {
+        "line": 162,
+        "text": "      \"outputs/grid261_bounded_basis/models/f2_s0.npz\": \"b561e8496f229052f8da8aaee55ac096830787ea7a063b8dda74cf2a89b0ba7b\","
+      },
+      {
+        "line": 163,
+        "text": "      \"outputs/grid170_remaining_date_folds/fold2/models/FACTOR_seed0.pt\": \"144e1656a0b707ad8d0c855c3369a217d65d12f08562336147b8233c236f1c23\","
+      },
+      {
+        "line": 166,
+        "text": "    \"checkpoint\": \"outputs/grid170_remaining_date_folds/fold2/models/FACTOR_seed0.pt\","
+      },
+      {
+        "line": 173,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s1_event.pkl\","
+      },
+      {
+        "line": 174,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s1_amount.pkl\""
+      },
+      {
+        "line": 176,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f2_s1.npz\","
+      },
+      {
+        "line": 178,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f2_s1.npz\","
+      },
+      {
+        "line": 182,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s1_event.pkl\": \"48550744af711887b767a1feff8d061936e85c1712e518d5c409818b1477973c\","
+      },
+      {
+        "line": 183,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s1_amount.pkl\": \"346a5bd698ba18f05aefd31f9a518cc42ef232a26f5ae6fd215f15f23dae23c9\","
+      },
+      {
+        "line": 184,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s1.npz\": \"3ece95f678f173e8ccd741dd12a752c82a8f0a8d2f617d185e73e6315daa8c62\","
+      },
+      {
+        "line": 186,
+        "text": "      \"outputs/grid261_bounded_basis/models/f2_s1.npz\": \"0c0b5e53ae776b1df5d74beaeb2cd10eeab384bb0a9fb62a5aef809703917aec\","
+      },
+      {
+        "line": 187,
+        "text": "      \"outputs/grid170_remaining_date_folds/fold2/models/FACTOR_seed1.pt\": \"732d37b76f45f7caf86b3fb1950347c3a0c6ce25e408e382f8c756cb26acdd9c\","
+      },
+      {
+        "line": 190,
+        "text": "    \"checkpoint\": \"outputs/grid170_remaining_date_folds/fold2/models/FACTOR_seed1.pt\","
+      },
+      {
+        "line": 197,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s2_event.pkl\","
+      },
+      {
+        "line": 198,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s2_amount.pkl\""
+      },
+      {
+        "line": 200,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f2_s2.npz\","
+      },
+      {
+        "line": 202,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f2_s2.npz\","
+      },
+      {
+        "line": 206,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s2_event.pkl\": \"00c216e9448aa2aa314fb4b1f00e94e8bd08680c7874e10acb74b537900954c0\","
+      },
+      {
+        "line": 207,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s2_amount.pkl\": \"4c161521f7fd917740c643cc711559d93593aff4389ce0084fefbc4759bc6225\","
+      },
+      {
+        "line": 208,
+        "text": "      \"outputs/grid208_public_amount/models/f2_s2.npz\": \"9052141bfbf5d23fcb15ed75bfef1e176988aa1653d9ff8bb49c7da823d5a392\","
+      },
+      {
+        "line": 210,
+        "text": "      \"outputs/grid261_bounded_basis/models/f2_s2.npz\": \"1f3319af260bdd3035b0c4cf7be8f6b10ebeb7889fdaaca24a028e1c03fac24e\","
+      },
+      {
+        "line": 211,
+        "text": "      \"outputs/grid170_remaining_date_folds/fold2/models/FACTOR_seed2.pt\": \"0492ec8db2e8709379dc72fb5f92da86b16c206028c25e016e925690dacbaf20\","
+      },
+      {
+        "line": 214,
+        "text": "    \"checkpoint\": \"outputs/grid170_remaining_date_folds/fold2/models/FACTOR_seed2.pt\","
+      },
+      {
+        "line": 221,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s0_event.pkl\","
+      },
+      {
+        "line": 222,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s0_amount.pkl\""
+      },
+      {
+        "line": 224,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f3_s0.npz\","
+      },
+      {
+        "line": 226,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f3_s0.npz\","
+      },
+      {
+        "line": 230,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s0_event.pkl\": \"cd34f29e05e24113f72aa7cb18129d2e0a5e83b9c94e808ec21c0085cad31a2e\","
+      },
+      {
+        "line": 231,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s0_amount.pkl\": \"778c59f3eb69e8fa04d6603f160cc8beb846086fc3fd381c8d7c501f7b38937a\","
+      },
+      {
+        "line": 232,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s0.npz\": \"13741abac7363f028a40e895b509d682ba925957972c37f4f285dda43abd13fa\","
+      },
+      {
+        "line": 234,
+        "text": "      \"outputs/grid261_bounded_basis/models/f3_s0.npz\": \"4edcf1ea3bef667d72642cf0f35e369d877308b14a0512accb777781f3418434\","
+      },
+      {
+        "line": 235,
+        "text": "      \"outputs/grid170_remaining_date_folds/fold3/models/FACTOR_seed0.pt\": \"7afe848812fc8f2a8d7a6f2c338bb64b9a6f8c42915528bdf02c7e91e7ac89ec\","
+      },
+      {
+        "line": 238,
+        "text": "    \"checkpoint\": \"outputs/grid170_remaining_date_folds/fold3/models/FACTOR_seed0.pt\","
+      },
+      {
+        "line": 245,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s1_event.pkl\","
+      },
+      {
+        "line": 246,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s1_amount.pkl\""
+      },
+      {
+        "line": 248,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f3_s1.npz\","
+      },
+      {
+        "line": 250,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f3_s1.npz\","
+      },
+      {
+        "line": 254,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s1_event.pkl\": \"7efe75814ff47926e904665981464cd0f87738fbc86fed7e7cf8a4654831d451\","
+      },
+      {
+        "line": 255,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s1_amount.pkl\": \"f125f3936081be388d0fb3b7bea47c73f3d5596973d627ce4378969072d809e1\","
+      },
+      {
+        "line": 256,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s1.npz\": \"88fecea744c802722443f6b2670fa7e65ff3883c40ee6ff7b172219737572910\","
+      },
+      {
+        "line": 258,
+        "text": "      \"outputs/grid261_bounded_basis/models/f3_s1.npz\": \"6e8898eef0c9ddb2e5c3edfea0c903da359f061452133cc4478bbd15dacbfee2\","
+      },
+      {
+        "line": 259,
+        "text": "      \"outputs/grid170_remaining_date_folds/fold3/models/FACTOR_seed1.pt\": \"ec5536ef5b02b2e360346047d77f8522eaed746ac1ed3aa1c9081a927325b568\","
+      },
+      {
+        "line": 262,
+        "text": "    \"checkpoint\": \"outputs/grid170_remaining_date_folds/fold3/models/FACTOR_seed1.pt\","
+      },
+      {
+        "line": 269,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s2_event.pkl\","
+      },
+      {
+        "line": 270,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s2_amount.pkl\""
+      },
+      {
+        "line": 272,
+        "text": "    \"parent_scaler\": \"outputs/grid208_public_amount/models/f3_s2.npz\","
+      },
+      {
+        "line": 274,
+        "text": "    \"residual_model\": \"outputs/grid261_bounded_basis/models/f3_s2.npz\","
+      },
+      {
+        "line": 278,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s2_event.pkl\": \"1ca396cff12a7380a9eb41ee30ecbeb37146b834404424b6a20b9b0e0b438bee\","
+      },
+      {
+        "line": 279,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s2_amount.pkl\": \"26339b22e47985df02d3115f4da7995835526b54247ee398f28aa04ea3d8afd4\","
+      },
+      {
+        "line": 280,
+        "text": "      \"outputs/grid208_public_amount/models/f3_s2.npz\": \"ebd064b5dc9e679f026ca035000d2c8fa0856bd77425d0148296b5ef17d01773\","
+      },
+      {
+        "line": 282,
+        "text": "      \"outputs/grid261_bounded_basis/models/f3_s2.npz\": \"7fd580c717bf59dcb592edf64f20be7f62b72edcd992459ba859ac64ed573468\","
+      },
+      {
+        "line": 283,
+        "text": "      \"outputs/grid170_remaining_date_folds/fold3/models/FACTOR_seed2.pt\": \"5c7cedbf260fe062609c154085d5b2c709c38716866f147e5be6c56b8012304b\","
+      },
+      {
+        "line": 286,
+        "text": "    \"checkpoint\": \"outputs/grid170_remaining_date_folds/fold3/models/FACTOR_seed2.pt\","
+      }
+    ]
+  },
+  {
+    "id": "184_model_source",
+    "source": "work/grid184_search_adapter/models.py",
+    "snapshot": "evidence_documents/07_184_model_source.py",
+    "sha256": "31732ec2e617d8948c8e3e25f4ef8fb6e71e511478b86fb7124c055a36c0004c",
+    "scope": "Static original checkpoint/source selectors; never execute model code.",
+    "line_count": 54,
+    "excerpts": [
+      {
+        "line": 1,
+        "text": "\"\"\"Checkpoint-compatible deployment definitions without training-module imports.\"\"\""
+      },
+      {
+        "line": 16,
+        "text": "class Factor(nn.Module):"
+      },
+      {
+        "line": 17,
+        "text": "    def __init__(self):super().__init__();self.base=Q(42);self.delta=V.RelationalValue('FACTOR')"
+      },
+      {
+        "line": 26,
+        "text": "        manifest=json.loads((folder/'deployment_manifest.json').read_text(encoding='utf8'))"
+      },
+      {
+        "line": 31,
+        "text": "            for arm in ['STATE4','POWER8','FACTOR']:"
+      },
+      {
+        "line": 32,
+        "text": "                p=folder/'models'/f'{arm}_seed{seed}.pt';assert sha(p)==manifest['models'][p.name]"
+      },
+      {
+        "line": 33,
+        "text": "                net=Factor() if arm=='FACTOR' else Q(50);net.load_state_dict(torch.load(p,map_location='cpu',weights_only=False)['state_dict']);net.eval();self.nets[arm]=net"
+      },
+      {
+        "line": 34,
+        "text": "        assert sha(folder/'normalization.npz')==manifest['normalization_sha256']"
+      },
+      {
+        "line": 40,
+        "text": "            self.small('STATE4',np.zeros(50,'f'));self.small('POWER8',np.zeros(50,'f'));self.factor(synthetic)"
+      },
+      {
+        "line": 46,
+        "text": "    def factor(self,pub):"
+      },
+      {
+        "line": 47,
+        "text": "        with torch.inference_mode():return self.nets['FACTOR'](**pack_one(pub))[0].numpy().copy()"
+      },
+      {
+        "line": 49,
+        "text": "        assert mode in ['FACTOR','CONSENSUS'];scores={};delegated=mode=='FACTOR';g=np.clip((raw-self.norm['mean41'])/self.norm['scale41'],-20,20).astype('f')"
+      },
+      {
+        "line": 50,
+        "text": "        if mode=='CONSENSUS':"
+      },
+      {
+        "line": 54,
+        "text": "        scores['FACTOR']=self.factor(S.pack(c,g,self.fee,self.scale));return int(scores['FACTOR'][1]>scores['FACTOR'][0]),dict(delegated=delegated,scores={k:v.tolist() for k,v in scores.items()})"
+      }
+    ]
+  },
+  {
+    "id": "March_FULL_summary",
+    "source": "outputs/grid100_data_foundation/bulk_runtime/runs/r0__2037-03-02_100__FULL_TEACHER/summary.json",
+    "snapshot": "evidence_documents/08_March_FULL_summary.json",
+    "sha256": "7d3914861d55aa9e3ddab50a677c6d73ca75bcf6623ebde2ad244ac6b91cd5ca",
+    "scope": "Original reference summary already used in291; no new full trajectory, timing or arrays.",
+    "line_count": 43,
+    "excerpts": [
+      {
+        "line": 4,
+        "text": "  \"checkpoint\": null,"
+      },
+      {
+        "line": 7,
+        "text": "  \"policy\": \"FULL\","
+      },
+      {
+        "line": 11,
+        "text": "  \"week\": \"2037-03-02_100\","
+      },
+      {
+        "line": 12,
+        "text": "  \"method\": \"FULL_TEACHER\","
+      },
+      {
+        "line": 39,
+        "text": "  \"exact_full_trajectory\": null,"
+      },
+      {
+        "line": 40,
+        "text": "  \"first_full_divergence\": null,"
+      }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "id": "GRID294_MARCH_SAVED_COST_AND_PREFIX_READOUT",
+  "status": "PREREGISTERED_NOT_EXECUTED",
+  "question": "Where is the recorded March cost excess in cost components/time, and what first delivered-action difference is visible on a common recorded prefix versus original FULL? Descriptive diagnosis only, no counterfactual or new policy return.",
+  "selection": "All42 accepted March runs in291 saved_partial_review/manifest (all12 pools, both arms and available repeats), plus originalMarchFULL reference, plus index186192-step partial separately. No winner/seed/trajectory filtering.",
+  "inputs": "Resolve through291 design full_references and raw_records_manifest/source constants. Read only saved summaries,metadata,steps.jsonl.gz and exact first-divergence-step call JSON(s) if available; reuse291 recorded trajectory_signature and existing292 public decision index for lookup. Partial uses published partial_steps/failure only; no NPZ vectors/tensors/model loads.",
+  "physical_or_learning_changes": 0,
+  "operation_caps": {
+    "new_fits": 0,
+    "new_predictions": 0,
+    "new_physics": 0,
+    "new_policy_scores_or_returns": 0,
+    "max_complete_current_trajectories": 42,
+    "max_reference_trajectories": 1,
+    "max_partial_trajectories": 1,
+    "total_readout_s": 600
+  },
+  "source_first": "Freeze code and exact input paths/hash references before analysis. Verify existing saved input provenance, not a second full291 audit. Keep a per-trajectory receipt; no rerun completed readout units after interruption.",
+  "cost": "Use exactly existing saved raw-cost/ledger component fields and original units. Sum each recorded component and expose rounding/residual/absent components; never invent a decomposition. Compare whole-week costs only for complete equal2017-step trajectories; partial192 stays separate. Preserve per-pool/pair/date/repeat and group duplicate signatures descriptively, never choose a best subgroup.",
+  "prefix": "Use recorded before/action/after hashes and delivered action, not assumed search selection. Confirm common initial state and matching prefix. If not common, report input/version mismatch and stop linked-prefix inference. At first delivered action difference require same before_hash before matching any saved call feedback; distinguish row.restore/base/selected action semantics. Log existing nativeSTOP/parent/residual if exact saved step records exist; do not call model/decoder/prepare/simulate. No comparison of future forecasts from divergent states as a common-state causal test.",
+  "limits": "No causal claim that first difference or any one ledger component explains all downstream cost; observed trajectories are different policies, not counterfactual interventions. No FULL time comparison, early-stop speedup, threshold/risk/seed/call exceptions, new normalization, hypothetical mixed strategy, final8 or new physical dates.",
+  "stop": "One finite saved readout then concrete evidence-based route decision. If schema/provenance/common-state support is insufficient, retain all diagnostics and stop safely without new models or forecasts. Any new learning needs a separate unique finite hypothesis based on own training labels/public support, not tuned to outer failure IDs."
+}

@@ -1,0 +1,69 @@
+{
+  "id": "GRID293",
+  "protocol": "Exactly8 fixed already-published reports/static source/reference-summary documents. No new trajectory/NPZ/model tensors, numeric path comparison, forecasts, fitting or alternative policy returns.",
+  "documents": [
+    {
+      "id": "291_quality",
+      "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID291_control_preparation/budget_limited_results/GRID291_report.md",
+      "snapshot": "evidence_documents/01_291_quality.md",
+      "sha256": "1f456dd7686be5c892270c9c0ab63b5ff358f448cbfcff8b81c4b58aee548462",
+      "scope": "Current2037 owner-f208/261 quality and scope, saved published result only."
+    },
+    {
+      "id": "184_report",
+      "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID184_search_adapter/final_delivery/GRID184_report.md",
+      "snapshot": "evidence_documents/02_184_report.md",
+      "sha256": "fbb4621ec247c717ac70fd83633a4efafcd3d04cefce97f50d23925eb6835d58",
+      "scope": "Prior2037 same validation dates, different models/arms; not automatically causal for current208/261."
+    },
+    {
+      "id": "184_divergences",
+      "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID184_search_adapter/final_delivery/first_divergences.json",
+      "snapshot": "evidence_documents/03_184_divergences.json",
+      "sha256": "d739c406f2f531e67907c17a504700f3bbd2398bc8497099636fa5f7c8d08dd8",
+      "scope": "Original first physical differences for CONSENSUS versus FACTOR, scope explicitly limited."
+    },
+    {
+      "id": "59_report",
+      "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID59_complete/outputs/grid59/GRID59_report.md",
+      "snapshot": "evidence_documents/04_59_report.md",
+      "sha256": "3af7519ba4efd07a6a594283e6d8d9d0c02bb7515bb4f5d93ab55ad7be4b5303",
+      "scope": "Historical2035 quality/compute evidence; qualify dates/controller before reuse."
+    },
+    {
+      "id": "61_report",
+      "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID61_complete/outputs/grid61/GRID61_report.md",
+      "snapshot": "evidence_documents/05_61_report.md",
+      "sha256": "0290194eb27fb640aa17285fbb88a3d45bf0b70547dc7be0c4b503579bb1d1fa",
+      "scope": "Historical matched completion mechanism evidence, not current owner-f causal diagnosis."
+    },
+    {
+      "id": "291_model_refs",
+      "source": "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID291_control_preparation/source_launch_recovery02/model_references.json",
+      "snapshot": "evidence_documents/06_291_model_refs.json",
+      "sha256": "9efcb081c1ac76c9edd21836563d6b38acfb0c0e8f5d1804e21bfc847095e2c4",
+      "scope": "Exact current owner-f checkpoint/parent/residual bindings; paths/hashes only."
+    },
+    {
+      "id": "184_model_source",
+      "source": "work/grid184_search_adapter/models.py",
+      "snapshot": "evidence_documents/07_184_model_source.py",
+      "sha256": "31732ec2e617d8948c8e3e25f4ef8fb6e71e511478b86fb7124c055a36c0004c",
+      "scope": "Static original checkpoint/source selectors; never execute model code."
+    },
+    {
+      "id": "March_FULL_summary",
+      "source": "outputs/grid100_data_foundation/bulk_runtime/runs/r0__2037-03-02_100__FULL_TEACHER/summary.json",
+      "snapshot": "evidence_documents/08_March_FULL_summary.json",
+      "sha256": "7d3914861d55aa9e3ddab50a677c6d73ca75bcf6623ebde2ad244ac6b91cd5ca",
+      "scope": "Original reference summary already used in291; no new full trajectory, timing or arrays."
+    }
+  ],
+  "operation_caps": {
+    "document_count": 8,
+    "new_fits": 0,
+    "new_predictions": 0,
+    "new_physics": 0
+  },
+  "decision": "Reuse existing explanations only within their dates/model/arm scope; if a precise current saved-data gap remains, preregister one limited follow-up but do not run it in293."
+}

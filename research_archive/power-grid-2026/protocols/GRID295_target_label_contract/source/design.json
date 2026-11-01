@@ -1,0 +1,97 @@
+{
+  "id": "GRID295",
+  "plan": {
+    "id": "GRID295_TARGET_AND_EXISTING_LABEL_QUALIFICATION_ONLY",
+    "status": "FIXED_QUALIFICATION_NOT_EXECUTED",
+    "question": "Does existing own-training information actually identify a new operating-cost/time-horizon learning problem distinct from the already-cost-aware queryNET objective, and are its labels already available?",
+    "reuse_first": "GRID286 existing cost-objective contract; do not rerun its fits/gradient/synthetic checks. Reuse294 recorded cost decomposition and delayed-cost/selected-versus-delivered limits.",
+    "scope": "At most8 static source/report/schema/manifest documents, resolve actual source constants and file indexes. No numerical trajectory/model/NPZ arrays or pickle deserialization. Schema key inventory from existing published manifests only; if unavailable, record missing proof rather than opening extra data.",
+    "required": [
+      "Exact actual search-feedback reward definition and originalNET gain/fee/scale/horizon",
+      "Trace original base.act/continuous action assembly via static source, no new hooks or interface predictions",
+      "Whether already-published own-training records include candidate-level operating-cost/redispatch/storage or suitable long-horizon matched labels; distinguish physical observed cost from unevaluated counterfactual candidate cost",
+      "Dates/outer exclusion and information-availability timing; do not use exposedMarch failureIDs as new training targets",
+      "Explicit target/unit/label/horizon changes and all necessary operations if a genuinely new finite hypothesis is feasible; no fitting in this qualification"
+    ],
+    "forbidden": [
+      "Renaming p*mu-charge or absNET weightedNLL as new cost learning",
+      "Treating lower one-step cost as guaranteed lower whole-week cost",
+      "Changing original NET/fees/controller/reward/threshold/seed",
+      "Generating labels or forecast/physical data without separate scope",
+      "NewNNheadforward/scoring/strategy returns or hidden search"
+    ],
+    "operation_caps": {
+      "new_fits": 0,
+      "new_predictions": 0,
+      "new_physics": 0,
+      "max_documents": 8
+    },
+    "stop": "One qualification decision: if no identifiable target or suitable own labels, close with concrete data/objective gap, no blind training. If evidence supports a unique finite learning hypothesis, preregister it separately (<=22fits/one600s) and disclose target changes; no automatic data generation/physical budget."
+  },
+  "documents": [
+    {
+      "id": "286_existing_contract",
+      "source": "outputs/grid286_cost_objective_contract/GRID286_report.md",
+      "snapshot": "source_documents/01_286_existing_contract.md",
+      "sha256": "1f836cdd4259e824b7a7ae5696ba1e5c0f99184f318b73180d52f00e6b756ce9",
+      "role": "Reuse existing queryNET cost-aware objective verdict, not a repeated qualification or fit."
+    },
+    {
+      "id": "query_environment",
+      "source": "work/grid102_search_rl/environment.py",
+      "snapshot": "source_documents/02_query_environment.py",
+      "sha256": "cbf633974a17d318e6a8b99756629a19069bb2407c0703ece6c2929473733680",
+      "role": "Original query continuation reward/NET formula and horizon."
+    },
+    {
+      "id": "teacher_case_schema",
+      "source": "work/grid102_search_rl/prepare.py",
+      "snapshot": "source_documents/03_teacher_case_schema.py",
+      "sha256": "cff45ce2bc9dfc2e3a6c44457a7d33d8f267e1d438cff72a5eb8c1cf2b2974c1",
+      "role": "Existing own-teacher case/feedback field construction, static schema only."
+    },
+    {
+      "id": "relational_training_schema",
+      "source": "work/grid113_relational_learning/prepare.py",
+      "snapshot": "source_documents/04_relational_training_schema.py",
+      "sha256": "a8e5f0622c73c36ba7bf65bfaab312ec978b62a0b99dcff57624509939730068",
+      "role": "Existing public and target dataset construction/roles; no pickle or NPZ load."
+    },
+    {
+      "id": "native_reward",
+      "source": "work/grid02/ljn_nn/modules/rewards.py",
+      "snapshot": "source_documents/05_native_reward.py",
+      "sha256": "4394f0cc2b385e5aa0c1c0428a7dd048f6fecd74ba42226b89c18b2e3871ead0",
+      "role": "Actual reward definition used by common.make_env."
+    },
+    {
+      "id": "base_agent",
+      "source": "work/grid02/ljn_nn/LJNAgent.py",
+      "snapshot": "source_documents/06_base_agent.py",
+      "sha256": "a0cc82e281b477e13fa30e36dddfbd63ff9a7381f59c566b02829fbb222d168f",
+      "role": "Original base.act action assembly and continuous response."
+    },
+    {
+      "id": "base_factory",
+      "source": "work/grid02/ljn_nn/make_agent.py",
+      "snapshot": "source_documents/07_base_factory.py",
+      "sha256": "cc67066abaf630bb257946d1c1936be999e82f7fef8993127842ae41d47630b5",
+      "role": "Bind make_agent_topoNN to actual agent class statically."
+    },
+    {
+      "id": "operating_cost_ledger",
+      "source": "work/grid03/score_adapter.py",
+      "snapshot": "source_documents/08_operating_cost_ledger.py",
+      "sha256": "77292ab049d2bc3966324001555265e139a1b33666f261f9ac4d1b896549c3bb",
+      "role": "Reuse original operating-cost fields and units; not redefining labels."
+    }
+  ],
+  "scope": "Eight static report/source/schema documents only. No numerical trajectory/model/NPZ/pickle reads; no generated labels, fitting, model predictions or physical observations. Reuse286 result and294 observations, do not repeat checks.",
+  "questions": [
+    "Exact original feedback and queryNET target/horizon versus operating-cost metric",
+    "Original delivered action versus proposed topology and continuous optimizer layers",
+    "Whether checked own-training schema already stores candidate-level operating costs or long-horizon paired labels",
+    "Which semantic/target/data gap prevents justified new training; no automatic target changes"
+  ],
+  "stop": "Complete one qualification and give evidence-based learning/data decision, no guessed label fields or auto physical generation."
+}

@@ -1,0 +1,187 @@
+{
+  "passed": true,
+  "source_published": "060dd26c03e127c4aad75008e591486b3f96cebe",
+  "payload_checks": [
+    {
+      "pool": "f0_s0",
+      "KEEP": false,
+      "loaded_without_predictions": true
+    },
+    {
+      "pool": "f0_s1",
+      "KEEP": true,
+      "loaded_without_predictions": true
+    },
+    {
+      "pool": "f0_s2",
+      "KEEP": false,
+      "loaded_without_predictions": true
+    },
+    {
+      "pool": "f1_s0",
+      "KEEP": false,
+      "loaded_without_predictions": true
+    },
+    {
+      "pool": "f1_s1",
+      "KEEP": false,
+      "loaded_without_predictions": true
+    },
+    {
+      "pool": "f1_s2",
+      "KEEP": false,
+      "loaded_without_predictions": true
+    },
+    {
+      "pool": "f2_s0",
+      "KEEP": false,
+      "loaded_without_predictions": true
+    },
+    {
+      "pool": "f2_s1",
+      "KEEP": false,
+      "loaded_without_predictions": true
+    },
+    {
+      "pool": "f2_s2",
+      "KEEP": false,
+      "loaded_without_predictions": true
+    },
+    {
+      "pool": "f3_s0",
+      "KEEP": false,
+      "loaded_without_predictions": true
+    },
+    {
+      "pool": "f3_s1",
+      "KEEP": false,
+      "loaded_without_predictions": true
+    },
+    {
+      "pool": "f3_s2",
+      "KEEP": false,
+      "loaded_without_predictions": true
+    }
+  ],
+  "model_payloads_loaded_without_forward": 12,
+  "synthetic_cases": [
+    {
+      "case": "no_local_bypass",
+      "arm": "PARENT208",
+      "synthetic_paid_records": 256,
+      "native_stub_calls": 0,
+      "gate_stub_calls": 0,
+      "passed": true
+    },
+    {
+      "case": "no_local_bypass",
+      "arm": "BOUNDED261",
+      "synthetic_paid_records": 256,
+      "native_stub_calls": 0,
+      "gate_stub_calls": 0,
+      "passed": true
+    },
+    {
+      "case": "stop_no_extension",
+      "arm": "PARENT208",
+      "synthetic_paid_records": 320,
+      "native_stub_calls": 1,
+      "gate_stub_calls": 1,
+      "passed": true
+    },
+    {
+      "case": "stop_no_extension",
+      "arm": "BOUNDED261",
+      "synthetic_paid_records": 320,
+      "native_stub_calls": 1,
+      "gate_stub_calls": 1,
+      "passed": true
+    },
+    {
+      "case": "stop_one_extension",
+      "arm": "PARENT208",
+      "synthetic_paid_records": 384,
+      "native_stub_calls": 1,
+      "gate_stub_calls": 1,
+      "passed": true
+    },
+    {
+      "case": "stop_one_extension",
+      "arm": "BOUNDED261",
+      "synthetic_paid_records": 384,
+      "native_stub_calls": 1,
+      "gate_stub_calls": 1,
+      "passed": true
+    },
+    {
+      "case": "native_then_one",
+      "arm": "PARENT208",
+      "synthetic_paid_records": 448,
+      "native_stub_calls": 2,
+      "gate_stub_calls": 1,
+      "passed": true
+    },
+    {
+      "case": "native_then_one",
+      "arm": "BOUNDED261",
+      "synthetic_paid_records": 448,
+      "native_stub_calls": 2,
+      "gate_stub_calls": 1,
+      "passed": true
+    },
+    {
+      "case": "native_exhaust",
+      "arm": "PARENT208",
+      "synthetic_paid_records": 600,
+      "native_stub_calls": 5,
+      "gate_stub_calls": 0,
+      "passed": true
+    },
+    {
+      "case": "native_exhaust",
+      "arm": "BOUNDED261",
+      "synthetic_paid_records": 600,
+      "native_stub_calls": 5,
+      "gate_stub_calls": 0,
+      "passed": true
+    },
+    {
+      "case": "input_fallback",
+      "arm": "PARENT208",
+      "synthetic_paid_records": 600,
+      "native_stub_calls": 0,
+      "gate_stub_calls": 0,
+      "passed": true
+    },
+    {
+      "case": "input_fallback",
+      "arm": "BOUNDED261",
+      "synthetic_paid_records": 600,
+      "native_stub_calls": 0,
+      "gate_stub_calls": 0,
+      "passed": true
+    }
+  ],
+  "synthetic_learned_predictions": 0,
+  "real_NN_predictions": 0,
+  "real_head_predictions": 0,
+  "real_physics": 0,
+  "authorization_rejections": 3,
+  "guarded_entry_checks": [
+    {
+      "script": "worker.py",
+      "exit": 1,
+      "blocked_before_model_environment_import": true
+    },
+    {
+      "script": "manager.py",
+      "exit": 1,
+      "blocked_before_model_environment_import": true
+    }
+  ],
+  "compiled_generated_sources": true,
+  "manifest192_unique_reverse": true,
+  "resource_budget_not_guaranteed": true,
+  "physical_launch_authorized": false,
+  "live_environment_smoke_test_not_performed": true
+}

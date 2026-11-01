@@ -1,0 +1,3 @@
+# GRID291准备完成，等待192条物理范围决定
+
+读integration/docs/NEXT_STEPS与本目录GRID291_report.md/decision/design/run_manifest/preparation_review。源07985dd1及恢复9d821cbe/5233dfd3/060dd26c全部保留；active source_recovery03，12合成控制流/3拒绝收据/worker+manager缺授权拒绝/12payload加载0forward通过。源路径、生成缩进、夹具分支、stderr编码错误全留档0真实预测物理，不重做资格。192条原4validation100×12pool×2臂×2逆序，14400总/1200条，387264步/6000000forecast上限；旧时长外推13462.706余937.294不保证完成，真实env烟雾未做。实际授权缺失且无runs/benchmark，worker/manager入口先守卫。已准备可审阅adapter、ledger、去重截止/部分日志/guard，不再训练/旧缓存审计。现在只等待用户是否允许固定192条4小时物理回放；未答不启动、不改范围、不重复请求。允许后把真实用户指令/消息引用和design/source_freeze哈希写physical_authorization，复制A/authorization发布并核具体Gitblob远端，再首次唯一manager。拒绝或喊停暂停；预算变更需先修订固定源/方案而非偷偷延窗。最终8/新日期FRAME电网论文安装不动，原190拟合/旧6续训/祖先限制保留。

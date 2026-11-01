@@ -1,3 +1,9 @@
+# 最新：GRID291准备完成，等待物理范围确认
+
+[报告](protocols/GRID291_control_preparation/qualified/GRID291_report.md)。2026-11-01 GRID291真实控制准备完成，仅静态/12桩流程/3拒绝收据/worker+manager缺授权拒绝/12payload载入0前向通过。adapter/原pool模型绑定、192唯一两逆序清单、14400总/1200条/387264步/6000000forecast、单管理器去重截止/部分日志与具体Gitblob授权守卫均就绪待审；0真实预测物理训练。active源060dd26c source_recovery03，准备源路径/生成缩进/夹具分支/子stderr编码错误及原源全留档，未改变数值控制协议或重做真实实验。真实env smoke未做，旧时长外推余937秒不保证窗口完成。现在WAITING_USER_PHYSICAL_SCOPE，请用户决定是否按192条4小时启动，未答不执行/不改范围/不重复请求；最终8/新日期FRAME/旧190拟合6续训/祖先边界保持。
+
+以下历史记录以本段和docs/NEXT_STEPS为准。
+
 # 最新：GRID290离线上游NN接入通过，准备真实控制方案
 
 [报告](protocols/GRID290_public_nn_chain/results/GRID290_report.md)。2026-11-01 GRID290公开上下文→原owner-fNN→208/261通过，源bf212406先发/12原NN与12public具体blob核对，12NN+24头+12线性一次完成；NNq最大差1.192e-7/83差4.768e-7符合原1903e-5，父b/logit误差0、原STOP/父/最终CONT精确，1KEEP，0拟合teacher物理回报。287—290离线接入串结束，不再重复。下一291仅准备192条真实控制提案：4旧validation100×12pool×2臂×2逆序重复、总14400/单条1200；旧FACTOR外推13462.706秒余937.294不是保证，接口/资源/授权守卫先资格，实际物理需明确决定，不静默减项延窗。准备归档import shutil缺失0预测已留源note只补复制非重跑；历史190拟合/旧6续训/祖先开发/最终8界限保持，grl ACTIVE。

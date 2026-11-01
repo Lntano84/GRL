@@ -1,0 +1,105 @@
+{
+  "scope": "PROPOSAL_ONLY_NOT_AUTHORIZED_FOR_PHYSICAL_LAUNCH",
+  "question": "Does frozen261 retain small query savings relative to matched208 after complete control costs?",
+  "selected_scenarios": [
+    {
+      "date": "2037-03-02",
+      "calendar_group": "2037-03-02",
+      "partition": "validation",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-03-02_100",
+      "seeds": [
+        2361551725,
+        3503137760,
+        3120196920
+      ]
+    },
+    {
+      "date": "2037-05-04",
+      "calendar_group": "2037-05-04",
+      "partition": "validation",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-05-04_100",
+      "seeds": [
+        934275470,
+        863610900,
+        3905794909
+      ]
+    },
+    {
+      "date": "2037-08-03",
+      "calendar_group": "2037-08-03",
+      "partition": "validation",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-08-03_100",
+      "seeds": [
+        1305084671,
+        2167423352,
+        165529114
+      ]
+    },
+    {
+      "date": "2037-10-19",
+      "calendar_group": "2037-10-19",
+      "partition": "validation",
+      "replicate": 0,
+      "scenario_id": 100,
+      "scenario": "2037-10-19_100",
+      "seeds": [
+        32485480,
+        1961503762,
+        2891281005
+      ]
+    }
+  ],
+  "pools": [
+    "f0_s0",
+    "f0_s1",
+    "f0_s2",
+    "f1_s0",
+    "f1_s1",
+    "f1_s2",
+    "f2_s0",
+    "f2_s1",
+    "f2_s2",
+    "f3_s0",
+    "f3_s1",
+    "f3_s2"
+  ],
+  "arms": [
+    "PARENT208",
+    "BOUNDED261"
+  ],
+  "repeats": 2,
+  "total_runs": 192,
+  "order": "96fixed first repeat, entire second repeat exact reverse; no sample/seed/pool changes by outcome",
+  "fit_budget": 0,
+  "proposed_total_window_s": 14400,
+  "proposed_worker_window_s": 1200,
+  "window": "manager includes launches/loading/physical loops, no extension or rerun complete entries; preserve partial",
+  "same": "alloriginalmodels/norms/fees/controller/global128/local64/stagnation2/.9/initialstation/order/aliases; reuse originalowner NN output for parent/residual",
+  "timing": "fullpropose incl publicfeatures/NN/head/residual and forecast; loading outside per-propose timing but inside manager budget; component exclusive; all/search P95/P99; no old timings mixed",
+  "quality": "completion and cost;FULLcomplete reference only<=100.5%;MayFULLincomplete reference-limited; equal horizon for time, early stop not speedup; no mandatoryallwin/5percent gate",
+  "reference_FULL_paths": {
+    "2037-03-02_100": "outputs/grid100_data_foundation/bulk_runtime/runs/r0__2037-03-02_100__FULL_TEACHER/summary.json",
+    "2037-05-04_100": "outputs/grid100_data_foundation/bulk_runtime/runs/r0__2037-05-04_100__FULL_TEACHER/summary.json",
+    "2037-08-03_100": "outputs/grid100_data_foundation/bulk_runtime/runs/r0__2037-08-03_100__FULL_TEACHER/summary.json",
+    "2037-10-19_100": "outputs/grid100_data_foundation/bulk_runtime/runs/r0__2037-10-19_100__FULL_TEACHER/summary.json"
+  },
+  "boundaries": "no final8/newdates/newgrid/newFRAME/newfitting; allfouroldvalidationdates100, all12pools inclKEEP; fourfolds are not independent scenes or seedrandomization",
+  "readiness": "not ready to launch: liveadapter/ledger/fallback/hash guard/resource deadline qualification pending; prepare reviewable adapter/source first; actual physics scope needs explicit authorization",
+  "resource": {
+    "source": "D:\\Codex\\GRL研究\\outputs\\grid184_search_adapter\\finished.json",
+    "sha256": "a40063f2b1b868f76e2be7871f32786b457716e4a9451c9ecd75cbc1a8eedffa",
+    "old_factor_runs": 24,
+    "old_factor_mean_wall_s": 70.11826241250037,
+    "naive192_run_projection_s": 13462.706383200071,
+    "proposed14400_remaining_s": 937.2936167999287,
+    "old_factor_max_wall_s": 148.56405230000382,
+    "not_a_completion_guarantee": true,
+    "new_heads_and_system_overhead_not_estimated_from_single_state_samples": true
+  }
+}

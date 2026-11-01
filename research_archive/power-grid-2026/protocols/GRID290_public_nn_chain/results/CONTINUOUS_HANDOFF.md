@@ -1,0 +1,3 @@
+# GRID290离线上游完成，结束离线接入串
+
+读integration/docs/NEXT_STEPS及本目录GRID290_report.md/NEXT_PROTOCOL_PLAN.json/real_control_proposal.json/proposed_run_manifest.json。源bf212406先发，12原NNcheckpoint与12公共输入具体blob核对；12NN+24头+12线性一次完成，NNq差1.192e-7/83差4.768e-7符合原1903e-5，父b/logit误差0，原STOP/父/最终决定精确，1KEEP，0拟合teacher物理回报。287—290离线接入串结束不重做。准备归档少import shutil错误0预测保留，仅补copy后首次执行，无科学重跑。下一291只把192条具体闭环提案变成可审阅固定adapter/资源/ledger/单管理器授权守卫，不实际物理运行；四旧validation100×12pool×两臂×两逆序重复=192，14400总/1200单条提议。旧FACTOR均70.118s估192=13462.706，余937.294非保证，资源接口待资格。全部种子foldKEEP保留，不静默减项/延窗；准备完成再问用户真正物理范围决定。最终8/新日期FRAME电网论文安装不动，不新训练/重复NN对齐，旧190拟合/6续训/祖先边界保持。实际A=GRID290_public_nn_chain，grl ACTIVE。

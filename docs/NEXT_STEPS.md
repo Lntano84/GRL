@@ -1,9 +1,9 @@
-# 下一步 — GRID290固定12公开上下文的原NN接入资格
+# 下一步 — GRID291真实控制验证的具体准备，暂不启动物理
 
-2026-11-01 GRID289合并Frozen208261接口完成，源557d889f及12固定首行/owner模型引用先发，24旧参考blob核对；12单状态/24单行头+12线性父p/mu/charge/b/entry与261logit/CONT均精确一致，1KEEP，0拟合NNteacher物理回报。非全链真实观测资格/提速结论，287—289缓存全批对齐不重做。下一唯一290同12公共上下文到原owner-fNN前向/hook83再合并接口，先schema版本norm/checkpoint资格发布，12NN+24头+12线性；继承190q3e-5容差、STOP/最终决定精确，不读target/cases，不改阈值救结果。随后关闭离线接入串，固定真实控制资源/范围，新增物理日期最终8不自动开；历史190拟合/6续训/祖先开发限制保持，grl ACTIVE。
+2026-11-01 GRID290公开上下文→原owner-fNN→208/261通过，源bf212406先发/12原NN与12public具体blob核对，12NN+24头+12线性一次完成；NNq最大差1.192e-7/83差4.768e-7符合原1903e-5，父b/logit误差0、原STOP/父/最终CONT精确，1KEEP，0拟合teacher物理回报。287—290离线接入串结束，不再重复。下一291仅准备192条真实控制提案：4旧validation100×12pool×2臂×2逆序重复、总14400/单条1200；旧FACTOR外推13462.706秒余937.294不是保证，接口/资源/授权守卫先资格，实际物理需明确决定，不静默减项延窗。准备归档import shutil缺失0预测已留源note只补复制非重跑；历史190拟合/旧6续训/祖先开发/最终8界限保持，grl ACTIVE。
 
-1. 读protocols/GRID289_combined_single_state/results/GRID289_report.md/NEXT_PROTOCOL_PLAN.json，12固定selection已发布，不重做287—289旧全批。
-2. 只113公共六字段和metadata，按190源码sources()解析原owner-fcheckpoint/norm，schema/版本/哈希/索引先核对及源码输入发布。不得读targets/cases；原公共global41要替换为ownerfold已存normalized，非raw41。
-3. 同12固定记录每池1NN前向hook64+16+q+charge为83，再24单行头+12线性合并资格。原190q容差3e-5继承，原STOP和父/最终CONT精确，数值差异全留不改阈值/模型救结果；部分完成功能不自动重跑。
-4. 关闭离线工程串后，准备一份具体真实控制验证方案和旧时长资源资格，不再追加无新增机制的缓存对齐。新物理/日期/FRAME及最终8不自动开。
-5. grl ACTIVE；旧190拟合/6续训/祖先开发与实际时延界限保持，不回森林/重复目标训练。
+1. 读protocols/GRID290_public_nn_chain/results/GRID290_report.md、NEXT_PROTOCOL_PLAN.json、real_control_proposal.json和192条manifest。
+2. 不重做287—290缓存/NN资格。准备原Search首次STOP后的208/261 adapter与完整费用ledger，按全部原pool/norm绑定模型，不改变控制器/排序/锁站/alias/128/64/停滞2/.9。无新预测/训练。
+3. 准备单管理器去重/全局截止/失败部分保留与具体模型hash授权守卫；先源数据发布，实际物理授权不能仅布尔字段。旧时长外推余量仅937秒，新头费用未知，不假装resource通过。
+4. 固定全部192条及预算方案准备可审阅后，请用户决定真实物理范围/必要预算，未授权不启动或静默降种子日期。最终8/新日期FRAME电网论文安装保持不动。
+5. grl ACTIVE；小改善值得探索，全seed/KEEP/反例保留，旧190拟合/6续训/祖先开发时延界限不变。

@@ -1,0 +1,5 @@
+# GRID297唯一manager已启动，原8小时截止固定
+
+GRID297用户明确批准288条/8h，新授权1023ca38先发布并通过精确Gitblob/远端及全部冻结引用核验。首次唯一manager PID14996（venvlauncher21204）已启动，原monotonic_start=11742.2093565，deadline=40542.2093565，含加载启动失败全程不重置。0训练，当前真实采集以pipeline_state/collection_error和保存收据为准，准备complete不代表288完成。只轻量跟进，工程失败/超限保留部分不自动重试，不第二manager。运行时文档已本地留存，避免与每worker的HEAD/remote验证并发改Git；退出后统一发布。
+
+先读integration AGENTS/当前状态/NEXT及本目录launch_verification/physical_authorization/collection_started/run_context/pipeline_state/active_worker/manifest/collection_error/finished和最新worker日志，核Python父子进程。当前首项index0是f0_s0 Jan19 STOP_NEXT，后续按固定manifest。不要重复请求已获批准的scope，不再运行prepare/qualify/旧审计或新模型smoke。任何错误先留全部源/部分，不自动恢复、续窗或以已有时钟重试；零物理工程错误也必须遵守本方案no_retry，给具体裁决而非悄悄第二manager。finished.runs288且无worker后才算全部源采集，源记录先发布后另定只读标签协议，运行中不连费用目标。旧*.log漏传/上传审批均已解决是历史，原Numba/yacs/lightning可选提示不安装依赖救结果。原291186/192及最终8不动。

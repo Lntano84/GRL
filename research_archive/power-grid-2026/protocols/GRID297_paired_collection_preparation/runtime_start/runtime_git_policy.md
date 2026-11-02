@@ -1,0 +1,1 @@
+运行中只留小型启动快照和本地状态，停止后再白名单发布。原source/qualification/authorization具体Gitblob已经1023ca38确认，此处未变更任何冻结数值源码或引用。

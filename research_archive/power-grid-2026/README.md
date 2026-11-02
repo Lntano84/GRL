@@ -1,3 +1,7 @@
+# 最新：GRID297采集完成，关机暂停
+
+[结果](protocols/GRID297_paired_collection_preparation/runtime_collection/GRID297_runtime_report.md)。GRID297固定288/288条及144配对执行完成，原25309.471秒/28800上限，566046物理步/1717785forecast，0训练/标签派生。全部原始10001文件D无损归档并逐对象SHA读回，Git只必要报告/收据/清单。用户关机暂停，grl PAUSED；无新实验，完整数值审计/成本标签待继续后另固定有限协议，不重做采集或旧全归档。
+
 # 最新：GRID297准备资格通过，物理尚未批准
 
 [报告](protocols/GRID297_paired_collection_preparation/results/GRID297_report.md)。GRID297具体仓库上传经用户批准后源e4b6fe24先发，首次有限准备资格通过：84既有模型具体Gitblob、288唯一成员/144配对，6合成流/6授权字段拒绝/manager和worker缺授权拒绝、生成源码编译；0真实模型加载预测/拟合标签/物理。旧上传拒绝已解决留档。现在仅等待明确288条/8h新物理scope，未批准不写授权或启动；旧291不补跑。资源/真实env smoke未通过或执行，资格不保证8h完成。

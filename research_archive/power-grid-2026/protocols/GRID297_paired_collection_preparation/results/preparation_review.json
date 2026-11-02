@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "source_published": "e4b6fe24cbb10e16aecb604669dbd0882b1b7ee6",
+  "pools": 12,
+  "pairs": 144,
+  "episodes": 288,
+  "exact_model_Git_blobs": 84,
+  "synthetic_cases": [
+    {
+      "case": "STOP_NEXT",
+      "paid_stub_records": 128,
+      "second_call_stub_records": 192,
+      "passed": true
+    },
+    {
+      "case": "CONT_NEXT",
+      "paid_stub_records": 192,
+      "second_call_stub_records": 192,
+      "passed": true
+    },
+    {
+      "case": "nativeCONT_exhaust_no_trigger",
+      "passed": true
+    },
+    {
+      "case": "paired_public_prefix_equal",
+      "passed": true
+    },
+    {
+      "case": "mismatch",
+      "rejected_before_optional_reveal": true
+    },
+    {
+      "case": "first_arm_no_event",
+      "rejected_before_optional_reveal": true
+    }
+  ],
+  "authorization_rejections": [
+    "approved_by_user",
+    "runs",
+    "wall_cap_s",
+    "source_freeze_sha256",
+    "forecasts_cap",
+    "scope_id"
+  ],
+  "guarded_entry_checks": [
+    {
+      "script": "manager.py",
+      "rejected_before_model_simulator_import": true
+    },
+    {
+      "script": "worker.py",
+      "rejected_before_model_simulator_import": true
+    }
+  ],
+  "generated_sources_compiled": true,
+  "new_model_loads": 0,
+  "new_NN_predictions": 0,
+  "new_head_predictions": 0,
+  "new_physics": 0,
+  "new_fits": 0,
+  "new_labels": 0,
+  "real_environment_smoke_test": false,
+  "resource_passed": false,
+  "scope_authorized": false,
+  "limitation": "Static/stub preparation passed, not a guarantee of simulator/schema compatibility, bit-exact cross-process prefixes or8h completion. Any first live attempt consumes the separately approved window; no automatic retry."
+}

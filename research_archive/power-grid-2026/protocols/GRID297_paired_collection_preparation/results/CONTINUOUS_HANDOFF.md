@@ -1,0 +1,5 @@
+# GRID297有限准备完成：仅等待288条/8h物理范围决定
+
+GRID297具体仓库上传经用户批准后源e4b6fe24先发，首次有限准备资格通过：84既有模型具体Gitblob、288唯一成员/144配对，6合成流/6授权字段拒绝/manager和worker缺授权拒绝、生成源码编译；0真实模型加载预测/拟合标签/物理。旧上传拒绝已解决留档。现在仅等待明确288条/8h新物理scope，未批准不写授权或启动；旧291不补跑。资源/真实env smoke未通过或执行，资格不保证8h完成。
+
+先读integration AGENTS/docs当前状态/NEXT以及本目录GRID297_report/design/preparation_review/decision/complete/publication_review/NEXT_PROTOCOL_PLAN。不要重复prepare/资格/旧291审计或新增模型工程串。用户批准上传到Lntano84/GRL已落实，publication_block及pending_review是历史，不再等待上传授权。只有明确批准本次288条/8h后，绑定design/source_freeze/确切预算和用户消息的新physical_authorization先发布核具体blob/远端，才首次唯一manager；不继承291或定时恢复授权。不批准则关该成本采集学习路线。原模型协议/日期seedKEEP/最终8/祖先开发与旧190拟合6续训边界保持。

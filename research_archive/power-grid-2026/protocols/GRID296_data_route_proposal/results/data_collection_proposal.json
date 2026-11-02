@@ -1,0 +1,44 @@
+{
+  "status": "REVIEWABLE_SCOPE_ONLY_NOT_IMPLEMENTED_OR_AUTHORIZED",
+  "recommendation": "Freeze208/261 and stop direct cost fitting. If cost research is funded, collect one matched whole-suffix intervention dataset; do not run a single-step cost-head substitute.",
+  "selection": "Each of12 original pools, each of its fixed own12 dates, scenario100/envseed0. On the unchanged261 closed-loop prefix take the first nativeNN STOP with a nonempty original next batch. Public eligibility only, never cost/outcome selection. If absent, retain NO_ELIGIBLE_EVENT and do not substitute a date/call.",
+  "pairs": 144,
+  "episodes": 288,
+  "fit_role_pairs": 96,
+  "cal_role_pairs": 48,
+  "KEEP_pairs": 12,
+  "active_nonKEEP_pairs": 132,
+  "maximum_physical_steps": 580896,
+  "maximum_total_forecasts": 9000000,
+  "total_window_s": 28800,
+  "per_episode_cap_s": 1200,
+  "serial": true,
+  "repeats_per_arm": 1,
+  "arms": [
+    "STOP at the selected nativeSTOP event",
+    "CONT exactly one original next batch <=64 at the same event"
+  ],
+  "pre_event": "Both independent episodes follow identical frozen261 controller up to the public trigger. Require exact common before-observation, base-action, ordered visible IDs/alias/station and original model/config hashes. A mismatch invalidates that pair; no restore from incomplete saved vectors.",
+  "post_event": "Assemble the original full LJN joint action in each arm including continuous optimizer response; after this one intervention revert to the identical original261 policy and run to original week end or failure. No repeated forced interventions.",
+  "target": "Separate diagnostic physical-time target C_CONT-C_STOP over matched suffix, using unchanged original operating-cost units/ledger; completion, illegal/ambiguous/done and safety separate. Negative means cheaper CONT only when same full horizon is valid. Do not collapse early failures into cheap cost or substitute for original queryNET.",
+  "future_inputs": "Only fields available before reveal; no suffix cost/reward/optimizer response enters model features.",
+  "timing": "Record full feature/NN/head/residual/optimizer/forecast ctl.propose and loading separately; one repeat is label collection, not robust latency/P95 improvement confirmation.",
+  "isolation": "Per-pool fit8 only may fit; cal4 only predeclared calibration/support; own outer4 prohibited in this collection. KEEP included for records but never newly fitted. Original validation4/final8 excluded. Source own12 parent ancestry still prevents full-chain independence.",
+  "publication": [
+    "Implementation+all model/input/role/selection references and exact scope authorization before first simulator call",
+    "All matched source receipts/observations/delivered-action identities before deriving the separate cost target",
+    "Label/data freeze before any uniquely justified model fit",
+    "All models before scoring; all predictions before held result join"
+  ],
+  "stops": [
+    "One28800s total manager window including loading/startup/failed work,1200s per episode,9000000 forecasts and580896 physical steps; stop at first exceeded cap, preserve every partial/missing pair, no automatic resume or replacement.",
+    "No common-prefix integrity -> mark invalid and stop that pair; cannot repair by changing control/numeric settings.",
+    "No valid matched full-horizon labels, or insufficient support across original date roles -> close cost-learning route; do not choose a successful subset.",
+    "No labels/outcome from heldMarch are added to ownfit. No fitting included in collection authorization."
+  ],
+  "new_fits": 0,
+  "new_labels_this_stage": 0,
+  "new_physics_this_stage": 0,
+  "future_training": "Not prequalified: at most11 models+11 scalars <=22/one600s, only if this distinct target is identifiable and a unique model/negative-control/loss/stop contract is separately frozen. No model form chosen from current exposed cost failures.",
+  "validation": "A new learned intervention would later need all original4 development dates x12 pools x2 arms x2 reverse repeats=192 physical episodes, its own fixed budget (old14400s did not complete). Not bundled or authorized by data collection, not final8/blind validation."
+}

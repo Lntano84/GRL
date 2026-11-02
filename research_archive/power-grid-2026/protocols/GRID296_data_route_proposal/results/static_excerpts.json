@@ -1,0 +1,820 @@
+[
+  {
+    "id": "teacher_schema",
+    "source": "work/grid102_search_rl/prepare.py",
+    "sha256": "cff45ce2bc9dfc2e3a6c44457a7d33d8f267e1d438cff72a5eb8c1cf2b2974c1",
+    "excerpts": [
+      {
+        "line": 1,
+        "text": "\"\"\"Construct saved-search transitions, qualify then freeze before model fitting.\"\"\""
+      },
+      {
+        "line": 4,
+        "text": "from common import ROOT,W,OUT,SOURCE,ARCHIVE,read,save,sha,test_sealed"
+      },
+      {
+        "line": 5,
+        "text": "from observations import NAMES,observe,best,reward"
+      },
+      {
+        "line": 23,
+        "text": "        call=cache[str(path)];order=call['order'];truth={r['pool_id']:r for r in call['outcomes']}"
+      },
+      {
+        "line": 28,
+        "text": "        original_pending=pending.copy();initial=reward(inc);states=[];gains=[];queries=[];chosen=[inc['pool_id']]"
+      },
+      {
+        "line": 31,
+        "text": "            state=observe(visible,order,call['aliases'],subs,call['rho_limit'],targets,pending,len(original_pending),step)"
+      },
+      {
+        "line": 32,
+        "text": "            if step==0:assert np.allclose(state[:37],previous[i],rtol=1e-6,atol=1e-6)"
+      },
+      {
+        "line": 33,
+        "text": "            # Future rows never enter observe(); poisoning the private suffix cannot affect current state."
+      },
+      {
+        "line": 34,
+        "text": "            poisoned={j:dict(truth[j],reward=1e6,rho=-1.) for j in pending}"
+      },
+      {
+        "line": 36,
+        "text": "            assert np.array_equal(state,observe(copy.deepcopy(visible),order,call['aliases'],subs,call['rho_limit'],targets,pending,len(original_pending),step))"
+      },
+      {
+        "line": 37,
+        "text": "            states.append(state);before=reward(best(visible));visible.extend(dict(truth[j]) for j in chunk)"
+      },
+      {
+        "line": 38,
+        "text": "            current=best(visible);after=reward(current);assert after>=before"
+      },
+      {
+        "line": 42,
+        "text": "        assert sum(gains)==target['local_reward_gain'] and sum(queries)==target['known_completion_queries']"
+      },
+      {
+        "line": 46,
+        "text": "            physical_state_group=m['physical_state_group'],states=np.stack(states),gains=np.asarray(gains,dtype=np.float64),"
+      },
+      {
+        "line": 49,
+        "text": "    training=[c for c in cases if c['partition']=='train'];validation=[c for c in cases if c['partition']=='validation']"
+      },
+      {
+        "line": 50,
+        "text": "    train_dates={c['date'] for c in training};assert len(train_dates)==16 and not train_dates&{c['date'] for c in validation}"
+      },
+      {
+        "line": 51,
+        "text": "    # Cost scale uses only training dates; no performance-based calibration on validation."
+      },
+      {
+        "line": 52,
+        "text": "    date_gain=[np.mean([c['gains'].sum() for c in training if c['date']==d]) for d in sorted(train_dates)]"
+      },
+      {
+        "line": 53,
+        "text": "    date_queries=[np.mean([c['queries'].sum() for c in training if c['date']==d]) for d in sorted(train_dates)]"
+      },
+      {
+        "line": 54,
+        "text": "    cost=.5*np.mean(date_gain)/np.mean(date_queries)"
+      },
+      {
+        "line": 55,
+        "text": "    positive=[c['gains'].sum() for c in training if c['gains'].sum()>0];gain_scale=float(np.mean(positive))"
+      },
+      {
+        "line": 56,
+        "text": "    train_states=[];weights=[];labels=[]"
+      },
+      {
+        "line": 57,
+        "text": "    for c in training:"
+      },
+      {
+        "line": 58,
+        "text": "        k=len(c['gains']);utilities=np.r_[0.,np.cumsum(c['gains']-cost*c['queries'])]"
+      },
+      {
+        "line": 59,
+        "text": "        for j,state in enumerate(c['states']):"
+      },
+      {
+        "line": 60,
+        "text": "            train_states.append(state);weights.append(c['date']);labels.append(bool(np.max(utilities[j+1:])-utilities[j]>0))"
+      },
+      {
+        "line": 62,
+        "text": "    X=np.stack(train_states).astype(np.float64);mean=np.average(X,axis=0,weights=w)"
+      },
+      {
+        "line": 64,
+        "text": "    np.savez_compressed(OUT/'normalization.npz',mean=mean,scale=scale)"
+      },
+      {
+        "line": 66,
+        "text": "    np.savez_compressed(OUT/'supervised_train.npz',X=np.clip((X-mean)/scale,-20,20).astype(np.float32),y=np.asarray(labels),weight=w)"
+      },
+      {
+        "line": 67,
+        "text": "    design=dict(id='GRID102_SEARCH_RL',scope='Exploratory saved-feedback local-search decision learning; no physical grid rollout or final test.',"
+      },
+      {
+        "line": 68,
+        "text": "        cases=dict(train=len(training),validation=len(validation),train_dates=16,validation_dates=4,physical_calls=len(cache)),"
+      },
+      {
+        "line": 69,
+        "text": "        input=dict(features=NAMES,normalization='Training reachable states only, each date equal total weight; clipped standardized features in[-20,20].',"
+      },
+      {
+        "line": 71,
+        "text": "        actions=dict(stop=0,continue_next_at_most64=1),"
+      },
+      {
+        "line": 72,
+        "text": "        reward='(increment in best-admissible float32 reward - cost_per_query*paid_queries)/gain_scale; gamma1 finite horizon.',"
+      },
+      {
+        "line": 73,
+        "text": "        cost_per_query=float(cost),gain_scale=gain_scale,cost_rule='0.5 * train-date macro full-completion mean gain / train-date macro full-completion mean queries; heuristic proxy price, not actual seconds or currency.',"
+      },
+      {
+        "line": 74,
+        "text": "        seeds=[0,1,2],timesteps=30000,"
+      },
+      {
+        "line": 75,
+        "text": "        dqn=dict(learning_rate=.0003,buffer_size=20000,learning_starts=1000,batch_size=64,tau=1.,gamma=1.,train_freq=4,gradient_steps=1,"
+      },
+      {
+        "line": 76,
+        "text": "            target_update_interval=500,exploration_fraction=.3,exploration_initial_eps=1.,exploration_final_eps=.05,max_grad_norm=10.,policy_kwargs={'net_arch':[64,64]},device='cpu',verbose=0),"
+      },
+      {
+        "line": 77,
+        "text": "        logistic=dict(C=1.,solver='lbfgs',max_iter=2000,random_state=20261022),"
+      },
+      {
+        "line": 78,
+        "text": "        logistic_teacher='Train-state hindsight label: does any later stopping point have strictly larger net utility than stopping now? Not validation labels; same observation/actions/cost as DQN.',"
+      },
+      {
+        "line": 79,
+        "text": "        baselines=['STOP','FULL_LOCAL','COST_LOGISTIC','ORACLE_hindsight_upper_bound'],"
+      },
+      {
+        "line": 80,
+        "text": "        fitting='One cost-logistic fit and three independent DQN fits, fixed final30000-step checkpoints. No validation-selected checkpoint, seed, cost or hyperparameter.',"
+      },
+      {
+        "line": 81,
+        "text": "        evaluation='Macro of four validation dates. Report reward gain, paid-query fraction, gain capture and net utility; all three seeds and per-date results.',"
+      },
+      {
+        "line": 82,
+        "text": "        caveats='Initial prefixes and local trajectories correlated within teacher states/date; FULL teacher state distribution. Saved-feedback environment training is not whole-week grid control, no latency claim. Final8 test scenarios remain ungenerated.')"
+      },
+      {
+        "line": 83,
+        "text": "    save(OUT/'design.json',design)"
+      },
+      {
+        "line": 84,
+        "text": "    save(OUT/'environment.json',dict(python=platform.python_version(),runtime=sys.executable,packages={n:importlib.metadata.version(n) for n in ['stable-baselines3','gymnasium','torch','numpy','scikit-learn']}))"
+      },
+      {
+        "line": 88,
+        "text": "    env=LocalSearchEnv(training,mean,scale,cost,gain_scale);check_env(env,skip_render_check=True)"
+      },
+      {
+        "line": 90,
+        "text": "        current=LocalSearchEnv([c],mean,scale,cost,gain_scale);obs,_=current.reset(seed=0,options={'index':0})"
+      },
+      {
+        "line": 94,
+        "text": "        expected=(c['gains'].sum()-cost*c['queries'].sum())/gain_scale"
+      },
+      {
+        "line": 97,
+        "text": "    save(OUT/'preflight.json',dict(passed=True,checks=dict(checks),train_states=len(X),train_continue_labels=int(np.sum(labels)),gym_env_check=True,"
+      },
+      {
+        "line": 101,
+        "text": "    save(OUT/'data_freeze.json',hashes)"
+      },
+      {
+        "line": 107,
+        "text": "    save(OUT/'code_freeze.json',{p.relative_to(ROOT).as_posix():sha(p) for p in files})"
+      },
+      {
+        "line": 111,
+        "text": "    print(json.dumps(dict(passed=True,cases=len(cases),checks=dict(checks),cost_per_query=cost,gain_scale=gain_scale)),flush=True)"
+      }
+    ]
+  },
+  {
+    "id": "public_schema",
+    "source": "work/grid113_relational_learning/prepare.py",
+    "sha256": "a8e5f0622c73c36ba7bf65bfaab312ec978b62a0b99dcff57624509939730068",
+    "excerpts": [
+      {
+        "line": 2,
+        "text": "import collections,datetime,gzip,inspect,pickle,copy,time"
+      },
+      {
+        "line": 12,
+        "text": "       'frozen_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),"
+      },
+      {
+        "line": 14,
+        "text": "       'training':dict(updates=7250,batch=32,lr=.0003,betas=[.9,.999],eps=1e-8,weight_decay=0.,max_grad_norm=10.,"
+      },
+      {
+        "line": 15,
+        "text": "          huber_beta=1.,sampler_seed_offset=20261022,trace_every=500,wall_cap_s=1800),"
+      },
+      {
+        "line": 16,
+        "text": "       'runtime':dict(device='cpu',threads=1,torch=torch.__version__,numpy=np.__version__,python=sys.version),"
+      },
+      {
+        "line": 17,
+        "text": "       'executed_this_stage':'Engineering qualification; synthetic backward without optimizer. No research updates until frozen setup pushed.'}"
+      },
+      {
+        "line": 18,
+        "text": "    save(O/'design.json',D)"
+      },
+      {
+        "line": 20,
+        "text": "    states={(c['sample_id'],j):(c,j,s) for c in cases for j,s in enumerate(c['states'])};raw={};metadata={}"
+      },
+      {
+        "line": 21,
+        "text": "    with gzip.open(R/'outputs/grid111_action_feedback/public_inputs.jsonl.gz','rt',encoding='utf8') as f:"
+      },
+      {
+        "line": 23,
+        "text": "            r=__import__('json').loads(line);key=r['sample_id'],r['position'];c,j,s=states[key]"
+      },
+      {
+        "line": 26,
+        "text": "            inp=pack(r['public_input'],g,D['target']['cost_per_query'],D['target']['gain_scale'])"
+      },
+      {
+        "line": 28,
+        "text": "            metadata[key]={k:r[k] for k in ['sample_id','position','date','partition','physical_state_group']}"
+      },
+      {
+        "line": 29,
+        "text": "            metadata[key]['next_queries']=len(inp['next_action'])"
+      },
+      {
+        "line": 31,
+        "text": "    trmeta=read(R/'outputs/grid107_direct_value/training_rows.json');trkeys=[(r['sample_id'],r['position']) for r in trmeta]"
+      },
+      {
+        "line": 32,
+        "text": "    vakeys=[k for k in states if metadata[k]['partition']=='validation'];assert len(vakeys)==856"
+      },
+      {
+        "line": 33,
+        "text": "    for part,keys in [('train',trkeys),('validation',vakeys)]:"
+      },
+      {
+        "line": 35,
+        "text": "        save(O/f'{part}_metadata.json',[metadata[k] for k in keys])"
+      },
+      {
+        "line": 36,
+        "text": "    z=np.load(R/'outputs/grid107_direct_value/train.npz');target=z['target'];prob=z['sampling_probability']"
+      },
+      {
+        "line": 39,
+        "text": "        c,j,s=states[k];assert np.array_equal(raw[k]['global41'],z['X'][i])"
+      },
+      {
+        "line": 40,
+        "text": "        assert np.float32((c['gains'][j]-D['target']['cost_per_query']*c['queries'][j])/D['target']['gain_scale'])==target[i]"
+      },
+      {
+        "line": 41,
+        "text": "    np.savez_compressed(O/'train_targets.npz',target=target,sampling_probability=prob)"
+      },
+      {
+        "line": 42,
+        "text": "    va=np.array([(states[k][0]['gains'][k[1]]-D['target']['cost_per_query']*states[k][0]['queries'][k[1]])/D['target']['gain_scale'] for k in vakeys],np.float32)"
+      },
+      {
+        "line": 43,
+        "text": "    np.savez_compressed(O/'validation_targets.npz',target=va)"
+      },
+      {
+        "line": 52,
+        "text": "        assert np.array_equal(counts,np.load(R/f'outputs/grid107_direct_value/training_exposure_seed{seed}.npz')['state_draws'])"
+      },
+      {
+        "line": 54,
+        "text": "    # Synthetic invariance and gradient smoke: no optimizer instantiated or stepped."
+      },
+      {
+        "line": 58,
+        "text": "        sample.append(dict(context_action=rng.normal(size=(n,68)).astype('f'),context_feedback=rng.normal(size=(n,8)).astype('f'),"
+      },
+      {
+        "line": 59,
+        "text": "            next_action=rng.normal(size=(m,68)).astype('f'),anchor_action=rng.normal(size=68).astype('f'),global41=rng.normal(size=41).astype('f'),known_query_cost=np.ones(1,'f')))"
+      },
+      {
+        "line": 66,
+        "text": "        for k in ['context_action','context_feedback','context_mask']:x[k]=x[k][:,perm]"
+      },
+      {
+        "line": 69,
+        "text": "        for k in ['next_action','next_mask']:x[k]=x[k][:,p]"
+      },
+      {
+        "line": 72,
+        "text": "        for k,mask in [('context_action','context_mask'),('context_feedback','context_mask'),('next_action','next_mask')]:x[k][~x[mask]]=float('nan')"
+      },
+      {
+        "line": 84,
+        "text": "    probe=next(iter(raw.values()));assert set(probe)=={'context_action','context_feedback','next_action','anchor_action','global41','known_query_cost'}"
+      },
+      {
+        "line": 86,
+        "text": "    save(O/'preflight.json',dict(passed=True,states=4438,train=3582,validation=856,actual_parameters=5938,initial_hashes=initial,"
+      },
+      {
+        "line": 87,
+        "text": "        sampling_streams=streams,invariance_max_abs=checks,pairing_counterexample_abs=effects,optimizer_steps=0,"
+      },
+      {
+        "line": 88,
+        "text": "        synthetic_backward_only=True,train_validation_dates_disjoint=True,labels_separate=True,"
+      },
+      {
+        "line": 89,
+        "text": "        schema_all_state_bus_and_ID_checks=read(R/'outputs/grid112_relational_plan/schema_check.json'),"
+      },
+      {
+        "line": 91,
+        "text": "    # Data inputs and executable source closed before research training; no validation outcome selection."
+      },
+      {
+        "line": 93,
+        "text": "    save(O/'code_freeze.json',{p.relative_to(R).as_posix():sha(p) for p in source})"
+      },
+      {
+        "line": 96,
+        "text": "    data += [R/'outputs/grid107_direct_value/validation_trajectories.json',R/'outputs/grid107_direct_value/validation_results.json',R/'outputs/grid111_action_feedback/critical_details.json']"
+      },
+      {
+        "line": 97,
+        "text": "    data += [R/f'outputs/grid107_direct_value/training_exposure_seed{s}.npz' for s in [0,1,2]]"
+      },
+      {
+        "line": 98,
+        "text": "    save(O/'data_freeze.json',{p.relative_to(R).as_posix():sha(p) for p in data})"
+      },
+      {
+        "line": 99,
+        "text": "    save(O/'state.json',dict(stage='qualified_awaiting_frozen_push',fits=0,optimizer_steps=0))"
+      },
+      {
+        "line": 100,
+        "text": "    print('QUALIFIED:5938params,6paired initializations,4438publicstates,zero optimizer steps',flush=True)"
+      }
+    ]
+  },
+  {
+    "id": "collector_binding",
+    "source": "work/grid100_data_foundation/bulk_teacher_worker.py",
+    "sha256": "a5e5e51be963a92e163a7a33ab5cd45b7be926d102e3fb78d98de32d2f09ccdf",
+    "excerpts": [
+      {
+        "line": 1,
+        "text": "\"\"\"Collect one fixed train/validation FULL teacher; controller unchanged.\"\"\""
+      },
+      {
+        "line": 4,
+        "text": "from bulk_common import ROOT, OUT, RUNTIME, items, read, verify, test_sealed"
+      },
+      {
+        "line": 11,
+        "text": "assert read(OUT / 'generation_trainval_finished.json')['passed']"
+      },
+      {
+        "line": 15,
+        "text": "item = read(RUNTIME / 'design.json')['execution_order'][args.index]"
+      },
+      {
+        "line": 23,
+        "text": "code = code.replace(old_out, \"OUT=ROOT/'outputs/grid100_data_foundation/bulk_runtime'\")"
+      },
+      {
+        "line": 27,
+        "text": "    ss=importlib.util.spec_from_file_location('grid100_runtime_adapter',ROOT/'work/grid89_review/adapter.py')"
+      },
+      {
+        "line": 31,
+        "text": "        return common.grid2op.make(str(ROOT/'work/grid100_data_foundation/trainval_env'),test=True,backend=common.LightSimBackend(),reward_class=common.MaxRhoReward,other_rewards=common.operational_other_rewards())"
+      }
+    ]
+  },
+  {
+    "id": "saved_call_schema",
+    "source": "work/grid89_review/adapter.py",
+    "sha256": "f77bfe3f1c12ae9dfe1f7ca795280a7e131e379e2cab691005990df87cc0edd9",
+    "excerpts": [
+      {
+        "line": 1,
+        "text": "\"\"\"Same physical controller and feedback; explicit order/parameter interventions.\"\"\""
+      },
+      {
+        "line": 3,
+        "text": "import hashlib,importlib.util,time"
+      },
+      {
+        "line": 10,
+        "text": "  # Fixed global priority, independent of call count, state outcomes and week."
+      },
+      {
+        "line": 15,
+        "text": "  for ends in [env.line_or_to_subid,env.line_ex_to_subid]:np.maximum.at(pressure,ends[live],obs.rho[live])"
+      },
+      {
+        "line": 21,
+        "text": "  t=time.perf_counter();order=expected_order(item,reps,self.subids,obs,self.env)"
+      },
+      {
+        "line": 22,
+        "text": "  return order,None,None,dict(feature_s=0.,prior_s=0.,forward_rank_s=time.perf_counter()-t)"
+      },
+      {
+        "line": 23,
+        "text": " def choose(self,obs,base,reward,done=False,**kwargs):"
+      },
+      {
+        "line": 24,
+        "text": "  start=time.perf_counter();eligible,reps,aliases,actions,changed=self.prepare(obs,base);prepared=time.perf_counter()"
+      },
+      {
+        "line": 25,
+        "text": "  order,prior,features,times=rank(self,obs,base,eligible,reps,aliases);limit=min(float(obs.rho.max()),float(kwargs.get('rho_threshold',obs.rho.max())))"
+      },
+      {
+        "line": 29,
+        "text": "   assert i not in cache;t=time.perf_counter();future,rr,ended,info=obs.simulate(actions[i]+base);forecast_s+=time.perf_counter()-t"
+      },
+      {
+        "line": 30,
+        "text": "   f=flags(info);rho=float(future.rho.max());valid=bool(0<rho<limit and not ended and not f['exceptions'] and not f['illegal'] and not f['ambiguous'])"
+      },
+      {
+        "line": 31,
+        "text": "   r=dict(pool_id=i,rho=rho,reward=float(rr),done=bool(ended),**f,strict_admissible=valid,forecast_s=time.perf_counter()-t,phase=phase);cache[i]=r;return r"
+      },
+      {
+        "line": 38,
+        "text": "  reason='no_admissible_shortlist' if prefix is None else 'shortlist_above_author_safe' if cache[prefix]['rho']>=safe else 'shortlist_below_author_safe'"
+      },
+      {
+        "line": 39,
+        "text": "  log=dict(rule=self.rule,policy=self.policy,budget=(item.get('parameters') or {}).get('p',128),eligible=eligible,representatives=reps,aliases=aliases,order=order,order_mode=item.get('order_mode','STATIC_ID'),shortlist=order[:(item.get('parameters') or {}).get('p',128)],masked_ids=changed,rho_limit=limit,guard_rho=safe,guard_reason=reason,**result,source_s=time.perf_counter()-start,prepare_s=prepared-start,forecast_s=forecast_s,**times)"
+      },
+      {
+        "line": 40,
+        "text": "  chosen=result['chosen_pool_id'];return None if chosen is None else actions[chosen],log,features,prior"
+      }
+    ]
+  },
+  {
+    "id": "delivered_ledger_schema",
+    "source": "work/grid55/worker.py",
+    "sha256": "63a549d9bc80c1fafc1c9d9a0da106dac651e9acde065e1a503eee81570f77f5",
+    "excerpts": [
+      {
+        "line": 9,
+        "text": "import time"
+      },
+      {
+        "line": 32,
+        "text": "    entered = time.perf_counter()"
+      },
+      {
+        "line": 34,
+        "text": "    from common import np, make_env, ResidualControl, action_vector, digest, flags, write_json, PREFIX, public_cost_ledger, cost_rounding_tolerance"
+      },
+      {
+        "line": 40,
+        "text": "    t = time.perf_counter()"
+      },
+      {
+        "line": 46,
+        "text": "    setup_s = time.perf_counter()-t"
+      },
+      {
+        "line": 48,
+        "text": "    calls = []; rows = []; vectors = {\"action\": [], \"observation\": []}"
+      },
+      {
+        "line": 49,
+        "text": "    started_loop = time.perf_counter()"
+      },
+      {
+        "line": 50,
+        "text": "    controller_s = controller_cpu_s = physical_s = cost = bookkeeping_s = 0."
+      },
+      {
+        "line": 51,
+        "text": "    reward = 0.; complete = False"
+      },
+      {
+        "line": 52,
+        "text": "    metadata = {**item, \"library_hashes\": [digest(action_vector(a)) for a in search.library],"
+      },
+      {
+        "line": 53,
+        "text": "        \"checkpoint_sha256\": search.checkpoint_sha, \"cost_per_MW\": env.gen_cost_per_MW,"
+      },
+      {
+        "line": 54,
+        "text": "        \"dt_hours\": float(env.delta_time_seconds)/3600., \"cadence\": 6, \"process_id\": os.getpid(),"
+      },
+      {
+        "line": 56,
+        "text": "        \"clock\": \"perf_counter wall; process_time CPU diagnostic\"}"
+      },
+      {
+        "line": 59,
+        "text": "    def replacement(observation, base_action, previous_reward, done=False, **kwargs):"
+      },
+      {
+        "line": 61,
+        "text": "        # its base action. Hashing/compression and all expensive checks are later."
+      },
+      {
+        "line": 62,
+        "text": "        state = observation.to_vect().copy(); base = action_vector(base_action).copy()"
+      },
+      {
+        "line": 63,
+        "text": "        selected, log, features, prior = search.choose(observation, base_action, previous_reward, done=done, **kwargs)"
+      },
+      {
+        "line": 64,
+        "text": "        pending.append((state, base, selected, log, features, prior))"
+      },
+      {
+        "line": 76,
+        "text": "        t0 = time.perf_counter()"
+      },
+      {
+        "line": 80,
+        "text": "            active_simulation[\"seconds\"] += time.perf_counter()-t0"
+      },
+      {
+        "line": 84,
+        "text": "            assert time.perf_counter()-entered < design[\"caps\"][\"episode_s\"]"
+      },
+      {
+        "line": 87,
+        "text": "            prev_curt = float(obs.curtailment_mw.sum(dtype=np.float64))"
+      },
+      {
+        "line": 88,
+        "text": "            simulation = {\"count\": 0, \"seconds\": 0.}"
+      },
+      {
+        "line": 90,
+        "text": "            cpu = time.process_time(); start = time.perf_counter()"
+      },
+      {
+        "line": 92,
+        "text": "                base, restore, proposal = ctl.propose(obs, reward, cadence=6)"
+      },
+      {
+        "line": 93,
+        "text": "                action = restore if proposal[\"offered\"] else base"
+      },
+      {
+        "line": 95,
+        "text": "                decision_s = time.perf_counter()-start"
+      },
+      {
+        "line": 96,
+        "text": "                decision_cpu_s = time.process_time()-cpu"
+      },
+      {
+        "line": 98,
+        "text": "            controller_s += decision_s; controller_cpu_s += decision_cpu_s"
+      },
+      {
+        "line": 101,
+        "text": "            t = time.perf_counter(); obs, reward, done, info = env.step(action)"
+      },
+      {
+        "line": 102,
+        "text": "            ps = time.perf_counter()-t; physical_s += ps"
+      },
+      {
+        "line": 103,
+        "text": "            t = time.perf_counter()"
+      },
+      {
+        "line": 104,
+        "text": "            raw = float(info[\"rewards\"][f\"{PREFIX}_grid_operational_cost\"]); cost += raw"
+      },
+      {
+        "line": 106,
+        "text": "            ledger = public_cost_ledger(obs, env, prev_curt) if (obs.gen_p > 0).any() and not f[\"exceptions\"] else None"
+      },
+      {
+        "line": 107,
+        "text": "            tolerance = float(cost_rounding_tolerance(obs, env)) if ledger else None"
+      },
+      {
+        "line": 108,
+        "text": "            if ledger: assert abs(ledger[\"recomputed_raw_cost\"]-raw) <= tolerance"
+      },
+      {
+        "line": 110,
+        "text": "            row = {\"step\": step, \"before_hash\": before, \"action_hash\": digest(action_vector(action)),"
+      },
+      {
+        "line": 111,
+        "text": "                \"after_hash\": digest(obs.to_vect()), \"raw_cost\": raw, \"simulations\": forecasts,"
+      },
+      {
+        "line": 113,
+        "text": "                \"all_forecast_s\": simulation[\"seconds\"], \"all_forecast_calls\": simulation[\"count\"],"
+      },
+      {
+        "line": 116,
+        "text": "            comparison_keys = [\"step\", \"before_hash\", \"action_hash\", \"after_hash\", \"raw_cost\", \"done\", \"complete\"]"
+      },
+      {
+        "line": 120,
+        "text": "            for state, base_vector, selected, log, features, prior in pending:"
+      },
+      {
+        "line": 122,
+        "text": "                log[\"step\"] = step; log[\"state_hash\"] = digest(state)"
+      },
+      {
+        "line": 125,
+        "text": "                log[\"returned_action_hash\"] = None if selected is None else digest(action_vector(selected))"
+      },
+      {
+        "line": 126,
+        "text": "                base_action = env.action_space(); base_action.from_vect(base_vector)"
+      },
+      {
+        "line": 127,
+        "text": "                previous_obs = obs.copy(); previous_obs.from_vect(state)"
+      },
+      {
+        "line": 128,
+        "text": "                _, _, _, actions, _ = search.prepare(previous_obs, base_action)"
+      },
+      {
+        "line": 129,
+        "text": "                for r in log[\"outcomes\"]: r[\"combined_hash\"] = digest(action_vector(actions[r[\"pool_id\"]] + base_action))"
+      },
+      {
+        "line": 131,
+        "text": "                np.savez_compressed(path / f\"call{number:03d}_state.npz\", observation=state, base_action=base_vector)"
+      },
+      {
+        "line": 132,
+        "text": "                if features is not None: np.savez_compressed(path / f\"call{number:03d}_inputs.npz\", **features, prior=prior)"
+      },
+      {
+        "line": 136,
+        "text": "            vectors[\"action\"].append(action_vector(action).copy()); vectors[\"observation\"].append(obs.to_vect().copy())"
+      },
+      {
+        "line": 137,
+        "text": "            bookkeeping_s += time.perf_counter()-t"
+      },
+      {
+        "line": 139,
+        "text": "                write_json(path / \"progress.json\", {\"step\": step, \"n1_calls\": len(calls), \"controller_s\": controller_s,"
+      },
+      {
+        "line": 142,
+        "text": "                    \"controller_s\": controller_s, \"wall_s\": time.perf_counter()-entered}), flush=True)"
+      },
+      {
+        "line": 145,
+        "text": "        loop_s = time.perf_counter()-started_loop"
+      },
+      {
+        "line": 146,
+        "text": "        t = time.perf_counter()"
+      },
+      {
+        "line": 149,
+        "text": "        np.savez_compressed(path / \"vectors.npz\", **{k: np.stack(v) for k, v in vectors.items()})"
+      },
+      {
+        "line": 150,
+        "text": "        final_save_s = time.perf_counter()-t"
+      },
+      {
+        "line": 151,
+        "text": "        summary = {**item, \"steps\": len(rows), \"complete\": complete, \"cost\": cost,"
+      },
+      {
+        "line": 152,
+        "text": "            \"controller_s\": controller_s, \"controller_cpu_s\": controller_cpu_s,"
+      },
+      {
+        "line": 154,
+        "text": "            \"loop_wall_s\": loop_s, \"bookkeeping_s\": bookkeeping_s, \"final_save_s\": final_save_s,"
+      },
+      {
+        "line": 165,
+        "text": "            \"wall_s\": time.perf_counter()-entered, \"new_model_fits\": 0}"
+      },
+      {
+        "line": 170,
+        "text": "            \"controller_s\": controller_s, \"public_forecasts\": int(env.nb_highres_called)-initial})"
+      },
+      {
+        "line": 174,
+        "text": "            np.savez_compressed(path / \"partial_vectors.npz\", **{k: np.stack(v) for k, v in vectors.items()})"
+      },
+      {
+        "line": 187,
+        "text": "    design = load(OUT / \"runtime_design.json\")"
+      },
+      {
+        "line": 196,
+        "text": "    started = time.perf_counter()"
+      },
+      {
+        "line": 199,
+        "text": "    (OUT / \"RUN_STATE.md\").write_text(f\"RUNNING {args.phase}: one serial worker. Frozen timing design, unchanged weights.\\n\", encoding=\"utf-8\")"
+      },
+      {
+        "line": 203,
+        "text": "        assert time.perf_counter()-started < design[\"caps\"][\"wall_s\"]"
+      },
+      {
+        "line": 215,
+        "text": "            \"controller_s\": summary[\"controller_s\"], \"n1_source_s\": summary[\"n1_source_s\"], \"complete\": summary[\"complete\"]}), flush=True)"
+      },
+      {
+        "line": 218,
+        "text": "        \"serial_workers\": 1, \"wall_s_this_process\": time.perf_counter()-started})"
+      }
+    ]
+  },
+  {
+    "id": "actual_runtime",
+    "source": "outputs/grid291_control_preparation/GRID291_report.md",
+    "sha256": "1f456dd7686be5c892270c9c0ab63b5ff358f448cbfcff8b81c4b58aee548462",
+    "excerpts": [
+      {
+        "line": 8,
+        "text": "原monotonic_start=5185.1399816，deadline=19585.1399816；第185项保存后仅剩21.070638秒。index186在原窗口到限停止，其failure保存192步/1608次forecast/10.456099秒控制；最后5条未启动。原manager报TimeoutExpired属于总预算耗尽，不当模型或方法失效。运行进程均退出，无延长、补跑或第二运行器。"
+      },
+      {
+        "line": 17,
+        "text": "| 2037-03-02_100 | 42 | 2017 | FAIL_COST | +0.571224% 至 +2.966994% |"
+      },
+      {
+        "line": 42,
+        "text": "| 方法 | 控制秒 | 候选query | 总query | 全步骤P95毫秒 | 搜索P95毫秒 |"
+      },
+      {
+        "line": 47,
+        "text": "P95/P99为每条轨迹自身分位数后宏比较，并非把全部步骤混成独立样本。优化器、所有forecast、公开特征、NN/208/261推理、搜索其余和控制其余互斥分解通过，逐条time_parts保留；加载和启动计入原4小时但在ctl.propose外单列。没有把单状态推理时间或早停当完整加速。"
+      },
+      {
+        "line": 52,
+        "text": "首轮只读核对错误：exceptions字段为列表和returned动作/含base动作哈希语义在执行前修正留源；实际第一次只读脚本因NPZ成员在逐步循环重复解压而在首条核对完成前停止。修复仅将每个NPZ成员读入一次，断言不变，后续首次完成186条保存核对。未重跑物理或完整审计；saved_review.py的192完成入口没有执行，saved_partial_review.json明确budget limited。"
+      },
+      {
+        "line": 58,
+        "text": "原父own12/内部cal4祖先和已暴露日期、相关前缀/seed/fold非独立限制保持。f0_s1 KEEP不当新学习覆盖；不拼成功子集，不设全赢或5%新门槛。历史190拟合、6续训8285updates、参考NN累计604.703秒/用户授权678.156秒仍另列，本轮0拟合。"
+      },
+      {
+        "line": 62,
+        "text": "- saved_partial_review.json：全部186逐条结果、93配对、90重复核对、所有缺项、宏口径和P95/P99。"
+      },
+      {
+        "line": 63,
+        "text": "- run_metrics.csv / saved_decisions.json：逐条指标与已保存模型决定清单。"
+      }
+    ]
+  }
+]

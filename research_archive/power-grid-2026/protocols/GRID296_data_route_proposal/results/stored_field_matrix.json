@@ -1,0 +1,63 @@
+[
+  {
+    "source": "grid89 adapter reveal",
+    "saved": [
+      "pool_id",
+      "rho",
+      "reward",
+      "done",
+      "flags",
+      "strict_admissible",
+      "forecast_s",
+      "phase"
+    ],
+    "missing": [
+      "full candidate successor observation",
+      "per-alternative original operating-cost ledger",
+      "post-LJN continuous optimizer joint delivered action",
+      "paired physical-time suffix"
+    ],
+    "lines": "adapter.py:29-31,39-40",
+    "verdict": "Security reward/candidate time only; cannot reconstruct joint monetary-equivalent costs from rho/reward."
+  },
+  {
+    "source": "grid55 worker",
+    "saved": [
+      "metadata library/checkpoint hashes, dt and generator price",
+      "call observation vector and base_action vector",
+      "delivered observation/action vectors and one realised step ledger"
+    ],
+    "missing": [
+      "full environment/backend/chronics/RNG snapshot",
+      "agent and continuous-optimizer internal state snapshot",
+      "other intervention closed-loop physical suffix"
+    ],
+    "lines": "worker.py:52-56,62-64,101-113,120-136,149",
+    "verdict": "Vectors establish provenance and observed path; not a complete restorable counterfactual simulator/controller checkpoint."
+  },
+  {
+    "source": "grid102/113",
+    "saved": [
+      "own date/scenario/call membership",
+      "query-prefix gains/queries/chosen",
+      "six public input fields",
+      "original queryNET target"
+    ],
+    "missing": [
+      "matched STOP versus one-more-batch joint-action weekly-cost labels"
+    ],
+    "lines": "prepare102:23-47;prepare113:21-43,84",
+    "verdict": "Reuse member identities and original NET; do not manufacture a new cost label from its target."
+  },
+  {
+    "source": "fixed roles",
+    "saved": [
+      "12 pool fit8/cal4/outer4 memberships"
+    ],
+    "missing": [
+      "independent upstream retraining/calibration isolation"
+    ],
+    "lines": "fixed_pool_roles.json role fields only",
+    "verdict": "Own12 date exclusion can be enforced; upstream own12 and historical exposure remain."
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "id": "GRID298_SAVED_SUFFIX_TARGETS",
+  "wall_cap_s": 600,
+  "episodes": 288,
+  "pairs": 144,
+  "roles": {
+    "fit8": 96,
+    "cal4": 48,
+    "KEEP_pairs": 12
+  },
+  "allowed": "Only frozen JSON and steps.jsonl.gz bytes, once per episode; no vectors NPZ, model arrays, live imports, forecasts, physics or fits.",
+  "target": "For matched EVENT pairs with both complete==True and exactly2017 steps: sum raw_cost at trigger step through2017 CONT minus STOP. Negative favors CONT. No queryNET/fee/reward change.",
+  "horizon": "Unequal or incomplete horizons retain both costs and completion/safety outcomes, target=null; NO_ELIGIBLE_EVENT target=null. No terminal penalties, imputation or replacement.",
+  "safety": "Record illegal/ambiguous/exceptions and terminal done/complete separately; complete-cost target never itself certifies safety or training qualification.",
+  "checks": [
+    "exact saved byte hashes",
+    "metadata original role/seed/library/costscale/dt consistency",
+    "all steps contiguous, exact summary sums",
+    "common event and state, original prefix digest/cost",
+    "delivered full joint action hashes at trigger",
+    "old per-row ledger tolerance; missing fields recorded, not invented",
+    "fit8/cal4/outer4 isolation, KEEP retained"
+  ],
+  "numeric": "Raw official costs accumulated in original row order for summary equality. Suffix fsum and whole-total delta both saved; arithmetic tolerance=64*machineepsilon*max(1,sum_abs_raw)*max(1,nrows), no performance threshold. Component dollars use per-row marginal_cost times each of four original MWh terms. Original curtailment_delta, not level.",
+  "no_retry": true,
+  "partial_receipts": true,
+  "new_training_qualified": false,
+  "interpretation": "One pair is an episode-level intervention, not an independent query sample. Correlated dates/pools/seeds and original own12/internalcal4 ancestry remain. No OOD/threshold/seed search or alternative strategy returns. No new physics authorization."
+}

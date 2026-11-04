@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\continuation01\publish_stage.py", line 22, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\continuation01\publish_stage.py", line 7, in main
+    require_authorization();started=read(O/'collection_started.json');ctx={'deadline_monotonic':started['deadline']};check(ctx)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\continuation01\guard.py", line 21, in require_authorization
+    if not p.exists():raise PermissionError('continuation01 authorization absent; no real model/environment imports')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: continuation01 authorization absent; no real model/environment imports

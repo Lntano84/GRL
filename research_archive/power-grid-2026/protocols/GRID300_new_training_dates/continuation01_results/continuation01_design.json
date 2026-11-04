@@ -1,0 +1,22 @@
+{
+  "scope_id": "GRID300_POST_GENERATION_CONTINUATION01",
+  "status": "REVIEWABLE_NOT_AUTHORIZED_OR_STARTED",
+  "original_start_monotonic": 9652.4935945,
+  "original_deadline_monotonic": 96052.4935945,
+  "original_generation_gate_failed": true,
+  "generation_new": 0,
+  "generation_reused": 16,
+  "baseline_runs": 144,
+  "max_opposite_runs": 576,
+  "max_runs": 720,
+  "worker_cap_s": 1200,
+  "physical_steps_cap": 1452240,
+  "forecasts_cap": 22500000,
+  "original_authorization_sha256": "61ada35dcbcc16ed9349efcb1ae3b4242b968fdfe3080ab535f5022e0d2a216b",
+  "original_error_sha256": "5b71167581243a5b14b386e9a5b33ca039fd37f5f368d3ea7010c60addeb522d",
+  "reused_generation_freeze_sha256": "d12048376aff235862b2495ed420d475af7fb6582206cdb2992fdb3b6ce53657",
+  "reused_generation_manifest_sha256": "8d110e37b82be520910c3b522ed06bb98639e27e96c77aa65e9b510127bfac51",
+  "publication": "Manager synchronously invokes fixed baseline publisher without active worker; exact whitelist/helper exit/Gitblob/remote required before next model call. No heartbeat release dependency. Failed original2h gate is preserved, not released or reset.",
+  "approval": "Requires a new explicit one-time post-generation user reply, including reuse of16 scenarios and continuation only until original Nov5 16:03 deadline. Old broad24h reply is not silently treated as continuation approval.",
+  "numerical_behavior": "state/adapter/source_builder/worker copied byte-identical to original300; original models/scalers/roles/controller/fees unchanged; zero new generation/training or target derivation in continuation."
+}

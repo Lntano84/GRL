@@ -1,0 +1,54 @@
+{
+  "id": "GRID299_PUBLIC_STATE_COVERAGE",
+  "status": "SAVED_PUBLIC_INVENTORY_AND_PROPOSAL_ONLY",
+  "wall_cap_s": 600,
+  "no_retry": true,
+  "baseline": "For each of144 fixed original pool-ownweek pairs, read only event.common public identities and event.ordinary261.continue_. Select archived CONT_NEXT if ordinary261 continued, else STOP_NEXT. No event -> fixed STOP_NEXT. This matches original261 intervention action, and afterwards original261; no arm picked by suffix cost/completion/gain.",
+  "allowed_root": [
+    "step",
+    "state_hash",
+    "model_pool",
+    "engineering_fallback",
+    "learned_decisions"
+  ],
+  "allowed_decision": [
+    "optional_extension",
+    "native_q",
+    "owner_pool",
+    "next_ids",
+    "batch",
+    "NN_input",
+    "raw_features",
+    "action"
+  ],
+  "excluded_fields": [
+    "outcomes",
+    "local_reward_gain",
+    "raw83",
+    "parent_mu",
+    "residual_logit",
+    "cost",
+    "rewards after reveal",
+    "summary completion for selection",
+    "new or298cost targets"
+  ],
+  "public_container_disclosure": "JSON is parsed as a container; only whitelisted fields accessed/exported, not a claim of unread bytes/physical blindness. Existing paid feedback within NN_input is public before the pending batch.",
+  "candidate": "Every saved optional_extension=True native_q1<=native_q0 with1..64 nonempty next_ids on the one original261 baseline per pool/week. No new NN/head calls.",
+  "selection": "Fixed4 physical-time bins[1,504],[505,1008],[1009,1512],[1513,2017]. In each choose earliest(step,callordinal,decisionindex), independent of labels, margin, costs, date names or seed success. Do not change bins/K or replace missing bins after inventory.",
+  "reuse": "If selected marker matches already collected297 first event by step,state,NN_input hash,batch and next_ids, reuse the existing pair; never replay it. Other markers propose exactly one NEW opposite-to-ordinary261 episode, paired with existing archived original261 baseline. Shared baseline means correlated target noise, not independent pairs. No vector restore or simulator snapshot assumption.",
+  "proposal_caps": {
+    "total_wall_s": 28800,
+    "per_episode_s": 1200,
+    "forecasts": 9000000,
+    "physical_steps": "2017*number_new_episodes"
+  },
+  "integrity": "Future live opposite episode must reproduce entire archived original261 prefix and exact selected public marker/model/norm/controller identities before one intervention. Saved full joint action hashes before event, not topology-only identities. Prefix mismatch invalidates; no automatic retry, replacement or protocol change.",
+  "future_target": "Originalraw_cost C_CONT-C_STOP from one intervention through fixed2017 step end; bothfull and safe separately. Existing baseline failures/noevent/missingbins remain recorded, no cost label imputation, survivor/related-date limitations explicit. No target derived by299.",
+  "roles": "All12 original pools, ownfit8/cal4/KEEP identities unchanged. No outer4/final8/newdate. More states on existing dates do not add independent dates. No future fit prequalified; no calibration-label borrowing.",
+  "resource": "Use only actual297 total25309.4708868s/288 episodes and1717785forecasts/288 as rough extrapolation. Not resource_passed, not guarantee. If8h looks infeasible, keep full fixed manifest and seek a concrete scope decision later; do not silently prune seeds/dates/bins.",
+  "new_physics": 0,
+  "new_predictions": 0,
+  "new_fits": 0,
+  "new_cost_labels": 0,
+  "new_physical_authorization": false
+}

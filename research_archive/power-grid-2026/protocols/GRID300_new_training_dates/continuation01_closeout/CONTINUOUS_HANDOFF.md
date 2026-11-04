@@ -1,0 +1,9 @@
+# 停机与受控衔接交付核验通过
+
+停机04870cf0、受控衔接源48caca85、控制结果503d231f；53具体Gitblob、D协作与本地归档成功收据核验通过（未重读ZIP）。旧2h门失败保留；16生成源可复用，0回放/新预测/训练。一次原截止内衔接尚需用户明确批准，不自动执行。
+
+# 当前：GRID300已停，受控衔接准备通过但未获批
+
+GRID30016场景已生成并归档，原发布等待2h子窗失败后所有进程退出，基线/相反动作均0；no_retry不自动重启。continuation01源48caca85已准备并通过一次控制检查，5数值模块字节相同、18新授权字段/5自动发布和截止检查/3缺新授权入口拒绝通过，0新生成模型预测物理训练。仅待用户允许一次复用16场景、沿原11月5日16:03:12绝对截止的受控衔接，不再给24h。
+
+先读GRID300_generation_stop_report/generation_stop_complete/collection_error、GRID300_continuation01_report/continuation01_design/continuation01_preparation_review/continuation01_decision/continuation01_publication_review（交付后）。原3184/15560已退出，旧pipeline pending是历史；当前pipeline_closed。不执行旧manager或旧publisher，不重生成。新版本guard只有新continuation01_authorization发布且原deadline未到才允许启动；未答前保持PAUSED，不重复问题、资格或归档。

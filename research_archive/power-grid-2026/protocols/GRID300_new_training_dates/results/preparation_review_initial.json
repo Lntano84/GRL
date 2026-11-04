@@ -1,0 +1,398 @@
+{
+  "passed": true,
+  "source_sha": "b9ac57f680763a508a4003d8dfff139a82de5bf7",
+  "exact_source_blobs": {
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/adapter.py": "96e4e582e11baadc7079d25ecb4a0529ad367af8517c03cc2456a10b6a570792",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/archive_manifest.json": "28f11de19e95466e4f8ebdd475ed7d73ac5c30b9a30824407bd51656bff3798e",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/calendar.json": "c09aef600fd5e249b603e5a96816058b87c07b39177e381b42b5f03f3bc6c338",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/code_freeze.json": "038c00ba805fe9e2bf27a780eeef0eeb777d7f60326143bf7f947a2a0b2a3641",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/design.json": "5dd4f927c3bffe44cde7d0d306a3506e4e81c8110389912938a51d136bed5916",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/generate_worker.py": "cb1ecea63da3495af96c6f11825033d7acdff8abc698e69b551bd1a41e3d58dc",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/guard.py": "9f815f49df3697ec5c1a94f03f7e0e6a3147c4a8f7178c6ce8c2dd4e26d563a9",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/manager.py": "d259936e39e719dec4bc755de96a7e85f258e155c4eb86121ce6394daa0b8c5f",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/model_freeze.json": "9b47dd538546cf8aaa9c9cff738e42b4a7a3e93652fe7a57a02e7b2417188ca3",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/model_references.json": "9efcb081c1ac76c9edd21836563d6b38acfb0c0e8f5d1804e21bfc847095e2c4",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/pool_roles.json": "c682843155b69dcf08111faba0688e2b77f7b3133ed7c4ad5ae2f7b51944bca1",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/prepare.py": "95cbee79cf10318a13c775c719f6295dbaa2d51220516b115e7b48773cde6719",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/published_model_bindings.json": "287657c58960285e9b7a19c414d089dca8dc84f931473a5c15120b5fa7deccbe",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/publish_stage.py": "3e9f81f46f31ca159e257af28767fed058f44068a80eb380d96901c1005b1b08",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/qualify.py": "a991abe2bc8e30459f687f609b334449c4d180355038a97a94df07c5c9bb968e",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/source_builder.py": "1b3fab460e1bedd06fe216acc70452aaec5644a212301ae4f628410b69a7d825",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/source_freeze.json": "038c00ba805fe9e2bf27a780eeef0eeb777d7f60326143bf7f947a2a0b2a3641",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/stages.py": "d40e0ef6b23680df66acde1e71041a1f73656726f5b6e062f2562a1cf4ba0b18",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/state.py": "becb0b4fbafae630c0960f2f7465bab58e1827dc1fa163995612c3c64dfe0482",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/static_freeze.json": "1ccafdf0c22cf7652c1d512c24d499f73142f064e40c33a9930545dc7551dfb5",
+    "research_archive/power-grid-2026/protocols/GRID300_new_training_dates/source/worker.py": "12577898112a1b62c3cee898ace3bc91d5969fccf51fb6f2793faeb1edaac710"
+  },
+  "exact_prior_payload_blobs": {
+    "outputs/grid208_public_amount/models/f0_s0_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f0_s0_event.pkl",
+      "sha256": "9954e2398b4510744eaa9aee3fd15a7c677545d174652f16fea7aba92f4f4d9e"
+    },
+    "outputs/grid208_public_amount/models/f0_s0_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f0_s0_amount.pkl",
+      "sha256": "c0f07cbc7c2a9bfab74ea636b5e9e505c4ba28d773392b75458e6f8aea5f3d90"
+    },
+    "outputs/grid208_public_amount/models/f0_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f0_s0.npz",
+      "sha256": "84408e60633a49a9f202844a6e1e04e0e407f9a83467834e1069e81963aee812"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f0_i0_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f0_i0_s0.npz",
+      "sha256": "5d4e8ffd931397d5b68298827a885817ee47f086f8017944446757e3164bbbb7"
+    },
+    "outputs/grid261_bounded_basis/models/f0_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID261_bounded_basis/trained/models/f0_s0.npz",
+      "sha256": "2e4221e86e39d95ab02746600c9337984d847ac0710364c61292604242fd05bd"
+    },
+    "outputs/grid168_one_sided_transfer/models/FACTOR_seed0.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID168_one_sided_transfer/complete/models/FACTOR_seed0.pt",
+      "sha256": "aebbd2df0d5f9421295c903be072fe6736e7db3fede759a89096372e1376b81e"
+    },
+    "outputs/grid291_control_preparation/normalizations/f0_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f0_s0.npz",
+      "sha256": "7aaf8c97115a738f29b04649f8bc4aa58fa91e67405f955be299352813f40f79"
+    },
+    "outputs/grid208_public_amount/models/f0_s1_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f0_s1_event.pkl",
+      "sha256": "9db0a18f90ebc6a5da6684f6499d64b8bb7dbc8a054bd976f44f3c2757704f50"
+    },
+    "outputs/grid208_public_amount/models/f0_s1_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f0_s1_amount.pkl",
+      "sha256": "4171ef2b061bfee8acc810fc86f3c1bd90448cc6a8b17e2b668638cdb73683be"
+    },
+    "outputs/grid208_public_amount/models/f0_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f0_s1.npz",
+      "sha256": "bd64ec410eba15da023813deadf9e0c5e661dcf24275ce24f149c5ed40d70605"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f0_i0_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f0_i0_s1.npz",
+      "sha256": "78f43277bbe602f162be534f2ce7035456f98535298e491bcbbdecfb35ca86ea"
+    },
+    "outputs/grid261_bounded_basis/models/f0_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID250_context_residual/trained/models/f0_s1.npz",
+      "sha256": "694df131765406a9ae745e14212c14931d8bb764d86ce4a27bb38e9f197a8068"
+    },
+    "outputs/grid168_one_sided_transfer/models/FACTOR_seed1.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID168_one_sided_transfer/complete/models/FACTOR_seed1.pt",
+      "sha256": "667bdae667e4ed5a631f2379b3d9bc28a088a46629a72006147d88deab807fbf"
+    },
+    "outputs/grid291_control_preparation/normalizations/f0_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f0_s1.npz",
+      "sha256": "7aaf8c97115a738f29b04649f8bc4aa58fa91e67405f955be299352813f40f79"
+    },
+    "outputs/grid208_public_amount/models/f0_s2_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f0_s2_event.pkl",
+      "sha256": "1e8f4a5bd66b8adb7127bc5bf7d0775426c0fc34bf149e0344b8e21ee8469aef"
+    },
+    "outputs/grid208_public_amount/models/f0_s2_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f0_s2_amount.pkl",
+      "sha256": "be1faea9199a31bbe519b4077ec7fba93b16fdcaf88cde5e714397836f4118be"
+    },
+    "outputs/grid208_public_amount/models/f0_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f0_s2.npz",
+      "sha256": "5ff4406d548432114f094532cdc788d6f89bfd09d2caf655947aa53cbd9ae766"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f0_i0_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f0_i0_s2.npz",
+      "sha256": "55d99a2e2468504a4d03b72ea2865ad5e395a8355687a92685844e1b8862c067"
+    },
+    "outputs/grid261_bounded_basis/models/f0_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID261_bounded_basis/trained/models/f0_s2.npz",
+      "sha256": "59d9e73e34750adff5374264a50fac41b6fdbae31d3dd0fcdcea7876903faf0c"
+    },
+    "outputs/grid168_one_sided_transfer/models/FACTOR_seed2.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID168_one_sided_transfer/complete/models/FACTOR_seed2.pt",
+      "sha256": "be288faea20d14773b722194131ca335e6c882ac2ebf500b11089ae1b83aa9e7"
+    },
+    "outputs/grid291_control_preparation/normalizations/f0_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f0_s2.npz",
+      "sha256": "7aaf8c97115a738f29b04649f8bc4aa58fa91e67405f955be299352813f40f79"
+    },
+    "outputs/grid208_public_amount/models/f1_s0_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f1_s0_event.pkl",
+      "sha256": "762d7bbe5de626a162e3b43cbee51990db81bd4479f80408268e5c1e9d72ffab"
+    },
+    "outputs/grid208_public_amount/models/f1_s0_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f1_s0_amount.pkl",
+      "sha256": "942d144fbc705a6e428c1cf79a1ab3ae870ac60ad58608118db3ba279ce34a07"
+    },
+    "outputs/grid208_public_amount/models/f1_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f1_s0.npz",
+      "sha256": "60630748e91fd93a1410fd5311dc042121c05232c14a183688ca470265e710ea"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f1_i0_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f1_i0_s0.npz",
+      "sha256": "8b1f035a4ebca5c6f82817e1038b2282a37f2a04969beb5debee9d8163bfbec8"
+    },
+    "outputs/grid261_bounded_basis/models/f1_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID261_bounded_basis/trained/models/f1_s0.npz",
+      "sha256": "b4a7032bb65351083cc66ef15228f85f22ccdd1b16bd8311376ce3bd03b6a563"
+    },
+    "outputs/grid170_remaining_date_folds/fold1/models/FACTOR_seed0.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID170_remaining_date_folds/complete/fold1/models/FACTOR_seed0.pt",
+      "sha256": "bc075055d518fe6480dd0363330a8dedc10b69f26516dcf20dc72c68bbd97309"
+    },
+    "outputs/grid291_control_preparation/normalizations/f1_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f1_s0.npz",
+      "sha256": "d1a45ae457c748af75e927599a4e30cb05737a0141709394b611bf2c4943f856"
+    },
+    "outputs/grid208_public_amount/models/f1_s1_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f1_s1_event.pkl",
+      "sha256": "2b0be311f1942a9fa8522e7ee8452b41a929ab4891752fb0b23590a47ef8dddb"
+    },
+    "outputs/grid208_public_amount/models/f1_s1_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f1_s1_amount.pkl",
+      "sha256": "34a76c6db91585fbbdd4328e4a5527e7920d237c77b5cb61d29685f14c6fe8da"
+    },
+    "outputs/grid208_public_amount/models/f1_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f1_s1.npz",
+      "sha256": "2a77d69391bd6502a621e02c2d70a90f66e4852a8a0202497093898fa31614da"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f1_i0_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f1_i0_s1.npz",
+      "sha256": "fa26b3aa6a3c829631320b4cf987f2c68bde955f7e02159a9ffca766632aa797"
+    },
+    "outputs/grid261_bounded_basis/models/f1_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID261_bounded_basis/trained/models/f1_s1.npz",
+      "sha256": "4f090848d5cc9a0d5c6379b52a1ddc3b260f7269d18a29c1798d81bee43724be"
+    },
+    "outputs/grid170_remaining_date_folds/fold1/models/FACTOR_seed1.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID170_remaining_date_folds/complete/fold1/models/FACTOR_seed1.pt",
+      "sha256": "a389adda6b839b926c2675bab650155a267c42e3a6ee3f2fc3f1ab859ec2371c"
+    },
+    "outputs/grid291_control_preparation/normalizations/f1_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f1_s1.npz",
+      "sha256": "d1a45ae457c748af75e927599a4e30cb05737a0141709394b611bf2c4943f856"
+    },
+    "outputs/grid208_public_amount/models/f1_s2_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f1_s2_event.pkl",
+      "sha256": "570dba6b4f179823dbd873b9326904405026b7acfa962e2b2393a82b02cf2609"
+    },
+    "outputs/grid208_public_amount/models/f1_s2_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f1_s2_amount.pkl",
+      "sha256": "58334d01f7b454937368daa43819be63523b3e2112347e6403f994108c5aa6ba"
+    },
+    "outputs/grid208_public_amount/models/f1_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f1_s2.npz",
+      "sha256": "90f279dd61ef6dca703414fec2b80da5c6fb2853a06a8578e2f5d9e895cd5a65"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f1_i0_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f1_i0_s2.npz",
+      "sha256": "6f503cc6889025592a3d064ab346d53ecb73a7272e793bc73125666a502457a1"
+    },
+    "outputs/grid261_bounded_basis/models/f1_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID261_bounded_basis/trained/models/f1_s2.npz",
+      "sha256": "d23448e52b55aa41bbfc17a7f4a173bb7367f1cc819dbf29f3dac8246cbfca68"
+    },
+    "outputs/grid170_remaining_date_folds/fold1/models/FACTOR_seed2.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID170_remaining_date_folds/complete/fold1/models/FACTOR_seed2.pt",
+      "sha256": "159bf32fc1b4eac728ea63e171e91aaae1656ce6f068b8e7351639d194588ff7"
+    },
+    "outputs/grid291_control_preparation/normalizations/f1_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f1_s2.npz",
+      "sha256": "d1a45ae457c748af75e927599a4e30cb05737a0141709394b611bf2c4943f856"
+    },
+    "outputs/grid208_public_amount/models/f2_s0_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f2_s0_event.pkl",
+      "sha256": "75d6ac7de8e7c84f86fe435df743d6e8b7138d2595fb399a2d19eac97f5239bb"
+    },
+    "outputs/grid208_public_amount/models/f2_s0_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f2_s0_amount.pkl",
+      "sha256": "db6b9d9a37d54cb34d57413887a77b13338899b240318213ba69bfe9b0e35ee2"
+    },
+    "outputs/grid208_public_amount/models/f2_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f2_s0.npz",
+      "sha256": "acb0aacb25b4577e12d03dde7aa1e2741c50cd35bff8e65bddb5ceca956f78ad"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f2_i0_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f2_i0_s0.npz",
+      "sha256": "3cdeb650abe73289f11e8c3824c433515032017e92bf4e0f2d1c3479aef31ed7"
+    },
+    "outputs/grid261_bounded_basis/models/f2_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID261_bounded_basis/trained/models/f2_s0.npz",
+      "sha256": "b561e8496f229052f8da8aaee55ac096830787ea7a063b8dda74cf2a89b0ba7b"
+    },
+    "outputs/grid170_remaining_date_folds/fold2/models/FACTOR_seed0.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID170_remaining_date_folds/complete/fold2/models/FACTOR_seed0.pt",
+      "sha256": "144e1656a0b707ad8d0c855c3369a217d65d12f08562336147b8233c236f1c23"
+    },
+    "outputs/grid291_control_preparation/normalizations/f2_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f2_s0.npz",
+      "sha256": "1fbe7c8453d144796a29c457704f184802cb707d989ed6f98467b9fa85295d1f"
+    },
+    "outputs/grid208_public_amount/models/f2_s1_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f2_s1_event.pkl",
+      "sha256": "48550744af711887b767a1feff8d061936e85c1712e518d5c409818b1477973c"
+    },
+    "outputs/grid208_public_amount/models/f2_s1_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f2_s1_amount.pkl",
+      "sha256": "346a5bd698ba18f05aefd31f9a518cc42ef232a26f5ae6fd215f15f23dae23c9"
+    },
+    "outputs/grid208_public_amount/models/f2_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f2_s1.npz",
+      "sha256": "3ece95f678f173e8ccd741dd12a752c82a8f0a8d2f617d185e73e6315daa8c62"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f2_i0_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f2_i0_s1.npz",
+      "sha256": "65205a9780a3d271a30b6901645368f50c4dc9d3110298a5141033cb8613af21"
+    },
+    "outputs/grid261_bounded_basis/models/f2_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID261_bounded_basis/trained/models/f2_s1.npz",
+      "sha256": "0c0b5e53ae776b1df5d74beaeb2cd10eeab384bb0a9fb62a5aef809703917aec"
+    },
+    "outputs/grid170_remaining_date_folds/fold2/models/FACTOR_seed1.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID170_remaining_date_folds/complete/fold2/models/FACTOR_seed1.pt",
+      "sha256": "732d37b76f45f7caf86b3fb1950347c3a0c6ce25e408e382f8c756cb26acdd9c"
+    },
+    "outputs/grid291_control_preparation/normalizations/f2_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f2_s1.npz",
+      "sha256": "1fbe7c8453d144796a29c457704f184802cb707d989ed6f98467b9fa85295d1f"
+    },
+    "outputs/grid208_public_amount/models/f2_s2_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f2_s2_event.pkl",
+      "sha256": "00c216e9448aa2aa314fb4b1f00e94e8bd08680c7874e10acb74b537900954c0"
+    },
+    "outputs/grid208_public_amount/models/f2_s2_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f2_s2_amount.pkl",
+      "sha256": "4c161521f7fd917740c643cc711559d93593aff4389ce0084fefbc4759bc6225"
+    },
+    "outputs/grid208_public_amount/models/f2_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f2_s2.npz",
+      "sha256": "9052141bfbf5d23fcb15ed75bfef1e176988aa1653d9ff8bb49c7da823d5a392"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f2_i0_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f2_i0_s2.npz",
+      "sha256": "6e576334e90d45d0046e76e2727e426ea6468a52c9aabcb8a30c41fa80af2775"
+    },
+    "outputs/grid261_bounded_basis/models/f2_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID261_bounded_basis/trained/models/f2_s2.npz",
+      "sha256": "1f3319af260bdd3035b0c4cf7be8f6b10ebeb7889fdaaca24a028e1c03fac24e"
+    },
+    "outputs/grid170_remaining_date_folds/fold2/models/FACTOR_seed2.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID170_remaining_date_folds/complete/fold2/models/FACTOR_seed2.pt",
+      "sha256": "0492ec8db2e8709379dc72fb5f92da86b16c206028c25e016e925690dacbaf20"
+    },
+    "outputs/grid291_control_preparation/normalizations/f2_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f2_s2.npz",
+      "sha256": "1fbe7c8453d144796a29c457704f184802cb707d989ed6f98467b9fa85295d1f"
+    },
+    "outputs/grid208_public_amount/models/f3_s0_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f3_s0_event.pkl",
+      "sha256": "cd34f29e05e24113f72aa7cb18129d2e0a5e83b9c94e808ec21c0085cad31a2e"
+    },
+    "outputs/grid208_public_amount/models/f3_s0_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f3_s0_amount.pkl",
+      "sha256": "778c59f3eb69e8fa04d6603f160cc8beb846086fc3fd381c8d7c501f7b38937a"
+    },
+    "outputs/grid208_public_amount/models/f3_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f3_s0.npz",
+      "sha256": "13741abac7363f028a40e895b509d682ba925957972c37f4f285dda43abd13fa"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f3_i0_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f3_i0_s0.npz",
+      "sha256": "1f4469004ab8e123321ae2ea8265cedc65ef8413da9ebe9769484834fd639ca6"
+    },
+    "outputs/grid261_bounded_basis/models/f3_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID261_bounded_basis/trained/models/f3_s0.npz",
+      "sha256": "4edcf1ea3bef667d72642cf0f35e369d877308b14a0512accb777781f3418434"
+    },
+    "outputs/grid170_remaining_date_folds/fold3/models/FACTOR_seed0.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID170_remaining_date_folds/complete/fold3/models/FACTOR_seed0.pt",
+      "sha256": "7afe848812fc8f2a8d7a6f2c338bb64b9a6f8c42915528bdf02c7e91e7ac89ec"
+    },
+    "outputs/grid291_control_preparation/normalizations/f3_s0.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f3_s0.npz",
+      "sha256": "b96c5ba0a89fd9b4f3558c1b7952b7aa1233972f01d9562d1fd5bbb60c573885"
+    },
+    "outputs/grid208_public_amount/models/f3_s1_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f3_s1_event.pkl",
+      "sha256": "7efe75814ff47926e904665981464cd0f87738fbc86fed7e7cf8a4654831d451"
+    },
+    "outputs/grid208_public_amount/models/f3_s1_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f3_s1_amount.pkl",
+      "sha256": "f125f3936081be388d0fb3b7bea47c73f3d5596973d627ce4378969072d809e1"
+    },
+    "outputs/grid208_public_amount/models/f3_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f3_s1.npz",
+      "sha256": "88fecea744c802722443f6b2670fa7e65ff3883c40ee6ff7b172219737572910"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f3_i0_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f3_i0_s1.npz",
+      "sha256": "9fa9f9cd4ee361429a4c0ae680f49bde4263c81d077059c74f453bad1832577e"
+    },
+    "outputs/grid261_bounded_basis/models/f3_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID261_bounded_basis/trained/models/f3_s1.npz",
+      "sha256": "6e8898eef0c9ddb2e5c3edfea0c903da359f061452133cc4478bbd15dacbfee2"
+    },
+    "outputs/grid170_remaining_date_folds/fold3/models/FACTOR_seed1.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID170_remaining_date_folds/complete/fold3/models/FACTOR_seed1.pt",
+      "sha256": "ec5536ef5b02b2e360346047d77f8522eaed746ac1ed3aa1c9081a927325b568"
+    },
+    "outputs/grid291_control_preparation/normalizations/f3_s1.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f3_s1.npz",
+      "sha256": "b96c5ba0a89fd9b4f3558c1b7952b7aa1233972f01d9562d1fd5bbb60c573885"
+    },
+    "outputs/grid208_public_amount/models/f3_s2_event.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f3_s2_event.pkl",
+      "sha256": "1ca396cff12a7380a9eb41ee30ecbeb37146b834404424b6a20b9b0e0b438bee"
+    },
+    "outputs/grid208_public_amount/models/f3_s2_amount.pkl": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID208_public_amount/audited/models/f3_s2_amount.pkl",
+      "sha256": "26339b22e47985df02d3115f4da7995835526b54247ee398f28aa04ea3d8afd4"
+    },
+    "outputs/grid208_public_amount/models/f3_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID206_public_event/audited/models/f3_s2.npz",
+      "sha256": "ebd064b5dc9e679f026ca035000d2c8fa0856bd77425d0148296b5ef17d01773"
+    },
+    "outputs/grid213_inner_head_plan/qualified_inputs/f3_i0_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID213_inner_head_plan/audited/qualified_inputs/f3_i0_s2.npz",
+      "sha256": "92b312db39dc434524ec787bf1256923d90c544fc2d9aa2a695cca04450ad95c"
+    },
+    "outputs/grid261_bounded_basis/models/f3_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID261_bounded_basis/trained/models/f3_s2.npz",
+      "sha256": "7fd580c717bf59dcb592edf64f20be7f62b72edcd992459ba859ac64ed573468"
+    },
+    "outputs/grid170_remaining_date_folds/fold3/models/FACTOR_seed2.pt": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID170_remaining_date_folds/complete/fold3/models/FACTOR_seed2.pt",
+      "sha256": "5c7cedbf260fe062609c154085d5b2c709c38716866f147e5be6c56b8012304b"
+    },
+    "outputs/grid291_control_preparation/normalizations/f3_s2.npz": {
+      "archive_path": "research_archive/power-grid-2026/protocols/GRID291_control_preparation/qualified/normalizations/f3_s2.npz",
+      "sha256": "b96c5ba0a89fd9b4f3558c1b7952b7aa1233972f01d9562d1fd5bbb60c573885"
+    }
+  },
+  "model_payload_files84_hashed_not_deserialized": 84,
+  "baseline_members": 144,
+  "new_dates": 16,
+  "synthetic_state_cases": 9,
+  "synthetic_invalid_auth_fields_rejected": 17,
+  "missing_auth_entrypoint_denials": [
+    {
+      "entrypoint": "manager.py",
+      "returncode": 1,
+      "denied_before_live_import": true
+    },
+    {
+      "entrypoint": "worker.py",
+      "returncode": 1,
+      "denied_before_live_import": true
+    },
+    {
+      "entrypoint": "generate_worker.py",
+      "returncode": 1,
+      "denied_before_live_import": true
+    }
+  ],
+  "generated_source_compilation_passed": true,
+  "new_model_loads": 0,
+  "new_predictions": 0,
+  "new_generation": 0,
+  "new_physics": 0,
+  "new_labels": 0,
+  "new_fits": 0,
+  "resource_passed": false,
+  "new_year_live_compatibility_tested": false,
+  "wall_s": 4.901006199999756,
+  "note": "Finite synthetic checks and byte/interface bindings only. No live Windows manager-worker or2038 generator/NN/physical smoke; first actual failure consumes original scope, no automatic retry."
+}

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\generate_worker.py", line 21, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\generate_worker.py", line 5, in main
+    p=argparse.ArgumentParser();p.add_argument('--index',type=int,required=True);index=p.parse_args().index;ctx=claim('generation',index);D=read(O/'design.json');item=read(O/'calendar.json')['dates'][index];E=R/D['environment'];folder=E/'chronics'/item['scenario'];assert not folder.exists()
+                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\guard.py", line 35, in claim
+    require_authorization();verify_frozen();ctx=read(O/'run_context.json');c=read(O/'claims'/f'{kind}_{index:03d}.json')
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\guard.py", line 17, in require_authorization
+    if not p.exists():raise PermissionError('new physical authorization absent: zero model/environment imports')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: new physical authorization absent: zero model/environment imports

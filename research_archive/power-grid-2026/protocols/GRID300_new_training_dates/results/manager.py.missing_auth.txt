@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\manager.py", line 55, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\manager.py", line 6, in main
+    start=time.perf_counter();require_authorization();verify_frozen();D=read(O/'design.json')
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\guard.py", line 17, in require_authorization
+    if not p.exists():raise PermissionError('new physical authorization absent: zero model/environment imports')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: new physical authorization absent: zero model/environment imports

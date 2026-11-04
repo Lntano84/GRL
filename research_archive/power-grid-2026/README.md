@@ -1,3 +1,7 @@
+# 最新：GRID300生成后发布等待超时停机
+
+[报告](protocols/GRID300_new_training_dates/stopped_generation/GRID300_generation_stop_report.md)。GRID300已生成16场景/208文件，wrapper5051.926秒；generation_ready17:29:29后发布未及时放行，原2h子窗超时退出，记录elapsed7802.862秒（迟检602.862秒仅等待）。基线/相反动作均0，0NN预测/训练/标签；全部进程已退出，不自动重启或重生成，原总deadline仍11月5日16:03:12。新数据已D无损归档并对象SHA读回，生成后衔接须新明确批准。
+
 # 最新：GRID300新范围已获用户批准
 
 用户2026-11-04已明确批准“16场景、最多720条，24小时上限”。GRID300新授权绑定实际问答引用及design/source/calendar hash，原16生成/144基线/至多576相反动作、24h总/2h生成/1800s生成/1200s回放/1452240步/22500000forecast不变；先发布授权核具体Gitblob及远端，再唯一manager。0新训练或标签，旧291/297预算不继承。

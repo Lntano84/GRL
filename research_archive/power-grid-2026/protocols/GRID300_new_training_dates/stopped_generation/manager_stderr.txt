@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\manager.py", line 55, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\manager.py", line 48, in main
+    finish_generation(generation);publication('generation',start+7200)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\manager.py", line 34, in publication
+    check({**ctx,'worker_deadline_monotonic':deadline})
+  File "D:\Codex\GRL研究\work\grid300_new_training_dates\guard.py", line 31, in check
+    if time.perf_counter()>=min(ctx['deadline_monotonic'],ctx.get('worker_deadline_monotonic',ctx['deadline_monotonic'])):raise TimeoutError('original scope deadline reached')
+                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: original scope deadline reached

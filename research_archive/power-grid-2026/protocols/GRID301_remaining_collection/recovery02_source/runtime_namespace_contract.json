@@ -1,0 +1,81 @@
+{
+  "immutable_metadata": {
+    "code_freeze.json": {
+      "source": "outputs/grid300_new_training_dates/code_freeze.json",
+      "sha256": "038c00ba805fe9e2bf27a780eeef0eeb777d7f60326143bf7f947a2a0b2a3641",
+      "bytes": 33287
+    },
+    "calendar.json": {
+      "source": "outputs/grid300_new_training_dates/calendar.json",
+      "sha256": "c09aef600fd5e249b603e5a96816058b87c07b39177e381b42b5f03f3bc6c338",
+      "bytes": 8312
+    },
+    "pool_roles.json": {
+      "source": "outputs/grid300_new_training_dates/pool_roles.json",
+      "sha256": "c682843155b69dcf08111faba0688e2b77f7b3133ed7c4ad5ae2f7b51944bca1",
+      "bytes": 5764
+    },
+    "model_references.json": {
+      "source": "outputs/grid300_new_training_dates/model_references.json",
+      "sha256": "9efcb081c1ac76c9edd21836563d6b38acfb0c0e8f5d1804e21bfc847095e2c4",
+      "bytes": 20249
+    },
+    "model_freeze.json": {
+      "source": "outputs/grid300_new_training_dates/model_freeze.json",
+      "sha256": "9b47dd538546cf8aaa9c9cff738e42b4a7a3e93652fe7a57a02e7b2417188ca3",
+      "bytes": 10877
+    },
+    "published_model_bindings.json": {
+      "source": "outputs/grid300_new_training_dates/published_model_bindings.json",
+      "sha256": "287657c58960285e9b7a19c414d089dca8dc84f931473a5c15120b5fa7deccbe",
+      "bytes": 23024
+    },
+    "static_freeze.json": {
+      "source": "outputs/grid300_new_training_dates/static_freeze.json",
+      "sha256": "1ccafdf0c22cf7652c1d512c24d499f73142f064e40c33a9930545dc7551dfb5",
+      "bytes": 6909
+    }
+  },
+  "target_namespace": "outputs/grid301_remaining_collection",
+  "source_inspection": {
+    "work/grid55/run.py": "9466732ea29e174a7f26f56faf91e99500270a127943ed653c4db1d142e6dae8",
+    "work/grid55/worker.py": "63a549d9bc80c1fafc1c9d9a0da106dac651e9acde065e1a503eee81570f77f5",
+    "work/grid291_control_preparation/models.py": "3306352777b36be9189cbac4e0ca73df75fae1ffe129ac27648f90881e33d639",
+    "work/grid291_control_preparation/policy.py": "f419a6d548eacbc7d70094326c671b0b174b05e42310763ec906ff8ca20198d2",
+    "work/grid297_paired_collection_preparation/source_builder.py": "6507d5e1c3f792433eb6bf71377558aebac7c414f1c004a2c6cc6581e5ea8dfa",
+    "work/grid297_paired_collection_preparation/adapter.py": "98331d0c718ec79830179c155bad3fe2c39afb92d2f769dbbfee4ee508fb14b4",
+    "work/grid297_paired_collection_preparation/intervention.py": "ea4f3b6a5898036b5d1970f5d1d1f67d99f3dc7d4e1e068f6492b25c550f65c5",
+    "work/grid184_search_adapter/models.py": "31732ec2e617d8948c8e3e25f4ef8fb6e71e511478b86fb7124c055a36c0004c",
+    "work/grid183_online_contract/runtime.py": "d016bc4bdadfb8a049231d077f8b7661b7307006e7e31bbf6f15290edad04a35",
+    "work/grid288_parent208_interface/runtime.py": "b3156eff3d21c84729535ffb894b0423cf90f9c63c867ebdc61996d2857f3a24",
+    "work/grid287_frozen261_interface/runtime.py": "bd9b6529fa45d7aa6e424803465c3b253691756763d2dc4aa7c739a0c7823db1",
+    "work/grid289_combined_single_state/runtime.py": "30bb3a37c2b03f14af1683fd904c45cd5e2799a1f7cd6c57380ce149a5032dd4"
+  },
+  "direct_preload_reads": [
+    "runtime_design.json",
+    "code_freeze.json",
+    "model_references.json"
+  ],
+  "existing_new_scope_inputs": [
+    "design.json",
+    "runtime_design.json",
+    "pool_roles.json",
+    "physical_authorization.json",
+    "launch_context.json",
+    "source_freeze.json"
+  ],
+  "stage_generated_before_opposites": [
+    "baseline_manifest.json",
+    "baseline_raw_manifest.json",
+    "runtime_design.json",
+    "baseline_ready.json",
+    "baseline_publication.json"
+  ],
+  "model_references_are_exact_old_bytes": true,
+  "scaler_and_model_paths_keep_old_R_root": true,
+  "new_model_load_preflight_required": 12,
+  "preflight_NN_forwards": 0,
+  "preflight_forecasts": 0,
+  "preflight_physics": 0,
+  "old_roles_and_missing35_unchanged": true
+}

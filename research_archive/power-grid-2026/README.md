@@ -1426,3 +1426,6 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 - [GRID143继续少数类与校准日期诊断](protocols/GRID143_continue_risk/complete/GRID143_report.md)：两固定模型排序、8个校准日敏感性重放、122后续路径；零拟合，原阈值不变。
 
 - [GRID144类别损失一次训练](protocols/GRID144_class_mass/complete/GRID144_report.md)：原18特征、两类质量平衡，开发动作差异0/62、少查0.155%，原筛查False。
+
+
+2026-11-05交付核验：中断结果a8b29365已上传，19个具体Gitblob、D协作副本和本地原始归档成功收据核对通过，未重复读取原始ZIP。grl周期运行监控已删除：原采集已中断且禁止自动第三次恢复，目前无获授权的活动运行；不会继续重播旧启动提示。后续须用户新的研究范围决定，不自动采集或训练。

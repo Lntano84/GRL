@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\publish_stage.py", line 22, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\publish_stage.py", line 7, in main
+    require_authorization();started=read(O/'launch_context.json');ctx=started.copy();check(ctx)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\guard.py", line 34, in require_authorization
+    if not p.exists(): raise PermissionError('GRID301 authorization absent; no live imports')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: GRID301 authorization absent; no live imports

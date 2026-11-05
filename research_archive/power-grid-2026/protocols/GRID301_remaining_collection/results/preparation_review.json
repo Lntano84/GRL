@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "source_commit": "f189bc46702cc6b25e7e0ad99d0dd1393f27c124",
+  "exact_source_blobs": {
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/adapter.py": "96e4e582e11baadc7079d25ecb4a0529ad367af8517c03cc2456a10b6a570792",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/archive_manifest.json": "79ba79059d09be0c8060b04e8f581c86fb627ee646e87cadca658eb0cf93f850",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/auto_publish.py": "a20eaa23cc40c3676063daf9d756a32635cd9f12dfc4de701d85dc89fd025e24",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/collection_proposal.json": "e25b5856b8b88597c5de18cc5276d762f4f02c93012fa35af9e12e80ccedd4c4",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/CONTINUOUS_HANDOFF.md": "bfe33b1bdc4e6bf7a68b83d649b47cc3a090869a187cf59225dca13fa3ded859",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/design.json": "1816a690110800308d970a49b501a8a25fa5d80d3b3aa79b5d9b551bf3dc6352",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/GRID301_report.md": "fe6533b234fd0e470276b5538c728418e386b51eb7c0c6583ada7182ff94bb6e",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/guard.py": "3cc7d6a28b1bb7f344f3f975ed591af53ca529e5114f336d49d23304d9545126",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/launch.py": "e392b5287e7a90989e908bf2617698590e6e28f40639ec32e1d3f857148c91e9",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/manager.py": "68c619050115eb0653d9a92ced85bf86e42fc8be8b5809ef474f0928686e74a4",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/NEXT_PROTOCOL_PLAN.json": "8af17c064ae9ca482bfe658b4ea69f52196b91e7c002d677798963dc8741e39a",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/pool_roles.json": "c682843155b69dcf08111faba0688e2b77f7b3133ed7c4ad5ae2f7b51944bca1",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/prepare.py": "26ea996a2e80f52a88fe06cce6f1d6bdeac2c6b5f3fd5ed63b9063965c82408b",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/publish_stage.py": "23cfac69553955bb07b33ec603a198a5093faf2701cbae877ec7e29e8b02ca7e",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/qualify_control.py": "bd613ade8a8ec9cb718cde6c953c5aa3ef0502f13d00b5ea5f3545ce9690c414",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/resource_estimates.json": "24c0319722b0d2e695f5a197beb4fa05a61851f93438f13b9a9b4bd781ffcb80",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/reuse_bindings.json": "33f0be81cec69b01ce3ea588d39a8a963f408e8c9afbdd0c23f010c28262099a",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/source_builder.py": "6351f0a356ca165a14a9e1dbe0c71693d3cce4a58e098a54cca56225cd9cd2c2",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/source_freeze.json": "763d45aa5f8dc3467691796e45fbd1abcbc01b34f06b7ff4cd5c4509cb89a8f1",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/stages.py": "638a9488a5a5dd723bf2366eade434bcb0b2544ba976d01e67d81326654194ff",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/state.py": "becb0b4fbafae630c0960f2f7465bab58e1827dc1fa163995612c3c64dfe0482",
+    "research_archive/power-grid-2026/protocols/GRID301_remaining_collection/source/worker.py": "12577898112a1b62c3cee898ace3bc91d5969fccf51fb6f2793faeb1edaac710"
+  },
+  "copied_modules_byte_identical": [
+    "state.py",
+    "adapter.py",
+    "worker.py",
+    "auto_publish.py"
+  ],
+  "old_model_or_numerical_checks_not_repeated": true,
+  "invalid_authorization_fields_rejected": [
+    "scope_id",
+    "generation_new",
+    "generation_reused",
+    "reused_baseline_receipts",
+    "skipped_partial_index",
+    "new_baseline_runs",
+    "max_new_opposite_runs",
+    "max_new_runs",
+    "wall_cap_s",
+    "worker_cap_s",
+    "physical_steps_cap",
+    "forecasts_cap",
+    "design_sha256",
+    "source_freeze_sha256",
+    "approved_by_user",
+    "user_instruction",
+    "user_message_reference"
+  ],
+  "clock_rejection_cases": [
+    "utc_expired",
+    "mono_expired",
+    "boot_changed",
+    "mono_reset",
+    "utc_backwards",
+    "deadline_extension",
+    "worker_timeout"
+  ],
+  "synchronous_publication_cases": [
+    {
+      "case": "published",
+      "sequence": [
+        "spawn",
+        "verified"
+      ]
+    },
+    {
+      "case": "active_worker",
+      "sequence": []
+    },
+    {
+      "case": "helper_failed",
+      "sequence": [
+        "spawn"
+      ]
+    }
+  ],
+  "synthetic_routing": {
+    "baseline_count": 143,
+    "old_reused_opposite_references": 140,
+    "new_opposite_references": 432,
+    "missing_index35_preserved": true,
+    "max572_and_empty_no_replacement": true
+  },
+  "missing_approval_entrypoints_denied": [
+    "launch.py",
+    "manager.py",
+    "worker.py",
+    "publish_stage.py"
+  ],
+  "new_generation": 0,
+  "new_model_loads": 0,
+  "new_predictions": 0,
+  "new_physics": 0,
+  "new_labels": 0,
+  "new_fits": 0,
+  "wall_s": 2.2679088999998385,
+  "static_pass_not_resource_guarantee": true
+}

@@ -1,0 +1,21 @@
+{
+  "status": "READY_FOR_DELIVERY_AFTER_USER_STOP",
+  "startup_files": [
+    "recovery03_authorization.json",
+    "recovery03_launch_verification.json",
+    "recovery03_launch_process.json",
+    "started_recovery03.json",
+    "load_only_review_recovery03.json",
+    "recovery03_runtime_launch_status.json",
+    "CONTINUOUS_HANDOFF.md",
+    "runtime_git_policy_recovery03.md"
+  ],
+  "reason": "Worker HEAD/remote checks and manager-owned automatic publisher; do not concurrently mutate integration",
+  "runtime_manager_pid": 37632,
+  "startup_message": "GRID301 recovery03已按54cc6573授权实际启动，唯一manager37632；11组直接原模型加载+首组已完成证据合计12组加载通过，0预热/检查前向或环境/forecast/物理。当前进入index36首条新增基线，实际物理进度以当前日志/manifest为准，启动快照不是完成数。原11月6日14:20:46截止不变，0训练/新标签。",
+  "original_deadline_utc_epoch": 1793946046.6902528,
+  "latest_verified_progress": "recovery03_first_live_progress.json",
+  "latest_message": "12组原模型加载已核实（11新加载+首组已完成证据），首条新增f1_s0/2038-01-04_100基线index36完整2017步已接纳，当前最新进度看manifest/pipeline/active_worker。实际回放已执行原NN预测与物理，不再称全程0预测/物理；训练和费用目标派生仍0。原截止11月6日14:20:46不变，旧35与部分35不重跑。",
+  "stop_receipt": "user_stop_complete.json",
+  "all_processes_exited": true
+}

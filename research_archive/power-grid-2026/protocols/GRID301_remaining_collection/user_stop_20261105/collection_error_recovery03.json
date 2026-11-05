@@ -1,0 +1,9 @@
+{
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\Codex\\GRL研究\\work\\grid301_remaining_collection\\recovery03\\manager.py\", line 45, in main\n    for item in opposite:replay(item)\n                         ^^^^^^^^^^^^\n  File \"D:\\Codex\\GRL研究\\work\\grid301_remaining_collection\\recovery03\\manager.py\", line 26, in replay\n    while child.poll() is None:check(current);time.sleep(.5)\n                               ^^^^^^^^^^^^^^\n  File \"D:\\Codex\\GRL研究\\work\\grid301_remaining_collection\\guard.py\", line 30, in check\n    if (O/'STOP_REQUEST.json').exists() or (OLD/'STOP_REQUEST.json').exists(): raise RuntimeError('stop requested; preserve partial')\n                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: stop requested; preserve partial\n",
+  "new_accepted": 300,
+  "physical_steps_new": 592946,
+  "forecasts_new": 1874873,
+  "wall_s": 32110.519370899998,
+  "no_retry_or_extension": true,
+  "preserve_all_partial": true
+}

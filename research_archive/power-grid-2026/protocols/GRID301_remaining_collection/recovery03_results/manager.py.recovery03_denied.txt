@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\recovery03\manager.py", line 50, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\recovery03\manager.py", line 6, in main
+    require_authorization(); launch=read(O/'launch_context.json');check(launch)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\recovery03\guard.py", line 16, in require_authorization
+    if not p.exists():raise PermissionError('GRID301 recovery03 authorization absent; no live imports')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: GRID301 recovery03 authorization absent; no live imports

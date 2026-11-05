@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\recovery02\manager.py", line 50, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\recovery02\manager.py", line 40, in main
+    run_load_only(ctx)
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\recovery02\preflight.py", line 20, in run_load_only
+    if child.returncode:raise RuntimeError('load-only preflight failed: '+item['pool'])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: load-only preflight failed: f0_s0

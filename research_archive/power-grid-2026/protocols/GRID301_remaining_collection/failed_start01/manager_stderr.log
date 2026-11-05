@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\manager.py", line 48, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\manager.py", line 39, in main
+    for item in D['baseline_runtime']['execution_order'][36:]:replay(item)
+                                                              ^^^^^^^^^^^^
+  File "D:\Codex\GRL研究\work\grid301_remaining_collection\manager.py", line 31, in replay
+    if child.returncode:raise RuntimeError('worker failed; no retry: '+str(index))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: worker failed; no retry: 36

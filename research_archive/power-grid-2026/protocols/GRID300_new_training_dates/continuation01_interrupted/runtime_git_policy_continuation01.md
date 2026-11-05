@@ -1,0 +1,1 @@
+Continuation01 manager owns synchronous baseline publication. Do not call publisher manually, start another manager or modify integration while generation/replay/automatic publisher is active. Queue runtime docs outside Git; publish fourdocs/start/end receipts only after manager and all children exit. Same original total deadline; old2h gate remains failed.

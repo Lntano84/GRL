@@ -1,0 +1,436 @@
+{
+  "rows": 201,
+  "calls_read": 201,
+  "active_rows": 184,
+  "keep_rows": 17,
+  "unique_active_states": 66,
+  "duplicate_active_records": 118,
+  "duplicate_state_groups_with_action_disagreement": 4,
+  "active_dates": 19,
+  "strict_cal_states": 24,
+  "representative_costs": {
+    "changed": {
+      "unavailable": 2,
+      "lower": 8,
+      "higher": 4
+    },
+    "unchanged": {
+      "same": 44,
+      "unavailable": 8
+    }
+  },
+  "strict_cal_costs": {
+    "changed": {
+      "higher": 1,
+      "lower": 1
+    },
+    "unchanged": {
+      "same": 22
+    }
+  },
+  "source_rows": {
+    "303": 185,
+    "307": 16
+  },
+  "unseen_count_differs_from_batch_size": 0,
+  "primary": {
+    "totals": {
+      "states": 66,
+      "date_batch_groups": 50,
+      "same_outcome": 5,
+      "groups_with_multiple_states": 12,
+      "score_tie": 13,
+      "higher_changed": 2
+    },
+    "by_date": {
+      "2037-01-05": {
+        "same_outcome": 1
+      },
+      "2037-04-06": {
+        "score_tie": 1,
+        "same_outcome": 1
+      },
+      "2037-07-06": {
+        "score_tie": 1,
+        "same_outcome": 2
+      },
+      "2038-01-18": {
+        "higher_changed": 2,
+        "score_tie": 2
+      },
+      "2038-06-21": {
+        "score_tie": 1
+      },
+      "2038-07-05": {
+        "score_tie": 1
+      },
+      "2038-08-16": {
+        "same_outcome": 1
+      },
+      "2038-11-01": {
+        "score_tie": 3
+      },
+      "2038-11-15": {
+        "score_tie": 4
+      }
+    },
+    "by_family": {
+      "2037-01-05": {
+        "same_outcome": 1
+      },
+      "2037-01-19": {
+        "higher_changed": 2,
+        "score_tie": 2
+      },
+      "2037-04-06": {
+        "score_tie": 1,
+        "same_outcome": 1
+      },
+      "2037-06-15": {
+        "score_tie": 1
+      },
+      "2037-07-06": {
+        "score_tie": 2,
+        "same_outcome": 2
+      },
+      "2037-08-17": {
+        "same_outcome": 1
+      },
+      "2037-11-02": {
+        "score_tie": 3
+      },
+      "2037-11-16": {
+        "score_tie": 4
+      }
+    },
+    "positive_families": [
+      "2037-01-19"
+    ],
+    "negative_families": [],
+    "groups": [
+      {
+        "group": [
+          "2037-01-05",
+          64
+        ],
+        "states": 2,
+        "pairs": {
+          "same_outcome": 1
+        }
+      },
+      {
+        "group": [
+          "2037-04-06",
+          7
+        ],
+        "states": 2,
+        "pairs": {
+          "score_tie": 1
+        }
+      },
+      {
+        "group": [
+          "2037-04-06",
+          64
+        ],
+        "states": 2,
+        "pairs": {
+          "same_outcome": 1
+        }
+      },
+      {
+        "group": [
+          "2037-07-06",
+          64
+        ],
+        "states": 3,
+        "pairs": {
+          "score_tie": 1,
+          "same_outcome": 2
+        }
+      },
+      {
+        "group": [
+          "2038-01-18",
+          8
+        ],
+        "states": 3,
+        "pairs": {
+          "higher_changed": 2,
+          "score_tie": 1
+        }
+      },
+      {
+        "group": [
+          "2038-01-18",
+          32
+        ],
+        "states": 2,
+        "pairs": {
+          "score_tie": 1
+        }
+      },
+      {
+        "group": [
+          "2038-06-21",
+          37
+        ],
+        "states": 2,
+        "pairs": {
+          "score_tie": 1
+        }
+      },
+      {
+        "group": [
+          "2038-07-05",
+          64
+        ],
+        "states": 2,
+        "pairs": {
+          "score_tie": 1
+        }
+      },
+      {
+        "group": [
+          "2038-08-16",
+          64
+        ],
+        "states": 2,
+        "pairs": {
+          "same_outcome": 1
+        }
+      },
+      {
+        "group": [
+          "2038-11-01",
+          64
+        ],
+        "states": 3,
+        "pairs": {
+          "score_tie": 3
+        }
+      },
+      {
+        "group": [
+          "2038-11-15",
+          7
+        ],
+        "states": 2,
+        "pairs": {
+          "score_tie": 1
+        }
+      },
+      {
+        "group": [
+          "2038-11-15",
+          64
+        ],
+        "states": 3,
+        "pairs": {
+          "score_tie": 3
+        }
+      }
+    ]
+  },
+  "same_baseline": {
+    "totals": {
+      "states": 66,
+      "date_batch_groups": 60,
+      "same_outcome": 4,
+      "groups_with_multiple_states": 5,
+      "score_tie": 3
+    },
+    "by_date": {
+      "2037-01-05": {
+        "same_outcome": 1
+      },
+      "2037-04-06": {
+        "same_outcome": 1
+      },
+      "2037-07-06": {
+        "score_tie": 1,
+        "same_outcome": 2
+      },
+      "2038-01-18": {
+        "score_tie": 1
+      },
+      "2038-07-05": {
+        "score_tie": 1
+      }
+    },
+    "by_family": {
+      "2037-01-05": {
+        "same_outcome": 1
+      },
+      "2037-01-19": {
+        "score_tie": 1
+      },
+      "2037-04-06": {
+        "same_outcome": 1
+      },
+      "2037-07-06": {
+        "score_tie": 2,
+        "same_outcome": 2
+      }
+    },
+    "positive_families": [],
+    "negative_families": [],
+    "groups": [
+      {
+        "group": [
+          "2037-01-05",
+          64,
+          "outputs/grid297_paired_collection_preparation/runs/r0__2037-01-05_100__STOP_NEXT__f1_s0"
+        ],
+        "states": 2,
+        "pairs": {
+          "same_outcome": 1
+        }
+      },
+      {
+        "group": [
+          "2037-04-06",
+          64,
+          "outputs/grid297_paired_collection_preparation/runs/r0__2037-04-06_100__STOP_NEXT__f1_s0"
+        ],
+        "states": 2,
+        "pairs": {
+          "same_outcome": 1
+        }
+      },
+      {
+        "group": [
+          "2037-07-06",
+          64,
+          "outputs/grid297_paired_collection_preparation/runs/r0__2037-07-06_100__STOP_NEXT__f1_s0"
+        ],
+        "states": 3,
+        "pairs": {
+          "score_tie": 1,
+          "same_outcome": 2
+        }
+      },
+      {
+        "group": [
+          "2038-01-18",
+          32,
+          "outputs/grid300_new_training_dates/runs/r0__2038-01-18_100__BASELINE261__f0_s0"
+        ],
+        "states": 2,
+        "pairs": {
+          "score_tie": 1
+        }
+      },
+      {
+        "group": [
+          "2038-07-05",
+          64,
+          "outputs/grid301_remaining_collection/runs/r0__2038-07-05_100__BASELINE261__f1_s0"
+        ],
+        "states": 2,
+        "pairs": {
+          "score_tie": 1
+        }
+      }
+    ]
+  },
+  "strict_cal": {
+    "totals": {
+      "states": 24,
+      "date_batch_groups": 18,
+      "same_outcome": 4,
+      "groups_with_multiple_states": 5,
+      "score_tie": 3
+    },
+    "by_date": {
+      "2037-01-05": {
+        "same_outcome": 1
+      },
+      "2037-04-06": {
+        "score_tie": 1,
+        "same_outcome": 1
+      },
+      "2037-07-06": {
+        "score_tie": 1,
+        "same_outcome": 2
+      },
+      "2038-07-05": {
+        "score_tie": 1
+      }
+    },
+    "by_family": {
+      "2037-01-05": {
+        "same_outcome": 1
+      },
+      "2037-04-06": {
+        "score_tie": 1,
+        "same_outcome": 1
+      },
+      "2037-07-06": {
+        "score_tie": 2,
+        "same_outcome": 2
+      }
+    },
+    "positive_families": [],
+    "negative_families": [],
+    "groups": [
+      {
+        "group": [
+          "2037-01-05",
+          64
+        ],
+        "states": 2,
+        "pairs": {
+          "same_outcome": 1
+        }
+      },
+      {
+        "group": [
+          "2037-04-06",
+          7
+        ],
+        "states": 2,
+        "pairs": {
+          "score_tie": 1
+        }
+      },
+      {
+        "group": [
+          "2037-04-06",
+          64
+        ],
+        "states": 2,
+        "pairs": {
+          "same_outcome": 1
+        }
+      },
+      {
+        "group": [
+          "2037-07-06",
+          64
+        ],
+        "states": 3,
+        "pairs": {
+          "score_tie": 1,
+          "same_outcome": 2
+        }
+      },
+      {
+        "group": [
+          "2038-07-05",
+          64
+        ],
+        "states": 2,
+        "pairs": {
+          "score_tie": 1
+        }
+      }
+    ]
+  },
+  "decision": "CLOSE_TOPOLOGY_SCORE_SAMPLING_ROUTE",
+  "new_physics": 0,
+  "new_predictions": 0,
+  "new_fits": 0,
+  "new_cost_labels": 0,
+  "wall_s": 2.249752700001409
+}

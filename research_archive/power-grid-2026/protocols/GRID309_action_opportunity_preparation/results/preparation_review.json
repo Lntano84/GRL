@@ -1,0 +1,66 @@
+{
+  "selection": [
+    "eight bounded selections",
+    "exact state dedup and chronological ties",
+    "same-batch lower-score reference",
+    "cost ignored",
+    "too few families stops",
+    "too few references stops",
+    "missing references stay empty"
+  ],
+  "intervention": [
+    "original baseline decisions",
+    "pure scoring of STOP only",
+    "one flip then original behavior",
+    "wrong full public marker refuses flip",
+    "missing marker refuses physical step"
+  ],
+  "assembled_sources_compiled": 3,
+  "rejected_missing_authorization_fields": 17,
+  "clock_claim_cases": 10,
+  "live_entries_refused": [
+    {
+      "args": [
+        "run"
+      ],
+      "exit_code": 2,
+      "guard_before_live_imports": true
+    },
+    {
+      "args": [
+        "worker",
+        "generation",
+        "0"
+      ],
+      "exit_code": 2,
+      "guard_before_live_imports": true
+    },
+    {
+      "args": [
+        "worker",
+        "replay",
+        "0"
+      ],
+      "exit_code": 2,
+      "guard_before_live_imports": true
+    },
+    {
+      "args": [
+        "worker",
+        "replay",
+        "4"
+      ],
+      "exit_code": 2,
+      "guard_before_live_imports": true
+    }
+  ],
+  "passed": true,
+  "source_commit": "268936645369033e441a93d0bb55e3e5ef5cc6fe",
+  "live_generation": 0,
+  "live_model_loads": 0,
+  "new_predictions": 0,
+  "physical_steps": 0,
+  "new_cost_labels": 0,
+  "new_fits": 0,
+  "wall_s": 0.44914369999969495
+}

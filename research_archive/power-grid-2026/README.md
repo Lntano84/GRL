@@ -1,3 +1,9 @@
+# 最新 GRID302 续采收尾
+
+GRID302 续采完成，接纳 40/40 条，其中 32 条完整走完 2017 步，8 条提前结束。另有 0 条启动后未接纳，0 条未启动。实际新物理步 79,764，forecast 268,102，总计时 62.6 分钟。
+
+[收尾报告](protocols/GRID302_unstarted_opposites/results/GRID302_report.md)
+
 # 最新：GRID301用户关机暂停
 
 [停机报告](protocols/GRID301_remaining_collection/user_stop_20261105/GRID301_user_stop_report.md)。GRID301已按用户关机要求停止，所有采集进程退出：341计划中接纳300（108基线/192相反动作，242完整周/58提前结束），592946新步/1874873forecast；index336另1079步/2938保存forecast，40未启动。新原始数据D无损去重归档并逐对象SHA读回，0新训练/费用标签。STOP_REQUEST保留，不自动恢复/补跑/延窗；grl此前已删除，保持关闭。

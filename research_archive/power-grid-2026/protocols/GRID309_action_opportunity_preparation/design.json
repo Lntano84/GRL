@@ -1,0 +1,199 @@
+{
+  "scope_id": "GRID309_FOUR_FAMILY_ACTION_OPPORTUNITY_PILOT",
+  "status": "PREPARATION_ONLY_NO_PHYSICAL_APPROVAL",
+  "environment": "work/grid309_action_opportunity_preparation/train_env",
+  "caps": {
+    "wall_s": 7200,
+    "generation_s": 2700,
+    "per_generation_s": 1800,
+    "per_replay_s": 1200,
+    "new_physical_steps": 24204,
+    "all_forecasts": 180000
+  },
+  "calendar": {
+    "dates": [
+      {
+        "date": "2039-03-14",
+        "family": {
+          "month": 3,
+          "monday_ordinal": 2
+        },
+        "scenario_id": 100,
+        "scenario": "2039-03-14_100",
+        "environment_seed": 0,
+        "model_pool": "f0_s0",
+        "role": "prospective_calibration_pilot_only",
+        "generator_seeds": {
+          "load_seed": 636483801,
+          "renew_seed": 1844674755,
+          "gen_p_forecast_seed": 2466743327
+        }
+      },
+      {
+        "date": "2039-06-13",
+        "family": {
+          "month": 6,
+          "monday_ordinal": 2
+        },
+        "scenario_id": 100,
+        "scenario": "2039-06-13_100",
+        "environment_seed": 0,
+        "model_pool": "f0_s0",
+        "role": "prospective_calibration_pilot_only",
+        "generator_seeds": {
+          "load_seed": 3640935489,
+          "renew_seed": 3181318788,
+          "gen_p_forecast_seed": 2932632662
+        }
+      },
+      {
+        "date": "2039-09-12",
+        "family": {
+          "month": 9,
+          "monday_ordinal": 2
+        },
+        "scenario_id": 100,
+        "scenario": "2039-09-12_100",
+        "environment_seed": 0,
+        "model_pool": "f0_s0",
+        "role": "prospective_calibration_pilot_only",
+        "generator_seeds": {
+          "load_seed": 1658590055,
+          "renew_seed": 3877754585,
+          "gen_p_forecast_seed": 3320787112
+        }
+      },
+      {
+        "date": "2039-12-12",
+        "family": {
+          "month": 12,
+          "monday_ordinal": 2
+        },
+        "scenario_id": 100,
+        "scenario": "2039-12-12_100",
+        "environment_seed": 0,
+        "model_pool": "f0_s0",
+        "role": "prospective_calibration_pilot_only",
+        "generator_seeds": {
+          "load_seed": 508911024,
+          "renew_seed": 967430282,
+          "gen_p_forecast_seed": 4192707184
+        }
+      }
+    ]
+  },
+  "baseline_runtime": {
+    "environment": "work/grid309_action_opportunity_preparation/train_env",
+    "caps": {
+      "episode_s": 1200,
+      "wall_s": 7200,
+      "physical_steps": 24204,
+      "public_forecasts": 180000
+    },
+    "timing": "Original frozen control and simulator with setup inside the total window.",
+    "execution_order": [
+      {
+        "method": "BASELINE261__f0_s0",
+        "completion_mode": "FROZEN261_NO_INTERVENTION",
+        "model_seed": 0,
+        "policy": "FRAME_GUARD",
+        "rule": "STATIC_ID",
+        "budget": 128,
+        "checkpoint": null,
+        "cache_dc": true,
+        "cache_safe": true,
+        "order_mode": "STATIC_ID",
+        "repeat": 0,
+        "week": "2039-03-14_100",
+        "date": "2039-03-14",
+        "stage_phase": "all",
+        "partition": "prospective_calibration_pilot_only",
+        "arm": "BASELINE261",
+        "pool": "f0_s0",
+        "index": 0,
+        "pair_index": 0,
+        "within_pair": 0,
+        "KEEP": false,
+        "target": null
+      },
+      {
+        "method": "BASELINE261__f0_s0",
+        "completion_mode": "FROZEN261_NO_INTERVENTION",
+        "model_seed": 0,
+        "policy": "FRAME_GUARD",
+        "rule": "STATIC_ID",
+        "budget": 128,
+        "checkpoint": null,
+        "cache_dc": true,
+        "cache_safe": true,
+        "order_mode": "STATIC_ID",
+        "repeat": 0,
+        "week": "2039-06-13_100",
+        "date": "2039-06-13",
+        "stage_phase": "all",
+        "partition": "prospective_calibration_pilot_only",
+        "arm": "BASELINE261",
+        "pool": "f0_s0",
+        "index": 1,
+        "pair_index": 1,
+        "within_pair": 0,
+        "KEEP": false,
+        "target": null
+      },
+      {
+        "method": "BASELINE261__f0_s0",
+        "completion_mode": "FROZEN261_NO_INTERVENTION",
+        "model_seed": 0,
+        "policy": "FRAME_GUARD",
+        "rule": "STATIC_ID",
+        "budget": 128,
+        "checkpoint": null,
+        "cache_dc": true,
+        "cache_safe": true,
+        "order_mode": "STATIC_ID",
+        "repeat": 0,
+        "week": "2039-09-12_100",
+        "date": "2039-09-12",
+        "stage_phase": "all",
+        "partition": "prospective_calibration_pilot_only",
+        "arm": "BASELINE261",
+        "pool": "f0_s0",
+        "index": 2,
+        "pair_index": 2,
+        "within_pair": 0,
+        "KEEP": false,
+        "target": null
+      },
+      {
+        "method": "BASELINE261__f0_s0",
+        "completion_mode": "FROZEN261_NO_INTERVENTION",
+        "model_seed": 0,
+        "policy": "FRAME_GUARD",
+        "rule": "STATIC_ID",
+        "budget": 128,
+        "checkpoint": null,
+        "cache_dc": true,
+        "cache_safe": true,
+        "order_mode": "STATIC_ID",
+        "repeat": 0,
+        "week": "2039-12-12_100",
+        "date": "2039-12-12",
+        "stage_phase": "all",
+        "partition": "prospective_calibration_pilot_only",
+        "arm": "BASELINE261",
+        "pool": "f0_s0",
+        "index": 3,
+        "pair_index": 3,
+        "within_pair": 0,
+        "KEEP": false,
+        "target": null
+      }
+    ]
+  },
+  "generation_scenarios": 4,
+  "max_cont_runs": 8,
+  "max_replays": 12,
+  "scientific_plan_sha256": "716ca6905ea4127ab0318e0af3404fb65ef86067664d66352aa9ec468183a64b",
+  "reference_rule": "Earliest different eligible state in the same baseline with the same next batch length and a strictly lower score. Record absence; no substitution across dates or batches.",
+  "minimum_coverage_before_CONT": "Primary points in at least three of four fixed date families, and matched references in at least two. Otherwise retain base records, no CONT."
+}

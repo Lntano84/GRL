@@ -1,5 +1,6 @@
 """Bind old scenario bytes and check the new four-arm program offline."""
 import argparse
+import ast
 import hashlib
 import subprocess
 import sys
@@ -69,7 +70,8 @@ def qualify():
         if name not in compiled:
             compile(adapter, "GRID322 adapter " + name, "exec")
             assert "N.CompletionPolicy('FRAME_GUARD')" in adapter
-            assert ("result['load_guard']" in adapter) == row["load_guard"]
+            embedded = [node.value for node in ast.walk(ast.parse(adapter)) if isinstance(node, ast.Constant)]
+            assert (rt.previous.policy_source() in embedded) == row["load_guard"]
             compiled[name] = row["load_guard"]
     assert len(compiled) == 4
     assert sum(x["load_guard"] for x in d["execution_order"]) == 8

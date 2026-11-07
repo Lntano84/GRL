@@ -1,0 +1,7 @@
+{
+  "initial_source": "589c4bb3",
+  "cause": "The first offline check searched unescaped policy text in a repr-embedded string.",
+  "fix": "Compare the original guarded policy source to the parsed AST literal. Runtime, design, budget and data were unchanged.",
+  "completed_qualifications_before_fix": 0,
+  "new_physics": 0
+}

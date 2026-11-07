@@ -1,0 +1,104 @@
+{
+  "actual": {
+    "states": 16,
+    "active_states": 5,
+    "can_stop": 9,
+    "must_continue": 3,
+    "can_stop_dates": 2,
+    "must_continue_dates": 1,
+    "by_date": {
+      "2037-03-02": {
+        "can_stop": 7,
+        "must_continue": 3
+      },
+      "2039-12-12": {
+        "can_stop": 2,
+        "must_continue": 0
+      }
+    }
+  },
+  "exact_full_matches": {
+    "states": 0,
+    "active_states": 0,
+    "can_stop": 0,
+    "must_continue": 0,
+    "can_stop_dates": 0,
+    "must_continue_dates": 0,
+    "by_date": {}
+  },
+  "other_full_joins": {
+    "same_step_different_state_or_base": 1
+  },
+  "teacher_proxy": {
+    "train": {
+      "states": 24,
+      "active_states": 24,
+      "can_stop": 56,
+      "must_continue": 2,
+      "can_stop_dates": 10,
+      "must_continue_dates": 2,
+      "by_date": {
+        "2037-01-05": {
+          "can_stop": 4,
+          "must_continue": 0
+        },
+        "2037-01-19": {
+          "can_stop": 7,
+          "must_continue": 1
+        },
+        "2037-02-16": {
+          "can_stop": 3,
+          "must_continue": 0
+        },
+        "2037-03-16": {
+          "can_stop": 7,
+          "must_continue": 1
+        },
+        "2037-04-06": {
+          "can_stop": 12,
+          "must_continue": 0
+        },
+        "2037-05-18": {
+          "can_stop": 9,
+          "must_continue": 0
+        },
+        "2037-06-01": {
+          "can_stop": 6,
+          "must_continue": 0
+        },
+        "2037-06-15": {
+          "can_stop": 1,
+          "must_continue": 0
+        },
+        "2037-07-06": {
+          "can_stop": 2,
+          "must_continue": 0
+        },
+        "2037-12-07": {
+          "can_stop": 5,
+          "must_continue": 0
+        }
+      }
+    },
+    "validation": {
+      "states": 6,
+      "active_states": 6,
+      "can_stop": 14,
+      "must_continue": 3,
+      "can_stop_dates": 1,
+      "must_continue_dates": 1,
+      "by_date": {
+        "2037-03-02": {
+          "can_stop": 14,
+          "must_continue": 3
+        }
+      }
+    }
+  },
+  "teacher_calls": 305,
+  "passed_necessary_gate": false,
+  "new_fits": 0,
+  "new_predictions": 0,
+  "new_physics": 0,
+  "elapsed_s": 0.9840000000003783
+}

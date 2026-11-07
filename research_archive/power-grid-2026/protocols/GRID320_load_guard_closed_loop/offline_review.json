@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "source_commit": "3c9bda3d8b6ac6e1ccbc99d26620a2db2dd79466",
+  "compiled_sources": 3,
+  "synthetic_policy_cases": [
+    {
+      "arm": "PARENT208",
+      "case": "below_threshold_stop",
+      "original_paid": 320,
+      "guarded_paid": 320
+    },
+    {
+      "arm": "PARENT208",
+      "case": "equal_threshold_stop",
+      "original_paid": 320,
+      "guarded_paid": 320
+    },
+    {
+      "arm": "PARENT208",
+      "case": "above_threshold_stop",
+      "original_paid": 320,
+      "guarded_paid": 600
+    },
+    {
+      "arm": "PARENT208",
+      "case": "previous_local_prefix",
+      "original_paid": 384,
+      "guarded_paid": 600
+    },
+    {
+      "arm": "PARENT208",
+      "case": "paid_extension_unchanged",
+      "original_paid": 384,
+      "guarded_paid": 384
+    },
+    {
+      "arm": "PARENT208",
+      "case": "no_pending_bypass",
+      "original_paid": 256,
+      "guarded_paid": 256
+    },
+    {
+      "arm": "BOUNDED261",
+      "case": "below_threshold_stop",
+      "original_paid": 320,
+      "guarded_paid": 320
+    },
+    {
+      "arm": "BOUNDED261",
+      "case": "equal_threshold_stop",
+      "original_paid": 320,
+      "guarded_paid": 320
+    },
+    {
+      "arm": "BOUNDED261",
+      "case": "above_threshold_stop",
+      "original_paid": 320,
+      "guarded_paid": 600
+    },
+    {
+      "arm": "BOUNDED261",
+      "case": "previous_local_prefix",
+      "original_paid": 384,
+      "guarded_paid": 600
+    },
+    {
+      "arm": "BOUNDED261",
+      "case": "paid_extension_unchanged",
+      "original_paid": 384,
+      "guarded_paid": 384
+    },
+    {
+      "arm": "BOUNDED261",
+      "case": "no_pending_bypass",
+      "original_paid": 256,
+      "guarded_paid": 256
+    }
+  ],
+  "missing_scope_entries_rejected": 2,
+  "new_model_loads": 0,
+  "new_predictions": 0,
+  "new_physics": 0,
+  "new_fits": 0,
+  "resource_passed": false,
+  "live_authorization": false
+}

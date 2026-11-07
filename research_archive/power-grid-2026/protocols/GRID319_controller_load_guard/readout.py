@@ -62,7 +62,9 @@ def evaluate(case, call):
     outcomes = call["outcomes"]
     paid, tail = case["learned_queries"], case["saved_queries"]
     assert call["public_queries"] == len(outcomes) == paid + tail == case["frame_queries"]
-    assert [r["pool_id"] for r in outcomes[paid:]] == call["completion_candidate_ids"]
+    seen = {r["pool_id"] for r in outcomes[:paid]}
+    remaining = [i for i in call["completion_candidate_ids"] if i not in seen]
+    assert [r["pool_id"] for r in outcomes[paid:]] == remaining
     assert all(r["phase"] == "local_completion" for r in outcomes[paid:])
     incumbent, full = best(outcomes[:paid]), best(outcomes)
     assert incumbent["pool_id"] == case["learned_candidate"] and full["pool_id"] == case["frame_candidate"]

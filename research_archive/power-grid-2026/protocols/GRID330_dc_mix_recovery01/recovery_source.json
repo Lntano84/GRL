@@ -1,0 +1,22 @@
+{
+  "original_authorization": "fa1d5997da30369cf8fb31d178c2fe90678469ad",
+  "original_error": "KeyError: timing",
+  "original_files": {
+    "launch_context.json": "1506e5f5ad1dff9f004c1391a7b5c76a1cfdd8592a8402305bbb103b7fb3fee0",
+    "collection_error.json": "ffd61809cd98f0d101a48c38e2e78eb415af7cbd8e79e48f8e4d4f98af3a26cb",
+    "pipeline_state.json": "2eb51fe8586faf6d141b1b39ced0d23f05765eb0aa4a2d70b86d215e1fc1cf04",
+    "active_worker.json": "201634671c26496b509b75b9adc044b09539a75fda9c35d312bb13ae2d3d9589",
+    "manager_stderr.log": "4d7e44c17769eacec5e2a12bf85a09af213d20d5ed129b376e0116e1c4a45d38",
+    "replay_00.log": "f84fd82cdc11f3bc786ea6fd0316dc24b36b945c767a17fa3b6bade69f7f6c75",
+    "worker_setup_000.json": "6ebc736f977f928bc0d2f936e665e2f08326be04b95fdd08124e2ee3c65ef132"
+  },
+  "accepted_before": 0,
+  "environment_initialized_before": true,
+  "physical_steps_before": 0,
+  "candidate_queries_before": 0,
+  "startup_forecast_count_measured": false,
+  "forecast_reserve": 1000,
+  "original_failed_wall_s": 16.358551200000875,
+  "original_deadline_utc": "2026-11-09T14:10:24.817896+00:00",
+  "repair": "Add the worker metadata field timing. Preserve original execution_order and numerical sources. Use separate output and claims. Count startup forecasts before metadata, keep the original clock and debit the failed startup from first worker cap."
+}

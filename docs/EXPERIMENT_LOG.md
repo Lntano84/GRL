@@ -2713,3 +2713,7 @@ GRID325 对 305 个保存 FULL 调用固定首批 128。开发 62 个调用为 1
 GRID326 固定首 64 原序、另 64 DC 候选。开发 62 调用相对原序 19 胜、40 平、3 负，FULL 最优命中原序 / 纯 DC / 混排为 27 / 42 / 43。救回三月第 110 步，第 539 步仍丢失可接纳动作，原训练分区另有一次接纳退化。固定混排未过保留条件。复用原 DC 排序，零新增求解、拟合、打分或仿真。
 
 [GRID326 报告](../research_archive/power-grid-2026/protocols/GRID326_fixed_dc_mix/results/GRID326_report.md)
+
+## GRID326 两条首批漏失的回退核对
+
+复用保存反馈，原回退找到相同最终动作。全局查询两例各多 64，含 FRAME 局部总查询分别多 45 和 64。[补充核对](../research_archive/power-grid-2026/protocols/GRID326_fixed_dc_mix/results/GRID326_fallback_note.md)

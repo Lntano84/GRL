@@ -1,0 +1,1011 @@
+{
+  "metrics": {
+    "train": {
+      "all": {
+        "calls": 243,
+        "queries_per_arm": 31104,
+        "mix_changed_static_sets": 183,
+        "comparisons": {
+          "static": {
+            "wins": 73,
+            "ties": 163,
+            "losses": 7,
+            "lost_admissible": 1,
+            "recovered_admissible": 1,
+            "paired_both_admissible": 218,
+            "paired_regret_reference": 0.010754451839202041,
+            "paired_regret_mix": 0.0022401011318241783
+          },
+          "dc": {
+            "wins": 12,
+            "ties": 224,
+            "losses": 7,
+            "lost_admissible": 0,
+            "recovered_admissible": 4,
+            "paired_both_admissible": 215,
+            "paired_regret_reference": 0.0025044635284778684,
+            "paired_regret_mix": 0.0022261503130890604
+          }
+        },
+        "static": {
+          "full_match": 106,
+          "frame_match": 140,
+          "frame_in_prefix": 140,
+          "missing_with_full_admissible": 3
+        },
+        "dc": {
+          "full_match": 166,
+          "frame_match": 149,
+          "frame_in_prefix": 175,
+          "missing_with_full_admissible": 7
+        },
+        "mix": {
+          "full_match": 167,
+          "frame_match": 155,
+          "frame_in_prefix": 181,
+          "missing_with_full_admissible": 3
+        }
+      },
+      "by_date": {
+        "2037-01-05": {
+          "calls": 26,
+          "queries_per_arm": 3328,
+          "mix_changed_static_sets": 17,
+          "comparisons": {
+            "static": {
+              "wins": 3,
+              "ties": 23,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 14,
+              "paired_regret_reference": 0.015214536871228899,
+              "paired_regret_mix": 0.009266359465462821
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 26,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 14,
+              "paired_regret_reference": 0.009266359465462821,
+              "paired_regret_mix": 0.009266359465462821
+            }
+          },
+          "static": {
+            "full_match": 4,
+            "frame_match": 5,
+            "frame_in_prefix": 5,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 6,
+            "frame_match": 8,
+            "frame_in_prefix": 8,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 6,
+            "frame_match": 8,
+            "frame_in_prefix": 8,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-01-19": {
+          "calls": 24,
+          "queries_per_arm": 3072,
+          "mix_changed_static_sets": 20,
+          "comparisons": {
+            "static": {
+              "wins": 8,
+              "ties": 15,
+              "losses": 1,
+              "lost_admissible": 1,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 19,
+              "paired_regret_reference": 0.005551237809030633,
+              "paired_regret_mix": 0.0003666877746582031
+            },
+            "dc": {
+              "wins": 1,
+              "ties": 23,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 19,
+              "paired_regret_reference": 0.0013820748580129522,
+              "paired_regret_mix": 0.0003666877746582031
+            }
+          },
+          "static": {
+            "full_match": 8,
+            "frame_match": 11,
+            "frame_in_prefix": 11,
+            "missing_with_full_admissible": 1
+          },
+          "dc": {
+            "full_match": 14,
+            "frame_match": 12,
+            "frame_in_prefix": 14,
+            "missing_with_full_admissible": 2
+          },
+          "mix": {
+            "full_match": 15,
+            "frame_match": 13,
+            "frame_in_prefix": 16,
+            "missing_with_full_admissible": 2
+          }
+        },
+        "2037-02-16": {
+          "calls": 13,
+          "queries_per_arm": 1664,
+          "mix_changed_static_sets": 11,
+          "comparisons": {
+            "static": {
+              "wins": 3,
+              "ties": 9,
+              "losses": 1,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 10,
+              "paired_regret_reference": 0.0032349109649658205,
+              "paired_regret_mix": 0.0009479165077209472
+            },
+            "dc": {
+              "wins": 2,
+              "ties": 10,
+              "losses": 1,
+              "lost_admissible": 0,
+              "recovered_admissible": 1,
+              "paired_both_admissible": 9,
+              "paired_regret_reference": 0.0035472578472561305,
+              "paired_regret_mix": 0.0007382233937581381
+            }
+          },
+          "static": {
+            "full_match": 5,
+            "frame_match": 7,
+            "frame_in_prefix": 7,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 7,
+            "frame_match": 5,
+            "frame_in_prefix": 7,
+            "missing_with_full_admissible": 1
+          },
+          "mix": {
+            "full_match": 7,
+            "frame_match": 5,
+            "frame_in_prefix": 7,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-03-16": {
+          "calls": 19,
+          "queries_per_arm": 2432,
+          "mix_changed_static_sets": 14,
+          "comparisons": {
+            "static": {
+              "wins": 6,
+              "ties": 13,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 1,
+              "paired_both_admissible": 18,
+              "paired_regret_reference": 0.001414762602912055,
+              "paired_regret_mix": 0.00011069244808620877
+            },
+            "dc": {
+              "wins": 1,
+              "ties": 17,
+              "losses": 1,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 19,
+              "paired_regret_reference": 8.817722922877262e-05,
+              "paired_regret_mix": 0.000104866529765882
+            }
+          },
+          "static": {
+            "full_match": 9,
+            "frame_match": 11,
+            "frame_in_prefix": 11,
+            "missing_with_full_admissible": 1
+          },
+          "dc": {
+            "full_match": 14,
+            "frame_match": 16,
+            "frame_in_prefix": 16,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 14,
+            "frame_match": 16,
+            "frame_in_prefix": 16,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-04-06": {
+          "calls": 21,
+          "queries_per_arm": 2688,
+          "mix_changed_static_sets": 18,
+          "comparisons": {
+            "static": {
+              "wins": 7,
+              "ties": 13,
+              "losses": 1,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 17,
+              "paired_regret_reference": 0.007108849637648638,
+              "paired_regret_mix": 0.0005307618309469784
+            },
+            "dc": {
+              "wins": 2,
+              "ties": 18,
+              "losses": 1,
+              "lost_admissible": 0,
+              "recovered_admissible": 1,
+              "paired_both_admissible": 16,
+              "paired_regret_reference": 0.0003623366355895996,
+              "paired_regret_mix": 0.00031238794326782227
+            }
+          },
+          "static": {
+            "full_match": 8,
+            "frame_match": 11,
+            "frame_in_prefix": 11,
+            "missing_with_full_admissible": 1
+          },
+          "dc": {
+            "full_match": 13,
+            "frame_match": 10,
+            "frame_in_prefix": 13,
+            "missing_with_full_admissible": 2
+          },
+          "mix": {
+            "full_match": 13,
+            "frame_match": 12,
+            "frame_in_prefix": 14,
+            "missing_with_full_admissible": 1
+          }
+        },
+        "2037-05-18": {
+          "calls": 12,
+          "queries_per_arm": 1536,
+          "mix_changed_static_sets": 9,
+          "comparisons": {
+            "static": {
+              "wins": 5,
+              "ties": 7,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 12,
+              "paired_regret_reference": 0.005202800035476685,
+              "paired_regret_mix": 1.7503897349039715e-05
+            },
+            "dc": {
+              "wins": 1,
+              "ties": 11,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 12,
+              "paired_regret_reference": 0.00018628438313802084,
+              "paired_regret_mix": 1.7503897349039715e-05
+            }
+          },
+          "static": {
+            "full_match": 6,
+            "frame_match": 7,
+            "frame_in_prefix": 7,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 11,
+            "frame_match": 10,
+            "frame_in_prefix": 11,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 11,
+            "frame_match": 11,
+            "frame_in_prefix": 12,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-06-01": {
+          "calls": 19,
+          "queries_per_arm": 2432,
+          "mix_changed_static_sets": 15,
+          "comparisons": {
+            "static": {
+              "wins": 8,
+              "ties": 9,
+              "losses": 2,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 19,
+              "paired_regret_reference": 0.00850115324321546,
+              "paired_regret_mix": 0.0015639066696166992
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 17,
+              "losses": 2,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 19,
+              "paired_regret_reference": 0.0006765001698544151,
+              "paired_regret_mix": 0.0015639066696166992
+            }
+          },
+          "static": {
+            "full_match": 7,
+            "frame_match": 10,
+            "frame_in_prefix": 10,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 15,
+            "frame_match": 11,
+            "frame_in_prefix": 15,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 13,
+            "frame_match": 9,
+            "frame_in_prefix": 13,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-06-15": {
+          "calls": 11,
+          "queries_per_arm": 1408,
+          "mix_changed_static_sets": 7,
+          "comparisons": {
+            "static": {
+              "wins": 2,
+              "ties": 9,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 11,
+              "paired_regret_reference": 0.01043492013757879,
+              "paired_regret_mix": 0.010326710614291105
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 10,
+              "losses": 1,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 11,
+              "paired_regret_reference": 0.009220253337513317,
+              "paired_regret_mix": 0.010326710614291105
+            }
+          },
+          "static": {
+            "full_match": 6,
+            "frame_match": 9,
+            "frame_in_prefix": 9,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 7,
+            "frame_match": 7,
+            "frame_in_prefix": 8,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 7,
+            "frame_match": 8,
+            "frame_in_prefix": 9,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-07-06": {
+          "calls": 22,
+          "queries_per_arm": 2816,
+          "mix_changed_static_sets": 17,
+          "comparisons": {
+            "static": {
+              "wins": 10,
+              "ties": 12,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 22,
+              "paired_regret_reference": 0.03247311440381137,
+              "paired_regret_mix": 1.2625347484241833e-06
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 22,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 22,
+              "paired_regret_reference": 1.2625347484241833e-06,
+              "paired_regret_mix": 1.2625347484241833e-06
+            }
+          },
+          "static": {
+            "full_match": 10,
+            "frame_match": 11,
+            "frame_in_prefix": 11,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 20,
+            "frame_match": 20,
+            "frame_in_prefix": 21,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 20,
+            "frame_match": 20,
+            "frame_in_prefix": 21,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-08-17": {
+          "calls": 17,
+          "queries_per_arm": 2176,
+          "mix_changed_static_sets": 15,
+          "comparisons": {
+            "static": {
+              "wins": 6,
+              "ties": 11,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 17,
+              "paired_regret_reference": 0.026088427094852224,
+              "paired_regret_mix": 2.791601068833295e-05
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 17,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 17,
+              "paired_regret_reference": 2.791601068833295e-05,
+              "paired_regret_mix": 2.791601068833295e-05
+            }
+          },
+          "static": {
+            "full_match": 10,
+            "frame_match": 12,
+            "frame_in_prefix": 12,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 15,
+            "frame_match": 12,
+            "frame_in_prefix": 15,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 15,
+            "frame_match": 12,
+            "frame_in_prefix": 15,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-09-07": {
+          "calls": 6,
+          "queries_per_arm": 768,
+          "mix_changed_static_sets": 5,
+          "comparisons": {
+            "static": {
+              "wins": 3,
+              "ties": 3,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 6,
+              "paired_regret_reference": 0.017506102720896404,
+              "paired_regret_mix": 0.0
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 6,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 6,
+              "paired_regret_reference": 0.0,
+              "paired_regret_mix": 0.0
+            }
+          },
+          "static": {
+            "full_match": 3,
+            "frame_match": 5,
+            "frame_in_prefix": 5,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 6,
+            "frame_match": 4,
+            "frame_in_prefix": 6,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 6,
+            "frame_match": 4,
+            "frame_in_prefix": 6,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-09-21": {
+          "calls": 10,
+          "queries_per_arm": 1280,
+          "mix_changed_static_sets": 8,
+          "comparisons": {
+            "static": {
+              "wins": 3,
+              "ties": 5,
+              "losses": 2,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 10,
+              "paired_regret_reference": 0.006538951396942138,
+              "paired_regret_mix": 0.01066584587097168
+            },
+            "dc": {
+              "wins": 3,
+              "ties": 7,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 1,
+              "paired_both_admissible": 9,
+              "paired_regret_reference": 0.011868596076965332,
+              "paired_regret_mix": 0.011533180872599283
+            }
+          },
+          "static": {
+            "full_match": 3,
+            "frame_match": 8,
+            "frame_in_prefix": 8,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 5,
+            "frame_match": 4,
+            "frame_in_prefix": 6,
+            "missing_with_full_admissible": 1
+          },
+          "mix": {
+            "full_match": 5,
+            "frame_match": 5,
+            "frame_in_prefix": 7,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-10-05": {
+          "calls": 13,
+          "queries_per_arm": 1664,
+          "mix_changed_static_sets": 9,
+          "comparisons": {
+            "static": {
+              "wins": 3,
+              "ties": 10,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 13,
+              "paired_regret_reference": 0.0021075927294217623,
+              "paired_regret_mix": 0.0012450951796311599
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 12,
+              "losses": 1,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 13,
+              "paired_regret_reference": 0.0003264133746807392,
+              "paired_regret_mix": 0.0012450951796311599
+            }
+          },
+          "static": {
+            "full_match": 8,
+            "frame_match": 9,
+            "frame_in_prefix": 9,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 10,
+            "frame_match": 10,
+            "frame_in_prefix": 11,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 10,
+            "frame_match": 10,
+            "frame_in_prefix": 11,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-11-02": {
+          "calls": 9,
+          "queries_per_arm": 1152,
+          "mix_changed_static_sets": 6,
+          "comparisons": {
+            "static": {
+              "wins": 2,
+              "ties": 7,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 9,
+              "paired_regret_reference": 0.0002548429701063368,
+              "paired_regret_mix": 0.0001561774147881402
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 9,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 9,
+              "paired_regret_reference": 0.0001561774147881402,
+              "paired_regret_mix": 0.0001561774147881402
+            }
+          },
+          "static": {
+            "full_match": 5,
+            "frame_match": 6,
+            "frame_in_prefix": 6,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 7,
+            "frame_match": 6,
+            "frame_in_prefix": 7,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 7,
+            "frame_match": 6,
+            "frame_in_prefix": 7,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-11-16": {
+          "calls": 10,
+          "queries_per_arm": 1280,
+          "mix_changed_static_sets": 5,
+          "comparisons": {
+            "static": {
+              "wins": 2,
+              "ties": 8,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 10,
+              "paired_regret_reference": 0.00639646053314209,
+              "paired_regret_mix": 0.005081593990325928
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 10,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 10,
+              "paired_regret_reference": 0.005081593990325928,
+              "paired_regret_mix": 0.005081593990325928
+            }
+          },
+          "static": {
+            "full_match": 7,
+            "frame_match": 8,
+            "frame_in_prefix": 8,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 9,
+            "frame_match": 8,
+            "frame_in_prefix": 9,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 9,
+            "frame_match": 8,
+            "frame_in_prefix": 9,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-12-07": {
+          "calls": 11,
+          "queries_per_arm": 1408,
+          "mix_changed_static_sets": 7,
+          "comparisons": {
+            "static": {
+              "wins": 2,
+              "ties": 9,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 11,
+              "paired_regret_reference": 0.007872158830816095,
+              "paired_regret_mix": 0.0010967904871160333
+            },
+            "dc": {
+              "wins": 2,
+              "ties": 9,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 1,
+              "paired_both_admissible": 10,
+              "paired_regret_reference": 0.006277680397033691,
+              "paired_regret_mix": 0.0012064695358276368
+            }
+          },
+          "static": {
+            "full_match": 7,
+            "frame_match": 10,
+            "frame_in_prefix": 10,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 7,
+            "frame_match": 6,
+            "frame_in_prefix": 8,
+            "missing_with_full_admissible": 1
+          },
+          "mix": {
+            "full_match": 9,
+            "frame_match": 8,
+            "frame_in_prefix": 10,
+            "missing_with_full_admissible": 0
+          }
+        }
+      }
+    },
+    "validation": {
+      "all": {
+        "calls": 62,
+        "queries_per_arm": 7936,
+        "mix_changed_static_sets": 46,
+        "comparisons": {
+          "static": {
+            "wins": 19,
+            "ties": 40,
+            "losses": 3,
+            "lost_admissible": 1,
+            "recovered_admissible": 0,
+            "paired_both_admissible": 55,
+            "paired_regret_reference": 0.01617221398787065,
+            "paired_regret_mix": 0.0016848065636374733
+          },
+          "dc": {
+            "wins": 2,
+            "ties": 58,
+            "losses": 2,
+            "lost_admissible": 0,
+            "recovered_admissible": 1,
+            "paired_both_admissible": 54,
+            "paired_regret_reference": 0.0015432481412534361,
+            "paired_regret_mix": 0.0017160066851863154
+          }
+        },
+        "static": {
+          "full_match": 27,
+          "frame_match": 34,
+          "frame_in_prefix": 34,
+          "missing_with_full_admissible": 0
+        },
+        "dc": {
+          "full_match": 42,
+          "frame_match": 38,
+          "frame_in_prefix": 45,
+          "missing_with_full_admissible": 2
+        },
+        "mix": {
+          "full_match": 43,
+          "frame_match": 39,
+          "frame_in_prefix": 46,
+          "missing_with_full_admissible": 1
+        }
+      },
+      "by_date": {
+        "2037-03-02": {
+          "calls": 28,
+          "queries_per_arm": 3584,
+          "mix_changed_static_sets": 21,
+          "comparisons": {
+            "static": {
+              "wins": 7,
+              "ties": 18,
+              "losses": 3,
+              "lost_admissible": 1,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 24,
+              "paired_regret_reference": 0.003861352801322937,
+              "paired_regret_mix": 0.0012021859486897786
+            },
+            "dc": {
+              "wins": 2,
+              "ties": 24,
+              "losses": 2,
+              "lost_admissible": 0,
+              "recovered_admissible": 1,
+              "paired_both_admissible": 23,
+              "paired_regret_reference": 0.0008488478867903999,
+              "paired_regret_mix": 0.0012544549029806385
+            }
+          },
+          "static": {
+            "full_match": 13,
+            "frame_match": 17,
+            "frame_in_prefix": 17,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 16,
+            "frame_match": 15,
+            "frame_in_prefix": 18,
+            "missing_with_full_admissible": 2
+          },
+          "mix": {
+            "full_match": 17,
+            "frame_match": 16,
+            "frame_in_prefix": 19,
+            "missing_with_full_admissible": 1
+          }
+        },
+        "2037-05-04": {
+          "calls": 5,
+          "queries_per_arm": 640,
+          "mix_changed_static_sets": 5,
+          "comparisons": {
+            "static": {
+              "wins": 3,
+              "ties": 2,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 5,
+              "paired_regret_reference": 0.007889795303344726,
+              "paired_regret_mix": 0.0
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 5,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 5,
+              "paired_regret_reference": 0.0,
+              "paired_regret_mix": 0.0
+            }
+          },
+          "static": {
+            "full_match": 2,
+            "frame_match": 3,
+            "frame_in_prefix": 3,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 5,
+            "frame_match": 4,
+            "frame_in_prefix": 5,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 5,
+            "frame_match": 4,
+            "frame_in_prefix": 5,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-08-03": {
+          "calls": 17,
+          "queries_per_arm": 2176,
+          "mix_changed_static_sets": 12,
+          "comparisons": {
+            "static": {
+              "wins": 8,
+              "ties": 9,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 17,
+              "paired_regret_reference": 0.04311811222749598,
+              "paired_regret_mix": 0.002347434268278234
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 17,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 17,
+              "paired_regret_reference": 0.002347434268278234,
+              "paired_regret_mix": 0.002347434268278234
+            }
+          },
+          "static": {
+            "full_match": 7,
+            "frame_match": 8,
+            "frame_in_prefix": 8,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 15,
+            "frame_match": 12,
+            "frame_in_prefix": 15,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 15,
+            "frame_match": 12,
+            "frame_in_prefix": 15,
+            "missing_with_full_admissible": 0
+          }
+        },
+        "2037-10-19": {
+          "calls": 12,
+          "queries_per_arm": 1536,
+          "mix_changed_static_sets": 8,
+          "comparisons": {
+            "static": {
+              "wins": 1,
+              "ties": 11,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 9,
+              "paired_regret_reference": 0.0027047130796644422,
+              "paired_regret_mix": 0.0026561684078640407
+            },
+            "dc": {
+              "wins": 0,
+              "ties": 12,
+              "losses": 0,
+              "lost_admissible": 0,
+              "recovered_admissible": 0,
+              "paired_both_admissible": 9,
+              "paired_regret_reference": 0.0026561684078640407,
+              "paired_regret_mix": 0.0026561684078640407
+            }
+          },
+          "static": {
+            "full_match": 5,
+            "frame_match": 6,
+            "frame_in_prefix": 6,
+            "missing_with_full_admissible": 0
+          },
+          "dc": {
+            "full_match": 6,
+            "frame_match": 7,
+            "frame_in_prefix": 7,
+            "missing_with_full_admissible": 0
+          },
+          "mix": {
+            "full_match": 6,
+            "frame_match": 7,
+            "frame_in_prefix": 7,
+            "missing_with_full_admissible": 0
+          }
+        }
+      }
+    }
+  },
+  "decision": "FIXED_MIX_DOES_NOT_CLEAR_GATE",
+  "scope_sha256": "f7658bfbdfd426943fdf76a04b8380fe5334dc7b408b22b08d2124e2ff960405",
+  "mix_sha256": "f0febb9422128c90ae862380fa0fc6d6a08ca208f51e2dcf9394496e877122c0",
+  "construct_mix_median_us": 10.6,
+  "inherited_dc_sort_median_s": 0.3663792999996076,
+  "new_dc_solves": 0,
+  "new_fits": 0,
+  "new_simulation": 0,
+  "evaluation_s": 0.9850000000005821
+}

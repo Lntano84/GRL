@@ -2707,3 +2707,9 @@ GRID324 核对 16 真实保护状态与 305 保存 FULL 调用。真实 12 个�
 GRID325 对 305 个保存 FULL 调用固定首批 128。开发 62 个调用为 19 胜、40 平、3 负，四日期均有改善，FULL 最优命中 27→42。三月两次丢失严格可接纳动作。DC 数值计算加排序中位 0.366 秒，P95 0.412 秒。保留离线线索，不部署纯重排。零拟合或新 Grid2Op 仿真。
 
 [GRID325 报告](../research_archive/power-grid-2026/protocols/GRID325_dc_global_priority/results/GRID325_report.md)
+
+## GRID326 固定 64＋64 候选混排
+
+GRID326 固定首 64 原序、另 64 DC 候选。开发 62 调用相对原序 19 胜、40 平、3 负，FULL 最优命中原序 / 纯 DC / 混排为 27 / 42 / 43。救回三月第 110 步，第 539 步仍丢失可接纳动作，原训练分区另有一次接纳退化。固定混排未过保留条件。复用原 DC 排序，零新增求解、拟合、打分或仿真。
+
+[GRID326 报告](../research_archive/power-grid-2026/protocols/GRID326_fixed_dc_mix/results/GRID326_report.md)

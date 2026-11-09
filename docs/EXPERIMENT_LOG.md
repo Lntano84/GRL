@@ -2717,3 +2717,9 @@ GRID326 固定首 64 原序、另 64 DC 候选。开发 62 调用相对原序 19
 ## GRID326 两条首批漏失的回退核对
 
 复用保存反馈，原回退找到相同最终动作。全局查询两例各多 64，含 FRAME 局部总查询分别多 45 和 64。[补充核对](../research_archive/power-grid-2026/protocols/GRID326_fixed_dc_mix/results/GRID326_fallback_note.md)
+
+## GRID327 混排回退全档案对照
+
+GRID327 在 305 个保存 FULL 调用上用原 GRID91 回退比较原序与固定混排。开发 FRAME 最终即时反馈 7 胜、55 平、0 负，查询少 2,021（8.43%），FULL 最优命中 46→53；训练另有 5 次退化。开发历史仿真工作量省 5.17 秒，排序及混排 17.37 秒，时间代理净增 12.20 秒。零新仿真、DC 求解、模型打分或拟合。
+
+[GRID327 报告](../research_archive/power-grid-2026/protocols/GRID327_mixed_fallback_readout/results/GRID327_report.md)

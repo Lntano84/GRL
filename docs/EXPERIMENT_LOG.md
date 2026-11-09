@@ -2735,3 +2735,9 @@ GRID328 批量 DC 求解在 305 个保存调用上复现全部 DC 与混排首�
 GRID329 从原 Search.prepare 已有联合动作字节直接批量导出拓扑。305 调用和 268,356 候选的拓扑、未知重连和原顺序全精确。开发直接导出平均 5.27 毫秒，配对整段增量平均 8.83 毫秒，均低于约 28 毫秒账面余量。沿用保存时间代理仍净少约 1.19–1.41 秒，真实整段控制时延待测。
 
 [GRID329 报告](../research_archive/power-grid-2026/protocols/GRID329_prepared_dc_plans/results/GRID329_report.md)
+
+## GRID330 快速混排闭环准备
+
+GRID330 五臂闭环适配已通过有限离线资格。四个既有 2039 开发周，每周原 FRAME、原序保护 208/261、同混排保护 208/261 各一次，共 20 条。拟 60 分钟总上限、单条 20 分钟、40,340 步及 250,000 预测。五路及运行源码编译通过，4 固定保存调用混排逐项一致，零模型加载或新仿真。等待本范围授权。
+
+[GRID330 报告](../research_archive/power-grid-2026/protocols/GRID330_dc_mix_closed_loop/results/GRID330_report.md)

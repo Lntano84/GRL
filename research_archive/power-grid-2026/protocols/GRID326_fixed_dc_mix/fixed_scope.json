@@ -1,0 +1,21 @@
+{
+  "previous_release": "915c6d0a2bc08b08332a6603b9c97ba8ca11b579",
+  "previous_hashes": {
+    "readout.py": "b6f9b19e9fc1e9bdfeb489b2dce6d1decfd33ce3149b36a7272baef1f4b26a7b",
+    "fixed_scope.json": "1a6ed8e696d7aa02208ff2fda4fa4847a7cc16a6f6e282410eb2e9869820da70",
+    "public_ranks.json": "f8f373bef7624350e7541d1acf88f76c79ed8ae2e02d9400016d45e23b78a39c",
+    "results/delivery_hashes.json": "f61044ab4de3a3d1130f48c6b535d26c16989bf9771c2573cf678ef39ded67f8"
+  },
+  "source_sha256": "e6975287797b6f3289743242341f102000787c594c84d8627b496b4a67d68409",
+  "population": "Same 305 saved FULL calls, same original train/validation dates, no new calls.",
+  "rank_rule": "Take first 64 STATIC_ID candidates, then first 64 distinct remaining IDs in frozen GRID325 DC order. Stable ties and unsupported slots inherit GRID325. The published DC128 suffices, since at most 64 of its IDs can overlap the original 64. Both original static128 and pure dc128 are controls.",
+  "quota": 64,
+  "budget": 128,
+  "selection": "Saved strict admissibility and float32 immediate reward. Use lower candidate id for equal reward. A valid action beats none; equal reward with different ID is a tie. FULL winner and original FRAME action are tracked separately.",
+  "keep_gate": "Validation: zero static-valid to mix-empty losses and no more than zero such losses in training, mix wins strictly more than it loses on validation, wins on at least two validation dates, and no validation date with more losses than wins. Decision only about the one offline mix, not deployment.",
+  "timing": "Mix construction time local offline. The 64+64 mix inherits the GRID325 DC ranking cost; no new DC computations. No online timing.",
+  "wall_cap_s_each": 600,
+  "new_dc_solves": 0,
+  "new_fits": 0,
+  "new_simulation": 0
+}

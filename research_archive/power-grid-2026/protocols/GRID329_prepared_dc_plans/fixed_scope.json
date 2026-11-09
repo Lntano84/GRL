@@ -1,6 +1,6 @@
 {
   "parent_commit": "74b201ea0ab3c69e6cabf6089c87bfdfeb265d70",
-  "source_sha256": "b9f559bf87496eff288d52f66577e4c226441dc279551250f13ec6df6b9691d7",
+  "source_sha256": "5f256437cefceede4973aea3ce893887339e46e28cf966be90cb8d6420617f81",
   "source_hashes": {
     "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID325_dc_global_priority/fixed_scope.json": "1a6ed8e696d7aa02208ff2fda4fa4847a7cc16a6f6e282410eb2e9869820da70",
     "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID325_dc_global_priority/public_ranks.json": "f8f373bef7624350e7541d1acf88f76c79ed8ae2e02d9400016d45e23b78a39c",
@@ -27,5 +27,10 @@
     "new_model_forward": 0,
     "new_fit": 0,
     "new_simulate": 0
+  },
+  "layout_fix": {
+    "before": "fc601c4a",
+    "accepted_calls": 0,
+    "note": "The first call was stopped by the contiguous native-array assertion. Request C order explicitly. No rule, state, timing definition, or numerical change."
   }
 }

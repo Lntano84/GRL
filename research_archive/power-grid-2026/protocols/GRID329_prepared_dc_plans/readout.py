@@ -137,7 +137,7 @@ class PreparedPlans:
         switch = raw[:, fields["_change_bus_vect"]] != 0
         if (switch & (cmd != 0)).any() or not np.isfinite(raw).all():
             raise ValueError("Unsupported or invalid canonical action")
-        plans = np.broadcast_to(obs.topo_vect, cmd.shape).astype(np.int32, copy=True)
+        plans = np.broadcast_to(obs.topo_vect, cmd.shape).astype(np.int32, order="C", copy=True)
         np.copyto(plans, cmd, where=cmd != 0, casting="unsafe")
         live = switch & (plans > 0)
         plans[live] = 3 - plans[live]

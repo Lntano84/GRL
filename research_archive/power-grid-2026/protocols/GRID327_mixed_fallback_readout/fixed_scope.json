@@ -1,0 +1,32 @@
+{
+  "source_sha256": "b08dc1bb2593e439851d5f4952d4af369149f5d6b6e8ee049ac0bac1b2e2772d",
+  "parents": {
+    "rank": "e32300e1",
+    "mixed_prefix": "26d3394f",
+    "two_case_note": "cd57941c"
+  },
+  "source_hashes": {
+    "work/grid91_mechanism/policies.py": "f09f1363f94502878663d5500396bfc3f1e92f1a2c4a68ca5a67c7046a4f0f61",
+    "outputs/grid139_global_feasibility/call_ledger.json": "957737ac21634bb225435e4b37bc65d3553e8634642ffb3e52b682b1c424f9c0",
+    "outputs/grid28/offline.json": "8ffde51efc176b93dd0400e4988390a574efbb5dc9ad67995e5561a6b561c65f",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID325_dc_global_priority/fixed_scope.json": "1a6ed8e696d7aa02208ff2fda4fa4847a7cc16a6f6e282410eb2e9869820da70",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID325_dc_global_priority/public_ranks.json": "f8f373bef7624350e7541d1acf88f76c79ed8ae2e02d9400016d45e23b78a39c",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID326_fixed_dc_mix/fixed_scope.json": "f7658bfbdfd426943fdf76a04b8380fe5334dc7b408b22b08d2124e2ff960405",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID326_fixed_dc_mix/public_mix.json": "f0febb9422128c90ae862380fa0fc6d6a08ca208f51e2dcf9394496e877122c0",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID326_fixed_dc_mix/results/rows.json": "2844db3fc5c2455eb7187cfa608ea740a2cfbd656419b59fea07daed2f9affc0"
+  },
+  "members": "Exactly all 305 calls from GRID325/326, same train and validation groups and candidate pool. No new cases.",
+  "original": "Entire original STATIC_ID candidate order.",
+  "mixed": "Published GRID326 64 original + 64 DC prefix; append all unqueried candidates in original STATIC_ID order. No new score, ratio, pruning or other variants.",
+  "policy": "Use actual frozen GRID91 stopping and station logic. Compare NO_LOCAL (shared global phase and pending local budget only) and FRAME_GUARD (its own full local completion). Neither applies 208 or 261 learned completion.",
+  "feedback": "Only saved reveal for requested ID, with original strict admissibility and float32 comparison. No new model or physical calls.",
+  "timing": "Reuse archived per-ID forecast_s as a work estimate and GRID325 per-call DC numerical plus sorting time as the paid overhead of mixing, even when no scores are available. Add GRID326 prefix construction time. No hardware normalization, no AC/simulation or end-to-end time measurement.",
+  "reports": "Final ID, availability, same-state reward, first acceptable position, exact FULL match, actual searched IDs, global/local and total queries, estimated forecast times and overhead; groups by original date. Keep adverse cases.",
+  "limits": {
+    "wall_s": 600,
+    "new_fit": 0,
+    "new_dc_solves": 0,
+    "new_model_forward": 0,
+    "new_simulate": 0
+  }
+}

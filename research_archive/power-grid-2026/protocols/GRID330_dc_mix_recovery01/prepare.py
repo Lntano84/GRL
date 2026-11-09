@@ -72,7 +72,9 @@ def qualify():
     manager = rt.manager_source()
     assert literal_keys(worker, "design") <= design.keys() and "timing" in literal_keys(worker, "design")
     assert literal_keys(launcher, "D") <= design.keys()
-    required_items = literal_keys(worker, "item") | literal_keys(launcher, "item")
+    entry, = [node for node in ast.parse(worker).body
+              if isinstance(node, ast.FunctionDef) and node.name == "worker"]
+    required_items = literal_keys(ast.unparse(entry), "item") | literal_keys(launcher, "item")
     assert all(required_items <= item.keys() for item in design["execution_order"])
     assert "'startup_forecast_receipt.json'" in worker and "failed[\"wall_s\"]" in manager
     for name, src in (("worker", worker), ("manager", manager), ("launcher", launcher)):

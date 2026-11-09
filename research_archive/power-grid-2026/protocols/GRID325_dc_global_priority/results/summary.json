@@ -1,0 +1,701 @@
+{
+  "metrics": {
+    "train": {
+      "all": {
+        "calls": 243,
+        "candidate_queries_each": 31104,
+        "changed_prefix_sets": 183,
+        "wins": 76,
+        "ties": 153,
+        "losses": 14,
+        "scored": 159053,
+        "fallback": {
+          "unknown_reclose_bus": 53152,
+          "disconnected_dc_grid": 425
+        },
+        "static": {
+          "frame_action_match": 140,
+          "frame_winner_in_prefix": 140,
+          "full_action_match": 106,
+          "no_legal_with_full_legal": 3,
+          "positive_full_regret": 113,
+          "mean_comparable_full_regret": 0.010705357817210019
+        },
+        "dc": {
+          "frame_action_match": 149,
+          "frame_winner_in_prefix": 175,
+          "full_action_match": 166,
+          "no_legal_with_full_legal": 7,
+          "positive_full_regret": 49,
+          "mean_comparable_full_regret": 0.0025044635284778684
+        },
+        "dc_and_sort_total_s": 67.42302300001938,
+        "dc_and_sort_median_s": 0.36588660000052187
+      },
+      "by_date": {
+        "2037-01-05": {
+          "calls": 26,
+          "candidate_queries_each": 3328,
+          "changed_prefix_sets": 17,
+          "wins": 3,
+          "ties": 23,
+          "losses": 0,
+          "scored": 15009,
+          "fallback": {
+            "unknown_reclose_bus": 8176,
+            "disconnected_dc_grid": 10
+          },
+          "static": {
+            "frame_action_match": 5,
+            "frame_winner_in_prefix": 5,
+            "full_action_match": 4,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 10,
+            "mean_comparable_full_regret": 0.015214536871228899
+          },
+          "dc": {
+            "frame_action_match": 8,
+            "frame_winner_in_prefix": 8,
+            "full_action_match": 6,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 8,
+            "mean_comparable_full_regret": 0.009266359465462821
+          },
+          "dc_and_sort_total_s": 6.332210300006409,
+          "dc_and_sort_median_s": 0.35948439999992843
+        },
+        "2037-01-19": {
+          "calls": 24,
+          "candidate_queries_each": 3072,
+          "changed_prefix_sets": 20,
+          "wins": 8,
+          "ties": 14,
+          "losses": 2,
+          "scored": 17429,
+          "fallback": {
+            "disconnected_dc_grid": 64,
+            "unknown_reclose_bus": 3603
+          },
+          "static": {
+            "frame_action_match": 11,
+            "frame_winner_in_prefix": 11,
+            "full_action_match": 8,
+            "no_legal_with_full_legal": 1,
+            "positive_full_regret": 12,
+            "mean_comparable_full_regret": 0.0052738189697265625
+          },
+          "dc": {
+            "frame_action_match": 12,
+            "frame_winner_in_prefix": 14,
+            "full_action_match": 14,
+            "no_legal_with_full_legal": 2,
+            "positive_full_regret": 5,
+            "mean_comparable_full_regret": 0.0013820748580129522
+          },
+          "dc_and_sort_total_s": 7.298689699999159,
+          "dc_and_sort_median_s": 0.3676187500004744
+        },
+        "2037-02-16": {
+          "calls": 13,
+          "candidate_queries_each": 1664,
+          "changed_prefix_sets": 11,
+          "wins": 4,
+          "ties": 7,
+          "losses": 2,
+          "scored": 9575,
+          "fallback": {
+            "disconnected_dc_grid": 36,
+            "unknown_reclose_bus": 1813
+          },
+          "static": {
+            "frame_action_match": 7,
+            "frame_winner_in_prefix": 7,
+            "full_action_match": 5,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 5,
+            "mean_comparable_full_regret": 0.0032349109649658205
+          },
+          "dc": {
+            "frame_action_match": 5,
+            "frame_winner_in_prefix": 7,
+            "full_action_match": 7,
+            "no_legal_with_full_legal": 1,
+            "positive_full_regret": 2,
+            "mean_comparable_full_regret": 0.0035472578472561305
+          },
+          "dc_and_sort_total_s": 4.094268300003023,
+          "dc_and_sort_median_s": 0.377036699999735
+        },
+        "2037-03-16": {
+          "calls": 19,
+          "candidate_queries_each": 2432,
+          "changed_prefix_sets": 14,
+          "wins": 6,
+          "ties": 12,
+          "losses": 1,
+          "scored": 12010,
+          "fallback": {
+            "unknown_reclose_bus": 4004,
+            "disconnected_dc_grid": 46
+          },
+          "static": {
+            "frame_action_match": 11,
+            "frame_winner_in_prefix": 11,
+            "full_action_match": 9,
+            "no_legal_with_full_legal": 1,
+            "positive_full_regret": 9,
+            "mean_comparable_full_regret": 0.001414762602912055
+          },
+          "dc": {
+            "frame_action_match": 16,
+            "frame_winner_in_prefix": 16,
+            "full_action_match": 14,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 5,
+            "mean_comparable_full_regret": 8.817722922877262e-05
+          },
+          "dc_and_sort_total_s": 5.016508300002897,
+          "dc_and_sort_median_s": 0.3655421000003116
+        },
+        "2037-04-06": {
+          "calls": 21,
+          "candidate_queries_each": 2688,
+          "changed_prefix_sets": 18,
+          "wins": 7,
+          "ties": 12,
+          "losses": 2,
+          "scored": 15691,
+          "fallback": {
+            "unknown_reclose_bus": 2727,
+            "disconnected_dc_grid": 61
+          },
+          "static": {
+            "frame_action_match": 11,
+            "frame_winner_in_prefix": 11,
+            "full_action_match": 8,
+            "no_legal_with_full_legal": 1,
+            "positive_full_regret": 9,
+            "mean_comparable_full_regret": 0.007108849637648638
+          },
+          "dc": {
+            "frame_action_match": 10,
+            "frame_winner_in_prefix": 13,
+            "full_action_match": 13,
+            "no_legal_with_full_legal": 2,
+            "positive_full_regret": 3,
+            "mean_comparable_full_regret": 0.0003623366355895996
+          },
+          "dc_and_sort_total_s": 6.773357899997791,
+          "dc_and_sort_median_s": 0.3772288000000117
+        },
+        "2037-05-18": {
+          "calls": 12,
+          "candidate_queries_each": 1536,
+          "changed_prefix_sets": 9,
+          "wins": 5,
+          "ties": 6,
+          "losses": 1,
+          "scored": 7538,
+          "fallback": {
+            "unknown_reclose_bus": 2717,
+            "disconnected_dc_grid": 25
+          },
+          "static": {
+            "frame_action_match": 7,
+            "frame_winner_in_prefix": 7,
+            "full_action_match": 6,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 6,
+            "mean_comparable_full_regret": 0.005202800035476685
+          },
+          "dc": {
+            "frame_action_match": 10,
+            "frame_winner_in_prefix": 11,
+            "full_action_match": 11,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 1,
+            "mean_comparable_full_regret": 0.00018628438313802084
+          },
+          "dc_and_sort_total_s": 3.253659099998913,
+          "dc_and_sort_median_s": 0.3712515000006533
+        },
+        "2037-06-01": {
+          "calls": 19,
+          "candidate_queries_each": 2432,
+          "changed_prefix_sets": 15,
+          "wins": 9,
+          "ties": 9,
+          "losses": 1,
+          "scored": 13232,
+          "fallback": {
+            "unknown_reclose_bus": 3636,
+            "disconnected_dc_grid": 11
+          },
+          "static": {
+            "frame_action_match": 10,
+            "frame_winner_in_prefix": 10,
+            "full_action_match": 7,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 12,
+            "mean_comparable_full_regret": 0.00850115324321546
+          },
+          "dc": {
+            "frame_action_match": 11,
+            "frame_winner_in_prefix": 15,
+            "full_action_match": 15,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 4,
+            "mean_comparable_full_regret": 0.0006765001698544151
+          },
+          "dc_and_sort_total_s": 5.73577550000482,
+          "dc_and_sort_median_s": 0.3781534999998257
+        },
+        "2037-06-15": {
+          "calls": 11,
+          "candidate_queries_each": 1408,
+          "changed_prefix_sets": 7,
+          "wins": 3,
+          "ties": 8,
+          "losses": 0,
+          "scored": 5467,
+          "fallback": {
+            "unknown_reclose_bus": 3222,
+            "disconnected_dc_grid": 27
+          },
+          "static": {
+            "frame_action_match": 9,
+            "frame_winner_in_prefix": 9,
+            "full_action_match": 6,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 5,
+            "mean_comparable_full_regret": 0.01043492013757879
+          },
+          "dc": {
+            "frame_action_match": 7,
+            "frame_winner_in_prefix": 8,
+            "full_action_match": 7,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 4,
+            "mean_comparable_full_regret": 0.009220253337513317
+          },
+          "dc_and_sort_total_s": 2.474658500002988,
+          "dc_and_sort_median_s": 0.25664639999922656
+        },
+        "2037-07-06": {
+          "calls": 22,
+          "candidate_queries_each": 2816,
+          "changed_prefix_sets": 17,
+          "wins": 10,
+          "ties": 12,
+          "losses": 0,
+          "scored": 14727,
+          "fallback": {
+            "unknown_reclose_bus": 4235,
+            "disconnected_dc_grid": 34
+          },
+          "static": {
+            "frame_action_match": 11,
+            "frame_winner_in_prefix": 11,
+            "full_action_match": 10,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 12,
+            "mean_comparable_full_regret": 0.03247311440381137
+          },
+          "dc": {
+            "frame_action_match": 20,
+            "frame_winner_in_prefix": 21,
+            "full_action_match": 20,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 2,
+            "mean_comparable_full_regret": 1.2625347484241833e-06
+          },
+          "dc_and_sort_total_s": 6.205612600004315,
+          "dc_and_sort_median_s": 0.3671703999998499
+        },
+        "2037-08-17": {
+          "calls": 17,
+          "candidate_queries_each": 2176,
+          "changed_prefix_sets": 15,
+          "wins": 6,
+          "ties": 11,
+          "losses": 0,
+          "scored": 12686,
+          "fallback": {
+            "unknown_reclose_bus": 1813,
+            "disconnected_dc_grid": 31
+          },
+          "static": {
+            "frame_action_match": 12,
+            "frame_winner_in_prefix": 12,
+            "full_action_match": 10,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 7,
+            "mean_comparable_full_regret": 0.026088427094852224
+          },
+          "dc": {
+            "frame_action_match": 12,
+            "frame_winner_in_prefix": 15,
+            "full_action_match": 15,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 2,
+            "mean_comparable_full_regret": 2.791601068833295e-05
+          },
+          "dc_and_sort_total_s": 5.242187300002115,
+          "dc_and_sort_median_s": 0.36099860000103945
+        },
+        "2037-09-07": {
+          "calls": 6,
+          "candidate_queries_each": 768,
+          "changed_prefix_sets": 5,
+          "wins": 3,
+          "ties": 3,
+          "losses": 0,
+          "scored": 4503,
+          "fallback": {
+            "disconnected_dc_grid": 3,
+            "unknown_reclose_bus": 909
+          },
+          "static": {
+            "frame_action_match": 5,
+            "frame_winner_in_prefix": 5,
+            "full_action_match": 3,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 3,
+            "mean_comparable_full_regret": 0.017506102720896404
+          },
+          "dc": {
+            "frame_action_match": 4,
+            "frame_winner_in_prefix": 6,
+            "full_action_match": 6,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 0,
+            "mean_comparable_full_regret": 0.0
+          },
+          "dc_and_sort_total_s": 1.9956622999998217,
+          "dc_and_sort_median_s": 0.39844280000033905
+        },
+        "2037-09-21": {
+          "calls": 10,
+          "candidate_queries_each": 1280,
+          "changed_prefix_sets": 8,
+          "wins": 3,
+          "ties": 4,
+          "losses": 3,
+          "scored": 6949,
+          "fallback": {
+            "unknown_reclose_bus": 1818,
+            "disconnected_dc_grid": 11
+          },
+          "static": {
+            "frame_action_match": 8,
+            "frame_winner_in_prefix": 8,
+            "full_action_match": 3,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 7,
+            "mean_comparable_full_regret": 0.006538951396942138
+          },
+          "dc": {
+            "frame_action_match": 4,
+            "frame_winner_in_prefix": 6,
+            "full_action_match": 5,
+            "no_legal_with_full_legal": 1,
+            "positive_full_regret": 4,
+            "mean_comparable_full_regret": 0.011868596076965332
+          },
+          "dc_and_sort_total_s": 2.7693322999966767,
+          "dc_and_sort_median_s": 0.3260525499990763
+        },
+        "2037-10-05": {
+          "calls": 13,
+          "candidate_queries_each": 1664,
+          "changed_prefix_sets": 9,
+          "wins": 3,
+          "ties": 10,
+          "losses": 0,
+          "scored": 8076,
+          "fallback": {
+            "disconnected_dc_grid": 12,
+            "unknown_reclose_bus": 3630
+          },
+          "static": {
+            "frame_action_match": 9,
+            "frame_winner_in_prefix": 9,
+            "full_action_match": 8,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 5,
+            "mean_comparable_full_regret": 0.0021075927294217623
+          },
+          "dc": {
+            "frame_action_match": 10,
+            "frame_winner_in_prefix": 11,
+            "full_action_match": 10,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 3,
+            "mean_comparable_full_regret": 0.0003264133746807392
+          },
+          "dc_and_sort_total_s": 3.443095300002824,
+          "dc_and_sort_median_s": 0.3732374000010168
+        },
+        "2037-11-02": {
+          "calls": 9,
+          "candidate_queries_each": 1152,
+          "changed_prefix_sets": 6,
+          "wins": 2,
+          "ties": 7,
+          "losses": 0,
+          "scored": 5413,
+          "fallback": {
+            "unknown_reclose_bus": 2674,
+            "disconnected_dc_grid": 12
+          },
+          "static": {
+            "frame_action_match": 6,
+            "frame_winner_in_prefix": 6,
+            "full_action_match": 5,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 4,
+            "mean_comparable_full_regret": 0.0002548429701063368
+          },
+          "dc": {
+            "frame_action_match": 6,
+            "frame_winner_in_prefix": 7,
+            "full_action_match": 7,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 2,
+            "mean_comparable_full_regret": 0.0001561774147881402
+          },
+          "dc_and_sort_total_s": 2.2721432999987883,
+          "dc_and_sort_median_s": 0.36856389999957173
+        },
+        "2037-11-16": {
+          "calls": 10,
+          "candidate_queries_each": 1280,
+          "changed_prefix_sets": 5,
+          "wins": 2,
+          "ties": 8,
+          "losses": 0,
+          "scored": 4475,
+          "fallback": {
+            "disconnected_dc_grid": 8,
+            "unknown_reclose_bus": 4544
+          },
+          "static": {
+            "frame_action_match": 8,
+            "frame_winner_in_prefix": 8,
+            "full_action_match": 7,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 3,
+            "mean_comparable_full_regret": 0.00639646053314209
+          },
+          "dc": {
+            "frame_action_match": 8,
+            "frame_winner_in_prefix": 9,
+            "full_action_match": 9,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 1,
+            "mean_comparable_full_regret": 0.005081593990325928
+          },
+          "dc_and_sort_total_s": 1.7965993999969214,
+          "dc_and_sort_median_s": 0.17050109999945562
+        },
+        "2037-12-07": {
+          "calls": 11,
+          "candidate_queries_each": 1408,
+          "changed_prefix_sets": 7,
+          "wins": 2,
+          "ties": 7,
+          "losses": 2,
+          "scored": 6273,
+          "fallback": {
+            "unknown_reclose_bus": 3631,
+            "disconnected_dc_grid": 34
+          },
+          "static": {
+            "frame_action_match": 10,
+            "frame_winner_in_prefix": 10,
+            "full_action_match": 7,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 4,
+            "mean_comparable_full_regret": 0.007872158830816095
+          },
+          "dc": {
+            "frame_action_match": 6,
+            "frame_winner_in_prefix": 8,
+            "full_action_match": 7,
+            "no_legal_with_full_legal": 1,
+            "positive_full_regret": 3,
+            "mean_comparable_full_regret": 0.006277680397033691
+          },
+          "dc_and_sort_total_s": 2.7192629000019224,
+          "dc_and_sort_median_s": 0.3674874999996973
+        }
+      }
+    },
+    "validation": {
+      "all": {
+        "calls": 62,
+        "candidate_queries_each": 7936,
+        "changed_prefix_sets": 46,
+        "wins": 19,
+        "ties": 40,
+        "losses": 3,
+        "scored": 41122,
+        "fallback": {
+          "disconnected_dc_grid": 98,
+          "unknown_reclose_bus": 14506
+        },
+        "static": {
+          "frame_action_match": 34,
+          "frame_winner_in_prefix": 34,
+          "full_action_match": 27,
+          "no_legal_with_full_legal": 0,
+          "positive_full_regret": 29,
+          "mean_comparable_full_regret": 0.016532050711768016
+        },
+        "dc": {
+          "frame_action_match": 38,
+          "frame_winner_in_prefix": 45,
+          "full_action_match": 42,
+          "no_legal_with_full_legal": 2,
+          "positive_full_regret": 11,
+          "mean_comparable_full_regret": 0.0015432481412534361
+        },
+        "dc_and_sort_total_s": 17.371203599990622,
+        "dc_and_sort_median_s": 0.36802689999967697
+      },
+      "by_date": {
+        "2037-03-02": {
+          "calls": 28,
+          "candidate_queries_each": 3584,
+          "changed_prefix_sets": 21,
+          "wins": 7,
+          "ties": 18,
+          "losses": 3,
+          "scored": 18625,
+          "fallback": {
+            "disconnected_dc_grid": 69,
+            "unknown_reclose_bus": 6325
+          },
+          "static": {
+            "frame_action_match": 17,
+            "frame_winner_in_prefix": 17,
+            "full_action_match": 13,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 12,
+            "mean_comparable_full_regret": 0.0051598215103149415
+          },
+          "dc": {
+            "frame_action_match": 15,
+            "frame_winner_in_prefix": 18,
+            "full_action_match": 16,
+            "no_legal_with_full_legal": 2,
+            "positive_full_regret": 6,
+            "mean_comparable_full_regret": 0.0008488478867903999
+          },
+          "dc_and_sort_total_s": 7.83072839999295,
+          "dc_and_sort_median_s": 0.36822234999999637
+        },
+        "2037-05-04": {
+          "calls": 5,
+          "candidate_queries_each": 640,
+          "changed_prefix_sets": 5,
+          "wins": 3,
+          "ties": 2,
+          "losses": 0,
+          "scored": 4489,
+          "fallback": {
+            "disconnected_dc_grid": 2
+          },
+          "static": {
+            "frame_action_match": 3,
+            "frame_winner_in_prefix": 3,
+            "full_action_match": 2,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 3,
+            "mean_comparable_full_regret": 0.007889795303344726
+          },
+          "dc": {
+            "frame_action_match": 4,
+            "frame_winner_in_prefix": 5,
+            "full_action_match": 5,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 0,
+            "mean_comparable_full_regret": 0.0
+          },
+          "dc_and_sort_total_s": 1.8173921999987215,
+          "dc_and_sort_median_s": 0.3672540999996272
+        },
+        "2037-08-03": {
+          "calls": 17,
+          "candidate_queries_each": 2176,
+          "changed_prefix_sets": 12,
+          "wins": 8,
+          "ties": 9,
+          "losses": 0,
+          "scored": 10746,
+          "fallback": {
+            "disconnected_dc_grid": 19,
+            "unknown_reclose_bus": 4545
+          },
+          "static": {
+            "frame_action_match": 8,
+            "frame_winner_in_prefix": 8,
+            "full_action_match": 7,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 10,
+            "mean_comparable_full_regret": 0.04311811222749598
+          },
+          "dc": {
+            "frame_action_match": 12,
+            "frame_winner_in_prefix": 15,
+            "full_action_match": 15,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 2,
+            "mean_comparable_full_regret": 0.002347434268278234
+          },
+          "dc_and_sort_total_s": 4.471691999997347,
+          "dc_and_sort_median_s": 0.3663792999996076
+        },
+        "2037-10-19": {
+          "calls": 12,
+          "candidate_queries_each": 1536,
+          "changed_prefix_sets": 8,
+          "wins": 1,
+          "ties": 11,
+          "losses": 0,
+          "scored": 7262,
+          "fallback": {
+            "disconnected_dc_grid": 8,
+            "unknown_reclose_bus": 3636
+          },
+          "static": {
+            "frame_action_match": 6,
+            "frame_winner_in_prefix": 6,
+            "full_action_match": 5,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 4,
+            "mean_comparable_full_regret": 0.0027047130796644422
+          },
+          "dc": {
+            "frame_action_match": 7,
+            "frame_winner_in_prefix": 7,
+            "full_action_match": 6,
+            "no_legal_with_full_legal": 0,
+            "positive_full_regret": 3,
+            "mean_comparable_full_regret": 0.0026561684078640407
+          },
+          "dc_and_sort_total_s": 3.251391000001604,
+          "dc_and_sort_median_s": 0.3810518999998749
+        }
+      }
+    }
+  },
+  "scope_sha256": "1a6ed8e696d7aa02208ff2fda4fa4847a7cc16a6f6e282410eb2e9869820da70",
+  "public_ranks_sha256": "f8f373bef7624350e7541d1acf88f76c79ed8ae2e02d9400016d45e23b78a39c",
+  "decision": "OFFLINE_LEAD_ONLY",
+  "new_model_forwards": 0,
+  "new_simulate_calls": 0,
+  "new_fits": 0,
+  "rank_elapsed_s": 140.29700000000048,
+  "evaluate_elapsed_s": 1.0779999999995198
+}

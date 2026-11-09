@@ -1,0 +1,144 @@
+{
+  "qualified": true,
+  "partition_timing": {
+    "train": {
+      "calls": 243,
+      "new_timing": {
+        "total_s": 16.541165700004058,
+        "mean_s": 0.06807064074075744,
+        "median_s": 0.04207899999892106,
+        "p95_s": 0.3608626000004733
+      },
+      "archived_timing": {
+        "total_s": 67.42540060001939,
+        "mean_s": 0.27747078436221967,
+        "median_s": 0.36589770000052185,
+        "p95_s": 0.41193899999999956
+      },
+      "component_ratio": 4.076218195432432,
+      "decoder_integrity_total_s": 41.92259510000622,
+      "estimated_total_original_s": 248.2234144999411,
+      "estimated_total_mixed_s": 244.7037671999983,
+      "estimated_net_delta_s": -3.5196472999427897,
+      "by_date": {
+        "2037-01-05": {
+          "component_s": 1.8699561999928846,
+          "estimated_net_delta_s": 0.5508771999925557
+        },
+        "2037-01-19": {
+          "component_s": 1.179307999991579,
+          "estimated_net_delta_s": -0.5483344999938708
+        },
+        "2037-02-16": {
+          "component_s": 1.2616786000016873,
+          "estimated_net_delta_s": 1.6811686000364716
+        },
+        "2037-03-16": {
+          "component_s": 0.7776527000041824,
+          "estimated_net_delta_s": -1.586029599993708
+        },
+        "2037-04-06": {
+          "component_s": 1.1048750000009022,
+          "estimated_net_delta_s": -0.8549744999963877
+        },
+        "2037-05-18": {
+          "component_s": 0.37284530000215454,
+          "estimated_net_delta_s": -1.059485300002052
+        },
+        "2037-06-01": {
+          "component_s": 1.3725692000025447,
+          "estimated_net_delta_s": -0.385422999959701
+        },
+        "2037-06-15": {
+          "component_s": 0.9673210000000836,
+          "estimated_net_delta_s": -0.08399950002058176
+        },
+        "2037-07-06": {
+          "component_s": 1.2688939000017854,
+          "estimated_net_delta_s": -3.9732331999675807
+        },
+        "2037-08-17": {
+          "component_s": 2.3971632000066165,
+          "estimated_net_delta_s": 1.1890289000548364
+        },
+        "2037-09-07": {
+          "component_s": 0.9607561999982863,
+          "estimated_net_delta_s": 0.20837159995062393
+        },
+        "2037-09-21": {
+          "component_s": 1.1051086999977997,
+          "estimated_net_delta_s": 0.9906308999761677
+        },
+        "2037-10-05": {
+          "component_s": 0.8004103999992367,
+          "estimated_net_delta_s": -0.26136600001518673
+        },
+        "2037-11-02": {
+          "component_s": 0.3917256000022462,
+          "estimated_net_delta_s": 0.17500790000485722
+        },
+        "2037-11-16": {
+          "component_s": 0.3366108999998687,
+          "estimated_net_delta_s": 0.14990290000605455
+        },
+        "2037-12-07": {
+          "component_s": 0.37429080000219983,
+          "estimated_net_delta_s": 0.28821029998471204
+        }
+      }
+    },
+    "validation": {
+      "calls": 62,
+      "new_timing": {
+        "total_s": 3.4340808000106335,
+        "mean_s": 0.055388400000171506,
+        "median_s": 0.04034944999966683,
+        "p95_s": 0.30200349999904574
+      },
+      "archived_timing": {
+        "total_s": 17.372134499990622,
+        "mean_s": 0.2801957177417842,
+        "median_s": 0.368037949999677,
+        "p95_s": 0.4041581999997071
+      },
+      "component_ratio": 5.058743667282619,
+      "decoder_integrity_total_s": 10.97613640000418,
+      "estimated_total_original_s": 60.39331619993936,
+      "estimated_total_mixed_s": 58.66005679990849,
+      "estimated_net_delta_s": -1.7332594000308745,
+      "by_date": {
+        "2037-03-02": {
+          "component_s": 1.891614500003925,
+          "estimated_net_delta_s": 1.6214149999668734
+        },
+        "2037-05-04": {
+          "component_s": 0.208088500001395,
+          "estimated_net_delta_s": -0.4888429999955406
+        },
+        "2037-08-03": {
+          "component_s": 0.5641827000017656,
+          "estimated_net_delta_s": -3.0822883999935584
+        },
+        "2037-10-19": {
+          "component_s": 0.7701951000035479,
+          "estimated_net_delta_s": 0.21645699999135104
+        }
+      }
+    }
+  },
+  "exact_dc": 305,
+  "exact_mix": 305,
+  "exact_support": 305,
+  "mismatch_ids": [],
+  "solver_counts": {
+    "native_solved": 200175,
+    "reference_near_tie_solves": 26108
+  },
+  "decoder_checks": {
+    "vector_roundtrips": 610,
+    "combined_hashes": 268356,
+    "public_preparations": 305
+  },
+  "elapsed_s": 75.875,
+  "scope_sha256": "cc1b6522ebf3a61b9e3ac913325963530dfc4ff969cf2e6f669e859e65630936"
+}

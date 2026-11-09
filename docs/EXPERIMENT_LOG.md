@@ -2723,3 +2723,9 @@ GRID326 固定首 64 原序、另 64 DC 候选。开发 62 调用相对原序 19
 GRID327 在 305 个保存 FULL 调用上用原 GRID91 回退比较原序与固定混排。开发 FRAME 最终即时反馈 7 胜、55 平、0 负，查询少 2,021（8.43%），FULL 最优命中 46→53；训练另有 5 次退化。开发历史仿真工作量省 5.17 秒，排序及混排 17.37 秒，时间代理净增 12.20 秒。零新仿真、DC 求解、模型打分或拟合。
 
 [GRID327 报告](../research_archive/power-grid-2026/protocols/GRID327_mixed_fallback_readout/results/GRID327_report.md)
+
+## GRID328 DC 同序加速
+
+GRID328 批量 DC 求解在 305 个保存调用上复现全部 DC 与混排首批顺序，计分及回退计数一致。开发组件平均 280→55 毫秒，P95 302 毫秒。历史工作量代理净减 1.73 秒（2.87%），两日期变快、两日期变慢。平均仍有约 28 毫秒在线准备余量，真实控制时延待测。
+
+[GRID328 报告](../research_archive/power-grid-2026/protocols/GRID328_dc_fast_solver/results/GRID328_report.md)

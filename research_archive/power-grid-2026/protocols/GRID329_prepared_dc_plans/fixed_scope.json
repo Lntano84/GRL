@@ -1,0 +1,31 @@
+{
+  "parent_commit": "74b201ea0ab3c69e6cabf6089c87bfdfeb265d70",
+  "source_sha256": "b9f559bf87496eff288d52f66577e4c226441dc279551250f13ec6df6b9691d7",
+  "source_hashes": {
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID325_dc_global_priority/fixed_scope.json": "1a6ed8e696d7aa02208ff2fda4fa4847a7cc16a6f6e282410eb2e9869820da70",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID325_dc_global_priority/public_ranks.json": "f8f373bef7624350e7541d1acf88f76c79ed8ae2e02d9400016d45e23b78a39c",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID328_dc_fast_solver/fixed_scope.json": "cc1b6522ebf3a61b9e3ac913325963530dfc4ff969cf2e6f669e859e65630936",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID328_dc_fast_solver/results/summary.json": "e6297b4b49f3f8bad9f83668d7e6cb1b824a43a6ffaf4a66ab26a725f3f543ae",
+    "work/grid26/engine.py": "ab19432ff99e5ee33c982fba8c32e8d6c97fa8678e04540c3c6f94f044929c43",
+    "work/grid01/trace_agent.py": "31bc54676e5befc5843e97ac421d79dca4e4a7bf2865e3713ec29cefcbb35622",
+    "work/grid183_online_contract/runtime.py": "d016bc4bdadfb8a049231d077f8b7661b7307006e7e31bbf6f15290edad04a35",
+    "outputs/grid291_control_preparation/code_freeze.json": "6d77f0ca11fbb7655569600276a6b697dec5ddfb7d1483bc470cf37816ca5d7b",
+    "outputs/grid100_data_foundation/bulk_code_freeze.json": "f2468b2012a1b83cc65a97dd4dfdf2cca4e9d8aad5050a75494edc80b3d8c8c2",
+    "work/grid28/engine.py": "30265a3d2aa321ab8d9cf46b7cc7711915f27622f5bb6492ec372b8e52acb280",
+    "work/grid291_control_preparation/adapter.py": "95646174b5db1879a9eeead9919667b3d9b275cafb2ceb876476b3fb9cbefa6d",
+    "work/grid111_action_feedback/public.py": "c53676cad45b2c622fe35f1564b8b35788e61b3ecef4f3f6b1a4c0453eb9bba5",
+    "work/grid111_action_feedback/common111.py": "06bec7a78a72ce8e1bd6a6da42ec34dedc10662610d2dd63ab52040d02ca53b9"
+  },
+  "method": "Expose the existing first map of canonical serialized combined-action bytes by appending it to the original Search.prepare return. Assemble int32 post-command topology matrix and uint8 unknown-reconnect flags from those vectors in one vectorized pass. No extra Action addition in proposed path.",
+  "reference": "Frozen GRID26 Search.prepare plus GRID183 PublicState.plan on serialized GRID100 train/validation states, and exact old metadata, combined hash and plan/candidate identities. No grid or model construction.",
+  "timing": "Paired once on each saved call, alternate baseline/enhanced invocation order by fixed row parity. Baseline includes sorted representatives. Enhanced includes sorted representatives and vectorized export. Report direct export separately and paired prep differences. Reuse GRID328 component and GRID327 forecast proxies only for additive accounting. No ranking or replay rerun.",
+  "limit": {
+    "calls": 305,
+    "candidate_representatives": 268356,
+    "wall_cap_s": 600,
+    "new_dc_solves": 0,
+    "new_model_forward": 0,
+    "new_fit": 0,
+    "new_simulate": 0
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "parent_commit": "e5dee4dfcd10d153db6e2f660ff4d5dcb7f6c9fd",
+  "refs": {
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID325_dc_global_priority/readout.py": "b6f9b19e9fc1e9bdfeb489b2dce6d1decfd33ce3149b36a7272baef1f4b26a7b",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID325_dc_global_priority/fixed_scope.json": "1a6ed8e696d7aa02208ff2fda4fa4847a7cc16a6f6e282410eb2e9869820da70",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID325_dc_global_priority/public_ranks.json": "f8f373bef7624350e7541d1acf88f76c79ed8ae2e02d9400016d45e23b78a39c",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID326_fixed_dc_mix/readout.py": "e6975287797b6f3289743242341f102000787c594c84d8627b496b4a67d68409",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID326_fixed_dc_mix/fixed_scope.json": "f7658bfbdfd426943fdf76a04b8380fe5334dc7b408b22b08d2124e2ff960405",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID326_fixed_dc_mix/public_mix.json": "f0febb9422128c90ae862380fa0fc6d6a08ca208f51e2dcf9394496e877122c0",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID327_mixed_fallback_readout/results/rows.json": "84871db1b92c171f9531bdf93c20a27e6cc5e8c53aa5fa5d8f5c464e7e6ee79a",
+    "work/GRL-results-integration/research_archive/power-grid-2026/protocols/GRID327_mixed_fallback_readout/results/summary.json": "50f3d8e47d710ae9349a885142674651c879b78fe8614bd30a7996c634ec2482"
+  },
+  "source": {
+    "run.py": "10162851f42fe061690698e7973f3faea2ad14855f2b508589f7df2415d2895b",
+    "solver.cpp": "415cf304f9239360c34d20ca9e56d825981b179a293ab041641bb55076ce2ec7"
+  },
+  "binary_sha256": "095fc2ba37cff1e0a95b826a64de94ecdac0ab262b12449b225ec646fdc8cd13",
+  "compiler_sha256": "23e5b6362bdb8d55f834935f04fcbcad48cff2cb9a1a0b1c0e362617cc33b3e2",
+  "compile": [
+    "g++",
+    "-O3",
+    "-ffp-contract=off",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-std=c++17",
+    "-shared",
+    "-static",
+    "solver.cpp",
+    "-o",
+    "solver.dll"
+  ],
+  "method": "Pack all public candidate busbar plans of a call. Assemble the identical grounded DC equations natively, using connected components by union-find and dense LAPACK DPOSV Cholesky (SciPy dposv capsule). Same injections, limits, branch weights and slack. One native batch per call, single BLAS thread.",
+  "numerical": "For uncertain native solve, use original sparse computation. For adjacent score gaps <=1e-10*(1+abs(left)+abs(right)), identify contiguous groups touching the supported prefix, then use original sparse scores within the entire group. Stable old ordering for equal reference scores. No score scaling or selection changes.",
+  "qualification": "All 305 published STATIC_ID/DC128 and mixed128 lists must be identical in order; candidate scored and fallback counts must agree per call. If any mismatch, do not infer GRID327's estimates for the new solver.",
+  "timing": "Measure packing, solve, native fallback, tie resolution, ranking and mix construction in one component interval. Decoder plus integrity checks timed separately. One pass on all 305. Combine qualified same-order timings with archived GRID327 forecast-work deltas only; no new end-to-end measurement.",
+  "scope": {
+    "calls": 305,
+    "candidate_rows": 268356,
+    "new_model_forward": 0,
+    "new_grid2op_simulation": 0,
+    "new_fits": 0,
+    "wall_cap_s": 600
+  }
+}

@@ -2741,3 +2741,9 @@ GRID329 从原 Search.prepare 已有联合动作字节直接批量导出拓扑�
 GRID330 五臂闭环适配已通过有限离线资格。四个既有 2039 开发周，每周原 FRAME、原序保护 208/261、同混排保护 208/261 各一次，共 20 条。拟 60 分钟总上限、单条 20 分钟、40,340 步及 250,000 预测。五路及运行源码编译通过，4 固定保存调用混排逐项一致，零模型加载或新仿真。等待本范围授权。
 
 [GRID330 报告](../research_archive/power-grid-2026/protocols/GRID330_dc_mix_closed_loop/results/GRID330_report.md)
+
+## GRID330 首次停机及衔接准备
+
+GRID330 首次回放在写元数据时因漏传 timing 退出，0 接纳、0 物理步和候选查询。保留原停机和未知的初始化计数。一次衔接补齐字段、保留原 20 成员与北京时间 22:10:24 截止，预测上限收紧至 249,000，已通过有限离线检查，等待恢复授权。
+
+[修复报告](../research_archive/power-grid-2026/protocols/GRID330_dc_mix_recovery01/GRID330_recovery01_report.md)

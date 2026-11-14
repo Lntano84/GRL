@@ -2781,3 +2781,9 @@ GRID334 八条闭环全部收录，三月六月十二月共同完周，九月同
 GRID335 保存账本核对：三月第520步，261臂的基础NN继续35个候选并换动作，此处无0.9保护和261残差调用。LogEIPC后续第521–547步全局多256个，整周局部少105个而总候选净多151个。描述性轨迹比较，零新模拟。
 
 [报告](../research_archive/power-grid-2026/protocols/GRID335_march_divergence/GRID335_report.md)
+
+## 2026-11-14 — GRID336 介入范围
+
+GRID336 核对 GRID334 四条保护261轨迹：526 个局部候选中，基础NN继续199（7批1改善），父门放行25（1批0改善，残差取消0），0.9保护302（6次2改善）。原残差小范围在该批总候选中至多0.41%；唯一待筛方向为基础NN继续入口的无收益批判别，先查跨日期支持。
+
+[报告](../research_archive/power-grid-2026/protocols/GRID336_261_intervention_scope/GRID336_report.md)

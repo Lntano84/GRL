@@ -90,13 +90,19 @@ def adapter_source():
     return parent.replace_once(text, marker, " policy=models")
 
 
+def acquisition_deadline(context):
+    replay_deadline = min(context["worker_deadline"], context["start_monotonic"] + CAPS["wall_s"])
+    return time.monotonic() + (replay_deadline - time.perf_counter())
+
+
 def install(search, item, payload, expected=None):
     if item["evaluation_arm"] == REFERENCE:
         return original_install(search, item, payload, expected)
     assert item["evaluation_arm"] == COMPARATOR and item["arm"] == "LOGEIPC"
     assert payload is None and expected is None
     context = read(O / "run_context.json")
-    deadline = min(context["worker_deadline"], context["start_monotonic"] + CAPS["wall_s"])
+    # GRID332 checks monotonic, while the replay runner anchors perf_counter.
+    deadline = acquisition_deadline(context)
     # Initialize the public action embedding when the actual Search has constructed
     # its library, outside the measured online decision interval.
     impl = policy_class()

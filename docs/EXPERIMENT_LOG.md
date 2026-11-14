@@ -2793,3 +2793,9 @@ GRID336 核对 GRID334 四条保护261轨迹：526 个局部候选中，基础NN
 GRID337 冻结范围先发布。核对 f0_s0 8 训练/4 校准日期和 GRID334 4 开发日期共112调用。7个合格批次，训练可省3/必须留0，校准可省1/必须留1且各一日期，开发各1。原跨日期资格未过，截点为空，停止该支线。保留原261；已生成12行配对主表和英文实验段落底稿。
 
 [报告](../research_archive/power-grid-2026/protocols/GRID337_native_last_batch/GRID337_report.md)
+
+## 2026-11-14 — e-Energy 稿件证据整合
+
+e-Energy 英文修订稿已整合 FRAME 的搜索预算分配、2035 同站补查消融及 2039 GRID330/334 的 12 行配对。三月反例、九月短周和同配置 208/261 一致均进入正文。表格已与 CSV 逐行核对，附内部复现说明。原稿保留，匿名 PDF 与合作者审阅待完成。
+
+[英文修订稿](../research_archive/power-grid-2026/paper/FRAME_eEnergy_working_draft_20261114/manuscript_en.md)

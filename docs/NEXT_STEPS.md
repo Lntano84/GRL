@@ -1,3 +1,7 @@
+# e-Energy 英文修订稿已整合
+
+以 [英文稿](../research_archive/power-grid-2026/paper/FRAME_eEnergy_working_draft_20261114/manuscript_en.md) 和配对 CSV 做合作者审阅底稿。12 月 15 日锁表，随后完成匿名模板、运行版本核对和复现附件。
+
 # GRID337 投稿主表准备
 
 使用已归档 GRID330/334 和 GRID337 的主表与实验段落底稿。12 月 15 日锁表，12 月下半月整理正文与匿名复现材料，按 ACM e-Energy 2027 冬季轮在 1 月提交并先核系统时间。

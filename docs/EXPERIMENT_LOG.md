@@ -2769,3 +2769,9 @@ GRID332 在 GRID330 四个开发周的 21 个保存调用上做独立 LogEIPC �
 GRID333 已按首故障停止。三月 261 完整 2,017 步，独立 LogEIPC 前 519 步与 261 轨迹和费用相同，第 520 步候选搜索在适配器缺绑定处退出，选择器未执行。共 1 完整、1 部分、6 未启动，零完整配对。完整和部分记录已归档并读回。
 
 [报告](../research_archive/power-grid-2026/protocols/GRID333_logeipc_closed_loop/results/GRID333_report.md)
+
+## 2026-11-14 — GRID334 闭环比较
+
+GRID334 八条闭环全部收录，三月六月十二月共同完周，九月同轨迹451步终止。独立 LogEIPC 相对保护261合计候选少133（2.18%），三完整周控制累计少1.16%。三月第520步分岔，整周多查151且费用高0.086118%，六月十二月轨迹和费用相同。各周用时差异保留，单次描述性，不宣称稳定提速。
+
+[报告](../research_archive/power-grid-2026/protocols/GRID334_logeipc_closed_loop/results/GRID334_report.md)

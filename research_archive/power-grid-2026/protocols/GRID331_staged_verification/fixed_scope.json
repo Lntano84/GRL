@@ -1,0 +1,144 @@
+{
+  "parent_commit": "40f3bb60",
+  "source_sha256": "f97f239335f93556787249d94145669aa701aaaf2d7668c5af077958e5cdaac0",
+  "parent_archive_manifest_sha256": "24648cda98b1193f213395735b54b3b80b110a241ba611b734884da4900ea22d",
+  "source_implementation": "GRID320 runtime policy_source and load_guard_receipt, reused by GRID330",
+  "original": "Frozen mixed-order protected 261; exact first native STOP plus parent/residual log and complete original 0.9 guard tail.",
+  "variant": "At recorded load_guard events only, use original locked-station tail order, verify rounds of 8,16,32,64,... capped by remaining tail, and stop at a round boundary once the current best strictly admissible action has rho <= 0.9; otherwise read the full tail. No reranking, fitting, or decisions outside those events.",
+  "method_reference": "ADAP-inspired increasing verification budget and first target hit, with fixed pre-existing candidates and order; not the original generative algorithm.",
+  "method_url": "https://arxiv.org/abs/2605.17609v3",
+  "comparison": "Same GRID330 recorded pre-guard observations and candidate ordering. Variant queries a prefix of the original paid tail; maximum budget equals original. Compare original strict float32 immediate-reward key and winner, plus verified candidate counts. No new whole-week trajectory or latency estimate.",
+  "calendar": [
+    {
+      "date": "2039-03-14",
+      "calls": 7,
+      "steps": 2017,
+      "complete": true
+    },
+    {
+      "date": "2039-06-13",
+      "calls": 7,
+      "steps": 2017,
+      "complete": true
+    },
+    {
+      "date": "2039-09-12",
+      "calls": 2,
+      "steps": 451,
+      "complete": false
+    },
+    {
+      "date": "2039-12-12",
+      "calls": 5,
+      "steps": 2017,
+      "complete": true
+    }
+  ],
+  "members": [
+    {
+      "date": "2039-03-14",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-03-14_100__BOUNDED261_GUARD_DC__f0_s0/call000.json",
+      "sha256": "cd3efa61343e81e63b7ba980a244399621af7f1993925296d93aeafed9c763c9"
+    },
+    {
+      "date": "2039-03-14",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-03-14_100__BOUNDED261_GUARD_DC__f0_s0/call001.json",
+      "sha256": "534b895e5b5f6744374d558ee681cf05f56037652f696ae69760e86dfdfcdd51"
+    },
+    {
+      "date": "2039-03-14",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-03-14_100__BOUNDED261_GUARD_DC__f0_s0/call002.json",
+      "sha256": "38c219bdc2c0228df18d596b90257f32fcb35a0a9a2ca9da0eb9b21e1ce04869"
+    },
+    {
+      "date": "2039-03-14",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-03-14_100__BOUNDED261_GUARD_DC__f0_s0/call003.json",
+      "sha256": "12b71e300270d54009d4a18d40c881c1e02376bdae5897553547618779f3a3a0"
+    },
+    {
+      "date": "2039-03-14",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-03-14_100__BOUNDED261_GUARD_DC__f0_s0/call004.json",
+      "sha256": "07322a4bcf2337627f7973292bb4eb708f96ef4baeee1add07d63b13ba441c81"
+    },
+    {
+      "date": "2039-03-14",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-03-14_100__BOUNDED261_GUARD_DC__f0_s0/call005.json",
+      "sha256": "2fa0a3b293c188d26e125577fff7382abcdf05bc6a8861501d9974681dfbf158"
+    },
+    {
+      "date": "2039-03-14",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-03-14_100__BOUNDED261_GUARD_DC__f0_s0/call006.json",
+      "sha256": "b0d5c315477eb8eabaf392a04990518bbdc7ab3f8cf914c77c8f66cd4677f0b2"
+    },
+    {
+      "date": "2039-06-13",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-06-13_100__BOUNDED261_GUARD_DC__f0_s0/call000.json",
+      "sha256": "d5aaf7b9b1866841d1b132740885ba5fbd0795116b02a7e15f6c1def0b34966c"
+    },
+    {
+      "date": "2039-06-13",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-06-13_100__BOUNDED261_GUARD_DC__f0_s0/call001.json",
+      "sha256": "6c559293b9e16fb4f0e0230648b03cf995ec92ff6233556cbf1f8f84a68ee0d2"
+    },
+    {
+      "date": "2039-06-13",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-06-13_100__BOUNDED261_GUARD_DC__f0_s0/call002.json",
+      "sha256": "1362d8ebad95f60e004c224ac91936e3324d3b80a6e7594651fc34d9401ad0e2"
+    },
+    {
+      "date": "2039-06-13",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-06-13_100__BOUNDED261_GUARD_DC__f0_s0/call003.json",
+      "sha256": "e277d6bd7c8604da93276791e07574e3184dd297906b8e69cbf368619aaab6b6"
+    },
+    {
+      "date": "2039-06-13",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-06-13_100__BOUNDED261_GUARD_DC__f0_s0/call004.json",
+      "sha256": "163f5d923f012385c43c2649608c75fbba007070183270348e8af6e7db9580ce"
+    },
+    {
+      "date": "2039-06-13",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-06-13_100__BOUNDED261_GUARD_DC__f0_s0/call005.json",
+      "sha256": "3ac704c380c2359d2efaa86382dd03fbe363e91171e80c5aa73594f32971dbd8"
+    },
+    {
+      "date": "2039-06-13",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-06-13_100__BOUNDED261_GUARD_DC__f0_s0/call006.json",
+      "sha256": "ebe305ae2cfacfdc5e36eb26b5dda1042eaf5096bb61ff0a46ce27cd364ed70a"
+    },
+    {
+      "date": "2039-09-12",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-09-12_100__BOUNDED261_GUARD_DC__f0_s0/call000.json",
+      "sha256": "d49b48e9b4cc87c4e57197ebbbd6db4dc275f01043662a88be76305ce641e169"
+    },
+    {
+      "date": "2039-09-12",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-09-12_100__BOUNDED261_GUARD_DC__f0_s0/call001.json",
+      "sha256": "37edca8426b7c6c61fc112562d44cd8f6826358bde84695ea083608821a0a28c"
+    },
+    {
+      "date": "2039-12-12",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-12-12_100__BOUNDED261_GUARD_DC__f0_s0/call000.json",
+      "sha256": "670b8e469060522da6b4b6b5614460bfa03075f1ce9afdf6373d53784428ab68"
+    },
+    {
+      "date": "2039-12-12",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-12-12_100__BOUNDED261_GUARD_DC__f0_s0/call001.json",
+      "sha256": "9db2c3c001868371bc2b015a49b9bf955e6e0ef9c7dc27158f18953050d6eefc"
+    },
+    {
+      "date": "2039-12-12",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-12-12_100__BOUNDED261_GUARD_DC__f0_s0/call002.json",
+      "sha256": "bb7d21093ad8426b4f0effef2af8ecda6a7357593f7e21895d54b78c6ed7969e"
+    },
+    {
+      "date": "2039-12-12",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-12-12_100__BOUNDED261_GUARD_DC__f0_s0/call003.json",
+      "sha256": "b0297b5f559aa395fcfddc1622382b99cf653b6eb6931cbfec40a1d87cba1a75"
+    },
+    {
+      "date": "2039-12-12",
+      "path": "outputs/grid330_remaining19/runs/r0__2039-12-12_100__BOUNDED261_GUARD_DC__f0_s0/call004.json",
+      "sha256": "900382c1e8557287fa6288297e2fd46227a83eb25dd1af757480a47812169b46"
+    }
+  ]
+}

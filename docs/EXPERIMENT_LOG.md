@@ -2763,3 +2763,9 @@ GRID331 在 GRID330 混排保护 261 的四周 21 次保存调用比较 8、16�
 GRID332 在 GRID330 四个开发周的 21 个保存调用上做独立 LogEIPC 对照。共用混排全局前缀，独立臂自主选查与停查原锁站尾部。总查 6,094→5,704，局部 526→136，20 同动作、1 即时反馈下降（2039-03-14 第520步）。代理净效用合计 +0.001372082，三月为负。零新仿真或拟合，保留 261 和独立对照。
 
 [报告](../research_archive/power-grid-2026/protocols/GRID332_independent_logeipc/results/GRID332_report.md)
+
+## 2026-11-14 — GRID333 独立 LogEIPC 闭环对照
+
+GRID333 已按首故障停止。三月 261 完整 2,017 步，独立 LogEIPC 前 519 步与 261 轨迹和费用相同，第 520 步候选搜索在适配器缺绑定处退出，选择器未执行。共 1 完整、1 部分、6 未启动，零完整配对。完整和部分记录已归档并读回。
+
+[报告](../research_archive/power-grid-2026/protocols/GRID333_logeipc_closed_loop/results/GRID333_report.md)

@@ -1,0 +1,431 @@
+{
+  "numerical_probe_passed": true,
+  "cvxpy": "1.9.3",
+  "osqp": "1.1.3",
+  "numpy": "2.4.6",
+  "saved": [
+    {
+      "date": "2039-03-14",
+      "arm": "BOUNDED261_GUARD_DC__f0_s0",
+      "complete": true,
+      "steps": 2017,
+      "controller_s": 86.20725449995734,
+      "calls": 23,
+      "total_unsafe_s": 42.34678869999334,
+      "compilation_s": 5.246748208999634,
+      "backend_s": 36.286178899999996,
+      "statuses": {
+        "optimal_inaccurate": 5,
+        "optimal": 10,
+        "user_limit": 8
+      }
+    },
+    {
+      "date": "2039-03-14",
+      "arm": "LOGEIPC_DC",
+      "complete": true,
+      "steps": 2017,
+      "controller_s": 83.62961819998236,
+      "calls": 22,
+      "total_unsafe_s": 39.17321169999559,
+      "compilation_s": 5.6929380893707275,
+      "backend_s": 32.9251472,
+      "statuses": {
+        "optimal_inaccurate": 7,
+        "optimal": 11,
+        "user_limit": 4
+      }
+    },
+    {
+      "date": "2039-06-13",
+      "arm": "BOUNDED261_GUARD_DC__f0_s0",
+      "complete": true,
+      "steps": 2017,
+      "controller_s": 51.45896930003073,
+      "calls": 7,
+      "total_unsafe_s": 11.97323840000172,
+      "compilation_s": 1.3143928050994873,
+      "backend_s": 10.482258,
+      "statuses": {
+        "optimal": 5,
+        "user_limit": 2
+      }
+    },
+    {
+      "date": "2039-06-13",
+      "arm": "LOGEIPC_DC",
+      "complete": true,
+      "steps": 2017,
+      "controller_s": 51.29573049999817,
+      "calls": 7,
+      "total_unsafe_s": 11.919416200000342,
+      "compilation_s": 1.3131048679351807,
+      "backend_s": 10.429779,
+      "statuses": {
+        "optimal": 5,
+        "user_limit": 2
+      }
+    },
+    {
+      "date": "2039-09-12",
+      "arm": "BOUNDED261_GUARD_DC__f0_s0",
+      "complete": false,
+      "steps": 451,
+      "controller_s": 4.9461540000029345,
+      "calls": 2,
+      "total_unsafe_s": 1.1472103999985848,
+      "compilation_s": 0.5400807857513428,
+      "backend_s": 0.5571463999999999,
+      "statuses": {
+        "optimal": 2
+      }
+    },
+    {
+      "date": "2039-09-12",
+      "arm": "LOGEIPC_DC",
+      "complete": false,
+      "steps": 451,
+      "controller_s": 4.952172000039354,
+      "calls": 2,
+      "total_unsafe_s": 1.1455547000005026,
+      "compilation_s": 0.5409128665924072,
+      "backend_s": 0.5545196,
+      "statuses": {
+        "optimal": 2
+      }
+    },
+    {
+      "date": "2039-12-12",
+      "arm": "BOUNDED261_GUARD_DC__f0_s0",
+      "complete": true,
+      "steps": 2017,
+      "controller_s": 92.14968239998416,
+      "calls": 22,
+      "total_unsafe_s": 42.10161380000318,
+      "compilation_s": 5.1058759689331055,
+      "backend_s": 36.4441852,
+      "statuses": {
+        "user_limit": 8,
+        "optimal_inaccurate": 3,
+        "optimal": 11
+      }
+    },
+    {
+      "date": "2039-12-12",
+      "arm": "LOGEIPC_DC",
+      "complete": true,
+      "steps": 2017,
+      "controller_s": 92.23302039996815,
+      "calls": 22,
+      "total_unsafe_s": 42.82788929999879,
+      "compilation_s": 5.015455484390259,
+      "backend_s": 36.4354959,
+      "statuses": {
+        "user_limit": 8,
+        "optimal_inaccurate": 3,
+        "optimal": 11
+      }
+    }
+  ],
+  "synthetic": [
+    {
+      "case": "cold",
+      "parameters": {
+        "load": 24.0,
+        "error": -0.25,
+        "observed_storage": 0.0,
+        "origin": 0,
+        "thermal_limit": 8.0,
+        "margin": 0.9,
+        "max_iter": 100000,
+        "flexible": true
+      },
+      "reference": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.0241546630859375,
+        "wall_s": 0.028957800001080614
+      },
+      "cached": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.008160591125488281,
+        "wall_s": 0.010883500002819346
+      },
+      "expected_cache": "miss",
+      "observed_cache": "miss",
+      "bitwise": true,
+      "within_atol_1e_7": true,
+      "statuses_match": true,
+      "max_finite_error": 0.0
+    },
+    {
+      "case": "changed_injections",
+      "parameters": {
+        "load": 24.25,
+        "error": -0.25,
+        "observed_storage": 0.25,
+        "origin": 0,
+        "thermal_limit": 8.0,
+        "margin": 0.9,
+        "max_iter": 100000,
+        "flexible": true
+      },
+      "reference": {
+        "converged": false,
+        "status": "infeasible",
+        "iterations": null,
+        "compilation_s": 0.008094549179077148,
+        "wall_s": 0.009922799999912968
+      },
+      "cached": {
+        "converged": false,
+        "status": "infeasible",
+        "iterations": null,
+        "compilation_s": 0.0,
+        "wall_s": 0.0015657000003557187
+      },
+      "expected_cache": "hit",
+      "observed_cache": "hit",
+      "bitwise": true,
+      "within_atol_1e_7": true,
+      "statuses_match": true,
+      "max_finite_error": 0.0
+    },
+    {
+      "case": "changed_flow_error_and_limit",
+      "parameters": {
+        "load": 24.0,
+        "error": 0.35,
+        "observed_storage": 0.0,
+        "origin": 0,
+        "thermal_limit": 7.7,
+        "margin": 0.9,
+        "max_iter": 100000,
+        "flexible": true
+      },
+      "reference": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.007902860641479492,
+        "wall_s": 0.009606800002075033
+      },
+      "cached": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.0010082721710205078,
+        "wall_s": 0.0016715000019758008
+      },
+      "expected_cache": "hit",
+      "observed_cache": "hit",
+      "bitwise": true,
+      "within_atol_1e_7": true,
+      "statuses_match": true,
+      "max_finite_error": 0.0
+    },
+    {
+      "case": "changed_constant",
+      "parameters": {
+        "load": 24.0,
+        "error": -0.25,
+        "observed_storage": 0.0,
+        "origin": 0,
+        "thermal_limit": 8.0,
+        "margin": 0.92,
+        "max_iter": 100000,
+        "flexible": true
+      },
+      "reference": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.007800579071044922,
+        "wall_s": 0.009574899999279296
+      },
+      "cached": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.0070078372955322266,
+        "wall_s": 0.009383200002048397
+      },
+      "expected_cache": "miss",
+      "observed_cache": "miss",
+      "bitwise": true,
+      "within_atol_1e_7": true,
+      "statuses_match": true,
+      "max_finite_error": 0.0
+    },
+    {
+      "case": "changed_topology",
+      "parameters": {
+        "load": 24.0,
+        "error": -0.25,
+        "observed_storage": 0.0,
+        "origin": 1,
+        "thermal_limit": 8.0,
+        "margin": 0.9,
+        "max_iter": 100000,
+        "flexible": true
+      },
+      "reference": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.0073394775390625,
+        "wall_s": 0.010201600001892075
+      },
+      "cached": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.007773876190185547,
+        "wall_s": 0.01006509999933769
+      },
+      "expected_cache": "miss",
+      "observed_cache": "miss",
+      "bitwise": true,
+      "within_atol_1e_7": true,
+      "statuses_match": true,
+      "max_finite_error": 0.0
+    },
+    {
+      "case": "restored_topology",
+      "parameters": {
+        "load": 24.0,
+        "error": -0.25,
+        "observed_storage": 0.0,
+        "origin": 0,
+        "thermal_limit": 8.0,
+        "margin": 0.9,
+        "max_iter": 100000,
+        "flexible": true
+      },
+      "reference": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.008424043655395508,
+        "wall_s": 0.011256800000410294
+      },
+      "cached": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.0,
+        "wall_s": 0.0017317999991064426
+      },
+      "expected_cache": "hit",
+      "observed_cache": "hit",
+      "bitwise": true,
+      "within_atol_1e_7": true,
+      "statuses_match": true,
+      "max_finite_error": 0.0
+    },
+    {
+      "case": "limited_iterations",
+      "parameters": {
+        "load": 24.0,
+        "error": -0.25,
+        "observed_storage": 0.0,
+        "origin": 0,
+        "thermal_limit": 8.0,
+        "margin": 0.9,
+        "max_iter": 1,
+        "flexible": true
+      },
+      "reference": {
+        "converged": true,
+        "status": "user_limit",
+        "iterations": 1,
+        "compilation_s": 0.008727073669433594,
+        "wall_s": 0.010356499999033986
+      },
+      "cached": {
+        "converged": true,
+        "status": "user_limit",
+        "iterations": 1,
+        "compilation_s": 0.0,
+        "wall_s": 0.0015868000009504613
+      },
+      "expected_cache": "hit",
+      "observed_cache": "hit",
+      "bitwise": true,
+      "within_atol_1e_7": true,
+      "statuses_match": true,
+      "max_finite_error": 0.0
+    },
+    {
+      "case": "infeasible",
+      "parameters": {
+        "load": 25.0,
+        "error": -0.25,
+        "observed_storage": 0.0,
+        "origin": 0,
+        "thermal_limit": 8.0,
+        "margin": 0.9,
+        "max_iter": 100000,
+        "flexible": false
+      },
+      "reference": {
+        "converged": false,
+        "status": "infeasible",
+        "iterations": null,
+        "compilation_s": 0.008955001831054688,
+        "wall_s": 0.010273500000039348
+      },
+      "cached": {
+        "converged": false,
+        "status": "infeasible",
+        "iterations": null,
+        "compilation_s": 0.0,
+        "wall_s": 0.0016037999994296115
+      },
+      "expected_cache": "hit",
+      "observed_cache": "hit",
+      "bitwise": true,
+      "within_atol_1e_7": true,
+      "statuses_match": true,
+      "max_finite_error": 0.0
+    },
+    {
+      "case": "after_infeasible",
+      "parameters": {
+        "load": 24.0,
+        "error": -0.25,
+        "observed_storage": 0.0,
+        "origin": 0,
+        "thermal_limit": 8.0,
+        "margin": 0.9,
+        "max_iter": 100000,
+        "flexible": true
+      },
+      "reference": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.024296283721923828,
+        "wall_s": 0.027203500001633074
+      },
+      "cached": {
+        "converged": true,
+        "status": "optimal",
+        "iterations": 200,
+        "compilation_s": 0.0010075569152832031,
+        "wall_s": 0.0017244000009668525
+      },
+      "expected_cache": "hit",
+      "observed_cache": "hit",
+      "bitwise": true,
+      "within_atol_1e_7": true,
+      "statuses_match": true,
+      "max_finite_error": 0.0
+    }
+  ],
+  "simulated_steps": 0,
+  "fits": 0
+}

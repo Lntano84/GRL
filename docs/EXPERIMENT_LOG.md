@@ -2799,3 +2799,8 @@ GRID337 冻结范围先发布。核对 f0_s0 8 训练/4 校准日期和 GRID334 
 e-Energy 英文修订稿已整合 FRAME 的搜索预算分配、2035 同站补查消融及 2039 GRID330/334 的 12 行配对。三月反例、九月短周和同配置 208/261 一致均进入正文。表格已与 CSV 逐行核对，附内部复现说明。原稿保留，匿名 PDF 与合作者审阅待完成。
 
 [英文修订稿](../research_archive/power-grid-2026/paper/FRAME_eEnergy_working_draft_20261114/manuscript_en.md)
+## 2026-11-14 — GRID338 超限求解复用离线原型
+
+复用 GRID334 两臂四周 16 个收据文件。保护 261 的 54 次超限优化共编译 12.207 秒。固定小样 9/9 逐字节同解，6 次缓存命中。0 新物理、0 拟合。
+
+[报告](../research_archive/power-grid-2026/protocols/GRID338_unsafe_qp_reuse/GRID338_report.md)

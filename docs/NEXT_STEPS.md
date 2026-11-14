@@ -1,3 +1,7 @@
+# GRID338 共享优化候选
+
+保留原 261 和当前主表。若能定位真实超限优化器输入及原动作转换状态，先冻结一次离线配对，核联合动作逐项一致及命中率，再判断闭环实测是否值得。GRID337 末批支线已结束。
+
 # e-Energy 英文修订稿已整合
 
 以 [英文稿](../research_archive/power-grid-2026/paper/FRAME_eEnergy_working_draft_20261114/manuscript_en.md) 和配对 CSV 做合作者审阅底稿。12 月 15 日锁表，随后完成匿名模板、运行版本核对和复现附件。

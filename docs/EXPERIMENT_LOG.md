@@ -2820,3 +2820,7 @@ IEEE118/300共1546次AC，三完整工况无同站补查，第四个基线不收
 ## 2026-11-15 — GRID342 PGLib 静态候选对照
 
 1,280 AC、4断连，一次评完2×642位置，两工况四臂无可行动作。电压合格候选最低峰仍超额定值。原基线复用，0新训练或OPF。[报告](../research_archive/power-grid-2026/protocols/GRID342_pglib_frame_comparison/GRID342_report.md)
+
+## 2026-11-15 — GRID344 PEGASE 单次资格
+
+一基线AC收敛，三母线超电压门，零候选、OPF、故障及训练。[报告](../research_archive/power-grid-2026/protocols/GRID344_pegase_base/GRID344_report.md)

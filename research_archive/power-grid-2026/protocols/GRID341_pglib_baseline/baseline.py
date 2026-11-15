@@ -24,7 +24,7 @@ COLS = {
     "impedance": (("from_bus", "to_bus"), ("p_from_mw", "q_from_mvar", "p_to_mw", "q_to_mvar")),
     "trafo": (("hv_bus", "lv_bus"), ("p_hv_mw", "q_hv_mvar", "p_lv_mw", "q_lv_mvar")),
 }
-DIMENSIONS = {"bus": 13, "gen": 21, "branch": 13, "gencost": 7}
+DIMENSIONS = {"bus": 13, "gen": 10, "branch": 13, "gencost": 7}
 NUMERIC = re.compile(r"[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?")
 
 def digest(path):

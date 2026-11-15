@@ -70,6 +70,10 @@ def main():
         r"\documentclass[sigconf,review,anonymous]{acmart}",
         r"\settopmatter{printacmref=false}",
         r"\setcopyright{none}",
+        r"\acmISBN{}",
+        r"\acmDOI{}",
+        r"\acmConference[ACM e-Energy 2027]{ACM e-Energy 2027}{June 2027}{Atlanta, GA, USA}",
+        r"\setlength{\emergencystretch}{2em}",
         r"\title{" + prose(title) + "}",
         r"\begin{document}",
         r"\begin{abstract}", *(prose(line) for line in lines[3:start]), r"\end{abstract}",
@@ -88,7 +92,12 @@ def main():
         elif line.startswith("### "):
             output.append(r"\subsection{" + prose(line[4:]) + "}")
         else:
-            output.append(prose(line).replace("Table 1", r"Table~\ref{tab:paired}"))
+            paragraph = prose(line).replace("Table 1", r"Table~\ref{tab:paired}")
+            paragraph = paragraph.replace(
+                r"strict loading bound \(0<\rho<\min(\rho_t,\theta_t)\),",
+                r"strict loading bound \[0<\rho<\min(\rho_t,\theta_t),\]",
+            )
+            output.append(paragraph)
     assert not table
     output.append(r"\begin{thebibliography}{4}")
     for line in filter(None, lines[end + 1:]):

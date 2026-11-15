@@ -2812,3 +2812,7 @@ e-Energy 英文修订稿已整合 FRAME 的搜索预算分配、2035 同站补�
 ## 2026-11-15 — GRID340 独立pandapower
 
 IEEE118/300共1546次AC，三完整工况无同站补查，第四个基线不收敛，无候选。保存记录只读汇总，零重跑。[报告](../research_archive/power-grid-2026/protocols/GRID340_pandapower_transfer/GRID340_report.md)
+
+## 2026-11-15 — GRID341 四个 PGLib 基线
+
+4次独立AC，118标准/API收敛且热约束明显，300标准/API未收敛，零候选及训练。解析初错发生在零求解，修原表宽度后首次执行4基线。

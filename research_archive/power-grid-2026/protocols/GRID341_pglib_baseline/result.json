@@ -1,0 +1,96 @@
+{
+  "baseline_attempts": 4,
+  "candidate_solves": 0,
+  "pglib_release": "v23.07",
+  "qualified": 2,
+  "rows": [
+    {
+      "case": "pglib_opf_case118_ieee.m",
+      "sha256": "b1af0833849040c04babc3700631cff0d9afa66b79c5d3e13ae79bdf516cec78",
+      "bus_count": 118,
+      "active_branch_count": 186,
+      "branch_kinds": {
+        "line": 175,
+        "trafo": 9,
+        "impedance": 2
+      },
+      "total_source_demand_mw": 4242.0,
+      "candidates": 642,
+      "stations": 33,
+      "converged": true,
+      "candidate_solves": 0,
+      "qualified": true,
+      "finite": true,
+      "rho": 1.9669969552716133,
+      "min_v": 0.9539869628947638,
+      "max_v": 1.0159907091947866,
+      "voltage_ok": true,
+      "thermal_pressure": true,
+      "max_branch_index": 118,
+      "branches_at_or_above_09": 10,
+      "reason": "basis_available"
+    },
+    {
+      "case": "pglib_opf_case118_ieee__api.m",
+      "sha256": "8a2c3bc2f086181a67d786b93397477189563d3c5615fc47c7df063f5a64a7ef",
+      "bus_count": 118,
+      "active_branch_count": 186,
+      "branch_kinds": {
+        "line": 175,
+        "trafo": 9,
+        "impedance": 2
+      },
+      "total_source_demand_mw": 6874.82,
+      "candidates": 642,
+      "stations": 33,
+      "converged": true,
+      "candidate_solves": 0,
+      "qualified": true,
+      "finite": true,
+      "rho": 4.2609187487080895,
+      "min_v": 0.9371207667697843,
+      "max_v": 1.0112411354070634,
+      "voltage_ok": true,
+      "thermal_pressure": true,
+      "max_branch_index": 118,
+      "branches_at_or_above_09": 22,
+      "reason": "basis_available"
+    },
+    {
+      "case": "pglib_opf_case300_ieee.m",
+      "sha256": "7ecf056d5942135765200ad7ae8791c28f0d35fb1dc888ba2c32dfc950f3c2f5",
+      "bus_count": 300,
+      "active_branch_count": 411,
+      "branch_kinds": {
+        "trafo": 63,
+        "line": 282,
+        "impedance": 66
+      },
+      "total_source_demand_mw": 23525.85,
+      "candidates": 258,
+      "stations": 30,
+      "converged": false,
+      "candidate_solves": 0,
+      "qualified": false,
+      "reason": "base_nonconverged"
+    },
+    {
+      "case": "pglib_opf_case300_ieee__api.m",
+      "sha256": "8e080feef51ab37dd6bc7416cad5fbcdd13f37a97e7bf7a2a0c4e2d732a443af",
+      "bus_count": 300,
+      "active_branch_count": 411,
+      "branch_kinds": {
+        "trafo": 63,
+        "line": 282,
+        "impedance": 66
+      },
+      "total_source_demand_mw": 26426.649999999998,
+      "candidates": 258,
+      "stations": 30,
+      "converged": false,
+      "candidate_solves": 0,
+      "qualified": false,
+      "reason": "base_nonconverged"
+    }
+  ]
+}

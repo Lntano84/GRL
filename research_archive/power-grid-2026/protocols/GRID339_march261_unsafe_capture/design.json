@@ -1,0 +1,66 @@
+{
+  "id": "GRID339_MARCH261_UNSAFE_CAPTURE",
+  "environment": "work/grid309_action_opportunity_preparation/train_env",
+  "environment_seed": 0,
+  "calendar": [
+    {
+      "date": "2039-03-14",
+      "family": {
+        "month": 3,
+        "monday_ordinal": 2
+      },
+      "scenario_id": 100,
+      "scenario": "2039-03-14_100",
+      "environment_seed": 0,
+      "model_pool": "f0_s0",
+      "role": "prospective_calibration_pilot_only",
+      "generator_seeds": {
+        "load_seed": 636483801,
+        "renew_seed": 1844674755,
+        "gen_p_forecast_seed": 2466743327
+      }
+    }
+  ],
+  "caps": {
+    "wall_s": 600,
+    "episode_s": 600,
+    "physical_steps": 2017,
+    "public_forecasts": 12000
+  },
+  "execution_order": [
+    {
+      "index": 0,
+      "week": "2039-03-14_100",
+      "date": "2039-03-14",
+      "repeat": 0,
+      "method": "BOUNDED261_GUARD_DC__f0_s0",
+      "arm": "BOUNDED261",
+      "evaluation_arm": "BOUNDED261_GUARD_DC",
+      "load_guard": true,
+      "completion_mode": "BOUNDED261",
+      "model_seed": 0,
+      "pool": "f0_s0",
+      "within_pair": 0,
+      "checkpoint": null,
+      "policy": "FRAME_GUARD",
+      "rule": "STATIC_ID",
+      "budget": 128,
+      "cache_dc": true,
+      "cache_safe": true,
+      "order_mode": "STATIC64_DC64",
+      "stage_phase": "all",
+      "partition": "other_family_development",
+      "dc_mix": true
+    }
+  ],
+  "pool": "f0_s0",
+  "comparisons": {},
+  "learned_models_trained": 0,
+  "timing": "Capture only. Wall time includes instrumentation.",
+  "protocol": "Original protected 261 with the GRID334 mixed order. Capture all in-control unsafe QP inputs, outputs and associated action conversion. No changed solver or action.",
+  "endpoint": "Compare saved GRID334 trajectory and cost at identical steps; verify input/output snapshot pairs.",
+  "resource": {
+    "historical_single_run_s": 95.2361354,
+    "no_retry": true
+  }
+}

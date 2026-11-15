@@ -2804,3 +2804,7 @@ e-Energy 英文修订稿已整合 FRAME 的搜索预算分配、2035 同站补�
 复用 GRID334 两臂四周 16 个收据文件。保护 261 的 54 次超限优化共编译 12.207 秒。固定小样 9/9 逐字节同解，6 次缓存命中。0 新物理、0 拟合。
 
 [报告](../research_archive/power-grid-2026/protocols/GRID338_unsafe_qp_reuse/GRID338_report.md)
+
+## 2026-11-15 — GRID339 原 261 快照和缓存复用
+
+三月 2,017 步与原动作、费用完全一致，23 次真实求解完整采样。离线复用 5 命中、18 未命中，0/23 达到逐字节同解，全保留，无训练。 [报告](../research_archive/power-grid-2026/protocols/GRID339_march261_unsafe_capture/GRID339_report.md)

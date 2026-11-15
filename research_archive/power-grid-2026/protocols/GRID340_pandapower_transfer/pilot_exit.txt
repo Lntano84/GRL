@@ -1,0 +1,14 @@
+C:\Users\windows\Documents\Codex\2026-09-24\influence-maximization-im-ccf-b-grl\work\grid00\.venv\Lib\site-packages\grid2op\Backend\pandaPowerBackend.py:38: UserWarning: Numba cannot be loaded. You will gain possibly massive speed if installing it by 
+	D:\Codex\GRL研究\work\grid02\.venv\Scripts\python.exe -m pip install numba
+
+  warnings.warn(
+{"case": "ieee118", "scale": 1.0, "count": 643, "outcomes": {"FULL": {"queries": 642, "winner": 0, "rho": 0.04475087324056167}, "NO_LOCAL": {"queries": 256, "winner": 0, "rho": 0.04475087324056167, "prefix_winner": 0, "lock": null, "stop_reason": "guard_verified_plateau_unchanged_incumbent", "local_queries": 0}, "GLOBAL_MATCH": {"queries": 256, "winner": 0, "rho": 0.04475087324056167, "prefix_winner": 0, "lock": null, "stop_reason": "guard_verified_plateau_unchanged_incumbent", "local_queries": 0}, "FRAME_GUARD": {"queries": 256, "winner": 0, "rho": 0.04475087324056167, "prefix_winner": 0, "lock": null, "stop_reason": "guard_verified_plateau_unchanged_incumbent", "local_queries": 0}}}
+{"case": "ieee118", "scale": 1.05, "count": 1286, "outcomes": {"FULL": {"queries": 642, "winner": 0, "rho": 0.044750873240561664}, "NO_LOCAL": {"queries": 256, "winner": 0, "rho": 0.044750873240561664, "prefix_winner": 0, "lock": null, "stop_reason": "guard_verified_plateau_unchanged_incumbent", "local_queries": 0}, "GLOBAL_MATCH": {"queries": 256, "winner": 0, "rho": 0.044750873240561664, "prefix_winner": 0, "lock": null, "stop_reason": "guard_verified_plateau_unchanged_incumbent", "local_queries": 0}, "FRAME_GUARD": {"queries": 256, "winner": 0, "rho": 0.044750873240561664, "prefix_winner": 0, "lock": null, "stop_reason": "guard_verified_plateau_unchanged_incumbent", "local_queries": 0}}}
+{"case": "ieee300", "scale": 1.0, "count": 1545, "outcomes": {"FULL": {"queries": 258, "winner": null, "rho": null}, "NO_LOCAL": {"queries": 258, "winner": null, "rho": null, "prefix_winner": null, "lock": null, "stop_reason": "full_exhaustion", "local_queries": 0}, "GLOBAL_MATCH": {"queries": 258, "winner": null, "rho": null, "prefix_winner": null, "lock": null, "stop_reason": "full_exhaustion", "local_queries": 0}, "FRAME_GUARD": {"queries": 258, "winner": null, "rho": null, "prefix_winner": null, "lock": null, "stop_reason": "full_exhaustion", "local_queries": 0}}}
+Traceback (most recent call last):
+  File "D:\Codex\GRL研究\work\GRL-results-integration\research_archive\power-grid-2026\protocols\GRID340_pandapower_transfer\pilot.py", line 157, in <module>
+    main()
+  File "D:\Codex\GRL研究\work\GRL-results-integration\research_archive\power-grid-2026\protocols\GRID340_pandapower_transfer\pilot.py", line 125, in main
+    assert base["converged"] and base["rho"] is not None, (name, scale, base)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('ieee300', 1.05, {'converged': False, 'voltage_ok': False, 'rho': None})

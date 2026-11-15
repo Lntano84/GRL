@@ -2808,3 +2808,7 @@ e-Energy 英文修订稿已整合 FRAME 的搜索预算分配、2035 同站补�
 ## 2026-11-15 — GRID339 原 261 快照和缓存复用
 
 三月 2,017 步与原动作、费用完全一致，23 次真实求解完整采样。离线复用 5 命中、18 未命中，0/23 达到逐字节同解，全保留，无训练。 [报告](../research_archive/power-grid-2026/protocols/GRID339_march261_unsafe_capture/GRID339_report.md)
+
+## 2026-11-15 — GRID340 独立pandapower
+
+IEEE118/300共1546次AC，三完整工况无同站补查，第四个基线不收敛，无候选。保存记录只读汇总，零重跑。[报告](../research_archive/power-grid-2026/protocols/GRID340_pandapower_transfer/GRID340_report.md)

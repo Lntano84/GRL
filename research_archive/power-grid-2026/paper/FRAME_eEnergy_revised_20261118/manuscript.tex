@@ -1,0 +1,136 @@
+\documentclass[sigconf,review,anonymous]{acmart}
+\settopmatter{printacmref=false}
+\setcopyright{none}
+\acmISBN{}
+\acmDOI{}
+\acmConference[ACM e-Energy 2027]{ACM e-Energy 2027}{June 2027}{Atlanta, GA, USA}
+\setlength{\emergencystretch}{2em}
+\title{Allocating Simulation Queries in Online Power-Grid Topology Search}
+
+\begin{document}
+\begin{abstract}
+An online power-grid controller can use a simulator to test topology changes before applying them. Once it has found an admissible action, it must decide how many additional candidates to check and where to look. FRAME expands a global candidate order in batches and, when triggered by search feedback, checks the remaining candidates at the incumbent's substation. In 185 saved search states on one Grid2Op network, local completion triggered in 113. At equal additional query counts, it yielded higher predicted reward than continuing the global order in 20 of these states, lower reward in one, and comparable reward in 92. A separate closed-loop comparison on four development horizons evaluates a DC-mixed ordering with learned stopping and a loading guard. This configuration used 20.95\% fewer topology candidate queries and 9.54\% fewer total forecasts than the original FRAME heuristic. Of the three jointly completed weeks, two had lower operating cost and one tied. Controller time increased by 3.06\% and 0.90\% in the two completed weeks with same-batch timing. A matched ablation found identical trajectories and query counts with and without the learned residual. A cost-aware stopping comparator saved queries overall, while one earlier local stop was followed by more global search and higher operating cost on the March trajectory.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+Topology controllers reconfigure busbar connections to manage line loading. A hybrid controller can combine topology proposals with redispatch, storage, and curtailment, then simulate the joint action before dispatch \cite{marot2021,ljn}. Candidate evaluation consumes computation online, and the action chosen today changes the states and search calls encountered later.
+
+A global priority order can place different configurations of the same substation far apart. The current best admissible action gives the controller a place to look for further improvements, even when local configurations rank poorly in the global order. FRAME uses the observed simulation feedback to set the depth of global search and the incumbent's substation to locate additional queries. Canonicalization merges identical joint actions while retaining the substation memberships needed for this second stage.
+
+We evaluate the search decision at two scales. For a fixed state and query count, we compare station-specific completion with continuing the global order. Over weekly trajectories, we examine how removing completion, changing the global order, or changing the local stopping policy affects simulation workload, operating cost, and controller time. These comparisons expose cases in which an attractive one-step search decision trades off against later control effort.
+
+\section{Related Work}
+Grid2Op provides a sequential benchmark for power-network operations \cite{marot2021}. We use an LJN-derived hybrid controller with continuous control and discrete topology proposals \cite{ljn}. Learned action ranking uses graph features and supervised feedback to prioritize topology candidates for simulation \cite{hassouna}. Region-based multi-agent topology control divides action selection between regional agents and a central coordinator \cite{demol2025}. FRAME uses substation membership at search time, after the candidate library and priority order are available. The current incumbent determines which group receives additional evaluations.
+
+Cost-aware Bayesian optimization treats evaluations as costly and stops when expected improvement falls below evaluation cost \cite{xie2026}. We adapt a LogEIPC rule inside the same locked-substation pool; this tests local query allocation within a common closed-loop controller.
+
+\section{Method}
+\subsection{Candidate evaluation}
+At control step \(t\), the simulator receives the observation, a base action, and a candidate topology change. Available actions are filtered and combined with the base action. Equal joint action vectors share a representative and retain the original substation aliases. A query returns reward, maximum predicted loading \(\rho\), and simulator flags. An admissible candidate satisfies
+\[
+0<\rho<\min(\rho_t,\theta_t)
+\]
+with a nonterminal, legal, unambiguous transition and no simulator exception. Here \(\rho_t\) is current maximum loading and \(\theta_t\) is the controller's loading limit. The selection key is the lexicographic pair of single-precision reward and negative representative ID.
+
+\subsection{Feedback-driven expansion and completion}
+Global search starts with at most 128 candidates and expands in batches of at most 64. When the initial incumbent is below 0.9 loading, additional batches verify that incumbent until a plateau or exhaustion. If the initial prefix lacks such an incumbent, search can end when a qualifying one appears or after two successive batches leave an existing admissible incumbent unimproved. The search can exhaust the pool if admissible candidates remain unavailable.
+
+At global exit FRAME locks the incumbent's substation when the completion branch is reached. The local pool consists of unqueried representatives with at least one original alias at that station. If the initially qualifying incumbent survives verification, FRAME returns it directly. Completion retains the incumbent and evaluates each remaining local representative at most once. The maximum observed selection key inside that pass is nondecreasing. Figure~\ref{fig:search} specifies the order in which the original heuristic and the local variants make these decisions.
+
+\begin{figure}[t]
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}r p{0.89\columnwidth}@{}}
+\toprule
+1 & Canonicalize eligible joint actions and keep station aliases.\\
+2 & Query the global prefix (up to 128), then expand by up to 64 using observed feedback.\\
+3 & Return the verified initial incumbent on the direct-return path. If the pool is exhausted, keep the best admissible action if one exists.\\
+4 & On the completion path, lock the incumbent's station and gather its unqueried representatives.\\
+5 & Original FRAME queries this pool. In learned variants, the base network requests local batches until its first stop, then 208 or 261 may authorize one additional batch. When a stop is taken above 0.9 loading, the protection rule completes the remaining pool.\\
+6 & Return the best admissible action observed under the same selection key.\\
+\bottomrule
+\end{tabular}
+\caption{Search decisions in execution order. The controller's fallback applies when search returns no admissible proposal.}
+\Description{Six ordered decisions from action canonicalization and global expansion through station locking, completion and selection.}
+\label{fig:search}
+\end{figure}
+
+\subsection{Ordering and stopping controls}
+The DC-mixed order keeps the first 64 representatives in the original order, then inserts up to 64 distinct candidates from a DC-based loading order. The remainder retain their relative order. Unsupported candidates retain their slots in the DC ranking; unsupported calls use the original order. The predictive simulator determines admissibility and final selection.
+
+The learned arms share a frozen base network for local batch continuation. At its first native stop, the 208 parent gate compares \(p\mu\) with a known batch charge, where \(p\) predicts a positive improvement and \(\mu\) estimates its conditional magnitude. The gate can authorize one extra batch. The 261 variant adds a linear correction with bounded inputs to the normalized parent margin and can cancel a purchase the parent would make. The correction uses bounded public features of the current search prefix and the parent margin. The 0.9 protection rule in Figure~\ref{fig:search} is shared by the two learned arms.
+
+The adapted LogEIPC arm shares candidate generation, DC-mixed global order, global expansion, and station lock. A fixed Matérn-5/2 Gaussian process with a length scale of one command unit conditions on revealed feedback from public command vectors. It chooses the remaining candidate with the largest expected improvement per query charge and stops at a ratio of at most one. The charge is 0.000012442348640059487 in the historical reward proxy units per candidate query. This arm controls local candidate selection and stopping using its own acquisition rule, with the local protection disabled.
+
+\begin{table}[t]
+\centering
+\caption{Equal-budget comparison by source group. Win, loss, and tie refer to station completion relative to global continuation. The final column averages their reward difference within each scenario with a triggered state and then across these scenarios.}
+\label{tab:budget}
+\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Group & Triggered & Win & Loss & Tie & Mean diff.\\
+\midrule
+Original & 70 & 13 & 0 & 57 & +0.002923\\
+Generated 1 & 18 & 3 & 1 & 14 & -0.000751\\
+Generated 2 & 25 & 4 & 0 & 21 & +0.001039\\
+\midrule
+Total & 113 & 20 & 1 & 92 & ---\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Evaluation}
+\input{closed_loop_table.tex}
+\subsection{Evaluation design and measurements}
+The Grid2Op testbed uses a 118-bus grid with 173 lines, 13 transformers, 62 generators, 99 loads, and seven storage units in the input network. The scenarios have five-minute intervals and a complete replay records 2,017 steps. Power flows use LightSimBackend. Saved metadata records one PyTorch intra-op thread. Recent component logs identify OSQP for DC flow and continuous optimization.
+
+The state-level evaluation uses 185 saved exhaustive-search states from 25 scenario entries in three groups. Two generated groups share calendar dates and differ in generation seed. We hold each state's input and global query prefix fixed. For the 113 states that trigger completion, both alternatives receive exactly \(q\) additional evaluations, where \(q\) is the number of unqueried representatives in the locked substation. We recover the resulting selection from the saved exhaustive feedback. The global alternative takes the next \(q\) representatives in the original order. A predicted reward difference with magnitude at most 0.000001 counts as a tie.
+
+The closed-loop comparisons use four previously observed 2039 development weeks, each with scenario 100 and environment seed 0. The learned policies use one frozen model pool (fold 0, model seed 0) from the historical development protocol. Each arm has one replay per week within its comparison. We report candidate evaluations, all instrumented forecasts, and cumulative wall-clock time inside controller decisions, including scoring, ordering, forecasts, and continuous optimization. Loading is outside this time. Time differences use the same batch and horizon; the historical March FRAME run supplies counts and cost. An earlier 2035 deletion ablation is analyzed using its own fixed-order configuration and exhaustive reference.
+
+Full-week cost is the sum of the simulator's raw operational-cost score over executed steps, reported only for pairs that both complete the week. At each step the ledger multiplies energy terms for the generation-minus-load balance, absolute redispatch, the signed change in curtailment, and absolute storage throughput by the highest marginal cost coefficient among producing units. Energy terms use MWh at the five-minute step size. We report aggregate costs in simulator cost units and report completion, exception steps, and query charges separately.
+
+\subsection{Where should a fixed budget be spent?}
+Table~\ref{tab:budget} compares the two allocations on the same states. Station completion improved the incumbent's predicted reward in 29 of the 113 states. It won 20 comparisons at equal budget, lost one, and tied 92. One loss was large enough that the first generated group favored global continuation on average. The original and second generated groups favored station completion on average.
+
+
+
+At step 1733 of the March 2035 week, a global prefix of 256 queries selected candidate 26. Both allocations found the exhaustive winner, candidate 309, after 198 additional queries. At step 1957 of the same week, the prefix of 384 queries selected candidate 224. With 165 more queries, station completion found the exhaustive winner, candidate 689, while global continuation retained 224. At step 406 of the May 2036 week, 198 extra queries raised predicted reward by 0.000606 within the station and by 0.012966 in the global order, which recovered the exhaustive winner. All three examples use the same additional budget within each state.
+
+In the separate 2035 March closed-loop deletion experiment, the global-only variant, FRAME, and the exhaustive reference completed the week. Relative to the exhaustive reference, operating cost was 4.810\% higher with global-only search and 0.372\% higher with station completion. In the wider saved analysis across 25 scenario entries, FRAME and global-only search first differed in the delivered action in 14 entries. Among the 13 such pairs where both completed, the station-completion arm had lower cost in eight and higher cost in five. The same-state comparison measures immediate reward; the deletions measure operating cost along the two executed trajectories.
+
+\subsection{What changes workload in closed loop?}
+Table~\ref{tab:closed} reports per-week results. Relative to original FRAME, the protected mixed-order 261 arm reduced candidate queries from 7,709 to 6,094 and total forecasts from 20,289 to 18,353. March contributed 1,221 of the 1,615 fewer candidate queries. March and June costs fell and December tied. In the two same-batch complete weeks, controller time increased by 3.06\% and 0.90\%. September ended at step 451 with one exception step per arm. The audited pairs recorded zero illegal or ambiguous steps.
+
+Changing only the global order, with the 261 gate and protection fixed, reduced candidate queries from 7,622 to 6,094 (20.05\%). March, June, September, and December contributed reductions of 1,221, 128, zero, and 179. With the same order and protection, 208 and 261 delivered identical trajectories and forecast counts, and the 261 correction canceled zero purchases.
+
+\subsection{When does a local saving change the rest of the week?}
+Relative to guarded mixed-order 261, LogEIPC used 133 fewer candidate queries (2.18\%) and 72 fewer total forecasts across the four matched horizons. In the three jointly completed weeks its cumulative controller time was 227.16\,s, compared with 229.82\,s for 261. June and December retained the same trajectories and cost.
+
+At the first March divergence, step 520, the two arms shared the state, 192 global evaluations, and the incumbent. LogEIPC stopped; the base network in guarded 261 requested the final 35 candidates before the residual and protection came into play. It replaced the incumbent and reduced maximum predicted loading from 0.899714 to 0.896234. Over the resulting March trajectories, LogEIPC used 105 fewer local candidates but 256 more global candidates and incurred 2,166.28 more simulator cost units (0.0861\%). The saved ledger attributes about +3,147 units to redispatch, -243 to the generation-minus-load term, and -739 to storage, with the curtailment term nearly unchanged. At the divergence step the observed cost difference was 10.80 units. After the states diverge, the accounting describes trajectories and their subsequent dispatch choices.
+
+\section{Discussion}
+A substation's identity can guide additional search when configurations are dispersed in the global order. Equal-budget outcomes show why a comparison with ordinary continuation matters: the local decision can recover an action missed by global continuation, and occasionally misses an improvement outside the station. In closed loop, the ordering change reduces simulation workload in the tested configuration, with mixed controller timings. The two local stopping policies illustrate how saving a few candidate evaluations can change which actions are delivered and how much search or redispatch is needed later in the week.
+
+The recent experiments use four exposed development horizons and one frozen model pool on one simulator network. The timing measurements are single pairs. The saved-state counts are descriptive because states within a scenario share the same trajectory. The accompanying data and script reconstruct Table~\ref{tab:closed} without simulator execution. Replaying the full controller requires the scenario inputs, candidate library, frozen model artifacts, and run configurations. The full historical software and hardware fingerprint is unavailable.
+
+\begin{thebibliography}{5}
+\bibitem{marot2021}
+Marot et al. 2021. \emph{Learning to run a Power Network Challenge: a Retrospective Analysis}. Proceedings of the NeurIPS 2020 Competition and Demonstration Track. \href{https://proceedings.mlr.press/v133/marot21a.html}{PMLR}.
+\bibitem{ljn}
+La Javaness. \emph{L2RPN 2023 LJN Agent}. \href{https://github.com/lajavaness/l2rpn-2023-ljn-agent}{Source implementation}.
+\bibitem{hassouna}
+Hassouna et al. \emph{Learning Topology Actions for Power Grid Control: A Graph-Based Soft-Label Imitation Learning Approach}. ECML PKDD Applied Data Science track. \href{https://doi.org/10.1007/978-3-032-06129-4_8}{Publisher DOI}.
+\bibitem{xie2026}
+Xie et al. 2026. \emph{Cost-aware Stopping for Bayesian Optimization}. International Conference on Machine Learning. \href{https://proceedings.mlr.press/v306/xie26c.html}{PMLR}.
+\bibitem{demol2025}
+Barbera de Mol, Davide Barbieri, Jan Viebahn, and Davide Grossi. 2025. \emph{Centrally Coordinated Multi-Agent Reinforcement Learning for Power Grid Topology Control}. ACM e-Energy. \href{https://doi.org/10.1145/3679240.3734602}{doi:10.1145/3679240.3734602}.
+\end{thebibliography}
+\end{document}
+
+
+
+
+

@@ -1,232 +1,27 @@
-# GRL
+# FRAME：电网拓扑控制中的仿真搜索
 
-## 研究资料入口 2026年10月17日
+FRAME 研究在线电网拓扑控制中如何分配有限的候选仿真。方法以分批全局搜索寻找可行方案，根据搜索反馈决定继续扩展，并在适用时补查当前最佳动作所属变电站的候选。动作去重时保留变电站归属，帮助补查正确覆盖候选。
 
-[中文论文全文与材料](docs/PAPER_MATERIALS_INDEX.md) · [研究记录总索引](docs/RECORDS_INDEX.md) · [当前研究状态](docs/RESEARCH_STATE.md)
+本仓库保存 Grid2Op / L2RPN 环境中的方法、实验报告、对照、分析数据和复现材料。研究仍在开发阶段，结果需结合所测电网、场景及运行条件理解。
 
-本次补齐实验报告、逐次查询和逐步记录、审计、失败与恢复日志、论文版本及协作材料。逐文件索引覆盖23,885个文件，新增16,120个文件按批次压缩并校验；已有相同归档保留原位置。具体范围与恢复方式见总索引。
+## 论文与实验
 
-## 当前电网研究与模型归档（2026-10-10）
+- [最新论文修订稿（PDF）](research_archive/power-grid-2026/paper/FRAME_eEnergy_revised_20261118/FRAME_eEnergy_revised.pdf)，同目录包含 LaTeX 源稿和表格数据。
+- [电网实验与报告索引](research_archive/power-grid-2026/README.md)，涵盖 FRAME、学习停止策略、排序和独立对照。
+- [等预算搜索机制分析](research_archive/power-grid-2026/paper/GRID92_completion_analysis_20261020/GRID92_report.md)，比较同站补查与相同查询数量的全局继续搜索。
+- [GRID330 闭环对照](research_archive/power-grid-2026/protocols/GRID330_remaining19/results/GRID330_closed_loop_report.md)和 [GRID334 LogEIPC 对照](research_archive/power-grid-2026/protocols/GRID334_logeipc_closed_loop/results/GRID334_report.md)。
+- [当前研究状态](docs/RESEARCH_STATE.md)与[后续工作](docs/NEXT_STEPS.md)。
 
-[Grid2Op/L2RPN实验索引](research_archive/power-grid-2026/README.md) · [GRID22–23完整收尾](research_archive/power-grid-2026/outputs/grid_research_audit/GRID22_23_closeout.md) · [模型版本记录](research_archive/power-grid-2026/outputs/grid_research_audit/POWER_MODEL_CHANGELOG.md)
+## 目前结果
 
-52条闭环轨迹及审计完成。128候选修订缓解提前失败，但成本质量仍未达标；尚未建立GNN的实用闭环增量或新RL优势。V0/V1初始、最终权重及曲线纳入归档；报告、汇总、代码与校验清单覆盖GRID00–23。大型轨迹、RTE数据和作者PPO依赖保持本地，实际包含项明确列出。此电网模型是独立的辅助排序研究，不是原IM权重直接迁移。当前状态以docs/RESEARCH_STATE.md为准。
+在 185 个已保存的穷举搜索状态中，113 个触发同站补查。与等预算继续原全局顺序比较，同站补查在当步预测奖励上为 20 胜、1 负、92 平。该分析使用同状态保存反馈。
 
-## 截至2026-10-06的完整实验归档
+在四个已使用的 2039 开发时域，混排与保护后的 261 方案相对原 FRAME 合计减少 20.95% 候选查询和 9.54% 全部预测。三个共同完周中，两周运行费用下降，一周持平。两个有同批计时的完整周控制时间分别增加 3.06% 和 0.90%。同配置 208 和 261 的四个时域轨迹与查询数一致。
 
-[实验总索引与最新裁决](research_archive/decision-studies-2026/README.md) · [更正/撤回记录](research_archive/decision-studies-2026/CORRECTIONS.md) · [完整结果Release](https://github.com/Lntano84/GRL/releases/tag/experiments-2026-10-06)
+## 仓库与复现
 
-覆盖原IM实验及后续CCIM、TAIM、N/M/RT/Q、LOT、MP/SB/BC/GP、FA和LG01。报告、汇总、审计与代码快照可浏览；完整方案和大轨迹以校验清单归档。不同问题的实验不构成同一GRL方法的成绩。当前没有已建立的GRL学习优势；LG01停止当前GNN、不进入RL。旧说明保留在下方，当前研究状态以docs/RESEARCH_STATE.md为准。
+论文目录中的表格可由随附 CSV 和脚本重建。历史运行的完整软件版本与机器指纹仍有缺口，表格复算和完整控制器复现属于不同范围。
 
-本仓库用于研究影响最大化（Influence Maximization）中的 GRL 方法，并逐步从历史实验脚本整理为一个可审计、可复现、可扩展的实验代码库。
+实验报告、配置、源码及归档清单位于 research_archive/power-grid-2026/。部分大型原始轨迹、场景和模型保存在本地 D 盘，清单中记录了对应路径和哈希。
 
-## 当前整理状态
-
-本次整理完成了第一版结构化改造，并开始推进第一阶段“可复现传统基线”建设：
-
-- 将历史实现迁移到 `legacy/`
-- 建立并保留 `configs/`、`docs/`、`scripts/`、`src/grl/`、`tests/` 等主线目录
-- 建立论文—代码映射与实验协议文档
-- 提供配置驱动的最小实验入口 `scripts/run_experiment.py`
-- 将图加载、IC 扩散与传统 baseline 迁入 `src/grl/`
-- 增加数据集检查脚本与基础测试骨架
-
-## 目录结构
-
-```text
-GRL/
-├── configs/
-├── data/
-├── docs/
-├── legacy/
-├── param/
-├── scripts/
-│   └── debug/
-├── src/
-│   └── grl/
-├── tests/
-├── README.md
-└── requirements.txt
-```
-
-## 历史实现说明
-
-以下文件保留在 `legacy/`，作为论文审计与对照实验的历史版本：
-
-- `legacy/grl.py`
-- `legacy/grl-v2.py`
-- `legacy/grl-v3.py`
-- `legacy/previous_code/`
-
-此前仓库根目录中存在的旧脚本 `baselines.py`、`gnn.py`、`gnn_celf.py` 已删除；其功能要么已经迁移至 `src/grl/` 模块化实现，要么仅保留在历史版本与文档记录中。
-
-调试脚本已移入：
-
-- `scripts/debug/check_norm.py`
-- `scripts/debug/debug_gnn.py`
-
-## 安装
-
-```bash
-pip install -r requirements.txt
-```
-
-## 最小实验入口
-
-可以通过配置文件运行第一版 baseline 实验：
-
-```bash
-python scripts/run_experiment.py --config configs/nethept.yaml
-```
-
-运行结果默认会输出到：
-
-```text
-outputs/<dataset>/<timestamp>/
-```
-
-其中包含：
-
-- `config.yaml`
-- `metrics.json`
-- `selected_seeds.json`
-- `run.log`
-
-## 数据集检查
-
-可以先检查配置与图统计是否一致：
-
-```bash
-python scripts/inspect_dataset.py --config configs/nethept.yaml
-```
-
-输出将包含数据集名称、图路径、有向性、节点数、边数、自环、重复边和连通分量等信息。
-
-## 运行测试
-
-```bash
-pytest
-```
-
-## 当前基线范围
-
-当前统一入口已接入：
-
-- Degree
-- Degree Discount
-
-当前仍**未**接入：
-
-- GNN-CELF
-- GRL / DQN
-- FeatureDQN
-
-## 第二阶段：边际增益预测器
-
-当前主线模型不是预测总 spread，而是直接预测给定 seed set `S` 下候选节点 `v` 的条件边际增益：
-
-```text
-Delta(v | S) = sigma(S union {v}) - sigma(S)
-```
-
-可以使用以下命令训练和评估边际增益预测器：
-
-```bash
-PYTHONPATH=src python scripts/train_gnn.py --config configs/gnn_nethept.yaml
-PYTHONPATH=src python scripts/evaluate_gnn.py --config configs/gnn_nethept.yaml
-```
-
-当前模型直接学习 `Delta(v | S)`，评估会输出：
-
-- MAE / RMSE
-- Spearman / Kendall 排名相关
-- Top-K 召回率
-- pairwise ranking accuracy
-- Top-K 召回率
-- 条件候选排序指标
-
-边际增益标签使用 common live-edge sampling 生成，使 `sigma(S)` 和 `sigma(S union {v})` 使用同一组扩散样本，避免由于 Monte Carlo 随机噪声产生负边际增益标签。
-
-## 第三阶段：Oracle 诊断实验
-
-可以运行：
-
-```bash
-PYTHONPATH=src python scripts/run_oracle_diagnostics.py --config configs/gnn_nethept.yaml
-```
-
-当前 Oracle 诊断会记录：
-
-- 每一步的 oracle 最优节点与真实边际增益
-- Degree 候选池是否召回 oracle 最优节点
-- GNN 候选池是否召回 oracle 最优节点
-- 选中节点的 oracle rank
-- 选中增益与 oracle 最优增益的比值
-
-当前仓库默认提供的是 **smoke-test 级 Oracle 配置**，会限制候选池、节点子集和步数，避免在大图上直接做全图暴力 oracle 导致运行时间过长。
-
-边际增益数据集可以单独生成：
-
-```bash
-PYTHONPATH=src python scripts/build_marginal_dataset.py \
-  --config configs/smoke/nethept_gnn.yaml \
-  --output /tmp/nethept_marginal_dataset.json
-```
-
-`configs/smoke/` 用于快速验证，`configs/paper/` 提供多 budget、多随机种子的实验字段。
-
-## 首轮小规模实验
-
-首轮流程验证使用小型 `network_science` 图、单个随机种子和低 MC 次数。运行：
-
-```bash
-PYTHONPATH=src python scripts/run_first_smoke.py \
-  --config configs/smoke/network_science_first_round.yaml
-```
-
-该入口依次完成：
-
-1. Degree / Degree Discount baseline；
-2. 边际增益数据集生成；
-3. `MarginalGainPredictor` 训练与测试集评估；
-4. sequential regret 评估；
-5. candidate loss / ranking loss oracle 诊断。
-
-结果保存在：
-
-```text
-outputs/first_smoke/network_science/first_round_results.json
-```
-
-`outputs/` 默认被 `.gitignore` 忽略，因此实验结果不会自动进入 Git 提交。首轮实际运行结果如下：
-
-| 指标 | 结果 |
-|---|---:|
-| Degree spread | 20.73 |
-| Degree Discount spread | 21.60 |
-| MarginalGain MAE | 1.440 |
-| MarginalGain RMSE | 1.916 |
-| Spearman | -0.377 |
-| Kendall | -0.267 |
-| Pairwise accuracy | 0.357 |
-| Top-1 recall | 0.000 |
-| Top-5 recall | 0.800 |
-| Sequential cumulative regret | 31.50 |
-
-本轮结果的主要用途是验证代码链路，而不是证明模型已经优于 baseline。结果显示数据集生成、模型训练、sequential 评估和 oracle loss 分解均正常，但在极少样本、低 MC、仅 2 个 epoch 的设置下，边际增益模型排序能力较弱。下一步应增加样本量、MC 次数和训练轮数后，再进行 NetHEPT 单 seed 实验。
-
-## 文档
-
-- `docs/DEVELOPMENT_PLAN.md`
-- `docs/PAPER_CODE_MAPPING.md`
-- `docs/EXPERIMENT_PROTOCOL.md`
-
-## 下一步
-
-后续将继续推进：
-
-1. 增加边际增益训练样本和 MC 次数；
-2. 在 NetHEPT 上进行单 seed 验证；
-3. 比较候选召回误差与模型排序误差；
-4. 重构并对齐模块化 GRL v3；
-5. 进一步接入 FeatureDQN、CELF/IMM 和完整 GRL pipeline。
+2026 年 11 月整理时，早期 IM、CCIM、TAIM 探索和历史论文稿件从当前仓库目录移出，本地备份位于 D:/Codex/GRL研究/archives/github_cleanup_20261122/。Git 历史仍可查询早期提交。其他决策研究保留在 research_archive/decision-studies-2026/。

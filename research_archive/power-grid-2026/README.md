@@ -38,7 +38,7 @@
 
 e-Energy 英文修订稿已整合 FRAME 的搜索预算分配、2035 同站补查消融及 2039 GRID330/334 的 12 行配对。三月反例、九月短周和同配置 208/261 一致均进入正文。表格已与 CSV 逐行核对，附内部复现说明。原稿保留，匿名 PDF 已生成，供本人自查。
 
-[英文稿](paper/FRAME_eEnergy_working_draft_20261114/manuscript_en.md)
+[最新匿名修订稿](paper/FRAME_eEnergy_revised_20261118/FRAME_eEnergy_revised.pdf)
 
 # GRID337 261 最后一批资格
 
@@ -1769,3 +1769,4 @@ GRID96主要判读见 protocols/GRID96_value_learning/complete/学习结果解�
 
 
 2026-11-05交付核验：中断结果a8b29365已上传，19个具体Gitblob、D协作副本和本地原始归档成功收据核对通过，未重复读取原始ZIP。grl周期运行监控已删除：原采集已中断且禁止自动第三次恢复，目前无获授权的活动运行；不会继续重播旧启动提示。后续须用户新的研究范围决定，不自动采集或训练。
+
